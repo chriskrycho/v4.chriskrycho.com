@@ -3,8 +3,9 @@
 @import "fonts";
 @import "base";
 
+// General default styles
 html {
-   font-size: 118.75%;  /* -> 18px, using percentage to allow IE user stylesheet changes */
+   font-size: 125%;  /* -> 18px, using percentage to allow IE user stylesheet changes */
    font-family: $serif;
    color: $dark_gray;
    background: $white;
@@ -62,3 +63,5 @@ h6 {
    display: inline-block;
    padding-right: 1em;
 }
+
+// Special styles
