@@ -1,0 +1,8 @@
+<header>
+   {% block article_title %}<h1>{{ article.title }}</h1>{% endblock %}
+</header>
+<div class="meta">
+   {{ article.date }}
+   {% include "includes/section.html" %}
+   {% include "includes/hashtags.html" %}
+</div>

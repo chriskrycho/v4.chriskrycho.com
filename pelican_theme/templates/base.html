@@ -18,7 +18,15 @@
 
 </head>
 <body>
-   <header>{% include "includes/header.html" %}</header>
+   <header>
+      <hgroup>
+         <h1 id="site-title">{{ SITENAME }}</h1>
+         <h2 id="site-subtitle">{{ SITE_DESCRIPTION }}</h2>
+      </hgroup>
+
+      <nav></nav>
+   </header>
+
    {% block content %}{% endblock %}
    <footer>{% include "includes/footer.html" %}</footer>
 </body>
