@@ -13,6 +13,8 @@ TIMEZONE = 'America/New_York'
 DEFAULT_LANG = 'en'
 
 THEME = 'pelican_theme'
+THEME_STATIC_DIR = 'assets'
+CSS_FILE = 'style.css'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -67,6 +69,3 @@ TAG_SAVE_AS = '{slug}/index.html'
 STATIC_PATHS = ['extra/CNAME', 'extra/.htaccess']  # Include the CNAME file
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},  # Copy CNAME file to /output
                        'extra/.htaccess': {'path': '.htaccess'},}  # Copy .htaccess file to /output
-
-THEME_STATIC_DIR = 'assets'
-CSS_FILE = 'style.css'

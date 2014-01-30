@@ -40,6 +40,28 @@ p, ul, ol, li, blockquote {
    font-size: $fsp;
 }
 
+p {
+   text-indent: $fs4;
+}
+
+ul, ol {
+
+   margin-left: $fs3;
+   padding-left: $fsp;
+
+   p {
+      text-indent: 0;
+   }
+}
+
+ul {
+   list-style: circle;
+}
+
+ol {
+   list-style: decimal;
+}
+
 h1, h2, h3, h4 {
    font-family: $sans;
 }
