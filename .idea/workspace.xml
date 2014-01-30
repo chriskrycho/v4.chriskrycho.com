@@ -1,71 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8a9ec5b3-0f7a-4a53-b554-a072d4d062cb" name="Default" comment="Add section and hashtags includes">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pelican_theme/templates/includes/hashtags.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pelican_theme/templates/includes/item-header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pelican_theme/templates/includes/section.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pelican_theme/templates/includes/header.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/archives.html" afterPath="$PROJECT_DIR$/output/archives.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pelican_theme/templates/archives.html" afterPath="$PROJECT_DIR$/pelican_theme/templates/archives.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/authors.html" afterPath="$PROJECT_DIR$/output/authors.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pelican_theme/templates/base.html" afterPath="$PROJECT_DIR$/pelican_theme/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/categories.html" afterPath="$PROJECT_DIR$/output/categories.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/author/chris-krycho.html" afterPath="$PROJECT_DIR$/output/author/chris-krycho.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/author/chris-krycho2.html" afterPath="$PROJECT_DIR$/output/author/chris-krycho2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/author/chris-krycho3.html" afterPath="$PROJECT_DIR$/output/author/chris-krycho3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/index.html" afterPath="$PROJECT_DIR$/output/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/01-14-practical-wisdom/index.html" afterPath="$PROJECT_DIR$/output/2014/01-14-practical-wisdom/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/a-note-to-rss-subscribers/index.html" afterPath="$PROJECT_DIR$/output/2014/a-note-to-rss-subscribers/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/elijah-elisha/index.html" afterPath="$PROJECT_DIR$/output/2014/elijah-elisha/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/ending-badly/index.html" afterPath="$PROJECT_DIR$/output/2014/ending-badly/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/every-king-broken/index.html" afterPath="$PROJECT_DIR$/output/2014/every-king-broken/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/finding-god-proverbs/index.html" afterPath="$PROJECT_DIR$/output/2014/finding-god-proverbs/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/five-things-proverbs-six/index.html" afterPath="$PROJECT_DIR$/output/2014/five-things-proverbs-six/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/folly-of-sin/index.html" afterPath="$PROJECT_DIR$/output/2014/folly-of-sin/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/foreign-wives-and-real-devotion/index.html" afterPath="$PROJECT_DIR$/output/2014/foreign-wives-and-real-devotion/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/from-creation-to-consummation/index.html" afterPath="$PROJECT_DIR$/output/2014/from-creation-to-consummation/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/generation-by-generation/index.html" afterPath="$PROJECT_DIR$/output/2014/generation-by-generation/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/grappling-with-genealogies/index.html" afterPath="$PROJECT_DIR$/output/2014/grappling-with-genealogies/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/hey-look-a-podcast/index.html" afterPath="$PROJECT_DIR$/output/2014/hey-look-a-podcast/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/invest-memorizing-scripture/index.html" afterPath="$PROJECT_DIR$/output/2014/invest-memorizing-scripture/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/justice-mercy-same-stroke/index.html" afterPath="$PROJECT_DIR$/output/2014/justice-mercy-same-stroke/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/kings-contrast/index.html" afterPath="$PROJECT_DIR$/output/2014/kings-contrast/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/life-and-death-of-words/index.html" afterPath="$PROJECT_DIR$/output/2014/life-and-death-of-words/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/mouths-of-poets/index.html" afterPath="$PROJECT_DIR$/output/2014/mouths-of-poets/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/nehemiahs-exhortation/index.html" afterPath="$PROJECT_DIR$/output/2014/nehemiahs-exhortation/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/new-year-devotions/index.html" afterPath="$PROJECT_DIR$/output/2014/new-year-devotions/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/ordinary-means-the-silence-of-god/index.html" afterPath="$PROJECT_DIR$/output/2014/ordinary-means-the-silence-of-god/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/prayer-thanksgiving-jan-12-2014/index.html" afterPath="$PROJECT_DIR$/output/2014/prayer-thanksgiving-jan-12-2014/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/saul-david-righteousness-folly/index.html" afterPath="$PROJECT_DIR$/output/2014/saul-david-righteousness-folly/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/scriptural-miscellanies-jan-12-2014/index.html" afterPath="$PROJECT_DIR$/output/2014/scriptural-miscellanies-jan-12-2014/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/study-in-contrasts-2-kings-16-20/index.html" afterPath="$PROJECT_DIR$/output/2014/study-in-contrasts-2-kings-16-20/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/temple-for-god/index.html" afterPath="$PROJECT_DIR$/output/2014/temple-for-god/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/what-was-their-sin/index.html" afterPath="$PROJECT_DIR$/output/2014/what-was-their-sin/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/when-god-built-david-a-house/index.html" afterPath="$PROJECT_DIR$/output/2014/when-god-built-david-a-house/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/2014/who-can-dwell-with-god/index.html" afterPath="$PROJECT_DIR$/output/2014/who-can-dwell-with-god/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/about/index.html" afterPath="$PROJECT_DIR$/output/about/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/blog/index.html" afterPath="$PROJECT_DIR$/output/blog/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/devotions/index.html" afterPath="$PROJECT_DIR$/output/devotions/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/prayers/index.html" afterPath="$PROJECT_DIR$/output/prayers/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/seminary/index.html" afterPath="$PROJECT_DIR$/output/seminary/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/theology/index.html" afterPath="$PROJECT_DIR$/output/theology/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/index2.html" afterPath="$PROJECT_DIR$/output/index2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/devotions/index2.html" afterPath="$PROJECT_DIR$/output/devotions/index2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/theology/index2.html" afterPath="$PROJECT_DIR$/output/theology/index2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/index3.html" afterPath="$PROJECT_DIR$/output/index3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/devotions/index3.html" afterPath="$PROJECT_DIR$/output/devotions/index3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/theology/index3.html" afterPath="$PROJECT_DIR$/output/theology/index3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/drafts/infant-guilt-purest-speculation.html" afterPath="$PROJECT_DIR$/output/drafts/infant-guilt-purest-speculation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/drafts/migrating-to-pelican.html" afterPath="$PROJECT_DIR$/output/drafts/migrating-to-pelican.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pelican_theme/sass/style.scss" afterPath="$PROJECT_DIR$/pelican_theme/sass/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/tags.html" afterPath="$PROJECT_DIR$/output/tags.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/drafts/thoughts-harry-potter-reread.html" afterPath="$PROJECT_DIR$/output/drafts/thoughts-harry-potter-reread.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="8a9ec5b3-0f7a-4a53-b554-a072d4d062cb" name="Default" comment="" />
     <ignored path="chriskrycho.com.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="8a9ec5b3-0f7a-4a53-b554-a072d4d062cb" time="1391039211441" ignored="false" />
+    <file path="/Dummy.txt" changelist="8a9ec5b3-0f7a-4a53-b554-a072d4d062cb" time="1391039917974" ignored="false" />
     <file path="/style.scss" changelist="8a9ec5b3-0f7a-4a53-b554-a072d4d062cb" time="1391038619287" ignored="false" />
     <file path="/*.regexp" changelist="8a9ec5b3-0f7a-4a53-b554-a072d4d062cb" time="1390874659473" ignored="false" />
     <file path="$PROJECT_DIR$/output/feeds/all.atom.xml" changelist="8a9ec5b3-0f7a-4a53-b554-a072d4d062cb" time="1388965136204" ignored="false" />
@@ -641,7 +580,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add poetry white space handling." />
+    <option name="LAST_COMMIT_MESSAGE" value="Build out templates. (#2)&#10;- Start building test version of the site&#10;- Add hashtags template include for 'tags'&#10;- Add section template for 'categories'&#10;- Fix recursion bug with mutual inclusion in archives and index templates&#10;- Remove header template and put its contents back in the base template" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -673,6 +612,7 @@
     <MESSAGE value="Start configuring things on the dev branch for the new theme.&#10;This way I can develop the theme and test it fully in parallel, constantly merging in the updated content from the main branch." />
     <MESSAGE value="Update font size and scale information." />
     <MESSAGE value="Add poetry white space handling." />
+    <MESSAGE value="Build out templates. (#2)&#10;- Start building test version of the site&#10;- Add hashtags template include for 'tags'&#10;- Add section template for 'categories'&#10;- Fix recursion bug with mutual inclusion in archives and index templates&#10;- Remove header template and put its contents back in the base template" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
