@@ -12,16 +12,22 @@ html {
    line-height: $line_height;
 }
 
+body {
+   line-height: $line_height;
+}
+
 a, a:visited {
    color: $light_blue;
    text-decoration: none;
    border-bottom: 1px solid transparent;
 
-   @include transition(all 0.5s $easeInOutCubic);
+   @include transition(border 0.224s $easeInOutCubic, color 0.224s $easeInOutCubic);
 
    &:hover, &:active {
       color: $dark_blue;
       border-bottom: 1px solid $dark_gray;
+
+      @include transition(border 0.465s $easeInOutCubic, color 0.465s $easeInOutCubic);
    }
 }
 
@@ -74,4 +80,10 @@ h6 {
 }
 
 // Layout
+article {
+   width: 30.814rem;
 
+   p {
+      @include font-feature-settings('liga', 'onum', 'pnum', 'kern');
+   }
+}
