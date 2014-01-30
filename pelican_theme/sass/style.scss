@@ -109,3 +109,7 @@ article {
       @include font-feature-settings('liga', 'onum', 'pnum', 'kern');
    }
 }
+
+.section-title {
+   text-transform: capitalize;
+}
