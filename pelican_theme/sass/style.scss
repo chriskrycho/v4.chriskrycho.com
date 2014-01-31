@@ -45,8 +45,7 @@ p {
 }
 
 ul, ol {
-
-   margin-left: $fs3;
+   margin-left: $fsp;
    padding-left: $fsp;
 
    p {
@@ -104,10 +103,20 @@ h6 {
 // Layout
 article {
    width: 30.814rem;
+   margin-left: 15.6%;
 
    p {
       @include font-feature-settings('liga', 'onum', 'pnum', 'kern');
    }
+}
+
+#site-title {
+
+}
+
+#site-subtitle {
+   font-family: $serif;
+   font-style: italic;
 }
 
 .section-title {

@@ -11,8 +11,9 @@
    <header>
       <h1>{{ article.title }}</h1>
    </header>
-   {% include "includes/meta.html" %}
    {{ article.content }}
    </article>
+
+   {% include "includes/meta.html" %}
 {% endblock %}
 

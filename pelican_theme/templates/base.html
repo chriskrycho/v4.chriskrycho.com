@@ -24,7 +24,13 @@
          <h2 id="site-subtitle">{{ SITE_DESCRIPTION }}</h2>
       </hgroup>
 
-      <nav></nav>
+      <nav>
+         <ul>
+         {% for category, _ in categories %}
+            <li>{{ category }}</li>
+         {% endfor %}
+         </ul>
+      </nav>
    </header>
 
    {% block content %}{% endblock %}
