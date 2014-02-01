@@ -9,12 +9,14 @@ SITE_DESCRIPTION = 'Creativity, reflection, & passionate endeavors by a peculiar
 LOGO = ''
 
 TIMEZONE = 'America/New_York'
+DEFAULT_DATE_FORMAT = "%B %d, %Y"
 
 DEFAULT_LANG = 'en'
 
 THEME = 'pelican_theme'
 THEME_STATIC_DIR = 'assets'
 CSS_FILE = 'style.css'
+
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
