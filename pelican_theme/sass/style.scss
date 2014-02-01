@@ -120,8 +120,16 @@ article {
    }
 }
 
-#site-title {
+#site-header {
+   line-height: $line_height_min;
+}
 
+#site-title {
+   font-size: $fs_very_large;
+}
+
+#site-subtitle {
+   font-size: $fs3;
 }
 
 #site-subtitle {
