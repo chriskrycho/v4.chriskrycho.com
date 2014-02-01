@@ -7,7 +7,7 @@
       <option name="description" value="Compiles .scss files into .css files" />
       <option name="exitCodeBehavior" value="ERROR" />
       <option name="fileExtension" value="scss" />
-      <option name="immediateSync" value="true" />
+      <option name="immediateSync" value="false" />
       <option name="name" value="SCSS" />
       <option name="output" value="$FileParentDir$/static/$FileNameWithoutExtension$.css" />
       <option name="outputFilters">
@@ -21,7 +21,7 @@
       <option name="workingDir" value="$PROJECT_DIR$/pelican_theme/sass" />
       <envs />
     </TaskOptions>
-    <TaskOptions isEnabled="true">
+    <TaskOptions isEnabled="false">
       <option name="arguments" value="content -o output -s pelicanconf.py" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="Build a local version of the site in Pelican" />
@@ -41,7 +41,7 @@
       <option name="workingDir" value="$PROJECT_DIR$" />
       <envs />
     </TaskOptions>
-    <TaskOptions isEnabled="true">
+    <TaskOptions isEnabled="false">
       <option name="arguments" value="content -o output -s pelicanconf.py" />
       <option name="checkSyntaxErrors" value="true" />
       <option name="description" value="Build a local version of the site in Pelican" />
