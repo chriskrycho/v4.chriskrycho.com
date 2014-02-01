@@ -7,13 +7,13 @@
     <inspection_tool class="CastToConcreteClass" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="false" />
     </inspection_tool>
-    <inspection_tool class="CheckEmptyScriptTag" enabled="true" level="WARNING" enabled_by_default="true">
+    <inspection_tool class="CheckEmptyScriptTag" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="true" />
     </inspection_tool>
-    <inspection_tool class="CheckImageSize" enabled="true" level="WARNING" enabled_by_default="true">
+    <inspection_tool class="CheckImageSize" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="true" />
     </inspection_tool>
-    <inspection_tool class="CheckValidXmlInScriptTagBody" enabled="true" level="ERROR" enabled_by_default="true">
+    <inspection_tool class="CheckValidXmlInScriptTagBody" enabled="true" level="ERROR" enabled_by_default="false">
       <scope name="Inspect" level="ERROR" enabled="true" />
     </inspection_tool>
     <inspection_tool class="ClassReferencesSubclass" enabled="true" level="WARNING" enabled_by_default="false">
@@ -41,22 +41,22 @@
       <option name="REPORT_INDEXED_LOOP" value="true" />
       <option name="ignoreUntypedCollections" value="false" />
     </inspection_tool>
-    <inspection_tool class="HtmlDeprecatedTag" enabled="true" level="WARNING" enabled_by_default="true">
+    <inspection_tool class="HtmlDeprecatedTag" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="true" />
     </inspection_tool>
-    <inspection_tool class="HtmlExtraClosingTag" enabled="true" level="ERROR" enabled_by_default="true">
+    <inspection_tool class="HtmlExtraClosingTag" enabled="true" level="ERROR" enabled_by_default="false">
       <scope name="Inspect" level="ERROR" enabled="true" />
     </inspection_tool>
-    <inspection_tool class="HtmlFormInputWithoutLabel" enabled="true" level="WARNING" enabled_by_default="true">
+    <inspection_tool class="HtmlFormInputWithoutLabel" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="true" />
     </inspection_tool>
-    <inspection_tool class="HtmlNonExistentInternetResource" enabled="true" level="WARNING" enabled_by_default="true">
+    <inspection_tool class="HtmlNonExistentInternetResource" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="true" />
     </inspection_tool>
-    <inspection_tool class="HtmlPresentationalElement" enabled="true" level="WARNING" enabled_by_default="true">
+    <inspection_tool class="HtmlPresentationalElement" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="true" />
     </inspection_tool>
-    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="true">
         <option name="myValues">
           <value>
@@ -72,7 +72,7 @@
       </option>
       <option name="myCustomValuesEnabled" value="true" />
     </inspection_tool>
-    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="true">
         <option name="myValues">
           <value>
@@ -102,7 +102,7 @@
       </option>
       <option name="myCustomValuesEnabled" value="true" />
     </inspection_tool>
-    <inspection_tool class="HtmlUnknownTarget" enabled="true" level="WARNING" enabled_by_default="true">
+    <inspection_tool class="HtmlUnknownTarget" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="IfCanBeSwitch" enabled="false" level="WARNING" enabled_by_default="false">
@@ -231,7 +231,7 @@
       <option name="OPERA9" value="true" />
       <option name="SAFARI" value="true" />
     </inspection_tool>
-    <inspection_tool class="RequiredAttributes" enabled="true" level="WARNING" enabled_by_default="true">
+    <inspection_tool class="RequiredAttributes" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="true">
         <option name="myAdditionalRequiredHtmlAttributes" value="" />
       </scope>
