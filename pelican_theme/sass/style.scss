@@ -122,7 +122,10 @@ article {
 
 #site-header {
    line-height: $line_height_min;
-   margin-left: $fs_large;
+   margin: {
+      top: $fs3;
+      left: $fs_large;
+   }
 }
 
 #site-title {

@@ -7,6 +7,15 @@
     <inspection_tool class="CastToConcreteClass" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="false" />
     </inspection_tool>
+    <inspection_tool class="CheckEmptyScriptTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Inspect" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="CheckImageSize" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Inspect" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="CheckValidXmlInScriptTagBody" enabled="true" level="ERROR" enabled_by_default="true">
+      <scope name="Inspect" level="ERROR" enabled="true" />
+    </inspection_tool>
     <inspection_tool class="ClassReferencesSubclass" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="false" />
     </inspection_tool>
@@ -31,6 +40,70 @@
     <inspection_tool class="ForCanBeForeach" enabled="false" level="WARNING" enabled_by_default="false">
       <option name="REPORT_INDEXED_LOOP" value="true" />
       <option name="ignoreUntypedCollections" value="false" />
+    </inspection_tool>
+    <inspection_tool class="HtmlDeprecatedTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Inspect" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlExtraClosingTag" enabled="true" level="ERROR" enabled_by_default="true">
+      <scope name="Inspect" level="ERROR" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlFormInputWithoutLabel" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Inspect" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlNonExistentInternetResource" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Inspect" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlPresentationalElement" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Inspect" level="WARNING" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Inspect" level="WARNING" enabled="true">
+        <option name="myValues">
+          <value>
+            <list size="0" />
+          </value>
+        </option>
+        <option name="myCustomValuesEnabled" value="true" />
+      </scope>
+      <option name="myValues">
+        <value>
+          <list size="0" />
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Inspect" level="WARNING" enabled="true">
+        <option name="myValues">
+          <value>
+            <list size="6">
+              <item index="0" class="java.lang.String" itemvalue="nobr" />
+              <item index="1" class="java.lang.String" itemvalue="noembed" />
+              <item index="2" class="java.lang.String" itemvalue="comment" />
+              <item index="3" class="java.lang.String" itemvalue="noscript" />
+              <item index="4" class="java.lang.String" itemvalue="embed" />
+              <item index="5" class="java.lang.String" itemvalue="script" />
+            </list>
+          </value>
+        </option>
+        <option name="myCustomValuesEnabled" value="true" />
+      </scope>
+      <option name="myValues">
+        <value>
+          <list size="6">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTarget" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Inspect" level="WARNING" enabled="true" />
     </inspection_tool>
     <inspection_tool class="IfCanBeSwitch" enabled="false" level="WARNING" enabled_by_default="false">
       <option name="minimumBranches" value="3" />
@@ -97,6 +170,7 @@
     <inspection_tool class="MagicNumber" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="false" />
     </inspection_tool>
+    <inspection_tool class="MakoArgumentListInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="MethodOnlyUsedFromInnerClass" enabled="true" level="WARNING" enabled_by_default="false">
       <scope name="Inspect" level="WARNING" enabled="false">
         <option name="ignoreMethodsAccessedFromAnonymousClass" value="false" />
@@ -130,6 +204,38 @@
       <option name="ignorableAnnotations">
         <value />
       </option>
+    </inspection_tool>
+    <inspection_tool class="QuirksModeInspectionTool" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false">
+        <option name="IE50" value="false" />
+        <option name="IE55" value="false" />
+        <option name="IE6" value="true" />
+        <option name="IE7" value="true" />
+        <option name="IE_MAC" value="false" />
+        <option name="MOZILLA" value="true" />
+        <option name="OPERA7" value="false" />
+        <option name="OPERA8" value="false" />
+        <option name="OPERA85" value="true" />
+        <option name="OPERA9" value="true" />
+        <option name="SAFARI" value="true" />
+      </scope>
+      <option name="IE50" value="false" />
+      <option name="IE55" value="false" />
+      <option name="IE6" value="true" />
+      <option name="IE7" value="true" />
+      <option name="IE_MAC" value="false" />
+      <option name="MOZILLA" value="true" />
+      <option name="OPERA7" value="false" />
+      <option name="OPERA8" value="false" />
+      <option name="OPERA85" value="true" />
+      <option name="OPERA9" value="true" />
+      <option name="SAFARI" value="true" />
+    </inspection_tool>
+    <inspection_tool class="RequiredAttributes" enabled="true" level="WARNING" enabled_by_default="true">
+      <scope name="Inspect" level="WARNING" enabled="true">
+        <option name="myAdditionalRequiredHtmlAttributes" value="" />
+      </scope>
+      <option name="myAdditionalRequiredHtmlAttributes" value="" />
     </inspection_tool>
     <inspection_tool class="SafeVarargsDetector" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SimplifiableIfStatement" enabled="false" level="WARNING" enabled_by_default="false" />
