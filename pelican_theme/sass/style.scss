@@ -45,9 +45,6 @@ p {
 }
 
 ul, ol {
-   margin-left: $fsp;
-   padding-left: $fsp;
-
    p {
       text-indent: 0;
    }
@@ -117,6 +114,10 @@ article {
 
    p {
       @include font-feature-settings('liga', 'onum', 'pnum', 'kern');
+   }
+
+   ul, ol {
+      padding-left: $fs4;
    }
 }
 

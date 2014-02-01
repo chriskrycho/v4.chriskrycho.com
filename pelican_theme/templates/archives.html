@@ -2,6 +2,7 @@
 
 {% block content %}
    {% if articles %}
+      {% block section_head %}{% endblock %}
       {% for article in articles %}
          <article>
             <header>
@@ -9,6 +10,8 @@
             </header>
             {% include "includes/meta.html" %}
          </article>
-      {% endfor %}
+      {% endfor %};
+   {% else %}
+      {% include "includes/404-content.html" %}
    {% endif %}
 {% endblock %}
