@@ -4,10 +4,30 @@
     <option name="myLocal" value="false" />
     <inspection_tool class="Anonymous2MethodRef" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="AssertEqualsBetweenInconvertibleTypes" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="CastToConcreteClass" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="ClassReferencesSubclass" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false" />
+    </inspection_tool>
     <inspection_tool class="CodeBlock2Expr" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="Convert2Diamond" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="Convert2Lambda" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="Convert2MethodRef" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="DeclareCollectionAsInterface" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false">
+        <option name="ignoreLocalVariables" value="false" />
+        <option name="ignorePrivateMethodsAndFields" value="false" />
+      </scope>
+      <option name="ignoreLocalVariables" value="false" />
+      <option name="ignorePrivateMethodsAndFields" value="false" />
+    </inspection_tool>
+    <inspection_tool class="FeatureEnvy" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false">
+        <option name="ignoreTestCases" value="false" />
+      </scope>
+      <option name="ignoreTestCases" value="false" />
+    </inspection_tool>
     <inspection_tool class="ForCanBeForeach" enabled="false" level="WARNING" enabled_by_default="false">
       <option name="REPORT_INDEXED_LOOP" value="true" />
       <option name="ignoreUntypedCollections" value="false" />
@@ -18,6 +38,21 @@
       <option name="suggestEnumSwitches" value="false" />
     </inspection_tool>
     <inspection_tool class="IndexOfReplaceableByContains" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="InstanceVariableOfConcreteClass" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="InstanceofChain" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false">
+        <option name="ignoreInstanceofOnLibraryClasses" value="false" />
+      </scope>
+      <option name="ignoreInstanceofOnLibraryClasses" value="false" />
+    </inspection_tool>
+    <inspection_tool class="InstanceofInterfaces" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="InstanceofThis" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false" />
+    </inspection_tool>
     <inspection_tool class="JRubyDeprecatedJavaMethodUsageInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="JRubyImplementInterfaceInspection" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="JRubyPublicClassInspection" enabled="false" level="ERROR" enabled_by_default="false" />
@@ -56,6 +91,46 @@
       <option name="myAdditionalJavadocTags" value="" />
     </inspection_tool>
     <inspection_tool class="JavadocReference" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="LocalVariableOfConcreteClass" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="MagicNumber" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="MethodOnlyUsedFromInnerClass" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false">
+        <option name="ignoreMethodsAccessedFromAnonymousClass" value="false" />
+        <option name="ignoreStaticMethodsFromNonStaticInnerClass" value="false" />
+        <option name="onlyReportStaticMethods" value="false" />
+      </scope>
+      <option name="ignoreMethodsAccessedFromAnonymousClass" value="false" />
+      <option name="ignoreStaticMethodsFromNonStaticInnerClass" value="false" />
+      <option name="onlyReportStaticMethods" value="false" />
+    </inspection_tool>
+    <inspection_tool class="MethodReturnOfConcreteClass" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="OverlyStrongTypeCast" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false">
+        <option name="ignoreInMatchingInstanceof" value="false" />
+      </scope>
+      <option name="ignoreInMatchingInstanceof" value="false" />
+    </inspection_tool>
+    <inspection_tool class="ParameterOfConcreteClass" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="PublicMethodNotExposedInInterface" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false">
+        <option name="onlyWarnIfContainingClassImplementsAnInterface" value="false" />
+        <option name="ignorableAnnotations">
+          <value />
+        </option>
+      </scope>
+      <option name="onlyWarnIfContainingClassImplementsAnInterface" value="false" />
+      <option name="ignorableAnnotations">
+        <value />
+      </option>
+    </inspection_tool>
     <inspection_tool class="SafeVarargsDetector" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SimplifiableIfStatement" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SpellCheckingInspection" enabled="true" level="TYPO" enabled_by_default="true">
@@ -63,9 +138,27 @@
       <option name="processLiterals" value="true" />
       <option name="processComments" value="true" />
     </inspection_tool>
+    <inspection_tool class="StaticMethodOnlyUsedInOneClass" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false" />
+    </inspection_tool>
+    <inspection_tool class="StaticVariableOfConcreteClass" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false" />
+    </inspection_tool>
     <inspection_tool class="StringBufferReplaceableByStringBuilder" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="TryFinallyCanBeTryWithResources" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="TryWithIdenticalCatches" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="TypeMayBeWeakened" enabled="true" level="WARNING" enabled_by_default="false">
+      <scope name="Inspect" level="WARNING" enabled="false">
+        <option name="useRighthandTypeAsWeakestTypeInAssignments" value="true" />
+        <option name="useParameterizedTypeForCollectionMethods" value="true" />
+        <option name="doNotWeakenToJavaLangObject" value="true" />
+        <option name="onlyWeakentoInterface" value="true" />
+      </scope>
+      <option name="useRighthandTypeAsWeakestTypeInAssignments" value="true" />
+      <option name="useParameterizedTypeForCollectionMethods" value="true" />
+      <option name="doNotWeakenToJavaLangObject" value="true" />
+      <option name="onlyWeakentoInterface" value="true" />
+    </inspection_tool>
     <inspection_tool class="UnnecessaryBoxing" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="UnnecessaryUnboxing" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="WhileCanBeForeach" enabled="false" level="WARNING" enabled_by_default="false" />

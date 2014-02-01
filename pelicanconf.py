@@ -6,7 +6,7 @@ AUTHOR = 'Chris Krycho'
 SITENAME = 'Chris Krycho'
 SITEURL = ''
 SITE_DESCRIPTION = 'Creativity, reflection, & passionate endeavors by a peculiar fellow'
-SITE_DESCRIPTION_HTML = 'Creativity, reflection, & passionate endeavors<br/> by a peculiar fellow'
+SITE_DESCRIPTION_HTML = 'Creativity, reflection, & passionate endeavors<br class="optional"/> by a peculiar fellow'
 LOGO = ''
 
 TIMEZONE = 'America/New_York'

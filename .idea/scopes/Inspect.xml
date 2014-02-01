@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Inspect" pattern="(file:content//*||file:converted/art//*||file:converted/blog/*||file:converted/tech/*||file:converted/theology/*)&amp;&amp;!file:output//*&amp;&amp;!file:wordpress//*||file:pelican_theme/sass//*||file:pelican_theme/static//*||file:pelican_theme/templates//*||file:.gitignore||file:.hgignore||file:chriskrycho.com.iml||file:develop_server.sh||file:LICENSE.md||file:Makefile||file:pelicanconf.py||file:publishconf.py||file:README.md" />
+</component>

@@ -122,6 +122,7 @@ article {
 
 #site-header {
    line-height: $line_height_min;
+   margin-left: $fs_large;
 }
 
 #site-title {
@@ -129,7 +130,8 @@ article {
 }
 
 #site-subtitle {
-   font-size: $fs3;
+   font-size: $fs4;
+   margin-left: $fs4;
 }
 
 #site-subtitle {
@@ -141,3 +143,6 @@ article {
 .section-title {
    text-transform: capitalize;
 }
+
+
+@import "media";

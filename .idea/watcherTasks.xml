@@ -21,6 +21,46 @@
       <option name="workingDir" value="$PROJECT_DIR$/pelican_theme/sass" />
       <envs />
     </TaskOptions>
+    <TaskOptions isEnabled="true">
+      <option name="arguments" value="content -o output -s pelicanconf.py" />
+      <option name="checkSyntaxErrors" value="true" />
+      <option name="description" value="Build a local version of the site in Pelican" />
+      <option name="exitCodeBehavior" value="ERROR" />
+      <option name="fileExtension" value="jinja2" />
+      <option name="immediateSync" value="true" />
+      <option name="name" value="Pelican Local Jinja2" />
+      <option name="output" value="" />
+      <option name="outputFilters">
+        <array />
+      </option>
+      <option name="outputFromStdout" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="program" value="$USER_HOME$/.virtualenvs/pelican/bin/pelican" />
+      <option name="scopeName" value="Watch-to-build" />
+      <option name="trackOnlyRoot" value="false" />
+      <option name="workingDir" value="$PROJECT_DIR$" />
+      <envs />
+    </TaskOptions>
+    <TaskOptions isEnabled="true">
+      <option name="arguments" value="content -o output -s pelicanconf.py" />
+      <option name="checkSyntaxErrors" value="true" />
+      <option name="description" value="Build a local version of the site in Pelican" />
+      <option name="exitCodeBehavior" value="ERROR" />
+      <option name="fileExtension" value="scss" />
+      <option name="immediateSync" value="true" />
+      <option name="name" value="Pelican Local SASS" />
+      <option name="output" value="" />
+      <option name="outputFilters">
+        <array />
+      </option>
+      <option name="outputFromStdout" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="program" value="$USER_HOME$/.virtualenvs/pelican/bin/pelican" />
+      <option name="scopeName" value="Watch-to-build" />
+      <option name="trackOnlyRoot" value="false" />
+      <option name="workingDir" value="$PROJECT_DIR$" />
+      <envs />
+    </TaskOptions>
   </component>
 </project>
 

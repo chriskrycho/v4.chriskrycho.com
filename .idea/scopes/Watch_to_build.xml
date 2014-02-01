@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Watch-to-build" pattern="file:pelican_theme/sass/*||file:pelican_theme/static/*||file:pelican_theme/static/fonts/*||file:pelican_theme/templates/*||file:pelican_theme/templates/identity/*||file:pelican_theme/templates/includes/*||file:pelican_theme/templates/templates/*||file:pelicanconf.py" />
+</component>
