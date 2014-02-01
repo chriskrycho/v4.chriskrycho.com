@@ -10,7 +10,6 @@ LOGO = ''
 
 TIMEZONE = 'America/New_York'
 DEFAULT_DATE_FORMAT = "%B %d, %Y"
-
 DEFAULT_LANG = 'en'
 
 THEME = 'pelican_theme'
