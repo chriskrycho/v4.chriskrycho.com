@@ -267,14 +267,23 @@ sup[id^="fnref:"] a {
 #site-footer {
    background-color: $dark_blue;
    min-height: $fs_very_large;
-   display: block;
    color: $white;
+   @include flexbox();
 
-   &:after {
-      display: block;
-      background-color: $dark_gray;
-      height: $fs_very_small;
-      content: '';
+   section {
+      @include flex(1);
+   }
+
+   h1 {
+      background: $light_blue;
+      font-size: $fs2;
+
+      &:before {
+         display: block;
+         height: 0.244rem;
+         background-color: $dark_gray;
+         content: '';
+      };
    }
 }
 
