@@ -143,6 +143,10 @@ body:before {
       top: $fs3;
       left: $fs_large;
    }
+
+   a, a:hover, a:active, a:visited {
+      border-bottom: none;
+   }
 }
 
 #site-title {
@@ -199,6 +203,10 @@ article {
       span {
          display: inline-block;
 
+         a {
+            display: inline-block;
+         }
+
          &:before {
             display: inline-block;
             padding: {
@@ -211,6 +219,16 @@ article {
 
          &:first-of-type:before {
             content: none;
+         }
+      }
+
+      .hashtag a {
+         margin: {
+            left: 0.13em;
+            right: 0.13em
+         };
+         &:first-of-type {
+            margin-left: 0;
          }
       }
    }
