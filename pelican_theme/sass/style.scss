@@ -337,13 +337,9 @@ sup[id^="fnref:"] a {
    @include flexbox();
 
    section {
+      border-top: 0.244rem solid $dark_gray;
+
       @include flex(1);
-      &:before {
-         display: block;
-         height: 0.244rem;
-         background-color: $dark_gray;
-         content: '';
-      };
    }
 
    h1 {
