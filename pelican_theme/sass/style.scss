@@ -245,6 +245,8 @@ article {
    }
 
    &.archive {
+      width: auto;
+      margin-right: 15.6%;
       header h1 {
          font-weight: 400;
       }
@@ -265,6 +267,7 @@ sup[id^="fnref:"] a {
 
 // Footer
 #site-footer {
+   margin-top: $fs_large;
    background-color: $dark_blue;
    min-height: $fs_very_large;
    color: $white;
