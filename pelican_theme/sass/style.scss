@@ -272,18 +272,18 @@ sup[id^="fnref:"] a {
 
    section {
       @include flex(1);
-   }
-
-   h1 {
-      background: $light_blue;
-      font-size: $fs2;
-
       &:before {
          display: block;
          height: 0.244rem;
          background-color: $dark_gray;
          content: '';
       };
+   }
+
+   h1 {
+      background: $light_blue;
+      font-size: $fs2;
+      padding-left: $fsp;
    }
 }
 
