@@ -197,7 +197,10 @@ body:before {
 
 // Article
 article {
-   padding-bottom: $fs2;
+   padding: {
+      right: 0.465em;
+      bottom: $fs2;
+   };
    clear: both;
    overflow: hidden;
 
