@@ -6,7 +6,7 @@ Tags: seminary
 Class: THE6120
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
-Template: templates/class
+Template: formats/class
 
 As Christians, we all recognize that Adam and Eve's first sin in the garden of Eden prompted the catastropic Fall of all humanity, and that their eating of the fruit of the tree of the knowledge of good and evil was the *act* of sin that produced such horrific results in human history. What is perhaps less clear is why that particular act was sinful. Was it disobedience? gaining knowledge? pride? idolatry? The most straightforward reading of Genesis 3 makes it clear that the act was sinful at the most basic level because it was disobedience, a direct rejection of the stated will of God. God tells Adam that the consequences he receives are because he ate of the tree from which he was commanded not to eat (3:17).
 

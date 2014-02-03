@@ -6,7 +6,7 @@ Tags: seminary
 Class: THE6120
 School: Southeastern Baptist Theological Seminary
 Professor: Dr. Steve McKinion
-Template: templates/class
+Template: formats/class
 
 Whether people are born guilty of sin, or simply inherit a nature so predisposed to sin that the actual act is inevitable has been a much debated topic for generations. In my view, however, the question is impossible to answer. I do not think Scripture speaks with sufficient clarity on the matter. We know on the one hand that all are "by nature children of wrath" (Ephesians 2:3), and that "all have sinned and fall short of the glory of God" (Romans 3:23). What neither of these texts tell us, though, and what indeed *no* text tells us, is whether people are guilty at birth or whether they are simply sinful and become guilty.
 
