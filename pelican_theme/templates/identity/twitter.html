@@ -3,8 +3,12 @@
 <meta name="twitter:creator" content="@chriskrycho" />
 {% if item is defined %}
    <meta name="twitter:title" content="{{ item.title }}" />
-   <meta name="twitter:description" content="{{ item.summary }}" />
-   {% if article.image is defined %}
+   {% if item.summary is defined %}
+      <meta name="twitter:description" content="{{ item.summary }}" />
+   {% else %}
+      <meta name="twitter:description" content="{{ item.description }}" />
+   {% endif %}
+   {% if item.image is defined %}
       <meta name="twitter:image" content="{{ item.image }}" />
    {% else %}
       <meta name="twitter:image" content="{{ SITEURL }}/{{ LOGO }}" />
