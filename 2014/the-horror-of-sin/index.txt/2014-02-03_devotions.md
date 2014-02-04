@@ -1,6 +1,6 @@
 Title: The Horror of Sin
 Description: Matthew 26:3--7 contains one of the most horrifying illustrations of human depravity anywhere in the Bible. It is such a simple passage, but the human wickedness on display is profound.
-Date: 2014-02-03 22:15
+Date: 2014-02-03 22:00
 Author: Chris Krycho
 Tags: devotions
 Passages: Matthew 25–28, Psalm 34, Ecclesiastes 3
