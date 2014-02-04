@@ -1,6 +1,6 @@
 Title: From Creation to Consummation
 Subtitle: A Meditation on Psalm 24
-Summary: The structure of Psalm 24 is not obvious—but the journey is profoundly rewarding. David beautifully leads us from creation to consummation.
+Description: The structure of Psalm 24 is not obvious—but the journey is profoundly rewarding. David beautifully leads us from creation to consummation.
 Date: 2014-01-24 22:05
 Author: Chris Krycho
 Tags: devotions
@@ -21,11 +21,11 @@ Sure enough, these pieces do relate. Each points us to a different aspect of Yah
 
 In short, the Psalm moves us from creation to consummation. Yahweh made and rules over the world. He calls his people to be holy, as he is holy, and he makes them righteous and saves them. He will come into his glory as the King. And David gets us there without ever coming out and saying those bare facts; the poem moves our hearts the more thoroughly because he makes us work for us, and because he does so with such aching beauty.
 
-> Lift up your heads, O gates!  
-> And lift them up, O ancienet doors,  
-> that the King of glory may come in.  
-> Who is this King of glory?  
-> Yahweh of hosts,  
+> Lift up your heads, O gates!
+> And lift them up, O ancienet doors,
+> that the King of glory may come in.
+> Who is this King of glory?
+> Yahweh of hosts,
 > he is the King of glory! Selah. (Psalm 24:9--10)
 
 Hallelujah.

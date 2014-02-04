@@ -1,5 +1,5 @@
 Title: Not Simple
-Summary: Jesus is not simple. He never was. We too often try to fit him into a neat box—but he will not be boxed in.
+Description: Jesus is not simple. He never was. We too often try to fit him into a neat box—but he will not be boxed in.
 Date: 2014-01-31 20:55
 Author: Chris Krycho
 Tags: devotions

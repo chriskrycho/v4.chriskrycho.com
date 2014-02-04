@@ -1,5 +1,5 @@
 Title: Nehemiah's Exhortation
-Summary: 
+Description:
 Date: 2014-01-25 22:30
 Author: Chris Krycho
 Tags: devotions
