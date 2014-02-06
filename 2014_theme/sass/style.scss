@@ -202,6 +202,14 @@ hr {
    font-family: 'gentium_plus_smcp';
 }
 
+.epigraph {
+   font-style: italic;
+   text-align: center;
+   font-size: $fs3;
+   line-height: $line_height_small;
+   padding-bottom: $fs5;
+}
+
 // ----- Layout -----
 body:before {
    height: $fs_very_small;
