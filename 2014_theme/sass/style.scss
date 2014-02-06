@@ -37,8 +37,23 @@ img {
    max-width: 100%;
 }
 
-p, ul, ol, li, blockquote {
+p, ul, ol, li {
    font-size: $fsp;
+}
+
+blockquote {
+   font: {
+      size: $fs6;
+      style: italic;
+   };
+   line-height: $line_height_small;
+   padding: {
+      top: $fsp;
+      bottom: $fsp;
+      left: $fs1;
+      right: $fs1;
+   }
+
 }
 
 // Paragraph styles
