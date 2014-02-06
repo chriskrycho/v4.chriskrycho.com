@@ -18,7 +18,7 @@
       <option name="program" value="/usr/local/opt/ruby/bin/scss" />
       <option name="scopeName" value="Project Files" />
       <option name="trackOnlyRoot" value="true" />
-      <option name="workingDir" value="$PROJECT_DIR$/pelican_theme/sass" />
+      <option name="workingDir" value="$PROJECT_DIR$/2014_theme/sass" />
       <envs />
     </TaskOptions>
     <TaskOptions isEnabled="false">
