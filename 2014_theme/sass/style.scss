@@ -2,6 +2,7 @@
 @import "reset";
 @import "fonts";
 @import "base";
+@import "pygments";
 
 // General default styles
 html {
@@ -129,8 +130,23 @@ h6 {
    }
 }
 
-pre, code {
+code, .highlight pre {
    font-family: 'Source Code Pro', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+   background: #efefef;
+   border-radius: 0.244em;
+   border: 1px solid #dedede;
+   margin: $fsp 0;
+   overflow: scroll;
+}
+
+code {
+   padding: 0 0.269em;
+   font-size: $fs_small;
+}
+
+.highlight pre {
+   padding: 0.558em;
+   font-size: $fs_very_small;
 }
 
 sup {
