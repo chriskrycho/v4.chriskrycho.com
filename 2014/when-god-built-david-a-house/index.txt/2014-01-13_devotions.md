@@ -1,6 +1,7 @@
 Title: When God Built David a House
 Date: 2014-01-13 22:15
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Passages: 1 Chronicles 16–20, Psalm 13, Proverbs 13
 Template: formats/devotions

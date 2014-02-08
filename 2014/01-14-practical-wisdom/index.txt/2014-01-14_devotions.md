@@ -1,6 +1,7 @@
 Title: Practical Wisdom
 Date: 2014-01-14 23:10
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Slug: 01-14-practical-wisdom
 Passages: 1 Chronicles 21–25, Psalm 14, Proverbs 14

@@ -1,6 +1,7 @@
 Title: Scriptural Miscellanies
 Date: 2014-01-12 23:30
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Slug: scriptural-miscellanies-jan-12-2014
 Passages: 1 Chronicles 11–15, Psalm 12, Proverbs 12

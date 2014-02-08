@@ -1,6 +1,7 @@
 Title: Ending Badly
 Date: 2014-01-20 23:30
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Passages: 2 Chronicles 23–28, Psalm 20, Proverbs 20
 Template: formats/devotions

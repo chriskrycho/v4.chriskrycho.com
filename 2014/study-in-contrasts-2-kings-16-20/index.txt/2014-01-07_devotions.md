@@ -2,6 +2,7 @@ Title: A Study in Contrasts: 2 Kings 16–20
 Date: 2014-01-07 23:40
 Author: Chris Krycho
 Slug: study-in-contrasts-2-kings-16-20
+Category: theology
 Tags: devotions
 Passages: 2 Kings 16–20, Psalm 7, Proverbs 7
 Template: formats/devotions

@@ -2,7 +2,7 @@ Title: What Was Their Sin?
 Author: Chris Krycho
 Date: 2014-01-25 08:00
 Topic: Why was it a sin to eat of the fruit of the tree of the knowledge of good and evil?
-Tags: seminary
+Tags: M.&thinsp;Div.
 Class: THE6120
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary

@@ -2,6 +2,7 @@ Title: You Must Be Perfect
 Description: The Sermon on the Mount both tells us of our need for Christ because we cannot be perfect, and requires us to genuinely pursue perfection to honor our Savior.
 Date: 2014-01-29 08:14
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Passages: Matthew 5–9, Psalm 29, Proverbs 29
 Template: formats/devotions

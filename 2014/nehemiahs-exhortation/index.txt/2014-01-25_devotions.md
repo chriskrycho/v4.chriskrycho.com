@@ -2,6 +2,7 @@ Title: Nehemiah's Exhortation
 Description:
 Date: 2014-01-25 22:30
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Passages: Nehemiah 6--8, Psalm 25, Proverbs 25
 Template: formats/devotions

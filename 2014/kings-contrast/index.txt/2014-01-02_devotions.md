@@ -2,6 +2,7 @@ Title: Kings in Contrast
 Date: 2014-01-02 21:00
 Author: Chris Krycho
 Slug: kings-contrast
+Category: theology
 Tags: devotions
 Passages: 1 Kings 14–18, Psalm 2, Proverbs 2
 Template: formats/devotions

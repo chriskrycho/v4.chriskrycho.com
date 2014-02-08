@@ -2,6 +2,7 @@ Title: Elijah and Elisha
 Date: 2014-01-04 23:45
 Author: Chris Krycho
 Slug: elijah-elisha
+Category: theology
 Tags: devotions
 Passages: 2 Kings 2–5, Psalm 4, Proverbs 4
 Template: formats/devotions

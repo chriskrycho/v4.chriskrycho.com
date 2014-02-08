@@ -1,6 +1,7 @@
 Title: Every King Broken
 Date: 2014-01-17 23:55
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Passages: 2 Chronicles 11–16, Psalm 17, Proverbs 17
 Template: formats/devotions

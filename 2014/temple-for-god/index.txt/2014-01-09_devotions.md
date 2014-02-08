@@ -2,6 +2,7 @@ Title: A Temple for God
 Date: 2014-01-09 07:45
 Author: Chris Krycho
 Slug: temple-for-god
+Category: theology
 Tags: devotions
 Passages: 2 Chronicles 1–5, Psalm 9, Proverbs 9
 Template: formats/devotions

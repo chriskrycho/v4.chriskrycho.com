@@ -2,7 +2,7 @@ Title: Infant Guilt—Purest Speculation
 Author: Chris Krycho
 Date: 2014-02-01 08:30
 Topic: Are people born guilty of sin?
-Tags: seminary
+Tags: M.&thinsp;Div.
 Class: THE6120
 School: Southeastern Baptist Theological Seminary
 Professor: Dr. Steve McKinion

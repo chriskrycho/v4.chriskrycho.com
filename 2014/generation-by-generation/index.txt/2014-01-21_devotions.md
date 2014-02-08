@@ -1,6 +1,7 @@
 Title: Generation by Generation
 Date: 2014-01-21 12:05
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Passages: 2 Chronicles 28–36, Psalm 21, Proverbs 21
 Template: formats/devotions

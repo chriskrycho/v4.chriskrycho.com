@@ -2,6 +2,7 @@ Title: Finding God in Proverbs
 Date: 2014-01-03 23:00
 Author: Chris Krycho
 Slug: finding-god-proverbs
+Category: theology
 Tags: devotions
 Passages: 1 Kings 19–2 Kings 1, Psalm 3, Proverbs 3
 Template: formats/devotions

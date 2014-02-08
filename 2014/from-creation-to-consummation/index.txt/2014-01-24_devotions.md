@@ -3,6 +3,7 @@ Subtitle: A Meditation on Psalm 24
 Description: The structure of Psalm 24 is not obvious—but the journey is profoundly rewarding. David beautifully leads us from creation to consummation.
 Date: 2014-01-24 22:05
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Passages: Nehemiah 1–5, Psalm 24, Proverbs 24
 Template: formats/devotions

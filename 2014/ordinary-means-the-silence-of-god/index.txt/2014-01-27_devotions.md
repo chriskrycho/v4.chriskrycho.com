@@ -2,6 +2,7 @@ Title: Ordinary Means: The Silence of God
 Description: God's silence does not imply his absence; nor does the ordinary nature of our lives imply his uninvolvement. Quite the contrary: most of the time, in most people's lives, in most places, God works by ordinary rather than extraordinary means.
 Date: 2014-01-27 08:05
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Passages: Esther, Psalm 27, Proverbs 27
 Template: formats/devotions

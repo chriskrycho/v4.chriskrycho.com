@@ -2,6 +2,7 @@ Title: Out of the Mouths of Poets
 Date: 2014-01-08 22:37
 Author: Chris Krycho
 Slug: mouths-of-poets
+Category: theology
 Tags: devotions
 Passages: 2 Kings 21–25, Psalm 8, Proverbs 8
 Template: formats/devotions

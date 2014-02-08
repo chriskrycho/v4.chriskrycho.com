@@ -1,6 +1,7 @@
 Title: Foreign Wives and Real Devotion
 Date: 2014-01-23 07:28
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Passages: Ezra 5–10, Psalm 23, Proverbs 23
 Description: The latter half of Ezra explains how it is that the people of Israel turned away from their pattern of idolatry—and it wasn't pretty or easy. Becoming holy rarely is.

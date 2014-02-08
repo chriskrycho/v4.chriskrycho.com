@@ -2,6 +2,7 @@ Title: Justice and Mercy in the Same Stroke
 Slug: justice-mercy-same-stroke
 Date: 2014-01-22 07:40
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Passages: Ezra 1–4, Psalm 22, Proverbs 22
 Template: formats/devotions

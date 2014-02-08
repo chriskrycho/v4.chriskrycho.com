@@ -2,6 +2,7 @@ Title: Resolved to Pray
 Description: Paul's prayerful openings to letters are a good reminder that I ought to pray more and of how I ought to pray.
 Date: 2014-02-04 07:40
 Author: Chris Krycho
+Category: theology
 Tags: devotions
 Passages: 1 Thessalonians 1, Psalm 35, Ecclesiastes 4
 Template: formats/devotions
