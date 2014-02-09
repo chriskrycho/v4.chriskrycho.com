@@ -4,6 +4,7 @@ Author: Chris Krycho
 Date: 2015-06-28
 Tags: devotions, papers, hot tamales
 Category: Fried Things
+Code: true
 Status: draft
 
 # Authors Often Misinterpret
