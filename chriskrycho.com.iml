@@ -16,7 +16,7 @@
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/pelican_theme/templates" />
+        <option value="$MODULE_DIR$/2014_theme/templates" />
       </list>
     </option>
   </component>
