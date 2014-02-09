@@ -1,3 +1,4 @@
+@import "base";
 @import "mixins";
 
 @media only screen and (max-width: 800px) {
@@ -12,6 +13,11 @@
 @media only screen and (max-width: 680px) {
    html {
       font-size: 16px;
+      line-height: $line_height_small;
+   }
+
+   body {
+      line-height: $line_height_small;
    }
 
    article {
