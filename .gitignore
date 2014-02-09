@@ -10,6 +10,9 @@
 *.marked
 .UlyssesRoot
 
+# Output files (for everything but the gh-pages branch---sanity saver)
+output
+
 # IntelliJ IDEA files
 .idea/workspace.xml
 
