@@ -61,7 +61,7 @@ p {
    text-indent: $fs4;
 }
 
-h1, h2, h3, h4, h5, h6, ul, ol {
+h1, h2, h3, h4, h5, h6, ul, ol, blockquote {
    + p {
       text-indent: 0;
    }
@@ -206,6 +206,11 @@ hr {
    padding-bottom: $fs6;
 }
 
+.greek {
+   font-family: $serif;
+   font-weight: normal;
+}
+
 // ----- Layout -----
 body {
    border-top: $fs_very_small solid $dark_blue;
@@ -317,7 +322,7 @@ article {
             color: lighten($light_gray, 39.1%);
          }
 
-         &:first-of-type {
+         &:first-child {
             padding-top: 0.244em;
 
             &:before {
@@ -397,7 +402,7 @@ article {
    }
 
    ul, ol {
-      padding-left: $fs4;
+      margin-left: $fs4;
 
       li {
          padding-top: 0.5em;
