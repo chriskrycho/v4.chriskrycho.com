@@ -198,11 +198,8 @@ hr {
 }
 
 // ----- Layout -----
-body:before {
-   height: $fs_very_small;
-   background-color: $dark_blue;
-   display: block;
-   content: '';
+body {
+   border-top: $fs_very_small solid $dark_blue;
 }
 
 // Header
@@ -456,6 +453,7 @@ sup[id^="fnref:"] a {
    min-height: $fs_very_large;
    color: $white;
    @include flexbox();
+   @include flex-flow(row wrap);
 
    section {
       border-top: 0.244rem solid $dark_gray;
