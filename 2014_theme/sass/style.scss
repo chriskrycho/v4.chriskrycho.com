@@ -218,29 +218,57 @@ body {
 
 // Header
 #site-header {
-   margin: {
-      top: $fs3;
-      left: $fs_large;
+   @include flexbox();
+   @include flex-flow(row wrap);
+   @include justify-content(space-around);
+
+   nav {
+      @include flex(1 60%);
+      font: {
+         family: $sans;
+         size: $fs5;
+      }
+      ul {
+         list-style-type: none;
+
+         li {
+            display: inline-block;
+         }
+      }
    }
 
-   a, a:hover, a:active, a:visited {
-      border-bottom: none;
+   hgroup {
+      @include flex(1 30%);
+
+      margin: {
+         top: $fs3;
+         left: $fs_large;
+      }
+
+      a, a:hover, a:active, a:visited {
+         border-bottom: none;
+      }
    }
-}
 
-#site-title {
-   font-size: $fs_very_large;
-}
+   #site-title {
+      font-size: $fs_very_large;
+      display: block;
+   }
 
-#site-subtitle {
-   font-size: $fs4;
-   margin-left: $fs4;
-}
+   #site-subtitle {
+      margin-left: $fs4;
+      display: block;
+      font: {
+         family: $serif;
+         style: italic;
+         size: $fs4;
+      }
+      @include font-feature-settings('liga');
+   }
 
-#site-subtitle {
-   font-family: $serif;
-   font-style: italic;
-   @include font-feature-settings('liga');
+   h3 {
+      @include flex(0 100%);
+   }
 }
 
 .section-title {
