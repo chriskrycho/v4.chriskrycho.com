@@ -223,7 +223,7 @@ body {
    @include justify-content(space-around);
 
    nav {
-      @include flex(1 60%);
+      @include flex(1 30%);
       font: {
          family: $sans;
          size: $fs5;
@@ -238,7 +238,7 @@ body {
    }
 
    hgroup {
-      @include flex(1 30%);
+      @include flex(1 60%);
 
       margin: {
          top: $fs3;
