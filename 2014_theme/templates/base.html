@@ -12,6 +12,8 @@
       {% set item = page %}
    {% elif article is defined %}
       {% set item = article %}
+   {% else %}
+      {% set item = None %}
    {% endif %}
    {% include "identity/app.net.html" %}
    {% include "identity/opengraph.html" %}
@@ -22,10 +24,11 @@
    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/{{ CSS_FILE }}" />
 
    {# Scripts #}
-   {% if article.category == 'tech' or article.code == 'true' %}
-   <script src="highlight.pack.js"></script>
-   <script>hljs.initHighlightingOnLoad();</script>
+   {% if item != None and item.category == 'tech' or item.code == 'true' %}
+      <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/highlight.pack.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
    {% endif %}
+
 
 </head>
 <body>
