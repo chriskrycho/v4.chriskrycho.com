@@ -354,4 +354,4 @@ Redirect 301 /web/work/ //2012-2013.chriskrycho.com/web/work/
 
 # Redirect `www` url to naked domain
 RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://www.%1/$1 [R=301,L]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
