@@ -49,3 +49,6 @@ pip-log.txt
 .coverage
 .tox
 nosetests.xml
+
+# Ignore output files
+output
