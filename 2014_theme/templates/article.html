@@ -1,27 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-   {% block article_el %}
-   <article {% if article.category == 'tech' or article.code == 'true' %}class="code"{% endif %}>
-   {% endblock article_el %}
-      <header>
-         <h1>{{ article.title }}</h1>
-         {% if article.subtitle is defined %}<h2>{{ article.subtitle }}</h2>{% endif %}
-      </header>
+    {% block article_el %}
+        <article {% if article.category == 'tech' or article.code == 'true' %}class="code"{% endif %}>
+    {% endblock article_el %}
+<header>
+    <h1>{{ article.title }}</h1>
 
-      {% include "includes/meta.html" %}
+    {% if article.subtitle is defined %}<h2>{{ article.subtitle }}</h2>{% endif %}
+</header>
 
-      {% block context %}{% endblock %}
+{% include "includes/meta.html" %}
 
-      {% if article.intro is defined %}
-         {% block intro %}<p class="intro">{{ article.intro }}</p>{% endblock %}
-      {% endif %}
+{% block context %}{% endblock %}
 
-      <div class="content">
-         {% if article.epigraph is defined %}<div class="epigraph">{{ article.epigraph }}</div>{% endif %}
-         {{ article.content }}
-      </div>
-   </article>
+{% if article.intro is defined %}
+    {% block intro %}<p class="intro">{{ article.intro }}</p>{% endblock %}
+{% endif %}
+
+<div class="content">
+    {% if article.epigraph is defined %}
+        <div class="epigraph">{{ article.epigraph }}</div>{% endif %}
+    {{ article.content }}
+</div>
+</article>
 
 {% endblock %}
 
