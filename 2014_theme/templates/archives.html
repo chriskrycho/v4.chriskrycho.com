@@ -8,7 +8,7 @@
                 <header>
                     <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
                 </header>
-                {% include "includes/meta.html" %}
+                <div class="meta">{% include "includes/meta.html" %}</div>
             </article>
         {% endfor %}
     {% else %}
