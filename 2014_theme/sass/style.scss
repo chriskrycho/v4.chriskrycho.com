@@ -232,7 +232,7 @@ body {
     padding-bottom: $fs1_abs;
 
     nav {
-        @include flex(1 240px);
+        @include flex(1 0 300px);
         text-align: right;
         margin: {
             right: $fsp;
@@ -257,7 +257,7 @@ body {
     }
 
     hgroup {
-        @include flex(1 600px);
+        @include flex(1 0 500px);
 
         margin: {
             top: $fs3;
