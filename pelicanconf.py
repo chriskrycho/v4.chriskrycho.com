@@ -29,8 +29,10 @@ TRANSLATION_FEED_RSS = None
 # Social networking/sharing settings
 IDENTITY = {'App.net': 'https://app.net/chriskrycho',
             'Facebook': 'https://www.facebook.com/chriskrycho',
-            'Google+': 'https://plus.google.com/+ChrisKrycho',
-            'Twitter': 'https://twitter.com/chriskrycho',}
+            'Twitter': 'https://twitter.com/chriskrycho',
+            'GitHub': 'https://github.com/chriskrycho',
+            'Bitbucket': 'https://bitbucket.org/chriskrycho',
+            'Stack Overflow': 'http://stackoverflow.com/users/564181/chris-krycho',}
 
 DEFAULT_SHARE_IMAGE = ''
 
