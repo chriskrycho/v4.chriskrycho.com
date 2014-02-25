@@ -31,6 +31,10 @@
                 }
                 width: 30.814rem;
             }
+
+            a:hover {
+                color: $white;
+            }
         }
 
         #section-head {
@@ -91,13 +95,27 @@
             }
         }
 
-        h3 {
+        nav {
+            text-align: center;
+            width: auto;
+
+            ul {
+                width: auto;
+            }
+        }
+
+        #section-head {
+            text-align: center;
+            width: auto;
             padding: {
                 left: 0;
                 top: $fs4;
                 bottom: 0;
             }
-            border: none;
+
+            h3 {
+                width: auto;
+            }
         }
     }
 
