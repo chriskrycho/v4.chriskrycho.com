@@ -14,7 +14,7 @@
 output
 
 # IntelliJ IDEA files
-.idea/workspace.xml
+.idea
 
 # SASS
 .sass-cache
