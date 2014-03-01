@@ -1,4 +1,5 @@
 Title: Welcome!
+Subtitle: Enjoy your stay; watch out for typographical nerdery.
 Author: Chris Krycho
 Description: Chris Krycho is a boss.
 URL:
