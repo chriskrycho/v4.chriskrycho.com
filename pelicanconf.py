@@ -66,8 +66,8 @@ CATEGORY_SAVE_AS = '{slug}/index.html'
 TAG_URL = '{slug}/'
 TAG_SAVE_AS = '{slug}/index.html'
 # AUTHOR_URL = False
-# AUTHOR_SAVE_AS = False
-# AUTHORS_SAVE_AS = False
+AUTHOR_SAVE_AS = False
+AUTHORS_SAVE_AS = False
 
 # Index and archive pages
 DEFAULT_PAGINATION = 10
