@@ -7,7 +7,6 @@ SITENAME = 'Chris Krycho'
 SITEURL = ''
 SITE_DESCRIPTION = 'Creativity, reflection, & passionate endeavors by a peculiar fellow'
 SITE_DESCRIPTION_HTML = 'Creativity, reflection, & passionate endeavors<br class="optional"/> by a peculiar fellow'
-LOGO = ''
 
 TIMEZONE = 'America/New_York'
 DEFAULT_DATE_FORMAT = "%B %d, %Y"
@@ -17,6 +16,10 @@ THEME = '2014_theme'
 THEME_STATIC_DIR = 'assets'
 CSS_FILE = 'style.css'
 
+JS_DIR = SITEURL + '/' + THEME_STATIC_DIR + '/js'
+IMAGE_DIR = SITEURL + '/' + THEME_STATIC_DIR + '/images'
+
+LOGO = IMAGE_DIR + '/ck.png'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -77,6 +80,7 @@ PAGINATION_PATTERNS = (
 DEFAULT_ORPHANS = 2
 
 # Path configuration
-STATIC_PATHS = ['extra/CNAME', 'extra/.htaccess']  # Include the CNAME file
+STATIC_PATHS = ['extra/CNAME', 'extra/.htaccess', 'extra/favicon.png']  # Include the CNAME file
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},  # Copy CNAME file to /output
-                       'extra/.htaccess': {'path': '.htaccess'},}  # Copy .htaccess file to /output
+                       'extra/favicon.png': {'path': 'favicon.png'},
+                       'extra/favicon.ico': {'path': 'favicon.ico'},}  # Copy .htaccess file to /output
