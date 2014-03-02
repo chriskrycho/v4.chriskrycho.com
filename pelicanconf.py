@@ -31,13 +31,14 @@ TRANSLATION_FEED_RSS = None
 
 # Social networking/sharing settings
 IDENTITY = {'App.net': 'https://app.net/chriskrycho',
-            'Facebook': 'https://www.facebook.com/chriskrycho',
-            'Twitter': 'https://twitter.com/chriskrycho',
-            'GitHub': 'https://github.com/chriskrycho',
             'Bitbucket': 'https://bitbucket.org/chriskrycho',
-            'Stack Overflow': 'http://stackoverflow.com/users/564181/chris-krycho',
+            'Facebook': 'https://www.facebook.com/chriskrycho',
+            'GitHub': 'https://github.com/chriskrycho',
             'Instagram': 'http://instagram.com/chriskrycho',
-            'SoundCloud': 'https://soundcloud.com/chriskrycho',}
+            'LinkedIn': 'http://www.linkedin.com/in/chriskrycho',
+            'SoundCloud': 'https://soundcloud.com/chriskrycho',
+            'Stack Overflow': 'http://stackoverflow.com/users/564181/chris-krycho',
+            'Twitter': 'https://twitter.com/chriskrycho',}
 
 DEFAULT_SHARE_IMAGE = ''
 
