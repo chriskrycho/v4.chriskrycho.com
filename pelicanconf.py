@@ -38,7 +38,15 @@ IDENTITY = {'App.net': 'https://app.net/chriskrycho',
             'LinkedIn': 'http://www.linkedin.com/in/chriskrycho',
             'SoundCloud': 'https://soundcloud.com/chriskrycho',
             'Stack Overflow': 'http://stackoverflow.com/users/564181/chris-krycho',
-            'Twitter': 'https://twitter.com/chriskrycho',}
+            'Twitter': 'https://twitter.com/chriskrycho',
+            }
+
+BROADCAST = {'all': 'https://broadcast.app.net/46224/chriskrychocom-all/',
+             'art': 'https://broadcast.app.net/46225/chriskrychocom-art/',
+             'blog': 'https://broadcast.app.net/46226/chriskrychocom-blog/',
+             'tech': 'https://broadcast.app.net/46227/chriskrychocom-tech/',
+             'theology': 'https://broadcast.app.net/46228/chriskrychocom-theology/',
+             }
 
 DEFAULT_SHARE_IMAGE = ''
 

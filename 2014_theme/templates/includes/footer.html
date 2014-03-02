@@ -1,5 +1,11 @@
-<section id="contact">
-    <h1>Contact</h1>
+<section id="connect">
+    <h1>Connect</h1>
+    <h2>Subscribe</h2>
+    <ul class="social">
+        <li><i class="fa fa-fw fa-rss"></i><a href="{{ FEED_ALL_RSS }}">Feed</a></li>
+        <li><i class="fa fa-fw fa-bullhorn"></i><a href="{{ FEED_ALL_RSS }}">Subscribe</a></li>
+    </ul>
+    <h2>Social</h2>
     <ul class="social">
         <li><i class="fa fa-fw fa-adn"></i><a href="{{ IDENTITY['App.net'] }}">App.net</a></li>
         <li><i class="fa fa-fw fa-twitter"></i><a href="{{ IDENTITY['Twitter'] }}">Twitter</a></li>
@@ -14,6 +20,14 @@
 </section>
 <section id="sections">
     <h1>Sections</h1>
+{% for category, _ in categories %}
+    <h2>{{ category }}</h2>
+    <ul>
+        <li><i class="fa fa-fw"></i><a href="{{  }}">Browse</a></li>
+        <li><i class="fa fa-fw"></i><a href="{{  }}">Feed</a></li>
+        <li><i class="fa fa-fw"></i><a href="{{  }}">Subscribe</a></li>
+    </ul>
+{% endfor %}
     <ul>
         <li class="section-title"><a href="{{ SITEURL }}/archives.html">archives</a></li>
         {% for category, _ in categories %}
