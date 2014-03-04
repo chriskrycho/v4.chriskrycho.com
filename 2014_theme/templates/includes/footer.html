@@ -27,17 +27,11 @@
 {% for category, _ in categories %}
     <h2 class="section-title">{{ category }}</h2>
     <ul>
-        <li><i class="fa fa-fw "></i><a href="{{ category.url }}">Browse</a></li>
+        <li><i class="fa fa-fw "></i><a href="{{ SITEURL }}/{{ category.url }}">Browse</a></li>
         <li><i class="fa fa-fw fa-rss"></i><a href="{{ SITEURL }}/feeds/{{ category }}.xml">Feed</a></li>
         <li><i class="fa fa-fw fa-bolt"></i><a href="{{ BROADCAST[category] }}">Subscribe</a></li>
     </ul>
 {% endfor %}
-    <ul>
-        <li class="section-title"><a href="{{ SITEURL }}/archives.html">archives</a></li>
-        {% for category, _ in categories %}
-            <li class="section-title"><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
-        {% endfor %}
-    </ul>
 </section>
 <section id="recent">
     <h1>Recent</h1>
