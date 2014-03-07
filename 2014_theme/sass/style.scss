@@ -317,7 +317,6 @@ body {
 
     #section-head {
         @include flex(0 100%);
-        border-bottom: 1px solid lighten($light_gray, 39.1%);
         padding: {
             top: $fs1_abs;
             left: 15.3%;
@@ -328,7 +327,7 @@ body {
         }
 
         h3 {
-            padding-top: 0;
+            padding: 0;
             border: none;
         }
     }
