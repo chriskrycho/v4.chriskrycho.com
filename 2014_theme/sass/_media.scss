@@ -1,6 +1,12 @@
 @import "base";
 @import "mixins";
 
+@media only screen and (min-width: 1280px) and (min-height: 800px) {
+    html {
+        font-size: 150%;
+    }
+}
+
 @media only screen and (max-width: 900px) {
     #site-header {
         hgroup {
@@ -202,11 +208,5 @@
 @media only screen and (max-width: 300px) {
     .logotype, br.optional {
         display: none;
-    }
-}
-
-@media only screen and (min-width: 1280px) and (min-height: 800px) {
-    html {
-        font-size: 150%;
     }
 }
