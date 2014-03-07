@@ -185,3 +185,22 @@
         width: 22.4%;
     }
 }
+
+@media only screen and (max-width: 440px) {
+    #site-header {
+        font-size: 80.3%;
+    }
+
+    .logotype {
+        height: 1.389em;
+        width: 1.389em;
+        vertical-align: -38.9%;
+        padding-right: 0.153rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .logotype, br.optional {
+        display: none;
+    }
+}
