@@ -1,7 +1,5 @@
 @import "mixins";
 @import "reset";
-@import "fonts";
-@import "fontawesome";
 @import "base";
 @import "highlight_js_tomorrow";
 
@@ -20,6 +18,7 @@ body {
 }
 
 a, a:visited {
+    text-indent: 0;
     color: $light_blue;
     text-decoration: none;
     border-bottom: 1px solid transparent;
@@ -575,10 +574,6 @@ sup[id^="fnref:"] a {
     line-height: $line_height_small;
     @include flexbox();
     @include flex-flow(row wrap);
-
-    a, a:visited {
-        //border-bottom: 1px solid transparent;
-    }
 
     a:hover, a:active {
         color: $white;
