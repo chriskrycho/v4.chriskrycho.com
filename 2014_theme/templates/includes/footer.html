@@ -46,7 +46,7 @@
     <h2 class="section-title">{{ category.name }}</h2>
     <ul>
     {% for category_article in category_articles %}
-        <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category_article.title }}</a></li>
+        <li><a href="{{ SITEURL }}/{{ category_article.url }}">{{ category_article.title }}</a></li>
     {% endfor %}
     </ul>
 {% endfor %}
