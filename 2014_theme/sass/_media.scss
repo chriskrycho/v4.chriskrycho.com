@@ -204,3 +204,9 @@
         display: none;
     }
 }
+
+@media only screen and (min-width: 1280px) and (min-height: 800px) {
+    html {
+        font-size: 150%;
+    }
+}
