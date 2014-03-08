@@ -6,10 +6,23 @@
             {% set item = article %}
             <article class="archive">
                 <header>
-                    <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
+                {% if item.link is defined %}
+                    <h1><a class="outbound" href="{{ item.link }}">{{ item.title }}<i class="fa fa-fw fa-external-link"></i></a></h1>
+                {% else %}
+                    <h1><a href="{{ SITEURL }}/{{ item.url }}">{{ item.title }}</a></h1>
+                {% endif %}
                     {% if item.subtitle is defined %}<h2>{{ item.subtitle }}</h2>{% endif %}
                 </header>
                 <div class="meta">{% include "includes/meta.html" %}</div>
+                <div class="content-wrapper">
+                    <div class="content">
+                    {% if item.link is defined %}
+                        {{ item.content }}
+                    {% elif item.preview is defined %}
+                        {{ item.preview }}
+                    {% endif %}
+                    </div>
+                </div>
             </article>
         {% endfor %}
     {% else %}
