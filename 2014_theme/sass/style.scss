@@ -328,6 +328,10 @@ body {
 
         i {
             font-style: italic;
+
+            &.fa {
+                font-style: normal;
+            }
         }
 
         h3 {
