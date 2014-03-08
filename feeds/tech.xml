@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2014-02-24T15:20:00-05:00</updated><entry><title>Goodbye, Chrome</title><link href="http://www.chriskrycho.com/2014/goodbye-chrome.html" rel="alternate"></link><updated>2014-02-24T15:20:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-02-24:2014/goodbye-chrome.html</id><summary type="html">&lt;p&gt;Last week, Chrome crossed the line for me. I deleted it from my system to clean
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2014-03-07T19:55:00-05:00</updated><entry><title>Why Is American Internet So Slow?</title><link href="http://www.chriskrycho.com/2014/why-is-american-internet-so-slow.html" rel="alternate"></link><updated>2014-03-07T19:55:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-03-07:2014/why-is-american-internet-so-slow.html</id><summary type="html">&lt;p&gt;Pretty damning of the current (lack of a) regulatory regime, if you ask&amp;nbsp;me:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;According to a recent study by Ookla Speedtest, the &lt;span class="caps"&gt;U.S.&lt;/span&gt; ranks a shocking 31st
+in the world in terms of average download speeds. The leaders in the world are
+Hong Kong at 72.49 Mbps and Singapore on 58.84 Mbps. And America? Averaging
+speeds of 20.77 Mbps, it falls behind countries like Estonia, Hungary,
+Slovakia, and&amp;nbsp;Uruguay.&lt;/p&gt;
+&lt;/blockquote&gt;</summary><category term="links"></category></entry><entry><title>Goodbye, Chrome</title><link href="http://www.chriskrycho.com/2014/goodbye-chrome.html" rel="alternate"></link><updated>2014-02-24T15:20:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-02-24:2014/goodbye-chrome.html</id><summary type="html">&lt;p&gt;Last week, Chrome crossed the line for me. I deleted it from my system to clean
 up its many hooks into my system&amp;#8212;I searched out every trace of it I could
 find&amp;#8212;and will put it back on my system only for testing websites. Why? Because
 it&amp;#8217;s just too creepy&amp;nbsp;now.&lt;/p&gt;
