@@ -1,5 +1,10 @@
 {% extends "archives.html" %}
 
-{% block title %}{{ category | capitalize }} &middot; {{ SITENAME }}{% endblock %}
+{% block title %}{{ category.name | capitalize }} &middot; {{ SITENAME }}{% endblock %}
 
-{% block section_head %}<div id="section-head"><h3>Filed under <span class="section-title">{{ category }}</span> ({{ articles|length }})</h3></div>{% endblock %}
+{% block section_head %}
+<div id="section-head">
+    <h3>
+        Filed under <span class="section-title">{{ category.name }}</span> ({{ articles|length }}) <a title="{{ category.name }} feed" href="{{ SITEURL }}/feeds/{{ category.name }}.xml"><i class="fa fa-fw fa-rss"></i></a>
+    </h3>
+</div>{% endblock %}
