@@ -9,23 +9,25 @@
 {% endblock %}
 
     <header>
-        <h1>{{ item.title }}</h1>
+        {% block item_title %}<h1>{{ item.title }}</h1>{% endblock item_title %}
 
         {% if item.subtitle is defined %}<h2>{{ item.subtitle }}</h2>{% endif %}
     </header>
 
     <div class="meta">{% block meta %}{% endblock %}</div>
 
+    <div class="content-wrapper">
     {% block context %}{% endblock %}
 
     {% if item.intro is defined %}
         {% block intro %}<p class="intro">{{ item.intro }}</p>{% endblock %}
     {% endif %}
 
-    <div class="content">
-        {% if item.epigraph is defined %}<div class="epigraph">{{ item.epigraph }}</div>{% endif %}
+        <div class="content">
+            {% if item.epigraph is defined %}<div class="epigraph">{{ item.epigraph }}</div>{% endif %}
 
-        {{ item.content }}
+            {% block item_content %}{{ item.content }}{% endblock item_content %}
+        </div>
     </div>
     </article>
 

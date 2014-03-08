@@ -353,7 +353,6 @@ article {
     padding-bottom: $fs2;
     clear: both;
     overflow: hidden;
-    width: 30.814rem;
     margin: {
         left: 15.3%;
         right: 15.3%;
@@ -362,6 +361,12 @@ article {
     header {
         h1 {
             font-weight: 600;
+
+            a.outbound {
+                .fa:before {
+                    font-size: 0.804em;
+                }
+            }
         }
 
         h2 {
@@ -391,6 +396,10 @@ article {
         &:last-of-type {
             padding-bottom: 0;
         }
+    }
+
+    .content-wrapper {
+        max-width: 30.814rem;
     }
 
     .intro {
@@ -524,6 +533,14 @@ article {
         width: auto;
         header h1 {
             font-weight: 400;
+        }
+
+        .meta {
+            padding-bottom: 0;
+        }
+
+        .content-wrapper {
+            padding-bottom: 1rem;
         }
     }
 

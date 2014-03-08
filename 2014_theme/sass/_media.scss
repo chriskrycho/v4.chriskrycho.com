@@ -64,8 +64,12 @@
             right: auto;
         }
 
-        &.archive {
-            width: 30.814rem;
+        &.archive, header, .meta {
+            max-width: 30.814rem;
+        }
+
+        header, .meta, .content-wrapper {
+            margin: auto;
         }
     }
 }
