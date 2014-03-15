@@ -4,10 +4,6 @@ Date: 2014-03-14 20:25
 Status: draft
 Epigraph: For He was made man that we might be made God; and He manifested Himself by a body that we might receive the idea of the unseen Father; and He endured the insolence of men that we might inherit immortality.&emsp;&mdash;St. Athanasius, <cite>On the Incarnation</cite>
 
-# [%title]
-
-<div class="epigraph">[%epigraph]</div>
-
 ## A Mistake
 
 It has been common, these past few years, to speak of "incarnational theology" as a way of describing the Christian mission to the world. We ought to live as Christ's body, we are told, "incarnating" Christ to the world as Christ "incarnated" the Godhead to us. There is much to appreciate in this sentiment. In many ways, it represents a wholly appropriate recognition that humans are image-bearers and that as Christians one of our roles is to show forth Christ in the world. It pays heed to the Biblical language that describes the church as the body of Christ. It takes seriously Paul's description of Christians as ambassadors for Christ and his language of "filling up what is lacking in the sufferings of Christ" (Colossians 1:24). And, at its best, the language has been used to channel all of this into a synthesis of evangelistic and social action that truly represent the best of what evangelicalism can be.
