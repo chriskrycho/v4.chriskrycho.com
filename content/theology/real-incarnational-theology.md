@@ -8,6 +8,8 @@ Epigraph: For He was made man that we might be made God; and He manifested Himse
 
 <div class="epigraph">[%epigraph]</div>
 
+## A Mistake
+
 It has been common, these past few years, to speak of "incarnational theology" as a way of describing the Christian mission to the world. We ought to live as Christ's body, we are told, "incarnating" Christ to the world as Christ "incarnated" the Godhead to us. There is much to appreciate in this sentiment. In many ways, it represents a wholly appropriate recognition that humans are image-bearers and that as Christians one of our roles is to show forth Christ in the world. It pays heed to the Biblical language that describes the church as the body of Christ. It takes seriously Paul's description of Christians as ambassadors for Christ and his language of "filling up what is lacking in the sufferings of Christ" (Colossians 1:24). And, at its best, the language has been used to channel all of this into a synthesis of evangelistic and social action that truly represent the best of what evangelicalism can be.
 
 Yet for all that, I think the language is a mistake, and a serious one. There are better ways to express these concepts, and expressing them in this way makes us miss other important concepts which we might find if we thought more about *real* incarnational theology.
@@ -18,9 +20,11 @@ Moreover, the language hides what the metaphors used of Christians in the New Te
 
 So we would do well to set aside the idea that we incarnate Christ for these kidns of negative reasons. Better to use the language of Scripture itself and say that we are his body, his servants, his temple, his ambassadors and representatives. We do not incarnate him, because we cannot---the Incarnation was unique---but that does not negate the instincts of which the theology of the last few years has been an expression. It simply means that we need to do better in expressing those ideas.
 
-But about that uniqueness. It seems to me that even more significant than these matters of words and meanings---important though they are---is how much we miss when our incarnational theology is about us instead of about Jesus, son of Mary and son of God.
+It seems to me, though, that even more significant than these matters of words and meanings---important though they are---is how much we miss when our incarnational theology is about us instead of about Jesus, the son of Mary and the son of God.
 
-In the time I have been studying at Southeastern Seminary, I have come near to tears in a class only once---a few weeks ago, listening to [my theology professor][mckinion] exult in what Christ did for us *in the Incarnation*. In evangelical churches, we often discuss Jesus' death on the cross, and sometimes his perfect life or his resurrection.[^1] Rarely, however, do we speak of the Incarnation. It gets a mention at Christmas---usually when we talk about how the Virgin Birth was necessary for the fulfillment of prophecy, one of many confirmations that Jesus was indeed the foretold Messiah.
+## On the Incarnation
+
+In the time I have been studying at Southeastern Seminary, I have come to tears in a class only once---a few weeks ago, listening to [my theology professor][mckinion] exult in what Christ did for us *in the Incarnation*. In evangelical churches, we often discuss Jesus' death on the cross, and sometimes his perfect life or his resurrection.[^1] Rarely, however, do we speak of the Incarnation. It gets a mention at Christmas---usually when we talk about how the Virgin Birth was necessary for the fulfillment of prophecy, one of many confirmations that Jesus was indeed the foretold Messiah.
 
 But the Incarnation means more than this. It always has. That God became a man is bigger than paying for our sins---marvelous though that alone would be. The language is there throughout the whole New Testament. A few samples will do, but I could cite many more.
 
