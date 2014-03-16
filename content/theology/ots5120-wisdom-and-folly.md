@@ -1,7 +1,7 @@
 Title: Wisdom and Folly
 Subtitle: Two Women, Two Ways, Two Houses
 Author: Chris Krycho
-Date: 2014-03-24 08:00
+Date: 2014-03-11 15:00
 Class: Old Testament II
 Professor: Dr. Heath Thomas
 School: Southeastern Baptist Theological Seminary

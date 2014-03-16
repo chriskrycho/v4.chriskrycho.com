@@ -1,7 +1,7 @@
 Title: The Servant of God
 Subtitle: Israel, Isaiah, and Jesus Christ
 Author: Chris Krycho
-Date: 2014-03-13 08:00
+Date: 2014-03-11 15:45
 Class: Old Testament II
 Professor: Dr. Heath Thomas
 School: Southeastern Baptist Theological Seminary

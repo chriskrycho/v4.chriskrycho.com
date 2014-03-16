@@ -1,6 +1,6 @@
 Title: Job&mdash;The Mourner
 Author: Chris Krycho
-Date: 2014-03-12 08:00
+Date: 2014-03-11 14:30
 Class: Old Testament II
 Professor: Dr. Heath Thomas
 School: Southeastern Baptist Theological Seminary
