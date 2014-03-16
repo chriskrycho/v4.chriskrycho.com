@@ -43,8 +43,9 @@ within a single paragraph.
 [^1]: Including, unfortunately, the occasional joke about the Church Fathers'
 views on aspects of the atonement are. At one point, he goes so far as to
 describe the Fathers' "ransom view" of the atonement as silly and only worth
-laughing at. We might *disagree* with the Fathers---I do---but we hardly ought
-to laugh at them. The chronological snobbery on display is obnoxious.
+laughing at. We might *disagree* with the Fathers' ransom view of the atonement,
+with God paying Satan---I do---but we hardly ought to laugh at them. The
+chronological snobbery on display is obnoxious.
 
 This emphasis on background also rather defeats the purpose of the book. If the
 aim is to help people see and savor the glory of Christ's atoning work on their
@@ -60,7 +61,11 @@ Morris wastes his readers' time with secondary matters and speeds over the
 riches of the text itself.
 
 [^2]: Usually focusing on the shape of the Christian life---an odd choice in a
-book one would think would focus on the gospel itself.
+book one would think would focus on the gospel itself. To be sure, I think that
+the atonement has enormous implications for the Christian life. Morris never
+shows *how* they connect, though, and he doesn't spend any time talking about
+the marvel of the atonement itself for the Christian, either. It is just
+strange.
 
 [^3]: This is the way that the historical-grammatical approach normally goes
 wrong. Other approaches have their own typical foibles, of course.
