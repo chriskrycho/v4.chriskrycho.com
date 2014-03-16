@@ -1,8 +1,9 @@
 Title: <cite>The Atonement</cite>, Leon Morris
 Category: theology
 Tags: reviews
-Date: 2014-03-16 15:00
+Date: 2014-03-16 20:00
 Rating: 2/5
+Status: draft
 
 I had to read Leon Morris' _The Atonement_ for one of my classes this semester.
 Given the importance of the doctrine of the atonement to our faith, I had hoped

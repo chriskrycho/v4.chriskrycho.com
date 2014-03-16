@@ -4,7 +4,7 @@ Date: 2014-03-16 17:00
 Link: http://www.canonandculture.com/combatting-generational-poverty-through-early-childhood-intervention/
 Tags: links
 Category: theology
-Template: formats/links
+Template: formats/link
 
 Great piece here from Alan Noble, who is increasingly showing himself to be one
 of the sharpest guys around.
