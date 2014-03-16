@@ -3,6 +3,7 @@ Author: Chris Krycho
 Date: 2014-03-08 22:20
 Link: http://www.washingtontimes.com/news/2014/mar/6/kim-jong-un-calls-execution-33-christians/
 Tags: links
+Category: theology
 Template: formats/link
 
 The Washington Times reports:
