@@ -2,6 +2,7 @@ Title: Infant Guilt—Purest Speculation
 Author: Chris Krycho
 Date: 2014-02-01 08:30
 Topic: Are people born guilty of sin?
+Category: theology
 Tags: M.&hairsp;Div.
 Class: Christian Theology II
 School: Southeastern Baptist Theological Seminary

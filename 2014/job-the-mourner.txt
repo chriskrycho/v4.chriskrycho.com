@@ -5,6 +5,7 @@ Class: Old Testament II
 Professor: Dr. Heath Thomas
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
+Category: theology
 Tags: M.&hairsp;Div.
 
 The book of Job has most commonly been read as theodicy, i.e. as a defense of
