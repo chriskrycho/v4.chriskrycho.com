@@ -6,6 +6,7 @@ Class: Old Testament II
 Professor: Dr. Heath Thomas
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
+Category: theology
 Tags: M.&hairsp;Div.
 
 The Servant pictured in Isaiah is one of the most famous images in the Old

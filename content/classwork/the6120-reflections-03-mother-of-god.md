@@ -3,6 +3,7 @@ Author: Chris Krycho
 Date: 2014-02-04 08:30
 Topic: Is is appropriate to call Mary the "Mother of God"?
 Description: Is it right to call Mary the Mother of God? The historic, orthodox answer is a resounding &ldquo;yes&rdquo;&mdash;though a clearly qualified and well articulated &ldquo;yes.&rdquo;
+Category: theology
 Tags: M.&hairsp;Div.
 Class: Christian Theology II
 Professor: Dr. Steve McKinion

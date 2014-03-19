@@ -2,6 +2,7 @@ Title: What Was Their Sin?
 Author: Chris Krycho
 Date: 2014-01-25 08:00
 Topic: Why was it a sin to eat of the fruit of the tree of the knowledge of good and evil?
+Category: theology
 Tags: M.&hairsp;Div.
 Class: Christian Theology II
 Professor: Dr. Steve McKinion

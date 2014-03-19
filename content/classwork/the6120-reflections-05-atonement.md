@@ -2,6 +2,7 @@ Title: Sufficiency and Efficacy
 Author: Chris Krycho
 Date: 2014-02-25 08:30
 Topic: Did Jesus atone for the sins of every person, or just those who becom Christians?
+Category: theology
 Tags: M.&hairsp;Div.
 Class: Christian Theology II
 Professor: Dr. Steve McKinion

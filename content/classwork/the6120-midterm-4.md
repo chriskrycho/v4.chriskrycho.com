@@ -4,6 +4,7 @@ Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Date: 2014-03-05 15:30
+Category: theology
 Tags: M.&hairsp;Div.
 Description: Nearly every major heresy the church confronts (and no few of its littler skirmishes) revolve around issues of the nature of the Incarnate Son of God.
 
