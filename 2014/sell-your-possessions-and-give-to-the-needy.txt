@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2014-03-18 22:00
 Tags: devotions
 Category: theology
-Passages: Psalm 59, Proverbs 18, and Luke 12--13
+Passages: Psalm 59, Proverbs 18, and Luke 12&mdash;13
 Description: Jesus tells us to sell our possessions and give to those in need. Most of us are not exactly doing that. Time for a heart check.
 Template: formats/devotions
 
