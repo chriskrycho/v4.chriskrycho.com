@@ -2,6 +2,7 @@ Title: Doing It Myself
 Date: 2014-03-21 22:14
 Author: Chris Krycho
 Tags: software development
+Description: Working with Pelican&mdash;the static site generator I use for my blog currently&mdash;has reinforced my desire to write my own such software. Sometimes, you just have to do it yourself.
 
 Last summer, I started work on a project I named [Step Stool](http://step-stool.io)---aiming to make a static site generator that would tick of all the little boxes marking my desires for a website generator. In due time, the project got put on hold, as I started up classes again and needed to focus more on my family than on fun side projects.
 
