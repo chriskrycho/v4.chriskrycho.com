@@ -8,4 +8,5 @@ The following tags are currently used on the site:
 - M.&hairsp;Div.
 - poetry
 - prayers
+- reviews
 - software development
