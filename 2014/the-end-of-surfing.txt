@@ -71,7 +71,7 @@ produce changes in people's behavior. Design has consequences.
     like and viral-cat-picture-like sites, too. I am not concerned with the
     *kind* of content being read here, so much as the way it is being read.
 
-[^2]: Note that I am not crediting Firefox 2.0 with *creating* the tabbed
+[^2]: Note that I am not crediting Firefox 1.0 with *creating* the tabbed
     browser---only with popularizing it. That distinction matters.
 
 [^3]: Excepting having multiple browser windows open, which I am sure people
