@@ -1,6 +1,8 @@
 Title: The End of Surfing
 Author: Chris Krycho
 Date: 2014-03-26 20:00
+Description: Tabbed browsers killed "surfing." You only thought it was Facebook to blame.
+Tags: design, software development
 
 Sometime in the last few months it occurred to me that I no longer "surf" the internet. I read, to be sure, and every once in a long while I even go on a spree where I follow links from one site to another (or just in a long trail on Wikipedia). In general, however, I no longer surf. I suspect I am not alone in this: if we took a straw poll I would venture that most of my friends offline and acquaintances online alike spend rather less time in "browsing" mode than they do reading Facebook or Twitter or Instagram. Motion from link to link has been replaced by individual hops out onto Buzzfeed or a viral cat picture website.[^1]
 
