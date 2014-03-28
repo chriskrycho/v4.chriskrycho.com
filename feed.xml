@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 28 Mar 2014 09:00:00 -0400</lastBuildDate><item><title>FirebirdSQL and IntelliJ IDEA (etc.)</title><link>http://www.chriskrycho.com/2014/firebirdsql-and-intellij-idea-etc.html</link><description>&lt;p&gt;Setting up IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&amp;#8217;s built-in database tools to work with FirebirdSQL
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 28 Mar 2014 13:05:00 -0400</lastBuildDate><item><title>Soul History</title><link>http://www.chriskrycho.com/2014/soul-history.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;The short story is the pastoral form for narrating &lt;em&gt;Heilsgeschichte&lt;/em&gt;
+(salvation history) in the vocabulary of &lt;em&gt;Seelsgeschichte&lt;/em&gt; (soul history). In
+the &lt;em&gt;Heilsgeschichte&lt;/em&gt; of Judges, for instance, the enmity of the Midianiites
+is kerygmatically integrated into the historical narrative and shown to be a
+part of salvation; in the &lt;em&gt;Seelsgeschichte&lt;/em&gt; of Ruth the bitter emptiness of
+Naomi is pastorally attended to under the dynamics of providence and guided to
+a concluding fullness. In the &lt;em&gt;Heilsgeschichte&lt;/em&gt; of Exodus the formidable and
+unyielding Egyptians are judged and defeated in the catastrophic plagues and
+miraculous sea crossing; in the &lt;em&gt;Seelsgeschichte&lt;/em&gt; of Ruth the everday
+ordinariness of gleaning in the barley fields is used as a means for
+accomplishing redemption. In the &lt;em&gt;Heilsgeschichte&lt;/em&gt; of Joshua the gigantically
+walled fortress Jericho is surrounded and conquered by the total community of
+God in colorful parade, accompanied by brilliantly sounding trumpets, and the
+promised land is entered; in the &lt;em&gt;Seelsgeschichte&lt;/em&gt; of Ruth an old levirate law
+is patiently and quietly worked through by some old men at the city gates of
+provincial Bethlehem, and a link is forged in the genealogical chain of the&amp;nbsp;Messiah.&lt;/p&gt;
+&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 28 Mar 2014 13:05:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-03-28:2014/soul-history.html</guid><category>quotes</category></item><item><title>FirebirdSQL and IntelliJ IDEA (etc.)</title><link>http://www.chriskrycho.com/2014/firebirdsql-and-intellij-idea-etc.html</link><description>&lt;p&gt;Setting up IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&amp;#8217;s built-in database tools to work with FirebirdSQL
 requires a particular setup configuration, which I&amp;#8217;m documenting here for public&amp;nbsp;consumption.&lt;/p&gt;
 &lt;p&gt;These setup tools &lt;em&gt;should&lt;/em&gt; be applicable to any of JetBrains&amp;#8217; other Java-based
 IDEs which include database support (e.g. PyCharm, RubyMine, WebStorm, etc.).
