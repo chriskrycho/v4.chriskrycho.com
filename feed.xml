@@ -1,5 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Thu, 27 Mar 2014 07:27:00 -0400</lastBuildDate><item><title>From Redemption to Creation</title><link>http://www.chriskrycho.com/2014/from-redemption-to-creation.html</link><description>&lt;p&gt;The structure of Psalm 65 surprised me. The psalm opens with a declaration of
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 28 Mar 2014 09:00:00 -0400</lastBuildDate><item><title>FirebirdSQL and IntelliJ IDEA (etc.)</title><link>http://www.chriskrycho.com/2014/firebirdsql-and-intellij-idea-etc.html</link><description>&lt;p&gt;Setting up IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&amp;#8217;s built-in database tools to work with FirebirdSQL
+requires a particular setup configuration, which I&amp;#8217;m documenting here for public&amp;nbsp;consumption.&lt;/p&gt;
+&lt;p&gt;These setup tools &lt;em&gt;should&lt;/em&gt; be applicable to any of JetBrains&amp;#8217; other Java-based
+IDEs which include database support (e.g. PyCharm, RubyMine, WebStorm, etc.).
+&lt;em&gt;Note:&lt;/em&gt; the following apply to IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt; 12 and the associated platforms,
+but &lt;em&gt;not&lt;/em&gt; to the &lt;span class="caps"&gt;IDEA&lt;/span&gt; 13 platform, which made substantial changes to how
+databases are configured. The underlying details are consistent, but the
+interface has changed. I have tested on PyCharm 3.1 to confirm&amp;nbsp;that.&lt;/p&gt;
+&lt;p&gt;This was all done on &lt;span class="caps"&gt;OS&lt;/span&gt; X 10.9, so I also make no guarantees that this works on
+other platforms, though the likelihood that it behaves the same on Linux is
+fairly good. I will update the post if and when I have confirmed that it&amp;nbsp;does.&lt;/p&gt;
+&lt;p&gt;Steps to configuring a database correctly for use with &lt;span class="caps"&gt;IDEA&lt;/span&gt;/etc. Note that
+steps 1&amp;#8211;3 are fairly obvious; the real point of interest is in steps 4 and 5,
+which took me the longest time to figure&amp;nbsp;out.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Download the latest version of the Firebird &lt;a href="http://www.firebirdsql.org/en/jdbc-driver/"&gt;Java drivers&lt;/a&gt; for your
+    operating system and your Java version. (You can check your Java version by
+    running &lt;code&gt;java -version&lt;/code&gt; at the command line.) Extract the downloaded zip
+    file. The extracted folder should include a file named
+    &lt;code&gt;jaybird-full-&amp;lt;version&amp;gt;.jar&lt;/code&gt; (&lt;code&gt;&amp;lt;version&amp;gt;&lt;/code&gt; is currently&amp;nbsp;2.2.4).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In &lt;span class="caps"&gt;IDEA&lt;/span&gt;, in the database view, add a new data source: in the Database view
+    (accessible via a menu button on the right side of the screen), right click
+    and choose &lt;strong&gt;New -&amp;gt; Data Source&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Under &lt;strong&gt;&lt;span class="caps"&gt;JDBC&lt;/span&gt; driver files&lt;/strong&gt;, browse to the location where you extracted the
+    Jaybird driver files and select &lt;code&gt;jaybird-full-&amp;lt;version&amp;gt;.jar&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Under &lt;strong&gt;&lt;span class="caps"&gt;JDBC&lt;/span&gt; driver class&lt;/strong&gt;, choose &lt;code&gt;org.firebirdsql.jdbc.FBDriver&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Under &lt;strong&gt;Database &lt;span class="caps"&gt;URL&lt;/span&gt;&lt;/strong&gt;, specify &lt;code&gt;jdbc:firebirdsql://localhost:3050/&lt;/code&gt;
+    followed by &lt;em&gt;either&lt;/em&gt; the full path to the database in question or a
+    corresponding alias.&lt;sup id="fnref:alias"&gt;&lt;a class="footnote-ref" href="#fn:alias" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; A full path might look like&amp;nbsp;this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jdbc:firebirdsql://localhost:3050/C:/my_project/the_database.db
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With an alias, you would instead&amp;nbsp;have:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jdbc:firebirdsql://localhost:3050/the_alias
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then specify valid values for the &lt;strong&gt;User&lt;/strong&gt; and &lt;strong&gt;Password&lt;/strong&gt; fields from
+your existing configuration of the&amp;nbsp;database.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click the &lt;strong&gt;Test Connection&lt;/strong&gt; button and make sure the configuration&amp;nbsp;works.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That should do it. Note that the driver choice and path configuration both
+matter. On &lt;span class="caps"&gt;OS&lt;/span&gt; X, I found that only the &lt;code&gt;FBDriver&lt;/code&gt; with this (and one other,
+older-style and therefore not recommended) path setup worked&amp;nbsp;successfully.&lt;/p&gt;
+&lt;p&gt;Observations, corrections, additional information, and miscellaneous comments
+welcomed on &lt;a href="https://alpha.app.net/chriskrycho"&gt;App.net&lt;/a&gt; or &lt;a href="https://www.twitter.com/chriskrycho"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:alias"&gt;
+&lt;p&gt;I strongly recommend configuring an alias in the aliases.conf file in
+the Firebird home directory (usually set as &lt;code&gt;$FIREBIRD_HOME&lt;/code&gt; during
+installation on *nix systems). This lets you move the database around at
+will, update just the configuration file, and not have to update any
+references to the database file whatsoever.&amp;#160;&lt;a class="footnote-backref" href="#fnref:alias" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 28 Mar 2014 09:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-03-28:2014/firebirdsql-and-intellij-idea-etc.html</guid></item><item><title>From Redemption to Creation</title><link>http://www.chriskrycho.com/2014/from-redemption-to-creation.html</link><description>&lt;p&gt;The structure of Psalm 65 surprised me. The psalm opens with a declaration of
 God&amp;#8217;s worthiness of praise and a statement of his atonement&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; and
 righteousness on behalf of his saints, then moves to a depiction of his power in
 creation. For some reason, I expected the Psalmist to move the other direction

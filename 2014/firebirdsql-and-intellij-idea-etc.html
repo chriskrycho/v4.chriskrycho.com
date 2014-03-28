@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Kings in&nbsp;Contrast &middot; Chris Krycho</title>
-    <meta name="description" content=""/>
+    <title>FirebirdSQL and IntelliJ <span class="caps">IDEA</span>&nbsp;(etc.) &middot; Chris Krycho</title>
+    <meta name="description" content="Configuration instructions for FirebirdSQL JDBC with JetBrains IntelliJ IDEA platform (including PyCharm, RubyMine, WebStorm, etc.)."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="2014/kings-contrast.html"/>
-    <meta property="og:title" content="Kings in Contrast"/>
-        <meta property="og:description" content="Creativity, reflection, & passionate endeavors by a peculiar fellow"/>
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="2014/firebirdsql-and-intellij-idea-etc.html"/>
+    <meta property="og:title" content="FirebirdSQL and IntelliJ IDEA (etc.)"/>
+        <meta property="og:description" content="Configuration instructions for FirebirdSQL JDBC with JetBrains IntelliJ IDEA platform (including PyCharm, RubyMine, WebStorm, etc.)."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-        <meta name="twitter:title" content="Kings in&nbsp;Contrast"/>
-        <meta name="twitter:description" content="Creativity, reflection, & passionate endeavors by a peculiar fellow"/>
+        <meta name="twitter:title" content="FirebirdSQL and IntelliJ <span class="caps">IDEA</span>&nbsp;(etc.)"/>
+        <meta name="twitter:description" content="Configuration instructions for FirebirdSQL JDBC with JetBrains IntelliJ IDEA platform (including PyCharm, RubyMine, WebStorm, etc.)."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 
     <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/style.css"/>
@@ -28,6 +28,8 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
     <script type="text/javascript">$.bigfoot();</script>
+        <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
     <script src="/assets/js/reftagger.js"></script>
 
 
@@ -55,72 +57,86 @@
     </header>
 
 
-<article >
+<article class='code'>
 
     <header>
-<h1>Kings in&nbsp;Contrast</h1>
+<h1>FirebirdSQL and IntelliJ <span class="caps">IDEA</span>&nbsp;(etc.)</h1>
     </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/kings-contrast.html"><i class="fa fa-fw fa-link"></i></a>January 02, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/theology/">theology</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/devotions/">#devotions</a></span><span><a href="http://www.chriskrycho.com/2014/kings-contrast.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/firebirdsql-and-intellij-idea-etc.html"><i class="fa fa-fw fa-link"></i></a>March 28, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span><a href="http://www.chriskrycho.com/2014/firebirdsql-and-intellij-idea-etc.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
-    <p class="context">
-        I have made it my goal to write short posts reflecting on my devotional
-        reading every day. These posts are composed off the cuff, in 30 minutes or
-        less. The following is one such post.
-            Before writing this post, I read: 1 Kings 14–18, Psalm 2, Proverbs 2.
-    </p>
-    <hr/>
 
 
         <div class="content">
 
-<p>Tonight&#8217;s reading in 1 Kings, Psalms, and Proverbs had some surprising overlaps.
-The material in 1 Kings covered a series of kings whose courses were largely
-<em>away</em> from worshipping Yahweh and toward worshipping other gods. With only one
-exception, in fact, every single king listed in these five chapters rejected the
-God of Israel in favor of the gods of the nations which the Hebrews had driven
-out of Canaan. That exception, Asa, stands in sharp contrast to the litany of
-rebellious kings who preceded and followed him as being a man who followed God
-with his whole heart. Others, it seems, included Yahweh in their list of gods to
-worship, but never reverenced him as supreme and only. This list of wicked kings
-of both Israel and Judah climaxes with the appearance of Elijah, the righteous
-prophet who confronts the <em>most</em> wicked king in the list, and who ultimately
-demonstrates Yahweh&#8217;s superiority over the other gods the Hebrews&nbsp;worshipped.</p>
-<p>Proverbs 2 continues Solomon&#8217;s exhortation to seek wisdom wholeheartedly, and
-his corresponding encouragement that Yahweh gives wisdom to those who seek it.
-But Solomon did not stop with the idea that knowledge and understanding are good
-&#8212;though this he certainly affirms. Rather, he continued on to emphasize that
-God&#8217;s knowledge and discernment go hand in hand with his integrity and justice.
-Those who seek this wisdom walk in righteousness and justice and equity. A
-person of wisdom is kept safe from both evildoers and from doing evil him- or
-herself. That Solomon&#8217;s own line, beginning with his own son and continuing on
-down through every king but Asa in these chapters in 1 Kings, went so far astray
-indicates how little these words were&nbsp;heeded.</p>
-<p>The picture painted by Psalm 2 stands in impossibly sharp contrast to these
-depraved kings. The Anointed One of the psalm is a messianic figure: those who
-take refuge in him find shelter, but those who rebel against him are broken
-under his rule. There is a king in view here who laughs at the rebellion of the
-rulers of every nation (Israel included), who scorns the folly of plotting
-against the Most High God. The king that Yahweh calls his Son will receive those
-same nations as his inheritance. He will be the king above all other kings. He
-will be both wrathful against rebellion and merciful to those who &#8220;take refuge
-in him&#8221; (v.&nbsp;11&#8211;12).</p>
-<p>So we have set before us the history of wicked men rebelling against the very
-God who gave them their thrones, and a call to that same line of the kings to
-humbly seek wisdom from that God, and a poetic picture of the true king against
-whom any rebellion is folly. And running through all of these are both the wrath
-of God against the folly and sin of those rebelling against him, and his mercy.
-Yahweh saves his people from following other gods in that magnificent
-confrontation on the mountain, Elijah on one side and the priests of Baal on the
-other. He is the source of wisdom, and the one who keeps his people from walking
-in folly or wickedness. And he is the righteous king who gives his people peace
-and security. Not because he does not do justice or cares little about sin, but
-precisely <em>because</em> he does justice and cares about sin. That Anointed One, that
-Son of the Most High, is Jesus Christ, who died in order that everything would
-be put under his feet. Every wicked king in 1 Kings points to the need for
-Jesus. He is the fulfillment of the wisdom promised in Proverbs 2. He is the
-Anointed One, the Son of Yahweh, who reigns the nations in righteousness.&nbsp;Hallelujah.</p>        </div>
+<p>Setting up IntelliJ <span class="caps">IDEA</span>&#8217;s built-in database tools to work with FirebirdSQL
+requires a particular setup configuration, which I&#8217;m documenting here for public&nbsp;consumption.</p>
+<p>These setup tools <em>should</em> be applicable to any of JetBrains&#8217; other Java-based
+IDEs which include database support (e.g. PyCharm, RubyMine, WebStorm, etc.).
+<em>Note:</em> the following apply to IntelliJ <span class="caps">IDEA</span> 12 and the associated platforms,
+but <em>not</em> to the <span class="caps">IDEA</span> 13 platform, which made substantial changes to how
+databases are configured. The underlying details are consistent, but the
+interface has changed. I have tested on PyCharm 3.1 to confirm&nbsp;that.</p>
+<p>This was all done on <span class="caps">OS</span> X 10.9, so I also make no guarantees that this works on
+other platforms, though the likelihood that it behaves the same on Linux is
+fairly good. I will update the post if and when I have confirmed that it&nbsp;does.</p>
+<p>Steps to configuring a database correctly for use with <span class="caps">IDEA</span>/etc. Note that
+steps 1&#8211;3 are fairly obvious; the real point of interest is in steps 4 and 5,
+which took me the longest time to figure&nbsp;out.</p>
+<ol>
+<li>
+<p>Download the latest version of the Firebird <a href="http://www.firebirdsql.org/en/jdbc-driver/">Java drivers</a> for your
+    operating system and your Java version. (You can check your Java version by
+    running <code>java -version</code> at the command line.) Extract the downloaded zip
+    file. The extracted folder should include a file named
+    <code>jaybird-full-&lt;version&gt;.jar</code> (<code>&lt;version&gt;</code> is currently&nbsp;2.2.4).</p>
+</li>
+<li>
+<p>In <span class="caps">IDEA</span>, in the database view, add a new data source: in the Database view
+    (accessible via a menu button on the right side of the screen), right click
+    and choose <strong>New -&gt; Data Source</strong>.</p>
+</li>
+<li>
+<p>Under <strong><span class="caps">JDBC</span> driver files</strong>, browse to the location where you extracted the
+    Jaybird driver files and select <code>jaybird-full-&lt;version&gt;.jar</code>.</p>
+</li>
+<li>
+<p>Under <strong><span class="caps">JDBC</span> driver class</strong>, choose <code>org.firebirdsql.jdbc.FBDriver</code>.</p>
+</li>
+<li>
+<p>Under <strong>Database <span class="caps">URL</span></strong>, specify <code>jdbc:firebirdsql://localhost:3050/</code>
+    followed by <em>either</em> the full path to the database in question or a
+    corresponding alias.<sup id="fnref:alias"><a class="footnote-ref" href="#fn:alias" rel="footnote">1</a></sup> A full path might look like&nbsp;this:</p>
+<pre><code>jdbc:firebirdsql://localhost:3050/C:/my_project/the_database.db
+</code></pre>
+<p>With an alias, you would instead&nbsp;have:</p>
+<pre><code>jdbc:firebirdsql://localhost:3050/the_alias
+</code></pre>
+<p>Then specify valid values for the <strong>User</strong> and <strong>Password</strong> fields from
+your existing configuration of the&nbsp;database.</p>
+</li>
+<li>
+<p>Click the <strong>Test Connection</strong> button and make sure the configuration&nbsp;works.</p>
+</li>
+</ol>
+<p>That should do it. Note that the driver choice and path configuration both
+matter. On <span class="caps">OS</span> X, I found that only the <code>FBDriver</code> with this (and one other,
+older-style and therefore not recommended) path setup worked&nbsp;successfully.</p>
+<p>Observations, corrections, additional information, and miscellaneous comments
+welcomed on <a href="https://alpha.app.net/chriskrycho">App.net</a> or <a href="https://www.twitter.com/chriskrycho">Twitter</a>.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:alias">
+<p>I strongly recommend configuring an alias in the aliases.conf file in
+the Firebird home directory (usually set as <code>$FIREBIRD_HOME</code> during
+installation on *nix systems). This lets you move the database around at
+will, update just the configuration file, and not have to update any
+references to the database file whatsoever.&#160;<a class="footnote-backref" href="#fnref:alias" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>        </div>
     </div>
     </article>
 
