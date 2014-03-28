@@ -2,6 +2,7 @@ Title: FirebirdSQL and IntelliJ IDEA (etc.)
 Author: Chris Krycho
 Date: 2014-03-28 09:00
 Description: Configuration instructions for FirebirdSQL JDBC with JetBrains IntelliJ IDEA platform (including PyCharm, RubyMine, WebStorm, etc.).
+Tags: Software Development
 Code: true
 
 Setting up IntelliJ IDEA's built-in database tools to work with FirebirdSQL
@@ -40,7 +41,7 @@ which took me the longest time to figure out.
 
 5.  Under **Database URL**, specify `jdbc:firebirdsql://localhost:3050/`
     followed by *either* the full path to the database in question or a
-    corresponding alias.[^alias] A full path might look like this:
+    corresponding alias.[^alias] A full path might look like this on Windows:
 
         jdbc:firebirdsql://localhost:3050/C:/my_project/the_database.db
 

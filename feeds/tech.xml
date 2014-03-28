@@ -36,7 +36,7 @@ which took me the longest time to figure&amp;nbsp;out.&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;Under &lt;strong&gt;Database &lt;span class="caps"&gt;URL&lt;/span&gt;&lt;/strong&gt;, specify &lt;code&gt;jdbc:firebirdsql://localhost:3050/&lt;/code&gt;
     followed by &lt;em&gt;either&lt;/em&gt; the full path to the database in question or a
-    corresponding alias.&lt;sup id="fnref:alias"&gt;&lt;a class="footnote-ref" href="#fn:alias" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; A full path might look like&amp;nbsp;this:&lt;/p&gt;
+    corresponding alias.&lt;sup id="fnref:alias"&gt;&lt;a class="footnote-ref" href="#fn:alias" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; A full path might look like this on&amp;nbsp;Windows:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;jdbc:firebirdsql://localhost:3050/C:/my_project/the_database.db
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;With an alias, you would instead&amp;nbsp;have:&lt;/p&gt;
@@ -65,7 +65,7 @@ will, update just the configuration file, and not have to update any
 references to the database file whatsoever.&amp;#160;&lt;a class="footnote-backref" href="#fnref:alias" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</summary></entry><entry><title>The End of Surfing</title><link href="http://www.chriskrycho.com/2014/the-end-of-surfing.html" rel="alternate"></link><updated>2014-03-26T20:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-03-26:2014/the-end-of-surfing.html</id><summary type="html">&lt;p&gt;Sometime in the last few months it occurred to me that I no longer &amp;#8220;surf&amp;#8221; the
+&lt;/div&gt;</summary><category term="Software Development"></category></entry><entry><title>The End of Surfing</title><link href="http://www.chriskrycho.com/2014/the-end-of-surfing.html" rel="alternate"></link><updated>2014-03-26T20:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-03-26:2014/the-end-of-surfing.html</id><summary type="html">&lt;p&gt;Sometime in the last few months it occurred to me that I no longer &amp;#8220;surf&amp;#8221; the
 internet. I read, to be sure, and every once in a long while I even go on a
 spree where I follow links from one site to another (or just in a long trail on
 Wikipedia). In general, however, I no longer surf. I suspect I am not alone in
