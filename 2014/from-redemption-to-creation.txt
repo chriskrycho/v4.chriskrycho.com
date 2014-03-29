@@ -4,6 +4,7 @@ Author: Chris Krycho
 Tags: devotions
 Category: theology
 Passages: Psalm 65, Proverbs 27, and 1 Corinthians 7&ndash;10
+Template: formats/devotions
 Description: Psalm 65&rsquo;s move from redemption to creation&mdash;instead of the other way around&mdash;surprised me in the best way possible.
 
 The structure of Psalm 65 surprised me. The psalm opens with a declaration of
