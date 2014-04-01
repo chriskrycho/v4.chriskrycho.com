@@ -91,7 +91,10 @@ PAGINATION_PATTERNS = (
 DEFAULT_ORPHANS = 2
 
 # Path configuration
-STATIC_PATHS = ['extra/CNAME', 'extra/.htaccess', 'extra/favicon.png']  # Include the CNAME file
+STATIC_PATHS = ['images', 'downloads',
+                'extra/CNAME',
+                'extra/.htaccess',
+                'extra/favicon.png']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},  # Copy CNAME file to /output
                        'extra/favicon.png': {'path': 'favicon.png'},
                        'extra/favicon.ico': {'path': 'favicon.ico'},}  # Copy .htaccess file to /output
