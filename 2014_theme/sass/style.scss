@@ -646,18 +646,26 @@ sup[id^="fnref:"] a {
     }
 
     ul {
-        li:before {
-            content: none;
-            display: none;
-            content: none;
-            margin-left: 0;
-            padding-right: 0;
+        li {
+            line-height: $line_height_min;
+            padding: {
+                top: $fsp/4;
+                bottom: $fsp/4;
+                left: 0;
+            }
+
+
+            &:before {
+                content: none;
+                display: none;
+                content: none;
+                margin-left: 0;
+                padding-right: 0;
+            }
         }
 
         &.icons {
-            padding: {
-                right: $fs4/2;
-            }
+            padding-right: $fs4/2;
         }
 
         &.inline {
