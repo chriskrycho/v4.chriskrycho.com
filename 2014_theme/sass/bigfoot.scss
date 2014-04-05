@@ -11,6 +11,7 @@
 //
 
 @import "bourbon/bourbon";
+@import "base";
 
 @mixin transitions($transitions...) {
     $transition: nth($transitions, 1);
@@ -36,8 +37,10 @@
 
 @function prefix-properties($properties, $prefix) {
     $new-props: property-checker(nth($properties, 1), $prefix);
-    @for $i from 2 through length($properties) {
-        $new-props: $new-props + ", " + property-checker(nth($properties, $i), $prefix);
+    @if(length($properties) > 1) {
+        @for $i from 2 through length($properties) {
+            $new-props: $new-props + ", " + property-checker(nth($properties, $i), $prefix);
+        }
     }
     @return unquote($new-props);
 }
@@ -111,19 +114,15 @@
 // -----
 
 
-//  ______   ______   ______   ________   __  __   __     _________
-// /_____/\ /_____/\ /_____/\ /_______/\ /_/\/_/\ /_/\   /________/\
-// \:::_ \ \\::::_\/_\::::_\/_\::: _  \ \\:\ \:\ \\:\ \  \__.::.__\/
-//  \:\ \ \ \\:\/___/\\:\/___/\\::(_)  \ \\:\ \:\ \\:\ \    \::\ \
-//   \:\ \ \ \\::___\/_\:::._\/ \:: __  \ \\:\ \:\ \\:\ \____\::\ \
-//    \:\/.:| |\:\____/\\:\ \    \:.\ \  \ \\:\_\:\ \\:\/___/\\::\ \
-//     \____/_/ \_____\/ \_\/     \__\/\__\/ \_____\/ \_____\/ \__\/
-//         ___________________________________________________________
-//        /__________________________________________________________/\
-//        \__________________________________________________________\/
+//   ___   __    __  __   ___ __ __    _______   ______   ______
+//  /__/\ /__/\ /_/\/_/\ /__//_//_/\ /_______/\ /_____/\ /_____/\
+//  \::\_\\  \ \\:\ \:\ \\::\| \| \ \\::: _  \ \\::::_\/_\:::_ \ \
+//   \:. `-\  \ \\:\ \:\ \\:.      \ \\::(_)  \/_\:\/___/\\:(_) ) )_
+//    \:. _    \ \\:\ \:\ \\:.\-/\  \ \\::  _  \ \\::___\/_\: __ `\ \
+//     \. \`-\  \ \\:\_\:\ \\. \  \  \ \\::(_)  \ \\:\____/\\ \ `\ \ \
+//      \__\/ \__\/ \_____\/ \__\/ \__\/ \_______\/ \_____\/ \_\/ \_\/
 //
-// Default for the footnote button: dark gray background which fades in through :hover/.active
-// and includes a light gray ellipsis within the button
+// Buttons with the footnote numbers included inside them
 
 
 
@@ -139,15 +138,15 @@
 // Just set the variable to none if you don't want that styling.
 
 $button-height:                         1em;                            // The total height of the button
-$button-width:                          auto;                           // The total button width (applies only if $button-apply-dimensions is true)
-$button-inner-circle-size:              0.32em;                         // Total height/width of the ellipsis circles
-$button-border-radius:                  0.3em;                          // Border radius on the button itself
+$button-width:                          1em;                            // The total button width (applies only if $button-apply-dimensions is true)
+$button-inner-circle-size:              0.156em;                         // Total height/width of the ellipsis circles
+$button-border-radius:                  0.244em;                          // Border radius on the button itself
 $button-left-margin:                    0.2em;                          // Margin between the button and the text to its left
 $button-right-margin:                   0.1em;                          // Margin between the button and the text to its right
-$button-vertical-adjust:                -0.15em;                            // Pushes the buttons along the vertical axis to align it with text as desired
-$button-inner-circle-left-margin:       0.7*$button-inner-circle-size;  // Space between the ellipsis circles
+$button-vertical-adjust:                -0.2em;                         // Pushes the buttons along the vertical axis to align it with text as desired
+$button-inner-circle-left-margin:       0.5*$button-inner-circle-size;  // Space between the ellipsis circles
 
-$button-color:                          rgb(70, 70, 70);                // Background color of the button
+$button-color:                          $light_gray;                    // Background color of the button
 $button-hovered-color:                  $button-color;                  // Background color of the button when being hovered
 $button-activating-color:               $button-color;                  // Background color of the button when being clicked
 $button-active-color:                   $button-color;                  // Background color of the button when active
@@ -157,23 +156,23 @@ $button-activating-opacity:             $button-hovered-opacity;        // Opaci
 $button-active-opacity:                 0.9;                            // Opacity for when the button is active
 $button-active-style-delay:             0.15s;                          // Delay before applying .active styles; this can be used to match to the popover activation transition
 
-$button-inner-circle-color:             rgb(230, 230, 230);             // Background color of the ellipsis circle
+$button-inner-circle-color:             none;                           // Background color of the ellipsis circle
 $button-inner-circle-border:            none;                           // Border of the ellipsis circle
-$button-perspective-shadow-color:       none;                           // The color of the button front
+$button-perspective-shadow-color:       $dark_blue;                           // The color of the button front
 $button-perspective-shadow-height:      none;                           // The (unpressed) height of the button
 $button-perspective-active-height:      none;                           // The height of the activated button
 $button-content:                        none;                           // Text to insert using :before on the button
-$button-content-color:                  none;                           // Color of the inserted text
-$button-content-font-size:              none;                           // Font size of the inserted text
-$button-content-vertical-adjust:        none;                           // Vertical adjustment of the inserted text (to center it in the button)
-$button-content-font-family:            none;                           // Font family of the inserted text
-$button-content-font-weight:            none;                           // Font weight of the inserted text
-$button-content-font-style:             none;                           // Font style of the inserted text
+$button-content-color:                  $white;                          // Color of the inserted text
+$button-content-font-size:              0.8em;                          // Font size of the inserted text
+$button-content-vertical-adjust:        0.589em;                         // Vertical adjustment of the inserted text (to center it in the button)
+$button-content-font-family:            $sans;                        // Font family of the inserted text
+$button-content-font-weight:            bold;                           // Font weight of the inserted text
+$button-content-font-style:             normal;                         // Font style of the inserted text
 
-$button-use-ellipsis:                   true;                           // Determines whether or not the footnote circles will be styled
-$button-use-number:                     false;                          // Determines whether the footnote number will be included
+$button-use-ellipsis:                   false;                          // Determines whether or not the footnote circles will be styled
+$button-use-number:                     true;                           // Determines whether the footnote number will be included
 $button-use-perspective-shadow:         false;                          // Determines whether or not a pretend button front will be used (makes the button function like a cartoonish, toggle-able button)
-$button-apply-dimensions:               false;                          // Determines whether or not the dimensions above will apply directly to the footnote button (use for creating particular button shapes, like a circle)
+$button-apply-dimensions:               true;                           // Determines whether or not the dimensions above will apply directly to the footnote button (use for creating particular button shapes, like a circle)
 
 
 
@@ -347,7 +346,7 @@ $button-perspective-shadow-zindex:  8;
 
         // CONTENT
         @if $button-use-number == true {
-            content: attr(data-footnote-identifier);
+            content: attr(data-footnote-number);
             } @else {
                 content: $button-content;
             }
@@ -422,12 +421,12 @@ $button-perspective-shadow-zindex:  8;
 $popover-width:                         22em;                           // Ideal width of the popover
 $popover-max-width:                     90%;                            // Best as a % to accommodate smaller viewports
 $popover-max-height:                    15em;                           // Maximum size of the content area
-$popover-color-background:              rgb(250, 250, 250);             // Color of the popover background
-$popover-border-radius:                 0.5em;                          // Radius of the corners of the popover
-$popover-border:                        1px solid rgb(195, 195, 195);   // Border of the popover/ tooltip
+$popover-color-background:              $white;                         // Color of the popover background
+$popover-border-radius:                 0.589em;                        // Radius of the corners of the popover
+$popover-border:                        1px solid lighten($light_gray, 39.1%);          // Border of the popover/ tooltip
 $popover-inactive-opacity:              0;                              // Opacity of the popover when instantiated/ deactivating
-$popover-active-opacity:                0.97;                           // Opacity of the popover when active
-$popover-box-shadow:                    0px 0px 8px rgba(0, 0, 0, 0.3); // Sets the box shadow under the popover/ tooltip
+$popover-active-opacity:                1;                              // Opacity of the popover when active
+$popover-box-shadow:                    0px 0px 8px lighten($light_gray, 39.1%);        // Sets the box shadow under the popover/ tooltip
 $popover-display-style:                 inline-block;                   // Determines the display style of the main popover
 $popover-bottom-position:               auto;                           // Sets the bottom position of the popover. Use only when setting positionPopover to false in the script
 $popover-left-position:                 auto;                           // Sets the left position of the popover. Use only when setting positionPopover to false in the script
@@ -737,6 +736,10 @@ $popover-scroll-up-transition-delay:            0.4s; // Sets the delay for the 
 // These apply to the actual content area of the popover (scroll).
 // You also set the max-height here
 .footnote-content-wrapper {
+
+    p {
+        font-size: $fs_small;
+    }
 
     // POSITIONING
     position: relative;

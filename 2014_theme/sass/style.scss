@@ -434,6 +434,7 @@ article {
                 content: '\00A7';
                 display: inline-block;
                 padding-right: 0.244em;
+                margin-left: -0.244em;
                 color: lighten($light_gray, 39.1%);
             }
 
@@ -646,18 +647,26 @@ sup[id^="fnref:"] a {
     }
 
     ul {
-        li:before {
-            content: none;
-            display: none;
-            content: none;
-            margin-left: 0;
-            padding-right: 0;
+        li {
+            line-height: $line_height_min;
+            padding: {
+                top: $fsp/4;
+                bottom: $fsp/4;
+                left: 0;
+            }
+
+
+            &:before {
+                content: none;
+                display: none;
+                content: none;
+                margin-left: 0;
+                padding-right: 0;
+            }
         }
 
         &.icons {
-            padding: {
-                right: $fs4/2;
-            }
+            padding-right: $fs4/2;
         }
 
         &.inline {
