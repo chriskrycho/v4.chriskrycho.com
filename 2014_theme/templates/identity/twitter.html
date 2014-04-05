@@ -3,12 +3,12 @@
 <meta name="twitter:creator" content="@chriskrycho"/>
 {% if item is defined %}
     {% if item.title is defined %}
-        <meta name="twitter:title" content="{{ item.title }}"/>
+        <meta name="twitter:title" content="{{ item.title|striptags }}"/>
     {% else %}
         <meta name="twitter:title" content="{{ SITENAME }}"/>
     {% endif %}
     {% if item.description is defined %}
-        <meta name="twitter:description" content="{{ item.description }}"/>
+        <meta name="twitter:description" content="{{ item.description|striptags }}"/>
     {% else %}
         <meta name="twitter:description" content="{{ SITE_DESCRIPTION }}"/>
     {% endif %}
