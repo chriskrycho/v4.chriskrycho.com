@@ -434,6 +434,7 @@ article {
                 content: '\00A7';
                 display: inline-block;
                 padding-right: 0.244em;
+                margin-left: -0.244em;
                 color: lighten($light_gray, 39.1%);
             }
 
