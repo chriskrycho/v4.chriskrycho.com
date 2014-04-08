@@ -1,6 +1,6 @@
 Title: <i>Noah</i>: A Theological-Aesthetic Rorschach Test
 Author: Chris Krycho
-Date: 2014-04-08 17:35
+Date: 2014-04-08 19:35
 Link: http://mereorthodoxy.com/noah-theological-aesthetic-rorschach-test/
 Tags: links, my writing elsewhere
 Category: theology
