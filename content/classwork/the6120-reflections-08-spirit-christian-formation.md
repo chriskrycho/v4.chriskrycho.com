@@ -1,8 +1,9 @@
 Title: The Spirit and Christian Formation
 Author: Chris Krycho
-Date: 2014-04-08 08:00
+Date: 2014-04-09 09:00
 Intro: What role does the Holy Spirit play in Christian formation?
 Tags: M.&hairsp;Div.
+Category: Theology
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
