@@ -71,8 +71,8 @@ text on a green background. It's impossible to access directly the `monkey_foot`
 element, though, which means that composing more complex objects in reusable
 ways is difficult. In fact, I haven't come up with a particularly good way to do
 it yet. At least, I should say that I haven't come up with a good way to create
-high- level reusable components yet. I can see pretty easily how to create low-
-level reusable components, but once you start putting them together in any
+high-level reusable components yet. I can see pretty easily how to create
+low-level reusable components, but once you start putting them together in any
 _specific_ way, you can't recompose them in other ways.
 
 From what I've gotten my head around so far, this ends up being less flexible

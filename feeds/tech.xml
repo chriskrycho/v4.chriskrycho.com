@@ -60,8 +60,8 @@ text on a green background. It&amp;#8217;s impossible to access directly the &lt
 element, though, which means that composing more complex objects in reusable
 ways is difficult. In fact, I haven&amp;#8217;t come up with a particularly good way to do
 it yet. At least, I should say that I haven&amp;#8217;t come up with a good way to create
-high- level reusable components yet. I can see pretty easily how to create low-
-level reusable components, but once you start putting them together in any
+high-level reusable components yet. I can see pretty easily how to create
+low-level reusable components, but once you start putting them together in any
 &lt;em&gt;specific&lt;/em&gt; way, you can&amp;#8217;t recompose them in other&amp;nbsp;ways.&lt;/p&gt;
 &lt;p&gt;From what I&amp;#8217;ve gotten my head around so far, this ends up being less flexible
 than either &lt;span class="caps"&gt;HTML&lt;/span&gt; templating languages (which are, or at least can be, completely
