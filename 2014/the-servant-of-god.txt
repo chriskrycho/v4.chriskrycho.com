@@ -7,7 +7,7 @@ Professor: Dr. Heath Thomas
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
 Category: theology
-Tags: M.&hairsp;Div.
+Tags: M. Div., SEBTS
 
 The Servant pictured in Isaiah is one of the most famous images in the Old
 Testament for Christians. The language applied to him in Isaiah 53 in particular
