@@ -5,7 +5,7 @@ Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Date: 2014-03-05 14:30
 Category: theology
-Tags: M.&hairsp;Div.
+Tags: M. Div., SEBTS
 Description: Sin is described in various ways in the Old and New Testaments, and these various descriptions and names tell us much about how the authors of the Bible conceived of the power than enslaves us apart from Christ.
 Template: formats/class
 

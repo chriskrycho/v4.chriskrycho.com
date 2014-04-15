@@ -4,7 +4,7 @@ Date: 2014-02-11 08:30
 Description: If Jesus could not have sinned, then he was not really like us in every way. And that&mdash;to put it mildly&mdash;is a really serious problem.
 Topic: Could Jesus have sinned?
 Category: theology
-Tags: M.&hairsp;Div.
+Tags: M. Div., SEBTS
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
