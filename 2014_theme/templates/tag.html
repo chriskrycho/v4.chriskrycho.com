@@ -2,4 +2,4 @@
 
 {% block title %}#{{ tag }} &middot; {{ SITENAME }}{% endblock %}
 
-{% block section_head %}<div id="section-head"><h3>#{{ tag.name }} ({{ articles|length }}) <a title="#{{ tag.name }} feed" href="{{ SITEURL }}/feeds/{{ tag.name }}.xml"><i class="fa fa-fw fa-rss"></i></a></h3></div>{% endblock %}
+{% block section_head %}<div id="section-head"><h3>#{{ tag.name }} ({{ articles|length }}) <a title="#{{ tag.name }} feed" href="{{ SITEURL }}/feeds/{{ tag.slug }}.xml"><i class="fa fa-fw fa-rss"></i></a></h3></div>{% endblock %}

@@ -5,6 +5,6 @@
 {% block section_head %}
 <div id="section-head">
     <h3>
-        Filed under <span class="section-title">{{ category.name }}</span> ({{ articles|length }}) <a title="{{ category.name }} feed" href="{{ SITEURL }}/feeds/{{ category.name }}.xml"><i class="fa fa-fw fa-rss"></i></a>
+        Filed under <span class="section-title">{{ category.name }}</span> ({{ articles|length }}) <a title="{{ category.name }} feed" href="{{ SITEURL }}/feeds/{{ category.slug }}.xml"><i class="fa fa-fw fa-rss"></i></a>
     </h3>
 </div>{% endblock %}
