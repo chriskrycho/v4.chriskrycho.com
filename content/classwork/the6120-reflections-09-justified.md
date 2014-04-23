@@ -8,7 +8,6 @@ Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
-Status: draft
 
 Any discussion of the work of God in Christ has to include the idea of justification: it is an important throughout the Bible, and is especially prominent in Paul's writings on salvation (which comprise a substantial part of the New Testament and most of our systematically theological reflection on salvation arises). The word "justify" and its nominal forms are used to translate words from the *dikaoō*  (δικαιόω) word group in Greek, which includes a number of related concepts, all circling in various ways around the notion of justice and right action and just and righteous character. Since "justification"---being justified---before God is a central idea in Scripture and an essential element of our salvation, we should be careful to understand what exactly this concept means.
 
