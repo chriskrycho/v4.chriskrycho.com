@@ -1,5 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Fri, 11 Apr 2014 15:30:00 -0400</lastBuildDate><item><title>Learning QML, Part 1</title><link>http://www.chriskrycho.com/2014/learning-qml-part-1.html</link><description>&lt;p&gt;For part of my work with Quest Consultants, I&amp;#8217;ve been picking up Qt&amp;#8217;s &lt;span class="caps"&gt;QML&lt;/span&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Tue, 29 Apr 2014 19:30:00 -0400</lastBuildDate><item><title>A Little Crazy</title><link>http://www.chriskrycho.com/2014/a-little-crazy.html</link><description>&lt;p&gt;I&amp;#8217;m going to do something a little crazy, I&amp;#8217;ve decided. I&amp;#8217;m going to go ahead
+and do like I wrote &lt;a href="http://www.chriskrycho.com/2014/doing-it-myself.html"&gt;a bit back&lt;/a&gt;, and make &lt;a href="http://step-stool.io"&gt;Step Stool&lt;/a&gt;
+actually a thing over the course of the rest of the year. Not so crazy. What is
+a bit nuts is the way I&amp;#8217;ve decided to go about that process. In short: as close
+to the hardest way possible as I can&amp;nbsp;conceive.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Over the last couple weeks, I&amp;#8217;ve been spending a fair bit of time toying with
+&lt;a href="http://iolanguage.org"&gt;Io&lt;/a&gt;. It&amp;#8217;s a neat little language, very different in its approach to a &lt;em&gt;lot&lt;/em&gt;
+of things than the languages I&amp;#8217;ve used previously. My programming language
+history is very focused on the &amp;#8220;normal&amp;#8221; languages. The vast majority of real-
+world code I&amp;#8217;ve written has been in one of C, &lt;span class="caps"&gt;PHP&lt;/span&gt;, or Python. I&amp;#8217;ve done a good
+bit of Javascript along the way, more Fortran than anyone my age has any
+business having done, and a little each of Java and Ruby. Like I said: the
+normal ones. With the exception of Javascript, all of those are either standard
+imperative, object-oriented, or mixed imperative and object-oriented languages.
+Python and Ruby both let you mix in a fair bit of functional-style programming,
+and Javascript does a &lt;em&gt;lot&lt;/em&gt; of that and tosses in prototypal inheritance to&amp;nbsp;boot.&lt;/p&gt;
+&lt;p&gt;But still: they&amp;#8217;re all pretty mainstream, &amp;#8220;normal&amp;#8221; languages. Io isn&amp;#8217;t like that
+at all. For one thing, it&amp;#8217;s hardly popular in any sense at all. Well-known among
+the hackers&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; I know, perhaps, but not popular by any measure. It&amp;#8217;s small. And
+it&amp;#8217;s very &lt;em&gt;alien&lt;/em&gt; in some ways. It&amp;#8217;s &lt;a href="http://en.wikipedia.org/wiki/Prototype-based_programming"&gt;prototypal inheritance&lt;/a&gt;, not normal
+inheritance. Courtesy of &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain"&gt;Javascript&lt;/a&gt;, I have a &lt;em&gt;little&lt;/em&gt; familiarity
+with that, but it&amp;#8217;s definitely still not my default way of thinking about
+inheritance. Python&amp;#8217;s inheritance model (the one I use most frequently) is
+&lt;em&gt;essentially&lt;/em&gt; the same as that in C++, Java, &lt;span class="caps"&gt;PHP&lt;/span&gt;, and so on&amp;#8212;it&amp;#8217;s normal class-
+driven inheritance. Io goes off and does full-blown prototypal inheritance;
+even just the little I&amp;#8217;ve played with it has been&amp;nbsp;fun.&lt;/p&gt;
+&lt;p&gt;Io also does a bunch of other things a &lt;em&gt;lot&lt;/em&gt; different from the other languages
+I&amp;#8217;ve used. First, there are no keywords or&amp;#8212;formally speaking&amp;#8212;even operators
+in the language. Every action (including ones like &lt;code&gt;+&lt;/code&gt; or &lt;code&gt;for&lt;/code&gt;) is simply a
+message. Every value is an object (so &lt;code&gt;1.0&lt;/code&gt; is just as fully an object as an
+arbitrarily-defiend &lt;code&gt;Person&lt;/code&gt;). The combination means that writing &lt;code&gt;1 + 2&lt;/code&gt; is
+actually just interpreted as the object &lt;code&gt;1&lt;/code&gt; receiving the &lt;code&gt;+&lt;/code&gt; message carrying
+as its &amp;#8220;argument&amp;#8221; the &lt;code&gt;2&lt;/code&gt; object (really just the message contents). This is
+&lt;em&gt;completely&lt;/em&gt; different at a deep paradigm level from the normal object-oriented
+approach with object methods, even in a language like Python where all elements
+are objects (including functions). The net result isn&amp;#8217;t necessarily particularly
+different from calling methods on objects, but it is a &lt;em&gt;little&lt;/em&gt; different, with
+have some interesting consequences. Notably (though trivially&amp;#8212;or at least, so
+it seems to me at this point), you can pass a message to the null object without
+it being an error. More importantly, the paradigm shift is&amp;nbsp;illuminating.&lt;/p&gt;
+&lt;p&gt;Io also has far more capabilities in terms of concurrency than any of the other
+languagues with which I&amp;#8217;m familiar, because it actively implements the &lt;a href="http://en.wikipedia.org/wiki/Actor_model"&gt;Actor
+Model&lt;/a&gt;, which means its implementation of messaging instead of object
+method calls can behave in concurrent ways. (I&amp;#8217;d say more if I understood it
+better. I don&amp;#8217;t yet, which is one of the reasons I want to study the language.
+Concurrency is very powerful, but it&amp;#8217;s also fairly foreign to me.) It&amp;#8217;s also
+like Lisp in that its code can be inspected and modified at runtime. I&amp;#8217;ve wanted
+to learn a Lisp for several years for this kind of mental challenge, but the
+syntax has always just annoyed me too much ever to get there. Io will give me a
+lot of its benefits with a much more pleasant syntax. It has coroutines, which
+are new to me, and also helpful for concurrency.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;The long and short of it is that the language has a ton of features not present
+in the languages I have used, and&amp;#8212;more importantly&amp;#8212;is &lt;em&gt;paradigmatically&lt;/em&gt;
+different from them. Just getting familiar with it by writing a goodly amount
+of code in it would be a good way to learn in practice a bunch of computer science concepts
+I never had a chance to learn formally.&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;By now, as long as I&amp;#8217;ve rambled about Io, you&amp;#8217;ve probably figured out where I
+was going in that first paragraph. I&amp;#8217;ve decided to stretch my brain a bit and
+write Step Stool in Io. There are bunches of static site generators out there in
+Python already, many of them quite mature. (This site is running on &lt;a href="https://github.com/getpelican"&gt;one of
+them&lt;/a&gt; as of the time I write this post&amp;#8212;it&amp;#8217;s quite solid, even its
+quirks and limitations occasionally annoy me.) The point of Step Stool has
+always been twofold, though. First, I&amp;#8217;ve wanted to get to a spot where I was
+really running my own software to manage my site, letting me do whatever I want
+with it and guaranteeing I always understand it well enough to make those kinds
+of changes. Second, I&amp;#8217;ve just wanted to &lt;em&gt;learn&lt;/em&gt; a whole bunch along the way.
+Third, it&amp;#8217;s right there in the website link: &lt;a href="http://step-stool.io"&gt;step-stool.io&lt;/a&gt;! How could I pass
+up such an&amp;nbsp;opportunity?&lt;/p&gt;
+&lt;p&gt;It is that second goal that has pushed me to do this crazy project this crazy
+way. It&amp;#8217;s crazier than just teaching myself a language in order to do the
+static site generator itself, too, because there are a few other pieces missing
+that I&amp;#8217;ll need to write to make this work&amp;#8230; like a Markdown implementation and
+an &lt;span class="caps"&gt;HTML&lt;/span&gt; templating language. I&amp;#8217;ve never written anything remotely like either
+before, so I&amp;#8217;m going to take the chance to learn a &lt;em&gt;lot&lt;/em&gt; of new things. For the
+Markdown implementation, rather than relying on regular expression parsing
+(like most Markdowns do), I&amp;#8217;m going to use a Parsing Expression Grammar.
+That will certainly be more efficient and reliable, but&amp;#8212;more importantly&amp;#8212;it
+is also outside my experience. I have yet to start thinking through how to
+tackle the &lt;span class="caps"&gt;HTML&lt;/span&gt; templating language implementation (though I know I am going to
+make it an Io implementation of &lt;a href="http://slim-lang.com"&gt;Slim&lt;/a&gt;, which I quite&amp;nbsp;like).&lt;/p&gt;
+&lt;p&gt;In any case, I&amp;#8217;m going to be taking a good bit longer to get Step Stool
+finished. That is all right: I am going to learn a ton along the way, and I am
+quite sure I will have a blast doing it. And that is &lt;em&gt;exactly&lt;/em&gt; what these kinds
+of projects are&amp;nbsp;for.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ll post updates as I go, with the things I&amp;#8217;m learning along the way.
+Hopefully they&amp;#8217;ll be interesting (or at least&amp;nbsp;entertaining).&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;Hackers in the original sense of the world. Not &amp;#8220;crackers&amp;#8221;, but people
+who like hacking on code, figuring things out the hard way.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:2"&gt;
+&lt;p&gt;Python 3.5 is actually adding coroutines, and I&amp;#8217;m excited about that.
+I&amp;#8217;ll feel much more comfortable with them there having used them in Io, I&amp;#8217;m
+sure!&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:3"&gt;
+&lt;p&gt;I got here backwards, as it were&amp;#8212;by way of an undergraduate degree in
+physics. I don&amp;#8217;t regret that for a second: I got a much broader education
+than I could have managed while getting an engineering degree, and most
+importantly learned &lt;em&gt;how to learn&lt;/em&gt;: easily the most important skill anyone
+gains from any engineering degree.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 29 Apr 2014 19:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-04-29:2014/a-little-crazy.html</guid><category>software development</category></item><item><title>Learning QML, Part 1</title><link>http://www.chriskrycho.com/2014/learning-qml-part-1.html</link><description>&lt;p&gt;For part of my work with Quest Consultants, I&amp;#8217;ve been picking up Qt&amp;#8217;s &lt;span class="caps"&gt;QML&lt;/span&gt;
 toolkit to use in building out the &lt;span class="caps"&gt;UI&lt;/span&gt;. The declarative syntax and ability to
 define one&amp;#8217;s own model in non-C++- or Python-specific ways is quite nice. That
 said, the learning process has had more than a few bumps along the way. I
