@@ -17,24 +17,24 @@ the New Testament and most of our systematically theological reflection on
 salvation arises). The word "justify" and its nominal forms are used to
 translate words from the *dikaoō*  (δικαιόω) word group in Greek, which includes
 a number of related concepts, all circling in various ways around the notion of
-justice and right action and just and righteous character. Since "justification"
----being justified---before God is a central idea in Scripture and an essential
-element of our salvation, we should be careful to understand what exactly this
-concept means.
+justice and right action and just and righteous character. Since
+"justification"---being justified---before God is a central idea in Scripture
+and an essential element of our salvation, we should be careful to understand
+what exactly this concept means.
 
-Most basically, for a person to be justified is for him or her to righteous, and
-correspondingly to have acted rightly---in the eyes of God. At a bare minimum,
-this of course requires both the performance of good works and the rejection of
-sin. However, justification means more than simply having checked off a series
-of boxes corresponding to specific good works while having avoided other boxes
-corresponding to bad or sinful actions. It means being regarded as having done
-righteously and justly by God, and God sees our hearts, so even doing what is
-right and shunning what is wrong may not be sufficient: we often have entirely
-the wrong motives in such actions. We seek the approval of men instead of to
-please God; we want the social or personal benefits that follow from doing nice
-things for others; we enjoy stoking the fires of our own pride. In any case, we
-do not even act rightly, still less do so for the glory of God. So the idea that
-we might be justified on our own merits is hopeless.
+Most basically, for a person to be justified is for him or her to be righteous,
+and correspondingly to have acted rightly---in the eyes of God. At a bare
+minimum, this of course requires both the performance of good works and the
+rejection of sin. However, justification means more than simply having checked
+off a series of boxes corresponding to specific good works while having avoided
+other boxes corresponding to bad or sinful actions. It means being regarded as
+having done righteously and justly by God, and God sees our hearts, so even
+doing what is right and shunning what is wrong may not be sufficient: we often
+have entirely the wrong motives in such actions. We seek the approval of men
+instead of to please God; we want the social or personal benefits that follow
+from doing nice things for others; we enjoy stoking the fires of our own pride.
+In any case, we do not even act rightly, still less do so for the glory of God.
+So the idea that we might be justified on our own merits is hopeless.
 
 Second, we should note that ordinary notions of justification often tend to
 include many of the right (that is, Biblical) concepts of justification in them,
