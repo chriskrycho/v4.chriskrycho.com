@@ -23,14 +23,14 @@ it&amp;#8217;s very &lt;em&gt;alien&lt;/em&gt; in some ways. It&amp;#8217;s &lt;
 inheritance. Courtesy of &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain"&gt;Javascript&lt;/a&gt;, I have a &lt;em&gt;little&lt;/em&gt; familiarity
 with that, but it&amp;#8217;s definitely still not my default way of thinking about
 inheritance. Python&amp;#8217;s inheritance model (the one I use most frequently) is
-&lt;em&gt;essentially&lt;/em&gt; the same as that in C++, Java, &lt;span class="caps"&gt;PHP&lt;/span&gt;, and so on&amp;#8212;it&amp;#8217;s normal class-
-driven inheritance. Io goes off and does full-blown prototypal inheritance;
-even just the little I&amp;#8217;ve played with it has been&amp;nbsp;fun.&lt;/p&gt;
+&lt;em&gt;essentially&lt;/em&gt; the same as that in C++, Java, &lt;span class="caps"&gt;PHP&lt;/span&gt;, and so on&amp;#8212;it&amp;#8217;s normal
+class-driven inheritance. Io goes off and does full-blown prototypal
+inheritance; even just the little I&amp;#8217;ve played with it has been&amp;nbsp;fun.&lt;/p&gt;
 &lt;p&gt;Io also does a bunch of other things a &lt;em&gt;lot&lt;/em&gt; different from the other languages
 I&amp;#8217;ve used. First, there are no keywords or&amp;#8212;formally speaking&amp;#8212;even operators
 in the language. Every action (including ones like &lt;code&gt;+&lt;/code&gt; or &lt;code&gt;for&lt;/code&gt;) is simply a
 message. Every value is an object (so &lt;code&gt;1.0&lt;/code&gt; is just as fully an object as an
-arbitrarily-defiend &lt;code&gt;Person&lt;/code&gt;). The combination means that writing &lt;code&gt;1 + 2&lt;/code&gt; is
+arbitrarily-defined &lt;code&gt;Person&lt;/code&gt;). The combination means that writing &lt;code&gt;1 + 2&lt;/code&gt; is
 actually just interpreted as the object &lt;code&gt;1&lt;/code&gt; receiving the &lt;code&gt;+&lt;/code&gt; message carrying
 as its &amp;#8220;argument&amp;#8221; the &lt;code&gt;2&lt;/code&gt; object (really just the message contents). This is
 &lt;em&gt;completely&lt;/em&gt; different at a deep paradigm level from the normal object-oriented
