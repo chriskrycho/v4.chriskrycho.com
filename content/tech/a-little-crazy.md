@@ -33,15 +33,15 @@ it's very *alien* in some ways. It's [prototypal inheritance][proto], not normal
 inheritance. Courtesy of [Javascript][js-proto], I have a *little* familiarity
 with that, but it's definitely still not my default way of thinking about
 inheritance. Python's inheritance model (the one I use most frequently) is
-*essentially* the same as that in C++, Java, PHP, and so on---it's normal class-
-driven inheritance. Io goes off and does full-blown prototypal inheritance;
-even just the little I've played with it has been fun.
+*essentially* the same as that in C++, Java, PHP, and so on---it's normal
+class-driven inheritance. Io goes off and does full-blown prototypal
+inheritance; even just the little I've played with it has been fun.
 
 Io also does a bunch of other things a *lot* different from the other languages
 I've used. First, there are no keywords or---formally speaking---even operators
 in the language. Every action (including ones like `+` or `for`) is simply a
 message. Every value is an object (so `1.0` is just as fully an object as an
-arbitrarily-defiend `Person`). The combination means that writing `1 + 2` is
+arbitrarily-defined `Person`). The combination means that writing `1 + 2` is
 actually just interpreted as the object `1` receiving the `+` message carrying
 as its "argument" the `2` object (really just the message contents). This is
 *completely* different at a deep paradigm level from the normal object-oriented
