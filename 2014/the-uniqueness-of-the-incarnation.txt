@@ -2,6 +2,7 @@ Title: The Uniqueness of the Incarnation
 Description: The Incarnation itself is essential and central in God's work in the life of believers. It must never be obscured, diminished, or denied.
 Author: Chris Krycho
 Date: 2014-05-06 08:15
+Category: theology
 Tags: M. Div., SEBTS, papers
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
