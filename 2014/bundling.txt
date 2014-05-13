@@ -69,7 +69,7 @@ Again: publishers need readers and readers need publishers.
 Percentage games
 ----------------
 
-Percentage-based cuts---like Curtis' options (b) and (c) -- are much more
+Percentage-based cuts---like Curtis' options (b) and (c)---are much more
 sensible and reasonable from the perspective of both the consumer and the
 publisher. In each of these cases, the publisher is granting that the customer
 has already made a purchase---perhaps a significant one, in the case of a
