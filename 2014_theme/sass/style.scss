@@ -91,12 +91,18 @@ p:first-child, p:first-of-type {
 ul {
     list-style: none;
 
-    // Fix for the fact that circles look *terrible* in Gentium
-    li:before {
-        display: inline-block;
-        content: '\25E6'; // white bullet
-        margin-left: -0.804em;
-        padding-right: 0.465em;
+    li {
+        // Fix for the fact that circles look *terrible* in Gentium
+        &:before {
+            float: left;
+            content: '\25E6'; // white bullet
+            margin-left: -0.804em;
+            padding-right: 0.465em;
+        }
+
+        p:first-child {
+            display: block;
+        }
     }
 }
 
