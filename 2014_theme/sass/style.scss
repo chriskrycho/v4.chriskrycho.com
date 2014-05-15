@@ -78,7 +78,7 @@ p {
     }
 }
 
-h1, h2, h3, h4, h5, h6, ul, ol, blockquote {
+h1, h2, h3, h4, h5, h6, ul, ol, blockquote, pre {
     + p {
         text-indent: 0;
     }
@@ -579,10 +579,17 @@ article {
             font-size: $fs_small;
         }
 
-        pre code {
-            padding: 0.558em;
-            font-size: $fs_very_small;
-            white-space: pre;
+        pre {
+            padding: {
+                top: 0.558em;
+                bottom: 0.558em;
+            }
+
+            code {
+                padding: $fsp 0.558em;
+                font-size: $fs_very_small;
+                white-space: pre;
+            }
         }
     }
 }
