@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2014-05-13T14:35:00-04:00</updated><entry><title>Bundling!</title><link href="http://www.chriskrycho.com/2014/bundling.html" rel="alternate"></link><updated>2014-05-13T14:35:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-05-13:2014/bundling.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.digitalbookworld.com/2012/why-do-we-have-to-choose-between-print-and-digital/"&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;Why do we have to choose between print and digital?&amp;#8221;&lt;/a&gt; asked Richard
 Curtis at Digital Book World last week, before tackling the topic of
-bundling&amp;#8212;getting ebooks at reduced cost or even free when buying a physical
+bundling&amp;#8211;getting ebooks at reduced cost or even free when buying a physical
 copy of the book. Drawing an analogy from music purchases that have moved in the
 same direction, he suggests that publishers &lt;em&gt;ought&lt;/em&gt; to be bundling, and then
 poses the query: When you purchase a print book you should be able to get the
@@ -24,7 +24,7 @@ the part where I show you why I&amp;#8217;m&amp;nbsp;not.)&lt;/p&gt;
 would love it if they could get away with (a), the reality is that both of these
 leave one party out in the cold. Publishers need readers, and readers need
 publishers. Publishers need readers or they die. Readers need publishers as
-providers of quality content&amp;#8212;not only as the gatekeepers but also as
+providers of quality content&amp;#8211;not only as the gatekeepers but also as
 polishers who take good books and make them great. Any system that will pan out
 well must therefore respect &lt;em&gt;both&lt;/em&gt; sides of that equation. Both (a) and (e) fail
 that test&amp;nbsp;immediately.&lt;/p&gt;
@@ -34,13 +34,13 @@ production. That goes double for ebooks: the cost of running a server is a
 pittance compared to the cost of writing, editing, and proofing a book. &amp;#8220;So,&amp;#8221;
 any smart reader says, &amp;#8220;I&amp;#8217;ve already paid for the book. Why should I have to pay
 &lt;em&gt;just as much again&lt;/em&gt; for the&amp;nbsp;ebook?&amp;#8221;&lt;/p&gt;
-&lt;p&gt;In the case of (e), the consumer is getting something of real value&amp;#8212;the
+&lt;p&gt;In the case of (e), the consumer is getting something of real value&amp;#8211;the
 ebook, with its associated portability, the ability to create &lt;a href="http://craigmod.com/journal/post_artifact/#section_4" title="Post Artifact Books and Publishing, Section 4: The post-artifact system&amp;quot; from Craig Mod"&gt;communal
 interactions&lt;/a&gt; around the content through shared marginalia, and so
-forth&amp;#8212;but without recognizing any infrastructure costs this poses to the
+forth&amp;#8211;but without recognizing any infrastructure costs this poses to the
 publisher. As always, there is no free lunch, and that is as it should be.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;
 The worker deserves his wages, and that includes the editor who turns a
-manuscript into ebook form&amp;#8212;especially for &lt;em&gt;good&lt;/em&gt; ebooks, which entail a great
+manuscript into ebook form&amp;#8211;especially for &lt;em&gt;good&lt;/em&gt; ebooks, which entail a great
 deal of work beyond simply running the print manuscript through a conversion
 script. That involves real people&amp;#8217;s time, and therefore costs real&amp;nbsp;money.&lt;/p&gt;
 &lt;p&gt;Neither of these options, then, is ultimately good for the market. The readers
@@ -48,15 +48,15 @@ will rightly reject paying the full price again for a book in a different form;
 they&amp;#8217;ve been conditioned by too many interactions on the internet not to
 recognize that digital transmission of files the size of a book is, while not
 costless, not costly either. On the other hand, publishers still need to make
-money, and they do sink real time and money into the ebook&amp;#8212;not at the
+money, and they do sink real time and money into the ebook&amp;#8211;not at the
 distribution point, but in the infrastructure involved in the preparation of the
 manuscript and readying it for digital and physical&amp;nbsp;publication.&lt;/p&gt;
 &lt;p&gt;Again: publishers need readers and readers need&amp;nbsp;publishers.&lt;/p&gt;
 &lt;h2 id="percentage-games"&gt;Percentage&amp;nbsp;games&lt;/h2&gt;
-&lt;p&gt;Percentage-based cuts&amp;#8212;like Curtis&amp;#8217; options (b) and (c)&amp;#8212;are much more
+&lt;p&gt;Percentage-based cuts&amp;#8211;like Curtis&amp;#8217; options (b) and (c)&amp;#8211;are much more
 sensible and reasonable from the perspective of both the consumer and the
 publisher. In each of these cases, the publisher is granting that the customer
-has already made a purchase&amp;#8212;perhaps a significant one, in the case of a
+has already made a purchase&amp;#8211;perhaps a significant one, in the case of a
 hardcover fiction book. Indeed, when we move out into the realm of reference
 books or textbooks, the consumer has already given the publisher quite a lot of
 money. Thus, options (b) and (c) are much friendlier to the consumer than choice
@@ -80,7 +80,7 @@ market simply won&amp;#8217;t support those kinds of costs on the upper end of t
 cost of distribution, but the preparation and distribution of the ebook don&amp;#8217;t
 justify an additional percentage on these scales beyond some point. I suspect
 that most customers are willing to pay extra to get the ebook in addition to the
-physical copy&amp;#8212;just not, in most cases, &lt;em&gt;that&lt;/em&gt; much&amp;nbsp;extra.&lt;/p&gt;
+physical copy&amp;#8211;just not, in most cases, &lt;em&gt;that&lt;/em&gt; much&amp;nbsp;extra.&lt;/p&gt;
 &lt;h3 id="aside-on-reasonability-and-trained-markets"&gt;Aside: on reasonability and trained&amp;nbsp;markets&lt;/h3&gt;
 &lt;p&gt;We must recognize that markets can be &lt;em&gt;trained&lt;/em&gt;. People have come to see $0.99
 as a reasonable price for individual songs. There was nothing inevitable about
@@ -132,9 +132,9 @@ revision is in order. Remember: the aim is to buoy both customer satisfaction
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;I&amp;#8217;m basing these on the current pricing schemes in the market&amp;#8212;these are the
+&lt;p&gt;I&amp;#8217;m basing these on the current pricing schemes in the market&amp;#8211;these are the
 normal suggested retail prices for paperbacks, trade paperbacks, and hard
-covers&amp;#8212;and on the assumption that the publisher&amp;#8217;s goal is to maximize revenue,
+covers&amp;#8211;and on the assumption that the publisher&amp;#8217;s goal is to maximize revenue,
 while the consumer&amp;#8217;s goal is to get the most content at a price he feels is
 reasonable. I&amp;#8217;m also taking into account the existing profit curves for
 publishers: paperbooks are relatively low margin, while hardcovers are the major
@@ -170,16 +170,16 @@ on the ebook. This is &lt;em&gt;exactly&lt;/em&gt; the combination that makes fo
 &lt;p&gt;Finally, the simplicity of these numbers is extremely helpful. Standardizing
 these prices will decrease the friction inherent in making the purchase
 decision, which increases the likelihood that a purchase will be made. I&amp;#8217;m not
-suggesting a cartel&amp;#8212;price standardization is natural in this sort of
-market&amp;#8212;and I believe the price points I&amp;#8217;ve suggested are where the market will
+suggesting a cartel&amp;#8211;price standardization is natural in this sort of
+market&amp;#8211;and I believe the price points I&amp;#8217;ve suggested are where the market will
 settle in the long run. The publishers who get there first will earn enormous
 goodwill from their readers in the short term, as well as demonstrating their
 leadership in the industry in ways that set them up for long term&amp;nbsp;success.&lt;/p&gt;
 &lt;h2 id="bundle-up"&gt;Bundle&amp;nbsp;up&lt;/h2&gt;
 &lt;p&gt;A smart approach to bundling could be enormously beneficial to the publishing
 industry. In addition to the pure numerical profitability of the approach
-outlined above&amp;#8212;no small detail in an industry struggling to adapt to the
-realities of the new economy&amp;#8212;it establishes that the publishers are responsive
+outlined above&amp;#8211;no small detail in an industry struggling to adapt to the
+realities of the new economy&amp;#8211;it establishes that the publishers are responsive
 to customers in a way that other large media have not seemed to be. Nothing is
 so helpful to a company&amp;#8217;s long-term sustainability as for consumers to &lt;em&gt;like&lt;/em&gt;
 it. Reasonable bundling prices would go a long way toward helping readers see
@@ -237,7 +237,7 @@ value proposition than other ebooks with a higher price point; in some
 cases, if that content is sufficiently central to the value proposition of
 the book, it might be more expensive than the physical&amp;nbsp;copies.&lt;/p&gt;
 &lt;p&gt;Similarly, a textbook might sell for $150, its ebook at $50, and the bundle
-at $165&amp;#8212;because the cost of preparing a textbook ebook may be
+at $165&amp;#8211;because the cost of preparing a textbook ebook may be
 substantially higher than that of preparing a fiction ebook. Signaling
 matters, but overpricing is as much a risk here as underpricing.&amp;#160;&lt;a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 5 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -257,7 +257,7 @@ legal and intellectual development.&amp;#160;&lt;a class="footnote-backref" href
 &lt;p&gt;&lt;a href="http://www.wired.com/2014/05/reading-on-screen-versus-paper/"&gt;Brandon Keim at&amp;nbsp;Wired:&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Paper books were supposed to be dead by now. For years, information theorists, marketers, and early adopters have told us their demise was imminent. Ikea even redesigned a bookshelf to hold something other than books. Yet in a world of screen ubiquity, many people still prefer to do their serious reading on&amp;nbsp;paper.&lt;/p&gt;
-&lt;p&gt;Count me among them. When I need to read deeply&amp;#8212;when I want to lose myself in a story or an intellectual journey, when focus and comprehension are paramount&amp;#8212;I still turn to paper. Something just feels fundamentally richer about reading on it. And researchers are starting to think there’s something to this&amp;nbsp;feeling.&lt;/p&gt;
+&lt;p&gt;Count me among them. When I need to read deeply&amp;#8211;when I want to lose myself in a story or an intellectual journey, when focus and comprehension are paramount&amp;#8211;I still turn to paper. Something just feels fundamentally richer about reading on it. And researchers are starting to think there’s something to this&amp;nbsp;feeling.&lt;/p&gt;
 &lt;/blockquote&gt;</summary><category term="links"></category></entry><entry><title>iPad vs. Kindle</title><link href="http://www.chriskrycho.com/2014/ipad-vs-kindle.html" rel="alternate"></link><updated>2014-04-30T21:20:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-04-30:2014/ipad-vs-kindle.html</id><summary type="html">&lt;p&gt;I&amp;#8217;ve been a happy owner of both a Kindle and an iPad Mini for the last several
 months, and it occurred to me tonight that I use them &lt;em&gt;very&lt;/em&gt; similarly in some
 ways. Both are primarily reading devices for me. What is different is the kinds
@@ -274,15 +274,15 @@ on the&amp;nbsp;device.&lt;/p&gt;
 delivered to my Kindle, and that worked &lt;em&gt;fairly&lt;/em&gt; well, but I much prefer the
 experience of using the app on the iPad. I opt to do pretty much any technical
 reading on the device: its screen just works much better for dealing with things
-like code samples embedded in a blog post&amp;#8212;not least because I can scroll
+like code samples embedded in a blog post&amp;#8211;not least because I can scroll
 easily if I need to! I also do basically all my Bible reading on the iPad. It is
 far easier to navigate to different parts of the text, switch translations (or
 original languages!) while keeping my place there on any of the top-tier iPad
-apps than on the Kindle. And I sometimes read comics on the iPad&amp;#8212;something I
+apps than on the Kindle. And I sometimes read comics on the iPad&amp;#8211;something I
 would not try in a million years on the current Kindle&amp;nbsp;screen!&lt;/p&gt;
 &lt;p&gt;A friend asked a few months ago if I thought one would obviate the other. Given
-the qualification that neither is in any sense truly a &lt;em&gt;necessity&lt;/em&gt;&amp;#8212;we could
-quite easily get along without either&amp;#8212;my answer after several months with both
+the qualification that neither is in any sense truly a &lt;em&gt;necessity&lt;/em&gt;&amp;#8211;we could
+quite easily get along without either&amp;#8211;my answer after several months with both
 is &lt;em&gt;no&lt;/em&gt;. Though the devices are similar in a number of ways, they fit into very
 different niches. The things I actively enjoy on each are very different. The
 Kindle is good for much longer-form reading, and its lack of distractions is
@@ -309,7 +309,7 @@ posts, etc. But mainly I read on it!&amp;#160;&lt;a class="footnote-backref" hre
 &lt;p&gt;No, Amazon&amp;#8217;s Kindle Fire series of tablets are nothing like that
 convergence: they are &lt;em&gt;functionally&lt;/em&gt; just poor-man&amp;#8217;s-iPads hooked into
 Amazon&amp;#8217;s ecosystem. Note that I&amp;#8217;m not making a comment about the quality or
-lack thereof on the devices&amp;#8212;only that they&amp;#8217;re much reduced in
+lack thereof on the devices&amp;#8211;only that they&amp;#8217;re much reduced in
 capabilities compared to an iPad or Android (e.g. Nexus 7).&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -337,11 +337,11 @@ it&amp;#8217;s very &lt;em&gt;alien&lt;/em&gt; in some ways. It&amp;#8217;s &lt;
 inheritance. Courtesy of &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain"&gt;Javascript&lt;/a&gt;, I have a &lt;em&gt;little&lt;/em&gt; familiarity
 with that, but it&amp;#8217;s definitely still not my default way of thinking about
 inheritance. Python&amp;#8217;s inheritance model (the one I use most frequently) is
-&lt;em&gt;essentially&lt;/em&gt; the same as that in C++, Java, &lt;span class="caps"&gt;PHP&lt;/span&gt;, and so on&amp;#8212;it&amp;#8217;s normal
+&lt;em&gt;essentially&lt;/em&gt; the same as that in C++, Java, &lt;span class="caps"&gt;PHP&lt;/span&gt;, and so on&amp;#8211;it&amp;#8217;s normal
 class-driven inheritance. Io goes off and does full-blown prototypal
 inheritance; even just the little I&amp;#8217;ve played with it has been&amp;nbsp;fun.&lt;/p&gt;
 &lt;p&gt;Io also does a bunch of other things a &lt;em&gt;lot&lt;/em&gt; different from the other languages
-I&amp;#8217;ve used. First, there are no keywords or&amp;#8212;formally speaking&amp;#8212;even operators
+I&amp;#8217;ve used. First, there are no keywords or&amp;#8211;formally speaking&amp;#8211;even operators
 in the language. Every action (including ones like &lt;code&gt;+&lt;/code&gt; or &lt;code&gt;for&lt;/code&gt;) is simply a
 message. Every value is an object (so &lt;code&gt;1.0&lt;/code&gt; is just as fully an object as an
 arbitrarily-defined &lt;code&gt;Person&lt;/code&gt;). The combination means that writing &lt;code&gt;1 + 2&lt;/code&gt; is
@@ -351,7 +351,7 @@ as its &amp;#8220;argument&amp;#8221; the &lt;code&gt;2&lt;/code&gt; object (rea
 approach with object methods, even in a language like Python where all elements
 are objects (including functions). The net result isn&amp;#8217;t necessarily particularly
 different from calling methods on objects, but it is a &lt;em&gt;little&lt;/em&gt; different, with
-have some interesting consequences. Notably (though trivially&amp;#8212;or at least, so
+have some interesting consequences. Notably (though trivially&amp;#8211;or at least, so
 it seems to me at this point), you can pass a message to the null object without
 it being an error. More importantly, the paradigm shift is&amp;nbsp;illuminating.&lt;/p&gt;
 &lt;p&gt;Io also has far more capabilities in terms of concurrency than any of the other
@@ -366,7 +366,7 @@ syntax has always just annoyed me too much ever to get there. Io will give me a
 lot of its benefits with a much more pleasant syntax. It has coroutines, which
 are new to me, and also helpful for concurrency.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;The long and short of it is that the language has a ton of features not present
-in the languages I have used, and&amp;#8212;more importantly&amp;#8212;is &lt;em&gt;paradigmatically&lt;/em&gt;
+in the languages I have used, and&amp;#8211;more importantly&amp;#8211;is &lt;em&gt;paradigmatically&lt;/em&gt;
 different from them. Just getting familiar with it by writing a goodly amount
 of code in it would be a good way to learn in practice a bunch of computer science concepts
 I never had a chance to learn formally.&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -375,7 +375,7 @@ I never had a chance to learn formally.&lt;sup id="fnref:3"&gt;&lt;a class="foot
 was going in that first paragraph. I&amp;#8217;ve decided to stretch my brain a bit and
 write Step Stool in Io. There are bunches of static site generators out there in
 Python already, many of them quite mature. (This site is running on &lt;a href="https://github.com/getpelican"&gt;one of
-them&lt;/a&gt; as of the time I write this post&amp;#8212;it&amp;#8217;s quite solid, even its
+them&lt;/a&gt; as of the time I write this post&amp;#8211;it&amp;#8217;s quite solid, even its
 quirks and limitations occasionally annoy me.) The point of Step Stool has
 always been twofold, though. First, I&amp;#8217;ve wanted to get to a spot where I was
 really running my own software to manage my site, letting me do whatever I want
@@ -391,7 +391,7 @@ an &lt;span class="caps"&gt;HTML&lt;/span&gt; templating language. I&amp;#8217;v
 before, so I&amp;#8217;m going to take the chance to learn a &lt;em&gt;lot&lt;/em&gt; of new things. For the
 Markdown implementation, rather than relying on regular expression parsing
 (like most Markdowns do), I&amp;#8217;m going to use a Parsing Expression Grammar.
-That will certainly be more efficient and reliable, but&amp;#8212;more importantly&amp;#8212;it
+That will certainly be more efficient and reliable, but&amp;#8211;more importantly&amp;#8211;it
 is also outside my experience. I have yet to start thinking through how to
 tackle the &lt;span class="caps"&gt;HTML&lt;/span&gt; templating language implementation (though I know I am going to
 make it an Io implementation of &lt;a href="http://slim-lang.com"&gt;Slim&lt;/a&gt;, which I quite&amp;nbsp;like).&lt;/p&gt;
@@ -414,7 +414,7 @@ I&amp;#8217;ll feel much more comfortable with them there having used them in Io
 sure!&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:3"&gt;
-&lt;p&gt;I got here backwards, as it were&amp;#8212;by way of an undergraduate degree in
+&lt;p&gt;I got here backwards, as it were&amp;#8211;by way of an undergraduate degree in
 physics. I don&amp;#8217;t regret that for a second: I got a much broader education
 than I could have managed while getting an engineering degree, and most
 importantly learned &lt;em&gt;how to learn&lt;/em&gt;: easily the most important skill anyone
@@ -494,7 +494,7 @@ get a good handle on that, and my head still feels a bit funny whenever I&amp;#8
 trying to see how best to create composable&amp;nbsp;components.&lt;/p&gt;
 &lt;p&gt;Note, too, that this is the &lt;em&gt;only&lt;/em&gt; way to create a new basic type of object in
 &lt;span class="caps"&gt;QML&lt;/span&gt;: it has to be the root level object in a &lt;span class="caps"&gt;QML&lt;/span&gt; document. I would &lt;em&gt;really&lt;/em&gt; like
-to be able to access internal declarations&amp;#8212;to have named internal
+to be able to access internal declarations&amp;#8211;to have named internal
 types/objects. Unfortunately, &lt;span class="caps"&gt;QML&lt;/span&gt; doesn&amp;#8217;t let you do this. I suspect this has to
 do with how the &lt;span class="caps"&gt;QML&lt;/span&gt; type system works: it actually binds these types to C++
 objects behind the scenes. This is a non-trivially helpful decision in terms of
@@ -513,11 +513,11 @@ each distinct&amp;nbsp;approach.&lt;/p&gt;
 to remember that while you can define some reusable components, the full-fledged
 elements are like full &lt;span class="caps"&gt;HTML&lt;/span&gt; pages with a templating system: you can include
 elements, but not override their internal contents. In &lt;span class="caps"&gt;QML&lt;/span&gt;, you can override
-&lt;em&gt;some&lt;/em&gt; of their contents, which is nice&amp;#8212;but that is not the primary way to go
+&lt;em&gt;some&lt;/em&gt; of their contents, which is nice&amp;#8211;but that is not the primary way to go
 about&amp;nbsp;it.&lt;/p&gt;</summary><category term="software development"></category></entry><entry><title>Feels Right</title><link href="http://www.chriskrycho.com/2014/feels-right.html" rel="alternate"></link><updated>2014-04-04T21:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-04-04:2014/feels-right.html</id><summary type="html">&lt;p&gt;I had spent most of the last week and a half working on getting
 &lt;a href="http://www.firebirdsql.org"&gt;FirebirdSQL&lt;/a&gt; configured and ready to use for a project I&amp;#8217;m working on with
 &lt;a href="http://www.questconsult.com"&gt;Quest Consultants&lt;/a&gt;. It was slow going. The tool is decent, but the
-documentation is spotty and it felt like everything was just a bit of a slog&amp;#8212;to
+documentation is spotty and it felt like everything was just a bit of a slog&amp;#8211;to
 get it working correctly, to get it playing nicely with other pieces of the
 development puzzle, to get it working across platforms.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; Then, because I had
 done something a &lt;em&gt;little&lt;/em&gt; bit silly in my eagerness to get up and going last
@@ -529,8 +529,8 @@ conversation with user &lt;em&gt;agronholm&lt;/em&gt; on the &lt;a href="http://
 one of their options as an &amp;#8220;embedded&amp;#8221; server, but &lt;em&gt;agronholm&lt;/em&gt; pointed out that
 what they really mean is &lt;em&gt;portable&lt;/em&gt;. It&amp;#8217;s running a standalone server and
 client, but it&amp;#8217;s not part of the same thread/process (like SQLite is). Then
-&lt;em&gt;agronholm&lt;/em&gt; very helpfully asked&amp;#8212;my having mentioned my preference for
-&lt;a href="http://www.postgresql.org"&gt;PostgreSQL&lt;/a&gt; earlier&amp;#8212;&amp;#8221;Does Postgres not have a portable version?&amp;#8221;
+&lt;em&gt;agronholm&lt;/em&gt; very helpfully asked&amp;#8211;my having mentioned my preference for
+&lt;a href="http://www.postgresql.org"&gt;PostgreSQL&lt;/a&gt; earlier&amp;#8211;&amp;#8221;Does Postgres not have a portable version?&amp;#8221;
 Two minutes later, we had both found &lt;a href="http://sourceforge.net/projects/postgresqlportable/"&gt;PostgreSQL Portable&lt;/a&gt;, and I&amp;nbsp;rejoiced.&lt;/p&gt;
 &lt;p&gt;It took me less than half an hour to get it downloaded and set up and to confirm
 that it would work the way we need for this particular piece of software.
@@ -542,7 +542,7 @@ been an especially frustrating work day now had me quietly smiling to myself
 constantly for the last two and a half hours as I &lt;a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception/22872598#22872598"&gt;finished&lt;/a&gt; tracking
 down the bug that had set me on this path in the first&amp;nbsp;place.&lt;/p&gt;
 &lt;p&gt;Several years ago, when I first started doing web development, I got my feet wet
-in database work with MySQL&amp;#8212;probably the single most common starting point for
+in database work with MySQL&amp;#8211;probably the single most common starting point for
 anyone going that route, courtesy of the ubiquity of the standard Linux-Apache-
 MySQL-&lt;span class="caps"&gt;PHP&lt;/span&gt; stack.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; A year after that, I picked up some work that was already
 using PostgreSQL and fell in love almost immediately.&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt; Something just felt
@@ -554,8 +554,8 @@ MySQL out of convenience on shared hosting from time to time, PostgreSQL is
 unquestionably my preferred database&amp;nbsp;target.&lt;/p&gt;
 &lt;p&gt;Today&amp;#8217;s experience brought that all home again. That grin on my face all
 afternoon felt a bit silly, but it highlights the difference that really good
-software design makes. I am not just talking about how it looks here&amp;#8212;though,
-to be sure, PostgreSQL is prettier than FirebirdSQL&amp;#8212;but how it works.
+software design makes. I am not just talking about how it looks here&amp;#8211;though,
+to be sure, PostgreSQL is prettier than FirebirdSQL&amp;#8211;but how it works.
 PostgreSQL feels responsive, its command set makes a lot of sense and is easy to
 use, and it is &lt;em&gt;extremely&lt;/em&gt; well documented. In fact, I would go so far as to say
 that it is the best documented open source software I have ever used, as well as
@@ -565,14 +565,14 @@ means an expert on either, or on open source software in general, but the Linux
 kernel is an unarguably amazing piece of work. So is PostgreSQL.) All those tiny
 little details add&amp;nbsp;up.&lt;/p&gt;
 &lt;p&gt;It&amp;#8217;s a good reminder for me as I write software that yes, the things I care
-about&amp;#8212;the small matters that would be so easy to overlook when customers
-express no interest in them&amp;#8212;really do matter. People may not know that things
+about&amp;#8211;the small matters that would be so easy to overlook when customers
+express no interest in them&amp;#8211;really do matter. People may not know that things
 like typography make a difference in their experience, but those subtle, often
 imperceptible things matter. They may not consciously notice the differences in
 your interface design (even a command line interface), but it will change their
 experience of the software. Do it poorly, or even in a just-good-enough-to-get-
 by fashion, and you&amp;#8217;ll annoy or simply bore them. Do it well, and you might just
-delight them&amp;#8212;even if they can&amp;#8217;t tell you&amp;nbsp;why.&lt;/p&gt;
+delight them&amp;#8211;even if they can&amp;#8217;t tell you&amp;nbsp;why.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2 id="examples"&gt;Examples&lt;/h2&gt;
 &lt;p&gt;To make my point a little more visible, I thought it might be useful to post
@@ -606,7 +606,7 @@ SET TERM ; +
   CONSTRAINT unique_file UNIQUE (file_name, file_location)
 );
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;It is not just that the PostgreSQL example is shorter and clearer&amp;#8212;it is that
+&lt;p&gt;It is not just that the PostgreSQL example is shorter and clearer&amp;#8211;it is that
 it is shorter and clearer because its designers and developers have taken the
 time to make sure that the shorter, cleaner way works well, and have documented
 it so you can know how to use that shorter cleaner way without too much&amp;nbsp;difficulty.&lt;/p&gt;
@@ -648,7 +648,7 @@ interface has changed. I have tested on PyCharm 3.1 to confirm&amp;nbsp;that.&lt
 other platforms, though the likelihood that it behaves the same on Linux is
 fairly good. I will update the post if and when I have confirmed that it&amp;nbsp;does.&lt;/p&gt;
 &lt;p&gt;Steps to configuring a database correctly for use with &lt;span class="caps"&gt;IDEA&lt;/span&gt;/etc. Note that
-steps 1&amp;#8211;3 are fairly obvious; the real point of interest is in steps 4 and 5,
+steps 1&amp;#8212;3 are fairly obvious; the real point of interest is in steps 4 and 5,
 which took me the longest time to figure&amp;nbsp;out.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -753,8 +753,8 @@ is predicated on the idea that it is natural to open a new tab with that juicy
 Buzzfeed content while keeping Facebook itself open in a background tab. Would
 it work in that old linear model? Sort of. Would it feel natural?&amp;nbsp;Never.&lt;/p&gt;
 &lt;p&gt;All of this because of tabs. Invention&amp;#8217;s most significant results are rarely
-those the minds behind it expect. When we are designing things&amp;#8212;whether a piece
-of furniture or a piece of the web&amp;#8212;we have to remember that design decisions
+those the minds behind it expect. When we are designing things&amp;#8211;whether a piece
+of furniture or a piece of the web&amp;#8211;we have to remember that design decisions
 all have repercussions that we may not see. Technology is never neutral.
 Particular innovations may or may not be &lt;em&gt;morally&lt;/em&gt; significant, but they always
 produce changes in people&amp;#8217;s behavior. Design has&amp;nbsp;consequences.&lt;/p&gt;
@@ -768,11 +768,11 @@ like and viral-cat-picture-like sites, too. I am not concerned with the
 &lt;/li&gt;
 &lt;li id="fn:2"&gt;
 &lt;p&gt;Note that I am not crediting Firefox 1.0 with &lt;em&gt;creating&lt;/em&gt; the tabbed
-browser&amp;#8212;only with popularizing it. That distinction matters.&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+browser&amp;#8211;only with popularizing it. That distinction matters.&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:3"&gt;
 &lt;p&gt;Excepting having multiple browser windows open, which I am sure people
-did&amp;#8212;but to a much lesser extent.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+did&amp;#8211;but to a much lesser extent.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:4"&gt;
 &lt;p&gt;Yes, yes, browser history and re-open closed tab commands. But the
@@ -780,7 +780,7 @@ did&amp;#8212;but to a much lesser extent.&amp;#160;&lt;a class="footnote-backre
 here.&amp;#160;&lt;a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</summary><category term="design"></category><category term="software development"></category></entry><entry><title>Doing It Myself</title><link href="http://www.chriskrycho.com/2014/doing-it-myself.html" rel="alternate"></link><updated>2014-03-21T22:14:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-03-21:2014/doing-it-myself.html</id><summary type="html">&lt;p&gt;Last summer, I started work on a project I named &lt;a href="http://step-stool.io"&gt;Step Stool&lt;/a&gt;&amp;#8212;aiming to
+&lt;/div&gt;</summary><category term="design"></category><category term="software development"></category></entry><entry><title>Doing It Myself</title><link href="http://www.chriskrycho.com/2014/doing-it-myself.html" rel="alternate"></link><updated>2014-03-21T22:14:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-03-21:2014/doing-it-myself.html</id><summary type="html">&lt;p&gt;Last summer, I started work on a project I named &lt;a href="http://step-stool.io"&gt;Step Stool&lt;/a&gt;&amp;#8211;aiming to
 make a static site generator that would tick of all the little boxes marking my
 desires for a website generator. In due time, the project got put on hold, as I
 started up classes again and needed to focus more on my family than on fun side&amp;nbsp;projects.&lt;/p&gt;
@@ -792,15 +792,15 @@ iPhone and anywhere I have Dropbox and/or Git access). I did not have time at
 the beginning of the year to finish writing Step Stool, and I knew as much,&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;
 so instead I moved to &lt;a href="http://docs.getpelican.com/en/3.3.0/"&gt;Pelican&lt;/a&gt; as a stop-gap. There were lots of good
 reasons to pick Pelican: it has an active development community, fairly thorough
-documentation,&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; and it&amp;#8217;s in Python and uses Jinja2 templates&amp;#8212;the same basic
+documentation,&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; and it&amp;#8217;s in Python and uses Jinja2 templates&amp;#8211;the same basic
 approach I had taken with Step Stool, and the same&amp;nbsp;toolset.&lt;/p&gt;
 &lt;p&gt;Unfortunately, while I have been glad to be away from WordPress, my experience
 with Pelican so far has only reinforced my desire to get Step Stool done. There
 are &lt;em&gt;lots&lt;/em&gt; of little things that it does in ways that just annoy me. Many of
 them have to do with configuration and documentation. On the latter, while the
 documentation is &lt;em&gt;fairly&lt;/em&gt; complete, there are quite a few holes and gaps. (Yes,
-yes, open source software and anyone can add to the docs. That&amp;#8217;s great&amp;#8212;it
-really is&amp;#8212;but if I&amp;#8217;m going to use someone else&amp;#8217;s solution, it had better &lt;em&gt;just
+yes, open source software and anyone can add to the docs. That&amp;#8217;s great&amp;#8211;it
+really is&amp;#8211;but if I&amp;#8217;m going to use someone else&amp;#8217;s solution, it had better &lt;em&gt;just
 work&lt;/em&gt;. Otherwise, I&amp;#8217;d rather spend my time getting my own&amp;nbsp;going.)&lt;/p&gt;
 &lt;p&gt;For example, if you want to see how the pagination actually works, good luck
 figuring it out from the documentation. You&amp;#8217;ll need to go looking at the way the
@@ -813,7 +813,7 @@ templates just to figure out what options I have&amp;nbsp;available.&lt;/p&gt;
 configuration is done through a Python module. While that makes the module
 easier to integrate on the code side of things, it makes its actual content much
 less transparent than one might hope. Python is not really well optimized for
-writing configuration files&amp;#8212;nor is any normal programming language.
+writing configuration files&amp;#8211;nor is any normal programming language.
 Configuration is inherently declarative, rather than&amp;nbsp;imperative.&lt;/p&gt;
 &lt;p&gt;This is not to say that Pelican is bad software. It is not. It is, however, a
 fairly typical example of open source software implemented by committee. It has
@@ -821,13 +821,13 @@ holes (some of them serious), bumps, and quirks. Here is the reality: so will
 Step Stool, though they will be the quirks that come from an individual
 developer&amp;#8217;s approach rather than a group&amp;#8217;s. But the one thing I can guarantee,
 and the reason I am increasingly motivated to get back to working on Step Stool.
-And yes, I do have a couple other projects on my plate as well&amp;#8212;contributions
+And yes, I do have a couple other projects on my plate as well&amp;#8211;contributions
 to the Smartypants and Typogrify modules, my own &lt;a href="https://bitbucket.org/chriskrycho/spacewell"&gt;Spacewell typography project&lt;/a&gt;,
 and quite possibly a &lt;a href="https://bitbucket.org/chriskrycho/markdown-poetry/"&gt;Markdown Poetry extension &lt;/a&gt;. But I would like
 very much to just get back to doing this myself. There is freedom in rolling my
 own solution to things. I will not always have time to do these kinds of things; 
 I figure I should do them when I&amp;nbsp;can.&lt;/p&gt;
-&lt;p&gt;So here&amp;#8217;s to &lt;a href="http://step-stool.io"&gt;Step Stool&lt;/a&gt;, and&amp;#8212;more importantly&amp;#8212;to writing your own
+&lt;p&gt;So here&amp;#8217;s to &lt;a href="http://step-stool.io"&gt;Step Stool&lt;/a&gt;, and&amp;#8211;more importantly&amp;#8211;to writing your own
 software just to scratch that&amp;nbsp;itch.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
@@ -836,7 +836,7 @@ software just to scratch that&amp;nbsp;itch.&lt;/p&gt;
 &lt;p&gt;I spent quite a bit of time tweaking my friend Vernon King&amp;#8217;s &lt;a href="http://www.vernonking.org"&gt;Jekyll-powered site&lt;/a&gt;, I got Winning Slowly off the ground,
 including designing the site from scratch and implementing it (also in Pelican),
 and I did some substantial redesign work on this site. That was more than enough
-for my three week break&amp;#8212;as evidenced by the fact that I didn&amp;#8217;t get to the sort
+for my three week break&amp;#8211;as evidenced by the fact that I didn&amp;#8217;t get to the sort
 of 1.0 version of this site until just a week or so ago.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:2"&gt;
@@ -851,8 +851,8 @@ Hong Kong at 72.49 Mbps and Singapore on 58.84 Mbps. And America? Averaging
 speeds of 20.77 Mbps, it falls behind countries like Estonia, Hungary,
 Slovakia, and&amp;nbsp;Uruguay.&lt;/p&gt;
 &lt;/blockquote&gt;</summary><category term="links"></category></entry><entry><title>Goodbye, Chrome</title><link href="http://www.chriskrycho.com/2014/goodbye-chrome.html" rel="alternate"></link><updated>2014-02-24T15:20:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-02-24:2014/goodbye-chrome.html</id><summary type="html">&lt;p&gt;Last week, Chrome crossed the line for me. I deleted it from my system to clean
-up its many hooks into my system&amp;#8212;I searched out every trace of it I could
-find&amp;#8212;and will put it back on my system only for testing websites. Why? Because
+up its many hooks into my system&amp;#8211;I searched out every trace of it I could
+find&amp;#8211;and will put it back on my system only for testing websites. Why? Because
 it&amp;#8217;s just too creepy&amp;nbsp;now.&lt;/p&gt;
 &lt;p&gt;Here&amp;#8217;s the story: two weekends ago, I was sitting at a coffee shop working on a
 friend&amp;#8217;s website, when up popped a series of Google Now &lt;span class="caps"&gt;OS&lt;/span&gt; X desktop
@@ -877,7 +877,7 @@ permission in all&amp;nbsp;contexts.&lt;/p&gt;
 place legally allowed them to continue touching it. That did not particularly
 bother me. Rather, it was the assumption that I wanted the same kind of
 interactions from the service in a different context. This is typical of Google
-&amp;#8212;typically un-human-friendly, that is. People do different things with their
+&amp;#8211;typically un-human-friendly, that is. People do different things with their
 phones than with their browsers, and have different expectations of what each
 will do. More importantly, though, even if we might &lt;em&gt;want&lt;/em&gt; our browsers to start
 supplying us the kinds of sometimes-valuable information that we get from Google
@@ -885,7 +885,7 @@ Now (or Apple or Microsoft&amp;#8217;s similar tools), we generally want the opp
 to make that decision. Increasingly, Google is making that decision for its
 users, leaving them to opt out and turn it off if they so desire. That is not a
 policy I particularly like. So: strike one. Or rather: strike several dozen, of
-the sort that had me moving away from Google&amp;#8217;s services for quite some time&amp;#8212;
+the sort that had me moving away from Google&amp;#8217;s services for quite some time&amp;#8211;
 but it probably still wouldn&amp;#8217;t have pushed me across the line to this kind of
 hard kill-it-with-fire&amp;nbsp;mentality.&lt;/p&gt;
 &lt;p&gt;What did? That would be the part where Chrome started sending me desktop Google
@@ -910,7 +910,7 @@ too far. This was not just slightly unnerving. It was&amp;nbsp;creepy.&lt;/p&gt;
 likely, were the other cases I saw above. But these are the kinds of bugs that
 make a browser fundamentally untrustworthy, and they are the kinds of bugs that
 are that much creepier coming from a company whose profit comes almost entirely
-from selling advertising&amp;#8212;that is, from selling user information to advertising
+from selling advertising&amp;#8211;that is, from selling user information to advertising
 companies. The deal was that we trusted Google not to abuse that information.
 Unfortunately, that deal just keeps getting worse all the time. (Pray they do
 not alter it&amp;nbsp;further.)&lt;/p&gt;

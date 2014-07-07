@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/design.xml" rel="self"></atom:link><lastBuildDate>Fri, 04 Apr 2014 21:30:00 -0400</lastBuildDate><item><title>Feels Right</title><link>http://www.chriskrycho.com/2014/feels-right.html</link><description>&lt;p&gt;I had spent most of the last week and a half working on getting
 &lt;a href="http://www.firebirdsql.org"&gt;FirebirdSQL&lt;/a&gt; configured and ready to use for a project I&amp;#8217;m working on with
 &lt;a href="http://www.questconsult.com"&gt;Quest Consultants&lt;/a&gt;. It was slow going. The tool is decent, but the
-documentation is spotty and it felt like everything was just a bit of a slog&amp;#8212;to
+documentation is spotty and it felt like everything was just a bit of a slog&amp;#8211;to
 get it working correctly, to get it playing nicely with other pieces of the
 development puzzle, to get it working across platforms.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; Then, because I had
 done something a &lt;em&gt;little&lt;/em&gt; bit silly in my eagerness to get up and going last
@@ -14,8 +14,8 @@ conversation with user &lt;em&gt;agronholm&lt;/em&gt; on the &lt;a href="http://
 one of their options as an &amp;#8220;embedded&amp;#8221; server, but &lt;em&gt;agronholm&lt;/em&gt; pointed out that
 what they really mean is &lt;em&gt;portable&lt;/em&gt;. It&amp;#8217;s running a standalone server and
 client, but it&amp;#8217;s not part of the same thread/process (like SQLite is). Then
-&lt;em&gt;agronholm&lt;/em&gt; very helpfully asked&amp;#8212;my having mentioned my preference for
-&lt;a href="http://www.postgresql.org"&gt;PostgreSQL&lt;/a&gt; earlier&amp;#8212;&amp;#8221;Does Postgres not have a portable version?&amp;#8221;
+&lt;em&gt;agronholm&lt;/em&gt; very helpfully asked&amp;#8211;my having mentioned my preference for
+&lt;a href="http://www.postgresql.org"&gt;PostgreSQL&lt;/a&gt; earlier&amp;#8211;&amp;#8221;Does Postgres not have a portable version?&amp;#8221;
 Two minutes later, we had both found &lt;a href="http://sourceforge.net/projects/postgresqlportable/"&gt;PostgreSQL Portable&lt;/a&gt;, and I&amp;nbsp;rejoiced.&lt;/p&gt;
 &lt;p&gt;It took me less than half an hour to get it downloaded and set up and to confirm
 that it would work the way we need for this particular piece of software.
@@ -27,7 +27,7 @@ been an especially frustrating work day now had me quietly smiling to myself
 constantly for the last two and a half hours as I &lt;a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception/22872598#22872598"&gt;finished&lt;/a&gt; tracking
 down the bug that had set me on this path in the first&amp;nbsp;place.&lt;/p&gt;
 &lt;p&gt;Several years ago, when I first started doing web development, I got my feet wet
-in database work with MySQL&amp;#8212;probably the single most common starting point for
+in database work with MySQL&amp;#8211;probably the single most common starting point for
 anyone going that route, courtesy of the ubiquity of the standard Linux-Apache-
 MySQL-&lt;span class="caps"&gt;PHP&lt;/span&gt; stack.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; A year after that, I picked up some work that was already
 using PostgreSQL and fell in love almost immediately.&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt; Something just felt
@@ -39,8 +39,8 @@ MySQL out of convenience on shared hosting from time to time, PostgreSQL is
 unquestionably my preferred database&amp;nbsp;target.&lt;/p&gt;
 &lt;p&gt;Today&amp;#8217;s experience brought that all home again. That grin on my face all
 afternoon felt a bit silly, but it highlights the difference that really good
-software design makes. I am not just talking about how it looks here&amp;#8212;though,
-to be sure, PostgreSQL is prettier than FirebirdSQL&amp;#8212;but how it works.
+software design makes. I am not just talking about how it looks here&amp;#8211;though,
+to be sure, PostgreSQL is prettier than FirebirdSQL&amp;#8211;but how it works.
 PostgreSQL feels responsive, its command set makes a lot of sense and is easy to
 use, and it is &lt;em&gt;extremely&lt;/em&gt; well documented. In fact, I would go so far as to say
 that it is the best documented open source software I have ever used, as well as
@@ -50,14 +50,14 @@ means an expert on either, or on open source software in general, but the Linux
 kernel is an unarguably amazing piece of work. So is PostgreSQL.) All those tiny
 little details add&amp;nbsp;up.&lt;/p&gt;
 &lt;p&gt;It&amp;#8217;s a good reminder for me as I write software that yes, the things I care
-about&amp;#8212;the small matters that would be so easy to overlook when customers
-express no interest in them&amp;#8212;really do matter. People may not know that things
+about&amp;#8211;the small matters that would be so easy to overlook when customers
+express no interest in them&amp;#8211;really do matter. People may not know that things
 like typography make a difference in their experience, but those subtle, often
 imperceptible things matter. They may not consciously notice the differences in
 your interface design (even a command line interface), but it will change their
 experience of the software. Do it poorly, or even in a just-good-enough-to-get-
 by fashion, and you&amp;#8217;ll annoy or simply bore them. Do it well, and you might just
-delight them&amp;#8212;even if they can&amp;#8217;t tell you&amp;nbsp;why.&lt;/p&gt;
+delight them&amp;#8211;even if they can&amp;#8217;t tell you&amp;nbsp;why.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2 id="examples"&gt;Examples&lt;/h2&gt;
 &lt;p&gt;To make my point a little more visible, I thought it might be useful to post
@@ -91,7 +91,7 @@ SET TERM ; +
   CONSTRAINT unique_file UNIQUE (file_name, file_location)
 );
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;It is not just that the PostgreSQL example is shorter and clearer&amp;#8212;it is that
+&lt;p&gt;It is not just that the PostgreSQL example is shorter and clearer&amp;#8211;it is that
 it is shorter and clearer because its designers and developers have taken the
 time to make sure that the shorter, cleaner way works well, and have documented
 it so you can know how to use that shorter cleaner way without too much&amp;nbsp;difficulty.&lt;/p&gt;
@@ -172,8 +172,8 @@ is predicated on the idea that it is natural to open a new tab with that juicy
 Buzzfeed content while keeping Facebook itself open in a background tab. Would
 it work in that old linear model? Sort of. Would it feel natural?&amp;nbsp;Never.&lt;/p&gt;
 &lt;p&gt;All of this because of tabs. Invention&amp;#8217;s most significant results are rarely
-those the minds behind it expect. When we are designing things&amp;#8212;whether a piece
-of furniture or a piece of the web&amp;#8212;we have to remember that design decisions
+those the minds behind it expect. When we are designing things&amp;#8211;whether a piece
+of furniture or a piece of the web&amp;#8211;we have to remember that design decisions
 all have repercussions that we may not see. Technology is never neutral.
 Particular innovations may or may not be &lt;em&gt;morally&lt;/em&gt; significant, but they always
 produce changes in people&amp;#8217;s behavior. Design has&amp;nbsp;consequences.&lt;/p&gt;
@@ -187,11 +187,11 @@ like and viral-cat-picture-like sites, too. I am not concerned with the
 &lt;/li&gt;
 &lt;li id="fn:2"&gt;
 &lt;p&gt;Note that I am not crediting Firefox 1.0 with &lt;em&gt;creating&lt;/em&gt; the tabbed
-browser&amp;#8212;only with popularizing it. That distinction matters.&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+browser&amp;#8211;only with popularizing it. That distinction matters.&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:3"&gt;
 &lt;p&gt;Excepting having multiple browser windows open, which I am sure people
-did&amp;#8212;but to a much lesser extent.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+did&amp;#8211;but to a much lesser extent.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:4"&gt;
 &lt;p&gt;Yes, yes, browser history and re-open closed tab commands. But the
