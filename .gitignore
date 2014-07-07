@@ -2,6 +2,9 @@
 *~
 .*\#
 
+# Cache files
+cache
+
 # OS X Finder files
 .DS_Store
 
