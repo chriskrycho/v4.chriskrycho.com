@@ -67,6 +67,11 @@ TYPOGRIFY = True
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
+# Content caching for faster builds
+CACHE_CONTENT = True
+LOAD_CONTENT_CACHE = True
+CHECK_MODIFIED_METHOD = 'md5'
+
 # URLs
 ARTICLE_URL = '{date:%Y}/{slug}.html'
 ARTICLE_SAVE_AS = '{date:%Y}/{slug}.html'
