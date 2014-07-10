@@ -36,5 +36,4 @@ choice), it occurred to me:
     when I feel like it, as well. That, too, can only be a good thing.
 12. After all: I am happier when I am writing.[^12]
 
-[^12]: As I have so often [noted before](http://www.chriskrycho.com/2014/the-
-    long-race.html)...
+[^12]: As I have so often [noted before](http://www.chriskrycho.com/2014/the-long-race.html)...
