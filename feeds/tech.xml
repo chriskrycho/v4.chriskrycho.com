@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2014-07-11T10:35:00-04:00</updated><entry><title>Economies of Scale</title><link href="http://www.chriskrycho.com/2014/economies-of-scale.html" rel="alternate"></link><updated>2014-07-11T10:35:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-11:2014/economies-of-scale.html</id><summary type="html">&lt;p&gt;I was reading through an interesting Ars Technica &lt;a href=""&gt;article&lt;/a&gt; on the new Long
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2014-07-11T18:50:00-04:00</updated><entry><title>Goodbye, Notifications</title><link href="http://www.chriskrycho.com/2014/goodbye-notifications.html" rel="alternate"></link><updated>2014-07-11T18:50:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-11:2014/goodbye-notifications.html</id><summary type="html">&lt;p&gt;In &lt;a href="http://atp.fm/episodes/73" title="73: Notifications Duck"&gt;this week&amp;#8217;s episode&lt;/a&gt; of &lt;a href="http://atp.fm"&gt;Accidental Tech Podcast&lt;/a&gt;, hosts Casey Liss
+and John Siracusa mentioned that they have the sound aspect of notifications
+disabled on their iDevices (Liss&amp;#8217; iPhone, Siracusa&amp;#8217;s iPod Touch). Strange though
+it might seem, the thought hadn&amp;#8217;t occurred to me. I like getting the notice of
+things having happened on my social media accounts, but I&amp;#8217;d concluded recently
+that I actively disliked having the interruption even of a buzz in my pocket: it
+forces a mental context shift which inevitably degrades my concentration on
+whatever task I am&amp;nbsp;about.&lt;/p&gt;
+&lt;p&gt;I spent ten minutes this evening and went through my iPhone&amp;#8217;s notification
+settings. The only things which have audible or vibrating notifications now are
+phone calls (including FaceTime) and text messages. Everything else I disabled.
+Now, I still have notifications on a number of other items: they can show up in
+Notification Center, and they can put markers on the home screen apps. After
+all: if I already have my phone out, it is almost certainly no problem to see a
+notification come in, and I definitely want to be able to glance at the app on
+my home screen and see that someone has interacted with me in some way. But when
+I &lt;em&gt;don&amp;#8217;t&lt;/em&gt; have my phone out? It is unhelpful. It is&amp;nbsp;distracting.&lt;/p&gt;
+&lt;p&gt;I actually turned on app badges for a number of apps for which I had previously
+disabled them, because they had been extraneous when I was getting noises or
+buzzes for the apps and services in question. I also tweaked a number of other
+apps: some can show app badges but not appear in notification center. Most
+cannot show anything on the lock screen at all. If I want to check on
+notifications, I can look&amp;nbsp;explicitly.&lt;/p&gt;
+&lt;p&gt;We will see how the experiment goes. Even just a few hours in, though, I can
+already say I like it. I did &lt;em&gt;not&lt;/em&gt; get any buzzing in my pocket when a few
+people interacted with me on App.net, or Instagram, or anywhere else. And,
+social media being what it is, none of those interactions are temporally
+important (however much it might feel otherwise). They will still be there
+waiting when I get&amp;nbsp;back.&lt;/p&gt;
+&lt;p&gt;Now, this does not automatically make me more productive. I still need self
+control to be most effective in using my time. It does take away a few of the
+most obvious distractions and interruptions that make it hard to focus, though,
+and that is &lt;em&gt;definitely&lt;/em&gt; a&amp;nbsp;win.&lt;/p&gt;</summary></entry><entry><title>Economies of Scale</title><link href="http://www.chriskrycho.com/2014/economies-of-scale.html" rel="alternate"></link><updated>2014-07-11T10:35:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-11:2014/economies-of-scale.html</id><summary type="html">&lt;p&gt;I was reading through an interesting Ars Technica &lt;a href=""&gt;article&lt;/a&gt; on the new Long
 Range Strike Bomber (&lt;span class="caps"&gt;LRS&lt;/span&gt;-B) proposal the Air Force is soliciting. It&amp;#8217;s generally
 interesting to me in part because I&amp;#8217;ve worked on a related project in the past,
 and we talked fairly often about how the &lt;span class="caps"&gt;LRS&lt;/span&gt;-B program might impact it. The
