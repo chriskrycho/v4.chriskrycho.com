@@ -1,5 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 09 Jul 2014 21:15:00 -0400</lastBuildDate><item><title>A Few Theses on Blogging</title><link>http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html</link><description>&lt;p&gt;I am a habitually&amp;#8212;even chronically&amp;#8212;long-winded blogger. I always have been.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 11 Jul 2014 10:35:00 -0400</lastBuildDate><item><title>Economies of Scale</title><link>http://www.chriskrycho.com/2014/economies-of-scale.html</link><description>&lt;p&gt;I was reading through an interesting Ars Technica &lt;a href=""&gt;article&lt;/a&gt; on the new Long
+Range Strike Bomber (&lt;span class="caps"&gt;LRS&lt;/span&gt;-B) proposal the Air Force is soliciting. It&amp;#8217;s generally
+interesting to me in part because I&amp;#8217;ve worked on a related project in the past,
+and we talked fairly often about how the &lt;span class="caps"&gt;LRS&lt;/span&gt;-B program might impact it. The
+article is worth your time. This quote from Robert Gates in the middle of the
+article, which touches on the program the &lt;span class="caps"&gt;LRS&lt;/span&gt;-B would replace, caught my
+attention,&amp;nbsp;though:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What we must not do is repeat what happened with our last manned bomber. By
+the time the research, development, and requirements processes ran their
+course, the aircraft, despite its great capability, turned out to be so
+expensive&amp;#8212;$2 billion each in the case of the B-2&amp;#8212;that less than one-sixth
+of the planned fleet of 132 was ever&amp;nbsp;built.&lt;/p&gt;
+&lt;p&gt;Looking ahead, it makes little sense to pursue a future bomber&amp;#8212;a prospective
+B-3, if you will&amp;#8212;in a way that repeats this history. We must avoid a
+situation in which the loss of even one aircraft&amp;#8212;by accident, or in
+combat&amp;#8212;results in a loss of a significant portion of the fleet, a national
+disaster akin to the sinking of a capital ship. This scenario raises our costs
+of action and shrinks our strategic options, when we should be looking to the
+kind of weapons systems that limit the costs of action and expand our&amp;nbsp;options.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now, in one sense, Gates was absolutely right. On the other hand, he seems to
+have committed a classic blunder in dealing with these kinds of costs: economies
+of scale matter. Part of the reason the per-unit price of the B-2 was so high
+was precisely that we only bought 20 of them. While the units were individually
+expensive to manufacture and maintain, because of unique materials used in their
+construction and so on, they were much &lt;em&gt;more&lt;/em&gt; expensive to manufacture in small
+numbers than they would have been in large numbers. There are basically two
+reasons for&amp;nbsp;this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The manufacturing process couldn&amp;#8217;t do what it does best (turn out large
+    numbers of standardized parts and thereby reduce&amp;nbsp;costs).&lt;/li&gt;
+&lt;li&gt;The costs of development—research, software development, etc.&amp;#8212;were all
+    distributed over a much smaller pool than they would have been had the
+    government purchased more&amp;nbsp;aircraft.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This second point is incredibly important to understand. It is certainly true
+that the absolute cost of buying 132 B-2s would have been high, possibly
+astronomically and unaffordably high. What it would &lt;em&gt;not&lt;/em&gt; have been is $264
+billion. Even assuming that manufacture costs were fully half of the cost-per-
+plane (almost certainly not the case), it would have been barely over half that.
+Assume that the B-2 cost $1B per plane to build, and that the other $10B was
+research. Well, that&amp;#8217;s still an expensive plan&amp;#8230; but the total cost is
+something like $144B, not $264B. Those economies of scale&amp;nbsp;matter.&lt;/p&gt;
+&lt;p&gt;This same reality is a point made later in the article by another commentator,
+but I couldn&amp;#8217;t let it go. Things like this drive me nuts, because they&amp;#8217;re such a
+common failing in our political discourse. Ignorance of basic economics from the
+people making decisions with this kind of economic impact is profoundly&amp;nbsp;unhelpful.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 11 Jul 2014 10:35:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-07-11:2014/economies-of-scale.html</guid></item><item><title>A Few Theses on Blogging</title><link>http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html</link><description>&lt;p&gt;I am a habitually&amp;#8212;even chronically&amp;#8212;long-winded blogger. I always have been.
 I sat down a few weeks ago to write up an explanation of my running approach,
 and I haven&amp;#8217;t finished it yet&amp;#8230; because it is over 2,500 words long and growing
 rapidly longer. But as I have considered my approach to blogging of late, and as
