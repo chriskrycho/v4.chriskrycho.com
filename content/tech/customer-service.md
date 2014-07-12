@@ -1,7 +1,7 @@
 Title: Don't Be Rude
 Subtitle: Or: Why I Won't Be Upgrading to Billings Pro
 Author: Chris Krycho
-Date: 2014-07-12 14:30
+Date: 2014-07-12 15:30
 Description: Customer service matters. In this post, I explain how I bid a company adieu because they talked down to me. Don&lsquo;t be like them.
 
 The quickest way to make me bid your company or product farewell is to patronize
@@ -114,8 +114,43 @@ always someone to respect. The moment you stop treating your customer with
 respect is the moment you cross the line into being a company with which I want
 to do business to one I will avoid.
 
+---
+
+###### Edit and Addendum:
+
+When I posted this on App.net, a few thoughtful acquaintances [pushed
+back][conv], noting that the customer service interactions did *not* read as
+condescending to them. It is possible that I misread the original customer
+service rep's tone in interacting in me. This is a constant danger in dealing
+with text-only communication. I take some responsibility for that---but I also
+note that the frustration had already built up in the course of a conversation
+that had already included a number of failures to respond to address or respond
+to my questions and concerns.
+
+I should also note that I didn't mean this as a critique of MarketCircle in
+particular, though re-reading the post in light of the response, it is clear it
+comes off more that way than I intended. My interactions with MarketCircle were
+meant simply to illustrate the broader point: customer service matters, and
+even one bad customer experience can turn off a customer.
+
+But the takeaway from this addendum is a bit different: I can sympathize with
+the difficulties facing the customer service rep. I failed at precisely the same
+task of communicating my intent in writing effectively. Now, whether that rep
+meant it the way I took it or the way others took it in reading the post, he
+certainly did not accomplish what he meant to with the exchange. My sympathies
+are with him. I am perfectly willing (though not perhaps *happy*; humility is
+rarely particularly pleasant) to say that I got it wrong here.
+
+All that being said... I still have a bad taste in my mouth, and I am still
+leery of doing further business with MarketCircle. And that *does* make the
+original point in a way, because the emotional response from a bad experience,
+even one you did not intend, doesn't fade quickly or at all, even in the face of
+reasonable articulations of alternative explanations for the bad experience. You
+have to work at a good customer experience continually.
+
 [mc]: https://www.marketcircle.com
 [billings]: https://www.marketcircle.com/billingspro/
 [upgrade]: https://www.marketcircle.com/blog/streamlining-the-billings-product-line/
 [discount]: https://www.marketcircle.com/billingspro/offer/
 [h]: http://www.getharvest.com/
+[conv]: https://alpha.app.net/chriskrycho/post/34459957
