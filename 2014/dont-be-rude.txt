@@ -41,7 +41,7 @@ product. I was quite willing to look at their Pro plan, and possibly even to
 invest in it, despite the fact that I did not *need* it, because I believe in
 supporting the developers of the software I use.
 
-I emailed them a couple follow-up questions. One of them, and among th most
+I emailed them a couple follow-up questions. One of them, and among the most
 important to me because of how I work for one particular client:
 
 > I note that in Billings Pro, unlike in Billings, I can't track multiple slips
