@@ -1,5 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2014-07-11T18:50:00-04:00</updated><entry><title>Goodbye, Notifications</title><link href="http://www.chriskrycho.com/2014/goodbye-notifications.html" rel="alternate"></link><updated>2014-07-11T18:50:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-11:2014/goodbye-notifications.html</id><summary type="html">&lt;p&gt;In &lt;a href="http://atp.fm/episodes/73" title="73: Notifications Duck"&gt;this week&amp;#8217;s episode&lt;/a&gt; of &lt;a href="http://atp.fm"&gt;Accidental Tech Podcast&lt;/a&gt;, hosts Casey Liss
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2014-07-12T14:30:00-04:00</updated><entry><title>Don’t Be Rude</title><link href="http://www.chriskrycho.com/2014/dont-be-rude.html" rel="alternate"></link><updated>2014-07-12T14:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-12:2014/dont-be-rude.html</id><summary type="html">&lt;p&gt;The quickest way to make me bid your company or product farewell is to patronize
+me. Don&amp;#8217;t talk down to me. Never treat me like anything but an adult. The moment
+you do, I am&amp;nbsp;gone.&lt;/p&gt;
+&lt;p&gt;Given which: farewell &lt;a href="https://www.marketcircle.com"&gt;MarketCircle&lt;/a&gt;, and adieu &lt;a href="https://www.marketcircle.com/billingspro/"&gt;Billings&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;A story: When I started working as a freelance software developer on the side a
+few years ago,&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; I looked at my options for tracking time and invoicing
+clients. I eventually settled on &lt;a href="https://www.marketcircle.com/billingspro/"&gt;Billings&lt;/a&gt;, by &lt;a href="https://www.marketcircle.com"&gt;MarketCircle&lt;/a&gt;.
+It&amp;#8217;s solid software: it is reliable, works well, and does everything I need it
+to, including tracking different clients and projects easily and sending them
+estimates or invoices. Best of all, from my perspective, it was a local app. You
+&lt;em&gt;could&lt;/em&gt; sync with a server out in the cloud somewhere via Billings Pro, but you
+did not have to, and you could use the Mac-native application, not some web app
+out there. Last but not least, it had a &lt;em&gt;great&lt;/em&gt; menubar app. I was sold, and I
+gladly dropped $40 for a single-user&amp;nbsp;license.&lt;/p&gt;
+&lt;p&gt;Fast forward to June 2013. MarketCircle, like a lot of software development
+companies, came to the conclusion that it is &lt;em&gt;really&lt;/em&gt; hard to develop software
+as a series of discrete releases, for which you get people to pay over and over
+again. Perfectly sensibly, they &lt;a href="https://www.marketcircle.com/blog/streamlining-the-billings-product-line/"&gt;discontinued development&lt;/a&gt; on and
+support for their standalone software and provided &lt;a href="https://www.marketcircle.com/billingspro/offer/"&gt;a (discounted!) migration
+path&lt;/a&gt; for users to upgrade to the Pro (syncing, etc.) version of the
+software. Note that they did &lt;em&gt;not&lt;/em&gt; do anything to disable functionality in
+existing Billings installations&amp;#8212;just provided an upgrade path and stopped
+developing it. That is the right way to handle it. So far so&amp;nbsp;good.&lt;/p&gt;
+&lt;p&gt;I am a software developer, and I have seen the pressures that exist in this
+industry. This move made good business sense to me, and I liked Billings as a
+product. I was quite willing to look at their Pro plan, and possibly even to
+invest in it, despite the fact that I did not &lt;em&gt;need&lt;/em&gt; it, because I believe in
+supporting the developers of the software I&amp;nbsp;use.&lt;/p&gt;
+&lt;p&gt;I emailed them a couple follow-up questions. One of them, and among th most
+important to me because of how I work for one particular&amp;nbsp;client:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I note that in Billings Pro, unlike in Billings, I can&amp;#8217;t track multiple slips
+simultaneously. This is problematic for me, as I often do this to keep track
+of hours worked against a &amp;#8220;Personal projects&amp;#8221; bit so I can see my hourly
+variations. That&amp;#8217;s a make-or-break kind of thing for me—any chance you guys
+will change that&amp;nbsp;behavior?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To elaborate: I like to track my total hours worked every week in a simple way,
+so I have a &amp;#8220;Personal&amp;#8221; timer going alongside the project timer for whatever I am
+doing. The fact that Billings let me do this was one of the selling points for
+me. Even so, I did not necessarily expect them to support the functionality
+going forward. The response I got started out reasonably&amp;nbsp;enough:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We allow you to have multiple active timers, but you can only time one task at
+a time in both applications. In Billings, there was a bug with this, however,
+this was corrected in Billings&amp;nbsp;Pro.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Thus far, fair enough: they saw this as a bug. I disagreed, but I&amp;nbsp;understand.&lt;/p&gt;
+&lt;p&gt;Then this,&amp;nbsp;though:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;While we all multi-task we cannot work on two billable items at&amp;nbsp;once.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;Whoops.&lt;/em&gt; You just talked down to&amp;nbsp;me.&lt;/p&gt;
+&lt;p&gt;You also clearly didn&amp;#8217;t read the original email, because you followed up by
+asking&amp;nbsp;this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Can you explain a little more about what you track and how and I can see if
+there&amp;#8217;s a different way to do this in Billings Pro that will give you the same&amp;nbsp;result?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Hmm. Let me get this straight: I told you what I track and how I use your
+software, and you thought the appropriate response was to instruct me on what I
+can and cannot do with it? Clearly not having even read the original question&amp;nbsp;carefully?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nope.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Let me explain: you don&amp;#8217;t tell your customers that they can&amp;#8217;t use your software
+in ways peculiar to them. You particularly do not do so as though explaining to
+a child that we simply cannot do certain things. If a user has a quirky way of
+using your software, you can of course say you don&amp;#8217;t intend to support that
+quirky behavior&amp;#8212;but you do not get to tell them that their unanticipated usage
+is &lt;em&gt;wrong&lt;/em&gt;, and especially not in a condescending&amp;nbsp;tone&lt;/p&gt;
+&lt;p&gt;I cancelled my Billings Pro trial within five minutes of receiving that email.
+The original software I kept: I was at a busy time in the year, switching time-
+tracking software is non-trivial, and it wasn&amp;#8217;t hurting me a bit to keep using
+the original software anyway. As I am evaluating time tracking software again,
+not least because I do not know through how many &lt;span class="caps"&gt;OS&lt;/span&gt; X upgrades Billings will
+continue to perform properly, MarketCircle isn&amp;#8217;t on the list. It only took one
+bad experience to leave a bad taste in my mouth and convince me to move&amp;nbsp;on.&lt;/p&gt;
+&lt;p&gt;At this point, it looks like I&amp;#8217;m headed to &lt;a href="http://www.getharvest.com/"&gt;Harvest&lt;/a&gt;. It turns out they don&amp;#8217;t
+support multiple timers, either. But they haven&amp;#8217;t talked down to me, and that
+makes all the difference in the&amp;nbsp;world.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;There is a takeaway here for anyone paying attention. Namely: respect your
+customers. Do not talk down to them. Do not assume their uses for your software
+are wrong, or stupid, even if they are not what you intended. (If anything, that
+means your users have thought of use cases you&amp;nbsp;didn&amp;#8217;t.)&lt;/p&gt;
+&lt;p&gt;It is going to far to say that the customer is always right. Sometimes, the
+customer is wrong. Sometimes, &lt;em&gt;I&lt;/em&gt; am wrong as a customer. But the customer &lt;em&gt;is&lt;/em&gt;
+always someone to respect. The moment you stop treating your customer with
+respect is the moment you cross the line into being a company with which I want
+to do business to one I will&amp;nbsp;avoid.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:1"&gt;
+&lt;p&gt;Early 2010, if you&amp;#8217;re curious.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</summary></entry><entry><title>Goodbye, Notifications</title><link href="http://www.chriskrycho.com/2014/goodbye-notifications.html" rel="alternate"></link><updated>2014-07-11T18:50:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-11:2014/goodbye-notifications.html</id><summary type="html">&lt;p&gt;In &lt;a href="http://atp.fm/episodes/73" title="73: Notifications Duck"&gt;this week&amp;#8217;s episode&lt;/a&gt; of &lt;a href="http://atp.fm"&gt;Accidental Tech Podcast&lt;/a&gt;, hosts Casey Liss
 and John Siracusa mentioned that they have the sound aspect of notifications
 disabled on their iDevices (Liss&amp;#8217; iPhone, Siracusa&amp;#8217;s iPod Touch). Strange though
 it might seem, the thought hadn&amp;#8217;t occurred to me. I like getting the notice of
