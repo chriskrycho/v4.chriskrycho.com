@@ -4,6 +4,25 @@ Author: Chris Krycho
 Date: 2014-07-12 15:30
 Description: Customer service matters. In this post, I explain how I bid a company adieu because they talked down to me. Don&lsquo;t be like them.
 
+###### Note
+I have left the original post here as I wrote it, but there is an important
+[addendum](#edit-and-addendum) at the bottom of the post that you should make
+sure to read (and note in particular the [further addendum](#further-addendum)).
+
+This post came off as pretty critical of MarketCircle, and that *really* wasn't
+my point. I wanted to use a bad experience I had with MarketCircle to illustrate
+a general principle, *not* to poke at any particular company. I did that poorly
+in this particular piece; for some follow-up on that see [this
+post](http://www.chriskrycho.com/2014/i-wrote-it-wrong.html) which I wrote later
+that day, analyzing how and why this piece so spectacularly failed to accomplish
+my desired goals.
+
+In any case, I do not want this piece to turn people off of using MarketCircle's
+software. I leave the unedited version below because I believe in having the
+intellectual integrity to own one's mistakes. This was one of mine.
+
+---
+
 The quickest way to make me bid your company or product farewell is to patronize
 me. Don't talk down to me. Never treat me like anything but an adult. The moment
 you do, I am gone.
@@ -116,7 +135,7 @@ to do business to one I will avoid.
 
 ---
 
-###### Edit and Addendum:
+###### Edit and Addendum
 
 When I posted this on App.net, a few thoughtful acquaintances [pushed
 back][conv], noting that the customer service interactions did *not* read as
@@ -147,6 +166,11 @@ original point in a way, because the emotional response from a bad experience,
 even one you did not intend, doesn't fade quickly or at all, even in the face of
 reasonable articulations of alternative explanations for the bad experience. You
 have to work at a good customer experience continually.
+
+###### Further Addendum
+MarketCircle actually saw this piece---presumably via my link on Twitter---and
+got back to me, looking to fix this issue, which I really appreciated. In some
+sense, then, they *are* doing exactly what I advocated in this piece.
 
 [mc]: https://www.marketcircle.com
 [billings]: https://www.marketcircle.com/billingspro/
