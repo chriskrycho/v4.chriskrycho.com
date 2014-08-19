@@ -3,6 +3,7 @@ Subtitle: A Plea for Sanity
 Author: Chris Krycho
 Date: 2014-08-18 22:00
 Description: With reference to history, witness, and textual issues, an argument for greater humility in the discussion of the meaning of Genesis 1, and particular for a willingness to be charitable to those with whom we disagree.
+Slug: earth-age-inerrancy
 
 <i class="editorial">A brief note on the title: I unabashedly stole it from D.A.
 Carson's very helpful little book,
