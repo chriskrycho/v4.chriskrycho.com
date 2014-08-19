@@ -213,14 +213,20 @@ strong {
 }
 
 hr {
-    margin: {
-        top: $fs3;
-        bottom: $fs3;
+    display: none;
+    
+    & + p::first-letter {
+        font-size: 4em;
+        float: left;
+        margin-top: -0.5em;
+        margin-bottom: -0.425em;
     }
-    border-top: 1px solid;
-    height: 0;
-    width: 46.5%;
-
+    
+    & + p::first-line {
+        @include first-line();
+    }
+    
+    
 }
 
 // Special styles
@@ -428,11 +434,6 @@ article {
     }
 
     .content {
-
-        @mixin first-line() {
-            font-family: 'gentium_plus_smcp';
-            @include font-feature-settings('smcp');
-        }
 
         > p:first-of-type {
             &:first-line {
