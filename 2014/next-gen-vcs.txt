@@ -84,9 +84,9 @@ developers who have adopted it and concluded that the way Git works is the way a
 distributed version control system *should* work.
 
 But Git (and, though to a slightly lesser extent because of their saner
-branching models[^history]) is complicated to use and in need of tools for
-managing its complexity. This is what has given rise to the [plethora][git flow]
-of [different][github flow] formal [workflows][gitlab flow] representing various
+branching models) is complicated to use and in need of tools for managing its
+complexity. This is what has given rise to the [plethora][git flow] of
+[different][github flow] formal [workflows][gitlab flow] representing various
 attempts to manage that complexity (which have been [applied][hg flow] to other
 systems [as well][hg flow intro]). Managing branching, linking that workflow to
 issues, and supplying associated documentation for projects have also cropped up

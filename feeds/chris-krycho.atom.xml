@@ -48,9 +48,9 @@ result has been wide adoption of Git, and a degree of Stockholm Syndrome among
 developers who have adopted it and concluded that the way Git works is the way a
 distributed version control system &lt;em&gt;should&lt;/em&gt;&amp;nbsp;work.&lt;/p&gt;
 &lt;p&gt;But Git (and, though to a slightly lesser extent because of their saner
-branching models&lt;sup id="fnref:history"&gt;&lt;a class="footnote-ref" href="#fn:history" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;) is complicated to use and in need of tools for
-managing its complexity. This is what has given rise to the &lt;a href="http://nvie.com/posts/a-successful-git-branching-model/"&gt;plethora&lt;/a&gt;
-of &lt;a href="http://scottchacon.com/2011/08/31/github-flow.html"&gt;different&lt;/a&gt; formal &lt;a href="https://about.gitlab.com/2014/09/29/gitlab-flow/"&gt;workflows&lt;/a&gt; representing various
+branching models) is complicated to use and in need of tools for managing its
+complexity. This is what has given rise to the &lt;a href="http://nvie.com/posts/a-successful-git-branching-model/"&gt;plethora&lt;/a&gt; of
+&lt;a href="http://scottchacon.com/2011/08/31/github-flow.html"&gt;different&lt;/a&gt; formal &lt;a href="https://about.gitlab.com/2014/09/29/gitlab-flow/"&gt;workflows&lt;/a&gt; representing various
 attempts to manage that complexity (which have been &lt;a href="https://bitbucket.org/yujiewu/hgflow/wiki/Home"&gt;applied&lt;/a&gt; to other
 systems &lt;a href="https://andy.mehalick.com/2011/12/24/an-introduction-to-hgflow"&gt;as well&lt;/a&gt;). Managing branching, linking that workflow to
 issues, and supplying associated documentation for projects have also cropped up
