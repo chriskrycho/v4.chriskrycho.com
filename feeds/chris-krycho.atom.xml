@@ -43,10 +43,10 @@ mean &lt;a href="https://github.com"&gt;GitHub&lt;/a&gt;, which is a &lt;em&gt;f
 most significant driving factor in the wider adoption of Git as a tool. The
 competition (&lt;a href="https://bitbucket.org"&gt;Bitbucket&lt;/a&gt; and &lt;a href="https://launchpad.net"&gt;Launchpad&lt;/a&gt;) are nowhere near
 the same level of sophistication or elegance, and they certainly have not
-managed to foster the sorts of community that GitHub has. But although the
-result has been wide adoption of Git, and a degree of Stockholm Syndrome among
-developers who have adopted it and concluded that the way Git works is the way a
-distributed version control system &lt;em&gt;should&lt;/em&gt;&amp;nbsp;work.&lt;/p&gt;
+managed to foster the sorts of community that GitHub has. The result has been
+wide adoption of Git, and a degree of Stockholm Syndrome among developers who
+have adopted it and concluded that the way Git works is the way a distributed
+version control system &lt;em&gt;should&lt;/em&gt; work. (It is&amp;nbsp;not.)&lt;/p&gt;
 &lt;p&gt;But Git (and, though to a slightly lesser extent because of their saner
 branching models) is complicated to use and in need of tools for managing its
 complexity. This is what has given rise to the &lt;a href="http://nvie.com/posts/a-successful-git-branching-model/"&gt;plethora&lt;/a&gt; of
