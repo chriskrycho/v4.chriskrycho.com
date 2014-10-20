@@ -5,8 +5,8 @@ from __future__ import unicode_literals
 AUTHOR = 'Chris Krycho'
 SITENAME = 'Chris Krycho'
 SITEURL = ''
-SITE_DESCRIPTION = 'Creativity, reflection, & passionate endeavors by a peculiar fellow'
-SITE_DESCRIPTION_HTML = 'Creativity, reflection, & passionate endeavors<br class="optional"/> by a peculiar fellow'
+SITE_DESCRIPTION = 'Creativity, reflection, & varied endeavors by a peculiar fellow'
+SITE_DESCRIPTION_HTML = 'Creativity, reflection, & varied endeavors<br class="optional"/> by a peculiar fellow'
 
 TIMEZONE = 'America/New_York'
 DEFAULT_DATE_FORMAT = "%B %d, %Y"
