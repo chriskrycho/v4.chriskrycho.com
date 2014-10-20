@@ -78,10 +78,10 @@ mean [GitHub][github], which is a *fantastic* piece of software and easily the
 most significant driving factor in the wider adoption of Git as a tool. The
 competition ([Bitbucket][bitbucket] and [Launchpad][launchpad]) are nowhere near
 the same level of sophistication or elegance, and they certainly have not
-managed to foster the sorts of community that GitHub has. But although the
-result has been wide adoption of Git, and a degree of Stockholm Syndrome among
-developers who have adopted it and concluded that the way Git works is the way a
-distributed version control system *should* work.
+managed to foster the sorts of community that GitHub has. The result has been
+wide adoption of Git, and a degree of Stockholm Syndrome among developers who
+have adopted it and concluded that the way Git works is the way a distributed
+version control system *should* work. (It is not.)
 
 But Git (and, though to a slightly lesser extent because of their saner
 branching models) is complicated to use and in need of tools for managing its
