@@ -4,6 +4,7 @@ Author: Chris Krycho
 Date: 2014-10-16 21:45
 Tags: software development
 Code: true
+Edited: 2014-10-20 07:25
 Description: The current state of affairs with version control is a mess. Things we can get right next time around.
 
 The current state of affairs in version control systems is a mess. To be sure,
@@ -82,20 +83,21 @@ the same level of sophistication or elegance, and they certainly have not
 managed to foster the sorts of community that GitHub has. The result has been
 wide adoption of Git, and a degree of Stockholm Syndrome among developers who
 have adopted it and concluded that the way Git works is the way a distributed
-version control system *should* work. (It is not.)
+version control system *should* work.
 
-But Git (and, though to a slightly lesser extent because of their saner
-branching models) is complicated to use and in need of tools for managing its
-complexity. This is what has given rise to the [plethora][git flow] of
-[different][github flow] formal [workflows][gitlab flow] representing various
-attempts to manage that complexity (which have been [applied][hg flow] to other
-systems [as well][hg flow intro]). Managing branching, linking that workflow to
-issues, and supplying associated documentation for projects have also cropped up
-as closely associated tasks---thus the popularity of GitHub issues and Bitbucket
-wikis, not to mention [Fossil's][fossil] integration of both into the DVCS tool
-itself. None of the tools handle differences between file systems very elegantly
-(and indeed, it took *years* for Git even to be useable on Windows). All of them
-especially struggle to manage symlinks and executable flags.
+It is not. Git is complicated to use and in need of tools for managing its
+complexity; the same is true of Hg and Bazaar, though perhaps to a slightly
+lesser extent because of their saner branching models. This is what has given
+rise to the [plethora][git flow] of [different][github flow] formal
+[workflows][gitlab flow] representing various attempts to manage that complexity
+(which have been [applied][hg flow] to other systems [as well][hg flow intro]).
+Managing branching, linking that workflow to issues, and supplying associated
+documentation for projects have also cropped up as closely associated tasks---
+thus the popularity of GitHub issues and Bitbucket wikis, not to mention
+[Fossil's][fossil] integration of both into the DVCS tool itself. None of the
+tools handle differences between file systems very elegantly (and indeed, it
+took *years* for Git even to be useable on Windows). All of them especially
+struggle to manage symlinks and executable flags.
 
 So there is an enormous opportunity for the *next* generation of tools. Git, Hg,
 and so on are huge steps forward for developers from CVS, Visual SourceSafe, or
