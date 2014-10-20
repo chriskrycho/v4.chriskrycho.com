@@ -1,5 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Tue, 12 Aug 2014 09:00:00 -0400</lastBuildDate><item><title>Pushing Into C’s Corner Cases</title><link>http://www.chriskrycho.com/2014/pushing-into-cs-corner-cases.html</link><description>&lt;p&gt;I&amp;#8217;m working on a project that is all in C because of its long history and legacy. We&amp;#8217;re slowly modernizing the codebase and writing all our new code in Python (using NumPy, C extensions, and so on for performance where necessary). Occasionally, I just want to bang my head against the wall because there are things we can do so simply in any modern language that you just can&amp;#8217;t do in any straightforward way in C. For example, I have file writers that all work &lt;em&gt;exactly&lt;/em&gt; the same way, with the single exception that the format string and the data that you put into it vary for each&amp;nbsp;file.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Thu, 16 Oct 2014 21:45:00 -0400</lastBuildDate><item><title>The Next Generation of Version Control</title><link>http://www.chriskrycho.com/2014/next-gen-vcs.html</link><description>&lt;p&gt;The current state of affairs in version control systems is a mess. To be sure,
+software development is &lt;em&gt;far&lt;/em&gt; better with &lt;em&gt;any&lt;/em&gt; of the distributed version
+control systems in play&amp;#8212;the three big ones being &lt;a href="http://git-scm.com"&gt;Git&lt;/a&gt;, &lt;a href="http://mercurial.selenic.com"&gt;Mercurial&lt;/a&gt;
+(&lt;code&gt;hg&lt;/code&gt;), and &lt;a href="http://bazaar.canonical.com/en/"&gt;Bazaar&lt;/a&gt; (&lt;code&gt;bzr&lt;/code&gt;), with a few other names like &lt;a href="http://www.fossil-scm.org"&gt;Fossil&lt;/a&gt;
+floating around the periphery&amp;#8212;than it ever was in a centralized version
+control system. There are definitely a few downsides for people converting over
+from some standard centralized version control systems, notably the increased
+number of steps in play to accomplish the same tasks.&lt;sup id="fnref:dad"&gt;&lt;a class="footnote-ref" href="#fn:dad" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; But on the whole,
+the advantages of being able to commit locally, have multiple complete copies of
+the repository, and share work without touching a centralized server far
+outweigh any downsides compared to the old centralized&amp;nbsp;system.&lt;/p&gt;
+&lt;p&gt;That being so, my opening statement remains true, I think: &lt;em&gt;The current state of
+affairs in version control is a mess.&lt;/em&gt; Here is what I mean: of those three major
+players (Git, Hg, and Bazaar), each has significant downsides relative to the
+others. Git is famously wires-exposed, with a user interface design philosphy
+closely matching the &lt;span class="caps"&gt;UI&lt;/span&gt; sensibilities of Linus Torvalds&amp;#8212;which is to say, all
+the wires are exposed, and it is about as user-hostile as it could be.&lt;sup id="fnref:hostile"&gt;&lt;a class="footnote-ref" href="#fn:hostile" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;
+It often outperforms Hg or Bazaar, but it has quirks, to say the very least. Hg
+and Bazaar both have &lt;em&gt;much&lt;/em&gt; better designed user interfaces. They also have
+saner defaults (especially before the arrival of Git 2.0), and they have better
+branching models and approaches to history.&lt;sup id="fnref:history"&gt;&lt;a class="footnote-ref" href="#fn:history" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt; They have substantially
+better documentation&amp;#8212;perhaps especially so with Bazaar, but with either one a
+user can understand how to use the tool &lt;em&gt;without having to understand the
+mechanics of the tool&lt;/em&gt;. This is simply not the case with Git, and while I
+&lt;em&gt;enjoy&lt;/em&gt; knowing the mechanics of Git because I find them interesting, &lt;em&gt;having&lt;/em&gt;
+to understand the mechanics of a tool to be able to use it is a&amp;nbsp;problem.&lt;/p&gt;
+&lt;p&gt;But the other systems have their downsides relative, to Git, too. (I will focus
+on Hg because I have never used Bazaar beyond playing with it, though I have
+read a good bit of the documentation.) Mutable history in Git is valuable and
+useful at times; I have rewritten whole sequences of commits when I realized I
+committed the wrong things but hadn&amp;#8217;t yet pushed.&lt;sup id="fnref:mutable"&gt;&lt;a class="footnote-ref" href="#fn:mutable" rel="footnote"&gt;4&lt;/a&gt;&lt;/sup&gt; Being able to commit
+chunks instead of having to commit whole files at a go is good; I feel the lack
+of this every time I use Hg.&lt;sup id="fnref:patch"&gt;&lt;a class="footnote-ref" href="#fn:patch" rel="footnote"&gt;5&lt;/a&gt;&lt;/sup&gt; (Needing to understand the &lt;em&gt;file system&lt;/em&gt;
+that Git invented to make sure you do not inadvertently destroy your repository
+is&amp;#8230; not so good.) A staging area is nice,&lt;sup id="fnref:queues"&gt;&lt;a class="footnote-ref" href="#fn:queues" rel="footnote"&gt;6&lt;/a&gt;&lt;/sup&gt; (even if &lt;em&gt;having&lt;/em&gt; to stage
+everything manually can be in the pain in the neck&lt;sup id="fnref:dash-a"&gt;&lt;a class="footnote-ref" href="#fn:dash-a" rel="footnote"&gt;7&lt;/a&gt;&lt;/sup&gt;).&lt;/p&gt;
+&lt;p&gt;In short, then, there was no clear winner for this generation. Each of the tools
+has significant upsides and downsides relative to the others. Git has become the
+&lt;em&gt;de facto&lt;/em&gt; standard, but &lt;em&gt;not&lt;/em&gt; because of its own superiority over the
+alternatives. Rather, it won because of other forces in the community. Mostly I
+mean &lt;a href="https://github.com"&gt;GitHub&lt;/a&gt;, which is a &lt;em&gt;fantastic&lt;/em&gt; piece of software and easily the
+most significant driving factor in the wider adoption of Git as a tool. The
+competition (&lt;a href="https://bitbucket.org"&gt;Bitbucket&lt;/a&gt; and &lt;a href="https://launchpad.net"&gt;Launchpad&lt;/a&gt;) are nowhere near
+the same level of sophistication or elegance, and they certainly have not
+managed to foster the sorts of community that GitHub has. But although the
+result has been wide adoption of Git, and a degree of Stockholm Syndrome among
+developers who have adopted it and concluded that the way Git works is the way a
+distributed version control system &lt;em&gt;should&lt;/em&gt;&amp;nbsp;work.&lt;/p&gt;
+&lt;p&gt;But Git (and, though to a slightly lesser extent because of their saner
+branching models&lt;sup id="fnref:history"&gt;&lt;a class="footnote-ref" href="#fn:history" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;) is complicated to use and in need of tools for
+managing its complexity. This is what has given rise to the &lt;a href="http://nvie.com/posts/a-successful-git-branching-model/"&gt;plethora&lt;/a&gt;
+of &lt;a href="http://scottchacon.com/2011/08/31/github-flow.html"&gt;different&lt;/a&gt; formal &lt;a href="https://about.gitlab.com/2014/09/29/gitlab-flow/"&gt;workflows&lt;/a&gt; representing various
+attempts to manage that complexity (which have been &lt;a href="https://bitbucket.org/yujiewu/hgflow/wiki/Home"&gt;applied&lt;/a&gt; to other
+systems &lt;a href="https://andy.mehalick.com/2011/12/24/an-introduction-to-hgflow"&gt;as well&lt;/a&gt;). Managing branching, linking that workflow to
+issues, and supplying associated documentation for projects have also cropped up
+as closely associated tasks&amp;#8212;thus the popularity of GitHub issues and Bitbucket
+wikis, not to mention &lt;a href="http://www.fossil-scm.org"&gt;Fossil&amp;#8217;s&lt;/a&gt; integration of both into the &lt;span class="caps"&gt;DVCS&lt;/span&gt; tool
+itself. None of the tools handle differences between file systems very elegantly
+(and indeed, it took &lt;em&gt;years&lt;/em&gt; for Git even to be useable on Windows). All of them
+especially struggle to manage symlinks and executable&amp;nbsp;flags.&lt;/p&gt;
+&lt;p&gt;So there is an enormous opportunity for the &lt;em&gt;next&lt;/em&gt; generation of tools. Git, Hg,
+and so on are huge steps forward for developers from &lt;span class="caps"&gt;CVS&lt;/span&gt;, Visual SourceSafe, or
+&lt;span class="caps"&gt;SVN&lt;/span&gt;. But they still have major weaknesses, and there are many things that not
+only can but should be better. In brief, I would love for the next-generation
+version control system to&amp;nbsp;be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;distributed (this is now a&amp;nbsp;non-negotiable);&lt;/li&gt;
+&lt;li&gt;fast;&lt;/li&gt;
+&lt;li&gt;well-documented&amp;#8212;&lt;em&gt;at least&lt;/em&gt; as well as Hg is, and preferably as well as
+    Bazaar&amp;nbsp;is;&lt;/li&gt;
+&lt;li&gt;well-designed, which is to say having a user interface that is actually a
+    user-interface (like Hg&amp;#8217;s) and not an extremely leaky abstraction around the
+    mechanics;&lt;sup id="fnref:leaky"&gt;&lt;a class="footnote-ref" href="#fn:leaky" rel="footnote"&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;fast;&lt;/li&gt;
+&lt;li&gt;file-system oriented, &lt;em&gt;not&lt;/em&gt; diff-oriented: this is one of Git&amp;#8217;s great
+    strengths and the reason for a lot of its performance&amp;nbsp;advantages;&lt;/li&gt;
+&lt;li&gt;extensible, with a good public &lt;span class="caps"&gt;API&lt;/span&gt; so that it is straightforward to add
+    functionality like wikis, documentation, social interaction,  and issue
+    tracking in a way that actually integrates the tool;&lt;sup id="fnref:integrates"&gt;&lt;a class="footnote-ref" href="#fn:integrates" rel="footnote"&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;and last but not least, truly&amp;nbsp;cross-platform.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That is a non-trivial task, but the first &lt;span class="caps"&gt;DVCS&lt;/span&gt; that manages to hit even a
+sizeable majority of these desires will gain a lot of traction in a hurry. The
+second generation of distributed version control has been good for us. The third
+could be&amp;nbsp;magical.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:dad"&gt;
+&lt;p&gt;A point that was highlighted for me in a conversation a few months ago
+with my father, a programmer who has been using &lt;span class="caps"&gt;SVN&lt;/span&gt; for a &lt;em&gt;long&lt;/em&gt; time and
+found the transition to Git distinctly less than wonderful.&amp;#160;&lt;a class="footnote-backref" href="#fnref:dad" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:hostile"&gt;
+&lt;p&gt;Anyone who feels like arguing with me on this point should go spend
+five minutes laughing at the &lt;a href="http://git-man-page-generator.lokaltog.net"&gt;fake man pages&lt;/a&gt; instead.&amp;#160;&lt;a class="footnote-backref" href="#fnref:hostile" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:history"&gt;
+&lt;p&gt;Few things are as hotly debated as the relative merits of the
+different systems&amp;#8217; branching models and approaches to history. At the least,
+I can say that Hg and Bazaar&amp;#8217;s branching models are &lt;em&gt;more to my taste&lt;/em&gt;.&amp;#160;&lt;a class="footnote-backref" href="#fnref:history" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:mutable"&gt;
+&lt;p&gt;Yes, there are extensions that let you do this with Hg, but they are
+fragile at best in my experience, and substantially less capable than Git&amp;#8217;s.&amp;#160;&lt;a class="footnote-backref" href="#fnref:mutable" rev="footnote" title="Jump back to footnote 4 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:patch"&gt;
+&lt;p&gt;Yes, I know about Hg&amp;#8217;s record extension. No, it is &lt;em&gt;not&lt;/em&gt; quite the
+same, especially because given the way it is implemented major &lt;span class="caps"&gt;GUI&lt;/span&gt; tools
+cannot support it without major chicanery.&amp;#160;&lt;a class="footnote-backref" href="#fnref:patch" rev="footnote" title="Jump back to footnote 5 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:queues"&gt;
+&lt;p&gt;Yes, I know about Hg&amp;#8217;s queue extension, too. There is a reason it is
+not turned on by default, and using it is substantially more arcane than
+Git&amp;#8217;s staging are. Think about that for a minute.&amp;#160;&lt;a class="footnote-backref" href="#fnref:queues" rev="footnote" title="Jump back to footnote 6 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:dash-a"&gt;
+&lt;p&gt;Yes, there is the &lt;code&gt;-a&lt;/code&gt; flag. No, I do not want to have to remember it
+for every commit.&amp;#160;&lt;a class="footnote-backref" href="#fnref:dash-a" rev="footnote" title="Jump back to footnote 7 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:leaky"&gt;
+&lt;p&gt;Let&amp;#8217;s be honest: if Git&amp;#8217;s abstraction were a boat, it would sink. It&amp;#8217;s
+just that leaky.&amp;#160;&lt;a class="footnote-backref" href="#fnref:leaky" rev="footnote" title="Jump back to footnote 8 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:integrates"&gt;
+&lt;p&gt;GitHub does all of this quite well&amp;#8230; but they have had to write
+heaps and gobs of software &lt;em&gt;around&lt;/em&gt; Git to make it work.&amp;#160;&lt;a class="footnote-backref" href="#fnref:integrates" rev="footnote" title="Jump back to footnote 9 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 16 Oct 2014 21:45:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-10-16:2014/next-gen-vcs.html</guid><category>software development</category></item><item><title>Pushing Into C’s Corner Cases</title><link>http://www.chriskrycho.com/2014/pushing-into-cs-corner-cases.html</link><description>&lt;p&gt;I&amp;#8217;m working on a project that is all in C because of its long history and legacy. We&amp;#8217;re slowly modernizing the codebase and writing all our new code in Python (using NumPy, C extensions, and so on for performance where necessary). Occasionally, I just want to bang my head against the wall because there are things we can do so simply in any modern language that you just can&amp;#8217;t do in any straightforward way in C. For example, I have file writers that all work &lt;em&gt;exactly&lt;/em&gt; the same way, with the single exception that the format string and the data that you put into it vary for each&amp;nbsp;file.&lt;/p&gt;
 &lt;p&gt;In Python, this would be straightforward to handle with the class machinery: you could simply specify the format string in each inheriting class and define the data points to be supplied at the top of an overriding function, call the parent function with &lt;code&gt;super()&lt;/code&gt; and be&amp;nbsp;done.&lt;/p&gt;
 &lt;p&gt;To do something similar in pure C is nearly impossible. You can supply a format string with each function (or module, or however you separate out the code), and if you feel especially clever you could convert all your data types to strings and pass them as a list to be printed by the standard function. The net result would be &lt;em&gt;longer&lt;/em&gt; and &lt;em&gt;less maintainable&lt;/em&gt; than simply having a set of essentially-duplicate functions,&amp;nbsp;though.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 12 Aug 2014 09:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-08-12:2014/pushing-into-cs-corner-cases.html</guid><category>software development</category></item><item><title>The Long Race</title><link>http://www.chriskrycho.com/2014/the-long-race.html</link><description>&lt;p&gt;It has been too long since I have written anything&amp;#8212;too long not for my
 audience (small as it is), but for my soul. The last few weeks of class were of

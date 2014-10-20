@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Next Generation of Version Control &middot; Chris Krycho</title>
+    <meta name="description" content="The current state of affairs with version control is a mess. Things we can get right next time around."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="2014/next-gen-vcs.html"/>
+    <meta property="og:title" content="The Next Generation of Version Control"/>
+        <meta property="og:description" content="The current state of affairs with version control is a mess. Things we can get right next time around."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+        <meta name="twitter:title" content="The Next Generation of Version Control"/>
+        <meta name="twitter:description" content="The current state of affairs with version control is a mess. Things we can get right next time around."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
+
+    <link href="http://www.chriskrycho.com/favicon.png" type="image/png" rel="icon" />
+    <link href="http://www.chriskrycho.com/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
+    <script type="text/javascript">$.bigfoot();</script>
+        <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <script src="/assets/js/reftagger.js"></script>
+
+
+</head>
+<body>
+    <header id="site-header">
+        <hgroup>
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Creativity, reflection, & passionate endeavors<br class="optional"/> by a peculiar fellow</h2>
+        </hgroup>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class='code'>
+
+    <header>
+<h1>The Next Generation of Version&nbsp;Control</h1>
+    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/next-gen-vcs.html"><i class="fa fa-fw fa-link"></i></a>October 16, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2014/next-gen-vcs.txt">Markdown source</a></span></div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>The current state of affairs in version control systems is a mess. To be sure,
+software development is <em>far</em> better with <em>any</em> of the distributed version
+control systems in play&#8212;the three big ones being <a href="http://git-scm.com">Git</a>, <a href="http://mercurial.selenic.com">Mercurial</a>
+(<code>hg</code>), and <a href="http://bazaar.canonical.com/en/">Bazaar</a> (<code>bzr</code>), with a few other names like <a href="http://www.fossil-scm.org">Fossil</a>
+floating around the periphery&#8212;than it ever was in a centralized version
+control system. There are definitely a few downsides for people converting over
+from some standard centralized version control systems, notably the increased
+number of steps in play to accomplish the same tasks.<sup id="fnref:dad"><a class="footnote-ref" href="#fn:dad" rel="footnote">1</a></sup> But on the whole,
+the advantages of being able to commit locally, have multiple complete copies of
+the repository, and share work without touching a centralized server far
+outweigh any downsides compared to the old centralized&nbsp;system.</p>
+<p>That being so, my opening statement remains true, I think: <em>The current state of
+affairs in version control is a mess.</em> Here is what I mean: of those three major
+players (Git, Hg, and Bazaar), each has significant downsides relative to the
+others. Git is famously wires-exposed, with a user interface design philosphy
+closely matching the <span class="caps">UI</span> sensibilities of Linus Torvalds&#8212;which is to say, all
+the wires are exposed, and it is about as user-hostile as it could be.<sup id="fnref:hostile"><a class="footnote-ref" href="#fn:hostile" rel="footnote">2</a></sup>
+It often outperforms Hg or Bazaar, but it has quirks, to say the very least. Hg
+and Bazaar both have <em>much</em> better designed user interfaces. They also have
+saner defaults (especially before the arrival of Git 2.0), and they have better
+branching models and approaches to history.<sup id="fnref:history"><a class="footnote-ref" href="#fn:history" rel="footnote">3</a></sup> They have substantially
+better documentation&#8212;perhaps especially so with Bazaar, but with either one a
+user can understand how to use the tool <em>without having to understand the
+mechanics of the tool</em>. This is simply not the case with Git, and while I
+<em>enjoy</em> knowing the mechanics of Git because I find them interesting, <em>having</em>
+to understand the mechanics of a tool to be able to use it is a&nbsp;problem.</p>
+<p>But the other systems have their downsides relative, to Git, too. (I will focus
+on Hg because I have never used Bazaar beyond playing with it, though I have
+read a good bit of the documentation.) Mutable history in Git is valuable and
+useful at times; I have rewritten whole sequences of commits when I realized I
+committed the wrong things but hadn&#8217;t yet pushed.<sup id="fnref:mutable"><a class="footnote-ref" href="#fn:mutable" rel="footnote">4</a></sup> Being able to commit
+chunks instead of having to commit whole files at a go is good; I feel the lack
+of this every time I use Hg.<sup id="fnref:patch"><a class="footnote-ref" href="#fn:patch" rel="footnote">5</a></sup> (Needing to understand the <em>file system</em>
+that Git invented to make sure you do not inadvertently destroy your repository
+is&#8230; not so good.) A staging area is nice,<sup id="fnref:queues"><a class="footnote-ref" href="#fn:queues" rel="footnote">6</a></sup> (even if <em>having</em> to stage
+everything manually can be in the pain in the neck<sup id="fnref:dash-a"><a class="footnote-ref" href="#fn:dash-a" rel="footnote">7</a></sup>).</p>
+<p>In short, then, there was no clear winner for this generation. Each of the tools
+has significant upsides and downsides relative to the others. Git has become the
+<em>de facto</em> standard, but <em>not</em> because of its own superiority over the
+alternatives. Rather, it won because of other forces in the community. Mostly I
+mean <a href="https://github.com">GitHub</a>, which is a <em>fantastic</em> piece of software and easily the
+most significant driving factor in the wider adoption of Git as a tool. The
+competition (<a href="https://bitbucket.org">Bitbucket</a> and <a href="https://launchpad.net">Launchpad</a>) are nowhere near
+the same level of sophistication or elegance, and they certainly have not
+managed to foster the sorts of community that GitHub has. But although the
+result has been wide adoption of Git, and a degree of Stockholm Syndrome among
+developers who have adopted it and concluded that the way Git works is the way a
+distributed version control system <em>should</em>&nbsp;work.</p>
+<p>But Git (and, though to a slightly lesser extent because of their saner
+branching models<sup id="fnref:history"><a class="footnote-ref" href="#fn:history" rel="footnote">3</a></sup>) is complicated to use and in need of tools for
+managing its complexity. This is what has given rise to the <a href="http://nvie.com/posts/a-successful-git-branching-model/">plethora</a>
+of <a href="http://scottchacon.com/2011/08/31/github-flow.html">different</a> formal <a href="https://about.gitlab.com/2014/09/29/gitlab-flow/">workflows</a> representing various
+attempts to manage that complexity (which have been <a href="https://bitbucket.org/yujiewu/hgflow/wiki/Home">applied</a> to other
+systems <a href="https://andy.mehalick.com/2011/12/24/an-introduction-to-hgflow">as well</a>). Managing branching, linking that workflow to
+issues, and supplying associated documentation for projects have also cropped up
+as closely associated tasks&#8212;thus the popularity of GitHub issues and Bitbucket
+wikis, not to mention <a href="http://www.fossil-scm.org">Fossil&#8217;s</a> integration of both into the <span class="caps">DVCS</span> tool
+itself. None of the tools handle differences between file systems very elegantly
+(and indeed, it took <em>years</em> for Git even to be useable on Windows). All of them
+especially struggle to manage symlinks and executable&nbsp;flags.</p>
+<p>So there is an enormous opportunity for the <em>next</em> generation of tools. Git, Hg,
+and so on are huge steps forward for developers from <span class="caps">CVS</span>, Visual SourceSafe, or
+<span class="caps">SVN</span>. But they still have major weaknesses, and there are many things that not
+only can but should be better. In brief, I would love for the next-generation
+version control system to&nbsp;be:</p>
+<ul>
+<li>distributed (this is now a&nbsp;non-negotiable);</li>
+<li>fast;</li>
+<li>well-documented&#8212;<em>at least</em> as well as Hg is, and preferably as well as
+    Bazaar&nbsp;is;</li>
+<li>well-designed, which is to say having a user interface that is actually a
+    user-interface (like Hg&#8217;s) and not an extremely leaky abstraction around the
+    mechanics;<sup id="fnref:leaky"><a class="footnote-ref" href="#fn:leaky" rel="footnote">8</a></sup></li>
+<li>fast;</li>
+<li>file-system oriented, <em>not</em> diff-oriented: this is one of Git&#8217;s great
+    strengths and the reason for a lot of its performance&nbsp;advantages;</li>
+<li>extensible, with a good public <span class="caps">API</span> so that it is straightforward to add
+    functionality like wikis, documentation, social interaction,  and issue
+    tracking in a way that actually integrates the tool;<sup id="fnref:integrates"><a class="footnote-ref" href="#fn:integrates" rel="footnote">9</a></sup></li>
+<li>and last but not least, truly&nbsp;cross-platform.</li>
+</ul>
+<p>That is a non-trivial task, but the first <span class="caps">DVCS</span> that manages to hit even a
+sizeable majority of these desires will gain a lot of traction in a hurry. The
+second generation of distributed version control has been good for us. The third
+could be&nbsp;magical.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:dad">
+<p>A point that was highlighted for me in a conversation a few months ago
+with my father, a programmer who has been using <span class="caps">SVN</span> for a <em>long</em> time and
+found the transition to Git distinctly less than wonderful.&#160;<a class="footnote-backref" href="#fnref:dad" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:hostile">
+<p>Anyone who feels like arguing with me on this point should go spend
+five minutes laughing at the <a href="http://git-man-page-generator.lokaltog.net">fake man pages</a> instead.&#160;<a class="footnote-backref" href="#fnref:hostile" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:history">
+<p>Few things are as hotly debated as the relative merits of the
+different systems&#8217; branching models and approaches to history. At the least,
+I can say that Hg and Bazaar&#8217;s branching models are <em>more to my taste</em>.&#160;<a class="footnote-backref" href="#fnref:history" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:mutable">
+<p>Yes, there are extensions that let you do this with Hg, but they are
+fragile at best in my experience, and substantially less capable than Git&#8217;s.&#160;<a class="footnote-backref" href="#fnref:mutable" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:patch">
+<p>Yes, I know about Hg&#8217;s record extension. No, it is <em>not</em> quite the
+same, especially because given the way it is implemented major <span class="caps">GUI</span> tools
+cannot support it without major chicanery.&#160;<a class="footnote-backref" href="#fnref:patch" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:queues">
+<p>Yes, I know about Hg&#8217;s queue extension, too. There is a reason it is
+not turned on by default, and using it is substantially more arcane than
+Git&#8217;s staging are. Think about that for a minute.&#160;<a class="footnote-backref" href="#fnref:queues" rev="footnote" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:dash-a">
+<p>Yes, there is the <code>-a</code> flag. No, I do not want to have to remember it
+for every commit.&#160;<a class="footnote-backref" href="#fnref:dash-a" rev="footnote" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:leaky">
+<p>Let&#8217;s be honest: if Git&#8217;s abstraction were a boat, it would sink. It&#8217;s
+just that leaky.&#160;<a class="footnote-backref" href="#fnref:leaky" rev="footnote" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:integrates">
+<p>GitHub does all of this quite well&#8230; but they have had to write
+heaps and gobs of software <em>around</em> Git to make it work.&#160;<a class="footnote-backref" href="#fnref:integrates" rev="footnote" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>        </div>
+    </div>
+    </article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h1>Connect</h1>
+    <h2>Social</h2>
+    <ul class="icons">
+        <li><a href="https://app.net/chriskrycho"><i class="fa fa-fw fa-adn"></i>App.net</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://www.facebook.com/chriskrycho"><i class="fa fa-fw fa-facebook"></i>Facebook</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-cloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+    </ul>
+    <h2>Software</h2>
+    <ul class="icons">
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://bitbucket.org/chriskrycho"><i class="fa fa-fw fa-bitbucket"></i>Bitbucket</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="navigate">
+    <h1>Navigate</h1>
+    <h2>Read</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/archives.html">Everything</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+    </ul>
+    <h2>Get Updates</h2>
+    <ul class="inline">
+        <li class="section-title">Everything</li>
+        <li><a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46224/chriskrychocom-all/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">art</li>
+        <li><a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46225/chriskrychocom-art/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">blog</li>
+        <li><a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46226/chriskrychocom-blog/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">tech</li>
+        <li><a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46227/chriskrychocom-tech/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">theology</li>
+        <li><a href="http://www.chriskrycho.com/feeds/theology.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46228/chriskrychocom-theology/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+</section>
+<section id="recent">
+    <h1>Recent</h1>
+    <h2 class="section-title">art</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It&nbsp;Wrong</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise&nbsp;You</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb&nbsp;Rampant</a></li>
+    </ul>
+    <h2 class="section-title">blog</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2014/whiplash.html">Whiplash</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html">A Few Theses on&nbsp;Blogging</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/three-month-cycles.html">Three Month&nbsp;Cycles.</a></li>
+    </ul>
+    <h2 class="section-title">tech</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2014/next-gen-vcs.html">The Next Generation of Version&nbsp;Control</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/pushing-into-cs-corner-cases.html">Pushing Into C&#8217;s Corner&nbsp;Cases</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/dont-be-rude.html">Don&#8217;t Be&nbsp;Rude</a></li>
+    </ul>
+    <h2 class="section-title">theology</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2014/earth-age-inerrancy.html">The Genesis&nbsp;Debate</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/patriotism-and-the-church.html">Patriotism and the&nbsp;Church</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/a-just-and-merciful-god.html">A Just and Merciful&nbsp;God</a></li>
+    </ul>
+</section></footer>
+</body>
+</html>
