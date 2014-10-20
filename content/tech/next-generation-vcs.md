@@ -25,18 +25,19 @@ outweigh any downsides compared to the old centralized system.
 That being so, my opening statement remains true, I think: *The current state of
 affairs in version control is a mess.* Here is what I mean: of those three major
 players (Git, Hg, and Bazaar), each has significant downsides relative to the
-others. Git is famously wires-exposed, with a user interface design philosphy
-closely matching the UI sensibilities of Linus Torvalds---which is to say, all
-the wires are exposed, and it is about as user-hostile as it could be.[^hostile]
-It often outperforms Hg or Bazaar, but it has quirks, to say the very least. Hg
-and Bazaar both have *much* better designed user interfaces. They also have
-saner defaults (especially before the arrival of Git 2.0), and they have better
-branching models and approaches to history.[^history] They have substantially
-better documentation---perhaps especially so with Bazaar, but with either one a
-user can understand how to use the tool *without having to understand the
-mechanics of the tool*. This is simply not the case with Git, and while I
-*enjoy* knowing the mechanics of Git because I find them interesting, *having*
-to understand the mechanics of a tool to be able to use it is a problem.
+others. Git is famously complex (even arcane), with a user interface design
+philosphy closely matching the UI sensibilities of Linus Torvalds---which is to
+say, all the wires are exposed, and it is about as user-hostile as it could
+be.[^hostile] It often outperforms Hg or Bazaar, but it has quirks, to say the
+very least. Hg and Bazaar both have *much* better designed user interfaces. They
+also have saner defaults (especially before the arrival of Git 2.0), and they
+have better branching models and approaches to history.[^history] They have
+substantially better documentation---perhaps especially so with Bazaar, but with
+either one a user can understand how to use the tool *without having to
+understand the mechanics of the tool*. This is simply not the case with Git, and
+while I *enjoy* knowing the mechanics of Git because I find them interesting,
+*having* to understand the mechanics of a tool to be able to use it is a
+problem.
 
 [^hostile]: Anyone who feels like arguing with me on this point should go spend
     five minutes laughing at the [fake man pages][man] instead.
