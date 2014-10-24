@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>FirebirdSQL and IntelliJ IDEA (etc.) &middot; Chris Krycho</title>
-    <meta name="description" content="Configuration instructions for FirebirdSQL JDBC with JetBrains IntelliJ IDEA platform (including PyCharm, RubyMine, WebStorm, etc.)."/>
+    <title>Nailed It &middot; Chris Krycho</title>
+    <meta name="description" content=""/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="2014/firebirdsql-and-intellij-idea-etc.html"/>
-    <meta property="og:title" content="FirebirdSQL and IntelliJ IDEA (etc.)"/>
-        <meta property="og:description" content="Configuration instructions for FirebirdSQL JDBC with JetBrains IntelliJ IDEA platform (including PyCharm, RubyMine, WebStorm, etc.)."/>
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="2014/nailed-it.html"/>
+    <meta property="og:title" content="Nailed It"/>
+        <meta property="og:description" content="Creativity, reflection, & varied endeavors by a peculiar fellow"/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-        <meta name="twitter:title" content="FirebirdSQL and IntelliJ IDEA (etc.)"/>
-        <meta name="twitter:description" content="Configuration instructions for FirebirdSQL JDBC with JetBrains IntelliJ IDEA platform (including PyCharm, RubyMine, WebStorm, etc.)."/>
+        <meta name="twitter:title" content="Nailed It"/>
+        <meta name="twitter:description" content="Creativity, reflection, & varied endeavors by a peculiar fellow"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 
     <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/style.css"/>
@@ -57,86 +57,60 @@
     </header>
 
 
-<article class='code'>
+<article >
 
     <header>
-<h1>FirebirdSQL and IntelliJ <span class="caps">IDEA</span>&nbsp;(etc.)</h1>
-    </header>
+<h1>Nailed&nbsp;It</h1>
+<h2>Marvel Actually Understands New Media</h2>    </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/firebirdsql-and-intellij-idea-etc.html"><i class="fa fa-fw fa-link"></i></a>March 28, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2014/firebirdsql-and-intellij-idea-etc.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/nailed-it.html"><i class="fa fa-fw fa-link"></i></a>October 22, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span><a href="http://www.chriskrycho.com/2014/nailed-it.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
 
         <div class="content">
 
-<p>Setting up IntelliJ <span class="caps">IDEA</span>&#8217;s built-in database tools to work with FirebirdSQL
-requires a particular setup configuration, which I&#8217;m documenting here for public&nbsp;consumption.</p>
-<p>These setup tools <em>should</em> be applicable to any of JetBrains&#8217; other Java-based
-IDEs which include database support (e.g. PyCharm, RubyMine, WebStorm, etc.).
-<em>Note:</em> the following apply to IntelliJ <span class="caps">IDEA</span> 12 and the associated platforms,
-but <em>not</em> to the <span class="caps">IDEA</span> 13 platform, which made substantial changes to how
-databases are configured. The underlying details are consistent, but the
-interface has changed. I have tested on PyCharm 3.1 to confirm&nbsp;that.</p>
-<p>This was all done on <span class="caps">OS</span> X 10.9, so I also make no guarantees that this works on
-other platforms, though the likelihood that it behaves the same on Linux is
-fairly good. I will update the post if and when I have confirmed that it&nbsp;does.</p>
-<p>Steps to configuring a database correctly for use with <span class="caps">IDEA</span>/etc. Note that
-steps 1&#8211;3 are fairly obvious; the real point of interest is in steps 4 and 5,
-which took me the longest time to figure&nbsp;out.</p>
-<ol>
-<li>
-<p>Download the latest version of the Firebird <a href="http://www.firebirdsql.org/en/jdbc-driver/">Java drivers</a> for your
-    operating system and your Java version. (You can check your Java version by
-    running <code>java -version</code> at the command line.) Extract the downloaded zip
-    file. The extracted folder should include a file named
-    <code>jaybird-full-&lt;version&gt;.jar</code> (<code>&lt;version&gt;</code> is currently&nbsp;2.2.4).</p>
-</li>
-<li>
-<p>In <span class="caps">IDEA</span>, in the database view, add a new data source: in the Database view
-    (accessible via a menu button on the right side of the screen), right click
-    and choose <strong>New -&gt; Data Source</strong>.</p>
-</li>
-<li>
-<p>Under <strong><span class="caps">JDBC</span> driver files</strong>, browse to the location where you extracted the
-    Jaybird driver files and select <code>jaybird-full-&lt;version&gt;.jar</code>.</p>
-</li>
-<li>
-<p>Under <strong><span class="caps">JDBC</span> driver class</strong>, choose <code>org.firebirdsql.jdbc.FBDriver</code>.</p>
-</li>
-<li>
-<p>Under <strong>Database <span class="caps">URL</span></strong>, specify <code>jdbc:firebirdsql://localhost:3050/</code>
-    followed by <em>either</em> the full path to the database in question or a
-    corresponding alias.<sup id="fnref:alias"><a class="footnote-ref" href="#fn:alias" rel="footnote">1</a></sup> A full path might look like this on&nbsp;Windows:</p>
-<pre><code>jdbc:firebirdsql://localhost:3050/C:/my_project/the_database.db
-</code></pre>
-<p>With an alias, you would instead&nbsp;have:</p>
-<pre><code>jdbc:firebirdsql://localhost:3050/the_alias
-</code></pre>
-<p>Then specify valid values for the <strong>User</strong> and <strong>Password</strong> fields from
-your existing configuration of the&nbsp;database.</p>
-</li>
-<li>
-<p>Click the <strong>Test Connection</strong> button and make sure the configuration&nbsp;works.</p>
-</li>
-</ol>
-<p>That should do it. Note that the driver choice and path configuration both
-matter. On <span class="caps">OS</span> X, I found that only the <code>FBDriver</code> with this (and one other,
-older-style and therefore not recommended) path setup worked&nbsp;successfully.</p>
-<p>Observations, corrections, additional information, and miscellaneous comments
-welcomed on <a href="https://alpha.app.net/chriskrycho">App.net</a> or <a href="https://www.twitter.com/chriskrycho">Twitter</a>.</p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:alias">
-<p>I strongly recommend configuring an alias in the aliases.conf file in
-the Firebird home directory (usually set as <code>$FIREBIRD_HOME</code> during
-installation on *nix systems). This lets you move the database around at
-will, update just the configuration file, and not have to update any
-references to the database file whatsoever.&#160;<a class="footnote-backref" href="#fnref:alias" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>        </div>
+<p>Yesterday, something rather remarkable happened. Someone leaked a copy of the
+trailer for <em>Avengers: Age of Ultron</em>&#8230; and the company behind the movie,
+rather than throwing a hissy fit (and ultimately just making things worse),
+played its hand perfectly in a response that was funny <em>and</em> demonstrated that
+the folks who work there actually understand how the internet works. Marvel&#8217;s
+response to the leak came primarily in the form of two tweets, just a few hours&nbsp;apart.</p>
+<blockquote>
+<p>Dammit, Hydra. (<a href="https://twitter.com/Marvel/status/525071656306626560">October 22, 7:50 <span class="caps">PM</span> <span class="caps">EST</span></a>)</p>
+</blockquote>
+<p>Pitch perfect. It&#8217;s self-aware, self-<em>referential</em> in a funny way without being
+too clever-seeming or coming off like it&#8217;s trying too hard, and just a generally
+good response. That alone would have been good enough to put Marvel in a league
+of its own when it comes to managing things <em>not</em> going the way hoped for. But
+(after what I&#8217;m sure was considerable back-room wrangling), they followed it up
+an hour and a half later with another different&nbsp;tweet:</p>
+<blockquote>
+<p>Here it is! Watch the <a href="https://twitter.com/Avengers">@Avengers</a>: <a href="https://twitter.com/hashtag/AgeofUltron?src=hash">#AgeofUltron</a> Teaser
+Trailer right <span class="caps">NOW</span>: <a href="http://youtu.be/tmeOjFno6Do">http://youtu.be/tmeOjFno6Do</a> <a href="https://twitter.com/hashtag/Avengers?src=hash">#Avengers</a>
+(<a href="https://twitter.com/Marvel/status/525093857772318720">October 22, 9:18 <span class="caps">PM</span> <span class="caps">EST</span></a>)</p>
+</blockquote>
+<p>Your average old-media company these days would have thrown a fit and made a
+stink about the release of their media. Many companies <em>have</em> done just that
+under similar circumstances, aiming to get the trailer, snippets of the movie,
+music, or the like removed from the internet. But that simply isn&#8217;t how the
+internet works: it famously &#8220;treats censorship like damage and routes around it&#8221;
+(<a href="http://www.chemie.fu-berlin.de/outerspace/internet-article.html">John Gilmore</a>). So rather than fight it&#8230; Marvel just rolled with
+it and made the best of the situation. They cracked a joke, went ahead and put
+the trailer out themselves, and earned general approval from the internet.
+Again. In short, despite being a decades-old company, Marvel is now <em>thoroughly</em>
+a new media company. They managed to dodge the <a href="http://www.economist.com/blogs/economist-explains/2013/04/economist-explains-what-streisand-effect">Streisand effect</a>
+quite nicely, turning what could have been an opportunity for hostility all
+around into a <span class="caps">PR</span> coup and a win that they couldn&#8217;t have scored on their&nbsp;own.</p>
+<p>Other old (and new!) media companies, take note. <em>This</em> is the way you play the
+game. You recognize when the cat is out of the bag and you run with it. Own it.
+Make it your own somehow. Don&#8217;t let it own you. The internet is a big, crazy,
+chaotic place, and you can never hope to control it&#8212;nor even the narrative
+about you and your stuff, whatever that may be&#8212;like you might have been able
+to do twenty-five years ago. But that&#8217;s okay. If you can roll with the punches,
+you can still come out ahead, and you&#8217;ll look a little more human doing it. I
+call that&nbsp;winning.</p>
+<p>(Go&nbsp;Marvel.)</p>        </div>
     </div>
     </article>
 

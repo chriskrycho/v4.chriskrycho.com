@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Thu, 16 Oct 2014 21:45:00 -0400</lastBuildDate><item><title>The Next Generation of Version Control</title><link>http://www.chriskrycho.com/2014/next-gen-vcs.html</link><description>&lt;p&gt;The current state of affairs in version control systems is a mess. To be sure,
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Wed, 22 Oct 2014 22:15:00 -0400</lastBuildDate><item><title>Nailed It</title><link>http://www.chriskrycho.com/2014/nailed-it.html</link><description>&lt;p&gt;Yesterday, something rather remarkable happened. Someone leaked a copy of the
+trailer for &lt;em&gt;Avengers: Age of Ultron&lt;/em&gt;&amp;#8230; and the company behind the movie,
+rather than throwing a hissy fit (and ultimately just making things worse),
+played its hand perfectly in a response that was funny &lt;em&gt;and&lt;/em&gt; demonstrated that
+the folks who work there actually understand how the internet works. Marvel&amp;#8217;s
+response to the leak came primarily in the form of two tweets, just a few hours&amp;nbsp;apart.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Dammit, Hydra. (&lt;a href="https://twitter.com/Marvel/status/525071656306626560"&gt;October 22, 7:50 &lt;span class="caps"&gt;PM&lt;/span&gt; &lt;span class="caps"&gt;EST&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Pitch perfect. It&amp;#8217;s self-aware, self-&lt;em&gt;referential&lt;/em&gt; in a funny way without being
+too clever-seeming or coming off like it&amp;#8217;s trying too hard, and just a generally
+good response. That alone would have been good enough to put Marvel in a league
+of its own when it comes to managing things &lt;em&gt;not&lt;/em&gt; going the way hoped for. But
+(after what I&amp;#8217;m sure was considerable back-room wrangling), they followed it up
+an hour and a half later with another different&amp;nbsp;tweet:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Here it is! Watch the &lt;a href="https://twitter.com/Avengers"&gt;@Avengers&lt;/a&gt;: &lt;a href="https://twitter.com/hashtag/AgeofUltron?src=hash"&gt;#AgeofUltron&lt;/a&gt; Teaser
+Trailer right &lt;span class="caps"&gt;NOW&lt;/span&gt;: &lt;a href="http://youtu.be/tmeOjFno6Do"&gt;http://youtu.be/tmeOjFno6Do&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/Avengers?src=hash"&gt;#Avengers&lt;/a&gt;
+(&lt;a href="https://twitter.com/Marvel/status/525093857772318720"&gt;October 22, 9:18 &lt;span class="caps"&gt;PM&lt;/span&gt; &lt;span class="caps"&gt;EST&lt;/span&gt;&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Your average old-media company these days would have thrown a fit and made a
+stink about the release of their media. Many companies &lt;em&gt;have&lt;/em&gt; done just that
+under similar circumstances, aiming to get the trailer, snippets of the movie,
+music, or the like removed from the internet. But that simply isn&amp;#8217;t how the
+internet works: it famously &amp;#8220;treats censorship like damage and routes around it&amp;#8221;
+(&lt;a href="http://www.chemie.fu-berlin.de/outerspace/internet-article.html"&gt;John Gilmore&lt;/a&gt;). So rather than fight it&amp;#8230; Marvel just rolled with
+it and made the best of the situation. They cracked a joke, went ahead and put
+the trailer out themselves, and earned general approval from the internet.
+Again. In short, despite being a decades-old company, Marvel is now &lt;em&gt;thoroughly&lt;/em&gt;
+a new media company. They managed to dodge the &lt;a href="http://www.economist.com/blogs/economist-explains/2013/04/economist-explains-what-streisand-effect"&gt;Streisand effect&lt;/a&gt;
+quite nicely, turning what could have been an opportunity for hostility all
+around into a &lt;span class="caps"&gt;PR&lt;/span&gt; coup and a win that they couldn&amp;#8217;t have scored on their&amp;nbsp;own.&lt;/p&gt;
+&lt;p&gt;Other old (and new!) media companies, take note. &lt;em&gt;This&lt;/em&gt; is the way you play the
+game. You recognize when the cat is out of the bag and you run with it. Own it.
+Make it your own somehow. Don&amp;#8217;t let it own you. The internet is a big, crazy,
+chaotic place, and you can never hope to control it&amp;#8212;nor even the narrative
+about you and your stuff, whatever that may be&amp;#8212;like you might have been able
+to do twenty-five years ago. But that&amp;#8217;s okay. If you can roll with the punches,
+you can still come out ahead, and you&amp;#8217;ll look a little more human doing it. I
+call that&amp;nbsp;winning.&lt;/p&gt;
+&lt;p&gt;(Go&amp;nbsp;Marvel.)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 22 Oct 2014 22:15:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-10-22:2014/nailed-it.html</guid></item><item><title>The Next Generation of Version Control</title><link>http://www.chriskrycho.com/2014/next-gen-vcs.html</link><description>&lt;p&gt;The current state of affairs in version control systems is a mess. To be sure,
 software development is &lt;em&gt;far&lt;/em&gt; better with &lt;em&gt;any&lt;/em&gt; of the distributed version
 control systems in play&amp;#8212;the three big ones being &lt;a href="http://git-scm.com"&gt;Git&lt;/a&gt;, &lt;a href="http://mercurial.selenic.com"&gt;Mercurial&lt;/a&gt;
 (&lt;code&gt;hg&lt;/code&gt;), and &lt;a href="http://bazaar.canonical.com/en/"&gt;Bazaar&lt;/a&gt; (&lt;code&gt;bzr&lt;/code&gt;), with a few other names like &lt;a href="http://www.fossil-scm.org"&gt;Fossil&lt;/a&gt;
