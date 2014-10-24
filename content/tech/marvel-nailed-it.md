@@ -35,8 +35,10 @@ Gilmore][censorship]). Once a video is online, it's online. Someone, somewhere,
 still has a copy of it and can put it back up. So rather than fight it... Marvel
 just rolled with it and made the best of the situation. They cracked a joke,
 went ahead and put the trailer out themselves, and earned general approval from
-the internet. Again. In short, despite being a decades-old company, Marvel is
-now *thoroughly* a new media company. They managed to dodge the [Streisand
+the internet. Again.
+
+Despite being a decades-old company, Marvel is clearly a new media company
+through and through at this point. They managed to dodge the [Streisand
 effect][streisand] quite nicely, turning what could have been an opportunity for
 hostility all around into a PR coup and a win that they couldn't have scored on
 their own.
