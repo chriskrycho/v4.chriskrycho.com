@@ -492,9 +492,24 @@ that he might have conversations with folks who can help him come to
 reconcile the inerrancy of Scripture with an old earth.&amp;#160;&lt;a class="footnote-backref" href="#fnref:13" rev="footnote" title="Jump back to footnote 13 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 18 Aug 2014 22:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-08-18:2014/earth-age-inerrancy.html</guid></item><item><title>Pushing Into C’s Corner Cases</title><link>http://www.chriskrycho.com/2014/pushing-into-cs-corner-cases.html</link><description>&lt;p&gt;I&amp;#8217;m working on a project that is all in C because of its long history and legacy. We&amp;#8217;re slowly modernizing the codebase and writing all our new code in Python (using NumPy, C extensions, and so on for performance where necessary). Occasionally, I just want to bang my head against the wall because there are things we can do so simply in any modern language that you just can&amp;#8217;t do in any straightforward way in C. For example, I have file writers that all work &lt;em&gt;exactly&lt;/em&gt; the same way, with the single exception that the format string and the data that you put into it vary for each&amp;nbsp;file.&lt;/p&gt;
-&lt;p&gt;In Python, this would be straightforward to handle with the class machinery: you could simply specify the format string in each inheriting class and define the data points to be supplied at the top of an overriding function, call the parent function with &lt;code&gt;super()&lt;/code&gt; and be&amp;nbsp;done.&lt;/p&gt;
-&lt;p&gt;To do something similar in pure C is nearly impossible. You can supply a format string with each function (or module, or however you separate out the code), and if you feel especially clever you could convert all your data types to strings and pass them as a list to be printed by the standard function. The net result would be &lt;em&gt;longer&lt;/em&gt; and &lt;em&gt;less maintainable&lt;/em&gt; than simply having a set of essentially-duplicate functions,&amp;nbsp;though.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 12 Aug 2014 09:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-08-12:2014/pushing-into-cs-corner-cases.html</guid><category>software development</category></item><item><title>Whiplash</title><link>http://www.chriskrycho.com/2014/whiplash.html</link><description>&lt;p&gt;I have a pretty severe case of emotional whiplash&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; at the moment. In the last
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 18 Aug 2014 22:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-08-18:2014/earth-age-inerrancy.html</guid></item><item><title>Pushing Into C’s Corner Cases</title><link>http://www.chriskrycho.com/2014/pushing-into-cs-corner-cases.html</link><description>&lt;p&gt;I&amp;#8217;m working on a project that is all in C because of its long history and
+legacy. We&amp;#8217;re slowly modernizing the codebase and writing all our new code in
+Python (using NumPy, C extensions, and so on for performance where necessary).
+Occasionally, I just want to bang my head against the wall because there are
+things we can do so simply in any modern language that you just can&amp;#8217;t do in any
+straightforward way in C. For example, I have file writers that all work
+&lt;em&gt;exactly&lt;/em&gt; the same way, with the single exception that the format string and the
+data that you put into it vary for each&amp;nbsp;file.&lt;/p&gt;
+&lt;p&gt;In Python, this would be straightforward to handle with the class machinery: you
+could simply specify the format string in each inheriting class and define the
+data points to be supplied at the top of an overriding function, call the parent
+function with &lt;code&gt;super()&lt;/code&gt; and be&amp;nbsp;done.&lt;/p&gt;
+&lt;p&gt;To do something similar in pure C is nearly impossible. You can supply a format
+string with each function (or module, or however you separate out the code), and
+if you feel especially clever you could convert all your data types to strings
+and pass them as a list to be printed by the standard function. The net result
+would be &lt;em&gt;longer&lt;/em&gt; and &lt;em&gt;less maintainable&lt;/em&gt; than simply having a set of
+essentially-duplicate functions,&amp;nbsp;though.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 12 Aug 2014 09:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-08-12:2014/pushing-into-cs-corner-cases.html</guid><category>software development</category></item><item><title>Whiplash</title><link>http://www.chriskrycho.com/2014/whiplash.html</link><description>&lt;p&gt;I have a pretty severe case of emotional whiplash&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; at the moment. In the last
 eight hours, I have gone from jubilant to the most worried I have ever been to
 simple, utter&amp;nbsp;exhaustion.&lt;/p&gt;
 &lt;p&gt;This afternoon, I heard back from a then-potential and now-actual client who
