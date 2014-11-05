@@ -15,10 +15,11 @@ sections you came here seeking.
 
 Otherwise, a few words of introduction are likely in order. I am first of all a
 Christ-follower, a husband, a happy father of two little girls (one toddling
-around happily and the other still snuggled up cozily in her mothers womb). I
-work as a software developer and web designer, am also in pursuit of the Master
-of Divinity degree at [Southeastern Baptist Theological Seminary][sebts] in Wake
-Forest, North Carolina.[^nc]
+around happily and the other working her way along through her first year of
+life, with all the craziness that entails). I work as a software developer and
+web designer, am also in pursuit of the Master of Divinity degree at
+[Southeastern Baptist Theological Seminary][sebts] in Wake Forest, North
+Carolina.[^nc]
 
 I am a Colorado native, and the mountains make my soul sing.[^sing] I had the
 pleasure of earning a bachelor's degree in physics from the University of
