@@ -32,7 +32,7 @@
     {# Scripts #}
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="{{ JS_DIR }}/bigfoot.min.js"></script>
-    <script type="text/javascript">$.bigfoot();</script>
+    <script type="text/javascript">$.bigfoot({actionOriginalFn: ignore});</script>
     {% if item != None and item.category == 'tech' or item.code == 'true' %}
         <script type="text/javascript" src="{{ JS_DIR }}/highlight.pack.js"></script>
         <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
