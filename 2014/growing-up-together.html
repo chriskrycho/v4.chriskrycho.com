@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Growing Up Together &middot; Chris Krycho</title>
+    <meta name="description" content=""/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="2014/growing-up-together.html"/>
+    <meta property="og:title" content="Growing Up Together"/>
+        <meta property="og:description" content="Creativity, reflection, & varied endeavors by a peculiar fellow"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+        <meta name="twitter:title" content="Growing Up Together"/>
+        <meta name="twitter:description" content="Creativity, reflection, & varied endeavors by a peculiar fellow"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
+
+    <link href="http://www.chriskrycho.com/favicon.png" type="image/png" rel="icon" />
+    <link href="http://www.chriskrycho.com/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
+    <script type="text/javascript">$.bigfoot({actionOriginalFN: 'ignore'});</script>
+        <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <script src="/assets/js/reftagger.js"></script>
+
+
+</head>
+<body>
+    <header id="site-header">
+        <hgroup>
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Creativity, reflection, & varied endeavors<br class="optional"/> by a peculiar fellow</h2>
+        </hgroup>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class='code'>
+
+    <header>
+<h1>Growing Up&nbsp;Together</h1>
+<h2>Or: How I Learned to Stop Worrying and Love JavaScript</h2>    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/growing-up-together.html"><i class="fa fa-fw fa-link"></i></a>November 15, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2014/growing-up-together.txt">Markdown source</a></span></div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>A few years ago, you might have caught me in a grumpy moment grousing about JavaScript. I distinctly did <em>not</em> like writing it. Every time I sat down to deal with it, I found myself in a tangled mess of plain JavaScript, jQuery, and <span class="caps">DOM</span> manipulations that inevitably left me tearing my hair out.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> I found it difficult to write in the first place, and even harder to maintain in the long run. I could not come up with good ways to organize it, especially because so much of what I was doing was so thoroughly <em>ad hoc</em> in nature. Cobble this together over here; scrounge together those things over there; hope nothing collides in the&nbsp;middle.</p>
+<p>In the last four months, I have written several thousand lines of JavaScript, and I have <em>loved</em>&nbsp;it.</p>
+<p>For my latest major project, relaunching <a href="https://holybible.com">HolyBible.com</a>, I wrote the front end in <a href="https://angularjs.org">AngularJS</a> and the back end as an <a href="http://expressjs.com">Express</a> app (the most popular <a href="http://nodejs.org">NodeJS</a> web framework). I&#8217;ve written gobs of tests in <a href="http://jasmine.github.io">Jasmine</a> (using <a href="https://github.com/mhevery/jasmine-node">jasmine-node</a> for server-side tests) and drawn on tons of other open-source&nbsp;packages.</p>
+<p>And I have <em>loved</em>&nbsp;it.</p>
+<p>A small example: a moment ago, looking up the link for Jasmine, I noted that the latest version released today. My response was, &#8220;Ooh&#8212;cool!&#8221;<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></p>
+<p>What changed? Well, mostly I changed, but also JavaScript changed a bit. We both grew up over the last four years. On the JavaScript side of things, a lot of good design patterns and tools have come into play in that span. I&#8217;m sure there were plenty of good, disciplined web developers writing clear, careful, well-organized client-side JavaScript four years go. But in the interval, that kind of JavaScript got a lot more prominent, in part because it has had help from the rapid rise of server-side JavaScript in the form of Node.js and its flourishing ecosystem of components and tools. Build tools like <a href="http://browserify.org">Browserify</a> and development tools like <a href="http://livereload.com">LiveReload</a> and <a href="https://incident57.com/codekit/">Codekit</a> have combined with best practices learned from those long years of jQuery/<span class="caps">DOM</span>-manipulation hell so that these days, good JavaScript is a lot like good programming in any other language: highly modular, carefully designed, and&nbsp;well-organized.</p>
+<p>In the same period of time, I have matured enormously as a developer (just enough to see how far I still have to go, of course). At the point where I most hated JavaScript, I also really struggled to see the utility of callbacks. Frankly, it took me the better part of a month just to get my head around it&#8212;most of the tutorials out there just assumed you understood them already, and, well: I didn&#8217;t. Functions as first-class members of a language was new to me at that point. Fast-forward through several years of full-time Python development, lots of time spent reading about software development and some harder computer science concepts, and my perspective on JavaScript has shifted more than a little. Closures are beautiful, wonderful things now. Functions as arguments to other functions are delightful and extremely expressive. Prototypal inheritance&#8212;trip me up though it sometimes still does&#8212;is a fascinating variation on the idea of inheritance and one that I think I like rather better than classical inheritance.<sup id="fnref:io"><a class="footnote-ref" href="#fn:io" rel="footnote">3</a></sup></p>
+<p>There are still things I don&#8217;t love about JavaScript. Its syntax owes far too much to the C family of languages to make me happy; I quite like the way that CoffeeScript borrows from Python (white-space-delimited blocks, use of equality words like <code>is</code> and boolean rules like <code>and</code> rather than <code>===</code> and <code>&amp;&amp;</code> respectively, etc.). And I am looking forward to a number of features coming in the next version of JavaScript&#8212;especially generators and the <code>const</code> and <code>let</code> keywords, which will allow for <em>much</em> saner&nbsp;patterns.</p>
+<p>But all of that is simply to say that I am now starting to know JavaScript enough to know that its <em>real</em> issues aren&#8217;t the surface-level differences from the other languages with which I&#8217;m familiar. They&#8217;re not even the warts I noted here. They&#8217;re things like the mix of classical and prototypal inheritance in the way the language keywords and object instantiation work. But I don&#8217;t mind those. Every language has tradeoffs. Python&#8217;s support for lambdas is pretty minimal, despite the utility of anonymous functions, for example. But I <em>like</em> the tradeoffs JavaScript makes.<sup id="fnref:coffee"><a class="footnote-ref" href="#fn:coffee" rel="footnote">4</a></sup></p>
+<p>In other words, I discovered the same thing so many other people have over the last few years: JavaScript isn&#8217;t just a good choice for utilitarian reasons. Beneath that messy exterior is a gem of a language. I&#8217;m having a lot of fun with&nbsp;it.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Thus the early balding starting by my temples.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>My wife&#8217;s bemused response: &#8220;Is that <em>another</em> language?&#8221; Take that as you will.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:io">
+<p>The couple weeks I got to spend <a href="http://www.chriskrycho.com/2014/a-little-crazy.html">playing</a> with <a href="http://iolanguage.org">Io</a> certainly helped! Io&#8217;s prototypal inheritance is semantically &#8220;purer&#8221; than JavaScript&#8217;s, which is quite an improvement in my view. JavaScript&#8217;s <code>new</code> keyword and the pseudo-classical object pattern it brings along can go rot in a bog.&#160;<a class="footnote-backref" href="#fnref:io" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:coffee">
+<p>Truth be told, I like them even better from the perspective of CoffeeScript, which hides a lot of the rough edges of JavaScript and, as noted above, brings in quite a few things I like from Python. For my part, I intend to write as much CoffeeScript as possible going forward.&#160;<a class="footnote-backref" href="#fnref:coffee" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>        </div>
+    </div>
+    </article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h1>Connect</h1>
+    <h2>Social</h2>
+    <ul class="icons">
+        <li><a href="https://app.net/chriskrycho"><i class="fa fa-fw fa-adn"></i>App.net</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://www.facebook.com/chriskrycho"><i class="fa fa-fw fa-facebook"></i>Facebook</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-cloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+    </ul>
+    <h2>Software</h2>
+    <ul class="icons">
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://bitbucket.org/chriskrycho"><i class="fa fa-fw fa-bitbucket"></i>Bitbucket</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="navigate">
+    <h1>Navigate</h1>
+    <h2>Read</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/archives.html">Everything</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+    </ul>
+    <h2>Get Updates</h2>
+    <ul class="inline">
+        <li class="section-title">Everything</li>
+        <li><a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46224/chriskrychocom-all/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">art</li>
+        <li><a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46225/chriskrychocom-art/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">blog</li>
+        <li><a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46226/chriskrychocom-blog/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">tech</li>
+        <li><a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46227/chriskrychocom-tech/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">theology</li>
+        <li><a href="http://www.chriskrycho.com/feeds/theology.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46228/chriskrychocom-theology/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+</section>
+<section id="recent">
+    <h1>Recent</h1>
+    <h2 class="section-title">art</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It&nbsp;Wrong</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise&nbsp;You</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb&nbsp;Rampant</a></li>
+    </ul>
+    <h2 class="section-title">blog</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2014/whiplash.html">Whiplash</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html">A Few Theses on&nbsp;Blogging</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/three-month-cycles.html">Three Month&nbsp;Cycles.</a></li>
+    </ul>
+    <h2 class="section-title">tech</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up&nbsp;Together</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous&nbsp;Situation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed&nbsp;It</a></li>
+    </ul>
+    <h2 class="section-title">theology</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2014/doctrine.html">Doctrine</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/earth-age-inerrancy.html">The Genesis&nbsp;Debate</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/patriotism-and-the-church.html">Patriotism and the&nbsp;Church</a></li>
+    </ul>
+</section></footer>
+</body>
+</html>
