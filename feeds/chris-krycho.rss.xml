@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 15 Nov 2014 00:30:00 -0500</lastBuildDate><item><title>Growing Up Together</title><link>http://www.chriskrycho.com/2014/growing-up-together.html</link><description>&lt;p&gt;A few years ago, you might have caught me in a grumpy moment grousing about JavaScript. I distinctly did &lt;em&gt;not&lt;/em&gt; like writing it. Every time I sat down to deal with it, I found myself in a tangled mess of plain JavaScript, jQuery, and &lt;span class="caps"&gt;DOM&lt;/span&gt; manipulations that inevitably left me tearing my hair out.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; I found it difficult to write in the first place, and even harder to maintain in the long run. I could not come up with good ways to organize it, especially because so much of what I was doing was so thoroughly &lt;em&gt;ad hoc&lt;/em&gt; in nature. Cobble this together over here; scrounge together those things over there; hope nothing collides in the&amp;nbsp;middle.&lt;/p&gt;
-&lt;p&gt;In the last four months, I have written several thousand lines of JavaScript, and I have &lt;em&gt;loved&lt;/em&gt;&amp;nbsp;it.&lt;/p&gt;
-&lt;p&gt;For my latest major project, relaunching &lt;a href="https://holybible.com"&gt;HolyBible.com&lt;/a&gt;, I wrote the front end in &lt;a href="https://angularjs.org"&gt;AngularJS&lt;/a&gt; and the back end as an &lt;a href="http://expressjs.com"&gt;Express&lt;/a&gt; app (the most popular &lt;a href="http://nodejs.org"&gt;NodeJS&lt;/a&gt; web framework). I&amp;#8217;ve written gobs of tests in &lt;a href="http://jasmine.github.io"&gt;Jasmine&lt;/a&gt; (using &lt;a href="https://github.com/mhevery/jasmine-node"&gt;jasmine-node&lt;/a&gt; for server-side tests) and drawn on tons of other open-source&amp;nbsp;packages.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 15 Nov 2014 00:30:00 -0500</lastBuildDate><item><title>Growing Up Together</title><link>http://www.chriskrycho.com/2014/growing-up-together.html</link><description>&lt;p&gt;A few years ago, you might have caught me in a grumpy moment grousing about
+JavaScript. I distinctly did &lt;em&gt;not&lt;/em&gt; like writing it. Every time I sat down to
+deal with it, I found myself in a tangled mess of plain JavaScript, jQuery, and
+&lt;span class="caps"&gt;DOM&lt;/span&gt; manipulations that inevitably left me tearing my hair out.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; I found it
+difficult to write in the first place, and even harder to maintain in the long
+run. I could not come up with good ways to organize it, especially because so
+much of what I was doing was so thoroughly &lt;em&gt;ad hoc&lt;/em&gt; in nature. Cobble this
+together over here; scrounge together those things over there; hope nothing
+collides in the&amp;nbsp;middle.&lt;/p&gt;
+&lt;p&gt;In the last four months, I have written several thousand lines of JavaScript,
+and I have &lt;em&gt;loved&lt;/em&gt;&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;For my latest major project, relaunching &lt;a href="https://holybible.com"&gt;HolyBible.com&lt;/a&gt;, I wrote the front
+end in &lt;a href="https://angularjs.org"&gt;AngularJS&lt;/a&gt; and the back end as an &lt;a href="http://expressjs.com"&gt;Express&lt;/a&gt; app (the most
+popular &lt;a href="http://nodejs.org"&gt;NodeJS&lt;/a&gt; web framework). I&amp;#8217;ve written gobs of tests in
+&lt;a href="http://jasmine.github.io"&gt;Jasmine&lt;/a&gt; (using &lt;a href="https://github.com/mhevery/jasmine-node"&gt;jasmine-node&lt;/a&gt; for server-side tests) and drawn on
+tons of other open-source&amp;nbsp;packages.&lt;/p&gt;
 &lt;p&gt;And I have &lt;em&gt;loved&lt;/em&gt;&amp;nbsp;it.&lt;/p&gt;
-&lt;p&gt;A small example: a moment ago, looking up the link for Jasmine, I noted that the latest version released today. My response was, &amp;#8220;Ooh&amp;#8212;cool!&amp;#8221;&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;What changed? Well, mostly I changed, but also JavaScript changed a bit. We both grew up over the last four years. On the JavaScript side of things, a lot of good design patterns and tools have come into play in that span. I&amp;#8217;m sure there were plenty of good, disciplined web developers writing clear, careful, well-organized client-side JavaScript four years go. But in the interval, that kind of JavaScript got a lot more prominent, in part because it has had help from the rapid rise of server-side JavaScript in the form of Node.js and its flourishing ecosystem of components and tools. Build tools like &lt;a href="http://browserify.org"&gt;Browserify&lt;/a&gt; and development tools like &lt;a href="http://livereload.com"&gt;LiveReload&lt;/a&gt; and &lt;a href="https://incident57.com/codekit/"&gt;Codekit&lt;/a&gt; have combined with best practices learned from those long years of jQuery/&lt;span class="caps"&gt;DOM&lt;/span&gt;-manipulation hell so that these days, good JavaScript is a lot like good programming in any other language: highly modular, carefully designed, and&amp;nbsp;well-organized.&lt;/p&gt;
-&lt;p&gt;In the same period of time, I have matured enormously as a developer (just enough to see how far I still have to go, of course). At the point where I most hated JavaScript, I also really struggled to see the utility of callbacks. Frankly, it took me the better part of a month just to get my head around it&amp;#8212;most of the tutorials out there just assumed you understood them already, and, well: I didn&amp;#8217;t. Functions as first-class members of a language was new to me at that point. Fast-forward through several years of full-time Python development, lots of time spent reading about software development and some harder computer science concepts, and my perspective on JavaScript has shifted more than a little. Closures are beautiful, wonderful things now. Functions as arguments to other functions are delightful and extremely expressive. Prototypal inheritance&amp;#8212;trip me up though it sometimes still does&amp;#8212;is a fascinating variation on the idea of inheritance and one that I think I like rather better than classical inheritance.&lt;sup id="fnref:io"&gt;&lt;a class="footnote-ref" href="#fn:io" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;There are still things I don&amp;#8217;t love about JavaScript. Its syntax owes far too much to the C family of languages to make me happy; I quite like the way that CoffeeScript borrows from Python (white-space-delimited blocks, use of equality words like &lt;code&gt;is&lt;/code&gt; and boolean rules like &lt;code&gt;and&lt;/code&gt; rather than &lt;code&gt;===&lt;/code&gt; and &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; respectively, etc.). And I am looking forward to a number of features coming in the next version of JavaScript&amp;#8212;especially generators and the &lt;code&gt;const&lt;/code&gt; and &lt;code&gt;let&lt;/code&gt; keywords, which will allow for &lt;em&gt;much&lt;/em&gt; saner&amp;nbsp;patterns.&lt;/p&gt;
-&lt;p&gt;But all of that is simply to say that I am now starting to know JavaScript enough to know that its &lt;em&gt;real&lt;/em&gt; issues aren&amp;#8217;t the surface-level differences from the other languages with which I&amp;#8217;m familiar. They&amp;#8217;re not even the warts I noted here. They&amp;#8217;re things like the mix of classical and prototypal inheritance in the way the language keywords and object instantiation work. But I don&amp;#8217;t mind those. Every language has tradeoffs. Python&amp;#8217;s support for lambdas is pretty minimal, despite the utility of anonymous functions, for example. But I &lt;em&gt;like&lt;/em&gt; the tradeoffs JavaScript makes.&lt;sup id="fnref:coffee"&gt;&lt;a class="footnote-ref" href="#fn:coffee" rel="footnote"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;In other words, I discovered the same thing so many other people have over the last few years: JavaScript isn&amp;#8217;t just a good choice for utilitarian reasons. Beneath that messy exterior is a gem of a language. I&amp;#8217;m having a lot of fun with&amp;nbsp;it.&lt;/p&gt;
+&lt;p&gt;A small example: a moment ago, looking up the link for Jasmine, I noted that the
+latest version released today. My response was, &amp;#8220;Ooh&amp;#8212;cool!&amp;#8221;&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;What changed? Well, mostly I changed, but also JavaScript changed a bit. We both
+grew up over the last four years. On the JavaScript side of things, a lot of
+good design patterns and tools have come into play in that span. I&amp;#8217;m sure there
+were plenty of good, disciplined web developers writing clear, careful, 
+well-organized client-side JavaScript four years go. But in the interval, that
+kind of JavaScript got a lot more prominent, in part because it has had help
+from the rapid rise of server-side JavaScript in the form of Node.js and its
+flourishing ecosystem of components and tools. Build tools like
+&lt;a href="http://browserify.org"&gt;Browserify&lt;/a&gt; and development tools like &lt;a href="http://livereload.com"&gt;LiveReload&lt;/a&gt; and
+&lt;a href="https://incident57.com/codekit/"&gt;Codekit&lt;/a&gt; have combined with best practices learned from those long years of
+jQuery/&lt;span class="caps"&gt;DOM&lt;/span&gt;-manipulation hell so that these days, good JavaScript is a lot like
+good programming in any other language: highly modular, carefully designed, and&amp;nbsp;well-organized.&lt;/p&gt;
+&lt;p&gt;In the same period of time, I have matured enormously as a developer (just
+enough to see how far I still have to go, of course). At the point where I most
+hated JavaScript, I also really struggled to see the utility of callbacks.
+Frankly, it took me the better part of a month just to get my head around 
+it&amp;#8212;most of the tutorials out there just assumed you understood them already, 
+and, well: I didn&amp;#8217;t. Functions as first-class members of a language was new to 
+me at that point. Fast-forward through several years of full-time Python 
+development, lots of time spent reading about software development and some 
+harder computer science concepts, and my perspective on JavaScript has shifted
+more than a little. Closures are beautiful, wonderful things now. Functions as
+arguments to other functions are delightful and extremely expressive. Prototypal
+inheritance&amp;#8212;trip me up though it sometimes still does&amp;#8212;is a fascinating
+variation on the idea of inheritance and one that I think I like rather better
+than classical inheritance.&lt;sup id="fnref:io"&gt;&lt;a class="footnote-ref" href="#fn:io" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;There are still things I don&amp;#8217;t love about JavaScript. Its syntax owes far too
+much to the C family of languages to make me happy; I quite like the way that
+CoffeeScript borrows from Python (white-space-delimited blocks, use of equality
+words like &lt;code&gt;is&lt;/code&gt; and boolean rules like &lt;code&gt;and&lt;/code&gt; rather than &lt;code&gt;===&lt;/code&gt; and &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;
+respectively, etc.). And I am looking forward to a number of features coming in
+the next version of JavaScript&amp;#8212;especially generators and the &lt;code&gt;const&lt;/code&gt; and &lt;code&gt;let&lt;/code&gt;
+keywords, which will allow for &lt;em&gt;much&lt;/em&gt; saner&amp;nbsp;patterns.&lt;/p&gt;
+&lt;p&gt;But all of that is simply to say that I am now starting to know JavaScript
+enough to know that its &lt;em&gt;real&lt;/em&gt; issues aren&amp;#8217;t the surface-level differences from
+the other languages with which I&amp;#8217;m familiar. They&amp;#8217;re not even the warts I noted
+here. They&amp;#8217;re things like the mix of classical and prototypal inheritance in the
+way the language keywords and object instantiation work. But I don&amp;#8217;t mind those.
+Every language has tradeoffs. Python&amp;#8217;s support for lambdas is pretty minimal,
+despite the utility of anonymous functions, for example. But I &lt;em&gt;like&lt;/em&gt; the
+tradeoffs JavaScript makes.&lt;sup id="fnref:coffee"&gt;&lt;a class="footnote-ref" href="#fn:coffee" rel="footnote"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;In other words, I discovered the same thing so many other people have over the
+last few years: JavaScript isn&amp;#8217;t just a good choice for utilitarian reasons.
+Beneath that messy exterior is a gem of a language. I&amp;#8217;m having a lot of fun with&amp;nbsp;it.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
