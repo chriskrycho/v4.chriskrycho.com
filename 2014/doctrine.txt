@@ -14,4 +14,3 @@ Source: John Calvin, <cite>Institutes of the Christian Religion</cite>, III:6.4.
 > which our religion is contained we have given the first place, since by it our
 > salvation commences; but it must be transfused into the breast, and pass into
 > the conduct, and so transform us into itself, as not to prove unfruitful.
-> ---John Calvin, _Institutes of the Christian Religion_, III:6.4.
