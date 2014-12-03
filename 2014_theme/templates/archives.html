@@ -18,6 +18,9 @@
                     <div class="content">
                     {% if item.link is defined %}
                         {{ item.content }}
+                    {% elif item.source is defined %}
+                        {{ item.content }}
+                        <p class="citation">&mdash;{{item.source}}</p>
                     {% elif item.preview is defined %}
                         {{ item.preview }}
                     {% endif %}

@@ -1,1 +1,6 @@
 {% extends "article.html" %}
+
+{% block item_content %}
+    {{ item.content }}
+    <p class="citation">&mdash;{{ item.source }}</p>
+{% endblock %}
