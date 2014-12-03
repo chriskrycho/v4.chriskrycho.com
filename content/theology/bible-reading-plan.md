@@ -1,6 +1,6 @@
 Title: You Need a Plan
 Author: Chris Krycho
-Date: 2014-12-02 12:00
+Date: 2014-12-02 17:50
 Slug: bible-reading-plan
 Description: I need a plan for reading the Bible&mdash;just like for everything else in life. Otherwise, things go downhill in a hurry.
 
