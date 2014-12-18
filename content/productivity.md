@@ -19,8 +19,8 @@ number of places:
   - Do not over-organize. Most tasks can go in a simple inbox.
   - Hit your due dates. Making it a habit to hit every due date will help you
     not to miss important tasks.
-  - Hit your due dates. Making it a habit to hit every due date will help you
-    not to miss important tasks.
+  - Do not put due dates on things that do not need them. You will eventually
+    stop paying attention to them---and also to the due dates that *do* matter.
 
 I try to knock out a few small things from my Inbox every day, and hit all the
 due dates I set for myself. I am missing fewer things, getting more things done,
