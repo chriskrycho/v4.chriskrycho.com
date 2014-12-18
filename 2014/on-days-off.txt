@@ -24,13 +24,13 @@ over time is extraordinary, though: my easy runs with a toddler in a stroller
 today are faster than my best runs alone were a few years ago.
 
 My hope for this year is to do something the same with my writing. I do not
-expect that the majority of my words will be particularly elegant or well-put-
-together. I expect most of my posts to go largely unread and unnoticed, and that
-is perfectly fine with me---indeed, *more* than fine, because I am writing them
-first of all as a double act of self-discipline. From those devotional posts I
-hope to gain not an audience but the benefit of thoughtful reflection the
-Scriptures I read and the helpful effect of regular writing on my *other*
-writing.
+expect that the majority of my words will be particularly elegant or
+well-put-together. I expect most of my posts to go largely unread and unnoticed,
+and that is perfectly fine with me---indeed, *more* than fine, because I am
+writing them first of all as a double act of self-discipline. From those
+devotional posts I hope to gain not an audience but the benefit of thoughtful
+reflection the Scriptures I read and the helpful effect of regular writing on my
+*other* writing.
 
 So when, as in the last few days, I simply cannot get to that writing because
 other things intrude, I have a double response. First, I recognize that this is
