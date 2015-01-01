@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block title %}{{ item.title|striptags }} &middot; {{ SITENAME }}{% endblock %}
-{% if item is defined and item.description is defined %}{% block description %}{{ item.description|striptags }}{% endblock %}{% endif %}
+{% if item is defined and item.description is defined %}
+    {% block description %}{{ item.description|striptags }}{% endblock %}
+{% endif %}
 
 {% block content %}
 
