@@ -25,15 +25,15 @@ breast? What is walking on water or calming a storm, for the God who took up the
 image of the image of God? Not to make little of these miracles---they are in no
 way trivial or light. But the Incarnation stands apart.
 
-Even the resurrection of the Son of God is less surprising than his birth. Once
-God had taken up this frail form, it seems almost unthinkable that he would
-*fail* to raise it from the dead. We must never minimize Jesus' resurrection. It
-is the means of our justification and the basis all our hope. It is the rock
-beneath our joy in the long and painful days that stand between us and our own
-restoration. Its enormity remains. But still, it seems to me less astonishing
-than the Incarnation. Death has always been an interloper; its reign was always
-temporary. The Creator-God wrapping himself in creature-hood was never something
-we could have guessed.
+Even the resurrection of the Son of God is less surprising than his birth. Now,
+we must never minimize Jesus' resurrection. It is the means of our justification
+and the basis all our hope. It is the rock beneath our joy in the long and
+painful days that stand between us and our own restoration. Its enormity
+remains. Still, it seems to me less astonishing than the Incarnation. Death has
+always been an interloper; its reign was always temporary. Once God had taken up
+this frail form, it seems almost unthinkable that he would *fail* to raise it
+from the dead. But the Creator-God wrapping himself in creature-hood was never
+something we could have guessed.
 
 Look closer. The wonders---the strange, delightful paradoxes---mount up.
 
