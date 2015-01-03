@@ -5,6 +5,7 @@ Template: formats/class
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
 Tags: M. Div., SEBTS, book reviews
+School: Southeastern Baptist Theological Seminary
 Rating: 2/5
 Description: Morris' book could have been a helpful volume; a robust doctrine of the atonement is a wonderful thing. I am sad to say that _The Atonement_ simply wasn't very good.
 
