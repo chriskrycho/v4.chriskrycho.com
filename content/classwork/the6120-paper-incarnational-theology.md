@@ -3,7 +3,7 @@ Description: The Incarnation itself is essential and central in God's work in th
 Author: Chris Krycho
 Date: 2014-05-06 08:15
 Category: theology
-Tags: M. Div., SEBTS, papers, book reviews
+Tags: M. Div., SEBTS, papers
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
