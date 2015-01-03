@@ -1,7 +1,10 @@
 Title: <cite>The Atonement</cite>, Leon Morris
 Category: theology
-Tags: reviews
 Date: 2014-03-16 19:50
+Template: formats/class
+Class: Christian Theology II
+Professor: Dr. Steve McKinion
+Tags: M. Div., SEBTS, book reviews
 Rating: 2/5
 Description: Morris' book could have been a helpful volume; a robust doctrine of the atonement is a wonderful thing. I am sad to say that _The Atonement_ simply wasn't very good.
 
