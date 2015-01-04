@@ -3,6 +3,7 @@
 @import "base";
 @import "highlight_js_tomorrow";
 @import "bigfoot";
+@import "bigfoot-number";
 
 // General default styles
 html {
@@ -719,6 +720,20 @@ sup[id^="fnref:"] a {
             }
         }
     }
+}
+
+.bigfoot-footnote__button {
+    &:after {
+        @include transform(translate(-50%, -50%));
+        font: {
+            family: $sans;
+            size: $fs_small;
+        }
+    }
+}
+
+.bigfoot-footnote__tooltip {
+    @include transform(rotate(45deg));
 }
 
 @import "media";
