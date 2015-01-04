@@ -79,10 +79,8 @@ p {
     }
 }
 
-h1, h2, h3, h4, h5, h6, ul, ol, blockquote, pre {
-    + p {
-        text-indent: 0;
-    }
+h1, h2, h3, h4, h5, h6, ul, ol, blockquote, pre, hr {
+    + p { text-indent: 0; }
 }
 
 p:first-child, p:first-of-type {
@@ -133,14 +131,13 @@ h3 {
         size: $fs3;
         weight: bold;
     }
-    ;
+
     color: $light_gray;
     border-bottom: 1px solid lighten($light_gray, 39.1%);
     padding: {
         top: 1em;
         bottom: 0.108em;
     }
-    ;
 
     + h4 {
         padding-top: 0.244em;
@@ -152,12 +149,9 @@ h4 {
         size: $fs4;
         weight: bold;
     }
-    ;
     padding-top: 1em;
 
-    + h5 {
-        padding-top: 0.244em;
-    }
+    + h5 { padding-top: 0.244em; }
 }
 
 h5 {
@@ -166,11 +160,8 @@ h5 {
         style: italic;
         size: $fs5
     }
-    ;
 
-    + h6 {
-        padding-top: 0;
-    }
+    + h6 { padding-top: 0; }
 }
 
 h6 {
@@ -184,16 +175,11 @@ h6 {
         top: $fs3;
         right: $fs_very_small;
     }
-    ;
 
-    + p {
-        display: inline;
-    }
+    + p { display: inline; }
 }
 
-pre {
-    white-space: pre-wrap;
-}
+pre { white-space: pre-wrap; }
 
 sup {
     line-height: 0; // Fixes vertical alignment issues
@@ -213,20 +199,22 @@ cite.bibleref { font-style: normal; }
 strong { font-weight: bold; }
 
 hr {
-    display: none;
-    
-    & + p::first-letter {
-        font-size: 4em;
-        float: left;
-        margin-top: -0.5em;
-        margin-bottom: -0.425em;
+    width: 62.5%;
+    margin: {
+        left: auto;
+        right: auto;
+        top: $fs3;
+        bottom: $fs4;
     }
-    
-    & + p::first-line {
-        @include first-line();
+    border: {
+        bottom: none;
+        right: none;
+        left: none;
+        top: 1px solid;
     }
-    
-    
+
+    &+ p::first-letter { @include first-letter(); }
+    &+ p::first-line { @include first-line(); }
 }
 
 // Special styles
@@ -436,9 +424,7 @@ article {
     .content {
 
         > p:first-of-type {
-            &:first-line {
-                @include first-line();
-            }
+            &::first-line { @include first-line(); }
         }
 
         h1 {
@@ -457,13 +443,13 @@ article {
             &:first-child {
                 padding-top: 0.244em;
 
-                &:before {
-                    content: none;
-                }
+                &:before { content: none; }
             }
 
-            + p:first-line, + h2 + p:first-line {
-                @include first-line();
+            + p,
+            + h2 {
+                &::first-letter { @include first-letter(); }
+                &::first-line { @include first-line(); }
             }
 
             + h2 {
@@ -543,11 +529,6 @@ article {
     .footnote {
         padding-top: 0.5rem;
         font-size: $fs_small;
-
-        hr {
-            @extend hr;
-            margin-left: 0;
-        }
     }
 
     &.archive {

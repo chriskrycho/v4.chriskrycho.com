@@ -84,3 +84,8 @@ $easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
     font-family: 'gentium_plus_smcp';
     @include font-feature-settings('smcp');
 }
+
+@mixin first-letter() {
+    font-size: $fs3;
+    line-height: 1;
+}
