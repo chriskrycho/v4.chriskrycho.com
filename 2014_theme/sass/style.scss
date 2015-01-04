@@ -202,15 +202,14 @@ sup {
 
 em, i, cite {
     font-style: italic;
+
+    em, i, cite { font-style: normal; }
 }
 
-cite.bibleref {
-    font-style: normal;
-}
 
-strong {
-    font-weight: bold;
-}
+cite.bibleref { font-style: normal; }
+
+strong { font-weight: bold; }
 
 hr {
     display: none;
