@@ -310,7 +310,7 @@ body {
         }
     }
 
-    hgroup {
+    .hgroup {
         @include flex(1 0 500px);
 
         margin: {

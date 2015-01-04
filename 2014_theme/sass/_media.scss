@@ -9,7 +9,7 @@
 
 @media only screen and (max-width: 920px) {
     #site-header {
-        hgroup {
+        .hgroup {
             @include flex(1 100%);
         }
 
@@ -126,7 +126,7 @@
     #site-header {
         padding-bottom: $fs3;
 
-        hgroup {
+        .hgroup {
             margin: {
                 left: 0;
                 right: 0;
