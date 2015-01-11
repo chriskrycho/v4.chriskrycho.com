@@ -1,5 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 02 Jan 2015 20:15:00 -0500</lastBuildDate><item><title>Public-ish Plans</title><link>http://www.chriskrycho.com/2015/public-ish-plans.html</link><description>&lt;p&gt;I have not (yet) made a formal list of goals for 2015, though I think I may do
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 09 Jan 2015 18:00:00 -0500</lastBuildDate><item><title>The Joy of Good Tools</title><link>http://www.chriskrycho.com/2015/the-joy-of-good-tools.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;Note: This started out as a &lt;a href="https://alpha.app.net/chriskrycho/post/47820144"&gt;series of posts on App.net&lt;/a&gt;,
+but as I realized that it was growing a bit, I decided to &lt;a href="/2014/a-few-theses-on-blogging.html"&gt;take my own advice&lt;/a&gt;
+and turn it into a short blog post. (The first four paragraphs of this post are
+the same as the posts that spawned it.) And then, as so often happens with my
+writing, it rather took on a life of its own. So much for&amp;nbsp;short.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;After wrestling with Bitbucket issues again all day, I think I’ve finally hit
+the breaking point. Time to go ahead and drop the money on GitHub and migrate my
+private repos there. (Yes, GitLab is neat, but tool integrations matter,&amp;nbsp;too.)&lt;/p&gt;
+&lt;p&gt;I think I’m also probably going to spring for a small subscription to Pivotal
+Tracker. It’s cheaper to do GitHub+PivotalTracker at my scale than to host
+GitLab and run YouTrack on a &lt;span class="caps"&gt;VPS&lt;/span&gt;. And that’s &lt;em&gt;not&lt;/em&gt; counting my&amp;nbsp;time.&lt;/p&gt;
+&lt;p&gt;The big thing with Pivotal is that I &lt;em&gt;need&lt;/em&gt; the ability to estimate more
+effectively even than something like Trello affords (and I don’t want to spend
+time wrangling with Chrome plugins), and it gives me that. Totally worth the
+cost in saved&amp;nbsp;pain.&lt;/p&gt;
+&lt;p&gt;And as for GitHub as compared to the free GitLab… well, honestly, the
+F/&lt;span class="caps"&gt;OSS&lt;/span&gt;-copycat model bothers me on a lot of levels. The fact that their strategy
+is “copy GitHub as closely as possible, and charge for it” is not my idea of
+&amp;#8220;winning&amp;nbsp;slowly&amp;#8221;.&lt;/p&gt;
+&lt;p&gt;(&amp;#8220;Winning slowly&amp;#8221; is more than just the name of my &lt;a href="//www.winningslowly.org"&gt;podcast&lt;/a&gt;. In fact, it&amp;#8217;s the
+opposite: we named the podcast that because it&amp;#8217;s one of the core commitments in
+our&amp;nbsp;lives.)&lt;/p&gt;
+&lt;p&gt;So I&amp;#8217;m going to pay for Pivotal and GitHub. My time is worth something, and the
+quality of the tools I use matters, too. Ongoing irritation and frustration adds
+up over time. Good tools can make us happier. Bad tools can make work more
+frustrating than it needs to be. Given just how frustrating work can be anyway,
+the last thing in the world I want to do is unnecessarily spend my time being
+even more frustrated by my tools. And you know what? $7/month for each of those
+tools is absolutely worth more than the frustration of wrestling with tools that
+do the job less&amp;nbsp;well.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m actually really excited by this. Pivotal Tracker will help me avoid making
+the painful mistake of underestimation in the future, by helping me see how long
+things actually take and giving me a way to plan out major projects with that
+data immediately available. GitHub will be simultaenously more functional and
+much lovelier than Bitbucket&amp;#8212;no strategy tax holding it back!&amp;#8212;and will be
+much nicer to&amp;nbsp;use.&lt;/p&gt;
+&lt;p&gt;At the end of the day, it comes down to this: I&amp;#8217;m happy to pay for good tools
+that make my work more&amp;nbsp;enjoyable.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;To my surprise and amusement, this leads me to a closely related point I had
+been writing up in a separate blog post: the value of tools that &lt;em&gt;delight&lt;/em&gt;. It
+is not merely that bad tools make work unpleasant. Good tools can make work a
+&lt;em&gt;joy&lt;/em&gt;. Indeed, because my vocations is such a significant part of my life, few
+things bring me as much simple pleasure as a tool that does its job well, is
+pleasant to use, and is beautiful, all at&amp;nbsp;once.&lt;/p&gt;
+&lt;p&gt;The latest example of this for me is &lt;a href="//www.neat.io/bee/index.html"&gt;Bee&lt;/a&gt;, a tool designed to make working with
+issue trackers like &lt;span class="caps"&gt;JIRA&lt;/span&gt;, GitHub Issues, and FogBugz easier and more pleasant. I
+use &lt;span class="caps"&gt;JIRA&lt;/span&gt; for one of my long-term contracts&amp;#8212;I actually set it up for the
+company&amp;#8212;and I have a love-hate relationship with it. &lt;span class="caps"&gt;JIRA&lt;/span&gt;&amp;#8217;s power is great,
+but the web interface is slow and cluttered.&lt;sup id="fnref:atlassian"&gt;&lt;a class="footnote-ref" href="#fn:atlassian" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;I have used other desktop tools with &lt;span class="caps"&gt;JIRA&lt;/span&gt; before, and they were even worse than
+the web interface. I stumbled across Bee the other day (I cannot even remember
+how!), decided to try it out, and fell in love. It is simple, fast, and
+&lt;em&gt;elegant&lt;/em&gt;. That is a killer combination. I have been using it daily for over a
+week, and strange though it might be to say of a desktop client for issue
+trackers, I get genuine pleasure out of using it. (Yes, I know: that is a bit&amp;nbsp;strange.)&lt;/p&gt;
+&lt;p&gt;I have the same experience with a number of other tools I use&amp;#8212;&lt;a href="//www.git-tower.com"&gt;Tower&lt;/a&gt;,
+&lt;a href="//bywordapp.com"&gt;Byword&lt;/a&gt;, and &lt;a href="//www.jetbrains.com/idea/"&gt;IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&lt;/a&gt; to name just a few. This very post is written in
+Byword, and I&amp;#8217;m &lt;em&gt;happy&lt;/em&gt; about it. I wish I felt that way about every tool I&amp;nbsp;use.&lt;/p&gt;
+&lt;p&gt;And this goes beyond software. I have had the same experience driving a car. The
+Mazda3 I drove in and after college was a delight. The &lt;span class="caps"&gt;MUV&lt;/span&gt;&lt;sup id="fnref:muv"&gt;&lt;a class="footnote-ref" href="#fn:muv" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; we drive right
+now is sufficient. The Chevy Malibu we rented for driving to and from Texas in
+December was &lt;em&gt;irritating&lt;/em&gt;, with an inordinate number of small failures to
+consider how the thing would actually be used. I would buy another Mazda3 in a
+heartbeat; I would contentedly take another Lexus &lt;span class="caps"&gt;RX300&lt;/span&gt;-alike; I would avoid a
+Chevy Malibu like the&amp;nbsp;plague.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Every&lt;/em&gt; category of tool is like&amp;nbsp;this.&lt;/p&gt;
+&lt;p&gt;The difference between a poor or mediocre tool and a good tool can make the
+difference between frustration and satisfaction. The difference between a good
+tool and a &lt;em&gt;great&lt;/em&gt; tool can make the difference between satisfaction and
+delight. That inspires me: it makes me want to make things so that they do more
+than &lt;em&gt;suffice&lt;/em&gt;&amp;#8212;so that they &lt;em&gt;excel&lt;/em&gt;, so that they delight and energize their
+audience. Whether that is someone using a web application I write or someone
+listening to a piece of music I composed, I want them to experience more than
+good-enough. I want them to feel&amp;nbsp;joy.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;There is something profound here, I think, something that goes even deeper than
+just the experience of being happy enough with a good tool to pay money to use
+it. I think human beings are meant for that profound joy&amp;#8212;meant for it in every
+breath. That these kinds of delights are rare, and so often marred even at their
+best by little failures, is a mark of the imperfection&amp;#8212;and, in human terms at
+least, the &lt;em&gt;imperfectibility&lt;/em&gt;&amp;#8212;of the world in which we live.  But the fact
+that such moments will be rare until the eschaton neither undoes nor diminishes
+the imperative to strive after them&amp;#8212;especially for those of us who, as
+Christians, affirm the goodness and the &lt;em&gt;telos&lt;/em&gt; of the created world. Quite the
+contrary. We have a responsibility and a charge as subcreators always to be able
+to say of the work we have done, &amp;#8220;It is&amp;nbsp;good.&amp;#8221;&lt;/p&gt;
+&lt;p&gt;I am not there yet. I hope very much, though, that the work I do this year will
+be&amp;#8212;for at least one person&amp;#8212;a little sip from that deep well of delight.
+Whether I succeed or no, at least the bar is set where it ought to&amp;nbsp;be.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:atlassian"&gt;
+&lt;p&gt;Atlassian&amp;#8217;s designers seem to be shooting for the kind of &amp;#8220;flat&amp;#8221; 
+minimalism that is in right now&amp;#8230; and missing the mark entirely. &lt;em&gt;All&lt;/em&gt; of their tools are a cluttered mess in the &lt;span class="caps"&gt;UI&lt;/span&gt;/X department.&amp;#160;&lt;a class="footnote-backref" href="#fnref:atlassian" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:muv"&gt;
+&lt;p&gt;A &amp;#8220;Mom Utility Vehicle&amp;#8221;, my wry term for &amp;#8220;&lt;span class="caps"&gt;SUV&lt;/span&gt;&amp;#8221;-type vehicles sitting on 
+standard car chasses.&amp;#160;&lt;a class="footnote-backref" href="#fnref:muv" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 09 Jan 2015 18:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-01-09:2015/the-joy-of-good-tools.html</guid></item><item><title>Public-ish Plans</title><link>http://www.chriskrycho.com/2015/public-ish-plans.html</link><description>&lt;p&gt;I have not (yet) made a formal list of goals for 2015, though I think I may do
 so on Sunday evening. While New Years&amp;#8217; resolutions can be silly and get us in
 trouble (when we set unrealistic goals, or unhelpful goals), the turning of the
 year can also be a helpful time to evaluate the way we spend our time and the
