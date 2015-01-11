@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-01-09T18:00:00-05:00</updated><entry><title>The Joy of Good Tools</title><link href="http://www.chriskrycho.com/2015/the-joy-of-good-tools.html" rel="alternate"></link><updated>2015-01-09T18:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-01-09:2015/the-joy-of-good-tools.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;Note: This started out as a &lt;a href="https://alpha.app.net/chriskrycho/post/47820144"&gt;series of posts on App.net&lt;/a&gt;,
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-01-09T18:00:00-05:00</updated><entry><title>The Joy of Good Tools</title><link href="http://www.chriskrycho.com/2015/joy-good-tools.html" rel="alternate"></link><updated>2015-01-09T18:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-01-09:2015/joy-good-tools.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;Note: This started out as a &lt;a href="https://alpha.app.net/chriskrycho/post/47820144"&gt;series of posts on App.net&lt;/a&gt;,
 but as I realized that it was growing a bit, I decided to &lt;a href="/2014/a-few-theses-on-blogging.html"&gt;take my own advice&lt;/a&gt;
 and turn it into a short blog post. (The first four paragraphs of this post are
 the same as the posts that spawned it.) And then, as so often happens with my
@@ -94,15 +94,16 @@ Whether I succeed or no, at least the bar is set where it ought to&amp;nbsp;be.&
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id="fn:atlassian"&gt;
-&lt;p&gt;Atlassian&amp;#8217;s designers seem to be shooting for the kind of &amp;#8220;flat&amp;#8221; 
-minimalism that is in right now&amp;#8230; and missing the mark entirely. &lt;em&gt;All&lt;/em&gt; of their tools are a cluttered mess in the &lt;span class="caps"&gt;UI&lt;/span&gt;/X department.&amp;#160;&lt;a class="footnote-backref" href="#fnref:atlassian" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Atlassian&amp;#8217;s designers seem to be shooting for the kind of &amp;#8220;flat&amp;#8221;
+minimalism that is in right now&amp;#8230; and missing the mark entirely. &lt;em&gt;All&lt;/em&gt; of
+their tools are a cluttered mess in the &lt;span class="caps"&gt;UI&lt;/span&gt;/X department.&amp;#160;&lt;a class="footnote-backref" href="#fnref:atlassian" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:muv"&gt;
 &lt;p&gt;A &amp;#8220;Mom Utility Vehicle&amp;#8221;, my wry term for &amp;#8220;&lt;span class="caps"&gt;SUV&lt;/span&gt;&amp;#8221;-type vehicles sitting on 
 standard car chasses.&amp;#160;&lt;a class="footnote-backref" href="#fnref:muv" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</summary></entry><entry><title>Public-ish Plans</title><link href="http://www.chriskrycho.com/2015/public-ish-plans.html" rel="alternate"></link><updated>2015-01-02T20:15:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-01-02:2015/public-ish-plans.html</id><summary type="html">&lt;p&gt;I have not (yet) made a formal list of goals for 2015, though I think I may do
+&lt;/div&gt;</summary><category term="software development"></category><category term="design"></category><category term="joy"></category></entry><entry><title>Public-ish Plans</title><link href="http://www.chriskrycho.com/2015/public-ish-plans.html" rel="alternate"></link><updated>2015-01-02T20:15:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-01-02:2015/public-ish-plans.html</id><summary type="html">&lt;p&gt;I have not (yet) made a formal list of goals for 2015, though I think I may do
 so on Sunday evening. While New Years&amp;#8217; resolutions can be silly and get us in
 trouble (when we set unrealistic goals, or unhelpful goals), the turning of the
 year can also be a helpful time to evaluate the way we spend our time and the

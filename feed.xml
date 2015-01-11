@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 09 Jan 2015 18:00:00 -0500</lastBuildDate><item><title>The Joy of Good Tools</title><link>http://www.chriskrycho.com/2015/the-joy-of-good-tools.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;Note: This started out as a &lt;a href="https://alpha.app.net/chriskrycho/post/47820144"&gt;series of posts on App.net&lt;/a&gt;,
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 09 Jan 2015 18:00:00 -0500</lastBuildDate><item><title>The Joy of Good Tools</title><link>http://www.chriskrycho.com/2015/joy-good-tools.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;Note: This started out as a &lt;a href="https://alpha.app.net/chriskrycho/post/47820144"&gt;series of posts on App.net&lt;/a&gt;,
 but as I realized that it was growing a bit, I decided to &lt;a href="/2014/a-few-theses-on-blogging.html"&gt;take my own advice&lt;/a&gt;
 and turn it into a short blog post. (The first four paragraphs of this post are
 the same as the posts that spawned it.) And then, as so often happens with my
@@ -94,15 +94,16 @@ Whether I succeed or no, at least the bar is set where it ought to&amp;nbsp;be.&
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id="fn:atlassian"&gt;
-&lt;p&gt;Atlassian&amp;#8217;s designers seem to be shooting for the kind of &amp;#8220;flat&amp;#8221; 
-minimalism that is in right now&amp;#8230; and missing the mark entirely. &lt;em&gt;All&lt;/em&gt; of their tools are a cluttered mess in the &lt;span class="caps"&gt;UI&lt;/span&gt;/X department.&amp;#160;&lt;a class="footnote-backref" href="#fnref:atlassian" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Atlassian&amp;#8217;s designers seem to be shooting for the kind of &amp;#8220;flat&amp;#8221;
+minimalism that is in right now&amp;#8230; and missing the mark entirely. &lt;em&gt;All&lt;/em&gt; of
+their tools are a cluttered mess in the &lt;span class="caps"&gt;UI&lt;/span&gt;/X department.&amp;#160;&lt;a class="footnote-backref" href="#fnref:atlassian" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:muv"&gt;
 &lt;p&gt;A &amp;#8220;Mom Utility Vehicle&amp;#8221;, my wry term for &amp;#8220;&lt;span class="caps"&gt;SUV&lt;/span&gt;&amp;#8221;-type vehicles sitting on 
 standard car chasses.&amp;#160;&lt;a class="footnote-backref" href="#fnref:muv" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 09 Jan 2015 18:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-01-09:2015/the-joy-of-good-tools.html</guid></item><item><title>Public-ish Plans</title><link>http://www.chriskrycho.com/2015/public-ish-plans.html</link><description>&lt;p&gt;I have not (yet) made a formal list of goals for 2015, though I think I may do
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 09 Jan 2015 18:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-01-09:2015/joy-good-tools.html</guid><category>software development</category><category>design</category><category>joy</category></item><item><title>Public-ish Plans</title><link>http://www.chriskrycho.com/2015/public-ish-plans.html</link><description>&lt;p&gt;I have not (yet) made a formal list of goals for 2015, though I think I may do
 so on Sunday evening. While New Years&amp;#8217; resolutions can be silly and get us in
 trouble (when we set unrealistic goals, or unhelpful goals), the turning of the
 year can also be a helpful time to evaluate the way we spend our time and the
