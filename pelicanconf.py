@@ -62,7 +62,6 @@ DEFAULT_DATE_FORMAT = "%B %d, %Y"
 
 # Markdown and text handling
 MD_EXTENSIONS = ['extra', 'toc', 'headerid', 'smartypants(smarten=old-school)']
-TYPOGRIFY = True
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
