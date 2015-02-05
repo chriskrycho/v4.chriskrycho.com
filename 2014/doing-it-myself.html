@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Doing It Myself &middot; Chris Krycho</title>
+    <title>Doing It Myself &middot; Chris Krycho</title>
     <meta name="description" content="Working with Pelican—the static site generator I use for my blog currently—has reinforced my desire to write my own such software. Sometimes, you just have to do it yourself."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
 <link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2014/doing-it-myself.html"/>
-    <meta property="og:title" content="Doing It Myself"/>
+    <meta property="og:title" content="Doing It Myself"/>
         <meta property="og:description" content="Working with Pelican—the static site generator I use for my blog currently—has reinforced my desire to write my own such software. Sometimes, you just have to do it yourself."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-        <meta name="twitter:title" content="Doing It Myself"/>
+        <meta name="twitter:title" content="Doing It Myself"/>
         <meta name="twitter:description" content="Working with Pelican—the static site generator I use for my blog currently—has reinforced my desire to write my own such software. Sometimes, you just have to do it yourself."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 
@@ -60,7 +60,7 @@
 <article >
 
     <header>
-<h1>Doing It&nbsp;Myself</h1>
+<h1>Doing It Myself</h1>
     </header>
 
     <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/doing-it-myself.html"><i class="fa fa-fw fa-link"></i></a>March 21, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2014/doing-it-myself.txt">Markdown source</a></span></div>
@@ -73,7 +73,8 @@
 <p>Last summer, I started work on a project I named <a href="http://step-stool.io">Step Stool</a>&#8212;aiming to
 make a static site generator that would tick of all the little boxes marking my
 desires for a website generator. In due time, the project got put on hold, as I
-started up classes again and needed to focus more on my family than on fun side&nbsp;projects.</p>
+started up classes again and needed to focus more on my family than on fun side
+projects.</p>
 <p>Come the beginning of 2014, I was ready to bit WordPress farewell once and for
 all, though. While <a href="https://ghost.org">Ghost</a> looks interesting, since I do all my writing
 in Markdown files, there is something tempting about the canonical version of
@@ -83,7 +84,7 @@ the beginning of the year to finish writing Step Stool, and I knew as much,<sup 
 so instead I moved to <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a> as a stop-gap. There were lots of good
 reasons to pick Pelican: it has an active development community, fairly thorough
 documentation,<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup> and it&#8217;s in Python and uses Jinja2 templates&#8212;the same basic
-approach I had taken with Step Stool, and the same&nbsp;toolset.</p>
+approach I had taken with Step Stool, and the same toolset.</p>
 <p>Unfortunately, while I have been glad to be away from WordPress, my experience
 with Pelican so far has only reinforced my desire to get Step Stool done. There
 are <em>lots</em> of little things that it does in ways that just annoy me. Many of
@@ -91,20 +92,20 @@ them have to do with configuration and documentation. On the latter, while the
 documentation is <em>fairly</em> complete, there are quite a few holes and gaps. (Yes,
 yes, open source software and anyone can add to the docs. That&#8217;s great&#8212;it
 really is&#8212;but if I&#8217;m going to use someone else&#8217;s solution, it had better <em>just
-work</em>. Otherwise, I&#8217;d rather spend my time getting my own&nbsp;going.)</p>
+work</em>. Otherwise, I&#8217;d rather spend my time getting my own going.)</p>
 <p>For example, if you want to see how the pagination actually works, good luck
 figuring it out from the documentation. You&#8217;ll need to go looking at the way the
 sample themes (yes, both of them) are implemented to start getting a feel for
 it. Along the same lines, many of the objects that get handed to the templates
 are not fully documented, so it is difficult to know what one can or cannot do.
 I do not particularly want to spend my time adding debug print statements to my
-templates just to figure out what options I have&nbsp;available.</p>
+templates just to figure out what options I have available.</p>
 <p>The same kinds of things hold true for configuration options. Moreover, the
 configuration is done through a Python module. While that makes the module
 easier to integrate on the code side of things, it makes its actual content much
 less transparent than one might hope. Python is not really well optimized for
 writing configuration files&#8212;nor is any normal programming language.
-Configuration is inherently declarative, rather than&nbsp;imperative.</p>
+Configuration is inherently declarative, rather than imperative.</p>
 <p>This is not to say that Pelican is bad software. It is not. It is, however, a
 fairly typical example of open source software implemented by committee. It has
 holes (some of them serious), bumps, and quirks. Here is the reality: so will
@@ -116,9 +117,9 @@ to the Smartypants and Typogrify modules, my own <a href="https://bitbucket.org/
 and quite possibly a <a href="https://bitbucket.org/chriskrycho/markdown-poetry/">Markdown Poetry extension </a>. But I would like
 very much to just get back to doing this myself. There is freedom in rolling my
 own solution to things. I will not always have time to do these kinds of things; 
-I figure I should do them when I&nbsp;can.</p>
+I figure I should do them when I can.</p>
 <p>So here&#8217;s to <a href="http://step-stool.io">Step Stool</a>, and&#8212;more importantly&#8212;to writing your own
-software just to scratch that&nbsp;itch.</p>
+software just to scratch that itch.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -197,27 +198,27 @@ of 1.0 version of this site until just a week or so ago.&#160;<a class="footnote
     <h1>Recent</h1>
     <h2 class="section-title">art</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It&nbsp;Wrong</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise&nbsp;You</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb&nbsp;Rampant</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It Wrong</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise You</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb Rampant</a></li>
     </ul>
     <h2 class="section-title">blog</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good&nbsp;Tools</a></li>
-        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish&nbsp;Plans</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/boosting-my-productivity.html">Boosting My&nbsp;Productivity</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good Tools</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish Plans</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/boosting-my-productivity.html">Boosting My Productivity</a></li>
     </ul>
     <h2 class="section-title">tech</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up&nbsp;Together</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous&nbsp;Situation</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed&nbsp;It</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up Together</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous Situation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed It</a></li>
     </ul>
     <h2 class="section-title">theology</h2>
     <ul>
         <li><a href="http://www.chriskrycho.com/2014/startlement.html">Startlement</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the&nbsp;Incarnation</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be&nbsp;Holy!</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the Incarnation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be Holy!</a></li>
     </ul>
 </section></footer>
 </body>

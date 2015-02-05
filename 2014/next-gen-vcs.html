@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>The Next Generation of Version Control &middot; Chris Krycho</title>
+    <title>The Next Generation of Version Control &middot; Chris Krycho</title>
     <meta name="description" content="The current state of affairs with version control is a mess. Things we can get right next time around."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
 <link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2014/next-gen-vcs.html"/>
-    <meta property="og:title" content="The Next Generation of Version Control"/>
+    <meta property="og:title" content="The Next Generation of Version Control"/>
         <meta property="og:description" content="The current state of affairs with version control is a mess. Things we can get right next time around."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-        <meta name="twitter:title" content="The Next Generation of Version Control"/>
+        <meta name="twitter:title" content="The Next Generation of Version Control"/>
         <meta name="twitter:description" content="The current state of affairs with version control is a mess. Things we can get right next time around."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 
@@ -60,7 +60,7 @@
 <article class='code'>
 
     <header>
-<h1>The Next Generation of Version&nbsp;Control</h1>
+<h1>The Next Generation of Version Control</h1>
     </header>
 
     <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/next-gen-vcs.html"><i class="fa fa-fw fa-link"></i></a>October 16, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2014/next-gen-vcs.txt">Markdown source</a></span></div>
@@ -80,12 +80,12 @@ from some standard centralized version control systems, notably the increased
 number of steps in play to accomplish the same tasks.<sup id="fnref:dad"><a class="footnote-ref" href="#fn:dad" rel="footnote">1</a></sup> But on the whole,
 the advantages of being able to commit locally, have multiple complete copies of
 the repository, and share work without touching a centralized server far
-outweigh any downsides compared to the old centralized&nbsp;system.</p>
+outweigh any downsides compared to the old centralized system.</p>
 <p>That being so, my opening statement remains true, I think: <em>The current state of
 affairs in version control is a mess.</em> Here is what I mean: of those three major
 players (Git, Hg, and Bazaar), each has significant downsides relative to the
 others. Git is famously complex (even arcane), with a user interface design
-philosphy closely matching the <span class="caps">UI</span> sensibilities of Linus Torvalds&#8212;which is to
+philosphy closely matching the UI sensibilities of Linus Torvalds&#8212;which is to
 say, all the wires are exposed, and it is about as user-hostile as it could
 be.<sup id="fnref:hostile"><a class="footnote-ref" href="#fn:hostile" rel="footnote">2</a></sup> It often outperforms Hg or Bazaar, but it has quirks, to say the
 very least. Hg and Bazaar both have <em>much</em> better designed user interfaces. They
@@ -95,7 +95,8 @@ substantially better documentation&#8212;perhaps especially so with Bazaar, but 
 either one a user can understand how to use the tool <em>without having to
 understand the mechanics of the tool</em>. This is simply not the case with Git, and
 while I <em>enjoy</em> knowing the mechanics of Git because I find them interesting,
-<em>having</em> to understand the mechanics of a tool to be able to use it is a&nbsp;problem.</p>
+<em>having</em> to understand the mechanics of a tool to be able to use it is a
+problem.</p>
 <p>But the other systems have their downsides relative, to Git, too. (I will focus
 on Hg because I have never used Bazaar beyond playing with it, though I have
 read a good bit of the documentation.) Mutable history in Git is valuable and
@@ -117,7 +118,7 @@ the same level of sophistication or elegance, and they certainly have not
 managed to foster the sorts of community that GitHub has. The result has been
 wide adoption of Git, and a degree of Stockholm Syndrome among developers who
 have adopted it and concluded that the way Git works is the way a distributed
-version control system <em>should</em>&nbsp;work.</p>
+version control system <em>should</em> work.</p>
 <p>It is not. Git is complicated to use and in need of tools for managing its
 complexity; the same is true of Hg and Bazaar, though perhaps to a slightly
 lesser extent because of their saner branching models. This is what has given
@@ -127,41 +128,41 @@ rise to the <a href="http://nvie.com/posts/a-successful-git-branching-model/">pl
 Managing branching, linking that workflow to issues, and supplying associated
 documentation for projects have also cropped up as closely associated tasks&#8212;
 thus the popularity of GitHub issues and Bitbucket wikis, not to mention
-<a href="http://www.fossil-scm.org">Fossil&#8217;s</a> integration of both into the <span class="caps">DVCS</span> tool itself. None of the
+<a href="http://www.fossil-scm.org">Fossil&#8217;s</a> integration of both into the DVCS tool itself. None of the
 tools handle differences between file systems very elegantly (and indeed, it
 took <em>years</em> for Git even to be useable on Windows). All of them especially
-struggle to manage symlinks and executable&nbsp;flags.</p>
+struggle to manage symlinks and executable flags.</p>
 <p>So there is an enormous opportunity for the <em>next</em> generation of tools. Git, Hg,
-and so on are huge steps forward for developers from <span class="caps">CVS</span>, Visual SourceSafe, or
-<span class="caps">SVN</span>. But they still have major weaknesses, and there are many things that not
+and so on are huge steps forward for developers from CVS, Visual SourceSafe, or
+SVN. But they still have major weaknesses, and there are many things that not
 only can but should be better. In brief, I would love for the next-generation
-version control system to&nbsp;be:</p>
+version control system to be:</p>
 <ul>
-<li>distributed (this is now a&nbsp;non-negotiable);</li>
+<li>distributed (this is now a non-negotiable);</li>
 <li>fast;</li>
 <li>well-documented&#8212;<em>at least</em> as well as Hg is, and preferably as well as
-    Bazaar&nbsp;is;</li>
+    Bazaar is;</li>
 <li>well-designed, which is to say having a user interface that is actually a
     user-interface (like Hg&#8217;s) and not an extremely leaky abstraction around the
     mechanics;<sup id="fnref:leaky"><a class="footnote-ref" href="#fn:leaky" rel="footnote">8</a></sup></li>
 <li>fast;</li>
 <li>file-system oriented, <em>not</em> diff-oriented: this is one of Git&#8217;s great
-    strengths and the reason for a lot of its performance&nbsp;advantages;</li>
-<li>extensible, with a good public <span class="caps">API</span> so that it is straightforward to add
+    strengths and the reason for a lot of its performance advantages;</li>
+<li>extensible, with a good public API so that it is straightforward to add
     functionality like wikis, documentation, social interaction,  and issue
     tracking in a way that actually integrates the tool;<sup id="fnref:integrates"><a class="footnote-ref" href="#fn:integrates" rel="footnote">9</a></sup></li>
-<li>and last but not least, truly&nbsp;cross-platform.</li>
+<li>and last but not least, truly cross-platform.</li>
 </ul>
-<p>That is a non-trivial task, but the first <span class="caps">DVCS</span> that manages to hit even a
+<p>That is a non-trivial task, but the first DVCS that manages to hit even a
 sizeable majority of these desires will gain a lot of traction in a hurry. The
 second generation of distributed version control has been good for us. The third
-could be&nbsp;magical.</p>
+could be magical.</p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:dad">
 <p>A point that was highlighted for me in a conversation a few months ago
-with my father, a programmer who has been using <span class="caps">SVN</span> for a <em>long</em> time and
+with my father, a programmer who has been using SVN for a <em>long</em> time and
 found the transition to Git distinctly less than wonderful.&#160;<a class="footnote-backref" href="#fnref:dad" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:hostile">
@@ -179,7 +180,7 @@ fragile at best in my experience, and substantially less capable than Git&#8217;
 </li>
 <li id="fn:patch">
 <p>Yes, I know about Hg&#8217;s record extension. No, it is <em>not</em> quite the
-same, especially because given the way it is implemented major <span class="caps">GUI</span> tools
+same, especially because given the way it is implemented major GUI tools
 cannot support it without major chicanery.&#160;<a class="footnote-backref" href="#fnref:patch" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:queues">
@@ -264,27 +265,27 @@ heaps and gobs of software <em>around</em> Git to make it work.&#160;<a class="f
     <h1>Recent</h1>
     <h2 class="section-title">art</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It&nbsp;Wrong</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise&nbsp;You</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb&nbsp;Rampant</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It Wrong</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise You</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb Rampant</a></li>
     </ul>
     <h2 class="section-title">blog</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good&nbsp;Tools</a></li>
-        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish&nbsp;Plans</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/boosting-my-productivity.html">Boosting My&nbsp;Productivity</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good Tools</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish Plans</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/boosting-my-productivity.html">Boosting My Productivity</a></li>
     </ul>
     <h2 class="section-title">tech</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up&nbsp;Together</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous&nbsp;Situation</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed&nbsp;It</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up Together</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous Situation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed It</a></li>
     </ul>
     <h2 class="section-title">theology</h2>
     <ul>
         <li><a href="http://www.chriskrycho.com/2014/startlement.html">Startlement</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the&nbsp;Incarnation</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be&nbsp;Holy!</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the Incarnation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be Holy!</a></li>
     </ul>
 </section></footer>
 </body>

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>A Little Crazy &middot; Chris Krycho</title>
+    <title>A Little Crazy &middot; Chris Krycho</title>
     <meta name="description" content="I am going to write a static site generator in Io. Oh, and also the Markdown parser and HTML templating engine required to go with it."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
 <link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2014/a-little-crazy.html"/>
-    <meta property="og:title" content="A Little Crazy"/>
+    <meta property="og:title" content="A Little Crazy"/>
         <meta property="og:description" content="I am going to write a static site generator in Io. Oh, and also the Markdown parser and HTML templating engine required to go with it."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-        <meta name="twitter:title" content="A Little Crazy"/>
+        <meta name="twitter:title" content="A Little Crazy"/>
         <meta name="twitter:description" content="I am going to write a static site generator in Io. Oh, and also the Markdown parser and HTML templating engine required to go with it."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 
@@ -60,7 +60,7 @@
 <article class='code'>
 
     <header>
-<h1>A Little&nbsp;Crazy</h1>
+<h1>A Little Crazy</h1>
     </header>
 
     <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/a-little-crazy.html"><i class="fa fa-fw fa-link"></i></a>April 29, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2014/a-little-crazy.txt">Markdown source</a></span></div>
@@ -74,19 +74,20 @@
 and do like I wrote <a href="http://www.chriskrycho.com/2014/doing-it-myself.html">a bit back</a>, and make <a href="http://step-stool.io">Step Stool</a>
 actually a thing over the course of the rest of the year. Not so crazy. What is
 a bit nuts is the way I&#8217;ve decided to go about that process. In short: as close
-to the hardest way possible as I can&nbsp;conceive.</p>
+to the hardest way possible as I can conceive.</p>
 <hr />
 <p>Over the last couple weeks, I&#8217;ve been spending a fair bit of time toying with
 <a href="http://iolanguage.org">Io</a>. It&#8217;s a neat little language, very different in its approach to a <em>lot</em>
 of things than the languages I&#8217;ve used previously. My programming language
 history is very focused on the &#8220;normal&#8221; languages. The vast majority of real-
-world code I&#8217;ve written has been in one of C, <span class="caps">PHP</span>, or Python. I&#8217;ve done a good
+world code I&#8217;ve written has been in one of C, PHP, or Python. I&#8217;ve done a good
 bit of Javascript along the way, more Fortran than anyone my age has any
 business having done, and a little each of Java and Ruby. Like I said: the
 normal ones. With the exception of Javascript, all of those are either standard
 imperative, object-oriented, or mixed imperative and object-oriented languages.
 Python and Ruby both let you mix in a fair bit of functional-style programming,
-and Javascript does a <em>lot</em> of that and tosses in prototypal inheritance to&nbsp;boot.</p>
+and Javascript does a <em>lot</em> of that and tosses in prototypal inheritance to
+boot.</p>
 <p>But still: they&#8217;re all pretty mainstream, &#8220;normal&#8221; languages. Io isn&#8217;t like that
 at all. For one thing, it&#8217;s hardly popular in any sense at all. Well-known among
 the hackers<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> I know, perhaps, but not popular by any measure. It&#8217;s small. And
@@ -94,9 +95,9 @@ it&#8217;s very <em>alien</em> in some ways. It&#8217;s <a href="http://en.wikip
 inheritance. Courtesy of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain">Javascript</a>, I have a <em>little</em> familiarity
 with that, but it&#8217;s definitely still not my default way of thinking about
 inheritance. Python&#8217;s inheritance model (the one I use most frequently) is
-<em>essentially</em> the same as that in C++, Java, <span class="caps">PHP</span>, and so on&#8212;it&#8217;s normal
+<em>essentially</em> the same as that in C++, Java, PHP, and so on&#8212;it&#8217;s normal
 class-driven inheritance. Io goes off and does full-blown prototypal
-inheritance; even just the little I&#8217;ve played with it has been&nbsp;fun.</p>
+inheritance; even just the little I&#8217;ve played with it has been fun.</p>
 <p>Io also does a bunch of other things a <em>lot</em> different from the other languages
 I&#8217;ve used. First, there are no keywords or&#8212;formally speaking&#8212;even operators
 in the language. Every action (including ones like <code>+</code> or <code>for</code>) is simply a
@@ -110,7 +111,7 @@ are objects (including functions). The net result isn&#8217;t necessarily partic
 different from calling methods on objects, but it is a <em>little</em> different, with
 have some interesting consequences. Notably (though trivially&#8212;or at least, so
 it seems to me at this point), you can pass a message to the null object without
-it being an error. More importantly, the paradigm shift is&nbsp;illuminating.</p>
+it being an error. More importantly, the paradigm shift is illuminating.</p>
 <p>Io also has far more capabilities in terms of concurrency than any of the other
 languagues with which I&#8217;m familiar, because it actively implements the <a href="http://en.wikipedia.org/wiki/Actor_model">Actor
 Model</a>, which means its implementation of messaging instead of object
@@ -139,25 +140,25 @@ really running my own software to manage my site, letting me do whatever I want
 with it and guaranteeing I always understand it well enough to make those kinds
 of changes. Second, I&#8217;ve just wanted to <em>learn</em> a whole bunch along the way.
 Third, it&#8217;s right there in the website link: <a href="http://step-stool.io">step-stool.io</a>! How could I pass
-up such an&nbsp;opportunity?</p>
+up such an opportunity?</p>
 <p>It is that second goal that has pushed me to do this crazy project this crazy
 way. It&#8217;s crazier than just teaching myself a language in order to do the
 static site generator itself, too, because there are a few other pieces missing
 that I&#8217;ll need to write to make this work&#8230; like a Markdown implementation and
-an <span class="caps">HTML</span> templating language. I&#8217;ve never written anything remotely like either
+an HTML templating language. I&#8217;ve never written anything remotely like either
 before, so I&#8217;m going to take the chance to learn a <em>lot</em> of new things. For the
 Markdown implementation, rather than relying on regular expression parsing
 (like most Markdowns do), I&#8217;m going to use a Parsing Expression Grammar.
 That will certainly be more efficient and reliable, but&#8212;more importantly&#8212;it
 is also outside my experience. I have yet to start thinking through how to
-tackle the <span class="caps">HTML</span> templating language implementation (though I know I am going to
-make it an Io implementation of <a href="http://slim-lang.com">Slim</a>, which I quite&nbsp;like).</p>
+tackle the HTML templating language implementation (though I know I am going to
+make it an Io implementation of <a href="http://slim-lang.com">Slim</a>, which I quite like).</p>
 <p>In any case, I&#8217;m going to be taking a good bit longer to get Step Stool
 finished. That is all right: I am going to learn a ton along the way, and I am
 quite sure I will have a blast doing it. And that is <em>exactly</em> what these kinds
-of projects are&nbsp;for.</p>
+of projects are for.</p>
 <p>I&#8217;ll post updates as I go, with the things I&#8217;m learning along the way.
-Hopefully they&#8217;ll be interesting (or at least&nbsp;entertaining).</p>
+Hopefully they&#8217;ll be interesting (or at least entertaining).</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -242,27 +243,27 @@ gains from any engineering degree.&#160;<a class="footnote-backref" href="#fnref
     <h1>Recent</h1>
     <h2 class="section-title">art</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It&nbsp;Wrong</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise&nbsp;You</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb&nbsp;Rampant</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It Wrong</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise You</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb Rampant</a></li>
     </ul>
     <h2 class="section-title">blog</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good&nbsp;Tools</a></li>
-        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish&nbsp;Plans</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/boosting-my-productivity.html">Boosting My&nbsp;Productivity</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good Tools</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish Plans</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/boosting-my-productivity.html">Boosting My Productivity</a></li>
     </ul>
     <h2 class="section-title">tech</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up&nbsp;Together</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous&nbsp;Situation</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed&nbsp;It</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up Together</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous Situation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed It</a></li>
     </ul>
     <h2 class="section-title">theology</h2>
     <ul>
         <li><a href="http://www.chriskrycho.com/2014/startlement.html">Startlement</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the&nbsp;Incarnation</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be&nbsp;Holy!</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the Incarnation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be Holy!</a></li>
     </ul>
 </section></footer>
 </body>

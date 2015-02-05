@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>FirebirdSQL and IntelliJ IDEA (etc.) &middot; Chris Krycho</title>
+    <title>FirebirdSQL and IntelliJ IDEA (etc.) &middot; Chris Krycho</title>
     <meta name="description" content="Configuration instructions for FirebirdSQL JDBC with JetBrains IntelliJ IDEA platform (including PyCharm, RubyMine, WebStorm, etc.)."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
 <link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2014/firebirdsql-and-intellij-idea-etc.html"/>
-    <meta property="og:title" content="FirebirdSQL and IntelliJ IDEA (etc.)"/>
+    <meta property="og:title" content="FirebirdSQL and IntelliJ IDEA (etc.)"/>
         <meta property="og:description" content="Configuration instructions for FirebirdSQL JDBC with JetBrains IntelliJ IDEA platform (including PyCharm, RubyMine, WebStorm, etc.)."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-        <meta name="twitter:title" content="FirebirdSQL and IntelliJ IDEA (etc.)"/>
+        <meta name="twitter:title" content="FirebirdSQL and IntelliJ IDEA (etc.)"/>
         <meta name="twitter:description" content="Configuration instructions for FirebirdSQL JDBC with JetBrains IntelliJ IDEA platform (including PyCharm, RubyMine, WebStorm, etc.)."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 
@@ -60,7 +60,7 @@
 <article class='code'>
 
     <header>
-<h1>FirebirdSQL and IntelliJ <span class="caps">IDEA</span>&nbsp;(etc.)</h1>
+<h1>FirebirdSQL and IntelliJ IDEA (etc.)</h1>
     </header>
 
     <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/firebirdsql-and-intellij-idea-etc.html"><i class="fa fa-fw fa-link"></i></a>March 28, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2014/firebirdsql-and-intellij-idea-etc.txt">Markdown source</a></span></div>
@@ -70,59 +70,60 @@
 
         <div class="content">
 
-<p>Setting up IntelliJ <span class="caps">IDEA</span>&#8217;s built-in database tools to work with FirebirdSQL
-requires a particular setup configuration, which I&#8217;m documenting here for public&nbsp;consumption.</p>
+<p>Setting up IntelliJ IDEA&#8217;s built-in database tools to work with FirebirdSQL
+requires a particular setup configuration, which I&#8217;m documenting here for public
+consumption.</p>
 <p>These setup tools <em>should</em> be applicable to any of JetBrains&#8217; other Java-based
 IDEs which include database support (e.g. PyCharm, RubyMine, WebStorm, etc.).
-<em>Note:</em> the following apply to IntelliJ <span class="caps">IDEA</span> 12 and the associated platforms,
-but <em>not</em> to the <span class="caps">IDEA</span> 13 platform, which made substantial changes to how
+<em>Note:</em> the following apply to IntelliJ IDEA 12 and the associated platforms,
+but <em>not</em> to the IDEA 13 platform, which made substantial changes to how
 databases are configured. The underlying details are consistent, but the
-interface has changed. I have tested on PyCharm 3.1 to confirm&nbsp;that.</p>
-<p>This was all done on <span class="caps">OS</span> X 10.9, so I also make no guarantees that this works on
+interface has changed. I have tested on PyCharm 3.1 to confirm that.</p>
+<p>This was all done on OS X 10.9, so I also make no guarantees that this works on
 other platforms, though the likelihood that it behaves the same on Linux is
-fairly good. I will update the post if and when I have confirmed that it&nbsp;does.</p>
-<p>Steps to configuring a database correctly for use with <span class="caps">IDEA</span>/etc. Note that
+fairly good. I will update the post if and when I have confirmed that it does.</p>
+<p>Steps to configuring a database correctly for use with IDEA/etc. Note that
 steps 1&#8211;3 are fairly obvious; the real point of interest is in steps 4 and 5,
-which took me the longest time to figure&nbsp;out.</p>
+which took me the longest time to figure out.</p>
 <ol>
 <li>
 <p>Download the latest version of the Firebird <a href="http://www.firebirdsql.org/en/jdbc-driver/">Java drivers</a> for your
     operating system and your Java version. (You can check your Java version by
     running <code>java -version</code> at the command line.) Extract the downloaded zip
     file. The extracted folder should include a file named
-    <code>jaybird-full-&lt;version&gt;.jar</code> (<code>&lt;version&gt;</code> is currently&nbsp;2.2.4).</p>
+    <code>jaybird-full-&lt;version&gt;.jar</code> (<code>&lt;version&gt;</code> is currently 2.2.4).</p>
 </li>
 <li>
-<p>In <span class="caps">IDEA</span>, in the database view, add a new data source: in the Database view
+<p>In IDEA, in the database view, add a new data source: in the Database view
     (accessible via a menu button on the right side of the screen), right click
     and choose <strong>New -&gt; Data Source</strong>.</p>
 </li>
 <li>
-<p>Under <strong><span class="caps">JDBC</span> driver files</strong>, browse to the location where you extracted the
+<p>Under <strong>JDBC driver files</strong>, browse to the location where you extracted the
     Jaybird driver files and select <code>jaybird-full-&lt;version&gt;.jar</code>.</p>
 </li>
 <li>
-<p>Under <strong><span class="caps">JDBC</span> driver class</strong>, choose <code>org.firebirdsql.jdbc.FBDriver</code>.</p>
+<p>Under <strong>JDBC driver class</strong>, choose <code>org.firebirdsql.jdbc.FBDriver</code>.</p>
 </li>
 <li>
-<p>Under <strong>Database <span class="caps">URL</span></strong>, specify <code>jdbc:firebirdsql://localhost:3050/</code>
+<p>Under <strong>Database URL</strong>, specify <code>jdbc:firebirdsql://localhost:3050/</code>
     followed by <em>either</em> the full path to the database in question or a
-    corresponding alias.<sup id="fnref:alias"><a class="footnote-ref" href="#fn:alias" rel="footnote">1</a></sup> A full path might look like this on&nbsp;Windows:</p>
+    corresponding alias.<sup id="fnref:alias"><a class="footnote-ref" href="#fn:alias" rel="footnote">1</a></sup> A full path might look like this on Windows:</p>
 <pre><code>jdbc:firebirdsql://localhost:3050/C:/my_project/the_database.db
 </code></pre>
-<p>With an alias, you would instead&nbsp;have:</p>
+<p>With an alias, you would instead have:</p>
 <pre><code>jdbc:firebirdsql://localhost:3050/the_alias
 </code></pre>
 <p>Then specify valid values for the <strong>User</strong> and <strong>Password</strong> fields from
-your existing configuration of the&nbsp;database.</p>
+your existing configuration of the database.</p>
 </li>
 <li>
-<p>Click the <strong>Test Connection</strong> button and make sure the configuration&nbsp;works.</p>
+<p>Click the <strong>Test Connection</strong> button and make sure the configuration works.</p>
 </li>
 </ol>
 <p>That should do it. Note that the driver choice and path configuration both
-matter. On <span class="caps">OS</span> X, I found that only the <code>FBDriver</code> with this (and one other,
-older-style and therefore not recommended) path setup worked&nbsp;successfully.</p>
+matter. On OS X, I found that only the <code>FBDriver</code> with this (and one other,
+older-style and therefore not recommended) path setup worked successfully.</p>
 <p>Observations, corrections, additional information, and miscellaneous comments
 welcomed on <a href="https://alpha.app.net/chriskrycho">App.net</a> or <a href="https://www.twitter.com/chriskrycho">Twitter</a>.</p>
 <div class="footnote">
@@ -200,27 +201,27 @@ references to the database file whatsoever.&#160;<a class="footnote-backref" hre
     <h1>Recent</h1>
     <h2 class="section-title">art</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It&nbsp;Wrong</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise&nbsp;You</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb&nbsp;Rampant</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It Wrong</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise You</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb Rampant</a></li>
     </ul>
     <h2 class="section-title">blog</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good&nbsp;Tools</a></li>
-        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish&nbsp;Plans</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/boosting-my-productivity.html">Boosting My&nbsp;Productivity</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good Tools</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish Plans</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/boosting-my-productivity.html">Boosting My Productivity</a></li>
     </ul>
     <h2 class="section-title">tech</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up&nbsp;Together</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous&nbsp;Situation</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed&nbsp;It</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up Together</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous Situation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed It</a></li>
     </ul>
     <h2 class="section-title">theology</h2>
     <ul>
         <li><a href="http://www.chriskrycho.com/2014/startlement.html">Startlement</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the&nbsp;Incarnation</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be&nbsp;Holy!</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the Incarnation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be Holy!</a></li>
     </ul>
 </section></footer>
 </body>

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/blog.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-01-09T18:00:00-05:00</updated><entry><title>The Joy of Good Tools</title><link href="http://www.chriskrycho.com/2015/joy-good-tools.html" rel="alternate"></link><updated>2015-01-09T18:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-01-09:2015/joy-good-tools.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;Note: This started out as a &lt;a href="https://alpha.app.net/chriskrycho/post/47820144"&gt;series of posts on App.net&lt;/a&gt;,
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/blog.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-01-09T18:00:00-05:00</updated><entry><title>The Joy of Good Tools</title><link href="http://www.chriskrycho.com/2015/joy-good-tools.html" rel="alternate"></link><updated>2015-01-09T18:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-01-09:2015/joy-good-tools.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;Note: This started out as a &lt;a href="https://alpha.app.net/chriskrycho/post/47820144"&gt;series of posts on App.net&lt;/a&gt;,
 but as I realized that it was growing a bit, I decided to &lt;a href="/2014/a-few-theses-on-blogging.html"&gt;take my own advice&lt;/a&gt;
 and turn it into a short blog post. (The first four paragraphs of this post are
 the same as the posts that spawned it.) And then, as so often happens with my
-writing, it rather took on a life of its own. So much for&amp;nbsp;short.&lt;/i&gt;&lt;/p&gt;
+writing, it rather took on a life of its own. So much for short.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;After wrestling with Bitbucket issues again all day, I think I’ve finally hit
 the breaking point. Time to go ahead and drop the money on GitHub and migrate my
-private repos there. (Yes, GitLab is neat, but tool integrations matter,&amp;nbsp;too.)&lt;/p&gt;
+private repos there. (Yes, GitLab is neat, but tool integrations matter, too.)&lt;/p&gt;
 &lt;p&gt;I think I’m also probably going to spring for a small subscription to Pivotal
 Tracker. It’s cheaper to do GitHub+PivotalTracker at my scale than to host
-GitLab and run YouTrack on a &lt;span class="caps"&gt;VPS&lt;/span&gt;. And that’s &lt;em&gt;not&lt;/em&gt; counting my&amp;nbsp;time.&lt;/p&gt;
+GitLab and run YouTrack on a VPS. And that’s &lt;em&gt;not&lt;/em&gt; counting my time.&lt;/p&gt;
 &lt;p&gt;The big thing with Pivotal is that I &lt;em&gt;need&lt;/em&gt; the ability to estimate more
 effectively even than something like Trello affords (and I don’t want to spend
 time wrangling with Chrome plugins), and it gives me that. Totally worth the
-cost in saved&amp;nbsp;pain.&lt;/p&gt;
+cost in saved pain.&lt;/p&gt;
 &lt;p&gt;And as for GitHub as compared to the free GitLab… well, honestly, the
-F/&lt;span class="caps"&gt;OSS&lt;/span&gt;-copycat model bothers me on a lot of levels. The fact that their strategy
+F/OSS-copycat model bothers me on a lot of levels. The fact that their strategy
 is “copy GitHub as closely as possible, and charge for it” is not my idea of
-&amp;#8220;winning&amp;nbsp;slowly&amp;#8221;.&lt;/p&gt;
+&amp;#8220;winning slowly&amp;#8221;.&lt;/p&gt;
 &lt;p&gt;(&amp;#8220;Winning slowly&amp;#8221; is more than just the name of my &lt;a href="//www.winningslowly.org"&gt;podcast&lt;/a&gt;. In fact, it&amp;#8217;s the
 opposite: we named the podcast that because it&amp;#8217;s one of the core commitments in
-our&amp;nbsp;lives.)&lt;/p&gt;
+our lives.)&lt;/p&gt;
 &lt;p&gt;So I&amp;#8217;m going to pay for Pivotal and GitHub. My time is worth something, and the
 quality of the tools I use matters, too. Ongoing irritation and frustration adds
 up over time. Good tools can make us happier. Bad tools can make work more
@@ -29,44 +29,45 @@ frustrating than it needs to be. Given just how frustrating work can be anyway,
 the last thing in the world I want to do is unnecessarily spend my time being
 even more frustrated by my tools. And you know what? $7/month for each of those
 tools is absolutely worth more than the frustration of wrestling with tools that
-do the job less&amp;nbsp;well.&lt;/p&gt;
+do the job less well.&lt;/p&gt;
 &lt;p&gt;I&amp;#8217;m actually really excited by this. Pivotal Tracker will help me avoid making
 the painful mistake of underestimation in the future, by helping me see how long
 things actually take and giving me a way to plan out major projects with that
 data immediately available. GitHub will be simultaenously more functional and
 much lovelier than Bitbucket&amp;#8212;no strategy tax holding it back!&amp;#8212;and will be
-much nicer to&amp;nbsp;use.&lt;/p&gt;
+much nicer to use.&lt;/p&gt;
 &lt;p&gt;At the end of the day, it comes down to this: I&amp;#8217;m happy to pay for good tools
-that make my work more&amp;nbsp;enjoyable.&lt;/p&gt;
+that make my work more enjoyable.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;To my surprise and amusement, this leads me to a closely related point I had
 been writing up in a separate blog post: the value of tools that &lt;em&gt;delight&lt;/em&gt;. It
 is not merely that bad tools make work unpleasant. Good tools can make work a
 &lt;em&gt;joy&lt;/em&gt;. Indeed, because my vocations is such a significant part of my life, few
 things bring me as much simple pleasure as a tool that does its job well, is
-pleasant to use, and is beautiful, all at&amp;nbsp;once.&lt;/p&gt;
+pleasant to use, and is beautiful, all at once.&lt;/p&gt;
 &lt;p&gt;The latest example of this for me is &lt;a href="//www.neat.io/bee/index.html"&gt;Bee&lt;/a&gt;, a tool designed to make working with
-issue trackers like &lt;span class="caps"&gt;JIRA&lt;/span&gt;, GitHub Issues, and FogBugz easier and more pleasant. I
-use &lt;span class="caps"&gt;JIRA&lt;/span&gt; for one of my long-term contracts&amp;#8212;I actually set it up for the
-company&amp;#8212;and I have a love-hate relationship with it. &lt;span class="caps"&gt;JIRA&lt;/span&gt;&amp;#8217;s power is great,
+issue trackers like JIRA, GitHub Issues, and FogBugz easier and more pleasant. I
+use JIRA for one of my long-term contracts&amp;#8212;I actually set it up for the
+company&amp;#8212;and I have a love-hate relationship with it. JIRA&amp;#8217;s power is great,
 but the web interface is slow and cluttered.&lt;sup id="fnref:atlassian"&gt;&lt;a class="footnote-ref" href="#fn:atlassian" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;I have used other desktop tools with &lt;span class="caps"&gt;JIRA&lt;/span&gt; before, and they were even worse than
+&lt;p&gt;I have used other desktop tools with JIRA before, and they were even worse than
 the web interface. I stumbled across Bee the other day (I cannot even remember
 how!), decided to try it out, and fell in love. It is simple, fast, and
 &lt;em&gt;elegant&lt;/em&gt;. That is a killer combination. I have been using it daily for over a
 week, and strange though it might be to say of a desktop client for issue
-trackers, I get genuine pleasure out of using it. (Yes, I know: that is a bit&amp;nbsp;strange.)&lt;/p&gt;
+trackers, I get genuine pleasure out of using it. (Yes, I know: that is a bit
+strange.)&lt;/p&gt;
 &lt;p&gt;I have the same experience with a number of other tools I use&amp;#8212;&lt;a href="//www.git-tower.com"&gt;Tower&lt;/a&gt;,
-&lt;a href="//bywordapp.com"&gt;Byword&lt;/a&gt;, and &lt;a href="//www.jetbrains.com/idea/"&gt;IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&lt;/a&gt; to name just a few. This very post is written in
-Byword, and I&amp;#8217;m &lt;em&gt;happy&lt;/em&gt; about it. I wish I felt that way about every tool I&amp;nbsp;use.&lt;/p&gt;
+&lt;a href="//bywordapp.com"&gt;Byword&lt;/a&gt;, and &lt;a href="//www.jetbrains.com/idea/"&gt;IntelliJ IDEA&lt;/a&gt; to name just a few. This very post is written in
+Byword, and I&amp;#8217;m &lt;em&gt;happy&lt;/em&gt; about it. I wish I felt that way about every tool I use.&lt;/p&gt;
 &lt;p&gt;And this goes beyond software. I have had the same experience driving a car. The
-Mazda3 I drove in and after college was a delight. The &lt;span class="caps"&gt;MUV&lt;/span&gt;&lt;sup id="fnref:muv"&gt;&lt;a class="footnote-ref" href="#fn:muv" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; we drive right
+Mazda3 I drove in and after college was a delight. The MUV&lt;sup id="fnref:muv"&gt;&lt;a class="footnote-ref" href="#fn:muv" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; we drive right
 now is sufficient. The Chevy Malibu we rented for driving to and from Texas in
 December was &lt;em&gt;irritating&lt;/em&gt;, with an inordinate number of small failures to
 consider how the thing would actually be used. I would buy another Mazda3 in a
-heartbeat; I would contentedly take another Lexus &lt;span class="caps"&gt;RX300&lt;/span&gt;-alike; I would avoid a
-Chevy Malibu like the&amp;nbsp;plague.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Every&lt;/em&gt; category of tool is like&amp;nbsp;this.&lt;/p&gt;
+heartbeat; I would contentedly take another Lexus RX300-alike; I would avoid a
+Chevy Malibu like the plague.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Every&lt;/em&gt; category of tool is like this.&lt;/p&gt;
 &lt;p&gt;The difference between a poor or mediocre tool and a good tool can make the
 difference between frustration and satisfaction. The difference between a good
 tool and a &lt;em&gt;great&lt;/em&gt; tool can make the difference between satisfaction and
@@ -74,7 +75,7 @@ delight. That inspires me: it makes me want to make things so that they do more
 than &lt;em&gt;suffice&lt;/em&gt;&amp;#8212;so that they &lt;em&gt;excel&lt;/em&gt;, so that they delight and energize their
 audience. Whether that is someone using a web application I write or someone
 listening to a piece of music I composed, I want them to experience more than
-good-enough. I want them to feel&amp;nbsp;joy.&lt;/p&gt;
+good-enough. I want them to feel joy.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;There is something profound here, I think, something that goes even deeper than
 just the experience of being happy enough with a good tool to pay money to use
@@ -86,35 +87,35 @@ that such moments will be rare until the eschaton neither undoes nor diminishes
 the imperative to strive after them&amp;#8212;especially for those of us who, as
 Christians, affirm the goodness and the &lt;em&gt;telos&lt;/em&gt; of the created world. Quite the
 contrary. We have a responsibility and a charge as subcreators always to be able
-to say of the work we have done, &amp;#8220;It is&amp;nbsp;good.&amp;#8221;&lt;/p&gt;
+to say of the work we have done, &amp;#8220;It is good.&amp;#8221;&lt;/p&gt;
 &lt;p&gt;I am not there yet. I hope very much, though, that the work I do this year will
 be&amp;#8212;for at least one person&amp;#8212;a little sip from that deep well of delight.
-Whether I succeed or no, at least the bar is set where it ought to&amp;nbsp;be.&lt;/p&gt;
+Whether I succeed or no, at least the bar is set where it ought to be.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id="fn:atlassian"&gt;
 &lt;p&gt;Atlassian&amp;#8217;s designers seem to be shooting for the kind of &amp;#8220;flat&amp;#8221;
 minimalism that is in right now&amp;#8230; and missing the mark entirely. &lt;em&gt;All&lt;/em&gt; of
-their tools are a cluttered mess in the &lt;span class="caps"&gt;UI&lt;/span&gt;/X department.&amp;#160;&lt;a class="footnote-backref" href="#fnref:atlassian" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+their tools are a cluttered mess in the UI/X department.&amp;#160;&lt;a class="footnote-backref" href="#fnref:atlassian" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:muv"&gt;
-&lt;p&gt;A &amp;#8220;Mom Utility Vehicle&amp;#8221;, my wry term for &amp;#8220;&lt;span class="caps"&gt;SUV&lt;/span&gt;&amp;#8221;-type vehicles sitting on 
+&lt;p&gt;A &amp;#8220;Mom Utility Vehicle&amp;#8221;, my wry term for &amp;#8220;SUV&amp;#8221;-type vehicles sitting on 
 standard car chasses.&amp;#160;&lt;a class="footnote-backref" href="#fnref:muv" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</summary><category term="software development"></category><category term="design"></category><category term="joy"></category></entry><entry><title>Public-ish Plans</title><link href="http://www.chriskrycho.com/2015/public-ish-plans.html" rel="alternate"></link><updated>2015-01-02T20:15:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-01-02:2015/public-ish-plans.html</id><summary type="html">&lt;p&gt;I have not (yet) made a formal list of goals for 2015, though I think I may do
+&lt;/div&gt;</summary><category term="software development"></category><category term="design"></category><category term="joy"></category></entry><entry><title>Public-ish Plans</title><link href="http://www.chriskrycho.com/2015/public-ish-plans.html" rel="alternate"></link><updated>2015-01-02T20:15:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-01-02:2015/public-ish-plans.html</id><summary type="html">&lt;p&gt;I have not (yet) made a formal list of goals for 2015, though I think I may do
 so on Sunday evening. While New Years&amp;#8217; resolutions can be silly and get us in
 trouble (when we set unrealistic goals, or unhelpful goals), the turning of the
 year can also be a helpful time to evaluate the way we spend our time and the
-things we want to&amp;nbsp;accomplish.&lt;/p&gt;
+things we want to accomplish.&lt;/p&gt;
 &lt;p&gt;What follows is a list of public-ish things I am &lt;em&gt;hoping&lt;/em&gt; to manage in 2015, in
 no particular order. Come the end of the year, I will Lord willing look back and
-see which of these I was able to pull&amp;nbsp;off!&lt;/p&gt;
+see which of these I was able to pull off!&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Publish at least two seasons of &lt;a href="//www.winningslowly.org"&gt;Winning Slowly&lt;/a&gt; with &lt;a href="//stephencarradini.com"&gt;Stephen Carradini&lt;/a&gt;
-    just as we did last year&amp;#8212;but&amp;nbsp;better.&lt;/p&gt;
+    just as we did last year&amp;#8212;but better.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Get the site for Winning Slowly updated so that it paginates between
@@ -126,7 +127,7 @@ see which of these I was able to pull&amp;nbsp;off!&lt;/p&gt;
 &lt;p&gt;Migrate Jaimie&amp;#8217;s &lt;a href="//jaimiekrycho.com"&gt;Jaimie&amp;#8217;s professional writing website&lt;/a&gt; from WordPress to
     &lt;a href="//ghost.org"&gt;Ghost&lt;/a&gt;. (Maybe do something similar with her current &lt;a href="//jaimiedawn.blogspot.com"&gt;personal site&lt;/a&gt;, which
     runs on Blogger. Yuck.) I&amp;#8217;ve gotten a bit of a start on that already, and I
-    hope to knock it out sooner rather than&amp;nbsp;later.&lt;/p&gt;
+    hope to knock it out sooner rather than later.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Get to a point where I&amp;#8217;m hosting all my own sites on my own DigitalOcean
@@ -140,27 +141,27 @@ see which of these I was able to pull&amp;nbsp;off!&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Write at least three minutes of music, and post it to my &lt;a href="//soundcloud.com/chriskrycho"&gt;SoundCloud&lt;/a&gt;
-    account. Preferably five minutes, but at least&amp;nbsp;three.&lt;/p&gt;
+    account. Preferably five minutes, but at least three.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Write some&amp;nbsp;poetry.&lt;/p&gt;
+&lt;p&gt;Write some poetry.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Write a substantive essay and post it at least once a&amp;nbsp;month.&lt;/p&gt;
+&lt;p&gt;Write a substantive essay and post it at least once a month.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Post at least a half dozen book reviews (which, among other things, means
     reading at least a half dozen books worth reviewing). These can be fiction
     or non-fiction. Personally, I&amp;#8217;d like to get everything from Dostoevsky to
-    Schreiner in&amp;nbsp;there.&lt;/p&gt;
+    Schreiner in there.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Add a picture to my &lt;a href="/about"&gt;About&lt;/a&gt;&amp;nbsp;page!&lt;/p&gt;
+&lt;p&gt;Add a picture to my &lt;a href="/about"&gt;About&lt;/a&gt; page!&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Post a &lt;a href="/family"&gt;#family&lt;/a&gt; update at least once a month. It&amp;#8217;ll be good for &lt;em&gt;me&lt;/em&gt;, just
     to have a better way of tracking what&amp;#8217;s going on with our little gals, and I
-    know my family would enjoy it,&amp;nbsp;too.&lt;/p&gt;
+    know my family would enjoy it, too.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In sum, I&amp;#8217;d like to be doing &lt;em&gt;something&lt;/em&gt; in nearly every public-facing category
@@ -170,10 +171,11 @@ matters to me. Keeping my writing skills sharp matters to me. I cannot &lt;em&gt
 at all of those things, certainly&amp;#8212;especially not if I wish to be a good
 husband and father! But keeping them active means keeping them from further
 atrophying, and that is something, at least. It will hopefully leave them more
-available to me for times in the future when I am able to dedicate more time to&amp;nbsp;them.&lt;/p&gt;
+available to me for times in the future when I am able to dedicate more time to
+them.&lt;/p&gt;
 &lt;p&gt;If 2014 and 2013 were both years in which I focused primarily on software&amp;#8212;and
 all to the good!&amp;#8212;then I hope 2015 will be a year in which I am able to broaden
-out again and focus on a wider variety of&amp;nbsp;things!&lt;/p&gt;
+out again and focus on a wider variety of things!&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;You&amp;#8217;ll note that there really aren&amp;#8217;t any purely personal goals on this list. Not
 to worry: I have them, and I intend to formalize them in the next couple of
@@ -182,7 +184,7 @@ blogging is that not everything needs to be public. Some things can be; indeed,
 some &lt;em&gt;should&lt;/em&gt; be. Some things &lt;em&gt;may&lt;/em&gt; be public but &lt;em&gt;need&lt;/em&gt; not, and yet others
 &lt;em&gt;should not&lt;/em&gt; be public. Right now, I am choosing to leave quite a few things in
 the &amp;#8220;may be need not&amp;#8221; category private. (This direction, I can always change my
-mind later. It&amp;#8217;s essentially impossible to do the opposite in the internet&amp;nbsp;era.)&lt;/p&gt;
+mind later. It&amp;#8217;s essentially impossible to do the opposite in the internet era.)&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -196,41 +198,41 @@ get 50% off! I&amp;#8217;d love it if you used it if you decide to sign up for e
 of them.&amp;#160;&lt;a class="footnote-backref" href="#fnref:affiliate" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</summary><category term="listicles"></category></entry><entry><title>Boosting My Productivity</title><link href="http://www.chriskrycho.com/2014/boosting-my-productivity.html" rel="alternate"></link><updated>2014-12-18T08:05:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-12-18:2014/boosting-my-productivity.html</id><summary type="html">&lt;p&gt;This fall, I have had a lot on my plate: building HolyBible.com, continuing to
+&lt;/div&gt;</summary><category term="listicles"></category></entry><entry><title>Boosting My Productivity</title><link href="http://www.chriskrycho.com/2014/boosting-my-productivity.html" rel="alternate"></link><updated>2014-12-18T08:05:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-12-18:2014/boosting-my-productivity.html</id><summary type="html">&lt;p&gt;This fall, I have had a lot on my plate: building HolyBible.com, continuing to
 work for Quest Consultants, and doing a pastoral ministry internship. I needed
 to be more productive&amp;#8212;a lot more. Happily, I have been, and it only took three
 small changes.&lt;sup id="fnref:personal"&gt;&lt;a class="footnote-ref" href="#fn:personal" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;h2 id="use-a-to-do-list"&gt;Use a To-Do&amp;nbsp;List&lt;/h2&gt;
+&lt;h2 id="use-a-to-do-list"&gt;Use a To-Do List&lt;/h2&gt;
 &lt;p&gt;Making a list of items to accomplish has been incredibly helpful. I started
 using &lt;a href="https://www.omnigroup.com/omnifocus/"&gt;OmniFocus&lt;/a&gt; in August for class due dates and any work tasks not tracked
 in other ways.&lt;sup id="fnref:tracker"&gt;&lt;a class="footnote-ref" href="#fn:tracker" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; At that point, I organized everything&amp;#8212;a bit too much,
 actually. Over the last couple months, I took some good advice I have seen in a
-number of&amp;nbsp;places:&lt;/p&gt;
+number of places:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Do not over-organize. Most tasks can go in a simple&amp;nbsp;inbox.&lt;/li&gt;
+&lt;li&gt;Do not over-organize. Most tasks can go in a simple inbox.&lt;/li&gt;
 &lt;li&gt;Hit your due dates. Making it a habit to hit every due date will help you
-    not to miss important&amp;nbsp;tasks.&lt;/li&gt;
+    not to miss important tasks.&lt;/li&gt;
 &lt;li&gt;Do not put due dates on things that do not need them. You will eventually
-    stop paying attention to them&amp;#8212;and also to the due dates that &lt;em&gt;do&lt;/em&gt;&amp;nbsp;matter.&lt;/li&gt;
+    stop paying attention to them&amp;#8212;and also to the due dates that &lt;em&gt;do&lt;/em&gt; matter.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;I try to knock out a few small things from my Inbox every day, and hit all the
 due dates I set for myself. I am missing fewer things, getting more things done,
 and getting them done sooner than I did before. I like my app, but I know people
 who have just used an old-fashioned planner. The trick is to find a strategy
 that works for you.&lt;sup id="fnref:app"&gt;&lt;a class="footnote-ref" href="#fn:app" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;h2 id="email-is-not-a-to-do-list"&gt;Email Is &lt;em&gt;Not&lt;/em&gt; A To-Do&amp;nbsp;List&lt;/h2&gt;
+&lt;h2 id="email-is-not-a-to-do-list"&gt;Email Is &lt;em&gt;Not&lt;/em&gt; A To-Do List&lt;/h2&gt;
 &lt;p&gt;At some point, I got in the habit of using my email as a to-do list. In theory,
 seeing a list of unanswered emails every day should have motivated me to respond
 to them. In reality, they just sat there and slowly piled up. At best, they
-nagged at me. At worst, I basically forgot&amp;nbsp;them.&lt;/p&gt;
+nagged at me. At worst, I basically forgot them.&lt;/p&gt;
 &lt;p&gt;When I started using OmniFocus, I killed this habit. Now I make a task for
 anything I need to act on, and I delete or archive everything else.&lt;sup id="fnref:email"&gt;&lt;a class="footnote-ref" href="#fn:email" rel="footnote"&gt;4&lt;/a&gt;&lt;/sup&gt; If
 the task is time-sensitive, I put a due date on it; otherwise, my third rule
 above applies. I also have a repeating task reminding me to empty my inbox at
 the end of each day (&amp;#8220;Inbox Zero&amp;#8221;). Having an empty inbox at the end of every
 day removes a certain amount of mental baggage: I have a task for everything I
-&lt;em&gt;need&lt;/em&gt; to act&amp;nbsp;on.&lt;/p&gt;
-&lt;h2 id="take-breaks"&gt;Take&amp;nbsp;breaks&lt;/h2&gt;
+&lt;em&gt;need&lt;/em&gt; to act on.&lt;/p&gt;
+&lt;h2 id="take-breaks"&gt;Take breaks&lt;/h2&gt;
 &lt;p&gt;Finally, I have started using the &lt;a href="http://en.wikipedia.org/wiki/Pomodoro_Technique"&gt;&amp;#8220;pomodoro&amp;#8221;&lt;/a&gt; technique. The basic approach is
 to work steadily for 25 minutes, then take a 5 minute break.&lt;sup id="fnref:25/5"&gt;&lt;a class="footnote-ref" href="#fn:25/5" rel="footnote"&gt;5&lt;/a&gt;&lt;/sup&gt; After four
 such cycles, I take a slightly longer break&amp;#8212;usually 15 minutes. On each break,
@@ -238,7 +240,7 @@ I walk around and do something unrelated to whatever I am working on. I also
 write down a brief summary of what I did on that cycle.&lt;sup id="fnref:summary"&gt;&lt;a class="footnote-ref" href="#fn:summary" rel="footnote"&gt;7&lt;/a&gt;&lt;/sup&gt; There is
 nothing complicated about this: I just use a simple timer to track the work and
 break cycles.&lt;sup id="fnref:timer"&gt;&lt;a class="footnote-ref" href="#fn:timer" rel="footnote"&gt;6&lt;/a&gt;&lt;/sup&gt; I have seen a &lt;em&gt;dramatic&lt;/em&gt; improvement in my ability to
-sustain my concentration on my tasks throughout the day since I&amp;nbsp;started.&lt;/p&gt;
+sustain my concentration on my tasks throughout the day since I started.&lt;/p&gt;
 &lt;p&gt;There are a few reasons for that improvement. First, I have dedicated break
 times, so I know that I can go check social media, read tech and news sites,
 etc. &lt;em&gt;later&lt;/em&gt;. That makes it easier to concentrate on work for the blocks in
@@ -246,7 +248,7 @@ between; the distractions can wait. Second, it puts a limit on those break
 times. We have all been surprised to find we have lost an hour reading online;
 using a timer helps prevent that. Third, getting up and moving around helps keep
 my brain active&amp;#8212;I can tell that the movement considerably improves my
-alertness and&amp;nbsp;concentration.&lt;/p&gt;
+alertness and concentration.&lt;/p&gt;
 &lt;p&gt;These breaks have other benefits, too. There is mounting evidence that sitting
 all day is terrible for our health. Even exercising as much as I do &lt;a href="http://www.npr.org/2011/04/25/135575490/sitting-all-day-worse-for-you-than-you-might-think" title="Sitting All Day: Worse For You Than You Might Think"&gt;cannot
 fully counteract&lt;/a&gt; a sedentary lifestyle. However, there is also evidence
@@ -254,19 +256,19 @@ that getting up and moving on a regular basis &lt;em&gt;does&lt;/em&gt; help. Wa
 usually manage a fifth or a quarter of a mile on a five-minute break. That adds
 up over the course of a day: if I am disciplined about walking on my breaks, I
 regularly walk 2&amp;#8211;3 miles in a day, even with lunch and other non-walking breaks
-in the&amp;nbsp;mix.&lt;/p&gt;
+in the mix.&lt;/p&gt;
 &lt;p&gt;I have also found the breaks spiritually helpful. One of the requirements for my
 pastoral ministry internship was to memorize Ephesians. Five-minute breaks are
 &lt;em&gt;perfect&lt;/em&gt; for memorizing and reviewing Scripture, so I was able to be productive
 on those breaks, even while letting my brain relax from my other work. It is
 similarly useful for dedicated times of prayer throughout the day. The
 combination of scripture memory and prayer has been invaluable in combatting sin
-and stirring up my affections for&amp;nbsp;Christ.&lt;/p&gt;
+and stirring up my affections for Christ.&lt;/p&gt;
 &lt;p&gt;In short, I get a triple benefit by doing pomodoros. I am more productive when I
 am working, my body will remain healthier because I am less sedentary, and I am
 growing in holiness and intimacy with God. Of all the changes I made this
 semester, incorporating pomodoros into my day has been the most important, and I
-plan to make it a regular part of my life&amp;nbsp;henceforth.&lt;/p&gt;
+plan to make it a regular part of my life henceforth.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -275,7 +277,7 @@ plan to make it a regular part of my life&amp;nbsp;henceforth.&lt;/p&gt;
 you crazy.&amp;#160;&lt;a class="footnote-backref" href="#fnref:personal" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:tracker"&gt;
-&lt;p&gt;I.e., things not covered by &lt;span class="caps"&gt;JIRA&lt;/span&gt;, Trello, Bitbucket issues, etc.&amp;#160;&lt;a class="footnote-backref" href="#fnref:tracker" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I.e., things not covered by JIRA, Trello, Bitbucket issues, etc.&amp;#160;&lt;a class="footnote-backref" href="#fnref:tracker" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:app"&gt;
 &lt;p&gt;While &lt;a href="https://www.omnigroup.com/omnifocus/"&gt;OmniFocus&lt;/a&gt; suits me, I would recommend &lt;a href="https://en.todoist.com/"&gt;Todoist&lt;/a&gt; to most people
@@ -303,7 +305,7 @@ weekly report for an employer.&amp;#160;&lt;a class="footnote-backref" href="#fn
 &lt;/ol&gt;
 &lt;/div&gt;</summary></entry><entry><title>Whiplash</title><link href="http://www.chriskrycho.com/2014/whiplash.html" rel="alternate"></link><updated>2014-07-14T23:15:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-14:2014/whiplash.html</id><summary type="html">&lt;p&gt;I have a pretty severe case of emotional whiplash&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; at the moment. In the last
 eight hours, I have gone from jubilant to the most worried I have ever been to
-simple, utter&amp;nbsp;exhaustion.&lt;/p&gt;
+simple, utter exhaustion.&lt;/p&gt;
 &lt;p&gt;This afternoon, I heard back from a then-potential and now-actual client who
 hired me and a friend to design and build a web application for them. They are
 going to pay us a substantial sum to do it. This is &lt;em&gt;fantastic&lt;/em&gt;. I have been
@@ -311,7 +313,7 @@ hoping this particular opportunity would come through, because everything about
 it is appealing to me. It is an interesting application; I like the material it
 involves (a &lt;em&gt;lot&lt;/em&gt;); I will learn a bit along the way; I will get to stretch my
 front-end design chops again; I will make some seriously good money at it. I am,
-in a word,&amp;nbsp;stoked.&lt;/p&gt;
+in a word, stoked.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Fast forward four and a half hours. Jaimie and I are helping Ellie wrap up her
 evening activities and getting ready to take her upstairs and put her to bed.
@@ -323,8 +325,8 @@ grabs her. &amp;#8220;Kate! Breathe! Breathe, little girl!&amp;#8221; She isn&am
 getting upset but she isn&amp;#8217;t crying. (Babies cry at the drop of a hat.) Little
 bubbles at her mouth. Jaimie is doing the baby variation of the Heimlich
 maneuver. I am nearly helpless; I keep using my finger to pull Kate&amp;#8217;s mouth
-open; she finally latches onto the finger, starts sucking, and&amp;nbsp;breathes.&lt;/p&gt;
-&lt;p&gt;Thank&amp;nbsp;God.&lt;/p&gt;
+open; she finally latches onto the finger, starts sucking, and breathes.&lt;/p&gt;
+&lt;p&gt;Thank God.&lt;/p&gt;
 &lt;p&gt;We hold her. She breathes&amp;#8212;&lt;em&gt;mostly&lt;/em&gt; normally. We keep paying close attention to
 her. The couple times I let her lay down on her back she starts seizing up and
 turning red again within a few minutes until I pick her up and pat her
@@ -333,17 +335,17 @@ doctor; she sends us to the hospital. A friend comes to watch Ellie and we run
 out the door. It is a 30-minute drive (and I am speeding, and Jaimie is holding
 Kate to make sure she keeps breathing).&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; Kate wheezes off and on the whole
 way there. She still isn&amp;#8217;t crying, and she should be. She hasn&amp;#8217;t eaten in six
-hours; she should be hungry. Why isn&amp;#8217;t she&amp;nbsp;hungry?&lt;/p&gt;
+hours; she should be hungry. Why isn&amp;#8217;t she hungry?&lt;/p&gt;
 &lt;p&gt;They admit us. They get all her vitals. The doctor is a kind, soft-spoken man
 with the last name Saad; I like him. He asks dozens of good questions. He tells
 us, &amp;#8220;95&amp;#8211;99% of the time, this is just reflux. We just care about that other 1%
 of the time.&amp;#8221; There is no reliable way to stop a baby from choking on milk she
-spits up because of reflux.&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt; They are going to do an &lt;span class="caps"&gt;EKG&lt;/span&gt; and chest X-rays
-just to make sure she is&amp;nbsp;okay.&lt;/p&gt;
+spits up because of reflux.&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt; They are going to do an EKG and chest X-rays
+just to make sure she is okay.&lt;/p&gt;
 &lt;p&gt;She seems to be okay. She is eating again&amp;#8212;like a champ, like she normally
-does, like she should&amp;nbsp;be.&lt;/p&gt;
+does, like she should be.&lt;/p&gt;
 &lt;p&gt;I go home to relieve the wonderful friends who are sitting in our house to make
-sure Ellie is fine. Ellie is still sleeping.&amp;nbsp;Good.&lt;/p&gt;
+sure Ellie is fine. Ellie is still sleeping. Good.&lt;/p&gt;
 &lt;p&gt;Breathe.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Whiplash. I am no less excited about that project. And my youngest daughter
@@ -352,9 +354,9 @@ were all asleep tonight, God only knows what would have happened. We are
 grateful to God that we were feet away from Kate, that Jaimie &amp;#8220;happened&amp;#8221; to look
 at her just then. We are grateful, too, for the extra money coming in; it will
 help with the so-very-worth-it-but-not-easy-on-a-seminary-budget cost of an
-emergency room&amp;nbsp;visit.&lt;/p&gt;
-&lt;p&gt;Ice&amp;nbsp;cream.&lt;/p&gt;
-&lt;p&gt;I think I&amp;#8217;m going to sleep now. Hopefully tomorrow is less&amp;nbsp;extreme.&lt;/p&gt;
+emergency room visit.&lt;/p&gt;
+&lt;p&gt;Ice cream.&lt;/p&gt;
+&lt;p&gt;I think I&amp;#8217;m going to sleep now. Hopefully tomorrow is less extreme.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -370,35 +372,36 @@ They will help us get to the hospital faster.&amp;#160;&lt;a class="footnote-bac
 &lt;p&gt;Terrifying, just a bit? Yes.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</summary><category term="family"></category><category term="Kate"></category></entry><entry><title>A Few Theses on Blogging</title><link href="http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html" rel="alternate"></link><updated>2014-07-09T21:15:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-09:2014/a-few-theses-on-blogging.html</id><summary type="html">&lt;p&gt;I am a habitually&amp;#8212;even chronically&amp;#8212;long-winded blogger. I always have been.
+&lt;/div&gt;</summary><category term="family"></category><category term="Kate"></category></entry><entry><title>A Few Theses on Blogging</title><link href="http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html" rel="alternate"></link><updated>2014-07-09T21:15:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-09:2014/a-few-theses-on-blogging.html</id><summary type="html">&lt;p&gt;I am a habitually&amp;#8212;even chronically&amp;#8212;long-winded blogger. I always have been.
 I sat down a few weeks ago to write up an explanation of my running approach,
 and I haven&amp;#8217;t finished it yet&amp;#8230; because it is over 2,500 words long and growing
 rapidly longer. But as I have considered my approach to blogging of late, and as
 I have also been posting fairly regularly on App.net (my social media locale of
-choice), it occurred to&amp;nbsp;me:&lt;/p&gt;
+choice), it occurred to me:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Blog posts do not have to be the lengthy things I usually make of&amp;nbsp;them.&lt;/li&gt;
+&lt;li&gt;Blog posts do not have to be the lengthy things I usually make of them.&lt;/li&gt;
 &lt;li&gt;I often write up a series of thoughts&amp;#8212;not necessarily an &amp;#8220;argument&amp;#8221; or
     indeed anything more than a series of connected thoughts&amp;#8212;on App.net,
     connecting them via the &amp;#8216;reply&amp;#8217; mechanism and enumerating them. Rather like
-    I am&amp;nbsp;here.&lt;/li&gt;
-&lt;li&gt;Doing so inevitably clutters up the streams of anyone following&amp;nbsp;me.&lt;/li&gt;
+    I am here.&lt;/li&gt;
+&lt;li&gt;Doing so inevitably clutters up the streams of anyone following me.&lt;/li&gt;
 &lt;li&gt;That clutter may or may not be problematic: some folks may enjoy those
-    connected thoughts. Others may&amp;nbsp;not.&lt;/li&gt;
+    connected thoughts. Others may not.&lt;/li&gt;
 &lt;li&gt;For those that &lt;em&gt;do&lt;/em&gt; enjoy those connected thoughts, a blog post like this
-    would probably serve just as&amp;nbsp;well.&lt;/li&gt;
+    would probably serve just as well.&lt;/li&gt;
 &lt;li&gt;For those who do &lt;em&gt;not&lt;/em&gt; enjoy them&amp;#8230; well, this sort of thing would be a
-    welcome way to clear their streams up without causing me any particular&amp;nbsp;difficulty.&lt;/li&gt;
+    welcome way to clear their streams up without causing me any particular
+    difficulty.&lt;/li&gt;
 &lt;li&gt;Using lists does not automatically mean I have given in to the constant
-    temptation to make my blogging about driving&amp;nbsp;views.&lt;/li&gt;
+    temptation to make my blogging about driving views.&lt;/li&gt;
 &lt;li&gt;Seriously.&lt;/li&gt;
 &lt;li&gt;This blog will &lt;em&gt;never&lt;/em&gt; drive substantial amounts of traffic. That is fine by
-    me. Indeed, I would probably feel a bit odd if it&amp;nbsp;did.&lt;/li&gt;
+    me. Indeed, I would probably feel a bit odd if it did.&lt;/li&gt;
 &lt;li&gt;Therefore, when I have those sorts of thoughts-in-a-line in the future, I
     will do as I have done here. I will write a &amp;#8216;listicle&amp;#8217; (the shame!) and
-    share it for others to partake of&amp;#8212;or not!&amp;#8212;as they&amp;nbsp;please.&lt;/li&gt;
+    share it for others to partake of&amp;#8212;or not!&amp;#8212;as they please.&lt;/li&gt;
 &lt;li&gt;Taking that approach will almost certainly free me up to blog more briefly
-    when I feel like it, as well. That, too, can only be a good&amp;nbsp;thing.&lt;/li&gt;
+    when I feel like it, as well. That, too, can only be a good thing.&lt;/li&gt;
 &lt;li&gt;After all: I am happier when I am writing.&lt;sup id="fnref:12"&gt;&lt;a class="footnote-ref" href="#fn:12" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="footnote"&gt;
@@ -408,19 +411,19 @@ choice), it occurred to&amp;nbsp;me:&lt;/p&gt;
 &lt;p&gt;As I have so often &lt;a href="http://www.chriskrycho.com/2014/the-long-race.html"&gt;noted before&lt;/a&gt;&amp;#8230;&amp;#160;&lt;a class="footnote-backref" href="#fnref:12" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</summary><category term="listicles"></category></entry><entry><title>Three Month Cycles.</title><link href="http://www.chriskrycho.com/2014/three-month-cycles.html" rel="alternate"></link><updated>2014-05-27T20:45:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-05-27:2014/three-month-cycles.html</id><summary type="html">&lt;p&gt;Over the past few years, Jaimie and I have observed that I tend to go in cycles
+&lt;/div&gt;</summary><category term="listicles"></category></entry><entry><title>Three Month Cycles.</title><link href="http://www.chriskrycho.com/2014/three-month-cycles.html" rel="alternate"></link><updated>2014-05-27T20:45:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-05-27:2014/three-month-cycles.html</id><summary type="html">&lt;p&gt;Over the past few years, Jaimie and I have observed that I tend to go in cycles
 in my time-spending habits. The issue is not so much whether I spend my time
 well, but where I spend it. I will go on a blogging kick for a few months, as I
 did at the beginning of this year, then not write much at all for a few
 months&amp;#8212;but in the interval spend gobs of time reading, or writing software, or
 so on. I am not sure what it is that triggers the change, but it has been a
-fairly regular fixture of my life for at least the length of our&amp;nbsp;marriage.&lt;/p&gt;
+fairly regular fixture of my life for at least the length of our marriage.&lt;/p&gt;
 &lt;p&gt;Every once in a while, I will even go on a weeks-long video games or television
 kick. This is bliss for Jaimie, as she finds spending time together playing
 video games or watching television shows we both enjoy to be one of our best
 connecting activities. But then the spell comes to an end, and I&amp;#8217;m back off to a
 reading kick, or designing a new website, or embarking on some crazed software
-development scheme or another. It somewhat drives Jaimie crazy, I&amp;nbsp;suspect.&lt;/p&gt;
+development scheme or another. It somewhat drives Jaimie crazy, I suspect.&lt;/p&gt;
 &lt;p&gt;I am not entirely sure what makes me tick this way. I do know that in those
 dedicated phases of work I can knock out significant tasks in the given area
 where I am motivated at any given time. (I have no doubt, for example, that I
@@ -429,7 +432,7 @@ November, if I were in a writing mode.) Being able to predict these things would
 be nice, though. I could make a plan for the year and have a good idea what
 projects I would accomplish. Instead, I find myself extraordinarily productive
 in &lt;em&gt;some&lt;/em&gt; area at any given time&amp;#8212;but never sure what it will be a month later.
-That&amp;#8217;s not a &lt;em&gt;problem&lt;/em&gt;. It is, however, a bit&amp;nbsp;perplexing.&lt;/p&gt;
+That&amp;#8217;s not a &lt;em&gt;problem&lt;/em&gt;. It is, however, a bit perplexing.&lt;/p&gt;
 &lt;p&gt;To be sure, I can and do force myself to continue on with certain tasks even
 when they are not particularly holding my interest. Sometimes that discipline is
 really helpful, and I eventually break through to another extended session of
@@ -439,14 +442,14 @@ Who and back again&amp;#8212;brings me back fresher and more energized to comple
 tasks. That is no surprise; I see the same patterns play out on the time scale
 of hours and days with my paid work (where just taking a month off is not
 particularly workable). Again: I just wish I could get a handle on the timing,
-so I could take advantage of that in making&amp;nbsp;plans.&lt;/p&gt;
+so I could take advantage of that in making plans.&lt;/p&gt;
 &lt;p&gt;Right now, I seem to be in a video games and general blogging mode. I &lt;em&gt;want&lt;/em&gt; to
 dig back in on my software projects, and I expect I&amp;#8217;ll do so soon. And by &amp;#8220;soon&amp;#8221;
-I mean: whenever I quit playing more &lt;em&gt;Skyrim&lt;/em&gt;. Probably in about two&amp;nbsp;weeks.&lt;/p&gt;
+I mean: whenever I quit playing more &lt;em&gt;Skyrim&lt;/em&gt;. Probably in about two weeks.&lt;/p&gt;
 &lt;p&gt;In the meantime, I think I&amp;#8217;m going to start tracking the particular moods I am
 in so that I can see if there is an established pattern throughout the year.
 Whether it correlates with the season, my other activities, or nothing at all
-would be helpful to know. For Jaimie&amp;#8217;s sanity, if nothing&amp;nbsp;else.&lt;/p&gt;</summary></entry><entry><title>The Long Race</title><link href="http://www.chriskrycho.com/2014/the-long-race.html" rel="alternate"></link><updated>2014-05-24T00:07:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-05-24:2014/the-long-race.html</id><summary type="html">&lt;p&gt;It has been too long since I have written anything&amp;#8212;too long not for my
+would be helpful to know. For Jaimie&amp;#8217;s sanity, if nothing else.&lt;/p&gt;</summary></entry><entry><title>The Long Race</title><link href="http://www.chriskrycho.com/2014/the-long-race.html" rel="alternate"></link><updated>2014-05-24T00:07:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-05-24:2014/the-long-race.html</id><summary type="html">&lt;p&gt;It has been too long since I have written anything&amp;#8212;too long not for my
 audience (small as it is), but for my soul. The last few weeks of class were of
 course even busier than the rest of the semester, courtesy of a couple major
 assignments I wrapped up and studying for and taking finals, all while doing my
@@ -454,7 +457,7 @@ normal work as a software developer on the side. Writing simply fell by the
 wayside, alas. Even my devotions posts simply didn&amp;#8217;t happen. And that is all
 right; there are seasons for all of these things, and it is not as if I didn&amp;#8217;t
 write many thousands of words in late April and early May. They simply were not
-&lt;em&gt;blogging&lt;/em&gt;&amp;nbsp;words.&lt;/p&gt;
+&lt;em&gt;blogging&lt;/em&gt; words.&lt;/p&gt;
 &lt;p&gt;So here I am tonight, writing simply to unwind. I spent much of the day working
 on various software projects&amp;#8212;a pattern I expect to carry throughout the
 summer. In addition to my regular work for Quest Consultants Inc. back in
@@ -465,7 +468,7 @@ supplement my 20 hours a week for Quest with other work. That is nice not only
 financially, but also intellectually. The change of pace between different
 kinds of work helps me stay fresh on all of them. My own personal &lt;a href="http://www.chriskrycho.com/2014/a-little-crazy.html"&gt;side
 projects&lt;/a&gt; are coming along slowly, but that is all right. Slow but steady
-is the best way to go about those kinds of projects&amp;nbsp;anyway.&lt;/p&gt;
+is the best way to go about those kinds of projects anyway.&lt;/p&gt;
 &lt;p&gt;That lesson is one I have learned more and more from my ongoing and
 ever-increasing delight in running. So far in May I have run about 125 miles; I
 expect to run over 150 miles this month in total (though of course all such
@@ -479,7 +482,8 @@ with it and used a &lt;a href="http://markallenonline.com/maoArticles.aspx?AID=2
 parts of life, it is that sticking-with-it that leads to getting somewhere. Of
 course, sticking with it is no guarantee that things will work out. It is
 usually a requisite step along the way, though&amp;#8212;a
-necessary-though-insufficient condition. That is simply the way God built the&amp;nbsp;world.&lt;/p&gt;
+necessary-though-insufficient condition. That is simply the way God built the
+world.&lt;/p&gt;
 &lt;p&gt;Little Ellie is quickly wrapping up her second year of life in this big world.
 She is saying lots of words (at last!), whining until she has driven Jaimie a
 bit crazy (in too-typical toddler fashion), and growing up in big ways and
@@ -489,7 +493,7 @@ that she has friends whom she loves and who love her in turn. She has also
 discovered a deep love of &lt;em&gt;Star Wars&lt;/em&gt;&amp;#8212;no surprise for a daughter of ours,
 though the intensity of her delight in the movies, for a girl who is not yet
 two years old, did surprise both Jaimie and me a bit. You should hear her try
-to say &amp;#8220;Darth Vader&amp;#8221; or &amp;#8220;Dark Side&amp;#8221; or &amp;#8220;Star Wars.&amp;#8221; It is impossibly&amp;nbsp;adorable.&lt;/p&gt;
+to say &amp;#8220;Darth Vader&amp;#8221; or &amp;#8220;Dark Side&amp;#8221; or &amp;#8220;Star Wars.&amp;#8221; It is impossibly adorable.&lt;/p&gt;
 &lt;p&gt;Jaimie is, as noted above, some 37 weeks pregnant and quite ready to be done
 carrying our second little gal on the inside. She is still plugging away slowly
 at the &lt;a href="http://jaimiekrycho.com/shaking-epheria-pt-1/" title="Bloodlines: The Shaking of Epheria, Part I"&gt;second novella&lt;/a&gt; in her &lt;a href="http://www.amazon.com/Bloodlines-Epheria-The-Trilogy-ebook/dp/B00HY478QO/" title="Get Bloodlines of Epheria on Kindle!"&gt;Bloodlines&lt;/a&gt; fantasy trilogy.
@@ -497,20 +501,20 @@ She manages to keep Ellie entertained&amp;#8212;no small feat&amp;#8212;and does
 job taking care of things around the house so that I can focus on work and
 school. Her struggle with &lt;a href="http://2012-2013.chriskrycho.com/theology/marriage-depression/" title="Marriage and Depression"&gt;depression&lt;/a&gt; has not diminished, but
 God has given us grace to carry on and she and I have both learned to respond
-in better, healthier, more helpful ways when the slumps&amp;nbsp;come.&lt;/p&gt;
+in better, healthier, more helpful ways when the slumps come.&lt;/p&gt;
 &lt;p&gt;As for the future, we really have no idea what the next several yeras will
 hold. I plan to finish my Master of Divinity&amp;#8212;Lord willing, around December
 2016. In the meantime, we will keep raising our little girls, I will keep
 writing software, and we will keep exploring and seeing what we want to do and
 how best to pursue those desires in a way that honors God. Who knows what those
-years will hold? God only, and certainly not&amp;nbsp;us.&lt;/p&gt;</summary><category term="software development"></category><category term="family"></category><category term="fitness"></category></entry><entry><title>Spinning!</title><link href="http://www.chriskrycho.com/2014/spinning.html" rel="alternate"></link><updated>2014-03-20T19:10:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-03-20:2014/spinning.html</id><summary type="html">&lt;p&gt;As she so often does, Ellie simply delighted me tonight, in two wonderful&amp;nbsp;moments:&lt;/p&gt;
+years will hold? God only, and certainly not us.&lt;/p&gt;</summary><category term="software development"></category><category term="family"></category><category term="fitness"></category></entry><entry><title>Spinning!</title><link href="http://www.chriskrycho.com/2014/spinning.html" rel="alternate"></link><updated>2014-03-20T19:10:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-03-20:2014/spinning.html</id><summary type="html">&lt;p&gt;As she so often does, Ellie simply delighted me tonight, in two wonderful moments:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;As I was cleaning up the dishes and playing Max Richter&amp;#8217;s
     &lt;a href="https://itunes.apple.com/us/album/memoryhouse/id545010150"&gt;&lt;em&gt;Memoryhouse&lt;/em&gt;&lt;/a&gt; album, I saw Ellie dancing, and encouraged her to keep
     going. After a moment, I looked over to see her spinning in circles. And
     spinning in circles. And spinning in circles. When she finally stopped, she
     started freaking out as she couldn&amp;#8217;t get her balance. I swooped in and
-    picked her up, laughing with her once she&amp;nbsp;recovered.&lt;/li&gt;
+    picked her up, laughing with her once she recovered.&lt;/li&gt;
 &lt;li&gt;After she calmed down, she started tugging on my shirt. It took me a few
     seconds to realize what she wanted, but then it clicked: she was trying to
     turn me by twisting my shirt. &amp;#8220;You want to spin?&amp;#8221; I asked her. She nodded
@@ -519,7 +523,7 @@ years will hold? God only, and certainly not&amp;nbsp;us.&lt;/p&gt;</summary><ca
     grin plastered across her face was something to behold. We spun first one
     way, then the other, all the way through &lt;a href="http://www.youtube.com/watch?v=BfoSv8iWA_I"&gt;&amp;#8220;The Twins (Prague)&amp;#8221;&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Moments like these are worth&amp;nbsp;remembering.&lt;/p&gt;</summary><category term="family"></category><category term="Ellie"></category></entry><entry><title>On Days Off</title><link href="http://www.chriskrycho.com/2014/on-days-off.html" rel="alternate"></link><updated>2014-02-23T10:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-02-23:2014/on-days-off.html</id><summary type="html">&lt;p&gt;These past few days I have completely missed my normal writing times&amp;#8212;no
+&lt;p&gt;Moments like these are worth remembering.&lt;/p&gt;</summary><category term="family"></category><category term="Ellie"></category></entry><entry><title>On Days Off</title><link href="http://www.chriskrycho.com/2014/on-days-off.html" rel="alternate"></link><updated>2014-02-23T10:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-02-23:2014/on-days-off.html</id><summary type="html">&lt;p&gt;These past few days I have completely missed my normal writing times&amp;#8212;no
 devotions, and certainly not the other few pieces I had been planning to write.
 This was disappointing: I have enjoyed the habit of writing regularly, and I
 intend to keep it up. As I have often noted in the past (in more blog posts on
@@ -527,7 +531,8 @@ previous versions of the site than I can count, still less dig up at the
 moment), writing serves to focus my thoughts as little else does. Moreover,
 though my &lt;a href="/devotions"&gt;#devotions&lt;/a&gt; posts are not especially excellent as
 writing goes, the discipline of writing is like many other things: sometimes it
-matters most that you &lt;em&gt;do&lt;/em&gt; it more than the doing of it be particularly&amp;nbsp;magnificent.&lt;/p&gt;
+matters most that you &lt;em&gt;do&lt;/em&gt; it more than the doing of it be particularly
+magnificent.&lt;/p&gt;
 &lt;p&gt;Most of my running is this way. The vast majority of my runs are entirely
 unexceptional and become notable only in their consistency. They are not tiring
 and not particularly fast&amp;#8212;for me, at least! This is an important
@@ -536,7 +541,7 @@ very ordinary nature of these runs. They become interesting, and are effective,
 only in the aggregate. My entire training plan is built on going slowly and
 training the &amp;#8220;easy&amp;#8221; side of my physiological response to running. The effect
 over time is extraordinary, though: my easy runs with a toddler in a stroller
-today are faster than my best runs alone were a few years&amp;nbsp;ago.&lt;/p&gt;
+today are faster than my best runs alone were a few years ago.&lt;/p&gt;
 &lt;p&gt;My hope for this year is to do something the same with my writing. I do not
 expect that the majority of my words will be particularly elegant or
 well-put-together. I expect most of my posts to go largely unread and unnoticed,
@@ -544,14 +549,14 @@ and that is perfectly fine with me&amp;#8212;indeed, &lt;em&gt;more&lt;/em&gt; t
 writing them first of all as a double act of self-discipline. From those
 devotional posts I hope to gain not an audience but the benefit of thoughtful
 reflection the Scriptures I read and the helpful effect of regular writing on my
-&lt;em&gt;other&lt;/em&gt;&amp;nbsp;writing.&lt;/p&gt;
+&lt;em&gt;other&lt;/em&gt; writing.&lt;/p&gt;
 &lt;p&gt;So when, as in the last few days, I simply cannot get to that writing because
 other things intrude, I have a double response. First, I recognize that this is
 totally all right, under the circumstances. Jaimie and I have been spending time
 with friends and each other, and my normal writing times in the evenings have
 simply been elided by those other activities. Second, though, I recognize that
 such things are likely to come up often, and as such am motivated to commit once
-again to doing this writing in the mornings as much as&amp;nbsp;possible.&lt;/p&gt;
+again to doing this writing in the mornings as much as possible.&lt;/p&gt;
 &lt;p&gt;For several weeks in the beginning of the semester this spring, I was able to
 get up, do my reading, and do my writing before I went to class at 8am. A few
 weeks ago, Jaimie&amp;#8217;s grandmother passed away and we flew her out for the funeral,
@@ -560,28 +565,28 @@ Instead of my two normally scheduled tasks for the weekend (school and work), I
 had three&amp;#8212;and one of them in the form of a teething toddler. The other two
 slipped. I have only just finally caught up, and as such I am hoping that in the
 week ahead I shall be able to resume my previously very effective habits of
-doing all these things to &lt;em&gt;start&lt;/em&gt; the day rather than to finish&amp;nbsp;them.&lt;/p&gt;
+doing all these things to &lt;em&gt;start&lt;/em&gt; the day rather than to finish them.&lt;/p&gt;
 &lt;p&gt;That, of course, assumes I get over this blasted cold that I seem to have caught
-last night&amp;#8230; Life is a funny thing,&amp;nbsp;sometimes.&lt;/p&gt;</summary></entry><entry><title>Hey, Look—A Podcast!</title><link href="http://www.chriskrycho.com/2014/hey-look-a-podcast.html" rel="alternate"></link><updated>2014-01-28T20:20:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-01-28:2014/hey-look-a-podcast.html</id><summary type="html">&lt;p&gt;Today, I was happy to be able to finally go public with a project on which I
+last night&amp;#8230; Life is a funny thing, sometimes.&lt;/p&gt;</summary></entry><entry><title>Hey, Look—A Podcast!</title><link href="http://www.chriskrycho.com/2014/hey-look-a-podcast.html" rel="alternate"></link><updated>2014-01-28T20:20:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-01-28:2014/hey-look-a-podcast.html</id><summary type="html">&lt;p&gt;Today, I was happy to be able to finally go public with a project on which I
 have been working for the last couple months (and for which I have been planning
 since mid-fall): &lt;a href="http://www.winningslowly.org/"&gt;Winning Slowly&lt;/a&gt;. Winning Slowly is a biweeklypodcast by
 yours truly and my good friend &lt;a href="http://stephencarradini.com"&gt;Stephen Carradini&lt;/a&gt; offering thoughtful
-commentary on trends in culture, technology, religion, ethics, and&amp;nbsp;art.&lt;/p&gt;
-&lt;p&gt;Of possible interest to my&amp;nbsp;readers:&lt;/p&gt;
+commentary on trends in culture, technology, religion, ethics, and art.&lt;/p&gt;
+&lt;p&gt;Of possible interest to my readers:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;You can listen to the first episode, &lt;a href="http://www.winningslowly.org/2014/01/we-need-some-context/"&gt;We Need Some&amp;nbsp;Context!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;You can listen to the first episode, &lt;a href="http://www.winningslowly.org/2014/01/we-need-some-context/"&gt;We Need Some Context!&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;You can &lt;a href="http://www.winningslowly.org/feed.xml"&gt;subscribe to the feed&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;You can follow and get updates via all sorts of social networks:&lt;ul&gt;
 &lt;li&gt;Twitter: &lt;a href="https://twitter.som/winningslowly"&gt;@winningslowly&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;App.net: &lt;a href="http://app.net/winningslowly"&gt;@winningslowly&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://broadcast.app.net/40022/winning-slowly-episodes/"&gt;App.net broadcast&lt;/a&gt; &amp;#8211; notifications on your phone or emails as
-  you&amp;nbsp;like&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://plus.google.com/u/0/+WinningslowlyOrgCast/"&gt;Google+&lt;/a&gt; (yes, shockingly&amp;nbsp;enough)&lt;/li&gt;
+  you like&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://plus.google.com/u/0/+WinningslowlyOrgCast/"&gt;Google+&lt;/a&gt; (yes, shockingly enough)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;We&amp;#8217;re still very much in a &amp;#8220;beta&amp;#8221; phase. The audio quality needs significant
 improvement, our back-and-forth needs to get smoother (and, at times, more back-
-and-forth!), and so on. We&amp;#8217;d love to hear your feedback. But be&amp;nbsp;gentle.&lt;/p&gt;</summary></entry><entry><title>A Note to RSS Subscribers</title><link href="http://www.chriskrycho.com/2014/a-note-to-rss-subscribers.html" rel="alternate"></link><updated>2014-01-05T09:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-01-05:2014/a-note-to-rss-subscribers.html</id><summary type="html">&lt;p&gt;A note to anyone who has subscribed to this &lt;span class="caps"&gt;RSS&lt;/span&gt; feed: you should resubscribe by
+and-forth!), and so on. We&amp;#8217;d love to hear your feedback. But be gentle.&lt;/p&gt;</summary></entry><entry><title>A Note to RSS Subscribers</title><link href="http://www.chriskrycho.com/2014/a-note-to-rss-subscribers.html" rel="alternate"></link><updated>2014-01-05T09:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-01-05:2014/a-note-to-rss-subscribers.html</id><summary type="html">&lt;p&gt;A note to anyone who has subscribed to this RSS feed: you should resubscribe by
 adding &lt;a href="http://www.chriskrycho.com/feed.xml"&gt;http://www.chriskrycho.com/feed.xml&lt;/a&gt; to your reader, as this feed
-location is now defunct.&amp;nbsp;Thanks!&lt;/p&gt;</summary></entry></feed>
+location is now defunct. Thanks!&lt;/p&gt;</summary></entry></feed>

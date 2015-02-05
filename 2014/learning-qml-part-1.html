@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Learning QML, Part 1 &middot; Chris Krycho</title>
+    <title>Learning QML, Part 1 &middot; Chris Krycho</title>
     <meta name="description" content=""/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
 <link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2014/learning-qml-part-1.html"/>
-    <meta property="og:title" content="Learning QML, Part 1"/>
+    <meta property="og:title" content="Learning QML, Part 1"/>
         <meta property="og:description" content="Creativity, reflection, & varied endeavors by a peculiar fellow"/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-        <meta name="twitter:title" content="Learning QML, Part 1"/>
+        <meta name="twitter:title" content="Learning QML, Part 1"/>
         <meta name="twitter:description" content="Creativity, reflection, & varied endeavors by a peculiar fellow"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 
@@ -60,7 +60,7 @@
 <article class='code'>
 
     <header>
-<h1>Learning <span class="caps">QML</span>, Part&nbsp;1</h1>
+<h1>Learning QML, Part 1</h1>
     </header>
 
     <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/learning-qml-part-1.html"><i class="fa fa-fw fa-link"></i></a>April 11, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2014/learning-qml-part-1.txt">Markdown source</a></span></div>
@@ -70,24 +70,24 @@
 
         <div class="content">
 
-<p>For part of my work with Quest Consultants, I&#8217;ve been picking up Qt&#8217;s <span class="caps">QML</span>
-toolkit to use in building out the <span class="caps">UI</span>. The declarative syntax and ability to
+<p>For part of my work with Quest Consultants, I&#8217;ve been picking up Qt&#8217;s QML
+toolkit to use in building out the UI. The declarative syntax and ability to
 define one&#8217;s own model in non-C++- or Python-specific ways is quite nice. That
 said, the learning process has had more than a few bumps along the way. I
 decided to go ahead and write those up as I go, both for my own reference and
-in the hope that it may prove useful to others as I&nbsp;go.</p>
-<p><span class="caps">QML</span> is a <em>Javascript-like</em> language for <em>declarative programming</em> of a user
-interface. So it&#8217;s a Javascript-based language that sort of behaves like <span class="caps">HTML</span>.
+in the hope that it may prove useful to others as I go.</p>
+<p>QML is a <em>Javascript-like</em> language for <em>declarative programming</em> of a user
+interface. So it&#8217;s a Javascript-based language that sort of behaves like HTML.
 In fact, it behaves like Javascript in terms of how you define, access, and
 update properties, and you can embed full-featured (mostly) Javascript functions
-and objects in&nbsp;it.</p>
-<p>But when you have nested <span class="caps">QML</span> Types, you end up with them behaving more like
-<span class="caps">HTML</span>.</p>
+and objects in it.</p>
+<p>But when you have nested QML Types, you end up with them behaving more like
+HTML.</p>
 <p>The weirdest bit, and the thing that I&#8217;m having the hardest time adjusting to,
 is that you can only edit properties of root Types when you&#8217;re working with an
 instance of that Type. And those Types are defined by <em>documents</em>.</p>
 <p>So, to give the simplest possible example, let&#8217;s say I defined a new type called
-<code>Monkey</code>, in the <code>Monkey.qml</code> file, like&nbsp;this:</p>
+<code>Monkey</code>, in the <code>Monkey.qml</code> file, like this:</p>
 <pre><code>// Monkey.qml
 import QtQuick 1.1
 
@@ -103,7 +103,7 @@ Item {
 }
 </code></pre>
 <p>I can use that in another file. If they&#8217;re in the same directory, it&#8217;s
-automatically imported, so I can just do something like&nbsp;this:</p>
+automatically imported, so I can just do something like this:</p>
 <pre><code>//main.qml
 import QtQuick 1.1
 
@@ -126,44 +126,45 @@ Rectangle {
     }
 }
 </code></pre>
-<p>That creates a (really ugly) rectangle that prints the <code>Monkey</code><span class="quo">&#8216;</span>s name in red
+<p>That creates a (really ugly) rectangle that prints the <code>Monkey</code>&#8216;s name in red
 text on a green background. It&#8217;s impossible to access directly the <code>monkey_foot</code>
 element, though, which means that composing more complex objects in reusable
 ways is difficult. In fact, I haven&#8217;t come up with a particularly good way to do
 it yet. At least, I should say that I haven&#8217;t come up with a good way to create
 high-level reusable components yet. I can see pretty easily how to create
 low-level reusable components, but once you start putting them together in any
-<em>specific</em> way, you can&#8217;t recompose them in other&nbsp;ways.</p>
+<em>specific</em> way, you can&#8217;t recompose them in other ways.</p>
 <p>From what I&#8217;ve gotten my head around so far, this ends up being less flexible
-than either <span class="caps">HTML</span> templating languages (which are, or at least can be, completely
+than either HTML templating languages (which are, or at least can be, completely
 declarative) or normal Javascript (which is obviously <em>not</em> declarative). Mind
 you, it&#8217;s all sorts of <em>interesting</em>, and I have a pretty decent idea what I&#8217;m
-going to do to implement our <span class="caps">UI</span> with it, but it&#8217;s taken me most of the day to
+going to do to implement our UI with it, but it&#8217;s taken me most of the day to
 get a good handle on that, and my head still feels a bit funny whenever I&#8217;m
-trying to see how best to create composable&nbsp;components.</p>
+trying to see how best to create composable components.</p>
 <p>Note, too, that this is the <em>only</em> way to create a new basic type of object in
-<span class="caps">QML</span>: it has to be the root level object in a <span class="caps">QML</span> document. I would <em>really</em> like
+QML: it has to be the root level object in a QML document. I would <em>really</em> like
 to be able to access internal declarations&#8212;to have named internal
-types/objects. Unfortunately, <span class="caps">QML</span> doesn&#8217;t let you do this. I suspect this has to
-do with how the <span class="caps">QML</span> type system works: it actually binds these types to C++
+types/objects. Unfortunately, QML doesn&#8217;t let you do this. I suspect this has to
+do with how the QML type system works: it actually binds these types to C++
 objects behind the scenes. This is a non-trivially helpful decision in terms of
-the performance of the application, but it certainly makes my brain a little bit&nbsp;twitchy.</p>
+the performance of the application, but it certainly makes my brain a little bit
+twitchy.</p>
 <p>There are two basic consequences of this structure. First, any types you need to
-be able to use in other <span class="caps">QML</span> objects have to be defined in their own <span class="caps">QML</span>
+be able to use in other QML objects have to be defined in their own QML
 documents. Second, it is (as near as I can see so far, at least) difficult to
-create good generic <span class="caps">QML</span> types of more complex structures that you can then use
+create good generic QML types of more complex structures that you can then use
 to implement specific variations. For example: if you want to create accordions,
 you can create a fair number of the low-level elements in generic ways that you
 can reuse, but once you get to the relationships between the actual model,
 delegate, and view elements, you will need to create them in custom forms for
-each distinct&nbsp;approach.</p>
-<p>This is more like creating <span class="caps">HTML</span> documents than Javascript, which makes sense,
-<em>if</em> you remember that <span class="caps">QML</span> is Javascript-based but <em>declarative</em>. You just have
+each distinct approach.</p>
+<p>This is more like creating HTML documents than Javascript, which makes sense,
+<em>if</em> you remember that QML is Javascript-based but <em>declarative</em>. You just have
 to remember that while you can define some reusable components, the full-fledged
-elements are like full <span class="caps">HTML</span> pages with a templating system: you can include
-elements, but not override their internal contents. In <span class="caps">QML</span>, you can override
+elements are like full HTML pages with a templating system: you can include
+elements, but not override their internal contents. In QML, you can override
 <em>some</em> of their contents, which is nice&#8212;but that is not the primary way to go
-about&nbsp;it.</p>        </div>
+about it.</p>        </div>
     </div>
     </article>
 
@@ -227,27 +228,27 @@ about&nbsp;it.</p>        </div>
     <h1>Recent</h1>
     <h2 class="section-title">art</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It&nbsp;Wrong</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise&nbsp;You</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb&nbsp;Rampant</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It Wrong</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise You</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb Rampant</a></li>
     </ul>
     <h2 class="section-title">blog</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good&nbsp;Tools</a></li>
-        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish&nbsp;Plans</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/boosting-my-productivity.html">Boosting My&nbsp;Productivity</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good Tools</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish Plans</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/boosting-my-productivity.html">Boosting My Productivity</a></li>
     </ul>
     <h2 class="section-title">tech</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up&nbsp;Together</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous&nbsp;Situation</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed&nbsp;It</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up Together</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous Situation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed It</a></li>
     </ul>
     <h2 class="section-title">theology</h2>
     <ul>
         <li><a href="http://www.chriskrycho.com/2014/startlement.html">Startlement</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the&nbsp;Incarnation</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be&nbsp;Holy!</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the Incarnation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be Holy!</a></li>
     </ul>
 </section></footer>
 </body>

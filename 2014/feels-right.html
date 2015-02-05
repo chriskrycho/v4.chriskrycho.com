@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Feels Right &middot; Chris Krycho</title>
+    <title>Feels Right &middot; Chris Krycho</title>
     <meta name="description" content="Little details in how things work can make all the difference when it comes to the experience of using software. So be diligent, and do it right."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
 <link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2014/feels-right.html"/>
-    <meta property="og:title" content="Feels Right"/>
+    <meta property="og:title" content="Feels Right"/>
         <meta property="og:description" content="Little details in how things work can make all the difference when it comes to the experience of using software. So be diligent, and do it right."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-        <meta name="twitter:title" content="Feels Right"/>
+        <meta name="twitter:title" content="Feels Right"/>
         <meta name="twitter:description" content="Little details in how things work can make all the difference when it comes to the experience of using software. So be diligent, and do it right."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 
@@ -60,7 +60,7 @@
 <article class='code'>
 
     <header>
-<h1>Feels&nbsp;Right</h1>
+<h1>Feels Right</h1>
     </header>
 
     <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/feels-right.html"><i class="fa fa-fw fa-link"></i></a>April 04, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/design/">#design</a></span><span><a href="http://www.chriskrycho.com/2014/feels-right.txt">Markdown source</a></span></div>
@@ -80,14 +80,15 @@ done something a <em>little</em> bit silly in my eagerness to get up and going l
 week and written code without a testable configuration, I hit a wall today. The
 queries weren&#8217;t working. I had made a <a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception">bug</a>.</p>
 <p>I spent a substantial part of the day chasing down that bug, and then a
-conversation with user <em>agronholm</em> on the <a href="http://docs.sqlalchemy.org/en/rel_0_9/">SQLAlchemy</a> <span class="caps">IRC</span> channel
+conversation with user <em>agronholm</em> on the <a href="http://docs.sqlalchemy.org/en/rel_0_9/">SQLAlchemy</a> IRC channel
 (<a href="irc://irc.freenode.net/sqlalchemy">freenode/#sqlalchemy</a>) got me thinking. The Firebird team describes
 one of their options as an &#8220;embedded&#8221; server, but <em>agronholm</em> pointed out that
 what they really mean is <em>portable</em>. It&#8217;s running a standalone server and
 client, but it&#8217;s not part of the same thread/process (like SQLite is). Then
 <em>agronholm</em> very helpfully asked&#8212;my having mentioned my preference for
 <a href="http://www.postgresql.org">PostgreSQL</a> earlier&#8212;&#8221;Does Postgres not have a portable version?&#8221;
-Two minutes later, we had both found <a href="http://sourceforge.net/projects/postgresqlportable/">PostgreSQL Portable</a>, and I&nbsp;rejoiced.</p>
+Two minutes later, we had both found <a href="http://sourceforge.net/projects/postgresqlportable/">PostgreSQL Portable</a>, and I
+rejoiced.</p>
 <p>It took me less than half an hour to get it downloaded and set up and to confirm
 that it would work the way we need for this particular piece of software.
 (Firebird had taken me a good three hours, what with digging through badly
@@ -96,18 +97,18 @@ hour more to get PostgreSQL to the same point that I&#8217;d finally gotten Fire
 to after multiple hours working with it. And I was so <em>very</em> happy. What had
 been an especially frustrating work day now had me quietly smiling to myself
 constantly for the last two and a half hours as I <a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception/22872598#22872598">finished</a> tracking
-down the bug that had set me on this path in the first&nbsp;place.</p>
+down the bug that had set me on this path in the first place.</p>
 <p>Several years ago, when I first started doing web development, I got my feet wet
 in database work with MySQL&#8212;probably the single most common starting point for
 anyone going that route, courtesy of the ubiquity of the standard Linux-Apache-
-MySQL-<span class="caps">PHP</span> stack.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup> A year after that, I picked up some work that was already
+MySQL-PHP stack.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup> A year after that, I picked up some work that was already
 using PostgreSQL and fell in love almost immediately.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup> Something just felt
 <em>better</em> about running <code>psql</code> than running <code>mysql</code> on the command line.
-Postgres&#8217; implementation of the <span class="caps">SQL</span> standard felt more natural. Even the tiniest
+Postgres&#8217; implementation of the SQL standard felt more natural. Even the tiniest
 little details like the way tables display when you query them in <code>psql</code> was
 nicer. In less than a week, I was sold and haven&#8217;t looked back. While I&#8217;ve used
 MySQL out of convenience on shared hosting from time to time, PostgreSQL is
-unquestionably my preferred database&nbsp;target.</p>
+unquestionably my preferred database target.</p>
 <p>Today&#8217;s experience brought that all home again. That grin on my face all
 afternoon felt a bit silly, but it highlights the difference that really good
 software design makes. I am not just talking about how it looks here&#8212;though,
@@ -119,7 +120,7 @@ among the very most robust. (The only other open source software I find to be as
 incredibly rock-solid and reliable as PostgreSQL is the Linux kernel. I am by no
 means an expert on either, or on open source software in general, but the Linux
 kernel is an unarguably amazing piece of work. So is PostgreSQL.) All those tiny
-little details add&nbsp;up.</p>
+little details add up.</p>
 <p>It&#8217;s a good reminder for me as I write software that yes, the things I care
 about&#8212;the small matters that would be so easy to overlook when customers
 express no interest in them&#8212;really do matter. People may not know that things
@@ -128,11 +129,12 @@ imperceptible things matter. They may not consciously notice the differences in
 your interface design (even a command line interface), but it will change their
 experience of the software. Do it poorly, or even in a just-good-enough-to-get-
 by fashion, and you&#8217;ll annoy or simply bore them. Do it well, and you might just
-delight them&#8212;even if they can&#8217;t tell you&nbsp;why.</p>
+delight them&#8212;even if they can&#8217;t tell you why.</p>
 <hr />
 <h2 id="examples">Examples</h2>
 <p>To make my point a little more visible, I thought it might be useful to post
-samples of <span class="caps">SQL</span> to accomplish the same task in the two different database&nbsp;dialects.</p>
+samples of SQL to accomplish the same task in the two different database
+dialects.</p>
 <h3 id="firebirdsql4">FirebirdSQL:<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup></h3>
 <pre><code>CREATE TABLE projects (
   id INT NOT NULL PRIMARY KEY,
@@ -165,23 +167,24 @@ SET TERM ; +
 <p>It is not just that the PostgreSQL example is shorter and clearer&#8212;it is that
 it is shorter and clearer because its designers and developers have taken the
 time to make sure that the shorter, cleaner way works well, and have documented
-it so you can know how to use that shorter cleaner way without too much&nbsp;difficulty.</p>
+it so you can know how to use that shorter cleaner way without too much
+difficulty.</p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
 <p>I do most of my development on a Mac, but do all the testing on the target
-platform (Windows) in a <span class="caps">VM</span>.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+platform (Windows) in a VM.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
 <p>At this point, I would only use one of those by default if I were building
 a web app: Linux. I&#8217;d use <a href="http://wiki.nginx.org/Main">nginx</a> instead of Apache,
 <a href="http://www.postgresql.org">PostgreSQL</a> instead of MySQL, and <a href="https://www.python.org">Python</a> (though
-<a href="https://www.ruby-lang.org/">Ruby</a>, Javascript via <a href="http://nodejs.org">node.js</a>, <a href="http://msdn.microsoft.com/en-us/vstudio/hh341490">C# and the .<span class="caps">NET</span> stack</a>,
-or just about anything <em>but</em> <span class="caps">PHP</span> would do fine).&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<a href="https://www.ruby-lang.org/">Ruby</a>, Javascript via <a href="http://nodejs.org">node.js</a>, <a href="http://msdn.microsoft.com/en-us/vstudio/hh341490">C# and the .NET stack</a>,
+or just about anything <em>but</em> PHP would do fine).&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p><em>Almost</em> immediately because at that point configuration on <span class="caps">OS</span> X was a bit
+<p><em>Almost</em> immediately because at that point configuration on OS X was a bit
 of a pain. That is <a href="http://postgresapp.com" title="Postgres.app">no longer the case</a>.&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
@@ -256,27 +259,27 @@ procedure smoother or easier, or make the documentation more complete.&#160;<a c
     <h1>Recent</h1>
     <h2 class="section-title">art</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It&nbsp;Wrong</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise&nbsp;You</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb&nbsp;Rampant</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It Wrong</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise You</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/the-lamb-rampant.html">The Lamb Rampant</a></li>
     </ul>
     <h2 class="section-title">blog</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good&nbsp;Tools</a></li>
-        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish&nbsp;Plans</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/boosting-my-productivity.html">Boosting My&nbsp;Productivity</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good Tools</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish Plans</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/boosting-my-productivity.html">Boosting My Productivity</a></li>
     </ul>
     <h2 class="section-title">tech</h2>
     <ul>
-        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up&nbsp;Together</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous&nbsp;Situation</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed&nbsp;It</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up Together</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous Situation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed It</a></li>
     </ul>
     <h2 class="section-title">theology</h2>
     <ul>
         <li><a href="http://www.chriskrycho.com/2014/startlement.html">Startlement</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the&nbsp;Incarnation</a></li>
-        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be&nbsp;Holy!</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the Incarnation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be Holy!</a></li>
     </ul>
 </section></footer>
 </body>

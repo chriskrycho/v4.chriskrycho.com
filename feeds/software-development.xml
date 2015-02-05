@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Fri, 09 Jan 2015 18:00:00 -0500</lastBuildDate><item><title>The Joy of Good Tools</title><link>http://www.chriskrycho.com/2015/joy-good-tools.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;Note: This started out as a &lt;a href="https://alpha.app.net/chriskrycho/post/47820144"&gt;series of posts on App.net&lt;/a&gt;,
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Fri, 09 Jan 2015 18:00:00 -0500</lastBuildDate><item><title>The Joy of Good Tools</title><link>http://www.chriskrycho.com/2015/joy-good-tools.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;Note: This started out as a &lt;a href="https://alpha.app.net/chriskrycho/post/47820144"&gt;series of posts on App.net&lt;/a&gt;,
 but as I realized that it was growing a bit, I decided to &lt;a href="/2014/a-few-theses-on-blogging.html"&gt;take my own advice&lt;/a&gt;
 and turn it into a short blog post. (The first four paragraphs of this post are
 the same as the posts that spawned it.) And then, as so often happens with my
-writing, it rather took on a life of its own. So much for&amp;nbsp;short.&lt;/i&gt;&lt;/p&gt;
+writing, it rather took on a life of its own. So much for short.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;After wrestling with Bitbucket issues again all day, I think I’ve finally hit
 the breaking point. Time to go ahead and drop the money on GitHub and migrate my
-private repos there. (Yes, GitLab is neat, but tool integrations matter,&amp;nbsp;too.)&lt;/p&gt;
+private repos there. (Yes, GitLab is neat, but tool integrations matter, too.)&lt;/p&gt;
 &lt;p&gt;I think I’m also probably going to spring for a small subscription to Pivotal
 Tracker. It’s cheaper to do GitHub+PivotalTracker at my scale than to host
-GitLab and run YouTrack on a &lt;span class="caps"&gt;VPS&lt;/span&gt;. And that’s &lt;em&gt;not&lt;/em&gt; counting my&amp;nbsp;time.&lt;/p&gt;
+GitLab and run YouTrack on a VPS. And that’s &lt;em&gt;not&lt;/em&gt; counting my time.&lt;/p&gt;
 &lt;p&gt;The big thing with Pivotal is that I &lt;em&gt;need&lt;/em&gt; the ability to estimate more
 effectively even than something like Trello affords (and I don’t want to spend
 time wrangling with Chrome plugins), and it gives me that. Totally worth the
-cost in saved&amp;nbsp;pain.&lt;/p&gt;
+cost in saved pain.&lt;/p&gt;
 &lt;p&gt;And as for GitHub as compared to the free GitLab… well, honestly, the
-F/&lt;span class="caps"&gt;OSS&lt;/span&gt;-copycat model bothers me on a lot of levels. The fact that their strategy
+F/OSS-copycat model bothers me on a lot of levels. The fact that their strategy
 is “copy GitHub as closely as possible, and charge for it” is not my idea of
-&amp;#8220;winning&amp;nbsp;slowly&amp;#8221;.&lt;/p&gt;
+&amp;#8220;winning slowly&amp;#8221;.&lt;/p&gt;
 &lt;p&gt;(&amp;#8220;Winning slowly&amp;#8221; is more than just the name of my &lt;a href="//www.winningslowly.org"&gt;podcast&lt;/a&gt;. In fact, it&amp;#8217;s the
 opposite: we named the podcast that because it&amp;#8217;s one of the core commitments in
-our&amp;nbsp;lives.)&lt;/p&gt;
+our lives.)&lt;/p&gt;
 &lt;p&gt;So I&amp;#8217;m going to pay for Pivotal and GitHub. My time is worth something, and the
 quality of the tools I use matters, too. Ongoing irritation and frustration adds
 up over time. Good tools can make us happier. Bad tools can make work more
@@ -29,44 +29,45 @@ frustrating than it needs to be. Given just how frustrating work can be anyway,
 the last thing in the world I want to do is unnecessarily spend my time being
 even more frustrated by my tools. And you know what? $7/month for each of those
 tools is absolutely worth more than the frustration of wrestling with tools that
-do the job less&amp;nbsp;well.&lt;/p&gt;
+do the job less well.&lt;/p&gt;
 &lt;p&gt;I&amp;#8217;m actually really excited by this. Pivotal Tracker will help me avoid making
 the painful mistake of underestimation in the future, by helping me see how long
 things actually take and giving me a way to plan out major projects with that
 data immediately available. GitHub will be simultaenously more functional and
 much lovelier than Bitbucket&amp;#8212;no strategy tax holding it back!&amp;#8212;and will be
-much nicer to&amp;nbsp;use.&lt;/p&gt;
+much nicer to use.&lt;/p&gt;
 &lt;p&gt;At the end of the day, it comes down to this: I&amp;#8217;m happy to pay for good tools
-that make my work more&amp;nbsp;enjoyable.&lt;/p&gt;
+that make my work more enjoyable.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;To my surprise and amusement, this leads me to a closely related point I had
 been writing up in a separate blog post: the value of tools that &lt;em&gt;delight&lt;/em&gt;. It
 is not merely that bad tools make work unpleasant. Good tools can make work a
 &lt;em&gt;joy&lt;/em&gt;. Indeed, because my vocations is such a significant part of my life, few
 things bring me as much simple pleasure as a tool that does its job well, is
-pleasant to use, and is beautiful, all at&amp;nbsp;once.&lt;/p&gt;
+pleasant to use, and is beautiful, all at once.&lt;/p&gt;
 &lt;p&gt;The latest example of this for me is &lt;a href="//www.neat.io/bee/index.html"&gt;Bee&lt;/a&gt;, a tool designed to make working with
-issue trackers like &lt;span class="caps"&gt;JIRA&lt;/span&gt;, GitHub Issues, and FogBugz easier and more pleasant. I
-use &lt;span class="caps"&gt;JIRA&lt;/span&gt; for one of my long-term contracts&amp;#8212;I actually set it up for the
-company&amp;#8212;and I have a love-hate relationship with it. &lt;span class="caps"&gt;JIRA&lt;/span&gt;&amp;#8217;s power is great,
+issue trackers like JIRA, GitHub Issues, and FogBugz easier and more pleasant. I
+use JIRA for one of my long-term contracts&amp;#8212;I actually set it up for the
+company&amp;#8212;and I have a love-hate relationship with it. JIRA&amp;#8217;s power is great,
 but the web interface is slow and cluttered.&lt;sup id="fnref:atlassian"&gt;&lt;a class="footnote-ref" href="#fn:atlassian" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;I have used other desktop tools with &lt;span class="caps"&gt;JIRA&lt;/span&gt; before, and they were even worse than
+&lt;p&gt;I have used other desktop tools with JIRA before, and they were even worse than
 the web interface. I stumbled across Bee the other day (I cannot even remember
 how!), decided to try it out, and fell in love. It is simple, fast, and
 &lt;em&gt;elegant&lt;/em&gt;. That is a killer combination. I have been using it daily for over a
 week, and strange though it might be to say of a desktop client for issue
-trackers, I get genuine pleasure out of using it. (Yes, I know: that is a bit&amp;nbsp;strange.)&lt;/p&gt;
+trackers, I get genuine pleasure out of using it. (Yes, I know: that is a bit
+strange.)&lt;/p&gt;
 &lt;p&gt;I have the same experience with a number of other tools I use&amp;#8212;&lt;a href="//www.git-tower.com"&gt;Tower&lt;/a&gt;,
-&lt;a href="//bywordapp.com"&gt;Byword&lt;/a&gt;, and &lt;a href="//www.jetbrains.com/idea/"&gt;IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&lt;/a&gt; to name just a few. This very post is written in
-Byword, and I&amp;#8217;m &lt;em&gt;happy&lt;/em&gt; about it. I wish I felt that way about every tool I&amp;nbsp;use.&lt;/p&gt;
+&lt;a href="//bywordapp.com"&gt;Byword&lt;/a&gt;, and &lt;a href="//www.jetbrains.com/idea/"&gt;IntelliJ IDEA&lt;/a&gt; to name just a few. This very post is written in
+Byword, and I&amp;#8217;m &lt;em&gt;happy&lt;/em&gt; about it. I wish I felt that way about every tool I use.&lt;/p&gt;
 &lt;p&gt;And this goes beyond software. I have had the same experience driving a car. The
-Mazda3 I drove in and after college was a delight. The &lt;span class="caps"&gt;MUV&lt;/span&gt;&lt;sup id="fnref:muv"&gt;&lt;a class="footnote-ref" href="#fn:muv" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; we drive right
+Mazda3 I drove in and after college was a delight. The MUV&lt;sup id="fnref:muv"&gt;&lt;a class="footnote-ref" href="#fn:muv" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; we drive right
 now is sufficient. The Chevy Malibu we rented for driving to and from Texas in
 December was &lt;em&gt;irritating&lt;/em&gt;, with an inordinate number of small failures to
 consider how the thing would actually be used. I would buy another Mazda3 in a
-heartbeat; I would contentedly take another Lexus &lt;span class="caps"&gt;RX300&lt;/span&gt;-alike; I would avoid a
-Chevy Malibu like the&amp;nbsp;plague.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Every&lt;/em&gt; category of tool is like&amp;nbsp;this.&lt;/p&gt;
+heartbeat; I would contentedly take another Lexus RX300-alike; I would avoid a
+Chevy Malibu like the plague.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Every&lt;/em&gt; category of tool is like this.&lt;/p&gt;
 &lt;p&gt;The difference between a poor or mediocre tool and a good tool can make the
 difference between frustration and satisfaction. The difference between a good
 tool and a &lt;em&gt;great&lt;/em&gt; tool can make the difference between satisfaction and
@@ -74,7 +75,7 @@ delight. That inspires me: it makes me want to make things so that they do more
 than &lt;em&gt;suffice&lt;/em&gt;&amp;#8212;so that they &lt;em&gt;excel&lt;/em&gt;, so that they delight and energize their
 audience. Whether that is someone using a web application I write or someone
 listening to a piece of music I composed, I want them to experience more than
-good-enough. I want them to feel&amp;nbsp;joy.&lt;/p&gt;
+good-enough. I want them to feel joy.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;There is something profound here, I think, something that goes even deeper than
 just the experience of being happy enough with a good tool to pay money to use
@@ -86,40 +87,40 @@ that such moments will be rare until the eschaton neither undoes nor diminishes
 the imperative to strive after them&amp;#8212;especially for those of us who, as
 Christians, affirm the goodness and the &lt;em&gt;telos&lt;/em&gt; of the created world. Quite the
 contrary. We have a responsibility and a charge as subcreators always to be able
-to say of the work we have done, &amp;#8220;It is&amp;nbsp;good.&amp;#8221;&lt;/p&gt;
+to say of the work we have done, &amp;#8220;It is good.&amp;#8221;&lt;/p&gt;
 &lt;p&gt;I am not there yet. I hope very much, though, that the work I do this year will
 be&amp;#8212;for at least one person&amp;#8212;a little sip from that deep well of delight.
-Whether I succeed or no, at least the bar is set where it ought to&amp;nbsp;be.&lt;/p&gt;
+Whether I succeed or no, at least the bar is set where it ought to be.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id="fn:atlassian"&gt;
 &lt;p&gt;Atlassian&amp;#8217;s designers seem to be shooting for the kind of &amp;#8220;flat&amp;#8221;
 minimalism that is in right now&amp;#8230; and missing the mark entirely. &lt;em&gt;All&lt;/em&gt; of
-their tools are a cluttered mess in the &lt;span class="caps"&gt;UI&lt;/span&gt;/X department.&amp;#160;&lt;a class="footnote-backref" href="#fnref:atlassian" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+their tools are a cluttered mess in the UI/X department.&amp;#160;&lt;a class="footnote-backref" href="#fnref:atlassian" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:muv"&gt;
-&lt;p&gt;A &amp;#8220;Mom Utility Vehicle&amp;#8221;, my wry term for &amp;#8220;&lt;span class="caps"&gt;SUV&lt;/span&gt;&amp;#8221;-type vehicles sitting on 
+&lt;p&gt;A &amp;#8220;Mom Utility Vehicle&amp;#8221;, my wry term for &amp;#8220;SUV&amp;#8221;-type vehicles sitting on 
 standard car chasses.&amp;#160;&lt;a class="footnote-backref" href="#fnref:muv" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 09 Jan 2015 18:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-01-09:2015/joy-good-tools.html</guid><category>software development</category><category>design</category><category>joy</category></item><item><title>Growing Up Together</title><link>http://www.chriskrycho.com/2014/growing-up-together.html</link><description>&lt;p&gt;A few years ago, you might have caught me in a grumpy moment grousing about
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 09 Jan 2015 18:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-01-09:2015/joy-good-tools.html</guid><category>software development</category><category>design</category><category>joy</category></item><item><title>Growing Up Together</title><link>http://www.chriskrycho.com/2014/growing-up-together.html</link><description>&lt;p&gt;A few years ago, you might have caught me in a grumpy moment grousing about
 JavaScript. I distinctly did &lt;em&gt;not&lt;/em&gt; like writing it. Every time I sat down to
 deal with it, I found myself in a tangled mess of plain JavaScript, jQuery, and
-&lt;span class="caps"&gt;DOM&lt;/span&gt; manipulations that inevitably left me tearing my hair out.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; I found it
+DOM manipulations that inevitably left me tearing my hair out.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; I found it
 difficult to write in the first place, and even harder to maintain in the long
 run. I could not come up with good ways to organize it, especially because so
 much of what I was doing was so thoroughly &lt;em&gt;ad hoc&lt;/em&gt; in nature. Cobble this
 together over here; scrounge together those things over there; hope nothing
-collides in the&amp;nbsp;middle.&lt;/p&gt;
+collides in the middle.&lt;/p&gt;
 &lt;p&gt;In the last four months, I have written several thousand lines of JavaScript,
-and I have &lt;em&gt;loved&lt;/em&gt;&amp;nbsp;it.&lt;/p&gt;
+and I have &lt;em&gt;loved&lt;/em&gt; it.&lt;/p&gt;
 &lt;p&gt;For my latest major project, relaunching &lt;a href="https://holybible.com"&gt;HolyBible.com&lt;/a&gt;, I wrote the front
 end in &lt;a href="https://angularjs.org"&gt;AngularJS&lt;/a&gt; and the back end as an &lt;a href="http://expressjs.com"&gt;Express&lt;/a&gt; app (the most
 popular &lt;a href="http://nodejs.org"&gt;NodeJS&lt;/a&gt; web framework). I&amp;#8217;ve written gobs of tests in
 &lt;a href="http://jasmine.github.io"&gt;Jasmine&lt;/a&gt; (using &lt;a href="https://github.com/mhevery/jasmine-node"&gt;jasmine-node&lt;/a&gt; for server-side tests) and drawn on
-tons of other open-source&amp;nbsp;packages.&lt;/p&gt;
-&lt;p&gt;And I have &lt;em&gt;loved&lt;/em&gt;&amp;nbsp;it.&lt;/p&gt;
+tons of other open-source packages.&lt;/p&gt;
+&lt;p&gt;And I have &lt;em&gt;loved&lt;/em&gt; it.&lt;/p&gt;
 &lt;p&gt;A small example: a moment ago, looking up the link for Jasmine, I noted that the
 latest version released today. My response was, &amp;#8220;Ooh&amp;#8212;cool!&amp;#8221;&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;What changed? Well, mostly I changed, but also JavaScript changed a bit. We both
@@ -132,8 +133,9 @@ from the rapid rise of server-side JavaScript in the form of Node.js and its
 flourishing ecosystem of components and tools. Build tools like
 &lt;a href="http://browserify.org"&gt;Browserify&lt;/a&gt; and development tools like &lt;a href="http://livereload.com"&gt;LiveReload&lt;/a&gt; and
 &lt;a href="https://incident57.com/codekit/"&gt;Codekit&lt;/a&gt; have combined with best practices learned from those long years of
-jQuery/&lt;span class="caps"&gt;DOM&lt;/span&gt;-manipulation hell so that these days, good JavaScript is a lot like
-good programming in any other language: highly modular, carefully designed, and&amp;nbsp;well-organized.&lt;/p&gt;
+jQuery/DOM-manipulation hell so that these days, good JavaScript is a lot like
+good programming in any other language: highly modular, carefully designed, and
+well-organized.&lt;/p&gt;
 &lt;p&gt;In the same period of time, I have matured enormously as a developer (just
 enough to see how far I still have to go, of course). At the point where I most
 hated JavaScript, I also really struggled to see the utility of callbacks.
@@ -154,7 +156,7 @@ CoffeeScript borrows from Python (white-space-delimited blocks, use of equality
 words like &lt;code&gt;is&lt;/code&gt; and boolean rules like &lt;code&gt;and&lt;/code&gt; rather than &lt;code&gt;===&lt;/code&gt; and &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;
 respectively, etc.). And I am looking forward to a number of features coming in
 the next version of JavaScript&amp;#8212;especially generators and the &lt;code&gt;const&lt;/code&gt; and &lt;code&gt;let&lt;/code&gt;
-keywords, which will allow for &lt;em&gt;much&lt;/em&gt; saner&amp;nbsp;patterns.&lt;/p&gt;
+keywords, which will allow for &lt;em&gt;much&lt;/em&gt; saner patterns.&lt;/p&gt;
 &lt;p&gt;But all of that is simply to say that I am now starting to know JavaScript
 enough to know that its &lt;em&gt;real&lt;/em&gt; issues aren&amp;#8217;t the surface-level differences from
 the other languages with which I&amp;#8217;m familiar. They&amp;#8217;re not even the warts I noted
@@ -165,7 +167,8 @@ despite the utility of anonymous functions, for example. But I &lt;em&gt;like&lt
 tradeoffs JavaScript makes.&lt;sup id="fnref:coffee"&gt;&lt;a class="footnote-ref" href="#fn:coffee" rel="footnote"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;In other words, I discovered the same thing so many other people have over the
 last few years: JavaScript isn&amp;#8217;t just a good choice for utilitarian reasons.
-Beneath that messy exterior is a gem of a language. I&amp;#8217;m having a lot of fun with&amp;nbsp;it.&lt;/p&gt;
+Beneath that messy exterior is a gem of a language. I&amp;#8217;m having a lot of fun with
+it.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -182,9 +185,9 @@ Beneath that messy exterior is a gem of a language. I&amp;#8217;m having a lot o
 &lt;p&gt;Truth be told, I like them even better from the perspective of CoffeeScript, which hides a lot of the rough edges of JavaScript and, as noted above, brings in quite a few things I like from Python. For my part, I intend to write as much CoffeeScript as possible going forward.&amp;#160;&lt;a class="footnote-backref" href="#fnref:coffee" rev="footnote" title="Jump back to footnote 4 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 15 Nov 2014 00:30:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2014-11-15:2014/growing-up-together.html</guid><category>software development</category></item><item><title>A Ridiculous Situation</title><link>http://www.chriskrycho.com/2014/a-ridiculous-situation.html</link><description>&lt;p&gt;One of the pieces of code I&amp;#8217;m maintaining has an &lt;em&gt;absurd&lt;/em&gt; situation in its build
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 15 Nov 2014 00:30:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2014-11-15:2014/growing-up-together.html</guid><category>software development</category></item><item><title>A Ridiculous Situation</title><link>http://www.chriskrycho.com/2014/a-ridiculous-situation.html</link><description>&lt;p&gt;One of the pieces of code I&amp;#8217;m maintaining has an &lt;em&gt;absurd&lt;/em&gt; situation in its build
 structure&amp;#8212;honestly, I&amp;#8217;m not sure how it ever compiled. For simplicity&amp;#8217;s sake,
-let us assume the four following&amp;nbsp;files:&lt;/p&gt;
+let us assume the four following files:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;main.c&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;secondary.c&lt;/code&gt;&lt;/li&gt;
@@ -193,15 +196,15 @@ let us assume the four following&amp;nbsp;files:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;The project has many more files than this, of course, but these are the
 important ones for demonstrating this particular piece of insanity (which shows
-up &lt;em&gt;many&lt;/em&gt; places in the&amp;nbsp;codebase).&lt;/p&gt;
+up &lt;em&gt;many&lt;/em&gt; places in the codebase).&lt;/p&gt;
 &lt;p&gt;I&amp;#8217;m reproducing here some dummy code representing an &lt;em&gt;actual set of 
 relationships in the codebase&lt;/em&gt;. The functions and module nameshave been changed;
 the relationships between the pieces of code have not.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; When I started trying
 to build the program that included what I am representing as &lt;code&gt;main.c&lt;/code&gt; below,
-this is the basic structure I&amp;nbsp;found:&lt;/p&gt;
+this is the basic structure I found:&lt;/p&gt;
 &lt;h3 id="maincpp"&gt;&lt;code&gt;main.cpp&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;This is the main module of the program. In the actual code in which I found this
-particular morass, it was actually code generated by the &lt;span class="caps"&gt;UI&lt;/span&gt; builder in Visual
+particular morass, it was actually code generated by the UI builder in Visual
 Studio 6&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; and then turned into an unholy mess by a developer whose idea of
 good programming involved coupling the various parts of the code as tightly as
 possible.&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -234,12 +237,12 @@ void main() {
 
 &lt;p&gt;Yes, the main function and the &lt;code&gt;doBadThingsWithGlobals&lt;/code&gt; function are both
 modifying global state, and yes, there is an include statement midway down
-through the module. (Just wait till you see what it&amp;nbsp;does.)&lt;/p&gt;
-&lt;h3 id="secondary"&gt;&lt;span class="dquo"&gt;&amp;#8220;&lt;/span&gt;secondary&amp;#8221;&lt;/h3&gt;
+through the module. (Just wait till you see what it does.)&lt;/p&gt;
+&lt;h3 id="secondary"&gt;&amp;#8220;secondary&amp;#8221;&lt;/h3&gt;
 &lt;p&gt;Here is a secondary module which has been somewhat cleaned up. It has normal
 relationships between header and source files, and includes all its dependency
-headers at the top of the file. It has a header which defines the public &lt;span class="caps"&gt;API&lt;/span&gt; for
-the module, and that even has inclusion guards on&amp;nbsp;it.&lt;/p&gt;
+headers at the top of the file. It has a header which defines the public API for
+the module, and that even has inclusion guards on it.&lt;/p&gt;
 &lt;h4 id="secondaryh"&gt;&lt;code&gt;secondary.h&lt;/code&gt;&lt;/h4&gt;
 &lt;pre&gt;&lt;code class="c"&gt;#ifndef SECONDARY_H
 #define SECONDARY_H
@@ -275,7 +278,8 @@ int subtractNumbers(int r, int s) {
 &lt;p&gt;Strangely, this &lt;code&gt;addNumbers&lt;/code&gt; function is identical to the one in &lt;code&gt;main.c&lt;/code&gt;. Even
 &lt;em&gt;more&lt;/em&gt; strangely, it is defined&amp;#8212;not merely declared, actually defined&amp;#8212;in
 the header file! Nor is this the only such function. Look at the details of
-&lt;code&gt;writer.h&lt;/code&gt;, which was mysteriously included above in the middle of the main&amp;nbsp;module.&lt;/p&gt;
+&lt;code&gt;writer.h&lt;/code&gt;, which was mysteriously included above in the middle of the main
+module.&lt;/p&gt;
 &lt;h3 id="writerh"&gt;&lt;code&gt;writer.h&lt;/code&gt;&lt;/h3&gt;
 &lt;pre&gt;&lt;code class="c"&gt;void writeStuff() {
     fprintf(stdout, &amp;quot;a: %d, b: %d&amp;quot;, a, b);
@@ -295,23 +299,24 @@ after they were defined, and the build process essentially drops this header
 inline into &lt;code&gt;main.c&lt;/code&gt; before it compilation.&lt;sup id="fnref:5"&gt;&lt;a class="footnote-ref" href="#fn:5" rel="footnote"&gt;5&lt;/a&gt;&lt;/sup&gt; So here we have a header file
 with the implementation of a given piece of code, included in a specific
 location and defined in such a way that if you change where it is included, it
-will no longer function properly (since the variables will not have been&amp;nbsp;defined!)&lt;/p&gt;
+will no longer function properly (since the variables will not have been defined!)&lt;/p&gt;
 &lt;p&gt;Worse, there are conflicting definitions for one of the functions used in
 &lt;code&gt;main.c&lt;/code&gt;, and because of its dependency on &lt;em&gt;other&lt;/em&gt; functions in &lt;code&gt;calculator.h&lt;/code&gt;
 (e.g. &lt;code&gt;subtractNumbers&lt;/code&gt; in this mock-up), it cannot be removed! Moreover, given
 the many places &lt;code&gt;calculator.h&lt;/code&gt; is referenced throughout the code base, it is
 non-trivial to refactor it.&lt;sup id="fnref:6"&gt;&lt;a class="footnote-ref" href="#fn:6" rel="footnote"&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;If this sounds insane&amp;#8230; that&amp;#8217;s because it&amp;nbsp;is.&lt;/p&gt;
+&lt;p&gt;If this sounds insane&amp;#8230; that&amp;#8217;s because it is.&lt;/p&gt;
 &lt;p&gt;If you&amp;#8217;re curious how I dealt with it, well&amp;#8230; I renamed the &lt;code&gt;addNumbers()&lt;/code&gt; 
 function in &lt;code&gt;main.c&lt;/code&gt; to &lt;code&gt;_addNumbers()&lt;/code&gt; and put a loud, angry &lt;code&gt;TODO&lt;/code&gt; on it for the
-current release, because the only way to fix it is to refactor this whole giant&amp;nbsp;mess.&lt;/p&gt;
+current release, because the only way to fix it is to refactor this whole giant
+mess.&lt;/p&gt;
 &lt;p&gt;The takeaway of the story, if there is one, is that people will do crazier,
 weirder, worse things than you can possibly imagine when they don&amp;#8217;t understand
 the tools they are using and just hack at them till they can make them work. The
 moral of the story? I&amp;#8217;m not sure. Run away from crazy code like this? Be
-prepared to spend your life&amp;nbsp;refactoring?&lt;/p&gt;
+prepared to spend your life refactoring?&lt;/p&gt;
 &lt;p&gt;How about: try desperately &lt;em&gt;not&lt;/em&gt; to leave this kind of thing for the person
-following&amp;nbsp;you.&lt;/p&gt;
+following you.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -351,7 +356,7 @@ each file so that they could just keep writing their non-modular code.&amp;#160;
 &lt;p&gt;I have tried. Twice. I&amp;#8217;m hoping that the third time &lt;em&gt;will&lt;/em&gt; be the charm.&amp;#160;&lt;a class="footnote-backref" href="#fnref:6" rev="footnote" title="Jump back to footnote 6 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 07 Nov 2014 21:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2014-11-07:2014/a-ridiculous-situation.html</guid><category>software development</category></item><item><title>The Next Generation of Version Control</title><link>http://www.chriskrycho.com/2014/next-gen-vcs.html</link><description>&lt;p&gt;The current state of affairs in version control systems is a mess. To be sure,
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 07 Nov 2014 21:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2014-11-07:2014/a-ridiculous-situation.html</guid><category>software development</category></item><item><title>The Next Generation of Version Control</title><link>http://www.chriskrycho.com/2014/next-gen-vcs.html</link><description>&lt;p&gt;The current state of affairs in version control systems is a mess. To be sure,
 software development is &lt;em&gt;far&lt;/em&gt; better with &lt;em&gt;any&lt;/em&gt; of the distributed version
 control systems in play&amp;#8212;the three big ones being &lt;a href="http://git-scm.com"&gt;Git&lt;/a&gt;, &lt;a href="http://mercurial.selenic.com"&gt;Mercurial&lt;/a&gt;
 (&lt;code&gt;hg&lt;/code&gt;), and &lt;a href="http://bazaar.canonical.com/en/"&gt;Bazaar&lt;/a&gt; (&lt;code&gt;bzr&lt;/code&gt;), with a few other names like &lt;a href="http://www.fossil-scm.org"&gt;Fossil&lt;/a&gt;
@@ -361,12 +366,12 @@ from some standard centralized version control systems, notably the increased
 number of steps in play to accomplish the same tasks.&lt;sup id="fnref:dad"&gt;&lt;a class="footnote-ref" href="#fn:dad" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; But on the whole,
 the advantages of being able to commit locally, have multiple complete copies of
 the repository, and share work without touching a centralized server far
-outweigh any downsides compared to the old centralized&amp;nbsp;system.&lt;/p&gt;
+outweigh any downsides compared to the old centralized system.&lt;/p&gt;
 &lt;p&gt;That being so, my opening statement remains true, I think: &lt;em&gt;The current state of
 affairs in version control is a mess.&lt;/em&gt; Here is what I mean: of those three major
 players (Git, Hg, and Bazaar), each has significant downsides relative to the
 others. Git is famously complex (even arcane), with a user interface design
-philosphy closely matching the &lt;span class="caps"&gt;UI&lt;/span&gt; sensibilities of Linus Torvalds&amp;#8212;which is to
+philosphy closely matching the UI sensibilities of Linus Torvalds&amp;#8212;which is to
 say, all the wires are exposed, and it is about as user-hostile as it could
 be.&lt;sup id="fnref:hostile"&gt;&lt;a class="footnote-ref" href="#fn:hostile" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; It often outperforms Hg or Bazaar, but it has quirks, to say the
 very least. Hg and Bazaar both have &lt;em&gt;much&lt;/em&gt; better designed user interfaces. They
@@ -376,7 +381,8 @@ substantially better documentation&amp;#8212;perhaps especially so with Bazaar, 
 either one a user can understand how to use the tool &lt;em&gt;without having to
 understand the mechanics of the tool&lt;/em&gt;. This is simply not the case with Git, and
 while I &lt;em&gt;enjoy&lt;/em&gt; knowing the mechanics of Git because I find them interesting,
-&lt;em&gt;having&lt;/em&gt; to understand the mechanics of a tool to be able to use it is a&amp;nbsp;problem.&lt;/p&gt;
+&lt;em&gt;having&lt;/em&gt; to understand the mechanics of a tool to be able to use it is a
+problem.&lt;/p&gt;
 &lt;p&gt;But the other systems have their downsides relative, to Git, too. (I will focus
 on Hg because I have never used Bazaar beyond playing with it, though I have
 read a good bit of the documentation.) Mutable history in Git is valuable and
@@ -398,7 +404,7 @@ the same level of sophistication or elegance, and they certainly have not
 managed to foster the sorts of community that GitHub has. The result has been
 wide adoption of Git, and a degree of Stockholm Syndrome among developers who
 have adopted it and concluded that the way Git works is the way a distributed
-version control system &lt;em&gt;should&lt;/em&gt;&amp;nbsp;work.&lt;/p&gt;
+version control system &lt;em&gt;should&lt;/em&gt; work.&lt;/p&gt;
 &lt;p&gt;It is not. Git is complicated to use and in need of tools for managing its
 complexity; the same is true of Hg and Bazaar, though perhaps to a slightly
 lesser extent because of their saner branching models. This is what has given
@@ -408,41 +414,41 @@ rise to the &lt;a href="http://nvie.com/posts/a-successful-git-branching-model/"
 Managing branching, linking that workflow to issues, and supplying associated
 documentation for projects have also cropped up as closely associated tasks&amp;#8212;
 thus the popularity of GitHub issues and Bitbucket wikis, not to mention
-&lt;a href="http://www.fossil-scm.org"&gt;Fossil&amp;#8217;s&lt;/a&gt; integration of both into the &lt;span class="caps"&gt;DVCS&lt;/span&gt; tool itself. None of the
+&lt;a href="http://www.fossil-scm.org"&gt;Fossil&amp;#8217;s&lt;/a&gt; integration of both into the DVCS tool itself. None of the
 tools handle differences between file systems very elegantly (and indeed, it
 took &lt;em&gt;years&lt;/em&gt; for Git even to be useable on Windows). All of them especially
-struggle to manage symlinks and executable&amp;nbsp;flags.&lt;/p&gt;
+struggle to manage symlinks and executable flags.&lt;/p&gt;
 &lt;p&gt;So there is an enormous opportunity for the &lt;em&gt;next&lt;/em&gt; generation of tools. Git, Hg,
-and so on are huge steps forward for developers from &lt;span class="caps"&gt;CVS&lt;/span&gt;, Visual SourceSafe, or
-&lt;span class="caps"&gt;SVN&lt;/span&gt;. But they still have major weaknesses, and there are many things that not
+and so on are huge steps forward for developers from CVS, Visual SourceSafe, or
+SVN. But they still have major weaknesses, and there are many things that not
 only can but should be better. In brief, I would love for the next-generation
-version control system to&amp;nbsp;be:&lt;/p&gt;
+version control system to be:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;distributed (this is now a&amp;nbsp;non-negotiable);&lt;/li&gt;
+&lt;li&gt;distributed (this is now a non-negotiable);&lt;/li&gt;
 &lt;li&gt;fast;&lt;/li&gt;
 &lt;li&gt;well-documented&amp;#8212;&lt;em&gt;at least&lt;/em&gt; as well as Hg is, and preferably as well as
-    Bazaar&amp;nbsp;is;&lt;/li&gt;
+    Bazaar is;&lt;/li&gt;
 &lt;li&gt;well-designed, which is to say having a user interface that is actually a
     user-interface (like Hg&amp;#8217;s) and not an extremely leaky abstraction around the
     mechanics;&lt;sup id="fnref:leaky"&gt;&lt;a class="footnote-ref" href="#fn:leaky" rel="footnote"&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;fast;&lt;/li&gt;
 &lt;li&gt;file-system oriented, &lt;em&gt;not&lt;/em&gt; diff-oriented: this is one of Git&amp;#8217;s great
-    strengths and the reason for a lot of its performance&amp;nbsp;advantages;&lt;/li&gt;
-&lt;li&gt;extensible, with a good public &lt;span class="caps"&gt;API&lt;/span&gt; so that it is straightforward to add
+    strengths and the reason for a lot of its performance advantages;&lt;/li&gt;
+&lt;li&gt;extensible, with a good public API so that it is straightforward to add
     functionality like wikis, documentation, social interaction,  and issue
     tracking in a way that actually integrates the tool;&lt;sup id="fnref:integrates"&gt;&lt;a class="footnote-ref" href="#fn:integrates" rel="footnote"&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;and last but not least, truly&amp;nbsp;cross-platform.&lt;/li&gt;
+&lt;li&gt;and last but not least, truly cross-platform.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;That is a non-trivial task, but the first &lt;span class="caps"&gt;DVCS&lt;/span&gt; that manages to hit even a
+&lt;p&gt;That is a non-trivial task, but the first DVCS that manages to hit even a
 sizeable majority of these desires will gain a lot of traction in a hurry. The
 second generation of distributed version control has been good for us. The third
-could be&amp;nbsp;magical.&lt;/p&gt;
+could be magical.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id="fn:dad"&gt;
 &lt;p&gt;A point that was highlighted for me in a conversation a few months ago
-with my father, a programmer who has been using &lt;span class="caps"&gt;SVN&lt;/span&gt; for a &lt;em&gt;long&lt;/em&gt; time and
+with my father, a programmer who has been using SVN for a &lt;em&gt;long&lt;/em&gt; time and
 found the transition to Git distinctly less than wonderful.&amp;#160;&lt;a class="footnote-backref" href="#fnref:dad" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:hostile"&gt;
@@ -460,7 +466,7 @@ fragile at best in my experience, and substantially less capable than Git&amp;#8
 &lt;/li&gt;
 &lt;li id="fn:patch"&gt;
 &lt;p&gt;Yes, I know about Hg&amp;#8217;s record extension. No, it is &lt;em&gt;not&lt;/em&gt; quite the
-same, especially because given the way it is implemented major &lt;span class="caps"&gt;GUI&lt;/span&gt; tools
+same, especially because given the way it is implemented major GUI tools
 cannot support it without major chicanery.&amp;#160;&lt;a class="footnote-backref" href="#fnref:patch" rev="footnote" title="Jump back to footnote 5 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:queues"&gt;
@@ -481,24 +487,24 @@ just that leaky.&amp;#160;&lt;a class="footnote-backref" href="#fnref:leaky" rev
 heaps and gobs of software &lt;em&gt;around&lt;/em&gt; Git to make it work.&amp;#160;&lt;a class="footnote-backref" href="#fnref:integrates" rev="footnote" title="Jump back to footnote 9 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 16 Oct 2014 21:45:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-10-16:2014/next-gen-vcs.html</guid><category>software development</category></item><item><title>Pushing Into C’s Corner Cases</title><link>http://www.chriskrycho.com/2014/pushing-into-cs-corner-cases.html</link><description>&lt;p&gt;I&amp;#8217;m working on a project that is all in C because of its long history and
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 16 Oct 2014 21:45:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-10-16:2014/next-gen-vcs.html</guid><category>software development</category></item><item><title>Pushing Into C's Corner Cases</title><link>http://www.chriskrycho.com/2014/pushing-into-cs-corner-cases.html</link><description>&lt;p&gt;I&amp;#8217;m working on a project that is all in C because of its long history and
 legacy. We&amp;#8217;re slowly modernizing the codebase and writing all our new code in
 Python (using NumPy, C extensions, and so on for performance where necessary).
 Occasionally, I just want to bang my head against the wall because there are
 things we can do so simply in any modern language that you just can&amp;#8217;t do in any
 straightforward way in C. For example, I have file writers that all work
 &lt;em&gt;exactly&lt;/em&gt; the same way, with the single exception that the format string and the
-data that you put into it vary for each&amp;nbsp;file.&lt;/p&gt;
+data that you put into it vary for each file.&lt;/p&gt;
 &lt;p&gt;In Python, this would be straightforward to handle with the class machinery: you
 could simply specify the format string in each inheriting class and define the
 data points to be supplied at the top of an overriding function, call the parent
-function with &lt;code&gt;super()&lt;/code&gt; and be&amp;nbsp;done.&lt;/p&gt;
+function with &lt;code&gt;super()&lt;/code&gt; and be done.&lt;/p&gt;
 &lt;p&gt;To do something similar in pure C is nearly impossible. You can supply a format
 string with each function (or module, or however you separate out the code), and
 if you feel especially clever you could convert all your data types to strings
 and pass them as a list to be printed by the standard function. The net result
 would be &lt;em&gt;longer&lt;/em&gt; and &lt;em&gt;less maintainable&lt;/em&gt; than simply having a set of
-essentially-duplicate functions,&amp;nbsp;though.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 12 Aug 2014 09:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-08-12:2014/pushing-into-cs-corner-cases.html</guid><category>software development</category></item><item><title>The Long Race</title><link>http://www.chriskrycho.com/2014/the-long-race.html</link><description>&lt;p&gt;It has been too long since I have written anything&amp;#8212;too long not for my
+essentially-duplicate functions, though.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 12 Aug 2014 09:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-08-12:2014/pushing-into-cs-corner-cases.html</guid><category>software development</category></item><item><title>The Long Race</title><link>http://www.chriskrycho.com/2014/the-long-race.html</link><description>&lt;p&gt;It has been too long since I have written anything&amp;#8212;too long not for my
 audience (small as it is), but for my soul. The last few weeks of class were of
 course even busier than the rest of the semester, courtesy of a couple major
 assignments I wrapped up and studying for and taking finals, all while doing my
@@ -506,7 +512,7 @@ normal work as a software developer on the side. Writing simply fell by the
 wayside, alas. Even my devotions posts simply didn&amp;#8217;t happen. And that is all
 right; there are seasons for all of these things, and it is not as if I didn&amp;#8217;t
 write many thousands of words in late April and early May. They simply were not
-&lt;em&gt;blogging&lt;/em&gt;&amp;nbsp;words.&lt;/p&gt;
+&lt;em&gt;blogging&lt;/em&gt; words.&lt;/p&gt;
 &lt;p&gt;So here I am tonight, writing simply to unwind. I spent much of the day working
 on various software projects&amp;#8212;a pattern I expect to carry throughout the
 summer. In addition to my regular work for Quest Consultants Inc. back in
@@ -517,7 +523,7 @@ supplement my 20 hours a week for Quest with other work. That is nice not only
 financially, but also intellectually. The change of pace between different
 kinds of work helps me stay fresh on all of them. My own personal &lt;a href="http://www.chriskrycho.com/2014/a-little-crazy.html"&gt;side
 projects&lt;/a&gt; are coming along slowly, but that is all right. Slow but steady
-is the best way to go about those kinds of projects&amp;nbsp;anyway.&lt;/p&gt;
+is the best way to go about those kinds of projects anyway.&lt;/p&gt;
 &lt;p&gt;That lesson is one I have learned more and more from my ongoing and
 ever-increasing delight in running. So far in May I have run about 125 miles; I
 expect to run over 150 miles this month in total (though of course all such
@@ -531,7 +537,8 @@ with it and used a &lt;a href="http://markallenonline.com/maoArticles.aspx?AID=2
 parts of life, it is that sticking-with-it that leads to getting somewhere. Of
 course, sticking with it is no guarantee that things will work out. It is
 usually a requisite step along the way, though&amp;#8212;a
-necessary-though-insufficient condition. That is simply the way God built the&amp;nbsp;world.&lt;/p&gt;
+necessary-though-insufficient condition. That is simply the way God built the
+world.&lt;/p&gt;
 &lt;p&gt;Little Ellie is quickly wrapping up her second year of life in this big world.
 She is saying lots of words (at last!), whining until she has driven Jaimie a
 bit crazy (in too-typical toddler fashion), and growing up in big ways and
@@ -541,7 +548,7 @@ that she has friends whom she loves and who love her in turn. She has also
 discovered a deep love of &lt;em&gt;Star Wars&lt;/em&gt;&amp;#8212;no surprise for a daughter of ours,
 though the intensity of her delight in the movies, for a girl who is not yet
 two years old, did surprise both Jaimie and me a bit. You should hear her try
-to say &amp;#8220;Darth Vader&amp;#8221; or &amp;#8220;Dark Side&amp;#8221; or &amp;#8220;Star Wars.&amp;#8221; It is impossibly&amp;nbsp;adorable.&lt;/p&gt;
+to say &amp;#8220;Darth Vader&amp;#8221; or &amp;#8220;Dark Side&amp;#8221; or &amp;#8220;Star Wars.&amp;#8221; It is impossibly adorable.&lt;/p&gt;
 &lt;p&gt;Jaimie is, as noted above, some 37 weeks pregnant and quite ready to be done
 carrying our second little gal on the inside. She is still plugging away slowly
 at the &lt;a href="http://jaimiekrycho.com/shaking-epheria-pt-1/" title="Bloodlines: The Shaking of Epheria, Part I"&gt;second novella&lt;/a&gt; in her &lt;a href="http://www.amazon.com/Bloodlines-Epheria-The-Trilogy-ebook/dp/B00HY478QO/" title="Get Bloodlines of Epheria on Kindle!"&gt;Bloodlines&lt;/a&gt; fantasy trilogy.
@@ -549,29 +556,30 @@ She manages to keep Ellie entertained&amp;#8212;no small feat&amp;#8212;and does
 job taking care of things around the house so that I can focus on work and
 school. Her struggle with &lt;a href="http://2012-2013.chriskrycho.com/theology/marriage-depression/" title="Marriage and Depression"&gt;depression&lt;/a&gt; has not diminished, but
 God has given us grace to carry on and she and I have both learned to respond
-in better, healthier, more helpful ways when the slumps&amp;nbsp;come.&lt;/p&gt;
+in better, healthier, more helpful ways when the slumps come.&lt;/p&gt;
 &lt;p&gt;As for the future, we really have no idea what the next several yeras will
 hold. I plan to finish my Master of Divinity&amp;#8212;Lord willing, around December
 2016. In the meantime, we will keep raising our little girls, I will keep
 writing software, and we will keep exploring and seeing what we want to do and
 how best to pursue those desires in a way that honors God. Who knows what those
-years will hold? God only, and certainly not&amp;nbsp;us.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 24 May 2014 00:07:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-05-24:2014/the-long-race.html</guid><category>software development</category><category>family</category><category>fitness</category></item><item><title>A Little Crazy</title><link>http://www.chriskrycho.com/2014/a-little-crazy.html</link><description>&lt;p&gt;I&amp;#8217;m going to do something a little crazy, I&amp;#8217;ve decided. I&amp;#8217;m going to go ahead
+years will hold? God only, and certainly not us.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 24 May 2014 00:07:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-05-24:2014/the-long-race.html</guid><category>software development</category><category>family</category><category>fitness</category></item><item><title>A Little Crazy</title><link>http://www.chriskrycho.com/2014/a-little-crazy.html</link><description>&lt;p&gt;I&amp;#8217;m going to do something a little crazy, I&amp;#8217;ve decided. I&amp;#8217;m going to go ahead
 and do like I wrote &lt;a href="http://www.chriskrycho.com/2014/doing-it-myself.html"&gt;a bit back&lt;/a&gt;, and make &lt;a href="http://step-stool.io"&gt;Step Stool&lt;/a&gt;
 actually a thing over the course of the rest of the year. Not so crazy. What is
 a bit nuts is the way I&amp;#8217;ve decided to go about that process. In short: as close
-to the hardest way possible as I can&amp;nbsp;conceive.&lt;/p&gt;
+to the hardest way possible as I can conceive.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Over the last couple weeks, I&amp;#8217;ve been spending a fair bit of time toying with
 &lt;a href="http://iolanguage.org"&gt;Io&lt;/a&gt;. It&amp;#8217;s a neat little language, very different in its approach to a &lt;em&gt;lot&lt;/em&gt;
 of things than the languages I&amp;#8217;ve used previously. My programming language
 history is very focused on the &amp;#8220;normal&amp;#8221; languages. The vast majority of real-
-world code I&amp;#8217;ve written has been in one of C, &lt;span class="caps"&gt;PHP&lt;/span&gt;, or Python. I&amp;#8217;ve done a good
+world code I&amp;#8217;ve written has been in one of C, PHP, or Python. I&amp;#8217;ve done a good
 bit of Javascript along the way, more Fortran than anyone my age has any
 business having done, and a little each of Java and Ruby. Like I said: the
 normal ones. With the exception of Javascript, all of those are either standard
 imperative, object-oriented, or mixed imperative and object-oriented languages.
 Python and Ruby both let you mix in a fair bit of functional-style programming,
-and Javascript does a &lt;em&gt;lot&lt;/em&gt; of that and tosses in prototypal inheritance to&amp;nbsp;boot.&lt;/p&gt;
+and Javascript does a &lt;em&gt;lot&lt;/em&gt; of that and tosses in prototypal inheritance to
+boot.&lt;/p&gt;
 &lt;p&gt;But still: they&amp;#8217;re all pretty mainstream, &amp;#8220;normal&amp;#8221; languages. Io isn&amp;#8217;t like that
 at all. For one thing, it&amp;#8217;s hardly popular in any sense at all. Well-known among
 the hackers&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; I know, perhaps, but not popular by any measure. It&amp;#8217;s small. And
@@ -579,9 +587,9 @@ it&amp;#8217;s very &lt;em&gt;alien&lt;/em&gt; in some ways. It&amp;#8217;s &lt;
 inheritance. Courtesy of &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain"&gt;Javascript&lt;/a&gt;, I have a &lt;em&gt;little&lt;/em&gt; familiarity
 with that, but it&amp;#8217;s definitely still not my default way of thinking about
 inheritance. Python&amp;#8217;s inheritance model (the one I use most frequently) is
-&lt;em&gt;essentially&lt;/em&gt; the same as that in C++, Java, &lt;span class="caps"&gt;PHP&lt;/span&gt;, and so on&amp;#8212;it&amp;#8217;s normal
+&lt;em&gt;essentially&lt;/em&gt; the same as that in C++, Java, PHP, and so on&amp;#8212;it&amp;#8217;s normal
 class-driven inheritance. Io goes off and does full-blown prototypal
-inheritance; even just the little I&amp;#8217;ve played with it has been&amp;nbsp;fun.&lt;/p&gt;
+inheritance; even just the little I&amp;#8217;ve played with it has been fun.&lt;/p&gt;
 &lt;p&gt;Io also does a bunch of other things a &lt;em&gt;lot&lt;/em&gt; different from the other languages
 I&amp;#8217;ve used. First, there are no keywords or&amp;#8212;formally speaking&amp;#8212;even operators
 in the language. Every action (including ones like &lt;code&gt;+&lt;/code&gt; or &lt;code&gt;for&lt;/code&gt;) is simply a
@@ -595,7 +603,7 @@ are objects (including functions). The net result isn&amp;#8217;t necessarily pa
 different from calling methods on objects, but it is a &lt;em&gt;little&lt;/em&gt; different, with
 have some interesting consequences. Notably (though trivially&amp;#8212;or at least, so
 it seems to me at this point), you can pass a message to the null object without
-it being an error. More importantly, the paradigm shift is&amp;nbsp;illuminating.&lt;/p&gt;
+it being an error. More importantly, the paradigm shift is illuminating.&lt;/p&gt;
 &lt;p&gt;Io also has far more capabilities in terms of concurrency than any of the other
 languagues with which I&amp;#8217;m familiar, because it actively implements the &lt;a href="http://en.wikipedia.org/wiki/Actor_model"&gt;Actor
 Model&lt;/a&gt;, which means its implementation of messaging instead of object
@@ -624,25 +632,25 @@ really running my own software to manage my site, letting me do whatever I want
 with it and guaranteeing I always understand it well enough to make those kinds
 of changes. Second, I&amp;#8217;ve just wanted to &lt;em&gt;learn&lt;/em&gt; a whole bunch along the way.
 Third, it&amp;#8217;s right there in the website link: &lt;a href="http://step-stool.io"&gt;step-stool.io&lt;/a&gt;! How could I pass
-up such an&amp;nbsp;opportunity?&lt;/p&gt;
+up such an opportunity?&lt;/p&gt;
 &lt;p&gt;It is that second goal that has pushed me to do this crazy project this crazy
 way. It&amp;#8217;s crazier than just teaching myself a language in order to do the
 static site generator itself, too, because there are a few other pieces missing
 that I&amp;#8217;ll need to write to make this work&amp;#8230; like a Markdown implementation and
-an &lt;span class="caps"&gt;HTML&lt;/span&gt; templating language. I&amp;#8217;ve never written anything remotely like either
+an HTML templating language. I&amp;#8217;ve never written anything remotely like either
 before, so I&amp;#8217;m going to take the chance to learn a &lt;em&gt;lot&lt;/em&gt; of new things. For the
 Markdown implementation, rather than relying on regular expression parsing
 (like most Markdowns do), I&amp;#8217;m going to use a Parsing Expression Grammar.
 That will certainly be more efficient and reliable, but&amp;#8212;more importantly&amp;#8212;it
 is also outside my experience. I have yet to start thinking through how to
-tackle the &lt;span class="caps"&gt;HTML&lt;/span&gt; templating language implementation (though I know I am going to
-make it an Io implementation of &lt;a href="http://slim-lang.com"&gt;Slim&lt;/a&gt;, which I quite&amp;nbsp;like).&lt;/p&gt;
+tackle the HTML templating language implementation (though I know I am going to
+make it an Io implementation of &lt;a href="http://slim-lang.com"&gt;Slim&lt;/a&gt;, which I quite like).&lt;/p&gt;
 &lt;p&gt;In any case, I&amp;#8217;m going to be taking a good bit longer to get Step Stool
 finished. That is all right: I am going to learn a ton along the way, and I am
 quite sure I will have a blast doing it. And that is &lt;em&gt;exactly&lt;/em&gt; what these kinds
-of projects are&amp;nbsp;for.&lt;/p&gt;
+of projects are for.&lt;/p&gt;
 &lt;p&gt;I&amp;#8217;ll post updates as I go, with the things I&amp;#8217;m learning along the way.
-Hopefully they&amp;#8217;ll be interesting (or at least&amp;nbsp;entertaining).&lt;/p&gt;
+Hopefully they&amp;#8217;ll be interesting (or at least entertaining).&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -663,24 +671,24 @@ importantly learned &lt;em&gt;how to learn&lt;/em&gt;: easily the most important
 gains from any engineering degree.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 29 Apr 2014 19:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-04-29:2014/a-little-crazy.html</guid><category>software development</category></item><item><title>Learning QML, Part 1</title><link>http://www.chriskrycho.com/2014/learning-qml-part-1.html</link><description>&lt;p&gt;For part of my work with Quest Consultants, I&amp;#8217;ve been picking up Qt&amp;#8217;s &lt;span class="caps"&gt;QML&lt;/span&gt;
-toolkit to use in building out the &lt;span class="caps"&gt;UI&lt;/span&gt;. The declarative syntax and ability to
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 29 Apr 2014 19:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-04-29:2014/a-little-crazy.html</guid><category>software development</category></item><item><title>Learning QML, Part 1</title><link>http://www.chriskrycho.com/2014/learning-qml-part-1.html</link><description>&lt;p&gt;For part of my work with Quest Consultants, I&amp;#8217;ve been picking up Qt&amp;#8217;s QML
+toolkit to use in building out the UI. The declarative syntax and ability to
 define one&amp;#8217;s own model in non-C++- or Python-specific ways is quite nice. That
 said, the learning process has had more than a few bumps along the way. I
 decided to go ahead and write those up as I go, both for my own reference and
-in the hope that it may prove useful to others as I&amp;nbsp;go.&lt;/p&gt;
-&lt;p&gt;&lt;span class="caps"&gt;QML&lt;/span&gt; is a &lt;em&gt;Javascript-like&lt;/em&gt; language for &lt;em&gt;declarative programming&lt;/em&gt; of a user
-interface. So it&amp;#8217;s a Javascript-based language that sort of behaves like &lt;span class="caps"&gt;HTML&lt;/span&gt;.
+in the hope that it may prove useful to others as I go.&lt;/p&gt;
+&lt;p&gt;QML is a &lt;em&gt;Javascript-like&lt;/em&gt; language for &lt;em&gt;declarative programming&lt;/em&gt; of a user
+interface. So it&amp;#8217;s a Javascript-based language that sort of behaves like HTML.
 In fact, it behaves like Javascript in terms of how you define, access, and
 update properties, and you can embed full-featured (mostly) Javascript functions
-and objects in&amp;nbsp;it.&lt;/p&gt;
-&lt;p&gt;But when you have nested &lt;span class="caps"&gt;QML&lt;/span&gt; Types, you end up with them behaving more like
-&lt;span class="caps"&gt;HTML&lt;/span&gt;.&lt;/p&gt;
+and objects in it.&lt;/p&gt;
+&lt;p&gt;But when you have nested QML Types, you end up with them behaving more like
+HTML.&lt;/p&gt;
 &lt;p&gt;The weirdest bit, and the thing that I&amp;#8217;m having the hardest time adjusting to,
 is that you can only edit properties of root Types when you&amp;#8217;re working with an
 instance of that Type. And those Types are defined by &lt;em&gt;documents&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;So, to give the simplest possible example, let&amp;#8217;s say I defined a new type called
-&lt;code&gt;Monkey&lt;/code&gt;, in the &lt;code&gt;Monkey.qml&lt;/code&gt; file, like&amp;nbsp;this:&lt;/p&gt;
+&lt;code&gt;Monkey&lt;/code&gt;, in the &lt;code&gt;Monkey.qml&lt;/code&gt; file, like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;// Monkey.qml
 import QtQuick 1.1
 
@@ -696,7 +704,7 @@ Item {
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I can use that in another file. If they&amp;#8217;re in the same directory, it&amp;#8217;s
-automatically imported, so I can just do something like&amp;nbsp;this:&lt;/p&gt;
+automatically imported, so I can just do something like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;//main.qml
 import QtQuick 1.1
 
@@ -719,44 +727,45 @@ Rectangle {
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;That creates a (really ugly) rectangle that prints the &lt;code&gt;Monkey&lt;/code&gt;&lt;span class="quo"&gt;&amp;#8216;&lt;/span&gt;s name in red
+&lt;p&gt;That creates a (really ugly) rectangle that prints the &lt;code&gt;Monkey&lt;/code&gt;&amp;#8216;s name in red
 text on a green background. It&amp;#8217;s impossible to access directly the &lt;code&gt;monkey_foot&lt;/code&gt;
 element, though, which means that composing more complex objects in reusable
 ways is difficult. In fact, I haven&amp;#8217;t come up with a particularly good way to do
 it yet. At least, I should say that I haven&amp;#8217;t come up with a good way to create
 high-level reusable components yet. I can see pretty easily how to create
 low-level reusable components, but once you start putting them together in any
-&lt;em&gt;specific&lt;/em&gt; way, you can&amp;#8217;t recompose them in other&amp;nbsp;ways.&lt;/p&gt;
+&lt;em&gt;specific&lt;/em&gt; way, you can&amp;#8217;t recompose them in other ways.&lt;/p&gt;
 &lt;p&gt;From what I&amp;#8217;ve gotten my head around so far, this ends up being less flexible
-than either &lt;span class="caps"&gt;HTML&lt;/span&gt; templating languages (which are, or at least can be, completely
+than either HTML templating languages (which are, or at least can be, completely
 declarative) or normal Javascript (which is obviously &lt;em&gt;not&lt;/em&gt; declarative). Mind
 you, it&amp;#8217;s all sorts of &lt;em&gt;interesting&lt;/em&gt;, and I have a pretty decent idea what I&amp;#8217;m
-going to do to implement our &lt;span class="caps"&gt;UI&lt;/span&gt; with it, but it&amp;#8217;s taken me most of the day to
+going to do to implement our UI with it, but it&amp;#8217;s taken me most of the day to
 get a good handle on that, and my head still feels a bit funny whenever I&amp;#8217;m
-trying to see how best to create composable&amp;nbsp;components.&lt;/p&gt;
+trying to see how best to create composable components.&lt;/p&gt;
 &lt;p&gt;Note, too, that this is the &lt;em&gt;only&lt;/em&gt; way to create a new basic type of object in
-&lt;span class="caps"&gt;QML&lt;/span&gt;: it has to be the root level object in a &lt;span class="caps"&gt;QML&lt;/span&gt; document. I would &lt;em&gt;really&lt;/em&gt; like
+QML: it has to be the root level object in a QML document. I would &lt;em&gt;really&lt;/em&gt; like
 to be able to access internal declarations&amp;#8212;to have named internal
-types/objects. Unfortunately, &lt;span class="caps"&gt;QML&lt;/span&gt; doesn&amp;#8217;t let you do this. I suspect this has to
-do with how the &lt;span class="caps"&gt;QML&lt;/span&gt; type system works: it actually binds these types to C++
+types/objects. Unfortunately, QML doesn&amp;#8217;t let you do this. I suspect this has to
+do with how the QML type system works: it actually binds these types to C++
 objects behind the scenes. This is a non-trivially helpful decision in terms of
-the performance of the application, but it certainly makes my brain a little bit&amp;nbsp;twitchy.&lt;/p&gt;
+the performance of the application, but it certainly makes my brain a little bit
+twitchy.&lt;/p&gt;
 &lt;p&gt;There are two basic consequences of this structure. First, any types you need to
-be able to use in other &lt;span class="caps"&gt;QML&lt;/span&gt; objects have to be defined in their own &lt;span class="caps"&gt;QML&lt;/span&gt;
+be able to use in other QML objects have to be defined in their own QML
 documents. Second, it is (as near as I can see so far, at least) difficult to
-create good generic &lt;span class="caps"&gt;QML&lt;/span&gt; types of more complex structures that you can then use
+create good generic QML types of more complex structures that you can then use
 to implement specific variations. For example: if you want to create accordions,
 you can create a fair number of the low-level elements in generic ways that you
 can reuse, but once you get to the relationships between the actual model,
 delegate, and view elements, you will need to create them in custom forms for
-each distinct&amp;nbsp;approach.&lt;/p&gt;
-&lt;p&gt;This is more like creating &lt;span class="caps"&gt;HTML&lt;/span&gt; documents than Javascript, which makes sense,
-&lt;em&gt;if&lt;/em&gt; you remember that &lt;span class="caps"&gt;QML&lt;/span&gt; is Javascript-based but &lt;em&gt;declarative&lt;/em&gt;. You just have
+each distinct approach.&lt;/p&gt;
+&lt;p&gt;This is more like creating HTML documents than Javascript, which makes sense,
+&lt;em&gt;if&lt;/em&gt; you remember that QML is Javascript-based but &lt;em&gt;declarative&lt;/em&gt;. You just have
 to remember that while you can define some reusable components, the full-fledged
-elements are like full &lt;span class="caps"&gt;HTML&lt;/span&gt; pages with a templating system: you can include
-elements, but not override their internal contents. In &lt;span class="caps"&gt;QML&lt;/span&gt;, you can override
+elements are like full HTML pages with a templating system: you can include
+elements, but not override their internal contents. In QML, you can override
 &lt;em&gt;some&lt;/em&gt; of their contents, which is nice&amp;#8212;but that is not the primary way to go
-about&amp;nbsp;it.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 11 Apr 2014 15:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-04-11:2014/learning-qml-part-1.html</guid><category>software development</category></item><item><title>Feels Right</title><link>http://www.chriskrycho.com/2014/feels-right.html</link><description>&lt;p&gt;I had spent most of the last week and a half working on getting
+about it.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 11 Apr 2014 15:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-04-11:2014/learning-qml-part-1.html</guid><category>software development</category></item><item><title>Feels Right</title><link>http://www.chriskrycho.com/2014/feels-right.html</link><description>&lt;p&gt;I had spent most of the last week and a half working on getting
 &lt;a href="http://www.firebirdsql.org"&gt;FirebirdSQL&lt;/a&gt; configured and ready to use for a project I&amp;#8217;m working on with
 &lt;a href="http://www.questconsult.com"&gt;Quest Consultants&lt;/a&gt;. It was slow going. The tool is decent, but the
 documentation is spotty and it felt like everything was just a bit of a slog&amp;#8212;to
@@ -766,14 +775,15 @@ done something a &lt;em&gt;little&lt;/em&gt; bit silly in my eagerness to get up
 week and written code without a testable configuration, I hit a wall today. The
 queries weren&amp;#8217;t working. I had made a &lt;a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception"&gt;bug&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I spent a substantial part of the day chasing down that bug, and then a
-conversation with user &lt;em&gt;agronholm&lt;/em&gt; on the &lt;a href="http://docs.sqlalchemy.org/en/rel_0_9/"&gt;SQLAlchemy&lt;/a&gt; &lt;span class="caps"&gt;IRC&lt;/span&gt; channel
+conversation with user &lt;em&gt;agronholm&lt;/em&gt; on the &lt;a href="http://docs.sqlalchemy.org/en/rel_0_9/"&gt;SQLAlchemy&lt;/a&gt; IRC channel
 (&lt;a href="irc://irc.freenode.net/sqlalchemy"&gt;freenode/#sqlalchemy&lt;/a&gt;) got me thinking. The Firebird team describes
 one of their options as an &amp;#8220;embedded&amp;#8221; server, but &lt;em&gt;agronholm&lt;/em&gt; pointed out that
 what they really mean is &lt;em&gt;portable&lt;/em&gt;. It&amp;#8217;s running a standalone server and
 client, but it&amp;#8217;s not part of the same thread/process (like SQLite is). Then
 &lt;em&gt;agronholm&lt;/em&gt; very helpfully asked&amp;#8212;my having mentioned my preference for
 &lt;a href="http://www.postgresql.org"&gt;PostgreSQL&lt;/a&gt; earlier&amp;#8212;&amp;#8221;Does Postgres not have a portable version?&amp;#8221;
-Two minutes later, we had both found &lt;a href="http://sourceforge.net/projects/postgresqlportable/"&gt;PostgreSQL Portable&lt;/a&gt;, and I&amp;nbsp;rejoiced.&lt;/p&gt;
+Two minutes later, we had both found &lt;a href="http://sourceforge.net/projects/postgresqlportable/"&gt;PostgreSQL Portable&lt;/a&gt;, and I
+rejoiced.&lt;/p&gt;
 &lt;p&gt;It took me less than half an hour to get it downloaded and set up and to confirm
 that it would work the way we need for this particular piece of software.
 (Firebird had taken me a good three hours, what with digging through badly
@@ -782,18 +792,18 @@ hour more to get PostgreSQL to the same point that I&amp;#8217;d finally gotten 
 to after multiple hours working with it. And I was so &lt;em&gt;very&lt;/em&gt; happy. What had
 been an especially frustrating work day now had me quietly smiling to myself
 constantly for the last two and a half hours as I &lt;a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception/22872598#22872598"&gt;finished&lt;/a&gt; tracking
-down the bug that had set me on this path in the first&amp;nbsp;place.&lt;/p&gt;
+down the bug that had set me on this path in the first place.&lt;/p&gt;
 &lt;p&gt;Several years ago, when I first started doing web development, I got my feet wet
 in database work with MySQL&amp;#8212;probably the single most common starting point for
 anyone going that route, courtesy of the ubiquity of the standard Linux-Apache-
-MySQL-&lt;span class="caps"&gt;PHP&lt;/span&gt; stack.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; A year after that, I picked up some work that was already
+MySQL-PHP stack.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; A year after that, I picked up some work that was already
 using PostgreSQL and fell in love almost immediately.&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt; Something just felt
 &lt;em&gt;better&lt;/em&gt; about running &lt;code&gt;psql&lt;/code&gt; than running &lt;code&gt;mysql&lt;/code&gt; on the command line.
-Postgres&amp;#8217; implementation of the &lt;span class="caps"&gt;SQL&lt;/span&gt; standard felt more natural. Even the tiniest
+Postgres&amp;#8217; implementation of the SQL standard felt more natural. Even the tiniest
 little details like the way tables display when you query them in &lt;code&gt;psql&lt;/code&gt; was
 nicer. In less than a week, I was sold and haven&amp;#8217;t looked back. While I&amp;#8217;ve used
 MySQL out of convenience on shared hosting from time to time, PostgreSQL is
-unquestionably my preferred database&amp;nbsp;target.&lt;/p&gt;
+unquestionably my preferred database target.&lt;/p&gt;
 &lt;p&gt;Today&amp;#8217;s experience brought that all home again. That grin on my face all
 afternoon felt a bit silly, but it highlights the difference that really good
 software design makes. I am not just talking about how it looks here&amp;#8212;though,
@@ -805,7 +815,7 @@ among the very most robust. (The only other open source software I find to be as
 incredibly rock-solid and reliable as PostgreSQL is the Linux kernel. I am by no
 means an expert on either, or on open source software in general, but the Linux
 kernel is an unarguably amazing piece of work. So is PostgreSQL.) All those tiny
-little details add&amp;nbsp;up.&lt;/p&gt;
+little details add up.&lt;/p&gt;
 &lt;p&gt;It&amp;#8217;s a good reminder for me as I write software that yes, the things I care
 about&amp;#8212;the small matters that would be so easy to overlook when customers
 express no interest in them&amp;#8212;really do matter. People may not know that things
@@ -814,11 +824,12 @@ imperceptible things matter. They may not consciously notice the differences in
 your interface design (even a command line interface), but it will change their
 experience of the software. Do it poorly, or even in a just-good-enough-to-get-
 by fashion, and you&amp;#8217;ll annoy or simply bore them. Do it well, and you might just
-delight them&amp;#8212;even if they can&amp;#8217;t tell you&amp;nbsp;why.&lt;/p&gt;
+delight them&amp;#8212;even if they can&amp;#8217;t tell you why.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2 id="examples"&gt;Examples&lt;/h2&gt;
 &lt;p&gt;To make my point a little more visible, I thought it might be useful to post
-samples of &lt;span class="caps"&gt;SQL&lt;/span&gt; to accomplish the same task in the two different database&amp;nbsp;dialects.&lt;/p&gt;
+samples of SQL to accomplish the same task in the two different database
+dialects.&lt;/p&gt;
 &lt;h3 id="firebirdsql4"&gt;FirebirdSQL:&lt;sup id="fnref:4"&gt;&lt;a class="footnote-ref" href="#fn:4" rel="footnote"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;CREATE TABLE projects (
   id INT NOT NULL PRIMARY KEY,
@@ -851,23 +862,24 @@ SET TERM ; +
 &lt;p&gt;It is not just that the PostgreSQL example is shorter and clearer&amp;#8212;it is that
 it is shorter and clearer because its designers and developers have taken the
 time to make sure that the shorter, cleaner way works well, and have documented
-it so you can know how to use that shorter cleaner way without too much&amp;nbsp;difficulty.&lt;/p&gt;
+it so you can know how to use that shorter cleaner way without too much
+difficulty.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id="fn:1"&gt;
 &lt;p&gt;I do most of my development on a Mac, but do all the testing on the target
-platform (Windows) in a &lt;span class="caps"&gt;VM&lt;/span&gt;.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+platform (Windows) in a VM.&amp;#160;&lt;a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:2"&gt;
 &lt;p&gt;At this point, I would only use one of those by default if I were building
 a web app: Linux. I&amp;#8217;d use &lt;a href="http://wiki.nginx.org/Main"&gt;nginx&lt;/a&gt; instead of Apache,
 &lt;a href="http://www.postgresql.org"&gt;PostgreSQL&lt;/a&gt; instead of MySQL, and &lt;a href="https://www.python.org"&gt;Python&lt;/a&gt; (though
-&lt;a href="https://www.ruby-lang.org/"&gt;Ruby&lt;/a&gt;, Javascript via &lt;a href="http://nodejs.org"&gt;node.js&lt;/a&gt;, &lt;a href="http://msdn.microsoft.com/en-us/vstudio/hh341490"&gt;C# and the .&lt;span class="caps"&gt;NET&lt;/span&gt; stack&lt;/a&gt;,
-or just about anything &lt;em&gt;but&lt;/em&gt; &lt;span class="caps"&gt;PHP&lt;/span&gt; would do fine).&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;a href="https://www.ruby-lang.org/"&gt;Ruby&lt;/a&gt;, Javascript via &lt;a href="http://nodejs.org"&gt;node.js&lt;/a&gt;, &lt;a href="http://msdn.microsoft.com/en-us/vstudio/hh341490"&gt;C# and the .NET stack&lt;/a&gt;,
+or just about anything &lt;em&gt;but&lt;/em&gt; PHP would do fine).&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:3"&gt;
-&lt;p&gt;&lt;em&gt;Almost&lt;/em&gt; immediately because at that point configuration on &lt;span class="caps"&gt;OS&lt;/span&gt; X was a bit
+&lt;p&gt;&lt;em&gt;Almost&lt;/em&gt; immediately because at that point configuration on OS X was a bit
 of a pain. That is &lt;a href="http://postgresapp.com" title="Postgres.app"&gt;no longer the case&lt;/a&gt;.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:4"&gt;
@@ -878,59 +890,60 @@ using Firebird more like that of using Postgres, or make the installation
 procedure smoother or easier, or make the documentation more complete.&amp;#160;&lt;a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 04 Apr 2014 21:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-04-04:2014/feels-right.html</guid><category>software development</category><category>design</category></item><item><title>FirebirdSQL and IntelliJ IDEA (etc.)</title><link>http://www.chriskrycho.com/2014/firebirdsql-and-intellij-idea-etc.html</link><description>&lt;p&gt;Setting up IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt;&amp;#8217;s built-in database tools to work with FirebirdSQL
-requires a particular setup configuration, which I&amp;#8217;m documenting here for public&amp;nbsp;consumption.&lt;/p&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 04 Apr 2014 21:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-04-04:2014/feels-right.html</guid><category>software development</category><category>design</category></item><item><title>FirebirdSQL and IntelliJ IDEA (etc.)</title><link>http://www.chriskrycho.com/2014/firebirdsql-and-intellij-idea-etc.html</link><description>&lt;p&gt;Setting up IntelliJ IDEA&amp;#8217;s built-in database tools to work with FirebirdSQL
+requires a particular setup configuration, which I&amp;#8217;m documenting here for public
+consumption.&lt;/p&gt;
 &lt;p&gt;These setup tools &lt;em&gt;should&lt;/em&gt; be applicable to any of JetBrains&amp;#8217; other Java-based
 IDEs which include database support (e.g. PyCharm, RubyMine, WebStorm, etc.).
-&lt;em&gt;Note:&lt;/em&gt; the following apply to IntelliJ &lt;span class="caps"&gt;IDEA&lt;/span&gt; 12 and the associated platforms,
-but &lt;em&gt;not&lt;/em&gt; to the &lt;span class="caps"&gt;IDEA&lt;/span&gt; 13 platform, which made substantial changes to how
+&lt;em&gt;Note:&lt;/em&gt; the following apply to IntelliJ IDEA 12 and the associated platforms,
+but &lt;em&gt;not&lt;/em&gt; to the IDEA 13 platform, which made substantial changes to how
 databases are configured. The underlying details are consistent, but the
-interface has changed. I have tested on PyCharm 3.1 to confirm&amp;nbsp;that.&lt;/p&gt;
-&lt;p&gt;This was all done on &lt;span class="caps"&gt;OS&lt;/span&gt; X 10.9, so I also make no guarantees that this works on
+interface has changed. I have tested on PyCharm 3.1 to confirm that.&lt;/p&gt;
+&lt;p&gt;This was all done on OS X 10.9, so I also make no guarantees that this works on
 other platforms, though the likelihood that it behaves the same on Linux is
-fairly good. I will update the post if and when I have confirmed that it&amp;nbsp;does.&lt;/p&gt;
-&lt;p&gt;Steps to configuring a database correctly for use with &lt;span class="caps"&gt;IDEA&lt;/span&gt;/etc. Note that
+fairly good. I will update the post if and when I have confirmed that it does.&lt;/p&gt;
+&lt;p&gt;Steps to configuring a database correctly for use with IDEA/etc. Note that
 steps 1&amp;#8211;3 are fairly obvious; the real point of interest is in steps 4 and 5,
-which took me the longest time to figure&amp;nbsp;out.&lt;/p&gt;
+which took me the longest time to figure out.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Download the latest version of the Firebird &lt;a href="http://www.firebirdsql.org/en/jdbc-driver/"&gt;Java drivers&lt;/a&gt; for your
     operating system and your Java version. (You can check your Java version by
     running &lt;code&gt;java -version&lt;/code&gt; at the command line.) Extract the downloaded zip
     file. The extracted folder should include a file named
-    &lt;code&gt;jaybird-full-&amp;lt;version&amp;gt;.jar&lt;/code&gt; (&lt;code&gt;&amp;lt;version&amp;gt;&lt;/code&gt; is currently&amp;nbsp;2.2.4).&lt;/p&gt;
+    &lt;code&gt;jaybird-full-&amp;lt;version&amp;gt;.jar&lt;/code&gt; (&lt;code&gt;&amp;lt;version&amp;gt;&lt;/code&gt; is currently 2.2.4).&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;In &lt;span class="caps"&gt;IDEA&lt;/span&gt;, in the database view, add a new data source: in the Database view
+&lt;p&gt;In IDEA, in the database view, add a new data source: in the Database view
     (accessible via a menu button on the right side of the screen), right click
     and choose &lt;strong&gt;New -&amp;gt; Data Source&lt;/strong&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Under &lt;strong&gt;&lt;span class="caps"&gt;JDBC&lt;/span&gt; driver files&lt;/strong&gt;, browse to the location where you extracted the
+&lt;p&gt;Under &lt;strong&gt;JDBC driver files&lt;/strong&gt;, browse to the location where you extracted the
     Jaybird driver files and select &lt;code&gt;jaybird-full-&amp;lt;version&amp;gt;.jar&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Under &lt;strong&gt;&lt;span class="caps"&gt;JDBC&lt;/span&gt; driver class&lt;/strong&gt;, choose &lt;code&gt;org.firebirdsql.jdbc.FBDriver&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Under &lt;strong&gt;JDBC driver class&lt;/strong&gt;, choose &lt;code&gt;org.firebirdsql.jdbc.FBDriver&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Under &lt;strong&gt;Database &lt;span class="caps"&gt;URL&lt;/span&gt;&lt;/strong&gt;, specify &lt;code&gt;jdbc:firebirdsql://localhost:3050/&lt;/code&gt;
+&lt;p&gt;Under &lt;strong&gt;Database URL&lt;/strong&gt;, specify &lt;code&gt;jdbc:firebirdsql://localhost:3050/&lt;/code&gt;
     followed by &lt;em&gt;either&lt;/em&gt; the full path to the database in question or a
-    corresponding alias.&lt;sup id="fnref:alias"&gt;&lt;a class="footnote-ref" href="#fn:alias" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; A full path might look like this on&amp;nbsp;Windows:&lt;/p&gt;
+    corresponding alias.&lt;sup id="fnref:alias"&gt;&lt;a class="footnote-ref" href="#fn:alias" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; A full path might look like this on Windows:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;jdbc:firebirdsql://localhost:3050/C:/my_project/the_database.db
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;With an alias, you would instead&amp;nbsp;have:&lt;/p&gt;
+&lt;p&gt;With an alias, you would instead have:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;jdbc:firebirdsql://localhost:3050/the_alias
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then specify valid values for the &lt;strong&gt;User&lt;/strong&gt; and &lt;strong&gt;Password&lt;/strong&gt; fields from
-your existing configuration of the&amp;nbsp;database.&lt;/p&gt;
+your existing configuration of the database.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Click the &lt;strong&gt;Test Connection&lt;/strong&gt; button and make sure the configuration&amp;nbsp;works.&lt;/p&gt;
+&lt;p&gt;Click the &lt;strong&gt;Test Connection&lt;/strong&gt; button and make sure the configuration works.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;That should do it. Note that the driver choice and path configuration both
-matter. On &lt;span class="caps"&gt;OS&lt;/span&gt; X, I found that only the &lt;code&gt;FBDriver&lt;/code&gt; with this (and one other,
-older-style and therefore not recommended) path setup worked&amp;nbsp;successfully.&lt;/p&gt;
+matter. On OS X, I found that only the &lt;code&gt;FBDriver&lt;/code&gt; with this (and one other,
+older-style and therefore not recommended) path setup worked successfully.&lt;/p&gt;
 &lt;p&gt;Observations, corrections, additional information, and miscellaneous comments
 welcomed on &lt;a href="https://alpha.app.net/chriskrycho"&gt;App.net&lt;/a&gt; or &lt;a href="https://www.twitter.com/chriskrycho"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="footnote"&gt;
@@ -944,7 +957,7 @@ will, update just the configuration file, and not have to update any
 references to the database file whatsoever.&amp;#160;&lt;a class="footnote-backref" href="#fnref:alias" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 28 Mar 2014 09:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-03-28:2014/firebirdsql-and-intellij-idea-etc.html</guid><category>Software Development</category></item><item><title>The End of Surfing</title><link>http://www.chriskrycho.com/2014/the-end-of-surfing.html</link><description>&lt;p&gt;Sometime in the last few months it occurred to me that I no longer &amp;#8220;surf&amp;#8221; the
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 28 Mar 2014 09:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-03-28:2014/firebirdsql-and-intellij-idea-etc.html</guid><category>Software Development</category></item><item><title>The End of Surfing</title><link>http://www.chriskrycho.com/2014/the-end-of-surfing.html</link><description>&lt;p&gt;Sometime in the last few months it occurred to me that I no longer &amp;#8220;surf&amp;#8221; the
 internet. I read, to be sure, and every once in a long while I even go on a
 spree where I follow links from one site to another (or just in a long trail on
 Wikipedia). In general, however, I no longer surf. I suspect I am not alone in
@@ -959,7 +972,7 @@ advent of social media and the increasing degree to which social media have
 captured user attention on the web are a significant factor in the end of the
 old surfing/browsing behavior. This is a dream come true for those social media
 giants which have found ways to deliver ads to their many millions of users and
-thereby turn enormous&amp;nbsp;profits.&lt;/p&gt;
+thereby turn enormous profits.&lt;/p&gt;
 &lt;p&gt;At the same time, I think there is an oft-overlooked factor in the shifting
 nature of the web over the last decade: the browser. In fact, if there is any
 single cause behind the death of old-fashioned surfing, I would point to Firefox
@@ -967,14 +980,14 @@ single cause behind the death of old-fashioned surfing, I would point to Firefox
 sections of the internet-using public.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; The open-source browser steadily ate
 away at Internet Explorer&amp;#8217;s then absurd levels of dominance, until Internet
 Explorer 8 included of tabs itself. By the time that Chrome came on the scene,
-tabbed browsing had long since become a&amp;nbsp;given.&lt;/p&gt;
+tabbed browsing had long since become a given.&lt;/p&gt;
 &lt;p&gt;So why do I think that &lt;em&gt;tabbed browsing&lt;/em&gt; of all things contributed to the end of
 &amp;#8220;browsing&amp;#8221; and &amp;#8220;surfing&amp;#8221; as our dominant mode of reading the internet? Simply
 put: it broke linearity. Previously,&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt; one&amp;#8217;s experience of the web was single-
 stranded, leaping from one point to another in a line that however contorted was
 always connected by the forward and backward buttons on the browser. The moment
 tabbed browsing came on the scene, that line was broken. Following a link might
-mean it opened in a new tab instead of moving the whole view forward to&amp;nbsp;it.&lt;/p&gt;
+mean it opened in a new tab instead of moving the whole view forward to it.&lt;/p&gt;
 &lt;p&gt;Surfing as I remember it in the late &amp;rsquo;90s and early &amp;rsquo;00s was
 inherently the experience of getting lost along that timeline, finding myself
 dozens of links along the chain and wondering how I had ended up there, and then
@@ -987,19 +1000,19 @@ journeys without ending the old. But there was a hidden cost: that newly opened
 tab had no history. It was a clean slate; before that newly opened link there
 was only a blank page. If I closed the original from which I had opened it,
 there was no going back.&lt;sup id="fnref:4"&gt;&lt;a class="footnote-ref" href="#fn:4" rel="footnote"&gt;4&lt;/a&gt;&lt;/sup&gt; If I closed this new tabs, there was no going
-forward to them. The line was&amp;nbsp;broken.&lt;/p&gt;
+forward to them. The line was broken.&lt;/p&gt;
 &lt;p&gt;From there it was only a short step to the idea of a single site being the
 center from which one ventured out to other points on the web before returning:
 the Facebooks and Twitters of the world. In some sense, Facebook&amp;#8217;s entire model
 is predicated on the idea that it is natural to open a new tab with that juicy
 Buzzfeed content while keeping Facebook itself open in a background tab. Would
-it work in that old linear model? Sort of. Would it feel natural?&amp;nbsp;Never.&lt;/p&gt;
+it work in that old linear model? Sort of. Would it feel natural? Never.&lt;/p&gt;
 &lt;p&gt;All of this because of tabs. Invention&amp;#8217;s most significant results are rarely
 those the minds behind it expect. When we are designing things&amp;#8212;whether a piece
 of furniture or a piece of the web&amp;#8212;we have to remember that design decisions
 all have repercussions that we may not see. Technology is never neutral.
 Particular innovations may or may not be &lt;em&gt;morally&lt;/em&gt; significant, but they always
-produce changes in people&amp;#8217;s behavior. Design has&amp;nbsp;consequences.&lt;/p&gt;
+produce changes in people&amp;#8217;s behavior. Design has consequences.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -1022,10 +1035,11 @@ did&amp;#8212;but to a much lesser extent.&amp;#160;&lt;a class="footnote-backre
 here.&amp;#160;&lt;a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 26 Mar 2014 20:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-03-26:2014/the-end-of-surfing.html</guid><category>design</category><category>software development</category></item><item><title>Doing It Myself</title><link>http://www.chriskrycho.com/2014/doing-it-myself.html</link><description>&lt;p&gt;Last summer, I started work on a project I named &lt;a href="http://step-stool.io"&gt;Step Stool&lt;/a&gt;&amp;#8212;aiming to
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 26 Mar 2014 20:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-03-26:2014/the-end-of-surfing.html</guid><category>design</category><category>software development</category></item><item><title>Doing It Myself</title><link>http://www.chriskrycho.com/2014/doing-it-myself.html</link><description>&lt;p&gt;Last summer, I started work on a project I named &lt;a href="http://step-stool.io"&gt;Step Stool&lt;/a&gt;&amp;#8212;aiming to
 make a static site generator that would tick of all the little boxes marking my
 desires for a website generator. In due time, the project got put on hold, as I
-started up classes again and needed to focus more on my family than on fun side&amp;nbsp;projects.&lt;/p&gt;
+started up classes again and needed to focus more on my family than on fun side
+projects.&lt;/p&gt;
 &lt;p&gt;Come the beginning of 2014, I was ready to bit WordPress farewell once and for
 all, though. While &lt;a href="https://ghost.org"&gt;Ghost&lt;/a&gt; looks interesting, since I do all my writing
 in Markdown files, there is something tempting about the canonical version of
@@ -1035,7 +1049,7 @@ the beginning of the year to finish writing Step Stool, and I knew as much,&lt;s
 so instead I moved to &lt;a href="http://docs.getpelican.com/en/3.3.0/"&gt;Pelican&lt;/a&gt; as a stop-gap. There were lots of good
 reasons to pick Pelican: it has an active development community, fairly thorough
 documentation,&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; and it&amp;#8217;s in Python and uses Jinja2 templates&amp;#8212;the same basic
-approach I had taken with Step Stool, and the same&amp;nbsp;toolset.&lt;/p&gt;
+approach I had taken with Step Stool, and the same toolset.&lt;/p&gt;
 &lt;p&gt;Unfortunately, while I have been glad to be away from WordPress, my experience
 with Pelican so far has only reinforced my desire to get Step Stool done. There
 are &lt;em&gt;lots&lt;/em&gt; of little things that it does in ways that just annoy me. Many of
@@ -1043,20 +1057,20 @@ them have to do with configuration and documentation. On the latter, while the
 documentation is &lt;em&gt;fairly&lt;/em&gt; complete, there are quite a few holes and gaps. (Yes,
 yes, open source software and anyone can add to the docs. That&amp;#8217;s great&amp;#8212;it
 really is&amp;#8212;but if I&amp;#8217;m going to use someone else&amp;#8217;s solution, it had better &lt;em&gt;just
-work&lt;/em&gt;. Otherwise, I&amp;#8217;d rather spend my time getting my own&amp;nbsp;going.)&lt;/p&gt;
+work&lt;/em&gt;. Otherwise, I&amp;#8217;d rather spend my time getting my own going.)&lt;/p&gt;
 &lt;p&gt;For example, if you want to see how the pagination actually works, good luck
 figuring it out from the documentation. You&amp;#8217;ll need to go looking at the way the
 sample themes (yes, both of them) are implemented to start getting a feel for
 it. Along the same lines, many of the objects that get handed to the templates
 are not fully documented, so it is difficult to know what one can or cannot do.
 I do not particularly want to spend my time adding debug print statements to my
-templates just to figure out what options I have&amp;nbsp;available.&lt;/p&gt;
+templates just to figure out what options I have available.&lt;/p&gt;
 &lt;p&gt;The same kinds of things hold true for configuration options. Moreover, the
 configuration is done through a Python module. While that makes the module
 easier to integrate on the code side of things, it makes its actual content much
 less transparent than one might hope. Python is not really well optimized for
 writing configuration files&amp;#8212;nor is any normal programming language.
-Configuration is inherently declarative, rather than&amp;nbsp;imperative.&lt;/p&gt;
+Configuration is inherently declarative, rather than imperative.&lt;/p&gt;
 &lt;p&gt;This is not to say that Pelican is bad software. It is not. It is, however, a
 fairly typical example of open source software implemented by committee. It has
 holes (some of them serious), bumps, and quirks. Here is the reality: so will
@@ -1068,9 +1082,9 @@ to the Smartypants and Typogrify modules, my own &lt;a href="https://bitbucket.o
 and quite possibly a &lt;a href="https://bitbucket.org/chriskrycho/markdown-poetry/"&gt;Markdown Poetry extension &lt;/a&gt;. But I would like
 very much to just get back to doing this myself. There is freedom in rolling my
 own solution to things. I will not always have time to do these kinds of things; 
-I figure I should do them when I&amp;nbsp;can.&lt;/p&gt;
+I figure I should do them when I can.&lt;/p&gt;
 &lt;p&gt;So here&amp;#8217;s to &lt;a href="http://step-stool.io"&gt;Step Stool&lt;/a&gt;, and&amp;#8212;more importantly&amp;#8212;to writing your own
-software just to scratch that&amp;nbsp;itch.&lt;/p&gt;
+software just to scratch that itch.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
