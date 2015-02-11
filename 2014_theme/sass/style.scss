@@ -580,7 +580,7 @@ article {
             bottom: $fsp;
         }
 
-        img { box-shadow: 0 0 0.625em; }
+        img { box-shadow: 0 0 0.625em $light_gray; }
     }
 
     figcaption {
