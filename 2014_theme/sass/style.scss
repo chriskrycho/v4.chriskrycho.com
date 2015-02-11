@@ -79,7 +79,7 @@ p {
     }
 }
 
-h1, h2, h3, h4, h5, h6, ul, ol, blockquote, pre, hr {
+h1, h2, h3, h4, h5, h6, ul, ol, blockquote, pre, hr, figure {
     + p { text-indent: 0; }
 }
 
@@ -423,6 +423,7 @@ article {
     .content {
 
         > p:first-of-type {
+            &::first-letter { @include first-letter(); }
             &::first-line { @include first-line(); }
         }
 
