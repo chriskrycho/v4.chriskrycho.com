@@ -1,8 +1,9 @@
 Title: Small Caps. They Aren't Even Hard
 Subtitle: A Plea to Christian Publishers Everywhere
 Author: Chris Krycho
-Date: 2015-02-10 12:00
+Date: 2015-02-11 12:00
 Slug: small-caps-not-hard
+Status: draft
 
 In addition to the various other issues I tackled in the [review] I published at Mere O today, there was one other secondary but to my mind non-trivial issue with Barrs' _Echoes of Eden_. I left it aside because it certainly wasn't Barrs' fault, and would have seemed absurdly nitpicky to my audience there. But it bears comment nonetheless.
 
