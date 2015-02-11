@@ -573,6 +573,20 @@ article {
             }
         }
     }
+
+    figure {
+        padding: {
+            top: $fs2;
+            bottom: $fsp;
+        }
+
+        img { box-shadow: 0 0 0.625em; }
+    }
+
+    figcaption {
+        color: $light_gray;
+        text-align: center;
+    }
 }
 
 sup[id^="fnref:"] a {
