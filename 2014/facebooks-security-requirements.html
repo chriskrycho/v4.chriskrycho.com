@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Facebook's "Security" Requirements &middot; Chris Krycho</title>
+    <meta name="description" content=""/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2014/facebooks-security-requirements.html"/>
+    <meta property="og:title" content="Facebook's "Security" Requirements"/>
+        <meta property="og:description" content="Creativity, reflection, & varied endeavors by a peculiar fellow"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+        <meta name="twitter:title" content="Facebook's "Security" Requirements"/>
+        <meta name="twitter:description" content="Creativity, reflection, & varied endeavors by a peculiar fellow"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
+
+    <link href="http://www.chriskrycho.com/favicon.png" type="image/png" rel="icon" />
+    <link href="http://www.chriskrycho.com/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
+    <script type="text/javascript">$.bigfoot();</script>
+        <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <script src="/assets/js/reftagger.js"></script>
+
+
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Creativity, reflection, & varied endeavors<br class="optional"/> by a peculiar fellow</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article >
+
+    <header>
+<h1>Facebook's "Security" Requirements</h1>
+<h2>No 2FA Unless You Let Us Track You</h2>    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/facebooks-security-requirements.html"><i class="fa fa-fw fa-link"></i></a>February 21, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span><a href="http://www.chriskrycho.com/2014/facebooks-security-requirements.txt">Markdown source</a></span></div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>I went to set up 2-step login (AKA 2-factor authentication, or what Facebook calls &#8220;Login Approvals&#8221;) on Facebook yesterday morning, and was greeted with this lovely message when I clicked &#8220;enable&#8221;:</p>
+<blockquote>
+<p>Your current Firefox settings might make it hard to use Login Approvals. It&#8217;s probably because:</p>
+<ul>
+<li>You sometimes clear your cookies.</li>
+<li>Your browser is set to automatically clear cookies whenever it closes.</li>
+<li>You use your browser&#8217;s &#8220;private browsing&#8221; or &#8220;incognito&#8221; mode.</li>
+<li>You&#8217;re using a new browser.</li>
+</ul>
+<p>It may take a few days after fixing these issues before you will be able to enable Login Approvals. You also may need to log out and then log in again after fixing these settings for the changes to take effect.</p>
+<p>Visit the Help Center for step-by-step directions on how to fix these settings.</p>
+</blockquote>
+<p>I use Firefox for the social media access I do online&#8212;and because I don&#8217;t like being tracked, I tell Firefox not to remember history and to delete cookies as soon as I close the browser, and I run <a href="https://github.com/gorhill/uBlock">μBlock</a><sup id="fnref:block"><a class="footnote-ref" href="#fn:block" rel="footnote">1</a></sup> and <a href="https://disconnect.me/">Disconnect</a>.<sup id="fnref:track"><a class="footnote-ref" href="#fn:track" rel="footnote">2</a></sup></p>
+<p>When you attempt to enable 2-step login, Facebook checks your security policy&#8230; and <em>will not let you turn it on</em> if your settings are like mine. They supply the message above, with no option to proceed anyway. Of course, there is no technical issue with using 2-step login with a browser configured this way. I use it for GitHub, Google, my domain registrar, and every other service with 2-step login.</p>
+<p>Facebook probably has two motives here. The better one is user experience: it <em>would</em> be frustrating if you are a non-tech-savvy user who doesn&#8217;t understand the consequences of setting this given the browser settings I have. But of course, if they were primarily just concerned with that, they could give the warning and then let users say, &#8220;Go ahead; I know what I&#8217;m getting into.&#8221; The second, less obvious but almost certainly more important motive from Facebook&#8217;s point of view, is to discourage people from using a browser the way I do. They want to be able to monetize my Facebook use better, and this means not just my time on Facebook, but my time all over the web. Facebook wants to know what I&#8217;m looking at any time I&#8217;m surfing <em>anywhere</em> so that they can tailor their ads to me.</p>
+<p>I&#8217;m not interested in being tracked that way.</p>
+<p>Apparently, Facebook isn&#8217;t interested in letting people have actual, modern security unless they&#8217;re willing to be tracked that way.</p>
+<p>We have a problem here.</p>
+<p>As it turns out, of course, people like me aren&#8217;t particularly valuable customers to Facebook anyway, so they probably don&#8217;t mind the fact that they&#8217;re losing more and more of our time. But losing that time they are. My use of Facebook is diminishing at an ever-increasing rate, for countless little reasons like this, where Facebook&#8217;s ad-driven motivations push them to treat me poorly. Too bad for them.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:block">
+<p>If anyone tells you that blocking ads is &#8220;stealing&#8221;, they&#8217;re talking up nonsense. The Internet is built in such a way that if nothing else you can always just request the plain text version of a website, and that&#8217;s extremely important for many reasons, including accessibility. I <em>choose</em> to leave ads on for any number of sites I want to support, but at the end of the day it&#8217;s every publisher&#8217;s choice how theyw ant to make money. If a newspaper supports itself with ads and coupons, I have every right to throw them in the trash without a glance; the same is true online.&#160;<a class="footnote-backref" href="#fnref:block" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:track">
+<p>Yes, I know this isn&#8217;t foolproof and I&#8217;m still being tracked. It&#8217;s impossible <em>not</em> to be tracked to some degree or another. What I am doing here is <em>decreasing</em> the degree to which companies can track me.&#160;<a class="footnote-backref" href="#fnref:track" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>        </div>
+    </div>
+    </article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h1>Connect</h1>
+    <h2>Social</h2>
+    <ul class="icons">
+        <li><a href="https://app.net/chriskrycho"><i class="fa fa-fw fa-adn"></i>App.net</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://www.facebook.com/chriskrycho"><i class="fa fa-fw fa-facebook"></i>Facebook</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-cloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+    </ul>
+    <h2>Software</h2>
+    <ul class="icons">
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://bitbucket.org/chriskrycho"><i class="fa fa-fw fa-bitbucket"></i>Bitbucket</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="navigate">
+    <h1>Navigate</h1>
+    <h2>Read</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/archives.html">Everything</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+    </ul>
+    <h2>Get Updates</h2>
+    <ul class="inline">
+        <li class="section-title">Everything</li>
+        <li><a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46224/chriskrychocom-all/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">art</li>
+        <li><a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46225/chriskrychocom-art/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">blog</li>
+        <li><a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46226/chriskrychocom-blog/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">tech</li>
+        <li><a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46227/chriskrychocom-tech/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">theology</li>
+        <li><a href="http://www.chriskrycho.com/feeds/theology.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46228/chriskrychocom-theology/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+</section>
+<section id="recent">
+    <h1>Recent</h1>
+    <h2 class="section-title">art</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2015/speak-the-truth-in-beauty.html">Speak the Truth in Beauty</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It Wrong</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html">Let The Peoples Praise You</a></li>
+    </ul>
+    <h2 class="section-title">blog</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2015/early-2015-family.html">The State of Our Family in Early 2015</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good Tools</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/public-ish-plans.html">Public-ish Plans</a></li>
+    </ul>
+    <h2 class="section-title">tech</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2014/growing-up-together.html">Growing Up Together</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/a-ridiculous-situation.html">A Ridiculous Situation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/nailed-it.html">Nailed It</a></li>
+    </ul>
+    <h2 class="section-title">theology</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2014/startlement.html">Startlement</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the Incarnation</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/be-holy.html">Be Holy!</a></li>
+    </ul>
+</section></footer>
+</body>
+</html>
