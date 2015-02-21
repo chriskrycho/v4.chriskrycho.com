@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Wed, 11 Feb 2015 07:00:00 -0500</lastBuildDate><item><title>Speak the Truth in Beauty</title><link>http://www.chriskrycho.com/2015/speak-the-truth-in-beauty.html</link><description>&lt;p&gt;This is sort of a &lt;a href="http://mereorthodoxy.com/speak-truth-beauty-review-echoes-eden/"&gt;hybrid review and essay&lt;/a&gt;. The review proper concludes:&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 21 Feb 2015 12:35:00 -0500</lastBuildDate><item><title>Facebook's "Security" Requirements</title><link>http://www.chriskrycho.com/2015/facebooks-security-requirements.html</link><description>&lt;p&gt;I went to set up 2-step login (AKA 2-factor authentication, or what Facebook calls &amp;#8220;Login Approvals&amp;#8221;) on Facebook yesterday morning, and was greeted with this lovely message when I clicked &amp;#8220;enable&amp;#8221;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Your current Firefox settings might make it hard to use Login Approvals. It&amp;#8217;s probably because:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You sometimes clear your cookies.&lt;/li&gt;
+&lt;li&gt;Your browser is set to automatically clear cookies whenever it closes.&lt;/li&gt;
+&lt;li&gt;You use your browser&amp;#8217;s &amp;#8220;private browsing&amp;#8221; or &amp;#8220;incognito&amp;#8221; mode.&lt;/li&gt;
+&lt;li&gt;You&amp;#8217;re using a new browser.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It may take a few days after fixing these issues before you will be able to enable Login Approvals. You also may need to log out and then log in again after fixing these settings for the changes to take effect.&lt;/p&gt;
+&lt;p&gt;Visit the Help Center for step-by-step directions on how to fix these settings.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I use Firefox for the social media access I do online&amp;#8212;and because I don&amp;#8217;t like being tracked, I tell Firefox not to remember history and to delete cookies as soon as I close the browser, and I run &lt;a href="https://github.com/gorhill/uBlock"&gt;μBlock&lt;/a&gt;&lt;sup id="fnref:block"&gt;&lt;a class="footnote-ref" href="#fn:block" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;a href="https://disconnect.me/"&gt;Disconnect&lt;/a&gt;.&lt;sup id="fnref:track"&gt;&lt;a class="footnote-ref" href="#fn:track" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;When you attempt to enable 2-step login, Facebook checks your security policy&amp;#8230; and &lt;em&gt;will not let you turn it on&lt;/em&gt; if your settings are like mine. They supply the message above, with no option to proceed anyway. Of course, there is no technical issue with using 2-step login with a browser configured this way. I use it for GitHub, Google, my domain registrar, and every other service with 2-step login.&lt;/p&gt;
+&lt;p&gt;Facebook probably has two motives here. The better one is user experience: it &lt;em&gt;would&lt;/em&gt; be frustrating if you are a non-tech-savvy user who doesn&amp;#8217;t understand the consequences of setting this given the browser settings I have. But of course, if they were primarily just concerned with that, they could give the warning and then let users say, &amp;#8220;Go ahead; I know what I&amp;#8217;m getting into.&amp;#8221; The second, less obvious but almost certainly more important motive from Facebook&amp;#8217;s point of view, is to discourage people from using a browser the way I do. They want to be able to monetize my Facebook use better, and this means not just my time on Facebook, but my time all over the web. Facebook wants to know what I&amp;#8217;m looking at any time I&amp;#8217;m surfing &lt;em&gt;anywhere&lt;/em&gt; so that they can tailor their ads to me.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;m not interested in being tracked that way.&lt;/p&gt;
+&lt;p&gt;Apparently, Facebook isn&amp;#8217;t interested in letting people have actual, modern security unless they&amp;#8217;re willing to be tracked that way.&lt;/p&gt;
+&lt;p&gt;We have a problem here.&lt;/p&gt;
+&lt;p&gt;As it turns out, of course, people like me aren&amp;#8217;t particularly valuable customers to Facebook anyway, so they probably don&amp;#8217;t mind the fact that they&amp;#8217;re losing more and more of our time. But losing that time they are. My use of Facebook is diminishing at an ever-increasing rate, for countless little reasons like this, where Facebook&amp;#8217;s ad-driven motivations push them to treat me poorly. Too bad for them.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:block"&gt;
+&lt;p&gt;If anyone tells you that blocking ads is &amp;#8220;stealing&amp;#8221;, they&amp;#8217;re talking up nonsense. The Internet is built in such a way that if nothing else you can always just request the plain text version of a website, and that&amp;#8217;s extremely important for many reasons, including accessibility. I &lt;em&gt;choose&lt;/em&gt; to leave ads on for any number of sites I want to support, but at the end of the day it&amp;#8217;s every publisher&amp;#8217;s choice how theyw ant to make money. If a newspaper supports itself with ads and coupons, I have every right to throw them in the trash without a glance; the same is true online.&amp;#160;&lt;a class="footnote-backref" href="#fnref:block" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn:track"&gt;
+&lt;p&gt;Yes, I know this isn&amp;#8217;t foolproof and I&amp;#8217;m still being tracked. It&amp;#8217;s impossible &lt;em&gt;not&lt;/em&gt; to be tracked to some degree or another. What I am doing here is &lt;em&gt;decreasing&lt;/em&gt; the degree to which companies can track me.&amp;#160;&lt;a class="footnote-backref" href="#fnref:track" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 21 Feb 2015 12:35:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-02-21:2015/facebooks-security-requirements.html</guid></item><item><title>Speak the Truth in Beauty</title><link>http://www.chriskrycho.com/2015/speak-the-truth-in-beauty.html</link><description>&lt;p&gt;This is sort of a &lt;a href="http://mereorthodoxy.com/speak-truth-beauty-review-echoes-eden/"&gt;hybrid review and essay&lt;/a&gt;. The review proper concludes:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;In short, Echoes of Eden says all the right things. Barrs has provided a
 healthy, sound theology of the arts, reiterating and synthesizing the helpful
@@ -6283,36 +6312,7 @@ slipped. I have only just finally caught up, and as such I am hoping that in the
 week ahead I shall be able to resume my previously very effective habits of
 doing all these things to &lt;em&gt;start&lt;/em&gt; the day rather than to finish them.&lt;/p&gt;
 &lt;p&gt;That, of course, assumes I get over this blasted cold that I seem to have caught
-last night&amp;#8230; Life is a funny thing, sometimes.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 23 Feb 2014 10:30:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2014-02-23:2014/on-days-off.html</guid></item><item><title>Facebook's "Security" Requirements</title><link>http://www.chriskrycho.com/2014/facebooks-security-requirements.html</link><description>&lt;p&gt;I went to set up 2-step login (AKA 2-factor authentication, or what Facebook calls &amp;#8220;Login Approvals&amp;#8221;) on Facebook yesterday morning, and was greeted with this lovely message when I clicked &amp;#8220;enable&amp;#8221;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Your current Firefox settings might make it hard to use Login Approvals. It&amp;#8217;s probably because:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;You sometimes clear your cookies.&lt;/li&gt;
-&lt;li&gt;Your browser is set to automatically clear cookies whenever it closes.&lt;/li&gt;
-&lt;li&gt;You use your browser&amp;#8217;s &amp;#8220;private browsing&amp;#8221; or &amp;#8220;incognito&amp;#8221; mode.&lt;/li&gt;
-&lt;li&gt;You&amp;#8217;re using a new browser.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;It may take a few days after fixing these issues before you will be able to enable Login Approvals. You also may need to log out and then log in again after fixing these settings for the changes to take effect.&lt;/p&gt;
-&lt;p&gt;Visit the Help Center for step-by-step directions on how to fix these settings.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;I use Firefox for the social media access I do online&amp;#8212;and because I don&amp;#8217;t like being tracked, I tell Firefox not to remember history and to delete cookies as soon as I close the browser, and I run &lt;a href="https://github.com/gorhill/uBlock"&gt;μBlock&lt;/a&gt;&lt;sup id="fnref:block"&gt;&lt;a class="footnote-ref" href="#fn:block" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; and &lt;a href="https://disconnect.me/"&gt;Disconnect&lt;/a&gt;.&lt;sup id="fnref:track"&gt;&lt;a class="footnote-ref" href="#fn:track" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;When you attempt to enable 2-step login, Facebook checks your security policy&amp;#8230; and &lt;em&gt;will not let you turn it on&lt;/em&gt; if your settings are like mine. They supply the message above, with no option to proceed anyway. Of course, there is no technical issue with using 2-step login with a browser configured this way. I use it for GitHub, Google, my domain registrar, and every other service with 2-step login.&lt;/p&gt;
-&lt;p&gt;Facebook probably has two motives here. The better one is user experience: it &lt;em&gt;would&lt;/em&gt; be frustrating if you are a non-tech-savvy user who doesn&amp;#8217;t understand the consequences of setting this given the browser settings I have. But of course, if they were primarily just concerned with that, they could give the warning and then let users say, &amp;#8220;Go ahead; I know what I&amp;#8217;m getting into.&amp;#8221; The second, less obvious but almost certainly more important motive from Facebook&amp;#8217;s point of view, is to discourage people from using a browser the way I do. They want to be able to monetize my Facebook use better, and this means not just my time on Facebook, but my time all over the web. Facebook wants to know what I&amp;#8217;m looking at any time I&amp;#8217;m surfing &lt;em&gt;anywhere&lt;/em&gt; so that they can tailor their ads to me.&lt;/p&gt;
-&lt;p&gt;I&amp;#8217;m not interested in being tracked that way.&lt;/p&gt;
-&lt;p&gt;Apparently, Facebook isn&amp;#8217;t interested in letting people have actual, modern security unless they&amp;#8217;re willing to be tracked that way.&lt;/p&gt;
-&lt;p&gt;We have a problem here.&lt;/p&gt;
-&lt;p&gt;As it turns out, of course, people like me aren&amp;#8217;t particularly valuable customers to Facebook anyway, so they probably don&amp;#8217;t mind the fact that they&amp;#8217;re losing more and more of our time. But losing that time they are. My use of Facebook is diminishing at an ever-increasing rate, for countless little reasons like this, where Facebook&amp;#8217;s ad-driven motivations push them to treat me poorly. Too bad for them.&lt;/p&gt;
-&lt;div class="footnote"&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id="fn:block"&gt;
-&lt;p&gt;If anyone tells you that blocking ads is &amp;#8220;stealing&amp;#8221;, they&amp;#8217;re talking up nonsense. The Internet is built in such a way that if nothing else you can always just request the plain text version of a website, and that&amp;#8217;s extremely important for many reasons, including accessibility. I &lt;em&gt;choose&lt;/em&gt; to leave ads on for any number of sites I want to support, but at the end of the day it&amp;#8217;s every publisher&amp;#8217;s choice how theyw ant to make money. If a newspaper supports itself with ads and coupons, I have every right to throw them in the trash without a glance; the same is true online.&amp;#160;&lt;a class="footnote-backref" href="#fnref:block" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id="fn:track"&gt;
-&lt;p&gt;Yes, I know this isn&amp;#8217;t foolproof and I&amp;#8217;m still being tracked. It&amp;#8217;s impossible &lt;em&gt;not&lt;/em&gt; to be tracked to some degree or another. What I am doing here is &lt;em&gt;decreasing&lt;/em&gt; the degree to which companies can track me.&amp;#160;&lt;a class="footnote-backref" href="#fnref:track" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 21 Feb 2014 12:35:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2014-02-21:2014/facebooks-security-requirements.html</guid></item><item><title>A Mighty Change</title><link>http://www.chriskrycho.com/2014/a-mighty-change.html</link><description>&lt;p&gt;One of the most remarkable transformations in history comes in the beginning of
+last night&amp;#8230; Life is a funny thing, sometimes.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 23 Feb 2014 10:30:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2014-02-23:2014/on-days-off.html</guid></item><item><title>A Mighty Change</title><link>http://www.chriskrycho.com/2014/a-mighty-change.html</link><description>&lt;p&gt;One of the most remarkable transformations in history comes in the beginning of
 the second chapter of Acts. A group of obviously-still-confused men and women
 were gathered for prayer, and the Holy Spirit came like fire on them and set the
 world on its head. The epoch-making change in this group of people is shocking

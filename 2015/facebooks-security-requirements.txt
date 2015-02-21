@@ -1,7 +1,7 @@
 Title: Facebook's "Security" Requirements
 Subtitle: No 2FA Unless You Let Us Track You
 Author: Chris Krycho
-Date: 2014-02-21 12:35
+Date: 2015-02-21 12:35
 
 I went to set up 2-step login (AKA 2-factor authentication, or what Facebook calls "Login Approvals") on Facebook yesterday morning, and was greeted with this lovely message when I clicked "enable":
 
