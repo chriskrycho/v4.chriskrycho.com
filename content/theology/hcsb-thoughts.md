@@ -8,4 +8,6 @@ Slug: HCSB-thoughts
 * "optimal equivalence" is a hilariously cocky phrase; *everyone* tries to be optimally equivalent---the whole point of the discussion is the question, "What is optimum for Bible translation?" I like the actual approach, but the name is ridiculous.
 * Treatment of יהוה is pretty silly. It will offend those who are put off by seeing or hearing it in print, but it's not consistent---so you can end up with LORD and Yahweh right next to each other, which makes the text far *more* ambiguous for ordinary reading.
 * "this is the Lord's declaration"
-* Treatment of units is splendid
+* Treatment of units is splendid—but inconsistent. Money treated very differently from distance.
+* Luke 22:37, John 3:36
+* 
