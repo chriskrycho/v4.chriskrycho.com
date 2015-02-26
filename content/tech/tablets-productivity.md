@@ -1,5 +1,5 @@
-Title: The Tablet "Productivity" Problem
-Subtitle: "Consumption", Reading, Utilitarianism, and Human Flourishing
+Title: The Tablet “Productivity” Problem
+Subtitle: “Consumption”, Reading, Utilitarianism, and Human Flourishing
 Author: Chris Krycho
 Date: 2015-02-25 21:35
 
