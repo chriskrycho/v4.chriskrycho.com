@@ -731,4 +731,9 @@ sup[id^="fnref:"] a {
     @include transform(rotate(45deg));
 }
 
+.bigfoot-footnote__content {
+    line-height: $line_height_small;
+    font-size: $fs6;
+}
+
 @import "media";
