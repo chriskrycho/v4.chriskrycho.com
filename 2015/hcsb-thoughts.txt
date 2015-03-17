@@ -1,7 +1,8 @@
-Title: “Optimal Equivalence” 
+Title: “Optimal Equivalence”
 Subtitle: A Few Thoughts on the Holman Christian Standard Bible
-Author: Chris Krycho 
-Date: 2015-02-28 20:30 
+Author: Chris Krycho
+Date: 2015-02-28 20:30
+Modified: 2015-03-16 20:30
 Slug: hcsb-thoughts
 
 Over the past few months, I have been doing a read-the-Bible-in-90-days plan,
@@ -70,7 +71,7 @@ basis of the Bible and of the original languages has advanced somewhat since
 1611.[^KJV] Occasionally, though, and especially in the poetic sections, the
 result is a serious flattening of the text. Compare, for example, their
 translation of Job 38:11. The HCSB reads:
- 
+
 >     when I declared: “You may come this far, but no farther;
 >         your proud waves stop here”?
 
@@ -121,41 +122,48 @@ comprehension.
 ### Miscellaneous Translation Notes
 There were a number of other quirks in the translation I thought worth noting.
 
-- Instead of the more usual "...declares the <span class="smcp">Lord</span>" or
-  "...says the <span class="smcp">Lord</span>," the tranlators opted to go with
-  "This is the <span class="smcp">Lord's</span> declaration..." and "This is
-  what the <span class="smcp">Lord</span> says...." This is a perfectly
-  defensible translation, but is another case where diverging from the
-  traditional reading, even for more normal English, actually sounds a bit
-  jarring. I never actually adjusted to it, even after weeks of seeing it.
+  - Instead of the more usual "...declares the <span class="smcp">Lord</span>"
+    or "...says the <span class="smcp">Lord</span>," the tranlators opted to go
+    with "This is the <span class="smcp">Lord's</span> declaration..." and "This
+    is what the <span class="smcp">Lord</span> says...." This is a perfectly
+    defensible translation, but is another case where diverging from the
+    traditional reading, even for more normal English, actually sounds a bit
+    jarring. I never actually adjusted to it, even after weeks of seeing it.
 
-- The treatment of units is splendid overall. It is, however, inconsistent.
-  Units of distance, weight, and so on are all translated directly into their
-  modern English equivalents. (This being a very American translation, the units
-  are all Imperial, of course.) Reading miles instead of *stadia* and inches or
-  feet instead of *cubits* was quite helpful and illuminating. On the other
-  hand, the translators treated money very differently, simply leaving them in
-  the original units. Perhaps they were concerned about currency fluctuations or
-  the vagaries of inflation on the value of money over time. Perhaps there is no
-  better way to handle monetary units, but the inconsistency remained a trifle
-  jarring.
+    **Edit:** I've been spending an awful lot of time looking at the prophetic
+    books in Hebrew lately, and I get to eat some crow on this one. Where the
+    HCSB has "this is the <span class="smcp">Lord's</span> declaration", the
+    original text usually has some that, brought over in an extremely wooden
+    sense, would be "declaration of the <span class="smcp">Lord</span>", so this
+    really is *better* than the original---even if it is a bit jarring!
 
-- There were a number of passages where the hermeneutical biases of the
-  translators came through clearly. Their rendering of John 3:36, for example,
-  supplies a great deal more than can be justified on the basis of the Greek
-  text alone. The HCSB has:
-	
+  - The treatment of units is splendid overall. It is, however, inconsistent.
+    Units of distance, weight, and so on are all translated directly into their
+    modern English equivalents. (This being a very American translation, the
+    units are all Imperial, of course.) Reading miles instead of *stadia* and
+    inches or feet instead of *cubits* was quite helpful and illuminating. On
+    the other hand, the translators treated money very differently, simply
+    leaving them in the original units. Perhaps they were concerned about
+    currency fluctuations or the vagaries of inflation on the value of money
+    over time. Perhaps there is no better way to handle monetary units, but the
+    inconsistency remained a trifle jarring.
+
+  - There were a number of passages where the hermeneutical biases of the
+    translators came through clearly. Their rendering of John 3:36, for example,
+    supplies a great deal more than can be justified on the basis of the Greek
+    text alone. The HCSB has:
+
     > The one who believes in the Son has eternal life, but the one who refuses
     > to believe in the Son will not see life; instead, the wrath of God remains
     > on him.
-	
+
     The translation the HCSB is certainly one possible interpretation of the
     text, but that interpretation must be justified on the basis of many other
     texts; the plain sense of the original is as the ESV has it:
-	
+
     > Whoever believes in the Son has eternal life; whoever does not obey the
     > Son shall not see life, but the wrath of God remains on him.
-	
+
     All translation involves some degree of interpretation, but on the whole the
     HCSB translators did an admirable job of leaving ambiguities in the original
     unresolved. That made instances like this one all the more jarring---though,
@@ -210,4 +218,3 @@ study habits.
     translators, who did a truly phenomenal job. I happen to think, though, that
     *they* would be pleased to see the work of translation continue forward,
     rather than remaining fixed on their particular work.
-

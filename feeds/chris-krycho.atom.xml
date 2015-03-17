@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-03-13T23:30:00-04:00</updated><entry><title>Small Caps and Margins</title><link href="http://www.chriskrycho.com/2015/small-caps-and-margins.html" rel="alternate"></link><updated>2015-03-13T23:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-03-13:2015/small-caps-and-margins.html</id><summary type="html">&lt;p&gt;In addition to the various other issues I tackled in the &lt;a href="http://mereorthodoxy.com/speak-truth-beauty-review-echoes-eden/"&gt;review&lt;/a&gt; I published at
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-03-16T20:30:00-04:00</updated><entry><title>Small Caps and Margins</title><link href="http://www.chriskrycho.com/2015/small-caps-and-margins.html" rel="alternate"></link><updated>2015-03-13T23:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-03-13:2015/small-caps-and-margins.html</id><summary type="html">&lt;p&gt;In addition to the various other issues I tackled in the &lt;a href="http://mereorthodoxy.com/speak-truth-beauty-review-echoes-eden/"&gt;review&lt;/a&gt; I published at
 Mere O a few weeks ago, there was one other secondary but to my mind non-trivial
 issue with Barrs&amp;#8217; &lt;em&gt;Echoes of Eden&lt;/em&gt;. I left it aside because it certainly wasn&amp;#8217;t
 Barrs&amp;#8217; fault, and would have seemed absurdly nitpicky to my audience there. But
@@ -64,7 +64,7 @@ screen, and it&amp;#8217;ll be really nice for her purposes.&lt;/p&gt;
 &lt;p&gt;In fact, I fully expect that we&amp;#8217;ll end up getting her a 2nd or 3rd generation
 machine when we need to replace her current (a 2010 white MacBook) sometime
 in 2016&amp;#8211;17.&lt;/p&gt;
-&lt;p&gt;So: better done than I initially thought, Apple.&lt;/p&gt;</summary></entry><entry><title>“Optimal Equivalence”</title><link href="http://www.chriskrycho.com/2015/hcsb-thoughts.html" rel="alternate"></link><updated>2015-02-28T20:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-02-28:2015/hcsb-thoughts.html</id><summary type="html">&lt;p&gt;Over the past few months, I have been doing a read-the-Bible-in-90-days plan,
+&lt;p&gt;So: better done than I initially thought, Apple.&lt;/p&gt;</summary></entry><entry><title>“Optimal Equivalence”</title><link href="http://www.chriskrycho.com/2015/hcsb-thoughts.html" rel="alternate"></link><updated>2015-03-16T20:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-02-28:2015/hcsb-thoughts.html</id><summary type="html">&lt;p&gt;Over the past few months, I have been doing a read-the-Bible-in-90-days plan,
 and decided to take the opportunity to read through the Holman Christian
 Standard Bible. I have not &lt;em&gt;quite&lt;/em&gt; finished the plan, but I &lt;em&gt;have&lt;/em&gt; read the
 whole text of the Bible in that time (just not in sequence!). The HCSB is a very
@@ -175,31 +175,37 @@ comprehension.&lt;/p&gt;
 &lt;p&gt;There were a number of other quirks in the translation I thought worth noting.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Instead of the more usual &amp;#8220;&amp;#8230;declares the &lt;span class="smcp"&gt;Lord&lt;/span&gt;&amp;#8221; or
-  &amp;#8220;&amp;#8230;says the &lt;span class="smcp"&gt;Lord&lt;/span&gt;,&amp;#8221; the tranlators opted to go with
-  &amp;#8220;This is the &lt;span class="smcp"&gt;Lord&amp;#8217;s&lt;/span&gt; declaration&amp;#8230;&amp;#8221; and &amp;#8220;This is
-  what the &lt;span class="smcp"&gt;Lord&lt;/span&gt; says&amp;#8230;.&amp;#8221; This is a perfectly
-  defensible translation, but is another case where diverging from the
-  traditional reading, even for more normal English, actually sounds a bit
-  jarring. I never actually adjusted to it, even after weeks of seeing it.&lt;/p&gt;
+&lt;p&gt;Instead of the more usual &amp;#8220;&amp;#8230;declares the &lt;span class="smcp"&gt;Lord&lt;/span&gt;&amp;#8221;
+    or &amp;#8220;&amp;#8230;says the &lt;span class="smcp"&gt;Lord&lt;/span&gt;,&amp;#8221; the tranlators opted to go
+    with &amp;#8220;This is the &lt;span class="smcp"&gt;Lord&amp;#8217;s&lt;/span&gt; declaration&amp;#8230;&amp;#8221; and &amp;#8220;This
+    is what the &lt;span class="smcp"&gt;Lord&lt;/span&gt; says&amp;#8230;.&amp;#8221; This is a perfectly
+    defensible translation, but is another case where diverging from the
+    traditional reading, even for more normal English, actually sounds a bit
+    jarring. I never actually adjusted to it, even after weeks of seeing it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; I&amp;#8217;ve been spending an awful lot of time looking at the prophetic
+books in Hebrew lately, and I get to eat some crow on this one. Where the
+HCSB has &amp;#8220;this is the &lt;span class="smcp"&gt;Lord&amp;#8217;s&lt;/span&gt; declaration&amp;#8221;, the
+original text usually has some that, brought over in an extremely wooden
+sense, would be &amp;#8220;declaration of the &lt;span class="smcp"&gt;Lord&lt;/span&gt;&amp;#8220;, so this
+really is &lt;em&gt;better&lt;/em&gt; than the original&amp;#8212;even if it is a bit jarring!&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;The treatment of units is splendid overall. It is, however, inconsistent.
-  Units of distance, weight, and so on are all translated directly into their
-  modern English equivalents. (This being a very American translation, the units
-  are all Imperial, of course.) Reading miles instead of &lt;em&gt;stadia&lt;/em&gt; and inches or
-  feet instead of &lt;em&gt;cubits&lt;/em&gt; was quite helpful and illuminating. On the other
-  hand, the translators treated money very differently, simply leaving them in
-  the original units. Perhaps they were concerned about currency fluctuations or
-  the vagaries of inflation on the value of money over time. Perhaps there is no
-  better way to handle monetary units, but the inconsistency remained a trifle
-  jarring.&lt;/p&gt;
+    Units of distance, weight, and so on are all translated directly into their
+    modern English equivalents. (This being a very American translation, the
+    units are all Imperial, of course.) Reading miles instead of &lt;em&gt;stadia&lt;/em&gt; and
+    inches or feet instead of &lt;em&gt;cubits&lt;/em&gt; was quite helpful and illuminating. On
+    the other hand, the translators treated money very differently, simply
+    leaving them in the original units. Perhaps they were concerned about
+    currency fluctuations or the vagaries of inflation on the value of money
+    over time. Perhaps there is no better way to handle monetary units, but the
+    inconsistency remained a trifle jarring.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;There were a number of passages where the hermeneutical biases of the
-  translators came through clearly. Their rendering of John 3:36, for example,
-  supplies a great deal more than can be justified on the basis of the Greek
-  text alone. The HCSB has:&lt;/p&gt;
+    translators came through clearly. Their rendering of John 3:36, for example,
+    supplies a great deal more than can be justified on the basis of the Greek
+    text alone. The HCSB has:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The one who believes in the Son has eternal life, but the one who refuses
 to believe in the Son will not see life; instead, the wrath of God remains
