@@ -1,5 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-03-13T08:00:00-04:00</updated><entry><title>The New Macbook</title><link href="http://www.chriskrycho.com/2015/the-new-macbook.html" rel="alternate"></link><updated>2015-03-13T08:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-03-13:2015/the-new-macbook.html</id><summary type="html">&lt;p&gt;I have seen and heard lots of discussion of the &lt;a href="http://www.apple.com/macbook/"&gt;new Macbook&lt;/a&gt; this week, and
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-04-08T16:05:00-04:00</updated><entry><title>Unsurprisingly, In Flux</title><link href="http://www.chriskrycho.com/2015/unsurprisingly-in-flux.html" rel="alternate"></link><updated>2015-04-08T16:05:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-04-08:2015/unsurprisingly-in-flux.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;This started as a &lt;a href="https://alpha.app.net/chriskrycho/post/57102562"&gt;series of posts&lt;/a&gt; on App.net. I &lt;a href="http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html"&gt;resolved&lt;/a&gt; a while ago that if I was tempted to do that, I should just write a blog post instead. I failed at that resolution, but at a friend&amp;#8217;s &lt;a href="https://alpha.app.net/jws/post/57108281"&gt;suggestion&lt;/a&gt;, am adapting it into a blog post anyway. You can see the posts that prompted it &lt;a href="https://alpha.app.net/keita/post/57096585"&gt;here&lt;/a&gt; and &lt;a href="https://alpha.app.net/jws/post/57096838"&gt;here&lt;/a&gt;.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The state of JavaScript frameworks today is a scale, really, from not-at-all-monolithic to totally-monolithic, in roughly this order:  Backbone &amp;#8211; React &amp;amp; Angular &amp;#8211; Ember &amp;#8211; Meteor.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Backbone and related library Underscore are really collections of common JS tools and patterns you can use to write apps, but they’re not &lt;em&gt;frameworks&lt;/em&gt;, per se. You’ll write all your own boilerplate there.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;React and Angular supply much &lt;em&gt;more&lt;/em&gt; of the functionality, but Angular is a “meta-framework” that aims to do &lt;em&gt;some&lt;/em&gt; boilerplate but let you construct your own custom app framework.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Angular is very powerful, but it&amp;#8217;s kind of like Git: wires are exposed; you have to understand a &lt;em&gt;lot&lt;/em&gt; about the internals to get it to do what you want. Its routing functionality is pretty limited out of the box, too&amp;#8212;so much so that there&amp;#8217;s a near-standard third-party router.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;React, as I understand it, supplies a paradigm and associated tools oriented primarily at view state management, though with capabilities via extensions for routing, etc. These tools are &lt;em&gt;extremely&lt;/em&gt; powerful for performance in particular. It&amp;#8217;s not a full framework, and the docs expressly note that you can &lt;em&gt;just&lt;/em&gt; use React for the view layer with other tools if you want.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In any case, Angular and React do &lt;em&gt;different&lt;/em&gt; things from each other, but both do substantially more than Backbone.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ember is a full framework, strongly emphasizing shared conventions (with a lot of common developers from Rails). It’s perhaps less adaptable than React or Angular, but is much more full-featured; you have very little boilerplate to do.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Meteor is like Ember, but does server-side Node as well as client-side stuff, with the goal being to minimize code duplication, sharing assets as much as possible.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Of all of those, Ember has easily (easily!) the best-explained roadmap, most articulate leadership, and best development path. They are also aggressively adopting the best features of other frameworks wherever it makes sense.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Angular is currently in flux, as Google has announced Angular 2.0 will be basically a completely different framework; there will be &lt;em&gt;no&lt;/em&gt; direct migration path for Angular 1.x apps to Angular 2.0+. Total rewrite required.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ember uses a steady 6-week release schedule with very careful regression testing and semantic versioning, with clear deprecation notices and upgrade paths, and is therefore both rapidly iterating &lt;em&gt;and&lt;/em&gt; relatively stable for use.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you just need a set of tools for enhance functionality on otherwise relatively static pages, Backbone+Underscore is a great combo. If you already have a bunch of things in place but want a dedicated view layer, React is good.&lt;sup id="fnref:react"&gt;&lt;a class="footnote-ref" href="#fn:react" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;If you’re writing a new, full-on web &lt;em&gt;application&lt;/em&gt; (SPA, or organized in whatever other way), I think Ember is the very clear winner at this point. I have good confidence in their leadership and they’re firing on all cylinders.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Regarding Angular, &lt;a href="https://alpha.app.net/mikehoss"&gt;@mikehoss&lt;/a&gt; &lt;a href="https://alpha.app.net/mikehoss/post/57105656"&gt;posted&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For the record they are doing that to make it more mobile-friendly. The Ang1 has abysmal performance on mobile. Besides a time machine, this maybe the best option. And Miško is a bit of a jerk.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I can&amp;#8217;t speak to his comment about Miško (Miško Hevery, one of the leads on AngularJS), but I agree about Angular itself: the rewrite needs to happen. Angular 1.x is a mess&amp;#8212;as are its docs. It’s just not a good time to be using 1.x for any new projects.&lt;/p&gt;
+&lt;p&gt;I&amp;#8217;ll add to these points that I&amp;#8217;ve used Angular for the last 9 months on HolyBible.com development. As I noted: the documentation is pretty rough, and in a lot of cases you really do have to understand what the framework is doing and how before you can get it to do the things you want. This is, in one sense, exactly the &lt;em&gt;opposite&lt;/em&gt; of what I&amp;#8217;m looking for in a framework&amp;#8212;but it makes sense given Angular&amp;#8217;s goal of being a meta-framework.&lt;/p&gt;
+&lt;p&gt;Rather like Git, though, which was originally going to be infrastructure for version control systems which would have their own interface, but eventually just had a &amp;#8220;good enough&amp;#8221; interface that we&amp;#8217;re all now stuck with, Angular is being used &lt;em&gt;as&lt;/em&gt; a framework, not just as a &lt;em&gt;meta-framework&lt;/em&gt;, and it&amp;#8217;s unsurprisingly not great for that.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;i class="editorial"&gt;Take this for what it&amp;#8217;s worth: not the final word (by a long stretch) on JavaScript frameworks, but rather the perspective of one guy who notably &lt;em&gt;hasn&amp;#8217;t used all of the frameworks&lt;/em&gt;, but has spent some time looking at them. Moreover, I haven&amp;#8217;t particularly edited this; it&amp;#8217;s more a summary in the kind of short-form posts that I originally created than a detailed analysis. The only things I&amp;#8217;ve done are expand some of the notes on Angular and React, and add the footnote on React.&lt;/i&gt;&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn:react"&gt;
+&lt;p&gt;I &lt;em&gt;really&lt;/em&gt; don&amp;#8217;t know a ton about React, but I do think a lot of what I do know about it is cool from a programming perspective. From a designer perspective, however, it&amp;#8217;s a bit of a pain: React&amp;#8217;s &amp;#8220;JSX&amp;#8221; domain-specific language is &lt;em&gt;much&lt;/em&gt; less friendly to developers than standard HTML, and therefore than either Ember or Angular, both of which implement their templating via HTML templating languages. There&amp;#8217;s a substantil tradeoff there: React&amp;#8217;s model is interesting not only academically but in practice because of the performance results it produces. It&amp;#8217;s worth note, though, that others have recognized this and are adopting it to varying degrees; notably, Ember is incorporating the idea of minimizing changes to the DOM by keeping track of state and updating only differences, rather than refreshing the whole tree, in the new rendering engine (HTMLBars) they&amp;#8217;re rolling out over the past several and future several releases.&amp;#160;&lt;a class="footnote-backref" href="#fnref:react" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</summary><category term="software development"></category></entry><entry><title>The New Macbook</title><link href="http://www.chriskrycho.com/2015/the-new-macbook.html" rel="alternate"></link><updated>2015-03-13T08:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-03-13:2015/the-new-macbook.html</id><summary type="html">&lt;p&gt;I have seen and heard lots of discussion of the &lt;a href="http://www.apple.com/macbook/"&gt;new Macbook&lt;/a&gt; this week, and
 have been thinking about its appeal and Apple&amp;#8217;s strategy a bit along the way. At
 first I was extremely skeptical of the only-one-port approach, but the more I&amp;#8217;ve
 thought about it, the more sense it makes to me. Why? &lt;em&gt;Market segmentation.&lt;/em&gt;&lt;/p&gt;
