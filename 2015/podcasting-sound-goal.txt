@@ -1,0 +1,11 @@
+Title: Podcasting Sound Goal
+Template: formats/micro
+Date: 2015-04-09 15:10
+Author: Chris Krycho
+
+People who edit podcasts take different tacks on this, but for [Winning Slowly],
+I happily shift around interactions, cut "uhhs", and generally improve the
+sound. My goal is for the show to be *clear*, not for it to be exactly what we
+recorded.
+
+[Winning Slowly]: //www.winningslowly.org
