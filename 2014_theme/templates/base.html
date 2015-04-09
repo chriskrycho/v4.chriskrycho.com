@@ -57,7 +57,9 @@
             <ul>
                 <li class="section-title"><a href="{{ SITEURL }}/about.html">About</a></li>
             {% for category, _ in categories %}
+            {% if category != 'micro' %}
                 <li class="section-title"><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
+            {% endif %}
             {% endfor %}
             </ul>
         </nav>

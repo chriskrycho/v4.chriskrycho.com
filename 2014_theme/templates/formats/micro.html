@@ -1,0 +1,7 @@
+{% extends "article.html" %}
+
+{# Set custom 'micro' class on the article element. #}
+{% block article_el %}<article class='micro {% if item.code == 'true' %}code{% endif %}'>{% endblock article_el %}
+
+{# No title! Pelican demands one, though, so we just don't display it. #}
+{% block item_title %}{% endblock item_title %}
