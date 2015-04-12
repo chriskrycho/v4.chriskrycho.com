@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lessons Learned &middot; Chris Krycho</title>
+    <meta name="description" content=""/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2015/lessons-learned.html"/>
+    <meta property="og:title" content="Lessons Learned"/>
+        <meta property="og:description" content="Creativity, reflection, & varied endeavors by a peculiar fellow"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+        <meta name="twitter:title" content="Lessons Learned"/>
+        <meta name="twitter:description" content="Creativity, reflection, & varied endeavors by a peculiar fellow"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
+
+    <link href="http://www.chriskrycho.com/favicon.png" type="image/png" rel="icon" />
+    <link href="http://www.chriskrycho.com/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
+    <script type="text/javascript">$.bigfoot();</script>
+        <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <script src="/assets/js/reftagger.js"></script>
+
+
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Creativity, reflection, & varied endeavors<br class="optional"/> by a peculiar fellow</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article >
+
+    <header>
+<h1>Lessons Learned</h1>
+<h2>9 Months With HolyBible.com</h2>    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/lessons-learned.html"><i class="fa fa-fw fa-link"></i></a>April 12, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2015/lessons-learned.txt">Markdown source</a></span></div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>Since mid July 2015, I have been working on a complete redesign and re-build of
+<a href="//holybible.com">HolyBible.com</a>. The good folks at <a href="//prts.edu">Puritan Reformed Theological Seminary</a> who
+own the site wanted to replace its previous content with a Bible reading tool.
+While there&#8217;s still a lot to wrap up, the project is <em>nearing</em> its conclusion,
+and I thought I&#8217;d note a few things I&#8217;ve learned (in some cases, learned
+<em>again</em>) along the way. I want to say up front, lest these be taken the wrong
+way: I&#8217;m extremely proud of the work I&#8217;ve done, and the application I&#8217;ve
+delivered <em>does</em> work to the specifications I was hired to meet. More than that,
+it does it well. But, of course, it could do it <em>better</em>. The following thoughts
+are therefore not, &#8220;How I failed&#8221; but rather &#8220;How I will do this <em>even better</em>
+next time around.&#8221;</p>
+<ol>
+<li>
+<p><em>Single page apps are great, but not always the right choice.</em> I made the
+    decision, based on my expectations and understandings of what I would need,
+    to develop the site as a single-page web application. This was a mistake.
+    Not the worst mistake ever: it has its upsides, including performance <em>once
+    the app spins up</em>, but for the kind of content I have here, I would take a
+    different tack today. Better in this case to deliver static content and
+    <em>update</em> it dynamically as appropriate than to try to load all the content
+    dynamically every time.</p>
+<p>At a technical level, that would probably mean supplementing standard HTML
+with <a href="//backbonejs.org">Backbone</a> instead of developing it as a single-page app in <a href="//angularjs.org">Angular</a>.
+For the backend, while I did it in Node.js and that would work fine, I&#8217;d
+probably do a straight Django app (especially with a few of the goals I
+learned about <em>after</em> the project was well along in development).</p>
+</li>
+<li>
+<p><em>Progressive enhancement or graceful degradation are hard in web
+    applications, but they still matter.</em> In the past, I&#8217;ve always taken a hard
+    line on making sure things either degrade gracefully or are simply enhanced
+    by JavaScript content. In the architecture decisions I made for this app, I
+    failed to take that into account (largely because I thought it would just
+    <em>need</em> to work as a web app, but see above). I regret that enormously at
+    this point; it would be much better in this particular case to have content
+    available even if the additional functionality doesn&#8217;t work. Even if you
+    <em>are</em> doing something where you are building an <em>app</em>, finding ways to make
+    it work on poor connections, older browsers, etc. matters. I&#8217;m still
+    thinking a <em>lot</em> about the best way to do this in the future.</p>
+</li>
+<li>
+<p><em>More popular doesn&#8217;t mean better.</em> Angular has a ton of traction and
+    uptake, and that was deceptive early on. I won&#8217;t so easily be fooled in the
+    future. Angular is so very popular in part because Google can put serious
+    money behind its development&#8212;and its marketing. But it&#8217;s <em>not</em> the best
+    for many applications; if you&#8217;re not in the business of developing your own
+    custom framework, it&#8217;s not even <em>close</em> to the best. Use Ember or Knockout
+    or any number of other full-stack frameworks rather than a meta-framework.</p>
+<p>How to avoid making that mistake? Well, for my part since then, I&#8217;ve learned
+to look not just as the <em>quantity</em> of material in a given community, but its
+<em>quality</em>. For example, <a href="//emberjs.com">Ember</a> has <em>incredible</em> documentation (far better
+than Angular&#8217;s), and they also have a much clearer vision and a more
+dependable approach to development (strict semantic versioning, etc.). Had I
+taken the time to read <em>both</em> sets of docs more carefully and think through
+the consequences of their designs more thoroughly, I could have recognized
+this before starting. Next time, I will do just that.</p>
+<p>I will also look at the way the community behaves. The Ember community is
+<em>far</em> friendlier for newcomers from what I&#8217;ve seen than the Angular
+community&#8212;no slam meant on the Angular crowd, but the Ember folks are just
+doing that really well. That matters, too. (I can&#8217;t speak for other
+communities, of course; these are just the groups I&#8217;ve watched the most.)</p>
+<p>All in all, Ember would have been the better fit between these two (even
+though, as noted above, it also wouldn&#8217;t have been the <em>best</em> fit).</p>
+</li>
+<li>
+<p><em>Unit tests really are the best.</em> I did a vast majority of this project with
+    unit tests&#8212;the first time I&#8217;ve ever been able to do that for a whole
+    project. In other projects, I&#8217;ve been able to do it for parts, but never
+    this much. It saved my bacon a <em>lot</em>. Where I got in a hurry and felt like I
+    didn&#8217;t have time to write the tests, I (inevitably and predictably!) ended
+    up spending a lot of time chasing down hard-to-isolate bugs&#8212;time I could
+    have avoided by writing well-tested (and therefore better-factored) code in
+    the first place. Lesson learned <em>very</em> thoroughly. Server- and client-side
+    unit tests are <em>really</em> good. They&#8217;re also sometimes <em>hard</em>; getting mocks
+    set up correctly for dealing with databases, etc. can take a while. That
+    difficulty pays for itself, though.</p>
+</li>
+<li>
+<p><em>Unit tests <strong>really</strong> don&#8217;t replace API documentation.</em> I have seen people
+    advocate test-driven-development as a way of obviating the need to do major
+    documentation of an API. This is, in a word, ridiculous. Having to read unit
+    tests if you want to remember how you structured an API call is a pain in
+    the neck. Don&#8217;t believe it. Design your API and document it, <em>then</em> do
+    test-driven development against that contract.</p>
+</li>
+<li>
+<p><em>Sometimes &#8216;good enough&#8217; is enough.</em> There is always more to be done, and
+    inevitably you can see a thousand things that could be improved. But &#8216;good&#8217;
+    shipping code is far more valuable than &#8216;perfect&#8217; code that never ships. You
+    should never ship <em>bad</em> code, but sometimes you do have to recognize &#8216;good
+    enough&#8217; and push it out the door.</p>
+</li>
+<li>
+<p><em>Full-stack development is fun, but it&#8217;s also really hard.</em> I wrote every
+    scrap of code in HolyBible.com proper (though of course it relies on a lot
+    of third-party code). It was very, very difficult to manage that all by
+    myself; it&#8217;s a lot to hold in one&#8217;s head. (One of the reasons I chose Node
+    was because keeping my implementation and testing all in one language helped
+    reduce that load somewhat.) Would I do it again? Sure. But very much
+    chastened about the difficulties involved. It has been enormously rewarding,
+    and I <em>like</em> being a full-stack developer. But it&#8217;s a lot of work, and now I
+    know more clearly just how much.</p>
+</li>
+</ol>
+<p>I could say a great deal more about the technical side of things especially, but
+my biggest takeaway here is that a lot of the hardest and most important work in
+developing software has nothing to do with the code itself. Architecture and
+approach shape <em>far</em> more than the implementation details (even if those details
+still matter an awful lot). And popularity is not at all the same as either
+<em>quality</em> or (especially) <em>suitability for a given task</em>. In the future, I will
+be better equipped for the necessary kinds of evaluation, and will hopefully
+make still better decisions accordingly.</p>        </div>
+    </div>
+    </article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h1>Connect</h1>
+    <h2>Social</h2>
+    <ul class="icons">
+        <li><a href="https://app.net/chriskrycho"><i class="fa fa-fw fa-adn"></i>App.net</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://www.facebook.com/chriskrycho"><i class="fa fa-fw fa-facebook"></i>Facebook</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-cloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+    </ul>
+    <h2>Software</h2>
+    <ul class="icons">
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://bitbucket.org/chriskrycho"><i class="fa fa-fw fa-bitbucket"></i>Bitbucket</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="navigate">
+    <h1>Navigate</h1>
+    <h2>Read</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/archives.html">Everything</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/micro/">micro</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+    </ul>
+    <h2>Get Updates</h2>
+    <ul class="inline">
+        <li class="section-title">Everything</li>
+        <li><a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46224/chriskrychocom-all/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">art</li>
+        <li><a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46225/chriskrychocom-art/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">blog</li>
+        <li><a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46226/chriskrychocom-blog/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">micro</li>
+        <li><a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href=""><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">tech</li>
+        <li><a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46227/chriskrychocom-tech/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">theology</li>
+        <li><a href="http://www.chriskrycho.com/feeds/theology.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46228/chriskrychocom-theology/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+</section>
+<section id="recent">
+    <h1>Recent</h1>
+    <h2 class="section-title">art</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2015/reflection-demands.html">Reflection demands</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/speak-the-truth-in-beauty.html">Speak the Truth in Beauty</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html">I Wrote It Wrong</a></li>
+    </ul>
+    <h2 class="section-title">blog</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2015/small-caps-and-margins.html">Small Caps and Margins</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/early-2015-family.html">The State of Our Family in Early 2015</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/joy-good-tools.html">The Joy of Good Tools</a></li>
+    </ul>
+    <h2 class="section-title">micro</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2015/flying.html">Flying</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/picking-fights.html">Picking Fights</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/podcasting-sound-goal.html">Podcasting Sound Goal</a></li>
+    </ul>
+    <h2 class="section-title">tech</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2015/the-nsa-wants-tech-companies-to-give-it-front-door-access-to-encrypted-data.html">The NSA wants tech companies to give it 'front door' access to encrypted data</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/lessons-learned.html">Lessons Learned</a></li>
+        <li><a href="http://www.chriskrycho.com/2015/unsurprisingly-in-flux.html">Unsurprisingly, In Flux</a></li>
+    </ul>
+    <h2 class="section-title">theology</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/2015/hcsb-thoughts.html">“Optimal Equivalence”</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/startlement.html">Startlement</a></li>
+        <li><a href="http://www.chriskrycho.com/2014/on-the-incarnation.html">On the Incarnation</a></li>
+    </ul>
+</section></footer>
+</body>
+</html>
