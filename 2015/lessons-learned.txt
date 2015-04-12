@@ -1,6 +1,6 @@
 Title: Lessons Learned
 Subtitle: 9 Months With HolyBible.com
-Date: 2015-04-12 13:00
+Date: 2015-04-12 13:49
 Tags: software development
 
 Since mid July 2015, I have been working on a complete redesign and re-build of
