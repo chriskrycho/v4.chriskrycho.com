@@ -1,0 +1,7 @@
+Title: Flying
+Date: 2015-04-12 12:07
+Template: formats/micro
+Tags: travel
+
+I have flown a lot (for me) lately; it has been both wonderful and terrible.
+I love seeing different places; I hate being away from my family.
