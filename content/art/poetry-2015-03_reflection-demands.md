@@ -10,9 +10,8 @@ Tags: poetry
         pain and toil, labor and sacrifice
             for—
         mind, like limb
-        like bow-stroke on a violin or
-                brush-stroke on a page
-        is weak by nature, dull, dim, fant
+        like bow-stroke on a violin, or brush-stroke on a page
+        is weak by nature: dull, dim, faint
             for—
         all our faculties, like autumn leaves,
         like ancien régime, or crumbled-down façade,
