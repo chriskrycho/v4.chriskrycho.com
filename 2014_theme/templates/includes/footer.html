@@ -42,12 +42,14 @@
 <section id="recent">
     <h1>Recent</h1>
 {% for category, category_articles in categories %}
-    {% set category_articles = category_articles[0:3] %}
-    <h2 class="section-title">{{ category.name }}</h2>
-    <ul>
-    {% for category_article in category_articles %}
-        <li><a href="{{ SITEURL }}/{{ category_article.url }}">{{ category_article.title }}</a></li>
-    {% endfor %}
+    {% if category != 'micro' %}
+        {% set category_articles = category_articles[0:3] %}
+        <h2 class="section-title">{{ category.name }}</h2>
+        <ul>
+        {% for category_article in category_articles %}
+            <li><a href="{{ SITEURL }}/{{ category_article.url }}">{{ category_article.title }}</a></li>
+        {% endfor %}
+    {% endif %}
     </ul>
 {% endfor %}
 </section>
