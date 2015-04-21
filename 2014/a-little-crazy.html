@@ -70,17 +70,16 @@
 
         <div class="content">
 
-<p>I&#8217;m going to do something a little crazy, I&#8217;ve decided. I&#8217;m going to go ahead
+<p>I&rsquo;m going to do something a little crazy, I&rsquo;ve decided. I&rsquo;m going to go ahead
 and do like I wrote <a href="http://www.chriskrycho.com/2014/doing-it-myself.html">a bit back</a>, and make <a href="http://step-stool.io">Step Stool</a>
 actually a thing over the course of the rest of the year. Not so crazy. What is
-a bit nuts is the way I&#8217;ve decided to go about that process. In short: as close
+a bit nuts is the way I&rsquo;ve decided to go about that process. In short: as close
 to the hardest way possible as I can conceive.</p>
 <hr />
-<p>Over the last couple weeks, I&#8217;ve been spending a fair bit of time toying with
-<a href="http://iolanguage.org">Io</a>. It&#8217;s a neat little language, very different in its approach to a <em>lot</em>
-of things than the languages I&#8217;ve used previously. My programming language
-history is very focused on the &#8220;normal&#8221; languages. The vast majority of real-
-world code I&#8217;ve written has been in one of C, PHP, or Python. I&#8217;ve done a good
+<p>Over the last couple weeks, I&rsquo;ve been spending a fair bit of time toying with<a href="http://iolanguage.org">Io</a>. It&rsquo;s a neat little language, very different in its approach to a <em>lot</em>
+of things than the languages I&rsquo;ve used previously. My programming language
+history is very focused on the &ldquo;normal&rdquo; languages. The vast majority of real-
+world code I&rsquo;ve written has been in one of C, PHP, or Python. I&rsquo;ve done a good
 bit of Javascript along the way, more Fortran than anyone my age has any
 business having done, and a little each of Java and Ruby. Like I said: the
 normal ones. With the exception of Javascript, all of those are either standard
@@ -88,92 +87,91 @@ imperative, object-oriented, or mixed imperative and object-oriented languages.
 Python and Ruby both let you mix in a fair bit of functional-style programming,
 and Javascript does a <em>lot</em> of that and tosses in prototypal inheritance to
 boot.</p>
-<p>But still: they&#8217;re all pretty mainstream, &#8220;normal&#8221; languages. Io isn&#8217;t like that
-at all. For one thing, it&#8217;s hardly popular in any sense at all. Well-known among
-the hackers<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> I know, perhaps, but not popular by any measure. It&#8217;s small. And
-it&#8217;s very <em>alien</em> in some ways. It&#8217;s <a href="http://en.wikipedia.org/wiki/Prototype-based_programming">prototypal inheritance</a>, not normal
+<p>But still: they&rsquo;re all pretty mainstream, &ldquo;normal&rdquo; languages. Io isn&rsquo;t like that
+at all. For one thing, it&rsquo;s hardly popular in any sense at all. Well-known among
+the hackers<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> I know, perhaps, but not popular by any measure. It&rsquo;s small. And
+it&rsquo;s very <em>alien</em> in some ways. It&rsquo;s <a href="http://en.wikipedia.org/wiki/Prototype-based_programming">prototypal inheritance</a>, not normal
 inheritance. Courtesy of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain">Javascript</a>, I have a <em>little</em> familiarity
-with that, but it&#8217;s definitely still not my default way of thinking about
-inheritance. Python&#8217;s inheritance model (the one I use most frequently) is
-<em>essentially</em> the same as that in C++, Java, PHP, and so on&#8212;it&#8217;s normal
+with that, but it&rsquo;s definitely still not my default way of thinking about
+inheritance. Python&rsquo;s inheritance model (the one I use most frequently) is<em>essentially</em> the same as that in C++, Java, PHP, and so on&mdash;it&rsquo;s normal
 class-driven inheritance. Io goes off and does full-blown prototypal
-inheritance; even just the little I&#8217;ve played with it has been fun.</p>
+inheritance; even just the little I&rsquo;ve played with it has been fun.</p>
 <p>Io also does a bunch of other things a <em>lot</em> different from the other languages
-I&#8217;ve used. First, there are no keywords or&#8212;formally speaking&#8212;even operators
+I&rsquo;ve used. First, there are no keywords or&mdash;formally speaking&mdash;even operators
 in the language. Every action (including ones like <code>+</code> or <code>for</code>) is simply a
 message. Every value is an object (so <code>1.0</code> is just as fully an object as an
 arbitrarily-defined <code>Person</code>). The combination means that writing <code>1 + 2</code> is
 actually just interpreted as the object <code>1</code> receiving the <code>+</code> message carrying
-as its &#8220;argument&#8221; the <code>2</code> object (really just the message contents). This is
+as its &ldquo;argument&rdquo; the <code>2</code> object (really just the message contents). This is
 <em>completely</em> different at a deep paradigm level from the normal object-oriented
 approach with object methods, even in a language like Python where all elements
-are objects (including functions). The net result isn&#8217;t necessarily particularly
+are objects (including functions). The net result isn&rsquo;t necessarily particularly
 different from calling methods on objects, but it is a <em>little</em> different, with
-have some interesting consequences. Notably (though trivially&#8212;or at least, so
+have some interesting consequences. Notably (though trivially&mdash;or at least, so
 it seems to me at this point), you can pass a message to the null object without
 it being an error. More importantly, the paradigm shift is illuminating.</p>
 <p>Io also has far more capabilities in terms of concurrency than any of the other
-languagues with which I&#8217;m familiar, because it actively implements the <a href="http://en.wikipedia.org/wiki/Actor_model">Actor
+languagues with which I&rsquo;m familiar, because it actively implements the <a href="http://en.wikipedia.org/wiki/Actor_model">Actor
 Model</a>, which means its implementation of messaging instead of object
-method calls can behave in concurrent ways. (I&#8217;d say more if I understood it
-better. I don&#8217;t yet, which is one of the reasons I want to study the language.
-Concurrency is very powerful, but it&#8217;s also fairly foreign to me.) It&#8217;s also
-like Lisp in that its code can be inspected and modified at runtime. I&#8217;ve wanted
+method calls can behave in concurrent ways. (I&rsquo;d say more if I understood it
+better. I don&rsquo;t yet, which is one of the reasons I want to study the language.
+Concurrency is very powerful, but it&rsquo;s also fairly foreign to me.) It&rsquo;s also
+like Lisp in that its code can be inspected and modified at runtime. I&rsquo;ve wanted
 to learn a Lisp for several years for this kind of mental challenge, but the
 syntax has always just annoyed me too much ever to get there. Io will give me a
 lot of its benefits with a much more pleasant syntax. It has coroutines, which
 are new to me, and also helpful for concurrency.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup></p>
 <p>The long and short of it is that the language has a ton of features not present
-in the languages I have used, and&#8212;more importantly&#8212;is <em>paradigmatically</em>
+in the languages I have used, and&mdash;more importantly&mdash;is <em>paradigmatically</em>
 different from them. Just getting familiar with it by writing a goodly amount
 of code in it would be a good way to learn in practice a bunch of computer science concepts
 I never had a chance to learn formally.<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup></p>
 <hr />
-<p>By now, as long as I&#8217;ve rambled about Io, you&#8217;ve probably figured out where I
-was going in that first paragraph. I&#8217;ve decided to stretch my brain a bit and
+<p>By now, as long as I&rsquo;ve rambled about Io, you&rsquo;ve probably figured out where I
+was going in that first paragraph. I&rsquo;ve decided to stretch my brain a bit and
 write Step Stool in Io. There are bunches of static site generators out there in
 Python already, many of them quite mature. (This site is running on <a href="https://github.com/getpelican">one of
-them</a> as of the time I write this post&#8212;it&#8217;s quite solid, even its
+them</a> as of the time I write this post&mdash;it&rsquo;s quite solid, even its
 quirks and limitations occasionally annoy me.) The point of Step Stool has
-always been twofold, though. First, I&#8217;ve wanted to get to a spot where I was
+always been twofold, though. First, I&rsquo;ve wanted to get to a spot where I was
 really running my own software to manage my site, letting me do whatever I want
 with it and guaranteeing I always understand it well enough to make those kinds
-of changes. Second, I&#8217;ve just wanted to <em>learn</em> a whole bunch along the way.
-Third, it&#8217;s right there in the website link: <a href="http://step-stool.io">step-stool.io</a>! How could I pass
+of changes. Second, I&rsquo;ve just wanted to <em>learn</em> a whole bunch along the way.
+Third, it&rsquo;s right there in the website link: <a href="http://step-stool.io">step-stool.io</a>! How could I pass
 up such an opportunity?</p>
 <p>It is that second goal that has pushed me to do this crazy project this crazy
-way. It&#8217;s crazier than just teaching myself a language in order to do the
+way. It&rsquo;s crazier than just teaching myself a language in order to do the
 static site generator itself, too, because there are a few other pieces missing
-that I&#8217;ll need to write to make this work&#8230; like a Markdown implementation and
-an HTML templating language. I&#8217;ve never written anything remotely like either
-before, so I&#8217;m going to take the chance to learn a <em>lot</em> of new things. For the
+that I&rsquo;ll need to write to make this work&hellip; like a Markdown implementation and
+an HTML templating language. I&rsquo;ve never written anything remotely like either
+before, so I&rsquo;m going to take the chance to learn a <em>lot</em> of new things. For the
 Markdown implementation, rather than relying on regular expression parsing
-(like most Markdowns do), I&#8217;m going to use a Parsing Expression Grammar.
-That will certainly be more efficient and reliable, but&#8212;more importantly&#8212;it
+(like most Markdowns do), I&rsquo;m going to use a Parsing Expression Grammar.
+That will certainly be more efficient and reliable, but&mdash;more importantly&mdash;it
 is also outside my experience. I have yet to start thinking through how to
 tackle the HTML templating language implementation (though I know I am going to
 make it an Io implementation of <a href="http://slim-lang.com">Slim</a>, which I quite like).</p>
-<p>In any case, I&#8217;m going to be taking a good bit longer to get Step Stool
+<p>In any case, I&rsquo;m going to be taking a good bit longer to get Step Stool
 finished. That is all right: I am going to learn a ton along the way, and I am
 quite sure I will have a blast doing it. And that is <em>exactly</em> what these kinds
 of projects are for.</p>
-<p>I&#8217;ll post updates as I go, with the things I&#8217;m learning along the way.
-Hopefully they&#8217;ll be interesting (or at least entertaining).</p>
+<p>I&rsquo;ll post updates as I go, with the things I&rsquo;m learning along the way.
+Hopefully they&rsquo;ll be interesting (or at least entertaining).</p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p>Hackers in the original sense of the world. Not &#8220;crackers&#8221;, but people
+<p>Hackers in the original sense of the world. Not &ldquo;crackers&rdquo;, but people
 who like hacking on code, figuring things out the hard way.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Python 3.5 is actually adding coroutines, and I&#8217;m excited about that.
-I&#8217;ll feel much more comfortable with them there having used them in Io, I&#8217;m
+<p>Python 3.5 is actually adding coroutines, and I&rsquo;m excited about that.
+I&rsquo;ll feel much more comfortable with them there having used them in Io, I&rsquo;m
 sure!&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>I got here backwards, as it were&#8212;by way of an undergraduate degree in
-physics. I don&#8217;t regret that for a second: I got a much broader education
+<p>I got here backwards, as it were&mdash;by way of an undergraduate degree in
+physics. I don&rsquo;t regret that for a second: I got a much broader education
 than I could have managed while getting an engineering degree, and most
 importantly learned <em>how to learn</em>: easily the most important skill anyone
 gains from any engineering degree.&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>

@@ -18,11 +18,11 @@ cost in saved pain.&lt;/p&gt;
 &lt;p&gt;And as for GitHub as compared to the free GitLab… well, honestly, the
 F/OSS-copycat model bothers me on a lot of levels. The fact that their strategy
 is “copy GitHub as closely as possible, and charge for it” is not my idea of
-&amp;#8220;winning slowly&amp;#8221;.&lt;/p&gt;
-&lt;p&gt;(&amp;#8220;Winning slowly&amp;#8221; is more than just the name of my &lt;a href="//www.winningslowly.org"&gt;podcast&lt;/a&gt;. In fact, it&amp;#8217;s the
-opposite: we named the podcast that because it&amp;#8217;s one of the core commitments in
+&amp;ldquo;winning slowly&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;(&amp;ldquo;Winning slowly&amp;rdquo; is more than just the name of my &lt;a href="//www.winningslowly.org"&gt;podcast&lt;/a&gt;. In fact, it&amp;rsquo;s the
+opposite: we named the podcast that because it&amp;rsquo;s one of the core commitments in
 our lives.)&lt;/p&gt;
-&lt;p&gt;So I&amp;#8217;m going to pay for Pivotal and GitHub. My time is worth something, and the
+&lt;p&gt;So I&amp;rsquo;m going to pay for Pivotal and GitHub. My time is worth something, and the
 quality of the tools I use matters, too. Ongoing irritation and frustration adds
 up over time. Good tools can make us happier. Bad tools can make work more
 frustrating than it needs to be. Given just how frustrating work can be anyway,
@@ -30,13 +30,13 @@ the last thing in the world I want to do is unnecessarily spend my time being
 even more frustrated by my tools. And you know what? $7/month for each of those
 tools is absolutely worth more than the frustration of wrestling with tools that
 do the job less well.&lt;/p&gt;
-&lt;p&gt;I&amp;#8217;m actually really excited by this. Pivotal Tracker will help me avoid making
+&lt;p&gt;I&amp;rsquo;m actually really excited by this. Pivotal Tracker will help me avoid making
 the painful mistake of underestimation in the future, by helping me see how long
 things actually take and giving me a way to plan out major projects with that
 data immediately available. GitHub will be simultaenously more functional and
-much lovelier than Bitbucket&amp;#8212;no strategy tax holding it back!&amp;#8212;and will be
+much lovelier than Bitbucket&amp;mdash;no strategy tax holding it back!&amp;mdash;and will be
 much nicer to use.&lt;/p&gt;
-&lt;p&gt;At the end of the day, it comes down to this: I&amp;#8217;m happy to pay for good tools
+&lt;p&gt;At the end of the day, it comes down to this: I&amp;rsquo;m happy to pay for good tools
 that make my work more enjoyable.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;To my surprise and amusement, this leads me to a closely related point I had
@@ -47,8 +47,8 @@ things bring me as much simple pleasure as a tool that does its job well, is
 pleasant to use, and is beautiful, all at once.&lt;/p&gt;
 &lt;p&gt;The latest example of this for me is &lt;a href="//www.neat.io/bee/index.html"&gt;Bee&lt;/a&gt;, a tool designed to make working with
 issue trackers like JIRA, GitHub Issues, and FogBugz easier and more pleasant. I
-use JIRA for one of my long-term contracts&amp;#8212;I actually set it up for the
-company&amp;#8212;and I have a love-hate relationship with it. JIRA&amp;#8217;s power is great,
+use JIRA for one of my long-term contracts&amp;mdash;I actually set it up for the
+company&amp;mdash;and I have a love-hate relationship with it. JIRA&amp;rsquo;s power is great,
 but the web interface is slow and cluttered.&lt;sup id="fnref:atlassian"&gt;&lt;a class="footnote-ref" href="#fn:atlassian" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;I have used other desktop tools with JIRA before, and they were even worse than
 the web interface. I stumbled across Bee the other day (I cannot even remember
@@ -57,9 +57,9 @@ how!), decided to try it out, and fell in love. It is simple, fast, and
 week, and strange though it might be to say of a desktop client for issue
 trackers, I get genuine pleasure out of using it. (Yes, I know: that is a bit
 strange.)&lt;/p&gt;
-&lt;p&gt;I have the same experience with a number of other tools I use&amp;#8212;&lt;a href="//www.git-tower.com"&gt;Tower&lt;/a&gt;,
+&lt;p&gt;I have the same experience with a number of other tools I use&amp;mdash;&lt;a href="//www.git-tower.com"&gt;Tower&lt;/a&gt;,
 &lt;a href="//bywordapp.com"&gt;Byword&lt;/a&gt;, and &lt;a href="//www.jetbrains.com/idea/"&gt;IntelliJ IDEA&lt;/a&gt; to name just a few. This very post is written in
-Byword, and I&amp;#8217;m &lt;em&gt;happy&lt;/em&gt; about it. I wish I felt that way about every tool I use.&lt;/p&gt;
+Byword, and I&amp;rsquo;m &lt;em&gt;happy&lt;/em&gt; about it. I wish I felt that way about every tool I use.&lt;/p&gt;
 &lt;p&gt;And this goes beyond software. I have had the same experience driving a car. The
 Mazda3 I drove in and after college was a delight. The MUV&lt;sup id="fnref:muv"&gt;&lt;a class="footnote-ref" href="#fn:muv" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; we drive right
 now is sufficient. The Chevy Malibu we rented for driving to and from Texas in
@@ -72,35 +72,35 @@ Chevy Malibu like the plague.&lt;/p&gt;
 difference between frustration and satisfaction. The difference between a good
 tool and a &lt;em&gt;great&lt;/em&gt; tool can make the difference between satisfaction and
 delight. That inspires me: it makes me want to make things so that they do more
-than &lt;em&gt;suffice&lt;/em&gt;&amp;#8212;so that they &lt;em&gt;excel&lt;/em&gt;, so that they delight and energize their
+than &lt;em&gt;suffice&lt;/em&gt;&amp;mdash;so that they &lt;em&gt;excel&lt;/em&gt;, so that they delight and energize their
 audience. Whether that is someone using a web application I write or someone
 listening to a piece of music I composed, I want them to experience more than
 good-enough. I want them to feel joy.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;There is something profound here, I think, something that goes even deeper than
 just the experience of being happy enough with a good tool to pay money to use
-it. I think human beings are meant for that profound joy&amp;#8212;meant for it in every
+it. I think human beings are meant for that profound joy&amp;mdash;meant for it in every
 breath. That these kinds of delights are rare, and so often marred even at their
-best by little failures, is a mark of the imperfection&amp;#8212;and, in human terms at
-least, the &lt;em&gt;imperfectibility&lt;/em&gt;&amp;#8212;of the world in which we live.  But the fact
+best by little failures, is a mark of the imperfection&amp;mdash;and, in human terms at
+least, the &lt;em&gt;imperfectibility&lt;/em&gt;&amp;mdash;of the world in which we live.  But the fact
 that such moments will be rare until the eschaton neither undoes nor diminishes
-the imperative to strive after them&amp;#8212;especially for those of us who, as
+the imperative to strive after them&amp;mdash;especially for those of us who, as
 Christians, affirm the goodness and the &lt;em&gt;telos&lt;/em&gt; of the created world. Quite the
 contrary. We have a responsibility and a charge as subcreators always to be able
-to say of the work we have done, &amp;#8220;It is good.&amp;#8221;&lt;/p&gt;
+to say of the work we have done, &amp;ldquo;It is good.&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;I am not there yet. I hope very much, though, that the work I do this year will
-be&amp;#8212;for at least one person&amp;#8212;a little sip from that deep well of delight.
+be&amp;mdash;for at least one person&amp;mdash;a little sip from that deep well of delight.
 Whether I succeed or no, at least the bar is set where it ought to be.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id="fn:atlassian"&gt;
-&lt;p&gt;Atlassian&amp;#8217;s designers seem to be shooting for the kind of &amp;#8220;flat&amp;#8221;
-minimalism that is in right now&amp;#8230; and missing the mark entirely. &lt;em&gt;All&lt;/em&gt; of
+&lt;p&gt;Atlassian&amp;rsquo;s designers seem to be shooting for the kind of &amp;ldquo;flat&amp;rdquo;
+minimalism that is in right now&amp;hellip; and missing the mark entirely. &lt;em&gt;All&lt;/em&gt; of
 their tools are a cluttered mess in the UI/X department.&amp;#160;&lt;a class="footnote-backref" href="#fnref:atlassian" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:muv"&gt;
-&lt;p&gt;A &amp;#8220;Mom Utility Vehicle&amp;#8221;, my wry term for &amp;#8220;SUV&amp;#8221;-type vehicles sitting on 
+&lt;p&gt;A &amp;ldquo;Mom Utility Vehicle&amp;rdquo;, my wry term for &amp;ldquo;SUV&amp;rdquo;-type vehicles sitting on 
 standard car chasses.&amp;#160;&lt;a class="footnote-backref" href="#fnref:muv" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;

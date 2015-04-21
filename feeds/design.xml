@@ -18,11 +18,11 @@ cost in saved pain.&lt;/p&gt;
 &lt;p&gt;And as for GitHub as compared to the free GitLab… well, honestly, the
 F/OSS-copycat model bothers me on a lot of levels. The fact that their strategy
 is “copy GitHub as closely as possible, and charge for it” is not my idea of
-&amp;#8220;winning slowly&amp;#8221;.&lt;/p&gt;
-&lt;p&gt;(&amp;#8220;Winning slowly&amp;#8221; is more than just the name of my &lt;a href="//www.winningslowly.org"&gt;podcast&lt;/a&gt;. In fact, it&amp;#8217;s the
-opposite: we named the podcast that because it&amp;#8217;s one of the core commitments in
+&amp;ldquo;winning slowly&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;(&amp;ldquo;Winning slowly&amp;rdquo; is more than just the name of my &lt;a href="//www.winningslowly.org"&gt;podcast&lt;/a&gt;. In fact, it&amp;rsquo;s the
+opposite: we named the podcast that because it&amp;rsquo;s one of the core commitments in
 our lives.)&lt;/p&gt;
-&lt;p&gt;So I&amp;#8217;m going to pay for Pivotal and GitHub. My time is worth something, and the
+&lt;p&gt;So I&amp;rsquo;m going to pay for Pivotal and GitHub. My time is worth something, and the
 quality of the tools I use matters, too. Ongoing irritation and frustration adds
 up over time. Good tools can make us happier. Bad tools can make work more
 frustrating than it needs to be. Given just how frustrating work can be anyway,
@@ -30,13 +30,13 @@ the last thing in the world I want to do is unnecessarily spend my time being
 even more frustrated by my tools. And you know what? $7/month for each of those
 tools is absolutely worth more than the frustration of wrestling with tools that
 do the job less well.&lt;/p&gt;
-&lt;p&gt;I&amp;#8217;m actually really excited by this. Pivotal Tracker will help me avoid making
+&lt;p&gt;I&amp;rsquo;m actually really excited by this. Pivotal Tracker will help me avoid making
 the painful mistake of underestimation in the future, by helping me see how long
 things actually take and giving me a way to plan out major projects with that
 data immediately available. GitHub will be simultaenously more functional and
-much lovelier than Bitbucket&amp;#8212;no strategy tax holding it back!&amp;#8212;and will be
+much lovelier than Bitbucket&amp;mdash;no strategy tax holding it back!&amp;mdash;and will be
 much nicer to use.&lt;/p&gt;
-&lt;p&gt;At the end of the day, it comes down to this: I&amp;#8217;m happy to pay for good tools
+&lt;p&gt;At the end of the day, it comes down to this: I&amp;rsquo;m happy to pay for good tools
 that make my work more enjoyable.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;To my surprise and amusement, this leads me to a closely related point I had
@@ -47,8 +47,8 @@ things bring me as much simple pleasure as a tool that does its job well, is
 pleasant to use, and is beautiful, all at once.&lt;/p&gt;
 &lt;p&gt;The latest example of this for me is &lt;a href="//www.neat.io/bee/index.html"&gt;Bee&lt;/a&gt;, a tool designed to make working with
 issue trackers like JIRA, GitHub Issues, and FogBugz easier and more pleasant. I
-use JIRA for one of my long-term contracts&amp;#8212;I actually set it up for the
-company&amp;#8212;and I have a love-hate relationship with it. JIRA&amp;#8217;s power is great,
+use JIRA for one of my long-term contracts&amp;mdash;I actually set it up for the
+company&amp;mdash;and I have a love-hate relationship with it. JIRA&amp;rsquo;s power is great,
 but the web interface is slow and cluttered.&lt;sup id="fnref:atlassian"&gt;&lt;a class="footnote-ref" href="#fn:atlassian" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;I have used other desktop tools with JIRA before, and they were even worse than
 the web interface. I stumbled across Bee the other day (I cannot even remember
@@ -57,9 +57,9 @@ how!), decided to try it out, and fell in love. It is simple, fast, and
 week, and strange though it might be to say of a desktop client for issue
 trackers, I get genuine pleasure out of using it. (Yes, I know: that is a bit
 strange.)&lt;/p&gt;
-&lt;p&gt;I have the same experience with a number of other tools I use&amp;#8212;&lt;a href="//www.git-tower.com"&gt;Tower&lt;/a&gt;,
+&lt;p&gt;I have the same experience with a number of other tools I use&amp;mdash;&lt;a href="//www.git-tower.com"&gt;Tower&lt;/a&gt;,
 &lt;a href="//bywordapp.com"&gt;Byword&lt;/a&gt;, and &lt;a href="//www.jetbrains.com/idea/"&gt;IntelliJ IDEA&lt;/a&gt; to name just a few. This very post is written in
-Byword, and I&amp;#8217;m &lt;em&gt;happy&lt;/em&gt; about it. I wish I felt that way about every tool I use.&lt;/p&gt;
+Byword, and I&amp;rsquo;m &lt;em&gt;happy&lt;/em&gt; about it. I wish I felt that way about every tool I use.&lt;/p&gt;
 &lt;p&gt;And this goes beyond software. I have had the same experience driving a car. The
 Mazda3 I drove in and after college was a delight. The MUV&lt;sup id="fnref:muv"&gt;&lt;a class="footnote-ref" href="#fn:muv" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; we drive right
 now is sufficient. The Chevy Malibu we rented for driving to and from Texas in
@@ -72,81 +72,78 @@ Chevy Malibu like the plague.&lt;/p&gt;
 difference between frustration and satisfaction. The difference between a good
 tool and a &lt;em&gt;great&lt;/em&gt; tool can make the difference between satisfaction and
 delight. That inspires me: it makes me want to make things so that they do more
-than &lt;em&gt;suffice&lt;/em&gt;&amp;#8212;so that they &lt;em&gt;excel&lt;/em&gt;, so that they delight and energize their
+than &lt;em&gt;suffice&lt;/em&gt;&amp;mdash;so that they &lt;em&gt;excel&lt;/em&gt;, so that they delight and energize their
 audience. Whether that is someone using a web application I write or someone
 listening to a piece of music I composed, I want them to experience more than
 good-enough. I want them to feel joy.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;There is something profound here, I think, something that goes even deeper than
 just the experience of being happy enough with a good tool to pay money to use
-it. I think human beings are meant for that profound joy&amp;#8212;meant for it in every
+it. I think human beings are meant for that profound joy&amp;mdash;meant for it in every
 breath. That these kinds of delights are rare, and so often marred even at their
-best by little failures, is a mark of the imperfection&amp;#8212;and, in human terms at
-least, the &lt;em&gt;imperfectibility&lt;/em&gt;&amp;#8212;of the world in which we live.  But the fact
+best by little failures, is a mark of the imperfection&amp;mdash;and, in human terms at
+least, the &lt;em&gt;imperfectibility&lt;/em&gt;&amp;mdash;of the world in which we live.  But the fact
 that such moments will be rare until the eschaton neither undoes nor diminishes
-the imperative to strive after them&amp;#8212;especially for those of us who, as
+the imperative to strive after them&amp;mdash;especially for those of us who, as
 Christians, affirm the goodness and the &lt;em&gt;telos&lt;/em&gt; of the created world. Quite the
 contrary. We have a responsibility and a charge as subcreators always to be able
-to say of the work we have done, &amp;#8220;It is good.&amp;#8221;&lt;/p&gt;
+to say of the work we have done, &amp;ldquo;It is good.&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;I am not there yet. I hope very much, though, that the work I do this year will
-be&amp;#8212;for at least one person&amp;#8212;a little sip from that deep well of delight.
+be&amp;mdash;for at least one person&amp;mdash;a little sip from that deep well of delight.
 Whether I succeed or no, at least the bar is set where it ought to be.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id="fn:atlassian"&gt;
-&lt;p&gt;Atlassian&amp;#8217;s designers seem to be shooting for the kind of &amp;#8220;flat&amp;#8221;
-minimalism that is in right now&amp;#8230; and missing the mark entirely. &lt;em&gt;All&lt;/em&gt; of
+&lt;p&gt;Atlassian&amp;rsquo;s designers seem to be shooting for the kind of &amp;ldquo;flat&amp;rdquo;
+minimalism that is in right now&amp;hellip; and missing the mark entirely. &lt;em&gt;All&lt;/em&gt; of
 their tools are a cluttered mess in the UI/X department.&amp;#160;&lt;a class="footnote-backref" href="#fnref:atlassian" rev="footnote" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:muv"&gt;
-&lt;p&gt;A &amp;#8220;Mom Utility Vehicle&amp;#8221;, my wry term for &amp;#8220;SUV&amp;#8221;-type vehicles sitting on 
+&lt;p&gt;A &amp;ldquo;Mom Utility Vehicle&amp;rdquo;, my wry term for &amp;ldquo;SUV&amp;rdquo;-type vehicles sitting on 
 standard car chasses.&amp;#160;&lt;a class="footnote-backref" href="#fnref:muv" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 09 Jan 2015 18:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-01-09:2015/joy-good-tools.html</guid><category>software development</category><category>design</category><category>joy</category></item><item><title>Feels Right</title><link>http://www.chriskrycho.com/2014/feels-right.html</link><description>&lt;p&gt;I had spent most of the last week and a half working on getting
-&lt;a href="http://www.firebirdsql.org"&gt;FirebirdSQL&lt;/a&gt; configured and ready to use for a project I&amp;#8217;m working on with
-&lt;a href="http://www.questconsult.com"&gt;Quest Consultants&lt;/a&gt;. It was slow going. The tool is decent, but the
-documentation is spotty and it felt like everything was just a bit of a slog&amp;#8212;to
+&lt;a href="http://www.firebirdsql.org"&gt;FirebirdSQL&lt;/a&gt; configured and ready to use for a project I&amp;rsquo;m working on with&lt;a href="http://www.questconsult.com"&gt;Quest Consultants&lt;/a&gt;. It was slow going. The tool is decent, but the
+documentation is spotty and it felt like everything was just a bit of a slog&amp;mdash;to
 get it working correctly, to get it playing nicely with other pieces of the
 development puzzle, to get it working across platforms.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt; Then, because I had
 done something a &lt;em&gt;little&lt;/em&gt; bit silly in my eagerness to get up and going last
 week and written code without a testable configuration, I hit a wall today. The
-queries weren&amp;#8217;t working. I had made a &lt;a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception"&gt;bug&lt;/a&gt;.&lt;/p&gt;
+queries weren&amp;rsquo;t working. I had made a &lt;a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception"&gt;bug&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I spent a substantial part of the day chasing down that bug, and then a
 conversation with user &lt;em&gt;agronholm&lt;/em&gt; on the &lt;a href="http://docs.sqlalchemy.org/en/rel_0_9/"&gt;SQLAlchemy&lt;/a&gt; IRC channel
 (&lt;a href="irc://irc.freenode.net/sqlalchemy"&gt;freenode/#sqlalchemy&lt;/a&gt;) got me thinking. The Firebird team describes
-one of their options as an &amp;#8220;embedded&amp;#8221; server, but &lt;em&gt;agronholm&lt;/em&gt; pointed out that
-what they really mean is &lt;em&gt;portable&lt;/em&gt;. It&amp;#8217;s running a standalone server and
-client, but it&amp;#8217;s not part of the same thread/process (like SQLite is). Then
-&lt;em&gt;agronholm&lt;/em&gt; very helpfully asked&amp;#8212;my having mentioned my preference for
-&lt;a href="http://www.postgresql.org"&gt;PostgreSQL&lt;/a&gt; earlier&amp;#8212;&amp;#8221;Does Postgres not have a portable version?&amp;#8221;
+one of their options as an &amp;ldquo;embedded&amp;rdquo; server, but &lt;em&gt;agronholm&lt;/em&gt; pointed out that
+what they really mean is &lt;em&gt;portable&lt;/em&gt;. It&amp;rsquo;s running a standalone server and
+client, but it&amp;rsquo;s not part of the same thread/process (like SQLite is). Then&lt;em&gt;agronholm&lt;/em&gt; very helpfully asked&amp;mdash;my having mentioned my preference for&lt;a href="http://www.postgresql.org"&gt;PostgreSQL&lt;/a&gt; earlier&amp;mdash;&amp;ldquo;Does Postgres not have a portable version?&amp;rdquo;
 Two minutes later, we had both found &lt;a href="http://sourceforge.net/projects/postgresqlportable/"&gt;PostgreSQL Portable&lt;/a&gt;, and I
 rejoiced.&lt;/p&gt;
 &lt;p&gt;It took me less than half an hour to get it downloaded and set up and to confirm
 that it would work the way we need for this particular piece of software.
 (Firebird had taken me a good three hours, what with digging through badly
 organized and not terribly clear documentation.) It took me less than half an
-hour more to get PostgreSQL to the same point that I&amp;#8217;d finally gotten Firebird
+hour more to get PostgreSQL to the same point that I&amp;rsquo;d finally gotten Firebird
 to after multiple hours working with it. And I was so &lt;em&gt;very&lt;/em&gt; happy. What had
 been an especially frustrating work day now had me quietly smiling to myself
 constantly for the last two and a half hours as I &lt;a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception/22872598#22872598"&gt;finished&lt;/a&gt; tracking
 down the bug that had set me on this path in the first place.&lt;/p&gt;
 &lt;p&gt;Several years ago, when I first started doing web development, I got my feet wet
-in database work with MySQL&amp;#8212;probably the single most common starting point for
+in database work with MySQL&amp;mdash;probably the single most common starting point for
 anyone going that route, courtesy of the ubiquity of the standard Linux-Apache-
 MySQL-PHP stack.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; A year after that, I picked up some work that was already
 using PostgreSQL and fell in love almost immediately.&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt; Something just felt
 &lt;em&gt;better&lt;/em&gt; about running &lt;code&gt;psql&lt;/code&gt; than running &lt;code&gt;mysql&lt;/code&gt; on the command line.
-Postgres&amp;#8217; implementation of the SQL standard felt more natural. Even the tiniest
+Postgres&amp;rsquo; implementation of the SQL standard felt more natural. Even the tiniest
 little details like the way tables display when you query them in &lt;code&gt;psql&lt;/code&gt; was
-nicer. In less than a week, I was sold and haven&amp;#8217;t looked back. While I&amp;#8217;ve used
+nicer. In less than a week, I was sold and haven&amp;rsquo;t looked back. While I&amp;rsquo;ve used
 MySQL out of convenience on shared hosting from time to time, PostgreSQL is
 unquestionably my preferred database target.&lt;/p&gt;
-&lt;p&gt;Today&amp;#8217;s experience brought that all home again. That grin on my face all
+&lt;p&gt;Today&amp;rsquo;s experience brought that all home again. That grin on my face all
 afternoon felt a bit silly, but it highlights the difference that really good
-software design makes. I am not just talking about how it looks here&amp;#8212;though,
-to be sure, PostgreSQL is prettier than FirebirdSQL&amp;#8212;but how it works.
+software design makes. I am not just talking about how it looks here&amp;mdash;though,
+to be sure, PostgreSQL is prettier than FirebirdSQL&amp;mdash;but how it works.
 PostgreSQL feels responsive, its command set makes a lot of sense and is easy to
 use, and it is &lt;em&gt;extremely&lt;/em&gt; well documented. In fact, I would go so far as to say
 that it is the best documented open source software I have ever used, as well as
@@ -155,15 +152,15 @@ incredibly rock-solid and reliable as PostgreSQL is the Linux kernel. I am by no
 means an expert on either, or on open source software in general, but the Linux
 kernel is an unarguably amazing piece of work. So is PostgreSQL.) All those tiny
 little details add up.&lt;/p&gt;
-&lt;p&gt;It&amp;#8217;s a good reminder for me as I write software that yes, the things I care
-about&amp;#8212;the small matters that would be so easy to overlook when customers
-express no interest in them&amp;#8212;really do matter. People may not know that things
+&lt;p&gt;It&amp;rsquo;s a good reminder for me as I write software that yes, the things I care
+about&amp;mdash;the small matters that would be so easy to overlook when customers
+express no interest in them&amp;mdash;really do matter. People may not know that things
 like typography make a difference in their experience, but those subtle, often
 imperceptible things matter. They may not consciously notice the differences in
 your interface design (even a command line interface), but it will change their
 experience of the software. Do it poorly, or even in a just-good-enough-to-get-
-by fashion, and you&amp;#8217;ll annoy or simply bore them. Do it well, and you might just
-delight them&amp;#8212;even if they can&amp;#8217;t tell you why.&lt;/p&gt;
+by fashion, and you&amp;rsquo;ll annoy or simply bore them. Do it well, and you might just
+delight them&amp;mdash;even if they can&amp;rsquo;t tell you why.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2 id="examples"&gt;Examples&lt;/h2&gt;
 &lt;p&gt;To make my point a little more visible, I thought it might be useful to post
@@ -198,7 +195,7 @@ SET TERM ; +
   CONSTRAINT unique_file UNIQUE (file_name, file_location)
 );
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;It is not just that the PostgreSQL example is shorter and clearer&amp;#8212;it is that
+&lt;p&gt;It is not just that the PostgreSQL example is shorter and clearer&amp;mdash;it is that
 it is shorter and clearer because its designers and developers have taken the
 time to make sure that the shorter, cleaner way works well, and have documented
 it so you can know how to use that shorter cleaner way without too much
@@ -212,7 +209,7 @@ platform (Windows) in a VM.&amp;#160;&lt;a class="footnote-backref" href="#fnref
 &lt;/li&gt;
 &lt;li id="fn:2"&gt;
 &lt;p&gt;At this point, I would only use one of those by default if I were building
-a web app: Linux. I&amp;#8217;d use &lt;a href="http://wiki.nginx.org/Main"&gt;nginx&lt;/a&gt; instead of Apache,
+a web app: Linux. I&amp;rsquo;d use &lt;a href="http://wiki.nginx.org/Main"&gt;nginx&lt;/a&gt; instead of Apache,
 &lt;a href="http://www.postgresql.org"&gt;PostgreSQL&lt;/a&gt; instead of MySQL, and &lt;a href="https://www.python.org"&gt;Python&lt;/a&gt; (though
 &lt;a href="https://www.ruby-lang.org/"&gt;Ruby&lt;/a&gt;, Javascript via &lt;a href="http://nodejs.org"&gt;node.js&lt;/a&gt;, &lt;a href="http://msdn.microsoft.com/en-us/vstudio/hh341490"&gt;C# and the .NET stack&lt;/a&gt;,
 or just about anything &lt;em&gt;but&lt;/em&gt; PHP would do fine).&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
@@ -224,21 +221,21 @@ of a pain. That is &lt;a href="http://postgresapp.com" title="Postgres.app"&gt;n
 &lt;li id="fn:4"&gt;
 &lt;p&gt;To be perfectly fair to Firebird, it is improving. The upcoming 3.0 series
 release will make these two a lot more similar than they are at present, and
-clean up a number of other issues. What it won&amp;#8217;t do is get the &lt;em&gt;feel&lt;/em&gt; of
+clean up a number of other issues. What it won&amp;rsquo;t do is get the &lt;em&gt;feel&lt;/em&gt; of
 using Firebird more like that of using Postgres, or make the installation
 procedure smoother or easier, or make the documentation more complete.&amp;#160;&lt;a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 04 Apr 2014 21:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-04-04:2014/feels-right.html</guid><category>software development</category><category>design</category></item><item><title>The End of Surfing</title><link>http://www.chriskrycho.com/2014/the-end-of-surfing.html</link><description>&lt;p&gt;Sometime in the last few months it occurred to me that I no longer &amp;#8220;surf&amp;#8221; the
+&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 04 Apr 2014 21:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-04-04:2014/feels-right.html</guid><category>software development</category><category>design</category></item><item><title>The End of Surfing</title><link>http://www.chriskrycho.com/2014/the-end-of-surfing.html</link><description>&lt;p&gt;Sometime in the last few months it occurred to me that I no longer &amp;ldquo;surf&amp;rdquo; the
 internet. I read, to be sure, and every once in a long while I even go on a
 spree where I follow links from one site to another (or just in a long trail on
 Wikipedia). In general, however, I no longer surf. I suspect I am not alone in
 this: if we took a straw poll I would venture that most of my friends offline
-and acquaintances online alike spend rather less time in &amp;#8220;browsing&amp;#8221; mode than
+and acquaintances online alike spend rather less time in &amp;ldquo;browsing&amp;rdquo; mode than
 they do reading Facebook or Twitter or Instagram. Motion from link to link has
 been replaced by individual hops out onto Buzzfeed or a viral cat picture
 website.&lt;sup id="fnref:1"&gt;&lt;a class="footnote-ref" href="#fn:1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;p&gt;The obvious explanation for all of this is already there in what I&amp;#8217;ve written:
+&lt;p&gt;The obvious explanation for all of this is already there in what I&amp;rsquo;ve written:
 Facebook and Twitter and all the rest of the social media web. To be sure, the
 advent of social media and the increasing degree to which social media have
 captured user attention on the web are a significant factor in the end of the
@@ -250,12 +247,12 @@ nature of the web over the last decade: the browser. In fact, if there is any
 single cause behind the death of old-fashioned surfing, I would point to Firefox
 1.0: the browser which popularized tabbed browsing to increasingly large
 sections of the internet-using public.&lt;sup id="fnref:2"&gt;&lt;a class="footnote-ref" href="#fn:2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt; The open-source browser steadily ate
-away at Internet Explorer&amp;#8217;s then absurd levels of dominance, until Internet
+away at Internet Explorer&amp;rsquo;s then absurd levels of dominance, until Internet
 Explorer 8 included of tabs itself. By the time that Chrome came on the scene,
 tabbed browsing had long since become a given.&lt;/p&gt;
 &lt;p&gt;So why do I think that &lt;em&gt;tabbed browsing&lt;/em&gt; of all things contributed to the end of
-&amp;#8220;browsing&amp;#8221; and &amp;#8220;surfing&amp;#8221; as our dominant mode of reading the internet? Simply
-put: it broke linearity. Previously,&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt; one&amp;#8217;s experience of the web was single-
+&amp;ldquo;browsing&amp;rdquo; and &amp;ldquo;surfing&amp;rdquo; as our dominant mode of reading the internet? Simply
+put: it broke linearity. Previously,&lt;sup id="fnref:3"&gt;&lt;a class="footnote-ref" href="#fn:3" rel="footnote"&gt;3&lt;/a&gt;&lt;/sup&gt; one&amp;rsquo;s experience of the web was single-
 stranded, leaping from one point to another in a line that however contorted was
 always connected by the forward and backward buttons on the browser. The moment
 tabbed browsing came on the scene, that line was broken. Following a link might
@@ -275,16 +272,16 @@ there was no going back.&lt;sup id="fnref:4"&gt;&lt;a class="footnote-ref" href=
 forward to them. The line was broken.&lt;/p&gt;
 &lt;p&gt;From there it was only a short step to the idea of a single site being the
 center from which one ventured out to other points on the web before returning:
-the Facebooks and Twitters of the world. In some sense, Facebook&amp;#8217;s entire model
+the Facebooks and Twitters of the world. In some sense, Facebook&amp;rsquo;s entire model
 is predicated on the idea that it is natural to open a new tab with that juicy
 Buzzfeed content while keeping Facebook itself open in a background tab. Would
 it work in that old linear model? Sort of. Would it feel natural? Never.&lt;/p&gt;
-&lt;p&gt;All of this because of tabs. Invention&amp;#8217;s most significant results are rarely
-those the minds behind it expect. When we are designing things&amp;#8212;whether a piece
-of furniture or a piece of the web&amp;#8212;we have to remember that design decisions
+&lt;p&gt;All of this because of tabs. Invention&amp;rsquo;s most significant results are rarely
+those the minds behind it expect. When we are designing things&amp;mdash;whether a piece
+of furniture or a piece of the web&amp;mdash;we have to remember that design decisions
 all have repercussions that we may not see. Technology is never neutral.
 Particular innovations may or may not be &lt;em&gt;morally&lt;/em&gt; significant, but they always
-produce changes in people&amp;#8217;s behavior. Design has consequences.&lt;/p&gt;
+produce changes in people&amp;rsquo;s behavior. Design has consequences.&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -295,15 +292,15 @@ like and viral-cat-picture-like sites, too. I am not concerned with the
 &lt;/li&gt;
 &lt;li id="fn:2"&gt;
 &lt;p&gt;Note that I am not crediting Firefox 1.0 with &lt;em&gt;creating&lt;/em&gt; the tabbed
-browser&amp;#8212;only with popularizing it. That distinction matters.&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+browser&amp;mdash;only with popularizing it. That distinction matters.&amp;#160;&lt;a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:3"&gt;
 &lt;p&gt;Excepting having multiple browser windows open, which I am sure people
-did&amp;#8212;but to a much lesser extent.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+did&amp;mdash;but to a much lesser extent.&amp;#160;&lt;a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id="fn:4"&gt;
 &lt;p&gt;Yes, yes, browser history and re-open closed tab commands. But the
-&lt;em&gt;experience&lt;/em&gt; of those is different, and that&amp;#8217;s what we&amp;#8217;re talking about
+&lt;em&gt;experience&lt;/em&gt; of those is different, and that&amp;rsquo;s what we&amp;rsquo;re talking about
 here.&amp;#160;&lt;a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;

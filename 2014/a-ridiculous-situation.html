@@ -70,8 +70,8 @@
 
         <div class="content">
 
-<p>One of the pieces of code I&#8217;m maintaining has an <em>absurd</em> situation in its build
-structure&#8212;honestly, I&#8217;m not sure how it ever compiled. For simplicity&#8217;s sake,
+<p>One of the pieces of code I&rsquo;m maintaining has an <em>absurd</em> situation in its build
+structure&mdash;honestly, I&rsquo;m not sure how it ever compiled. For simplicity&rsquo;s sake,
 let us assume the four following files:</p>
 <ul>
 <li><code>main.c</code></li>
@@ -82,7 +82,7 @@ let us assume the four following files:</p>
 <p>The project has many more files than this, of course, but these are the
 important ones for demonstrating this particular piece of insanity (which shows
 up <em>many</em> places in the codebase).</p>
-<p>I&#8217;m reproducing here some dummy code representing an <em>actual set of 
+<p>I&rsquo;m reproducing here some dummy code representing an <em>actual set of 
 relationships in the codebase</em>. The functions and module nameshave been changed;
 the relationships between the pieces of code have not.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> When I started trying
 to build the program that included what I am representing as <code>main.c</code> below,
@@ -123,7 +123,7 @@ void main() {
 <p>Yes, the main function and the <code>doBadThingsWithGlobals</code> function are both
 modifying global state, and yes, there is an include statement midway down
 through the module. (Just wait till you see what it does.)</p>
-<h3 id="secondary">&#8220;secondary&#8221;</h3>
+<h3 id="secondary">&ldquo;secondary&rdquo;</h3>
 <p>Here is a secondary module which has been somewhat cleaned up. It has normal
 relationships between header and source files, and includes all its dependency
 headers at the top of the file. It has a header which defines the public API for
@@ -147,8 +147,8 @@ int doStuffWithNumbers(int x, int y) {
 }
 </code></pre>
 
-<p><em>But wait!</em> you say, <em>That function isn&#8217;t defined here!</em> Ah, and you would be
-right, except that it doesn&#8217;t refer to the <code>addNumbers</code> function in <code>main.c</code>. It
+<p><em>But wait!</em> you say, <em>That function isn&rsquo;t defined here!</em> Ah, and you would be
+right, except that it doesn&rsquo;t refer to the <code>addNumbers</code> function in <code>main.c</code>. It
 refers to a function implementation in <code>calculator.h</code>.</p>
 <h3 id="calculatorh"><code>calculator.h</code></h3>
 <pre><code class="c">int addNumbers(int p, int q) {
@@ -161,9 +161,8 @@ int subtractNumbers(int r, int s) {
 </code></pre>
 
 <p>Strangely, this <code>addNumbers</code> function is identical to the one in <code>main.c</code>. Even
-<em>more</em> strangely, it is defined&#8212;not merely declared, actually defined&#8212;in
-the header file! Nor is this the only such function. Look at the details of
-<code>writer.h</code>, which was mysteriously included above in the middle of the main
+<em>more</em> strangely, it is defined&mdash;not merely declared, actually defined&mdash;in
+the header file! Nor is this the only such function. Look at the details of<code>writer.h</code>, which was mysteriously included above in the middle of the main
 module.</p>
 <h3 id="writerh"><code>writer.h</code></h3>
 <pre><code class="c">void writeStuff() {
@@ -173,10 +172,10 @@ module.</p>
 
 <p>Once again, we have a full-fledged implementation in the header file. Why, you
 ask? Presumably because the developer responsible for writing this code never
-quite got his head around how C&#8217;s build system works. The entirety of one of the
-central components of this software&#8212;an element that in any normal build would
-be a common library&#8212;was a single, approximately 2,000-line <em>header file</em>. (Say
-hello to <code>calculator.h</code> up there; that&#8217;s what I&#8217;m abstracting away for this
+quite got his head around how C&rsquo;s build system works. The entirety of one of the
+central components of this software&mdash;an element that in any normal build would
+be a common library&mdash;was a single, approximately 2,000-line <em>header file</em>. (Say
+hello to <code>calculator.h</code> up there; that&rsquo;s what I&rsquo;m abstracting away for this
 example.)<sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup></p>
 <p>Worse: it is printing the values of <code>a</code> and <code>b</code>, and no, I am not skipping some
 part of <code>writer.h</code>. It is getting those from <code>main.c</code>, because it was included
@@ -190,15 +189,15 @@ will no longer function properly (since the variables will not have been defined
 (e.g. <code>subtractNumbers</code> in this mock-up), it cannot be removed! Moreover, given
 the many places <code>calculator.h</code> is referenced throughout the code base, it is
 non-trivial to refactor it.<sup id="fnref:6"><a class="footnote-ref" href="#fn:6" rel="footnote">6</a></sup></p>
-<p>If this sounds insane&#8230; that&#8217;s because it is.</p>
-<p>If you&#8217;re curious how I dealt with it, well&#8230; I renamed the <code>addNumbers()</code> 
+<p>If this sounds insane&hellip; that&rsquo;s because it is.</p>
+<p>If you&rsquo;re curious how I dealt with it, well&hellip; I renamed the <code>addNumbers()</code> 
 function in <code>main.c</code> to <code>_addNumbers()</code> and put a loud, angry <code>TODO</code> on it for the
 current release, because the only way to fix it is to refactor this whole giant
 mess.</p>
 <p>The takeaway of the story, if there is one, is that people will do crazier,
-weirder, worse things than you can possibly imagine when they don&#8217;t understand
+weirder, worse things than you can possibly imagine when they don&rsquo;t understand
 the tools they are using and just hack at them till they can make them work. The
-moral of the story? I&#8217;m not sure. Run away from crazy code like this? Be
+moral of the story? I&rsquo;m not sure. Run away from crazy code like this? Be
 prepared to spend your life refactoring?</p>
 <p>How about: try desperately <em>not</em> to leave this kind of thing for the person
 following you.</p>
@@ -206,27 +205,27 @@ following you.</p>
 <hr />
 <ol>
 <li id="fn:1">
-<p>That&#8217;s actually not <em>wholly</em> true, because these pieces of code are also
-duplicated in numerous places throughout the codebase. We&#8217;ve eliminated as
-many as possible at present&#8230; but not all of them, courtesy of the crazy
+<p>That&rsquo;s actually not <em>wholly</em> true, because these pieces of code are also
+duplicated in numerous places throughout the codebase. We&rsquo;ve eliminated as
+many as possible at present&hellip; but not all of them, courtesy of the crazy
 dependency chains that exist. Toss in a dependency on Visual Studio 6 for
-some of those components, and, well&#8230; suffice it to say that we&#8217;re just
+some of those components, and, well&hellip; suffice it to say that we&rsquo;re just
 happy there are only two versions floating around instead of the seven that
 were present when I started working with this codebase two and a half years
 ago.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Yes, <a href="http://en.wikipedia.org/wiki/Microsoft_Visual_Studio#Visual_Studio_6.0_.281998.29"><em>that</em></a> Visual Studio 6. The one from 1998. Yes, that&#8217;s insane.
-No, we haven&#8217;t managed to get rid of it yet, though we&#8217;re close. So close.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Yes, <a href="http://en.wikipedia.org/wiki/Microsoft_Visual_Studio#Visual_Studio_6.0_.281998.29"><em>that</em></a> Visual Studio 6. The one from 1998. Yes, that&rsquo;s insane.
+No, we haven&rsquo;t managed to get rid of it yet, though we&rsquo;re close. So close.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
 <p>I am not joking. Multi-thousand line functions constituting the entirety
 of a program are not just <em>normal</em>, they are pretty much the only way that
 programmer ever wrote. When you see the code samples below, you will see
-why: someone was lacking an understanding of C&#8217;s build system.&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+why: someone was lacking an understanding of C&rsquo;s build system.&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p>Also, that&#8217;s the piece of code of which I found seven different versions
+<p>Also, that&rsquo;s the piece of code of which I found seven different versions
 in various places when I started. Seven!&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
@@ -238,7 +237,7 @@ of splitting the source file and adding <code>#include</code> statements at the 
 each file so that they could just keep writing their non-modular code.&#160;<a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
-<p>I have tried. Twice. I&#8217;m hoping that the third time <em>will</em> be the charm.&#160;<a class="footnote-backref" href="#fnref:6" rev="footnote" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>I have tried. Twice. I&rsquo;m hoping that the third time <em>will</em> be the charm.&#160;<a class="footnote-backref" href="#fnref:6" rev="footnote" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>        </div>
