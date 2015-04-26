@@ -2,6 +2,7 @@ Title: Repent and Be Baptized
 Subtitle: The Theology and Practice of Baptism
 Author: Chris Krycho
 Template: formats/class
+Category: Theology
 Class: Baptist History and Identity
 Date: March 28, 2015 22:00
 Professor: Dr. Nathan Finn
