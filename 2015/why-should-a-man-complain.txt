@@ -36,7 +36,9 @@ Description: An open-ended, multi-vocal answer to a rhetorical question—demons
 
 ---
 
-# Author's Translation
+
+Author's Translation
+====================
 
 ## *Nun* נ
 40. Let us search out our ways and examine them thoroughly and let us return to Yahweh.
@@ -85,7 +87,10 @@ Description: An open-ended, multi-vocal answer to a rhetorical question—demons
 
 ---
 
-# Outline
+
+Outline
+=======
+
 1. We repent but God has not forgiven us (40--51)
     1. Let us repent! (40--42a)
     2. God is still hidden (42b--44)
@@ -98,7 +103,10 @@ Description: An open-ended, multi-vocal answer to a rhetorical question—demons
 
 ---
 
-# Introduction
+
+Introduction
+============
+
 This essay will demonstrate that the concluding section of Lamentations 3,
 running from v. 40 to v. 66, constitutes an open-ended, multivocal answer to the
 question posed in Lamentations 3:39: “Why should a person complain, / a living
@@ -108,7 +116,10 @@ him deeply enough to call out to him, even when all evidence suggested he would
 not answer. The point will be demonstrated by a close analysis of the structure,
 verbs, and poetic devices employed throughout the text.
 
-## Authorship
+
+Authorship
+----------
+
 Lamentations has traditionally been attributed to Jeremiah, but the poems
 themselves make no claim to authorship whatsoever.[^1] Jeremianic authorship is
 possible, and a few commentators continue to argue for it as a reasonable
@@ -136,8 +147,12 @@ represent continuity of thought and theology, both individually and
 collectively.[^11] Together, they present a multivocal but coherent expression
 of grief in the face of horrific tragedy.
 
-## Context
+
+Context
+-------
+
 ### Geographical and Cultural
+
 Lamentations was composed in response to the Babylonian destruction of Jerusalem
 and its temple and the deportation of Judean leadership in 595--587 B.C.
 However, it is not clear how long after the fall of Jerusalem the poems were
@@ -165,6 +180,7 @@ anti-theodic bent of other city laments.[^18] The text mingles "penitence *and*
 protest, confession *and* lament."[^19]
 
 ### Literary
+
 The book consists of five poems, each sharing the same basic acrostic structure.
 Chapters 1, 2, and 4 each have twenty-two multi-line verses, each beginning with
 a consecutive letter of the Hebrew alphabet.[^20] Chapter 3 changes the pattern,
@@ -228,8 +244,12 @@ the transition from the מ-strophe to the נ-strophe. Indeed, given the enjambme
 across strophe boundaries typical of the final section of the poem,[^39] the
 alignment here clearly indicates a major transition in the poem.
 
-# Exegesis
-## We Repent but God Has Not Forgiven Us (40--51)
+Exegesis
+========
+
+We Repent but God Has Not Forgiven Us (40--51)
+----------------------------------------------
+
 The speaker has finished his discourse on who Yahweh is and how he acts; now it
 is time to respond. In light of the preceding declaration of Yahweh's covenant
 love and justice, and its "emphasis on confession and penitence"[^40] the
@@ -238,6 +258,7 @@ lengthy lament, however: God has not forgiven. Indeed, the divine warrior has
 struck down his own people.[^41] Things seems hopeless.
 
 ### Let us repent! (40--42a)
+
 If Yahweh's covenant love may be trusted and he judges rightly, and if his
 people have sinned, they ought to repent. The speaker employs the language of
 (especially Jeremianic) prophetic exhortation, calling the people to search out
@@ -253,6 +274,7 @@ external.[^43] The reference to "God in heaven" does double duty: it marks his
 authority to forgive, but it also suggests his absence from Zion.
 
 ### God is still hidden (42b--44)
+
 In the following verses, the author begins by confessing sin, then addresses
 Yahweh, who has not forgiven his people, and who has instead opposed them and
 hidden himself from their prayers. Israel's divine warrior-God has now become
@@ -288,6 +310,7 @@ begins a speech section that runs through v. 47, but this transition is within
 rather than between sections---from one kind of response to another.
 
 ### We are devastated by our enemies (45--47)
+
 Once again, the poet employs enjambment to drive the reader into the speaker's
 experience of suffering. The transition between the ס- and פ-strophes occurs in
 v. 46, but already in v. 45 the speaker returns to a theme expressed in the
@@ -320,6 +343,7 @@ Were this the final note of the poem, this analysis would be basically correct.
 It is not, but things get worse before they get better.
 
 ### Sight and salvation (48--51)
+
 The speaker echoes the end of v. 47 at the end of v. 48, tying the two together,
 but shifts in person (from "we" to "I").[^57] The identity of the speaker shifts
 slightly as a result: he spoke first for himself alone, then exhorted his
@@ -348,7 +372,10 @@ to have heard nothing else (though nothing in the context or language here
 suggests these tears are meant to *manipulate* God into responding).[^60] The
 section closes without any such response, though; all hope seems lost.
 
-## Deliver me from my enemies! (52--66)
+
+Deliver me from my enemies! (52--66)
+------------------------------------
+
 The concluding section is like an individual psalm of lament.[^61] It continues
 the shift begun in v. 19. The chapter (as well as the book) opens with the image
 of God as a divine warrior fighting against his people, but it concludes with a
@@ -358,6 +385,7 @@ their enemies, but refuses to collapse the tension between hope and lament that
 characterizes the whole poem.
 
 ### Excursus: Verb Tense and Meaning in Poetry
+
 The verb tense throughout the final section of the poem is a subject of much
 debate. Commentators differ especially on how to take the mix of perfects and
 imperfects in vv. 56--58, but significant differences appear beginning as early
@@ -398,6 +426,7 @@ ongoing present. The suffering in Lamentations is timeless, and the expression
 of timelessness seems to have been one of the poet’s goals."[^69]
 
 ### My enemies! Despair and pleading (52--55)
+
 The צ-strophe opens with a stereotyped image of the beleaguered servant of God:
 the person hunted like a bird (cf. Prov. 6:5; Pss. 11:1, 124:7, 140:5) by those
 who hated him for no reason (cf. 1 Sam. 19:15, 25:31; Ps. 35:7, 69:5). The
@@ -430,6 +459,7 @@ the trial, but it does undercut the idea that the end of the poem is
 unrelentingly pessimistic---especially when coupled with the verses that follow.
 
 ### Yahweh hears/May Yahweh hear (56--58)
+
 The next sequence (continuing the ק-strophe and running into the first line of
 the ר-strophe) is a striking sequence and is key to understanding the poet's
 intent in the final section of the poem. The speaker proclaims Yahweh's response
@@ -463,6 +493,7 @@ necessary. Complaint remains,[^77] yet Israel's hope that Yahweh was and would
 be with them remains, too.[^78]
 
 ### May Yahweh judge the enemies (59--66)
+
 The poem concludes with the resumption of the speaker's complaint about the
 enemies, followed by an imprecatory prayer against them; both the complaint and
 the imprecation echo the imprecatory psalms.[^79] The only two imperatives
@@ -489,7 +520,10 @@ of faith resolved everything. Instead, echoing both the Psalms and
 Jeremiah,[^85] the speaker implores Yahweh for deliverance, confident that God
 *can* help but desperately needing that ability to become action.[^86]
 
-## Conclusion
+
+Conclusion
+----------
+
 The poem ends on an unresolved note, unlike most of the psalms of imprecation or
 lament (notable exceptions including Pss. 44, 60).[^87] But this is appropriate
 to the poet's aims. He presents not a cheery resolve to act as though everything
@@ -514,7 +548,10 @@ judgment was deserved, Yahweh may yet answer, silence the enemy, and draw near
 to his people. In one sense, he already has; in another, his people are still
 waiting---and the poet leaves it at that.
 
-# Application
+
+Application
+===========
+
 In recent decades, scholars have applied Lamentations to everything from
 Freudian grief models[^91] to massive national tragedies.[^92] The Freudian
 model of grief has some serious deficiencies---but applications of Lamentations
@@ -798,7 +835,9 @@ until suffering ends, lament remains.
 
 ---
 
-# Works Cited
+
+Works Cited
+===========
 
   - Bier, Miriam. "'We have sinned and rebelled; you have not forgiven': the
     dialogic interaction between authoritative and internally persuasive
