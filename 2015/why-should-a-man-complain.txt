@@ -17,7 +17,7 @@ Description: An open-ended, multi-vocal answer to a rhetorical question—demons
 >     The best lack all conviction, while the worst   
 >     Are full of passionate intensity.
 
-<p class="citation">–“The Second Coming,” William Butler Yeats</p>
+<p class="citation">—“The Second Coming,” William Butler Yeats</p>
 
 >     Who then devised the torment? Love.
 >     Love is the unfamiliar Name
