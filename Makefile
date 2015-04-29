@@ -2,6 +2,8 @@ PY=python3
 PELICAN=pelican
 PELICANOPTS=
 
+SCSS=scss
+
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
@@ -25,6 +27,12 @@ CLOUDFILES_CONTAINER=my_cloudfiles_container
 
 DROPBOX_DIR=~/Dropbox/Public/
 
+THEME_DIR=$(BASEDIR)/2014_theme
+STYLE_SRC_DIR=$(THEME_DIR)/sass
+STYLE_INCLUDES=$(STYLE_SRC_DIR)/$(wildcard _*.scss)
+STYLE_OBJ=$(STYLE_SOURCES:.scss=.css)
+STATIC_DIR=$(THEME_DIR)/static
+
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
 	PELICANOPTS += -D
@@ -37,6 +45,7 @@ help:
 	@echo '   make html                        (re)generate the web site          '
 	@echo '   make clean                       remove the generated files         '
 	@echo '   make regenerate                  regenerate files upon modification '
+	@echo '   make [scss|sass]                 rebuild the CSS from source        '
 	@echo '   make publish                     generate using production settings '
 	@echo '   make serve [PORT=8000]           serve site at http://localhost:8000'
 	@echo '   make devserver [PORT=8000]       start/restart develop_server.sh    '
@@ -57,10 +66,21 @@ html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 clean:
-	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
+	[ ! -d $(OUTPUTDIR) ] && [ ! -d $(STATIC_DIR)/*.css ] || rm -rf $(OUTPUTDIR) $(STATIC_DIR)/*.css
 
 regenerate:
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+
+
+$(STATIC_DIR)/%.css: $(STYLE_SRC_DIR)/%.scss $(STYLE_INCLUDES)
+	@echo Compiling $<
+	@$(SCSS) -t compressed $< $@
+
+.PHONY: scss
+scss: $(STATIC_DIR)/$(wildcard *.css)
+
+.PHONY: sass
+sass: scss
 
 serve:
 ifdef PORT

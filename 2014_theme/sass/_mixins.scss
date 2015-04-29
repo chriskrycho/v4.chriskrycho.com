@@ -76,16 +76,21 @@
     order: $val;
 }
 
+// Style rules
+@mixin first-letter() {
+    font-size: 2.9rem;
+    line-height: 1rem;
+    float: left;
+    margin-top: 0.9rem;
+    margin-right: 2px;
+}
+
+@mixin first-letter-reset() {
+    font-size: inherit;
+    line-height: inherit;
+    float: inherit;
+    margin: inherit;
+}
+
 // Bezier curves
 $easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
-
-// Style rules
-@mixin first-line() {
-    font-family: 'gentium_plus_smcp';
-    @include font-feature-settings('smcp');
-}
-
-@mixin first-letter() {
-    font-size: $fs5;
-    line-height: 1;
-}

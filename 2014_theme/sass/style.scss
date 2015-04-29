@@ -19,14 +19,18 @@ body {
     background: $white;
 }
 
-a, a:visited {
+a {
     text-indent: 0;
-    color: $light_blue;
     text-decoration: none;
-    border-bottom: 1px solid transparent;
     display: inline-block;
+    line-height: 1;
 
     @include transition(border 0.224s $easeInOutCubic, color 0.224s $easeInOutCubic);
+
+    &:link, &:visited {
+        color: $light_blue;
+        border-bottom: 1px solid transparent;        
+    }
 
     &:hover, &:active {
         color: $dark_blue;
@@ -73,10 +77,6 @@ blockquote {
 // Paragraph styles
 p {
     text-indent: $fs4;
-
-    a {
-        display: inline;
-    }
 }
 
 h1, h2, h3, h4, h5, h6, ul, ol, blockquote, pre, hr, figure {
@@ -115,11 +115,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: $fs1;
+    font-size: $fs2;
 }
 
 h2 {
-    font-size: $fs2;
+    font-size: $fs4;
 
     + h3 {
         padding-top: 0;
@@ -128,12 +128,11 @@ h2 {
 
 h3 {
     font: {
-        size: $fs3;
+        size: $fs5;
         weight: bold;
     }
 
     color: $light_gray;
-    border-bottom: 1px solid lighten($light_gray, 39.1%);
     padding: {
         top: 1em;
         bottom: 0.108em;
@@ -146,8 +145,8 @@ h3 {
 
 h4 {
     font: {
-        size: $fs4;
-        weight: bold;
+        size: $fs5;
+        style: italic;
     }
     padding-top: 1em;
 
@@ -189,6 +188,7 @@ sup {
 
 em, i, cite {
     font-style: italic;
+    line-height: 1;  // Fix for different heights in Cardo.
 
     em, i, cite { font-style: normal; }
 }
@@ -203,8 +203,8 @@ hr {
     margin: {
         left: auto;
         right: auto;
-        top: $fs3;
-        bottom: $fs4;
+        top: $fs1;
+        bottom: $fs2;
     }
     border: {
         bottom: none;
@@ -213,8 +213,7 @@ hr {
         top: 1px solid;
     }
 
-    &+ p::first-letter { @include first-letter(); }
-    &+ p::first-line { @include first-line(); }
+    + p::first-letter { @include first-letter(); }
 }
 
 // Special styles
@@ -227,7 +226,8 @@ hr {
 }
 
 .smcp {
-    font-family: 'gentium_plus_smcp';
+    font-family: 'Cardo SMCP';
+    letter-spacing: 0.8px;
 }
 
 .epigraph {
@@ -424,7 +424,10 @@ article {
 
         > p:first-of-type {
             &::first-letter { @include first-letter(); }
-            &::first-line { @include first-line(); }
+        }
+
+        > p.citation:first-of-type::first-letter { 
+            @include first-letter-reset();
         }
 
         h1 {
@@ -446,30 +449,41 @@ article {
                 &:before { content: none; }
             }
 
-            + p,
-            + h2 {
-                &::first-letter { @include first-letter(); }
-                &::first-line { @include first-line(); }
-            }
+            + p { &::first-letter { @include first-letter(); } }
 
             + h2 {
                 padding-top: 0;
             }
         }
 
+        hr + h1 { padding-top: $fs_very_small_abs; }
+
         h2 {
-            color: $dark_blue;
+            color: $light_gray;
             text-align: center;
-            font-weight: bold;
             padding-top: $fsp;
             margin-bottom: 0.323em;
         }
 
-        p {
-            @include hyphens(auto);
+        hr + h1 { padding-top: $fs_very_small; }
 
-            &:first-of-type:first-line {
-                @include hyphens(none);
+        p { @include hyphens(auto); }
+    }
+
+    &.micro { font-family: $sans; }
+
+    &.archive,
+    &.micro {
+        .content {
+            > p:first-of-type {
+                &::first-letter { @include first-letter-reset(); }
+            }
+
+            h1 {
+                + p,
+                + h2 {
+                    &::first-letter { @include first-letter-reset(); }
+                }
             }
         }
     }
@@ -524,12 +538,11 @@ article {
         margin-left: $fs2;
         padding-top: $fsp;
         padding-bottom: $fsp;
+
+        + hr { margin-top: 1.4em; }
     }
 
-    .footnote {
-        padding-top: 0.5rem;
-        font-size: $fs_small;
-    }
+    .footnote { font-size: $fs_small; }
 
     &.archive {
         width: auto;
@@ -546,7 +559,7 @@ article {
         }
     }
 
-    &.code {
+    &.code, &.micro {
         code {
             font-family: 'Source Code Pro', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
             background: #efefef;

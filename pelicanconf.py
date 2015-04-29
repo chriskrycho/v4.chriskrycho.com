@@ -61,7 +61,11 @@ OUTPUT_SOURCES_EXTENSION = ".txt"
 DEFAULT_DATE_FORMAT = "%B %d, %Y"
 
 # Markdown and text handling
-MD_EXTENSIONS = ['extra', 'toc', 'headerid', 'smartypants(smarten=old-school)']
+MD_EXTENSIONS = ['extra', 
+                 'toc',
+                 'headerid',
+                 'superscript',
+                 'markdown.extensions.smarty']
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
@@ -70,6 +74,7 @@ RELATIVE_URLS = True
 CACHE_CONTENT = True
 LOAD_CONTENT_CACHE = True
 CHECK_MODIFIED_METHOD = 'md5'
+CONTENT_CACHING_LAYER = 'reader'
 
 # URLs
 ARTICLE_URL = '{date:%Y}/{slug}.html'
