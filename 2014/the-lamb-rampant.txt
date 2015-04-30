@@ -3,7 +3,6 @@ Tags: poetry
 Date: 2014-02-10 12:30
 Author: Chris Krycho
 Description: Come and rest! Come and heal! Ev’ry traitor / Ev’ry wretch and stinking fiend: lay down your arms...
-<!--Template: formats/poetry-->
 
     Come and rest! Come and heal! Ev’ry traitor
              Ev’ry wretch and stinking fiend: lay down your arms
