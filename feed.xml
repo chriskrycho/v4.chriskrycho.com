@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Thu, 30 Apr 2015 06:05:00 -0400</lastBuildDate><item><title>Airship</title><link>http://www.chriskrycho.com/2015/airship.html</link><description>&lt;pre&gt;&lt;code&gt;Our airship sails,
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 01 May 2015 10:30:00 -0400</lastBuildDate><item><title>Tolle Lege!</title><link>http://www.chriskrycho.com/2015/tolle-lege.html</link><description>&lt;p&gt;I was delighted to be able to give a talk at &lt;a href="http://bibletechconference.com/"&gt;BibleTech&lt;/a&gt; this year. I spoke for
+almost exactly 40 minutes on the subject of digital typography, with a focus on
+some of the nitty-gritty details that make texts readable&amp;hellip; or not. Here is the
+screen capture and audio from the talk!&lt;/p&gt;
+&lt;iframe src="https://player.vimeo.com/video/126655499" style="width: 500px; height: 375px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;You can also access the &lt;a href="/talks/bibletech2015/"&gt;slides&lt;/a&gt; whenever you like (though note that they were
+designed to be complements to the talk, &lt;em&gt;not&lt;/em&gt; the content of the talk, and as
+such they elide a great deal of the content).&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 01 May 2015 10:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-01:2015/tolle-lege.html</guid></item><item><title>Airship</title><link>http://www.chriskrycho.com/2015/airship.html</link><description>&lt;pre&gt;&lt;code&gt;Our airship sails,
 Ere sunrise,
 Above a foam-flecked sea
 Which gives way, sometimes

@@ -1,0 +1,18 @@
+Title: Tolle Lege!
+Subtitle: Designing Readable Bibles with Digital Typography
+Author: Chris Krycho
+Date: 2015-05-01 10:30
+
+I was delighted to be able to give a talk at [BibleTech] this year. I spoke for
+almost exactly 40 minutes on the subject of digital typography, with a focus on
+some of the nitty-gritty details that make texts readable... or not. Here is the
+screen capture and audio from the talk!
+
+<iframe src="https://player.vimeo.com/video/126655499" style="width: 500px; height: 375px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+You can also access the [slides] whenever you like (though note that they were
+designed to be complements to the talk, *not* the content of the talk, and as
+such they elide a great deal of the content).
+
+[BibleTech]: http://bibletechconference.com/
+[slides]: /talks/bibletech2015/
