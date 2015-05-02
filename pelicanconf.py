@@ -39,14 +39,13 @@ IDENTITY = {'App.net': 'https://app.net/chriskrycho',
             'SoundCloud': 'https://soundcloud.com/chriskrycho',
             'Stack Overflow': 'http://stackoverflow.com/users/564181/chris-krycho',
             'Twitter': 'https://twitter.com/chriskrycho',
-            }
+            'Vimeo': 'https://vimeo.com/chriskrycho'}
 
 BROADCAST = {'all': 'https://broadcast.app.net/46224/chriskrychocom-all/',
              'art': 'https://broadcast.app.net/46225/chriskrychocom-art/',
              'blog': 'https://broadcast.app.net/46226/chriskrychocom-blog/',
              'tech': 'https://broadcast.app.net/46227/chriskrychocom-tech/',
-             'theology': 'https://broadcast.app.net/46228/chriskrychocom-theology/',
-             }
+             'theology': 'https://broadcast.app.net/46228/chriskrychocom-theology/'}
 
 DEFAULT_SHARE_IMAGE = ''
 
@@ -92,18 +91,26 @@ AUTHORS_SAVE_AS = False
 # Index and archive pages
 DEFAULT_PAGINATION = 10
 
-PAGINATION_PATTERNS = (
-    (1, '{base_name}/', '{base_name}/index.html'),
-    (2, '{base_name}/page/{number}/', '{base_name}/page/{number}/index.html'),
-)
+PAGINATION_PATTERNS = ((1, 
+                        '{base_name}/', 
+                        '{base_name}/index.html'),
+                       (2, 
+                        '{base_name}/page/{number}/', 
+                        '{base_name}/page/{number}/index.html'),)
 
 DEFAULT_ORPHANS = 2
 
 # Path configuration
-STATIC_PATHS = ['images', 'downloads',
+STATIC_PATHS = ['images',
+                'downloads',
+                'talks/lib',
+                'talks/bibletech2015'
                 'extra/CNAME',
                 'extra/.htaccess',
                 'extra/favicon.png']
+STATIC_EXCLUDE_SOURCES = False
+PAGE_EXCLUDES = ['talks/bibletech2015']
+ARTIClE_EXCLUDES = ['talks/bibletech2015']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},  # Copy CNAME file to /output
                        'extra/favicon.png': {'path': 'favicon.png'},
                        'extra/favicon.ico': {'path': 'favicon.ico'},}  # Copy .htaccess file to /output
