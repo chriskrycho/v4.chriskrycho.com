@@ -3,7 +3,9 @@
 almost exactly 40 minutes on the subject of digital typography, with a focus on
 some of the nitty-gritty details that make texts readable&amp;hellip; or not. Here is the
 screen capture and audio from the talk!&lt;/p&gt;
-&lt;iframe src="https://player.vimeo.com/video/126655499" style="width: 500px; height: 375px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div class="iframe-wrapper four-to-three"&gt;
+&lt;iframe src="https://player.vimeo.com/video/126655499" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 
 &lt;p&gt;You can also access the &lt;a href="/talks/bibletech2015/"&gt;slides&lt;/a&gt; whenever you like (though note that they were
 designed to be complements to the talk, &lt;em&gt;not&lt;/em&gt; the content of the talk, and as

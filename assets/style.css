@@ -404,9 +404,19 @@ img {
   max-height: 100%;
   max-width: 100%; }
 
-iframe {
+.iframe-wrapper {
   margin: 1em auto;
-  display: block; }
+  display: block;
+  position: relative;
+  height: 0; }
+  .iframe-wrapper.four-to-three {
+    padding-bottom: 75%; }
+  .iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 p, ul, ol, li {
   font-size: 1em; }
