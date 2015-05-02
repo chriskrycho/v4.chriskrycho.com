@@ -45,16 +45,32 @@ img {
     max-width: 100%;
 }
 
+.iframe-wrapper {
+    margin: 1em auto; 
+    display: block;
+    position: relative;
+    height: 0;
+
+    &.four-to-three {
+        padding-bottom: 75%;
+    }
+    
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }    
+}
+
 p, ul, ol, li {
     font-size: $fsp;
 }
 
 blockquote {
-    font: {
-        size: $fs6;
-        style: italic;
-    }
-    ;
+    font-size: $fs6;
+    color: $light_gray;
     line-height: $line_height_small;
     margin: {
         top: $fsp;
@@ -79,7 +95,7 @@ p {
     text-indent: $fs4;
 }
 
-h1, h2, h3, h4, h5, h6, ul, ol, blockquote, pre, hr, figure {
+h1, h2, h3, h4, h5, h6, ul, ol, blockquote, pre, hr, figure, iframe {
     + p { text-indent: 0; }
 }
 
