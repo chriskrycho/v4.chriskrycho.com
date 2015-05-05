@@ -16,7 +16,7 @@ Source: Robert Alter, <cite>The Art of Biblical Poetry</cite>, p. 146.
 > consider, how God has treated them as beloved sons, then their exploitation of
 > the poor and the helpless in their midst (1:23 and elsewhere), in flagrant
 > violation of God's commands, becomes a paradigmatic instance of treachery, of
-> man's dating capacity for self-destructive perverseness. In this fashion, a
+> man's... capacity for self-destructive perverseness. In this fashion, a
 > set of messages framed for a particular audience of the eighth century B.C.E.
 > Is not just the transcription of a historical document but continues to speak
 > age after age, inviting members of otherwise very different audiences to read
