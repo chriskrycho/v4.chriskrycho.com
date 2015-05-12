@@ -26,7 +26,7 @@ interesting (at best!) from a content perspective, but it may be interesting if
 you are curious to see how the design aesthetic of the site has changed over
 time.
 
-[the `gh-pages` branch]: https://github.com/chriskrycho/chriskrycho.com/tree/master
+[the `gh-pages` branch]: https://github.com/chriskrycho/chriskrycho.com/tree/gh-pages
 [GitHub Pages]: https://pages.github.com
 
 If you have any questions, feel free to ping me on [App.net] or [Twitter].
