@@ -11,19 +11,22 @@ the `LICENSE` file.
 So... now what?
 ---------------
 
-To see how the site *works*, look at the `master` branch, which has the
+To see how the site *works*, look at [the `master` branch], which has the
 [Pelican] configuration, [Jinja2] templates, etc., as well as all the Markdown
 files which constitute the content of the site (but before conversion).
 
-To get the site itself, look at the `gh-pages` branch. Because of the way
+[Pelican]: http://docs.getpelican.com/en/3.5.0/
+[Jinja2]: http://jinja.pocoo.org
+[the `master` branch]: https://github.com/chriskrycho/chriskrycho.com/tree/master
+
+To get the site itself, look at [the `gh-pages` branch]. Because of the way
 [Pelican] and [GitHub Pages] play together, you can actually check out the site
 from any point in time since I started hosting it. That's only mildly 
 interesting (at best!) from a content perspective, but it may be interesting if
 you are curious to see how the design aesthetic of the site has changed over
 time.
 
-[Pelican]: http://docs.getpelican.com/en/3.5.0/
-[Jinja2]: http://jinja.pocoo.org
+[the `gh-pages` branch]: https://github.com/chriskrycho/chriskrycho.com/tree/master
 [GitHub Pages]: https://pages.github.com
 
 If you have any questions, feel free to ping me on [App.net] or [Twitter].
