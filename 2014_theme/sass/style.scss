@@ -121,8 +121,21 @@ ul {
     }
 }
 
-ol {
-    list-style: decimal;
+ol { list-style: upper-roman;
+
+    ol { list-style: decimal;
+
+        ol { list-style: upper-latin;
+
+            ol { list-style: lower-roman;
+
+                ol { list-style: lower-latin;
+
+                    ol { list-style: lower-greek; }
+                }
+            }
+        }
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
