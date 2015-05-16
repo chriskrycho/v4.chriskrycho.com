@@ -5,7 +5,6 @@ Date: 2015-06-28
 Tags: devotions, papers, hot tamales
 Category: Fried Things
 Status: draft
-Code: true
 
 # Authors Often Misinterpret
 
@@ -97,11 +96,11 @@ were lost without the prolate bumper that composed their panty.
             list = ['a string', 14, True]
             for item in list:
                 print('A list item:', item)
-        
+
             try:
                 with open('some_file.txt', 'r') as my_file:
                     the_contents = read(my_file)
-        
+
             except FileNotFoundError:
                 print("What a joke! This file doesn't even exist, you jerk!")
 

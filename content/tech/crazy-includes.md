@@ -3,7 +3,6 @@ subtitle: The craziest include structure I've ever seen.
 author: Chris Krycho
 date: 2014-11-07 21:00
 Tags: software development
-Code: true
 Description: An example of just how deep the rabbit-hole can go.
 
 One of the pieces of code I'm maintaining has an *absurd* situation in its build
@@ -19,7 +18,7 @@ The project has many more files than this, of course, but these are the
 important ones for demonstrating this particular piece of insanity (which shows
 up *many* places in the codebase).
 
-I'm reproducing here some dummy code representing an *actual set of 
+I'm reproducing here some dummy code representing an *actual set of
 relationships in the codebase*. The functions and module nameshave been changed;
 the relationships between the pieces of code have not.[^1] When I started trying
 to build the program that included what I am representing as `main.c` below,
@@ -150,7 +149,7 @@ non-trivial to refactor it.[^6]
 
 If this sounds insane... that's because it is.
 
-If you're curious how I dealt with it, well... I renamed the `addNumbers()` 
+If you're curious how I dealt with it, well... I renamed the `addNumbers()`
 function in `main.c` to `_addNumbers()` and put a loud, angry `TODO` on it for the
 current release, because the only way to fix it is to refactor this whole giant
 mess.

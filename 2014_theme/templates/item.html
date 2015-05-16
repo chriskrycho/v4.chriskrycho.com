@@ -8,7 +8,7 @@
 {% block content %}
 
 {% block article_el %}
-<article {% if item.code == 'true' %}class='code'{% endif %}>
+<article class="{%for t in item.tags %}{{ t.slug }} {% endfor %}{{ item.category.slug }}">
 {% endblock %}
 
     <header>
@@ -32,6 +32,6 @@
             {% block item_content %}{{ item.content }}{% endblock item_content %}
         </div>
     </div>
-    </article>
+</article>
 
 {% endblock %}

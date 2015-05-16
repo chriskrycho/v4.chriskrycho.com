@@ -2,7 +2,6 @@ Title: Pushing Into C's Corner Cases
 Author: Chris Krycho
 Date: 2014-08-12 09:00
 Tags: software development
-Code: true
 
 I'm working on a project that is all in C because of its long history and
 legacy. We're slowly modernizing the codebase and writing all our new code in

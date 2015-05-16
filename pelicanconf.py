@@ -59,13 +59,6 @@ OUTPUT_SOURCES_EXTENSION = ".txt"
 
 DEFAULT_DATE_FORMAT = "%B %d, %Y"
 
-# Markdown and text handling
-MD_EXTENSIONS = ['extra', 
-                 'toc',
-                 'headerid',
-                 'superscript',
-                 'markdown.extensions.smarty']
-
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
@@ -84,18 +77,17 @@ CATEGORY_URL = '{slug}/'
 CATEGORY_SAVE_AS = '{slug}/index.html'
 TAG_URL = '{slug}/'
 TAG_SAVE_AS = '{slug}/index.html'
-# AUTHOR_URL = False
 AUTHOR_SAVE_AS = False
 AUTHORS_SAVE_AS = False
 
 # Index and archive pages
 DEFAULT_PAGINATION = 10
 
-PAGINATION_PATTERNS = ((1, 
-                        '{base_name}/', 
+PAGINATION_PATTERNS = ((1,
+                        '{base_name}/',
                         '{base_name}/index.html'),
-                       (2, 
-                        '{base_name}/page/{number}/', 
+                       (2,
+                        '{base_name}/page/{number}/',
                         '{base_name}/page/{number}/index.html'),)
 
 DEFAULT_ORPHANS = 2
@@ -110,7 +102,13 @@ STATIC_PATHS = ['images',
                 'extra/favicon.png']
 STATIC_EXCLUDE_SOURCES = False
 PAGE_EXCLUDES = ['talks/bibletech2015']
-ARTIClE_EXCLUDES = ['talks/bibletech2015']
+ARTICLE_EXCLUDES = ['talks/bibletech2015']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},  # Copy CNAME file to /output
                        'extra/favicon.png': {'path': 'favicon.png'},
                        'extra/favicon.ico': {'path': 'favicon.ico'},}  # Copy .htaccess file to /output
+
+READERS = {'html': None}
+
+PLUGIN_PATHS = ['../../pelican-plugins']
+PLUGINS = ['pandoc_reader']
+PANDOC_ARGS = ['--smart', '--no-highlight']

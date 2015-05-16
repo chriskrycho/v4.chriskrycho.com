@@ -2,7 +2,6 @@ Title: Growing Up Together
 Subtitle: Or: How I Learned to Stop Worrying and Love JavaScript
 Author: Chris Krycho
 Date: 2014-11-15 00:30
-Code: true
 Tags: software development
 
 A few years ago, you might have caught me in a grumpy moment grousing about
@@ -32,7 +31,7 @@ latest version released today. My response was, "Ooh---cool!"[^2]
 What changed? Well, mostly I changed, but also JavaScript changed a bit. We both
 grew up over the last four years. On the JavaScript side of things, a lot of
 good design patterns and tools have come into play in that span. I'm sure there
-were plenty of good, disciplined web developers writing clear, careful, 
+were plenty of good, disciplined web developers writing clear, careful,
 well-organized client-side JavaScript four years go. But in the interval, that
 kind of JavaScript got a lot more prominent, in part because it has had help
 from the rapid rise of server-side JavaScript in the form of Node.js and its
@@ -46,11 +45,11 @@ well-organized.
 In the same period of time, I have matured enormously as a developer (just
 enough to see how far I still have to go, of course). At the point where I most
 hated JavaScript, I also really struggled to see the utility of callbacks.
-Frankly, it took me the better part of a month just to get my head around 
-it---most of the tutorials out there just assumed you understood them already, 
-and, well: I didn't. Functions as first-class members of a language was new to 
-me at that point. Fast-forward through several years of full-time Python 
-development, lots of time spent reading about software development and some 
+Frankly, it took me the better part of a month just to get my head around
+it---most of the tutorials out there just assumed you understood them already,
+and, well: I didn't. Functions as first-class members of a language was new to
+me at that point. Fast-forward through several years of full-time Python
+development, lots of time spent reading about software development and some
 harder computer science concepts, and my perspective on JavaScript has shifted
 more than a little. Closures are beautiful, wonderful things now. Functions as
 arguments to other functions are delightful and extremely expressive. Prototypal
