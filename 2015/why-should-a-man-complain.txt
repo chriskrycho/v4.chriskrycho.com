@@ -1,3 +1,4 @@
+---
 Title: Why Should a Man Complain?
 Subtitle: Syntax, Poetry, and Meaning in Lamentations 3:40–66
 Author: Chris Krycho
@@ -8,26 +9,30 @@ Template: formats/class
 Class: Hebrew Syntax and Exegesis
 Professor: Dr. Heath A. Thomas
 School: Southeastern Baptist Theological Seminary
-Description: An open-ended, multi-vocal answer to a rhetorical question—demonstrated by a close analysis of the structure, verbs, and poetic devices employed by the poet.
+Description: >
+    An open-ended, multi-vocal answer to a rhetorical question—demonstrated by a
+    close analysis of the structure, verbs, and poetic devices employed by the
+    poet.
+...
 
->     Things fall apart; the centre cannot hold;
->     Mere anarchy is loosed upon the world,
->     The blood-dimmed tide is loosed, and everywhere   
->     The ceremony of innocence is drowned;
->     The best lack all conviction, while the worst   
->     Are full of passionate intensity.
+> | Things fall apart; the centre cannot hold;
+> | Mere anarchy is loosed upon the world,
+> | The blood-dimmed tide is loosed, and everywhere
+> | The ceremony of innocence is drowned;
+> | The best lack all conviction, while the worst
+> | Are full of passionate intensity.
 
 <p class="citation">—“The Second Coming,” William Butler Yeats</p>
 
->     Who then devised the torment? Love.
->     Love is the unfamiliar Name
->     Behind the hands that wove
->     The intolerable shirt of flame
->     Which human power cannot remove.
->          We only live, only suspire
->          Consumed by either fire or fire.
+> | Who then devised the torment? Love.
+> | Love is the unfamiliar Name
+> | Behind the hands that wove
+> | The intolerable shirt of flame
+> | Which human power cannot remove.
+> |      We only live, only suspire
+> |      Consumed by either fire or fire.
 
-<p class="citation">—“Little Gidding” (No. 4 of “Four Quartets”), T. S. Eliot    
+<p class="citation">—“Little Gidding” (No. 4 of “Four Quartets”), T. S. Eliot
 </p>
 
 > He who has ears to hear, let him hear.  
@@ -88,21 +93,6 @@ Author's Translation
 ---
 
 
-Outline
-=======
-
-1. We repent but God has not forgiven us (40--51)
-    1. Let us repent! (40--42a)
-    2. God is still hidden (42b--44)
-    3. We are devastated by our enemies (45--47)
-    4. Sight and salvation (48--51)
-2. Deliver Me From My Enemies! (52--66)
-    1. My enemies! Despair and pleading (52--55)
-    2. Yahweh hears/May Yahweh hear (56--58)
-    3. May Yahweh judge the enemies (59--66)
-
----
-
 
 Introduction
 ============
@@ -115,6 +105,31 @@ his people, even in the face of his judgment. Rather, his people were to trust
 him deeply enough to call out to him, even when all evidence suggested he would
 not answer. The point will be demonstrated by a close analysis of the structure,
 verbs, and poetic devices employed throughout the text.
+
+
+Outline
+-------
+
+ I.  [We repent but God has not forgiven us (40--51)]
+       1. [Let us repent! (40--42a)]
+       2. [God is still hidden (42b--44)]
+       3. [We are devastated by our enemies (45--47)]
+       4. [Sight and salvation (48--51)]
+II.  [Deliver Me From My Enemies! (52--66)]
+       1. [My enemies! Despair and pleading (52--55)]
+       2. [Yahweh hears/May Yahweh hear (56--58)]
+       3. [May Yahweh judge the enemies (59--66)]
+
+
+[We repent but God has not forgiven us (40--51)]: #we-repent-but-god-has-not-forgiven-us-4051
+[Let us repent! (40--42a)]: #let-us-repent-4042a
+[God is still hidden (42b--44)]: #god-is-still-hidden-42b44
+[We are devastated by our enemies (45--47)]: #we-are-devastated-by-our-enemies-4547
+[Sight and salvation (48--51)]: #sight-and-salvation-4851
+[Deliver Me From My Enemies! (52--66)]: #deliver-me-from-my-enemies-5266
+[My enemies! Despair and pleading (52--55)]: #my-enemies!-despair-and-pleading-5255
+[Yahweh hears/May Yahweh hear (56--58)]: #yahweh-hearsmay-yahweh-hear-5658
+[May Yahweh judge the enemies (59--66)]: #may-yahweh-judge-the-enemies-5966
 
 
 Authorship
@@ -606,7 +621,7 @@ until suffering ends, lament remains.
 
 [^4]: Rightly, House, 289.
 
-[^5]: Adele Berlin, _Lamentations: A Commentary_, The Old Testament Library 
+[^5]: Adele Berlin, _Lamentations: A Commentary_, The Old Testament Library
     (Louisville: Westminster John Knox Press, 2002), 31--32.
 
 [^6]: Lalleman, 322.
@@ -625,7 +640,7 @@ until suffering ends, lament remains.
 
 [^10]: Longman, 329.
 
-[^11]: Norman K. Gottwald, _Studies in the Book of Lamentations_ (Chicago: Alec 
+[^11]: Norman K. Gottwald, _Studies in the Book of Lamentations_ (Chicago: Alec
     R. Allenson, Inc., 1954), 20--21.
 
 [^12]: Thomas, 8--9.
@@ -685,7 +700,7 @@ until suffering ends, lament remains.
 
 [^33]: Lalleman, 362. How to take Yahweh's speech is an open question; see below.
 
-[^35]: So Bier, 162--163; 
+[^35]: So Bier, 162--163;
 
 [^36]: Dobbs-Allsopp, "Tragedy, Tradition, and Theology," 55--56.
 
@@ -693,7 +708,7 @@ until suffering ends, lament remains.
 
 [^38]: ibid.
 
-[^39]: F. W. Dobbs-Allsopp, "The effects of enjambment (part 2)," 374. 
+[^39]: F. W. Dobbs-Allsopp, "The effects of enjambment (part 2)," 374.
 
 [^40]: Thomas, 194.
 
@@ -703,28 +718,28 @@ until suffering ends, lament remains.
 
 [^43]: House, 421.
 
-[^44]: Dobbs-Allsopp, "Tragedy, Tradition, and Theology," 38; ibid., 
+[^44]: Dobbs-Allsopp, "Tragedy, Tradition, and Theology," 38; ibid.,
     _Lamentations_, 30; Longman, 336.
 
-[^45]: Cf. Exo. 13:21; 14:20,24; 19:9,16; 24:15--18; 33:9--10; 34:5; 40:34--38; 
+[^45]: Cf. Exo. 13:21; 14:20,24; 19:9,16; 24:15--18; 33:9--10; 34:5; 40:34--38;
     Num. 9:15--22; 1 Ki. 8:10--11.
 
 [^46]: Berlin, 96; Longman, 373.
 
 [^47]: Berlin, 96.
 
-[^48]: See Dobbs-Allsopp, "The enjambing line (part 1)" and ibid., "The effects 
+[^48]: See Dobbs-Allsopp, "The enjambing line (part 1)" and ibid., "The effects
     of enjambment (part 2)" for a partial list.
 
-[^49]: So Bier, 162--163; Dobbs-Allsopp, _Lamentations_, 123; ibid., "Tragedy, 
+[^49]: So Bier, 162--163; Dobbs-Allsopp, _Lamentations_, 123; ibid., "Tragedy,
     Tradition, and Theology," 48; Provan, _Lamentations_, 84.
 
 [^50]: So, rightly, Longman, 339.
 
-[^51]: The word translated "waste" here is a hapax; BDB gives "scum," but the 
+[^51]: The word translated "waste" here is a hapax; BDB gives "scum," but the
     other versions (LXX, Syriac, etc.) differ (Provan, _Lamentations_, 100--101).
 
-[^52]: Dobbs-Allsopp, _Lamentations_, 123--124; ibid., "Tragedy, Tradition, and 
+[^52]: Dobbs-Allsopp, _Lamentations_, 123--124; ibid., "Tragedy, Tradition, and
     Theology," 38.
 
 [^53]: Berlin, 3; she rightly notes that most English translations exchange the
@@ -737,7 +752,7 @@ until suffering ends, lament remains.
 
 [^55]: Thomas, 195--196.
 
-[^56]: Bier, 146--147, 153--154, 162--163; Dobbs-Allsopp, "Tragedy, Tradition, 
+[^56]: Bier, 146--147, 153--154, 162--163; Dobbs-Allsopp, "Tragedy, Tradition,
     and Theology," 48--49.
 
 [^57]: Dobbs-Allsopp, “Tragedy, Tradition, and Theology,” 41.
@@ -746,7 +761,7 @@ until suffering ends, lament remains.
 
 [^59]: Provan, _Lamentations_, 103.
 
-[^60]: So, rightly, Longman, 374; Provan, _Lamentations_, 82; contra 
+[^60]: So, rightly, Longman, 374; Provan, _Lamentations_, 82; contra
     Dobbs-Allsopp, _Lamentations_, 125; Gottwald, 93.
 
 [^61]: House, 425; Lalleman, 361.
@@ -773,8 +788,8 @@ until suffering ends, lament remains.
 
 [^70]: Dobbs-Allsopp, _Lamentations_, 126; Thomas, 197.
 
-[^71]: On the lament imagery used throughout the section, see Dobbs-Allsopp, 
-    _Lamentations_, 126; Lalleman, 362; Longman, 375; Provan, _Lamentations_, 
+[^71]: On the lament imagery used throughout the section, see Dobbs-Allsopp,
+    _Lamentations_, 126; Lalleman, 362; Longman, 375; Provan, _Lamentations_,
     105.
 
 [^72]: Dobbs-Allsopp, _Lamentations_, 127; Thomas, 197.
@@ -810,7 +825,7 @@ until suffering ends, lament remains.
 
 [^87]: Longman, 331.
 
-[^88]: Dobbs-Allsopp, _Lamentations_, 127, steps partway in this direction; cf. 
+[^88]: Dobbs-Allsopp, _Lamentations_, 127, steps partway in this direction; cf.
     Thomas, 203.
 
 [^89]: See especially Gottwald, 30, 99.

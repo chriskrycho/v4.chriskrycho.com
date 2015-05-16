@@ -1,68 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/poetry.xml" rel="self"></atom:link><lastBuildDate>Thu, 30 Apr 2015 06:05:00 -0400</lastBuildDate><item><title>Airship</title><link>http://www.chriskrycho.com/2015/airship.html</link><description>&lt;pre&gt;&lt;code&gt;Our airship sails,
-Ere sunrise,
-Above a foam-flecked sea
-Which gives way, sometimes
-To green and citied depths beneath.
-&lt;/code&gt;&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 30 Apr 2015 06:05:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-04-30:2015/airship.html</guid><category>poetry</category></item><item><title>April Is</title><link>http://www.chriskrycho.com/2015/april-is.html</link><description>&lt;pre&gt;&lt;code&gt;April is—
-    blue and gray and blue and gray and
-        darker gray and deeper blue and
-
-April is—
-    gold and green and gold and green and
-        richest green and brightest gold and
-
-April is—
-    verdant, daily changing, sometimes
-        silent, sometimes
-        cantillating, always
-            altering and new
-                again.
-&lt;/code&gt;&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 19 Apr 2015 14:25:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-04-19:2015/april-is.html</guid><category>poetry</category></item><item><title>Reflection demands</title><link>http://www.chriskrycho.com/2015/reflection-demands.html</link><description>&lt;pre&gt;&lt;code&gt;Reflection demands
-    of its practitioners, like poetry,
-    like painting, dance, or ev’ry art,
-    pain and toil, labor and sacrifice
-        for—
-    mind, like limb
-    like bow-stroke on a violin, or brush-stroke on a page
-    is weak by nature: dull, dim, faint
-        for—
-    all our faculties, like autumn leaves,
-    like ancien régime, or crumbled-down façade,
-    are fallen, troubled, and woe’d
-        so—
-    loose the mind from surly bond!
-    set intellect free by striving hard!
-    free from ruinous decay, and
-    free from foolish sluggery
-    with ev’ry breath sing higher note
-    by ev’ry step climb further up
-        and—
-    so deliver to the self
-    what wisdom may be found.
-&lt;/code&gt;&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 28 Mar 2015 07:40:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-03-28:2015/reflection-demands.html</guid><category>poetry</category></item><item><title>The Lamb Rampant</title><link>http://www.chriskrycho.com/2014/the-lamb-rampant.html</link><description>&lt;pre&gt;&lt;code&gt;Come and rest! Come and heal! Ev’ry traitor
-         Ev’ry wretch and stinking fiend: lay down your arms
-    Find comfort here, and respite, rest, rapport
-         All are welcome here, not one refused, none barred
-
-She wearied, wounded, sorrowed, battle-sore
-         Bids her children yet another weary soul embrace
-    Offer care and proffer aid, render service to her foes
-         As—though her progeny—once were as they
-
-Her march to war is ever triumph by defeat
-         Her shields and banners ’blazoned not with martial sign
-    Not lion proud nor weapons bright; instead a bleeding sheep
-         The lamb which piercèd, bruised and bloodied, died
-
-No stranger, prouder heraldry to march beneath
-         But under it she conquers all, so waves she bold
-    The lamb rampant! Dancing proud on trampled death
-         On mort laid low by low-laid, somehow mortal God
-
-Come and rest! she calls— Come and heal! Ev’ry traitor
-         Ev’ry wretch and stinking fiend: lay down your arms
-    Find comfort here, and respite, rest, rapport
-         All are welcome here, not one refused, none barred
-         Beneath the dancing banner: the piercèd, rampant lamb.
-&lt;/code&gt;&lt;/pre&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 10 Feb 2014 12:30:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2014-02-10:2014/the-lamb-rampant.html</guid><category>poetry</category></item></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/poetry.xml" rel="self"></atom:link><lastBuildDate>Thu, 30 Apr 2015 06:05:00 -0400</lastBuildDate><item><title>Airship</title><link>http://www.chriskrycho.com/2015/airship.html</link><description>&lt;p&gt;Our airship sails,&lt;br /&gt;Ere sunrise,&lt;br /&gt;Above a foam-flecked sea&lt;br /&gt;Which gives way, sometimes&lt;br /&gt;To green and citied depths beneath.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 30 Apr 2015 06:05:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-04-30:2015/airship.html</guid><category>poetry</category></item><item><title>April Is</title><link>http://www.chriskrycho.com/2015/april-is.html</link><description>&lt;p&gt;April is—&lt;br /&gt;    blue and gray and blue and gray and&lt;br /&gt;        darker gray and deeper blue and&lt;/p&gt;
+&lt;p&gt;April is—&lt;br /&gt;    gold and green and gold and green and&lt;br /&gt;        richest green and brightest gold and&lt;/p&gt;
+&lt;p&gt;April is—&lt;br /&gt;    verdant, daily changing, sometimes&lt;br /&gt;        silent, sometimes&lt;br /&gt;        cantillating, always&lt;br /&gt;            altering and new&lt;br /&gt;                again.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 19 Apr 2015 14:25:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-04-19:2015/april-is.html</guid><category>poetry</category></item><item><title>Reflection demands</title><link>http://www.chriskrycho.com/2015/reflection-demands.html</link><description>&lt;p&gt;Reflection demands&lt;br /&gt;    of its practitioners, like poetry,&lt;br /&gt;    like painting, dance, or ev’ry art,&lt;br /&gt;    pain and toil, labor and sacrifice&lt;br /&gt;        for—&lt;br /&gt;    mind, like limb&lt;br /&gt;    like bow-stroke on a violin, or brush-stroke on a page&lt;br /&gt;    is weak by nature: dull, dim, faint&lt;br /&gt;        for—&lt;br /&gt;    all our faculties, like autumn leaves,&lt;br /&gt;    like ancien régime, or crumbled-down façade,&lt;br /&gt;    are fallen, troubled, and woe’d&lt;br /&gt;        so—&lt;br /&gt;    loose the mind from surly bond!&lt;br /&gt;    set intellect free by striving hard!&lt;br /&gt;    free from ruinous decay, and&lt;br /&gt;    free from foolish sluggery&lt;br /&gt;    with ev’ry breath sing higher note&lt;br /&gt;    by ev’ry step climb further up&lt;br /&gt;        and—&lt;br /&gt;    so deliver to the self&lt;br /&gt;    what wisdom may be found.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 28 Mar 2015 07:40:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-03-28:2015/reflection-demands.html</guid><category>poetry</category></item><item><title>The Lamb Rampant</title><link>http://www.chriskrycho.com/2014/the-lamb-rampant.html</link><description>&lt;p&gt;Come and rest! Come and heal! Ev’ry traitor&lt;br /&gt;         Ev’ry wretch and stinking fiend: lay down your arms&lt;br /&gt;    Find comfort here, and respite, rest, rapport&lt;br /&gt;         All are welcome here, not one refused, none barred&lt;/p&gt;
+&lt;p&gt;She wearied, wounded, sorrowed, battle-sore&lt;br /&gt;         Bids her children yet another weary soul embrace&lt;br /&gt;    Offer care and proffer aid, render service to her foes&lt;br /&gt;         As—though her progeny—once were as they&lt;/p&gt;
+&lt;p&gt;Her march to war is ever triumph by defeat&lt;br /&gt;         Her shields and banners ’blazoned not with martial sign&lt;br /&gt;    Not lion proud nor weapons bright; instead a bleeding sheep&lt;br /&gt;         The lamb which piercèd, bruised and bloodied, died&lt;/p&gt;
+&lt;p&gt;No stranger, prouder heraldry to march beneath&lt;br /&gt;         But under it she conquers all, so waves she bold&lt;br /&gt;    The lamb rampant! Dancing proud on trampled death&lt;br /&gt;         On mort laid low by low-laid, somehow mortal God&lt;/p&gt;
+&lt;p&gt;Come and rest! she calls— Come and heal! Ev’ry traitor&lt;br /&gt;         Ev’ry wretch and stinking fiend: lay down your arms&lt;br /&gt;    Find comfort here, and respite, rest, rapport&lt;br /&gt;         All are welcome here, not one refused, none barred&lt;br /&gt;         Beneath the dancing banner: the piercèd, rampant lamb.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 10 Feb 2014 12:30:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2014-02-10:2014/the-lamb-rampant.html</guid><category>poetry</category></item></channel></rss>

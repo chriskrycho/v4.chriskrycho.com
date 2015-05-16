@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/talks.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-05-01T10:30:00-04:00</updated><entry><title>Tolle Lege!</title><link href="http://www.chriskrycho.com/2015/tolle-lege.html" rel="alternate"></link><updated>2015-05-01T10:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-01:2015/tolle-lege.html</id><summary type="html">&lt;p&gt;I was delighted to be able to give a talk at &lt;a href="http://bibletechconference.com/"&gt;BibleTech&lt;/a&gt; this year. I spoke for
-almost exactly 40 minutes on the subject of digital typography, with a focus on
-some of the nitty-gritty details that make texts readable&amp;hellip; or not. Here is the
-screen capture and audio from the talk!&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/talks.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-05-01T10:30:00-04:00</updated><entry><title>Tolle Lege!</title><link href="http://www.chriskrycho.com/2015/tolle-lege.html" rel="alternate"></link><updated>2015-05-01T10:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-01:2015/tolle-lege.html</id><summary type="html">&lt;p&gt;I was delighted to be able to give a talk at &lt;a href="http://bibletechconference.com/"&gt;BibleTech&lt;/a&gt; this year. I spoke for almost exactly 40 minutes on the subject of digital typography, with a focus on some of the nitty-gritty details that make texts readable… or not. Here is the screen capture and audio from the talk!&lt;/p&gt;
 &lt;div class="iframe-wrapper four-to-three"&gt;
-&lt;iframe src="https://player.vimeo.com/video/126655499" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe src="https://player.vimeo.com/video/126655499" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;
+&lt;/iframe&gt;
 &lt;/div&gt;
-
-&lt;p&gt;You can also access the &lt;a href="/talks/bibletech2015/"&gt;slides&lt;/a&gt; whenever you like (though note that they were
-designed to be complements to the talk, &lt;em&gt;not&lt;/em&gt; the content of the talk, and as
-such they elide a great deal of the content).&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;You can also access the &lt;a href="/talks/bibletech2015/"&gt;slides&lt;/a&gt; whenever you like (though note that they were designed to be complements to the talk, &lt;em&gt;not&lt;/em&gt; the content of the talk, and as such they elide a great deal of the content).&lt;/p&gt;
+</summary></entry></feed>

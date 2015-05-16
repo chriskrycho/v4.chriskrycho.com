@@ -22,8 +22,8 @@
     <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
     <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
 
-    <link href="http://www.chriskrycho.com/favicon.png" type="image/png" rel="icon" />
-    <link href="http://www.chriskrycho.com/favicon.ico" type="image/ico" rel="icon" />
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
 
 </head>
 <body>
@@ -50,7 +50,7 @@
     </header>
 
 
-<article >
+<article class="software-development tech">
 
     <header>
 <h1>Doing It Myself</h1>
@@ -63,73 +63,23 @@
 
         <div class="content">
 
-<p>Last summer, I started work on a project I named <a href="http://step-stool.io">Step Stool</a>&mdash;aiming to
-make a static site generator that would tick of all the little boxes marking my
-desires for a website generator. In due time, the project got put on hold, as I
-started up classes again and needed to focus more on my family than on fun side
-projects.</p>
-<p>Come the beginning of 2014, I was ready to bit WordPress farewell once and for
-all, though. While <a href="https://ghost.org">Ghost</a> looks interesting, since I do all my writing
-in Markdown files, there is something tempting about the canonical version of
-the documents being the version on my computer (and thus also on my iPad and
-iPhone and anywhere I have Dropbox and/or Git access). I did not have time at
-the beginning of the year to finish writing Step Stool, and I knew as much,<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>
-so instead I moved to <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a> as a stop-gap. There were lots of good
-reasons to pick Pelican: it has an active development community, fairly thorough
-documentation,<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup> and it&rsquo;s in Python and uses Jinja2 templates&mdash;the same basic
-approach I had taken with Step Stool, and the same toolset.</p>
-<p>Unfortunately, while I have been glad to be away from WordPress, my experience
-with Pelican so far has only reinforced my desire to get Step Stool done. There
-are <em>lots</em> of little things that it does in ways that just annoy me. Many of
-them have to do with configuration and documentation. On the latter, while the
-documentation is <em>fairly</em> complete, there are quite a few holes and gaps. (Yes,
-yes, open source software and anyone can add to the docs. That&rsquo;s great&mdash;it
-really is&mdash;but if I&rsquo;m going to use someone else&rsquo;s solution, it had better <em>just
-work</em>. Otherwise, I&rsquo;d rather spend my time getting my own going.)</p>
-<p>For example, if you want to see how the pagination actually works, good luck
-figuring it out from the documentation. You&rsquo;ll need to go looking at the way the
-sample themes (yes, both of them) are implemented to start getting a feel for
-it. Along the same lines, many of the objects that get handed to the templates
-are not fully documented, so it is difficult to know what one can or cannot do.
-I do not particularly want to spend my time adding debug print statements to my
-templates just to figure out what options I have available.</p>
-<p>The same kinds of things hold true for configuration options. Moreover, the
-configuration is done through a Python module. While that makes the module
-easier to integrate on the code side of things, it makes its actual content much
-less transparent than one might hope. Python is not really well optimized for
-writing configuration files&mdash;nor is any normal programming language.
-Configuration is inherently declarative, rather than imperative.</p>
-<p>This is not to say that Pelican is bad software. It is not. It is, however, a
-fairly typical example of open source software implemented by committee. It has
-holes (some of them serious), bumps, and quirks. Here is the reality: so will
-Step Stool, though they will be the quirks that come from an individual
-developer&rsquo;s approach rather than a group&rsquo;s. But the one thing I can guarantee,
-and the reason I am increasingly motivated to get back to working on Step Stool.
-And yes, I do have a couple other projects on my plate as well&mdash;contributions
-to the Smartypants and Typogrify modules, my own <a href="https://bitbucket.org/chriskrycho/spacewell">Spacewell typography project</a>,
-and quite possibly a <a href="https://bitbucket.org/chriskrycho/markdown-poetry/">Markdown Poetry extension </a>. But I would like
-very much to just get back to doing this myself. There is freedom in rolling my
-own solution to things. I will not always have time to do these kinds of things; 
-I figure I should do them when I can.</p>
-<p>So here&rsquo;s to <a href="http://step-stool.io">Step Stool</a>, and&mdash;more importantly&mdash;to writing your own
-software just to scratch that itch.</p>
-<div class="footnote">
+<p>Last summer, I started work on a project I named <a href="http://step-stool.io">Step Stool</a>—aiming to make a static site generator that would tick of all the little boxes marking my desires for a website generator. In due time, the project got put on hold, as I started up classes again and needed to focus more on my family than on fun side projects.</p>
+<p>Come the beginning of 2014, I was ready to bit WordPress farewell once and for all, though. While <a href="https://ghost.org">Ghost</a> looks interesting, since I do all my writing in Markdown files, there is something tempting about the canonical version of the documents being the version on my computer (and thus also on my iPad and iPhone and anywhere I have Dropbox and/or Git access). I did not have time at the beginning of the year to finish writing Step Stool, and I knew as much,<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> so instead I moved to <a href="http://docs.getpelican.com/en/3.3.0/">Pelican</a> as a stop-gap. There were lots of good reasons to pick Pelican: it has an active development community, fairly thorough documentation,<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> and it’s in Python and uses Jinja2 templates—the same basic approach I had taken with Step Stool, and the same toolset.</p>
+<p>Unfortunately, while I have been glad to be away from WordPress, my experience with Pelican so far has only reinforced my desire to get Step Stool done. There are <em>lots</em> of little things that it does in ways that just annoy me. Many of them have to do with configuration and documentation. On the latter, while the documentation is <em>fairly</em> complete, there are quite a few holes and gaps. (Yes, yes, open source software and anyone can add to the docs. That’s great—it really is—but if I’m going to use someone else’s solution, it had better <em>just work</em>. Otherwise, I’d rather spend my time getting my own going.)</p>
+<p>For example, if you want to see how the pagination actually works, good luck figuring it out from the documentation. You’ll need to go looking at the way the sample themes (yes, both of them) are implemented to start getting a feel for it. Along the same lines, many of the objects that get handed to the templates are not fully documented, so it is difficult to know what one can or cannot do. I do not particularly want to spend my time adding debug print statements to my templates just to figure out what options I have available.</p>
+<p>The same kinds of things hold true for configuration options. Moreover, the configuration is done through a Python module. While that makes the module easier to integrate on the code side of things, it makes its actual content much less transparent than one might hope. Python is not really well optimized for writing configuration files—nor is any normal programming language. Configuration is inherently declarative, rather than imperative.</p>
+<p>This is not to say that Pelican is bad software. It is not. It is, however, a fairly typical example of open source software implemented by committee. It has holes (some of them serious), bumps, and quirks. Here is the reality: so will Step Stool, though they will be the quirks that come from an individual developer’s approach rather than a group’s. But the one thing I can guarantee, and the reason I am increasingly motivated to get back to working on Step Stool. And yes, I do have a couple other projects on my plate as well—contributions to the Smartypants and Typogrify modules, my own <a href="https://bitbucket.org/chriskrycho/spacewell">Spacewell typography project</a>, and quite possibly a <a href="https://bitbucket.org/chriskrycho/markdown-poetry/">Markdown Poetry extension</a>. But I would like very much to just get back to doing this myself. There is freedom in rolling my own solution to things. I will not always have time to do these kinds of things; I figure I should do them when I can.</p>
+<p>So here’s to <a href="http://step-stool.io">Step Stool</a>, and—more importantly—to writing your own software just to scratch that itch.</p>
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn:1">
-<p>I spent quite a bit of time tweaking my friend Vernon King&rsquo;s <a href="http://www.vernonking.org">Jekyll-powered site</a>, I got Winning Slowly off the ground,
-including designing the site from scratch and implementing it (also in Pelican),
-and I did some substantial redesign work on this site. That was more than enough
-for my three week break&mdash;as evidenced by the fact that I didn&rsquo;t get to the sort
-of 1.0 version of this site until just a week or so ago.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>Emphasis on &ldquo;fairly.&rdquo; More on <em>that</em> in a moment as well.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
+<li id="fn1"><p>I spent quite a bit of time tweaking my friend Vernon King’s <a href="http://www.vernonking.org">Jekyll-powered site</a>, I got Winning Slowly off the ground, including designing the site from scratch and implementing it (also in Pelican), and I did some substantial redesign work on this site. That was more than enough for my three week break—as evidenced by the fact that I didn’t get to the sort of 1.0 version of this site until just a week or so ago.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Emphasis on “fairly.” More on <em>that</em> in a moment as well.<a href="#fnref2">↩</a></p></li>
 </ol>
-</div>        </div>
+</section>
+        </div>
     </div>
-    </article>
+</article>
 
 
     <footer id="site-footer"><section id="connect">
@@ -236,7 +186,7 @@ of 1.0 version of this site until just a week or so ago.&#160;<a class="footnote
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
     <script type="text/javascript">$.bigfoot();</script>
-        <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+         <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
         <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
     <script src="/assets/js/reftagger.js"></script>
 

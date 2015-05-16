@@ -22,8 +22,8 @@
     <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
     <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
 
-    <link href="http://www.chriskrycho.com/favicon.png" type="image/png" rel="icon" />
-    <link href="http://www.chriskrycho.com/favicon.ico" type="image/ico" rel="icon" />
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
 
 </head>
 <body>
@@ -50,7 +50,7 @@
     </header>
 
 
-<article >
+<article class="software-development tech">
 
     <header>
 <h1>Unsurprisingly, In Flux</h1>
@@ -63,68 +63,41 @@
 
         <div class="content">
 
-<p><i class="editorial">This started as a <a href="https://alpha.app.net/chriskrycho/post/57102562">series of posts</a> on App.net. I <a href="http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html">resolved</a> a while ago that if I was tempted to do that, I should just write a blog post instead. I failed at that resolution, but at a friend&rsquo;s <a href="https://alpha.app.net/jws/post/57108281">suggestion</a>, am adapting it into a blog post anyway. You can see the posts that prompted it <a href="https://alpha.app.net/keita/post/57096585">here</a> and <a href="https://alpha.app.net/jws/post/57096838">here</a>.</i></p>
+<p><i class="editorial">This started as a <a href="https://alpha.app.net/chriskrycho/post/57102562">series of posts</a> on App.net. I <a href="http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html">resolved</a> a while ago that if I was tempted to do that, I should just write a blog post instead. I failed at that resolution, but at a friend’s <a href="https://alpha.app.net/jws/post/57108281">suggestion</a>, am adapting it into a blog post anyway. You can see the posts that prompted it [here]<span class="citation" data-cites="keita">[@keita]</span> and [here]<span class="citation" data-cites="jws">[@jws]</span>.</i></p>
 <hr />
 <ul>
-<li>
-<p>The state of JavaScript frameworks today is a scale, really, from not-at-all-monolithic to totally-monolithic, in roughly this order:  Backbone &ndash; React &amp; Angular &ndash; Ember &ndash; Meteor.</p>
-</li>
-<li>
-<p>Backbone and related library Underscore are really collections of common JS tools and patterns you can use to write apps, but they’re not <em>frameworks</em>, per se. You’ll write all your own boilerplate there.</p>
-</li>
-<li>
-<p>React and Angular supply much <em>more</em> of the functionality, but Angular is a “meta-framework” that aims to do <em>some</em> boilerplate but let you construct your own custom app framework.</p>
-</li>
-<li>
-<p>Angular is very powerful, but it&rsquo;s kind of like Git: wires are exposed; you have to understand a <em>lot</em> about the internals to get it to do what you want. Its routing functionality is pretty limited out of the box, too&mdash;so much so that there&rsquo;s a near-standard third-party router.</p>
-</li>
-<li>
-<p>React, as I understand it, supplies a paradigm and associated tools oriented primarily at view state management, though with capabilities via extensions for routing, etc. These tools are <em>extremely</em> powerful for performance in particular. It&rsquo;s not a full framework, and the docs expressly note that you can <em>just</em> use React for the view layer with other tools if you want.</p>
-</li>
-<li>
-<p>In any case, Angular and React do <em>different</em> things from each other, but both do substantially more than Backbone.</p>
-</li>
-<li>
-<p>Ember is a full framework, strongly emphasizing shared conventions (with a lot of common developers from Rails). It’s perhaps less adaptable than React or Angular, but is much more full-featured; you have very little boilerplate to do.</p>
-</li>
-<li>
-<p>Meteor is like Ember, but does server-side Node as well as client-side stuff, with the goal being to minimize code duplication, sharing assets as much as possible.</p>
-</li>
-<li>
-<p>Of all of those, Ember has easily (easily!) the best-explained roadmap, most articulate leadership, and best development path. They are also aggressively adopting the best features of other frameworks wherever it makes sense.</p>
-</li>
-<li>
-<p>Angular is currently in flux, as Google has announced Angular 2.0 will be basically a completely different framework; there will be <em>no</em> direct migration path for Angular 1.x apps to Angular 2.0+. Total rewrite required.</p>
-</li>
-<li>
-<p>Ember uses a steady 6-week release schedule with very careful regression testing and semantic versioning, with clear deprecation notices and upgrade paths, and is therefore both rapidly iterating <em>and</em> relatively stable for use.</p>
-</li>
-<li>
-<p>If you just need a set of tools for enhance functionality on otherwise relatively static pages, Backbone+Underscore is a great combo. If you already have a bunch of things in place but want a dedicated view layer, React is good.<sup id="fnref:react"><a class="footnote-ref" href="#fn:react" rel="footnote">1</a></sup></p>
-</li>
-<li>
-<p>If you’re writing a new, full-on web <em>application</em> (SPA, or organized in whatever other way), I think Ember is the very clear winner at this point. I have good confidence in their leadership and they’re firing on all cylinders.</p>
-</li>
+<li><p>The state of JavaScript frameworks today is a scale, really, from not-at-all-monolithic to totally-monolithic, in roughly this order: Backbone – React &amp; Angular – Ember – Meteor.</p></li>
+<li><p>Backbone and related library Underscore are really collections of common JS tools and patterns you can use to write apps, but they’re not <em>frameworks</em>, per se. You’ll write all your own boilerplate there.</p></li>
+<li><p>React and Angular supply much <em>more</em> of the functionality, but Angular is a “meta-framework” that aims to do <em>some</em> boilerplate but let you construct your own custom app framework.</p></li>
+<li><p>Angular is very powerful, but it’s kind of like Git: wires are exposed; you have to understand a <em>lot</em> about the internals to get it to do what you want. Its routing functionality is pretty limited out of the box, too—so much so that there’s a near-standard third-party router.</p></li>
+<li><p>React, as I understand it, supplies a paradigm and associated tools oriented primarily at view state management, though with capabilities via extensions for routing, etc. These tools are <em>extremely</em> powerful for performance in particular. It’s not a full framework, and the docs expressly note that you can <em>just</em> use React for the view layer with other tools if you want.</p></li>
+<li><p>In any case, Angular and React do <em>different</em> things from each other, but both do substantially more than Backbone.</p></li>
+<li><p>Ember is a full framework, strongly emphasizing shared conventions (with a lot of common developers from Rails). It’s perhaps less adaptable than React or Angular, but is much more full-featured; you have very little boilerplate to do.</p></li>
+<li><p>Meteor is like Ember, but does server-side Node as well as client-side stuff, with the goal being to minimize code duplication, sharing assets as much as possible.</p></li>
+<li><p>Of all of those, Ember has easily (easily!) the best-explained roadmap, most articulate leadership, and best development path. They are also aggressively adopting the best features of other frameworks wherever it makes sense.</p></li>
+<li><p>Angular is currently in flux, as Google has announced Angular 2.0 will be basically a completely different framework; there will be <em>no</em> direct migration path for Angular 1.x apps to Angular 2.0+. Total rewrite required.</p></li>
+<li><p>Ember uses a steady 6-week release schedule with very careful regression testing and semantic versioning, with clear deprecation notices and upgrade paths, and is therefore both rapidly iterating <em>and</em> relatively stable for use.</p></li>
+<li><p>If you just need a set of tools for enhance functionality on otherwise relatively static pages, Backbone+Underscore is a great combo. If you already have a bunch of things in place but want a dedicated view layer, React is good.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p></li>
+<li><p>If you’re writing a new, full-on web <em>application</em> (SPA, or organized in whatever other way), I think Ember is the very clear winner at this point. I have good confidence in their leadership and they’re firing on all cylinders.</p></li>
 </ul>
-<p>Regarding Angular, <a href="https://alpha.app.net/mikehoss">@mikehoss</a> <a href="https://alpha.app.net/mikehoss/post/57105656">posted</a>:</p>
+<p>Regarding Angular, <span class="citation" data-cites="mikehoss">[@mikehoss]</span><span class="citation" data-cites="mikehoss">[@mikehoss]</span> <a href="https://alpha.app.net/mikehoss/post/57105656">posted</a>:</p>
 <blockquote>
 <p>For the record they are doing that to make it more mobile-friendly. The Ang1 has abysmal performance on mobile. Besides a time machine, this maybe the best option. And Miško is a bit of a jerk.</p>
 </blockquote>
-<p>I can&rsquo;t speak to his comment about Miško (Miško Hevery, one of the leads on AngularJS), but I agree about Angular itself: the rewrite needs to happen. Angular 1.x is a mess&mdash;as are its docs. It’s just not a good time to be using 1.x for any new projects.</p>
-<p>I&rsquo;ll add to these points that I&rsquo;ve used Angular for the last 9 months on HolyBible.com development. As I noted: the documentation is pretty rough, and in a lot of cases you really do have to understand what the framework is doing and how before you can get it to do the things you want. This is, in one sense, exactly the <em>opposite</em> of what I&rsquo;m looking for in a framework&mdash;but it makes sense given Angular&rsquo;s goal of being a meta-framework.</p>
-<p>Rather like Git, though, which was originally going to be infrastructure for version control systems which would have their own interface, but eventually just had a &ldquo;good enough&rdquo; interface that we&rsquo;re all now stuck with, Angular is being used <em>as</em> a framework, not just as a <em>meta-framework</em>, and it&rsquo;s unsurprisingly not great for that.</p>
+<p>I can’t speak to his comment about Miško (Miško Hevery, one of the leads on AngularJS), but I agree about Angular itself: the rewrite needs to happen. Angular 1.x is a mess—as are its docs. It’s just not a good time to be using 1.x for any new projects.</p>
+<p>I’ll add to these points that I’ve used Angular for the last 9 months on HolyBible.com development. As I noted: the documentation is pretty rough, and in a lot of cases you really do have to understand what the framework is doing and how before you can get it to do the things you want. This is, in one sense, exactly the <em>opposite</em> of what I’m looking for in a framework—but it makes sense given Angular’s goal of being a meta-framework.</p>
+<p>Rather like Git, though, which was originally going to be infrastructure for version control systems which would have their own interface, but eventually just had a “good enough” interface that we’re all now stuck with, Angular is being used <em>as</em> a framework, not just as a <em>meta-framework</em>, and it’s unsurprisingly not great for that.</p>
 <hr />
-<p><i class="editorial">Take this for what it&rsquo;s worth: not the final word (by a long stretch) on JavaScript frameworks, but rather the perspective of one guy who notably <em>hasn&rsquo;t used all of the frameworks</em>, but has spent some time looking at them. Moreover, I haven&rsquo;t particularly edited this; it&rsquo;s more a summary in the kind of short-form posts that I originally created than a detailed analysis. The only things I&rsquo;ve done are expand some of the notes on Angular and React, and add the footnote on React.</i></p>
-<div class="footnote">
+<p><i class="editorial">Take this for what it’s worth: not the final word (by a long stretch) on JavaScript frameworks, but rather the perspective of one guy who notably <em>hasn’t used all of the frameworks</em>, but has spent some time looking at them. Moreover, I haven’t particularly edited this; it’s more a summary in the kind of short-form posts that I originally created than a detailed analysis. The only things I’ve done are expand some of the notes on Angular and React, and add the footnote on React.</i></p>
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn:react">
-<p>I <em>really</em> don&rsquo;t know a ton about React, but I do think a lot of what I do know about it is cool from a programming perspective. From a designer perspective, however, it&rsquo;s a bit of a pain: React&rsquo;s &ldquo;JSX&rdquo; domain-specific language is <em>much</em> less friendly to developers than standard HTML, and therefore than either Ember or Angular, both of which implement their templating via HTML templating languages. There&rsquo;s a substantil tradeoff there: React&rsquo;s model is interesting not only academically but in practice because of the performance results it produces. It&rsquo;s worth note, though, that others have recognized this and are adopting it to varying degrees; notably, Ember is incorporating the idea of minimizing changes to the DOM by keeping track of state and updating only differences, rather than refreshing the whole tree, in the new rendering engine (HTMLBars) they&rsquo;re rolling out over the past several and future several releases.&#160;<a class="footnote-backref" href="#fnref:react" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
+<li id="fn1"><p>I <em>really</em> don’t know a ton about React, but I do think a lot of what I do know about it is cool from a programming perspective. From a designer perspective, however, it’s a bit of a pain: React’s “JSX” domain-specific language is <em>much</em> less friendly to developers than standard HTML, and therefore than either Ember or Angular, both of which implement their templating via HTML templating languages. There’s a substantil tradeoff there: React’s model is interesting not only academically but in practice because of the performance results it produces. It’s worth note, though, that others have recognized this and are adopting it to varying degrees; notably, Ember is incorporating the idea of minimizing changes to the DOM by keeping track of state and updating only differences, rather than refreshing the whole tree, in the new rendering engine (HTMLBars) they’re rolling out over the past several and future several releases.<a href="#fnref1">↩</a></p></li>
 </ol>
-</div>        </div>
+</section>
+        </div>
     </div>
-    </article>
+</article>
 
 
     <footer id="site-footer"><section id="connect">
@@ -231,7 +204,7 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
     <script type="text/javascript">$.bigfoot();</script>
-        <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+         <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
         <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
     <script src="/assets/js/reftagger.js"></script>
 

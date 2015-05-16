@@ -22,8 +22,8 @@
     <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
     <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
 
-    <link href="http://www.chriskrycho.com/favicon.png" type="image/png" rel="icon" />
-    <link href="http://www.chriskrycho.com/favicon.ico" type="image/ico" rel="icon" />
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
 
 </head>
 <body>
@@ -50,7 +50,7 @@
     </header>
 
 
-<article >
+<article class="software-development tech">
 
     <header>
 <h1>Lessons Learned</h1>
@@ -63,119 +63,24 @@
 
         <div class="content">
 
-<p>Since mid July 2015, I have been working on a complete redesign and re-build of
-<a href="//holybible.com">HolyBible.com</a>. The good folks at <a href="//prts.edu">Puritan Reformed Theological Seminary</a> who
-own the site wanted to replace its previous content with a Bible reading tool.
-While there&rsquo;s still a lot to wrap up, the project is <em>nearing</em> its conclusion,
-and I thought I&rsquo;d note a few things I&rsquo;ve learned (in some cases, learned<em>again</em>) along the way. I want to say up front, lest these be taken the wrong
-way: I&rsquo;m extremely proud of the work I&rsquo;ve done, and the application I&rsquo;ve
-delivered <em>does</em> work to the specifications I was hired to meet. More than that,
-it does it well. But, of course, it could do it <em>better</em>. The following thoughts
-are therefore not, &ldquo;How I failed&rdquo; but rather &ldquo;How I will do this <em>even better</em>
-next time around.&rdquo;</p>
-<ol>
-<li>
-<p><em>Single page apps are great, but not always the right choice.</em> I made the
-    decision, based on my expectations and understandings of what I would need,
-    to develop the site as a single-page web application. This was a mistake.
-    Not the worst mistake ever: it has its upsides, including performance <em>once
-    the app spins up</em>, but for the kind of content I have here, I would take a
-    different tack today. Better in this case to deliver static content and
-    <em>update</em> it dynamically as appropriate than to try to load all the content
-    dynamically every time.</p>
-<p>At a technical level, that would probably mean supplementing standard HTML
-with <a href="//backbonejs.org">Backbone</a> instead of developing it as a single-page app in <a href="//angularjs.org">Angular</a>.
-For the backend, while I did it in Node.js and that would work fine, I&rsquo;d
-probably do a straight Django app (especially with a few of the goals I
-learned about <em>after</em> the project was well along in development).</p>
-</li>
-<li>
-<p><em>Progressive enhancement or graceful degradation are hard in web
-    applications, but they still matter.</em> In the past, I&rsquo;ve always taken a hard
-    line on making sure things either degrade gracefully or are simply enhanced
-    by JavaScript content. In the architecture decisions I made for this app, I
-    failed to take that into account (largely because I thought it would just
-    <em>need</em> to work as a web app, but see above). I regret that enormously at
-    this point; it would be much better in this particular case to have content
-    available even if the additional functionality doesn&rsquo;t work. Even if you
-    <em>are</em> doing something where you are building an <em>app</em>, finding ways to make
-    it work on poor connections, older browsers, etc. matters. I&rsquo;m still
-    thinking a <em>lot</em> about the best way to do this in the future.</p>
-</li>
-<li>
-<p><em>More popular doesn&rsquo;t mean better.</em> Angular has a ton of traction and
-    uptake, and that was deceptive early on. I won&rsquo;t so easily be fooled in the
-    future. Angular is so very popular in part because Google can put serious
-    money behind its development&mdash;and its marketing. But it&rsquo;s <em>not</em> the best
-    for many applications; if you&rsquo;re not in the business of developing your own
-    custom framework, it&rsquo;s not even <em>close</em> to the best. Use Ember or Knockout
-    or any number of other full-stack frameworks rather than a meta-framework.</p>
-<p>How to avoid making that mistake? Well, for my part since then, I&rsquo;ve learned
-to look not just as the <em>quantity</em> of material in a given community, but its
-<em>quality</em>. For example, <a href="//emberjs.com">Ember</a> has <em>incredible</em> documentation (far better
-than Angular&rsquo;s), and they also have a much clearer vision and a more
-dependable approach to development (strict semantic versioning, etc.). Had I
-taken the time to read <em>both</em> sets of docs more carefully and think through
-the consequences of their designs more thoroughly, I could have recognized
-this before starting. Next time, I will do just that.</p>
-<p>I will also look at the way the community behaves. The Ember community is
-<em>far</em> friendlier for newcomers from what I&rsquo;ve seen than the Angular
-community&mdash;no slam meant on the Angular crowd, but the Ember folks are just
-doing that really well. That matters, too. (I can&rsquo;t speak for other
-communities, of course; these are just the groups I&rsquo;ve watched the most.)</p>
-<p>All in all, Ember would have been the better fit between these two (even
-though, as noted above, it also wouldn&rsquo;t have been the <em>best</em> fit).</p>
-</li>
-<li>
-<p><em>Unit tests really are the best.</em> I did a vast majority of this project with
-    unit tests&mdash;the first time I&rsquo;ve ever been able to do that for a whole
-    project. In other projects, I&rsquo;ve been able to do it for parts, but never
-    this much. It saved my bacon a <em>lot</em>. Where I got in a hurry and felt like I
-    didn&rsquo;t have time to write the tests, I (inevitably and predictably!) ended
-    up spending a lot of time chasing down hard-to-isolate bugs&mdash;time I could
-    have avoided by writing well-tested (and therefore better-factored) code in
-    the first place. Lesson learned <em>very</em> thoroughly. Server- and client-side
-    unit tests are <em>really</em> good. They&rsquo;re also sometimes <em>hard</em>; getting mocks
-    set up correctly for dealing with databases, etc. can take a while. That
-    difficulty pays for itself, though.</p>
-</li>
-<li>
-<p><em>Unit tests <strong>really</strong> don&rsquo;t replace API documentation.</em> I have seen people
-    advocate test-driven-development as a way of obviating the need to do major
-    documentation of an API. This is, in a word, ridiculous. Having to read unit
-    tests if you want to remember how you structured an API call is a pain in
-    the neck. Don&rsquo;t believe it. Design your API and document it, <em>then</em> do
-    test-driven development against that contract.</p>
-</li>
-<li>
-<p><em>Sometimes &lsquo;good enough&rsquo; is enough.</em> There is always more to be done, and
-    inevitably you can see a thousand things that could be improved. But &lsquo;good&rsquo;
-    shipping code is far more valuable than &lsquo;perfect&rsquo; code that never ships. You
-    should never ship <em>bad</em> code, but sometimes you do have to recognize &lsquo;good
-    enough&rsquo; and push it out the door.</p>
-</li>
-<li>
-<p><em>Full-stack development is fun, but it&rsquo;s also really hard.</em> I wrote every
-    scrap of code in HolyBible.com proper (though of course it relies on a lot
-    of third-party code). It was very, very difficult to manage that all by
-    myself; it&rsquo;s a lot to hold in one&rsquo;s head. (One of the reasons I chose Node
-    was because keeping my implementation and testing all in one language helped
-    reduce that load somewhat.) Would I do it again? Sure. But very much
-    chastened about the difficulties involved. It has been enormously rewarding,
-    and I <em>like</em> being a full-stack developer. But it&rsquo;s a lot of work, and now I
-    know more clearly just how much.</p>
-</li>
+<p>Since mid July 2015, I have been working on a complete redesign and re-build of <a href="//holybible.com">HolyBible.com</a>. The good folks at <a href="//prts.edu">Puritan Reformed Theological Seminary</a> who own the site wanted to replace its previous content with a Bible reading tool. While there’s still a lot to wrap up, the project is <em>nearing</em> its conclusion, and I thought I’d note a few things I’ve learned (in some cases, learned <em>again</em>) along the way. I want to say up front, lest these be taken the wrong way: I’m extremely proud of the work I’ve done, and the application I’ve delivered <em>does</em> work to the specifications I was hired to meet. More than that, it does it well. But, of course, it could do it <em>better</em>. The following thoughts are therefore not, “How I failed” but rather “How I will do this <em>even better</em> next time around.”</p>
+<ol type="1">
+<li><p><em>Single page apps are great, but not always the right choice.</em> I made the decision, based on my expectations and understandings of what I would need, to develop the site as a single-page web application. This was a mistake. Not the worst mistake ever: it has its upsides, including performance <em>once the app spins up</em>, but for the kind of content I have here, I would take a different tack today. Better in this case to deliver static content and <em>update</em> it dynamically as appropriate than to try to load all the content dynamically every time.</p>
+<p>At a technical level, that would probably mean supplementing standard HTML with <a href="//backbonejs.org">Backbone</a> instead of developing it as a single-page app in <a href="//angularjs.org">Angular</a>. For the backend, while I did it in Node.js and that would work fine, I’d probably do a straight Django app (especially with a few of the goals I learned about <em>after</em> the project was well along in development).</p></li>
+<li><p><em>Progressive enhancement or graceful degradation are hard in web applications, but they still matter.</em> In the past, I’ve always taken a hard line on making sure things either degrade gracefully or are simply enhanced by JavaScript content. In the architecture decisions I made for this app, I failed to take that into account (largely because I thought it would just <em>need</em> to work as a web app, but see above). I regret that enormously at this point; it would be much better in this particular case to have content available even if the additional functionality doesn’t work. Even if you <em>are</em> doing something where you are building an <em>app</em>, finding ways to make it work on poor connections, older browsers, etc. matters. I’m still thinking a <em>lot</em> about the best way to do this in the future.</p></li>
+<li><p><em>More popular doesn’t mean better.</em> Angular has a ton of traction and uptake, and that was deceptive early on. I won’t so easily be fooled in the future. Angular is so very popular in part because Google can put serious money behind its development—and its marketing. But it’s <em>not</em> the best for many applications; if you’re not in the business of developing your own custom framework, it’s not even <em>close</em> to the best. Use Ember or Knockout or any number of other full-stack frameworks rather than a meta-framework.</p>
+<p>How to avoid making that mistake? Well, for my part since then, I’ve learned to look not just as the <em>quantity</em> of material in a given community, but its <em>quality</em>. For example, <a href="//emberjs.com">Ember</a> has <em>incredible</em> documentation (far better than Angular’s), and they also have a much clearer vision and a more dependable approach to development (strict semantic versioning, etc.). Had I taken the time to read <em>both</em> sets of docs more carefully and think through the consequences of their designs more thoroughly, I could have recognized this before starting. Next time, I will do just that.</p>
+<p>I will also look at the way the community behaves. The Ember community is <em>far</em> friendlier for newcomers from what I’ve seen than the Angular community—no slam meant on the Angular crowd, but the Ember folks are just doing that really well. That matters, too. (I can’t speak for other communities, of course; these are just the groups I’ve watched the most.)</p>
+<p>All in all, Ember would have been the better fit between these two (even though, as noted above, it also wouldn’t have been the <em>best</em> fit).</p></li>
+<li><p><em>Unit tests really are the best.</em> I did a vast majority of this project with unit tests—the first time I’ve ever been able to do that for a whole project. In other projects, I’ve been able to do it for parts, but never this much. It saved my bacon a <em>lot</em>. Where I got in a hurry and felt like I didn’t have time to write the tests, I (inevitably and predictably!) ended up spending a lot of time chasing down hard-to-isolate bugs—time I could have avoided by writing well-tested (and therefore better-factored) code in the first place. Lesson learned <em>very</em> thoroughly. Server- and client-side unit tests are <em>really</em> good. They’re also sometimes <em>hard</em>; getting mocks set up correctly for dealing with databases, etc. can take a while. That difficulty pays for itself, though.</p></li>
+<li><p><em>Unit tests <strong>really</strong> don’t replace API documentation.</em> I have seen people advocate test-driven-development as a way of obviating the need to do major documentation of an API. This is, in a word, ridiculous. Having to read unit tests if you want to remember how you structured an API call is a pain in the neck. Don’t believe it. Design your API and document it, <em>then</em> do test-driven development against that contract.</p></li>
+<li><p><em>Sometimes ‘good enough’ is enough.</em> There is always more to be done, and inevitably you can see a thousand things that could be improved. But ‘good’ shipping code is far more valuable than ‘perfect’ code that never ships. You should never ship <em>bad</em> code, but sometimes you do have to recognize ‘good enough’ and push it out the door.</p></li>
+<li><p><em>Full-stack development is fun, but it’s also really hard.</em> I wrote every scrap of code in HolyBible.com proper (though of course it relies on a lot of third-party code). It was very, very difficult to manage that all by myself; it’s a lot to hold in one’s head. (One of the reasons I chose Node was because keeping my implementation and testing all in one language helped reduce that load somewhat.) Would I do it again? Sure. But very much chastened about the difficulties involved. It has been enormously rewarding, and I <em>like</em> being a full-stack developer. But it’s a lot of work, and now I know more clearly just how much.</p></li>
 </ol>
-<p>I could say a great deal more about the technical side of things especially, but
-my biggest takeaway here is that a lot of the hardest and most important work in
-developing software has nothing to do with the code itself. Architecture and
-approach shape <em>far</em> more than the implementation details (even if those details
-still matter an awful lot). And popularity is not at all the same as either
-<em>quality</em> or (especially) <em>suitability for a given task</em>. In the future, I will
-be better equipped for the necessary kinds of evaluation, and will hopefully
-make still better decisions accordingly.</p>        </div>
+<p>I could say a great deal more about the technical side of things especially, but my biggest takeaway here is that a lot of the hardest and most important work in developing software has nothing to do with the code itself. Architecture and approach shape <em>far</em> more than the implementation details (even if those details still matter an awful lot). And popularity is not at all the same as either <em>quality</em> or (especially) <em>suitability for a given task</em>. In the future, I will be better equipped for the necessary kinds of evaluation, and will hopefully make still better decisions accordingly.</p>
+        </div>
     </div>
-    </article>
+</article>
 
 
     <footer id="site-footer"><section id="connect">
@@ -282,7 +187,7 @@ make still better decisions accordingly.</p>        </div>
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
     <script type="text/javascript">$.bigfoot();</script>
-        <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+         <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
         <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
     <script src="/assets/js/reftagger.js"></script>
 

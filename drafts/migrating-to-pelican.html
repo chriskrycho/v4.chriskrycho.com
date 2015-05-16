@@ -22,8 +22,8 @@
     <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
     <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
 
-    <link href="http://www.chriskrycho.com/favicon.png" type="image/png" rel="icon" />
-    <link href="http://www.chriskrycho.com/favicon.ico" type="image/ico" rel="icon" />
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
 
 </head>
 <body>
@@ -50,7 +50,7 @@
     </header>
 
 
-<article >
+<article class="blog">
 
     <header>
 <h1>Migrating to Pelican</h1>
@@ -63,34 +63,16 @@
 
         <div class="content">
 
-<p>I&rsquo;ve been wanting to migrate to a static site generator for a while. I like flat
-text files&mdash;that&rsquo;s where I do all my writing&mdash;and I have increasingly hated
-WordPress. Though it is getting <em>prettier</em>, WordPress is not actually
-functionally improving for the ordinary blogger right now.
-<a href="http://ghost.org">Ghost</a> looks super cool, but it doesn&rsquo;t give me the benefit
-of flat files. So I started building <a href="http://step-stool.io">my own</a>. However,
-life is busy and I haven&rsquo;t had time to finish it just yet, so I am temporarily
-moving to <a href="http://docs.getpelican.com">Pelican</a>. Here I am documenting the
-migration, both because I find it interesting and in the hopes that it may be
-valuable to others.</p>
+<p>I’ve been wanting to migrate to a static site generator for a while. I like flat text files—that’s where I do all my writing—and I have increasingly hated WordPress. Though it is getting <em>prettier</em>, WordPress is not actually functionally improving for the ordinary blogger right now. <a href="http://ghost.org">Ghost</a> looks super cool, but it doesn’t give me the benefit of flat files. So I started building <a href="http://step-stool.io">my own</a>. However, life is busy and I haven’t had time to finish it just yet, so I am temporarily moving to <a href="http://docs.getpelican.com">Pelican</a>. Here I am documenting the migration, both because I find it interesting and in the hopes that it may be valuable to others.</p>
 <h3 id="contents">Contents</h3>
-<div class="toc">
-<ul>
-<li><a href="#contents">Contents</a></li>
-<li><a href="#dealing-with-my-old-site">Dealing With My Old Site</a><ul>
-<li><a href="#the-options">The Options</a></li>
-<li><a href="#what-i-did">What I Did</a></li>
-</ul>
-</li>
-<li><a href="#setting-up-pelican">Setting Up Pelican</a></li>
-</ul>
-</div>
+<p>[TOC]</p>
 <h2 id="dealing-with-my-old-site">Dealing With My Old Site</h2>
 <h3 id="the-options">The Options</h3>
 <h3 id="what-i-did">What I Did</h3>
-<h2 id="setting-up-pelican">Setting Up Pelican</h2>        </div>
+<h2 id="setting-up-pelican">Setting Up Pelican</h2>
+        </div>
     </div>
-    </article>
+</article>
 
 
     <footer id="site-footer"><section id="connect">
@@ -197,6 +179,8 @@ valuable to others.</p>
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
     <script type="text/javascript">$.bigfoot();</script>
+         <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
     <script src="/assets/js/reftagger.js"></script>
 
     <script>
