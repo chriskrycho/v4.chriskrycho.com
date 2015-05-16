@@ -332,6 +332,8 @@ body {
     #site-subtitle {
         margin-left: $fs4;
         display: block;
+        line-height: 1.1;
+        text-indent: -0.25em;
         font: {
             family: $serif;
             style: italic;
@@ -501,6 +503,8 @@ article {
         }
     }
 
+    &.poetry p { text-indent: 0; }
+
     .meta {
         color: $light_gray;
         padding-bottom: $fsp_abs;
@@ -553,6 +557,10 @@ article {
         padding-bottom: $fsp;
 
         + hr { margin-top: 1.4em; }
+
+        ul, ol {
+            padding-top: 0;
+        }
     }
 
     .footnote { font-size: $fs_small; }

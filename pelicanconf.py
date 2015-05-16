@@ -95,11 +95,9 @@ DEFAULT_ORPHANS = 2
 # Path configuration
 STATIC_PATHS = ['images',
                 'downloads',
+                'extra',
                 'talks/lib',
-                'talks/bibletech2015'
-                'extra/CNAME',
-                'extra/.htaccess',
-                'extra/favicon.png']
+                'talks/bibletech2015']
 STATIC_EXCLUDE_SOURCES = False
 PAGE_EXCLUDES = ['talks/bibletech2015']
 ARTICLE_EXCLUDES = ['talks/bibletech2015']

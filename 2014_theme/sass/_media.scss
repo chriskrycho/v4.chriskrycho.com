@@ -86,6 +86,11 @@
 }
 
 @media only screen and (max-width: 680px) and (min-width: 520px) {
+    #site-subtitle {
+        line-height: 1;
+        text-indent: 0;
+    }
+
     #site-footer ul.inline li.section-title {
         width: 15.3%;
     }
