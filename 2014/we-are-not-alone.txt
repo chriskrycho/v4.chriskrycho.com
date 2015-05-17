@@ -13,16 +13,16 @@ had the same feeling I did. "And then what happened?"
 This Psalm of Asaph is one of those laments that does not hesitate to ask hard
 questions of God.
 
->     I cry aloud to God,
->         aloud to God, and he will hear me.
->     In the day of my trouble I seek the Lord;
->         in the night my hand is stretched out without wearying;
->         my soul refuses to be comforted.
->     When I remember God, I moan;
->         when I meditate, my spirit faints. Selah
->     
->     You hold my eyelids open;
->         I am so troubled that I cannot speak.
+> | I cry aloud to God,
+> |     aloud to God, and he will hear me.
+> | In the day of my trouble I seek the Lord;
+> |     in the night my hand is stretched out without wearying;
+> |     my soul refuses to be comforted.
+> | When I remember God, I moan;
+> |     when I meditate, my spirit faints. Selah
+> | 
+> | You hold my eyelids open;
+> |     I am so troubled that I cannot speak.
 > 
 > (Psalm 77:1--4 ESV)
 
@@ -35,10 +35,10 @@ nations---stumble and falter. We long for things to be set right, and they have
 But Asaph looks to God anyway. The rest of the Psalm turns and faces the
 character and history of God. It asks the hard questions:
 
->     Has his steadfast love forever ceased?
->         Are his promises at an end for all time?
->     Has God forgotten to be gracious?
->         Has he in anger shut up his compassion?"
+> |  Has his steadfast love forever ceased?
+> |      Are his promises at an end for all time?
+> |  Has God forgotten to be gracious?
+> |      Has he in anger shut up his compassion?"
 > (Psalm 77:8--9, ESV)
 
 Asaph's answer is straightforward: "I will remember the deeds of Yahweh" (v.

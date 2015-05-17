@@ -18,12 +18,12 @@ the morning" (Psalm 30:5).
 Then David tells us how he got there. I cannot do better in summing up the third
 stanza than simply quoting it:
 
->     As for me, I said in my prosperity,
->         "I shall never be moved."
->     By your favor, O <span class='smcp'>Lord</span>,
->         you made my mountain stand strong;
->     you hid your face;
->         I was dismayed.
+> | As for me, I said in my prosperity,
+> |     "I shall never be moved."
+> | By your favor, O <span class='smcp'>Lord</span>,
+> |     you made my mountain stand strong;
+> | you hid your face;
+> |     I was dismayed.
 
 This is one of the most basic human follies. As God cares for us and provides
 for us, we take credit for it ourselves. But it was *Yahweh* who made David's
@@ -58,8 +58,8 @@ death of lament ("mourning" and "sackloth") to ritual life ("dancing" and
 took him down this road in the first place. He recognizes that Yahweh had
 restored him for a reason:
 
->     that my glory may sing your praise and be not silent,
->         O <span class=smcp>Lord</span> my God, I will give thanks to you forever!
+> | that my glory may sing your praise and be not silent,
+> |     O <span class=smcp>Lord</span> my God, I will give thanks to you forever!
 
 His "glory"---his mountain standing strong---was not for his own pleasure, but
 for the honor of the one who made him stand strong.
