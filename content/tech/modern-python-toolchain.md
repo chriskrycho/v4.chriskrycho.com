@@ -243,16 +243,33 @@ at all.
 
 
 
-[^caveats]: All the usual caveats apply, of course: this may or may not work well for you; it's just what works for me, and I make no claim or warranty on the tools below---they're working well for *me*, but I don't maintain them, so if they break, please tell the people who maintain them! Also, because I do nearly all my development on a Mac (I test on Windows, but that's it), the following is necessarily *fairly* specific to OS X. You can readily adapt most of it to Linux, though, or even to a [Cygwin] install on Windows---I do just that when I have cause. But my main tool is a Mac, so that's what I've specialized for.
+[^caveats]: All the usual caveats apply, of course: this may or may not work
+    well for you; it's just what works for me, and I make no claim or warranty
+    on the tools below---they're working well for *me*, but I don't maintain
+    them, so if they break, please tell the people who maintain them! Also,
+    because I do nearly all my development on a Mac (I test on Windows, but
+    that's it), the following is necessarily *fairly* specific to OS X. You can
+    readily adapt most of it to Linux, though, or even to a [Cygwin] install on
+    Windows---I do just that when I have cause. But my main tool is a Mac, so
+    that's what I've specialized for.
 
 [Cygwin]: https://www.cygwin.com
 
 [^py3]: Lucky me, I know!
 
-[^pkg]: Yes, I know that those are wrappers around Debian and Arch, and I know about *apt-get* and *rpm*. No, that information isn't especially relevant for the rest of this post.
+[^pkg]: Yes, I know that those are wrappers around Debian and Arch, and I know
+    about *apt-get* and *rpm*. No, that information isn't especially relevant
+    for the rest of this post.
 
-[^finicky]: For example, if you upgrade your Python installation using homebrew and then cleanup the old version (`brew update && brew upgrade && brew cleanup`)---say, from 3.4.2 to 3.4.3---and you have virtual environments which dependeed on 3.4.2... well, you're in a bad spot now. A *very* bad spot. Have fun getting back to a working state!
+[^finicky]: For example, if you upgrade your Python installation using homebrew 
+    and then cleanup the old version (e.g., by running the typical
+    `brew update && brew upgrade && brew cleanup` sequence)---say, from 3.4.2 to
+    3.4.3---and you have virtual environments which dependeed on 3.4.2... well, 
+    you're in a bad spot now. A *very* bad spot. Have fun getting back to a
+    working state!
 
-[^profile]: You can of course drop it directly in `.zshrc` or `.bash_profile` or wherever else. [My setup] puts all common handling in `.profile` and runs `source .profile` as the first action in any other shell configurations.
+[^profile]: You can of course drop it directly in `.zshrc` or `.bash_profile` or
+    wherever else. [My setup] puts all common handling in `.profile` and runs 
+    `source .profile` as the first action in any other shell configurations.
 
 [My setup]: //github.com/chriskrycho/profile
