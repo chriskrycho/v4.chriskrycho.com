@@ -208,7 +208,14 @@ $ cd path/to/my/project
 $ pyenv local my-project
 ```
 
-The `.python-version` file will contain `my-project`. The Python version will be 2.7.9. The environment will be isolated, just as if you had run `pyvenv` to set up a virtual environment. Everything works together beautifully! Moreover, you can easily reuse virtual environments this way, because you can set the `local` value in more than one place. For example, I use the same virtual environment, for this site and [Winning Slowly], because they have slightly different site configurations but all the same Python dependencies. Creating it was simple (I actually installed 3.4.3 earlier, but include it here for clarity):
+The `.python-version` file will contain `my-project`. The Python version will be
+2.7.9. The environment will be isolated, just as if you had run `pyvenv` to set
+up a virtual environment. Everything works together beautifully! Moreover, you
+can easily reuse virtual environments this way, because you can set the `local`
+value in more than one place. For example, I use the same virtual environment,
+for this site and [Winning Slowly], because they have slightly different site
+configurations but all the same Python dependencies. Creating it was simple (I
+actually installed 3.4.3 earlier, but include it here for clarity):
 
 ```shell
 $ pyenv install 3.4.3
@@ -219,7 +226,8 @@ $ cd ~/Sites/winningslowly.org
 $ pyenv local pelican
 ```
 
-[Winning Slowly]: //www.winningslowly.org/ "A podcast: taking the long view on technology, religion, ethics, and art."
+[Winning Slowly]: //www.winningslowly.org/ 
+    "A podcast: taking the long view on technology, religion, ethics, and art."
 
 I named the virtual environment after [the tool I use to generate the 
 sites][pelican], and reused it in both sites. Both now have a `.python-version` 
