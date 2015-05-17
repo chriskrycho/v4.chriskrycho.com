@@ -84,12 +84,12 @@ to manage your installations. *pyenv* is a dedicated tool for managing your
 *homebrew* installed, your setup process to add the latest version of Python
 might look something like this:
 
-[*pyenv*]: https://github.com/yyuu/pyenv-virtualenv
+[*pyenv*]: https://github.com/yyuu/pyenv
 
 ```shell
 $ brew install pyenv
 $ echo 'eval "$(pyenv init -)"' >> ~.profile
-$ source ~/.zshrc
+$ source ~/.profile
 $ pyenv install 3.4.3
 ```
 
@@ -184,7 +184,9 @@ environments yet, start now!
 I know, the similarity of names for *pyenv* and *pyvenv* is unfortunate. If it
 helps, you can call the latter as `venv` rather than `pyvenv`. But, more
 importantly, one of the areas *pyenv* is much better than *homebrew* is its
-support for managing virtual environments. Install *pyenv-virtualenv*:
+support for managing virtual environments. Install [*pyenv-virtualenv*]:
+
+[*pyenv-virtualenv*]: https://github.com/yyuu/pyenv-virtualenv
 
 ```shell
 $ brew install pyenv-virtualenv
@@ -192,30 +194,31 @@ $ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.profile
 ```
 
 Now you're off to the races: you'll never have to type 
-`pyvenv <path to a virtual environment`, because instead you can just type 
-`pyenv <version> <name>` and *pyenv* will take care of setting it up for you. 
-Even better: all the nice tricks I listed above about setting directory-specific
-and global preferences for which Python version to use work equally well with
-virtual environments managed via *pyenv*. In other words, you can do something
-like this:
+`pyvenv <path to a virtual environment>`, because instead you can just type 
+`pyenv virtualenv <version> <name>` and *pyenv* will take care of setting it up
+for you. Even better: all the nice tricks I listed above about setting
+directory-specific and global preferences for which Python version to use work
+equally well with virtual environments managed via *pyenv*. In other words, you
+can do something like this:
 
 ```shell
 $ pyenv install 2.7.9
 $ pyenv install 3.4.3
 $ pyenv global 3.4.3
-$ pyenv virtualenv 2.7.9 my-project
+$ pyenv virtualenv 2.7.9 my-virtual-environment
 $ cd path/to/my/project
-$ pyenv local my-project
+$ pyenv local my-virtual-environment
 ```
 
-The `.python-version` file will contain `my-project`. The Python version will be
-2.7.9. The environment will be isolated, just as if you had run `pyvenv` to set
-up a virtual environment. Everything works together beautifully! Moreover, you
-can easily reuse virtual environments this way, because you can set the `local`
-value in more than one place. For example, I use the same virtual environment,
-for this site and [Winning Slowly], because they have slightly different site
-configurations but all the same Python dependencies. Creating it was simple (I
-actually installed 3.4.3 earlier, but include it here for clarity):
+The `.python-version` file will contain `my-virtual-environment`. The Python
+version will be 2.7.9. The environment will be isolated, just as if you had run
+`pyvenv` to set up a virtual environment. Everything works together beautifully!
+Moreover, you can easily reuse virtual environments this way, because you can
+set the `local` value in more than one place. For example, I use the same
+virtual environment for this site and [Winning Slowly], because they have
+slightly different site configurations but all the same Python dependencies.
+Creating it was simple (I actually installed 3.4.3 earlier, but include it here
+for clarity):
 
 ```shell
 $ pyenv install 3.4.3
@@ -272,7 +275,7 @@ at all.
 [^finicky]: For example, if you upgrade your Python installation using homebrew 
     and then cleanup the old version (e.g., by running the typical
     `brew update && brew upgrade && brew cleanup` sequence)---say, from 3.4.2 to
-    3.4.3---and you have virtual environments which dependeed on 3.4.2... well, 
+    3.4.3---and you have virtual environments which depended on 3.4.2... well, 
     you're in a bad spot now. A *very* bad spot. Have fun getting back to a
     working state!
 
