@@ -1,3 +1,4 @@
+---
 Title: The Life and Death of Words
 Slug: life-and-death-of-words
 Date: 2014-01-18 22:55
@@ -6,6 +7,7 @@ Category: theology
 Tags: devotions
 Passages: 2 Chronicles 17–22, Psalm 18, Proverbs 18
 Template: formats/devotions
+...
 
 It is no exaggeration to say that I have spent more time thinking on the words
 Proverbs assigns to warning fools about the quantity of their speech than to
@@ -14,8 +16,8 @@ most significant and ongoing is a tendency to be quick to speak and slow to hear
 (and yes, quick to become angry)---to invert the order commended by James in the
 New Testament. This is no small thing.
 
->     Death and life are in the power of the tongue,  
->         and those who love it will eat its fruits. (Proverbs 18:21)
+> | Death and life are in the power of the tongue,  
+> |     and those who love it will eat its fruits. (Proverbs 18:21)
 
 Though I have sometimes heard this verse misused (as though to suggest a
 mystical power in our speech---a view for which I think there is no warrant),
@@ -34,16 +36,18 @@ The words one chooses to use---the words *I* choose to use---can build others up
 or cut them down. They can encourage, or they can wound. They can bring life or
 death.
 
->     A fool takes no pleasure in understanding,  
->         but only in expressing his opinion.  
->     
->     A fool's lips walk into a fight,  
->         and his mouth invites a beating.  
->     A fool's mouth is his ruin,  
->         and his lips are a snare to his soul.  
->       
->     If one gives an answer before he hears,  
->         it is his folly and shame. (Proverbs 18:2, 6--7, 13)
+> | A fool takes no pleasure in understanding,
+> |     but only in expressing his opinion.
+> | 
+> | A fool's lips walk into a fight,
+> |     and his mouth invites a beating.
+> | A fool's mouth is his ruin,
+> |     and his lips are a snare to his soul.
+> |   
+> | If one gives an answer before he hears,
+> |     it is his folly and shame.
+> 
+> (Proverbs 18:2, 6--7, 13)
 
 It is a bit painful to think how often I have been a fool in these terms. It is
 a caution to me in writing these very posts. Yes, it is good to take time to

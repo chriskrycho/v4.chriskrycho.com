@@ -1,3 +1,4 @@
+---
 Title: Invest!—Memorizing Scripture
 Date: 2014-01-19 23:05
 Author: Chris Krycho
@@ -5,6 +6,7 @@ Category: theology
 Tags: devotions
 Passages: Colossians 1:1–12
 Template: formats/devotions
+...
 
 Tonight, I am pausing from my normal discussion of the passages I've been
 reading, to discuss instead how Jaimie and I have begun memorizing Scripture
@@ -72,15 +74,15 @@ and be reviewing it.
 
 The basic system itself is simple:
 
-- Pick a book. (Start short. Dr. Davis recommends Ephesians, and I certainly
-  wouldn't go longer than that.)
-- Day 1: read 1:1 ten times out loud, then repeat it ten times from memory.
-- Day 2: repeat 1:1 ten times from memory, checking the text if you need to.
-  Once you finish that, read 1:2 ten times out loud, and then repeat it ten
-  times from meory.
-- Days 3 and following: repeat all previously memorized verses once from memory.
-  Then repeat the previous day's verse 10 times from memory. Then read the next
-  verse ten times out loud, and then repeat it ten times from memory.
+  - Pick a book. (Start short. Dr. Davis recommends Ephesians, and I certainly
+    wouldn't go longer than that.)
+  - Day 1: read 1:1 ten times out loud, then repeat it ten times from memory.
+  - Day 2: repeat 1:1 ten times from memory, checking the text if you need to.
+    Once you finish that, read 1:2 ten times out loud, and then repeat it ten
+    times from meory.
+  - Days 3 and following: repeat all previously memorized verses once from
+    memory. Then repeat the previous day's verse 10 times from memory. Then read
+    the next verse ten times out loud, and then repeat it ten times from memory.
 
 This way, one always reviews previous material in the book, but without it
 taking overly long. For example, on day 6, one would review 1:1--5 from memory,
@@ -100,13 +102,13 @@ books one has already learned. I commend this approach to you, even as I urge
 you strongly to consider making Scripture memory a regular spiritual discipline.
 
 [^memorization-confession]: We actually tried starting this in the fall. It
-didn't work out so well. Keep reading.
+    didn't work out so well. Keep reading.
 
 [^value]: If you are not persuaded, I am not here going to make a full attempt
-to persuade you. Suffice it to say that I find it enormously helpful to have
-God's revelation stored up in my mind---I find that the Holy Spirit often uses
-it to convict me or encourage me throughout the day, and that it is incredibly
-valuable in interacting with others, whether building up fellow believers or
-speaking with those who do not believe.
+    to persuade you. Suffice it to say that I find it enormously helpful to have
+    God's revelation stored up in my mind---I find that the Holy Spirit often
+    uses it to convict me or encourage me throughout the day, and that it is
+    incredibly valuable in interacting with others, whether building up fellow
+    believers or speaking with those who do not believe.
 
 [booklet]: http://www.fbcdurham.org/wp-content/uploads/2012/05/Scripture-Memory-Booklet-for-Publication-Website-Layout.pdf

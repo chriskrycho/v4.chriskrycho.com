@@ -18,8 +18,8 @@ affections[^affections] to honor him.
 As I read Psalm 8, I was wondering, "Okay, how does this lead me to worship?"
 Echoing the psalm is a good start, of course, as it opens and closes:
 
-> Oh Yahweh, our Lord,  
-> how majestic is your name in all the earth!
+> | Oh Yahweh, our Lord,
+> |     how majestic is your name in all the earth!
 
 But the rest of the psalm is a meditation not only on Yahweh's majesty, but on
 the people he made. This is an interesting turn, and it caught me off guard as I
@@ -31,10 +31,10 @@ The whole poem turns back and forth between the God who made the heavens, who
 set his glory above them, and the people he made. The contrast is striking, and
 the more so because of the wonderful turns of phrase.
 
-> When I look at your heavens, the work of your fingers,  
-> the moon and the stars, which you have set in place,  
-> what is man that you are mindful of him,  
-> and the son of man that you care for him?
+> | When I look at your heavens, the work of your fingers,  
+> |         the moon and the stars, which you have set in place,  
+> |     what is man that you are mindful of him,  
+> |         and the son of man that you care for him?
 
 Now, I can sum up the point David is making here. One could say simply, "Humans
 are small compared to the universe, so it is surprising that God would pay
