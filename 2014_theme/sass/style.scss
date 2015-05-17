@@ -516,7 +516,11 @@ article {
         }
     }
 
-    &.poetry p { text-indent: 0; }
+    &.poetry {
+        p { text-indent: 0; }
+
+        hr + p { &::first-letter { @include first-letter-reset(); } }
+    }
 
     .meta {
         color: $light_gray;
