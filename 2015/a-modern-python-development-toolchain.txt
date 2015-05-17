@@ -36,10 +36,12 @@ The main tools I use are: a good text editor (I like all of [Sublime Text],
 [Atom], [TextMate], and [Chocolat]; each has its own strengths and weaknesses)
 or sometimes [a full IDE], version control software (I appreciate and use both
 [Git] and [Mercurial]), and three dedicated tools to which the rest of this post
-is devoted: *pyenv*, *pip*, and virtual environments. Everyone is going to have
-their own preferences for version control tools and an editor; but the
-recommendations I make below should be fairly standard for anyone doing Python
-development on a Unix-like system in 2015.
+is devoted: *pyenv*, *pip*, and virtual environments.
+
+Everyone is going to have their own preferences for version control tools and an
+editor; but the recommendations I make regarding Python installations, package
+management, and workspaces/virtual environemtns should be fairly standard for
+anyone doing Python development on a Unix-like system in 2015.
 
 [Sublime Text]: //www.sublimetext.com
 [Atom]: //atom.io
@@ -103,11 +105,11 @@ Now you have a full version of Python 3.4.3 alongside the system install of
 Python 2.7.6. If you wanted to install 2.7.9, or 2.2.3, or the development
 version of PyPy3, you could easily do that as well.
 
-In addition, *pyenv* lets you specify which version to use globally (`pyenv
-global <name>`) and which version to use in a given directory structure (`pyenv
-local <name>`). So if you prefer to use Python 3 in general, but need to use
-Python 2 on one project, you can just navigate to the root of that project and
-set it:
+In addition, *pyenv* lets you specify which version to use globally 
+(`pyenv global <name>`) and which version to use in a given directory structure
+(`pyenv local <name>`). So if you prefer to use Python 3 in general, but need to
+use Python 2 on one project, you can just navigate to the root of that project 
+and set it:
 
 ```shell
 $ pyenv global 3.4.3
@@ -117,11 +119,11 @@ $ pyenv local 2.7.9
 
 This will create a simple plain text file, `.python-version`, whose contents
 will be just `2.7.9`---but for everything under `path/to/my/project`, typing
-`python` will launch Python 2.7.9, not any other version, while typing it
-*outside* that folder will launch Python 3.4.3. (If you want, you can just
-create the `.python-version` file yourself manually and give it the name of a
-version. There's nothing special about it all; it's just the place `pyenv` looks
-to know which Python version to use.)
+`python` will launch Python 2.7.9, while typing it *outside* that folder will
+launch Python 3.4.3. (If you want, you can just create the `.python-version`
+file yourself manually and give it the name of a version. There's nothing
+special about it all; it's just the place `pyenv` looks to know which Python
+version to use.)
 
 Managing Python Packages
 ------------------------
@@ -132,31 +134,31 @@ There are four basic approaches to managing Python packages:
   - using *easy_install*
   - using *pip*
 
-The vast majority of the time, *right* choice is using *pip*. This doesn't need
-a lot of time, I think, since *pip* has become the default install tool for
-Python packages and now ships natively with it on every platform. Suffice it to
-say: if you need to install a package, do not install it not with *homebrew* (or
-*aptitude* or *yum*). Install it with *pip*. It integrates with Python better,
-it always has access both to the latest versions of Python packages (including
-those only available in e.g. development repositories on GitHub or Bitbucket or
-wherever else) and to all previously released versions, and it's the community's
-main tool for the job.
+The vast majority of the time, the right choice is using *pip*. Over the last
+few years, *pip* has become the default install tool for Python packages and it
+now ships natively with it on every platform. Suffice it to say: if you need to
+install a package, do not install it not with *homebrew* (or *aptitude* or
+*yum*). Install it with *pip*. It integrates with Python better, it always has
+access both to the latest versions of Python packages (including those only
+available in e.g. development repositories on GitHub or Bitbucket or wherever
+else) and to all previously released versions, and it's the community's main
+tool for the job.
 
-As a rule, prefer `pip install numpy` over `brew install numpy` or downloading
-the NumPy source and building it from scratch!. That said, occasionally it makes
-sense to install packages manually by downloading them and running `python
-setup.py install` or to use a system-level package manager. (Given *pip*'s
-ability to do everything *easy_install* does, and quite a few more as well there
-really isn't a time to take that path.) Using the language-supplied tools keeps
-everything playing nicely together. Perhaps just as importantly, it is the only
-way to make sure everything behaves the way it should when you start using...
+That said, occasionally it makes sense to install packages manually by
+downloading them and running `python setup.py install` or to use a system-level
+package manager. On the other hand, given *pip*'s ability to do everything
+*easy_install* does, and its ability to do quite a few more things as well,
+there really isn't a time to use *easy_install*. Using the language-supplied
+tools keeps everything playing nicely together. Perhaps just as importantly, it
+is the only way to make sure everything behaves the way it should when you start
+using...
 
 Virtual Environments
 --------------------
 When working with a variety of different clients, or simply on different
-projects, it is common not only to end up with different versions of Python, but
-also with different sets of packages---or, tricker still different versions of
-the same package!---required for different projects. Virtual environments
+projects, it is common not only to end up with different versions of Python but
+also with different sets of packages or---tricker still!---different versions of
+the same package required for different projects. Virtual environments
 provide a solution: they reuse the main Python executable (by creating links on
 the file system to it), but create isolated "workspaces" for the various
 packages you might install.
@@ -164,7 +166,7 @@ packages you might install.
 That way, in one workspace, you might have version 1.2 of a package installed,
 and in another you might have version 3.3 installed---because those are the
 required dependencies for something *else* you're doing. This isn't a
-hypothetical situation; for quite a while at one place I contract, we had pinned
+hypothetical situation. For quite a while with one of my clients, we had pinned
 a particular version of the Python documentation package we use because it broke
 our use case after an update---but I still wanted to have the latest version of
 that tool in my *other* projects. Setting up virtual environments neatly solves
@@ -220,13 +222,12 @@ Moreover, you can easily reuse virtual environments this way, because you can
 set the `local` value in more than one place. For example, I use the same
 virtual environment for this site and [Winning Slowly], because they have
 slightly different site configurations but all the same Python dependencies.
-Creating it was simple (I actually installed 3.4.3 earlier, but include it here
-for clarity):
+Creating it was simple:
 
 ```shell
 $ pyenv install 3.4.3
 $ pyenv virtualenv 3.4.3 pelican
-$ cd ~/Sites/chriskrycho.com/current
+$ cd ~/Sites/chriskrycho.com
 $ pyenv local pelican
 $ cd ~/Sites/winningslowly.org
 $ pyenv local pelican
@@ -237,8 +238,8 @@ $ pyenv local pelican
 
 I named the virtual environment after [the tool I use to generate the 
 sites][pelican], and reused it in both sites. Both now have a `.python-version` 
-file that reads `pelican`. So anytime I'm working anywhere under 
-`~/Sites/chriskrycho.com/current` *or* `~/Sites/winningslowly.org`, I have the 
+file that reads `pelican`. Now, anytime I'm working anywhere under 
+`~/Sites/chriskrycho.com` *or* `~/Sites/winningslowly.org`, I have the 
 same tooling in place.
 
 [pelican]: //docs.getpelican.com/
