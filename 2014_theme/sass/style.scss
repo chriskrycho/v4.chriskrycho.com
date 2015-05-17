@@ -596,8 +596,7 @@ article {
     code {
         font-family: 'Source Code Pro', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
         background: #efefef;
-        border-radius: 0.244em;
-        border: 1px solid lighten($light_gray, 39.1%);
+        border-radius: 2px;
         margin: $fsp 0;
         overflow: scroll;
     }
@@ -616,6 +615,7 @@ article {
         code {
             padding: $fsp 0.558em;
             font-size: $fs_very_small;
+            border: 1px solid lighten($light_gray, 39.1%);
             white-space: pre;
         }
     }
