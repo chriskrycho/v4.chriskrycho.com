@@ -40,7 +40,7 @@ is devoted: *pyenv*, *pip*, and virtual environments.
 
 Everyone is going to have their own preferences for version control tools and an
 editor; but the recommendations I make regarding Python installations, package
-management, and workspaces/virtual environemtns should be fairly standard for
+management, and workspaces/virtual environments should be fairly standard for
 anyone doing Python development on a Unix-like system in 2015.
 
 [Sublime Text]: //www.sublimetext.com
