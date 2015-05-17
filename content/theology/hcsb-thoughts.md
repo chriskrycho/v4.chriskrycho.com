@@ -72,21 +72,21 @@ basis of the Bible and of the original languages has advanced somewhat since
 result is a serious flattening of the text. Compare, for example, their
 translation of Job 38:11. The HCSB reads:
 
->     when I declared: “You may come this far, but no farther;
->         your proud waves stop here”?
+> | when I declared: “You may come this far, but no farther;
+> |     your proud waves stop here”?
 
 The KJV has:
 
->     and said, Hitherto shalt thou come, but no further:
->         and here shall thy proud waves be stayed?
+> | and said, Hitherto shalt thou come, but no further:
+> |     and here shall thy proud waves be stayed?
 
 Of course, I am not *terribly* sad to see the archaic pronouns go (though I do
 miss their precision a bit!). But "here shall thy proud waves be stayed" sings
 in a way that "your proud waves stop here" just... doesn't. It's not bad, but it
 isn't particularly poetic, either. The ESV follows the KJV more closely, with:
 
->     and said, ‘Thus far shall you come, and no farther,
->         and here shall your proud waves be stayed’?
+> | and said, ‘Thus far shall you come, and no farther,
+> |     and here shall your proud waves be stayed’?
 
 That manages to keep the poetry of the KJV while using modern English, perhaps
 the best tradeoff under the circumstances. Given the extent to which the
