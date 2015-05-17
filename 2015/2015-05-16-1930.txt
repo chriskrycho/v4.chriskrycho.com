@@ -2,7 +2,7 @@
 Title: 2015-05-16 19:30
 Date: 2015-05-16 19:30
 Template: formats/micro
-Tags: software development
+Tags: software development, design
 ...
 
 Updated the websites today. Did a bunch of back end work that *should* be

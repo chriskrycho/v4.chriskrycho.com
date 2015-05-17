@@ -1,8 +1,13 @@
+---
 Title: Tolle Lege!
 Subtitle: Designing Readable Bibles with Digital Typography
 Author: Chris Krycho
 Date: 2015-05-01 10:30
-Description: Designing Readable Bibles with Digital Typography (BibleTech 2015 conference talk)
+Description: >
+    Designing Readable Bibles with Digital Typography (BibleTech 2015
+    conference talk)
+Tags: design
+...
 
 I was delighted to be able to give a talk at [BibleTech] this year. I spoke for
 almost exactly 40 minutes on the subject of digital typography, with a focus on
