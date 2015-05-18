@@ -121,18 +121,15 @@ ul {
     }
 }
 
-ol { list-style: upper-roman;
+ol { list-style: decimal;
 
-    ol { list-style: decimal;
+    ol { list-style: upper-latin;
 
-        ol { list-style: upper-latin;
+        ol { list-style: lower-roman;
 
-            ol { list-style: lower-roman;
+            ol { list-style: lower-latin;
 
-                ol { list-style: lower-latin;
-
-                    ol { list-style: lower-greek; }
-                }
+                ol { list-style: lower-greek; }
             }
         }
     }
@@ -230,18 +227,19 @@ cite.bibleref { font-style: normal; }
 strong { font-weight: bold; }
 
 hr {
-    width: 62.5%;
-    margin: {
-        left: auto;
-        right: auto;
-        top: $fs1;
-        bottom: $fs2;
-    }
-    border: {
-        bottom: none;
-        right: none;
-        left: none;
-        top: 1px solid;
+    border: none;
+
+    &::after {
+        content: "•          •          •          •          •";
+        margin: $fs4_abs auto;
+        display: block;
+        text-align: center;
+        position: relative;
+        
+        font-size: 0.75em;
+
+        background: white;
+        color: $light_gray;
     }
 
     + p::first-letter { @include first-letter(); }
@@ -478,7 +476,8 @@ article {
                 &:before { content: none; }
             }
 
-            + p { &::first-letter { @include first-letter(); } }
+            + p,
+            + h2 + p { &::first-letter { @include first-letter(); } }
 
             + h2 {
                 padding-top: 0;
