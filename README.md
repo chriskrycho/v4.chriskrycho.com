@@ -1,6 +1,8 @@
 chriskrycho.com
 ===============
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/chriskrycho/chriskrycho.com?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 Here I version control my website. Everything is public, because anything I have
 here is *already* public. Moreover, all of this material is provided open source
 so that others can learn from, remix, and otherwise make use of it. There is
