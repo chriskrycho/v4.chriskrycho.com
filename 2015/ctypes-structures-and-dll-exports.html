@@ -99,7 +99,9 @@ my_dll = c.cdll.LoadLibrary(&#39;my_dll&#39;)
 get_an_enum_value = my_dll.getAnEnumValue
 get_an_enum_value.argtypes = [MyEnum]
 get_an_enum_value.restype = c.c_int</code></pre>
-<p>That seems sensible enough, but <code>argtypes</code> values <em>have</em> to be either existing <code>ctypes</code> types<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> or supply either:</p>
+<p>That seems sensible enough, but as it is, it won’t work: you’ll get an error:</p>
+<pre><code>TypeError: item 1 in _argtypes_ has no from_param method</code></pre>
+<p>This is because <code>argtypes</code> values <em>have</em> to be either existing <code>ctypes</code> types<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> or supply either:</p>
 <ul>
 <li>a <code>from_param</code> classmethod, or</li>
 <li>an <code>_as_parameter_</code> attribute</li>

@@ -76,8 +76,14 @@ get_an_enum_value.argtypes = [MyEnum]
 get_an_enum_value.restype = c.c_int
 ```
 
-That seems sensible enough, but `argtypes` values *have* to be either existing
-`ctypes` types[^2] or supply either:
+That seems sensible enough, but as it is, it won't work: you'll get an error:
+
+```
+TypeError: item 1 in _argtypes_ has no from_param method
+```
+
+This is because `argtypes` values *have* to be either existing `ctypes`
+types[^2] or supply either:
 
   - a `from_param` classmethod, or
   - an `_as_parameter_` attribute

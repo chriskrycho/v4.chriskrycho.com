@@ -35,7 +35,9 @@ my_dll = c.cdll.LoadLibrary(&amp;#39;my_dll&amp;#39;)
 get_an_enum_value = my_dll.getAnEnumValue
 get_an_enum_value.argtypes = [MyEnum]
 get_an_enum_value.restype = c.c_int&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;That seems sensible enough, but &lt;code&gt;argtypes&lt;/code&gt; values &lt;em&gt;have&lt;/em&gt; to be either existing &lt;code&gt;ctypes&lt;/code&gt; types&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; or supply either:&lt;/p&gt;
+&lt;p&gt;That seems sensible enough, but as it is, it won’t work: you’ll get an error:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;TypeError: item 1 in _argtypes_ has no from_param method&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is because &lt;code&gt;argtypes&lt;/code&gt; values &lt;em&gt;have&lt;/em&gt; to be either existing &lt;code&gt;ctypes&lt;/code&gt; types&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; or supply either:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;a &lt;code&gt;from_param&lt;/code&gt; classmethod, or&lt;/li&gt;
 &lt;li&gt;an &lt;code&gt;_as_parameter_&lt;/code&gt; attribute&lt;/li&gt;
