@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ctypes Structures and DLL exports &middot; Chris Krycho</title>
+    <meta name="description" content="Unfortunately, the official docs for ctypes leaves a few things out—namely, the most basic use case with from_param! Here's a simple, working example from my own development work."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2015/ctypes-structures-and-dll-exports.html"/>
+    <meta property="og:title" content="ctypes Structures and DLL exports"/>
+        <meta property="og:description" content="Unfortunately, the official docs for ctypes leaves a few things out—namely, the most basic use case with from_param! Here's a simple, working example from my own development work."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+        <meta name="twitter:title" content="ctypes Structures and DLL exports"/>
+        <meta name="twitter:description" content="Unfortunately, the official docs for ctypes leaves a few things out—namely, the most basic use case with from_param! Here's a simple, working example from my own development work."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Creativity, reflection, & varied endeavors<br class="optional"/> by a peculiar fellow</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/talks/">talks</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="software-development tech">
+
+    <header>
+<h1>ctypes Structures and DLL exports</h1>
+<h2>Illustrating the Simplest Use of ctypes Structures</h2>    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/ctypes-structures-and-dll-exports.html"><i class="fa fa-fw fa-link"></i></a>May 28, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2015/ctypes-structures-and-dll-exports.txt">Markdown source</a></span></div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>For one of my contracts right now, I’m writing a <code>ctypes</code> Python interface to existing C code. I got stuck and confused for quite a while on getting the interface to a given function to build correctly, and along the way had to try to understand the <code>from_param</code> class method. The official docs are… fine… but the examples provided don’t cover the most common/basic use case: defining a simple, <em>non-ctypes</em> data type as an argument to a DLL-exported function.</p>
+<p>Let’s say you have a C function exported from a DLL; for convenience we’ll make it something rather silly but easy to understand:</p>
+<pre class="c"><code>/** my_exported.h */
+#include &quot;exports.h&quot;
+
+typedef enum {
+    ZERO,
+    ONE,
+    TWO
+} MyEnum;
+
+MY_API int getAnEnumValue(MyEnum anEnum);</code></pre>
+<p>The implementation just gives back the integer value of the function:</p>
+<pre class="c"><code>int getAnEnumValue(MyEnum anEnum) {
+    return (int)anEnum;
+}</code></pre>
+<p>As I said, a <em>very</em> silly example. Note that you don’t technically need the <code>(int)</code> cast there; I’ve just put it in to be explicit about what we’re doing.</p>
+<p>How would we use this from Python? Assuming we have a DLL named <code>my_dll</code> which exports the <code>getAnEnumValue</code> function, we’d load it up roughly like this:<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<pre class="python"><code>import ctypes as c
+
+my_dll = c.cdll.LoadLibrary(&#39;my_dll&#39;)</code></pre>
+<p>Then, we bind to the function like this:</p>
+<pre class="python"><code>get_an_enum_value = my_dll.getAnEnumValue</code></pre>
+<p>Now, when you do this, you usually also supply the <code>argtypes</code> and <code>restype</code> values for these functions. If you’re like me, you’d think, “Oh, an enum—a perfect opportunity to use the <code>Enum</code> type in Python 3.4+!” and then you’d do something like this:</p>
+<pre class="python"><code>import ctypes as c
+from enum import IntEnum
+
+class MyEnum(IntEnum):
+    ZERO = 0
+    ONE = 1
+    TWO = 2
+
+my_dll = c.cdll.LoadLibrary(&#39;my_dll&#39;)
+get_an_enum_value = my_dll.getAnEnumValue
+get_an_enum_value.argtypes = [MyEnum]
+get_an_enum_value.restype = c.c_int</code></pre>
+<p>That seems sensible enough, but <code>argtypes</code> values <em>have</em> to be either existing <code>ctypes</code> types<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> or supply either:</p>
+<ul>
+<li>a <code>from_param</code> classmethod, or</li>
+<li>an <code>_as_parameter_</code> attribute</li>
+</ul>
+<p>You can use <code>ctypes.Structure</code> subclasses natively that way, because the <code>Structure</code> class supplies its <code>from_param</code> classmethod. The same is <em>not</em> true of our custom enum class, though. As the docs put it:</p>
+<blockquote>
+<p>If you have defined your own classes which you pass to function calls, you have to implement a <code>from_param()</code> class method for them to be able to use them in the argtypes sequence. The <code>from_param()</code> class method receives the Python object passed to the function call, it should do a typecheck or whatever is needed to make sure this object is acceptable, and then return the object itself, its <code>_as_parameter_</code> attribute, or whatever you want to pass as the C function argument in this case. Again, the result should be an integer, string, bytes, a <code>ctypes</code> instance, or an object with an <code>_as_parameter_</code> attribute.</p>
+</blockquote>
+<p>So, to make the enum type work, we need to add a <code>from_param</code> class method or an <code>_as_parameter_</code> attribute to it. Thus, either of these options will work:</p>
+<pre class="python"><code>class MyEnum(IntEnum):
+    ZERO = 0
+    ONE = 1
+    TWO = 2
+
+    # Option 1: set the _as_parameter value at construction.
+    def __init__(self, value):
+        self._as_parameter = int(value)
+
+    # Option 2: define the class method `from_param`.
+    @classmethod
+    def from_param(cls, obj):
+        return int(obj)</code></pre>
+<p>In the constructor-based option, the <code>value</code> argument to the constructor is the value of the <code>Enum</code> instance. Since the value of anan <code>IntEnum</code> is always the same as the integer to whcih it is bound, we can just return <code>int(value)</code>.</p>
+<p>The <code>from_param</code> approach works a little differently, but with the same results. The <code>obj</code> argument to the <code>from_param</code> method is the object instance, in this case the enumerated value itself. <em>Any</em> <code>Enum</code> with an integer value can be directly cast to <code>int</code> (though it is possible for <code>Enum</code> instances to have other values, so be careful), and since we have an <code>IntEnum</code> here, we can again just return <code>int(obj)</code> directly.</p>
+<p>Now, let’s say we want to apply this pattern to more than a single <code>IntEnum</code> class, because our C code defines more than one enumeration. Extracting it to be common functionality is simple enough: just create a class that implements the class method, and inherit from it.</p>
+<pre class="python"><code>class CtypesEnum(IntEnum):
+    &quot;&quot;&quot;A ctypes-compatible IntEnum superclass.&quot;&quot;&quot;
+    @classmethod
+    def from_param(cls, obj):
+        return int(obj)
+
+
+class MyEnum(CtypesEnum):
+    ZERO = 0
+    ONE = 1
+    TWO = 2</code></pre>
+<p>Our final (working!) Python code, then, would be:</p>
+<pre class="python"><code># Import the standard library dependencies
+import ctypes as c
+from enum import IntEnum
+
+
+# Define the types we need.
+class CtypesEnum(IntEnum):
+    &quot;&quot;&quot;A ctypes-compatible IntEnum superclass.&quot;&quot;&quot;
+    @classmethod
+    def from_param(cls, obj):
+        return int(obj)
+
+
+class MyEnum(CtypesEnum):
+    ZERO = 0
+    ONE = 1
+    TWO = 2
+
+
+# Load the DLL and configure the function call.
+my_dll = c.cdll.LoadLibrary(&#39;my_dll&#39;)
+get_an_enum_value = my_dll.getAnEnumValue
+get_an_enum_value.argtypes = [MyEnum]
+get_an_enum_value.restype = c.c_int
+
+# Demonstrate that it works.
+print(get_an_enum_value(MyEnum.TWO))</code></pre>
+<p>The output will be <code>2</code>, just as you’d expect!</p>
+<p>An important note: The type definition we’ve provided here will work for <code>argtypes</code> or <code>restype</code> assignments, but <em>not</em> as one of the members of a custom <code>ctypes.Structure</code> type’s <code>_fields_</code> value. (Discussing how you’d go about doing that is beyond the scope of this post; the most direct approach is just to use a <code>ctypes.c_int</code> and note that it is intended to be used with a given <code>IntEnum</code>/<code>CtypesEnum</code> type.)</p>
+<hr />
+<p>Thanks to <a href="https://alpha.app.net/oluseyi">@oluseyi</a> for being my <a href="http://en.wikipedia.org/wiki/Rubber_duck_debugging">rubber ducky</a> while I was working this out earlier this week!</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>I’m leaving out the part where we build the DLL, and also the part where we locate the DLL, and only using the Windows convention. If you’re on a *nix system, you should use <code>'my_dll.so'</code> instead, and in any case you need to make sure the DLL is available in the search path.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>I <em>love</em> the redundancy of “<code>ctypes</code> types,” don’t you?<a href="#fnref2">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h1>Connect</h1>
+    <h2>Social</h2>
+    <ul class="icons">
+        <li><a href="https://app.net/chriskrycho"><i class="fa fa-fw fa-adn"></i>App.net</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://www.facebook.com/chriskrycho"><i class="fa fa-fw fa-facebook"></i>Facebook</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-cloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+    </ul>
+    <h2>Software</h2>
+    <ul class="icons">
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://bitbucket.org/chriskrycho"><i class="fa fa-fw fa-bitbucket"></i>Bitbucket</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="navigate">
+    <h1>Navigate</h1>
+    <h2>Read</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/archives.html">Everything</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/micro/">micro</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/talks/">talks</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+    </ul>
+    <h2>Get Updates</h2>
+    <ul class="inline">
+        <li class="section-title">Everything</li>
+        <li><a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46224/chriskrychocom-all/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">art</li>
+        <li><a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46225/chriskrychocom-art/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">blog</li>
+        <li><a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46226/chriskrychocom-blog/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">micro</li>
+        <li><a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href=""><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">talks</li>
+        <li><a href="http://www.chriskrycho.com/feeds/talks.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href=""><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">tech</li>
+        <li><a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46227/chriskrychocom-tech/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">theology</li>
+        <li><a href="http://www.chriskrycho.com/feeds/theology.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46228/chriskrychocom-theology/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+</section>
+<section id="recent">
+    <h1>Recent</h1>
+        <h2 class="section-title">art</h2>
+        <ul>
+            <li><a href="http://www.chriskrycho.com/2015/easier.html">Easier</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/airship.html">Airship</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/april-is.html">April Is</a></li>
+    </ul>
+        <h2 class="section-title">blog</h2>
+        <ul>
+            <li><a href="http://www.chriskrycho.com/2015/these-are-my-people.html">These Are My People</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/the-brutality-of-police-culture-in-baltimore.html">The Brutality of Police Culture in Baltimore</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/small-caps-and-margins.html">Small Caps and Margins</a></li>
+    </ul>
+    </ul>
+        <h2 class="section-title">talks</h2>
+        <ul>
+            <li><a href="http://www.chriskrycho.com/2015/tolle-lege.html">Tolle Lege!</a></li>
+    </ul>
+        <h2 class="section-title">tech</h2>
+        <ul>
+            <li><a href="http://www.chriskrycho.com/2015/ctypes-structures-and-dll-exports.html">ctypes Structures and DLL exports</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/open-source-is-neat.html">Open Source is Neat</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/a-modern-python-development-toolchain.html">A Modern Python Development Toolchain</a></li>
+    </ul>
+        <h2 class="section-title">theology</h2>
+        <ul>
+            <li><a href="http://www.chriskrycho.com/2015/strong-group-cultures-are-broken-too.html">Strong-Group Cultures are Broken, Too</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/a-particular-way-of-imagining-the-world.html">A Particular Way of Imagining the World</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/a-paradigmatic-instance-of-treachery.html">A Paradigmatic Instance of Treachery</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
+    <script type="text/javascript">$.bigfoot();</script>
+         <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <script src="/assets/js/reftagger.js"></script>
+
+    <script>
+        !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+        arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+        d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+        insertBefore(d,q)}(window,document,'script','_gs');
+
+        _gs('GSN-862423-O');
+    </script>
+</body>
+</html>

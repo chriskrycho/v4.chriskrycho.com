@@ -3,9 +3,9 @@ Title: A Modern Python Development Toolchain
 Date: 2015-05-16 22:40
 Tags: Software Development
 Description: >
-    Using homebrew, pyenv, and pip to manage Python development environments 
+    Using homebrew, pyenv, and pip to manage Python development environments
     and workspaces.
-...
+---
 
 Most of my development time these days---and especially the majority of my
 happiest time!---is spent working in Python. As such, I've experimented off and
@@ -105,10 +105,10 @@ Now you have a full version of Python 3.4.3 alongside the system install of
 Python 2.7.6. If you wanted to install 2.7.9, or 2.2.3, or the development
 version of PyPy3, you could easily do that as well.
 
-In addition, *pyenv* lets you specify which version to use globally 
+In addition, *pyenv* lets you specify which version to use globally
 (`pyenv global <name>`) and which version to use in a given directory structure
 (`pyenv local <name>`). So if you prefer to use Python 3 in general, but need to
-use Python 2 on one project, you can just navigate to the root of that project 
+use Python 2 on one project, you can just navigate to the root of that project
 and set it:
 
 ```shell
@@ -198,8 +198,8 @@ $ brew install pyenv-virtualenv
 $ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.profile
 ```
 
-Now you're off to the races: you'll never have to type 
-`pyvenv <path to a virtual environment>`, because instead you can just type 
+Now you're off to the races: you'll never have to type
+`pyvenv <path to a virtual environment>`, because instead you can just type
 `pyenv virtualenv <version> <name>` and *pyenv* will take care of setting it up
 for you. Even better: all the nice tricks I listed above about setting
 directory-specific and global preferences for which Python version to use work
@@ -233,13 +233,13 @@ $ cd ~/Sites/winningslowly.org
 $ pyenv local pelican
 ```
 
-[Winning Slowly]: //www.winningslowly.org/ 
+[Winning Slowly]: //www.winningslowly.org/
     "A podcast: taking the long view on technology, religion, ethics, and art."
 
-I named the virtual environment after [the tool I use to generate the 
-sites][pelican], and reused it in both sites. Both now have a `.python-version` 
-file that reads `pelican`. Now, anytime I'm working anywhere under 
-`~/Sites/chriskrycho.com` *or* `~/Sites/winningslowly.org`, I have the 
+I named the virtual environment after [the tool I use to generate the
+sites][pelican], and reused it in both sites. Both now have a `.python-version`
+file that reads `pelican`. Now, anytime I'm working anywhere under
+`~/Sites/chriskrycho.com` *or* `~/Sites/winningslowly.org`, I have the
 same tooling in place.
 
 [pelican]: //docs.getpelican.com/
@@ -276,15 +276,15 @@ at all.
     about *apt-get* and *rpm*. No, that information isn't especially relevant
     for the rest of this post.
 
-[^finicky]: For example, if you upgrade your Python installation using homebrew 
+[^finicky]: For example, if you upgrade your Python installation using homebrew
     and then cleanup the old version (e.g., by running the typical
     `brew update && brew upgrade && brew cleanup` sequence)---say, from 3.4.2 to
-    3.4.3---and you have virtual environments which depended on 3.4.2... well, 
+    3.4.3---and you have virtual environments which depended on 3.4.2... well,
     you're in a bad spot now. A *very* bad spot. Have fun getting back to a
     working state!
 
 [^profile]: You can of course drop it directly in `.zshrc` or `.bash_profile` or
-    wherever else. [My setup] puts all common handling in `.profile` and runs 
+    wherever else. [My setup] puts all common handling in `.profile` and runs
     `source .profile` as the first action in any other shell configurations.
 
 [My setup]: //github.com/chriskrycho/profile
