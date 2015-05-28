@@ -1,5 +1,5 @@
 ---
-Title: Python Enums, ctypes.Structures, and DLL exports—oh, my!
+Title: Python Enums, ctypes.Structures, and DLL exports
 Subtitle: Illustrating the Simplest Use of ctypes Structures
 Description: >
     Unfortunately, the official docs for <code>ctypes</code> leaves a few things out—namely, the most basic use case with <code>from_param</code>! Here's a simple, working example from my own development work.
