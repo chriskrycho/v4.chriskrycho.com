@@ -2,16 +2,16 @@
 Title: Strong-Group Cultures are Broken, Too
 Subtitle: Thoughts on <cite>When the Church Was a Family</cite>
 Date: 2015-05-28 17:25
-Template: formats/class
 Tags: M. Div., SEBTS
-Class: Christian Theology III
-Professor: Dr. Keith Whitfield
-School: Southeastern Baptist Theological Seminary
 Description: >
     Joseph D. Hellerman's The Church Was a Family has some great things  to say,
     but he profoundly overstates the extent to which the Bible affirms
     "strong-group" (or indeed, any human) cultures.
----
+Template: formats/class
+Class: Christian Theology III
+Professor: Dr. Keith Whitfield
+School: Southeastern Baptist Theological Seminary
+...
 
 In *When the Church Was a Family*, Joseph D. Hellerman argues that the health of
 the church depends on embracing what he describes as a strong-group culture
