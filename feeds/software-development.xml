@@ -1,5 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Mon, 25 May 2015 20:06:00 -0400</lastBuildDate><item><title>2015-05-25 20:06</title><link>http://www.chriskrycho.com/2015/2015-05-25-2006.html</link><description>&lt;p&gt;That &lt;a href="http://www.chriskrycho.com/2015/2015-05-22-2330.html"&gt;project&lt;/a&gt; I started on the other day? It’s still going… and swimmingly. I’ve now gotten it not only working at the most basic level (as it was before) but also to do a bit more complex work. You can see it (and any other scripts I build) &lt;a href="https://github.com/chriskrycho/tilde"&gt;here&lt;/a&gt;.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Thu, 28 May 2015 18:00:00 -0400</lastBuildDate><item><title>Python Enums, ctypes.Structures, and DLL exports—oh, my!</title><link>http://www.chriskrycho.com/2015/ctypes-structures-and-dll-exports.html</link><description>&lt;p&gt;For one of my contracts right now, I’m writing a &lt;code&gt;ctypes&lt;/code&gt; Python interface to existing C code. I got stuck and confused for quite a while on getting the interface to a given function to build correctly, and along the way had to try to understand the &lt;code&gt;from_param&lt;/code&gt; class method. The official docs are… fine… but the examples provided don’t cover the most common/basic use case: defining a simple, &lt;em&gt;non-ctypes&lt;/em&gt; data type as an argument to a DLL-exported function.&lt;/p&gt;
+&lt;p&gt;Let’s say you have a C function exported from a DLL; for convenience we’ll make it something rather silly but easy to understand:&lt;/p&gt;
+&lt;pre class="c"&gt;&lt;code&gt;/** my_exported.h */
+#include &amp;quot;exports.h&amp;quot;
+
+typedef enum {
+    ZERO,
+    ONE,
+    TWO
+} MyEnum;
+
+MY_API int getAnEnumValue(MyEnum anEnum);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The implementation just gives back the integer value of the function:&lt;/p&gt;
+&lt;pre class="c"&gt;&lt;code&gt;int getAnEnumValue(MyEnum anEnum) {
+    return (int)anEnum;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As I said, a &lt;em&gt;very&lt;/em&gt; silly example. Note that you don’t technically need the &lt;code&gt;(int)&lt;/code&gt; cast there; I’ve just put it in to be explicit about what we’re doing.&lt;/p&gt;
+&lt;p&gt;How would we use this from Python? Assuming we have a DLL named &lt;code&gt;my_dll&lt;/code&gt; which exports the &lt;code&gt;getAnEnumValue&lt;/code&gt; function, we’d load it up roughly like this:&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;import ctypes as c
+
+my_dll = c.cdll.LoadLibrary(&amp;#39;my_dll&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, we bind to the function like this:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;get_an_enum_value = my_dll.getAnEnumValue&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, when you do this, you usually also supply the &lt;code&gt;argtypes&lt;/code&gt; and &lt;code&gt;restype&lt;/code&gt; values for these functions. If you’re like me, you’d think, “Oh, an enum—a perfect opportunity to use the &lt;code&gt;Enum&lt;/code&gt; type in Python 3.4+!” and then you’d do something like this:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;import ctypes as c
+from enum import IntEnum
+
+class MyEnum(IntEnum):
+    ZERO = 0
+    ONE = 1
+    TWO = 2
+
+my_dll = c.cdll.LoadLibrary(&amp;#39;my_dll&amp;#39;)
+get_an_enum_value = my_dll.getAnEnumValue
+get_an_enum_value.argtypes = [MyEnum]
+get_an_enum_value.restype = c.c_int&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That seems sensible enough, but as it is, it won’t work: you’ll get an error:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;TypeError: item 1 in _argtypes_ has no from_param method&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is because &lt;code&gt;argtypes&lt;/code&gt; values &lt;em&gt;have&lt;/em&gt; to be either existing &lt;code&gt;ctypes&lt;/code&gt; types&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; or supply either:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;code&gt;from_param&lt;/code&gt; classmethod, or&lt;/li&gt;
+&lt;li&gt;an &lt;code&gt;_as_parameter_&lt;/code&gt; attribute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can use &lt;code&gt;ctypes.Structure&lt;/code&gt; subclasses natively that way, because the &lt;code&gt;Structure&lt;/code&gt; class supplies its &lt;code&gt;from_param&lt;/code&gt; classmethod. The same is &lt;em&gt;not&lt;/em&gt; true of our custom enum class, though. As the docs put it:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you have defined your own classes which you pass to function calls, you have to implement a &lt;code&gt;from_param()&lt;/code&gt; class method for them to be able to use them in the argtypes sequence. The &lt;code&gt;from_param()&lt;/code&gt; class method receives the Python object passed to the function call, it should do a typecheck or whatever is needed to make sure this object is acceptable, and then return the object itself, its &lt;code&gt;_as_parameter_&lt;/code&gt; attribute, or whatever you want to pass as the C function argument in this case. Again, the result should be an integer, string, bytes, a &lt;code&gt;ctypes&lt;/code&gt; instance, or an object with an &lt;code&gt;_as_parameter_&lt;/code&gt; attribute.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So, to make the enum type work, we need to add a &lt;code&gt;from_param&lt;/code&gt; class method or an &lt;code&gt;_as_parameter_&lt;/code&gt; attribute to it. Thus, either of these options will work:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;class MyEnum(IntEnum):
+    ZERO = 0
+    ONE = 1
+    TWO = 2
+
+    # Option 1: set the _as_parameter value at construction.
+    def __init__(self, value):
+        self._as_parameter = int(value)
+
+    # Option 2: define the class method `from_param`.
+    @classmethod
+    def from_param(cls, obj):
+        return int(obj)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the constructor-based option, the &lt;code&gt;value&lt;/code&gt; argument to the constructor is the value of the &lt;code&gt;Enum&lt;/code&gt; instance. Since the value of anan &lt;code&gt;IntEnum&lt;/code&gt; is always the same as the integer to whcih it is bound, we can just return &lt;code&gt;int(value)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;from_param&lt;/code&gt; approach works a little differently, but with the same results. The &lt;code&gt;obj&lt;/code&gt; argument to the &lt;code&gt;from_param&lt;/code&gt; method is the object instance, in this case the enumerated value itself. &lt;em&gt;Any&lt;/em&gt; &lt;code&gt;Enum&lt;/code&gt; with an integer value can be directly cast to &lt;code&gt;int&lt;/code&gt; (though it is possible for &lt;code&gt;Enum&lt;/code&gt; instances to have other values, so be careful), and since we have an &lt;code&gt;IntEnum&lt;/code&gt; here, we can again just return &lt;code&gt;int(obj)&lt;/code&gt; directly.&lt;/p&gt;
+&lt;p&gt;Now, let’s say we want to apply this pattern to more than a single &lt;code&gt;IntEnum&lt;/code&gt; class, because our C code defines more than one enumeration. Extracting it to be common functionality is simple enough: just create a class that implements the class method, and inherit from it.&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;class CtypesEnum(IntEnum):
+    &amp;quot;&amp;quot;&amp;quot;A ctypes-compatible IntEnum superclass.&amp;quot;&amp;quot;&amp;quot;
+    @classmethod
+    def from_param(cls, obj):
+        return int(obj)
+
+
+class MyEnum(CtypesEnum):
+    ZERO = 0
+    ONE = 1
+    TWO = 2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Our final (working!) Python code, then, would be:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;# Import the standard library dependencies
+import ctypes as c
+from enum import IntEnum
+
+
+# Define the types we need.
+class CtypesEnum(IntEnum):
+    &amp;quot;&amp;quot;&amp;quot;A ctypes-compatible IntEnum superclass.&amp;quot;&amp;quot;&amp;quot;
+    @classmethod
+    def from_param(cls, obj):
+        return int(obj)
+
+
+class MyEnum(CtypesEnum):
+    ZERO = 0
+    ONE = 1
+    TWO = 2
+
+
+# Load the DLL and configure the function call.
+my_dll = c.cdll.LoadLibrary(&amp;#39;my_dll&amp;#39;)
+get_an_enum_value = my_dll.getAnEnumValue
+get_an_enum_value.argtypes = [MyEnum]
+get_an_enum_value.restype = c.c_int
+
+# Demonstrate that it works.
+print(get_an_enum_value(MyEnum.TWO))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The output will be &lt;code&gt;2&lt;/code&gt;, just as you’d expect!&lt;/p&gt;
+&lt;p&gt;An important note: The type definition we’ve provided here will work for &lt;code&gt;argtypes&lt;/code&gt; or &lt;code&gt;restype&lt;/code&gt; assignments, but &lt;em&gt;not&lt;/em&gt; as one of the members of a custom &lt;code&gt;ctypes.Structure&lt;/code&gt; type’s &lt;code&gt;_fields_&lt;/code&gt; value. (Discussing how you’d go about doing that is beyond the scope of this post; the most direct approach is just to use a &lt;code&gt;ctypes.c_int&lt;/code&gt; and note that it is intended to be used with a given &lt;code&gt;IntEnum&lt;/code&gt;/&lt;code&gt;CtypesEnum&lt;/code&gt; type.)&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Thanks to &lt;a href="https://alpha.app.net/oluseyi"&gt;@oluseyi&lt;/a&gt; for being my &lt;a href="http://en.wikipedia.org/wiki/Rubber_duck_debugging"&gt;rubber ducky&lt;/a&gt; while I was working this out earlier this week!&lt;/p&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;I’m leaving out the part where we build the DLL, and also the part where we locate the DLL, and only using the Windows convention. If you’re on a *nix system, you should use &lt;code&gt;'my_dll.so'&lt;/code&gt; instead, and in any case you need to make sure the DLL is available in the search path.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;I &lt;em&gt;love&lt;/em&gt; the redundancy of “&lt;code&gt;ctypes&lt;/code&gt; types,” don’t you?&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 28 May 2015 18:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-28:2015/ctypes-structures-and-dll-exports.html</guid><category>software development</category></item><item><title>2015-05-25 20:06</title><link>http://www.chriskrycho.com/2015/2015-05-25-2006.html</link><description>&lt;p&gt;That &lt;a href="http://www.chriskrycho.com/2015/2015-05-22-2330.html"&gt;project&lt;/a&gt; I started on the other day? It’s still going… and swimmingly. I’ve now gotten it not only working at the most basic level (as it was before) but also to do a bit more complex work. You can see it (and any other scripts I build) &lt;a href="https://github.com/chriskrycho/tilde"&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 25 May 2015 20:06:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-25:2015/2015-05-25-2006.html</guid><category>software development</category></item><item><title>2015-05-23 15:30</title><link>http://www.chriskrycho.com/2015/2015-05-23-1530.html</link><description>&lt;p&gt;Currently on my mind: how to chunk up the Bible text with semantic blobs and chapter/verse trees in corresponding data structures, in order to present meaningful sections of content (paragraphs, etc.) without resorting to delivering a whole book.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 23 May 2015 15:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-23:2015/2015-05-23-1530.html</guid><category>software development</category><category>design</category></item><item><title>2015-05-22 23:30</title><link>http://www.chriskrycho.com/2015/2015-05-22-2330.html</link><description>&lt;p&gt;This post brought to you by a brand new script, which automatically generates the file needed—YAML header and all!—to create a new microblog post on chriskrycho.com. Python for the win.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 22 May 2015 23:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-22:2015/2015-05-22-2330.html</guid><category>software development</category></item><item><title>Open Source is Neat</title><link>http://www.chriskrycho.com/2015/open-source-is-neat.html</link><description>&lt;p&gt;I confess: my &lt;em&gt;first&lt;/em&gt; response to seeing &lt;a href="//andrewcamenga.com/"&gt;this page&lt;/a&gt; was a flash of anger: &lt;em&gt;Hey, he didn’t just learn from my site configuration, he actually stole my site &lt;/em&gt;&lt;strong&gt;design&lt;/strong&gt;&lt;em&gt;!&lt;/em&gt; And then I remembered: I open-sourced the design precisely so people could do that. This was just the first time I’ve ever actually had someone reuse something I did and shared like this. It was a strange (but ultimately wonderful) feeling. I hope to have it again many more times.&lt;/p&gt;

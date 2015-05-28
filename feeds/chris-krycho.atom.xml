@@ -1,5 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-05-28T17:25:00-04:00</updated><entry><title>Strong-Group Cultures are Broken, Too</title><link href="http://www.chriskrycho.com/2015/strong-group-cultures-are-broken-too.html" rel="alternate"></link><updated>2015-05-28T17:25:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-28:2015/strong-group-cultures-are-broken-too.html</id><summary type="html">&lt;p&gt;In &lt;em&gt;When the Church Was a Family&lt;/em&gt;, Joseph D. Hellerman argues that the health of the church depends on embracing what he describes as a strong-group culture mentality. Based on insights from sociology, he maintains that the “family” language of Scripture, and especially that of the New Testament, should lead believers to embrace the same kind of cultural norms that characterized families in the ancient Mediterranean world where the Bible was written. He first explains how that strong-group culture works, contrasting it with the individualistic (or “weak-group”) culture of the west: individual desires are sublimated to those of the group, and decisions are made both within the context of the group and with the good of the group foremost. He then defends the idea that this was how the New Testament church community was structured, before turning to a general discussion of how the practice of the Western church might need to change to accommodate this kind of cultural shift. In this practical turn, Hellerman considers a number of cases studies for how this has played out in his experience, as well as the implications for leadership.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-05-28T18:00:00-04:00</updated><entry><title>Python Enums, ctypes.Structures, and DLL exports—oh, my!</title><link href="http://www.chriskrycho.com/2015/ctypes-structures-and-dll-exports.html" rel="alternate"></link><updated>2015-05-28T18:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-28:2015/ctypes-structures-and-dll-exports.html</id><summary type="html">&lt;p&gt;For one of my contracts right now, I’m writing a &lt;code&gt;ctypes&lt;/code&gt; Python interface to existing C code. I got stuck and confused for quite a while on getting the interface to a given function to build correctly, and along the way had to try to understand the &lt;code&gt;from_param&lt;/code&gt; class method. The official docs are… fine… but the examples provided don’t cover the most common/basic use case: defining a simple, &lt;em&gt;non-ctypes&lt;/em&gt; data type as an argument to a DLL-exported function.&lt;/p&gt;
+&lt;p&gt;Let’s say you have a C function exported from a DLL; for convenience we’ll make it something rather silly but easy to understand:&lt;/p&gt;
+&lt;pre class="c"&gt;&lt;code&gt;/** my_exported.h */
+#include &amp;quot;exports.h&amp;quot;
+
+typedef enum {
+    ZERO,
+    ONE,
+    TWO
+} MyEnum;
+
+MY_API int getAnEnumValue(MyEnum anEnum);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The implementation just gives back the integer value of the function:&lt;/p&gt;
+&lt;pre class="c"&gt;&lt;code&gt;int getAnEnumValue(MyEnum anEnum) {
+    return (int)anEnum;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As I said, a &lt;em&gt;very&lt;/em&gt; silly example. Note that you don’t technically need the &lt;code&gt;(int)&lt;/code&gt; cast there; I’ve just put it in to be explicit about what we’re doing.&lt;/p&gt;
+&lt;p&gt;How would we use this from Python? Assuming we have a DLL named &lt;code&gt;my_dll&lt;/code&gt; which exports the &lt;code&gt;getAnEnumValue&lt;/code&gt; function, we’d load it up roughly like this:&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;import ctypes as c
+
+my_dll = c.cdll.LoadLibrary(&amp;#39;my_dll&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then, we bind to the function like this:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;get_an_enum_value = my_dll.getAnEnumValue&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, when you do this, you usually also supply the &lt;code&gt;argtypes&lt;/code&gt; and &lt;code&gt;restype&lt;/code&gt; values for these functions. If you’re like me, you’d think, “Oh, an enum—a perfect opportunity to use the &lt;code&gt;Enum&lt;/code&gt; type in Python 3.4+!” and then you’d do something like this:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;import ctypes as c
+from enum import IntEnum
+
+class MyEnum(IntEnum):
+    ZERO = 0
+    ONE = 1
+    TWO = 2
+
+my_dll = c.cdll.LoadLibrary(&amp;#39;my_dll&amp;#39;)
+get_an_enum_value = my_dll.getAnEnumValue
+get_an_enum_value.argtypes = [MyEnum]
+get_an_enum_value.restype = c.c_int&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That seems sensible enough, but as it is, it won’t work: you’ll get an error:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;TypeError: item 1 in _argtypes_ has no from_param method&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is because &lt;code&gt;argtypes&lt;/code&gt; values &lt;em&gt;have&lt;/em&gt; to be either existing &lt;code&gt;ctypes&lt;/code&gt; types&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; or supply either:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;code&gt;from_param&lt;/code&gt; classmethod, or&lt;/li&gt;
+&lt;li&gt;an &lt;code&gt;_as_parameter_&lt;/code&gt; attribute&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can use &lt;code&gt;ctypes.Structure&lt;/code&gt; subclasses natively that way, because the &lt;code&gt;Structure&lt;/code&gt; class supplies its &lt;code&gt;from_param&lt;/code&gt; classmethod. The same is &lt;em&gt;not&lt;/em&gt; true of our custom enum class, though. As the docs put it:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you have defined your own classes which you pass to function calls, you have to implement a &lt;code&gt;from_param()&lt;/code&gt; class method for them to be able to use them in the argtypes sequence. The &lt;code&gt;from_param()&lt;/code&gt; class method receives the Python object passed to the function call, it should do a typecheck or whatever is needed to make sure this object is acceptable, and then return the object itself, its &lt;code&gt;_as_parameter_&lt;/code&gt; attribute, or whatever you want to pass as the C function argument in this case. Again, the result should be an integer, string, bytes, a &lt;code&gt;ctypes&lt;/code&gt; instance, or an object with an &lt;code&gt;_as_parameter_&lt;/code&gt; attribute.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So, to make the enum type work, we need to add a &lt;code&gt;from_param&lt;/code&gt; class method or an &lt;code&gt;_as_parameter_&lt;/code&gt; attribute to it. Thus, either of these options will work:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;class MyEnum(IntEnum):
+    ZERO = 0
+    ONE = 1
+    TWO = 2
+
+    # Option 1: set the _as_parameter value at construction.
+    def __init__(self, value):
+        self._as_parameter = int(value)
+
+    # Option 2: define the class method `from_param`.
+    @classmethod
+    def from_param(cls, obj):
+        return int(obj)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the constructor-based option, the &lt;code&gt;value&lt;/code&gt; argument to the constructor is the value of the &lt;code&gt;Enum&lt;/code&gt; instance. Since the value of anan &lt;code&gt;IntEnum&lt;/code&gt; is always the same as the integer to whcih it is bound, we can just return &lt;code&gt;int(value)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;from_param&lt;/code&gt; approach works a little differently, but with the same results. The &lt;code&gt;obj&lt;/code&gt; argument to the &lt;code&gt;from_param&lt;/code&gt; method is the object instance, in this case the enumerated value itself. &lt;em&gt;Any&lt;/em&gt; &lt;code&gt;Enum&lt;/code&gt; with an integer value can be directly cast to &lt;code&gt;int&lt;/code&gt; (though it is possible for &lt;code&gt;Enum&lt;/code&gt; instances to have other values, so be careful), and since we have an &lt;code&gt;IntEnum&lt;/code&gt; here, we can again just return &lt;code&gt;int(obj)&lt;/code&gt; directly.&lt;/p&gt;
+&lt;p&gt;Now, let’s say we want to apply this pattern to more than a single &lt;code&gt;IntEnum&lt;/code&gt; class, because our C code defines more than one enumeration. Extracting it to be common functionality is simple enough: just create a class that implements the class method, and inherit from it.&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;class CtypesEnum(IntEnum):
+    &amp;quot;&amp;quot;&amp;quot;A ctypes-compatible IntEnum superclass.&amp;quot;&amp;quot;&amp;quot;
+    @classmethod
+    def from_param(cls, obj):
+        return int(obj)
+
+
+class MyEnum(CtypesEnum):
+    ZERO = 0
+    ONE = 1
+    TWO = 2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Our final (working!) Python code, then, would be:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;# Import the standard library dependencies
+import ctypes as c
+from enum import IntEnum
+
+
+# Define the types we need.
+class CtypesEnum(IntEnum):
+    &amp;quot;&amp;quot;&amp;quot;A ctypes-compatible IntEnum superclass.&amp;quot;&amp;quot;&amp;quot;
+    @classmethod
+    def from_param(cls, obj):
+        return int(obj)
+
+
+class MyEnum(CtypesEnum):
+    ZERO = 0
+    ONE = 1
+    TWO = 2
+
+
+# Load the DLL and configure the function call.
+my_dll = c.cdll.LoadLibrary(&amp;#39;my_dll&amp;#39;)
+get_an_enum_value = my_dll.getAnEnumValue
+get_an_enum_value.argtypes = [MyEnum]
+get_an_enum_value.restype = c.c_int
+
+# Demonstrate that it works.
+print(get_an_enum_value(MyEnum.TWO))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The output will be &lt;code&gt;2&lt;/code&gt;, just as you’d expect!&lt;/p&gt;
+&lt;p&gt;An important note: The type definition we’ve provided here will work for &lt;code&gt;argtypes&lt;/code&gt; or &lt;code&gt;restype&lt;/code&gt; assignments, but &lt;em&gt;not&lt;/em&gt; as one of the members of a custom &lt;code&gt;ctypes.Structure&lt;/code&gt; type’s &lt;code&gt;_fields_&lt;/code&gt; value. (Discussing how you’d go about doing that is beyond the scope of this post; the most direct approach is just to use a &lt;code&gt;ctypes.c_int&lt;/code&gt; and note that it is intended to be used with a given &lt;code&gt;IntEnum&lt;/code&gt;/&lt;code&gt;CtypesEnum&lt;/code&gt; type.)&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Thanks to &lt;a href="https://alpha.app.net/oluseyi"&gt;@oluseyi&lt;/a&gt; for being my &lt;a href="http://en.wikipedia.org/wiki/Rubber_duck_debugging"&gt;rubber ducky&lt;/a&gt; while I was working this out earlier this week!&lt;/p&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;I’m leaving out the part where we build the DLL, and also the part where we locate the DLL, and only using the Windows convention. If you’re on a *nix system, you should use &lt;code&gt;'my_dll.so'&lt;/code&gt; instead, and in any case you need to make sure the DLL is available in the search path.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;I &lt;em&gt;love&lt;/em&gt; the redundancy of “&lt;code&gt;ctypes&lt;/code&gt; types,” don’t you?&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</summary><category term="software development"></category></entry><entry><title>Strong-Group Cultures are Broken, Too</title><link href="http://www.chriskrycho.com/2015/strong-group-cultures-are-broken-too.html" rel="alternate"></link><updated>2015-05-28T17:25:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-28:2015/strong-group-cultures-are-broken-too.html</id><summary type="html">&lt;p&gt;In &lt;em&gt;When the Church Was a Family&lt;/em&gt;, Joseph D. Hellerman argues that the health of the church depends on embracing what he describes as a strong-group culture mentality. Based on insights from sociology, he maintains that the “family” language of Scripture, and especially that of the New Testament, should lead believers to embrace the same kind of cultural norms that characterized families in the ancient Mediterranean world where the Bible was written. He first explains how that strong-group culture works, contrasting it with the individualistic (or “weak-group”) culture of the west: individual desires are sublimated to those of the group, and decisions are made both within the context of the group and with the good of the group foremost. He then defends the idea that this was how the New Testament church community was structured, before turning to a general discussion of how the practice of the Western church might need to change to accommodate this kind of cultural shift. In this practical turn, Hellerman considers a number of cases studies for how this has played out in his experience, as well as the implications for leadership.&lt;/p&gt;
 &lt;p&gt;While Hellerman’s argument has much to recommend it on the whole, his treatment of the Bible’s relationship to strong- and weak-group cultures leaves a great deal to be desired. Granted that the Bible clearly rejects the kind of radical individualism that characterizes contemporary evangelicalism, and granted further that Hellerman rightly emphasizes the communal and familial language of the New Testament in particular, nonetheless he substantially overstates the case for “strong-group” communities, and in doing so partly undermines an otherwise strong and helpful book. Hellerman repeatedly argues that the Bible clearly and unabashedly appropriates and affirms the strong-group culture of the surrounding world. This is the thesis with which he opens the book, and he dedicates the first half of the book to defending it from the pages of Scripture and the early years of church history.&lt;/p&gt;
 &lt;p&gt;Unfortunately, Hellerman’s thesis cannot be sustained—at least, not as he presents it. Scripture does appropriate at times from the strong-group ideas of the surrounding culture at times, but it never does so unreservedly, and it often corrects those ideas. First, while Hellerman argues repeatedly and at great length that the dominant understanding of group identity and especially family from the surrounding culture presented patrilineal family groups as primary, and sibling identity as trumping all others, including those from marriage, God rejects that approach to the family itself from the earliest pages of Scripture. Very much &lt;em&gt;unlike&lt;/em&gt; the culture Hellerman praises, with its prioritizing of blood families over a spouse, Genesis clarifies that the pattern for God’s people is that the new relationship formed in marriage takes first place (Gen. 2:24; cf. Eph. 5:31). Likewise, many of the very passages that Hellerman cites as evidence for the strength of the new community Jesus formed among his followers—and especially the most challenging passages where Jesus speaks of hating father and mother and siblings for his sake—implicitly undermine the surrounding culture’s understanding of community and systems. Hellerman rightly sees that these passages emphasized the commitment the new Christ-followers were to have to the eschatological community; he misses the inherent critique of the existing structures.&lt;/p&gt;
 &lt;p&gt;The same pattern plays out in Hellerman’s readings of Acts, the Epistles, and early church history. Regarding Acts, for example, he asserts:&lt;/p&gt;
