@@ -1,7 +1,9 @@
+---
 Title: 2015-04-09-1510
 Template: formats/micro
 Date: 2015-04-09 15:10
 Author: Chris Krycho
+...
 
 People who edit podcasts take different tacks on this, but for [Winning Slowly],
 I happily shift around interactions, cut "uhhs", and generally improve the
