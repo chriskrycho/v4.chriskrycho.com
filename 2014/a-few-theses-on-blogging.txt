@@ -3,7 +3,7 @@ Subtitle: (Twelve, to be precise.)
 Author: Chris Krycho
 Date: 2014-07-09 21:15
 Tags: listicles
-Description: Twelve thoughts&mdash;only loosely connected&mdash;on writing blog posts consisting simply of a series of loosely connected thoughts.
+Summary: Twelve thoughts&mdash;only loosely connected&mdash;on writing blog posts consisting simply of a series of loosely connected thoughts.
 
 I am a habitually---even chronically---long-winded blogger. I always have been.
 I sat down a few weeks ago to write up an explanation of my running approach,

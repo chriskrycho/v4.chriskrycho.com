@@ -2,7 +2,7 @@
 Title: Corporate and Government Surveillance
 Subtitle: "Or: Why Senator Sheldon is Wrong"
 Date: 2015-06-02 22:43
-Description: >
+Summary: >
     A response to Senator Sheldon Whitehouse's address to the NSA on Americans’
     greater mistrust of government collection of data than corporations’.
 Tags: listicles

@@ -8,7 +8,7 @@ Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
-Description: Our focus on the obviously miraculous gifts can blind us to the astounding reality of the role played by the Spirit in our Christian formation.
+Summary: Our focus on the obviously miraculous gifts can blind us to the astounding reality of the role played by the Spirit in our Christian formation.
 
 Discussions of the person of the Holy Spirit in modern Christianity tend to
 focus on the third person of the Trinity's obviously miraculous activity in the

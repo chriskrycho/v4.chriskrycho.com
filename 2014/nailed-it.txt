@@ -2,7 +2,7 @@ Title: Nailed It
 Subtitle: Marvel Actually Understands New Media
 Author: Chris Krycho
 Date: 2014-10-22 22:15
-Description: Someone leaked a copy of the trailer for Avengers: Age of Ultron&hellip; and Marvel didn&rsquo;t throw a fit. Quite the opposite, in fact.
+Summary: Someone leaked a copy of the trailer for Avengers: Age of Ultron&hellip; and Marvel didn&rsquo;t throw a fit. Quite the opposite, in fact.
 
 Yesterday, something rather remarkable happened. Someone leaked a copy of the
 trailer for _Avengers: Age of Ultron_... and Marvel, rather than throwing a

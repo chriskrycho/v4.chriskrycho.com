@@ -1,5 +1,5 @@
 Title: Further Upward and Further In
-Description: The Christian life  the life of growing sanctification&mdash;increasing in Christlikeness and so in humanity as it was meant to be.
+Summary: The Christian life  the life of growing sanctification&mdash;increasing in Christlikeness and so in humanity as it was meant to be.
 Author: Chris Krycho
 Date: 2014-04-29 08:15
 Topic: What does it mean to be "sanctified"?

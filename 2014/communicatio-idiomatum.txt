@@ -6,7 +6,7 @@ Date: 2014-05-03 14:00
 Category: theology
 Tags: M. Div., SEBTS
 Title: Communicatio Idiomatum
-Description: The "communication of attributes" between the divine and human natures in Jesus is one of the most important affirmations of the faith. In Jesus were united all that it is to be God and all that it is to be man.
+Summary: The "communication of attributes" between the divine and human natures in Jesus is one of the most important affirmations of the faith. In Jesus were united all that it is to be God and all that it is to be man.
 Template: formats/class
 
 The "communication of attributes" (Latin _communicatio idiomatum_) is a summary

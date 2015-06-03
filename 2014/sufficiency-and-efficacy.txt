@@ -8,7 +8,7 @@ Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
-Description: It is most appropriate to speak of Jesus' atonement as unlimited in extent but limited in effect.
+Summary: It is most appropriate to speak of Jesus' atonement as unlimited in extent but limited in effect.
 
 The extent of the atonement is one of the most debated topics in the history of
 the church for centuries. Whether Jesus Christ's death provided substition for

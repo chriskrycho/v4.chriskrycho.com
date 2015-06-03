@@ -3,7 +3,7 @@ Title: The Lamb Rampant
 Tags: poetry
 Date: 2014-02-10 12:30
 Author: Chris Krycho
-Description: |
+Summary: |
     Come and rest! Come and heal! Ev’ry traitor 
             Ev’ry wretch and stinking fiend: lay down your arms...
 ...

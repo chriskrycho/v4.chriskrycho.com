@@ -1,5 +1,5 @@
 Title: Bind It On Your Forehead
-Description: Memorizing a book of the Bible yields remarkable fruit. It shapes us and transforms our thinking.
+Summary: Memorizing a book of the Bible yields remarkable fruit. It shapes us and transforms our thinking.
 Author: Chris Krycho
 Date: 2014-04-07 06:30
 Template: formats/devotions

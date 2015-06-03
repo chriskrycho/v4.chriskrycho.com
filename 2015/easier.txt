@@ -2,7 +2,7 @@
 Title: Easier
 Date: 2015-05-17 11:15
 Tags: poetry
-Description: |
+Summary: |
     ’Tis easier, I confess
         to speak of savor than
             in truth to taste…

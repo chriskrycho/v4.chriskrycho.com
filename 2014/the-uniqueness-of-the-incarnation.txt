@@ -1,6 +1,6 @@
 ---
 Title: The Uniqueness of the Incarnation
-Description: >
+Summary: >
     The Incarnation itself is essential and central in God's work in the life of
     believers. It must never be obscured, diminished, or denied.
 Author: Chris Krycho

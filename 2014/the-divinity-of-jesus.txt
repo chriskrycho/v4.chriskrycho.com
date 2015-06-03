@@ -6,7 +6,7 @@ Date: 2014-05-03 14:00
 Category: theology
 Tags: M. Div., SEBTS
 Title: The Divinity of Jesus
-Description: Failing to affirm the divinity of Christ means failing to affirm one of the essentials of the faith. Without Christ's divinity, there is no salvation for any of us.
+Summary: Failing to affirm the divinity of Christ means failing to affirm one of the essentials of the faith. Without Christ's divinity, there is no salvation for any of us.
 Template: formats/class
 
 The divinity of Jesus is and has been from the beginning a core component of

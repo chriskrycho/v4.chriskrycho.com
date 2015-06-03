@@ -2,7 +2,7 @@ Title: Goodbye, Notifications
 Subtitle: Hello, Increased Focus
 Author: Chris Krycho
 Date: 2014-07-11 18:50
-Description: The Accidental Tech Podcast guys inspired me to change how I handle notifications for social media&mdash;silencing them all. So far, I like it a lot.
+Summary: The Accidental Tech Podcast guys inspired me to change how I handle notifications for social media&mdash;silencing them all. So far, I like it a lot.
 
 In [this week's episode][ep] of [Accidental Tech Podcast][atp], hosts Casey Liss
 and John Siracusa mentioned that they have the sound aspect of notifications

@@ -1,7 +1,7 @@
 Title: Bundling!
 Date: 2014-05-13 14:35
 Author: Chris Krycho
-Description: The world of ebook pricing is sometimes a bit crazy. A smart bundling strategy might make it a bit less so.
+Summary: The world of ebook pricing is sometimes a bit crazy. A smart bundling strategy might make it a bit less so.
 Template: formats/republish
 original_url: http://2012-2013.chriskrycho.com/web/bundling/
 

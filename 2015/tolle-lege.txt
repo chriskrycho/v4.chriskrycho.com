@@ -3,7 +3,7 @@ Title: Tolle Lege!
 Subtitle: Designing Readable Bibles with Digital Typography
 Author: Chris Krycho
 Date: 2015-05-01 10:30
-Description: >
+Summary: >
     Designing Readable Bibles with Digital Typography (BibleTech 2015
     conference talk)
 Tags: design

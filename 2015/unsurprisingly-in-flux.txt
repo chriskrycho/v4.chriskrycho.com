@@ -3,7 +3,7 @@ Subtitle: A Quick Look at the State of JS Frameworks in Early 2015
 Author: Chris Krycho
 Date: 2015-04-08 16:05
 Tags: software development
-Description: The state of JavaScript frameworks today is a scale, really, from not-at-all-monolithic to totally-monolithic, in roughly this order:  Backbone – React & Angular – Ember – Meteor.
+Summary: The state of JavaScript frameworks today is a scale, really, from not-at-all-monolithic to totally-monolithic, in roughly this order:  Backbone – React & Angular – Ember – Meteor.
 
 <i class="editorial">This started as a [series of posts] on App.net. I [resolved] a while ago that if I was tempted to do that, I should just write a blog post instead. I failed at that resolution, but at a friend's [suggestion], am adapting it into a blog post anyway. You can see the posts that prompted it [here][@keita] and [here][@jws].</i>
 

@@ -6,7 +6,7 @@ Date: 2014-05-03 14:00
 Category: theology
 Tags: M. Div., SEBTS
 Title: The Nature of Justification (redux)
-Description: Justification is one of the essential elements of our salvation, and while it is not less than judicial right standing before God, it is more&mdash;much more.
+Summary: Justification is one of the essential elements of our salvation, and while it is not less than judicial right standing before God, it is more&mdash;much more.
 Template: formats/class
 
 Put most simply, to be justified is to be *right* with God---to be "righteous".

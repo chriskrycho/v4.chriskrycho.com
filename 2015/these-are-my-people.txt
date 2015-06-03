@@ -1,7 +1,7 @@
 ---
 Title: These Are My People
 Date: 2015-05-17 22:25
-Description: >
+Summary: >
     When I went to Seattle for BibleTech 2015, I expected to put a nice mark on
     my résumé and learn some interesting things. I came out with something much,
     much more valuable.

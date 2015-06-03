@@ -7,7 +7,7 @@ Passages: 1 John, Psalm 41, Ecclesiastes 10
 Template: formats/devotions
 Epigraph: &ldquo;God is love.&rdquo; &mdash;1 John 4:8
 
-Description: God is love—but God is not corrupted human sentimentality. He is
+Summary: God is love—but God is not corrupted human sentimentality. He is
 holy, and his love and justice run hand in hand.
 
 Our culture has a fixation on the idea that "God is love." I remember a

@@ -1,7 +1,7 @@
 Title: Economies of Scale
 Author: Chris Krycho
 Date: 2014-07-11 10:35
-Description: In which I strongly critique Robert Gates' years-old comments on the cost of the B-2, because I'm a pedant.
+Summary: In which I strongly critique Robert Gates' years-old comments on the cost of the B-2, because I'm a pedant.
 
 I was reading through an interesting Ars Technica [article]() on the new Long
 Range Strike Bomber (LRS-B) proposal the Air Force is soliciting. It's generally

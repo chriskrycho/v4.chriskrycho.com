@@ -2,7 +2,7 @@
 Title: Welcome!
 Subtitle: Enjoy your stay; watch out for typographical nerdery.
 Author: Chris Krycho
-Description: Creativity, reflection, & passionate endeavors by a peculiar fellow
+Summary: Creativity, reflection, & passionate endeavors by a peculiar fellow
 Slug: about
 ...
 

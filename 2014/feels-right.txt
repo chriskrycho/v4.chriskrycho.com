@@ -1,5 +1,5 @@
 Title: Feels Right
-Description: Little details in how things work can make all the difference when it comes to the experience of using software. So be diligent, and do it right.
+Summary: Little details in how things work can make all the difference when it comes to the experience of using software. So be diligent, and do it right.
 Author: Chris Krycho
 Date: 2014-04-04 21:30
 Tags: software development, design

@@ -4,7 +4,7 @@ Author: Chris Krycho
 Tags: devotions
 Category: theology
 Passages: Psalm 64, Proverbs 26, and 1 Corinthians 4&ndash;6
-Description: Some devotional thoughts on Psalm 64, Proverbs 26, and 1 Corinthians 4&ndash;6.
+Summary: Some devotional thoughts on Psalm 64, Proverbs 26, and 1 Corinthians 4&ndash;6.
 Template: formats/devotions
 
 Today's passages did not connect in any particular way in my head, but all bear

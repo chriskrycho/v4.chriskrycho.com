@@ -1,7 +1,7 @@
 Title: FirebirdSQL and IntelliJ IDEA (etc.)
 Author: Chris Krycho
 Date: 2014-03-28 09:00
-Description: Configuration instructions for FirebirdSQL JDBC with JetBrains IntelliJ IDEA platform (including PyCharm, RubyMine, WebStorm, etc.).
+Summary: Configuration instructions for FirebirdSQL JDBC with JetBrains IntelliJ IDEA platform (including PyCharm, RubyMine, WebStorm, etc.).
 Tags: Software Development
 
 Setting up IntelliJ IDEA's built-in database tools to work with FirebirdSQL

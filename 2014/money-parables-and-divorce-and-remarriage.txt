@@ -5,7 +5,7 @@ Author: Chris Krycho
 Tags: devotions
 Category: theology
 Passages: Psalm 60, Proverbs 19, and Luke 14&mdash;16
-Description: Luke 16:18 points us to something beyond just divorce and remarriage&mdash;though it is hard to see for all the heading markers in the text.
+Summary: Luke 16:18 points us to something beyond just divorce and remarriage&mdash;though it is hard to see for all the heading markers in the text.
 Template: formats/devotions
 
 I have said it before and I will say it again: I really quite detest the heading

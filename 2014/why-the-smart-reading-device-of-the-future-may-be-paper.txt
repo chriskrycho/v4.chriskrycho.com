@@ -5,7 +5,7 @@ Date: 2014-05-03 10:45
 Tags: links
 Category: tech
 Template: formats/link
-Description: Link&mdash;I enjoy Kindle and iPad, but I still love books best. Turns out I'm not alone... and there might just be reason for it.
+Summary: Link&mdash;I enjoy Kindle and iPad, but I still love books best. Turns out I'm not alone... and there might just be reason for it.
 
 One thing I didn't talk about in comparing reading experiences on a Kindle and on an iPad the other day is the elephant in the room: old-fashioned books. I enjoy Kindle and iPad, but I still love books best. Turns out I'm not alone... and there might just be reason for it.
 

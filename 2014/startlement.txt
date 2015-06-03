@@ -2,7 +2,7 @@ Title: Startlement
 Subtitle: The most astounding truth: God became a man.
 Date: 2014-12-29 20:00
 Author: Chris Krycho
-Description: The Incarnation is the most surprising of all the miracles. All miracles are a surprise, but this one startles more than any other.
+Summary: The Incarnation is the most surprising of all the miracles. All miracles are a surprise, but this one startles more than any other.
 
 <i class="editorial">This was originally published as part of James Metelak's
 2015 [25 Days of Christmas Project](http://headpiecestraw.blogspot.com/).</i>

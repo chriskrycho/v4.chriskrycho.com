@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2014-10-16 21:45
 Tags: software development
 Edited: 2014-10-20 07:25
-Description: The current state of affairs with version control is a mess. Things we can get right next time around.
+Summary: The current state of affairs with version control is a mess. Things we can get right next time around.
 
 The current state of affairs in version control systems is a mess. To be sure,
 software development is *far* better with *any* of the distributed version
