@@ -2,7 +2,7 @@ Title: A Little Crazy
 Author: Chris Krycho
 Date: 2014-04-29 19:30
 Tags: software development
-Description: I am going to write a static site generator in Io. Oh, and also the Markdown parser and HTML templating engine required to go with it.
+Summary: I am going to write a static site generator in Io. Oh, and also the Markdown parser and HTML templating engine required to go with it.
 
 I'm going to do something a little crazy, I've decided. I'm going to go ahead
 and do like I wrote [a bit back][do-it-myself], and make [Step Stool][ss]

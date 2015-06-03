@@ -2,7 +2,7 @@ Title: Migrating to Pelican
 Subtitle: Or, Adventures in Static Site Generation
 Author: Chris Krycho
 Date: 2014-01-01 08:00
-Description: I migrated to Pelican as a stopgap for migrating to my own generator.
+Summary: I migrated to Pelican as a stopgap for migrating to my own generator.
 Status: draft
 
 I've been wanting to migrate to a static site generator for a while. I like flat

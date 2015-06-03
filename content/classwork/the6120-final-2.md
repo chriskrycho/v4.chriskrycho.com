@@ -7,7 +7,7 @@ Category: theology
 Tags: M. Div., SEBTS
 Title: Perfectionism
 Subtitle: An Imperfect Doctrine Of Sanctification
-Description: The classic Wesleyan doctrine of moral perfectionism in this life is tempting on some fronts&mdash;but profoundly unhelpful.
+Summary: The classic Wesleyan doctrine of moral perfectionism in this life is tempting on some fronts&mdash;but profoundly unhelpful.
 Template: formats/class
 
 The theory of perfectionism suggests that believers ultimately come to a point

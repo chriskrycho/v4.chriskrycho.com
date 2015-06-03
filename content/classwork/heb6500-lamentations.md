@@ -9,7 +9,7 @@ Template: formats/class
 Class: Hebrew Syntax and Exegesis
 Professor: Dr. Heath A. Thomas
 School: Southeastern Baptist Theological Seminary
-Description: >
+Summary: >
     An open-ended, multi-vocal answer to a rhetorical question—demonstrated by a
     close analysis of the structure, verbs, and poetic devices employed by the
     poet.

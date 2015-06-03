@@ -2,7 +2,7 @@ Title: The Joy of Good Tools
 Subtitle: Or: How deciding to pay for GitHub made me think about delight.
 Author: Chris Krycho
 Date: 2015-01-09 18:00
-Description: I started out with a post on being willing to pay for GitHub. I ended up with a meditation on vocation and delight. It's quite the journey!
+Summary: I started out with a post on being willing to pay for GitHub. I ended up with a meditation on vocation and delight. It's quite the journey!
 Slug: joy-good-tools
 Tags: software development, design, joy
 

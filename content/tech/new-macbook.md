@@ -1,6 +1,8 @@
+---
 Title: The New Macbook
 Author: Chris Krycho
 Date: 2015-03-13 8:00
+...
 
 I have seen and heard lots of discussion of the [new Macbook] this week, and
 have been thinking about its appeal and Apple's strategy a bit along the way. At

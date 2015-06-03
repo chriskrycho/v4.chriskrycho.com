@@ -6,7 +6,7 @@ Link: http://andrewcamenga.com/
 Tags: links, software development, design
 Category: Tech
 Template: formats/link
-Description: >
+Summary: >
     Link: Andrew J. Camenga took advantage of the fact that my site design is
     under an open-source license, and adapted it. It is truly lovely!
 ...

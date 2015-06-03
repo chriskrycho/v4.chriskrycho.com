@@ -1,5 +1,5 @@
 Title: Right Standing Before God
-Description: Any discussion of the work of God in Christ has to include the idea of justification. It is a central theme in Bible's picture of salvation.
+Summary: Any discussion of the work of God in Christ has to include the idea of justification. It is a central theme in Bible's picture of salvation.
 Author: Chris Krycho
 Date: 2014-04-22 08:15
 Topic: What does it mean to be "justified"?

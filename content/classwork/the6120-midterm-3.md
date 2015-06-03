@@ -6,7 +6,7 @@ School: Southeastern Baptist Theological Seminary
 Date: 2014-03-05 15:00
 Category: theology
 Tags: M. Div., SEBTS
-Description: How exactly human beings' guilt relates to Adam's guilt is a question of no small theological import, and it has unsurprisingly been the topic of much theological discussion---not to say debate---over the past many hundreds of years.
+Summary: How exactly human beings' guilt relates to Adam's guilt is a question of no small theological import, and it has unsurprisingly been the topic of much theological discussion---not to say debate---over the past many hundreds of years.
 Template: formats/class
 
 How exactly human beings' guilt relates to Adam's guilt is a question of no

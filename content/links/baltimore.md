@@ -6,7 +6,7 @@ Link: http://www.theatlantic.com/politics/archive/2015/04/the-brutality-of-polic
 Tags: links
 Category: blog
 Template: formats/link
-Description: >
+Summary: >
     Link: Connor Friedersdort, writing at The Atlantic on the systemic culture
     of police brutality in Baltimore.
 ...

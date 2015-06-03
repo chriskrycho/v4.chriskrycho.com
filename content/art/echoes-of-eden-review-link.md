@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2015-02-11 07:00
 Tags: links
 Template: formats/link
-Description: Link&mdash;my review of Jerram Barrs' Echoes of Eden at Mere Orthodoxy.
+Summary: Link&mdash;my review of Jerram Barrs' Echoes of Eden at Mere Orthodoxy.
 
 This is sort of a [hybrid review and essay][review]. The review proper concludes:
 

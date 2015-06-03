@@ -2,7 +2,7 @@ Title: Three Month Cycles.
 Subtitle: Or Something Thereabouts
 Date: 2014-05-27 20:45
 Author: Chris Krycho
-Description: My general pattern of active focus in one particular area for months at a time, followed by a switch to a different area. I wish I could identify the pattern.
+Summary: My general pattern of active focus in one particular area for months at a time, followed by a switch to a different area. I wish I could identify the pattern.
 
 Over the past few years, Jaimie and I have observed that I tend to go in cycles
 in my time-spending habits. The issue is not so much whether I spend my time

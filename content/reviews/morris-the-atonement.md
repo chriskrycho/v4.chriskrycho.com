@@ -3,7 +3,7 @@ Category: theology
 Date: 2014-03-16 19:50
 Tags: book reviews
 Rating: 2/5
-Description: Morris' book could have been a helpful volume; a robust doctrine of the atonement is a wonderful thing. I am sad to say that _The Atonement_ simply wasn't very good.
+Summary: Morris' book could have been a helpful volume; a robust doctrine of the atonement is a wonderful thing. I am sad to say that _The Atonement_ simply wasn't very good.
 
 <i class="editorial">I wrote the following review after reading the book when it
 was assigned for my Christian Theology II class, covering Christology and 

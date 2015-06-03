@@ -5,7 +5,7 @@ Date: 2014-03-19 21:25
 Tags: links
 Category: theology
 Template: formats/link
-Description: The story on the execution of 33 Christians in North Korea may not have been true&hellip; it is hard to tell, because we have a hard time getting information about anything in the country.
+Summary: The story on the execution of 33 Christians in North Korea may not have been true&hellip; it is hard to tell, because we have a hard time getting information about anything in the country.
 
 Christ and Pop Culture has some great follow-up on the link [I posted][nk] last
 week:

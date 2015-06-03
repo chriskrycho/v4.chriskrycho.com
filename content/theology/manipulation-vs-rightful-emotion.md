@@ -2,7 +2,7 @@ Title: Music, Emotions, and Manipulation
 Author: Chris Krycho
 Date: 2014-03-24 08:00
 Status: draft
-Description: 
+Summary: 
 
 One challenge that we have in deciding how to approach corporate worship is walking the line between emotional manipulation and righty emotional action---especially in our music. It is entirely possible here (as in so many areas) to fall off the cart in a variety of ways.
 

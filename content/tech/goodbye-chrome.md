@@ -1,8 +1,12 @@
+---
 Title: Goodbye, Chrome
 Subtitle: You're just too creepy now.
-Description: Opting people into Google Now in the browser is bad enough. Doing it when they're signed out? Beyond creepy.
+Summary: >
+    Opting people into Google Now in the browser is bad enough. Doing it when
+    they're signed out? Beyond creepy.
 Author: Chris Krycho
 Date: 2014-02-24 15:20
+...
 
 Last week, Chrome crossed the line for me. I deleted it from my system to clean
 up its many hooks into my system---I searched out every trace of it I could

@@ -5,7 +5,7 @@ Link: http://mereorthodoxy.com/noah-theological-aesthetic-rorschach-test/
 Tags: links, my writing elsewhere
 Category: theology
 Template: formats/link
-Description: Link: Over at Mere Orthodoxy, I write at some length about how our responses to <i>Noah</i> says a great deal about us as well as about the movie itself.
+Summary: Link: Over at Mere Orthodoxy, I write at some length about how our responses to <i>Noah</i> says a great deal about us as well as about the movie itself.
 
 I spent a good bit of time working on this over the last week, and I hope you'll
 find it helpful.

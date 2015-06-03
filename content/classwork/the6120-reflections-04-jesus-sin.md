@@ -1,7 +1,7 @@
 Title: Like His Brothers in Every Way
 Author: Chris Krycho
 Date: 2014-02-11 08:30
-Description: If Jesus could not have sinned, then he was not really like us in every way. And that&mdash;to put it mildly&mdash;is a really serious problem.
+Summary: If Jesus could not have sinned, then he was not really like us in every way. And that&mdash;to put it mildly&mdash;is a really serious problem.
 Topic: Could Jesus have sinned?
 Category: theology
 Tags: M. Div., SEBTS

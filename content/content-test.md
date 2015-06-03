@@ -1,5 +1,5 @@
 Title: An Excursus on Ipsums
-Description: Using pseudo-random ipsum text to test and demonstrate the styles in an article of the highest possible complexity.
+Summary: Using pseudo-random ipsum text to test and demonstrate the styles in an article of the highest possible complexity.
 Author: Chris Krycho
 Date: 2015-06-28
 Tags: devotions, papers, hot tamales

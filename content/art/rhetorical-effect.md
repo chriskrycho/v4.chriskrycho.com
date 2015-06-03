@@ -1,7 +1,7 @@
 Title: I Wrote It Wrong
 Author: Chris Krycho
 Date: 2014-07-12 20:07
-Description: A few lessons I learned from a previous blog post&mdash;rhetorical effectiveness in writing is a non-trivial endeavor to say the least.
+Summary: A few lessons I learned from a previous blog post&mdash;rhetorical effectiveness in writing is a non-trivial endeavor to say the least.
 
 I wrote a [blog post][post] earlier, and it seems I got it wrong (see the
 [addendum][edit] at the end of the post). That is always an unpleasant

@@ -5,7 +5,7 @@ Link: http://mereorthodoxy.com/god-become-man-richer-theology-incarnation/
 Tags: links, my writing elsewhere
 Category: theology
 Template: formats/link
-Description: Link: My latest piece over at Mere Orthodoxy, on the Incarnation.
+Summary: Link: My latest piece over at Mere Orthodoxy, on the Incarnation.
 
 My latest piece over at Mere Orthodoxy (and the first such in too long):
 
