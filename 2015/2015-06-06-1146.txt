@@ -5,4 +5,6 @@ Template: formats/micro
 Tags: software development
 ...
 
-I just taught Jaimie how to use GitHub for Mac (as she is helping a friend with his Jekyll-powered website), and explained the basics of distributed version control. She is totally a boss. And GitHub for Mac is a pretty good app.
+I just taught Jaimie how to use GitHub for Mac (as she is helping a friend with
+his Jekyll-powered website), and explained the basics of distributed version
+control. She is totally a boss. And GitHub for Mac is a pretty good app.
