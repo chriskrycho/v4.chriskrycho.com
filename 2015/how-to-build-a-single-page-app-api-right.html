@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>How to Build a Single-Page App API Right &middot; Chris Krycho</title>
+    <meta name="description" content="How to write a single-page app API so that you get usable data on the first load *and* have a nice interface for your single-page application built in Ember/Angular/Knockout/Backbone/etc."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2015/how-to-build-a-single-page-app-api-right.html"/>
+    <meta property="og:title" content="How to Build a Single-Page App API Right"/>
+    <meta property="og:description" content="How to write a single-page app API so that you get usable data on the first load *and* have a nice interface for your single-page application built in Ember/Angular/Knockout/Backbone/etc."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="How to Build a Single-Page App API Right"/>
+    <meta name="twitter:description" content=""/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Creativity, reflection, & varied endeavors<br class="optional"/> by a peculiar fellow</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/talks/">talks</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="software-development tech">
+
+    <header>
+<h1>How to Build a Single-Page App API <em>Right</em></h1>
+<h2>Or: How to get performance, progressive enhancement, and SEO in your  Ember/Angular/Knockout/Backbone/etc. app for free!</h2>    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/how-to-build-a-single-page-app-api-right.html"><i class="fa fa-fw fa-link"></i></a>June 09, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2015/how-to-build-a-single-page-app-api-right.txt">Markdown source</a></span></div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>When I was first working on HolyBible.com, I struggled for quite a while to wrap my head around the right way to structure its API—and in truth, I actually didn’t come up with what I would call the <em>right</em> solution. I came up with a <em>working</em> solution, and the site performs all right, most of the time. However, our goal as developers shouldn’t be “all right, most of the time.” It should be “really well, all the time.” A big part of what I did wrong came from the bad advice I found in reading up on the issue along the way. This is my shot at helping you, dear reader, avoid making the same mistake.</p>
+<h2 id="the-challenge">The challenge</h2>
+<p>When building a client-side application, we need to get the data for each view so that we can render it. In the case of HolyBible.com, that means everything from actual Bible text to study Bible notes, about pages, etc. The question is <em>how</em> to do this: we need to be able to load an actual page from our server, and we need a way to request data (rather than whole pages) from the server.</p>
+<p>(More experienced developers already know where this is going: that last sentence there has the key to this whole thing. I know. But the internet <em>doesn’t.</em> I learned this the hard way.)</p>
+<h3 id="the-mistake">The mistake</h3>
+<p>Here’s the mistake I made: I built the Bible data API as (essentially) a <em>single</em> endpoint. When I went looking for advice on how to build this in Angular and Node/Express, every single tutorial or blog post I found outlined the same basic solution: routes for your data endpoints, and catch-all route that returns the basic frame page for everything else. So, for HolyBible.com, that would come out with route matchers for e.g. <code>/data/gen.1.1</code>, and for any other specific routes needed (for other views, static resources, etc.), with a default behavior of just dropping a static, basically empty template at the catchall <code>*</code> route. Then, once the application has loaded, it can inspect the URL and load the relevant data.</p>
+<p>This works. It’s exactly what I did on HolyBible.com, in fact. But it’s <em>slow</em>.</p>
+<p>Don’t get me wrong: the time until the initial page load is actually relatively quick (though I plan to improve it substantially over the next couple months). The real problem is that the initial page load <em>doesn’t include any content</em>.</p>
+<p>I <em>hate</em> this. That’s why people are on the site: not to see my neat skills with JavaScript, just to read the Bible. And they have to wait, because once the page <em>does</em> load, Angular has to spin up the full application, see what content <em>should</em> have been loaded, and request it.</p>
+<h3 id="the-solution">The solution</h3>
+<p>Don’t write <em>one</em> API. Write <em>two</em>. They should be structured nearly identically, but one of them will be a <em>page</em> API endpoint, and one will be a <em>data</em> API endpoint. In the context of HolyBible.com, here’s how that would play out.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> One endpoint would be based purely on the standard URL, something like <code>holybible.com/jhn.3.16</code>. The other would be to retrieve a set of <em>data</em> associated with a given address, like <code>holybible.com/data/jhn.3.16</code>. This is only a little different from the approach suggested above, but that small difference matters—in fact, it matters a <em>lot</em>.</p>
+<p>Instead of having the <code>jhn.3.16</code> route get handled by a catchall <code>*</code> route on the back end, it gets its own API endpoint, which looks for URLS of this shape and hands back a full page. That API endpoint is responsible to actually render the content of the page appropriately—in this case, with something like the whole chapter of John 3.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <em>That</em> gets handed back to the browser, so the very first thing the user sees is not a blank page while the JavaScript framework spins up and requests data, but rather <em>the Bible text they asked for in the first place</em>.</p>
+<p>Meanwhile, the JavaScript framework <em>can</em> spin up, and load any required session data, etc. and start managing the UI like normal. Once we get to this point, the framework can go ahead and request a data payload from the <code>/data/&lt;reference&gt;</code> endpoint. So, for example, if there is a navigation control on the page (as on HolyBible.com and indeed most sites), clicking to navigate to Job 14 could, instead of requesting <code>/job.14.4</code>, fetch the data from the other endpoint by running an AJAX request to <code>/data/job.14.4</code>.</p>
+<p>The backend thus supplies <em>both</em> a <code>/&lt;resource&gt;</code> and a <code>/data/&lt;resource&gt;</code> route. This might seem redundant, but we’ve just seen why it isn’t, Moreover, if you have any logic that needs to be in place—in our example here, a Bible reference parser, for example, to decide what content should be supplied—you can easily reuse it between the two routes. The differences is simply in the form of the data returned: is it a fully-rendered template, or just the data?</p>
+<h2 id="so-what">So what?</h2>
+<p>This approach has two big advantages over the catch-all approach that was frequently recommended in e.g. Angular SPA tutorials I read.</p>
+<ol type="1">
+<li><p>It’s <em>progressive enhancement</em>. If the JavaScript fails, or the user has it disabled, or it fails to load because it’s loaded asynchronously, the user still gets the page they asked for. Moreover, as long as the page content is build carefully (links built appropriately for other content, and so on), the entire application could continue to work even if the JavaScript <em>never</em> becomes available.</p></li>
+<li><p>It’s <em>performant</em>. Loading the content this way will be <em>much</em> faster than the standard approach recommended for single-page apps. As noted above, it gets the content to the user immediately, then lets the JavaScript UI bits come into play. Since future page loads can take advantage of both caching and smaller data payloads, the whole thing can actually be faster than either a pure client-side <em>or</em> a pure server-side approach. That is, once the client-side application is running, it can just update its views with data delivered via AJAX, rather than reloading the whole page. But <em>before</em> that, the user doesn’t have to wait to see something useful until the JavaScript framework spins up.</p></li>
+</ol>
+<p>It’s not often an approach gives you progressive enhancement and actually increases the performance of an application, but this one does. Better yet, you can apply this in just about any framework: it’s equally applicable to AngularJS with ExpressJS, Backbone with Rails, Ember with Django, Aurelia with Phoenix, or any other combination you come up with.</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Note: this is <em>not</em> the actual API structure of HolyBible.com, or even particularly close to it. Remember, I learned everything I’m writing here by doing it <em>wrong</em>.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Or possibly a section which constitutes a semantic block of data. I have some thoughts on chunking Bible data semantically rather than by chapter and verse for this kind of thing. That’s another post for another day, though.<a href="#fnref2">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h1>Connect</h1>
+    <h2>Social</h2>
+    <ul class="icons">
+        <li><a href="https://app.net/chriskrycho"><i class="fa fa-fw fa-adn"></i>App.net</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://www.facebook.com/chriskrycho"><i class="fa fa-fw fa-facebook"></i>Facebook</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-cloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+    </ul>
+    <h2>Software</h2>
+    <ul class="icons">
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://bitbucket.org/chriskrycho"><i class="fa fa-fw fa-bitbucket"></i>Bitbucket</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="navigate">
+    <h1>Navigate</h1>
+    <h2>Read</h2>
+    <ul>
+        <li><a href="http://www.chriskrycho.com/archives.html">Everything</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/micro/">micro</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/talks/">talks</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+        <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+    </ul>
+    <h2>Get Updates</h2>
+    <ul class="inline">
+        <li class="section-title">Everything</li>
+        <li><a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46224/chriskrychocom-all/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">art</li>
+        <li><a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46225/chriskrychocom-art/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">blog</li>
+        <li><a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46226/chriskrychocom-blog/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">micro</li>
+        <li><a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href=""><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">talks</li>
+        <li><a href="http://www.chriskrycho.com/feeds/talks.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href=""><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">tech</li>
+        <li><a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46227/chriskrychocom-tech/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+    <ul class="inline">
+        <li class="section-title">theology</li>
+        <li><a href="http://www.chriskrycho.com/feeds/theology.xml"><i class="fa fa-rss"></i>Feed</a></li>
+        <li><a href="https://broadcast.app.net/46228/chriskrychocom-theology/"><i class="fa fa-envelope-o"></i>Subscribe</a></li>
+    </ul>
+</section>
+<section id="recent">
+    <h1>Recent</h1>
+        <h2 class="section-title">art</h2>
+        <ul>
+            <li><a href="http://www.chriskrycho.com/2015/to-grow-older.html">To Grow Older</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/easier.html">Easier</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/airship.html">Airship</a></li>
+    </ul>
+        <h2 class="section-title">blog</h2>
+        <ul>
+            <li><a href="http://www.chriskrycho.com/2015/these-are-my-people.html">These Are My People</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/the-brutality-of-police-culture-in-baltimore.html">The Brutality of Police Culture in Baltimore</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/small-caps-and-margins.html">Small Caps and Margins</a></li>
+    </ul>
+    </ul>
+        <h2 class="section-title">talks</h2>
+        <ul>
+            <li><a href="http://www.chriskrycho.com/2015/tolle-lege.html">Tolle Lege!</a></li>
+    </ul>
+        <h2 class="section-title">tech</h2>
+        <ul>
+            <li><a href="http://www.chriskrycho.com/2015/how-to-build-a-single-page-app-api-right.html">How to Build a Single-Page App API <em>Right</em></a></li>
+            <li><a href="http://www.chriskrycho.com/2015/corporate-and-government-surveillance.html">Corporate and Government Surveillance</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/ctypes-structures-and-dll-exports.html">Python Enums, ctypes.Structures, and DLL exports</a></li>
+    </ul>
+        <h2 class="section-title">theology</h2>
+        <ul>
+            <li><a href="http://www.chriskrycho.com/2015/strong-group-cultures-are-broken-too.html">Strong-Group Cultures are Broken, Too</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/a-particular-way-of-imagining-the-world.html">A Particular Way of Imagining the World</a></li>
+            <li><a href="http://www.chriskrycho.com/2015/a-paradigmatic-instance-of-treachery.html">A Paradigmatic Instance of Treachery</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
+    <script type="text/javascript">$.bigfoot({'actionOriginalFN': 'ignore'});</script>
+         <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <script src="/assets/js/reftagger.js"></script>
+
+    <script>
+        !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+        arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+        d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+        insertBefore(d,q)}(window,document,'script','_gs');
+
+        _gs('GSN-862423-O');
+    </script>
+</body>
+</html>
