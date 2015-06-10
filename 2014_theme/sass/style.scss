@@ -8,7 +8,7 @@
 // General default styles
 html {
     font-size: 125%; /* -> 20px, using percentage to allow IE user stylesheet changes */
-    font-family: $serif;
+    font-family: $sans;
     color: $dark_gray;
     background: $dark_blue;
     line-height: $line_height;
@@ -409,14 +409,17 @@ article {
         }
 
         h2 {
-            font-size: $fs4;
+            font: {
+                family: $serif;
+                size: $fs5;
+                style: italic;
+            }
+
+            line-height: $line_height_small;
+
             padding: {
                 top: 0.465rem;
                 bottom: 0.465rem;
-            }
-
-            &:after, &:before {
-                content: "\2014";
             }
         }
     }
@@ -499,7 +502,34 @@ article {
         p { @include hyphens(auto); }
     }
 
-    &.micro { font-family: $sans; }
+    &.theology {
+        font: {
+            family: $serif; 
+            size: 92%;
+        }
+
+        @mixin theology-first-letter() {
+            font-size: 3em;
+            margin-top: 0.625rem;
+        }
+
+        .content {
+            > p:first-of-type {
+                &::first-letter { @include theology-first-letter(); }
+            }
+
+            > p.citation:first-of-type::first-letter {
+                @include first-letter-reset();
+            }
+
+            h1 {
+                + p,
+                + h2 + p { 
+                    &::first-letter { @include theology-first-letter(); } 
+                }
+            }
+        }
+    }
 
     &.archive,
     &.micro,

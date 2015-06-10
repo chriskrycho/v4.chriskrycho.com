@@ -4,7 +4,7 @@
     {% if articles %}
         {% for article in articles %}
             {% set item = article %}
-            <article class="archive {% if item.category == 'micro' %}micro{% endif %}">
+            <article class="archive {{item.category.slug}} {%for t in item.tags %}{{ t.slug }}{% endfor %}">
                 <header>
                 {% if item.link is defined %}
                     <h1><a class="outbound" href="{{ item.link }}">{{ item.title }}<i class="fa fa-fw fa-external-link"></i></a></h1>
