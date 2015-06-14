@@ -39,11 +39,12 @@
         <nav>
             <ul>
                 <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/talks/">talks</a></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title micro"><a href="http://www.chriskrycho.com/micro/">micro</a></li>
+                <li class="section-title talks"><a href="http://www.chriskrycho.com/talks/">talks</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
             </ul>
         </nav>
 
@@ -74,7 +75,7 @@
 <p>I <em>hate</em> this. That’s why people are on the site: not to see my neat skills with JavaScript, just to read the Bible. And they have to wait, because once the page <em>does</em> load, Angular has to spin up the full application, see what content <em>should</em> have been loaded, and request it.</p>
 <h3 id="the-solution">The solution</h3>
 <p>Don’t write <em>one</em> API. Write <em>two</em>. They should be structured nearly identically, but one of them will be a <em>page</em> API endpoint, and one will be a <em>data</em> API endpoint. In the context of HolyBible.com, here’s how that would play out.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> One endpoint would be based purely on the standard URL, something like <code>holybible.com/jhn.3.16</code>. The other would be to retrieve a set of <em>data</em> associated with a given address, like <code>holybible.com/data/jhn.3.16</code>. This is only a little different from the approach suggested above, but that small difference matters—in fact, it matters a <em>lot</em>.</p>
-<p>Instead of having the <code>jhn.3.16</code> route get handled by a catchall <code>*</code> route on the back end, it gets its own API endpoint, which looks for URLS of this shape and hands back a full page. That API endpoint is responsible to actually render the content of the page appropriately—in this case, with something like the whole chapter of John 3.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <em>That</em> gets handed back to the browser, so the very first thing the user sees is not a blank page while the JavaScript framework spins up and requests data, but rather <em>the Bible text they asked for in the first place</em>.</p>
+<p>Instead of having the <code>/jhn.3.16</code> route get handled by a catchall <code>*</code> route on the back end, it gets its own API endpoint, which looks for URLS of this shape and hands back a full page. That API endpoint is responsible to actually render the content of the page appropriately—in this case, with something like the whole chapter of John 3.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <em>That</em> gets handed back to the browser, so the very first thing the user sees is not a blank page while the JavaScript framework spins up and requests data, but rather <em>the Bible text they asked for in the first place</em>.</p>
 <p>Meanwhile, the JavaScript framework <em>can</em> spin up, and load any required session data, etc. and start managing the UI like normal. Once we get to this point, the framework can go ahead and request a data payload from the <code>/data/&lt;reference&gt;</code> endpoint. So, for example, if there is a navigation control on the page (as on HolyBible.com and indeed most sites), clicking to navigate to Job 14 could, instead of requesting <code>/job.14.4</code>, fetch the data from the other endpoint by running an AJAX request to <code>/data/job.14.4</code>.</p>
 <p>The backend thus supplies <em>both</em> a <code>/&lt;resource&gt;</code> and a <code>/data/&lt;resource&gt;</code> route. This might seem redundant, but we’ve just seen why it isn’t, Moreover, if you have any logic that needs to be in place—in our example here, a Bible reference parser, for example, to decide what content should be supplied—you can easily reuse it between the two routes. The differences is simply in the form of the data returned: is it a fully-rendered template, or just the data?</p>
 <h2 id="so-what">So what?</h2>
@@ -200,17 +201,6 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
     <script type="text/javascript">$.bigfoot({'actionOriginalFN': 'ignore'});</script>
-         <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
-        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
     <script src="/assets/js/reftagger.js"></script>
-
-    <script>
-        !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
-        arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
-        d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
-        insertBefore(d,q)}(window,document,'script','_gs');
-
-        _gs('GSN-862423-O');
-    </script>
 </body>
 </html>

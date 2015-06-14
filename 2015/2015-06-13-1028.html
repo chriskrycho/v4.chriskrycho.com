@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>One Page, Two APIs &middot; Chris Krycho</title>
-    <meta name="description" content="How to write a single-page app API so that you get usable data on the first load *and* have a nice interface for you Ember/Angular/etc. app."/>
+    <title>2015-06-13 10:28 &middot; Chris Krycho</title>
+    <meta name="description" content="If, in your discussion of eschatology, you skip or glide over physical resurrection, you have missed Christian hope almost entirely."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/drafts/one-page-two-apis.html"/>
-    <meta property="og:title" content="One Page, Two APIs"/>
-    <meta property="og:description" content="How to write a single-page app API so that you get usable data on the first load *and* have a nice interface for you Ember/Angular/etc. app."/>
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2015/2015-06-13-1028.html"/>
+    <meta property="og:title" content="2015-06-13 10:28"/>
+    <meta property="og:description" content="If, in your discussion of eschatology, you skip or glide over physical resurrection, you have missed Christian hope almost entirely."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-    <meta name="twitter:title" content="One Page, Two APIs"/>
+    <meta name="twitter:title" content="2015-06-13 10:28"/>
     <meta name="twitter:description" content=""/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
 
@@ -39,38 +39,31 @@
         <nav>
             <ul>
                 <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/art/">art</a></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/talks/">talks</a></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title micro"><a href="http://www.chriskrycho.com/micro/">micro</a></li>
+                <li class="section-title talks"><a href="http://www.chriskrycho.com/talks/">talks</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
             </ul>
         </nav>
 
     </header>
 
 
-<article class="software-development tech">
-
+<article class='micro'>
     <header>
-<h1>One Page, Two APIs</h1>
-<h2>A Sane Approach to Single-Page Applications</h2>    </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/drafts/one-page-two-apis.html"><i class="fa fa-fw fa-link"></i></a>June 09, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2015/one-page-two-apis.txt">Markdown source</a></span></div>
+    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/2015-06-13-1028.html"><i class="fa fa-fw fa-link"></i></a>June 13, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/micro/">micro</a></span><span><a href="http://www.chriskrycho.com/2015/2015-06-13-1028.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
 
         <div class="content">
 
-<p>When I was first working on HolyBible.com, I struggled for quite a while to wrap my head around the right way to structure its API—and in truth, I actually didn’t come up with what I would call the <em>right</em> solution. I came up with a <em>working</em> solution, and the site performs all right, most of the time. However, our goal as developers shouldn’t be “all right, most of the time.” It should be “really well, all the time.”</p>
-<h2 id="the-mistake">The mistake</h2>
-<p>Here’s the mistake I made: I built the Bible data API as a <em>single</em></p>
-<h2 id="the-solution">The solution</h2>
-<p>Don’t write <em>one</em> API. Write <em>two</em>. They should be structured nearly identically, but one of them will be a <em>page</em> API endpoint, and one will be a <em>data</em> API endpoint. In the context of HolyBible.com, here’s how that would play out: one endpoint would be based purely on the standard URL, something like this:</p>
-<pre><code>holybible.com/gen.1.1</code></pre>
-<p>The other would be to retrieve a set of <em>data</em> associated with a given address:</p>
-<pre><code>holybible.com/data/gen.1.1</code></pre>
+<p>If, in your discussion of eschatology, you skip or glide over physical resurrection, you have missed <em>Christian</em> hope almost entirely.</p>
         </div>
     </div>
 </article>
@@ -165,9 +158,9 @@
     </ul>
         <h2 class="section-title">tech</h2>
         <ul>
+            <li><a href="http://www.chriskrycho.com/2015/how-to-build-a-single-page-app-api-right.html">How to Build a Single-Page App API <em>Right</em></a></li>
             <li><a href="http://www.chriskrycho.com/2015/corporate-and-government-surveillance.html">Corporate and Government Surveillance</a></li>
             <li><a href="http://www.chriskrycho.com/2015/ctypes-structures-and-dll-exports.html">Python Enums, ctypes.Structures, and DLL exports</a></li>
-            <li><a href="http://www.chriskrycho.com/2015/open-source-is-neat.html">Open Source is Neat</a></li>
     </ul>
         <h2 class="section-title">theology</h2>
         <ul>
@@ -180,17 +173,6 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="/assets/js/bigfoot.min.js"></script>
     <script type="text/javascript">$.bigfoot({'actionOriginalFN': 'ignore'});</script>
-         <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
-        <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
     <script src="/assets/js/reftagger.js"></script>
-
-    <script>
-        !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
-        arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
-        d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
-        insertBefore(d,q)}(window,document,'script','_gs');
-
-        _gs('GSN-862423-O');
-    </script>
 </body>
 </html>
