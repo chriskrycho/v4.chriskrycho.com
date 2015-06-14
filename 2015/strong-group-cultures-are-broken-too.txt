@@ -4,7 +4,7 @@ Subtitle: Thoughts on <cite>When the Church Was a Family</cite>
 Date: 2015-05-28 17:25
 Tags: M. Div., SEBTS
 Summary: >
-    Joseph D. Hellerman's The Church Was a Family has some great things  to say,
+    Joseph D. Hellerman's The Church Was a Family has some great things to say,
     but he profoundly overstates the extent to which the Bible affirms
     "strong-group" (or indeed, any human) cultures.
 Template: formats/class
