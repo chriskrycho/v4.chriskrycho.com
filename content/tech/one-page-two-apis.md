@@ -64,7 +64,7 @@ associated with a given address, like `holybible.com/data/jhn.3.16`. This is
 only a little different from the approach suggested above, but that small
 difference matters---in fact, it matters a *lot*.
 
-Instead of having the `jhn.3.16` route get handled by a catchall `*` route on
+Instead of having the `/jhn.3.16` route get handled by a catchall `*` route on
 the back end, it gets its own API endpoint, which looks for URLS of this shape
 and hands back a full page. That API endpoint is responsible to actually render
 the content of the page appropriately---in this case, with something like the
