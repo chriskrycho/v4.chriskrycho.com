@@ -386,6 +386,8 @@ body {
 
 .section-title {
     text-transform: capitalize;
+    
+    &.micro { display: none; }
 }
 
 // Article
