@@ -5,8 +5,8 @@ Template: formats/micro
 Tags: coffee
 ...
 
-The [Counter Culture] \[Finca Al Puente] Honduran I ground for my Chemex this
-morning was amazing---one of the best cups of coffee I’ve ever had.
+The [Counter Culture][cc] [Finca Al Puente][fap] Honduran I ground for my Chemex
+this morning was amazing---one of the best cups of coffee I’ve ever had.
 
-[Counter Culture]: https://counterculturecoffee.com/
-[Finca Al Puente]: https://counterculturecoffee.com/store/coffee/finca-el-puente
+[cc]: https://counterculturecoffee.com/
+[fap]: https://counterculturecoffee.com/store/coffee/finca-el-puente
