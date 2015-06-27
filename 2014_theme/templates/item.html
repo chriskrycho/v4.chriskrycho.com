@@ -6,7 +6,7 @@
 {% block content %}
 
 {% block article_el %}
-<article class="{%for t in item.tags %}{{ t.slug }}{% endfor %} {{ item.category.slug }}">
+<article class="{%for t in item.tags %}{{ t.slug }} {% endfor %}{{ item.category.slug }}">
 {% endblock %}
 
     <header>
