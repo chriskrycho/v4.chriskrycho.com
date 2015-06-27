@@ -1,0 +1,8 @@
+---
+Title: 2015-06-26 14:03
+Date: 2015-06-26 14:03
+Tags: software development
+Template: formats/micro
+...
+
+I cannot wait till I can switch to ES2015. Got bit by the stupid var scoping issue again. You’d think I’d be past that by now...
