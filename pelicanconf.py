@@ -101,7 +101,8 @@ STATIC_PATHS = ['images',
 STATIC_EXCLUDE_SOURCES = False
 PAGE_EXCLUDES = ['talks/bibletech2015']
 ARTICLE_EXCLUDES = ['talks/bibletech2015']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},  # Copy CNAME file to /output
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
+                       'extra/robots.txt': {'path': 'robots.txt'},
                        'extra/favicon.png': {'path': 'favicon.png'},
                        'extra/favicon.ico': {'path': 'favicon.ico'},}  # Copy .htaccess file to /output
 
