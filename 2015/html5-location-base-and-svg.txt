@@ -8,6 +8,7 @@ Summary: |
     <code>location</code>… but if you get it wrong, SVG things can and will break
     under you.
 Tags: software development
+Modified: 2015-07-02 22:00
 ...
 
 For quite some time, I have been frustrated by a bug in HolyBible.com: Firefox
@@ -71,7 +72,7 @@ would entail an awful lot of changes if the base URL were ever changed.
 
 [recurring theme]: http://www.chriskrycho.com/2015/how-to-build-a-single-page-app-api-right.html
 
-Instead, we can do this:
+What if, instead, we did this?
 
 ```html
 <script>document.write('<base href="' + document.location.origin + '" />');</script>
@@ -82,7 +83,32 @@ This way, when the page renders, it writes the document location based on the
 the relative URLs for IDs behave as expected in Firefox again, while not
 breaking the behavior in any other browsers.
 
-Your best bet, for getting Firefox to play nicely with anchor-based references
-and SVG is either to use `document.location`, or to specify the base URL in a
-way that won't break anchor-based URL references. Since the latter is difficult
-(at best!), the `document.location` hack is probably the best way to go.
+But... then you'll navigate to another page, and Firefox will be back to not
+working.
+
+The [solution], it turns out, only came into being after I'd done the initial
+implementation, and I have no idea how much later it found its way into the
+Angular docs. However, even though it now *exists* in the docs, it's by no means
+obvious why you should do it this way, and certainly no mention of SVG! This
+might not seem odd to you... but it should, given that the only reason that
+Angular introduced this API change was to account for *exactly this issue*.[^1]
+
+[solution]: https://github.com/angular/angular.js/issues/8934#issuecomment-56568466
+
+As the Angular docs note, leaving out the `<base>` tag means all your URLs have
+to be absolute if you want to use HTML5 location and the `$locationProvider`. If
+you want to use SVGs with `<use>` and Firefox, though, that's what you have to
+do (and therefore that's what I'm doing).
+
+Fun times, right?
+
+
+
+[^1]: The closest it gets is this reference:
+
+    > Links that only contain a hash fragment (e.g. `<a href="#target">`) will
+    > only change `$location.hash()` and not modify the url otherwise. This is
+    > useful for scrolling to anchors on the same page without needing to know
+    > on which page the user currently is.
+
+    Even this, however, only *hints* at the root of the SVG issue.
