@@ -74,7 +74,7 @@ would entail an awful lot of changes if the base URL were ever changed.
 Instead, we can do this:
 
 ```html
-<script>document.write('<base href="' + document.location + '" />');</script>
+<script>document.write('<base href="' + document.location.origin + '" />');</script>
 ```
 
 This way, when the page renders, it writes the document location based on the
@@ -86,4 +86,3 @@ Your best bet, for getting Firefox to play nicely with anchor-based references
 and SVG is either to use `document.location`, or to specify the base URL in a
 way that won't break anchor-based URL references. Since the latter is difficult
 (at best!), the `document.location` hack is probably the best way to go.
-
