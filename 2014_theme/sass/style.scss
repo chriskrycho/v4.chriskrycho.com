@@ -235,7 +235,7 @@ hr {
         display: block;
         text-align: center;
         position: relative;
-        
+
         font-size: 0.75em;
 
         background: white;
@@ -251,7 +251,7 @@ hr {
 }
 
 .smcp {
-    font-family: 'Cardo SMCP';
+    font-family: $serif-smcp;
     letter-spacing: 0.8px;
 }
 
@@ -386,7 +386,7 @@ body {
 
 .section-title {
     text-transform: capitalize;
-    
+
     &.micro { display: none; }
 }
 
@@ -423,6 +423,8 @@ article {
                 top: 0.465rem;
                 bottom: 0.465rem;
             }
+
+            cite { font-style: normal; }
         }
     }
 
@@ -506,13 +508,13 @@ article {
 
     &.theology {
         font: {
-            family: $serif; 
+            family: $serif;
             size: 92%;
         }
 
         @mixin theology-first-letter() {
             font-size: 3em;
-            margin-top: 0.625rem;
+            margin-top: 0.5rem;
         }
 
         .content {
@@ -526,10 +528,12 @@ article {
 
             h1 {
                 + p,
-                + h2 + p { 
-                    &::first-letter { @include theology-first-letter(); } 
+                + h2 + p {
+                    &::first-letter { @include theology-first-letter(); }
                 }
             }
+
+            hr + p { &::first-letter { @include theology-first-letter(); } }
         }
     }
 
