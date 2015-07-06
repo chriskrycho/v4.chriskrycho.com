@@ -1,0 +1,11 @@
+---
+Title: 2015-06-25 21:06
+Date: 2015-06-25 21:06
+Tags: software development
+Template: formats/micro
+...
+
+Reading JavaScript Allongé. Just got to combinatorial logic (kestrel and idiot
+bird, for those in the know). Then he destructured a list with them.
+
+Mind. Blown.
