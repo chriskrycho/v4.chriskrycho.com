@@ -1,12 +1,12 @@
 ---
 Title: HTML5 Location, <code>&lt;base&gt;</code>, and SVG
 Date: 2015-06-20 10:30
-Subtitle: |
+Subtitle: >
     Making Angular and SVG <code>xlink:href</code> work correctly in Firefox.
-Summary: |
+Summary: >
     Angular requires <code><base></code> if you want to use HTML5's
-    <code>location</code>… but if you get it wrong, SVG things can and will break
-    under you.
+    <code>location</code>… but if you get it wrong, SVG things can and will
+    break under you.
 Tags: software development
 Modified: 2015-07-02 22:00
 ...

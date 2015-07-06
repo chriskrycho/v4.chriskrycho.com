@@ -1,7 +1,11 @@
+---
 Title: Theology is Essential
-Subtitle: We&rsquo;re all theologians&mdash;including the seven-year-olds.
+Subtitle: We’re all theologians—including the seven-year-olds.
+Summary: >
+    Chatting with a seven-year-old is one sure way to highlight the need for all
+    of us to be better theologians.
 Date: 2014-04-06 20:30
-Summary: Chatting with a seven-year-old is one sure way to highlight the need for all of us to be better theologians.
+...
 
 Today, I spent a good part of my afternoon talking theology with a seven-year-
 old. I was watching some friends' little girl, who is not yet a Christ-follower,
