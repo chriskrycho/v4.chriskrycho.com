@@ -76,21 +76,5 @@
     order: $val;
 }
 
-// Style rules
-@mixin first-letter() {
-    font-size: 3.2rem;
-    line-height: 1rem;
-    float: left;
-    margin-top: 1.1rem;
-    margin-right: 2px;
-}
-
-@mixin first-letter-reset() {
-    font-size: inherit;
-    line-height: inherit;
-    float: inherit;
-    margin: inherit;
-}
-
 // Bezier curves
 $easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);

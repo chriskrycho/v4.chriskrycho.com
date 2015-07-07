@@ -3,7 +3,7 @@
 <meta name="twitter:creator" content="@chriskrycho"/>
 {% if item is defined %}
     <meta name="twitter:title" content="{{ item.title|striptags }}"/>
-    <meta name="twitter:description" content="{{ item.description|striptags }}"/>
+    <meta name="twitter:description" content="{{ item.summary|striptags }}"/>
     {% if item.image is defined %}
         <meta name="twitter:image" content="{{ item.image }}"/>
     {% else %}

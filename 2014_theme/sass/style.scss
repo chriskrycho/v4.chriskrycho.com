@@ -40,6 +40,10 @@ a {
     }
 }
 
+b { font-weight: bold; }
+
+i { font-style: italic; }
+
 img {
     max-height: 100%;
     max-width: 100%;
@@ -241,8 +245,6 @@ hr {
         background: white;
         color: $light_gray;
     }
-
-    + p::first-letter { @include first-letter(); }
 }
 
 // Special styles
@@ -265,23 +267,18 @@ hr {
     padding-bottom: $fs6;
 }
 
-.greek {
-    font-family: $serif;
-    font-weight: normal;
-}
-
-.lbsBibleRef, .rtBibleRef {
-    white-space: nowrap;
-}
-
 .fa {
     font-size: $fs_small;
     padding-right: 0.224em;
 }
 
 // ----- Layout -----
-body {
-    border-top: $fs_very_small solid $dark_blue;
+body::before {
+    content: '';
+    width: 100%;
+    display: block;
+    height: $fs_very_small / 2;
+    background: linear-gradient(to right, $light_blue -15%, $dark_blue 35%, $light_blue);
 }
 
 // Header
@@ -455,15 +452,6 @@ article {
     }
 
     .content {
-
-        > p:first-of-type {
-            &::first-letter { @include first-letter(); }
-        }
-
-        > p.citation:first-of-type::first-letter {
-            @include first-letter-reset();
-        }
-
         h1 {
             padding-top: $fsp;
             padding-bottom: 0.323em;
@@ -484,9 +472,6 @@ article {
                 &:before { content: none; }
             }
 
-            + p,
-            + h2 + p { &::first-letter { @include first-letter(); } }
-
             + h2 {
                 padding-top: 0;
             }
@@ -506,58 +491,18 @@ article {
         p { @include hyphens(auto); }
     }
 
-    &.theology {
-        font: {
-            family: $serif;
-            size: 92%;
-        }
-
-        @mixin theology-first-letter() {
-            font-size: 3em;
-            margin-top: 0.5rem;
-        }
-
+    &.theology,
+    &.art {
         .content {
-            > p:first-of-type {
-                &::first-letter { @include theology-first-letter(); }
-            }
-
-            > p.citation:first-of-type::first-letter {
-                @include first-letter-reset();
-            }
-
-            h1 {
-                + p,
-                + h2 + p {
-                    &::first-letter { @include theology-first-letter(); }
-                }
-            }
-
-            hr + p { &::first-letter { @include theology-first-letter(); } }
-        }
-    }
-
-    &.archive,
-    &.micro,
-    &.poetry {
-        .content {
-            > p:first-of-type {
-                &::first-letter { @include first-letter-reset(); }
-            }
-
-            h1 {
-                + p,
-                + h2 {
-                    &::first-letter { @include first-letter-reset(); }
-                }
+            font: {
+                family: $serif;
+                size: 92%;
             }
         }
     }
 
     &.poetry {
         p { text-indent: 0; }
-
-        hr + p { &::first-letter { @include first-letter-reset(); } }
     }
 
     .meta {
@@ -691,11 +636,9 @@ sup[id^="fnref:"] a {
 
 // Footer
 #site-footer {
-    margin: {
-        top: $fs_large;
-        bottom: $fs_large;
-    };
-    background-color: $dark_blue;
+    margin-top: $fs_large;
+    padding-bottom: $fs_large;
+    background: linear-gradient(to bottom, $light_blue -75%, $dark_blue 50%);
     min-height: $fs_very_large;
     color: $white;
     text-align: center;
@@ -719,17 +662,19 @@ sup[id^="fnref:"] a {
     }
 
     section {
-        border-top: 0.244rem solid $dark_gray;
         padding-bottom: $fs3;
 
         @include flex(1);
     }
 
-    h1 {
-        background: $light_blue;
-        font-size: $fs2;
-        border-bottom: 0.156rem solid $white;
-        text-shadow: 0 0 2px $dark_blue;
+    h2 {
+        background: linear-gradient(to bottom, $dark_blue -100%, $light_blue 100%);
+        border: {
+            top: 1px solid $white;
+            bottom: 1px solid $white;
+        }
+
+        font-size: $fs3;
         padding: {
             top: 0.224em;
             bottom: 0.153em;
@@ -737,18 +682,23 @@ sup[id^="fnref:"] a {
         margin-bottom: 0.224em;
     }
 
-    h2 {
-        font-size: $fs3;
+    h3 {
+        color: $white;
+        font: {
+            size: $fs3;
+            weight: 300;
+        }
+
         padding-top: $fsp;
         text-shadow: 0 0 2px $dark_gray;
         margin: {
             left: auto;
             right: auto;
         }
+    }
 
-        &:first-of-type {
-            padding-top: 0.465em;
-        }
+    h2 + ul, h2 + h3 {
+        &:first-of-type { padding-top: 0.465rem; }
     }
 
     ul {
@@ -772,34 +722,6 @@ sup[id^="fnref:"] a {
 
         &.icons {
             padding-right: $fs4/2;
-        }
-
-        &.inline {
-            margin: {
-                left: auto;
-                right: auto;
-            }
-
-            li {
-                display: inline-block;
-                text-align: left;
-                padding: {
-                    right: 0.323em;
-                }
-
-                &:after {
-                    content: none;
-                }
-
-                &.section-title {
-                    width: 32.3%;
-                    text-align: right;
-
-                    &:after {
-                        content: ':';
-                    }
-                }
-            }
         }
     }
 }

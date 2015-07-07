@@ -2,9 +2,7 @@
 @import "mixins";
 
 @media only screen and (min-width: 1280px) and (min-height: 800px) {
-    html {
-        font-size: 150%;
-    }
+    html { font-size: 150%; }
 }
 
 @media only screen and (max-width: 920px) {
@@ -16,7 +14,7 @@
         nav {
             @include flex(1 0 100%);
             text-align: left;
-            background: $dark_blue;
+            background: linear-gradient(to right, $light_blue -50%, $dark_blue 25%, $dark_blue 75%, $light_blue 150%);
             padding: {
                 top: 0.465rem;
                 bottom: 0.391rem;
@@ -57,6 +55,11 @@
             }
         }
     }
+
+    body::before {
+        background: linear-gradient(to right, $light_blue -15%, $dark_blue 50%, $light_blue 115%);
+    }
+
 
     article {
         margin: {
