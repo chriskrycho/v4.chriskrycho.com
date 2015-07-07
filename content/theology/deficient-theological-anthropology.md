@@ -1,7 +1,7 @@
 ---
 Title: A Profoundly Deficient Theological Anthropology
 Subtitle: How most Christians have gotten the gay marriage debate wrong.
-Summary: |
+Summary: >
     TODO
 Status: draft
 Date: 2015-06-29 08:00
@@ -13,7 +13,7 @@ Responses to these trends have included no few critiques of the very idea of hom
 
 Both of these positions are partly right. Older conservatives have been right to decry brazen sexual immorality as fundamentally destructive to culture. Younger conservatives have been right when they have noted that much of the church's response has been holier-than-thou and has mashed hard on people for attractions and temptations they did not choose, and for which they have historically suffered (a theme Ross Douthat [traced out thoroughly and carefully][Douthat] last year as he reflected on this same outcome at lower levels of the court system). As followers of Christ, we ought to be clear and forthright about moral evils, and we do believe that sexual immorality, including the practice of homosexuality, is in that category. However, as followers of Christ we also ought to be deeply sympathetic to the reality that *none* of us choose our struggles or our temptations, and equally to the fact that all of us sin grievously, such that God's own self-sacrifice is necessary on *my* behalf. And we have not threaded this needle well. We have tended either to hammer on "those gays" or on "the judgmental church."
 
-[Douthat]: 
+[Douthat]:
 
 But all of this is really driven by much older problems, and goes much deeper in evangelicalism than these spasms on the surface might suggest. This is not merely a reflection of evangelicalism's tone problem, or only a reflection of the depravity of the world around us (depending on which cohort you ask). Although we have gotten this wrong in both of these ways---and we have, by both capitulating to the world's mores and by responding in profoundly unloving ways to our neighbors---our situation primarily reflects a deeper problem in evangelicalism: a profoundly deficient *theological anthropology*.
 
@@ -29,7 +29,7 @@ Equally, though: it is *those* truths which must be applied. We may reason in th
 
 We have not dwelt deeply enough on this one fact: God became a man. The Incarnation is [not merely a prerequisite][athanasius] for penal substitutionary atonement. It is itself an essential element of our salvation, and it is also one of the keys for understanding human nature rightly. Without it, even if we recognize the Puzzle-maker's plan and want to complete his puzzle, we are trying to make out edges and shapes in a dim light, more by feel than by sight. In the light of Jesus the Messiah's bursting onto the scene, many more things become clear. And a *theological anthropology* becomes possible. We ask, "What does it mean to be a human?" and if our answers are still halting and faltering, we at least have a starting point: the face of God in the life of man, and the life of God in the face of a man.
 
-[athanasius]: 
+[athanasius]:
 
 ---
 
