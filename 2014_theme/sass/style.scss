@@ -99,6 +99,8 @@ p {
     text-indent: $fs4;
 }
 
+.citation { text-align: right; }
+
 h1, h2, h3, h4, h5, h6, ul, ol, blockquote, pre, hr, figure, iframe {
     + p { text-indent: 0; }
 }
