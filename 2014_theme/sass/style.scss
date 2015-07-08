@@ -7,8 +7,8 @@
 
 // General default styles
 html {
-    font-size: 125%; /* -> 20px, using percentage to allow IE user stylesheet changes */
-    font-family: $sans;
+    font-size: 112.5%; /* -> 18px, using percentage to allow IE user stylesheet changes */
+    font-family: $serif;
     color: $dark_gray;
     background: $dark_blue;
     line-height: $line_height;
@@ -96,7 +96,7 @@ blockquote {
 
 // Paragraph styles
 p {
-    text-indent: $fs4;
+    text-indent: $fs3;
 }
 
 .citation { text-align: right; }
@@ -444,7 +444,7 @@ article {
     }
 
     .content-wrapper {
-        max-width: 30.814rem;
+        max-width: 32rem;
     }
 
     .intro {
@@ -493,19 +493,9 @@ article {
         p { @include hyphens(auto); }
     }
 
-    &.theology,
-    &.art {
-        .content {
-            font: {
-                family: $serif;
-                size: 92%;
-            }
-        }
-    }
+    &.poetry p { text-indent: 0; }
 
-    &.poetry {
-        p { text-indent: 0; }
-    }
+    &.micro { font-family: $sans; }
 
     .meta {
         color: $light_gray;
@@ -645,8 +635,21 @@ sup[id^="fnref:"] a {
     color: $white;
     text-align: center;
     line-height: $line_height_small;
+    position: relative;
     @include flexbox();
     @include flex-flow(row wrap);
+
+    $footer-header-height: $fs3-abs + $fsp-abs;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        height: $footer-header-height;
+        width: 100%;
+        border-bottom: 1px solid white;
+        background: linear-gradient(to right, $light_blue -15%, $dark_blue, $light_blue 115%);
+    }
 
     a:hover, a:active {
         color: $white;
@@ -665,23 +668,16 @@ sup[id^="fnref:"] a {
 
     section {
         padding-bottom: $fs3;
+        z-index: 1;
 
         @include flex(1);
     }
 
     h2 {
-        background: linear-gradient(to bottom, $dark_blue -100%, $light_blue 100%);
-        border: {
-            top: 1px solid $white;
-            bottom: 1px solid $white;
-        }
-
-        font-size: $fs3;
-        padding: {
-            top: 0.224em;
-            bottom: 0.153em;
-        }
-        margin-bottom: 0.224em;
+        font-size: $fs3-abs;
+        padding: (abs($footer-header-height - $fs3-abs) / 2) 0;
+        margin: 0;
+        height: $footer-header-height;
     }
 
     h3 {

@@ -77,25 +77,10 @@
     }
 }
 
-@media only screen and (max-width: 900px) and (min-width: 680px) {
-    #site-footer ul.inline {
-        padding-top: $fs_very_small;
-        li.section-title {
-            display: block;
-            width: auto;
-            text-align: center;
-        }
-    }
-}
-
 @media only screen and (max-width: 680px) and (min-width: 520px) {
     #site-subtitle {
         line-height: 1;
         text-indent: 0;
-    }
-
-    #site-footer ul.inline li.section-title {
-        width: 15.3%;
     }
 }
 
@@ -187,12 +172,24 @@
     }
 
     #site-footer {
+        background: none;
+        padding-bottom: 0;
+        &::before { content: none; }
+
         section {
+            background: linear-gradient(to bottom, $light_blue -75%, $dark_blue 50%);
+            padding-bottom: $fs3-abs;
             @include flex(1 0 100%);
         }
 
-        h1 {
-            padding-left: 0;
+        h2 {
+            height: auto;
+            background: linear-gradient(to right, $light_blue -50%, $dark_blue 25%, $dark_blue 75%, $light_blue 150%);
+            border: {
+                top: 1px solid $white;
+                bottom: 1px solid $white;
+            }
+            margin-bottom: $fs3-abs;
         }
 
     }
