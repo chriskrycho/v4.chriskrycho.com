@@ -7,7 +7,7 @@
 
 // General default styles
 html {
-    font-size: 112.5%; /* -> 18px, using percentage to allow IE user stylesheet changes */
+    font-size: 118.75%; /* -> 19px, using percentage to allow IE user stylesheet changes */
     font-family: $serif;
     color: $dark_gray;
     background: $dark_blue;
@@ -281,6 +281,7 @@ body::before {
     display: block;
     height: $fs_very_small / 2;
     background: linear-gradient(to right, $light_blue -15%, $dark_blue 35%, $light_blue);
+    border-bottom: 1px solid $light_gray;
 }
 
 // Header
@@ -630,12 +631,14 @@ sup[id^="fnref:"] a {
 #site-footer {
     margin-top: $fs_large;
     padding-bottom: $fs_large;
-    background: linear-gradient(to bottom, $light_blue -75%, $dark_blue 50%);
+    background: $dark_blue;
     min-height: $fs_very_large;
     color: $white;
     text-align: center;
     line-height: $line_height_small;
     position: relative;
+    border-top: 1px solid $light_gray;
+    font-family: $sans;
     @include flexbox();
     @include flex-flow(row wrap);
 
@@ -647,7 +650,7 @@ sup[id^="fnref:"] a {
         z-index: 0;
         height: $footer-header-height;
         width: 100%;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid $white;
         background: linear-gradient(to right, $light_blue -15%, $dark_blue, $light_blue 115%);
     }
 
@@ -675,8 +678,8 @@ sup[id^="fnref:"] a {
 
     h2 {
         font-size: $fs3-abs;
-        padding: (abs($footer-header-height - $fs3-abs) / 2) 0;
-        margin: 0;
+        line-height: 1.667;
+        margin: 0 0 $fsp-abs;
         height: $footer-header-height;
     }
 

@@ -20,8 +20,8 @@
                 bottom: 0.391rem;
             }
             border: {
-                top: 1px solid lighten($light_gray, 39.1%);
-                bottom: 1px solid lighten($light_gray, 39.1%);
+                top: 1px solid $light_gray;
+                bottom: 1px solid $light_gray;
             }
             margin: {
                 top: $fs3;
@@ -172,18 +172,19 @@
     }
 
     #site-footer {
-        background: none;
         padding-bottom: 0;
         &::before { content: none; }
 
         section {
-            background: linear-gradient(to bottom, $light_blue -75%, $dark_blue 50%);
             padding-bottom: $fs3-abs;
             @include flex(1 0 100%);
+
+            &:first-of-type h2 { border-top: none; }
         }
 
         h2 {
             height: auto;
+            padding-top: 2px;  // Just looks right
             background: linear-gradient(to right, $light_blue -50%, $dark_blue 25%, $dark_blue 75%, $light_blue 150%);
             border: {
                 top: 1px solid $white;
