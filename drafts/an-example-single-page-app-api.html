@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>An Example Single-Page App API &middot; Chris Krycho</title>
+    <meta name="description" content="A few weeks ago, I published a short description of a better way to write single-page-type applications with a two-part API, with matching page- and data-targeting URL endpoints. Of course, as nice as that is in principle, it is incredibly helpful to see ideas put into practice, so I’ve ..."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/drafts/an-example-single-page-app-api.html"/>
+    <meta property="og:title" content="An Example Single-Page App API"/>
+    <meta property="og:description" content="A few weeks ago, I published a short description of a better way to write single-page-type applications with a two-part API, with matching page- and data-targeting URL endpoints. Of course, as nice as that is in principle, it is incredibly helpful to see ideas put into practice, so I’ve ..."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="An Example Single-Page App API"/>
+    <meta name="twitter:description" content="A few weeks ago, I published a short description of a better way to write single-page-type applications with a two-part API, with matching page- and data-targeting URL endpoints. Of course, as nice as that is in principle, it is incredibly helpful to see ideas put into practice, so I’ve ..."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" async src="/assets/js/mtiFontTrackingCode.js"></script>
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Creativity, reflection, & varied endeavors<br class="optional"/> by a peculiar fellow</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title talks"><a href="http://www.chriskrycho.com/talks/">talks</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="software-development tech">
+
+    <header>
+<h1>An Example Single-Page App API</h1>
+<h2>Implementing a "single-page" JavaScript app in ExpressJS and EmberJS.</h2>    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/drafts/an-example-single-page-app-api.html"><i class="fa fa-fw fa-link"></i></a>July 27, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2015/an-example-single-page-app-api.txt">Markdown source</a></span></div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>A few weeks ago, I published <a href="http://www.chriskrycho.com/2015/how-to-build-a-single-page-app-api-right.html">a short description</a> of a better way to write single-page-type applications with a two-part API, with matching page- and data-targeting URL endpoints. Of course, as nice as that is in principle, it is incredibly helpful to see ideas put into practice, so I’ve created a small example application to demonstrate the principle.</p>
+<p>A few caveats:</p>
+<ul>
+<li>The <em>structure</em> of the app I outline below is <em>not</em> necessarily how you should do things in production. I have intentionally kept this as bare-bones as possible so that you can see the <em>idea</em>. When structuring your application, follow the best practices of whatever tools you’re using, not just random examples you found on the web (this one included). Trust me: you’ll thank me later.</li>
+<li>The goal of keeping this barebones, just to demonstrate the point, means I’m also leaving out a lot of other pieces that you’ll have to account for in most apps—other kinds of URL endpoints, authentication and authorization,<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> and so on.</li>
+</ul>
+<p>In short, I’m going to willfully disregard a <em>lot</em> of best practices to make this point clear. Please don’t take that as a license to do the same in your production apps.</p>
+<p>Those qualifications given, let’s get going.</p>
+<h2 id="moving-pieces">Moving pieces</h2>
+<p>To make this work, we’re going to need both a front-end and a back-end toolkit. <a href="http://expressjs.com">ExpressJS</a> is basically <em>the</em> standard NodeJS server framework at this point, so we’ll use that.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> There is a <em>lot</em> of competition among front-end frameworks, and while <a href="https://angularjs.org">AngularJS</a> is probably the most popular currently, it is distinctly <em>not</em> my favorite—not to mention that it will very much be <a href="https://angular.io" title="Angular 2.0">in flux</a> over the next few years. <a href="http://facebook.github.io/react/">ReactJS</a> is also super hot right now, and for good reason. However, I’m going to use my <em>favorite</em> of the front-end frameworks out there right now: <a href="http://emberjs.com">EmberJS</a>. Why? Basically, just because I like it the best!<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+<p>For the sake of my own convenience and future-proofing this to some extent, I’m writing the samples up in ES2015 (ES6), which is <em>much</em> nicer for a lot of things.</p>
+<p>To manage all of this, you’re going to need the following:</p>
+<ul>
+<li><a href="https://iojs.org">io.js</a> v2.0+ (anything higher than that will work; v2.3+ is preferred)</li>
+<li><a href="https://babeljs.io">Babel</a> (<code>npm install -g babel</code>)</li>
+<li><a href="http://www.ember-cli.com">Ember CLI</a> (<code>npm install -g ember-cli</code>)</li>
+</ul>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Note: these are <em>not</em> the same. Roughly speaking, <em>authentication</em> is determining that someone is who they allege themselves to be; <em>authorization</em> is determining what they have access to. These are of course related, but do not make the mistake of conflating them.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>I would be quite happy to do this in Python, but it’s easier to keep things simple if we limit this to a single language.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>Somewhat more seriously, I actually have a lot of reasons to prefer Ember, among them its governance model (i.e. <em>not</em> a corporate project) and its strong conventions. The latter is a good reason <em>not</em> to love it in some cases, in which case an up-and-coming toolkit you should check out is Rob Eisenberg’s <a href="http://aurelia.io">Aurelia</a>.<a href="#fnref3">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://app.net/chriskrycho"><i class="fa fa-fw fa-adn"></i>App.net</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-cloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/talks.xml"><i class="fa fa-fw fa-rss"></i>talks</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/theology.xml"><i class="fa fa-fw fa-rss"></i>theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2015/a-leaf.html">A Leaf</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2015/faithfulness.html">Faithfulness</a></li>
+        <li>Talks: <a href="http://www.chriskrycho.com/2015/tolle-lege.html">Tolle Lege!</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2015/html5-location-base-and-svg.html">HTML5 Location, <code>&lt;base&gt;</code>, and SVG</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2015/more-than-a-watchword.html">More than a Watchword</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <script src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+</body>
+</html>
