@@ -29,6 +29,13 @@
     <link href="/favicon.png" type="image/png" rel="icon" />
     <link href="/favicon.ico" type="image/ico" rel="icon" />
 
+    {# RSS Feed(s) #}
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+    {% for category, _ in categories %}
+        <link rel="alternate" href="/feeds/{{ category.name }}.xml" type="application/rss+xml" title="Posts filed in in '{{ category.name|title }}''">
+    {% endfor %}
+    {% block additional_feeds %}{% endblock %}
+
     {# Font tracking Script #}
     <script type="text/javascript" async src="{{ JS_DIR }}/mtiFontTrackingCode.js"></script>
 </head>
