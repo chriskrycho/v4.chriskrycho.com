@@ -197,10 +197,10 @@ given `IntEnum`/`CtypesEnum` type.)
 
 ---
 
-Thanks to [@oluseyi] for being my [rubber ducky] while I was working this out
+Thanks to [\@oluseyi] for being my [rubber ducky] while I was working this out
 earlier this week!
 
-[@oluseyi]: https://alpha.app.net/oluseyi
+[\@oluseyi]: https://alpha.app.net/oluseyi
 [rubber ducky]: http://en.wikipedia.org/wiki/Rubber_duck_debugging
 
 
