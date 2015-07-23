@@ -77,8 +77,8 @@ CATEGORY_URL = '{slug}/'
 CATEGORY_SAVE_AS = '{slug}/index.html'
 TAG_URL = '{slug}/'
 TAG_SAVE_AS = '{slug}/index.html'
-AUTHOR_SAVE_AS = False
-AUTHORS_SAVE_AS = False
+AUTHOR_SAVE_AS = ''
+AUTHORS_SAVE_AS = ''
 
 # Index and archive pages
 DEFAULT_PAGINATION = False
@@ -93,13 +93,24 @@ STATIC_EXCLUDE_SOURCES = False
 PAGE_EXCLUDES = ['talks/bibletech2015']
 ARTICLE_EXCLUDES = ['talks/bibletech2015']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
+                       'extra/.nojekyll': {'path': '.nojekyll'},
                        'extra/robots.txt': {'path': 'robots.txt'},
                        'extra/favicon.png': {'path': 'favicon.png'},
                        'extra/favicon.ico': {'path': 'favicon.ico'},}  # Copy .htaccess file to /output
 
 READERS = {'html': None}
 
+import os
+from pathlib import Path
+writing_path = Path(os.environ['HOME']) / 'Dropbox' / 'writing'
+bibliography_path = (writing_path / 'library.bib').resolve()
+csl_path = (writing_path / 'chicago.csl').resolve()
+
 PLUGIN_PATHS = ['../../pelican-plugins']
 PLUGINS = ['pandoc_reader']
-PANDOC_ARGS = ['--smart', '--no-highlight']
-PANDOC_EXTENSIONS = ['-citations']
+PANDOC_ARGS = ['--smart',  # use smart typography
+               '--no-highlight',  # use highlight.js instead
+               '-t', 'html5',  # use HTML and its corresponding attributes
+               '--section-divs',  # wrap heading-blocks with <section>
+               '--filter', 'pandoc-citeproc']
+            #    '--csl', str(csl_path)]  # bibtex
