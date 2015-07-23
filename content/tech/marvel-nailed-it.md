@@ -1,8 +1,12 @@
+---
 Title: Nailed It
 Subtitle: Marvel Actually Understands New Media
 Author: Chris Krycho
 Date: 2014-10-22 22:15
-Summary: Someone leaked a copy of the trailer for Avengers: Age of Ultron&hellip; and Marvel didn&rsquo;t throw a fit. Quite the opposite, in fact.
+Summary: >
+   Someone leaked a copy of the trailer for Avengers: Age of Ultron&hellip; and
+   Marvel didn&rsquo;t throw a fit. Quite the opposite, in fact.
+---
 
 Yesterday, something rather remarkable happened. Someone leaked a copy of the
 trailer for _Avengers: Age of Ultron_... and Marvel, rather than throwing a
@@ -22,7 +26,7 @@ it comes to managing things *not* going the way hoped for. But (after what I'm
 sure was considerable back-room wrangling), they followed it up an hour and a
 half later with another, equally fantastic tweet:
 
-> Here it is! Watch the [@Avengers][@av]: [\#AgeofUltron][aou-hash] Teaser
+> Here it is! Watch the [\@Avengers][\@av]: [\#AgeofUltron][aou-hash] Teaser
 > Trailer right NOW: <http://youtu.be/tmeOjFno6Do> [\#Avengers][av-hash]
 > ([October 22, 9:18 PM EST][trailer-tweet])
 
@@ -57,7 +61,7 @@ call that winning.
 
 [hydra]: https://twitter.com/Marvel/status/525071656306626560
 [trailer-tweet]: https://twitter.com/Marvel/status/525093857772318720
-[@av]: https://twitter.com/Avengers
+[\@av]: https://twitter.com/Avengers
 [aou-hash]: https://twitter.com/hashtag/AgeofUltron?src=hash
 [av-hash]: https://twitter.com/hashtag/Avengers?src=hash
 [censorship]: http://www.chemie.fu-berlin.de/outerspace/internet-article.html

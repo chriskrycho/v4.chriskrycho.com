@@ -1,6 +1,8 @@
+---
 Title: Hey, Look—A Podcast!
 Author: Chris Krycho
 Date: 2014-01-28 20:20
+---
 
 Today, I was happy to be able to finally go public with a project on which I
 have been working for the last couple months (and for which I have been planning
@@ -13,8 +15,8 @@ Of possible interest to my readers:
 - You can listen to the first episode, [We Need Some Context!][01]
 - You can [subscribe to the feed][feed].
 - You can follow and get updates via all sorts of social networks:
-	* Twitter: [@winningslowly][twitter]
-	* App.net: [@winningslowly][adn]
+	* Twitter: [\@winningslowly][twitter]
+	* App.net: [\@winningslowly][adn]
     * [App.net broadcast][broadcast] -- notifications on your phone or emails as
       you like
     * [Google+][g+] (yes, shockingly enough)
