@@ -26,6 +26,9 @@
 &lt;p&gt;The &lt;a href="https://github.com/angular/angular.js/issues/8934#issuecomment-56568466"&gt;solution&lt;/a&gt;, it turns out, only came into being after I’d done the initial implementation, and I have no idea how much later it found its way into the Angular docs. However, even though it now &lt;em&gt;exists&lt;/em&gt; in the docs, it’s by no means obvious why you should do it this way, and certainly no mention of SVG! This might not seem odd to you… but it should, given that the only reason that Angular introduced this API change was to account for &lt;em&gt;exactly this issue&lt;/em&gt;.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As the Angular docs note, leaving out the &lt;code&gt;&amp;lt;base&amp;gt;&lt;/code&gt; tag means all your URLs have to be absolute if you want to use HTML5 location and the &lt;code&gt;$locationProvider&lt;/code&gt;. If you want to use SVGs with &lt;code&gt;&amp;lt;use&amp;gt;&lt;/code&gt; and Firefox, though, that’s what you have to do (and therefore that’s what I’m doing).&lt;/p&gt;
 &lt;p&gt;Fun times, right?&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -57,6 +60,9 @@
 &lt;li&gt;&lt;p&gt;It’s &lt;em&gt;performant&lt;/em&gt;. Loading the content this way will be &lt;em&gt;much&lt;/em&gt; faster than the standard approach recommended for single-page apps. As noted above, it gets the content to the user immediately, then lets the JavaScript UI bits come into play. Since future page loads can take advantage of both caching and smaller data payloads, the whole thing can actually be faster than either a pure client-side &lt;em&gt;or&lt;/em&gt; a pure server-side approach. That is, once the client-side application is running, it can just update its views with data delivered via AJAX, rather than reloading the whole page. But &lt;em&gt;before&lt;/em&gt; that, the user doesn’t have to wait to see something useful until the JavaScript framework spins up.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;It’s not often an approach gives you progressive enhancement and actually increases the performance of an application, but this one does. Better yet, you can apply this in just about any framework: it’s equally applicable to AngularJS with ExpressJS, Backbone with Rails, Ember with Django, Aurelia with Phoenix, or any other combination you come up with.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -76,6 +82,9 @@
 &lt;li&gt;&lt;p&gt;As such, people are &lt;em&gt;absolutely right&lt;/em&gt; to be more tolerant of corporate data collection than of federal data collection. That they ought to be less tolerant of corporate data collection by no means suggests that their hostility to unwarranted governmental data collection should be diminished: quite the contrary.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Therefore, while some of the criticism of the government’s data collection may well be driven by the sorts of corporate interests he suggests, and while much of the opposition from companies like Facebook and Google is indeed hypocritical, the criticism is still warranted. The NSA has clearly and repeatedly overstepped even the extremely wide bounds granted it by the Patriot Act, and the Patriot Act itself licensed behavior that should be horrifying to people concerned with the long-term effects of mass surveillance on governance.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary><category term="listicles"></category></entry><entry><title>Python Enums, ctypes.Structures, and DLL exports</title><link href="http://www.chriskrycho.com/2015/ctypes-structures-and-dll-exports.html" rel="alternate"></link><updated>2015-05-28T18:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-28:2015/ctypes-structures-and-dll-exports.html</id><summary type="html">&lt;p&gt;For one of my contracts right now, I’m writing a &lt;code&gt;ctypes&lt;/code&gt; Python interface to existing C code. I got stuck and confused for quite a while on getting the interface to a given function to build correctly, and along the way had to try to understand the &lt;code&gt;from_param&lt;/code&gt; class method. The official docs are… fine… but the examples provided don’t cover the most common/basic use case: defining a simple, &lt;em&gt;non-ctypes&lt;/em&gt; data type as an argument to a DLL-exported function.&lt;/p&gt;
 &lt;p&gt;Let’s say you have a C function exported from a DLL; for convenience we’ll make it something rather silly but easy to understand:&lt;/p&gt;
 &lt;pre class="c"&gt;&lt;code&gt;/** my_exported.h */
@@ -183,6 +192,9 @@ print(get_an_enum_value(MyEnum.TWO))&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;An important note: The type definition we’ve provided here will work for &lt;code&gt;argtypes&lt;/code&gt; or &lt;code&gt;restype&lt;/code&gt; assignments, but &lt;em&gt;not&lt;/em&gt; as one of the members of a custom &lt;code&gt;ctypes.Structure&lt;/code&gt; type’s &lt;code&gt;_fields_&lt;/code&gt; value. (Discussing how you’d go about doing that is beyond the scope of this post; the most direct approach is just to use a &lt;code&gt;ctypes.c_int&lt;/code&gt; and note that it is intended to be used with a given &lt;code&gt;IntEnum&lt;/code&gt;/&lt;code&gt;CtypesEnum&lt;/code&gt; type.)&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Thanks to &lt;a href="https://alpha.app.net/oluseyi"&gt;@oluseyi&lt;/a&gt; for being my &lt;a href="http://en.wikipedia.org/wiki/Rubber_duck_debugging"&gt;rubber ducky&lt;/a&gt; while I was working this out earlier this week!&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -192,6 +204,9 @@ print(get_an_enum_value(MyEnum.TWO))&lt;/code&gt;&lt;/pre&gt;
 &lt;/section&gt;
 </summary><category term="software development"></category></entry><entry><title>Open Source is Neat</title><link href="http://www.chriskrycho.com/2015/open-source-is-neat.html" rel="alternate"></link><updated>2015-05-17T22:52:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-17:2015/open-source-is-neat.html</id><summary type="html">&lt;p&gt;I confess: my &lt;em&gt;first&lt;/em&gt; response to seeing &lt;a href="//andrewcamenga.com/"&gt;this page&lt;/a&gt; was a flash of anger: &lt;em&gt;Hey, he didn’t just learn from my site configuration, he actually stole my site &lt;/em&gt;&lt;strong&gt;design&lt;/strong&gt;&lt;em&gt;!&lt;/em&gt; And then I remembered: I open-sourced the design precisely so people could do that. This was just the first time I’ve ever actually had someone reuse something I did and shared like this. It was a strange (but ultimately wonderful) feeling. I hope to have it again many more times.&lt;/p&gt;
 &lt;p&gt;In any case, I rather like the tweaks Andrew Comenga made to my design to make it his own; &lt;a href="//andrewcamenga.com/"&gt;go take a look&lt;/a&gt;!&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary><category term="links"></category><category term="software development"></category><category term="design"></category></entry><entry><title>A Modern Python Development Toolchain</title><link href="http://www.chriskrycho.com/2015/a-modern-python-development-toolchain.html" rel="alternate"></link><updated>2015-05-16T22:40:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-16:2015/a-modern-python-development-toolchain.html</id><summary type="html">&lt;p&gt;Most of my development time these days—and especially the majority of my happiest time!—is spent working in Python. As such, I’ve experimented off and on over the last few years with the best workflow, and have settled down with a set of tools that is &lt;em&gt;very&lt;/em&gt; effective and efficient for me. I’m sure I’m not the only one who’s had to wrestle with some of the issues particular to this toolchain, and I know that information like this can be valuable especially for people just starting off, so I thought I would document it all in one place.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Note: when talking about a given program, I will italicize it, like &lt;em&gt;brew&lt;/em&gt; or &lt;em&gt;git&lt;/em&gt; or &lt;em&gt;python&lt;/em&gt;. When talking about things to type, I will make them a code block like &lt;code&gt;git clone &amp;lt;a repository&amp;gt;&lt;/code&gt;. For any extended samples, I will make them full-on code blocks:&lt;/p&gt;
 &lt;pre class="python"&gt;&lt;code&gt;import re
@@ -262,6 +277,9 @@ $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;Set up virtual environments with &lt;em&gt;pyenv-virtualenv&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;If you stick to those basic rules, Python itself shouldn’t give you any trouble at all.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -287,12 +305,18 @@ $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;&lt;p&gt;&lt;em&gt;Full-stack development is fun, but it’s also really hard.&lt;/em&gt; I wrote every scrap of code in HolyBible.com proper (though of course it relies on a lot of third-party code). It was very, very difficult to manage that all by myself; it’s a lot to hold in one’s head. (One of the reasons I chose Node was because keeping my implementation and testing all in one language helped reduce that load somewhat.) Would I do it again? Sure. But very much chastened about the difficulties involved. It has been enormously rewarding, and I &lt;em&gt;like&lt;/em&gt; being a full-stack developer. But it’s a lot of work, and now I know more clearly just how much.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;I could say a great deal more about the technical side of things especially, but my biggest takeaway here is that a lot of the hardest and most important work in developing software has nothing to do with the code itself. Architecture and approach shape &lt;em&gt;far&lt;/em&gt; more than the implementation details (even if those details still matter an awful lot). And popularity is not at all the same as either &lt;em&gt;quality&lt;/em&gt; or (especially) &lt;em&gt;suitability for a given task&lt;/em&gt;. In the future, I will be better equipped for the necessary kinds of evaluation, and will hopefully make still better decisions accordingly.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary><category term="software development"></category></entry><entry><title>The NSA wants tech companies to give it 'front door' access to encrypted data</title><link href="http://www.chriskrycho.com/2015/the-nsa-wants-tech-companies-to-give-it-front-door-access-to-encrypted-data.html" rel="alternate"></link><updated>2015-04-12T13:16:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-04-12:2015/the-nsa-wants-tech-companies-to-give-it-front-door-access-to-encrypted-data.html</id><summary type="html">&lt;p&gt;The Verge:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;“I don’t want a back door,” Rogers said. “I want a front door. And I want the front door to have multiple locks. Big locks….”&lt;/p&gt;
 &lt;p&gt;Rogers suggests the adoption of “front door” access will allow for essential security measures while keeping data safe from hackers or an outside attack. But opponents of the idea note that even broken into pieces, a master digital key creates security flaws. “There’s no way to do this where you don’t have unintentional vulnerabilities,” Donna Dodson, chief cyber­security adviser at the Commerce Department’s National Institute of Standards and Technologies, told the Post.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;That last bit is absolutely true. The government basically wants to make sure it can spy on anyone, any time it wants. That’s a bad, bad plan.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary><category term="links"></category></entry><entry><title>Unsurprisingly, In Flux</title><link href="http://www.chriskrycho.com/2015/unsurprisingly-in-flux.html" rel="alternate"></link><updated>2015-04-08T16:05:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-04-08:2015/unsurprisingly-in-flux.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;This started as a &lt;a href="https://alpha.app.net/chriskrycho/post/57102562"&gt;series of posts&lt;/a&gt; on App.net. I &lt;a href="http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html"&gt;resolved&lt;/a&gt; a while ago that if I was tempted to do that, I should just write a blog post instead. I failed at that resolution, but at a friend’s &lt;a href="https://alpha.app.net/jws/post/57108281"&gt;suggestion&lt;/a&gt;, am adapting it into a blog post anyway. You can see the posts that prompted it &lt;a href="https://alpha.app.net/keita/post/57096585"&gt;here&lt;/a&gt; and &lt;a href="https://alpha.app.net/jws/post/57096838"&gt;here&lt;/a&gt;.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -319,6 +343,9 @@ $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Rather like Git, though, which was originally going to be infrastructure for version control systems which would have their own interface, but eventually just had a “good enough” interface that we’re all now stuck with, Angular is being used &lt;em&gt;as&lt;/em&gt; a framework, not just as a &lt;em&gt;meta-framework&lt;/em&gt;, and it’s unsurprisingly not great for that.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;i class="editorial"&gt;Take this for what it’s worth: not the final word (by a long stretch) on JavaScript frameworks, but rather the perspective of one guy who notably &lt;em&gt;hasn’t used all of the frameworks&lt;/em&gt;, but has spent some time looking at them. Moreover, I haven’t particularly edited this; it’s more a summary in the kind of short-form posts that I originally created than a detailed analysis. The only things I’ve done are expand some of the notes on Angular and React, and add the footnote on React.&lt;/i&gt;&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -330,6 +357,9 @@ $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In the meantime, it lets Apple cleanly differentiate between its MacBook and MacBook Pro lines. If you need the ports for expandability—because you’re a power user—you get a Pro. If you don’t, you get the MacBook. The tradeoffs with CPU make sense here, too: a computer that performs about like a 2012 MacBook Air would not be my favorite for development work. But for the writing work that Jaimie does? Again, the performance levels there are perfectly reasonable. It’ll do everything she needs, and do it &lt;em&gt;well&lt;/em&gt;. Throw in the retina screen, and it’ll be really nice for her purposes.&lt;/p&gt;
 &lt;p&gt;In fact, I fully expect that we’ll end up getting her a 2nd or 3rd generation machine when we need to replace her current (a 2010 white MacBook) sometime in 2016–17.&lt;/p&gt;
 &lt;p&gt;So: better done than I initially thought, Apple.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary></entry><entry><title>The Tablet “Productivity” Problem</title><link href="http://www.chriskrycho.com/2015/the-tablet-productivity-problem.html" rel="alternate"></link><updated>2015-02-25T21:35:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-02-25:2015/the-tablet-productivity-problem.html</id><summary type="html">&lt;p&gt;I’m thinking this one through out loud. I rather hope that I can take these nascent thoughts and turn them into a more fully-fledged essay over the course of this year, so if you have thoughts, I’d &lt;em&gt;love&lt;/em&gt; to hear them. Hit me up on &lt;a href="https://twitter.com/chriskrycho"&gt;Twitter&lt;/a&gt;, &lt;a href="https://alpha.app.net/chriskrycho"&gt;ADN&lt;/a&gt;, or via &lt;script type="text/javascript"&gt;
 &lt;!--
 h='&amp;#x6b;&amp;#114;&amp;#x79;&amp;#x63;&amp;#104;&amp;#x6f;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#x6d;';a='&amp;#64;';n='&amp;#x63;&amp;#104;&amp;#114;&amp;#x69;&amp;#x73;';e=n+a+h;
@@ -344,6 +374,9 @@ document.write('&lt;a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail"&gt;'
 &lt;p&gt;I recognize that the answer may seem obvious against the backdrop of a consumerist culture against which many an anti-consumerism critique has rightly been levied. But think about what we mean by “consumption” in this case. Nearly every day I use my iPad both for reading and for displaying (and for learning) music. To be sure, I also watch the occasional YouTube video, interact on Twitter and App.net, and so on. But the vast majority of what I do with an iPad is best summed up as &lt;em&gt;learning&lt;/em&gt;.&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; Whether it is reading through a few carefully selected RSS feeds in &lt;a href="http://supertop.co/unread/"&gt;Unread&lt;/a&gt;, reading the news in &lt;a href="http://cir.ca"&gt;Circa&lt;/a&gt;,&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; working through reading for school in iBooks,&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; perusing the &lt;a href="http://emberjs.com"&gt;EmberJS&lt;/a&gt; docs in preparation for a major project I’ll be starting with the tool in a few months, or reading the Bible every morning, I do a &lt;em&gt;lot&lt;/em&gt; of reading on my iPad. Add in the fact that I use it for music as I practice piano, and I get an awful lot of mileage out of it every day.&lt;/p&gt;
 &lt;p&gt;Now, none of this negates Jason’s post in particular. If he doesn’t get that kind of traction out of an iPad, that’s no skin off my back. But I do think that the criticism of devices which are primarily “consumptive”—perhaps implied in Jason’s post; certainly stated outright in many other responses to the iPad—is misplaced. Whether simply for entertainment (joy in the arts is good!) or in reading (joy in the arts &lt;em&gt;or&lt;/em&gt; in self-betterment is good!) or in the myriad other ways that people put the iPad&lt;a href="#fn5" class="footnoteRef" id="fnref5"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; to use that are not making something new, there is value in the kinds of consumption done with it.&lt;/p&gt;
 &lt;p&gt;Are there valid critiques to be offered of tablets, including that certain kinds of consumptive habits are problematic? Of course. But reducing things to their productive utility is ethically flawed, and reducing human pursuits to their productive output even more so. It is just fine if &lt;a href="https://alpha.app.net/matigo"&gt;@matigo&lt;/a&gt; isn’t the sort of guy who loves an iPad. It is &lt;em&gt;not&lt;/em&gt; fine if tech pundits want to slam the iPad and other tablets because they have a misanthropic view of human flourishing—and make no mistake, the utilitarian calculus so often levied against tablets is just that. People are more than what they make; their time is valuable even (and sometimes especially) when not producing anything tangible at all.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -373,6 +406,9 @@ document.write('&lt;a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail"&gt;'
 &lt;p&gt;Apparently, Facebook isn’t interested in letting people have actual, modern security unless they’re willing to be tracked that way.&lt;/p&gt;
 &lt;p&gt;We have a problem here.&lt;/p&gt;
 &lt;p&gt;As it turns out, of course, people like me aren’t particularly valuable customers to Facebook anyway, so they probably don’t mind the fact that they’re losing more and more of our time. But losing that time they are. My use of Facebook is diminishing at an ever-increasing rate, for countless little reasons like this, where Facebook’s ad-driven motivations push them to treat me poorly. Too bad for them.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -390,6 +426,9 @@ document.write('&lt;a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail"&gt;'
 &lt;p&gt;There are still things I don’t love about JavaScript. Its syntax owes far too much to the C family of languages to make me happy; I quite like the way that CoffeeScript borrows from Python (white-space-delimited blocks, use of equality words like &lt;code&gt;is&lt;/code&gt; and boolean rules like &lt;code&gt;and&lt;/code&gt; rather than &lt;code&gt;===&lt;/code&gt; and &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; respectively, etc.). And I am looking forward to a number of features coming in the next version of JavaScript—especially generators and the &lt;code&gt;const&lt;/code&gt; and &lt;code&gt;let&lt;/code&gt; keywords, which will allow for &lt;em&gt;much&lt;/em&gt; saner patterns.&lt;/p&gt;
 &lt;p&gt;But all of that is simply to say that I am now starting to know JavaScript enough to know that its &lt;em&gt;real&lt;/em&gt; issues aren’t the surface-level differences from the other languages with which I’m familiar. They’re not even the warts I noted here. They’re things like the mix of classical and prototypal inheritance in the way the language keywords and object instantiation work. But I don’t mind those. Every language has tradeoffs. Python’s support for lambdas is pretty minimal, despite the utility of anonymous functions, for example. But I &lt;em&gt;like&lt;/em&gt; the tradeoffs JavaScript makes.&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In other words, I discovered the same thing so many other people have over the last few years: JavaScript isn’t just a good choice for utilitarian reasons. Beneath that messy exterior is a gem of a language. I’m having a lot of fun with it.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -474,6 +513,9 @@ int subtractNumbers(int r, int s) {
 &lt;p&gt;If you’re curious how I dealt with it, well… I renamed the &lt;code&gt;addNumbers()&lt;/code&gt; function in &lt;code&gt;main.c&lt;/code&gt; to &lt;code&gt;_addNumbers()&lt;/code&gt; and put a loud, angry &lt;code&gt;TODO&lt;/code&gt; on it for the current release, because the only way to fix it is to refactor this whole giant mess.&lt;/p&gt;
 &lt;p&gt;The takeaway of the story, if there is one, is that people will do crazier, weirder, worse things than you can possibly imagine when they don’t understand the tools they are using and just hack at them till they can make them work. The moral of the story? I’m not sure. Run away from crazy code like this? Be prepared to spend your life refactoring?&lt;/p&gt;
 &lt;p&gt;How about: try desperately &lt;em&gt;not&lt;/em&gt; to leave this kind of thing for the person following you.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -498,6 +540,9 @@ int subtractNumbers(int r, int s) {
 &lt;p&gt;Despite being a decades-old company, Marvel is clearly a new media company through and through at this point. They managed to dodge the &lt;a href="http://www.economist.com/blogs/economist-explains/2013/04/economist-explains-what-streisand-effect"&gt;Streisand effect&lt;/a&gt; quite nicely, turning what could have been an opportunity for hostility all around into a PR coup and a win that they couldn’t have scored on their own.&lt;/p&gt;
 &lt;p&gt;Other old (and new!) media companies, take note. &lt;em&gt;This&lt;/em&gt; is the way you play the game. You recognize when the cat is out of the bag and you run with it. Own it. Make it your own somehow. Don’t let it own you. The internet is a big, crazy, chaotic place, and you can never hope to control it—nor even the narrative about you and your stuff, whatever that may be—like you might have been able to do twenty-five years ago. But that’s okay. If you can roll with the punches, you can still come out ahead, and you’ll look a little more human doing it. I call that winning.&lt;/p&gt;
 &lt;p&gt;(Go Marvel.)&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary></entry><entry><title>The Next Generation of Version Control</title><link href="http://www.chriskrycho.com/2014/next-gen-vcs.html" rel="alternate"></link><updated>2014-10-16T21:45:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-10-16:2014/next-gen-vcs.html</id><summary type="html">&lt;p&gt;The current state of affairs in version control systems is a mess. To be sure, software development is &lt;em&gt;far&lt;/em&gt; better with &lt;em&gt;any&lt;/em&gt; of the distributed version control systems in play—the three big ones being &lt;a href="http://git-scm.com"&gt;Git&lt;/a&gt;, &lt;a href="http://mercurial.selenic.com"&gt;Mercurial&lt;/a&gt; (&lt;code&gt;hg&lt;/code&gt;), and &lt;a href="http://bazaar.canonical.com/en/"&gt;Bazaar&lt;/a&gt; (&lt;code&gt;bzr&lt;/code&gt;), with a few other names like &lt;a href="http://www.fossil-scm.org"&gt;Fossil&lt;/a&gt; floating around the periphery—than it ever was in a centralized version control system. There are definitely a few downsides for people converting over from some standard centralized version control systems, notably the increased number of steps in play to accomplish the same tasks.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; But on the whole, the advantages of being able to commit locally, have multiple complete copies of the repository, and share work without touching a centralized server far outweigh any downsides compared to the old centralized system.&lt;/p&gt;
 &lt;p&gt;That being so, my opening statement remains true, I think: &lt;em&gt;The current state of affairs in version control is a mess.&lt;/em&gt; Here is what I mean: of those three major players (Git, Hg, and Bazaar), each has significant downsides relative to the others. Git is famously complex (even arcane), with a user interface design philosphy closely matching the UI sensibilities of Linus Torvalds—which is to say, all the wires are exposed, and it is about as user-hostile as it could be.&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; It often outperforms Hg or Bazaar, but it has quirks, to say the very least. Hg and Bazaar both have &lt;em&gt;much&lt;/em&gt; better designed user interfaces. They also have saner defaults (especially before the arrival of Git 2.0), and they have better branching models and approaches to history.&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; They have substantially better documentation—perhaps especially so with Bazaar, but with either one a user can understand how to use the tool &lt;em&gt;without having to understand the mechanics of the tool&lt;/em&gt;. This is simply not the case with Git, and while I &lt;em&gt;enjoy&lt;/em&gt; knowing the mechanics of Git because I find them interesting, &lt;em&gt;having&lt;/em&gt; to understand the mechanics of a tool to be able to use it is a problem.&lt;/p&gt;
 &lt;p&gt;But the other systems have their downsides relative, to Git, too. (I will focus on Hg because I have never used Bazaar beyond playing with it, though I have read a good bit of the documentation.) Mutable history in Git is valuable and useful at times; I have rewritten whole sequences of commits when I realized I committed the wrong things but hadn’t yet pushed.&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; Being able to commit chunks instead of having to commit whole files at a go is good; I feel the lack of this every time I use Hg.&lt;a href="#fn5" class="footnoteRef" id="fnref5"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; (Needing to understand the &lt;em&gt;file system&lt;/em&gt; that Git invented to make sure you do not inadvertently destroy your repository is… not so good.) A staging area is nice,&lt;a href="#fn6" class="footnoteRef" id="fnref6"&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt; (even if &lt;em&gt;having&lt;/em&gt; to stage everything manually can be in the pain in the neck&lt;a href="#fn7" class="footnoteRef" id="fnref7"&gt;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt;).&lt;/p&gt;
@@ -515,6 +560,9 @@ int subtractNumbers(int r, int s) {
 &lt;li&gt;and last but not least, truly cross-platform.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;That is a non-trivial task, but the first DVCS that manages to hit even a sizeable majority of these desires will gain a lot of traction in a hurry. The second generation of distributed version control has been good for us. The third could be magical.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -532,6 +580,9 @@ int subtractNumbers(int r, int s) {
 </summary><category term="software development"></category></entry><entry><title>Pushing Into C's Corner Cases</title><link href="http://www.chriskrycho.com/2014/pushing-into-cs-corner-cases.html" rel="alternate"></link><updated>2014-08-12T09:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-08-12:2014/pushing-into-cs-corner-cases.html</id><summary type="html">&lt;p&gt;I’m working on a project that is all in C because of its long history and legacy. We’re slowly modernizing the codebase and writing all our new code in Python (using NumPy, C extensions, and so on for performance where necessary). Occasionally, I just want to bang my head against the wall because there are things we can do so simply in any modern language that you just can’t do in any straightforward way in C. For example, I have file writers that all work &lt;em&gt;exactly&lt;/em&gt; the same way, with the single exception that the format string and the data that you put into it vary for each file.&lt;/p&gt;
 &lt;p&gt;In Python, this would be straightforward to handle with the class machinery: you could simply specify the format string in each inheriting class and define the data points to be supplied at the top of an overriding function, call the parent function with &lt;code&gt;super()&lt;/code&gt; and be done.&lt;/p&gt;
 &lt;p&gt;To do something similar in pure C is nearly impossible. You can supply a format string with each function (or module, or however you separate out the code), and if you feel especially clever you could convert all your data types to strings and pass them as a list to be printed by the standard function. The net result would be &lt;em&gt;longer&lt;/em&gt; and &lt;em&gt;less maintainable&lt;/em&gt; than simply having a set of essentially-duplicate functions, though.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary><category term="software development"></category></entry><entry><title>Don't Be Rude</title><link href="http://www.chriskrycho.com/2014/dont-be-rude.html" rel="alternate"></link><updated>2014-07-12T15:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-12:2014/dont-be-rude.html</id><summary type="html">&lt;h6 id="note"&gt;Note&lt;/h6&gt;
 &lt;p&gt;I have left the original post here as I wrote it, but there is an important &lt;a href="#edit-and-addendum"&gt;addendum&lt;/a&gt; at the bottom of the post that you should make sure to read (and note in particular the &lt;a href="#further-addendum"&gt;further addendum&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;This post came off as pretty critical of MarketCircle, and that &lt;em&gt;really&lt;/em&gt; wasn’t my point. I wanted to use a bad experience I had with MarketCircle to illustrate a general principle, &lt;em&gt;not&lt;/em&gt; to poke at any particular company. I did that poorly in this particular piece; for some follow-up on that see &lt;a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html"&gt;this post&lt;/a&gt; which I wrote later that day, analyzing how and why this piece so spectacularly failed to accomplish my desired goals.&lt;/p&gt;
@@ -577,6 +628,9 @@ int subtractNumbers(int r, int s) {
 &lt;p&gt;All that being said… I still have a bad taste in my mouth, and I am still leery of doing further business with MarketCircle. And that &lt;em&gt;does&lt;/em&gt; make the original point in a way, because the emotional response from a bad experience, even one you did not intend, doesn’t fade quickly or at all, even in the face of reasonable articulations of alternative explanations for the bad experience. You have to work at a good customer experience continually.&lt;/p&gt;
 &lt;h6 id="further-addendum"&gt;Further Addendum&lt;/h6&gt;
 &lt;p&gt;MarketCircle actually saw this piece—presumably via my link on Twitter—and got back to me, looking to fix this issue, which I really appreciated. In some sense, then, they &lt;em&gt;are&lt;/em&gt; doing exactly what I advocated in this piece.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -588,6 +642,9 @@ int subtractNumbers(int r, int s) {
 &lt;p&gt;I actually turned on app badges for a number of apps for which I had previously disabled them, because they had been extraneous when I was getting noises or buzzes for the apps and services in question. I also tweaked a number of other apps: some can show app badges but not appear in notification center. Most cannot show anything on the lock screen at all. If I want to check on notifications, I can look explicitly.&lt;/p&gt;
 &lt;p&gt;We will see how the experiment goes. Even just a few hours in, though, I can already say I like it. I did &lt;em&gt;not&lt;/em&gt; get any buzzing in my pocket when a few people interacted with me on App.net, or Instagram, or anywhere else. And, social media being what it is, none of those interactions are temporally important (however much it might feel otherwise). They will still be there waiting when I get back.&lt;/p&gt;
 &lt;p&gt;Now, this does not automatically make me more productive. I still need self control to be most effective in using my time. It does take away a few of the most obvious distractions and interruptions that make it hard to focus, though, and that is &lt;em&gt;definitely&lt;/em&gt; a win.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary></entry><entry><title>Economies of Scale</title><link href="http://www.chriskrycho.com/2014/economies-of-scale.html" rel="alternate"></link><updated>2014-07-11T10:35:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-11:2014/economies-of-scale.html</id><summary type="html">&lt;p&gt;I was reading through an interesting Ars Technica &lt;a href=""&gt;article&lt;/a&gt; on the new Long Range Strike Bomber (LRS-B) proposal the Air Force is soliciting. It’s generally interesting to me in part because I’ve worked on a related project in the past, and we talked fairly often about how the LRS-B program might impact it. The article is worth your time. This quote from Robert Gates in the middle of the article, which touches on the program the LRS-B would replace, caught my attention, though:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;What we must not do is repeat what happened with our last manned bomber. By the time the research, development, and requirements processes ran their course, the aircraft, despite its great capability, turned out to be so expensive—$2 billion each in the case of the B-2—that less than one-sixth of the planned fleet of 132 was ever built.&lt;/p&gt;
@@ -600,6 +657,9 @@ int subtractNumbers(int r, int s) {
 &lt;/ol&gt;
 &lt;p&gt;This second point is incredibly important to understand. It is certainly true that the absolute cost of buying 132 B-2s would have been high, possibly astronomically and unaffordably high. What it would &lt;em&gt;not&lt;/em&gt; have been is $264 billion. Even assuming that manufacture costs were fully half of the cost-per- plane (almost certainly not the case), it would have been barely over half that. Assume that the B-2 cost $1B per plane to build, and that the other $10B was research. Well, that’s still an expensive plan… but the total cost is something like $144B, not $264B. Those economies of scale matter.&lt;/p&gt;
 &lt;p&gt;This same reality is a point made later in the article by another commentator, but I couldn’t let it go. Things like this drive me nuts, because they’re such a common failing in our political discourse. Ignorance of basic economics from the people making decisions with this kind of economic impact is profoundly unhelpful.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary></entry><entry><title>Bundling!</title><link href="http://www.chriskrycho.com/2014/bundling.html" rel="alternate"></link><updated>2014-05-13T14:35:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-05-13:2014/bundling.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.digitalbookworld.com/2012/why-do-we-have-to-choose-between-print-and-digital/"&gt;“Why do we have to choose between print and digital?”&lt;/a&gt; asked Richard Curtis at Digital Book World last week, before tackling the topic of bundling—getting ebooks at reduced cost or even free when buying a physical copy of the book. Drawing an analogy from music purchases that have moved in the same direction, he suggests that publishers &lt;em&gt;ought&lt;/em&gt; to be bundling, and then poses the query: When you purchase a print book you should be able to get the e-book for…&lt;/p&gt;
 &lt;ol type="1"&gt;
 &lt;li&gt;the full combined retail prices of print and e-book editions&lt;/li&gt;
@@ -660,6 +720,9 @@ int subtractNumbers(int r, int s) {
 &lt;hr /&gt;
 &lt;p&gt;My thanks to &lt;a href="http://stephencarradini.com"&gt;Stephen Carradini&lt;/a&gt; for invaluable contributions to this piece in two forms: many long conversations about this very topic, and a helpful edit of the actual content.&lt;/p&gt;
 &lt;p&gt;[craigmod]: http://craigmod.com/journal/post_artifact/#section_4 “Post Artifact Books and Publishing, Section 4: The post-artifact system” from Craig Mod&amp;quot;&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -681,11 +744,17 @@ int subtractNumbers(int r, int s) {
 &lt;blockquote&gt;
 &lt;p&gt;Count me among them. When I need to read deeply—when I want to lose myself in a story or an intellectual journey, when focus and comprehension are paramount—I still turn to paper. Something just feels fundamentally richer about reading on it. And researchers are starting to think there’s something to this feeling.&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary><category term="links"></category></entry><entry><title>iPad vs. Kindle</title><link href="http://www.chriskrycho.com/2014/ipad-vs-kindle.html" rel="alternate"></link><updated>2014-04-30T21:20:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-04-30:2014/ipad-vs-kindle.html</id><summary type="html">&lt;p&gt;I’ve been a happy owner of both a Kindle and an iPad Mini for the last several months, and it occurred to me tonight that I use them &lt;em&gt;very&lt;/em&gt; similarly in some ways. Both are primarily reading devices for me. What is different is the kinds of material I read on each.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;My Kindle is a first generation Paperwhite, in fairly good condition. (It has one significant quirk in that it sometimes turns on without the power button being pushed. Alas.) I use it nearly every day right now. I have most of my school books on it, and several of my favorite novels. I’m rereading Patrick Rothfuss’ &lt;em&gt;The Wise Man’s Fear&lt;/em&gt; right now, and so I spend a good half a hour a day on the Kindle for that alone. I also get a lot of my seminary reading done on the device.&lt;/p&gt;
 &lt;p&gt;On the iPad, on the other hand, I read a lot of web pages, nearly all via &lt;a href="https://www.instapaper.com"&gt;Instapaper&lt;/a&gt;. I had sometimes had Instapaper items delivered to my Kindle, and that worked &lt;em&gt;fairly&lt;/em&gt; well, but I much prefer the experience of using the app on the iPad. I opt to do pretty much any technical reading on the device: its screen just works much better for dealing with things like code samples embedded in a blog post—not least because I can scroll easily if I need to! I also do basically all my Bible reading on the iPad. It is far easier to navigate to different parts of the text, switch translations (or original languages!) while keeping my place there on any of the top-tier iPad apps than on the Kindle. And I sometimes read comics on the iPad—something I would not try in a million years on the current Kindle screen!&lt;/p&gt;
 &lt;p&gt;A friend asked a few months ago if I thought one would obviate the other. Given the qualification that neither is in any sense truly a &lt;em&gt;necessity&lt;/em&gt;—we could quite easily get along without either—my answer after several months with both is &lt;em&gt;no&lt;/em&gt;. Though the devices are similar in a number of ways, they fit into very different niches. The things I actively enjoy on each are very different. The Kindle is good for much longer-form reading, and its lack of distractions is nice (though I often take advantage of the Do Not Disturb mode on the iPad when I actually want to accomplish things besides talking on social media). The iPad is better for anything with color, for technical documents, and for anything where navigation more complex than one-page-after-another is important. I would not particularly want to read a novel on it, though!&lt;/p&gt;
 &lt;p&gt;I will be curious to see if the devices converge at some point in the future.&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; At present, no technology gives both the responsiveness and gorgeous color of the iPad &lt;em&gt;and&lt;/em&gt; the low-contrast, pleasant long-form reading experience offered by the Kindle’s e-ink. If at some point we get a technology that does both, it will be pretty amazing. In the meantime… we still have pretty amazing pieces of technology, and I enjoy them both a lot.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -705,6 +774,9 @@ int subtractNumbers(int r, int s) {
 &lt;p&gt;It is that second goal that has pushed me to do this crazy project this crazy way. It’s crazier than just teaching myself a language in order to do the static site generator itself, too, because there are a few other pieces missing that I’ll need to write to make this work… like a Markdown implementation and an HTML templating language. I’ve never written anything remotely like either before, so I’m going to take the chance to learn a &lt;em&gt;lot&lt;/em&gt; of new things. For the Markdown implementation, rather than relying on regular expression parsing (like most Markdowns do), I’m going to use a Parsing Expression Grammar. That will certainly be more efficient and reliable, but—more importantly—it is also outside my experience. I have yet to start thinking through how to tackle the HTML templating language implementation (though I know I am going to make it an Io implementation of &lt;a href="http://slim-lang.com"&gt;Slim&lt;/a&gt;, which I quite like).&lt;/p&gt;
 &lt;p&gt;In any case, I’m going to be taking a good bit longer to get Step Stool finished. That is all right: I am going to learn a ton along the way, and I am quite sure I will have a blast doing it. And that is &lt;em&gt;exactly&lt;/em&gt; what these kinds of projects are for.&lt;/p&gt;
 &lt;p&gt;I’ll post updates as I go, with the things I’m learning along the way. Hopefully they’ll be interesting (or at least entertaining).&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -758,6 +830,9 @@ Rectangle {
 &lt;p&gt;Note, too, that this is the &lt;em&gt;only&lt;/em&gt; way to create a new basic type of object in QML: it has to be the root level object in a QML document. I would &lt;em&gt;really&lt;/em&gt; like to be able to access internal declarations—to have named internal types/objects. Unfortunately, QML doesn’t let you do this. I suspect this has to do with how the QML type system works: it actually binds these types to C++ objects behind the scenes. This is a non-trivially helpful decision in terms of the performance of the application, but it certainly makes my brain a little bit twitchy.&lt;/p&gt;
 &lt;p&gt;There are two basic consequences of this structure. First, any types you need to be able to use in other QML objects have to be defined in their own QML documents. Second, it is (as near as I can see so far, at least) difficult to create good generic QML types of more complex structures that you can then use to implement specific variations. For example: if you want to create accordions, you can create a fair number of the low-level elements in generic ways that you can reuse, but once you get to the relationships between the actual model, delegate, and view elements, you will need to create them in custom forms for each distinct approach.&lt;/p&gt;
 &lt;p&gt;This is more like creating HTML documents than Javascript, which makes sense, &lt;em&gt;if&lt;/em&gt; you remember that QML is Javascript-based but &lt;em&gt;declarative&lt;/em&gt;. You just have to remember that while you can define some reusable components, the full-fledged elements are like full HTML pages with a templating system: you can include elements, but not override their internal contents. In QML, you can override &lt;em&gt;some&lt;/em&gt; of their contents, which is nice—but that is not the primary way to go about it.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary><category term="software development"></category></entry><entry><title>Feels Right</title><link href="http://www.chriskrycho.com/2014/feels-right.html" rel="alternate"></link><updated>2014-04-04T21:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-04-04:2014/feels-right.html</id><summary type="html">&lt;p&gt;I had spent most of the last week and a half working on getting &lt;a href="http://www.firebirdsql.org"&gt;FirebirdSQL&lt;/a&gt; configured and ready to use for a project I’m working on with &lt;a href="http://www.questconsult.com"&gt;Quest Consultants&lt;/a&gt;. It was slow going. The tool is decent, but the documentation is spotty and it felt like everything was just a bit of a slog—to get it working correctly, to get it playing nicely with other pieces of the development puzzle, to get it working across platforms.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Then, because I had done something a &lt;em&gt;little&lt;/em&gt; bit silly in my eagerness to get up and going last week and written code without a testable configuration, I hit a wall today. The queries weren’t working. I had made a &lt;a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception"&gt;bug&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I spent a substantial part of the day chasing down that bug, and then a conversation with user &lt;em&gt;agronholm&lt;/em&gt; on the &lt;a href="http://docs.sqlalchemy.org/en/rel_0_9/"&gt;SQLAlchemy&lt;/a&gt; IRC channel (&lt;a href="irc://irc.freenode.net/sqlalchemy"&gt;freenode/#sqlalchemy&lt;/a&gt;) got me thinking. The Firebird team describes one of their options as an “embedded” server, but &lt;em&gt;agronholm&lt;/em&gt; pointed out that what they really mean is &lt;em&gt;portable&lt;/em&gt;. It’s running a standalone server and client, but it’s not part of the same thread/process (like SQLite is). Then &lt;em&gt;agronholm&lt;/em&gt; very helpfully asked—my having mentioned my preference for &lt;a href="http://www.postgresql.org"&gt;PostgreSQL&lt;/a&gt; earlier—“Does Postgres not have a portable version?” Two minutes later, we had both found &lt;a href="http://sourceforge.net/projects/postgresqlportable/"&gt;PostgreSQL Portable&lt;/a&gt;, and I rejoiced.&lt;/p&gt;
 &lt;p&gt;It took me less than half an hour to get it downloaded and set up and to confirm that it would work the way we need for this particular piece of software. (Firebird had taken me a good three hours, what with digging through badly organized and not terribly clear documentation.) It took me less than half an hour more to get PostgreSQL to the same point that I’d finally gotten Firebird to after multiple hours working with it. And I was so &lt;em&gt;very&lt;/em&gt; happy. What had been an especially frustrating work day now had me quietly smiling to myself constantly for the last two and a half hours as I &lt;a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception/22872598#22872598"&gt;finished&lt;/a&gt; tracking down the bug that had set me on this path in the first place.&lt;/p&gt;
@@ -795,6 +870,9 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
   CONSTRAINT unique_file UNIQUE (file_name, file_location)
 );&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It is not just that the PostgreSQL example is shorter and clearer—it is that it is shorter and clearer because its designers and developers have taken the time to make sure that the shorter, cleaner way works well, and have documented it so you can know how to use that shorter cleaner way without too much difficulty.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -822,6 +900,9 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
 &lt;/ol&gt;
 &lt;p&gt;That should do it. Note that the driver choice and path configuration both matter. On OS X, I found that only the &lt;code&gt;FBDriver&lt;/code&gt; with this (and one other, older-style and therefore not recommended) path setup worked successfully.&lt;/p&gt;
 &lt;p&gt;Observations, corrections, additional information, and miscellaneous comments welcomed on &lt;a href="https://alpha.app.net/chriskrycho"&gt;App.net&lt;/a&gt; or &lt;a href="https://www.twitter.com/chriskrycho"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -835,6 +916,9 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Surfing as I remember it in the late ’90s and early ’00s was inherently the experience of getting lost along that timeline, finding myself dozens of links along the chain and wondering how I had ended up there, and then being able to trace my way back. With tabs, that traceability was gone. With it went the inherent tension that we faced with every link: to follow, or not? To get sucked down into &lt;em&gt;this&lt;/em&gt; vortex or &lt;em&gt;that&lt;/em&gt;? Because in all likelihood, we knew, we were not going to be coming back to this page. With tabs, though, I could open both of those pages without ever leaving this one. I could start new journeys without ending the old. But there was a hidden cost: that newly opened tab had no history. It was a clean slate; before that newly opened link there was only a blank page. If I closed the original from which I had opened it, there was no going back.&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; If I closed this new tabs, there was no going forward to them. The line was broken.&lt;/p&gt;
 &lt;p&gt;From there it was only a short step to the idea of a single site being the center from which one ventured out to other points on the web before returning: the Facebooks and Twitters of the world. In some sense, Facebook’s entire model is predicated on the idea that it is natural to open a new tab with that juicy Buzzfeed content while keeping Facebook itself open in a background tab. Would it work in that old linear model? Sort of. Would it feel natural? Never.&lt;/p&gt;
 &lt;p&gt;All of this because of tabs. Invention’s most significant results are rarely those the minds behind it expect. When we are designing things—whether a piece of furniture or a piece of the web—we have to remember that design decisions all have repercussions that we may not see. Technology is never neutral. Particular innovations may or may not be &lt;em&gt;morally&lt;/em&gt; significant, but they always produce changes in people’s behavior. Design has consequences.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -851,6 +935,9 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The same kinds of things hold true for configuration options. Moreover, the configuration is done through a Python module. While that makes the module easier to integrate on the code side of things, it makes its actual content much less transparent than one might hope. Python is not really well optimized for writing configuration files—nor is any normal programming language. Configuration is inherently declarative, rather than imperative.&lt;/p&gt;
 &lt;p&gt;This is not to say that Pelican is bad software. It is not. It is, however, a fairly typical example of open source software implemented by committee. It has holes (some of them serious), bumps, and quirks. Here is the reality: so will Step Stool, though they will be the quirks that come from an individual developer’s approach rather than a group’s. But the one thing I can guarantee, and the reason I am increasingly motivated to get back to working on Step Stool. And yes, I do have a couple other projects on my plate as well—contributions to the Smartypants and Typogrify modules, my own &lt;a href="https://bitbucket.org/chriskrycho/spacewell"&gt;Spacewell typography project&lt;/a&gt;, and quite possibly a &lt;a href="https://bitbucket.org/chriskrycho/markdown-poetry/"&gt;Markdown Poetry extension&lt;/a&gt;. But I would like very much to just get back to doing this myself. There is freedom in rolling my own solution to things. I will not always have time to do these kinds of things; I figure I should do them when I can.&lt;/p&gt;
 &lt;p&gt;So here’s to &lt;a href="http://step-stool.io"&gt;Step Stool&lt;/a&gt;, and—more importantly—to writing your own software just to scratch that itch.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -862,6 +949,9 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
 &lt;p&gt;According to a recent study by Ookla Speedtest, the U.S. ranks a shocking 31st in the world in terms of average download speeds. The leaders in the world are Hong Kong at 72.49 Mbps and Singapore on 58.84 Mbps. And America? Averaging speeds of 20.77 Mbps, it falls behind countries like Estonia, Hungary, Slovakia, and Uruguay.&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary><category term="links"></category></entry><entry><title>Goodbye, Chrome</title><link href="http://www.chriskrycho.com/2014/goodbye-chrome.html" rel="alternate"></link><updated>2014-02-24T15:20:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-02-24:2014/goodbye-chrome.html</id><summary type="html">&lt;p&gt;Last week, Chrome crossed the line for me. I deleted it from my system to clean up its many hooks into my system—I searched out every trace of it I could find—and will put it back on my system only for testing websites. Why? Because it’s just too creepy now.&lt;/p&gt;
 &lt;p&gt;Here’s the story: two weekends ago, I was sitting at a coffee shop working on a friend’s website, when up popped a series of Google Now OS X desktop notifications from Chrome, informing me of the weather, a package having recently shipped, and so on.&lt;/p&gt;
 &lt;p&gt;There were just two problems with this:&lt;/p&gt;
@@ -878,4 +968,7 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This was not the first time I have seen Chrome engage in behavior that does not respect its users. I have repeatedly run into cases where clearing the cache and deleting browsers… doesn’t. Cookies sometimes still stick around. Private browsing sessions inherit cookies from the main window (and sometimes vice versa). Closing a private session and launching a new one would sometimes still include cookies and cache from a previous session (bank accounts still logged in, etc.). Chrome had thus long been untrustworthy to me. But this was a bridge too far. This was not just slightly unnerving. It was creepy.&lt;/p&gt;
 &lt;p&gt;Call it a bug if you like. It is likely that it was, in fact, a bug. So, most likely, were the other cases I saw above. But these are the kinds of bugs that make a browser fundamentally untrustworthy, and they are the kinds of bugs that are that much creepier coming from a company whose profit comes almost entirely from selling advertising—that is, from selling user information to advertising companies. The deal was that we trusted Google not to abuse that information. Unfortunately, that deal just keeps getting worse all the time. (Pray they do not alter it further.)&lt;/p&gt;
 &lt;p&gt;I will have a copy of the browser on my system for testing purposes, but for nothing else. Goodbye, Chrome. And for that matter: goodbye, Google services. Over the course of the rest of this year, I will be moving myself completely off of all Google services (mail, calendar, etc.), with the sole exception of (non- logged-in) search. You’re just too creepy now.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
 </summary></entry></feed>
