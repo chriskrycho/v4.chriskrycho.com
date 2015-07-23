@@ -285,7 +285,7 @@ proclaim Christ alone is Lord.
 
 # Works Cited
 
-<!--- Inserted automatically by pandoc-citeproc --->
+<!-- Inserted automatically by pandoc-citeproc -->
 
 
 [^1]: [@r.mounce:revelation:1998], 360; commentators across the spectrum make
