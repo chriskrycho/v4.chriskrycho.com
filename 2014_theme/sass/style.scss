@@ -91,7 +91,11 @@ blockquote {
         left: $fs5;
         right: $fs1;
     }
+}
 
+abbr {
+    font-family: $serif-smcp;
+    text-transform: lowercase;
 }
 
 // Paragraph styles
@@ -556,7 +560,13 @@ article {
         }
     }
 
-    .footnote { font-size: $fs_small; }
+    .references p {
+        font-size: $fs6;
+        padding-bottom: $fsp_abs;
+        line-height: $line_height_small;
+    }
+
+    .footnote, .footnotes { font-size: $fs_small; }
 
     &.archive {
         width: auto;
@@ -579,9 +589,6 @@ article {
         border-radius: 2px;
         margin: $fsp 0;
         overflow: scroll;
-    }
-
-    code {
         padding: 0 0.269em;
         font-size: $fs_small;
     }
@@ -725,25 +732,6 @@ sup[id^="fnref:"] a {
             padding-right: $fs4/2;
         }
     }
-}
-
-.bigfoot-footnote__button {
-    &:after {
-        @include transform(translate(-50%, -50%));
-        font: {
-            family: $sans;
-            size: $fs_small;
-        }
-    }
-}
-
-.bigfoot-footnote__tooltip {
-    @include transform(rotate(45deg));
-}
-
-.bigfoot-footnote__content {
-    line-height: $line_height_small;
-    font-size: $fs6;
 }
 
 @import "media";
