@@ -249,6 +249,11 @@ processing any new content with it; total generation time is back down where it
 was before for me: the effort is all in generating the large indexes I use to
 display the content for the landing pages and for category and tag archives.
 
+And the result: that same paper, rendered to <abbr>HTML</abbr> [on my website],
+with citations and works cited, generated automatically and beautifully.
+
+[on my website]: http://www.chriskrycho.com/2015/not-exactly-a-millennium.html
+
 ### Other site generators
 I don't know the situation around using Pandoc itself in other generators,
 including Jekyll---I simply haven't looked. I do know, however, that there *is*
