@@ -241,7 +241,7 @@ more below under **The Future**.)
 One word of warning: Pandoc is much slower to generate <abbr>HTML</abbr> with
 `--filter pandoc-citeproc` than *without* the filter, and the larger your site,
 the more you will feel this. (The time to generate the site from scratch jumped
-from about 2.5s to about 30s for me, with 270 articles, 17 drafts, 2 pages, and
+from about 10s to about 30s for me, with 270 articles, 17 drafts, 2 pages, and
 1 hidden page, according to Pelican.) Pandoc has to process *every* article to
 check for citations, and that's no small task. However, if you have Pelican's
 content caching turned on, this is a one-time event. After that, it will only be
