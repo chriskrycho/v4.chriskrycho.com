@@ -65,7 +65,7 @@
 <h1>Academic Markdown and Citations</h1>
 <h2>A workflow with Pandoc, <span class='tex'>BibT<span class="texE">E</span>X</span>, and the editor of your choice</h2>    </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/academic-markdown-and-citations.html"><i class="fa fa-fw fa-link"></i></a>July 26, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/workflow/">#workflow</a><a class="hashtags" href="http://www.chriskrycho.com/writing/">#writing</a></span><span><a href="http://www.chriskrycho.com/2015/academic-markdown-and-citations.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/academic-markdown-and-citations.html"><i class="fa fa-fw fa-link"></i></a>July 26, 2015 (updated July 26, 2015)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/workflow/">#workflow</a><a class="hashtags" href="http://www.chriskrycho.com/writing/">#writing</a></span><span><a href="http://www.chriskrycho.com/2015/academic-markdown-and-citations.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
@@ -118,6 +118,26 @@ What is this? Yet *another* citation?[^fn3]
 --csl=/Users/chris/Dropbox/writing/chicago.csl -o revelation.docx</code></pre>
 <p>To see an extended sample of this kind of usage in practice, take a look at the <a href="http://www.chriskrycho.com/2015/not-exactly-a-millennium.txt">Markdown source</a> for the paper I wrote last week, using exactly this approach. Every footnote that references a specific source simply has a cite key of this variety. The header metadata includes a path to the bibliography file and a <abbr>CSL</abbr>. (These could be configured globally, as well, but I chose to specify them on a per-file basis so that if I want or need to use <em>different</em> styles or a separate library for another file at a later time, I can do so with a minimum of fuss. More on this below.)</p>
 <p><a href="/downloads/revelation.docx">Here</a> is the rendered result. You can see that it automatically generated everything right down to the “ibid.”-style footnotes. I made a few, fairly minimal tweaks (replacing the search <abbr>URL</abbr> with an <abbr>ATLA</abbr> database catalog reference and inserting a section break before the Works Cited list), and turned the paper in—confident, for the first time since I started seminary, that all of the references were in the right order and the right format. With carefully formatted reference documents (with their own style sets),<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> I was able to generate an actually <em>nice</em> <abbr><a href="/downloads/revelation-pretty.pdf">PDF</a></abbr> version of the paper from another Word document, as well.<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></p>
+<p>And, better yet, you don’t even have to put citations in footnotes. As <a href="https://twitter.com/anjdunning">@anjdunning</a> pointed out in a <a href="https://twitter.com/anjdunning/status/625415216575197184">tweet</a> response to the original version of this post:</p>
+<blockquote>
+<p><a href="https://www.twitter.com/chriskrycho">@chriskrycho</a> Don’t put citekeys in a footnote: write everything as inline citations and it will also generate notes when asked by CSL def.<br />
+<a href="https://twitter.com/anjdunning/status/625415216575197184">∞</a> July 26, 2015 17:19</p>
+</blockquote>
+<p>In my standard example from above, then, you could simply do this:</p>
+<pre class="markdown"><code>Some text in which I cite an author.[@krycho:revelation:2015, ¶6]
+
+More text. Another citation.[Contra @krycho:revelation:2015, ¶15, who has
+everything *quite* wrong.]
+
+What is this? Yet *another* citation?[@krycho:revelation:2015]</code></pre>
+<p>This will generate the same markup for my purposes here; and as <a href="https://twitter.com/anjdunning">@anjdunning</a> noted, it goes one step further and does what’s appropriate for the <abbr>CSL</abbr>. This might be handy if, for example, you wanted to use the Chicago notes-bibliography style in one format, but switch to a simpler parenthetical citation style for a different medium—or even if you had a paper to submit to different journals with different standards. Having the citations inline thus has many advantages.</p>
+<p>Now, there are still times when you might want to split those out into distinct footnotes, of course. That second one is a good candidate, at least for the way I tend to structure my plain-text source. I find it useful in the case of <em>actual</em> footnote content—i.e. text that I’m intentionally leaving aside from the main text, even with reference to other authors—to split it out from the main flow of the paragraph, so that someone reading the plain text source gets a similar effect to someone reading the web or Word or <abbr>PDF</abbr> versions, with the text removed from the flow of thought. In any case, it’s quite nice that Pandoc has the power and flexibility such that you don’t <em>have</em> to.</p>
+<p>Finally, you don’t actually <em>need</em> the brackets around the citekey, depending on how you’re using the reference. If you wanted to cite the relevant author inline, you can—and it will properly display both the inline name and a reference (footnote, parenthetical, etc.) in line with the <abbr>CSL</abbr> you’ve chosen. If I were going to quote myself in a paper, I would do something like this:</p>
+<pre class="markdown"><code>As @krycho:revelation:2015 comments:
+
+&gt; This was a hard paper to write.
+</code></pre>
+<p>This is <em>extremely</em> powerful, and while I didn’t take advantage of it in my first paper using these tools, you can bet I will be in every future paper I write.</p>
 <section id="all-those-references" class="level3">
 <h3>All those references</h3>
 <p>Of course, as is probably apparent, managing a <span class="tex">BibT<span class="texE">E</span>X</span> library by hand is no joke. Entries tend to look like this:</p>

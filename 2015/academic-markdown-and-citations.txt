@@ -2,11 +2,12 @@
 title: Academic Markdown and Citations
 subtitle: A workflow with Pandoc, <span class='tex'>BibT<span class="texE">E</span>X</span>, and the editor of your choice
 date: 2015-07-26 13:50
+tags: workflow, writing
 summary: >
     Managing citations is painful—especially in plain text. But with a little
     setup, Pandoc and BibTEX can take a lot of the pain out of it, whether for
     Word documents or a static site generator.
-tags: workflow, writing
+modified: 2015-07-26 20:07
 ...
 
 Much of my past few weeks were taken up with study for and writing and editing
@@ -166,6 +167,66 @@ version of the paper from another Word document, as well.[^pdf]
 
 [Here]: /downloads/revelation.docx
 [PDF]: /downloads/revelation-pretty.pdf
+
+And, better yet, you don't even have to put citations in footnotes. As
+[\@anjdunning] pointed out in a [tweet] response to the original version of this
+post:
+
+[\@anjdunning]: https://twitter.com/anjdunning
+[tweet]: https://twitter.com/anjdunning/status/625415216575197184
+
+> [\@chriskrycho] Don't put citekeys in a footnote: write everything as inline
+> citations and it will also generate notes when asked by CSL def.  
+> [∞](https://twitter.com/anjdunning/status/625415216575197184) July 26, 2015 17:19
+
+[\@chriskrycho]: https://www.twitter.com/chriskrycho
+
+In my standard example from above, then, you could simply do this:
+
+```markdown
+Some text in which I cite an author.[@krycho:revelation:2015, ¶6]
+
+More text. Another citation.[Contra @krycho:revelation:2015, ¶15, who has
+everything *quite* wrong.]
+
+What is this? Yet *another* citation?[@krycho:revelation:2015]
+```
+
+This will generate the same markup for my purposes here; and as [\@anjdunning]
+noted, it goes one step further and does what's appropriate for the
+<abbr>CSL</abbr>. This might be handy if, for example, you wanted to use the
+Chicago notes-bibliography style in one format, but switch to a simpler
+parenthetical citation style for a different medium---or even if you had a paper
+to submit to different journals with different standards. Having the citations
+inline thus has many advantages.
+
+Now, there are still times when you might want to split those out into distinct
+footnotes, of course. That second one is a good candidate, at least for the way
+I tend to structure my plain-text source. I find it useful in the case of
+*actual* footnote content---i.e. text that I'm intentionally leaving aside from
+the main text, even with reference to other authors---to split it out from the
+main flow of the paragraph, so that someone reading the plain text source gets a
+similar effect to someone reading the web or Word or <abbr>PDF</abbr> versions,
+with the text removed from the flow of thought. In any case, it's quite nice
+that Pandoc has the power and flexibility such that you don't *have* to.
+
+Finally, you don't actually *need* the brackets around the citekey, depending on
+how you're using the reference. If you wanted to cite the relevant author
+inline, you can---and it will properly display both the inline name and a
+reference (footnote, parenthetical, etc.) in line with the <abbr>CSL</abbr>
+you've chosen. If I were going to quote myself in a paper, I would do something
+like this:
+
+```markdown
+As @krycho:revelation:2015 comments:
+
+> This was a hard paper to write.
+
+```
+
+This is *extremely* powerful, and while I didn't take advantage of it in my
+first paper using these tools, you can bet I will be in every future paper I
+write.
 
 ### All those references
 Of course, as is probably apparent, managing a <span class='tex'>BibT<span
@@ -363,9 +424,9 @@ there. Now I've put good tools around that process, and I love it even more.
     document that already uses your desired style set, so you don't have to go
     in and apply it manually.
 
-[^pdf]: I could have done that with Pandoc's 
-    <span class='tex'>L<span class="texA">A</span>T<span class="texE">E</span>X</span> 
-    <abbr>PDF</abbr> tools, as well, but didn't really feel like taking the time 
+[^pdf]: I could have done that with Pandoc's
+    <span class='tex'>L<span class="texA">A</span>T<span class="texE">E</span>X</span>
+    <abbr>PDF</abbr> tools, as well, but didn't really feel like taking the time
     to tweak the <span class='tex'>L<span class="texA">A</span>T<span class="texE">E</span>X</span>
     template for it.
 
