@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Wed, 29 Jul 2015 10:20:00 -0400</lastBuildDate><item><title>2015-07-29 10:20</title><link>http://www.chriskrycho.com/2015/2015-07-29-1020.html</link><description>&lt;p&gt;Hmm, this may be telling of the future… &lt;a href="https://www.sourcetreeapp.com"&gt;SourceTree&lt;/a&gt; now introduces itself as a Git tool. No mention of Hg at all. 😟&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Wed, 29 Jul 2015 10:31:00 -0400</lastBuildDate><item><title>2015-07-29 10:31</title><link>http://www.chriskrycho.com/2015/2015-07-29-1031.html</link><description>&lt;p&gt;Per &lt;a href="https://alpha.app.net/manton"&gt;@manton&lt;/a&gt;’s &lt;a href="http://www.manton.org/2015/06/microblogging-with-wordpress.html"&gt;suggestion&lt;/a&gt;, I’ve set up IFTTT recipes for ADN and Twitter to repost microblog posts from my own blog to those services. If you see this post either place, it worked.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 29 Jul 2015 10:31:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-07-29:2015/2015-07-29-1031.html</guid></item><item><title>2015-07-29 10:20</title><link>http://www.chriskrycho.com/2015/2015-07-29-1020.html</link><description>&lt;p&gt;Hmm, this may be telling of the future… &lt;a href="https://www.sourcetreeapp.com"&gt;SourceTree&lt;/a&gt; now introduces itself as a Git tool. No mention of Hg at all. 😟&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
