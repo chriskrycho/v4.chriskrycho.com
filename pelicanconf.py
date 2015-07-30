@@ -113,4 +113,3 @@ PANDOC_ARGS = ['--smart',  # use smart typography
                '-t', 'html5',  # use HTML and its corresponding attributes
                '--section-divs',  # wrap heading-blocks with <section>
                '--filter', 'pandoc-citeproc']
-            #    '--csl', str(csl_path)]  # bibtex
