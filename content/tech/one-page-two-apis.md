@@ -1,8 +1,8 @@
 ---
 Title: How to Build a Single-Page App API <em>Right</em>
 Subtitle: >
-    Or: How to get performance, progressive enhancement, and SEO in your 
-    Ember/Angular/Knockout/Backbone/etc. app for free!
+    Or: How to get performance, progressive enhancement, and SEO in your
+    Ember/Angular/Backbone/etc. app for free!
 Summary: >
     How to write a single-page app API so that you get usable data on the first
     load *and* have a nice interface for your single-page application built in
@@ -14,7 +14,7 @@ Date: 2015-06-09 22:16
 When I was first working on HolyBible.com, I struggled for quite a while to wrap
 my head around the right way to structure its API---and in truth, I actually
 didn't come up with what I would call the *right* solution. I came up with a
-*working* solution, and the site performs all right, most of the time. However, 
+*working* solution, and the site performs all right, most of the time. However,
 our goal as developers shouldn't be "all right, most of the time." It should be
 "really well, all the time." A big part of what I did wrong came from the bad
 advice I found in reading up on the issue along the way. This is my shot at
@@ -55,11 +55,11 @@ JavaScript, just to read the Bible. And they have to wait, because once the page
 *should* have been loaded, and request it.
 
 ### The solution
-Don't write *one* API. Write *two*. They should be structured nearly 
+Don't write *one* API. Write *two*. They should be structured nearly
 identically, but one of them will be a *page* API endpoint, and one will be a
 *data* API endpoint. In the context of HolyBible.com, here's how that would play
 out.[^hb-api] One endpoint would be based purely on the standard URL, something
-like `holybible.com/jhn.3.16`. The other would be to retrieve a set of *data* 
+like `holybible.com/jhn.3.16`. The other would be to retrieve a set of *data*
 associated with a given address, like `holybible.com/data/jhn.3.16`. This is
 only a little different from the approach suggested above, but that small
 difference matters---in fact, it matters a *lot*.
@@ -116,10 +116,10 @@ can apply this in just about any framework: it's equally applicable to AngularJS
 with ExpressJS, Backbone with Rails, Ember with Django, Aurelia with Phoenix, or
 any other combination you come up with.
 
-[^hb-api]: Note: this is *not* the actual API structure of HolyBible.com, or 
+[^hb-api]: Note: this is *not* the actual API structure of HolyBible.com, or
     even particularly close to it. Remember, I learned everything I'm writing
     here by doing it *wrong*.
-    
+
 [^semantic]: Or possibly a section which constitutes a semantic block of data.
     I have some thoughts on chunking Bible data semantically rather than by
     chapter and verse for this kind of thing. That's another post for another
