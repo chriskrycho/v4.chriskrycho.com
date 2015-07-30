@@ -1,10 +1,11 @@
+---
 Title: Speak the Truth in Beauty
 Link: http://mereorthodoxy.com/speak-truth-beauty-review-echoes-eden/
-Author: Chris Krycho
 Date: 2015-02-11 07:00
 Tags: links
 Template: formats/link
 Summary: Link&mdash;my review of Jerram Barrs' Echoes of Eden at Mere Orthodoxy.
+...
 
 This is sort of a [hybrid review and essay][review]. The review proper concludes:
 
