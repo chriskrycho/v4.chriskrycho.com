@@ -3,7 +3,7 @@
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
-</summary></entry><entry><title>Academic Markdown and Citations</title><link href="http://www.chriskrycho.com/2015/academic-markdown-and-citations.html" rel="alternate"></link><updated>2015-07-26T20:07:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-07-26:2015/academic-markdown-and-citations.html</id><summary type="html">&lt;p&gt;Much of my past few weeks were taken up with study for and writing and editing &lt;a href="http://www.chriskrycho.com/2015/not-exactly-a-millennium.html"&gt;a paper&lt;/a&gt; for one of my classes at Southeastern. I’ve been writing all of my papers in Markdown ever since I got here, and haven’t regretted any part of that… except that managing references and footnotes has been painful at times.&lt;/p&gt;
+</summary><category term="links"></category></entry><entry><title>Academic Markdown and Citations</title><link href="http://www.chriskrycho.com/2015/academic-markdown-and-citations.html" rel="alternate"></link><updated>2015-07-26T20:07:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-07-26:2015/academic-markdown-and-citations.html</id><summary type="html">&lt;p&gt;Much of my past few weeks were taken up with study for and writing and editing &lt;a href="http://www.chriskrycho.com/2015/not-exactly-a-millennium.html"&gt;a paper&lt;/a&gt; for one of my classes at Southeastern. I’ve been writing all of my papers in Markdown ever since I got here, and haven’t regretted any part of that… except that managing references and footnotes has been painful at times.&lt;/p&gt;
 &lt;p&gt;Footnotes in Markdown look like this:&lt;/p&gt;
 &lt;pre class="markdown"&gt;&lt;code&gt;Here is some text.[^fn]
 
