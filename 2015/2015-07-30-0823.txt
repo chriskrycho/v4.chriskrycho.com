@@ -1,0 +1,8 @@
+---
+Title: 2015-07-30 08:23
+Date: 2015-07-30 08:23
+Template: formats/micro
+...
+
+El Cap public beta 2 was all sorts of broken. Things like copy and paste weren't
+working right! Beta 3 looks *much* better so far.
