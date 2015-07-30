@@ -96,6 +96,7 @@ blockquote {
 abbr {
     font-family: $serif-smcp;
     text-transform: lowercase;
+    letter-spacing: 0.2pt;
 }
 
 // Paragraph styles
@@ -260,7 +261,7 @@ hr {
 
 .smcp {
     font-family: $serif-smcp;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.2pt;
 }
 
 .epigraph {
@@ -496,11 +497,13 @@ article {
         hr + h1 { padding-top: $fs_very_small; }
 
         p { @include hyphens(auto); }
+
+        a { display: inline; }
     }
 
     &.poetry p { text-indent: 0; }
 
-    &.micro { font-family: $sans; }
+    &.micro, &.links { font-family: $sans; }
 
     .meta {
         color: $light_gray;
@@ -733,5 +736,26 @@ sup[id^="fnref:"] a {
         }
     }
 }
+
+// miscellanies
+.tex { font-family: $serif-smcp; }
+
+.texA {
+    position: relative;
+    font-size: $fs-small;
+    bottom: 0.3em;
+    margin-left: -0.3em;
+    margin-right: -0.1em;
+}
+
+.texE {
+    position: relative;
+    bottom: -0.2em;
+    margin: {
+        left: -0.2em;
+        right: -0.1em;
+    }
+}
+
 
 @import "media";
