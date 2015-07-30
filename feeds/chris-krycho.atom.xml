@@ -7,7 +7,11 @@
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
-</summary></entry><entry><title>2015-07-29 10:42</title><link href="http://www.chriskrycho.com/2015/2015-07-29-1042.html" rel="alternate"></link><updated>2015-07-29T10:42:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-07-29:2015/2015-07-29-1042.html</id><summary type="html">&lt;p&gt;Courtesy of &lt;em&gt;something&lt;/em&gt; in my stack not playing right, I’ve now been reduced to pushing and pulling changes between OS X and my Windows VM through Bitbucket, rather than just having a mapped drive locally. This feels silly.&lt;/p&gt;
+</summary></entry><entry><title>2015-07-29 20:47</title><link href="http://www.chriskrycho.com/2015/2015-07-29-2047.html" rel="alternate"></link><updated>2015-07-29T20:47:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-07-29:2015/2015-07-29-2047.html</id><summary type="html">&lt;p&gt;I just realized that one of the reason &lt;a href="http://www.rust-lang.org/"&gt;Rust&lt;/a&gt; so strongly appeals to me is that its design embodies one of my favorite traits from &lt;a href="https://www.python.org/dev/peps/pep-0020/"&gt;the Zen of Python&lt;/a&gt;: &lt;em&gt;explicit is better than implicit&lt;/em&gt;.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="software development"></category></entry><entry><title>2015-07-29 10:42</title><link href="http://www.chriskrycho.com/2015/2015-07-29-1042.html" rel="alternate"></link><updated>2015-07-29T10:42:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-07-29:2015/2015-07-29-1042.html</id><summary type="html">&lt;p&gt;Courtesy of &lt;em&gt;something&lt;/em&gt; in my stack not playing right, I’ve now been reduced to pushing and pulling changes between OS X and my Windows VM through Bitbucket, rather than just having a mapped drive locally. This feels silly.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
