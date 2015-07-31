@@ -17,7 +17,7 @@ csl: /Users/chris/Dropbox/writing/chicago.csl
 ...
 
 ## Introduction
-Few books are are perplexing to modern readers as Revelation, and few matters
+Few books are as perplexing to modern readers as Revelation, and few matters
 within it as controversial as the nature of the millennium. As one commentator
 put it, "Judging from the amount of attention given by many writers to the first
 ten verses of chapter 20, one would think they were the single most important
