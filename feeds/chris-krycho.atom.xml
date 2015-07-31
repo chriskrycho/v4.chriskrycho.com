@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-07-30T20:28:00-04:00</updated><entry><title>2015/07/30 20:28</title><link href="http://www.chriskrycho.com/2015/20150730-2028.html" rel="alternate"></link><updated>2015-07-30T20:28:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-07-30:2015/20150730-2028.html</id><summary type="html">&lt;p&gt;Another little feature of Rust I quite like: the use of &lt;a href="https://en.wikipedia.org/wiki/Trait_(computer_programming)"&gt;&lt;code&gt;trait&lt;/code&gt;s&lt;/a&gt; instead of inheritance to share behavior. All the benefits of inheritance, and a few more besides, but none of the drawbacks.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-07-31T19:37:00-04:00</updated><entry><title>Lines in the Mirror</title><link href="http://www.chriskrycho.com/2015/lines-in-the-mirror.html" rel="alternate"></link><updated>2015-07-31T19:37:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-07-31:2015/lines-in-the-mirror.html</id><summary type="html">&lt;p&gt;The mirror begins to show me lines&lt;br /&gt;
+around my lips and across my brow&lt;br /&gt;
+but I shall not mind their steady growth&lt;br /&gt;
+so long as they are mostly wonder&lt;br /&gt;
+with compassion mixed, and joy writ bold&lt;br /&gt;
+’til by God’s grace an agéd man&lt;br /&gt;
+I wear deep these marks of life well-lived:&lt;br /&gt;
+not scars, but prizes, fought hard and won&lt;br /&gt;
+and full of hope for others after&lt;br /&gt;
+(who may likewise four-score years do good)&lt;br /&gt;
+and bright countenance bear to that end&lt;br /&gt;
+which but another beginning be.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="poetry"></category></entry><entry><title>2015/07/30 20:28</title><link href="http://www.chriskrycho.com/2015/20150730-2028.html" rel="alternate"></link><updated>2015-07-30T20:28:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-07-30:2015/20150730-2028.html</id><summary type="html">&lt;p&gt;Another little feature of Rust I quite like: the use of &lt;a href="https://en.wikipedia.org/wiki/Trait_(computer_programming)"&gt;&lt;code&gt;trait&lt;/code&gt;s&lt;/a&gt; instead of inheritance to share behavior. All the benefits of inheritance, and a few more besides, but none of the drawbacks.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
