@@ -3,7 +3,7 @@
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="software development"></category></entry><entry><title>2015/07/30 20:28</title><link href="http://www.chriskrycho.com/2015/20150730-2028.html" rel="alternate"></link><updated>2015-07-30T20:28:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-07-30:2015/20150730-2028.html</id><summary type="html">&lt;p&gt;Another little feature of Rust I quite like: the use of &lt;a href="https://en.wikipedia.org/wiki/Trait_(computer_programming)"&gt;&lt;code&gt;trait&lt;/code&gt;s&lt;/a&gt; instead of inheritance to share behavior. All the benefits of inheritance, and a few more besides, but none of the drawbacks.&lt;/p&gt;
+</summary><category term="software development"></category></entry><entry><title>2015-07-30 20:28</title><link href="http://www.chriskrycho.com/2015/2015-07-30-2028.html" rel="alternate"></link><updated>2015-07-30T20:28:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-07-30:2015/2015-07-30-2028.html</id><summary type="html">&lt;p&gt;Another little feature of Rust I quite like: the use of &lt;a href="https://en.wikipedia.org/wiki/Trait_(computer_programming)"&gt;&lt;code&gt;trait&lt;/code&gt;s&lt;/a&gt; instead of inheritance to share behavior. All the benefits of inheritance, and a few more besides, but none of the drawbacks.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
