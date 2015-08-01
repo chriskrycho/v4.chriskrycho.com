@@ -375,12 +375,16 @@ def a_neat_function():
 &lt;hr /&gt;
 &lt;p&gt;The main tools I use are: a good text editor (I like all of &lt;a href="//www.sublimetext.com"&gt;Sublime Text&lt;/a&gt;, &lt;a href="//atom.io"&gt;Atom&lt;/a&gt;, &lt;a href="//github.com/textmate/textmate"&gt;TextMate&lt;/a&gt;, and &lt;a href="//chocolatapp.com"&gt;Chocolat&lt;/a&gt;; each has its own strengths and weaknesses) or sometimes &lt;a href="https://www.jetbrains.com/pycharm/"&gt;a full IDE&lt;/a&gt;, version control software (I appreciate and use both &lt;a href="http://www.git-scm.com"&gt;Git&lt;/a&gt; and &lt;a href="http://mercurial.selenic.com"&gt;Mercurial&lt;/a&gt;), and three dedicated tools to which the rest of this post is devoted: &lt;em&gt;pyenv&lt;/em&gt;, &lt;em&gt;pip&lt;/em&gt;, and virtual environments.&lt;/p&gt;
 &lt;p&gt;Everyone is going to have their own preferences for version control tools and an editor; but the recommendations I make regarding Python installations, package management, and workspaces/virtual environments should be fairly standard for anyone doing Python development on a Unix-like system in 2015.&lt;/p&gt;
-&lt;h2 id="python-proper"&gt;Python Proper&lt;/h2&gt;
+&lt;section id="python-proper" class="level2"&gt;
+&lt;h2&gt;Python Proper&lt;/h2&gt;
 &lt;p&gt;First up: Python itself. OS X ships with a built-in copy of Python 2; in the latest version of Yosemite, it’s running Python 2.7.6. The latest version of Python 2 is 2.7.9, so that isn’t &lt;em&gt;terribly&lt;/em&gt; far behind—but it is still behind. Moreover, OS X does &lt;em&gt;not&lt;/em&gt; ship with Python 3, and since I do all of my development in Python 3&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; I need to install it.&lt;/p&gt;
-&lt;h3 id="homebrew"&gt;Homebrew&lt;/h3&gt;
+&lt;section id="homebrew" class="level3"&gt;
+&lt;h3&gt;Homebrew&lt;/h3&gt;
 &lt;p&gt;For a long time, I managed all my Python installations with &lt;a href="http://brew.sh"&gt;&lt;em&gt;homebrew&lt;/em&gt;&lt;/a&gt;. If you’re not familiar with it, &lt;em&gt;homebrew&lt;/em&gt; is a package manager that lets you installed tools on the command line, similar to what you get from &lt;em&gt;aptitude&lt;/em&gt; or &lt;em&gt;yum&lt;/em&gt; on Ubuntu or Fedora respectively.&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; If you’re not using &lt;em&gt;homebrew&lt;/em&gt; yet, I highly recommend it for installing command-line tools. (If you’re not using command-line tools yet, then the rest of this post will either bore you to death, or prove extremely enlightening!) If you haven’t started yet, now’s a good time: &lt;a href="http://brew.sh"&gt;go install it!&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;While &lt;em&gt;homebrew&lt;/em&gt; is great for installing and managing packages in general, I can’t say this loud enough: &lt;em&gt;don’t manage Python with homebrew&lt;/em&gt;. It’s finicky, and really isn’t meant for all the things you have to do to manage more than one version of Python at a time.&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; (There’s a reason there’s a whole &lt;a href="https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Homebrew-and-Python.md"&gt;troubleshooting section&lt;/a&gt; devoted to it.) If you think it’s crazy that I might want more than one copy of Python installed a time, well… let’s just say I suspect you’ll change your mind after doing a bit more development. (At the most basic, most people will end up wanting both Python 2 and 3 installed, and will want to upgrade them as bug fixes and the like come out.)&lt;/p&gt;
-&lt;h3 id="pyenv"&gt;pyenv&lt;/h3&gt;
+&lt;/section&gt;
+&lt;section id="pyenv" class="level3"&gt;
+&lt;h3&gt;pyenv&lt;/h3&gt;
 &lt;p&gt;Instead of installing via &lt;em&gt;homebrew&lt;/em&gt;, use it to install &lt;a href="https://github.com/yyuu/pyenv"&gt;&lt;em&gt;pyenv&lt;/em&gt;&lt;/a&gt;, and use that to manage your installations. &lt;em&gt;pyenv&lt;/em&gt; is a dedicated tool for managing your “Python environment,” and it excels at that. If you were on a Mac with &lt;em&gt;homebrew&lt;/em&gt; installed, your setup process to add the latest version of Python might look something like this:&lt;/p&gt;
 &lt;pre class="shell"&gt;&lt;code&gt;$ brew install pyenv
 $ echo &amp;#39;eval &amp;quot;$(pyenv init -)&amp;quot;&amp;#39; &amp;gt;&amp;gt; ~.profile
@@ -392,7 +396,10 @@ $ pyenv install 3.4.3&lt;/code&gt;&lt;/pre&gt;
 $ cd path/to/my/project
 $ pyenv local 2.7.9&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This will create a simple plain text file, &lt;code&gt;.python-version&lt;/code&gt;, whose contents will be just &lt;code&gt;2.7.9&lt;/code&gt;—but for everything under &lt;code&gt;path/to/my/project&lt;/code&gt;, typing &lt;code&gt;python&lt;/code&gt; will launch Python 2.7.9, while typing it &lt;em&gt;outside&lt;/em&gt; that folder will launch Python 3.4.3. (If you want, you can just create the &lt;code&gt;.python-version&lt;/code&gt; file yourself manually and give it the name of a version. There’s nothing special about it all; it’s just the place &lt;code&gt;pyenv&lt;/code&gt; looks to know which Python version to use.)&lt;/p&gt;
-&lt;h2 id="managing-python-packages"&gt;Managing Python Packages&lt;/h2&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="managing-python-packages" class="level2"&gt;
+&lt;h2&gt;Managing Python Packages&lt;/h2&gt;
 &lt;p&gt;There are four basic approaches to managing Python packages:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;installing them manually&lt;/li&gt;
@@ -402,12 +409,17 @@ $ pyenv local 2.7.9&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;p&gt;The vast majority of the time, the right choice is using &lt;em&gt;pip&lt;/em&gt;. Over the last few years, &lt;em&gt;pip&lt;/em&gt; has become the default install tool for Python packages and it now ships natively with it on every platform. Suffice it to say: if you need to install a package, do not install it not with &lt;em&gt;homebrew&lt;/em&gt; (or &lt;em&gt;aptitude&lt;/em&gt; or &lt;em&gt;yum&lt;/em&gt;). Install it with &lt;em&gt;pip&lt;/em&gt;. It integrates with Python better, it always has access both to the latest versions of Python packages (including those only available in e.g. development repositories on GitHub or Bitbucket or wherever else) and to all previously released versions, and it’s the community’s main tool for the job.&lt;/p&gt;
 &lt;p&gt;That said, occasionally it makes sense to install packages manually by downloading them and running &lt;code&gt;python setup.py install&lt;/code&gt; or to use a system-level package manager. On the other hand, given &lt;em&gt;pip&lt;/em&gt;’s ability to do everything &lt;em&gt;easy_install&lt;/em&gt; does, and its ability to do quite a few more things as well, there really isn’t a time to use &lt;em&gt;easy_install&lt;/em&gt;. Using the language-supplied tools keeps everything playing nicely together. Perhaps just as importantly, it is the only way to make sure everything behaves the way it should when you start using…&lt;/p&gt;
-&lt;h2 id="virtual-environments"&gt;Virtual Environments&lt;/h2&gt;
+&lt;/section&gt;
+&lt;section id="virtual-environments" class="level2"&gt;
+&lt;h2&gt;Virtual Environments&lt;/h2&gt;
 &lt;p&gt;When working with a variety of different clients, or simply on different projects, it is common not only to end up with different versions of Python but also with different sets of packages or—tricker still!—different versions of the same package required for different projects. Virtual environments provide a solution: they reuse the main Python executable (by creating links on the file system to it), but create isolated “workspaces” for the various packages you might install.&lt;/p&gt;
 &lt;p&gt;That way, in one workspace, you might have version 1.2 of a package installed, and in another you might have version 3.3 installed—because those are the required dependencies for something &lt;em&gt;else&lt;/em&gt; you’re doing. This isn’t a hypothetical situation. For quite a while with one of my clients, we had pinned a particular version of the Python documentation package we use because it broke our use case after an update—but I still wanted to have the latest version of that tool in my &lt;em&gt;other&lt;/em&gt; projects. Setting up virtual environments neatly solves that problem.&lt;/p&gt;
-&lt;h3 id="venv-and-virtualenv"&gt;venv and virtualenv&lt;/h3&gt;
+&lt;section id="venv-and-virtualenv" class="level3"&gt;
+&lt;h3&gt;venv and virtualenv&lt;/h3&gt;
 &lt;p&gt;If you have Python 3.3 or later, you have a built-in tool for this called &lt;a href="https://docs.python.org/3/library/venv.html"&gt;&lt;em&gt;pyvenv&lt;/em&gt;&lt;/a&gt;; if you have Python 3.4 or later, it supports &lt;em&gt;pip&lt;/em&gt; right out of the gate so you don’t have to install it yourself. If you’re on older versions, you can install &lt;a href="https://virtualenv.pypa.io/en/latest/"&gt;&lt;em&gt;virtualenv&lt;/em&gt;&lt;/a&gt; (&lt;code&gt;pip install virtualenv&lt;/code&gt;) and get the same basic tooling: &lt;em&gt;pyvenv&lt;/em&gt; was inspired by &lt;em&gt;virtualenv&lt;/em&gt;. Then you can create virtual environments with the &lt;code&gt;pyvenv&lt;/code&gt; or &lt;code&gt;virtualenv&lt;/code&gt; commands, and use those to isolate different setups from each other. If you haven’t started using virtual environments yet, start now!&lt;/p&gt;
-&lt;h3 id="pyenv-with-virtualenv"&gt;pyenv with virtualenv&lt;/h3&gt;
+&lt;/section&gt;
+&lt;section id="pyenv-with-virtualenv" class="level3"&gt;
+&lt;h3&gt;pyenv with virtualenv&lt;/h3&gt;
 &lt;p&gt;I know, the similarity of names for &lt;em&gt;pyenv&lt;/em&gt; and &lt;em&gt;pyvenv&lt;/em&gt; is unfortunate. If it helps, you can call the latter as &lt;code&gt;venv&lt;/code&gt; rather than &lt;code&gt;pyvenv&lt;/code&gt;. But, more importantly, one of the areas &lt;em&gt;pyenv&lt;/em&gt; is much better than &lt;em&gt;homebrew&lt;/em&gt; is its support for managing virtual environments. Install &lt;a href="https://github.com/yyuu/pyenv-virtualenv"&gt;&lt;em&gt;pyenv-virtualenv&lt;/em&gt;&lt;/a&gt;:&lt;/p&gt;
 &lt;pre class="shell"&gt;&lt;code&gt;$ brew install pyenv-virtualenv
 $ echo &amp;#39;eval &amp;quot;$(pyenv virtualenv-init -)&amp;quot;&amp;#39; &amp;gt;&amp;gt; ~/.profile&lt;/code&gt;&lt;/pre&gt;
@@ -426,7 +438,10 @@ $ pyenv local pelican
 $ cd ~/Sites/winningslowly.org
 $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I named the virtual environment after &lt;a href="//docs.getpelican.com/"&gt;the tool I use to generate the sites&lt;/a&gt;, and reused it in both sites. Both now have a &lt;code&gt;.python-version&lt;/code&gt; file that reads &lt;code&gt;pelican&lt;/code&gt;. Now, anytime I’m working anywhere under &lt;code&gt;~/Sites/chriskrycho.com&lt;/code&gt; &lt;em&gt;or&lt;/em&gt; &lt;code&gt;~/Sites/winningslowly.org&lt;/code&gt;, I have the same tooling in place.&lt;/p&gt;
-&lt;h2 id="summary"&gt;Summary&lt;/h2&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="summary" class="level2"&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
 &lt;p&gt;The combination of &lt;em&gt;pip&lt;/em&gt;, &lt;em&gt;pyenv&lt;/em&gt; and virtual environments makes for a very simple, straightforward process to manage Python environments these days:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Install Python versions with &lt;em&gt;pyenv&lt;/em&gt;.&lt;/li&gt;
@@ -437,6 +452,7 @@ $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
+&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -604,7 +620,8 @@ document.write('&lt;a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail"&gt;'
 &lt;/ul&gt;
 &lt;p&gt;The project has many more files than this, of course, but these are the important ones for demonstrating this particular piece of insanity (which shows up &lt;em&gt;many&lt;/em&gt; places in the codebase).&lt;/p&gt;
 &lt;p&gt;I’m reproducing here some dummy code representing an &lt;em&gt;actual set of relationships in the codebase&lt;/em&gt;. The functions and module nameshave been changed; the relationships between the pieces of code have not.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; When I started trying to build the program that included what I am representing as &lt;code&gt;main.c&lt;/code&gt; below, this is the basic structure I found:&lt;/p&gt;
-&lt;h3 id="main.cpp"&gt;&lt;code&gt;main.cpp&lt;/code&gt;&lt;/h3&gt;
+&lt;section id="main.cpp" class="level3"&gt;
+&lt;h3&gt;&lt;code&gt;main.cpp&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;This is the main module of the program. In the actual code in which I found this particular morass, it was actually code generated by the UI builder in Visual Studio 6&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; and then turned into an unholy mess by a developer whose idea of good programming involved coupling the various parts of the code as tightly as possible.&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;pre class="c"&gt;&lt;code&gt;#include &amp;quot;calculator.h&amp;quot;
 #include &amp;quot;secondary.h&amp;quot;
@@ -632,16 +649,21 @@ void main() {
 
 // More insanity follows...&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Yes, the main function and the &lt;code&gt;doBadThingsWithGlobals&lt;/code&gt; function are both modifying global state, and yes, there is an include statement midway down through the module. (Just wait till you see what it does.)&lt;/p&gt;
-&lt;h3 id="secondary"&gt;“secondary”&lt;/h3&gt;
+&lt;/section&gt;
+&lt;section id="secondary" class="level3"&gt;
+&lt;h3&gt;“secondary”&lt;/h3&gt;
 &lt;p&gt;Here is a secondary module which has been somewhat cleaned up. It has normal relationships between header and source files, and includes all its dependency headers at the top of the file. It has a header which defines the public API for the module, and that even has inclusion guards on it.&lt;/p&gt;
-&lt;h4 id="secondary.h"&gt;&lt;code&gt;secondary.h&lt;/code&gt;&lt;/h4&gt;
+&lt;section id="secondary.h" class="level4"&gt;
+&lt;h4&gt;&lt;code&gt;secondary.h&lt;/code&gt;&lt;/h4&gt;
 &lt;pre class="c"&gt;&lt;code&gt;#ifndef SECONDARY_H
 #define SECONDARY_H
 
 int doStuffWithNumbers();
 
 #endif SECONDARY_H&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id="secondary.c"&gt;&lt;code&gt;secondary.c&lt;/code&gt;&lt;/h4&gt;
+&lt;/section&gt;
+&lt;section id="secondary.c" class="level4"&gt;
+&lt;h4&gt;&lt;code&gt;secondary.c&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;The &lt;code&gt;doStuffWithNumbers&lt;/code&gt; function here calls &lt;code&gt;addNumbers&lt;/code&gt;:&lt;/p&gt;
 &lt;pre class="c"&gt;&lt;code&gt;#include &amp;quot;secondary.h&amp;quot;
 #include &amp;quot;calculator.h&amp;quot;
@@ -650,7 +672,10 @@ int doStuffWithNumbers(int x, int y) {
     addNumbers(x, y);
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;em&gt;But wait!&lt;/em&gt; you say, &lt;em&gt;That function isn’t defined here!&lt;/em&gt; Ah, and you would be right, except that it doesn’t refer to the &lt;code&gt;addNumbers&lt;/code&gt; function in &lt;code&gt;main.c&lt;/code&gt;. It refers to a function implementation in &lt;code&gt;calculator.h&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id="calculator.h"&gt;&lt;code&gt;calculator.h&lt;/code&gt;&lt;/h3&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="calculator.h" class="level3"&gt;
+&lt;h3&gt;&lt;code&gt;calculator.h&lt;/code&gt;&lt;/h3&gt;
 &lt;pre class="c"&gt;&lt;code&gt;int addNumbers(int p, int q) {
     return p + q;
 }
@@ -659,7 +684,9 @@ int subtractNumbers(int r, int s) {
     return r - s;
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Strangely, this &lt;code&gt;addNumbers&lt;/code&gt; function is identical to the one in &lt;code&gt;main.c&lt;/code&gt;. Even &lt;em&gt;more&lt;/em&gt; strangely, it is defined—not merely declared, actually defined—in the header file! Nor is this the only such function. Look at the details of &lt;code&gt;writer.h&lt;/code&gt;, which was mysteriously included above in the middle of the main module.&lt;/p&gt;
-&lt;h3 id="writer.h"&gt;&lt;code&gt;writer.h&lt;/code&gt;&lt;/h3&gt;
+&lt;/section&gt;
+&lt;section id="writer.h" class="level3"&gt;
+&lt;h3&gt;&lt;code&gt;writer.h&lt;/code&gt;&lt;/h3&gt;
 &lt;pre class="c"&gt;&lt;code&gt;void writeStuff() {
     fprintf(stdout, &amp;quot;a: %d, b: %d&amp;quot;, a, b);
 }&lt;/code&gt;&lt;/pre&gt;
@@ -673,6 +700,7 @@ int subtractNumbers(int r, int s) {
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
+&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -740,7 +768,8 @@ int subtractNumbers(int r, int s) {
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="software development"></category></entry><entry><title>Don't Be Rude</title><link href="http://www.chriskrycho.com/2014/dont-be-rude.html" rel="alternate"></link><updated>2014-07-12T15:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-12:2014/dont-be-rude.html</id><summary type="html">&lt;h6 id="note"&gt;Note&lt;/h6&gt;
+</summary><category term="software development"></category></entry><entry><title>Don't Be Rude</title><link href="http://www.chriskrycho.com/2014/dont-be-rude.html" rel="alternate"></link><updated>2014-07-12T15:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2014-07-12:2014/dont-be-rude.html</id><summary type="html">&lt;section id="note" class="level6"&gt;
+&lt;h6&gt;Note&lt;/h6&gt;
 &lt;p&gt;I have left the original post here as I wrote it, but there is an important &lt;a href="#edit-and-addendum"&gt;addendum&lt;/a&gt; at the bottom of the post that you should make sure to read (and note in particular the &lt;a href="#further-addendum"&gt;further addendum&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;This post came off as pretty critical of MarketCircle, and that &lt;em&gt;really&lt;/em&gt; wasn’t my point. I wanted to use a bad experience I had with MarketCircle to illustrate a general principle, &lt;em&gt;not&lt;/em&gt; to poke at any particular company. I did that poorly in this particular piece; for some follow-up on that see &lt;a href="http://www.chriskrycho.com/2014/i-wrote-it-wrong.html"&gt;this post&lt;/a&gt; which I wrote later that day, analyzing how and why this piece so spectacularly failed to accomplish my desired goals.&lt;/p&gt;
 &lt;p&gt;In any case, I do not want this piece to turn people off of using MarketCircle’s software. I leave the unedited version below because I believe in having the intellectual integrity to own one’s mistakes. This was one of mine.&lt;/p&gt;
@@ -778,16 +807,21 @@ int subtractNumbers(int r, int s) {
 &lt;p&gt;There is a takeaway here for anyone paying attention. Namely: respect your customers. Do not talk down to them. Do not assume their uses for your software are wrong, or stupid, even if they are not what you intended. (If anything, that means your users have thought of use cases you didn’t.)&lt;/p&gt;
 &lt;p&gt;It is going to far to say that the customer is always right. Sometimes, the customer is wrong. Sometimes, &lt;em&gt;I&lt;/em&gt; am wrong as a customer. But the customer &lt;em&gt;is&lt;/em&gt; always someone to respect. The moment you stop treating your customer with respect is the moment you cross the line into being a company with which I want to do business to one I will avoid.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h6 id="edit-and-addendum"&gt;Edit and Addendum&lt;/h6&gt;
+&lt;/section&gt;
+&lt;section id="edit-and-addendum" class="level6"&gt;
+&lt;h6&gt;Edit and Addendum&lt;/h6&gt;
 &lt;p&gt;When I posted this on App.net, a few thoughtful acquaintances &lt;a href="https://alpha.app.net/chriskrycho/post/34459957"&gt;pushed back&lt;/a&gt;, noting that the customer service interactions did &lt;em&gt;not&lt;/em&gt; read as condescending to them. It is possible that I misread the original customer service rep’s tone in interacting in me. This is a constant danger in dealing with text-only communication. I take some responsibility for that—but I also note that the frustration had already built up in the course of a conversation that had already included a number of failures to respond to address or respond to my questions and concerns.&lt;/p&gt;
 &lt;p&gt;I should also note that I didn’t mean this as a critique of MarketCircle in particular, though re-reading the post in light of the response, it is clear it comes off more that way than I intended. My interactions with MarketCircle were meant simply to illustrate the broader point: customer service matters, and even one bad customer experience can turn off a customer.&lt;/p&gt;
 &lt;p&gt;But the takeaway from this addendum is a bit different: I can sympathize with the difficulties facing the customer service rep. I failed at precisely the same task of communicating my intent in writing effectively. Now, whether that rep meant it the way I took it or the way others took it in reading the post, he certainly did not accomplish what he meant to with the exchange. My sympathies are with him. I am perfectly willing (though not perhaps &lt;em&gt;happy&lt;/em&gt;; humility is rarely particularly pleasant) to say that I got it wrong here.&lt;/p&gt;
 &lt;p&gt;All that being said… I still have a bad taste in my mouth, and I am still leery of doing further business with MarketCircle. And that &lt;em&gt;does&lt;/em&gt; make the original point in a way, because the emotional response from a bad experience, even one you did not intend, doesn’t fade quickly or at all, even in the face of reasonable articulations of alternative explanations for the bad experience. You have to work at a good customer experience continually.&lt;/p&gt;
-&lt;h6 id="further-addendum"&gt;Further Addendum&lt;/h6&gt;
+&lt;/section&gt;
+&lt;section id="further-addendum" class="level6"&gt;
+&lt;h6&gt;Further Addendum&lt;/h6&gt;
 &lt;p&gt;MarketCircle actually saw this piece—presumably via my link on Twitter—and got back to me, looking to fix this issue, which I really appreciated. In some sense, then, they &lt;em&gt;are&lt;/em&gt; doing exactly what I advocated in this piece.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
+&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -826,24 +860,32 @@ int subtractNumbers(int r, int s) {
 &lt;li&gt;free&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;He suggests that this proves to be something of a conundrum for decision-makers in the publishing industry. With respect, and while recognizing that it probably &lt;em&gt;feels&lt;/em&gt; like a conundrum to the publishers, I think the answer is really quite simple. Publishers can dramatically increase their profits, and do it in a way that readers will &lt;em&gt;love&lt;/em&gt;. (This is the part where you call me crazy. Up next is the part where I show you why I’m not.)&lt;/p&gt;
-&lt;h2 id="all-or-nothing"&gt;All or nothing&lt;/h2&gt;
+&lt;section id="all-or-nothing" class="level2"&gt;
+&lt;h2&gt;All or nothing&lt;/h2&gt;
 &lt;p&gt;First, we should note that while readers would always choose (e) and publishers would love it if they could get away with (a), the reality is that both of these leave one party out in the cold. Publishers need readers, and readers need publishers. Publishers need readers or they die. Readers need publishers as providers of quality content—not only as the gatekeepers but also as polishers who take good books and make them great. Any system that will pan out well must therefore respect &lt;em&gt;both&lt;/em&gt; sides of that equation. Both (a) and (e) fail that test immediately.&lt;/p&gt;
 &lt;p&gt;In the case of (a), the consumer can rightly point out that the cost of distribution of a book is minimal, trivial even, in the grand scheme of book production. That goes double for ebooks: the cost of running a server is a pittance compared to the cost of writing, editing, and proofing a book. “So,” any smart reader says, “I’ve already paid for the book. Why should I have to pay &lt;em&gt;just as much again&lt;/em&gt; for the ebook?”&lt;/p&gt;
 &lt;p&gt;In the case of (e), the consumer is getting something of real value—the ebook, with its associated portability, the ability to create [communal interactions][craigmod] around the content through shared marginalia, and so forth—but without recognizing any infrastructure costs this poses to the publisher. As always, there is no free lunch, and that is as it should be.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; The worker deserves his wages, and that includes the editor who turns a manuscript into ebook form—especially for &lt;em&gt;good&lt;/em&gt; ebooks, which entail a great deal of work beyond simply running the print manuscript through a conversion script. That involves real people’s time, and therefore costs real money.&lt;/p&gt;
 &lt;p&gt;Neither of these options, then, is ultimately good for the market. The readers will rightly reject paying the full price again for a book in a different form; they’ve been conditioned by too many interactions on the internet not to recognize that digital transmission of files the size of a book is, while not costless, not costly either. On the other hand, publishers still need to make money, and they do sink real time and money into the ebook—not at the distribution point, but in the infrastructure involved in the preparation of the manuscript and readying it for digital and physical publication.&lt;/p&gt;
 &lt;p&gt;Again: publishers need readers and readers need publishers.&lt;/p&gt;
-&lt;h2 id="percentage-games"&gt;Percentage games&lt;/h2&gt;
+&lt;/section&gt;
+&lt;section id="percentage-games" class="level2"&gt;
+&lt;h2&gt;Percentage games&lt;/h2&gt;
 &lt;p&gt;Percentage-based cuts—like Curtis’ options (b) and (c)—are much more sensible and reasonable from the perspective of both the consumer and the publisher. In each of these cases, the publisher is granting that the customer has already made a purchase—perhaps a significant one, in the case of a hardcover fiction book. Indeed, when we move out into the realm of reference books or textbooks, the consumer has already given the publisher quite a lot of money. Thus, options (b) and (c) are much friendlier to the consumer than choice (a), while still affording the publisher some profits, unlike (e). This is clearly a step in the right direction.&lt;/p&gt;
 &lt;p&gt;The percentage option quickly runs into issues when we start thinking about how such a scheme would work in practice, though. Is it 25% of the hardcover but 50% of the paperback, so that the publisher can recoup more of the costs? In this scheme, it is difficult to match the actual cost of the ebook sale to its relative value compared to the physical copy. Moreover, it’s difficult to standardize. When purchasing a textbook at $150, should someone have to pay another $37.50 or $75 to have a digital copy? It seems unlikely that preparing an ebook of a textbook is really 5-6 times more costly than the preparation of a fiction ebook, which on a percentage basis would come out around $6.50 or $13 for the hardcover at those rates, or $2 or $4 for paperbacks.&lt;/p&gt;
 &lt;p&gt;Equally important: &lt;em&gt;will&lt;/em&gt; people pay that much for a digital copy? Publishers may want to study the question in depth by testing the market, but this is a waste of time. The answer is obvious to anyone under the age of 30: &lt;em&gt;no&lt;/em&gt;. The market simply won’t support those kinds of costs on the upper end of the spectrum.&lt;/p&gt;
 &lt;p&gt;Again, customers may recognize that they are subsidizing more than simply the cost of distribution, but the preparation and distribution of the ebook don’t justify an additional percentage on these scales beyond some point. I suspect that most customers are willing to pay extra to get the ebook in addition to the physical copy—just not, in most cases, &lt;em&gt;that&lt;/em&gt; much extra.&lt;/p&gt;
-&lt;h3 id="aside-on-reasonability-and-trained-markets"&gt;Aside: on reasonability and trained markets&lt;/h3&gt;
+&lt;section id="aside-on-reasonability-and-trained-markets" class="level3"&gt;
+&lt;h3&gt;Aside: on reasonability and trained markets&lt;/h3&gt;
 &lt;p&gt;We must recognize that markets can be &lt;em&gt;trained&lt;/em&gt;. People have come to see $0.99 as a reasonable price for individual songs. There was nothing inevitable about that outcome; it is a direct result of the success of the iTunes store. Had prices been set at $1.49 or $0.33, it’s likely we would have settled on that number as a reasonable price. Similarly, TV show episodes sell at $1.99,&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; and people seem to treat that as a reasonable price: the perceived value matches the cost well. They could have been $1 or $2.50, and consumers probably would have settled in with those numbers equally well.&lt;/p&gt;
 &lt;p&gt;Of course, had the price been too high, we would have rejected it entirely: markets can be trained, but they’re not capable of stretching into just any shape at all.&lt;/p&gt;
 &lt;p&gt;Admittedly, the music market remains volatile, but consumers on the whole don’t seem to balk at spending a dollar on a song. While the piracy rate remains high, iTunes and similar markets provide an outlet for those who are interested in purchasing their music legitimately.&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This outcome results from the combination of a trained market and a sensible cost/value relationship that allowed the training to occur in the first place. Book publishers should aim for the same outcome: profitability on the basis of perceived reasonability of their prices. This will require training the market, but that is possible so long as their expectations are reasonable.&lt;/p&gt;
-&lt;h2 id="a-reasonable-target"&gt;A reasonable target&lt;/h2&gt;
-&lt;h3 id="price-points"&gt;Price points&lt;/h3&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="a-reasonable-target" class="level2"&gt;
+&lt;h2&gt;A reasonable target&lt;/h2&gt;
+&lt;section id="price-points" class="level3"&gt;
+&lt;h3&gt;Price points&lt;/h3&gt;
 &lt;p&gt;Curtis’ final suggested price point is close to the mark, but I think some revision is in order. Remember: the aim is to buoy both customer satisfaction &lt;em&gt;and&lt;/em&gt; publisher profitability. Here’s my proposed pricing scheme for fiction (which could be adapted to other parts of the market fairly straightforwardly):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Standalone ebook: $4.99&lt;/li&gt;
@@ -864,14 +906,19 @@ int subtractNumbers(int r, int s) {
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;I’m basing these on the current pricing schemes in the market—these are the normal suggested retail prices for paperbacks, trade paperbacks, and hard covers—and on the assumption that the publisher’s goal is to maximize revenue, while the consumer’s goal is to get the most content at a price he feels is reasonable. I’m also taking into account the existing profit curves for publishers: paperbooks are relatively low margin, while hardcovers are the major profit points, at least when they’re successful.&lt;/p&gt;
-&lt;h3 id="rationale"&gt;Rationale&lt;/h3&gt;
+&lt;/section&gt;
+&lt;section id="rationale" class="level3"&gt;
+&lt;h3&gt;Rationale&lt;/h3&gt;
 &lt;p&gt;First, and most importantly, I believe the market will support these price points. The standalone ebook is less expensive than the paperback, as it should be, since its distribution costs are much lower than the costs of printing and shipping paperbacks. At the same time, ebooks sales will still generate revenue for the publisher; $5 is not a meaningless amount of money.&lt;/p&gt;
 &lt;p&gt;For each tier upwards, the cost of the bundled ebook drops. The publisher thus acknowledges the increasing profitability of each tier as well as the increasing cost to the reader. At the same time, the lowered bundling cost incentivizes the user toward the higher profit items. In each case, the bundling cost is sufficiently low as to be in the “impulse purchase” range for most users.&lt;a href="#fn5" class="footnoteRef" id="fnref5"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Readers will be far more likely to front the cost of a hardcover if an ebook comes bundled with it, because the value proposition is so much better. At the same time, this is unlikely to decrease the profits of the publisher, because the margins are much higher for hardcovers.&lt;/p&gt;
 &lt;p&gt;In fact, bundling at these rates will likely increase publisher profits from ebooks, as most readers currently choose between ebook and physical books. The price of a hardcover is simply too high to allow for the purchase of both. (Even when this is not actually true, it &lt;em&gt;seems&lt;/em&gt; true to consumers, which is equally important in determining their behavior.) With a sufficiently lower barrier to getting the additional content, the likelihood that the reader purchases both goes up substantially.&lt;a href="#fn6" class="footnoteRef" id="fnref6"&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This potential for increased profitability is compounded by the availability of the bundle at initial purchase time. A consumer who has already committed to spending $8 on a book is unlikely to balk at $10, and even less to balk at the transition from $15 to $16. In many cases, the publisher will earn more money from the book purchase than before, but the reader is still getting a good deal on the ebook. This is &lt;em&gt;exactly&lt;/em&gt; the combination that makes for a flourishing market.&lt;/p&gt;
 &lt;p&gt;Finally, the simplicity of these numbers is extremely helpful. Standardizing these prices will decrease the friction inherent in making the purchase decision, which increases the likelihood that a purchase will be made. I’m not suggesting a cartel—price standardization is natural in this sort of market—and I believe the price points I’ve suggested are where the market will settle in the long run. The publishers who get there first will earn enormous goodwill from their readers in the short term, as well as demonstrating their leadership in the industry in ways that set them up for long term success.&lt;/p&gt;
-&lt;h2 id="bundle-up"&gt;Bundle up&lt;/h2&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="bundle-up" class="level2"&gt;
+&lt;h2&gt;Bundle up&lt;/h2&gt;
 &lt;p&gt;A smart approach to bundling could be enormously beneficial to the publishing industry. In addition to the pure numerical profitability of the approach outlined above—no small detail in an industry struggling to adapt to the realities of the new economy—it establishes that the publishers are responsive to customers in a way that other large media have not seemed to be. Nothing is so helpful to a company’s long-term sustainability as for consumers to &lt;em&gt;like&lt;/em&gt; it. Reasonable bundling prices would go a long way toward helping readers see publishers as friends, rather than enemies.&lt;/p&gt;
 &lt;p&gt;Obviously these numbers work best in the context of fiction. The value propositions are entirely different in other contexts; a cookbook is an entirely different thing than a copy of &lt;em&gt;The Hobbit&lt;/em&gt;. Across the board, though, publishers should keep the same goals in mind: profitability by means of reasonability and approachability. Be allies of the readers, not their enemies. Make it easy and affordable for them to pay you for your work, and they will.&lt;/p&gt;
 &lt;hr /&gt;
@@ -880,6 +927,7 @@ int subtractNumbers(int r, int s) {
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
+&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -997,9 +1045,11 @@ Rectangle {
 &lt;p&gt;Today’s experience brought that all home again. That grin on my face all afternoon felt a bit silly, but it highlights the difference that really good software design makes. I am not just talking about how it looks here—though, to be sure, PostgreSQL is prettier than FirebirdSQL—but how it works. PostgreSQL feels responsive, its command set makes a lot of sense and is easy to use, and it is &lt;em&gt;extremely&lt;/em&gt; well documented. In fact, I would go so far as to say that it is the best documented open source software I have ever used, as well as among the very most robust. (The only other open source software I find to be as incredibly rock-solid and reliable as PostgreSQL is the Linux kernel. I am by no means an expert on either, or on open source software in general, but the Linux kernel is an unarguably amazing piece of work. So is PostgreSQL.) All those tiny little details add up.&lt;/p&gt;
 &lt;p&gt;It’s a good reminder for me as I write software that yes, the things I care about—the small matters that would be so easy to overlook when customers express no interest in them—really do matter. People may not know that things like typography make a difference in their experience, but those subtle, often imperceptible things matter. They may not consciously notice the differences in your interface design (even a command line interface), but it will change their experience of the software. Do it poorly, or even in a just-good-enough-to-get- by fashion, and you’ll annoy or simply bore them. Do it well, and you might just delight them—even if they can’t tell you why.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h2 id="examples"&gt;Examples&lt;/h2&gt;
+&lt;section id="examples" class="level2"&gt;
+&lt;h2&gt;Examples&lt;/h2&gt;
 &lt;p&gt;To make my point a little more visible, I thought it might be useful to post samples of SQL to accomplish the same task in the two different database dialects.&lt;/p&gt;
-&lt;h3 id="firebirdsql4"&gt;FirebirdSQL:&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;section id="firebirdsql4" class="level3"&gt;
+&lt;h3&gt;FirebirdSQL:&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;CREATE TABLE projects (
   id INT NOT NULL PRIMARY KEY,
   title VARCHAR(32) NOT NULL,
@@ -1018,7 +1068,9 @@ BEGIN
     THEN new.id = NEXT VALUE FOR project_id_sequence;
 END+
 SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="postgresql"&gt;PostgreSQL&lt;/h3&gt;
+&lt;/section&gt;
+&lt;section id="postgresql" class="level3"&gt;
+&lt;h3&gt;PostgreSQL&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;CREATE TABLE projects (
   id SERIAL NOT NULL PRIMARY KEY,
   title VARCHAR(32) NOT NULL,
@@ -1030,6 +1082,8 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
+&lt;/section&gt;
+&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;

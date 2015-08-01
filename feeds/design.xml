@@ -68,9 +68,11 @@
 &lt;p&gt;Today’s experience brought that all home again. That grin on my face all afternoon felt a bit silly, but it highlights the difference that really good software design makes. I am not just talking about how it looks here—though, to be sure, PostgreSQL is prettier than FirebirdSQL—but how it works. PostgreSQL feels responsive, its command set makes a lot of sense and is easy to use, and it is &lt;em&gt;extremely&lt;/em&gt; well documented. In fact, I would go so far as to say that it is the best documented open source software I have ever used, as well as among the very most robust. (The only other open source software I find to be as incredibly rock-solid and reliable as PostgreSQL is the Linux kernel. I am by no means an expert on either, or on open source software in general, but the Linux kernel is an unarguably amazing piece of work. So is PostgreSQL.) All those tiny little details add up.&lt;/p&gt;
 &lt;p&gt;It’s a good reminder for me as I write software that yes, the things I care about—the small matters that would be so easy to overlook when customers express no interest in them—really do matter. People may not know that things like typography make a difference in their experience, but those subtle, often imperceptible things matter. They may not consciously notice the differences in your interface design (even a command line interface), but it will change their experience of the software. Do it poorly, or even in a just-good-enough-to-get- by fashion, and you’ll annoy or simply bore them. Do it well, and you might just delight them—even if they can’t tell you why.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h2 id="examples"&gt;Examples&lt;/h2&gt;
+&lt;section id="examples" class="level2"&gt;
+&lt;h2&gt;Examples&lt;/h2&gt;
 &lt;p&gt;To make my point a little more visible, I thought it might be useful to post samples of SQL to accomplish the same task in the two different database dialects.&lt;/p&gt;
-&lt;h3 id="firebirdsql4"&gt;FirebirdSQL:&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;section id="firebirdsql4" class="level3"&gt;
+&lt;h3&gt;FirebirdSQL:&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;CREATE TABLE projects (
   id INT NOT NULL PRIMARY KEY,
   title VARCHAR(32) NOT NULL,
@@ -89,7 +91,9 @@ BEGIN
     THEN new.id = NEXT VALUE FOR project_id_sequence;
 END+
 SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="postgresql"&gt;PostgreSQL&lt;/h3&gt;
+&lt;/section&gt;
+&lt;section id="postgresql" class="level3"&gt;
+&lt;h3&gt;PostgreSQL&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;CREATE TABLE projects (
   id SERIAL NOT NULL PRIMARY KEY,
   title VARCHAR(32) NOT NULL,
@@ -101,6 +105,8 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
+&lt;/section&gt;
+&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;

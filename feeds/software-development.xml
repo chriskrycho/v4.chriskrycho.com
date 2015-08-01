@@ -287,12 +287,16 @@ def a_neat_function():
 &lt;hr /&gt;
 &lt;p&gt;The main tools I use are: a good text editor (I like all of &lt;a href="//www.sublimetext.com"&gt;Sublime Text&lt;/a&gt;, &lt;a href="//atom.io"&gt;Atom&lt;/a&gt;, &lt;a href="//github.com/textmate/textmate"&gt;TextMate&lt;/a&gt;, and &lt;a href="//chocolatapp.com"&gt;Chocolat&lt;/a&gt;; each has its own strengths and weaknesses) or sometimes &lt;a href="https://www.jetbrains.com/pycharm/"&gt;a full IDE&lt;/a&gt;, version control software (I appreciate and use both &lt;a href="http://www.git-scm.com"&gt;Git&lt;/a&gt; and &lt;a href="http://mercurial.selenic.com"&gt;Mercurial&lt;/a&gt;), and three dedicated tools to which the rest of this post is devoted: &lt;em&gt;pyenv&lt;/em&gt;, &lt;em&gt;pip&lt;/em&gt;, and virtual environments.&lt;/p&gt;
 &lt;p&gt;Everyone is going to have their own preferences for version control tools and an editor; but the recommendations I make regarding Python installations, package management, and workspaces/virtual environments should be fairly standard for anyone doing Python development on a Unix-like system in 2015.&lt;/p&gt;
-&lt;h2 id="python-proper"&gt;Python Proper&lt;/h2&gt;
+&lt;section id="python-proper" class="level2"&gt;
+&lt;h2&gt;Python Proper&lt;/h2&gt;
 &lt;p&gt;First up: Python itself. OS X ships with a built-in copy of Python 2; in the latest version of Yosemite, it’s running Python 2.7.6. The latest version of Python 2 is 2.7.9, so that isn’t &lt;em&gt;terribly&lt;/em&gt; far behind—but it is still behind. Moreover, OS X does &lt;em&gt;not&lt;/em&gt; ship with Python 3, and since I do all of my development in Python 3&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; I need to install it.&lt;/p&gt;
-&lt;h3 id="homebrew"&gt;Homebrew&lt;/h3&gt;
+&lt;section id="homebrew" class="level3"&gt;
+&lt;h3&gt;Homebrew&lt;/h3&gt;
 &lt;p&gt;For a long time, I managed all my Python installations with &lt;a href="http://brew.sh"&gt;&lt;em&gt;homebrew&lt;/em&gt;&lt;/a&gt;. If you’re not familiar with it, &lt;em&gt;homebrew&lt;/em&gt; is a package manager that lets you installed tools on the command line, similar to what you get from &lt;em&gt;aptitude&lt;/em&gt; or &lt;em&gt;yum&lt;/em&gt; on Ubuntu or Fedora respectively.&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; If you’re not using &lt;em&gt;homebrew&lt;/em&gt; yet, I highly recommend it for installing command-line tools. (If you’re not using command-line tools yet, then the rest of this post will either bore you to death, or prove extremely enlightening!) If you haven’t started yet, now’s a good time: &lt;a href="http://brew.sh"&gt;go install it!&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;While &lt;em&gt;homebrew&lt;/em&gt; is great for installing and managing packages in general, I can’t say this loud enough: &lt;em&gt;don’t manage Python with homebrew&lt;/em&gt;. It’s finicky, and really isn’t meant for all the things you have to do to manage more than one version of Python at a time.&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; (There’s a reason there’s a whole &lt;a href="https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Homebrew-and-Python.md"&gt;troubleshooting section&lt;/a&gt; devoted to it.) If you think it’s crazy that I might want more than one copy of Python installed a time, well… let’s just say I suspect you’ll change your mind after doing a bit more development. (At the most basic, most people will end up wanting both Python 2 and 3 installed, and will want to upgrade them as bug fixes and the like come out.)&lt;/p&gt;
-&lt;h3 id="pyenv"&gt;pyenv&lt;/h3&gt;
+&lt;/section&gt;
+&lt;section id="pyenv" class="level3"&gt;
+&lt;h3&gt;pyenv&lt;/h3&gt;
 &lt;p&gt;Instead of installing via &lt;em&gt;homebrew&lt;/em&gt;, use it to install &lt;a href="https://github.com/yyuu/pyenv"&gt;&lt;em&gt;pyenv&lt;/em&gt;&lt;/a&gt;, and use that to manage your installations. &lt;em&gt;pyenv&lt;/em&gt; is a dedicated tool for managing your “Python environment,” and it excels at that. If you were on a Mac with &lt;em&gt;homebrew&lt;/em&gt; installed, your setup process to add the latest version of Python might look something like this:&lt;/p&gt;
 &lt;pre class="shell"&gt;&lt;code&gt;$ brew install pyenv
 $ echo &amp;#39;eval &amp;quot;$(pyenv init -)&amp;quot;&amp;#39; &amp;gt;&amp;gt; ~.profile
@@ -304,7 +308,10 @@ $ pyenv install 3.4.3&lt;/code&gt;&lt;/pre&gt;
 $ cd path/to/my/project
 $ pyenv local 2.7.9&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This will create a simple plain text file, &lt;code&gt;.python-version&lt;/code&gt;, whose contents will be just &lt;code&gt;2.7.9&lt;/code&gt;—but for everything under &lt;code&gt;path/to/my/project&lt;/code&gt;, typing &lt;code&gt;python&lt;/code&gt; will launch Python 2.7.9, while typing it &lt;em&gt;outside&lt;/em&gt; that folder will launch Python 3.4.3. (If you want, you can just create the &lt;code&gt;.python-version&lt;/code&gt; file yourself manually and give it the name of a version. There’s nothing special about it all; it’s just the place &lt;code&gt;pyenv&lt;/code&gt; looks to know which Python version to use.)&lt;/p&gt;
-&lt;h2 id="managing-python-packages"&gt;Managing Python Packages&lt;/h2&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="managing-python-packages" class="level2"&gt;
+&lt;h2&gt;Managing Python Packages&lt;/h2&gt;
 &lt;p&gt;There are four basic approaches to managing Python packages:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;installing them manually&lt;/li&gt;
@@ -314,12 +321,17 @@ $ pyenv local 2.7.9&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;p&gt;The vast majority of the time, the right choice is using &lt;em&gt;pip&lt;/em&gt;. Over the last few years, &lt;em&gt;pip&lt;/em&gt; has become the default install tool for Python packages and it now ships natively with it on every platform. Suffice it to say: if you need to install a package, do not install it not with &lt;em&gt;homebrew&lt;/em&gt; (or &lt;em&gt;aptitude&lt;/em&gt; or &lt;em&gt;yum&lt;/em&gt;). Install it with &lt;em&gt;pip&lt;/em&gt;. It integrates with Python better, it always has access both to the latest versions of Python packages (including those only available in e.g. development repositories on GitHub or Bitbucket or wherever else) and to all previously released versions, and it’s the community’s main tool for the job.&lt;/p&gt;
 &lt;p&gt;That said, occasionally it makes sense to install packages manually by downloading them and running &lt;code&gt;python setup.py install&lt;/code&gt; or to use a system-level package manager. On the other hand, given &lt;em&gt;pip&lt;/em&gt;’s ability to do everything &lt;em&gt;easy_install&lt;/em&gt; does, and its ability to do quite a few more things as well, there really isn’t a time to use &lt;em&gt;easy_install&lt;/em&gt;. Using the language-supplied tools keeps everything playing nicely together. Perhaps just as importantly, it is the only way to make sure everything behaves the way it should when you start using…&lt;/p&gt;
-&lt;h2 id="virtual-environments"&gt;Virtual Environments&lt;/h2&gt;
+&lt;/section&gt;
+&lt;section id="virtual-environments" class="level2"&gt;
+&lt;h2&gt;Virtual Environments&lt;/h2&gt;
 &lt;p&gt;When working with a variety of different clients, or simply on different projects, it is common not only to end up with different versions of Python but also with different sets of packages or—tricker still!—different versions of the same package required for different projects. Virtual environments provide a solution: they reuse the main Python executable (by creating links on the file system to it), but create isolated “workspaces” for the various packages you might install.&lt;/p&gt;
 &lt;p&gt;That way, in one workspace, you might have version 1.2 of a package installed, and in another you might have version 3.3 installed—because those are the required dependencies for something &lt;em&gt;else&lt;/em&gt; you’re doing. This isn’t a hypothetical situation. For quite a while with one of my clients, we had pinned a particular version of the Python documentation package we use because it broke our use case after an update—but I still wanted to have the latest version of that tool in my &lt;em&gt;other&lt;/em&gt; projects. Setting up virtual environments neatly solves that problem.&lt;/p&gt;
-&lt;h3 id="venv-and-virtualenv"&gt;venv and virtualenv&lt;/h3&gt;
+&lt;section id="venv-and-virtualenv" class="level3"&gt;
+&lt;h3&gt;venv and virtualenv&lt;/h3&gt;
 &lt;p&gt;If you have Python 3.3 or later, you have a built-in tool for this called &lt;a href="https://docs.python.org/3/library/venv.html"&gt;&lt;em&gt;pyvenv&lt;/em&gt;&lt;/a&gt;; if you have Python 3.4 or later, it supports &lt;em&gt;pip&lt;/em&gt; right out of the gate so you don’t have to install it yourself. If you’re on older versions, you can install &lt;a href="https://virtualenv.pypa.io/en/latest/"&gt;&lt;em&gt;virtualenv&lt;/em&gt;&lt;/a&gt; (&lt;code&gt;pip install virtualenv&lt;/code&gt;) and get the same basic tooling: &lt;em&gt;pyvenv&lt;/em&gt; was inspired by &lt;em&gt;virtualenv&lt;/em&gt;. Then you can create virtual environments with the &lt;code&gt;pyvenv&lt;/code&gt; or &lt;code&gt;virtualenv&lt;/code&gt; commands, and use those to isolate different setups from each other. If you haven’t started using virtual environments yet, start now!&lt;/p&gt;
-&lt;h3 id="pyenv-with-virtualenv"&gt;pyenv with virtualenv&lt;/h3&gt;
+&lt;/section&gt;
+&lt;section id="pyenv-with-virtualenv" class="level3"&gt;
+&lt;h3&gt;pyenv with virtualenv&lt;/h3&gt;
 &lt;p&gt;I know, the similarity of names for &lt;em&gt;pyenv&lt;/em&gt; and &lt;em&gt;pyvenv&lt;/em&gt; is unfortunate. If it helps, you can call the latter as &lt;code&gt;venv&lt;/code&gt; rather than &lt;code&gt;pyvenv&lt;/code&gt;. But, more importantly, one of the areas &lt;em&gt;pyenv&lt;/em&gt; is much better than &lt;em&gt;homebrew&lt;/em&gt; is its support for managing virtual environments. Install &lt;a href="https://github.com/yyuu/pyenv-virtualenv"&gt;&lt;em&gt;pyenv-virtualenv&lt;/em&gt;&lt;/a&gt;:&lt;/p&gt;
 &lt;pre class="shell"&gt;&lt;code&gt;$ brew install pyenv-virtualenv
 $ echo &amp;#39;eval &amp;quot;$(pyenv virtualenv-init -)&amp;quot;&amp;#39; &amp;gt;&amp;gt; ~/.profile&lt;/code&gt;&lt;/pre&gt;
@@ -338,7 +350,10 @@ $ pyenv local pelican
 $ cd ~/Sites/winningslowly.org
 $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I named the virtual environment after &lt;a href="//docs.getpelican.com/"&gt;the tool I use to generate the sites&lt;/a&gt;, and reused it in both sites. Both now have a &lt;code&gt;.python-version&lt;/code&gt; file that reads &lt;code&gt;pelican&lt;/code&gt;. Now, anytime I’m working anywhere under &lt;code&gt;~/Sites/chriskrycho.com&lt;/code&gt; &lt;em&gt;or&lt;/em&gt; &lt;code&gt;~/Sites/winningslowly.org&lt;/code&gt;, I have the same tooling in place.&lt;/p&gt;
-&lt;h2 id="summary"&gt;Summary&lt;/h2&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="summary" class="level2"&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
 &lt;p&gt;The combination of &lt;em&gt;pip&lt;/em&gt;, &lt;em&gt;pyenv&lt;/em&gt; and virtual environments makes for a very simple, straightforward process to manage Python environments these days:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Install Python versions with &lt;em&gt;pyenv&lt;/em&gt;.&lt;/li&gt;
@@ -349,6 +364,7 @@ $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
+&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -486,7 +502,8 @@ $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;/ul&gt;
 &lt;p&gt;The project has many more files than this, of course, but these are the important ones for demonstrating this particular piece of insanity (which shows up &lt;em&gt;many&lt;/em&gt; places in the codebase).&lt;/p&gt;
 &lt;p&gt;I’m reproducing here some dummy code representing an &lt;em&gt;actual set of relationships in the codebase&lt;/em&gt;. The functions and module nameshave been changed; the relationships between the pieces of code have not.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; When I started trying to build the program that included what I am representing as &lt;code&gt;main.c&lt;/code&gt; below, this is the basic structure I found:&lt;/p&gt;
-&lt;h3 id="main.cpp"&gt;&lt;code&gt;main.cpp&lt;/code&gt;&lt;/h3&gt;
+&lt;section id="main.cpp" class="level3"&gt;
+&lt;h3&gt;&lt;code&gt;main.cpp&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;This is the main module of the program. In the actual code in which I found this particular morass, it was actually code generated by the UI builder in Visual Studio 6&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; and then turned into an unholy mess by a developer whose idea of good programming involved coupling the various parts of the code as tightly as possible.&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;pre class="c"&gt;&lt;code&gt;#include &amp;quot;calculator.h&amp;quot;
 #include &amp;quot;secondary.h&amp;quot;
@@ -514,16 +531,21 @@ void main() {
 
 // More insanity follows...&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Yes, the main function and the &lt;code&gt;doBadThingsWithGlobals&lt;/code&gt; function are both modifying global state, and yes, there is an include statement midway down through the module. (Just wait till you see what it does.)&lt;/p&gt;
-&lt;h3 id="secondary"&gt;“secondary”&lt;/h3&gt;
+&lt;/section&gt;
+&lt;section id="secondary" class="level3"&gt;
+&lt;h3&gt;“secondary”&lt;/h3&gt;
 &lt;p&gt;Here is a secondary module which has been somewhat cleaned up. It has normal relationships between header and source files, and includes all its dependency headers at the top of the file. It has a header which defines the public API for the module, and that even has inclusion guards on it.&lt;/p&gt;
-&lt;h4 id="secondary.h"&gt;&lt;code&gt;secondary.h&lt;/code&gt;&lt;/h4&gt;
+&lt;section id="secondary.h" class="level4"&gt;
+&lt;h4&gt;&lt;code&gt;secondary.h&lt;/code&gt;&lt;/h4&gt;
 &lt;pre class="c"&gt;&lt;code&gt;#ifndef SECONDARY_H
 #define SECONDARY_H
 
 int doStuffWithNumbers();
 
 #endif SECONDARY_H&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id="secondary.c"&gt;&lt;code&gt;secondary.c&lt;/code&gt;&lt;/h4&gt;
+&lt;/section&gt;
+&lt;section id="secondary.c" class="level4"&gt;
+&lt;h4&gt;&lt;code&gt;secondary.c&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;The &lt;code&gt;doStuffWithNumbers&lt;/code&gt; function here calls &lt;code&gt;addNumbers&lt;/code&gt;:&lt;/p&gt;
 &lt;pre class="c"&gt;&lt;code&gt;#include &amp;quot;secondary.h&amp;quot;
 #include &amp;quot;calculator.h&amp;quot;
@@ -532,7 +554,10 @@ int doStuffWithNumbers(int x, int y) {
     addNumbers(x, y);
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;em&gt;But wait!&lt;/em&gt; you say, &lt;em&gt;That function isn’t defined here!&lt;/em&gt; Ah, and you would be right, except that it doesn’t refer to the &lt;code&gt;addNumbers&lt;/code&gt; function in &lt;code&gt;main.c&lt;/code&gt;. It refers to a function implementation in &lt;code&gt;calculator.h&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id="calculator.h"&gt;&lt;code&gt;calculator.h&lt;/code&gt;&lt;/h3&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="calculator.h" class="level3"&gt;
+&lt;h3&gt;&lt;code&gt;calculator.h&lt;/code&gt;&lt;/h3&gt;
 &lt;pre class="c"&gt;&lt;code&gt;int addNumbers(int p, int q) {
     return p + q;
 }
@@ -541,7 +566,9 @@ int subtractNumbers(int r, int s) {
     return r - s;
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Strangely, this &lt;code&gt;addNumbers&lt;/code&gt; function is identical to the one in &lt;code&gt;main.c&lt;/code&gt;. Even &lt;em&gt;more&lt;/em&gt; strangely, it is defined—not merely declared, actually defined—in the header file! Nor is this the only such function. Look at the details of &lt;code&gt;writer.h&lt;/code&gt;, which was mysteriously included above in the middle of the main module.&lt;/p&gt;
-&lt;h3 id="writer.h"&gt;&lt;code&gt;writer.h&lt;/code&gt;&lt;/h3&gt;
+&lt;/section&gt;
+&lt;section id="writer.h" class="level3"&gt;
+&lt;h3&gt;&lt;code&gt;writer.h&lt;/code&gt;&lt;/h3&gt;
 &lt;pre class="c"&gt;&lt;code&gt;void writeStuff() {
     fprintf(stdout, &amp;quot;a: %d, b: %d&amp;quot;, a, b);
 }&lt;/code&gt;&lt;/pre&gt;
@@ -555,6 +582,7 @@ int subtractNumbers(int r, int s) {
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
+&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -693,9 +721,11 @@ Rectangle {
 &lt;p&gt;Today’s experience brought that all home again. That grin on my face all afternoon felt a bit silly, but it highlights the difference that really good software design makes. I am not just talking about how it looks here—though, to be sure, PostgreSQL is prettier than FirebirdSQL—but how it works. PostgreSQL feels responsive, its command set makes a lot of sense and is easy to use, and it is &lt;em&gt;extremely&lt;/em&gt; well documented. In fact, I would go so far as to say that it is the best documented open source software I have ever used, as well as among the very most robust. (The only other open source software I find to be as incredibly rock-solid and reliable as PostgreSQL is the Linux kernel. I am by no means an expert on either, or on open source software in general, but the Linux kernel is an unarguably amazing piece of work. So is PostgreSQL.) All those tiny little details add up.&lt;/p&gt;
 &lt;p&gt;It’s a good reminder for me as I write software that yes, the things I care about—the small matters that would be so easy to overlook when customers express no interest in them—really do matter. People may not know that things like typography make a difference in their experience, but those subtle, often imperceptible things matter. They may not consciously notice the differences in your interface design (even a command line interface), but it will change their experience of the software. Do it poorly, or even in a just-good-enough-to-get- by fashion, and you’ll annoy or simply bore them. Do it well, and you might just delight them—even if they can’t tell you why.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h2 id="examples"&gt;Examples&lt;/h2&gt;
+&lt;section id="examples" class="level2"&gt;
+&lt;h2&gt;Examples&lt;/h2&gt;
 &lt;p&gt;To make my point a little more visible, I thought it might be useful to post samples of SQL to accomplish the same task in the two different database dialects.&lt;/p&gt;
-&lt;h3 id="firebirdsql4"&gt;FirebirdSQL:&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;section id="firebirdsql4" class="level3"&gt;
+&lt;h3&gt;FirebirdSQL:&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;CREATE TABLE projects (
   id INT NOT NULL PRIMARY KEY,
   title VARCHAR(32) NOT NULL,
@@ -714,7 +744,9 @@ BEGIN
     THEN new.id = NEXT VALUE FOR project_id_sequence;
 END+
 SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="postgresql"&gt;PostgreSQL&lt;/h3&gt;
+&lt;/section&gt;
+&lt;section id="postgresql" class="level3"&gt;
+&lt;h3&gt;PostgreSQL&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;CREATE TABLE projects (
   id SERIAL NOT NULL PRIMARY KEY,
   title VARCHAR(32) NOT NULL,
@@ -726,6 +758,8 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
+&lt;/section&gt;
+&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
