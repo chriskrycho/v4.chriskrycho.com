@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sun, 02 Aug 2015 18:03:00 -0400</lastBuildDate><item><title>2015-08-02 18:03</title><link>http://www.chriskrycho.com/2015/2015-08-02-1803.html</link><description>&lt;p&gt;Just recorded the first episode of a new, short, weekly podcast I’m working on. Audio should be live in about a week!&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Mon, 03 Aug 2015 07:58:00 -0400</lastBuildDate><item><title>2015-08-03 07:58</title><link>http://www.chriskrycho.com/2015/2015-08-03-0758.html</link><description>&lt;p&gt;Whoa! After years of demand, Confluence &lt;em&gt;finally&lt;/em&gt; added support for importing Markdown-formatted content in its “Markup” box. It’s not native support for editing in Markdown… but it &lt;em&gt;is&lt;/em&gt; a step forward. Good work, Atlassian.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 03 Aug 2015 07:58:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-03:2015/2015-08-03-0758.html</guid><category>software development</category></item><item><title>2015-08-02 18:03</title><link>http://www.chriskrycho.com/2015/2015-08-02-1803.html</link><description>&lt;p&gt;Just recorded the first episode of a new, short, weekly podcast I’m working on. Audio should be live in about a week!&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
