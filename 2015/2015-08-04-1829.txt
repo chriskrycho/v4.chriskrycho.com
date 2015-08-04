@@ -1,0 +1,9 @@
+---
+Title: 2015-08-04 18:29
+Date: 2015-08-04 18:29
+Template: formats/micro
+...
+
+So far, at least, System Integrity Protect ("rootless" mode) is causing quite a
+mess on the El Capitan betas. I'm sure Apple will get it straightened out... and
+I'm hoping it's by the next public beta.
