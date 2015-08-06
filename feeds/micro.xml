@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-08-05T21:05:00-04:00</updated><entry><title>2015-08-05 21:05</title><link href="http://www.chriskrycho.com/2015/2015-08-05-2105.html" rel="alternate"></link><updated>2015-08-05T21:05:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-05:2015/2015-08-05-2105.html</id><summary type="html">&lt;p&gt;Hooked up my digital piano to Logic Pro X tonight and wrote &lt;a href="https://soundcloud.com/chriskrycho/theme-for-sappy-no-vocals"&gt;the theme&lt;/a&gt; for a podcast we’re doing together on learning to program. It’s so good!&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-08-06T17:33:00-04:00</updated><entry><title>2015-08-06 17:33</title><link href="http://www.chriskrycho.com/2015/2015-08-06-1733.html" rel="alternate"></link><updated>2015-08-06T17:33:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-06:2015/2015-08-06-1733.html</id><summary type="html">&lt;p&gt;☑ Finished reading the &lt;a href="http://rustbyexample.com"&gt;Rust by Example&lt;/a&gt; book.&lt;br /&gt;
+☑ Submitted a couple &lt;a href="https://github.com/rust-lang/rust-by-example/pull/628"&gt;pull requests&lt;/a&gt;.&lt;br /&gt;
+☑ Concluded that I &lt;em&gt;really&lt;/em&gt; like this language.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="software development"></category></entry><entry><title>2015-08-05 21:05</title><link href="http://www.chriskrycho.com/2015/2015-08-05-2105.html" rel="alternate"></link><updated>2015-08-05T21:05:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-05:2015/2015-08-05-2105.html</id><summary type="html">&lt;p&gt;Hooked up my digital piano to Logic Pro X tonight and wrote &lt;a href="https://soundcloud.com/chriskrycho/theme-for-sappy-no-vocals"&gt;the theme&lt;/a&gt; for a podcast we’re doing together on learning to program. It’s so good!&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
