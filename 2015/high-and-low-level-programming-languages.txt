@@ -1,6 +1,6 @@
 ---
 Title: High- and Low-Level Programming Languages
-Subtitle: C, C++, Python, Ruby, and... Rust. Hmm.
+Subtitle: Python, Ruby, C, C++, and... Rust. Hmm.
 Date: 2015-08-07 20:00
 Tags: software development
 ...
