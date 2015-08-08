@@ -1,0 +1,13 @@
+---
+Title: 2015-08-07 21:37
+Date: 2015-08-07 21:37
+Tags: software development, typefaces
+Template: formats/micro
+...
+
+Thinking about setting [Input] as my typeface for doing my development for a
+week or two, see how it goes.
+
+Anybody tried it? Bugs or problems to report?
+
+[Input]: http://input.fontbureau.com

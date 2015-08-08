@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-08-07T18:20:00-04:00</updated><entry><title>2015-08-07 18:20</title><link href="http://www.chriskrycho.com/2015/2015-08-07-1820.html" rel="alternate"></link><updated>2015-08-07T18:20:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-07:2015/2015-08-07-1820.html</id><summary type="html">&lt;p&gt;Quote of the week (3-year-old Ellie talking to her mom, who has been learning Python): “Mommy! I have a function for you!”&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-08-07T21:37:00-04:00</updated><entry><title>2015-08-07 21:37</title><link href="http://www.chriskrycho.com/2015/2015-08-07-2137.html" rel="alternate"></link><updated>2015-08-07T21:37:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-07:2015/2015-08-07-2137.html</id><summary type="html">&lt;p&gt;Thinking about setting &lt;a href="http://input.fontbureau.com"&gt;Input&lt;/a&gt; as my typeface for doing my development for a week or two, see how it goes.&lt;/p&gt;
+&lt;p&gt;Anybody tried it? Bugs or problems to report?&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="software development"></category><category term="typefaces"></category></entry><entry><title>2015-08-07 18:20</title><link href="http://www.chriskrycho.com/2015/2015-08-07-1820.html" rel="alternate"></link><updated>2015-08-07T18:20:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-07:2015/2015-08-07-1820.html</id><summary type="html">&lt;p&gt;Quote of the week (3-year-old Ellie talking to her mom, who has been learning Python): “Mommy! I have a function for you!”&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
