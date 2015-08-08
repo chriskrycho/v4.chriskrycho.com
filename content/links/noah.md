@@ -1,11 +1,15 @@
-Title: <i>Noah</i>: A Theological-Aesthetic Rorschach Test
+---
+Title: "<i>Noah</i>: A Theological-Aesthetic Rorschach Test"
 Author: Chris Krycho
 Date: 2014-04-08 19:35
 Link: http://mereorthodoxy.com/noah-theological-aesthetic-rorschach-test/
 Tags: links, my writing elsewhere
 Category: theology
+Summary: >
+    Link: Over at Mere Orthodoxy, I write at some length about how our responses
+    to <i>Noah</i> says a great deal about us as well as about the movie itself.
 Template: formats/link
-Summary: Link: Over at Mere Orthodoxy, I write at some length about how our responses to <i>Noah</i> says a great deal about us as well as about the movie itself.
+...
 
 I spent a good bit of time working on this over the last week, and I hope you'll
 find it helpful.
