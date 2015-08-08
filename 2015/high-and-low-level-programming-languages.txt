@@ -6,16 +6,17 @@ Tags: software development
 ...
 
 It occurred to me while listening to [Edwin Brady] talk about [Idris] on the
-[Type Theory Podcast],[^1] having just spent a few weeks starting to learn Rust:
-"low-level" has at least two meanings in software. One is whether something has
-manual memory management or is garbage collected, reference counted, or
-otherwise manages memory itself. This is what people often mean when they talk
-about C, C++, etc. as being "low-level" and languages like Python or Ruby or C♯
-being high-level.
+[Type Theory Podcast],[^1] having just spent a few weeks starting to learn
+[Rust]: "low-level" has at least two meanings in software. One is whether
+something has manual memory management or is garbage collected, reference
+counted, or otherwise manages memory itself. This is what people often mean when
+they talk about C, C++, etc. as being "low-level" and languages like Python or
+Ruby or C♯ being high-level.
 
 [Edwin Brady]: https://edwinb.wordpress.com
 [Idris]: http://www.idris-lang.org
 [Type Theory Podcast]: http://typetheorypodcast.com
+[Rust]: https://www.rust-lang.org
 
 But then you toss in a language like [Rust], and things start to get a little
 more complicated. Rust can do the same kind of direct memory management that
@@ -25,7 +26,6 @@ Like C♯, you have to be explicit about any unsafe code, with the `unsafe`
 keyword on any blocks that do memory management that *isn't* safe. And the vast
 majority of Rust code *is* safe.
 
-[Rust]: https://www.rust-lang.org
 [1]: https://github.com/torvalds/linux
 [2]: https://en.wikipedia.org/wiki/Architecture_of_Windows_NT
 [3]: http://www.opensource.apple.com/source/xnu/xnu-2782.10.72/
