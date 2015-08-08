@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 08 Aug 2015 10:44:00 -0400</lastBuildDate><item><title>2015-08-08 10:44</title><link>http://www.chriskrycho.com/2015/2015-08-08-1044.html</link><description>&lt;p&gt;Well, hello there, Smetana’s “Má Vlast”—I don’t believe we’ve met before, but you are absolutely delightful.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 08 Aug 2015 15:33:00 -0400</lastBuildDate><item><title>2015-08-08 15:33</title><link>http://www.chriskrycho.com/2015/2015-08-08-1533.html</link><description>&lt;p&gt;I found a &lt;code&gt;CEditDlg&lt;/code&gt; instance and went looking for it in the MSDN docs, and was a bit nonplussed not to find it. Oh. It’s a &lt;code&gt;CFileDialog&lt;/code&gt; subclass, and never mind the semantic ambiguity arising from the existence of a native &lt;code&gt;CEdit&lt;/code&gt; class. 😐&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 08 Aug 2015 15:33:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-08:2015/2015-08-08-1533.html</guid><category>software development</category></item><item><title>2015-08-08 10:44</title><link>http://www.chriskrycho.com/2015/2015-08-08-1044.html</link><description>&lt;p&gt;Well, hello there, Smetana’s “Má Vlast”—I don’t believe we’ve met before, but you are absolutely delightful.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
