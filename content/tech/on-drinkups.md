@@ -17,7 +17,7 @@ What I do not care for so much, though, is the way that drinking has become a
 it's equally *de rigueur* in other fields, but I wouldn't know: those aren't my
 fields.) Case in point: I see a lot of these kinds of tweets:
 
-<blockquote class="twitter-tweet" lang="en"><p>Join us for a drinkup at Bell&#39;s Brewery in Kalamazoo on April 26! <a href="https://t.co/6Kjfd9MPGl">https://t.co/6Kjfd9MPGl</a> <a href="https://twitter.com/GitHubCommunity">@githubcommunity</a></p>&mdash; GitHub (@github) <a href="https://twitter.com/github/statuses/458311940704858113">April 21, 2014</a></blockquote>
+<blockquote class="twitter-tweet" lang="en"><p>Join us for a drinkup at Bell&#39;s Brewery in Kalamazoo on April 26! <a href="https://t.co/6Kjfd9MPGl">https://t.co/6Kjfd9MPGl</a> <a href="https://twitter.com/GitHubCommunity">\@githubcommunity</a></p>&mdash; GitHub (\@github) <a href="https://twitter.com/github/statuses/458311940704858113">April 21, 2014</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Again, I like a beer. Having a drink with friends can be a really delightful
