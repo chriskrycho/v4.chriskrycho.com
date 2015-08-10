@@ -23,7 +23,7 @@ more complicated. Rust can do the same kind of direct memory management that
 makes C or C++ a good language for things like writing operating system kernels.
 [[1][1],[2][2],[3][3]] But it is also memory-safe, at least in ordinary usage.
 Like C♯, you have to be explicit about any unsafe code, with the `unsafe`
-keyword on any blocks that do memory management that *isn't* safe. And the vast
+keyword on any blocks that do memory management that isn't safe. And the vast
 majority of Rust code *is* safe.
 
 [1]: https://github.com/torvalds/linux
