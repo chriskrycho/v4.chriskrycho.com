@@ -21,7 +21,7 @@ Ruby or C♯ being high-level.
 But then you toss in a language like [Rust], and things start to get a little
 more complicated. Rust can do the same kind of direct memory management that
 makes C or C++ a good language for things like writing operating system kernels.
-[[1][1],[2][2],[3][3]] But it is also memory-*safe*, at least in ordinary usage.
+[[1][1],[2][2],[3][3]] But it is also memory-safe, at least in ordinary usage.
 Like C♯, you have to be explicit about any unsafe code, with the `unsafe`
 keyword on any blocks that do memory management that *isn't* safe. And the vast
 majority of Rust code *is* safe.
@@ -33,12 +33,12 @@ majority of Rust code *is* safe.
 More than that, though, Rust *feels* like a high-level language. It gives you
 higher-kinded functions, generics, traits-based composition of types, hygienic
 macros, and the implementation of many important parts the essentials of the
-language *in the library*. If you need to patch something, or extend something,
+language in the library. If you need to patch something, or extend something,
 you can do that in a straightforward way. In short, it gives you lots of good
-*abstractions* like you would expect in a high-level language.
+abstractions like you would expect in a high-level language.
 
-Rust is *low-level* in that you can write (and people are writing) systems-level
-programs in it. It is *high-level* in that it lets you express things in ways
+Rust is low-level in that you can write (and people are writing) systems-level
+programs in it. It is high-level in that it lets you express things in ways
 normally associated with languages like Haskell or OCaml or Python or Ruby. To
 put it simply: it's *low-level* in its ability to address the computer, and
 *high-level* in the abstractions it hands to a programmer. That's a powerful
