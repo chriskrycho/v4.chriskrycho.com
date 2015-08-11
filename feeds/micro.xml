@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-08-10T15:33:00-04:00</updated><entry><title>2015-08-10 15:33</title><link href="http://www.chriskrycho.com/2015/2015-08-10-1533.html" rel="alternate"></link><updated>2015-08-10T15:33:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-10:2015/2015-08-10-1533.html</id><summary type="html">&lt;p&gt;Just a few minutes ago, I heard Ellie singing a song that mashed together “Let It Go” with something about munchkins. People who know me well know where the munchkins bit came from. “The apple doesn’t fall far from the tree!” Jaimie immediately opined. 😏&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-08-11T09:09:00-04:00</updated><entry><title>2015-08-11 09:09</title><link href="http://www.chriskrycho.com/2015/2015-08-11-0909.html" rel="alternate"></link><updated>2015-08-11T09:09:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-11:2015/2015-08-11-0909.html</id><summary type="html">&lt;p&gt;My ASICS Gel-Lyte33s lasted me over a thousand miles. The Gel-Lyte33 3s I got to replace them lasted less than 500 miles (more in line with normal expectations for shoes). I wonder what changed between the models?&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="fitness"></category></entry><entry><title>2015-08-10 15:33</title><link href="http://www.chriskrycho.com/2015/2015-08-10-1533.html" rel="alternate"></link><updated>2015-08-10T15:33:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-10:2015/2015-08-10-1533.html</id><summary type="html">&lt;p&gt;Just a few minutes ago, I heard Ellie singing a song that mashed together “Let It Go” with something about munchkins. People who know me well know where the munchkins bit came from. “The apple doesn’t fall far from the tree!” Jaimie immediately opined. 😏&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
 </summary><category term="ellie"></category></entry><entry><title>2015-08-10 15:06</title><link href="http://www.chriskrycho.com/2015/2015-08-10-1506.html" rel="alternate"></link><updated>2015-08-10T15:06:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-10:2015/2015-08-10-1506.html</id><summary type="html">&lt;p&gt;Tradeoffs time: whether ’tis better to drop in an off-the-shelf open source solution for this particular problem, and bring in all the extra weight it includes, or do it myself and pay in the time spent.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="software development"></category></entry><entry><title>2015/08/09 22:16</title><link href="http://www.chriskrycho.com/2015/20150809-2216.html" rel="alternate"></link><updated>2015-08-09T22:16:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-09:2015/20150809-2216.html</id><summary type="html">&lt;p&gt;Tonight, Jaimie said that she thought Rust had turned me into a bit of a fanboy. Don’t tell anyone, but I think she’s basically right…&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
