@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-08-11T20:13:00-04:00</updated><entry><title>2015-08-11 20:13</title><link href="http://www.chriskrycho.com/2015/2015-08-11-2013.html" rel="alternate"></link><updated>2015-08-11T20:13:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-11:2015/2015-08-11-2013.html</id><summary type="html">&lt;p&gt;If you’re delivering images over the web, you &lt;em&gt;need&lt;/em&gt; to be using something like &lt;a href="https://imageoptim.com"&gt;ImageOptim&lt;/a&gt;. No excuses.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-08-11T22:37:00-04:00</updated><entry><title>2015-08-11 22:37</title><link href="http://www.chriskrycho.com/2015/2015-08-11-2237.html" rel="alternate"></link><updated>2015-08-11T22:37:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-11:2015/2015-08-11-2237.html</id><summary type="html">&lt;p&gt;Dear Washington Post: [Georgia] was designed for high legibility on screens. You may think it’s “newspapery” to squish the letters together with &lt;code&gt;letter-spacing: -1.75px&lt;/code&gt;, but actually it’s just ugly.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/images/nolig.png" title="&amp;#39;Unfinished&amp;#39; set in Georgia with bad letter-spacing" alt="A bad thing not to be mistaken for kerning or a ligature" /&gt;&lt;figcaption&gt;A bad thing not to be mistaken for kerning or a ligature&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="typography"></category></entry><entry><title>2015-08-11 20:13</title><link href="http://www.chriskrycho.com/2015/2015-08-11-2013.html" rel="alternate"></link><updated>2015-08-11T20:13:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-11:2015/2015-08-11-2013.html</id><summary type="html">&lt;p&gt;If you’re delivering images over the web, you &lt;em&gt;need&lt;/em&gt; to be using something like &lt;a href="https://imageoptim.com"&gt;ImageOptim&lt;/a&gt;. No excuses.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
