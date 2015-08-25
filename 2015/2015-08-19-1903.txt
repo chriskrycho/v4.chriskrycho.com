@@ -1,8 +1,0 @@
----
-Title: 2015-08-19 19:03
-Date: 2015-08-19 19:03
-Tags: Ellie
-Template: formats/micro
-...
-
-**Ellie:** "I'm an alien cookie!"

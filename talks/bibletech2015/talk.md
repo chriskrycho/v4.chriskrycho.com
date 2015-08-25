@@ -512,8 +512,8 @@ Note:
   - Email: [chris@krycho.com]
   - Podcast: [www.winningslowly.org]
   - Social media:
-      * Twitter: [\@chriskrycho][tw]
-      * App.net: [\@chriskrycho][adn]
+      * Twitter: [@chriskrycho][tw]
+      * App.net: [@chriskrycho][adn]
       * LinkedIn: [chriskrycho][li]
       * Facebook: [chriskrycho][fb]
       * Instagram: [chriskrycho][insta]
