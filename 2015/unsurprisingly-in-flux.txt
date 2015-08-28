@@ -2,11 +2,12 @@
 Title: Unsurprisingly, In Flux
 Subtitle: A Quick Look at the State of JS Frameworks in Early 2015
 Summary: >
-    The state of JavaScript frameworks today is a scale, really, from 
-    not-at-all-monolithic to totally-monolithic, in roughly this order: 
+    The state of JavaScript frameworks today is a scale, really, from
+    not-at-all-monolithic to totally-monolithic, in roughly this order:
     Backbone – React & Angular – Ember – Meteor.
 Author: Chris Krycho
 Date: 2015-04-08 16:05
+Modified: 2015-08-28 19:50
 Tags: software development
 ...
 

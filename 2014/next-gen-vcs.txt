@@ -1,10 +1,14 @@
+---
 Title: The Next Generation of Version Control
+Summary: >
+    The current state of affairs with version control is a mess. Things we can
+    get right next time around.
 Slug: next-gen-vcs
 Author: Chris Krycho
 Date: 2014-10-16 21:45
+Modified: 2014-10-20 07:25
 Tags: software development
-Edited: 2014-10-20 07:25
-Summary: The current state of affairs with version control is a mess. Things we can get right next time around.
+...
 
 The current state of affairs in version control systems is a mess. To be sure,
 software development is *far* better with *any* of the distributed version

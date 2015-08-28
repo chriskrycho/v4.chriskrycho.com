@@ -3,7 +3,7 @@ Title: On Editing Podcasts
 Subtitle: >
     Good podcasts—like good blog posts—require planning, care, and editing.
 Date: 2015-08-24 20:16
-Updated: 2015-08-28 19:51
+Modified: 2015-08-28 19:51
 Category: tech
 Summary: >
     Most podcasts are more like blog posts than magazine articles. (That doesn't
@@ -98,7 +98,7 @@ episodes, we outline carefully (like the one we recorded today, which will come
 out next Tuesday). For others, we can basically just wing it (like the one we
 recorded a week ago and which comes out tomorrow). But if our podcast is good,
 and I really do think it is, it is because we take the time to work at making it
-good. Just like you have to do on a blog, or really anything else in 
+good. Just like you have to do on a blog, or really anything else in
 life.[^difference]
 
 [New Rustacean]: http://www.newrustacean.com/
