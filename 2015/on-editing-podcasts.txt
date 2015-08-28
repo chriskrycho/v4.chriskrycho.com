@@ -49,14 +49,14 @@ incredibly tight work that you find in a magazine can actually be attractive at
 times. Many of my favorite podcasts are very conversational and not heavily
 produced.
 
-But---and here I think Jacobs is *absolutely* correct---all of the shows I
-really enjoy make a point to edit their shows. They clean up the audio from
-artifacts, they cut segments that were off topic, they make sure the levels are
-good between the different members of the podcast, and so on. And while you
-don't have to do those things to have a podcast, any more than you need to edit
-the things you write to have a blog, you do need to do them if you want to have
-a *good* show. Sadly, this is where a number of shows I otherwise might enjoy
-show themselves to the door.
+But---and here I think Jacobs is absolutely correct---all of the shows I really
+enjoy make a point to edit their shows. They clean up the audio from artifacts,
+they cut segments that were off topic, they make sure the levels are good
+between the different members of the podcast, and so on. And while you don't
+have to do those things to have a podcast, any more than you need to edit the
+things you write to have a blog, you do need to do them if you want to have a
+*good* show. Sadly, this is where a number of shows I otherwise might enjoy show
+themselves to the door.
 
 There is a reason Stephen and I spent a whole ["beta" season] of [Winning
 Slowly][ws][^beta] working not only on what we wanted the show to be about, but
@@ -66,7 +66,7 @@ adopted seemingly silly practices like putting blankets over our heads and
 microphones and laptops while recording so that we can get better sound spaces.
 We have taken the time to learn about compression and limiting and other audio
 editing techniques, and work hard to get the mix between our intro and outro
-music and our own voices correct. And we cut things *mercilessly*.
+music and our own voices correct. And we cut things mercilessly.
 
 ["beta" season]: http://www.winningslowly.org/season-0.html
 
