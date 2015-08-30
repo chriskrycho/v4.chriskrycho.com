@@ -68,6 +68,13 @@ img {
     }
 }
 
+.media-embed {
+    margin: 1em auto;
+    display: block;
+    position: relative;
+    width: 75%;
+}
+
 p, ul, ol, li {
     font-size: $fsp;
 }
@@ -615,6 +622,8 @@ article {
             top: $fs2;
             bottom: $fsp;
         }
+
+        text-align: center;
 
         img { box-shadow: 0 0 0.625em $light_gray; }
     }
