@@ -2,10 +2,6 @@
 
 {% block title %}{{ category.name | capitalize }} &middot; {{ SITENAME }}{% endblock %}
 
-{% block additional_feeds %}
-    <link rel="alternate" href="feeds/{{ category.name }}.xml"  type="application/rss+xml" title="Posts filed under '{{ category.name|title }}'"/>
-{% endblock %}
-
 {% block section_head %}
 <div id="section-head">
     <h3>

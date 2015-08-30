@@ -19,14 +19,9 @@
     {% include "identity/opengraph.html" %}
     {% include "identity/google.html" %}
     {% include "identity/twitter.html" %}
-    <link rel="me" href="{{ IDENTITY['Bitbucket'] }}"/>
-    <link rel="me" href="{{ IDENTITY['GitHub'] }}"/>
-    <link rel="me" href="{{ IDENTITY['Instagram'] }}"/>
-    <link rel="me" href="{{ IDENTITY['LinkedIn'] }}"/>
-    <link rel="me" href="{{ IDENTITY['Medium'] }}"/>
-    <link rel="me" href="{{ IDENTITY['SoundCloud'] }}"/>
-    <link rel="me" href="{{ IDENTITY['Stack Overflow'] }}"/>
-    <link rel="me" href="{{ IDENTITY['Vimeo'] }}"/>
+    {% for id in IDENTITY %}
+    <link rel="me" href="{{ IDENTITY[id] }}"/>
+    {% endfor %}
 
     {# IndieWeb OpenID #}
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
