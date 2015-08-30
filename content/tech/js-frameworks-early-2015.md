@@ -1,14 +1,15 @@
 ---
 Title: Unsurprisingly, In Flux
 Subtitle: A Quick Look at the State of JS Frameworks in Early 2015
-Author: Chris Krycho
-Date: 2015-04-08 16:05
 Summary: >
     The state of JavaScript frameworks today is a scale, really, from
     not-at-all-monolithic to totally-monolithic, in roughly this order:
     Backbone – React & Angular – Ember – Meteor.
+Author: Chris Krycho
+Date: 2015-04-08 16:05
+Modified: 2015-08-28 19:50
 Tags: software development
----
+...
 
 <i class="editorial">This started as a [series of posts] on App.net. I
 [resolved] a while ago that if I was tempted to do that, I should just write a
@@ -25,15 +26,15 @@ am adapting it into a blog post anyway. You can see the posts that prompted it
 ---
 
   - The state of JavaScript frameworks today is a scale, really, from
-    not-at-all-monolithic to totally-monolithic, in roughly this order:
-    Backbone -- React & Angular -- Ember -- Meteor.
+    not-at-all-monolithic to totally-monolithic, in roughly this order: Backbone
+    -- React & Angular -- Ember -- Meteor.
 
   - Backbone and related library Underscore are really collections of common JS
-    tools and patterns you can use to write apps, but they’re not *frameworks*,
-    per se. You’ll write all your own boilerplate there.
+    tools and patterns you can use to write apps, but they're not *frameworks*,
+    per se. You'll write all your own boilerplate there.
 
   - React and Angular supply much *more* of the functionality, but Angular is a
-    “meta-framework” that aims to do *some* boilerplate but let you construct
+    "meta-framework" that aims to do *some* boilerplate but let you construct
     your own custom app framework.
 
   - Angular is very powerful, but it's kind of like Git: wires are exposed; you
@@ -49,9 +50,9 @@ am adapting it into a blog post anyway. You can see the posts that prompted it
 
   - In any case, Angular and React do *different* things from each other, but
     both do substantially more than Backbone.
-	
+
   - Ember is a full framework, strongly emphasizing shared conventions (with a
-    lot of common developers from Rails). It’s perhaps less adaptable than React
+    lot of common developers from Rails). It's perhaps less adaptable than React
     or Angular, but is much more full-featured; you have very little boilerplate
     to do.
 
@@ -77,9 +78,9 @@ am adapting it into a blog post anyway. You can see the posts that prompted it
     already have a bunch of things in place but want a dedicated view layer,
     React is good.[^react]
 
-  - If you’re writing a new, full-on web *application* (SPA, or organized in
+  - If you're writing a new, full-on web *application* (SPA, or organized in
     whatever other way), I think Ember is the very clear winner at this point. I
-    have good confidence in their leadership and they’re firing on all
+    have good confidence in their leadership and they're firing on all
     cylinders.
 
 Regarding Angular, [\@mikehoss][\@mikehoss] [posted][posted]:
@@ -93,7 +94,7 @@ Regarding Angular, [\@mikehoss][\@mikehoss] [posted][posted]:
 
 I can't speak to his comment about Miško (Miško Hevery, one of the leads on
 AngularJS), but I agree about Angular itself: the rewrite needs to happen.
-Angular 1.x is a mess---as are its docs. It’s just not a good time to be using
+Angular 1.x is a mess---as are its docs. It's just not a good time to be using
 1.x for any new projects.
 
 I'll add to these points that I've used Angular for the last 9 months on
