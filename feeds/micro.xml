@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-09-01T06:51:00-04:00</updated><entry><title>2015-09-01 06:51</title><link href="http://www.chriskrycho.com/2015/2015-09-01-0651.html" rel="alternate"></link><updated>2015-09-01T06:51:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-01:2015/2015-09-01-0651.html</id><summary type="html">&lt;p&gt;What are you using to track software development issues these days? JIRA, YouTrack, FogBugz, RedMine, or something else?&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-09-01T07:25:00-04:00</updated><entry><title>2015-09-01 07:25</title><link href="http://www.chriskrycho.com/2015/2015-09-01-0725.html" rel="alternate"></link><updated>2015-09-01T07:25:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-01:2015/2015-09-01-0725.html</id><summary type="html">&lt;p&gt;Of all my nerdy statements, this has to be near the top, but it’s still true: I &lt;em&gt;love&lt;/em&gt; RSS. It’s a wonderful tool.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</summary></entry><entry><title>2015-09-01 06:51</title><link href="http://www.chriskrycho.com/2015/2015-09-01-0651.html" rel="alternate"></link><updated>2015-09-01T06:51:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-01:2015/2015-09-01-0651.html</id><summary type="html">&lt;p&gt;What are you using to track software development issues these days? JIRA, YouTrack, FogBugz, RedMine, or something else?&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
