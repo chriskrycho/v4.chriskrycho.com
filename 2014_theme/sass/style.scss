@@ -121,20 +121,36 @@ p:first-child, p:first-of-type {
     text-indent: 0;
 }
 
+p + ul,
+p + ol {
+    margin-top: 1em;
+}
+
 ul {
-    list-style: none;
+    list-style-type: circle;
 
     li {
-        // Fix for the fact that circles look *terrible* in Gentium
-        &:before {
-            float: left;
-            content: '\25E6'; // white bullet
-            margin-left: -0.804em;
-            padding-right: 0.465em;
-        }
-
         p:first-child {
             display: block;
+            margin-top: 1em;
+        }
+    }
+
+    ul {
+        list-style-type: disc;
+
+        ul {
+            list-style-type: square;
+
+            ul {
+                list-style-type: circle;
+
+                ul {
+                    list-style-type: disc;
+
+                    ul { list-style-type: square; }
+                }
+            }
         }
     }
 }
