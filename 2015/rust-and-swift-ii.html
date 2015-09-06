@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rust and Swift (ii) &middot; Chris Krycho</title>
+    <meta name="description" content="I am still reading through the Swift book, and continuing to compare it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear ..."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2015/rust-and-swift-ii.html"/>
+    <meta property="og:title" content="Rust and Swift (ii)"/>
+    <meta property="og:description" content="I am still reading through the Swift book, and continuing to compare it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear ..."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Rust and Swift (ii)"/>
+    <meta name="twitter:description" content="I am still reading through the Swift book, and continuing to compare it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear ..."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
+        <link rel="alternate" href="/feeds/talks.xml" type="application/rss+xml" title="Posts filed in in 'Talks''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+
+    <script type="text/javascript" async src="/assets/js/mtiFontTrackingCode.js"></script>
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Creativity, reflection, & varied endeavors<br class="optional"/> by a peculiar fellow</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title talks"><a href="http://www.chriskrycho.com/talks/">talks</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="software-development listicles tech">
+
+    <header>
+<h1>Rust and Swift (ii)</h1>
+    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html"><i class="fa fa-fw fa-link"></i></a>September 06, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#['software development'</a><a class="hashtags" href="http://www.chriskrycho.com/listicles/">#'listicles']</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.txt">Markdown source</a></span></div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class="editorial">I am still reading through the Swift book, and continuing to compare it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.</i></p>
+<hr />
+<ul>
+<li><p>At first blush, I find the extra syntax around optionals in Swift more confusing than helpful. I think this comes down to my preference for a more Python-like approach: “Explicit is better than implicit” and “There should be one– and preferably only one –obvious way to do it” both militate against the multiple different ways you can handle optional values in Swift. Optional types are created in one of two ways:</p>
+<ul>
+<li>with the <code>?</code> operator on a type definition, creating an explicitly wrapped type which must be checked in some way.</li>
+<li>with the <code>!</code> operator on a type definition, creating an “implicitly unwrapped optional” by forcibly unwrapping it (and creating a runtime error if the optional is empty)</li>
+</ul>
+<p>After creating an optional, you can get at its contents by:</p>
+<ul>
+<li>using the <code>if let</code> or <code>while let</code> constructs to bind the optional value’s non-<code>nil</code> value for a block</li>
+<li>using the <code>!</code> operator on a variable name, explicitly unwrapping it (and creating a runtime error if the optional is empty)</li>
+</ul>
+<p>By contrast, in Rust you always have to explicitly unwrap the item, using the <code>unwrap</code> method or pattern matching. There are no implicitly unwrapped types. Moreover, there is no special syntax around creating optional types in Rust: you just declare them with an <code>Option</code> type or another type that <code>impl</code>s the <code>Option</code> behavior. The “shortcut” behavior around error handling, <code>try!</code>, isn’t special syntax, but application of another standard language construct (in this case, a macro).</p></li>
+<li><p>The discussion of <code>assert</code> in the Swift book re-raises the question about the global namespace:</p>
+<blockquote>
+<p>“You write an assertion by calling the global <code>assert(_:_:)</code> function.”</p>
+</blockquote>
+<p>This continues to suggest strongly that Swift does in fact have a true global namespace, <em>not</em> an automatically-imported prelude. That can make a big difference for applications in certain spaces (e.g. systems programming), when you might have good reason to want to replace the standard library’s approach with a different one. (See Rust’s <a href="https://doc.rust-lang.org/book/no-stdlib.html"><code>#[no_std]</code></a> docs and the <a href="https://github.com/rust-lang/rfcs/blob/master/text/1184-stabilize-no_std.md">related RFC</a>.)</p></li>
+<li><p>In Rust, <code>assert!</code> is a macro, not a function, which is an interesting but perhaps not <em>especially</em> important distinction in this particular case. (It might be, though; I’d have to see the implementation of each to see how they play out differently.)</p></li>
+<li><p>In any case, this also highlights another large difference between the two: testing is <a href="https://doc.rust-lang.org/stable/book/testing.html">front and center</a> in Rust, and barely receives a mention so far in the Swift book (and isn’t in the table of contents). Having language-level support for testing is a big deal.</p></li>
+<li><p>Language tour and first chapter of the language guide down, my sense is that Swift is a substantially better language than C or C++ (and presumably than Objective C, but since I don’t know that language I can’t speak to it) for app design, but that Rust is a better language yet. Both a far more modern than their predecessors, but they approach the same problems in surprisingly different ways, relatively similar syntax notwithstanding. So far, I like the Rust approach better.</p></li>
+<li><p>In particular, more syntax is not my preferred way to tackle these things. Providing good language constructs and primitives on which to build seems better in <em>many</em> ways:</p>
+<ul>
+<li>It substantially reduces the cognitive load for the developer, by keeping the number of constructs small and simply varying how they are applied.</li>
+<li>It increases the quality of those primitives, because it forces the language deadness to make sure they actually address the full problem space.</li>
+<li>It lets developers approach the same problem in ways the language design team may not have anticipated, and over time the community may find shared conventions that improve on the <code>std</code> approach, and nothing has to change in the language spec (or the compiler!) to adopt those changes.</li>
+<li>In general, then, it makes change much easier to manage, and change can be community-driven rather than requiring the language design team to manage it.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></li>
+</ul></li>
+</ul>
+<div class="references">
+
+</div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This may of course be intentional on Apple’s part with Swift. Maintaining tight control over its tooling is very typical of modern Apple.<a href="#fnref1">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://app.net/chriskrycho"><i class="fa fa-fw fa-adn"></i>App.net</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-cloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/talks.xml"><i class="fa fa-fw fa-rss"></i>talks</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2015/one-deer-standing-in-a-field.html">one deer standing in a field</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2015/my-dream-of-dreams.html">My dream of dreams</a></li>
+        <li>Talks: <a href="http://www.chriskrycho.com/2015/tolle-lege.html">Tolle Lege!</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html">Rust and Swift (ii)</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2015/he-who-knew-no-sin.html">He who knew no sin...</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <script src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+</body>
+</html>
