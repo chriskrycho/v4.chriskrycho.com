@@ -1,8 +1,6 @@
 ---
 Title: Rust and Swift (ii)
-Tags:
-  - software development
-  - listicles
+Tags: software development, listicles
 Date: 2015-09-06 10:20
 ...
 
