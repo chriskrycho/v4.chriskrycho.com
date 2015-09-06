@@ -1,11 +1,12 @@
+---
 Title: Seeds of Comfort
 Author: Chris Krycho
 Date: 2015-04-20 09:57
 Template: formats/quotation
 Category: Theology
 Tags: quotes
-Source: Adele Berlin, <cite>Lamentations: A Commentary</cite>, 18–19.
-
+Source: "Adele Berlin, <cite>Lamentations: A Commentary</cite>, 18–19."
+...
 
 > No matter that Deuteronomy had envisioned it and the prophets had foretold it;
 > nothing could prepare one for the ruel reality and the apparently finality of
