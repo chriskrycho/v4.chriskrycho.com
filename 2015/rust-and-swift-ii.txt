@@ -2,6 +2,9 @@
 Title: Rust and Swift (ii)
 Tags: software development, listicles
 Date: 2015-09-06 10:20
+Series:
+  Title: Rust and Swift
+  Part: 2
 ...
 
 <i class="editorial">I am still reading through the Swift book, and continuing
