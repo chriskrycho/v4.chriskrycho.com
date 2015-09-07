@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Why the Smart Reading Device of the Future May Be … Paper &middot; Chris Krycho</title>
-    <meta name="description" content="Link—I enjoy Kindle and iPad, but I still love books best. Turns out I'm not alone... and there might just be reason for it."/>
+    <title>Rust and Swift (iv) &middot; Chris Krycho</title>
+    <meta name="description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2014/why-the-smart-reading-device-of-the-future-may-be-paper.html"/>
-    <meta property="og:title" content="Why the Smart Reading Device of the Future May Be … Paper"/>
-    <meta property="og:description" content="Link—I enjoy Kindle and iPad, but I still love books best. Turns out I'm not alone... and there might just be reason for it."/>
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2015/rust-and-swift-iv.html"/>
+    <meta property="og:title" content="Rust and Swift (iv)"/>
+    <meta property="og:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/>
 <link rel="me" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-    <meta name="twitter:title" content="Why the Smart Reading Device of the Future May Be … Paper"/>
-    <meta name="twitter:description" content="Link—I enjoy Kindle and iPad, but I still love books best. Turns out I'm not alone... and there might just be reason for it."/>
+    <meta name="twitter:title" content="Rust and Swift (iv)"/>
+    <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
@@ -74,25 +74,28 @@
     </header>
 
 
-<article class="links tech">
+<article class="software-development listicles tech">
 
     <header>
-<h1><a href="http://www.wired.com/2014/05/reading-on-screen-versus-paper/" class="outbound">Why the Smart Reading Device of the Future May Be &hellip; Paper<i class="fa fa-fw fa-external-link"></i></a></h1>
+<h1>Rust and Swift (iv)</h1>
     </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/why-the-smart-reading-device-of-the-future-may-be-paper.html"><i class="fa fa-fw fa-link"></i></a>May 03, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/links/">#links</a></span><span><a href="http://www.chriskrycho.com/2014/why-the-smart-reading-device-of-the-future-may-be-paper.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-iv.html"><i class="fa fa-fw fa-link"></i></a>September 07, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/listicles/">#listicles</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-iv.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
 
         <div class="content">
 
-<p>One thing I didn’t talk about in comparing reading experiences on a Kindle and on an iPad the other day is the elephant in the room: old-fashioned books. I enjoy Kindle and iPad, but I still love books best. Turns out I’m not alone… and there might just be reason for it.</p>
-<p><a href="http://www.wired.com/2014/05/reading-on-screen-versus-paper/">Brandon Keim at Wired:</a></p>
-<blockquote>
-<p>Paper books were supposed to be dead by now. For years, information theorists, marketers, and early adopters have told us their demise was imminent. Ikea even redesigned a bookshelf to hold something other than books. Yet in a world of screen ubiquity, many people still prefer to do their serious reading on paper.</p>
-<p>Count me among them. When I need to read deeply—when I want to lose myself in a story or an intellectual journey, when focus and comprehension are paramount—I still turn to paper. Something just feels fundamentally richer about reading on it. And researchers are starting to think there’s something to this feeling.</p>
-</blockquote>
+<p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.</i></p>
+<hr />
+<ul>
+<li><p>Both Swift and Rust directly address the issue of having to worry about memory allocation ad safety. They do it in different ways, though: Swift by automatic reference counting, Rust by its concept of ownership. For a lot of day-to-day development, I can see the Swift approach being a win for the same reason a language like Python or Ruby is: having that all handled for you is <em>nice</em>. Having the power Rust gives you comes at the price of increased cognitive load from having to reason about ownership.</p></li>
+<li><p>To put it another way: all programming languages have to make trade offs. Although I like Rust’s better than Swift’s so far, I’ve no doubt I will find any number of things to appreciate about Swift over Rust. You can’t have everything.</p></li>
+<li><p>This caught my attention in part because dealing with things like strings (or other pass-by-value types) in Swift is rather more straightforward than in Rust. The outcomes are much the same, but since <em>all</em> <code>String</code>s in Swift are passed by value (never by reference), you simply don’t have to think about modification—even safe modification!</p></li>
+<li><p>Rust of course had the <code>Copy</code> trait which lets you do this, but the point is that the “ergonomics” are slightly nicer in Swift.</p></li>
+<li><p>Also, the string interpolation Swift does is <em>nice</em>. That’s one thing I really wish Rust had. It’s Python-style string formatting macro is great, but being able to interpolate values (<code>&quot;strings with \(variables)&quot;</code> or even <code>&quot;embedded expressions like \(2 + 4)&quot;</code>) is very nice.</p></li>
+</ul>
 <div class="references">
 
 </div>

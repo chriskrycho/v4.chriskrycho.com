@@ -18,16 +18,16 @@
     <meta name="twitter:title" content="Rust and Swift (i)"/>
     <meta name="twitter:description" content="I started writing these responses in a Slack channel of developers I participate in as I worked through the Swift book. I realized after a bit that it would make a better blog post than chat room content, so here we are. This is all entirely off-the-cuff: me just thinking ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
@@ -80,7 +80,7 @@
 <h1>Rust and Swift (i)</h1>
     </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-i.html"><i class="fa fa-fw fa-link"></i></a>September 04, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/listicles/">#listicles</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-i.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-i.html"><i class="fa fa-fw fa-link"></i></a>September 04, 2015 (updated September 07, 2015)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/listicles/">#listicles</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-i.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
@@ -97,7 +97,7 @@
 <p>In Rust, there is just the <code>struct</code> type to handle both of those. They’re immutable unless you declare them with <code>mut</code>, and you can pass them via copy simply by implementing the <code>Copy</code> <code>trait</code> (which seems roughly analogous to Swift’s <code>protocol</code>, but I’ve not yet dig deeply enough to see how they differ). Those things aren’t baked into the language, but use simpler language building blocks to define behavior into he library.</p></li>
 <li><p>I saw someone do a write up a while back arguing that Go isn’t a <em>bad</em> language, it just isn’t a <em>good</em> language. My first impression of Swift, after having spent the last month with Rust, is very much along those lines.</p></li>
 <li><p>Huh. Here’s something that I appreciate about Rust, Haskell, and others now that I didn’t before: there’s a difference between implicitly/automatically importing a prelude or a given set of standard library functions, and having actually global functions. Does Swift actually have functions like <code>print</code> in a global namespace, as the book seems to imply, or they being imported automatically <em>a la</em> Rust/Haskell/etc.? (edited)</p></li>
-<li><p>Hmm. Why have <code>Double</code> <em>and</em> <code>Float</code>—just for ObjC interop, I guess?</p></li>
+<li><p>Hmm. Why have <code>Double</code> <em>and</em> <code>Float</code>—just for ObjC interop, I guess? <strong>Edit:</strong> follow-up from a conversation with a friend: it’s because you have 32- and 64-bit architectures out there; sometimes you don’t want 64 bits of floating point precision for that reason. Note that Rust <em>also</em> has this distinction; you can declare things as <code>f32</code> or <code>f64</code>.</p></li>
 <li><p>Extending the above note on <code>class</code>es and <code>struct</code>s and <code>protocol</code>s vs. Rust’s approach: the same thing is true about <code>extension</code>, which is a distinct concept from implementing a <code>protocol</code>; again, in Rust these are both just handled with a single language construct, <code>impl</code>. That’s not because <code>impl</code> is overloaded, but rather because the underlying language machinery is the same for the two things. (edited)</p></li>
 <li><p>(I’ve a feeling learning Swift is going to turn me into even more of a Rust fanboy.)</p></li>
 <li><p>Reading the two books in close sequence like this is proving really productive mentally for thinking about how the two handle the same issues. I’ve never done anything quite like this before, and it’s fascinating.</p></li>

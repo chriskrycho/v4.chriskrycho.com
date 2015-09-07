@@ -1,0 +1,26 @@
+---
+Title: Rust and Swift (iv)
+Tags: software development, listicles
+Date: 2015-09-07 11:55
+Series:
+  Title: Rust and Swift
+  Part: 4
+...
+
+<i class="editorial">I am reading through the Swift book, and comparing it to
+Rust, which I have also been learning over the past month. As with the other
+posts in this series, these are off-the-cuff impressions, which may be
+inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my
+preferences are just that: preferences. Your tastes may differ from mine.</i>
+
+---
+
+-   Both Swift and Rust directly address the issue of having to worry about memory allocation ad safety. They do it in different ways, though: Swift by automatic reference counting, Rust by its concept of ownership. For a lot of day-to-day development, I can see the Swift approach being a win for the same reason a language like Python or Ruby is: having that all handled for you is *nice*. Having the power Rust gives you comes at the price of increased cognitive load from having to reason about ownership.
+
+-   To put it another way: all programming languages have to make trade offs. Although I like Rust's better than Swift's so far, I've no doubt I will find any number of things to appreciate about Swift over Rust. You can't have everything.
+
+-   This caught my attention in part because dealing with things like strings (or other pass-by-value types) in Swift is rather more straightforward than in Rust. The outcomes are much the same, but since *all* `String`s in Swift are passed by value (never by reference), you simply don't have to think about modification---even safe modification!
+
+-   Rust of course had the `Copy` trait which lets you do this, but the point is that the "ergonomics" are slightly nicer in Swift.
+
+-   Also, the string interpolation Swift does is *nice*. That's one thing I really wish Rust had. It's Python-style string formatting macro is great, but being able to interpolate values (`"strings with \(variables)"` or even `"embedded expressions like \(2 + 4)"`) is very nice.

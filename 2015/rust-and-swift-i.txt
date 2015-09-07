@@ -6,6 +6,7 @@ Tags: listicles, software development
 Series:
   Title: Rust and Swift
   Part: 1
+modified: 2015-09-07 13:45
 ...
 
 <i class=editorial>I started writing these responses in a Slack channel of
@@ -55,6 +56,10 @@ read; this is by no means expert opinion.</i>
     automatically _a la_ Rust/Haskell/etc.? (edited)
 
   - Hmm. Why have `Double` *and* `Float`---just for ObjC interop, I guess?
+    **Edit:** follow-up from a conversation with a friend: it's because you have
+    32- and 64-bit architectures out there; sometimes you don't want 64 bits of
+    floating point precision for that reason. Note that Rust *also* has this
+    distinction; you can declare things as `f32` or `f64`.
 
   - Extending the above note on `class`es and `struct`s and `protocol`s vs.
     Rust's approach: the same thing is true about `extension`, which is a
