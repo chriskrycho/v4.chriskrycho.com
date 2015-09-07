@@ -7,6 +7,14 @@ Series:
   Part: 3
 ...
 
+<i class="editorial">I am reading through the Swift book, and comparing it to
+Rust, which I have also been learning over the past month. As with the other
+posts in this series, these are off-the-cuff impressions, which may be
+inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my
+preferences are just that: preferences. Your tastes may differ from mine.</i>
+
+---
+
 -   I just hit operators in the Swift book. First question: are operators
     special syntax, or are they sugar for `protocol`s? (Every modern language I
     use or even have played with handles them as sugar for another language
@@ -24,12 +32,11 @@ Series:
     answer.
 
 -   Interestingly, Rust has several fewer operators than Swift, even apart from
-    those mentioned in my [previous
-    post](http://www.chriskrycho.com/2015/rust-and-swift-ii.html). It drops the
-    pre- and post-increment operators entirely (as does Python), since their
-    results can always be accomplished in other ways with less potential for
-    confusion. Swift keeps them, no doubt in part because most (Objective) C
-    programs are deeply familiar with them and with idioms associated with them.
+    those mentioned in my [previous post][ii]. It drops the pre- and
+    post-increment operators entirely (as does Python), since their results can
+    always be accomplished in other ways with less potential for confusion.
+    Swift keeps them, no doubt in part because most (Objective) C programs are
+    deeply familiar with them and with idioms associated with them.
 
 -   I learned a few new things about Rust's operators as well: the Boolean `||`
     and `&&` operators and its bit wise `|` and `&` operators differ not only in
@@ -45,9 +52,9 @@ Series:
     `if` blocks are expressions, so it's redundant, and they have had a goal of
     removing unnecessary features. (See the discussion on dropping the ternary
     operator---with an interesting aside from Brendan Eich on
-    JavaScript---[here](https://github.com/rust-lang/rust/issues/1698)). Note
-    that this is not a criticism of Swift, just an observation, though I do
-    really like Rust's expression-driven approach.
+    JavaScript---[here][#1698]). Note that this is not a criticism of Swift,
+    just an observation, though I do really like Rust's expression-driven
+    approach.
 
 -   The `??` "nil coalescing operator", on the other hand, I actively dislike.
     This seems like shorthand for the sake of shorthand, partly necessitated by
@@ -63,3 +70,6 @@ Series:
     Swift book? It's increasingly clear to me reading that brevity is one of the
     primary design goals. Maybe it's just me, but that actually seems a little
     weird. Brevity is good so far as it goes, but *legibility* is much better.
+
+[ii]: http://www.chriskrycho.com/2015/rust-and-swift-ii.html
+[#1698]: https://github.com/rust-lang/rust/issues/1698
