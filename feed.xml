@@ -14,19 +14,7 @@
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 07 Sep 2015 11:55:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-07:2015/rust-and-swift-iii.html</guid><category>software development</category><category>listicles</category></item><item><title>Rust and Swift (iv)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-iv.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Both Swift and Rust directly address the issue of having to worry about memory allocation ad safety. They do it in different ways, though: Swift by automatic reference counting, Rust by its concept of ownership. For a lot of day-to-day development, I can see the Swift approach being a win for the same reason a language like Python or Ruby is: having that all handled for you is &lt;em&gt;nice&lt;/em&gt;. Having the power Rust gives you comes at the price of increased cognitive load from having to reason about ownership.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;To put it another way: all programming languages have to make trade offs. Although I like Rust’s better than Swift’s so far, I’ve no doubt I will find any number of things to appreciate about Swift over Rust. You can’t have everything.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;This caught my attention in part because dealing with things like strings (or other pass-by-value types) in Swift is rather more straightforward than in Rust. The outcomes are much the same, but since &lt;em&gt;all&lt;/em&gt; &lt;code&gt;String&lt;/code&gt;s in Swift are passed by value (never by reference), you simply don’t have to think about modification—even safe modification!&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Rust of course had the &lt;code&gt;Copy&lt;/code&gt; trait which lets you do this, but the point is that the “ergonomics” are slightly nicer in Swift.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Also, the string interpolation Swift does is &lt;em&gt;nice&lt;/em&gt;. That’s one thing I really wish Rust had. It’s Python-style string formatting macro is great, but being able to interpolate values (&lt;code&gt;&amp;quot;strings with \(variables)&amp;quot;&lt;/code&gt; or even &lt;code&gt;&amp;quot;embedded expressions like \(2 + 4)&amp;quot;&lt;/code&gt;) is very nice.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="references"&gt;
-
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 07 Sep 2015 11:55:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-07:2015/rust-and-swift-iv.html</guid><category>software development</category><category>listicles</category></item><item><title>2015-09-06 13:21</title><link>http://www.chriskrycho.com/2015/2015-09-06-1321.html</link><description>&lt;p&gt;I had forgotten both how good and how incredibly tired I feel after a hard fifteen mile run.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 07 Sep 2015 11:55:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-07:2015/rust-and-swift-iii.html</guid><category>software development</category><category>listicles</category></item><item><title>2015-09-06 13:21</title><link>http://www.chriskrycho.com/2015/2015-09-06-1321.html</link><description>&lt;p&gt;I had forgotten both how good and how incredibly tired I feel after a hard fifteen mile run.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
