@@ -5,4 +5,5 @@ Template: formats/micro
 Tags: fitness
 ...
 
-I had forgotten both how good and how incredibly tired I feel after a hard fifteen mile run.
+I had forgotten both how good and how incredibly tired I feel after a hard
+fifteen mile run.
