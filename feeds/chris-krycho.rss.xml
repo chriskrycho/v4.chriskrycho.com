@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 10 Sep 2015 07:18:00 -0400</lastBuildDate><item><title>2015-09-10 07:18</title><link>http://www.chriskrycho.com/2015/2015-09-10-0718.html</link><description>&lt;p&gt;That’s kind of brutal—the new Apple Pencil with &lt;a href="http://www.fiftythree.com"&gt;FiftyThree&lt;/a&gt;’s Paper app:&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 10 Sep 2015 12:22:00 -0400</lastBuildDate><item><title>2015-09-10 12:22</title><link>http://www.chriskrycho.com/2015/2015-09-10-1222.html</link><description>&lt;p&gt;Needed to set up a simple test bed for a Python distribution with &lt;code&gt;setuptools&lt;/code&gt;, which depends on external DLLs. So I used Rust and linked it up with Python’s FFI, because it was a perfect chance to see them interact.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 10 Sep 2015 12:22:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-10:2015/2015-09-10-1222.html</guid><category>software development</category></item><item><title>2015-09-10 07:18</title><link>http://www.chriskrycho.com/2015/2015-09-10-0718.html</link><description>&lt;p&gt;That’s kind of brutal—the new Apple Pencil with &lt;a href="http://www.fiftythree.com"&gt;FiftyThree&lt;/a&gt;’s Paper app:&lt;/p&gt;
 &lt;figure&gt;
 &lt;img src="/images/apple-pencil-53-paper.png" title="Promo photo from Apple website" alt="Apple Pencil with Paper app" /&gt;&lt;figcaption&gt;Apple Pencil with Paper app&lt;/figcaption&gt;
 &lt;/figure&gt;
