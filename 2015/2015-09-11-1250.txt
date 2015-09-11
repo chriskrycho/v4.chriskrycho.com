@@ -1,0 +1,11 @@
+---
+Title: 2015-09-11 12:50
+Date: 2015-09-11 12:50
+Tags: software development
+Template: formats/micro
+...
+
+Since Rust allows `unsafe` code, it's easy to wonder how necessary it is. The
+answer: in general, [not at all].
+
+[not at all]: https://github.com/iron/iron#overview "'Iron' Rust web framework"

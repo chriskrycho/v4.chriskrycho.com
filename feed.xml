@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 11 Sep 2015 08:53:00 -0400</lastBuildDate><item><title>2015-09-11 08:53</title><link>http://www.chriskrycho.com/2015/2015-09-11-0853.html</link><description>&lt;p&gt;Listening to the &lt;em&gt;Noah&lt;/em&gt; soundtrack this morning makes me want to get around to actually watching the movie. Good work, Mansell.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 11 Sep 2015 12:50:00 -0400</lastBuildDate><item><title>2015-09-11 12:50</title><link>http://www.chriskrycho.com/2015/2015-09-11-1250.html</link><description>&lt;p&gt;Since Rust allows &lt;code&gt;unsafe&lt;/code&gt; code, it’s easy to wonder how necessary it is. The answer: in general, &lt;a href="https://github.com/iron/iron#overview" title="&amp;#39;Iron&amp;#39; Rust web framework"&gt;not at all&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 11 Sep 2015 12:50:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-11:2015/2015-09-11-1250.html</guid><category>software development</category></item><item><title>2015-09-11 08:53</title><link>http://www.chriskrycho.com/2015/2015-09-11-0853.html</link><description>&lt;p&gt;Listening to the &lt;em&gt;Noah&lt;/em&gt; soundtrack this morning makes me want to get around to actually watching the movie. Good work, Mansell.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
