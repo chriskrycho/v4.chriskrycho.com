@@ -5,7 +5,8 @@ Tags: software development
 Template: formats/micro
 ...
 
-Since Rust allows `unsafe` code, it's easy to wonder how necessary it is. The
+Since Rust allows [`unsafe`] code, it's easy to wonder how necessary it is. The
 answer: in general, [not at all].
 
+[`unsafe`]: https://doc.rust-lang.org/book/unsafe.html
 [not at all]: https://github.com/iron/iron#overview "'Iron' Rust web framework"

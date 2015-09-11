@@ -3,7 +3,7 @@
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="typography"></category></entry><entry><title>2015-09-11 12:50</title><link href="http://www.chriskrycho.com/2015/2015-09-11-1250.html" rel="alternate"></link><updated>2015-09-11T12:50:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-11:2015/2015-09-11-1250.html</id><summary type="html">&lt;p&gt;Since Rust allows &lt;code&gt;unsafe&lt;/code&gt; code, it’s easy to wonder how necessary it is. The answer: in general, &lt;a href="https://github.com/iron/iron#overview" title="&amp;#39;Iron&amp;#39; Rust web framework"&gt;not at all&lt;/a&gt;.&lt;/p&gt;
+</summary><category term="typography"></category></entry><entry><title>2015-09-11 12:50</title><link href="http://www.chriskrycho.com/2015/2015-09-11-1250.html" rel="alternate"></link><updated>2015-09-11T12:50:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-11:2015/2015-09-11-1250.html</id><summary type="html">&lt;p&gt;Since Rust allows &lt;a href="https://doc.rust-lang.org/book/unsafe.html"&gt;&lt;code&gt;unsafe&lt;/code&gt;&lt;/a&gt; code, it’s easy to wonder how necessary it is. The answer: in general, &lt;a href="https://github.com/iron/iron#overview" title="&amp;#39;Iron&amp;#39; Rust web framework"&gt;not at all&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
