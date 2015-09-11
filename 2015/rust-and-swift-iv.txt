@@ -70,5 +70,5 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
 
 This was the first section where it didn't feel like Rust was just a clear
 overall "winner" over Swift. Some of the trade offs between the language designs
-are more apparent here, and I do appreciate e "ergonomics" of Swift in a number
-of these things.
+are more apparent here, and I do appreciate the "ergonomics" of Swift in a
+number of these things.

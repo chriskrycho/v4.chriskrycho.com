@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (iv)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -100,7 +100,7 @@
 <li><p>Actually, on reading further, the way Swift handles Unicode strings is pretty nice. It <em>does</em> give you insight into those, via specific methods for different representations. I particularly appreciate that it’s you deal with them as the standalone <code>String</code> type as well as giving you direct access to the code points—and not just one Unicode code point set, but any of <abbr>UTF8</abbr>, <abbr>UTF16</abbr>, or <abbr>UTF32</abbr> (Unicode scalars). Trust Apple to pay close attention to text.</p></li>
 <li><p>Rust’s strings are <em>good</em>, but not quite as sophisticated (presumably for simplicity around the memory mapping). All Rust <code>String</code> or <code>str</code> instances are composed of <abbr>UTF32</abbr> Unicode scalars, encoded as <abbr>UTF8</abbr> sequences. It doesn’t have some of the convenience methods Swift does for getting any of the other representations. That said, I expect this should show up rarely if at all in my ordinary usage. Importantly, the fundamental storage is the same: both use scalars.</p></li>
 </ul>
-<p>This was the first section where it didn’t feel like Rust was just a clear overall “winner” over Swift. Some of the trade offs between the language designs are more apparent here, and I do appreciate e “ergonomics” of Swift in a number of these things.</p>
+<p>This was the first section where it didn’t feel like Rust was just a clear overall “winner” over Swift. Some of the trade offs between the language designs are more apparent here, and I do appreciate the “ergonomics” of Swift in a number of these things.</p>
 <div class="references">
 
 </div>
