@@ -3,7 +3,7 @@ Title: 2015-09-11 12:50
 Date: 2015-09-11 12:50
 Tags: software development
 Template: formats/micro
-Modified: 2015-09-10 13:30
+Modified: 2015-09-11 13:30
 ...
 
 Since Rust allows [`unsafe`] code, it's easy to wonder how necessary it is. The
