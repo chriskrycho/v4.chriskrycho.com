@@ -1,7 +1,7 @@
 ---
 Title: Rust and Swift (iv)
 Tags: software development, listicles
-Date: 2015-09-10 20:55
+Date: 2015-09-10 21:05
 Series:
   Title: Rust and Swift
   Part: 4
@@ -52,12 +52,13 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
     all?) insight into the internal structure of the string. That may be good,
     and may be bad, depending on the circumstance. Like I said: trade-offs.
 
-  - The way Swift handles Unicode strings is pretty nice. I particularly
-    appreciate that it's you deal with them as the standalone `String` type as
-    well as giving you direct access to the code points---and not just one
-    Unicode code point set, but any of <abbr>UTF8</abbr>, <abbr>UTF16</abbr>, or
-    <abbr>UTF32</abbr> (Unicode scalars). Trust Apple to pay close attention to
-    text.
+  - Actually, on reading further, the way Swift handles Unicode strings is
+    pretty nice. It *does* give you insight into those, via specific methods for
+    different representations. I particularly appreciate that it's you deal with
+    them as the standalone `String` type as well as giving you direct access to
+    the code points---and not just one Unicode code point set, but any of
+    <abbr>UTF8</abbr>, <abbr>UTF16</abbr>, or <abbr>UTF32</abbr> (Unicode
+    scalars). Trust Apple to pay close attention to text.
 
   - Rust's strings are *good*, but not quite as sophisticated (presumably for
     simplicity around the memory mapping). All Rust `String` or `str` instances
