@@ -1,7 +1,8 @@
 ---
 Title: If-expressions in Rust
-Date: 2015-09-12 11:09
+Date: 2015-09-12 11:05
 Tags: software development
+Modified: 2015-09-12 11:10
 ...
 
 I love the fact that all `if` statements in Rust are expressions. It gives you a
