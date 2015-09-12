@@ -1,8 +1,12 @@
 ---
 Title: Rust and Swift (v)
-Subtitle: Learning languages in parallel
+Subtitle: The value (and challenge) of learning languages in parallel.
 Tags: software development
 Date: 2015-09-12 13:45
+Summary: >
+  I have been learning Rust and Swift in parallel. I wouldn’t normally recommend
+  this course of action, but I’m finding it enormously profitable. You might, 
+  too, under the right circumstances.
 Series:
   Title: Rust and Swift
   Part: 5
