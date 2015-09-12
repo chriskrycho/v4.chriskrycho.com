@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Infant Guilt—Purest Speculation &middot; Chris Krycho</title>
-    <meta name="description" content="Whether people are born guilty of sin, or simply inherit a nature so predisposed to sin that the actual act is inevitable has been a much debated topic for generations. In my view, however, the question is impossible to answer. I do not think Scripture speaks with sufficient clarity on ..."/>
+    <title>If-expressions in Rust &middot; Chris Krycho</title>
+    <meta name="description" content="I love the fact that all if statements in Rust are expressions. It gives you a great deal of expressitivity in the language. Let’s contrast with Python (which I love, for the record). In Python, you can do something like this: some_condition = True if some_condition: a_value = "Yeah!" else: a_value ..."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2014/infant-guilt-purest-speculation.html"/>
-    <meta property="og:title" content="Infant Guilt—Purest Speculation"/>
-    <meta property="og:description" content="Whether people are born guilty of sin, or simply inherit a nature so predisposed to sin that the actual act is inevitable has been a much debated topic for generations. In my view, however, the question is impossible to answer. I do not think Scripture speaks with sufficient clarity on ..."/>
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2015/if-expressions-in-rust.html"/>
+    <meta property="og:title" content="If-expressions in Rust"/>
+    <meta property="og:description" content="I love the fact that all if statements in Rust are expressions. It gives you a great deal of expressitivity in the language. Let’s contrast with Python (which I love, for the record). In Python, you can do something like this: some_condition = True if some_condition: a_value = "Yeah!" else: a_value ..."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/>
 <link rel="me" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-    <meta name="twitter:title" content="Infant Guilt—Purest Speculation"/>
-    <meta name="twitter:description" content="Whether people are born guilty of sin, or simply inherit a nature so predisposed to sin that the actual act is inevitable has been a much debated topic for generations. In my view, however, the question is impossible to answer. I do not think Scripture speaks with sufficient clarity on ..."/>
+    <meta name="twitter:title" content="If-expressions in Rust"/>
+    <meta name="twitter:description" content="I love the fact that all if statements in Rust are expressions. It gives you a great deal of expressitivity in the language. Let’s contrast with Python (which I love, for the record). In Python, you can do something like this: some_condition = True if some_condition: a_value = "Yeah!" else: a_value ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://app.net/chriskrycho"/>
@@ -74,32 +74,57 @@
     </header>
 
 
-<article class="m-div sebts theology">
+<article class="software-development tech">
 
     <header>
-<h1>Infant Guilt—Purest Speculation</h1>
+<h1>If-expressions in Rust</h1>
     </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/infant-guilt-purest-speculation.html"><i class="fa fa-fw fa-link"></i></a>February 01, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/theology/">theology</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/m-div/">#m. div.</a><a class="hashtags" href="http://www.chriskrycho.com/sebts/">#sebts</a></span><span><a href="http://www.chriskrycho.com/2014/infant-guilt-purest-speculation.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/if-expressions-in-rust.html"><i class="fa fa-fw fa-link"></i></a>September 12, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2015/if-expressions-in-rust.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
-    <p class="context">
-        The following was written in partial fulfillment of the requirements of Dr. Steve McKinion's
-        Christian Theology II class at Southeastern Baptist Theological Seminary.
-    </p>
-        <p class="context">
-            Topic: Are people born guilty of sin?
-        </p>
-    <hr/>
 
 
         <div class="content">
 
-<p>Whether people are born guilty of sin, or simply inherit a nature so predisposed to sin that the actual act is inevitable has been a much debated topic for generations. In my view, however, the question is impossible to answer. I do not think Scripture speaks with sufficient clarity on the matter. We know on the one hand that all are “by nature children of wrath” (Ephesians 2:3), and that “all have sinned and fall short of the glory of God” (Romans 3:23). What neither of these texts tell us, though, and what indeed <em>no</em> text tells us, is whether people are guilty at birth or whether they are simply sinful and become guilty.</p>
-<p>We could reason to a conclusion that accords with our other theological commitments with little difficulty. We know that God is just, and punishes for the wrongs we commit, but we have no evidence that he punishes wrongs we <em>might</em> commit, and therefore we might conclude that he would therefore not find guilty any newly conceived or newly born person. On the other hand, we also must reckon with the reality that the Scriptures treat questions of progeny far differently than do individually-minded modern Westerners.</p>
-<p>Scripture points us to the God who “will by no means clear the guilty, visiting the iniquity of the fathers on the children and the children’s children, to the third and the fourth generation” (Exodus 34:7) as well as the God who proclaims that “The soul who sins shall die. The son shall not suffer for the iniquity of the father, nor the father suffer for the iniquity of the son” (Ezekiel 18:20). Paul did write that “one trespass led to condemnation for all men,” but he immediately follows up this provocative statement by arguing that “one act of righteousness leads to justification and life for all men” (Romans 5:18)—yet we know that Paul does not (and cannot) here mean that all men are saved, for we know that he believes that those who do not repent and believe the gospel perish in their sins under the expectation of judgment.</p>
-<p>We cannot from the evidence that God has given us decide this question. We are left without an answer. If we grant the sufficiency of Scripture, then we must recognize that if there are questions God has in his wisdom opted not to answer, it is for a reason, and we should cease with our speculations and be silent. We may not know whether infants are <em>guilty</em>, but we do know two other things that are far more important than that: First, God is merciful and gracious and just. We will not in the final reckoning find his justice lacking or his treatment of (for example) those who died in infancy to be lacking. Second, all are born under the dual curse of sin’s hold and death’s certainty.</p>
-<p>These truths give us clear and straightforward points of application. First, we must preach the gospel clearly to people of every age and intellectual ability, for even little children sin and death is awaiting us all. Whether or not we are born guilty, we <em>become</em> guilty very quickly. Second, much of the speculation on this question—and many churches practices such as infant baptism—seems to be rooted in worry about the fate of those who die young, without having made a credible profession of faith. Yet even if we <em>did</em> know the answer to the question of their guilt, we still might not know God’s response. Even did we know the answer, still we would need learn to trust in the goodness and wisdom of God in this matter.</p>
+<p>I love the fact that all <code>if</code> statements in Rust are expressions. It gives you a great deal of expressitivity in the language.</p>
+<p>Let’s contrast with Python (which I love, for the record). In Python, you can do something like this:</p>
+<pre class="python"><code>some_condition = True
+if some_condition:
+    a_value = &quot;Yeah!&quot;
+else:
+    a_value = &quot;Oh, sads.&quot;</code></pre>
+<p>Those are <em>statements</em> in the body of the <code>if</code>/<code>else</code> block; you can’t assign the block itself to <code>a_value</code>. However, like C, C++, Java, etc., Python does provide an <em>expression</em>-type conditional, a ternary expression.</p>
+<p>So you can also do this:</p>
+<pre class="python"><code>some_condition = True
+a_value = &quot;Yeah&quot; if some_condition else &quot;Oh, sads.&quot;</code></pre>
+<p>This expression form of the <code>if</code> block is what all Rust <code>if</code> blocks are. So in Rust, the normal long form is:</p>
+<pre class="rust"><code>let some_condition = true;
+let a_value = if some_condition {
+    &quot;Yeah!&quot;
+}
+else {
+    &quot;Oh, sads.&quot;
+}</code></pre>
+<p>(You could also write this with a <code>let mut a_value</code> and then set its value inside the conditional blocks, but that’s not at all good form in Rust.)</p>
+<p>And of course, you can shorten that rather nicely where the expressions are brief enough:</p>
+<pre class="rust"><code>let some_condition = true;
+let a_value = if some_condition { &quot;Yeah!&quot; } else { &quot;Oh, sads.&quot; }</code></pre>
+<p>But this gets really nice when you have more complicated work to do in a Rust conditional. It doesn’t matter how many things going on inside an <code>if</code> expression; it’s still an expression, and so you could have this, equally (note that under normal conditions the compiler won’t actually accept this because of the unused names):</p>
+<pre class="rust"><code>let some_condition = true;
+let a_value = if some_condition {
+    let the_answer = 42;
+    let theme = &quot;Take my love, take my land...&quot;;
+    &quot;Yeah!&quot;  // An expression!
+}
+else {
+    let the_question = &quot;What do you get when you multiply six by nine?&quot;;
+    the theme = &quot;You can&#39;t take the sky from me!&quot;;
+    &quot;Oh, sads.&quot;  // An expression!
+}</code></pre>
+<p>Obviously this is totally contrived and silly; the point is that no matter what the internals are, <code>if</code> blocks are expressions, and their final expressions can be assigned like any other.</p>
+<hr />
+<p>As a note: I got here because I was originally thinking you couldn’t do a one-liner like you can in Python. As shown above, that’s totally false, and in fact the Rust version is much more capable than Python’s, because you don’t need a dedicated ternary when all <code>if</code> blocks are expressions. Rust used to have a C-style ternary (<code>&lt;condition&gt; ? &lt;value if true&gt; : &lt;value if false&gt;</code>) but it was <a href="https://github.com/rust-lang/rust/issues/1698">removed</a> during the lead-up to the 1.0 release—a decision I wholeheartedly affirm.</p>
 <div class="references">
 
 </div>

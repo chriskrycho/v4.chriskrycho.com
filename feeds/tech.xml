@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-09-10T21:05:00-04:00</updated><entry><title>Rust and Swift (iv)</title><link href="http://www.chriskrycho.com/2015/rust-and-swift-iv.html" rel="alternate"></link><updated>2015-09-10T21:05:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-10:2015/rust-and-swift-iv.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-09-12T10:39:00-04:00</updated><entry><title>If-expressions in Rust</title><link href="http://www.chriskrycho.com/2015/if-expressions-in-rust.html" rel="alternate"></link><updated>2015-09-12T10:39:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-12:2015/if-expressions-in-rust.html</id><summary type="html">&lt;p&gt;I love the fact that all &lt;code&gt;if&lt;/code&gt; statements in Rust are expressions. It gives you a great deal of expressitivity in the language.&lt;/p&gt;
+&lt;p&gt;Let’s contrast with Python (which I love, for the record). In Python, you can do something like this:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;some_condition = True
+if some_condition:
+    a_value = &amp;quot;Yeah!&amp;quot;
+else:
+    a_value = &amp;quot;Oh, sads.&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Those are &lt;em&gt;statements&lt;/em&gt; in the body of the &lt;code&gt;if&lt;/code&gt;/&lt;code&gt;else&lt;/code&gt; block; you can’t assign the block itself to &lt;code&gt;a_value&lt;/code&gt;. However, like C, C++, Java, etc., Python does provide an &lt;em&gt;expression&lt;/em&gt;-type conditional, a ternary expression.&lt;/p&gt;
+&lt;p&gt;So you can also do this:&lt;/p&gt;
+&lt;pre class="python"&gt;&lt;code&gt;some_condition = True
+a_value = &amp;quot;Yeah&amp;quot; if some_condition else &amp;quot;Oh, sads.&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This expression form of the &lt;code&gt;if&lt;/code&gt; block is what all Rust &lt;code&gt;if&lt;/code&gt; blocks are. So in Rust, the normal long form is:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;let some_condition = true;
+let a_value = if some_condition {
+    &amp;quot;Yeah!&amp;quot;
+}
+else {
+    &amp;quot;Oh, sads.&amp;quot;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(You could also write this with a &lt;code&gt;let mut a_value&lt;/code&gt; and then set its value inside the conditional blocks, but that’s not at all good form in Rust.)&lt;/p&gt;
+&lt;p&gt;And of course, you can shorten that rather nicely where the expressions are brief enough:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;let some_condition = true;
+let a_value = if some_condition { &amp;quot;Yeah!&amp;quot; } else { &amp;quot;Oh, sads.&amp;quot; }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But this gets really nice when you have more complicated work to do in a Rust conditional. It doesn’t matter how many things going on inside an &lt;code&gt;if&lt;/code&gt; expression; it’s still an expression, and so you could have this, equally (note that under normal conditions the compiler won’t actually accept this because of the unused names):&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;let some_condition = true;
+let a_value = if some_condition {
+    let the_answer = 42;
+    let theme = &amp;quot;Take my love, take my land...&amp;quot;;
+    &amp;quot;Yeah!&amp;quot;  // An expression!
+}
+else {
+    let the_question = &amp;quot;What do you get when you multiply six by nine?&amp;quot;;
+    the theme = &amp;quot;You can&amp;#39;t take the sky from me!&amp;quot;;
+    &amp;quot;Oh, sads.&amp;quot;  // An expression!
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Obviously this is totally contrived and silly; the point is that no matter what the internals are, &lt;code&gt;if&lt;/code&gt; blocks are expressions, and their final expressions can be assigned like any other.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;As a note: I got here because I was originally thinking you couldn’t do a one-liner like you can in Python. As shown above, that’s totally false, and in fact the Rust version is much more capable than Python’s, because you don’t need a dedicated ternary when all &lt;code&gt;if&lt;/code&gt; blocks are expressions. Rust used to have a C-style ternary (&lt;code&gt;&amp;lt;condition&amp;gt; ? &amp;lt;value if true&amp;gt; : &amp;lt;value if false&amp;gt;&lt;/code&gt;) but it was &lt;a href="https://github.com/rust-lang/rust/issues/1698"&gt;removed&lt;/a&gt; during the lead-up to the 1.0 release—a decision I wholeheartedly affirm.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="software development"></category></entry><entry><title>Rust and Swift (iv)</title><link href="http://www.chriskrycho.com/2015/rust-and-swift-iv.html" rel="alternate"></link><updated>2015-09-10T21:05:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-10:2015/rust-and-swift-iv.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Both Swift and Rust directly address the issue of having to worry about memory allocation and safety. They do it in different ways, though: Swift by automatic reference counting, Rust by its concept of ownership. For a lot of day-to-day development, I can see the Swift approach being a win for the same reason a language like Python or Ruby is: having that all handled for you is &lt;em&gt;nice&lt;/em&gt;. Having the power Rust gives you comes at the price of increased cognitive load from having to reason about ownership.&lt;/p&gt;&lt;/li&gt;
