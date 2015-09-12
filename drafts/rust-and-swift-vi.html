@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (vi)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -123,6 +123,10 @@
 </ul></li>
 </ul></li>
 <li><p>Rust also adds the concept of “slices,” which provide access to segments of arrays, and are heap-allocated as pointers to a given item in the array and a length (number of elements) included.</p></li>
+<li><p><code>Array</code> operations in Swift are all pretty reasonable, and surprisingly descriptive. They remind me in a good way of Python’s <code>list</code> methods.</p></li>
+<li><p>There are a <em>lot</em> of <a href="http://doc.rust-lang.org/stable/std/vec/struct.Vec.html">ways to interact with <code>Vec</code>s in Rust</a>. (That’s not a bad thing.) A bit surprising to me was the absence of an <code>enumerate</code> method, on <code>Vec</code> itself, but then I discovered that it exists in the <code>IntoIter</code> strict in the same module, which fully implements the <code>Iterator</code> <code>trait</code>. As a result, it has an <code>enumerate</code> function returning an <code>Enumerate</code> <code>struct</code> instance. (Under the covers, I suspect Swift <code>Array</code>s just implement an <code>Iterable</code> <code>protocol</code>, which is similar to this approach in some ways.)</p></li>
+<li><p>This makes a point I’m coming back to fairly often: Rust doesn’t necessarily out everything on a single object definition, but rather into a set of related <code>struct</code> or <code>enum</code> types and <code>trait</code>s. This is really powerful, but it’s going to take some mental adjustment. In this way, Swift’s structure and semantics are much more like the languages I’m used to than Rust’s are (but even there, the use of <code>protocols</code> gives it considerable new flexibility).</p></li>
+<li><p>Note that I said <em>semantics</em>, not syntax. Swift and Rust are a great example of how very similar syntax can mask differences in semantics. (For another such example, compare JavaScript’s syntax and semantics to Java’s: they’re superficially similar syntactically, and light years apart semantically.)</p></li>
 </ul>
 <div class="references">
 
