@@ -31,7 +31,7 @@ let a_value = if some_condition {
 }
 else {
     let the_question = &amp;quot;What do you get when you multiply six by nine?&amp;quot;;
-    the theme = &amp;quot;You can&amp;#39;t take the sky from me!&amp;quot;;
+    let song = &amp;quot;You can&amp;#39;t take the sky from me!&amp;quot;;
     &amp;quot;Oh, sads.&amp;quot;  // An expression!
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Obviously this is totally contrived and silly; the point is that no matter what the internals are, &lt;code&gt;if&lt;/code&gt; blocks are expressions, and their final expressions can be assigned like any other.&lt;/p&gt;

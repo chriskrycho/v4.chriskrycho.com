@@ -68,7 +68,7 @@ let a_value = if some_condition {
 }
 else {
     let the_question = "What do you get when you multiply six by nine?";
-    the theme = "You can't take the sky from me!";
+    let song = "You can't take the sky from me!";
     "Oh, sads."  // An expression!
 }
 ```
