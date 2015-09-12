@@ -22,7 +22,7 @@ else {
 &lt;p&gt;And of course, you can shorten that rather nicely where the expressions are brief enough:&lt;/p&gt;
 &lt;pre class="rust"&gt;&lt;code&gt;let some_condition = true;
 let a_value = if some_condition { &amp;quot;Yeah!&amp;quot; } else { &amp;quot;Oh, sads.&amp;quot; }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;But this gets really nice when you have more complicated work to do in a Rust conditional. It doesn’t matter how many things going on inside an &lt;code&gt;if&lt;/code&gt; expression; it’s still an expression, and so you could have this, equally (note that under normal conditions the compiler won’t actually accept this because of the unused names):&lt;/p&gt;
+&lt;p&gt;But this gets really nice when you have more complicated work to do in a Rust conditional. It doesn’t matter how many things going on inside an &lt;code&gt;if&lt;/code&gt; expression; it’s still an expression. As such, you can also write this:&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;pre class="rust"&gt;&lt;code&gt;let some_condition = true;
 let a_value = if some_condition {
     let the_answer = 42;
@@ -40,6 +40,12 @@ else {
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;Note that under normal conditions the compiler won’t actually accept this because of the unused names.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
 </summary><category term="software development"></category></entry><entry><title>Rust and Swift (iv)</title><link href="http://www.chriskrycho.com/2015/rust-and-swift-iv.html" rel="alternate"></link><updated>2015-09-10T21:05:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-10:2015/rust-and-swift-iv.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;

@@ -55,9 +55,7 @@ let a_value = if some_condition { "Yeah!" } else { "Oh, sads." }
 
 But this gets really nice when you have more complicated work to do in a Rust
 conditional. It doesn't matter how many things going on inside an `if` 
-expression; it's still an expression, and so you could have this, equally (note
-that under normal conditions the compiler won't actually accept this because of
-the unused names):
+expression; it's still an expression. As such, you can also write this:[^compiler]
 
 ```rust
 let some_condition = true;
@@ -88,3 +86,6 @@ C-style ternary (`<condition> ? <value if true> : <value if false>`) but it was
 affirm.
 
 [removed]: https://github.com/rust-lang/rust/issues/1698
+
+[^compiler]: Note that under normal conditions the compiler won't actually 
+    accept this because of the unused names.

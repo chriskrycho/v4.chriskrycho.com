@@ -22,7 +22,7 @@ else {
 &lt;p&gt;And of course, you can shorten that rather nicely where the expressions are brief enough:&lt;/p&gt;
 &lt;pre class="rust"&gt;&lt;code&gt;let some_condition = true;
 let a_value = if some_condition { &amp;quot;Yeah!&amp;quot; } else { &amp;quot;Oh, sads.&amp;quot; }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;But this gets really nice when you have more complicated work to do in a Rust conditional. It doesn’t matter how many things going on inside an &lt;code&gt;if&lt;/code&gt; expression; it’s still an expression, and so you could have this, equally (note that under normal conditions the compiler won’t actually accept this because of the unused names):&lt;/p&gt;
+&lt;p&gt;But this gets really nice when you have more complicated work to do in a Rust conditional. It doesn’t matter how many things going on inside an &lt;code&gt;if&lt;/code&gt; expression; it’s still an expression. As such, you can also write this:&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;pre class="rust"&gt;&lt;code&gt;let some_condition = true;
 let a_value = if some_condition {
     let the_answer = 42;
@@ -40,6 +40,12 @@ else {
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;Note that under normal conditions the compiler won’t actually accept this because of the unused names.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
 </summary><category term="software development"></category></entry><entry><title>2015-09-11 12:56</title><link href="http://www.chriskrycho.com/2015/2015-09-11-1256.html" rel="alternate"></link><updated>2015-09-11T12:56:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-11:2015/2015-09-11-1256.html</id><summary type="html">&lt;p&gt;I’ve been thinking about publishing my blog content in physical form, and of course I want to match the typeface. Time to start saving up to purchase a &lt;a href="http://www.linotype.com/191926/SabonCompleteFamilyPack-product.html"&gt;desktop license for Sabon&lt;/a&gt;, it seems.&lt;/p&gt;
 &lt;div class="references"&gt;
 
