@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Sep 2015 11:10:00 -0400</lastBuildDate><item><title>If-expressions in Rust</title><link>http://www.chriskrycho.com/2015/if-expressions-in-rust.html</link><description>&lt;p&gt;I love the fact that all &lt;code&gt;if&lt;/code&gt; statements in Rust are expressions. It gives you a great deal of expressitivity in the language.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Sep 2015 12:55:00 -0400</lastBuildDate><item><title>2015-09-12 12:55</title><link>http://www.chriskrycho.com/2015/2015-09-12-1255.html</link><description>&lt;p&gt;I just realized: I have &lt;em&gt;no idea&lt;/em&gt; how to listen to music the way “kids these days do”—i.e., as singles. I only ever listen to whole albums.&lt;/p&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 12 Sep 2015 12:55:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-12:2015/2015-09-12-1255.html</guid><category>music</category></item><item><title>If-expressions in Rust</title><link>http://www.chriskrycho.com/2015/if-expressions-in-rust.html</link><description>&lt;p&gt;I love the fact that all &lt;code&gt;if&lt;/code&gt; statements in Rust are expressions. It gives you a great deal of expressitivity in the language.&lt;/p&gt;
 &lt;p&gt;Let’s contrast with Python (which I love, for the record). In Python, you can do something like this:&lt;/p&gt;
 &lt;pre class="python"&gt;&lt;code&gt;some_condition = True
 if some_condition:
