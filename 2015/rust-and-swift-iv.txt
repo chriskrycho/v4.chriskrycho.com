@@ -1,5 +1,6 @@
 ---
 Title: Rust and Swift (iv)
+Subtitle: Language design tradeoffs, highlighted by string manipulation.
 Tags: software development, listicles
 Date: 2015-09-10 21:05
 Series:

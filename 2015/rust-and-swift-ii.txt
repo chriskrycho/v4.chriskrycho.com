@@ -1,5 +1,6 @@
 ---
 Title: Rust and Swift (ii)
+Subtitle: Basic types and the syntax around them.
 Tags: software development, listicles
 Date: 2015-09-06 10:20
 Series:

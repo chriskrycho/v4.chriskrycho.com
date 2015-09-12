@@ -1,5 +1,6 @@
 ---
 Title: Rust and Swift (iii)
+Subtitle: Operators, including overloading, and thoughts on brevity.
 Tags: software development, listicles
 Date: 2015-09-07 11:55
 Series:
