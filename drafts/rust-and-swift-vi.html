@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (vi)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -131,11 +131,12 @@
 <li><p>Because of their stricter typing systems, both Rust and Swift require you to specify the types used in their mapping constructs (Rust has <code>HashMap</code> and Swift has <code>Dictionary</code>), though of course both can infer this as well in certain cases. At the most basic level, you can’t use arbitrary (hashable) types as keys in mixed fashion like you can in e.g. Python’s <code>dict</code> type, but in practice this shouldn’t matter, for two reasons:</p>
 <ol type="1">
 <li>It’s generally inadvisable to use different types for keys in the same dictionary anyway. To me, at least, that usually indicates the need to step back and think more carefully about the types and data structures I’m using.</li>
-<li>For the occasional case where it <em>is</em> appropriate, I <em>suspect</em> you could declare the type as generic in either Rust or Swift. I’m putting this down as a TODO item for myself to find out!</li>
+<li>For the occasional case where it <em>is</em> appropriate, I wonder if you could declare the type as generic in either Rust or Swift. I’m putting this down as a TODO item for myself to find out!</li>
 </ol></li>
 <li><p>I really wish that Swift used the Python-style curly-brace delimited syntax (<code>{'key': 'value'}</code>) for its dictionary literal initializers. I can see, from a syntax reason, why it doesn’t: that would overload the block syntax (which Python can avoid because it’s white-space delimited).</p></li>
 <li><p>Along similar lines, I can see why the Swift designers chose to make all iterables have literal initializers using braces (<code>[...]</code>); it makes parsing fairly straightforward. However, the result is that it’s pretty difficult to see at first glance what you’re dealing with. It could quite easily be an <code>Array</code>, a <code>Set</code>, or a <code>Dictionary</code>.</p></li>
 <li><p>This highlights a too-little-appreciated aspect of programming language design: <em>readability</em>. However much we programmers enjoy writing code, the reality is that we will all spend a great deal of our time—probably even a majority of it—reading it instead. Thus, while we should care about conveniences for writing code, and being overly verbose can be a pain, we should also concern ourselves with the ease of comprehending code when it is read, and the syntax and conventions a language embraces are a big part of this.</p></li>
+<li></li>
 </ul>
 <div class="references">
 
