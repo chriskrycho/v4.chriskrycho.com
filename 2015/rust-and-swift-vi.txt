@@ -33,7 +33,7 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
     I've been spoiled by Python.
 
   - Swift's `Array` type is analogous to Rust's `Vec` type (usually created with
-    the `vec!` macro), *not* it's `Array` type. Rust `Vec`s and Swift `Array`s
+    the `vec!` macro), *not* its `Array` type. Rust `Vec`s and Swift `Array`s
     are dynamically sized and created on the heap, whereas Rust's `Array`s are
     statically sized and created on the stack. Syntax for creating `Array`s in
     both languages is quite similar (though the results are different):
@@ -68,7 +68,7 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
   - There are a *lot* of [ways to interact with `Vec`s in Rust][std::vec::Vec].
     (That's not a bad thing.) A bit surprising to me was the absence of an
     `enumerate` method, on `Vec` itself, but then I discovered that it exists in
-    the `IntoIter` strict in the same module, which fully implements the
+    the `IntoIter` struct in the same module, which fully implements the
     `Iterator` `trait`. As a result, it has an `enumerate` function returning an
     `Enumerate` `struct` instance. (Under the covers, I suspect Swift `Array`s
     just implement an `Iterable` `protocol`, which is similar to this approach
