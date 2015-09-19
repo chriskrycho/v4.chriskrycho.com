@@ -1,6 +1,6 @@
 ---
 Title: Rust and Swift (vi)
-Subtitle: Collection types
+Subtitle: Collection types and the difference between syntax and semantics.
 Tags: software development, listicles
 Date: 2015-09-12 15:00
 Series:
