@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 19 Sep 2015 12:58:00 -0400</lastBuildDate><item><title>2015-09-19 12:58</title><link>http://www.chriskrycho.com/2015/2015-09-19-1258.html</link><description>&lt;p&gt;Why, yes, I &lt;em&gt;did&lt;/em&gt; just purchase a season pass for Doctor Who Series 9. And yes, I &lt;em&gt;am&lt;/em&gt; giddy about it.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sun, 20 Sep 2015 07:30:00 -0400</lastBuildDate><item><title>Rust and Swift (vii)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-vii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Both Rust and Swift have &lt;em&gt;pattern-matching&lt;/em&gt;, and with what appears to be fairly similar basic behavior. (I touched on this briefly in my &lt;a href="/2015/rust-and-swift-i.html"&gt;first post in the series&lt;/a&gt;.) In Rust this goes under the &lt;code&gt;match&lt;/code&gt; construct, with matches specified like &lt;code&gt;&amp;lt;pattern&amp;gt; =&amp;gt; &amp;lt;expression|statement&amp;gt;&lt;/code&gt;, optionally with guards specified with &lt;code&gt;if&lt;/code&gt; expressions. In Swift, patterns are matched using the &lt;code&gt;switch&lt;/code&gt; construct, with matches specified like &lt;code&gt;case &amp;lt;pattern&amp;gt;: &amp;lt;expression|statement&amp;gt;&lt;/code&gt;, optionally with guards specified with &lt;code&gt;where&lt;/code&gt; expressions. (&lt;code&gt;where&lt;/code&gt; is also used in Rust, but for generic constraints, not pattern match guards.)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Both languages allow you to bind names to a matched pattern: Swift with &lt;code&gt;case let &amp;lt;name&amp;gt;&lt;/code&gt; and Rust simply by using the name in a normal destructuring expression as part of the match definition.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; that’s not &lt;em&gt;quite&lt;/em&gt; right. In Rust, you use the &lt;code&gt;@&lt;/code&gt; operator with the variable name you want to bind in the match.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Both languages allow for the use of &lt;code&gt;_&lt;/code&gt; as a “wildcard” in match definitions. Since match definitions in Rust use the patterns directly, the equivalent of Swift’s C-like &lt;code&gt;default&lt;/code&gt; is simply a wildcard match pattern (&lt;code&gt;_ =&amp;gt; &amp;lt;-expression|statement&amp;gt;&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;One significant difference: like its &lt;code&gt;if&lt;/code&gt; blocks, Rust’s &lt;code&gt;match&lt;/code&gt; blocks are expressions, so they can be assigned. I.e., you can write this:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;let test = 5u32;
+let description = match test {
+    0..10 =&amp;gt; &amp;quot;less than ten&amp;quot;,
+        _ =&amp;gt; &amp;quot;greater than ten&amp;quot;,
+}
+println!(&amp;quot;{?:}&amp;quot;);  // &amp;quot;less than ten&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Swift doesn’t let you do this; the same thing there would be written like this:&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;let test: UInt32 = 5
+var description: String
+switch test {
+    case 0..&amp;lt;10:
+        description = &amp;quot;less than ten&amp;quot;
+    default:
+        description = &amp;quot;greater than ten&amp;quot;
+}
+println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Both languages have &lt;code&gt;break&lt;/code&gt; statements, but in Rust they’re only used in loop constructs, while Swift (like C) uses them to escape &lt;code&gt;case&lt;/code&gt;s as well. The Swift book gives an example of one place they’re necessary in a &lt;code&gt;switch&lt;/code&gt;: to match a case and do nothing there (e.g. &lt;code&gt;default: break&lt;/code&gt;). In Rust, you would simply supply an empty block for that scenario (e.g. &lt;code&gt;_ =&amp;gt; {}&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Correctly, both languages force you to match exhaustively on relevant patterns. If you’re matching an enumerated type, for example, you must handle every enumerated value. You can of course do this with wildcard patterns or with Swift’s &lt;code&gt;default&lt;/code&gt;, but the good thing is that both languages will refuse even to compile if a given pattern isn’t matched.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Swift’s default behavior around its &lt;code&gt;switch&lt;/code&gt; statements is sane: it does &lt;em&gt;not&lt;/em&gt; automatically fall through into the next statement. It does let you do this, without checking the condition on the next statement (as in C), using the &lt;code&gt;fallthrough&lt;/code&gt; keyword. Rust, by contrast, simply doesn’t allow this at all.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Both languages supply named control statements (loops, etc.), with slightly different syntax for naming them. Rust’s, curiously, shares its syntax with lifetime definitions—more on those in a future post.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I don’t believe Rust has anything quite like Swift’s &lt;code&gt;guard&lt;/code&gt;s, which allow you to leave normal or expected control flow in the main body of a block, with a secondary block for cases where the &lt;code&gt;guard&lt;/code&gt; isn’t matched. This isn’t a huge deal, but it does fit as a nice convenience into the typical &lt;code&gt;if let&lt;/code&gt; pattern in Swift. Basically, it just lets you elide an empty &lt;code&gt;if&lt;/code&gt; block and supply only the &lt;code&gt;else&lt;/code&gt; block.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; a friend &lt;a href="https://alpha.app.net/jws/post/64804111"&gt;points out&lt;/a&gt; that Swift &lt;code&gt;guard&lt;/code&gt;s also require you to exit the current scope, so it’s unambiguous what you’re doing if you use them.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 20 Sep 2015 07:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-19:2015/rust-and-swift-vii.html</guid><category>software development</category><category>listicles</category></item><item><title>2015-09-19 12:58</title><link>http://www.chriskrycho.com/2015/2015-09-19-1258.html</link><description>&lt;p&gt;Why, yes, I &lt;em&gt;did&lt;/em&gt; just purchase a season pass for Doctor Who Series 9. And yes, I &lt;em&gt;am&lt;/em&gt; giddy about it.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
@@ -94,39 +128,7 @@
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 12 Sep 2015 18:49:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-12:2015/2015-09-12-1849.html</guid></item><item><title>Rust and Swift (vii)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-vii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Both Rust and Swift have &lt;em&gt;pattern-matching&lt;/em&gt;, and with what appears to be fairly similar basic behavior. (I touched on this briefly in my &lt;a href="/2015/rust-and-swift-i.html"&gt;first post in the series&lt;/a&gt;.) In Rust this goes under the &lt;code&gt;match&lt;/code&gt; construct, with matches specified like &lt;code&gt;&amp;lt;pattern&amp;gt; =&amp;gt; &amp;lt;expression|statement&amp;gt;&lt;/code&gt;, optionally with guards specified with &lt;code&gt;if&lt;/code&gt; expressions. In Swift, patterns are matched using the &lt;code&gt;switch&lt;/code&gt; construct, with matches specified like &lt;code&gt;case &amp;lt;pattern&amp;gt;: &amp;lt;expression|statement&amp;gt;&lt;/code&gt;, optionally with guards specified with &lt;code&gt;where&lt;/code&gt; expressions. (&lt;code&gt;where&lt;/code&gt; is also used in Rust, but for generic constraints, not pattern match guards.)&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Both languages allow you to bind names to a matched pattern: Swift with &lt;code&gt;case let &amp;lt;name&amp;gt;&lt;/code&gt; and Rust simply by using the name in a normal destructuring expression as part of the match definition.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;Both languages allow for the use of &lt;code&gt;_&lt;/code&gt; as a “wildcard” in match definitions. Since match definitions in Rust use the patterns directly, the equivalent of Swift’s C-like &lt;code&gt;default&lt;/code&gt; is simply a wildcard match pattern (&lt;code&gt;_ =&amp;gt; &amp;lt;-expression|statement&amp;gt;&lt;/code&gt;).&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;One significant difference: like its &lt;code&gt;if&lt;/code&gt; blocks, Rust’s &lt;code&gt;match&lt;/code&gt; blocks are expressions, so they can be assigned. I.e., you can write this:&lt;/p&gt;
-&lt;pre class="rust"&gt;&lt;code&gt;let test = 5u32;
-let description = match test {
-    0..10 =&amp;gt; &amp;quot;less than ten&amp;quot;,
-        _ =&amp;gt; &amp;quot;greater than ten&amp;quot;,
-}
-println!(&amp;quot;{?:}&amp;quot;);  // &amp;quot;less than ten&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Swift doesn’t let you do this; the same thing there would be written like this:&lt;/p&gt;
-&lt;pre class="swift"&gt;&lt;code&gt;let test: UInt32 = 5
-var description: String
-switch test {
-    case 0..&amp;lt;10:
-        description = &amp;quot;less than ten&amp;quot;
-    default:
-        description = &amp;quot;greater than ten&amp;quot;
-}
-println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Both languages have &lt;code&gt;break&lt;/code&gt; statements, but in Rust they’re only used in loop constructs, while Swift (like C) uses them to escape &lt;code&gt;case&lt;/code&gt;s as well. The Swift book gives an example of one place they’re necessary in a &lt;code&gt;switch&lt;/code&gt;: to match a case and do nothing there (e.g. &lt;code&gt;default: break&lt;/code&gt;). In Rust, you would simply supply an empty block for that scenario (e.g. &lt;code&gt;_ =&amp;gt; {}&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Correctly, both languages force you to match exhaustively on relevant patterns. If you’re matching an enumerated type, for example, you must handle every enumerated value. You can of course do this with wildcard patterns or with Swift’s &lt;code&gt;default&lt;/code&gt;, but the good thing is that both languages will refuse even to compile if a given pattern isn’t matched.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Swift’s default behavior around its &lt;code&gt;switch&lt;/code&gt; statements is sane: it does &lt;em&gt;not&lt;/em&gt; automatically fall through into the next statement. It does let you do this, without checking the condition on the next statement (as in C), using the &lt;code&gt;fallthrough&lt;/code&gt; keyword. Rust, by contrast, simply doesn’t allow this at all.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Both languages supply named control statements (loops, etc.), with slightly different syntax for naming them. Rust’s, curiously, shares its syntax with lifetime definitions—more on those in a future post.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;I don’t believe Rust has anything quite like Swift’s &lt;code&gt;guard&lt;/code&gt;s, which allow you to leave normal or expected control flow in the main body of a block, with a secondary block for cases where the &lt;code&gt;guard&lt;/code&gt; isn’t matched. This isn’t a huge deal, but it does fit as a nice convenience into the typical &lt;code&gt;if let&lt;/code&gt; pattern in Swift. Basically, it just lets you elide an empty &lt;code&gt;if&lt;/code&gt; block and supply only the &lt;code&gt;else&lt;/code&gt; block.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="references"&gt;
-
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 12 Sep 2015 15:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-12:2015/rust-and-swift-vii.html</guid><category>software development</category><category>listicles</category></item><item><title>Rust and Swift (v)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-v.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 12 Sep 2015 18:49:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-12:2015/2015-09-12-1849.html</guid></item><item><title>Rust and Swift (v)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-v.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;I’ve been working on learning Swift over the past couple weeks, and had spent the month prior to that doing a deep first dive on Rust. This kind of approach, learning two languages basically at the same time, is entirely new to me, and for good reason. Programming languages are not trivial to learn, and to learn them meaningfully one must practice with them a great deal.&lt;/p&gt;
 &lt;p&gt;I’m doing this largely of necessity. I’m hoping to build an application with a very capable, performant cross-platform core language (Rust), but planning to ship a native OS X app (first) when all is said and done. My desire to make the core libraries portable rules out Swift immediately. To be frank, so does the fact that it’s an Apple language: I am happy to use Apple’s tools on its platform, but I don’t want to shackle myself to their choices in the long run. Too, having good Rust experience is likely to be valuable in many other contexts.&lt;/p&gt;
