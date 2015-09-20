@@ -3,7 +3,7 @@ Title: Rust and Swift (vii)
 Subtitle: Pattern matching and the value of expression blocks.
 Tags: software development, listicles
 Date: 2015-09-19 15:00
-Modified: 2015-09-20 07:30
+Modified: 2015-09-20 13:42
 Series:
   Title: Rust and Swift
   Part: 7
@@ -34,6 +34,12 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
     **Edit:** that's not *quite* right. In Rust, you use the `@` operator with
     the variable name you want to bind in the match.
 
+    **Edit the second:** I was mixed up, because Rust actually has *both* of
+    those options. You can either match directly, e.g. when getting the value of
+    an `Option` type: `Some(value)` as the pattern will bind `value`. But if you
+    need to bind a specific part of more complicated data structure, the `@`
+    operator is present to let you do it in a fairly straightforward way.
+
   - Both languages allow for the use of `_` as a "wildcard" in match
     definitions. Since match definitions in Rust use the patterns directly, the
     equivalent of Swift's C-like `default` is simply a wildcard match pattern
@@ -50,10 +56,10 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
     }
     println!("{?:}");  // "less than ten"
     ```
-    
+
     Swift doesn't let you do this; the same thing there would be written like
     this:
-    
+
     ```swift
     let test: UInt32 = 5
     var description: String
@@ -65,7 +71,7 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
     }
     println("\(description)")
     ```
-    
+
   - Both languages have `break` statements, but in Rust they're only used in
     loop constructs, while Swift (like C) uses them to escape `case`s as well.
     The Swift book gives an example of one place they're necessary in a
