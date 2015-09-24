@@ -2,7 +2,7 @@
 Title: Jeb Bush on net neutrality
 Date: 2015-09-24 07:15
 Category: tech
-Tags: link
+Tags: links
 Template: formats/link
 Link: http://arstechnica.com/tech-policy/2015/09/if-elected-president-jeb-bush-will-get-rid-of-net-neutrality-rules/
 ...
