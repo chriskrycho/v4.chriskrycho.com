@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-09-26T11:25:00-04:00</updated><entry><title>2015-09-26 11:25</title><link href="http://www.chriskrycho.com/2015/2015-09-26-1125.html" rel="alternate"></link><updated>2015-09-26T11:25:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-26:2015/2015-09-26-1125.html</id><summary type="html">&lt;p&gt;A friend recently reminded me of the work of Eric Whitacre, which I loved in college, but had forgotten about since. I’m deeply grateful for that reminder on this rainy day studying in the library.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-09-26T13:00:00-04:00</updated><entry><title>Autonomous Individualism</title><link href="http://www.chriskrycho.com/2015/autonomous-individualism.html" rel="alternate"></link><updated>2015-09-26T13:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-26:2015/autonomous-individualism.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;The &lt;em&gt;pro me&lt;/em&gt; of the gospel does not further an autonomous individualism. It brings it to an end.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div id="references" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="quotes"></category></entry><entry><title>2015-09-26 11:25</title><link href="http://www.chriskrycho.com/2015/2015-09-26-1125.html" rel="alternate"></link><updated>2015-09-26T11:25:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-26:2015/2015-09-26-1125.html</id><summary type="html">&lt;p&gt;A friend recently reminded me of the work of Eric Whitacre, which I loved in college, but had forgotten about since. I’m deeply grateful for that reminder on this rainy day studying in the library.&lt;/p&gt;
 &lt;div id="references" class="references"&gt;
 
 &lt;/div&gt;
@@ -474,10 +480,10 @@ Even so, I step out the door again:&lt;br /&gt;
 </summary><category term="podcasting"></category></entry><entry><title>That Something</title><link href="http://www.chriskrycho.com/2015/that-something.html" rel="alternate"></link><updated>2015-08-20T08:57:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-20:2015/that-something.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;You don’t just use illustrations in preaching; you illustrate &lt;em&gt;something&lt;/em&gt;. You don’t just offer applications in preaching; you apply &lt;em&gt;something&lt;/em&gt;. That &lt;em&gt;something&lt;/em&gt; is the word of God, rightly applied.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class="references"&gt;
+&lt;div id="references" class="references"&gt;
 
 &lt;/div&gt;
-</summary></entry><entry><title>2015-08-20 07:37</title><link href="http://www.chriskrycho.com/2015/2015-08-20-0737.html" rel="alternate"></link><updated>2015-08-20T07:37:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-20:2015/2015-08-20-0737.html</id><summary type="html">&lt;p&gt;Thank goodness for &lt;a href="https://www.backblaze.com"&gt;Backblaze&lt;/a&gt;. After a bad OS X 10.11 beta install, I had to revert to a Time Machine backup from mid-July—but I’m getting back all the changes I’ve made in the interval.&lt;/p&gt;
+</summary><category term="quotes"></category></entry><entry><title>2015-08-20 07:37</title><link href="http://www.chriskrycho.com/2015/2015-08-20-0737.html" rel="alternate"></link><updated>2015-08-20T07:37:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-20:2015/2015-08-20-0737.html</id><summary type="html">&lt;p&gt;Thank goodness for &lt;a href="https://www.backblaze.com"&gt;Backblaze&lt;/a&gt;. After a bad OS X 10.11 beta install, I had to revert to a Time Machine backup from mid-July—but I’m getting back all the changes I’ve made in the interval.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
