@@ -7,7 +7,7 @@
 
 // General default styles
 html {
-    font-size: 118.75%; /* -> 19px, using percentage to allow IE user stylesheet changes */
+    font-size: 118.75%; // -> 19px, using percentage for IE user settings
     font-family: $serif;
     color: $dark_gray;
     background: $dark_blue;
@@ -25,7 +25,8 @@ a {
     display: inline-block;
     line-height: 1;
 
-    @include transition(border 0.224s $easeInOutCubic, color 0.224s $easeInOutCubic);
+    @include transition(border 0.224s $easeInOutCubic, 
+                        color 0.224s $easeInOutCubic);
 
     &:link, &:visited {
         color: $light_blue;
@@ -36,7 +37,8 @@ a {
         color: $dark_blue;
         border-bottom: 1px solid $dark_gray;
 
-        @include transition(border 0.465s $easeInOutCubic, color 0.465s $easeInOutCubic);
+        @include transition(border 0.465s $easeInOutCubic, 
+                            color 0.465s $easeInOutCubic);
     }
 }
 
@@ -287,6 +289,15 @@ hr {
     letter-spacing: 0.2pt;
 }
 
+.divine-name {
+    @extend .smcp;
+}
+
+.tetragrammaton {
+    @extend .divine-name;
+    text-transform: lowercase;
+}
+
 .epigraph {
     text-align: center;
     font: {
@@ -308,7 +319,10 @@ body::before {
     width: 100%;
     display: block;
     height: $fs_very_small / 2;
-    background: linear-gradient(to right, $light_blue -15%, $dark_blue 35%, $light_blue);
+    background: linear-gradient(to right, 
+                                $light_blue -15%, 
+                                $dark_blue 35%, 
+                                $light_blue);
     border-bottom: 1px solid $light_gray;
 }
 
@@ -575,15 +589,13 @@ article {
     }
 
     ul, ol {
-        margin-left: $fs2;
-        padding-top: $fsp;
-        padding-bottom: $fsp;
+        margin: {
+            top: $fsp;
+            bottom: $fsp;
+            left: $fs2;
+        }
 
         + hr { margin-top: 1.4em; }
-
-        ul, ol {
-            padding-top: 0;
-        }
     }
 
     .references p {
@@ -610,7 +622,10 @@ article {
     }
 
     code {
-        font-family: 'Source Code Pro', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+        font-family: 'Source Code Pro', 
+                     'DejaVu Sans Mono',
+                     'Bitstream Vera Sans Mono', 
+                     monospace;
         background: #efefef;
         border-radius: 2px;
         margin: $fsp 0;
@@ -686,7 +701,10 @@ sup[id^="fnref:"] a {
         height: $footer-header-height;
         width: 100%;
         border-bottom: 1px solid $white;
-        background: linear-gradient(to right, $light_blue -15%, $dark_blue, $light_blue 115%);
+        background: linear-gradient(to right, 
+                                    $light_blue -15%, 
+                                    $dark_blue, 
+                                    $light_blue 115%);
     }
 
     a:hover, a:active {
@@ -696,12 +714,14 @@ sup[id^="fnref:"] a {
 
     a .fa, a:visited .fa {
         color: lighten($light_gray, 24.4%);
-        @include transition(border 0.224s $easeInOutCubic, color 0.224s $easeInOutCubic);
+        @include transition(border 0.224s $easeInOutCubic,  
+                            color 0.224s $easeInOutCubic);
     }
 
     a:hover .fa, a:active, .fa {
         color: $white;
-        @include transition(border 0.465s $easeInOutCubic, color 0.465s $easeInOutCubic);
+        @include transition(border 0.465s $easeInOutCubic, 
+                            color 0.465s $easeInOutCubic);
     }
 
     section {
