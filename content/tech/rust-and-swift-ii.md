@@ -1,15 +1,18 @@
 ---
 Title: Rust and Swift (ii)
+Subtitle: Basic types and the syntax around them.
 Tags: software development, listicles
 Date: 2015-09-06 10:20
+Series:
+  Title: Rust and Swift
+  Part: 2
 ...
 
-<i class="editorial">I am still reading through the Swift book, and continuing
-to compare it to Rust, which I have also been learning over the past month. As
-with the other posts in this series, these are off-the-cuff impressions, which
-may be inaccurate in various ways. I'd be happy to hear feedback! Note, too,
-that my preferences are just that: preferences. Your tastes may differ from
-mine.</i>
+<i class="editorial">I am reading through the Swift book, and comparing it to
+Rust, which I have also been learning over the past month. As with the other
+posts in this series, these are off-the-cuff impressions, which may be
+inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my
+preferences are just that: preferences. Your tastes may differ from mine.</i>
 
 ---
 

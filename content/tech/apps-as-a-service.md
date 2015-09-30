@@ -15,8 +15,8 @@ They've since promised to revisit the decision, in light of the quick and loud b
 There are many reasons why these models look attractive to software vendors, and they can actually provide a lot of benefits to consumers as well. However, there are several problems with the subscription model as implemented by most vendors today:
 
   - They provide clear value to the software creator, but are generally neutral at best for users.
-  - They conflate two distinct {TBD}
-  - They mix up *services* and *applications*
+  - They conflate two distinct responses from users: wanting to use the app, and wanting the particular upgrades you're offering at any given time.
+  - They mix up the business models appropriate to *services* and *applications* respectively.
 
 These problems affect consumers of the software product first, but in the long run, they will hurt the vendors, too.
 

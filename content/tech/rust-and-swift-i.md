@@ -1,8 +1,13 @@
 ---
 Title: Rust and Swift (i)
+Subtitle: Thoughts after reading the introduction to the Swift book.
 Date: 2015-09-04 22:59
 Category: Tech
 Tags: listicles, software development
+Series:
+  Title: Rust and Swift
+  Part: 1
+modified: 2015-09-07 13:45
 ...
 
 <i class=editorial>I started writing these responses in a Slack channel of
@@ -49,9 +54,17 @@ read; this is by no means expert opinion.</i>
     importing a prelude or a given set of standard library functions, and having
     actually global functions. Does Swift actually have functions like `print`
     in a global namespace, as the book seems to imply, or they being imported
-    automatically _a la_ Rust/Haskell/etc.? (edited)
+    automatically _a la_ Rust/Haskell/etc.?
+
+    **Edit:** it appears Swift does likewise, but that you can't access the
+    relevant module directly. Which is halfway there.
 
   - Hmm. Why have `Double` *and* `Float`---just for ObjC interop, I guess?
+    
+    **Edit:** follow-up from a conversation with a friend: it's because you have
+    32- and 64-bit architectures out there; sometimes you don't want 64 bits of
+    floating point precision for that reason. Note that Rust *also* has this
+    distinction; you can declare things as `f32` or `f64`.
 
   - Extending the above note on `class`es and `struct`s and `protocol`s vs.
     Rust's approach: the same thing is true about `extension`, which is a
