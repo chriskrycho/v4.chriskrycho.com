@@ -1,7 +1,7 @@
 ---
 Title: 2015-08-05 21:05
 Date: 2015-08-05 21:05
-Tags: podcast, music, Jaimie, software development
+Tags: podcasting, music, Jaimie, software development
 Template: formats/micro
 ...
 

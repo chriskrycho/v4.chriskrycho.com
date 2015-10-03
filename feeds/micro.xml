@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-09-30T17:01:00-04:00</updated><entry><title>2015-09-30 17:01</title><link href="http://www.chriskrycho.com/2015/2015-09-30-1701.html" rel="alternate"></link><updated>2015-09-30T17:01:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-30:2015/2015-09-30-1701.html</id><summary type="html">&lt;p&gt;Tip for copying large files between Macs (like, say, a new OS installer): just connect them with ethernet to set up an ad hoc network and copy them that way. It’s easily the fastest and easiest way to move large things between two Macs.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-10-03T16:18:00-04:00</updated><entry><title>2015-10-03 16:18</title><link href="http://www.chriskrycho.com/2015/2015-10-03-1618.html" rel="alternate"></link><updated>2015-10-03T16:18:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-10-03:2015/2015-10-03-1618.html</id><summary type="html">&lt;p&gt;Today, I edited and published &lt;a href="http://www.sap-py.com/1/" title="Mommy, I Have a Function For You!"&gt;Sap.py 1&lt;/a&gt; and recorded, edited, and published &lt;a href="http://newrustacean.com/show_notes/e01/index.html" title="Document All the Things"&gt;New Rustacean e01&lt;/a&gt;. A nice, productive day of podcasting!&lt;/p&gt;
+&lt;div id="references" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="podcasting"></category></entry><entry><title>2015-09-30 17:01</title><link href="http://www.chriskrycho.com/2015/2015-09-30-1701.html" rel="alternate"></link><updated>2015-09-30T17:01:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-30:2015/2015-09-30-1701.html</id><summary type="html">&lt;p&gt;Tip for copying large files between Macs (like, say, a new OS installer): just connect them with ethernet to set up an ad hoc network and copy them that way. It’s easily the fastest and easiest way to move large things between two Macs.&lt;/p&gt;
 &lt;div id="references" class="references"&gt;
 
 &lt;/div&gt;
@@ -270,10 +274,10 @@
 
 &lt;/div&gt;
 </summary><category term="software development"></category></entry><entry><title>2015-08-05 21:05</title><link href="http://www.chriskrycho.com/2015/2015-08-05-2105.html" rel="alternate"></link><updated>2015-08-05T21:05:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-05:2015/2015-08-05-2105.html</id><summary type="html">&lt;p&gt;Hooked up my digital piano to Logic Pro X tonight and wrote &lt;a href="https://soundcloud.com/chriskrycho/theme-for-sappy-no-vocals"&gt;the theme&lt;/a&gt; for a podcast we’re doing together on learning to program. It’s so good!&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="references" class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="podcast"></category><category term="music"></category><category term="Jaimie"></category><category term="software development"></category></entry><entry><title>2015-08-05 08:46</title><link href="http://www.chriskrycho.com/2015/2015-08-05-0846.html" rel="alternate"></link><updated>2015-08-05T08:46:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-05:2015/2015-08-05-0846.html</id><summary type="html">&lt;p&gt;Don’t blame me: it’s all &lt;a href="https://alpha.app.net/manton"&gt;@manton&lt;/a&gt;’s fault. He started this.&lt;/p&gt;
+</summary><category term="podcasting"></category><category term="music"></category><category term="Jaimie"></category><category term="software development"></category></entry><entry><title>2015-08-05 08:46</title><link href="http://www.chriskrycho.com/2015/2015-08-05-0846.html" rel="alternate"></link><updated>2015-08-05T08:46:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-05:2015/2015-08-05-0846.html</id><summary type="html">&lt;p&gt;Don’t blame me: it’s all &lt;a href="https://alpha.app.net/manton"&gt;@manton&lt;/a&gt;’s fault. He started this.&lt;/p&gt;
 &lt;figure&gt;
 &lt;img src="/images/microblogging.png" alt="Crosspost from microblog to everywhere" /&gt;&lt;figcaption&gt;Crosspost from microblog to everywhere&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -289,10 +293,10 @@
 
 &lt;/div&gt;
 </summary></entry><entry><title>2015-08-04 18:55</title><link href="http://www.chriskrycho.com/2015/2015-08-04-1855.html" rel="alternate"></link><updated>2015-08-04T18:55:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-04:2015/2015-08-04-1855.html</id><summary type="html">&lt;p&gt;A minute ago, Ellie asked me to play with her and Kate. I started to answer, “No, I need to finish publishing Winning Slowly.” Then I remembered: putting that first would be pretty much &lt;em&gt;exactly the opposite&lt;/em&gt; of &lt;a href="http://www.winningslowly.org/1.02" title="1.02: On Family"&gt;Winning Slowly&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="references" class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="family"></category><category term="ellie"></category><category term="kate"></category><category term="podcast"></category></entry><entry><title>2015-08-04 18:29</title><link href="http://www.chriskrycho.com/2015/2015-08-04-1829.html" rel="alternate"></link><updated>2015-08-04T18:29:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-04:2015/2015-08-04-1829.html</id><summary type="html">&lt;p&gt;So far, at least, System Integrity Protect (“rootless” mode) is causing quite a mess on the El Capitan betas. I’m sure Apple will get it straightened out… and I’m hoping it’s by the next public beta.&lt;/p&gt;
+</summary><category term="family"></category><category term="ellie"></category><category term="kate"></category><category term="podcasting"></category></entry><entry><title>2015-08-04 18:29</title><link href="http://www.chriskrycho.com/2015/2015-08-04-1829.html" rel="alternate"></link><updated>2015-08-04T18:29:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-08-04:2015/2015-08-04-1829.html</id><summary type="html">&lt;p&gt;So far, at least, System Integrity Protect (“rootless” mode) is causing quite a mess on the El Capitan betas. I’m sure Apple will get it straightened out… and I’m hoping it’s by the next public beta.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;

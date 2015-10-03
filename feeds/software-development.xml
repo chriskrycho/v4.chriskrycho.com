@@ -338,10 +338,10 @@ else {
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 06 Aug 2015 17:33:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-06:2015/2015-08-06-1733.html</guid><category>software development</category></item><item><title>2015-08-05 21:05</title><link>http://www.chriskrycho.com/2015/2015-08-05-2105.html</link><description>&lt;p&gt;Hooked up my digital piano to Logic Pro X tonight and wrote &lt;a href="https://soundcloud.com/chriskrycho/theme-for-sappy-no-vocals"&gt;the theme&lt;/a&gt; for a podcast we’re doing together on learning to program. It’s so good!&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="references" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 05 Aug 2015 21:05:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-05:2015/2015-08-05-2105.html</guid><category>podcast</category><category>music</category><category>Jaimie</category><category>software development</category></item><item><title>2015-08-03 07:58</title><link>http://www.chriskrycho.com/2015/2015-08-03-0758.html</link><description>&lt;p&gt;Whoa! After years of demand, Confluence &lt;em&gt;finally&lt;/em&gt; added support for importing Markdown-formatted content in its “Markup” box. It’s not native support for editing in Markdown… but it &lt;em&gt;is&lt;/em&gt; a step forward. Good work, Atlassian.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 05 Aug 2015 21:05:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-05:2015/2015-08-05-2105.html</guid><category>podcasting</category><category>music</category><category>Jaimie</category><category>software development</category></item><item><title>2015-08-03 07:58</title><link>http://www.chriskrycho.com/2015/2015-08-03-0758.html</link><description>&lt;p&gt;Whoa! After years of demand, Confluence &lt;em&gt;finally&lt;/em&gt; added support for importing Markdown-formatted content in its “Markup” box. It’s not native support for editing in Markdown… but it &lt;em&gt;is&lt;/em&gt; a step forward. Good work, Atlassian.&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;
