@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-10-04T11:59:00-04:00</updated><entry><title>2015-10-04 11:59</title><link href="http://www.chriskrycho.com/2015/2015-10-04-1159.html" rel="alternate"></link><updated>2015-10-04T11:59:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-10-04:2015/2015-10-04-1159.html</id><summary type="html">&lt;p&gt;Ellie has invented her first totally-original (as opposed to borrowed from a TV show) imaginary friend. Her name, apparently, is “Ballerina”.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-10-06T08:36:00-04:00</updated><entry><title>2015-10-06 08:36</title><link href="http://www.chriskrycho.com/2015/2015-10-06-0836.html" rel="alternate"></link><updated>2015-10-06T08:36:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-10-06:2015/2015-10-06-0836.html</id><summary type="html">&lt;p&gt;Here’s a thing I’m &lt;em&gt;quite&lt;/em&gt; okay with:&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/images/new-and-noteworthy.png" title="Screenshot of iTunes Podcast list" alt="Sap.py and New Rustacean in New and Noteworthy on the iTunes Podcast list" /&gt;&lt;figcaption&gt;Sap.py and New Rustacean in New and Noteworthy on the iTunes Podcast list&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;div id="references" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="podcasting"></category></entry><entry><title>2015-10-04 11:59</title><link href="http://www.chriskrycho.com/2015/2015-10-04-1159.html" rel="alternate"></link><updated>2015-10-04T11:59:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-10-04:2015/2015-10-04-1159.html</id><summary type="html">&lt;p&gt;Ellie has invented her first totally-original (as opposed to borrowed from a TV show) imaginary friend. Her name, apparently, is “Ballerina”.&lt;/p&gt;
 &lt;div id="references" class="references"&gt;
 
 &lt;/div&gt;

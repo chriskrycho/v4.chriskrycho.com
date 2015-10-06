@@ -1,0 +1,10 @@
+---
+Title: 2015-10-06 08:36
+Date: 2015-10-06 08:36
+Tags: podcasting
+Template: formats/micro
+...
+
+Here's a thing I'm *quite* okay with:
+
+![Sap.py and New Rustacean in New and Noteworthy on the iTunes Podcast list](/images/new-and-noteworthy.png "Screenshot of iTunes Podcast list")
