@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Fri, 25 Sep 2015 07:33:00 -0400</lastBuildDate><item><title>2015-09-25 07:33</title><link>http://www.chriskrycho.com/2015/2015-09-25-0733.html</link><description>&lt;p&gt;I find that I solve many software problems faster by writing them out with pen on paper. I wonder how common that is?&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Fri, 09 Oct 2015 13:46:00 -0400</lastBuildDate><item><title>2015-10-09 13:46</title><link>http://www.chriskrycho.com/2015/2015-10-09-1346.html</link><description>&lt;p&gt;Inversion of control is a beautiful thing. Not least because it makes it so much easier to manage control over necessarily global state.&lt;/p&gt;
+&lt;div id="references" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 09 Oct 2015 13:46:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-09:2015/2015-10-09-1346.html</guid><category>software development</category></item><item><title>2015-09-25 07:33</title><link>http://www.chriskrycho.com/2015/2015-09-25-0733.html</link><description>&lt;p&gt;I find that I solve many software problems faster by writing them out with pen on paper. I wonder how common that is?&lt;/p&gt;
 &lt;div class="references"&gt;
 
 &lt;/div&gt;

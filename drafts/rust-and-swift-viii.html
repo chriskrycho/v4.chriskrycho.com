@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (viii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -99,6 +99,18 @@
 <li><p>I’m sure there’s a reason for Swift’s internal and external parameter names and the rules about using <code>_</code> to elide the need to use keyword arguments (but automatically eliding the first one) and so on… but I really can’t see the utility, overall. It seems like it would be better just to have Python-like args and keyword args.</p></li>
 <li><p>That’s doubly so given that Swift’s rules for default-valued parameters map exactly to Python’s: they need to go at the end, after any parameters which don’t have default values.</p></li>
 <li><p>Swift’s variadic parameters are nice—though of course limited, since if you have more than one, the compiler may not know how to resolve which destination parameter a given argument belongs with. (I imagine the compiler <em>could</em> be extended to be able to handle multiple variadic parameters as long as hey we’re all of different types, but that’s probably not worth the work or the potential confusion it would introduce.) In any case, it’s a small nicety that I do wish Rust had.</p></li>
+<li><p>Swift’s variable parameters are… interesting. I can see the utility, sort of, but (probably from years of habit with C and n Python and pass-by-reference types), it’s just not a pattern that makes a lot of sense to me right now. No doubt I’ll get used to hen in idiomatic Swift, but while Rust doesn’t have a similar feature, I suspect I won’t miss it.</p></li>
+<li><p>In/out parameters—that is, mutable pass-by-reference types—are available in both languages. The syntax is <em>very</em> different here, as are the semantics.</p>
+<p>Swift has the <code>inout</code> keyword, supplied before a parameter definition:</p>
+<pre class="swift"><code>func adds4ToInput(inout num: Int) {
+    num += 4;
+}</code></pre>
+<p>Rust has instead a variation on every other type definition, declaring the type in this case to be a mutable reference:</p>
+<pre class="rust"><code>fn adds_4_to_input(num: &amp;mut i32) {
+    num += 4;
+}</code></pre>
+As usual, in other words, Swift opts to use new syntax (in this case, a dedicated keyword) while Rust opts to use the same syntax used everywhere else to denote a mutable reference. In fairness to Swift, though, this is something of a necessity there. From what I’ve seen so far, Swift generally doesn’t (and perhaps can’t?) do pointers or references; arguments to functions are a special case, presumably present primarily for interoperability with Objective-C.</li>
+<li><p>Swift’s function type definitions, as used in e.g. function parameter definitions, are quite nice, and reminiscent of Haskell in the best way.</p></li>
 </ul>
 <div id="references" class="references">
 
