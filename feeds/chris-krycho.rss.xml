@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 10 Oct 2015 10:43:00 -0400</lastBuildDate><item><title>2015-10-10 10:43</title><link>http://www.chriskrycho.com/2015/2015-10-10-1043.html</link><description>&lt;p&gt;I’m suddenly finding myself with an interest in parsers and compilers. &lt;em&gt;What is happening to me???&lt;/em&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 10 Oct 2015 10:44:00 -0400</lastBuildDate><item><title>2015-10-10 10:44</title><link>http://www.chriskrycho.com/2015/2015-10-10-1044.html</link><description>&lt;p&gt;Related to my &lt;a href="/2015/2015-10-10-1043.html"&gt;previous post&lt;/a&gt;—I really, &lt;em&gt;really&lt;/em&gt; wish more of the fundamental papers on CS topics were freely available.&lt;/p&gt;
+&lt;div id="references" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 10 Oct 2015 10:44:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-10:2015/2015-10-10-1044.html</guid><category>software development</category></item><item><title>2015-10-10 10:43</title><link>http://www.chriskrycho.com/2015/2015-10-10-1043.html</link><description>&lt;p&gt;I’m suddenly finding myself with an interest in parsers and compilers. &lt;em&gt;What is happening to me???&lt;/em&gt;&lt;/p&gt;
 &lt;div id="references" class="references"&gt;
 
 &lt;/div&gt;
