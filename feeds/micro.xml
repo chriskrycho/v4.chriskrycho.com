@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-10-09T13:46:00-04:00</updated><entry><title>2015-10-09 13:46</title><link href="http://www.chriskrycho.com/2015/2015-10-09-1346.html" rel="alternate"></link><updated>2015-10-09T13:46:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-10-09:2015/2015-10-09-1346.html</id><summary type="html">&lt;p&gt;Inversion of control is a beautiful thing. Not least because it makes it so much easier to manage control over necessarily global state.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-10-10T10:43:00-04:00</updated><entry><title>2015-10-10 10:43</title><link href="http://www.chriskrycho.com/2015/2015-10-10-1043.html" rel="alternate"></link><updated>2015-10-10T10:43:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-10-10:2015/2015-10-10-1043.html</id><summary type="html">&lt;p&gt;I’m suddenly finding myself with an interest in parsers and compilers. &lt;em&gt;What is happening to me???&lt;/em&gt;&lt;/p&gt;
+&lt;div id="references" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="software development"></category></entry><entry><title>2015-10-09 13:46</title><link href="http://www.chriskrycho.com/2015/2015-10-09-1346.html" rel="alternate"></link><updated>2015-10-09T13:46:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-10-09:2015/2015-10-09-1346.html</id><summary type="html">&lt;p&gt;Inversion of control is a beautiful thing. Not least because it makes it so much easier to manage control over necessarily global state.&lt;/p&gt;
 &lt;div id="references" class="references"&gt;
 
 &lt;/div&gt;
