@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-10-10T10:44:00-04:00</updated><entry><title>2015-10-10 10:44</title><link href="http://www.chriskrycho.com/2015/2015-10-10-1044.html" rel="alternate"></link><updated>2015-10-10T10:44:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-10-10:2015/2015-10-10-1044.html</id><summary type="html">&lt;p&gt;Related to my &lt;a href="/2015/2015-10-10-1043.html"&gt;previous post&lt;/a&gt;—I really, &lt;em&gt;really&lt;/em&gt; wish more of the fundamental papers on CS topics were freely available.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-10-13T10:59:00-04:00</updated><entry><title>2015-10-13 10:59</title><link href="http://www.chriskrycho.com/2015/2015-10-13-1059.html" rel="alternate"></link><updated>2015-10-13T10:59:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-10-13:2015/2015-10-13-1059.html</id><summary type="html">&lt;p&gt;Today I did a code review on my iPad while walking from school to a coffee shop, using my iPhone’s data connection as a hotspot.&lt;/p&gt;
+&lt;p&gt;What a world we live in.&lt;/p&gt;
+&lt;div id="references" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="software development"></category></entry><entry><title>2015-10-10 10:44</title><link href="http://www.chriskrycho.com/2015/2015-10-10-1044.html" rel="alternate"></link><updated>2015-10-10T10:44:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-10-10:2015/2015-10-10-1044.html</id><summary type="html">&lt;p&gt;Related to my &lt;a href="/2015/2015-10-10-1043.html"&gt;previous post&lt;/a&gt;—I really, &lt;em&gt;really&lt;/em&gt; wish more of the fundamental papers on CS topics were freely available.&lt;/p&gt;
 &lt;div id="references" class="references"&gt;
 
 &lt;/div&gt;
