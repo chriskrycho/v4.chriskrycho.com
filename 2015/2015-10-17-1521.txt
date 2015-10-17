@@ -7,4 +7,4 @@ Template: formats/micro
 
 This is interesting: I've read some F♯ before, but it reads a *lot* more
 obviously to me now that I've read a lot of Rust recently. Why? Because for all
-that they're very different languages, both ar ML descendants. It shows.
+that they're very different languages, both are ML descendants. It shows.
