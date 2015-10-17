@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Tue, 13 Oct 2015 10:59:00 -0400</lastBuildDate><item><title>2015-10-13 10:59</title><link>http://www.chriskrycho.com/2015/2015-10-13-1059.html</link><description>&lt;p&gt;Today I did a code review on my iPad while walking from school to a coffee shop, using my iPhone’s data connection as a hotspot.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Sat, 17 Oct 2015 15:21:00 -0400</lastBuildDate><item><title>2015-10-17 15:21</title><link>http://www.chriskrycho.com/2015/2015-10-17-1521.html</link><description>&lt;p&gt;This is interesting: I’ve read some F♯ before, but it reads a &lt;em&gt;lot&lt;/em&gt; more obviously to me now that I’ve read a lot of Rust recently. Why? Because for all that they’re very different languages, both ar ML descendants. It shows.&lt;/p&gt;
+&lt;div id="references" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 17 Oct 2015 15:21:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-17:2015/2015-10-17-1521.html</guid><category>software development</category></item><item><title>2015-10-13 10:59</title><link>http://www.chriskrycho.com/2015/2015-10-13-1059.html</link><description>&lt;p&gt;Today I did a code review on my iPad while walking from school to a coffee shop, using my iPhone’s data connection as a hotspot.&lt;/p&gt;
 &lt;p&gt;What a world we live in.&lt;/p&gt;
 &lt;div id="references" class="references"&gt;
 

@@ -1,3 +1,4 @@
+---
 Title: A Particular Way of Imagining the World
 Author: Chris Krycho
 Date: 2015-05-02 3:33
@@ -5,6 +6,7 @@ Template: formats/quotation
 Category: Theology
 Tags: quotes
 Source: Robert Alter, <cite>The Art of Biblical Poetry</cite>, p. 151.
+...
 
 > Poetry, as I have been arguing throughout this study, is not just a set of
 > techniques for saying impressively what could he said otherwise. Rather, it is

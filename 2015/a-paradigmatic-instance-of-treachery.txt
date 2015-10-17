@@ -1,3 +1,4 @@
+---
 Title: A Paradigmatic Instance of Treachery
 Author: Chris Krycho
 Date: 2015-05-02 3:20
@@ -5,6 +6,7 @@ Template: formats/quotation
 Category: Theology
 Tags: quotes
 Source: Robert Alter, <cite>The Art of Biblical Poetry</cite>, p. 146.
+...
 
 > What I would like to suggest about the effect of the language of poetry in
 > this [Isa. 1:2--9] and most other Biblical prophecies is that it tends to lift

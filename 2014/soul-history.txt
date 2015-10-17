@@ -1,3 +1,4 @@
+---
 Title: Soul History
 Author: Chris Krycho
 Date: 2014-03-28 13:05
@@ -5,6 +6,7 @@ Template: formats/quotation
 Category: Theology
 Tags: quotes
 Source: Eugene Peterson, <cite>Five Smooth Stones for Pastoral Work</cite>, pp. 84&ndash;85.
+...
 
 > The short story is the pastoral form for narrating *Heilsgeschichte*
 > (salvation history) in the vocabulary of *Seelsgeschichte* (soul history). In

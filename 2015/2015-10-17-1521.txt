@@ -1,0 +1,10 @@
+---
+Title: 2015-10-17 15:21
+Date: 2015-10-17 15:21
+Tags: software development
+Template: formats/micro
+...
+
+This is interesting: I've read some F♯ before, but it reads a *lot* more
+obviously to me now that I've read a lot of Rust recently. Why? Because for all
+that they're very different languages, both ar ML descendants. It shows.
