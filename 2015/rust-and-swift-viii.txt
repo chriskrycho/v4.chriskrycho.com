@@ -1,6 +1,6 @@
 ---
 Title: Rust and Swift (viii)
-Subtitle: Pattern matching and the value of expression blocks.
+Subtitle: Functions, closures, and an awful lot of Swift syntax.
 Tags: software development, listicles
 Date: 2015-10-18 11:50
 Series:
