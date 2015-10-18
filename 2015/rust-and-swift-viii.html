@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (viii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -95,7 +95,7 @@
 <li><p>Type declarations on functions are basically identical for simple cases, though they vary into the details as you get into generics and constraints in generics.</p></li>
 <li><p>I have no idea why the Swift team chooses to represent function names like this: <code>function_name(_:second_param:third_param:&lt;etc.&gt;)</code>. Perhaps it’s a convention from other languages I’m simply unfamiliar with, but it seems both odd and unhelpful: eliding the first parameter name obscures important information. Also, why use colons for the delimiter?</p></li>
 <li><p>Being able to name the items in a returned type in Swift is quite handy; it’s something I have often wanted and had to work around with dictionaries or other similar types in Python.</p></li>
-<li><p>We’ll see how I feel once I’ve been writing both for a while, but initially I <em>strongly</em> prefer Rust’s more-obvious (if also somewhat longer) <code>-&gt; Option&lt;i32&gt;</code> to return an optional integer to Swift’s <code>-&gt; Int?</code>. I am quite confident that I’ll miss that trailing <code>?</code> Somewhere along the way.</p></li>
+<li><p>We’ll see how I feel once I’ve been writing both for a while, but initially I <em>strongly</em> prefer Rust’s more-obvious (if also somewhat longer) <code>-&gt; Option&lt;i32&gt;</code> to return an optional integer to Swift’s <code>-&gt; Int?</code>. I am quite confident that I’ll miss that trailing <code>?</code> somewhere along the way.</p></li>
 <li><p>I’m sure there’s a reason for Swift’s internal and external parameter names and the rules about using <code>_</code> to elide the need to use keyword arguments (but automatically eliding the first one) and so on… but I really can’t see the utility, overall. It seems like it would be better just to have Python-like args and keyword args.</p></li>
 <li><p>That’s doubly so given that Swift’s rules for default-valued parameters map exactly to Python’s: they need to go at the end, after any parameters which don’t have default values.</p></li>
 <li><p>Swift’s variadic parameters are nice—though of course limited, since if you have more than one, the compiler may not know how to resolve which destination parameter a given argument belongs with. (I imagine the compiler <em>could</em> be extended to be able to handle multiple variadic parameters as long as hey we’re all of different types, but that’s probably not worth the work or the potential confusion it would introduce.) In any case, it’s a small nicety that I do wish Rust had.</p></li>

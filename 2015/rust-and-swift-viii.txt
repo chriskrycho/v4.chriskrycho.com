@@ -43,7 +43,7 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
   - We'll see how I feel once I've been writing both for a while, but initially
     I *strongly* prefer Rust's more-obvious (if also somewhat longer) `->
     Option<i32>` to return an optional integer to Swift's `-> Int?`. I am quite
-    confident that I'll miss that trailing `?` Somewhere along the way.
+    confident that I'll miss that trailing `?` somewhere along the way.
 
   - I'm sure there's a reason for Swift's internal and external parameter names
     and the rules about using `_` to elide the need to use keyword arguments
