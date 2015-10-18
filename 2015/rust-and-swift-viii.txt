@@ -14,6 +14,26 @@ other posts in this series, these are off-the-cuff impressions, which may be
 inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my
 preferences are just that: preferences. Your tastes may differ from mine.</i>
 
+Parts in the Series
+-------------------
+
+1. [Thoughts after reading the introduction to the Swift book.][1]
+2. [Basic types and the syntax around them.][2]
+3. [Operators, including overloading, and thoughts on brevity.][3]
+4. [Language design tradeoffs, highlighted by string manipulation.][4]
+5. [The value (and challenge) of learning languages in parallel.][5]
+6. [Collection types and the difference between syntax and semantics.][6]
+7. [Pattern matching and the value of expression blocks.][7]
+8. Functions, closures, and an awful lot of Swift syntax.
+
+[1]: /2015/rust-and-swift-i.html
+[2]: /2015/rust-and-swift-ii.html
+[3]: /2015/rust-and-swift-iii.html
+[4]: /2015/rust-and-swift-iv.html
+[5]: /2015/rust-and-swift-v.html
+[6]: /2015/rust-and-swift-vi.html
+[7]: /2015/rust-and-swift-vii.html
+
 ---
 
   - Rust and Swift handle function definition fairly similarly, at least for
@@ -64,10 +84,10 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
     small nicety that I do wish Rust had.
 
   - Swift's variable parameters are... interesting. I can see the utility, sort
-    of, but (probably from years of habit with C and n Python and
+    of, but (probably from years of habit with C and Python and
     pass-by-reference types), it's just not a pattern that makes a lot of sense
-    to me right now. No doubt I'll get used to hen in idiomatic Swift, but while
-    Rust doesn't have a similar feature, I  suspect I won't miss it.
+    to me right now. No doubt I'll get used to them in idiomatic Swift, but
+    while Rust doesn't have a similar feature, I suspect I won't miss it.
 
   - In/out parameters---that is, mutable pass-by-reference types---are available
     in both languages. The syntax is *very* different here, as are the
