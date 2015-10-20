@@ -3,6 +3,7 @@ Title: Rust and Swift (viii)
 Subtitle: Functions, closures, and an awful lot of Swift syntax.
 Tags: software development, listicles
 Date: 2015-10-18 11:50
+Modified: 2015-10-19 20:15
 Series:
   Title: Rust and Swift
   Part: 8
@@ -55,6 +56,9 @@ Parts in the Series
     convention from other languages I'm simply unfamiliar with, but it seems
     both odd and unhelpful: eliding the first parameter name obscures important
     information. Also, why use colons for the delimiter?
+
+    **Edit:** I'm informed via Twitter and App.net that this reflects how 
+    function names work in Objective C, and derives ultimately from Smalltalk.
 
   - Being able to name the items in a returned type in Swift is quite handy;
     it's something I have often wanted and had to work around with dictionaries
@@ -114,7 +118,8 @@ Parts in the Series
     dedicated keyword) while Rust opts to use the same syntax used everywhere
     else to denote a mutable reference. In fairness to Swift, though, this is
     something of a necessity there. From what I've seen so far, Swift generally
-    doesn't (and perhaps can't?) do pointers or references; arguments to
+    doesn't (and perhaps can't?) do pointers or references explicitly (though of
+    course it's handling lots of things that way under the covers); arguments to
     functions are a special case, presumably present primarily for
     interoperability with Objective-C.
 
