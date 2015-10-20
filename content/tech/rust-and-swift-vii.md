@@ -15,6 +15,26 @@ posts in this series, these are off-the-cuff impressions, which may be
 inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my
 preferences are just that: preferences. Your tastes may differ from mine.</i>
 
+Parts in the Series
+-------------------
+
+1. [Thoughts after reading the introduction to the Swift book.][1]
+2. [Basic types and the syntax around them.][2]
+3. [Operators, including overloading, and thoughts on brevity.][3]
+4. [Language design tradeoffs, highlighted by string manipulation.][4]
+5. [The value (and challenge) of learning languages in parallel.][5]
+6. [Collection types and the difference between syntax and semantics.][6]
+7. Pattern matching and the value of expression blocks.
+8. [Functions, closures, and an awful lot of Swift syntax.][8]
+
+[1]: /2015/rust-and-swift-i.html
+[2]: /2015/rust-and-swift-ii.html
+[3]: /2015/rust-and-swift-iii.html
+[4]: /2015/rust-and-swift-iv.html
+[5]: /2015/rust-and-swift-v.html
+[6]: /2015/rust-and-swift-vi.html
+[8]: /2015/rust-and-swift-viii.html
+
 ---
 
   - Both Rust and Swift have *pattern-matching*, and with what appears to be
@@ -107,3 +127,8 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
 
 [first post in the series]: /2015/rust-and-swift-i.html
 [points out]: https://alpha.app.net/jws/post/64804111
+
+---
+
+  - [Previous: Collection types and the difference between syntax and semantics.][6]
+  - [Next: Functions, closures, and an awful lot of Swift syntax.][8]

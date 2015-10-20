@@ -14,15 +14,35 @@ posts in this series, these are off-the-cuff impressions, which may be
 inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my
 preferences are just that: preferences. Your tastes may differ from mine.</i>
 
+Parts in the Series
+-------------------
+
+1. [Thoughts after reading the introduction to the Swift book.][1]
+2. [Basic types and the syntax around them.][2]
+3. Operators, including overloading, and thoughts on brevity.
+4. [Language design tradeoffs, highlighted by string manipulation.][4]
+5. [The value (and challenge) of learning languages in parallel.][5]
+6. [Collection types and the difference between syntax and semantics.][6]
+7. [Pattern matching and the value of expression blocks.][7]
+8. [Functions, closures, and an awful lot of Swift syntax.][8]
+
+[1]: /2015/rust-and-swift-i.html
+[2]: /2015/rust-and-swift-ii.html
+[4]: /2015/rust-and-swift-iv.html
+[5]: /2015/rust-and-swift-v.html
+[6]: /2015/rust-and-swift-vi.html
+[7]: /2015/rust-and-swift-vii.html
+[8]: /2015/rust-and-swift-viii.html
+
 ---
 
--   I just hit operators in the Swift book. First question: are operators
+  - I just hit operators in the Swift book. First question: are operators
     special syntax, or are they sugar for `protocol`s? (Every modern language I
     use or even have played with handles them as sugar for another language
     construct---Python, Ruby, Io, Elixir, and Rust, to name just a few ranging
     over a substantial variety of ages and styles.)
 
--   Oh. I did the requisite digging, and operators are functions (which is okay)
+  - Oh. I did the requisite digging, and operators are functions (which is okay)
     defined in the global namespace (_:sigh:_). I say "okay" rather than good
     because the justification offered is that this is the only way to make the
     operators work as binary operators between existing instances of types. But
@@ -32,14 +52,14 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
     capable to handle this? That's an open question; I have no idea about the
     answer.
 
--   Interestingly, Rust has several fewer operators than Swift, even apart from
+  - Interestingly, Rust has several fewer operators than Swift, even apart from
     those mentioned in my [previous post][ii]. It drops the pre- and
     post-increment operators entirely (as does Python), since their results can
     always be accomplished in other ways with less potential for confusion.
     Swift keeps them, no doubt in part because most (Objective) C programs are
     deeply familiar with them and with idioms associated with them.
 
--   I learned a few new things about Rust's operators as well: the Boolean `||`
+  - I learned a few new things about Rust's operators as well: the Boolean `||`
     and `&&` operators and its bit wise `|` and `&` operators differ not only in
     that the former are *short-circuit* operators and the latter are not.
     Obviously you can also do things like bit-wise flag operations with the
@@ -47,7 +67,7 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
     makes perfect sense, but it wasn't something I'd ever considered explicitly
     before.
 
--   There is no ternary operator in Rust, because of how it handles the
+  - There is no ternary operator in Rust, because of how it handles the
     relationship between expressions and statements. Swift keeps it. That's an
     interesting reflection of differences in design: Rust dropped it because
     `if` blocks are expressions, so it's redundant, and they have had a goal of
@@ -57,20 +77,25 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
     just an observation, though I do really like Rust's expression-driven
     approach.
 
--   The `??` "nil coalescing operator", on the other hand, I actively dislike.
+  - The `??` "nil coalescing operator", on the other hand, I actively dislike.
     This seems like shorthand for the sake of shorthand, partly necessitated by
     the existing drive toward shorthand with optional types in Swift. Sometimes
     brevity can lead to decreased clarity. Eliding too much, or subsuming it
     into shorthand, makes the language harder to hold in your head and requires
     you to slow down more for parsing each line.
 
--   Nothing surprising (or different) between the standard boolean operators in
+  - Nothing surprising (or different) between the standard boolean operators in
     the two languages.
 
--   I wonder how many times the word "concise" (or synonyms of it) appear in the
+  - I wonder how many times the word "concise" (or synonyms of it) appear in the
     Swift book? It's increasingly clear to me reading that brevity is one of the
     primary design goals. Maybe it's just me, but that actually seems a little
     weird. Brevity is good so far as it goes, but *legibility* is much better.
 
 [ii]: http://www.chriskrycho.com/2015/rust-and-swift-ii.html
 [#1698]: https://github.com/rust-lang/rust/issues/1698
+
+---
+
+  - [Previous: Basic types and the syntax around them.][2]
+  - [Next: Language design tradeoffs, highlighted by string manipulation.][4]
