@@ -303,7 +303,6 @@ number of variants Swift has on the same concept.
 
 [early on]: /2015/rust-and-swift-ii.html
 
-
 [^closures]: Compare the closure syntaxes especially in Ruby and ES6+.
 
 [^elixir]: For a similar example in another up-and-coming language, see [Elixir],
