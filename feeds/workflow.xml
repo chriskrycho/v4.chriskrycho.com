@@ -115,7 +115,7 @@ What is this? Yet *another* citation?[@krycho:revelation:2015]&lt;/code&gt;&lt;/
 &lt;li&gt;I can use the same tooling, integrated into my static site generator, to build a web version of the content—with no extra effort, once I configured it properly the first time.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Perhaps most importantly, this helps me meet one of my major goals for all my writing: to have a single canonical &lt;em&gt;source&lt;/em&gt; for the content, which I will be able to access in the future regardless of what operating system I am using or what publishing systems come and go. Simple plain text files—Markdown—get me there. Now I’ve put good tools around that process, and I love it even more.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;/section&gt;

@@ -1,6 +1,6 @@
 ---
 title: Academic Markdown and Citations
-subtitle: A workflow with Pandoc, <span class='tex'>BibT<span class="texE">E</span>X</span>, and the editor of your choice
+subtitle: A workflow with Pandoc, BibTEX, and the editor of your choice.
 date: 2015-07-26 13:50
 tags: workflow, writing
 summary: >
