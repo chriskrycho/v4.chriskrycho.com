@@ -305,3 +305,7 @@ number of variants Swift has on the same concept.
     which does almost exactly the same but with `&` in place of `$`.
 
 [Elixir]: http://elixir-lang.org/getting-started/modules.html#function-capturing
+
+---
+
+  - [Previous: Pattern matching and the value of expression blocks.][7]

@@ -127,3 +127,8 @@ Parts in the Series
 
 [first post in the series]: /2015/rust-and-swift-i.html
 [points out]: https://alpha.app.net/jws/post/64804111
+
+---
+
+  - [Previous: Collection types and the difference between syntax and semantics.][6]
+  - [Next: Functions, closures, and an awful lot of Swift syntax.][8]

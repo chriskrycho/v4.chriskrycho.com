@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (vii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -130,6 +130,11 @@ println(&quot;\(description)&quot;)</code></pre></li>
 <li><p>Both languages supply named control statements (loops, etc.), with slightly different syntax for naming them. Rust’s, curiously, shares its syntax with lifetime definitions—more on those in a future post.</p></li>
 <li><p>I don’t believe Rust has anything quite like Swift’s <code>guard</code>s, which allow you to leave normal or expected control flow in the main body of a block, with a secondary block for cases where the <code>guard</code> isn’t matched. This isn’t a huge deal, but it does fit as a nice convenience into the typical <code>if let</code> pattern in Swift. Basically, it just lets you elide an empty <code>if</code> block and supply only the <code>else</code> block.</p>
 <p><strong>Edit:</strong> a friend <a href="https://alpha.app.net/jws/post/64804111">points out</a> that Swift <code>guard</code>s also require you to exit the current scope, so it’s unambiguous what you’re doing if you use them.</p></li>
+</ul>
+<hr />
+<ul>
+<li><a href="/2015/rust-and-swift-vi.html">Previous: Collection types and the difference between syntax and semantics.</a></li>
+<li><a href="/2015/rust-and-swift-viii.html">Next: Functions, closures, and an awful lot of Swift syntax.</a></li>
 </ul>
 <div id="refs" class="references">
 

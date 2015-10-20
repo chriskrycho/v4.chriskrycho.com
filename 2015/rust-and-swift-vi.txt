@@ -155,3 +155,8 @@ Parts in the Series
     `HashMap`. That's not a bad thing by any stretch of the imagination.
 
 [std::vec::Vec]: http://doc.rust-lang.org/stable/std/vec/struct.Vec.html
+
+---
+
+  - [Previous: The value (and challenge) of learning languages in parallel.][5]
+  - [Next: Pattern matching and the value of expression blocks.][7]

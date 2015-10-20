@@ -116,3 +116,7 @@ Parts in the Series
     construct (even if it's actually doing something substantially more
     sophisticated than that under the hood by being a form of actual pattern
     matching).
+
+---
+
+  - [Next: Basic types and the syntax around them.][2]
