@@ -1,3 +1,4 @@
+---
 Title: Be Holy!
 Subtitle: A Review of <cite>An Infinite Journey</cite>
 Date: 2014-12-10 12:00
@@ -8,6 +9,7 @@ Professor: Dr. Andrew M. Davis and Andy Winn
 School: FBC Durham for Southeastern Baptist Theological Seminary
 Category: Theology
 Tags: M. Div., SEBTS, FBC Durham, papers, book reviews
+...
 
 <i class="editorial">I would like to preface the following review by noting that
 Andy Davis is not just any author, and indeed not just any pastor. He is one of

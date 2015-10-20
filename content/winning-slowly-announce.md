@@ -1,7 +1,7 @@
 ---
 Title: Hey, Look—A Podcast!
 Author: Chris Krycho
-Tags: podcast
+Tags: podcasting
 Date: 2014-01-28 20:20
 ---
 

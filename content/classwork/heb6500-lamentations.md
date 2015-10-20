@@ -15,33 +15,6 @@ Summary: >
     poet.
 ...
 
-> | Things fall apart; the centre cannot hold;
-> | Mere anarchy is loosed upon the world,
-> | The blood-dimmed tide is loosed, and everywhere
-> | The ceremony of innocence is drowned;
-> | The best lack all conviction, while the worst
-> | Are full of passionate intensity.
-
-<p class="citation">—“The Second Coming,” William Butler Yeats</p>
-
-> | Who then devised the torment? Love.
-> | Love is the unfamiliar Name
-> | Behind the hands that wove
-> | The intolerable shirt of flame
-> | Which human power cannot remove.
-> |      We only live, only suspire
-> |      Consumed by either fire or fire.
-
-<p class="citation">—“Little Gidding” (No. 4 of “Four Quartets”), T. S. Eliot
-</p>
-
-> He who has ears to hear, let him hear.  
-
-<p class="citation">—Matthew 11:15</p>
-
----
-
-
 Author's Translation
 ====================
 
