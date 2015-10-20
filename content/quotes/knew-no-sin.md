@@ -4,7 +4,7 @@ Date: 2015-09-01 16:16
 Template: formats/quotation
 Category: Theology
 Tags: quotes
-Source: 2 Corinthians 5:11 (SBLGNT and my translation)
+Source: 2 Corinthians 5:21 (SBLGNT and my translation)
 ...
 
 This is one of the single most beautiful sentences in the Bible, and it is
