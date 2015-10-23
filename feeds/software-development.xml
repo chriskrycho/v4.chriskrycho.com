@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Wed, 21 Oct 2015 07:57:00 -0400</lastBuildDate><item><title>2015-10-21 07:57</title><link>http://www.chriskrycho.com/2015/2015-10-21-0757.html</link><description>&lt;p&gt;I &lt;em&gt;really&lt;/em&gt; wish someone had explained “separation of concerns” to the person who wrote this UI/controller/blob.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Thu, 22 Oct 2015 20:11:00 -0400</lastBuildDate><item><title>2015-10-22 20:11</title><link>http://www.chriskrycho.com/2015/2015-10-22-2011.html</link><description>&lt;p&gt;Bizarre though it would have seemed to me just a year ago, Vim has now displaced Emacs for quick command line editing for me. Weird.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 22 Oct 2015 20:11:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-22:2015/2015-10-22-2011.html</guid><category>software development</category></item><item><title>2015-10-21 07:57</title><link>http://www.chriskrycho.com/2015/2015-10-21-0757.html</link><description>&lt;p&gt;I &lt;em&gt;really&lt;/em&gt; wish someone had explained “separation of concerns” to the person who wrote this UI/controller/blob.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
