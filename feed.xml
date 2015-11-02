@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Thu, 22 Oct 2015 20:11:00 -0400</lastBuildDate><item><title>2015-10-22 20:11</title><link>http://www.chriskrycho.com/2015/2015-10-22-2011.html</link><description>&lt;p&gt;Bizarre though it would have seemed to me just a year ago, Vim has now displaced Emacs for quick command line editing for me. Weird.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Mon, 02 Nov 2015 17:22:00 -0500</lastBuildDate><item><title>2015-11-02 17:22</title><link>http://www.chriskrycho.com/2015/2015-11-02-1722.html</link><description>&lt;p&gt;Got the &lt;a href="https://www.jetbrains.com/store/"&gt;JetBrains Toolbox&lt;/a&gt; license for &lt;em&gt;everything&lt;/em&gt;. And then realized I now have access to the ReSharper Visual Studio C++ tools. &lt;em&gt;Yes!&lt;/em&gt;&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 02 Nov 2015 17:22:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-11-02:2015/2015-11-02-1722.html</guid><category>software development</category></item><item><title>2015-10-22 20:11</title><link>http://www.chriskrycho.com/2015/2015-10-22-2011.html</link><description>&lt;p&gt;Bizarre though it would have seemed to me just a year ago, Vim has now displaced Emacs for quick command line editing for me. Weird.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
