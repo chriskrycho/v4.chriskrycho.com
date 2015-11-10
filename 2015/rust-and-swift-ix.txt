@@ -1,0 +1,85 @@
+---
+Title: Rust and Swift (ix)
+Subtitle: Sum types (`enum`s) and more on pattern matching
+Tags: software development, listicles
+Date: 2015-11-09 22:20
+Series:
+  Title: Rust and Swift
+  Part: 9
+...
+
+<i class="editorial">I am reading through the Swift book, and comparing it to
+Rust, which I have also been learning over the past few months. As with the
+other posts in this series, these are off-the-cuff impressions, which may be
+inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my
+preferences are just that: preferences. Your tastes may differ from mine.</i>
+
+Parts in the Series
+-------------------
+
+1. [Thoughts after reading the introduction to the Swift book.][1]
+2. [Basic types and the syntax around them.][2]
+3. [Operators, including overloading, and thoughts on brevity.][3]
+4. [Language design tradeoffs, highlighted by string manipulation.][4]
+5. [The value (and challenge) of learning languages in parallel.][5]
+6. [Collection types and the difference between syntax and semantics.][6]
+7. [Pattern matching and the value of expression blocks.][7]
+8. [Functions, closures, and an awful lot of Swift syntax.][8]
+9. Sum types (`enum`s) and more on pattern matching
+
+[1]: /2015/rust-and-swift-i.html
+[2]: /2015/rust-and-swift-ii.html
+[3]: /2015/rust-and-swift-iii.html
+[4]: /2015/rust-and-swift-iv.html
+[5]: /2015/rust-and-swift-v.html
+[6]: /2015/rust-and-swift-vi.html
+[7]: /2015/rust-and-swift-vii.html
+[8]: /2015/rust-and-swift-viii.html
+
+---
+
+-   Right off the bat when looking at the definitions for Swift's and Rust's `enum` types, a difference pops out: the use of the keyword `case` to introduce an enum member in Swift. In one sense, this overloads that keyword, but in another sense it's fine: pattern matching and enums go hand in hand, so the use in both cases is fairly natural. Rust doesn't have any special syntax to designate the elements of an enum; they're just separated by commas.
+-   I am not at all shocked to find that Swift has a variant syntax for its unit type case declarations, where a single `case` keyword precedes a list of comma-separated cases defined on a single line. (At this point, I would be more surprised *not* to find a variant syntax for something in Swift!)
+-   Something truly wonderful about both a Rust and Swift: enumerated types aren't just wrappers around integer values. They're real types of their own. This is powerful.
+-   Rust and Swift also share in having enumerated types that can hold values. The most prominent of these so far in the Swift book are optionals, the `Optional` enum type, corresponding very closely to Rust's `Option` type. Having had these for a bit in playing with Rust, and having gotten familiar with the utility of types like these while reading [_Maybe Haskell_]---a delightful book which introduces Haskell and functional programming using Haskell's `Maybe` type---I now miss them profoundly in languages which don't have them.
+-   Swift's enum types don't have integer values *by default*---but they can have them if you define a type and assign a value to each enum case at the definition. These "raw values" are distinct from the "associated values" noted just above. I expect these exist primarily for ease of interoperation with Objective-C.
+-   Rust doesn't have anything like this, at least that I can think of. The main place it would be useful would be for foreign function interfaces (as in Swift), and this is one of several such gaps in Rust, along with the lack of a straightforward way to map to C's `union` types. There are trade offs in terms of adding the functionality to the language, though, as it substantially increases the complexity of what an enum value can be, I think.
+-   Initialization of Swift's raw-valued enum type is quite similar, and pleasantly so, to Python's initialization of enums.
+-   In a surprising change from the usual, Swift's syntax for binding variable names when pattern matching against an enum is *more* verbose than Rust's, requiring the use of either a leading `let` on the `case` statement if all the elements are of the same type, or a `let` in front of each element otherwise: TODO
+
+    ```swift
+    var matchedValue: String
+    let matchee = 3.14159
+    switch matchee {
+    case 3.14159:
+        matchedValue = "pi"
+    case _:
+        matchedValue = "not pi"
+    }
+    ```
+
+    In Rust, a matched pattern can simply bind its value directly:
+    
+    ```rust
+    let matchee = 3.14159;
+    let matchedValue = match matchee {
+        3.14159 => "pi".to_string(),
+        _ => "not pi".to_string()
+    };
+    ```
+
+-   Swift has the ability to do recursive enumerations with its `indirect` type. This is conceptually interesting, but off the top of my head I can't think of a time when this would have been useful at any point since I started programming seven and a half years ago. The book's example of a recursive function a aliasing arithmetic expressions is fine, but not particularly illuminating to me. I suspect, though, that it might make more sense if I were more familiar with pure functional programming paradigms.
+
+-   All those same lines: Rust does *not* have the ability to have recursive enumerations at present (or recursive `struct` types, for that matter), at least without heap-allocating with `Box` along the way. You *can* construct such a type, in other words, but you have to be explicit about how you're handling the memory, and it can't be stack-allocated.
+
+    +   For an example of a recursive enumeration type (as well as an interesting/hilarious example of how you can easily confuse the compiler if you do this wrong), see [this Rust forum post][forum].
+
+    +   For some discussion on stack- and heap-allocated memory in Rust, I'll shamelessly promote my Rust podcast, [New Rustacean]: take a listen to [e005: Allocate it where?][e005]
+
+[forum]: https://users.rust-lang.org/t/recursive-enum-types/2938
+[New Rustacean]: http://www.newrustacean.com
+[e005]: http://www.newrustacean.com/show_notes/e005/index.html
+
+---
+
+-  [Previous: Functions, closures, and an awful lot of Swift syntax.][8]
