@@ -3,6 +3,7 @@ Title: Rust and Swift (ix)
 Subtitle: Sum types (`enum`s) and more on pattern matching
 Tags: software development, listicles
 Date: 2015-11-09 22:20
+Modified: 2015-11-10 06:15
 Series:
   Title: Rust and Swift
   Part: 9
@@ -66,7 +67,7 @@ Parts in the Series
     ```
 
     In Rust, a matched pattern can simply bind its value directly:
-    
+
     ```rust
     let matchee = 3.14159;
     let matchedValue = match matchee {
