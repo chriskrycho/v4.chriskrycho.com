@@ -30,6 +30,7 @@ Parts in the Series
 6. [Collection types and the difference between syntax and semantics.][6]
 7. [Pattern matching and the value of expression blocks.][7]
 8. [Functions, closures, and an awful lot of Swift syntax.][8]
+9. [Sum types (`enum`s) and more on pattern matching.][9]
 
 [2]: /2015/rust-and-swift-ii.html
 [3]: /2015/rust-and-swift-iii.html
@@ -38,6 +39,7 @@ Parts in the Series
 [6]: /2015/rust-and-swift-vi.html
 [7]: /2015/rust-and-swift-vii.html
 [8]: /2015/rust-and-swift-viii.html
+[9]: /2015/rust-and-swift-ix.html
 
 ---
 
