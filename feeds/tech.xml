@@ -37,7 +37,11 @@ let matchedValue = match matchee {
     3.14159 =&amp;gt; &amp;quot;pi&amp;quot;.to_string(),
     _ =&amp;gt; &amp;quot;not pi&amp;quot;.to_string()
 };&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Swift has the ability to do recursive enumerations with its &lt;code&gt;indirect&lt;/code&gt; type. This is conceptually interesting, but off the top of my head I can’t think of a time when this would have been useful at any point since I started programming seven and a half years ago. The book’s example of a recursive function a aliasing arithmetic expressions is fine, but not particularly illuminating to me. I suspect, though, that it might make more sense if I were more familiar with pure functional programming paradigms.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Swift has the ability to do recursive enumerations with its &lt;code&gt;indirect&lt;/code&gt; type. This is conceptually interesting, but off the top of my head I can’t think of a time when this would have been useful at any point since I started programming seven and a half years ago. The book’s example of a recursive function a aliasing arithmetic expressions is fine, but not particularly illuminating to me. I suspect, though, that it might make more sense if I were more familiar with pure functional programming paradigms.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; a friend &lt;a href="https://alpha.app.net/jws/post/65990633"&gt;points out&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Indirect enums are useful for recursive types in general. There are a lot of these: Lists, trees, and streams are the big ones that come to mind.&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;All those same lines: Rust does &lt;em&gt;not&lt;/em&gt; have the ability to have recursive enumerations at present (or recursive &lt;code&gt;struct&lt;/code&gt; types, for that matter), at least without heap-allocating with &lt;code&gt;Box&lt;/code&gt; along the way. You &lt;em&gt;can&lt;/em&gt; construct such a type, in other words, but you have to be explicit about how you’re handling the memory, and it can’t be stack-allocated.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;For an example of a recursive enumeration type (as well as an interesting/hilarious example of how you can easily confuse the compiler if you do this wrong), see &lt;a href="https://users.rust-lang.org/t/recursive-enum-types/2938"&gt;this Rust forum post&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;

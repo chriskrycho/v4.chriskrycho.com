@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (ix)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -125,7 +125,11 @@ let matchedValue = match matchee {
     3.14159 =&gt; &quot;pi&quot;.to_string(),
     _ =&gt; &quot;not pi&quot;.to_string()
 };</code></pre></li>
-<li><p>Swift has the ability to do recursive enumerations with its <code>indirect</code> type. This is conceptually interesting, but off the top of my head I can’t think of a time when this would have been useful at any point since I started programming seven and a half years ago. The book’s example of a recursive function a aliasing arithmetic expressions is fine, but not particularly illuminating to me. I suspect, though, that it might make more sense if I were more familiar with pure functional programming paradigms.</p></li>
+<li><p>Swift has the ability to do recursive enumerations with its <code>indirect</code> type. This is conceptually interesting, but off the top of my head I can’t think of a time when this would have been useful at any point since I started programming seven and a half years ago. The book’s example of a recursive function a aliasing arithmetic expressions is fine, but not particularly illuminating to me. I suspect, though, that it might make more sense if I were more familiar with pure functional programming paradigms.</p>
+<p><strong>Edit:</strong> a friend <a href="https://alpha.app.net/jws/post/65990633">points out</a>:</p>
+<blockquote>
+<p>Indirect enums are useful for recursive types in general. There are a lot of these: Lists, trees, and streams are the big ones that come to mind.</p>
+</blockquote></li>
 <li><p>All those same lines: Rust does <em>not</em> have the ability to have recursive enumerations at present (or recursive <code>struct</code> types, for that matter), at least without heap-allocating with <code>Box</code> along the way. You <em>can</em> construct such a type, in other words, but you have to be explicit about how you’re handling the memory, and it can’t be stack-allocated.</p>
 <ul>
 <li><p>For an example of a recursive enumeration type (as well as an interesting/hilarious example of how you can easily confuse the compiler if you do this wrong), see <a href="https://users.rust-lang.org/t/recursive-enum-types/2938">this Rust forum post</a>.</p></li>
@@ -188,7 +192,7 @@ let matchedValue = match matchee {
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2015/fall-haiku.html">Fall Haiku</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2015/how-i-became-a-runner.html">How I Became a Runner</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2015/how-i-became-a-relatively-quick-runner.html">How I Became a (Relatively) Quick Runner</a></li>
         <li>Talks: <a href="http://www.chriskrycho.com/2015/tolle-lege.html">Tolle Lege!</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2015/rust-and-swift-ix.html">Rust and Swift (ix)</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2015/a-range-of-prophets.html">A Range of Prophets</a></li>
