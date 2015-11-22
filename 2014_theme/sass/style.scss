@@ -25,7 +25,7 @@ a {
     display: inline-block;
     line-height: 1;
 
-    @include transition(border 0.224s $easeInOutCubic, 
+    @include transition(border 0.224s $easeInOutCubic,
                         color 0.224s $easeInOutCubic);
 
     &:link, &:visited {
@@ -37,7 +37,7 @@ a {
         color: $dark_blue;
         border-bottom: 1px solid $dark_gray;
 
-        @include transition(border 0.465s $easeInOutCubic, 
+        @include transition(border 0.465s $easeInOutCubic,
                             color 0.465s $easeInOutCubic);
     }
 }
@@ -319,9 +319,9 @@ body::before {
     width: 100%;
     display: block;
     height: $fs_very_small / 2;
-    background: linear-gradient(to right, 
-                                $light_blue -15%, 
-                                $dark_blue 35%, 
+    background: linear-gradient(to right,
+                                $light_blue -15%,
+                                $dark_blue 35%,
                                 $light_blue);
     border-bottom: 1px solid $light_gray;
 }
@@ -622,16 +622,16 @@ article {
     }
 
     code {
-        font-family: 'Source Code Pro', 
+        font-family: 'Source Code Pro',
                      'DejaVu Sans Mono',
-                     'Bitstream Vera Sans Mono', 
+                     'Bitstream Vera Sans Mono',
                      monospace;
         background: #efefef;
         border-radius: 2px;
         margin: $fsp 0;
         overflow: scroll;
         padding: 0 0.269em;
-        font-size: $fs_small;
+        font-size: $fs6_abs;
     }
 
     pre {
@@ -642,7 +642,7 @@ article {
 
         code {
             padding: $fsp 0.558em;
-            font-size: $fs_very_small;
+            font-size: $fs6_abs;
             border: 1px solid lighten($light_gray, 39.1%);
             white-space: pre;
         }
@@ -701,9 +701,9 @@ sup[id^="fnref:"] a {
         height: $footer-header-height;
         width: 100%;
         border-bottom: 1px solid $white;
-        background: linear-gradient(to right, 
-                                    $light_blue -15%, 
-                                    $dark_blue, 
+        background: linear-gradient(to right,
+                                    $light_blue -15%,
+                                    $dark_blue,
                                     $light_blue 115%);
     }
 
@@ -714,13 +714,13 @@ sup[id^="fnref:"] a {
 
     a .fa, a:visited .fa {
         color: lighten($light_gray, 24.4%);
-        @include transition(border 0.224s $easeInOutCubic,  
+        @include transition(border 0.224s $easeInOutCubic,
                             color 0.224s $easeInOutCubic);
     }
 
     a:hover .fa, a:active, .fa {
         color: $white;
-        @include transition(border 0.465s $easeInOutCubic, 
+        @include transition(border 0.465s $easeInOutCubic,
                             color 0.465s $easeInOutCubic);
     }
 
