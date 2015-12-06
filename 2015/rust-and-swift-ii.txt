@@ -17,15 +17,16 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
 Parts in the Series
 -------------------
 
-1. [Thoughts after reading the introduction to the Swift book.][1]
-2. Basic types and the syntax around them.
-3. [Operators, including overloading, and thoughts on brevity.][3]
-4. [Language design tradeoffs, highlighted by string manipulation.][4]
-5. [The value (and challenge) of learning languages in parallel.][5]
-6. [Collection types and the difference between syntax and semantics.][6]
-7. [Pattern matching and the value of expression blocks.][7]
-8. [Functions, closures, and an awful lot of Swift syntax.][8]
-9. [Sum types (`enum`s) and more on pattern matching.][9]
+1.  [Thoughts after reading the introduction to the Swift book.][1]
+2.  Basic types and the syntax around them.
+3.  [Operators, including overloading, and thoughts on brevity.][3]
+4.  [Language design tradeoffs, highlighted by string manipulation.][4]
+5.  [The value (and challenge) of learning languages in parallel.][5]
+6.  [Collection types and the difference between syntax and semantics.][6]
+7.  [Pattern matching and the value of expression blocks.][7]
+8.  [Functions, closures, and an awful lot of Swift syntax.][8]
+9.  [Sum types (`enum`s) and more on pattern matching.][9]
+10. [Classes and structs (product types), and reference and value types.][10]
 
 [1]: /2015/rust-and-swift-i.html
 [3]: /2015/rust-and-swift-iii.html
@@ -35,6 +36,7 @@ Parts in the Series
 [7]: /2015/rust-and-swift-vii.html
 [8]: /2015/rust-and-swift-viii.html
 [9]: /2015/rust-and-swift-ix.html
+[10]: /2015/rust-and-swift-x.html
 
 ---
 
@@ -50,14 +52,14 @@ Parts in the Series
       + with the `!` operator on a type definition, creating an "implicitly
         unwrapped optional" by forcibly unwrapping it (and creating a runtime
         error if the optional is empty)
-  
+
     After creating an optional, you can get at its contents by:
-  
+
       + using the `if let` or `while let` constructs to bind the optional
         value's non-`nil` value for a block
       + using the `!` operator on a variable name, explicitly unwrapping it (and
         creating a runtime error if the optional is empty)
-    
+
     By contrast, in Rust you always have to explicitly unwrap the item, using
     the `unwrap` method or pattern matching. There are no implicitly unwrapped
     types. Moreover, there is no special syntax around creating optional types
@@ -68,21 +70,21 @@ Parts in the Series
 
   - The discussion of `assert` in the Swift book re-raises the question about
     the global namespace:
-    
+
     > "You write an assertion by calling the global `assert(_:_:)` function."
-    
+
     This continues to suggest strongly that Swift does in fact have a true
     global namespace, *not* an automatically-imported prelude. That can make a
     big difference for applications in certain spaces (e.g. systems
     programming), when you might have good reason to want to replace the
     standard library's approach with a different one. (See Rust's [`#[no_std]`]
     docs and the [related RFC].)
-    
+
   - In Rust, `assert!` is a macro, not a function, which is an interesting but
     perhaps not *especially* important distinction in this particular case. (It
     might be, though; I'd have to see the implementation of each to see how they
     play out differently.)
-    
+
   - In any case, this also highlights another large difference between the two:
     testing is [front and center][rust-tests] in Rust, and barely receives a
     mention so far in the Swift book (and isn't in the table of contents).
@@ -114,7 +116,7 @@ Parts in the Series
       + In general, then, it makes change much easier to manage, and change can
         be community-driven rather than requiring the language design team to
         manage it.[^1]
-    
+
 [rust-tests]: https://doc.rust-lang.org/stable/book/testing.html
 [`#[no_std]`]: https://doc.rust-lang.org/book/no-stdlib.html
 [related RFC]: https://github.com/rust-lang/rfcs/blob/master/text/1184-stabilize-no_std.md

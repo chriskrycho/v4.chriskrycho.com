@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rust and Swift (x) &middot; Chris Krycho</title>
+    <meta name="description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2015/rust-and-swift-x.html"/>
+    <meta property="og:title" content="Rust and Swift (x)"/>
+    <meta property="og:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Rust and Swift (x)"/>
+    <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/fonts.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.chriskrycho.com/assets/icons.css"/>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
+        <link rel="alternate" href="/feeds/talks.xml" type="application/rss+xml" title="Posts filed in in 'Talks''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+
+    <script type="text/javascript" async src="/assets/js/mtiFontTrackingCode.js"></script>
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Creativity, reflection, & varied endeavors<br class="optional"/> by a peculiar fellow</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title talks"><a href="http://www.chriskrycho.com/talks/">talks</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="tech">
+
+    <header>
+<h1>Rust and Swift (x)</h1>
+<h2>Classes and structs (product types), and reference and value types.</h2>    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html"><i class="fa fa-fw fa-link"></i></a>December 06, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-x.txt">Markdown source</a></span></div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.</i></p>
+<section id="parts-in-the-series" class="level2">
+<h2>Parts in the Series</h2>
+<ol type="1">
+<li><a href="/2015/rust-and-swift-i.html">Thoughts after reading the introduction to the Swift book.</a></li>
+<li><a href="/2015/rust-and-swift-ii.html">Basic types and the syntax around them.</a></li>
+<li><a href="/2015/rust-and-swift-iii.html">Operators, including overloading, and thoughts on brevity.</a></li>
+<li><a href="/2015/rust-and-swift-iv.html">Language design tradeoffs, highlighted by string manipulation.</a></li>
+<li><a href="/2015/rust-and-swift-v.html">The value (and challenge) of learning languages in parallel.</a></li>
+<li><a href="/2015/rust-and-swift-vi.html">Collection types and the difference between syntax and semantics.</a></li>
+<li><a href="/2015/rust-and-swift-vii.html">Pattern matching and the value of expression blocks.</a></li>
+<li><a href="/2015/rust-and-swift-viii.html">Functions, closures, and an awful lot of Swift syntax.</a></li>
+<li><a href="/2015/rust-and-swift-ix.html">Sum types (<code>enum</code>s) and more on pattern matching.</a></li>
+<li>Classes and structs (product types), and reference and value types.</li>
+</ol>
+<hr />
+<ul>
+<li><p>Swift and Rust both have “product types” as well as the <code>enum</code> “sum types.” In Rust, these are <code>struct</code> types; Swift splits them into <code>class</code>es and <code>struct</code>s.</p></li>
+<li><p>“Product types” will be much more familiar to programmers coming from a C-like background, or indeed most object-oriented programming languages: these are the same basic kind of thing as classes, structs, and objects in other languages. These include <em>all</em> the value types which compose them, unlike sum types—<code>enum</code>—which have <em>only one</em> of the value types which compose them.</p></li>
+<li><p>Right off the bat, I note the Swift book’s somewhat amusing reticence to call out C and C-descended languages:</p>
+<blockquote>
+<p>Unlike other programming languages, Swift does not require you to create separate interface and implementation files for custom classes and structures.</p>
+</blockquote>
+<p>Because there’s such a long list of languages not directly descended from C which do that, right? 😉</p></li>
+<li><p>Rust differs not only from Swift but from every other modern language I have used in not having a constructor <em>syntax</em> for its instantiations. Whereas C++ has <code>new NameOfType()</code> and Python has <code>NameOfType()</code> and Swift has <code>NameOfType()</code>, “constructors” for Rust <code>struct</code>s are just functions which return an instance constructed using literal syntax, by convention <code>NameOfType::new()</code>.</p></li>
+<li><p>Let’s make a <code>struct</code> defining a location in a plane, you might do this in Swift (leaving aside initializer values; I’ll come back to those later). These definitions look <em>very</em> similar. Swift:</p>
+<pre class="swift"><code>struct Point {
+    var x: Double
+    var y: Double
+}</code></pre>
+<p>Rust:</p>
+<pre class="rust"><code>struct Point {
+    x: f64,
+    y: f64,
+}</code></pre></li>
+<li><p>Creating the types looks a little different, though. Here’s a constructor in Swift:</p>
+<pre class="swift"><code>let point = Point(x: 0, y: 0)</code></pre>
+<p>And the two ways we could construct the type in Rust, a literal constructor (fairly similar to constructing <code>dict</code> literals in Python or object literals in JavaScript):</p>
+<pre class="rust"><code>let point = Point { x: 0.0, y: 0.0 };</code></pre>
+<p>Or a constructor method, <code>new</code>:</p>
+<pre class="rust"><code>// &quot;Constructor&quot;
+impl Point {
+    fn new(x: f64, y: f64) -&gt; Point {
+        Point { x: x, y: y }
+    }
+}
+
+let another_point = Point::new(0, 0);</code></pre>
+<p>Observe: these two things in Rust are the same under the covers (though if <code>Point</code>s had non-public internals, they would be non-trivially different: you couldn’t construct it with its private members externally). As usual, Rust opts to keep the language relatively small in these core areas. Given the plethora of ways you can construct something in e.g. C++, I count that a big win.</p></li>
+<li><p>Another difference: Swift has <em>syntax</em> for default values; Rust uses a <code>trait</code> instead. In Swift, you simply supply the default value in the definition of the <code>struct</code> or <code>class</code>:</p>
+<pre class="swift"><code>struct Point {
+    var x = 0.0
+    var y = 0.0
+}
+
+let point = Point()</code></pre>
+<p>In Rust, you use <code>std::default::Default</code>, which provides a standard value for a given type, and for simple types can be supplied by the compiler even for custom types. Here is the equivalent Rust code:</p>
+<pre class="rust"><code>use std::default::Default;
+
+#[derive(Default)]
+struct Point {
+    x: f64,
+    y: f64,
+}
+
+let point = Point::default();</code></pre>
+<p>This is reasonable enough, but we can also supply our own custom implementation if we so desire:</p>
+<pre class="rust"><code>use std::default::Default;
+
+struct Point {
+    x: f64,
+    y: f64,
+}
+
+impl Default for Point {
+    fn default() -&gt; Point {
+        Point { x: 0.0, y: 0.0 }
+    }
+}
+
+let point = Point::default();</code></pre>
+<p>Of course, this is trivial for this type, but you can see how it could be useful for more complex types.</p></li>
+<li><p>The tradeoffs here are our usual suspects: Rust’s re-use of an existing concept/tool within the language (<code>trait</code>) vs. Swift’s use of syntax. Rust is slightly more explicit, making it obvious that a default value is being created—but Swift is perfectly readable and the syntax is consistent with many other languages, and it <em>is</em> shorter.</p></li>
+<li><p>Both languages use <code>.</code> syntax for member access. Swift:</p>
+<pre class="swift"><code>println(&quot;The point is: \(point.x), \(point.y)&quot;)</code></pre>
+<p>Rust:</p>
+<pre class="rust"><code>println!(&quot;The point is {:}, {:}&quot;, point.x, point.y);</code></pre></li>
+<li><p>Swift lets you define items <em>within</em> a struct as mutable or constant. So you can create a variable struct instance, with some of its items immutable:</p>
+<pre class="swift"><code>struct PointOnZAxis {
+    var x: Double
+    var y: Double
+    let z = 0.0
+}
+
+var point = PointOnZAxis(x: 4.0, 5.0)
+point.x = 5.0
+point.y = 6.0
+// This wouldn&#39;t compile, though:
+// point.z = 1.0</code></pre>
+<p>This is pretty handy for a lot of object-oriented programming approaches.</p></li>
+<li><p>And Rust doesn’t have it. There are ways to accomplish the same thing; this isn’t the end of the world. Still, it’s an interesting omission, and it’s very much by design. Rust <em>used</em> to have this feature, and dropped it—and for good reason. Say you had a mutable field in a mutable struct, and then an immutable reference to it; should the mutable field be mutable, or immutable, with that reference?</p></li>
+<li><p>The Rusty way to do this is to differentiate between public and private data. The above examples don’t make the public/private distinction particularly clear, because they assume everything is within the same module. However, many times, this will not be the case.</p>
+<pre class="rust"><code>mod geometry {
+    pub struct Point {
+        x: f64,
+        pub y: f64,
+    }
+
+    impl Point {
+        pub fn new() -&gt; Point {
+            Point { x: 0.0, y: 0.0 }
+        }
+
+        pub fn set_x(&amp;mut self, x: f64) {
+            self.x = x;
+        }
+    }
+}
+
+fn main() {
+    // Won&#39;t compile: the `x` field is private.
+    // let mut p = geometry::Point { x: 0.0, y: 0.0 };
+
+    // Will compile: the `new` method is public.
+    let mut p = geometry::Point::new();
+
+    // Won&#39;t compile: `x` isn&#39;t public.
+    // p.x = 4.0;
+    // You can use the setter, though:
+    p.set_x(4.0);
+
+    // You *can* set `y` directly, though, because it&#39;s public.
+    p.y = 14.0;
+
+    // You can&#39;t set fields either way if the instance is immutable.
+    let q = geometry::Point::new();
+
+    // This fails because `set_x` requires a mutable reference, but `q` is
+    // immutable.
+    // q.set_x(4.0);
+
+    // This fails because `q` is immutable, and so all its fields are, too.
+    // q.y = 14.0;
+}</code></pre></li>
+<li><p>This is an interesting way of handling this issue. Rust takes the fairly standard use of information hiding (one of the basic principles of most object-oriented programming techniques) and combines it with the language’s normal mutability rules to make it so that the mutability of any given instance data is quite clear: all public members are just as mutable as the struct. If a member isn’t potentially publicly mutable, it isn’t publicly accessible. I really like this, though it took some mental readjustment.</p></li>
+<li><p>There’s one other difference here, and it’s actually one of the areas Swift and Rust diverge substantially. Rust has <code>struct</code> for all product types; Swift splits them into <code>struct</code> types and <code>class</code> types.</p></li>
+<li><p>Swift <code>class</code>es have inheritance; there is presently <em>no</em> inheritance in Rust.</p></li>
+<li><p>Additionally, whereas Rust determines whether to use pass-by-reference or -value depending on details of the type (whether it implements the <code>Copy</code> <code>trait</code>) and expected arguments to a function, Swift makes that distinction between <code>class</code> (pass-by-reference) and <code>struct</code> (pass-by-value) types. Quirky.</p></li>
+<li><p>Not bad, <em>per se</em>. But quirky.</p></li>
+<li><p>One consequence of this: in Rust, you’re always rather explicit about whether you’re accessing things by value vs. by reference. Not so in Swift; you have to remember whether the item you’re touching is a <code>struct</code> type or a <code>class</code> type, so that you can <em>remember</em> whether a given assignment or function call results in a reference or a copy. This is necessary because Swift doesn’t let you make that explicit (trying to hide the memory management from you). And it’s not alone in that, of course; many other high-level languages obscure that for convenience but still require you to think about it in certain circumstances. I’ve been bitten in the past by the value/reference distinction when thinking through the behavior of Python objects, for example, so that’s not a critique of Swift. Moreover, having the distinction between <code>struct</code> and <code>class</code> types does let you be <em>more</em> explicit than you might in e.g. Python about how given data will be handled.</p></li>
+<li><p>I won’t lie, though: I like Rust’s approach better. (Shocking, I know.)</p></li>
+<li><p>All that nice initializer syntax for Swift <code>struct</code> types is absent for its <code>class</code> types, which seems strange to me.</p></li>
+<li><p>Swift supplies some syntax for object identity, since it’s useful to know not only whether two <code>class</code> instances have the same data, but are in fact the same instance. You can use <code>===</code> and <code>!==</code>. Handy enough. To get at this kind of equivalence in Rust, you have to use raw pointers (which are often but not always <code>unsafe</code>; you can do this specific comparison <em>without</em> being <code>unsafe</code>, for example) to check whether the memory addresses are the same.</p></li>
+</ul>
+<hr />
+<ul>
+<li><a href="/2015/rust-and-swift-ix.html">Previous: Sum types (<code>enum</code>s) and more on pattern matching.</a></li>
+</ul>
+<div id="refs" class="references">
+
+</div>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://app.net/chriskrycho"><i class="fa fa-fw fa-adn"></i>App.net</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-cloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/talks.xml"><i class="fa fa-fw fa-rss"></i>talks</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2015/fall-haiku.html">Fall Haiku</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2015/how-i-became-a-relatively-quick-runner.html">How I Became a (Relatively) Quick Runner</a></li>
+        <li>Talks: <a href="http://www.chriskrycho.com/2015/tolle-lege.html">Tolle Lege!</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html">Rust and Swift (x)</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2015/an-apology-and-a-hermeneutic.html">An Apology and a Hermeneutic</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <script src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+</body>
+</html>

@@ -18,15 +18,16 @@ preferences are just that: preferences. Your tastes may differ from mine.</i>
 Parts in the Series
 -------------------
 
-1. [Thoughts after reading the introduction to the Swift book.][1]
-2. [Basic types and the syntax around them.][2]
-3. [Operators, including overloading, and thoughts on brevity.][3]
-4. [Language design tradeoffs, highlighted by string manipulation.][4]
-5. [The value (and challenge) of learning languages in parallel.][5]
-6. [Collection types and the difference between syntax and semantics.][6]
-7. [Pattern matching and the value of expression blocks.][7]
-8. Functions, closures, and an awful lot of Swift syntax.
-9. [Sum types (`enum`s) and more on pattern matching.][9]
+1.  [Thoughts after reading the introduction to the Swift book.][1]
+2.  [Basic types and the syntax around them.][2]
+3.  [Operators, including overloading, and thoughts on brevity.][3]
+4.  [Language design tradeoffs, highlighted by string manipulation.][4]
+5.  [The value (and challenge) of learning languages in parallel.][5]
+6.  [Collection types and the difference between syntax and semantics.][6]
+7.  [Pattern matching and the value of expression blocks.][7]
+8.  Functions, closures, and an awful lot of Swift syntax.
+9.  [Sum types (`enum`s) and more on pattern matching.][9]
+10. [Classes and structs (product types), and reference and value types.][10]
 
 [1]: /2015/rust-and-swift-i.html
 [2]: /2015/rust-and-swift-ii.html
@@ -36,6 +37,7 @@ Parts in the Series
 [6]: /2015/rust-and-swift-vi.html
 [7]: /2015/rust-and-swift-vii.html
 [9]: /2015/rust-and-swift-ix.html
+[10]: /2015/rust-and-swift-x.html
 
 ---
 
@@ -59,7 +61,7 @@ Parts in the Series
     both odd and unhelpful: eliding the first parameter name obscures important
     information. Also, why use colons for the delimiter?
 
-    **Edit:** I'm informed via Twitter and App.net that this reflects how 
+    **Edit:** I'm informed via Twitter and App.net that this reflects how
     function names work in Objective C, and derives ultimately from Smalltalk.
 
   - Being able to name the items in a returned type in Swift is quite handy;
@@ -98,24 +100,24 @@ Parts in the Series
   - In/out parameters---that is, mutable pass-by-reference types---are available
     in both languages. The syntax is *very* different here, as are the
     semantics.
-    
+
     Swift has the `inout` keyword, supplied before a parameter definition:
-    
+
     ```swift
     func adds4ToInput(inout num: Int) {
         num += 4;
     }
     ```
-    
+
     Rust has instead a variation on every other type definition, declaring the
     type in this case to be a mutable reference:
-    
+
     ```rust
     fn adds_4_to_input(num: &mut i32) {
         num += 4;
     }
     ```
-    
+
     As usual, in other words, Swift opts to use new syntax (in this case, a
     dedicated keyword) while Rust opts to use the same syntax used everywhere
     else to denote a mutable reference. In fairness to Swift, though, this is
@@ -136,41 +138,41 @@ Parts in the Series
   - Again, though, the downside to Rust's sophistication is that it sometimes
     bundles in some complexity. Returning a function in Swift is incredibly
     straightforward:
-    
+
     ```swift
     func getDoubler() -> (Int) -> Int {
         func doubler(number: Int) -> Int {
             return number * 2
         }
-        
+
         return doubler
     }
-    
+
     func main() {
         let doubler = getDoubler()
         println("\(doubler(14))")  // -> 28
     }
     ```
-    
+
     Doing the same in Rust is a bit harder, because---as of the 1.3 stable/1.5
     nightly timeframe---it requires you to explicitly heap-allocate the
     function. Swift just takes care of this for you.
-    
+
     ```rust
     fn get_doubler() -> Box<Fn(i32) -> i32> {
         fn doubler(number: i32) -> i32 {
             number * 2
         }
-        
+
         Box::new(doubler)
     }
-    
+
     fn main() {
         let doubler = get_doubler();
         println!("{:}", doubler(14));  // -> 28
     }
     ```
-    
+
     If you understand what's going on under the covers here, this makes sense:
     Rust normally stack-allocates a function in a scope, and therefore the
     `doubler` function goes out of scope entirely when the `get_doubler`
@@ -189,16 +191,16 @@ Parts in the Series
         return n * 2
     }
     ```
-    
+
     For brevity, this can collapse down to the shorter form with types inferred
     from context, parentheses dropped and the `return` keyword inferred from the
     fact that the closure has only a single expression (note that this wouldn't
     be valid unless in a context where the type of `n` could be inferred):
-    
+
     ```swift
     { n in n * 2 }
     ```
-    
+
     The simplicity here is nice, reminiscent in a good way of closures/lambdas
     in other languages.[^closures] The fact that it's a special case is less to
     my taste.
@@ -206,18 +208,18 @@ Parts in the Series
   - Rust's closure syntax is fairly similar to Swift's brief syntax. More
     importantly, there's no special handling for closures' final expressions.
     Remember: the final expression of *any* block is always returned in Rust.
-    
+
     ```rust
     |n| n * 2
     ```
-    
+
     If we wanted to fully annotate the types, as in the first Swift example, it
     would be like so:
-    
+
     ```rust
     |n: i32| -> i32 { n * 2 }
     ```
-    
+
   - There are even *more* differences between the two, because of Rust's
     ownership notion and the associated need to think about whether a given
     closure is being borrowed or moved (if the latter, explicitly using the
@@ -227,7 +229,7 @@ Parts in the Series
     closures.[^elixir] The arguments to a closure get the default names `$0`,
     `$1`, etc. This gets you even *more* brevity, and is quite convenient in
     cases where closures get used a lot (`map`, `sort`, `fold`, `reduce`, etc.).
-    
+
     ```swift
     { $0 * 2 }
     ```
@@ -249,13 +251,13 @@ Parts in the Series
     a closure to a Swift function that expects it: you can supply a block (`{ /*
     closure body */ }`) *after* the function which expects it. Yes, this can end
     up looking nearly identical to the form for declaring a function:
-    
+
     ```swift
     someFunctionExpectingAnIntegerClosure() { n * 2 }
     ```
-    
+
     But you can also drop the parentheses if that's the only argument.
-    
+
     ```swift
     someFunctionExpectingAnIntegerClosure { n * 2 }
     ```
@@ -277,11 +279,11 @@ Parts in the Series
     exists so that you can call functions which take closures as if they *don't*
     take closures, but rather the argument the closure itself takes. But of
     course, this leads the Swift book to include the following warning:
-    
+
     > **Note:** Overusing autoclosures can make your code hard to understand.
     > The context and function name should make it clear that the evaluation is
     > being deferred.
-    
+
     Yes, care needed indeed. (Or, perhaps, you could just avoid adding more
     special syntax that leads to unexpected behaviors?)
 
@@ -300,7 +302,7 @@ Parts in the Series
     to learn it. You could guess (even if you hadn't already seen) where this
     lands me between Rust and Swift.
 
-This post is incredibly long, but I blame that on the (frankly incredible) 
+This post is incredibly long, but I blame that on the (frankly incredible)
 number of variants Swift has on the same concept.
 
 [early on]: /2015/rust-and-swift-ii.html

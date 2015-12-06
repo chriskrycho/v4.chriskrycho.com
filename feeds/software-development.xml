@@ -12,6 +12,7 @@
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -51,6 +52,7 @@ let matchedValue = match matchee {
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Previous: Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Next Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -157,6 +159,7 @@ let matchedValue = match matchee {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -295,6 +298,7 @@ fn main() {
 &lt;li&gt;Pattern matching and the value of expression blocks.&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -349,6 +353,7 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -422,6 +427,7 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;p&gt;I’ve been working on learning Swift over the past couple weeks, and had spent the month prior to that doing a deep first dive on Rust. This kind of approach, learning two languages basically at the same time, is entirely new to me, and for good reason. Programming languages are not trivial to learn, and to learn them meaningfully one must practice with them a great deal.&lt;/p&gt;
@@ -503,6 +509,7 @@ else {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -543,6 +550,7 @@ else {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -577,6 +585,7 @@ else {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -635,6 +644,7 @@ else {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
