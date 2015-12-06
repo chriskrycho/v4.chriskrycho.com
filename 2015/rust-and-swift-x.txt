@@ -2,6 +2,7 @@
 Title: Rust and Swift (x)
 Subtitle: Classes and structs (product types), and reference and value types.
 Date: 2015-12-06 11:25
+Tags: listicles, software development
 Series:
   Title: Rust and Swift
   Part: 10

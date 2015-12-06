@@ -1,5 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Tue, 10 Nov 2015 06:15:00 -0500</lastBuildDate><item><title>Rust and Swift (ix)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-ix.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Sun, 06 Dec 2015 11:25:00 -0500</lastBuildDate><item><title>Rust and Swift (x)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-x.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
+&lt;section id="parts-in-the-series" class="level2"&gt;
+&lt;h2&gt;Parts in the Series&lt;/h2&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Classes and structs (product types), and reference and value types.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Swift and Rust both have “product types” as well as the &lt;code&gt;enum&lt;/code&gt; “sum types.” In Rust, these are &lt;code&gt;struct&lt;/code&gt; types; Swift splits them into &lt;code&gt;class&lt;/code&gt;es and &lt;code&gt;struct&lt;/code&gt;s.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;“Product types” will be much more familiar to programmers coming from a C-like background, or indeed most object-oriented programming languages: these are the same basic kind of thing as classes, structs, and objects in other languages. These include &lt;em&gt;all&lt;/em&gt; the value types which compose them, unlike sum types—&lt;code&gt;enum&lt;/code&gt;—which have &lt;em&gt;only one&lt;/em&gt; of the value types which compose them.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Right off the bat, I note the Swift book’s somewhat amusing reticence to call out C and C-descended languages:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Unlike other programming languages, Swift does not require you to create separate interface and implementation files for custom classes and structures.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Because there’s such a long list of languages not directly descended from C which do that, right? 😉&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Rust differs not only from Swift but from every other modern language I have used in not having a constructor &lt;em&gt;syntax&lt;/em&gt; for its instantiations. Whereas C++ has &lt;code&gt;new NameOfType()&lt;/code&gt; and Python has &lt;code&gt;NameOfType()&lt;/code&gt; and Swift has &lt;code&gt;NameOfType()&lt;/code&gt;, “constructors” for Rust &lt;code&gt;struct&lt;/code&gt;s are just functions which return an instance constructed using literal syntax, by convention &lt;code&gt;NameOfType::new()&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Let’s make a &lt;code&gt;struct&lt;/code&gt; defining a location in a plane, you might do this in Swift (leaving aside initializer values; I’ll come back to those later). These definitions look &lt;em&gt;very&lt;/em&gt; similar. Swift:&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;struct Point {
+    var x: Double
+    var y: Double
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Rust:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;struct Point {
+    x: f64,
+    y: f64,
+}&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Creating the types looks a little different, though. Here’s a constructor in Swift:&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;let point = Point(x: 0, y: 0)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And the two ways we could construct the type in Rust, a literal constructor (fairly similar to constructing &lt;code&gt;dict&lt;/code&gt; literals in Python or object literals in JavaScript):&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;let point = Point { x: 0.0, y: 0.0 };&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or a constructor method, &lt;code&gt;new&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;// &amp;quot;Constructor&amp;quot;
+impl Point {
+    fn new(x: f64, y: f64) -&amp;gt; Point {
+        Point { x: x, y: y }
+    }
+}
+
+let another_point = Point::new(0, 0);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Observe: these two things in Rust are the same under the covers (though if &lt;code&gt;Point&lt;/code&gt;s had non-public internals, they would be non-trivially different: you couldn’t construct it with its private members externally). As usual, Rust opts to keep the language relatively small in these core areas. Given the plethora of ways you can construct something in e.g. C++, I count that a big win.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Another difference: Swift has &lt;em&gt;syntax&lt;/em&gt; for default values; Rust uses a &lt;code&gt;trait&lt;/code&gt; instead. In Swift, you simply supply the default value in the definition of the &lt;code&gt;struct&lt;/code&gt; or &lt;code&gt;class&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;struct Point {
+    var x = 0.0
+    var y = 0.0
+}
+
+let point = Point()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In Rust, you use &lt;code&gt;std::default::Default&lt;/code&gt;, which provides a standard value for a given type, and for simple types can be supplied by the compiler even for custom types. Here is the equivalent Rust code:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;use std::default::Default;
+
+#[derive(Default)]
+struct Point {
+    x: f64,
+    y: f64,
+}
+
+let point = Point::default();&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is reasonable enough, but we can also supply our own custom implementation if we so desire:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;use std::default::Default;
+
+struct Point {
+    x: f64,
+    y: f64,
+}
+
+impl Default for Point {
+    fn default() -&amp;gt; Point {
+        Point { x: 0.0, y: 0.0 }
+    }
+}
+
+let point = Point::default();&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Of course, this is trivial for this type, but you can see how it could be useful for more complex types.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The tradeoffs here are our usual suspects: Rust’s re-use of an existing concept/tool within the language (&lt;code&gt;trait&lt;/code&gt;) vs. Swift’s use of syntax. Rust is slightly more explicit, making it obvious that a default value is being created—but Swift is perfectly readable and the syntax is consistent with many other languages, and it &lt;em&gt;is&lt;/em&gt; shorter.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Both languages use &lt;code&gt;.&lt;/code&gt; syntax for member access. Swift:&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;println(&amp;quot;The point is: \(point.x), \(point.y)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Rust:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;println!(&amp;quot;The point is {:}, {:}&amp;quot;, point.x, point.y);&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Swift lets you define items &lt;em&gt;within&lt;/em&gt; a struct as mutable or constant. So you can create a variable struct instance, with some of its items immutable:&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;struct PointOnZAxis {
+    var x: Double
+    var y: Double
+    let z = 0.0
+}
+
+var point = PointOnZAxis(x: 4.0, 5.0)
+point.x = 5.0
+point.y = 6.0
+// This wouldn&amp;#39;t compile, though:
+// point.z = 1.0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is pretty handy for a lot of object-oriented programming approaches.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;And Rust doesn’t have it. There are ways to accomplish the same thing; this isn’t the end of the world. Still, it’s an interesting omission, and it’s very much by design. Rust &lt;em&gt;used&lt;/em&gt; to have this feature, and dropped it—and for good reason. Say you had a mutable field in a mutable struct, and then an immutable reference to it; should the mutable field be mutable, or immutable, with that reference?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The Rusty way to do this is to differentiate between public and private data. The above examples don’t make the public/private distinction particularly clear, because they assume everything is within the same module. However, many times, this will not be the case.&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;mod geometry {
+    pub struct Point {
+        x: f64,
+        pub y: f64,
+    }
+
+    impl Point {
+        pub fn new() -&amp;gt; Point {
+            Point { x: 0.0, y: 0.0 }
+        }
+
+        pub fn set_x(&amp;amp;mut self, x: f64) {
+            self.x = x;
+        }
+    }
+}
+
+fn main() {
+    // Won&amp;#39;t compile: the `x` field is private.
+    // let mut p = geometry::Point { x: 0.0, y: 0.0 };
+
+    // Will compile: the `new` method is public.
+    let mut p = geometry::Point::new();
+
+    // Won&amp;#39;t compile: `x` isn&amp;#39;t public.
+    // p.x = 4.0;
+    // You can use the setter, though:
+    p.set_x(4.0);
+
+    // You *can* set `y` directly, though, because it&amp;#39;s public.
+    p.y = 14.0;
+
+    // You can&amp;#39;t set fields either way if the instance is immutable.
+    let q = geometry::Point::new();
+
+    // This fails because `set_x` requires a mutable reference, but `q` is
+    // immutable.
+    // q.set_x(4.0);
+
+    // This fails because `q` is immutable, and so all its fields are, too.
+    // q.y = 14.0;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;This is an interesting way of handling this issue. Rust takes the fairly standard use of information hiding (one of the basic principles of most object-oriented programming techniques) and combines it with the language’s normal mutability rules to make it so that the mutability of any given instance data is quite clear: all public members are just as mutable as the struct. If a member isn’t potentially publicly mutable, it isn’t publicly accessible. I really like this, though it took some mental readjustment.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;There’s one other difference here, and it’s actually one of the areas Swift and Rust diverge substantially. Rust has &lt;code&gt;struct&lt;/code&gt; for all product types; Swift splits them into &lt;code&gt;struct&lt;/code&gt; types and &lt;code&gt;class&lt;/code&gt; types.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Swift &lt;code&gt;class&lt;/code&gt;es have inheritance; there is presently &lt;em&gt;no&lt;/em&gt; inheritance in Rust.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Additionally, whereas Rust determines whether to use pass-by-reference or -value depending on details of the type (whether it implements the &lt;code&gt;Copy&lt;/code&gt; &lt;code&gt;trait&lt;/code&gt;) and expected arguments to a function, Swift makes that distinction between &lt;code&gt;class&lt;/code&gt; (pass-by-reference) and &lt;code&gt;struct&lt;/code&gt; (pass-by-value) types. Quirky.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Not bad, &lt;em&gt;per se&lt;/em&gt;. But quirky.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;One consequence of this: in Rust, you’re always rather explicit about whether you’re accessing things by value vs. by reference. Not so in Swift; you have to remember whether the item you’re touching is a &lt;code&gt;struct&lt;/code&gt; type or a &lt;code&gt;class&lt;/code&gt; type, so that you can &lt;em&gt;remember&lt;/em&gt; whether a given assignment or function call results in a reference or a copy. This is necessary because Swift doesn’t let you make that explicit (trying to hide the memory management from you). And it’s not alone in that, of course; many other high-level languages obscure that for convenience but still require you to think about it in certain circumstances. I’ve been bitten in the past by the value/reference distinction when thinking through the behavior of Python objects, for example, so that’s not a critique of Swift. Moreover, having the distinction between &lt;code&gt;struct&lt;/code&gt; and &lt;code&gt;class&lt;/code&gt; types does let you be &lt;em&gt;more&lt;/em&gt; explicit than you might in e.g. Python about how given data will be handled.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I won’t lie, though: I like Rust’s approach better. (Shocking, I know.)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;All that nice initializer syntax for Swift &lt;code&gt;struct&lt;/code&gt; types is absent for its &lt;code&gt;class&lt;/code&gt; types, which seems strange to me.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Swift supplies some syntax for object identity, since it’s useful to know not only whether two &lt;code&gt;class&lt;/code&gt; instances have the same data, but are in fact the same instance. You can use &lt;code&gt;===&lt;/code&gt; and &lt;code&gt;!==&lt;/code&gt;. Handy enough. To get at this kind of equivalence in Rust, you have to use raw pointers (which are often but not always &lt;code&gt;unsafe&lt;/code&gt;; you can do this specific comparison &lt;em&gt;without&lt;/em&gt; being &lt;code&gt;unsafe&lt;/code&gt;, for example) to check whether the memory addresses are the same.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Previous: Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 06 Dec 2015 11:25:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-12-06:2015/rust-and-swift-x.html</guid><category>listicles</category><category>software development</category></item><item><title>Rust and Swift (ix)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-ix.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
 &lt;section id="parts-in-the-series" class="level2"&gt;
 &lt;h2&gt;Parts in the Series&lt;/h2&gt;
 &lt;ol type="1"&gt;
