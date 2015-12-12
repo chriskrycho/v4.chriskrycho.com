@@ -758,6 +758,8 @@ sup[id^="fnref:"] a {
     }
 
     ul {
+        list-style-type: none;
+
         li {
             line-height: $line_height_min;
             padding: {
