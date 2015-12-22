@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (x)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -80,7 +80,7 @@
 <h1>Rust and Swift (x)</h1>
 <h2>Classes and structs (product types), and reference and value types.</h2>    </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html"><i class="fa fa-fw fa-link"></i></a>December 06, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/listicles/">#listicles</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-x.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html"><i class="fa fa-fw fa-link"></i></a>December 06, 2015 (updated December 22, 2015)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/listicles/">#listicles</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-x.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
@@ -235,7 +235,8 @@ fn main() {
 <li><p>There’s one other difference here, and it’s actually one of the areas Swift and Rust diverge substantially. Rust has <code>struct</code> for all product types; Swift splits them into <code>struct</code> types and <code>class</code> types.</p></li>
 <li><p>Swift <code>class</code>es have inheritance; there is presently <em>no</em> inheritance in Rust.</p></li>
 <li><p>Additionally, whereas Rust determines whether to use pass-by-reference or -value depending on details of the type (whether it implements the <code>Copy</code> <code>trait</code>) and expected arguments to a function, Swift makes that distinction between <code>class</code> (pass-by-reference) and <code>struct</code> (pass-by-value) types. Quirky.</p></li>
-<li><p>Not bad, <em>per se</em>. But quirky.</p></li>
+<li><p>Not bad, <em>per se</em>. But quirky.</p>
+<p><strong>Edit:</strong> I recently bumped into some discussion of data types in C♯ along with C, C++, and Java (<a href="http://joeduffyblog.com/2015/12/19/safe-native-code/">here</a>) and discovered that Swift is stealing this idea from C♯, which <a href="https://msdn.microsoft.com/en-us/library/0taef578.aspx">makes the same copy/reference distinction</a> between <code>struct</code> and <code>class</code>.</p></li>
 <li><p>One consequence of this: in Rust, you’re always rather explicit about whether you’re accessing things by value vs. by reference. Not so in Swift; you have to remember whether the item you’re touching is a <code>struct</code> type or a <code>class</code> type, so that you can <em>remember</em> whether a given assignment or function call results in a reference or a copy. This is necessary because Swift doesn’t let you make that explicit (trying to hide the memory management from you). And it’s not alone in that, of course; many other high-level languages obscure that for convenience but still require you to think about it in certain circumstances. I’ve been bitten in the past by the value/reference distinction when thinking through the behavior of Python objects, for example, so that’s not a critique of Swift. Moreover, having the distinction between <code>struct</code> and <code>class</code> types does let you be <em>more</em> explicit than you might in e.g. Python about how given data will be handled.</p></li>
 <li><p>I won’t lie, though: I like Rust’s approach better. (Shocking, I know.)</p></li>
 <li><p>All that nice initializer syntax for Swift <code>struct</code> types is absent for its <code>class</code> types, which seems strange to me.</p></li>
