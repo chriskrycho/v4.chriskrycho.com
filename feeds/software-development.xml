@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Fri, 25 Dec 2015 07:48:00 -0500</lastBuildDate><item><title>2015-12-25 07:48</title><link>http://www.chriskrycho.com/2015/2015-12-25-0748.html</link><description>&lt;p&gt;Christmas Eve, and I’m enjoying delicious coffee, getting my budget caught up, and doing some writing. Huzzah.&lt;/p&gt;
-&lt;div id="refs" class="references"&gt;
-
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 25 Dec 2015 07:48:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-12-25:2015/2015-12-25-0748.html</guid><category>software development</category></item><item><title>2015-12-21 08:05</title><link>http://www.chriskrycho.com/2015/2015-12-21-0805.html</link><description>&lt;p&gt;Somehow I’ve never made much (or really &lt;em&gt;any&lt;/em&gt;) use of JetBrains IDEs’ “scopes” concept before. Quite handy.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Tue, 22 Dec 2015 13:30:00 -0500</lastBuildDate><item><title>2015-12-21 08:05</title><link>http://www.chriskrycho.com/2015/2015-12-21-0805.html</link><description>&lt;p&gt;Somehow I’ve never made much (or really &lt;em&gt;any&lt;/em&gt;) use of JetBrains IDEs’ “scopes” concept before. Quite handy.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
