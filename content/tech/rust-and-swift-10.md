@@ -2,10 +2,11 @@
 Title: Rust and Swift (x)
 Subtitle: Classes and structs (product types), and reference and value types.
 Date: 2015-12-06 11:25
-Tags: listicles, software development 
+Tags: listicles, software development
 Series:
   Title: Rust and Swift
   Part: 10
+Modified: 2015-12-22 13:30
 ---
 
 <i class="editorial">I am reading through the Swift book, and comparing it to
@@ -293,6 +294,11 @@ Parts in the Series
 
 -   Not bad, *per se*. But quirky.
 
+    **Edit:** I recently bumped into some discussion of data types in C♯ along
+    with C, C++, and Java ([here][midori]) and discovered that Swift is stealing
+    this idea from C♯, which [makes the same copy/reference distinction][C♯]
+    between `struct` and `class`.
+
 -   One consequence of this: in Rust, you're always rather explicit about
     whether you're accessing things by value vs. by reference. Not so in Swift;
     you have to remember whether the item you're touching is a `struct` type or
@@ -322,3 +328,6 @@ Parts in the Series
 ---
 
 -  [Previous: Sum types (`enum`s) and more on pattern matching.][9]
+
+[midori]: http://joeduffyblog.com/2015/12/19/safe-native-code/
+[C♯]: https://msdn.microsoft.com/en-us/library/0taef578.aspx
