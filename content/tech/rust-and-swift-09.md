@@ -3,7 +3,7 @@ Title: Rust and Swift (ix)
 Subtitle: Sum types (`enum`s) and more on pattern matching
 Tags: software development, listicles
 Date: 2015-11-09 22:20
-Modified: 2015-11-10 06:15
+Modified: 2016-01-02 21:54
 Series:
   Title: Rust and Swift
   Part: 9
@@ -74,13 +74,35 @@ Parts in the Series
     noted just above. I expect these exist primarily for ease of interoperation
     with Objective-C.
 
--   Rust doesn't have anything like this, at least that I can think of. The main
-    place it would be useful would be for foreign function interfaces (as in
-    Swift), and this is one of several such gaps in Rust, along with the lack of
-    a straightforward way to map to C's `union` types. There are trade offs in
-    terms of adding the functionality to the language, though, as it
+-   ~~Rust doesn't have anything like this, at least that I can think of. The
+    main place it would be useful would be for foreign function interfaces (as
+    in Swift), and this is one of several such gaps in Rust,~~ along with the
+    lack of a straightforward way to map to C's `union` types. ~~There are trade
+    offs in terms of adding the functionality to the language, though, as it
     substantially increases the complexity of what an enum value can be,
-    I think.
+    I think.~~
+
+    **Edit:** This was incorrect. From the [Rust Reference] section on [Enumerations]:
+
+    > Enums have a discriminant. You can assign them explicitly:
+    >
+    > ```rust
+    > enum Foo {
+    >     Bar = 123,
+    > }
+    > ```
+    >
+    > If a discriminant isn't assigned, they start at zero, and add one for each
+    > variant, in order.
+    >
+    > You can cast an enum to get this value:
+    >
+    > ```rust
+    > let x = Foo::Bar as u32; // x is now 123u32
+    > ```
+    >
+    > This only works as long as none of the variants have data attached. If it
+    > were `Bar(i32)`, this is disallowed.
 
 -   Initialization of Swift's raw-valued enum type is quite similar, and
     pleasantly so, to Python's initialization of enums.
@@ -140,6 +162,8 @@ Parts in the Series
         [e005: Allocate it where?][e005]
 
 [_Maybe Haskell_]: https://gumroad.com/l/maybe-haskell
+[Rust Reference]: https://doc.rust-lang.org/reference.html
+[Enumerations]: https://doc.rust-lang.org/reference.html#enumerations
 [points out]: https://alpha.app.net/jws/post/65990633
 [forum]: https://users.rust-lang.org/t/recursive-enum-types/2938
 [New Rustacean]: http://www.newrustacean.com
