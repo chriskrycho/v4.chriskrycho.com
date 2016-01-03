@@ -162,6 +162,8 @@ Parts in the Series
         [e005: Allocate it where?][e005]
 
 [_Maybe Haskell_]: https://gumroad.com/l/maybe-haskell
+[Rust Reference]: https://doc.rust-lang.org/reference.html
+[Enumerations]: https://doc.rust-lang.org/reference.html#enumerations
 [points out]: https://alpha.app.net/jws/post/65990633
 [forum]: https://users.rust-lang.org/t/recursive-enum-types/2938
 [New Rustacean]: http://www.newrustacean.com
