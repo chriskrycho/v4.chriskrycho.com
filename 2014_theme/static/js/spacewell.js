@@ -10,7 +10,7 @@
     }
 
     var patt = /([\w\d‘’“”\)]+)(—|&mdash;|&#8212;|&x2014;)([\w\d‘’“”\(]+)/g;
-    var repl = '<span style="whitespace: nowrap">$1&hairsp;$2&hairsp;$3</span>';
+    var repl = '<span style="white-space: nowrap">$1&hairsp;$2&hairsp;$3</span>';
 
     // TODO: Account for e.g. when followed by another <span>, etc.
 
@@ -26,7 +26,7 @@
       return;
     }
 
-    var span = '<span style="whitespace: nowrap">';
+    var span = '<span style="white-space: nowrap">';
     var unspan = '</span>';
 
     // Do numbers *first*. Include a variety of ways digits might be constructed
