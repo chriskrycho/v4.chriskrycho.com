@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 02 Jan 2016 21:54:00 -0500</lastBuildDate><item><title>2016-01-02-1432</title><link>http://www.chriskrycho.com/2016/2016-01-02-1432.html</link><description>&lt;p&gt;So you like GitHub pull requests but not so much the resulting merge commits? &lt;a href="https://blog.spreedly.com/2014/06/24/merge-pull-request-considered-harmful/"&gt;Have your 🍰 and eat it too.&lt;/a&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 08 Jan 2016 12:08:00 -0500</lastBuildDate><item><title>2016-01-08 12:08</title><link>http://www.chriskrycho.com/2016/2016-01-08-1208.html</link><description>&lt;p&gt;Just wrapped up 3.5 years of working for one company. I’ll start elsewhere on the 19th. Always feels a bit odd. Good. But odd.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 08 Jan 2016 12:08:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-01-08:2016/2016-01-08-1208.html</guid></item><item><title>2016-01-04 07:50</title><link>http://www.chriskrycho.com/2016/2016-01-04-0750.html</link><description>&lt;p&gt;This is definitely an Arvo Pärt kind of morning as I wrap up my last week of work with this client.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 04 Jan 2016 07:50:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-01-04:2016/2016-01-04-0750.html</guid><category>music</category></item><item><title>2016-01-02-1432</title><link>http://www.chriskrycho.com/2016/2016-01-02-1432.html</link><description>&lt;p&gt;So you like GitHub pull requests but not so much the resulting merge commits? &lt;a href="https://blog.spreedly.com/2014/06/24/merge-pull-request-considered-harmful/"&gt;Have your 🍰 and eat it too.&lt;/a&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
