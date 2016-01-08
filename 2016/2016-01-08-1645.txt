@@ -1,0 +1,12 @@
+---
+Title: 2016-01-08 16:45
+Date: 2016-01-08 16:45
+Template: formats/micro
+...
+
+
+Editing [Winning Slowly] 4.01 for release on Tuesday. I accidentally did a 5
+minute monologue—apparently I’m used to soloing on [New Rustacean]!
+
+[Winning Slowly]: http://www.winningslowly.org/
+[New Rustacean]: http://www.newrustacean.com/
