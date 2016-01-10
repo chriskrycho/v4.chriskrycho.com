@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 08 Jan 2016 16:45:00 -0500</lastBuildDate><item><title>2016-01-08 16:45</title><link>http://www.chriskrycho.com/2016/2016-01-08-1645.html</link><description>&lt;p&gt;Editing &lt;a href="http://www.winningslowly.org/"&gt;Winning Slowly&lt;/a&gt; 4.01 for release on Tuesday. I accidentally did a 5 minute monologue—apparently I’m used to soloing on &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt;!&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 09 Jan 2016 20:58:00 -0500</lastBuildDate><item><title>2016-01-09 20:58</title><link>http://www.chriskrycho.com/2016/2016-01-09-2058.html</link><description>&lt;p&gt;Published my tenth full episode (and twelfth total) of &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt; today. Researching for, writing, recording, and editing the 17-minute, 23-second episode took a total of seven and a half hours.&lt;/p&gt;
+&lt;p&gt;Podcasting is a &lt;em&gt;lot&lt;/em&gt; of work, but I still really enjoy it.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 08 Jan 2016 16:45:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-01-08:2016/2016-01-08-1645.html</guid></item><item><title>2016-01-08 12:08</title><link>http://www.chriskrycho.com/2016/2016-01-08-1208.html</link><description>&lt;p&gt;Just wrapped up 3.5 years of working for one company. I’ll start elsewhere on the 19th. Always feels a bit odd. Good. But odd.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 09 Jan 2016 20:58:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-01-09:2016/2016-01-09-2058.html</guid><category>podcasting</category></item><item><title>2016-01-08 16:45</title><link>http://www.chriskrycho.com/2016/2016-01-08-1645.html</link><description>&lt;p&gt;Editing &lt;a href="http://www.winningslowly.org/"&gt;Winning Slowly&lt;/a&gt; 4.01 for release on Tuesday. I accidentally did a 5 minute monologue—apparently I’m used to soloing on &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt;!&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 08 Jan 2016 16:45:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-01-08:2016/2016-01-08-1645.html</guid><category>podcasting</category></item><item><title>2016-01-08 12:08</title><link>http://www.chriskrycho.com/2016/2016-01-08-1208.html</link><description>&lt;p&gt;Just wrapped up 3.5 years of working for one company. I’ll start elsewhere on the 19th. Always feels a bit odd. Good. But odd.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -2617,7 +2622,7 @@ print(get_an_enum_value(MyEnum.TWO))&lt;/code&gt;&lt;/pre&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 17 May 2015 22:13:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-17:2015/2015-05-17-2213.html</guid><category>M. Div.</category><category>SEBTS</category></item><item><title>2015-05-17 21:47</title><link>http://www.chriskrycho.com/2015/2015-05-17-2147.html</link><description>&lt;p&gt;A friend of my complimented me tonight, describing me as “intelligent and articulate.” I appreciated and accepted the compliment, but it struck me later: good as those things are, they are not the same as “wise” or “Godly”—and &lt;em&gt;those&lt;/em&gt; are what is necessary to teach well.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 17 May 2015 21:47:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-17:2015/2015-05-17-2147.html</guid></item><item><title>Easier</title><link>http://www.chriskrycho.com/2015/easier.html</link><description>&lt;p&gt;’Tis easier, I confess,&lt;br /&gt;

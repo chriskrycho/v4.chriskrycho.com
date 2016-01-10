@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-01-08T16:45:00-05:00</updated><entry><title>2016-01-08 16:45</title><link href="http://www.chriskrycho.com/2016/2016-01-08-1645.html" rel="alternate"></link><updated>2016-01-08T16:45:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-01-08:2016/2016-01-08-1645.html</id><summary type="html">&lt;p&gt;Editing &lt;a href="http://www.winningslowly.org/"&gt;Winning Slowly&lt;/a&gt; 4.01 for release on Tuesday. I accidentally did a 5 minute monologue—apparently I’m used to soloing on &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt;!&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-01-09T20:58:00-05:00</updated><entry><title>2016-01-09 20:58</title><link href="http://www.chriskrycho.com/2016/2016-01-09-2058.html" rel="alternate"></link><updated>2016-01-09T20:58:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-01-09:2016/2016-01-09-2058.html</id><summary type="html">&lt;p&gt;Published my tenth full episode (and twelfth total) of &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt; today. Researching for, writing, recording, and editing the 17-minute, 23-second episode took a total of seven and a half hours.&lt;/p&gt;
+&lt;p&gt;Podcasting is a &lt;em&gt;lot&lt;/em&gt; of work, but I still really enjoy it.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</summary></entry><entry><title>2016-01-08 12:08</title><link href="http://www.chriskrycho.com/2016/2016-01-08-1208.html" rel="alternate"></link><updated>2016-01-08T12:08:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-01-08:2016/2016-01-08-1208.html</id><summary type="html">&lt;p&gt;Just wrapped up 3.5 years of working for one company. I’ll start elsewhere on the 19th. Always feels a bit odd. Good. But odd.&lt;/p&gt;
+</summary><category term="podcasting"></category></entry><entry><title>2016-01-08 16:45</title><link href="http://www.chriskrycho.com/2016/2016-01-08-1645.html" rel="alternate"></link><updated>2016-01-08T16:45:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-01-08:2016/2016-01-08-1645.html</id><summary type="html">&lt;p&gt;Editing &lt;a href="http://www.winningslowly.org/"&gt;Winning Slowly&lt;/a&gt; 4.01 for release on Tuesday. I accidentally did a 5 minute monologue—apparently I’m used to soloing on &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt;!&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="podcasting"></category></entry><entry><title>2016-01-08 12:08</title><link href="http://www.chriskrycho.com/2016/2016-01-08-1208.html" rel="alternate"></link><updated>2016-01-08T12:08:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-01-08:2016/2016-01-08-1208.html</id><summary type="html">&lt;p&gt;Just wrapped up 3.5 years of working for one company. I’ll start elsewhere on the 19th. Always feels a bit odd. Good. But odd.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -733,7 +738,7 @@
 
 &lt;/div&gt;
 </summary><category term="M. Div."></category><category term="SEBTS"></category></entry><entry><title>2015-05-17 21:47</title><link href="http://www.chriskrycho.com/2015/2015-05-17-2147.html" rel="alternate"></link><updated>2015-05-17T21:47:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-17:2015/2015-05-17-2147.html</id><summary type="html">&lt;p&gt;A friend of my complimented me tonight, describing me as “intelligent and articulate.” I appreciated and accepted the compliment, but it struck me later: good as those things are, they are not the same as “wise” or “Godly”—and &lt;em&gt;those&lt;/em&gt; are what is necessary to teach well.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </summary></entry><entry><title>2015-05-17 07:45</title><link href="http://www.chriskrycho.com/2015/2015-05-17-0745.html" rel="alternate"></link><updated>2015-05-17T07:45:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-17:2015/2015-05-17-0745.html</id><summary type="html">&lt;p&gt;On the one hand, I really enjoy (many of) my seminary classes. On the other hand, having no time at all off between the end of my Spring semester and the beginning of the summer semester makes me want to be done with my M. Div.&lt;/p&gt;
