@@ -24,7 +24,24 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="podcasting"></category><category term="tweetstorm"></category></entry><entry><title>Rust and Swift (xi)</title><link href="http://www.chriskrycho.com/2016/rust-and-swift-xi.html" rel="alternate"></link><updated>2016-01-10T10:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-01-10:2016/rust-and-swift-xi.html</id><summary type="html">&lt;p&gt;I’ve still been (slowly) working through the Swift book and comparing Swift and Rust; I have another draft started which I’ll hopefully finish this week. And I still find the comparison deeply profitable. The two languages continue to evolve in interesting ways, and the comparison is all the more interesting &lt;a href="https://github.com/apple/swift"&gt;now that Swift is open-source&lt;/a&gt; and its future &lt;a href="https://github.com/apple/swift-evolution"&gt;open for community input&lt;/a&gt; (just as &lt;a href="https://github.com/rust-lang/rfcs"&gt;Rust is&lt;/a&gt;).&lt;/p&gt;
+</summary><category term="podcasting"></category><category term="tweetstorm"></category></entry><entry><title>Rust and Swift (xi)</title><link href="http://www.chriskrycho.com/2016/rust-and-swift-xi.html" rel="alternate"></link><updated>2016-01-10T10:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-01-10:2016/rust-and-swift-xi.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
+&lt;section id="parts-in-the-series" class="level2"&gt;
+&lt;h2&gt;Parts in the Series&lt;/h2&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Hopes for the next generation of systems programming.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;p&gt;I’ve still been (slowly) working through the Swift book and comparing Swift and Rust; I have another draft started which I’ll hopefully finish this week. And I still find the comparison deeply profitable. The two languages continue to evolve in interesting ways, and the comparison is all the more interesting &lt;a href="https://github.com/apple/swift"&gt;now that Swift is open-source&lt;/a&gt; and its future &lt;a href="https://github.com/apple/swift-evolution"&gt;open for community input&lt;/a&gt; (just as &lt;a href="https://github.com/rust-lang/rfcs"&gt;Rust is&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Something I’ve been thinking about for several months, and which the &lt;a href="https://overcast.fm/+CdSzsTIY/1:16:42"&gt;brief discussion of Swift, Go, and Rust&lt;/a&gt; at the end of the latest &lt;a href="http://atp.fm/episodes/151"&gt;Accidental Tech Podcast&lt;/a&gt; brought back to my mind, is the question of what the next generation of systems-level programming language should be. And my answer is: there shouldn’t be &lt;em&gt;just one&lt;/em&gt;. The best possible thing for the space, in many ways, is for there to be a healthy diversity of options and lots of competition in the space. We don’t want to have &lt;em&gt;ten&lt;/em&gt; different systems programming languages to deal with, I think—but three or four or five would be &lt;em&gt;much&lt;/em&gt; preferable to having one or two (closely related) as we have in the decades of C and C++ dominance.&lt;/p&gt;
 &lt;p&gt;Don’t get me wrong: both languages (and perhaps especially C) do many things exceptionally well. For all that they are (justly) maligned for some of their problems, the logevity of both C and C++ has a great deal to do with how well they fit the problem domain, and how much they’ve empowered developers to accomplish within that space (which is very, &lt;em&gt;very&lt;/em&gt; large).&lt;/p&gt;
 &lt;p&gt;The problem, though, at least as I see it, is that the existence of only two really serious systems programming languages for the last several decades has led a lot of developers to think that C and C++‘s ways of solving problems are the &lt;em&gt;only&lt;/em&gt; way to solve problems. The languages we use shape the way we think about possible solutions, and when a given language doesn’t recognize entire classes of different approaches, that deeply limits developers’ ability to tackle certain issues. (See also the interesting CppCast &lt;a href="http://cppcast.com/2015/10/andrei-alexandrescu/"&gt;interview with D’s Andrei Alexandrescu&lt;/a&gt; in which he makes similar points.)&lt;/p&gt;
@@ -36,6 +53,7 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
+&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -56,6 +74,7 @@
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Classes and structs (product types), and reference and value types.&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -200,6 +219,7 @@ fn main() {
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Previous: Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Next: Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -219,6 +239,7 @@ fn main() {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -357,6 +378,7 @@ let matchedValue = match matchee {
 &lt;li&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -480,6 +502,7 @@ fn main() {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -535,6 +558,7 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -609,6 +633,7 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;p&gt;I’ve been working on learning Swift over the past couple weeks, and had spent the month prior to that doing a deep first dive on Rust. This kind of approach, learning two languages basically at the same time, is entirely new to me, and for good reason. Programming languages are not trivial to learn, and to learn them meaningfully one must practice with them a great deal.&lt;/p&gt;
@@ -687,6 +712,7 @@ else {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -724,6 +750,7 @@ else {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -759,6 +786,7 @@ else {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -818,6 +846,7 @@ else {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
