@@ -41,7 +41,7 @@ worked regularly in Python and JavaScript.
 
 That experience has taught me that my current inability to see the utility of a
 given abstraction means little about the abstraction. It's primarily an
-indicator
+indicator of my own inexperience.
 
 To the question of the utility HKTs in general---in Haskell, Rust, or somewhere
 else---I don't have the knowledge myself (yet) to supply a good answer. Heck, I
