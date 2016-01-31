@@ -2,33 +2,33 @@
 <html lang="en">
 <head>
     <title>“I Don't Know When I'd Use That” &middot; Chris Krycho</title>
-    <meta name="description" content="I was reading an interesting Stack Overflow discussion of the value of higher-kinded types (hereafter HKTs), and noted someone repeatedly commenting, “But when would you use this in a real app?” To put it the way another blog post about HKTs (in Rust), they are “a feature people do not ..."/>
+    <meta name="description" content="I was reading an interesting Stack Overflow discussion of the value of higher-kinded types (hereafter HKTs</), and noted someone repeatedly commenting, “But when would you use this in a real app?” To put it the way another blog post about HKTs (in Rust), they are “a feature people do not ..."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
 <link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2016/i-dont-know-when-id-use-that.html"/>
     <meta property="og:title" content="“I Don't Know When I'd Use That”"/>
-    <meta property="og:description" content="I was reading an interesting Stack Overflow discussion of the value of higher-kinded types (hereafter HKTs), and noted someone repeatedly commenting, “But when would you use this in a real app?” To put it the way another blog post about HKTs (in Rust), they are “a feature people do not ..."/>
+    <meta property="og:description" content="I was reading an interesting Stack Overflow discussion of the value of higher-kinded types (hereafter HKTs</), and noted someone repeatedly commenting, “But when would you use this in a real app?” To put it the way another blog post about HKTs (in Rust), they are “a feature people do not ..."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/>
 <link rel="me" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
     <meta name="twitter:title" content="“I Don't Know When I'd Use That”"/>
-    <meta name="twitter:description" content="I was reading an interesting Stack Overflow discussion of the value of higher-kinded types (hereafter HKTs), and noted someone repeatedly commenting, “But when would you use this in a real app?” To put it the way another blog post about HKTs (in Rust), they are “a feature people do not ..."/>
+    <meta name="twitter:description" content="I was reading an interesting Stack Overflow discussion of the value of higher-kinded types (hereafter HKTs</), and noted someone repeatedly commenting, “But when would you use this in a real app?” To put it the way another blog post about HKTs (in Rust), they are “a feature people do not ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -80,19 +80,19 @@
 <h1>“I Don't Know When I'd Use That”</h1>
 <h2>Learning new languages as a way of stretching your brain.</h2>    </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2016/i-dont-know-when-id-use-that.html"><i class="fa fa-fw fa-link"></i></a>October 17, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a></span><span><a href="http://www.chriskrycho.com/2016/i-dont-know-when-id-use-that.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2016/i-dont-know-when-id-use-that.html"><i class="fa fa-fw fa-link"></i></a>January 17, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a></span><span><a href="http://www.chriskrycho.com/2016/i-dont-know-when-id-use-that.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
 
         <div class="content">
 
-<p>I was reading an interesting Stack Overflow <a href="http://stackoverflow.com/questions/21170493/when-are-higher-kinded-types-useful">discussion</a> of the value of <a href="http://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala">higher-kinded types</a> (hereafter HKTs), and noted someone repeatedly commenting, “But when would you use this in a <em>real app</em>?” To put it the way another <a href="https://m4rw3r.github.io/rust-and-monad-trait/">blog post</a> about HKTs (in Rust), they are “a feature people do not really know what to do with.”</p>
+<p>I was reading an interesting Stack Overflow <a href="http://stackoverflow.com/questions/21170493/when-are-higher-kinded-types-useful">discussion</a> of the value of <a href="http://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala">higher-kinded types</a> (hereafter <abbr>HKTs&lt;/), and noted someone repeatedly commenting, “But when would you use this in a <em>real app</em>?” To put it the way another <a href="https://m4rw3r.github.io/rust-and-monad-trait/">blog post</a> about <abbr>HKTs</abbr> (in Rust), they are “a feature people do not really know what to do with.”</p>
 <p>Don’t get me wrong: I’m sympathetic to that desire for concrete examples. I’m interested in these kinds of things not primarily for their intellectual value but for their pragmatic value (though I don’t think those two are as distinct as many people do). I’d <em>also</em> love to see some more real-world examples in those discussions. All too often, the discussions of types in Haskell end up being quite abstract and academic—no surprise, given the language’s origin. But I’m also aware that quite often it’s difficult to see how a given kind of abstraction is useful without jumping into a language which has that abstraction available and <em>using</em> it.</p>
 <p>People often get turned off by Haskell (and other similarly high-abstraction languages like Scala) because of challenging terms like <em>monad</em>, <em>applicative</em>, <em>functor</em>, and so on. And again: I get that. To grok Haskell, you need to wrap your head around a lot of <em>math</em> ideas—mainly various properties of <em>sets</em>.</p>
 <p>But I remember feeling the same way six years ago when I started playing with JavaScript and jQuery and every tutorial out there simply assumed existing familiarity and comfort with functions as arguments or return values. Coming from the world of Fortran and C, my head ached for weeks as I tried to make sense of what I was seeing. Even when I finally got it, <em>I didn’t like it</em>. Over the last several years, though, I’ve become increasingly comfortable and even reliant on closures, composition of functions to transform data, and so on as I worked regularly in Python and JavaScript.</p>
 <p>That experience has taught me that my current inability to see the utility of a given abstraction means little about the abstraction. It’s primarily an indicator of my own inexperience.</p>
-<p>To the question of the utility HKTs in general—in Haskell, Rust, or somewhere else—I don’t have the knowledge myself (yet) to supply a good answer. Heck, I can’t even <em>explain</em> them very well. (<a href="http://adriaanm.github.io/research/2010/10/06/new-in-scala-2.8-type-constructor-inference/">Other people can, though!</a>) But I can say that reading <a href="https://gumroad.com/l/maybe-haskell"><em>Maybe Haskell</em></a> showed me clearly that such things can be very useful. Even if I am not yet comfortable using that tool, I see how learning to use it would be profitable in the long-term. And like any good tool, even if you don’t need it every day… when you want it, you <em>really</em> want it.</p>
+<p>To the question of the utility <abbr>HKTs</abbr> in general—in Haskell, Rust, or somewhere else—I don’t have the knowledge myself (yet) to supply a good answer. Heck, I can’t even <em>explain</em> them very well. (<a href="http://adriaanm.github.io/research/2010/10/06/new-in-scala-2.8-type-constructor-inference/">Other people can, though!</a>) But I can say that reading <a href="https://gumroad.com/l/maybe-haskell"><em>Maybe Haskell</em></a> showed me clearly that such things can be very useful. Even if I am not yet comfortable using that tool, I see how learning to use it would be profitable in the long-term. And like any good tool, even if you don’t need it every day… when you want it, you <em>really</em> want it.</p>
 <div id="refs" class="references">
 
 </div>

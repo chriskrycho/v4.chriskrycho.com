@@ -1,18 +1,18 @@
 ---
 Title: “I Don't Know When I'd Use That”
 Subtitle: Learning new languages as a way of stretching your brain.
-Date: 2016-10-17 10:00
+Date: 2016-01-17 10:00
 Tags: software development, programming languages
 ...
 
 I was reading an interesting Stack Overflow [discussion] of the value of
-[higher-kinded types] (hereafter HKTs), and noted someone repeatedly commenting,
-"But when would you use this in a *real app*?" To put it the way another [blog
-post] about HKTs (in Rust), they are "a feature people do not really know what
-to do with."
+[higher-kinded types][HKTs] (hereafter <abbr>HKTs</), and noted someone
+repeatedly commenting, "But when would you use this in a *real app*?" To put it
+the way another [blog post] about <abbr>HKTs</abbr> (in Rust), they are "a
+feature people do not really know what to do with."
 
 [discussion]: http://stackoverflow.com/questions/21170493/when-are-higher-kinded-types-useful
-[higher-kinded types]: http://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala
+[HKTs]: http://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala
 [blog post]: https://m4rw3r.github.io/rust-and-monad-trait/
 
 Don't get me wrong: I'm sympathetic to that desire for concrete examples. I'm
@@ -43,13 +43,14 @@ That experience has taught me that my current inability to see the utility of a
 given abstraction means little about the abstraction. It's primarily an
 indicator of my own inexperience.
 
-To the question of the utility HKTs in general---in Haskell, Rust, or somewhere
-else---I don't have the knowledge myself (yet) to supply a good answer. Heck, I
-can't even *explain* them very well. ([Other people can, though!][scala]) But I
-can say that reading [_Maybe Haskell_] showed me clearly that such things can be
-very useful. Even if I am not yet comfortable using that tool, I see how
-learning to use it would be profitable in the long-term. And like any good tool,
-even if you don't need it every day... when you want it, you *really* want it.
+To the question of the utility <abbr>HKTs</abbr> in general---in Haskell, Rust,
+or somewhere else---I don't have the knowledge myself (yet) to supply a good
+answer. Heck, I can't even *explain* them very well. ([Other people can,
+though!][scala]) But I can say that reading [_Maybe Haskell_] showed me clearly
+that such things can be very useful. Even if I am not yet comfortable using that
+tool, I see how learning to use it would be profitable in the long-term. And
+like any good tool, even if you don't need it every day... when you want it, you
+*really* want it.
 
 [scala]: http://adriaanm.github.io/research/2010/10/06/new-in-scala-2.8-type-constructor-inference/
 [_Maybe Haskell_]: https://gumroad.com/l/maybe-haskell
