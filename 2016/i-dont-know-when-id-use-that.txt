@@ -6,7 +6,7 @@ Tags: software development, programming languages
 ...
 
 I was reading an interesting Stack Overflow [discussion] of the value of
-[higher-kinded types][HKTs] (hereafter <abbr>HKTs</), and noted someone
+[higher-kinded types][HKTs] (hereafter <abbr>HKTs</abbr>), and noted someone
 repeatedly commenting, "But when would you use this in a *real app*?" To put it
 the way another [blog post] about <abbr>HKTs</abbr> (in Rust), they are "a
 feature people do not really know what to do with."
