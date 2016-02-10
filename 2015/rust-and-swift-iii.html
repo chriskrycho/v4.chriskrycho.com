@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (iii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -48,7 +48,7 @@
         <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
         <link rel="alternate" href="/feeds/talks.xml" type="application/rss+xml" title="Posts filed in in 'Talks''">
         <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
-        <link rel="alternate" href="/feeds/theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
 </head>
 <body>
     <header id="site-header">
@@ -67,7 +67,7 @@
                 <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title talks"><a href="http://www.chriskrycho.com/talks/">talks</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
-                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
             </ul>
         </nav>
 
@@ -107,7 +107,7 @@
 <ul>
 <li><p>I just hit operators in the Swift book. First question: are operators special syntax, or are they sugar for <code>protocol</code>s? (Every modern language I use or even have played with handles them as sugar for another language construct—Python, Ruby, Io, Elixir, and Rust, to name just a few ranging over a substantial variety of ages and styles.)</p></li>
 <li><p>Oh. I did the requisite digging, and operators are functions (which is okay) defined in the global namespace (<em>:sigh:</em>). I say “okay” rather than good because the justification offered is that this is the only way to make the operators work as binary operators between existing instances of types. But that elides the fact that, if that’s the case, it is so because of other language design decisions. This seems like a perfect place to use a <code>protocol</code>, but perhaps (unlike Rust’s <code>trait</code>) they’re not sufficiently capable to handle this? That’s an open question; I have no idea about the answer.</p></li>
-<li><p>Interestingly, Rust has several fewer operators than Swift, even apart from those mentioned in my <a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html">previous post</a>. It drops the pre- and post-increment operators entirely (as does Python), since their results can always be accomplished in other ways with less potential for confusion. Swift keeps them, no doubt in part because most (Objective) C programs are deeply familiar with them and with idioms associated with them.</p></li>
+<li><p>Interestingly, Rust has several fewer operators than Swift, even apart from those mentioned in my <a href="/2015/rust-and-swift-ii.html">previous post</a>. It drops the pre- and post-increment operators entirely (as does Python), since their results can always be accomplished in other ways with less potential for confusion. Swift keeps them, no doubt in part because most (Objective) C programs are deeply familiar with them and with idioms associated with them.</p></li>
 <li><p>I learned a few new things about Rust’s operators as well: the Boolean <code>||</code> and <code>&amp;&amp;</code> operators and its bit wise <code>|</code> and <code>&amp;</code> operators differ not only in that the former are <em>short-circuit</em> operators and the latter are not. Obviously you can also do things like bit-wise flag operations with the latter, but the reference emphasizes the short-circuiting behavior. This makes perfect sense, but it wasn’t something I’d ever considered explicitly before.</p></li>
 <li><p>There is no ternary operator in Rust, because of how it handles the relationship between expressions and statements. Swift keeps it. That’s an interesting reflection of differences in design: Rust dropped it because <code>if</code> blocks are expressions, so it’s redundant, and they have had a goal of removing unnecessary features. (See the discussion on dropping the ternary operator—with an interesting aside from Brendan Eich on JavaScript—<a href="https://github.com/rust-lang/rust/issues/1698">here</a>). Note that this is not a criticism of Swift, just an observation, though I do really like Rust’s expression-driven approach.</p></li>
 <li><p>The <code>??</code> “nil coalescing operator”, on the other hand, I actively dislike. This seems like shorthand for the sake of shorthand, partly necessitated by the existing drive toward shorthand with optional types in Swift. Sometimes brevity can lead to decreased clarity. Eliding too much, or subsuming it into shorthand, makes the language harder to hold in your head and requires you to slow down more for parsing each line.</p></li>
@@ -116,8 +116,8 @@
 </ul>
 <hr />
 <ul>
-<li><a href="/2015/rust-and-swift-ii.html">Previous: Basic types and the syntax around them.</a></li>
-<li><a href="/2015/rust-and-swift-iv.html">Next: Language design tradeoffs, highlighted by string manipulation.</a></li>
+<li><a href="/2015/rust-and-swift-ii.html"><strong>Previous:</strong> Basic types and the syntax around them.</a></li>
+<li><a href="/2015/rust-and-swift-iv.html"><strong>Next:</strong> Language design tradeoffs, highlighted by string manipulation.</a></li>
 </ul>
 <div id="refs" class="references">
 
@@ -163,7 +163,7 @@
             <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
         </li>
         <li class="section-title">
-            <a href="http://www.chriskrycho.com/feeds/theology.xml"><i class="fa fa-fw fa-rss"></i>theology</a>
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
         </li>
     </ul>
 </section>
@@ -174,7 +174,7 @@
         <li>Blog: <a href="http://www.chriskrycho.com/2016/trust-fame-and-deceit.html">Trust, Fame, and Deceit</a></li>
         <li>Talks: <a href="http://www.chriskrycho.com/2015/tolle-lege.html">Tolle Lege!</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2016/i-dont-know-when-id-use-that.html">“I Don't Know When I'd Use That”</a></li>
-        <li>Theology: <a href="http://www.chriskrycho.com/2015/power-and-mercy.html">Power and Mercy</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2016/a-humble-selfless-unity.html">A Humble, Selfless, Unity</a></li>
     </ul>
 </section></footer>
 

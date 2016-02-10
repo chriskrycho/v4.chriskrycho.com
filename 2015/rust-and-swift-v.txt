@@ -90,5 +90,5 @@ how much you learn.
 
 ---
 
-  - [Previous: Language design tradeoffs, highlighted by string manipulation.][4]
-  - [Next: Collection types and the difference between syntax and semantics.][6]
+  - [**Previous:** Language design tradeoffs, highlighted by string manipulation.][4]
+  - [**Next:** Collection types and the difference between syntax and semantics.][6]

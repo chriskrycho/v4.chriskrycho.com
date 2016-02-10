@@ -123,6 +123,9 @@ related languages) dominating the ecosystem. It will make it likelier that
 people will be more familiar with different programming paradigms. And that can
 only be a good thing, as far as I'm concerned.
 
+---
+
+-   [**Previous:** Classes and structs (product types), and reference and value types.][10]
 
 
 [^oop]: It is of course entirely possible to do non-classical OOP; the point is

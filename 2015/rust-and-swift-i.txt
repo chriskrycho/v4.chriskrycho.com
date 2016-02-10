@@ -125,4 +125,4 @@ Parts in the Series
 
 ---
 
-  - [Next: Basic types and the syntax around them.][2]
+  - [**Next:** Basic types and the syntax around them.][2]

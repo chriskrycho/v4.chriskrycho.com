@@ -164,5 +164,5 @@ Parts in the Series
 
 ---
 
-  - [Previous: The value (and challenge) of learning languages in parallel.][5]
-  - [Next: Pattern matching and the value of expression blocks.][7]
+  - [**Previous:** The value (and challenge) of learning languages in parallel.][5]
+  - [**Next:** Pattern matching and the value of expression blocks.][7]

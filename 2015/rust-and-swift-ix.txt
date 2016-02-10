@@ -173,5 +173,5 @@ Parts in the Series
 
 ---
 
--  [Previous: Functions, closures, and an awful lot of Swift syntax.][8]
--  [Next Classes and structs (product types), and reference and value types.][10]
+-  [**Previous:** Functions, closures, and an awful lot of Swift syntax.][8]
+-  [**Next:** Classes and structs (product types), and reference and value types.][10]

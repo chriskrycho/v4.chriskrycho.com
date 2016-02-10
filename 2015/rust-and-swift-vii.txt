@@ -136,5 +136,5 @@ Parts in the Series
 
 ---
 
-  - [Previous: Collection types and the difference between syntax and semantics.][6]
-  - [Next: Functions, closures, and an awful lot of Swift syntax.][8]
+  - [**Previous:** Collection types and the difference between syntax and semantics.][6]
+  - [**Next:** Functions, closures, and an awful lot of Swift syntax.][8]

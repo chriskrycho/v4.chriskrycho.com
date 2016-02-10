@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Sat, 06 Feb 2016 13:45:00 -0500</lastBuildDate><item><title>2016-02-06 13:45</title><link>http://www.chriskrycho.com/2016/2016-02-06-1345.html</link><description>&lt;p&gt;Just noted a way my programming languages snobbery has increased: if you have &lt;code&gt;nil&lt;/code&gt;/&lt;code&gt;null&lt;/code&gt;/etc. instead of &lt;code&gt;Maybe&lt;/code&gt;/&lt;code&gt;Option&lt;/code&gt;/etc., I say NOPE NOPE NOPE.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Sun, 07 Feb 2016 16:00:00 -0500</lastBuildDate><item><title>2016-02-07 16:00</title><link>http://www.chriskrycho.com/2016/2016-02-07-1600.html</link><description>&lt;p&gt;Spent the last little bit reading about Rust’s type system for the next episode of &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt;. Heady stuff.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 07 Feb 2016 16:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-07:2016/2016-02-07-1600.html</guid><category>podcasting</category><category>software development</category></item><item><title>2016-02-06 13:45</title><link>http://www.chriskrycho.com/2016/2016-02-06-1345.html</link><description>&lt;p&gt;Just noted a way my programming languages snobbery has increased: if you have &lt;code&gt;nil&lt;/code&gt;/&lt;code&gt;null&lt;/code&gt;/etc. instead of &lt;code&gt;Maybe&lt;/code&gt;/&lt;code&gt;Option&lt;/code&gt;/etc., I say NOPE NOPE NOPE.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -42,6 +46,10 @@
 &lt;p&gt;All of which is to say: C and C++ have been really useful tools in many ways, but having &lt;em&gt;only&lt;/em&gt; C and C++ available for serious systems programming work over the last decades has left many developers blind to or simply unaware of the real advantages other paradigms might offer them.&lt;/p&gt;
 &lt;p&gt;So going forward, I don’t want there to be &lt;em&gt;a winner&lt;/em&gt; in the systems programming space. I’d rather see D, Rust, Swift, Go, and maybe even a few other contenders all stay strong—finding their own niches and continually pushing each other and learning from each other. That will give us a space in which different languages are free to try out different approaches to the same problems, without being tied to the specific constraints faced by other languages. Built-in greenthreading? Go! Hindley-Milner types, memory safety, and zero runtime? Rust! Something in beween, highly expressive and with different type systems and tradeoffs around memory management, etc.? Swift, or D!&lt;/p&gt;
 &lt;p&gt;Having a robust, thriving set of competitors in the market will be good for the languages themselves. But it will also be good for developers. It will take off some of the blinders that come from a single language (or a pair of very closely related languages) dominating the ecosystem. It will make it likelier that people will be more familiar with different programming paradigms. And that can only be a good thing, as far as I’m concerned.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -218,8 +226,8 @@ fn main() {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Previous: Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Next: Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -289,8 +297,8 @@ let matchedValue = match matchee {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Previous: Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Next Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -399,6 +407,7 @@ let matchedValue = match matchee {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -486,7 +495,8 @@ fn main() {
 &lt;p&gt;This post is incredibly long, but I blame that on the (frankly incredible) number of variants Swift has on the same concept.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Previous: Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -573,8 +583,8 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Previous: Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Next: Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -648,8 +658,8 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;Previous: The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Next: Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -680,8 +690,8 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;p&gt;I have a long way to go in both languages, of course. Reading on nights and weekends, and the little bit of playing I’ve been able to do with each of them, is no replacement for just sinking my teeth into a project and finding the pain points. Nonetheless, I’m really glad to be learning these two languages &lt;em&gt;together&lt;/em&gt;. If you’re up for a challenge, try it sometime! You’ll be surprised how much you learn.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Previous: Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Next: Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -769,8 +779,8 @@ else {
 &lt;p&gt;This was the first section where it didn’t feel like Rust was just a clear overall “winner” over Swift. Some of the trade offs between the language designs are more apparent here, and I do appreciate the “ergonomics” of Swift in a number of these things.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Previous: Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;Next: The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -800,7 +810,7 @@ else {
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;I just hit operators in the Swift book. First question: are operators special syntax, or are they sugar for &lt;code&gt;protocol&lt;/code&gt;s? (Every modern language I use or even have played with handles them as sugar for another language construct—Python, Ruby, Io, Elixir, and Rust, to name just a few ranging over a substantial variety of ages and styles.)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Oh. I did the requisite digging, and operators are functions (which is okay) defined in the global namespace (&lt;em&gt;:sigh:&lt;/em&gt;). I say “okay” rather than good because the justification offered is that this is the only way to make the operators work as binary operators between existing instances of types. But that elides the fact that, if that’s the case, it is so because of other language design decisions. This seems like a perfect place to use a &lt;code&gt;protocol&lt;/code&gt;, but perhaps (unlike Rust’s &lt;code&gt;trait&lt;/code&gt;) they’re not sufficiently capable to handle this? That’s an open question; I have no idea about the answer.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Interestingly, Rust has several fewer operators than Swift, even apart from those mentioned in my &lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html"&gt;previous post&lt;/a&gt;. It drops the pre- and post-increment operators entirely (as does Python), since their results can always be accomplished in other ways with less potential for confusion. Swift keeps them, no doubt in part because most (Objective) C programs are deeply familiar with them and with idioms associated with them.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Interestingly, Rust has several fewer operators than Swift, even apart from those mentioned in my &lt;a href="/2015/rust-and-swift-ii.html"&gt;previous post&lt;/a&gt;. It drops the pre- and post-increment operators entirely (as does Python), since their results can always be accomplished in other ways with less potential for confusion. Swift keeps them, no doubt in part because most (Objective) C programs are deeply familiar with them and with idioms associated with them.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;I learned a few new things about Rust’s operators as well: the Boolean &lt;code&gt;||&lt;/code&gt; and &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; operators and its bit wise &lt;code&gt;|&lt;/code&gt; and &lt;code&gt;&amp;amp;&lt;/code&gt; operators differ not only in that the former are &lt;em&gt;short-circuit&lt;/em&gt; operators and the latter are not. Obviously you can also do things like bit-wise flag operations with the latter, but the reference emphasizes the short-circuiting behavior. This makes perfect sense, but it wasn’t something I’d ever considered explicitly before.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;There is no ternary operator in Rust, because of how it handles the relationship between expressions and statements. Swift keeps it. That’s an interesting reflection of differences in design: Rust dropped it because &lt;code&gt;if&lt;/code&gt; blocks are expressions, so it’s redundant, and they have had a goal of removing unnecessary features. (See the discussion on dropping the ternary operator—with an interesting aside from Brendan Eich on JavaScript—&lt;a href="https://github.com/rust-lang/rust/issues/1698"&gt;here&lt;/a&gt;). Note that this is not a criticism of Swift, just an observation, though I do really like Rust’s expression-driven approach.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The &lt;code&gt;??&lt;/code&gt; “nil coalescing operator”, on the other hand, I actively dislike. This seems like shorthand for the sake of shorthand, partly necessitated by the existing drive toward shorthand with optional types in Swift. Sometimes brevity can lead to decreased clarity. Eliding too much, or subsuming it into shorthand, makes the language harder to hold in your head and requires you to slow down more for parsing each line.&lt;/p&gt;&lt;/li&gt;
@@ -809,8 +819,8 @@ else {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Previous: Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Next: Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -831,6 +841,7 @@ else {
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -863,8 +874,8 @@ else {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Next: Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Previous: Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -913,7 +924,7 @@ else {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Next: Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 

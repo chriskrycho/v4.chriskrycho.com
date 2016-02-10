@@ -329,8 +329,8 @@ Parts in the Series
 
 ---
 
--  [Previous: Sum types (`enum`s) and more on pattern matching.][9]
--  [Next: Hopes for the next generation of systems programming.][11]
+-  [**Previous:** Sum types (`enum`s) and more on pattern matching.][9]
+-  [**Next:** Hopes for the next generation of systems programming.][11]
 
 [midori]: http://joeduffyblog.com/2015/12/19/safe-native-code/
 [C♯]: https://msdn.microsoft.com/en-us/library/0taef578.aspx
