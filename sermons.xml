@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+    <channel>
+        <title>Sermons by Chris Krycho</title>
+        <link>http://www.chriskrycho.com/sermons/</link>
+        <description>Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a software developer, writer, and podcaster, currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.</description>
+        <generator>Feeder 3 3.1.5(2620); Mac OS X Version 10.11.3 (Build 15D21) http://reinventedsoftware.com/feeder/</generator>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <language>en</language>
+        <copyright>2016 Chris Krycho</copyright>
+        <managingEditor>chris@krycho.com (Chris Krycho)</managingEditor>
+        <webMaster>chris@krycho.com (Chris Krycho)</webMaster>
+        <pubDate>Wed, 10 Feb 2016 16:01:36 -0500</pubDate>
+        <lastBuildDate>Wed, 10 Feb 2016 16:01:36 -0500</lastBuildDate>
+        <image>
+            <url>http://www.chriskrycho.com/images/sermons-1400.png</url>
+            <title>Chris Krycho</title>
+            <link>http://www.chriskrycho.com/sermons/</link>
+            <width>144</width>
+            <height>144</height>
+        </image>
+        <atom:link href="http://www.chriskrycho.com/sermons.xml" rel="self" type="application/rss+xml"/>
+        <itunes:author>Chris Krycho</itunes:author>
+        <itunes:summary><![CDATA[Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a software developer, writer, and podcaster, currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.]]></itunes:summary>
+        <itunes:keywords>sermon,Christianity,faith,evangelical,Reformed,baptist,Scripture,exegesis,expository,expositional</itunes:keywords>
+        <itunes:image href="http://www.chriskrycho.com/images/sermons-1400.png"/>
+        <itunes:explicit>no</itunes:explicit>
+        <itunes:owner>
+            <itunes:name>Chris Krycho</itunes:name>
+            <itunes:email>chris@krycho.com</itunes:email>
+        </itunes:owner>
+        <itunes:block>no</itunes:block>
+        <itunes:category text="Religion &amp; Spirituality">
+            <itunes:category text="Christianity"/>
+        </itunes:category>
+        <item>
+            <title>A Humble, Selfless, Unity</title>
+            <link>http://www.chriskrycho.com/2016/a-humble-selfless-unity.html</link>
+            <description><![CDATA[<p>Believers are called to a <em>humble, selfless, unity</em> which reflects the <em>humble, selfless, unity</em> of the Trinity.</p>
+<p>The following was written in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.</p>
+<p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from an epistle. Audio is from an old MacBook Pro pointed at the podium.</p>
+]]></description>
+            <pubDate>Tue, 09 Feb 2016 18:45:00 -0500</pubDate>
+            <enclosure url="http://cdn.chriskrycho.com/2016-02-09.m4a" length="17108682" type="audio/x-m4a"/>
+            <guid isPermaLink="false">E20E92FA-793F-49B2-9E94-ACA1B5A47976</guid>
+            <itunes:subtitle>Philippians 2:1–11</itunes:subtitle>
+            <itunes:summary><![CDATA[Believers are called to a *humble, selfless, unity* which reflects the *humble, selfless, unity* of the Trinity.
+
+The following was written in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.
+
+The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from an epistle. Audio is from an old MacBook Pro pointed at the podium.]]></itunes:summary>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:duration>21:57</itunes:duration>
+        </item>
+    </channel>
+</rss>
