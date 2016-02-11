@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-02-07T16:00:00-05:00</updated><entry><title>2016-02-07 16:00</title><link href="http://www.chriskrycho.com/2016/2016-02-07-1600.html" rel="alternate"></link><updated>2016-02-07T16:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-02-07:2016/2016-02-07-1600.html</id><summary type="html">&lt;p&gt;Spent the last little bit reading about Rust’s type system for the next episode of &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt;. Heady stuff.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-02-11T09:00:00-05:00</updated><entry><title>2016-02-11 09:00</title><link href="http://www.chriskrycho.com/2016/2016-02-11-0900.html" rel="alternate"></link><updated>2016-02-11T09:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-02-11:2016/2016-02-11-0900.html</id><summary type="html">&lt;p&gt;I’ve set up a podcast feed specifically for any sermons I preach going forward. You can subscribe these places:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://itunes.apple.com/us/podcast/sermons-by-chris-krycho/id1083193863?mt=2"&gt;&lt;i class="fa fa-fw fa-music"&gt;&lt;/i&gt; iTunes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://overcast.fm/p395569-ypBaG2"&gt;&lt;i class="fa fa-fw fa-play-circle"&gt;&lt;/i&gt; Overcast&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pca.st/slox"&gt;&lt;i class="fa fa-fw fa-play-circle-o"&gt;&lt;/i&gt; Pocket Casts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/sermons.xml"&gt;&lt;i class="fa fa-fw fa-rss"&gt;&lt;/i&gt; Direct&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As an aside: having done the starting-up dance for 4 podcasts now, it’s gotten pretty easy. 😉&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="podcasting"></category><category term="sermons"></category></entry><entry><title>2016-02-07 16:00</title><link href="http://www.chriskrycho.com/2016/2016-02-07-1600.html" rel="alternate"></link><updated>2016-02-07T16:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-02-07:2016/2016-02-07-1600.html</id><summary type="html">&lt;p&gt;Spent the last little bit reading about Rust’s type system for the next episode of &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt;. Heady stuff.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
