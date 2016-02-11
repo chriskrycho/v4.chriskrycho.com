@@ -17,6 +17,21 @@ Summary: >
 15 and 25 minutes long, and be on a text from an epistle. Video is from an old
 MacBook Pro pointed at the podium.</i>
 
+### Audio
+
+[Download](http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/2016-02-09.m4a)
+
+<audio
+    title="A Humble, Selfless, Unity"
+    controls="controls"
+    preload="metadata"
+    src="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/2016-02-09.m4a"
+    type="audio/m4a">
+    Sorry; your browser doesn't support m4a files. Try downloading the file
+    directly and playing it in iTunes or another media app.
+</audio>
+
+### Video
 <div class="iframe-wrapper four-to-three">
 <iframe src="https://player.vimeo.com/video/154810219" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/154810219">A Humble, Selfless Unity (Philippians 2:1&ndash;11)</a> from <a href="https://vimeo.com/chriskrycho">Chris Krycho</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
