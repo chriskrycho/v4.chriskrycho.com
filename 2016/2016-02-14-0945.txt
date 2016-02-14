@@ -1,0 +1,11 @@
+---
+Title: 2016-02-14 09:45
+Date: 2016-02-14 09:45
+Template: formats/micro
+Tags: software development
+...
+
+I'm seriously thinking about trying [Otto] to make distinct environments for
+personal development projects.
+
+[Otto]: https://www.hashicorp.com/blog/otto.html
