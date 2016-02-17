@@ -4,16 +4,16 @@
         <title>Sermons by Chris Krycho</title>
         <link>http://www.chriskrycho.com/sermons/</link>
         <description>Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a Reformed, evangelical Baptist currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.</description>
-        <generator>Feeder 3 3.1.5(2620); Mac OS X Version 10.11.3 (Build 15D21) http://reinventedsoftware.com/feeder/</generator>
+        <generator>Feeder 3 3.1.6(2632); Mac OS X Version 10.11.3 (Build 15D21) http://reinventedsoftware.com/feeder/</generator>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <language>en</language>
         <copyright>2016 Chris Krycho</copyright>
         <managingEditor>chris@krycho.com (Chris Krycho)</managingEditor>
         <webMaster>chris@krycho.com (Chris Krycho)</webMaster>
-        <pubDate>Wed, 10 Feb 2016 16:28:35 -0500</pubDate>
-        <lastBuildDate>Wed, 10 Feb 2016 16:28:35 -0500</lastBuildDate>
+        <pubDate>Wed, 17 Feb 2016 09:51:08 -0500</pubDate>
+        <lastBuildDate>Wed, 17 Feb 2016 09:51:09 -0500</lastBuildDate>
         <image>
-            <url>http://www.chriskrycho.com/images/sermons-1400.jpg</url>
+            <url>http://www.chriskrycho.com/images/ck-sermons-1400.jpg</url>
             <title>Chris Krycho</title>
             <link>http://www.chriskrycho.com/sermons/</link>
             <width>144</width>
@@ -23,8 +23,7 @@
         <itunes:author>Chris Krycho</itunes:author>
         <itunes:summary><![CDATA[Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a software developer, writer, and podcaster, currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.]]></itunes:summary>
         <itunes:keywords>sermon,Christianity,faith,evangelical,Reformed,baptist,Scripture,exegesis,expository,expositional</itunes:keywords>
-        <itunes:image href="http://www.chriskrycho.com/images/sermons-1400.jpg"/>
-        <itunes:explicit>no</itunes:explicit>
+        <itunes:image href="http://www.chriskrycho.com/images/ck-sermons-1400.jpg"/>
         <itunes:owner>
             <itunes:name>Chris Krycho</itunes:name>
             <itunes:email>chris@krycho.com</itunes:email>
@@ -49,7 +48,6 @@
 The following was written in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.
 
 The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from an epistle. Audio is from an old MacBook Pro pointed at the podium.]]></itunes:summary>
-            <itunes:explicit>no</itunes:explicit>
             <itunes:duration>21:57</itunes:duration>
         </item>
     </channel>
