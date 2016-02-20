@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 20 Feb 2016 08:14:00 -0500</lastBuildDate><item><title>2016-02-20 08:14</title><link>http://www.chriskrycho.com/2016/2016-02-20-0814.html</link><description>&lt;p&gt;&lt;a href="http://www.chriskrycho.com/2016/2016-02-20-0802.html"&gt;The upside to stepping away for a bit&lt;/a&gt;: I just found a bug in this code… which I introduced in December 2014. &lt;em&gt;:sigh:&lt;/em&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 20 Feb 2016 08:23:00 -0500</lastBuildDate><item><title>2016-02-20 08:23</title><link>http://www.chriskrycho.com/2016/2016-02-20-0823.html</link><description>&lt;p&gt;Of course, there’s another challenge with &lt;a href="http://www.chriskrycho.com/2016/2016-02-20-0814.html"&gt;picking back up&lt;/a&gt;: I’ve gotten spoiled by having [ES2015] available and want to add it to this Angular project.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 20 Feb 2016 08:23:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-20:2016/2016-02-20-0823.html</guid><category>software development</category></item><item><title>2016-02-20 08:14</title><link>http://www.chriskrycho.com/2016/2016-02-20-0814.html</link><description>&lt;p&gt;&lt;a href="http://www.chriskrycho.com/2016/2016-02-20-0802.html"&gt;The upside to stepping away for a bit&lt;/a&gt;: I just found a bug in this code… which I introduced in December 2014. &lt;em&gt;:sigh:&lt;/em&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
