@@ -9,3 +9,4 @@ Of course, there's another challenge with [picking back up][prev]: I've gotten
 spoiled by having [ES2015] available and want to add it to this Angular project.
 
 [prev]: http://www.chriskrycho.com/2016/2016-02-20-0814.html
+[ES2015]: https://babeljs.io/docs/learn-es2015/
