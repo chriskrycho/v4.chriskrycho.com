@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 20 Feb 2016 15:50:00 -0500</lastBuildDate><item><title>2016-02-20 15:50</title><link>http://www.chriskrycho.com/2016/2016-02-20-1550.html</link><description>&lt;p&gt;First day of true spring weather. Time to get the bike out and take a ride. Tri training season, here we come!&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sun, 21 Feb 2016 15:59:00 -0500</lastBuildDate><item><title>2016-02-21 15:59</title><link>http://www.chriskrycho.com/2016/2016-02-21-1559.html</link><description>&lt;p&gt;Looked at using &lt;a href="https://www.ottoproject.io/"&gt;Otto&lt;/a&gt; for dev environment management. I think it’ll be great when it’s more mature; for right now, it’s too narrowly focused on Amazon, and plain-old &lt;a href="https://www.vagrantup.com"&gt;Vagrant&lt;/a&gt; will do what I need better.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 21 Feb 2016 15:59:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-21:2016/2016-02-21-1559.html</guid><category>software development</category></item><item><title>2016-02-20 15:50</title><link>http://www.chriskrycho.com/2016/2016-02-20-1550.html</link><description>&lt;p&gt;First day of true spring weather. Time to get the bike out and take a ride. Tri training season, here we come!&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -5278,7 +5282,7 @@ to understand a proverb and a saying,&lt;br /&gt;
 &lt;/ol&gt;
 &lt;p&gt;That should do it. Note that the driver choice and path configuration both matter. On OS X, I found that only the &lt;code&gt;FBDriver&lt;/code&gt; with this (and one other, older-style and therefore not recommended) path setup worked successfully.&lt;/p&gt;
 &lt;p&gt;Observations, corrections, additional information, and miscellaneous comments welcomed on &lt;a href="https://alpha.app.net/chriskrycho"&gt;App.net&lt;/a&gt; or &lt;a href="https://www.twitter.com/chriskrycho"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;

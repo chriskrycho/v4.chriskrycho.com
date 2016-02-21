@@ -2044,7 +2044,7 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
 &lt;/ol&gt;
 &lt;p&gt;That should do it. Note that the driver choice and path configuration both matter. On OS X, I found that only the &lt;code&gt;FBDriver&lt;/code&gt; with this (and one other, older-style and therefore not recommended) path setup worked successfully.&lt;/p&gt;
 &lt;p&gt;Observations, corrections, additional information, and miscellaneous comments welcomed on &lt;a href="https://alpha.app.net/chriskrycho"&gt;App.net&lt;/a&gt; or &lt;a href="https://www.twitter.com/chriskrycho"&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;

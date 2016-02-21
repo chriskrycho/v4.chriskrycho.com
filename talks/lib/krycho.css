@@ -1,6 +1,6 @@
 /**
  * Krycho theme for reveal.js.
- * 
+ *
  * Derived from the white theme for reveal.js. This is the opposite of the
  * 'black' theme.
  *
@@ -47,7 +47,7 @@ body {
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 2.4em; 
+  font-size: 2.4em;
   color: #FEFEFE; }
 
 .reveal h2 {
@@ -86,8 +86,8 @@ body {
   font-style: italic; }
 
 .reveal ol, .reveal dl, .reveal ul {
-  display: inline-block;
   text-align: left;
+  display: inline-block;
   margin: 0 0 0 1em; }
 
 .reveal ol {
@@ -135,25 +135,46 @@ body {
   display: block;
   position: relative;
   width: 90%;
-  margin: 20px auto;
+  margin: 1.4em auto;
   text-align: left;
-  font-size: 0.55em;
-  font-family: monospace;
-  line-height: 1.2em;
-  word-wrap: break-word;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+  word-wrap: break-word; }
 
 .reveal code {
-  font-family: monospace; }
+  font-family: Hack;
+  font-size: 0.8em; }
+
+.reveal h1 code,
+.reveal h2 code,
+.reveal h3 code,
+.reveal h4 code,
+.reveal h5 code,
+.reveal h6 code { font-size: 1em; }
+
+.reveal p code,
+.reveal ul code,
+.reveal ol code,
+.reveal h1 code,
+.reveal h2 code,
+.reveal h3 code,
+.reveal h4 code,
+.reveal h5 code,
+.reveal h6 code {
+    display: inline-block;
+    background: #002451;
+    border-radius: 0.25em;
+    padding: 0.1em 0.25em;
+    box-shadow: 0 0 1em rgba(155, 155, 155, 0.2); }
 
 .reveal pre code {
   display: block;
-  padding: 5px;
+  padding: 0.7em 1em;
+  font-size: 0.6em;
+  line-height: 1.3;
   overflow: auto;
   max-height: 400px;
   word-wrap: normal;
-  background: #3F3F3F;
-  color: #DCDCDC; }
+  border-radius: 1em;
+  box-shadow: 0 0 1em rgba(155, 155, 155, 0.4); }
 
 .reveal table {
   margin: auto;
