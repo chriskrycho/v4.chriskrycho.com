@@ -28,6 +28,8 @@ Parts in the Series
 8.  Functions, closures, and an awful lot of Swift syntax.
 9.  [Sum types (`enum`s) and more on pattern matching.][9]
 10. [Classes and structs (product types), and reference and value types.][10]
+11. [Hopes for the next generation of systems programming.][11]
+12. [Properties: type and instance, stored and computed.][12]
 
 [1]: /2015/rust-and-swift-i.html
 [2]: /2015/rust-and-swift-ii.html
@@ -38,6 +40,8 @@ Parts in the Series
 [7]: /2015/rust-and-swift-vii.html
 [9]: /2015/rust-and-swift-ix.html
 [10]: /2015/rust-and-swift-x.html
+[11]: /2016/rust-and-swift-xi.html
+[12]: /2016/rust-and-swift-xii.html
 
 ---
 
@@ -316,4 +320,5 @@ number of variants Swift has on the same concept.
 
 ---
 
-  - [Previous: Pattern matching and the value of expression blocks.][7]
+  - [**Previous:** Pattern matching and the value of expression blocks.][7]
+  - [**Next:** Sum types (`enum`s) and more on pattern matching.][9]

@@ -27,6 +27,7 @@ Parts in the Series
 8.  [Functions, closures, and an awful lot of Swift syntax.][8]
 9.  [Sum types (`enum`s) and more on pattern matching.][9]
 10. [Classes and structs (product types), and reference and value types.][10]
+11. [Hopes for the next generation of systems programming.][11]
 
 [1]: /2015/rust-and-swift-i.html
 [2]: /2015/rust-and-swift-ii.html
@@ -37,6 +38,7 @@ Parts in the Series
 [8]: /2015/rust-and-swift-viii.html
 [9]: /2015/rust-and-swift-ix.html
 [10]: /2015/rust-and-swift-x.html
+[11]: /2016/rust-and-swift-xi.html
 
 ---
 
@@ -57,7 +59,7 @@ Parts in the Series
     answer.
 
   - Interestingly, Rust has several fewer operators than Swift, even apart from
-    those mentioned in my [previous post][ii]. It drops the pre- and
+    those mentioned in my [previous post][2]. It drops the pre- and
     post-increment operators entirely (as does Python), since their results can
     always be accomplished in other ways with less potential for confusion.
     Swift keeps them, no doubt in part because most (Objective) C programs are
@@ -96,10 +98,9 @@ Parts in the Series
     primary design goals. Maybe it's just me, but that actually seems a little
     weird. Brevity is good so far as it goes, but *legibility* is much better.
 
-[ii]: http://www.chriskrycho.com/2015/rust-and-swift-ii.html
 [#1698]: https://github.com/rust-lang/rust/issues/1698
 
 ---
 
-  - [Previous: Basic types and the syntax around them.][2]
-  - [Next: Language design tradeoffs, highlighted by string manipulation.][4]
+  - [**Previous:** Basic types and the syntax around them.][2]
+  - [**Next:** Language design tradeoffs, highlighted by string manipulation.][4]

@@ -32,6 +32,7 @@ Parts in the Series
 8.  [Functions, closures, and an awful lot of Swift syntax.][8]
 9.  [Sum types (`enum`s) and more on pattern matching.][9]
 10. [Classes and structs (product types), and reference and value types.][10]
+11. [Hopes for the next generation of systems programming.][11]
 
 [2]: /2015/rust-and-swift-ii.html
 [3]: /2015/rust-and-swift-iii.html
@@ -42,6 +43,7 @@ Parts in the Series
 [8]: /2015/rust-and-swift-viii.html
 [9]: /2015/rust-and-swift-ix.html
 [10]: /2015/rust-and-swift-x.html
+[11]: /2016/rust-and-swift-xi.html
 
 ---
 
@@ -123,4 +125,4 @@ Parts in the Series
 
 ---
 
-  - [Next: Basic types and the syntax around them.][2]
+  - [**Next:** Basic types and the syntax around them.][2]
