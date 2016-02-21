@@ -89,16 +89,18 @@ STATIC_PATHS = ['images',
                 'downloads',
                 'extra',
                 'talks/lib',
-                'talks/bibletech2015']
+                'talks/bibletech2015',
+                'talks/es-future-olo']
 STATIC_EXCLUDE_SOURCES = False
-PAGE_EXCLUDES = ['talks/bibletech2015']
-ARTICLE_EXCLUDES = ['talks/bibletech2015']
+PAGE_EXCLUDES = ['talks/bibletech2015', 'talks/es-future-olo']
+ARTICLE_EXCLUDES = ['talks/bibletech2015', 'talks/es-future-olo']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
                        'extra/sermons.xml': {'path': 'sermons.xml'},
                        'extra/.nojekyll': {'path': '.nojekyll'},
                        'extra/robots.txt': {'path': 'robots.txt'},
                        'extra/favicon.png': {'path': 'favicon.png'},
-                       'extra/favicon.ico': {'path': 'favicon.ico'},}  # Copy .htaccess file to /output
+                       'extra/favicon.ico': {'path': 'favicon.ico'},
+                       'extra/sermons.xml': {'path': 'sermons.xml'}}
 
 READERS = {'html': None}
 
