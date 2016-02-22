@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sun, 21 Feb 2016 15:59:00 -0500</lastBuildDate><item><title>2016-02-21 15:59</title><link>http://www.chriskrycho.com/2016/2016-02-21-1559.html</link><description>&lt;p&gt;Looked at using &lt;a href="https://www.ottoproject.io/"&gt;Otto&lt;/a&gt; for dev environment management. I think it’ll be great when it’s more mature; for right now, it’s too narrowly focused on Amazon, and plain-old &lt;a href="https://www.vagrantup.com"&gt;Vagrant&lt;/a&gt; will do what I need better.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sun, 21 Feb 2016 19:45:00 -0500</lastBuildDate><item><title>2016-02-21 19:45</title><link>http://www.chriskrycho.com/2016/2016-02-21-1945.html</link><description>&lt;p&gt;Reading &lt;em&gt;Learn You a Haskell for Great Good&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Hang on—all name bindings are just functions? &lt;em&gt;So&lt;/em&gt; many things just clicked. Mind. blown.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 21 Feb 2016 19:45:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-21:2016/2016-02-21-1945.html</guid><category>software development</category></item><item><title>2016-02-21 15:59</title><link>http://www.chriskrycho.com/2016/2016-02-21-1559.html</link><description>&lt;p&gt;Looked at using &lt;a href="https://www.ottoproject.io/"&gt;Otto&lt;/a&gt; for dev environment management. I think it’ll be great when it’s more mature; for right now, it’s too narrowly focused on Amazon, and plain-old &lt;a href="https://www.vagrantup.com"&gt;Vagrant&lt;/a&gt; will do what I need better.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
