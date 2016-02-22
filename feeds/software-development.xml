@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Sun, 21 Feb 2016 19:45:00 -0500</lastBuildDate><item><title>2016-02-21 19:45</title><link>http://www.chriskrycho.com/2016/2016-02-21-1945.html</link><description>&lt;p&gt;Reading &lt;em&gt;Learn You a Haskell for Great Good&lt;/em&gt;.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Mon, 22 Feb 2016 08:24:00 -0500</lastBuildDate><item><title>2016-02-22 08:24</title><link>http://www.chriskrycho.com/2016/2016-02-22-0824.html</link><description>&lt;p&gt;I’m feeling the itch: to tweak both the information architecture and the visuals of this site. And maybe to use &lt;a href="https://jaspervdj.be/hakyll/"&gt;a different generator&lt;/a&gt;, since &lt;a href="http://docs.getpelican.com/en/3.6.3/"&gt;Pelican&lt;/a&gt; isn’t really up for the information architecture challenges I have.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 22 Feb 2016 08:24:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-22:2016/2016-02-22-0824.html</guid><category>software development</category></item><item><title>2016-02-21 19:45</title><link>http://www.chriskrycho.com/2016/2016-02-21-1945.html</link><description>&lt;p&gt;Reading &lt;em&gt;Learn You a Haskell for Great Good&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Hang on—all name bindings are just functions? &lt;em&gt;So&lt;/em&gt; many things just clicked. Mind. blown.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
