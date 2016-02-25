@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-02-24T12:26:00-05:00</updated><entry><title>2016-02-24 12:26</title><link href="http://www.chriskrycho.com/2016/2016-02-24-1226.html" rel="alternate"></link><updated>2016-02-24T12:26:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-02-24:2016/2016-02-24-1226.html</id><summary type="html">&lt;p&gt;Parenting skills: seeing the projectile vomit beginning, and sidestepping so it only gets on the floor.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-02-25T07:58:00-05:00</updated><entry><title>2016-02-25 07:58</title><link href="http://www.chriskrycho.com/2016/2016-02-25-0758.html" rel="alternate"></link><updated>2016-02-25T07:58:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-02-25:2016/2016-02-25-0758.html</id><summary type="html">&lt;p&gt;I have an irrational-but-ridiculously-strong desire to build an Atom package that is a tiny JavaScript wrapper around a Rust implementation. Just because.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="software development"></category></entry><entry><title>2016-02-24 12:26</title><link href="http://www.chriskrycho.com/2016/2016-02-24-1226.html" rel="alternate"></link><updated>2016-02-24T12:26:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-02-24:2016/2016-02-24-1226.html</id><summary type="html">&lt;p&gt;Parenting skills: seeing the projectile vomit beginning, and sidestepping so it only gets on the floor.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
