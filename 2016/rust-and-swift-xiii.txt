@@ -73,13 +73,13 @@ Parts in the Series
     distinction is by now exactly what we expect from the two languages.
 
 -   Both use dot notation, in line with most other languages with a C-like
-    syntax, for method calls, e.g. `someInstance.someMethod()` in Swift and
-    `some_instance.some_method()` in Rust. The latter is just syntactical sugar
-    for `SomeType::some_method(&some_instance)` or
-    `SomeType::some_method(some_instance)` (depending on whether the item is
-    being borrowed or moved). Given its implicit knowledge of/access to
-    instance-local data, and the distinctive behavior of Swift methods (see
-    below), I don't *think* the same is, or even could be, true of Swift.
+    syntax, for method calls, e.g. `instance.method()` in Swift and
+    `instance.method()` in Rust. The latter is just syntactical sugar for
+    `T::method(&instance)` or `T::method(instance)` where `T` is the type of the
+    instance (depending on whether the item is being borrowed or moved). Given
+    its implicit knowledge of/access to instance-local data, and the distinctive
+    behavior of Swift methods (see below), I don't *think* the same is, or even
+    could be, true of Swift.
 
 -   All of Swift's [other behaviors around functions][8]---internal and external
     names, and all the distinctions that go with those---are equally applicable
