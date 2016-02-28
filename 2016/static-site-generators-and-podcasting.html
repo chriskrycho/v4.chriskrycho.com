@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Static Site Generators and Podcasting"/>
     <meta name="twitter:description" content="Presently, I publish both Winning Slowly and New Rustacean1 using what is admittedly a bit of a quirky approach. It works well for me, and I think it’s worth documenting for other nerdy types out there, but if you’re just getting going with podcasting and you’re ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -99,8 +99,8 @@
 <section id="the-long-version" class="level2">
 <h2>The long version</h2>
 <p>I generate the sites themselves with <a href="http://docs.getpelican.com/en/3.6.3/">Pelican</a> and <a href="http://www.newrustacean.com/show_notes/e001/index.html"><code>cargo doc</code></a>, respectively. I was already comfortable with Pelican because it’s what I use to generate <em>this</em> site (with a few <a href="https://github.com/chriskrycho/chriskrycho.com/blob/master/pelicanconf.py">tweaks</a> to the standard configuration, especially using <a href="http://pandoc.org/">Pandoc</a> rather than the Python Markdown implementation), so I ran with it for building the Winning Slowly site, and it has worked quite well for building the site itself. It just gets built locally and deployed via <a href="https://pages.github.com/">GitHub Pages</a>.</p>
-<p>However, it does <em>not</em> have built-in support for generating <a href="https://en.wikipedia.org/wiki/RSS_enclosure">podcast feeds</a>, even just the general case with enclosures. <a href="https://itunespartner.apple.com/en/podcasts/overview">iTunes podcast support</a> would have taken a <em>lot</em> of work to add.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Instead, I chose to build the RSS feed semi-manually. <em>Semi</em>-manually, because doing it totally manually is a recipe for making mistakes. XML is many things, but “easy to write correctly by hand” is not one of them. I use <a href="http://reinventedsoftware.com/feeder/">Feeder</a> to manage the feeds, and <em>it</em> makes sure that the enclosure and iTunes elements are set correctly.</p>
-<p>The biggest upside to this is that I can use Pelican without modification to how <em>it</em> generates feeds. It just <a href="https://github.com/WinningSlowly/winningslowly.org/blob/master/pelicanconf.py#L99">copies</a> the feed I generate to the output file during its normal build process. I also <em>don’t</em> generate the other feeds which Pelican supports, as we have no need for them; we only care about the podcast feed.</p>
+<p>However, it does not have built-in support for generating <a href="https://en.wikipedia.org/wiki/RSS_enclosure">podcast feeds</a>, even just the general case with enclosures. <a href="https://itunespartner.apple.com/en/podcasts/overview">iTunes podcast support</a> would have taken a lot of work to add.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Instead, I chose to build the RSS feed semi-manually. <em>Semi</em>-manually, because doing it totally manually is a recipe for making mistakes. XML is many things, but “easy to write correctly by hand” is not one of them. I use <a href="http://reinventedsoftware.com/feeder/">Feeder</a> to manage the feeds, and <em>it</em> makes sure that the enclosure and iTunes elements are set correctly.</p>
+<p>The biggest upside to this is that I can use Pelican without modification to how it generates feeds (apart from optionally turning them off entirely). It just <a href="https://github.com/WinningSlowly/winningslowly.org/blob/master/pelicanconf.py#L99">copies</a> the feed I generate to the output file during its normal build process. As suggested above, I also <em>don’t</em> generate the other feeds which Pelican supports, as we have no need for them; we only care about the podcast feed.</p>
 <p>This process works equally well, with very little modification, for New Rustacean. In that case, I’m generating the content by running Rust’s documentation tool, <code>cargo doc</code><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> to render the “API docs” which serve as show notes. Notice the family resemblance between <a href="http://www.newrustacean.com/show_notes/">my “show notes”</a> and, say, the <a href="http://sgrif.github.io/diesel/diesel/index.html">Diesel docs</a>, which are both generated the same way. This is <em>not</em> a normal way of building a podcast website; you can hear me explain why I did it this way in <a href="http://www.newrustacean.com/show_notes/e001/index.html">New Rustacean e001: Document all the things!</a> In any case, I just take the show note-relevant parts of the documentation and put it in Feeder, generate the feed, and <a href="https://github.com/chriskrycho/newrustacean.com/blob/master/Makefile#L32">copy that as part of the build process</a>.</p>
 <p>That’s it!</p>
 <div id="refs" class="references">

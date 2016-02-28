@@ -48,9 +48,9 @@ for building the site itself. It just gets built locally and deployed via
 [Pandoc]: http://pandoc.org/
 [GitHub Pages]: https://pages.github.com/
 
-However, it does *not* have built-in support for generating [podcast feeds],
+However, it does not have built-in support for generating [podcast feeds],
 even just the general case with enclosures. [iTunes podcast support] would have
-taken a *lot* of work to add.[^pelican] Instead, I chose to build the RSS feed
+taken a lot of work to add.[^pelican] Instead, I chose to build the RSS feed
 semi-manually. *Semi*-manually, because doing it totally manually is a recipe
 for making mistakes. XML is many things, but "easy to write correctly by hand"
 is not one of them. I use [Feeder] to manage the feeds, and *it* makes sure that
@@ -60,10 +60,10 @@ the enclosure and iTunes elements are set correctly.
 [iTunes podcast support]: https://itunespartner.apple.com/en/podcasts/overview
 
 The biggest upside to this is that I can use Pelican without modification to how
-*it* generates feeds. It just [copies] the feed I generate to the output file
-during its normal build process. I also *don't* generate the other feeds which
-Pelican supports, as we have no need for them; we only care about the podcast
-feed.
+it generates feeds (apart from optionally turning them off entirely). It just
+[copies] the feed I generate to the output file during its normal build process.
+As suggested above, I also *don't* generate the other feeds which Pelican
+supports, as we have no need for them; we only care about the podcast feed.
 
 [copies]: https://github.com/WinningSlowly/winningslowly.org/blob/master/pelicanconf.py#L99
 
