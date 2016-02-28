@@ -10,10 +10,10 @@
         <copyright>2016 Chris Krycho</copyright>
         <managingEditor>chris@krycho.com (Chris Krycho)</managingEditor>
         <webMaster>chris@krycho.com (Chris Krycho)</webMaster>
-        <pubDate>Wed, 17 Feb 2016 09:51:08 -0500</pubDate>
-        <lastBuildDate>Wed, 17 Feb 2016 09:51:09 -0500</lastBuildDate>
+        <pubDate>Thu, 25 Feb 2016 08:03:05 -0500</pubDate>
+        <lastBuildDate>Thu, 25 Feb 2016 08:03:05 -0500</lastBuildDate>
         <image>
-            <url>http://www.chriskrycho.com/images/ck-sermons-1400.jpg</url>
+            <url>http://cdn.chriskrycho.com/sermons-3000.png</url>
             <title>Chris Krycho</title>
             <link>http://www.chriskrycho.com/sermons/</link>
             <width>144</width>
@@ -23,7 +23,7 @@
         <itunes:author>Chris Krycho</itunes:author>
         <itunes:summary><![CDATA[Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a software developer, writer, and podcaster, currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.]]></itunes:summary>
         <itunes:keywords>sermon,Christianity,faith,evangelical,Reformed,baptist,Scripture,exegesis,expository,expositional</itunes:keywords>
-        <itunes:image href="http://www.chriskrycho.com/images/ck-sermons-1400.jpg"/>
+        <itunes:image href="http://cdn.chriskrycho.com/sermons-3000.png"/>
         <itunes:owner>
             <itunes:name>Chris Krycho</itunes:name>
             <itunes:email>chris@krycho.com</itunes:email>
