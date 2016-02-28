@@ -13,7 +13,7 @@ Summary: >
     An open-ended, multi-vocal answer to a rhetorical question—demonstrated by a
     close analysis of the structure, verbs, and poetic devices employed by the
     poet.
----
+...
 
 Author's Translation
 ====================
