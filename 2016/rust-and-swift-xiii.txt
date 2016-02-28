@@ -78,8 +78,8 @@ Parts in the Series
     for `SomeType::some_method(&some_instance)` or
     `SomeType::some_method(some_instance)` (depending on whether the item is
     being borrowed or moved). Given its implicit knowledge of/access to
-    instance- local data, and the distinctive behavior of Swift methods (see
-    below), I don't *think* the same is or even could be true of Swift.
+    instance-local data, and the distinctive behavior of Swift methods (see
+    below), I don't *think* the same is, or even could be, true of Swift.
 
 -   All of Swift's [other behaviors around functions][8]---internal and external
     names, and all the distinctions that go with those---are equally applicable
@@ -96,7 +96,7 @@ Parts in the Series
     comes into play on methods, as you might expect, as does its approach to
     mutability. Methods which change the values in value types (`struct` or
     `enum` instances) have to be declared `mutating func`. This kind of
-    explicit- ness is good. In Rust, as we discussed in [Part 10][10], Rust
+    explicit-ness is good. In Rust, as we discussed in [Part 10][10], Rust
     approaches this entire problem differently: types are not value or reference
     types; they are either mutably and passed mutably (including as `mut self`
     or `&mut self`), or they are not. If an instance is mutable and passed

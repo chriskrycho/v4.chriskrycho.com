@@ -84,9 +84,8 @@ Parts in the Series
     decision to deeply separate *data* from *behavior*, essentially stealing a
     page from more pure-functional languages (Haskell etc.). This is (one
     reason) why you don't define the implementation of a `struct` method in the
-    same block as the members of the struct. See an excellent explanation [here]
-    (https://www.reddit.com/r/rust/comments/2uvfic/why_doesnt_rust_have_properti
-    es/cocmunq).
+    same block as the members of the struct. See an excellent explanation
+    [here][reddit].
 
 -   It's also closely related the way Rust favors composition over inheritance
     (by making the latter impossible, at least for now!). By separating `impl`
@@ -173,6 +172,8 @@ Parts in the Series
     implementation, this is one of the areas where the superficially (and
     sometimes actually) similar languages diverge *a lot*.
 
+[reddit]: https://www.reddit.com/r/rust/comments/2uvfic/why_doesnt_rust_have_properti
+es/cocmunq
 [Rust]: https://github.com/rust-lang/rust
 [Swift]: https://github.com/apple/swift
 
