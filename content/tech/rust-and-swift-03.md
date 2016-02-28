@@ -28,6 +28,8 @@ Parts in the Series
 9.  [Sum types (`enum`s) and more on pattern matching.][9]
 10. [Classes and structs (product types), and reference and value types.][10]
 11. [Hopes for the next generation of systems programming.][11]
+12. [Properties: type and instance, stored and computed.][12]
+13. [Methods, instance and otherwise.][13]
 
 [1]: /2015/rust-and-swift-i.html
 [2]: /2015/rust-and-swift-ii.html
@@ -39,6 +41,8 @@ Parts in the Series
 [9]: /2015/rust-and-swift-ix.html
 [10]: /2015/rust-and-swift-x.html
 [11]: /2016/rust-and-swift-xi.html
+[12]: /2016/rust-and-swift-xii.html
+[13]: /2016/rust-and-swift-xiii.html
 
 ---
 

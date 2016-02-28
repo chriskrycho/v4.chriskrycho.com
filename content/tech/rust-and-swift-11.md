@@ -1,3 +1,6 @@
+12. [Properties: type and instance, stored and computed.][12]
+
+[12]: /2016/rust-and-swift-xii.html
 ---
 Title: Rust and Swift (xi)
 Subtitle: Hopes for the next generation of systems programming.
@@ -28,6 +31,8 @@ Parts in the Series
 9.  [Sum types (`enum`s) and more on pattern matching.][9]
 10. [Classes and structs (product types), and reference and value types.][10]
 11. Hopes for the next generation of systems programming.
+12. [Properties: type and instance, stored and computed.][12]
+13. [Methods, instance and otherwise.][13]
 
 [1]: /2015/rust-and-swift-i.html
 [2]: /2015/rust-and-swift-ii.html
@@ -39,6 +44,8 @@ Parts in the Series
 [8]: /2015/rust-and-swift-viii.html
 [9]: /2015/rust-and-swift-ix.html
 [10]: /2015/rust-and-swift-x.html
+[12]: /2016/rust-and-swift-xii.html
+[13]: /2016/rust-and-swift-xiii.html
 
 ---
 
@@ -126,6 +133,7 @@ only be a good thing, as far as I'm concerned.
 ---
 
 -   [**Previous:** Classes and structs (product types), and reference and value types.][10]
+-   [**Next:** Properties: type and instance, stored and computed.][12]
 
 
 [^oop]: It is of course entirely possible to do non-classical OOP; the point is
