@@ -32,6 +32,7 @@ Parts in the Series
 10. [Classes and structs (product types), and reference and value types.][10]
 11. [Hopes for the next generation of systems programming.][11]
 12. Properties: type and instance, stored and computed.
+13. [Methods, instance and otherwise.][13]
 
 [1]: /2015/rust-and-swift-i.html
 [2]: /2015/rust-and-swift-ii.html
@@ -44,6 +45,7 @@ Parts in the Series
 [9]: /2015/rust-and-swift-ix.html
 [10]: /2015/rust-and-swift-x.html
 [11]: /2016/rust-and-swift-xi.html
+[13]: /2016/rust-and-swift-xiii.html
 
 ---
 
@@ -173,7 +175,8 @@ Parts in the Series
 
 ---
 
--  [Previous: Hopes for the next generation of systems programming.][11]
+-  [**Previous:** Hopes for the next generation of systems programming.][11]
+-  [**Next:** Methods, instance and otherwise.][13]
 
 [Rust]: https://github.com/rust-lang/rust
 [Swift]: https://github.com/apple/swift
