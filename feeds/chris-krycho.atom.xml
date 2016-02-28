@@ -3,7 +3,21 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="podcasting"></category></entry><entry><title>2016-02-25 07:58</title><link href="http://www.chriskrycho.com/2016/2016-02-25-0758.html" rel="alternate"></link><updated>2016-02-25T07:58:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-02-25:2016/2016-02-25-0758.html</id><summary type="html">&lt;p&gt;I have an irrational-but-ridiculously-strong desire to build an Atom package that is a tiny JavaScript wrapper around a Rust implementation. Just because.&lt;/p&gt;
+</summary><category term="podcasting"></category></entry><entry><title>2016-02-27 20:05</title><link href="http://www.chriskrycho.com/2016/2016-02-27-2005.html" rel="alternate"></link><updated>2016-02-27T20:05:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-02-27:2016/2016-02-27-2005.html</id><summary type="html">&lt;p&gt;&lt;i class=editorial&gt;I posted these as a series of tweets.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Fired up and played the demo for &lt;a href="https://www.elitedangerous.com"&gt;Elite Dangerous&lt;/a&gt; on my Parallels VM. Made me want to buy it. But of course, I’d prefer to play it natively.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Of course, it’s available for Mac. But my (more than a decade old) joystick doesn’t have any support on OS X. No drivers, full stop.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;You can find software out there which recognizes it, of course—but it’s quirky and doesn’t behave well.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Looks like opportunity calling.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;I might—might, I say, not &lt;em&gt;will&lt;/em&gt;—end up seeing if I can write the requisite pieces in Rust. Because that seems like a good plan.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="software development"></category></entry><entry><title>2016-02-25 07:58</title><link href="http://www.chriskrycho.com/2016/2016-02-25-0758.html" rel="alternate"></link><updated>2016-02-25T07:58:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-02-25:2016/2016-02-25-0758.html</id><summary type="html">&lt;p&gt;I have an irrational-but-ridiculously-strong desire to build an Atom package that is a tiny JavaScript wrapper around a Rust implementation. Just because.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
