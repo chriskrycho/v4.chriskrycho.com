@@ -57,7 +57,7 @@ Parts in the Series
 
 -   This goes to one of the philosophical differences between the two languages.
     As we've discussed often in the series, Rust reuses a smaller set of
-    concepts ---language-level primitives---to build up its functionality. So
+    concepts---language-level primitives---to build up its functionality. So
     methods on a type and methods for a trait on a type are basically the same
     thing in Rust; they're defined in almost exactly the same way (the latter
     includes `for SomeTrait` in the `impl` expression). In Swift, a method is
