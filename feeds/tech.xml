@@ -92,6 +92,10 @@ fn main() {
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As usual, Rust chooses to use existing language machinery; Swift uses new (combinations of) keywords.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;

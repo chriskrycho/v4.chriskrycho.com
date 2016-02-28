@@ -224,3 +224,8 @@ Parts in the Series
 
     As usual, Rust chooses to use existing language machinery; Swift uses new
     (combinations of) keywords.
+
+
+---
+
+-  [**Previous:** Properties: type and instance, stored and computed.][12]

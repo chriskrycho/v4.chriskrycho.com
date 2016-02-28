@@ -173,13 +173,17 @@ Parts in the Series
     implementation, this is one of the areas where the superficially (and
     sometimes actually) similar languages diverge *a lot*.
 
+[Rust]: https://github.com/rust-lang/rust
+[Swift]: https://github.com/apple/swift
+
+
 ---
+
 
 -  [**Previous:** Hopes for the next generation of systems programming.][11]
 -  [**Next:** Methods, instance and otherwise.][13]
 
-[Rust]: https://github.com/rust-lang/rust
-[Swift]: https://github.com/apple/swift
+
 
 [^always]: leaving aside details about `trait` specialization [still being
     hashed out][specialization] in Rust
