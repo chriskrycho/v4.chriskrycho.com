@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 25 Feb 2016 07:58:00 -0500</lastBuildDate><item><title>2016-02-25 07:58</title><link>http://www.chriskrycho.com/2016/2016-02-25-0758.html</link><description>&lt;p&gt;I have an irrational-but-ridiculously-strong desire to build an Atom package that is a tiny JavaScript wrapper around a Rust implementation. Just because.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 27 Feb 2016 20:54:00 -0500</lastBuildDate><item><title>2016-02-27 20:54</title><link>http://www.chriskrycho.com/2016/2016-02-27-2054.html</link><description>&lt;p&gt;One of these days I should write up the slightly arcane workflow I use to publish Winning Slowly and New Rustacean. It’s weird.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 27 Feb 2016 20:54:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-27:2016/2016-02-27-2054.html</guid><category>podcasting</category></item><item><title>2016-02-25 07:58</title><link>http://www.chriskrycho.com/2016/2016-02-25-0758.html</link><description>&lt;p&gt;I have an irrational-but-ridiculously-strong desire to build an Atom package that is a tiny JavaScript wrapper around a Rust implementation. Just because.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
