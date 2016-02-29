@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/talks.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2015-05-01T10:30:00-04:00</updated><entry><title>Tolle Lege!</title><link href="http://www.chriskrycho.com/2015/tolle-lege.html" rel="alternate"></link><updated>2015-05-01T10:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-01:2015/tolle-lege.html</id><summary type="html">&lt;p&gt;I was delighted to be able to give a talk at &lt;a href="http://bibletechconference.com/"&gt;BibleTech&lt;/a&gt; this year. I spoke for almost exactly 40 minutes on the subject of digital typography, with a focus on some of the nitty-gritty details that make texts readable… or not. Here is the screen capture and audio from the talk!&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/talks.xml" rel="self"></atom:link><lastBuildDate>Fri, 01 May 2015 10:30:00 -0400</lastBuildDate><item><title>Tolle Lege!</title><link>http://www.chriskrycho.com/2015/tolle-lege.html</link><description>&lt;p&gt;I was delighted to be able to give a talk at &lt;a href="http://bibletechconference.com/"&gt;BibleTech&lt;/a&gt; this year. I spoke for almost exactly 40 minutes on the subject of digital typography, with a focus on some of the nitty-gritty details that make texts readable… or not. Here is the screen capture and audio from the talk!&lt;/p&gt;
 &lt;div class="iframe-wrapper four-to-three"&gt;
 &lt;iframe src="https://player.vimeo.com/video/126655499" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;
 &lt;/iframe&gt;
@@ -8,4 +8,4 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="design"></category><category term="typography"></category></entry></feed>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 01 May 2015 10:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-01:2015/tolle-lege.html</guid><category>design</category><category>typography</category><category>talks</category></item></channel></rss>
