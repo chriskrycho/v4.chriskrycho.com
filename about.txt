@@ -6,7 +6,7 @@ Summary: Creativity, reflection, & passionate endeavors by a peculiar fellow
 Slug: about
 ...
 
-![My wonderful family!]({filename}/images/family_2014.jpg "Family photo 2014")
+![My wonderful family!](/images/family_2014.jpg "Family photo 2014")
 
 Good day (or evening, as the case may be), and welcome to my home on the
 interwebs!
