@@ -31,33 +31,16 @@
 &lt;li id="fn3"&gt;&lt;p&gt;Technically, Rust’s documentation tool is &lt;code&gt;rustdoc&lt;/code&gt;, which &lt;code&gt;cargo doc&lt;/code&gt; wraps around. I never actually use &lt;code&gt;rustdoc&lt;/code&gt; directly, though.&lt;a href="#fnref3"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 28 Feb 2016 12:50:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-28:2016/static-site-generators-and-podcasting.html</guid><category>software development</category><category>podcasting</category></item><item><title>Rust and Swift (xiii)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xiii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
-&lt;section id="parts-in-the-series" class="level2"&gt;
-&lt;h2&gt;Parts in the Series&lt;/h2&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Methods, instance and otherwise.&lt;/li&gt;
-&lt;/ol&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 28 Feb 2016 12:50:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-28:2016/static-site-generators-and-podcasting.html</guid><category>software development</category><category>podcasting</category></item><item><title>Rust and Swift (xiii)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xiii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Rust and Swift both have methods which are attached to given data types. However, whereas Rust takes its notion of separation of data and functions rather strictly, Swift implements them on the relevant data structures (classes, structs, or enums) directly. In other words, the implementation of a given type’s methods is within his e body of the type definition itself in swift, whereas in Rust it is in an &lt;code&gt;impl&lt;/code&gt; block, usually but not always immediately adjacent in the code.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;This goes to one of the philosophical differences between the two languages. As we’ve discussed often in the series, Rust reuses a smaller set of concepts—language-level primitives—to build up its functionality. So methods on a type and methods for a trait on a type are basically the same thing in Rust; they’re defined in almost exactly the same way (the latter includes &lt;code&gt;for SomeTrait&lt;/code&gt; in the &lt;code&gt;impl&lt;/code&gt; expression). In Swift, a method is defined differently from a protocol definition, which we’ll get to in the future. The point is simply this: the two take distinct approaches to the relationship between a given type definition and the implementations of any functions which may be attached to it.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Another important difference: access to other members of a given data type from within a method is &lt;em&gt;explicit&lt;/em&gt; in Rust and &lt;em&gt;implicit&lt;/em&gt; in Swift. In Rust, the first parameter to an instance method is always &lt;code&gt;self&lt;/code&gt; or &lt;code&gt;&amp;amp;self&lt;/code&gt; (or a mutable version of either of course), much as in Python. This explicitness distinction is by now exactly what we expect from the two languages.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Both use dot notation, in line with most other languages with a C-like syntax, for method calls, e.g. &lt;code&gt;instance.method()&lt;/code&gt; in Swift and &lt;code&gt;instance.method()&lt;/code&gt; in Rust. The latter is just syntactical sugar for &lt;code&gt;T::method(&amp;amp;instance)&lt;/code&gt; or &lt;code&gt;T::method(instance)&lt;/code&gt; where &lt;code&gt;T&lt;/code&gt; is the type of the instance (depending on whether the item is being borrowed or moved). Given its implicit knowledge of/access to instance-local data, and the distinctive behavior of Swift methods (see below), I don’t &lt;em&gt;think&lt;/em&gt; the same is, or even could be, true of Swift.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;All of Swift’s &lt;a href="/2015/rust-and-swift-viii.html"&gt;other behaviors around functions&lt;/a&gt;—internal and external names, and all the distinctions that go with those—are equally applicable to methods. Similarly, with the sole change that the first parameter is always the instance being acted on, a Rust methods follow all the same rules as ordinary Rust functions (which is why you can call the struct or enum method with an instance parameter as in the example above).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;All of Swift’s [other behaviors around functions][8]—internal and external names, and all the distinctions that go with those—are equally applicable to methods. Similarly, with the sole change that the first parameter is always the instance being acted on, a Rust methods follow all the same rules as ordinary Rust functions (which is why you can call the struct or enum method with an instance parameter as in the example above).&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift does &lt;em&gt;have&lt;/em&gt; a &lt;code&gt;self&lt;/code&gt;—it is, of course, implicit. It’s useful at times for disambiguation—basically, when a parameter name shadows an instance name. This will look familiar to people coming from Ruby.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The strong distinction Swift makes &lt;a href="/2015/rust-and-swift-x.html"&gt;between reference and value types&lt;/a&gt; comes into play on methods, as you might expect, as does its approach to mutability. Methods which change the values in value types (&lt;code&gt;struct&lt;/code&gt; or &lt;code&gt;enum&lt;/code&gt; instances) have to be declared &lt;code&gt;mutating func&lt;/code&gt;. This kind of explicit-ness is good. In Rust, as we discussed in &lt;a href="/2015/rust-and-swift-x.html"&gt;Part 10&lt;/a&gt;, Rust approaches this entire problem differently: types are not value or reference types; they are either mutably and passed mutably (including as &lt;code&gt;mut self&lt;/code&gt; or &lt;code&gt;&amp;amp;mut self&lt;/code&gt;), or they are not. If an instance is mutable and passed mutably, a method is free to act on instance data. And in fact both languages require that the instance in question not be immutable. In fact, everyone we said in Part 10 about both languages applies here, just with the addendum that private properties are available to methods.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The strong distinction Swift makes [between reference and value types][10] comes into play on methods, as you might expect, as does its approach to mutability. Methods which change the values in value types (&lt;code&gt;struct&lt;/code&gt; or &lt;code&gt;enum&lt;/code&gt; instances) have to be declared &lt;code&gt;mutating func&lt;/code&gt;. This kind of explicit-ness is good. In Rust, as we discussed in [Part 10][10], Rust approaches this entire problem differently: types are not value or reference types; they are either mutably and passed mutably (including as &lt;code&gt;mut self&lt;/code&gt; or &lt;code&gt;&amp;amp;mut self&lt;/code&gt;), or they are not. If an instance is mutable and passed mutably, a method is free to act on instance data. And in fact both languages require that the instance in question not be immutable. In fact, everyone we said in Part 10 about both languages applies here, just with the addendum that private properties are available to methods.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The distinction, you’ll note, is in where the indication that there’s a mutation happens. Swift has a special keyword combination (&lt;code&gt;mutating func&lt;/code&gt;) for this. With Rust, it’s the same as every other function which mutates an argument. This makes Rust slightly more verbose, but it also means that in cases like this, the existing language tooling is perfectly capable of handling what has to be a special syntactical case in Swift.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Both Swift and Rust let you out-and-out change the instance by assigning to &lt;code&gt;self&lt;/code&gt;, albeit in fairly different ways. In Swift, you’d write a mutating method which updates the instance proper like this:&lt;/p&gt;
 &lt;pre class="swift"&gt;&lt;code&gt;struct Point {
@@ -126,34 +109,16 @@ fn main() {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Properties: type and instance, stored and computed.][12]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-&lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 28 Feb 2016 11:15:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-28:2016/rust-and-swift-xiii.html</guid><category>listicles</category><category>software development</category></item><item><title>Rust and Swift (xii)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 28 Feb 2016 11:15:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-28:2016/rust-and-swift-xiii.html</guid><category>listicles</category><category>software development</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>Rust and Swift (xii)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class="editorial"&gt;A note on publication: I had this drafted in early January and sold forgot to publish it. Whoops!&lt;/i&gt;&lt;/p&gt;
-&lt;section id="parts-in-the-series" class="level2"&gt;
-&lt;h2&gt;Parts in the Series&lt;/h2&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Properties: type and instance, stored and computed.&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xiii.html"&gt;Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;As noted in &lt;a href="/2015/rust-and-swift-x.html"&gt;my discussion of the product types in Rust and Swift&lt;/a&gt;, Swift distinguishes between classes and structs, with the former being reference types and the latter being value types. All structs are value types in Rust. (That you can wrap them in a pointer for heap-allocation with one of the smart pointer types, e.g. &lt;code&gt;Box&lt;/code&gt; or &lt;code&gt;Rc&lt;/code&gt; or &lt;code&gt;Arc&lt;/code&gt;, doesn’t change this fundamental reality.) This underlying difference gives rise to one the big difference between Swift classes and Rust structs: a constant &lt;code&gt;class&lt;/code&gt; instance in Swift can still have its fields mutated; not so with a Rust &lt;code&gt;struct&lt;/code&gt; instance. But also not so with a &lt;em&gt;Swift&lt;/em&gt; &lt;code&gt;struct&lt;/code&gt; instance, as it turns out! There isn’t a straightforward way to do this with &lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; in Rust; you &lt;em&gt;could&lt;/em&gt; do it with something like an &lt;code&gt;Rc&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code&gt;Arc&amp;lt;T&amp;gt;&lt;/code&gt;, though.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;As noted in [my discussion of the product types in Rust and Swift][10], Swift distinguishes between classes and structs, with the former being reference types and the latter being value types. All structs are value types in Rust. (That you can wrap them in a pointer for heap-allocation with one of the smart pointer types, e.g. &lt;code&gt;Box&lt;/code&gt; or &lt;code&gt;Rc&lt;/code&gt; or &lt;code&gt;Arc&lt;/code&gt;, doesn’t change this fundamental reality.) This underlying difference gives rise to one the big difference between Swift classes and Rust structs: a constant &lt;code&gt;class&lt;/code&gt; instance in Swift can still have its fields mutated; not so with a Rust &lt;code&gt;struct&lt;/code&gt; instance. But also not so with a &lt;em&gt;Swift&lt;/em&gt; &lt;code&gt;struct&lt;/code&gt; instance, as it turns out! There isn’t a straightforward way to do this with &lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; in Rust; you &lt;em&gt;could&lt;/em&gt; do it with something like an &lt;code&gt;Rc&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code&gt;Arc&amp;lt;T&amp;gt;&lt;/code&gt;, though.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift’s &lt;code&gt;lazy&lt;/code&gt; keyword, and associated delayed initialization of properties has, as far as I know, no equivalent whatsoever in Rust. And while I can see the utility in principle, I’m hard-pressed to think of any time in my working experience where the behavior would actually be useful. Rather than having &lt;code&gt;lazy&lt;/code&gt; properties, I would be far more inclined to separate the behavior which should be initialized at a later time into its own data structure, and supplying it via &lt;em&gt;inversion of control&lt;/em&gt; if it is necessary for an actions taken by other data structures. (This seems—at first blush at least—to be a way of supporting the un- or partially-initialized data types possible in Objective C?)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift has computed properties, a concept familiar to Python developers (and relatively recently introduced in JavaScript). These can e quite handy, as they let you define a property to be accessed like any other (&lt;code&gt;someInstance.theProperty&lt;/code&gt;) while being defined with functions which compute the value dynamically. A common, trivial example: if you defined a &lt;code&gt;Person&lt;/code&gt; with &lt;code&gt;firstName&lt;/code&gt; and &lt;code&gt;lastName&lt;/code&gt; members, you could define a computed property, &lt;code&gt;fullName&lt;/code&gt;, which was built using the existing values.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Rust doesn’t have computed properties at all. This is because of its design decision to deeply separate &lt;em&gt;data&lt;/em&gt; from &lt;em&gt;behavior&lt;/em&gt;, essentially stealing a page from more pure-functional languages (Haskell etc.). This is (one reason) why you don’t define the implementation of a &lt;code&gt;struct&lt;/code&gt; method in the same block as the members of the struct. See an excellent explanation &lt;a href="https://www.reddit.com/r/rust/comments/2uvfic/why_doesnt_rust_have_properti"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
@@ -174,13 +139,12 @@ fn main() {
 &lt;p&gt;es/cocmunq [Rust]: https://github.com/rust-lang/rust [Swift]: https://github.com/apple/swift&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xiii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Hopes for the next generation of systems programming.][11]&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Methods, instance and otherwise.][13]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -189,7 +153,7 @@ fn main() {
 &lt;li id="fn3"&gt;&lt;p&gt;There’s nothing analogous to Rust’s concept of explicit lifetimes in Swift, as far as I can tell. The &lt;code&gt;static&lt;/code&gt; keyword in Swift, like that in C, Objective-C, and C++, is &lt;em&gt;sort of&lt;/em&gt; like Rust’s &lt;code&gt;'static&lt;/code&gt; lifetime specifically, for variables at least—but Rust’s lifetime is substantially more sophisticated and complex than that analogy might suggest.&lt;a href="#fnref3"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 27 Feb 2016 22:30:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-27:2016/rust-and-swift-xii.html</guid><category>listicles</category><category>software development</category></item><item><title>2016-02-27 20:05</title><link>http://www.chriskrycho.com/2016/2016-02-27-2005.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I posted these as a series of tweets.&lt;/i&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 27 Feb 2016 22:30:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-27:2016/rust-and-swift-xii.html</guid><category>listicles</category><category>software development</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>2016-02-27 20:05</title><link>http://www.chriskrycho.com/2016/2016-02-27-2005.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I posted these as a series of tweets.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Fired up and played the demo for &lt;a href="https://www.elitedangerous.com"&gt;Elite Dangerous&lt;/a&gt; on my Parallels VM. Made me want to buy it. But of course, I’d prefer to play it natively.&lt;/p&gt;
 &lt;hr /&gt;
@@ -257,7 +221,32 @@ fn main() {
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 17 Jan 2016 10:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-01-17:2016/i-dont-know-when-id-use-that.html</guid><category>software development</category><category>programming languages</category></item><item><title>2016-01-02-1432</title><link>http://www.chriskrycho.com/2016/2016-01-02-1432.html</link><description>&lt;p&gt;So you like GitHub pull requests but not so much the resulting merge commits? &lt;a href="https://blog.spreedly.com/2014/06/24/merge-pull-request-considered-harmful/"&gt;Have your 🍰 and eat it too.&lt;/a&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 17 Jan 2016 10:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-01-17:2016/i-dont-know-when-id-use-that.html</guid><category>software development</category><category>programming languages</category></item><item><title>Rust and Swift (xi)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xi.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;I’ve still been (slowly) working through the Swift book and comparing Swift and Rust; I have another draft started which I’ll hopefully finish this week. And I still find the comparison deeply profitable. The two languages continue to evolve in interesting ways, and the comparison is all the more interesting &lt;a href="https://github.com/apple/swift"&gt;now that Swift is open-source&lt;/a&gt; and its future &lt;a href="https://github.com/apple/swift-evolution"&gt;open for community input&lt;/a&gt; (just as &lt;a href="https://github.com/rust-lang/rfcs"&gt;Rust is&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Something I’ve been thinking about for several months, and which the &lt;a href="https://overcast.fm/+CdSzsTIY/1:16:42"&gt;brief discussion of Swift, Go, and Rust&lt;/a&gt; at the end of the latest &lt;a href="http://atp.fm/episodes/151"&gt;Accidental Tech Podcast&lt;/a&gt; brought back to my mind, is the question of what the next generation of systems-level programming language should be. And my answer is: there shouldn’t be &lt;em&gt;just one&lt;/em&gt;. The best possible thing for the space, in many ways, is for there to be a healthy diversity of options and lots of competition in the space. We don’t want to have &lt;em&gt;ten&lt;/em&gt; different systems programming languages to deal with, I think—but three or four or five would be &lt;em&gt;much&lt;/em&gt; preferable to having one or two (closely related) as we have in the decades of C and C++ dominance.&lt;/p&gt;
+&lt;p&gt;Don’t get me wrong: both languages (and perhaps especially C) do many things exceptionally well. For all that they are (justly) maligned for some of their problems, the logevity of both C and C++ has a great deal to do with how well they fit the problem domain, and how much they’ve empowered developers to accomplish within that space (which is very, &lt;em&gt;very&lt;/em&gt; large).&lt;/p&gt;
+&lt;p&gt;The problem, though, at least as I see it, is that the existence of only two really serious systems programming languages for the last several decades has led a lot of developers to think that C and C++‘s ways of solving problems are the &lt;em&gt;only&lt;/em&gt; way to solve problems. The languages we use shape the way we think about possible solutions, and when a given language doesn’t recognize entire classes of different approaches, that deeply limits developers’ ability to tackle certain issues. (See also the interesting CppCast &lt;a href="http://cppcast.com/2015/10/andrei-alexandrescu/"&gt;interview with D’s Andrei Alexandrescu&lt;/a&gt; in which he makes similar points.)&lt;/p&gt;
+&lt;p&gt;The most obvious thing missing from both is the ability to do truly functional-style programming. C of course is also lacking classes and thus is much more difficult to use for any sort of object-oriented programming.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Neither has anything remotely like Rust’s traits or Swift’s extensions; C++ has only gotten lambdas recently.&lt;/p&gt;
+&lt;p&gt;All of this comes out to mean that the set of &lt;em&gt;tools&lt;/em&gt; available to systems programmer has necessarily been missing any number of things available in languages outside that context. In some cases, this may be a necessary consequence of the kinds of programming being done: when you need totally deterministic memory and compiler behavior, dynamic typing and a non-trivial runtime are simply not options. But in many cases, they are simply a function of the history of the languages’ development and history. Being an ALGOL descendant, and especially a C descendant, means there are some fundamental choices about the language which will differ from those made in a language descended from ML.&lt;/p&gt;
+&lt;p&gt;All of which is to say: C and C++ have been really useful tools in many ways, but having &lt;em&gt;only&lt;/em&gt; C and C++ available for serious systems programming work over the last decades has left many developers blind to or simply unaware of the real advantages other paradigms might offer them.&lt;/p&gt;
+&lt;p&gt;So going forward, I don’t want there to be &lt;em&gt;a winner&lt;/em&gt; in the systems programming space. I’d rather see D, Rust, Swift, Go, and maybe even a few other contenders all stay strong—finding their own niches and continually pushing each other and learning from each other. That will give us a space in which different languages are free to try out different approaches to the same problems, without being tied to the specific constraints faced by other languages. Built-in greenthreading? Go! Hindley-Milner types, memory safety, and zero runtime? Rust! Something in beween, highly expressive and with different type systems and tradeoffs around memory management, etc.? Swift, or D!&lt;/p&gt;
+&lt;p&gt;Having a robust, thriving set of competitors in the market will be good for the languages themselves. But it will also be good for developers. It will take off some of the blinders that come from a single language (or a pair of very closely related languages) dominating the ecosystem. It will make it likelier that people will be more familiar with different programming paradigms. And that can only be a good thing, as far as I’m concerned.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Classes and structs (product types), and reference and value types.][10]&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Properties: type and instance, stored and computed.][12]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;It is of course entirely possible to do non-classical OOP; the point is that C entirely lacks &lt;em&gt;language-level&lt;/em&gt; facilities for OOP, inheritance, etc.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 10 Jan 2016 10:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-01-10:2016/rust-and-swift-xi.html</guid><category>software development</category><category>rust</category><category>swift</category><category>rust-and-swift</category><category>programming-languages</category></item><item><title>2016-01-02-1432</title><link>http://www.chriskrycho.com/2016/2016-01-02-1432.html</link><description>&lt;p&gt;So you like GitHub pull requests but not so much the resulting merge commits? &lt;a href="https://blog.spreedly.com/2014/06/24/merge-pull-request-considered-harmful/"&gt;Have your 🍰 and eat it too.&lt;/a&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -265,24 +254,7 @@ fn main() {
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 21 Dec 2015 08:05:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-12-21:2015/2015-12-21-0805.html</guid><category>software development</category></item><item><title>Rust and Swift (x)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-x.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
-&lt;section id="parts-in-the-series" class="level2"&gt;
-&lt;h2&gt;Parts in the Series&lt;/h2&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Classes and structs (product types), and reference and value types.&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xiii.html"&gt;Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 21 Dec 2015 08:05:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-12-21:2015/2015-12-21-0805.html</guid><category>software development</category></item><item><title>Rust and Swift (x)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-x.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Swift and Rust both have “product types” as well as the &lt;code&gt;enum&lt;/code&gt; “sum types.” In Rust, these are &lt;code&gt;struct&lt;/code&gt; types; Swift splits them into &lt;code&gt;class&lt;/code&gt;es and &lt;code&gt;struct&lt;/code&gt;s.&lt;/p&gt;&lt;/li&gt;
@@ -425,31 +397,13 @@ fn main() {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.][9]&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Hopes for the next generation of systems programming.][11]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-&lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 22 Dec 2015 13:30:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-12-06:2015/rust-and-swift-x.html</guid><category>listicles</category><category>software development</category></item><item><title>Rust and Swift (ix)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-ix.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
-&lt;section id="parts-in-the-series" class="level2"&gt;
-&lt;h2&gt;Parts in the Series&lt;/h2&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xiii.html"&gt;Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 22 Dec 2015 13:30:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-12-06:2015/rust-and-swift-x.html</guid><category>listicles</category><category>software development</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>Rust and Swift (ix)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-ix.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Right off the bat when looking at the definitions for Swift’s and Rust’s &lt;code&gt;enum&lt;/code&gt; types, a difference pops out: the use of the keyword &lt;code&gt;case&lt;/code&gt; to introduce an enum member in Swift. In one sense, this overloads that keyword, but in another sense it’s fine: pattern matching and enums go hand in hand, so the use in both cases is fairly natural. Rust doesn’t have any special syntax to designate the elements of an enum; they’re just separated by commas.&lt;/p&gt;&lt;/li&gt;
@@ -498,14 +452,13 @@ let matchedValue = match matchee {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Functions, closures, and an awful lot of Swift syntax.][8]&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Classes and structs (product types), and reference and value types.][10]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-&lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 02 Jan 2016 21:54:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-11-09:2015/rust-and-swift-ix.html</guid><category>software development</category><category>listicles</category></item><item><title>2015-11-02 17:22</title><link>http://www.chriskrycho.com/2015/2015-11-02-1722.html</link><description>&lt;p&gt;Got the &lt;a href="https://www.jetbrains.com/store/"&gt;JetBrains Toolbox&lt;/a&gt; license for &lt;em&gt;everything&lt;/em&gt;. And then realized I now have access to the ReSharper Visual Studio C++ tools. &lt;em&gt;Yes!&lt;/em&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 02 Jan 2016 21:54:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2015-11-09:2015/rust-and-swift-ix.html</guid><category>software development</category><category>listicles</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>2015-11-02 17:22</title><link>http://www.chriskrycho.com/2015/2015-11-02-1722.html</link><description>&lt;p&gt;Got the &lt;a href="https://www.jetbrains.com/store/"&gt;JetBrains Toolbox&lt;/a&gt; license for &lt;em&gt;everything&lt;/em&gt;. And then realized I now have access to the ReSharper Visual Studio C++ tools. &lt;em&gt;Yes!&lt;/em&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -593,25 +546,9 @@ let matchedValue = match matchee {
 &lt;a href="#fnref3"&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 19 Oct 2015 20:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-19:2015/css-fallback-for-opentype-small-caps.html</guid><category>design</category><category>software development</category><category>typography</category></item><item><title>Rust and Swift (viii)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-viii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
-&lt;section id="parts-in-the-series" class="level2"&gt;
-&lt;h2&gt;Parts in the Series&lt;/h2&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xiii.html"&gt;Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 19 Oct 2015 20:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-19:2015/css-fallback-for-opentype-small-caps.html</guid><category>design</category><category>software development</category><category>typography</category></item><item><title>Rust and Swift (viii)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-viii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]&lt;/i&gt;&lt;/p&gt;
+&lt;section id="series-rust-and-swift.html" class="level2"&gt;
+&lt;h2&gt;[series]: /rust-and-swift.html&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Rust and Swift handle function definition fairly similarly, at least for basic function definitions. In fact, for most basic functions, the only difference between the two is the keyword used to indicate that you’re declaring a function: &lt;code&gt;fn&lt;/code&gt; in Rust and &lt;code&gt;func&lt;/code&gt; in Swift.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Likewise, both return an empty tuple, &lt;code&gt;()&lt;/code&gt;, called the &lt;em&gt;unit type&lt;/em&gt; in Rust or &lt;code&gt;Void&lt;/code&gt; in Swift. Note, however, that this unit/&lt;code&gt;Void&lt;/code&gt; type is &lt;em&gt;not&lt;/em&gt; like C(++)’s &lt;code&gt;void&lt;/code&gt; or Java’s &lt;code&gt;null&lt;/code&gt;: you cannot coerce other types to it; it really is an empty tuple.&lt;/p&gt;&lt;/li&gt;
@@ -697,8 +634,8 @@ fn main() {
 &lt;p&gt;This post is incredibly long, but I blame that on the (frankly incredible) number of variants Swift has on the same concept.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Pattern matching and the value of expression blocks.][7]&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.][9]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -711,49 +648,32 @@ fn main() {
 &lt;li id="fn2"&gt;&lt;p&gt;For a similar example in another up-and-coming language, see &lt;a href="http://elixir-lang.org/getting-started/modules.html#function-capturing"&gt;Elixir&lt;/a&gt;, which does almost exactly the same but with &lt;code&gt;&amp;amp;&lt;/code&gt; in place of &lt;code&gt;$&lt;/code&gt;.&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 19 Oct 2015 20:15:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-18:2015/rust-and-swift-viii.html</guid><category>software development</category><category>listicles</category></item><item><title>2015-10-17 15:21</title><link>http://www.chriskrycho.com/2015/2015-10-17-1521.html</link><description>&lt;p&gt;This is interesting: I’ve read some F♯ before, but it reads a &lt;em&gt;lot&lt;/em&gt; more obviously to me now that I’ve read a lot of Rust recently. Why? Because for all that they’re very different languages, both are ML descendants. It shows.&lt;/p&gt;
-&lt;div id="references" class="references"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 19 Oct 2015 20:15:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-18:2015/rust-and-swift-viii.html</guid><category>software development</category><category>listicles</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>2015-10-17 15:21</title><link>http://www.chriskrycho.com/2015/2015-10-17-1521.html</link><description>&lt;p&gt;This is interesting: I’ve read some F♯ before, but it reads a &lt;em&gt;lot&lt;/em&gt; more obviously to me now that I’ve read a lot of Rust recently. Why? Because for all that they’re very different languages, both are ML descendants. It shows.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 17 Oct 2015 15:21:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-17:2015/2015-10-17-1521.html</guid><category>software development</category></item><item><title>2015-10-13 10:59</title><link>http://www.chriskrycho.com/2015/2015-10-13-1059.html</link><description>&lt;p&gt;Today I did a code review on my iPad while walking from school to a coffee shop, using my iPhone’s data connection as a hotspot.&lt;/p&gt;
 &lt;p&gt;What a world we live in.&lt;/p&gt;
-&lt;div id="references" class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 13 Oct 2015 10:59:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-13:2015/2015-10-13-1059.html</guid><category>software development</category></item><item><title>2015-10-10 10:44</title><link>http://www.chriskrycho.com/2015/2015-10-10-1044.html</link><description>&lt;p&gt;Related to my &lt;a href="/2015/2015-10-10-1043.html"&gt;previous post&lt;/a&gt;—I really, &lt;em&gt;really&lt;/em&gt; wish more of the fundamental papers on CS topics were freely available.&lt;/p&gt;
-&lt;div id="references" class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 10 Oct 2015 10:44:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-10:2015/2015-10-10-1044.html</guid><category>software development</category></item><item><title>2015-10-10 10:43</title><link>http://www.chriskrycho.com/2015/2015-10-10-1043.html</link><description>&lt;p&gt;I’m suddenly finding myself with an interest in parsers and compilers. &lt;em&gt;What is happening to me???&lt;/em&gt;&lt;/p&gt;
-&lt;div id="references" class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 10 Oct 2015 10:43:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-10:2015/2015-10-10-1043.html</guid><category>software development</category></item><item><title>2015-10-09 13:46</title><link>http://www.chriskrycho.com/2015/2015-10-09-1346.html</link><description>&lt;p&gt;Inversion of control is a beautiful thing. Not least because it makes it so much easier to manage control over necessarily global state.&lt;/p&gt;
-&lt;div id="references" class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 09 Oct 2015 13:46:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-09:2015/2015-10-09-1346.html</guid><category>software development</category></item><item><title>2015-09-25 07:33</title><link>http://www.chriskrycho.com/2015/2015-09-25-0733.html</link><description>&lt;p&gt;I find that I solve many software problems faster by writing them out with pen on paper. I wonder how common that is?&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 25 Sep 2015 07:33:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-25:2015/2015-09-25-0733.html</guid><category>software development</category></item><item><title>Rust and Swift (vii)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-vii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
-&lt;section id="parts-in-the-series" class="level2"&gt;
-&lt;h2&gt;Parts in the Series&lt;/h2&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Pattern matching and the value of expression blocks.&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xiii.html"&gt;Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 25 Sep 2015 07:33:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-25:2015/2015-09-25-0733.html</guid><category>software development</category></item><item><title>Rust and Swift (vii)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-vii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Both Rust and Swift have &lt;em&gt;pattern-matching&lt;/em&gt;, and with what appears to be fairly similar basic behavior. (I touched on this briefly in my &lt;a href="/2015/rust-and-swift-i.html"&gt;first post in the series&lt;/a&gt;.) In Rust this goes under the &lt;code&gt;match&lt;/code&gt; construct, with matches specified like &lt;code&gt;&amp;lt;pattern&amp;gt; =&amp;gt; &amp;lt;expression|statement&amp;gt;&lt;/code&gt;, optionally with guards specified with &lt;code&gt;if&lt;/code&gt; expressions. In Swift, patterns are matched using the &lt;code&gt;switch&lt;/code&gt; construct, with matches specified like &lt;code&gt;case &amp;lt;pattern&amp;gt;: &amp;lt;expression|statement&amp;gt;&lt;/code&gt;, optionally with guards specified with &lt;code&gt;where&lt;/code&gt; expressions. (&lt;code&gt;where&lt;/code&gt; is also used in Rust, but for generic constraints, not pattern match guards.)&lt;/p&gt;&lt;/li&gt;
@@ -787,32 +707,15 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Collection types and the difference between syntax and semantics.][6]&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Functions, closures, and an awful lot of Swift syntax.][8]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-&lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 20 Sep 2015 13:42:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-19:2015/rust-and-swift-vii.html</guid><category>software development</category><category>listicles</category></item><item><title>Rust and Swift (vi)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-vi.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
-&lt;section id="parts-in-the-series" class="level2"&gt;
-&lt;h2&gt;Parts in the Series&lt;/h2&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Collection types and the difference between syntax and semantics.&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xiii.html"&gt;Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 20 Sep 2015 13:42:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-19:2015/rust-and-swift-vii.html</guid><category>software development</category><category>listicles</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>Rust and Swift (vi)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-vi.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]&lt;/i&gt;&lt;/p&gt;
+&lt;section id="series-rust-and-swift.html" class="level2"&gt;
+&lt;h2&gt;[series]: /rust-and-swift.html&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;It kind of feels like this summarizes a &lt;em&gt;lot&lt;/em&gt; of things about the overall design of Swift:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -864,32 +767,16 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; The value (and challenge) of learning languages in parallel.][5]&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Pattern matching and the value of expression blocks.][7]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 19 Sep 2015 09:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-19:2015/rust-and-swift-vi.html</guid><category>software development</category><category>listicles</category></item><item><title>Rust and Swift (v)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-v.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
-&lt;section id="parts-in-the-series" class="level2"&gt;
-&lt;h2&gt;Parts in the Series&lt;/h2&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;The value (and challenge) of learning languages in parallel.&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xiii.html"&gt;Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 19 Sep 2015 09:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-19:2015/rust-and-swift-vi.html</guid><category>software development</category><category>listicles</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>Rust and Swift (v)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-v.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]&lt;/i&gt;&lt;/p&gt;
+&lt;section id="series-rust-and-swift.html" class="level2"&gt;
+&lt;h2&gt;[series]: /rust-and-swift.html&lt;/h2&gt;
 &lt;p&gt;I’ve been working on learning Swift over the past couple weeks, and had spent the month prior to that doing a deep first dive on Rust. This kind of approach, learning two languages basically at the same time, is entirely new to me, and for good reason. Programming languages are not trivial to learn, and to learn them meaningfully one must practice with them a great deal.&lt;/p&gt;
 &lt;p&gt;I’m doing this largely of necessity. I’m hoping to build an application with a very capable, performant cross-platform core language (Rust), but planning to ship a native OS X app (first) when all is said and done. My desire to make the core libraries portable rules out Swift immediately. To be frank, so does the fact that it’s an Apple language: I am happy to use Apple’s tools on its platform, but I don’t want to shackle myself to their choices in the long run. Too, having good Rust experience is likely to be valuable in many other contexts.&lt;/p&gt;
 &lt;p&gt;So I need to learn both.&lt;/p&gt;
@@ -898,14 +785,14 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;p&gt;I have a long way to go in both languages, of course. Reading on nights and weekends, and the little bit of playing I’ve been able to do with each of them, is no replacement for just sinking my teeth into a project and finding the pain points. Nonetheless, I’m really glad to be learning these two languages &lt;em&gt;together&lt;/em&gt;. If you’re up for a challenge, try it sometime! You’ll be surprised how much you learn.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Language design tradeoffs, highlighted by string manipulation.][4]&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Collection types and the difference between syntax and semantics.][6]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 12 Sep 2015 13:45:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-12:2015/rust-and-swift-v.html</guid><category>software development</category></item><item><title>If-expressions in Rust</title><link>http://www.chriskrycho.com/2015/if-expressions-in-rust.html</link><description>&lt;p&gt;I love the fact that all &lt;code&gt;if&lt;/code&gt; statements in Rust are expressions. It gives you a great deal of expressitivity in the language.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 12 Sep 2015 13:45:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-12:2015/rust-and-swift-v.html</guid><category>software development</category><category>rust</category><category>swift</category><category>rust-and-swift</category><category>programming languages</category></item><item><title>If-expressions in Rust</title><link>http://www.chriskrycho.com/2015/if-expressions-in-rust.html</link><description>&lt;p&gt;I love the fact that all &lt;code&gt;if&lt;/code&gt; statements in Rust are expressions. It gives you a great deal of expressitivity in the language.&lt;/p&gt;
 &lt;p&gt;Let’s contrast with Python (which I love, for the record). In Python, you can do something like this:&lt;/p&gt;
 &lt;pre class="python"&gt;&lt;code&gt;some_condition = True
 if some_condition:
@@ -943,7 +830,7 @@ else {
 &lt;p&gt;Obviously this is totally contrived and silly; the point is that no matter what the internals are, &lt;code&gt;if&lt;/code&gt; blocks are expressions, and their final expressions can be assigned like any other.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;As a note: I got here because I was originally thinking you couldn’t do a one-liner like you can in Python. As shown above, that’s totally false, and in fact the Rust version is much more capable than Python’s, because you don’t need a dedicated ternary when all &lt;code&gt;if&lt;/code&gt; blocks are expressions. Rust used to have a C-style ternary (&lt;code&gt;&amp;lt;condition&amp;gt; ? &amp;lt;value if true&amp;gt; : &amp;lt;value if false&amp;gt;&lt;/code&gt;) but it was &lt;a href="https://github.com/rust-lang/rust/issues/1698"&gt;removed&lt;/a&gt; during the lead-up to the 1.0 release—a decision I wholeheartedly affirm.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;
@@ -953,27 +840,10 @@ else {
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 12 Sep 2015 11:10:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-12:2015/if-expressions-in-rust.html</guid><category>software development</category></item><item><title>2015-09-11 12:50</title><link>http://www.chriskrycho.com/2015/2015-09-11-1250.html</link><description>&lt;p&gt;Since Rust allows &lt;a href="https://doc.rust-lang.org/book/unsafe.html"&gt;&lt;code&gt;unsafe&lt;/code&gt;&lt;/a&gt; code, it’s easy to wonder how necessary it is. The answer: in general, &lt;a href="https://github.com/iron/iron#overview" title="&amp;#39;Iron&amp;#39; Rust web framework"&gt;not at all&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 11 Sep 2015 13:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-11:2015/2015-09-11-1250.html</guid><category>software development</category></item><item><title>Rust and Swift (iv)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-iv.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
-&lt;section id="parts-in-the-series" class="level2"&gt;
-&lt;h2&gt;Parts in the Series&lt;/h2&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xiii.html"&gt;Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 11 Sep 2015 13:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-11:2015/2015-09-11-1250.html</guid><category>software development</category></item><item><title>Rust and Swift (iv)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-iv.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Both Swift and Rust directly address the issue of having to worry about memory allocation and safety. They do it in different ways, though: Swift by automatic reference counting, Rust by its concept of ownership. For a lot of day-to-day development, I can see the Swift approach being a win for the same reason a language like Python or Ruby is: having that all handled for you is &lt;em&gt;nice&lt;/em&gt;. Having the power Rust gives you comes at the price of increased cognitive load from having to reason about ownership.&lt;/p&gt;&lt;/li&gt;
@@ -989,40 +859,22 @@ else {
 &lt;p&gt;This was the first section where it didn’t feel like Rust was just a clear overall “winner” over Swift. Some of the trade offs between the language designs are more apparent here, and I do appreciate the “ergonomics” of Swift in a number of these things.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Operators, including overloading, and thoughts on brevity.][3]&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; The value (and challenge) of learning languages in parallel.][5]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-&lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 10 Sep 2015 21:05:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-10:2015/rust-and-swift-iv.html</guid><category>software development</category><category>listicles</category></item><item><title>2015-09-10 12:22</title><link>http://www.chriskrycho.com/2015/2015-09-10-1222.html</link><description>&lt;p&gt;Needed to set up a simple test bed for a Python distribution with &lt;code&gt;setuptools&lt;/code&gt;, which depends on external DLLs. So I used Rust and linked it up with Python’s FFI, because it was a perfect chance to see them interact.&lt;/p&gt;
-&lt;div class="references"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 10 Sep 2015 21:05:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-10:2015/rust-and-swift-iv.html</guid><category>software development</category><category>listicles</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>2015-09-10 12:22</title><link>http://www.chriskrycho.com/2015/2015-09-10-1222.html</link><description>&lt;p&gt;Needed to set up a simple test bed for a Python distribution with &lt;code&gt;setuptools&lt;/code&gt;, which depends on external DLLs. So I used Rust and linked it up with Python’s FFI, because it was a perfect chance to see them interact.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 10 Sep 2015 12:22:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-10:2015/2015-09-10-1222.html</guid><category>software development</category></item><item><title>Rust and Swift (iii)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-iii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
-&lt;section id="parts-in-the-series" class="level2"&gt;
-&lt;h2&gt;Parts in the Series&lt;/h2&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Operators, including overloading, and thoughts on brevity.&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xiii.html"&gt;Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 10 Sep 2015 12:22:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-10:2015/2015-09-10-1222.html</guid><category>software development</category></item><item><title>Rust and Swift (iii)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-iii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;I just hit operators in the Swift book. First question: are operators special syntax, or are they sugar for &lt;code&gt;protocol&lt;/code&gt;s? (Every modern language I use or even have played with handles them as sugar for another language construct—Python, Ruby, Io, Elixir, and Rust, to name just a few ranging over a substantial variety of ages and styles.)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Oh. I did the requisite digging, and operators are functions (which is okay) defined in the global namespace (&lt;em&gt;:sigh:&lt;/em&gt;). I say “okay” rather than good because the justification offered is that this is the only way to make the operators work as binary operators between existing instances of types. But that elides the fact that, if that’s the case, it is so because of other language design decisions. This seems like a perfect place to use a &lt;code&gt;protocol&lt;/code&gt;, but perhaps (unlike Rust’s &lt;code&gt;trait&lt;/code&gt;) they’re not sufficiently capable to handle this? That’s an open question; I have no idea about the answer.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Interestingly, Rust has several fewer operators than Swift, even apart from those mentioned in my &lt;a href="/2015/rust-and-swift-ii.html"&gt;previous post&lt;/a&gt;. It drops the pre- and post-increment operators entirely (as does Python), since their results can always be accomplished in other ways with less potential for confusion. Swift keeps them, no doubt in part because most (Objective) C programs are deeply familiar with them and with idioms associated with them.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Interestingly, Rust has several fewer operators than Swift, even apart from those mentioned in my [previous post][2]. It drops the pre- and post-increment operators entirely (as does Python), since their results can always be accomplished in other ways with less potential for confusion. Swift keeps them, no doubt in part because most (Objective) C programs are deeply familiar with them and with idioms associated with them.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;I learned a few new things about Rust’s operators as well: the Boolean &lt;code&gt;||&lt;/code&gt; and &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; operators and its bit wise &lt;code&gt;|&lt;/code&gt; and &lt;code&gt;&amp;amp;&lt;/code&gt; operators differ not only in that the former are &lt;em&gt;short-circuit&lt;/em&gt; operators and the latter are not. Obviously you can also do things like bit-wise flag operations with the latter, but the reference emphasizes the short-circuiting behavior. This makes perfect sense, but it wasn’t something I’d ever considered explicitly before.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;There is no ternary operator in Rust, because of how it handles the relationship between expressions and statements. Swift keeps it. That’s an interesting reflection of differences in design: Rust dropped it because &lt;code&gt;if&lt;/code&gt; blocks are expressions, so it’s redundant, and they have had a goal of removing unnecessary features. (See the discussion on dropping the ternary operator—with an interesting aside from Brendan Eich on JavaScript—&lt;a href="https://github.com/rust-lang/rust/issues/1698"&gt;here&lt;/a&gt;). Note that this is not a criticism of Swift, just an observation, though I do really like Rust’s expression-driven approach.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The &lt;code&gt;??&lt;/code&gt; “nil coalescing operator”, on the other hand, I actively dislike. This seems like shorthand for the sake of shorthand, partly necessitated by the existing drive toward shorthand with optional types in Swift. Sometimes brevity can lead to decreased clarity. Eliding too much, or subsuming it into shorthand, makes the language harder to hold in your head and requires you to slow down more for parsing each line.&lt;/p&gt;&lt;/li&gt;
@@ -1031,31 +883,13 @@ else {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Basic types and the syntax around them.][2]&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Language design tradeoffs, highlighted by string manipulation.][4]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-&lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 07 Sep 2015 11:55:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-07:2015/rust-and-swift-iii.html</guid><category>software development</category><category>listicles</category></item><item><title>Rust and Swift (ii)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-ii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.&lt;/i&gt;&lt;/p&gt;
-&lt;section id="parts-in-the-series" class="level2"&gt;
-&lt;h2&gt;Parts in the Series&lt;/h2&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Basic types and the syntax around them.&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xiii.html"&gt;Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 07 Sep 2015 11:55:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-07:2015/rust-and-swift-iii.html</guid><category>software development</category><category>listicles</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>Rust and Swift (ii)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-ii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;At first blush, I find the extra syntax around optionals in Swift more confusing than helpful. I think this comes down to my preference for a more Python-like approach: “Explicit is better than implicit” and “There should be one– and preferably only one –obvious way to do it” both militate against the multiple different ways you can handle optional values in Swift. Optional types are created in one of two ways:&lt;/p&gt;
@@ -1087,37 +921,20 @@ else {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-i.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Thoughts after reading the introduction to the Swift book.][1]&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Operators, including overloading, and thoughts on brevity.][3]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id="fn1"&gt;&lt;p&gt;This may of course be intentional on Apple’s part with Swift. Maintaining tight control over its tooling is very typical of modern Apple.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 06 Sep 2015 10:20:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-06:2015/rust-and-swift-ii.html</guid><category>software development</category><category>listicles</category></item><item><title>Rust and Swift (i)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-i.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I started writing these responses in a Slack channel of developers I participate in as I worked through the &lt;a href="https://developer.apple.com/swift/"&gt;Swift&lt;/a&gt; &lt;a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/"&gt;book&lt;/a&gt;. I realized after a bit that it would make a better blog post than chat room content, so here we are. This is all entirely off-the-cuff: me just thinking out loud as I read; this is by no means expert opinion.&lt;/i&gt;&lt;/p&gt;
-&lt;section id="parts-in-the-series" class="level2"&gt;
-&lt;h2&gt;Parts in the Series&lt;/h2&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;Thoughts after reading the introduction to the Swift book.&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iii.html"&gt;Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-iv.html"&gt;Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-v.html"&gt;The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vi.html"&gt;Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-vii.html"&gt;Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-viii.html"&gt;Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ix.html"&gt;Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-x.html"&gt;Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xi.html"&gt;Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xii.html"&gt;Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="/2016/rust-and-swift-xiii.html"&gt;Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 06 Sep 2015 10:20:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-06:2015/rust-and-swift-ii.html</guid><category>software development</category><category>listicles</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>Rust and Swift (i)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-i.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I started writing these responses in a Slack channel of developers I participate in as I worked through the &lt;a href="https://developer.apple.com/swift/"&gt;Swift&lt;/a&gt; &lt;a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/"&gt;book&lt;/a&gt;. I realized after a bit that it would make a better blog post than chat room content, so here we are. This is all entirely off-the-cuff: me just thinking out loud as I read; this is by no means expert opinion.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class=editorial&gt;I later turned this into the first part of a whole &lt;a href="/rust-and-swift.html"&gt;series&lt;/a&gt; comparing Rust and Swift!&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;..&amp;lt;&lt;/code&gt; – seriously?&lt;/p&gt;
@@ -1139,79 +956,78 @@ else {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="/2015/rust-and-swift-ii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Basic types and the syntax around them.][2]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-&lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 07 Sep 2015 13:45:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-04:2015/rust-and-swift-i.html</guid><category>listicles</category><category>software development</category></item><item><title>2015-09-02 08:07</title><link>http://www.chriskrycho.com/2015/2015-09-02-0807.html</link><description>&lt;p&gt;I’m writing a bunch of C that &lt;em&gt;needs&lt;/em&gt; to handle error returns. I’m really wishing I had Rust’s &lt;code&gt;#[must_use]&lt;/code&gt; annotation right now. For that matter, I just want Rust’s &lt;code&gt;Result&amp;lt;T, E&amp;gt;&lt;/code&gt; type available.&lt;/p&gt;
-&lt;div class="references"&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 07 Sep 2015 13:45:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-04:2015/rust-and-swift-i.html</guid><category>listicles</category><category>software development</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>2015-09-02 08:07</title><link>http://www.chriskrycho.com/2015/2015-09-02-0807.html</link><description>&lt;p&gt;I’m writing a bunch of C that &lt;em&gt;needs&lt;/em&gt; to handle error returns. I’m really wishing I had Rust’s &lt;code&gt;#[must_use]&lt;/code&gt; annotation right now. For that matter, I just want Rust’s &lt;code&gt;Result&amp;lt;T, E&amp;gt;&lt;/code&gt; type available.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 02 Sep 2015 08:07:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-02:2015/2015-09-02-0807.html</guid><category>software development</category></item><item><title>2015-09-01 06:51</title><link>http://www.chriskrycho.com/2015/2015-09-01-0651.html</link><description>&lt;p&gt;What are you using to track software development issues these days? JIRA, YouTrack, FogBugz, RedMine, or something else?&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 01 Sep 2015 06:51:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-01:2015/2015-09-01-0651.html</guid><category>software development</category></item><item><title>2015-08-27 06:13</title><link>http://www.chriskrycho.com/2015/2015-08-27-0613.html</link><description>&lt;p&gt;Flame war time: I’ve basically concluded that &lt;em&gt;for the tasks I use them for&lt;/em&gt;, I prefer Vim’s modal editing style to Emacs’ not-modal editing style.&lt;/p&gt;
 &lt;p&gt;I’d still rather use Atom/Sublime or IntelliJ IDEA for almost everything, though.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 27 Aug 2015 06:13:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-27:2015/2015-08-27-0613.html</guid><category>software development</category></item><item><title>2015/08/19 16:33</title><link>http://www.chriskrycho.com/2015/20150819-1633.html</link><description>&lt;p&gt;Sometimes it is tempting as a designer to think that users are stupid. Don’t. If the software is not working for users, that implies stupidity in another party entirely: the one that designed the software. 😉&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 19 Aug 2015 16:33:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-19:2015/20150819-1633.html</guid><category>design</category><category>software development</category></item><item><title>2015-08-18 17:49</title><link>http://www.chriskrycho.com/2015/2015-08-18-1749.html</link><description>&lt;p&gt;Ugh. I just discovered that a support email address has been sitting unattended for eight months. (Totally my fault.) Not a &lt;em&gt;lot&lt;/em&gt; of problems… but any unanswered emails for that long are the worst user experience. So frustrated with myself right now.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 18 Aug 2015 17:49:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-18:2015/2015-08-18-1749.html</guid><category>software development</category></item><item><title>2015-08-17 17:40</title><link>http://www.chriskrycho.com/2015/2015-08-17-1740.html</link><description>&lt;p&gt;I’ve been using &lt;a href="http://input.fontbureau.com"&gt;Input&lt;/a&gt; for &lt;a href="http://www.chriskrycho.com/2015/2015-08-07-2137.html"&gt;about ten days now&lt;/a&gt;. It grew on me slowly, but I &lt;em&gt;really&lt;/em&gt; like it. Using it everywhere now!&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 17 Aug 2015 17:40:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-17:2015/2015-08-17-1740.html</guid><category>typography</category><category>software development</category></item><item><title>2015-08-17 06:33</title><link>http://www.chriskrycho.com/2015/2015-08-17-0633.html</link><description>&lt;p&gt;It turns out browsers render CSS transitions for &lt;em&gt;positioning&lt;/em&gt; much more nicely than they do those for the &lt;em&gt;box model&lt;/em&gt; (perhaps unsurprisingly, on reflection). Use &lt;code&gt;position&lt;/code&gt; and &lt;code&gt;top&lt;/code&gt; instead of &lt;code&gt;margin&lt;/code&gt; to smoothly animate an item moving within its container.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 17 Aug 2015 06:33:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-17:2015/2015-08-17-0633.html</guid><category>software development</category><category>design</category></item><item><title>2015-08-13 20:01</title><link>http://www.chriskrycho.com/2015/2015-08-13-2001.html</link><description>&lt;p&gt;It’s nice when you evaluate a potential product’s market more closely and find your idea might actually be viable.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 13 Aug 2015 20:01:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-13:2015/2015-08-13-2001.html</guid><category>software development</category><category>business</category></item><item><title>2015-08-12 08:40</title><link>http://www.chriskrycho.com/2015/2015-08-12-0840.html</link><description>&lt;p&gt;Where do you like to set your &lt;code&gt;--prefix&lt;/code&gt; when configuring personal development tooling setups? Somewhere under ~? Or somewhere else?&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 12 Aug 2015 08:40:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-12:2015/2015-08-12-0840.html</guid><category>software development</category></item><item><title>2015-08-11 20:13</title><link>http://www.chriskrycho.com/2015/2015-08-11-2013.html</link><description>&lt;p&gt;If you’re delivering images over the web, you &lt;em&gt;need&lt;/em&gt; to be using something like &lt;a href="https://imageoptim.com"&gt;ImageOptim&lt;/a&gt;. No excuses.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 11 Aug 2015 20:13:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-11:2015/2015-08-11-2013.html</guid><category>software development</category></item><item><title>2015-08-10 15:06</title><link>http://www.chriskrycho.com/2015/2015-08-10-1506.html</link><description>&lt;p&gt;Tradeoffs time: whether ’tis better to drop in an off-the-shelf open source solution for this particular problem, and bring in all the extra weight it includes, or do it myself and pay in the time spent.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 10 Aug 2015 15:06:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-10:2015/2015-08-10-1506.html</guid><category>software development</category></item><item><title>2015/08/09 22:16</title><link>http://www.chriskrycho.com/2015/20150809-2216.html</link><description>&lt;p&gt;Tonight, Jaimie said that she thought Rust had turned me into a bit of a fanboy. Don’t tell anyone, but I think she’s basically right…&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 09 Aug 2015 22:16:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-09:2015/20150809-2216.html</guid><category>software development</category></item><item><title>2015-08-08 18:11</title><link>http://www.chriskrycho.com/2015/2015-08-08-1811.html</link><description>&lt;p&gt;I can think of no more effective an argument for &lt;a href="http://www.rust-lang.org/"&gt;Rust&lt;/a&gt; and its &lt;a href="http://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html"&gt;memory safety guarantees&lt;/a&gt; than the time I spent this weekend hunting down bugs caused by buffer overruns in decades-old C code.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 08 Aug 2015 18:11:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-08:2015/2015-08-08-1811.html</guid><category>software development</category></item><item><title>2015-08-08 15:33</title><link>http://www.chriskrycho.com/2015/2015-08-08-1533.html</link><description>&lt;p&gt;I found a &lt;code&gt;CEditDlg&lt;/code&gt; instance and went looking for it in the MSDN docs, and was a bit nonplussed not to find it. Oh. It’s a &lt;code&gt;CFileDialog&lt;/code&gt; subclass, and never mind the semantic ambiguity arising from the existence of a native &lt;code&gt;CEdit&lt;/code&gt; class. 😐&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 08 Aug 2015 15:33:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-08:2015/2015-08-08-1533.html</guid><category>software development</category></item><item><title>2015-08-07 21:37</title><link>http://www.chriskrycho.com/2015/2015-08-07-2137.html</link><description>&lt;p&gt;Thinking about setting &lt;a href="http://input.fontbureau.com"&gt;Input&lt;/a&gt; as my typeface for doing my development for a week or two, see how it goes.&lt;/p&gt;
 &lt;p&gt;Anybody tried it? Bugs or problems to report?&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 07 Aug 2015 21:37:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-07:2015/2015-08-07-2137.html</guid><category>software development</category><category>typography</category></item><item><title>High- and Low-Level Programming Languages</title><link>http://www.chriskrycho.com/2015/high-and-low-level-programming-languages.html</link><description>&lt;p&gt;It occurred to me while listening to &lt;a href="https://edwinb.wordpress.com"&gt;Edwin Brady&lt;/a&gt; talk about &lt;a href="http://www.idris-lang.org"&gt;Idris&lt;/a&gt; on the &lt;a href="http://typetheorypodcast.com"&gt;Type Theory Podcast&lt;/a&gt;,&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; having just spent a few weeks starting to learn &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt;: “low-level” has at least two meanings in software. One is whether something has manual memory management or is garbage collected, reference counted, or otherwise manages memory itself. This is what people often mean when they talk about C, C++, etc. as being “low-level” and languages like Python or Ruby or C♯ being high-level.&lt;/p&gt;
 &lt;p&gt;But then you toss in a language like &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt;, and things start to get a little more complicated. Rust can do the same kind of direct memory management that makes C or C++ a good language for things like writing operating system kernels. [&lt;a href="https://github.com/torvalds/linux"&gt;1&lt;/a&gt;,&lt;a href="https://en.wikipedia.org/wiki/Architecture_of_Windows_NT"&gt;2&lt;/a&gt;,&lt;a href="http://www.opensource.apple.com/source/xnu/xnu-2782.10.72/"&gt;3&lt;/a&gt;] But it is also memory-safe, at least in ordinary usage. Like C♯, you have to be explicit about any unsafe code, with the &lt;code&gt;unsafe&lt;/code&gt; keyword on any blocks that do memory management that isn’t safe. And the vast majority of Rust code &lt;em&gt;is&lt;/em&gt; safe.&lt;/p&gt;
 &lt;p&gt;More than that, though, Rust &lt;em&gt;feels&lt;/em&gt; like a high-level language. It gives you higher-kinded functions, generics, traits-based composition of types, hygienic macros, and the implementation of many important parts the essentials of the language in the library. If you need to patch something, or extend something, you can do that in a straightforward way. In short, it gives you lots of good abstractions like you would expect in a high-level language.&lt;/p&gt;
 &lt;p&gt;Rust is low-level in that you can write (and people are writing) systems-level programs in it. It is high-level in that it lets you express things in ways normally associated with languages like Haskell or OCaml or Python or Ruby. To put it simply: it’s &lt;em&gt;low-level&lt;/em&gt; in its ability to address the computer, and &lt;em&gt;high-level&lt;/em&gt; in the abstractions it hands to a programmer. That’s a powerful combination, and I hope more languages embrace it in the years to come.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;
@@ -1221,66 +1037,66 @@ else {
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 07 Aug 2015 20:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-07:2015/high-and-low-level-programming-languages.html</guid><category>software development</category></item><item><title>2015-08-07 18:20</title><link>http://www.chriskrycho.com/2015/2015-08-07-1820.html</link><description>&lt;p&gt;Quote of the week (3-year-old Ellie talking to her mom, who has been learning Python): “Mommy! I have a function for you!”&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 07 Aug 2015 18:20:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-07:2015/2015-08-07-1820.html</guid><category>ellie</category><category>software development</category><category>jaimie</category></item><item><title>2015-08-06 17:33</title><link>http://www.chriskrycho.com/2015/2015-08-06-1733.html</link><description>&lt;p&gt;☑ Finished reading the &lt;a href="http://rustbyexample.com"&gt;Rust by Example&lt;/a&gt; book.&lt;br /&gt;
 ☑ Submitted a couple &lt;a href="https://github.com/rust-lang/rust-by-example/pull/628"&gt;pull requests&lt;/a&gt;.&lt;br /&gt;
 ☑ Concluded that I &lt;em&gt;really&lt;/em&gt; like this language.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 06 Aug 2015 17:33:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-06:2015/2015-08-06-1733.html</guid><category>software development</category></item><item><title>2015-08-05 21:05</title><link>http://www.chriskrycho.com/2015/2015-08-05-2105.html</link><description>&lt;p&gt;Hooked up my digital piano to Logic Pro X tonight and wrote &lt;a href="https://soundcloud.com/chriskrycho/theme-for-sappy-no-vocals"&gt;the theme&lt;/a&gt; for a podcast we’re doing together on learning to program. It’s so good!&lt;/p&gt;
-&lt;div id="references" class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 05 Aug 2015 21:05:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-05:2015/2015-08-05-2105.html</guid><category>podcasting</category><category>music</category><category>Jaimie</category><category>software development</category></item><item><title>2015-08-03 07:58</title><link>http://www.chriskrycho.com/2015/2015-08-03-0758.html</link><description>&lt;p&gt;Whoa! After years of demand, Confluence &lt;em&gt;finally&lt;/em&gt; added support for importing Markdown-formatted content in its “Markup” box. It’s not native support for editing in Markdown… but it &lt;em&gt;is&lt;/em&gt; a step forward. Good work, Atlassian.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 03 Aug 2015 07:58:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-03:2015/2015-08-03-0758.html</guid><category>software development</category></item><item><title>2015-08-02 18:03</title><link>http://www.chriskrycho.com/2015/2015-08-02-1803.html</link><description>&lt;p&gt;Just recorded the first episode of a new, short, weekly podcast I’m working on. Audio should be live in about a week!&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 02 Aug 2015 18:03:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-02:2015/2015-08-02-1803.html</guid><category>software development</category><category>podcast</category></item><item><title>2015-08-01 08:33</title><link>http://www.chriskrycho.com/2015/2015-08-01-0833.html</link><description>&lt;p&gt;People often point to &lt;a href="https://xkcd.com/627/"&gt;this (&lt;em&gt;hilariously accurate&lt;/em&gt;) flowchart&lt;/a&gt; to explain how to solve tech problems… but it leaves something &lt;em&gt;really&lt;/em&gt; important out: we “techies” know the right questions to ask. That makes a big difference.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 01 Aug 2015 08:33:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-01:2015/2015-08-01-0833.html</guid><category>software development</category></item><item><title>2015-07-30 20:28</title><link>http://www.chriskrycho.com/2015/2015-07-30-2028.html</link><description>&lt;p&gt;Another little feature of Rust I quite like: the use of &lt;a href="https://en.wikipedia.org/wiki/Trait_(computer_programming)"&gt;&lt;code&gt;trait&lt;/code&gt;s&lt;/a&gt; instead of inheritance to share behavior. All the benefits of inheritance, and a few more besides, but none of the drawbacks.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 30 Jul 2015 20:28:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-07-30:2015/2015-07-30-2028.html</guid><category>software development</category></item><item><title>2015-07-29 20:47</title><link>http://www.chriskrycho.com/2015/2015-07-29-2047.html</link><description>&lt;p&gt;I just realized that one of the reason &lt;a href="http://www.rust-lang.org/"&gt;Rust&lt;/a&gt; so strongly appeals to me is that its design embodies one of my favorite traits from &lt;a href="https://www.python.org/dev/peps/pep-0020/"&gt;the Zen of Python&lt;/a&gt;: &lt;em&gt;explicit is better than implicit&lt;/em&gt;.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 29 Jul 2015 20:47:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-07-29:2015/2015-07-29-2047.html</guid><category>software development</category></item><item><title>2015-07-29 10:42</title><link>http://www.chriskrycho.com/2015/2015-07-29-1042.html</link><description>&lt;p&gt;Courtesy of &lt;em&gt;something&lt;/em&gt; in my stack not playing right, I’ve now been reduced to pushing and pulling changes between OS X and my Windows VM through Bitbucket, rather than just having a mapped drive locally. This feels silly.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 29 Jul 2015 10:42:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-07-29:2015/2015-07-29-1042.html</guid><category>software development</category></item><item><title>2015-07-29 10:20</title><link>http://www.chriskrycho.com/2015/2015-07-29-1020.html</link><description>&lt;p&gt;Hmm, this may be telling of the future… &lt;a href="https://www.sourcetreeapp.com"&gt;SourceTree&lt;/a&gt; now introduces itself as a Git tool. No mention of Hg at all. 😟&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 29 Jul 2015 10:20:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-07-29:2015/2015-07-29-1020.html</guid><category>software development</category></item><item><title>2015-07-04 19:57</title><link>http://www.chriskrycho.com/2015/2015-07-04-1957.html</link><description>&lt;p&gt;My dear &lt;a href="http://jaimiekrycho.com"&gt;wife&lt;/a&gt; has started teaching herself Python as a hobby. She has &lt;em&gt;the&lt;/em&gt; essential skill required to succeed as a programmer: the willingness to persevere even when it isn’t making sense to her. I’m extremely impressed.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 04 Jul 2015 19:57:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-07-04:2015/2015-07-04-1957.html</guid><category>Jaimie</category><category>software development</category></item><item><title>2015-06-27 14:11</title><link>http://www.chriskrycho.com/2015/2015-06-27-1411.html</link><description>&lt;p&gt;Playing with CSS transforms and transitions while I listen to a lecture on Romans for my New Testament class. Keep myself awake…&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 27 Jun 2015 14:11:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-27:2015/2015-06-27-1411.html</guid><category>software development</category></item><item><title>2015-06-26 14:03</title><link>http://www.chriskrycho.com/2015/2015-06-26-1403.html</link><description>&lt;p&gt;I cannot wait till I can switch to ES2015. Got bit by the stupid var scoping issue again. You’d think I’d be past that by now…&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 26 Jun 2015 14:03:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-26:2015/2015-06-26-1403.html</guid><category>software development</category></item><item><title>2015-06-25 21:06</title><link>http://www.chriskrycho.com/2015/2015-06-25-2106.html</link><description>&lt;p&gt;Reading JavaScript Allongé. Just got to combinatorial logic (kestrel and idiot bird, for those in the know). Then he destructured a list with them.&lt;/p&gt;
 &lt;p&gt;Mind. Blown.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 25 Jun 2015 21:06:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-25:2015/2015-06-25-2106.html</guid><category>software development</category></item><item><title>2015-06-25 09:10</title><link>http://www.chriskrycho.com/2015/2015-06-25-0910.html</link><description>&lt;p&gt;One of the things that annoys me most when writing C is how difficult (really, almost impossible) it is to do anything generically. The same operation for different items in a struct? Good luck. It’s possible, but rarely worth the work.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 25 Jun 2015 09:10:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-25:2015/2015-06-25-0910.html</guid><category>software development</category></item><item><title>HTML5 Location, &lt;base&gt;, and SVG</title><link>http://www.chriskrycho.com/2015/html5-location-base-and-svg.html</link><description>&lt;p&gt;For quite some time, I have been frustrated by a bug in HolyBible.com: Firefox would not render SVGs using the &lt;code&gt;&amp;lt;use xlink:xhref=&amp;quot;#some-SVG-ID&amp;quot;&amp;gt;&amp;lt;/use&amp;gt;&lt;/code&gt; pattern. Today, I set aside my ongoing work on new user-facing functionality and dedicated what working time I had to hunting down the cause of this and fixing it at last.&lt;/p&gt;
@@ -1310,7 +1126,7 @@ else {
 &lt;p&gt;The &lt;a href="https://github.com/angular/angular.js/issues/8934#issuecomment-56568466"&gt;solution&lt;/a&gt;, it turns out, only came into being after I’d done the initial implementation, and I have no idea how much later it found its way into the Angular docs. However, even though it now &lt;em&gt;exists&lt;/em&gt; in the docs, it’s by no means obvious why you should do it this way, and certainly no mention of SVG! This might not seem odd to you… but it should, given that the only reason that Angular introduced this API change was to account for &lt;em&gt;exactly this issue&lt;/em&gt;.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;As the Angular docs note, leaving out the &lt;code&gt;&amp;lt;base&amp;gt;&lt;/code&gt; tag means all your URLs have to be absolute if you want to use HTML5 location and the &lt;code&gt;$locationProvider&lt;/code&gt;. If you want to use SVGs with &lt;code&gt;&amp;lt;use&amp;gt;&lt;/code&gt; and Firefox, though, that’s what you have to do (and therefore that’s what I’m doing).&lt;/p&gt;
 &lt;p&gt;Fun times, right?&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;
@@ -1324,7 +1140,7 @@ else {
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 02 Jul 2015 22:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-20:2015/html5-location-base-and-svg.html</guid><category>software development</category></item><item><title>2015-06-18 21:54</title><link>http://www.chriskrycho.com/2015/2015-06-18-2154.html</link><description>&lt;p&gt;To my great delight, and thanks to a &lt;a href="https://alpha.app.net/jnm/post/61270949"&gt;suggestion&lt;/a&gt; from App.net friend &lt;a href="https://alpha.app.net/jnm/"&gt;@jnm&lt;/a&gt;, I was able to &lt;a href="http://www.linuxjournal.com/content/downloading-entire-web-site-wget"&gt;get a static copy&lt;/a&gt; of my 2012–2013-era site archived this evening. That in turn means I’ll be able to replace my WordPress install with static HTML pages over the next few weeks. &lt;em&gt;Victory.&lt;/em&gt;&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 18 Jun 2015 21:54:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-18:2015/2015-06-18-2154.html</guid><category>software development</category></item><item><title>How to Build a Single-Page App API Right</title><link>http://www.chriskrycho.com/2015/how-to-build-a-single-page-app-api-right.html</link><description>&lt;p&gt;When I was first working on HolyBible.com, I struggled for quite a while to wrap my head around the right way to structure its API—and in truth, I actually didn’t come up with what I would call the &lt;em&gt;right&lt;/em&gt; solution. I came up with a &lt;em&gt;working&lt;/em&gt; solution, and the site performs all right, most of the time. However, our goal as developers shouldn’t be “all right, most of the time.” It should be “really well, all the time.” A big part of what I did wrong came from the bad advice I found in reading up on the issue along the way. This is my shot at helping you, dear reader, avoid making the same mistake.&lt;/p&gt;
@@ -1355,7 +1171,7 @@ else {
 &lt;li&gt;&lt;p&gt;It’s &lt;em&gt;performant&lt;/em&gt;. Loading the content this way will be &lt;em&gt;much&lt;/em&gt; faster than the standard approach recommended for single-page apps. As noted above, it gets the content to the user immediately, then lets the JavaScript UI bits come into play. Since future page loads can take advantage of both caching and smaller data payloads, the whole thing can actually be faster than either a pure client-side &lt;em&gt;or&lt;/em&gt; a pure server-side approach. That is, once the client-side application is running, it can just update its views with data delivered via AJAX, rather than reloading the whole page. But &lt;em&gt;before&lt;/em&gt; that, the user doesn’t have to wait to see something useful until the JavaScript framework spins up.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;It’s not often an approach gives you progressive enhancement and actually increases the performance of an application, but this one does. Better yet, you can apply this in just about any framework: it’s equally applicable to AngularJS with ExpressJS, Backbone with Rails, Ember with Django, Aurelia with Phoenix, or any other combination you come up with.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;/section&gt;
@@ -1367,17 +1183,17 @@ else {
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 09 Jun 2015 22:16:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-09:2015/how-to-build-a-single-page-app-api-right.html</guid><category>software development</category></item><item><title>2015-06-09 10:46</title><link>http://www.chriskrycho.com/2015/2015-06-09-1046.html</link><description>&lt;p&gt;Tip: if you’re using Mercurial’s bookmarks to track lightweight branches, somewhat analogous to Git’s branches, use Mercurial’s special &lt;code&gt;@&lt;/code&gt; tag to track whatever you want to treat as the tip of a &lt;code&gt;master&lt;/code&gt; branch. That way, any clone will check that out by default.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 09 Jun 2015 10:46:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-09:2015/2015-06-09-1046.html</guid><category>software development</category></item><item><title>2015-06-06 11:46</title><link>http://www.chriskrycho.com/2015/2015-06-06-1146.html</link><description>&lt;p&gt;I just taught Jaimie how to use GitHub for Mac (as she is helping a friend with his Jekyll-powered website), and explained the basics of distributed version control. She is totally a boss. And GitHub for Mac is a pretty good app.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 06 Jun 2015 11:46:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-06:2015/2015-06-06-1146.html</guid><category>software development</category></item><item><title>2015-05-29 09:38</title><link>http://www.chriskrycho.com/2015/2015-05-29-0938.html</link><description>&lt;p&gt;One of (many) irritations with using Angular: every search turns up Bootstrap solutions.&lt;/p&gt;
 &lt;p&gt;I’m not using Bootstrap.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;:sigh:&lt;/em&gt;&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 29 May 2015 09:38:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-29:2015/2015-05-29-0938.html</guid><category>software development</category></item><item><title>Python Enums, ctypes.Structures, and DLL exports</title><link>http://www.chriskrycho.com/2015/ctypes-structures-and-dll-exports.html</link><description>&lt;p&gt;For one of my contracts right now, I’m writing a &lt;code&gt;ctypes&lt;/code&gt; Python interface to existing C code. I got stuck and confused for quite a while on getting the interface to a given function to build correctly, and along the way had to try to understand the &lt;code&gt;from_param&lt;/code&gt; class method. The official docs are… fine… but the examples provided don’t cover the most common/basic use case: defining a simple, &lt;em&gt;non-ctypes&lt;/em&gt; data type as an argument to a DLL-exported function.&lt;/p&gt;
@@ -1487,7 +1303,7 @@ print(get_an_enum_value(MyEnum.TWO))&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;An important note: The type definition we’ve provided here will work for &lt;code&gt;argtypes&lt;/code&gt; or &lt;code&gt;restype&lt;/code&gt; assignments, but &lt;em&gt;not&lt;/em&gt; as one of the members of a custom &lt;code&gt;ctypes.Structure&lt;/code&gt; type’s &lt;code&gt;_fields_&lt;/code&gt; value. (Discussing how you’d go about doing that is beyond the scope of this post; the most direct approach is just to use a &lt;code&gt;ctypes.c_int&lt;/code&gt; and note that it is intended to be used with a given &lt;code&gt;IntEnum&lt;/code&gt;/&lt;code&gt;CtypesEnum&lt;/code&gt; type.)&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Thanks to &lt;a href="https://alpha.app.net/oluseyi"&gt;@oluseyi&lt;/a&gt; for being my &lt;a href="http://en.wikipedia.org/wiki/Rubber_duck_debugging"&gt;rubber ducky&lt;/a&gt; while I was working this out earlier this week!&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;
@@ -1498,20 +1314,20 @@ print(get_an_enum_value(MyEnum.TWO))&lt;/code&gt;&lt;/pre&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 28 May 2015 18:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-28:2015/ctypes-structures-and-dll-exports.html</guid><category>software development</category></item><item><title>2015-05-25 20:06</title><link>http://www.chriskrycho.com/2015/2015-05-25-2006.html</link><description>&lt;p&gt;That &lt;a href="http://www.chriskrycho.com/2015/2015-05-22-2330.html"&gt;project&lt;/a&gt; I started on the other day? It’s still going… and swimmingly. I’ve now gotten it not only working at the most basic level (as it was before) but also to do a bit more complex work. You can see it (and any other scripts I build) &lt;a href="https://github.com/chriskrycho/tilde"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 25 May 2015 20:06:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-25:2015/2015-05-25-2006.html</guid><category>software development</category></item><item><title>2015-05-23 15:30</title><link>http://www.chriskrycho.com/2015/2015-05-23-1530.html</link><description>&lt;p&gt;Currently on my mind: how to chunk up the Bible text with semantic blobs and chapter/verse trees in corresponding data structures, in order to present meaningful sections of content (paragraphs, etc.) without resorting to delivering a whole book.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 23 May 2015 15:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-23:2015/2015-05-23-1530.html</guid><category>software development</category><category>design</category></item><item><title>2015-05-22 23:30</title><link>http://www.chriskrycho.com/2015/2015-05-22-2330.html</link><description>&lt;p&gt;This post brought to you by a brand new script, which automatically generates the file needed—YAML header and all!—to create a new microblog post on chriskrycho.com. Python for the win.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 22 May 2015 23:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-22:2015/2015-05-22-2330.html</guid><category>software development</category></item><item><title>Open Source is Neat</title><link>http://www.chriskrycho.com/2015/open-source-is-neat.html</link><description>&lt;p&gt;I confess: my &lt;em&gt;first&lt;/em&gt; response to seeing &lt;a href="//andrewcamenga.com/"&gt;this page&lt;/a&gt; was a flash of anger: &lt;em&gt;Hey, he didn’t just learn from my site configuration, he actually stole my site &lt;/em&gt;&lt;strong&gt;design&lt;/strong&gt;&lt;em&gt;!&lt;/em&gt; And then I remembered: I open-sourced the design precisely so people could do that. This was just the first time I’ve ever actually had someone reuse something I did and shared like this. It was a strange (but ultimately wonderful) feeling. I hope to have it again many more times.&lt;/p&gt;
 &lt;p&gt;In any case, I rather like the tweaks Andrew Comenga made to my design to make it his own; &lt;a href="//andrewcamenga.com/"&gt;go take a look&lt;/a&gt;!&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 17 May 2015 22:52:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-17:2015/open-source-is-neat.html</guid><category>links</category><category>software development</category><category>design</category></item><item><title>These Are My People</title><link>http://www.chriskrycho.com/2015/these-are-my-people.html</link><description>&lt;p&gt;At the end of April, I flew out to Seattle to &lt;a href="//www.chriskrycho.com/2015/tolle-lege.html"&gt;give a talk&lt;/a&gt; at &lt;a href="//bibletechconference.com"&gt;BibleTech&lt;/a&gt;, a conference hosted by Faithlife (the company that owns Logos Bible Software). What I found was not only a bunch of interesting content—though there was certainly plenty of that, and props to the Logos/Faithlife people for putting on a great event—but also an awful lot of people &lt;em&gt;a lot like me&lt;/em&gt;.&lt;/p&gt;
@@ -1520,7 +1336,7 @@ print(get_an_enum_value(MyEnum.TWO))&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I was reflecting on the experience today—thinking about why I’ve so deeply enjoyed not only the conference itself but &lt;a href="//bibletechnology-slack.herokuapp.com/"&gt;the community&lt;/a&gt; that has sprung out of it—I realized: &lt;em&gt;These are my people.&lt;/em&gt; They share a passion for software development, theology, linguistics, and in many cases even music. There may not be many of us in the world, but a substantial number were assembled in Seattle April 30–May 1, 2015. That’s no small thing.&lt;/p&gt;
 &lt;p&gt;I have no idea what the future holds for me—whether it will continue to include writing software for the Bible specifically or not—but I &lt;em&gt;can&lt;/em&gt; say that this phase of my life has been enormously beneficial in this one way if in no others. It is nice to find kindred spirits in the world, and to know that, even if I am pretty strange, there are other strange people out there, too, and that we can keep working in our strange ways to make the Word of God more available and more useful to people every day.&lt;/p&gt;
 &lt;p&gt;Good work, BibleTech.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 17 May 2015 22:25:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-17:2015/these-are-my-people.html</guid><category>software development</category><category>joy</category></item><item><title>A Modern Python Development Toolchain</title><link>http://www.chriskrycho.com/2015/a-modern-python-development-toolchain.html</link><description>&lt;p&gt;Most of my development time these days—and especially the majority of my happiest time!—is spent working in Python. As such, I’ve experimented off and on over the last few years with the best workflow, and have settled down with a set of tools that is &lt;em&gt;very&lt;/em&gt; effective and efficient for me. I’m sure I’m not the only one who’s had to wrestle with some of the issues particular to this toolchain, and I know that information like this can be valuable especially for people just starting off, so I thought I would document it all in one place.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1608,7 +1424,7 @@ $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;Set up virtual environments with &lt;em&gt;pyenv-virtualenv&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;If you stick to those basic rules, Python itself shouldn’t give you any trouble at all.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;/section&gt;
@@ -1623,15 +1439,15 @@ $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 16 May 2015 22:40:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-16:2015/a-modern-python-development-toolchain.html</guid><category>Software Development</category></item><item><title>2015-05-16 19:30</title><link>http://www.chriskrycho.com/2015/2015-05-16-1930.html</link><description>&lt;p&gt;Updated the websites today. Did a bunch of back end work that &lt;em&gt;should&lt;/em&gt; be basically invisible or make a change seamlessly on the front end for both &lt;a href="//www.chriskrycho.com"&gt;chriskrycho.com&lt;/a&gt; and &lt;a href="//www.winningslowly.org"&gt;winningslowly.org&lt;/a&gt;. Very satisfying day; nice to be working on things just because I can.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 16 May 2015 19:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-16:2015/2015-05-16-1930.html</guid><category>software development</category><category>design</category></item><item><title>2015-05-06 07:37</title><link>http://www.chriskrycho.com/2015/2015-05-06-0737.html</link><description>&lt;p&gt;Microsoft Visual Studio: bringing you links in error messages… that aren’t clickable!&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 06 May 2015 07:37:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-06:2015/2015-05-06-0737.html</guid><category>software development</category></item><item><title>2015-05-06 07:22</title><link>http://www.chriskrycho.com/2015/2015-05-06-0722.html</link><description>&lt;p&gt;I’m &lt;a href="https://github.com/chriskrycho/euler-elixir"&gt;doing Project Euler with Elixir&lt;/a&gt; as a way of keeping myself sane while I try to get a project that worked fine in Visual Studio 2015 Technical Preview to build in Visual Studio 2015 Release Candidate. &lt;em&gt;sigh&lt;/em&gt;&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 06 May 2015 07:22:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-06:2015/2015-05-06-0722.html</guid><category>software development</category></item><item><title>Lessons Learned</title><link>http://www.chriskrycho.com/2015/lessons-learned.html</link><description>&lt;p&gt;Since mid July 2015, I have been working on a complete redesign and re-build of &lt;a href="//holybible.com"&gt;HolyBible.com&lt;/a&gt;. The good folks at &lt;a href="//prts.edu"&gt;Puritan Reformed Theological Seminary&lt;/a&gt; who own the site wanted to replace its previous content with a Bible reading tool. While there’s still a lot to wrap up, the project is &lt;em&gt;nearing&lt;/em&gt; its conclusion, and I thought I’d note a few things I’ve learned (in some cases, learned &lt;em&gt;again&lt;/em&gt;) along the way. I want to say up front, lest these be taken the wrong way: I’m extremely proud of the work I’ve done, and the application I’ve delivered &lt;em&gt;does&lt;/em&gt; work to the specifications I was hired to meet. More than that, it does it well. But, of course, it could do it &lt;em&gt;better&lt;/em&gt;. The following thoughts are therefore not, “How I failed” but rather “How I will do this &lt;em&gt;even better&lt;/em&gt; next time around.”&lt;/p&gt;
@@ -1678,7 +1494,7 @@ $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Rather like Git, though, which was originally going to be infrastructure for version control systems which would have their own interface, but eventually just had a “good enough” interface that we’re all now stuck with, Angular is being used &lt;em&gt;as&lt;/em&gt; a framework, not just as a &lt;em&gt;meta-framework&lt;/em&gt;, and it’s unsurprisingly not great for that.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;i class="editorial"&gt;Take this for what it’s worth: not the final word (by a long stretch) on JavaScript frameworks, but rather the perspective of one guy who notably &lt;em&gt;hasn’t used all of the frameworks&lt;/em&gt;, but has spent some time looking at them. Moreover, I haven’t particularly edited this; it’s more a summary in the kind of short-form posts that I originally created than a detailed analysis. The only things I’ve done are expand some of the notes on Angular and React, and add the footnote on React.&lt;/i&gt;&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;
@@ -1708,7 +1524,7 @@ $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;hr /&gt;
 &lt;p&gt;There is something profound here, I think, something that goes even deeper than just the experience of being happy enough with a good tool to pay money to use it. I think human beings are meant for that profound joy—meant for it in every breath. That these kinds of delights are rare, and so often marred even at their best by little failures, is a mark of the imperfection—and, in human terms at least, the &lt;em&gt;imperfectibility&lt;/em&gt;—of the world in which we live. But the fact that such moments will be rare until the eschaton neither undoes nor diminishes the imperative to strive after them—especially for those of us who, as Christians, affirm the goodness and the &lt;em&gt;telos&lt;/em&gt; of the created world. Quite the contrary. We have a responsibility and a charge as subcreators always to be able to say of the work we have done, “It is good.”&lt;/p&gt;
 &lt;p&gt;I am not there yet. I hope very much, though, that the work I do this year will be—for at least one person—a little sip from that deep well of delight. Whether I succeed or no, at least the bar is set where it ought to be.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;
@@ -1728,7 +1544,7 @@ $ pyenv local pelican&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;There are still things I don’t love about JavaScript. Its syntax owes far too much to the C family of languages to make me happy; I quite like the way that CoffeeScript borrows from Python (white-space-delimited blocks, use of equality words like &lt;code&gt;is&lt;/code&gt; and boolean rules like &lt;code&gt;and&lt;/code&gt; rather than &lt;code&gt;===&lt;/code&gt; and &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; respectively, etc.). And I am looking forward to a number of features coming in the next version of JavaScript—especially generators and the &lt;code&gt;const&lt;/code&gt; and &lt;code&gt;let&lt;/code&gt; keywords, which will allow for &lt;em&gt;much&lt;/em&gt; saner patterns.&lt;/p&gt;
 &lt;p&gt;But all of that is simply to say that I am now starting to know JavaScript enough to know that its &lt;em&gt;real&lt;/em&gt; issues aren’t the surface-level differences from the other languages with which I’m familiar. They’re not even the warts I noted here. They’re things like the mix of classical and prototypal inheritance in the way the language keywords and object instantiation work. But I don’t mind those. Every language has tradeoffs. Python’s support for lambdas is pretty minimal, despite the utility of anonymous functions, for example. But I &lt;em&gt;like&lt;/em&gt; the tradeoffs JavaScript makes.&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In other words, I discovered the same thing so many other people have over the last few years: JavaScript isn’t just a good choice for utilitarian reasons. Beneath that messy exterior is a gem of a language. I’m having a lot of fun with it.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;
@@ -1826,7 +1642,7 @@ int subtractNumbers(int r, int s) {
 &lt;p&gt;If you’re curious how I dealt with it, well… I renamed the &lt;code&gt;addNumbers()&lt;/code&gt; function in &lt;code&gt;main.c&lt;/code&gt; to &lt;code&gt;_addNumbers()&lt;/code&gt; and put a loud, angry &lt;code&gt;TODO&lt;/code&gt; on it for the current release, because the only way to fix it is to refactor this whole giant mess.&lt;/p&gt;
 &lt;p&gt;The takeaway of the story, if there is one, is that people will do crazier, weirder, worse things than you can possibly imagine when they don’t understand the tools they are using and just hack at them till they can make them work. The moral of the story? I’m not sure. Run away from crazy code like this? Be prepared to spend your life refactoring?&lt;/p&gt;
 &lt;p&gt;How about: try desperately &lt;em&gt;not&lt;/em&gt; to leave this kind of thing for the person following you.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;/section&gt;
@@ -1858,7 +1674,7 @@ int subtractNumbers(int r, int s) {
 &lt;li&gt;and last but not least, truly cross-platform.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;That is a non-trivial task, but the first DVCS that manages to hit even a sizeable majority of these desires will gain a lot of traction in a hurry. The second generation of distributed version control has been good for us. The third could be magical.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;
@@ -1887,7 +1703,7 @@ int subtractNumbers(int r, int s) {
 &lt;p&gt;Little Ellie is quickly wrapping up her second year of life in this big world. She is saying lots of words (at last!), whining until she has driven Jaimie a bit crazy (in too-typical toddler fashion), and growing up in big ways and small. We are having a great deal of fun watching her start to be more socially aware and active, even if it is a little strange to have a daughter old enough that she has friends whom she loves and who love her in turn. She has also discovered a deep love of &lt;em&gt;Star Wars&lt;/em&gt;—no surprise for a daughter of ours, though the intensity of her delight in the movies, for a girl who is not yet two years old, did surprise both Jaimie and me a bit. You should hear her try to say “Darth Vader” or “Dark Side” or “Star Wars.” It is impossibly adorable.&lt;/p&gt;
 &lt;p&gt;Jaimie is, as noted above, some 37 weeks pregnant and quite ready to be done carrying our second little gal on the inside. She is still plugging away slowly at the &lt;a href="http://jaimiekrycho.com/shaking-epheria-pt-1/" title="Bloodlines: The Shaking of Epheria, Part I"&gt;second novella&lt;/a&gt; in her &lt;a href="http://www.amazon.com/Bloodlines-Epheria-The-Trilogy-ebook/dp/B00HY478QO/" title="Get Bloodlines of Epheria on Kindle!"&gt;Bloodlines&lt;/a&gt; fantasy trilogy. She manages to keep Ellie entertained—no small feat—and does a remarkable job taking care of things around the house so that I can focus on work and school. Her struggle with &lt;a href="http://2012-2013.chriskrycho.com/theology/marriage-depression/" title="Marriage and Depression"&gt;depression&lt;/a&gt; has not diminished, but God has given us grace to carry on and she and I have both learned to respond in better, healthier, more helpful ways when the slumps come.&lt;/p&gt;
 &lt;p&gt;As for the future, we really have no idea what the next several yeras will hold. I plan to finish my Master of Divinity—Lord willing, around December 2016. In the meantime, we will keep raising our little girls, I will keep writing software, and we will keep exploring and seeing what we want to do and how best to pursue those desires in a way that honors God. Who knows what those years will hold? God only, and certainly not us.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 24 May 2014 00:07:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-05-24:2014/the-long-race.html</guid><category>software development</category><category>family</category><category>fitness</category></item><item><title>A Little Crazy</title><link>http://www.chriskrycho.com/2014/a-little-crazy.html</link><description>&lt;p&gt;I’m going to do something a little crazy, I’ve decided. I’m going to go ahead and do like I wrote &lt;a href="http://www.chriskrycho.com/2014/doing-it-myself.html"&gt;a bit back&lt;/a&gt;, and make &lt;a href="http://step-stool.io"&gt;Step Stool&lt;/a&gt; actually a thing over the course of the rest of the year. Not so crazy. What is a bit nuts is the way I’ve decided to go about that process. In short: as close to the hardest way possible as I can conceive.&lt;/p&gt;
@@ -1902,7 +1718,7 @@ int subtractNumbers(int r, int s) {
 &lt;p&gt;It is that second goal that has pushed me to do this crazy project this crazy way. It’s crazier than just teaching myself a language in order to do the static site generator itself, too, because there are a few other pieces missing that I’ll need to write to make this work… like a Markdown implementation and an HTML templating language. I’ve never written anything remotely like either before, so I’m going to take the chance to learn a &lt;em&gt;lot&lt;/em&gt; of new things. For the Markdown implementation, rather than relying on regular expression parsing (like most Markdowns do), I’m going to use a Parsing Expression Grammar. That will certainly be more efficient and reliable, but—more importantly—it is also outside my experience. I have yet to start thinking through how to tackle the HTML templating language implementation (though I know I am going to make it an Io implementation of &lt;a href="http://slim-lang.com"&gt;Slim&lt;/a&gt;, which I quite like).&lt;/p&gt;
 &lt;p&gt;In any case, I’m going to be taking a good bit longer to get Step Stool finished. That is all right: I am going to learn a ton along the way, and I am quite sure I will have a blast doing it. And that is &lt;em&gt;exactly&lt;/em&gt; what these kinds of projects are for.&lt;/p&gt;
 &lt;p&gt;I’ll post updates as I go, with the things I’m learning along the way. Hopefully they’ll be interesting (or at least entertaining).&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;
@@ -1958,7 +1774,7 @@ Rectangle {
 &lt;p&gt;Note, too, that this is the &lt;em&gt;only&lt;/em&gt; way to create a new basic type of object in QML: it has to be the root level object in a QML document. I would &lt;em&gt;really&lt;/em&gt; like to be able to access internal declarations—to have named internal types/objects. Unfortunately, QML doesn’t let you do this. I suspect this has to do with how the QML type system works: it actually binds these types to C++ objects behind the scenes. This is a non-trivially helpful decision in terms of the performance of the application, but it certainly makes my brain a little bit twitchy.&lt;/p&gt;
 &lt;p&gt;There are two basic consequences of this structure. First, any types you need to be able to use in other QML objects have to be defined in their own QML documents. Second, it is (as near as I can see so far, at least) difficult to create good generic QML types of more complex structures that you can then use to implement specific variations. For example: if you want to create accordions, you can create a fair number of the low-level elements in generic ways that you can reuse, but once you get to the relationships between the actual model, delegate, and view elements, you will need to create them in custom forms for each distinct approach.&lt;/p&gt;
 &lt;p&gt;This is more like creating HTML documents than Javascript, which makes sense, &lt;em&gt;if&lt;/em&gt; you remember that QML is Javascript-based but &lt;em&gt;declarative&lt;/em&gt;. You just have to remember that while you can define some reusable components, the full-fledged elements are like full HTML pages with a templating system: you can include elements, but not override their internal contents. In QML, you can override &lt;em&gt;some&lt;/em&gt; of their contents, which is nice—but that is not the primary way to go about it.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 11 Apr 2014 15:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2014-04-11:2014/learning-qml-part-1.html</guid><category>software development</category></item><item><title>Feels Right</title><link>http://www.chriskrycho.com/2014/feels-right.html</link><description>&lt;p&gt;I had spent most of the last week and a half working on getting &lt;a href="http://www.firebirdsql.org"&gt;FirebirdSQL&lt;/a&gt; configured and ready to use for a project I’m working on with &lt;a href="http://www.questconsult.com"&gt;Quest Consultants&lt;/a&gt;. It was slow going. The tool is decent, but the documentation is spotty and it felt like everything was just a bit of a slog—to get it working correctly, to get it playing nicely with other pieces of the development puzzle, to get it working across platforms.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Then, because I had done something a &lt;em&gt;little&lt;/em&gt; bit silly in my eagerness to get up and going last week and written code without a testable configuration, I hit a wall today. The queries weren’t working. I had made a &lt;a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception"&gt;bug&lt;/a&gt;.&lt;/p&gt;
@@ -2002,7 +1818,7 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
   CONSTRAINT unique_file UNIQUE (file_name, file_location)
 );&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It is not just that the PostgreSQL example is shorter and clearer—it is that it is shorter and clearer because its designers and developers have taken the time to make sure that the shorter, cleaner way works well, and have documented it so you can know how to use that shorter cleaner way without too much difficulty.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;/section&gt;
@@ -2050,7 +1866,7 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Surfing as I remember it in the late ’90s and early ’00s was inherently the experience of getting lost along that timeline, finding myself dozens of links along the chain and wondering how I had ended up there, and then being able to trace my way back. With tabs, that traceability was gone. With it went the inherent tension that we faced with every link: to follow, or not? To get sucked down into &lt;em&gt;this&lt;/em&gt; vortex or &lt;em&gt;that&lt;/em&gt;? Because in all likelihood, we knew, we were not going to be coming back to this page. With tabs, though, I could open both of those pages without ever leaving this one. I could start new journeys without ending the old. But there was a hidden cost: that newly opened tab had no history. It was a clean slate; before that newly opened link there was only a blank page. If I closed the original from which I had opened it, there was no going back.&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; If I closed this new tabs, there was no going forward to them. The line was broken.&lt;/p&gt;
 &lt;p&gt;From there it was only a short step to the idea of a single site being the center from which one ventured out to other points on the web before returning: the Facebooks and Twitters of the world. In some sense, Facebook’s entire model is predicated on the idea that it is natural to open a new tab with that juicy Buzzfeed content while keeping Facebook itself open in a background tab. Would it work in that old linear model? Sort of. Would it feel natural? Never.&lt;/p&gt;
 &lt;p&gt;All of this because of tabs. Invention’s most significant results are rarely those the minds behind it expect. When we are designing things—whether a piece of furniture or a piece of the web—we have to remember that design decisions all have repercussions that we may not see. Technology is never neutral. Particular innovations may or may not be &lt;em&gt;morally&lt;/em&gt; significant, but they always produce changes in people’s behavior. Design has consequences.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;
@@ -2069,7 +1885,7 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The same kinds of things hold true for configuration options. Moreover, the configuration is done through a Python module. While that makes the module easier to integrate on the code side of things, it makes its actual content much less transparent than one might hope. Python is not really well optimized for writing configuration files—nor is any normal programming language. Configuration is inherently declarative, rather than imperative.&lt;/p&gt;
 &lt;p&gt;This is not to say that Pelican is bad software. It is not. It is, however, a fairly typical example of open source software implemented by committee. It has holes (some of them serious), bumps, and quirks. Here is the reality: so will Step Stool, though they will be the quirks that come from an individual developer’s approach rather than a group’s. But the one thing I can guarantee, and the reason I am increasingly motivated to get back to working on Step Stool. And yes, I do have a couple other projects on my plate as well—contributions to the Smartypants and Typogrify modules, my own &lt;a href="https://bitbucket.org/chriskrycho/spacewell"&gt;Spacewell typography project&lt;/a&gt;, and quite possibly a &lt;a href="https://bitbucket.org/chriskrycho/markdown-poetry/"&gt;Markdown Poetry extension&lt;/a&gt;. But I would like very much to just get back to doing this myself. There is freedom in rolling my own solution to things. I will not always have time to do these kinds of things; I figure I should do them when I can.&lt;/p&gt;
 &lt;p&gt;So here’s to &lt;a href="http://step-stool.io"&gt;Step Stool&lt;/a&gt;, and—more importantly—to writing your own software just to scratch that itch.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;

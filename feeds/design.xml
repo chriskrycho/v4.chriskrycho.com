@@ -68,33 +68,33 @@
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 19 Oct 2015 20:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-19:2015/css-fallback-for-opentype-small-caps.html</guid><category>design</category><category>software development</category><category>typography</category></item><item><title>2015/08/19 16:33</title><link>http://www.chriskrycho.com/2015/20150819-1633.html</link><description>&lt;p&gt;Sometimes it is tempting as a designer to think that users are stupid. Don’t. If the software is not working for users, that implies stupidity in another party entirely: the one that designed the software. 😉&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 19 Aug 2015 16:33:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-19:2015/20150819-1633.html</guid><category>design</category><category>software development</category></item><item><title>2015-08-17 06:33</title><link>http://www.chriskrycho.com/2015/2015-08-17-0633.html</link><description>&lt;p&gt;It turns out browsers render CSS transitions for &lt;em&gt;positioning&lt;/em&gt; much more nicely than they do those for the &lt;em&gt;box model&lt;/em&gt; (perhaps unsurprisingly, on reflection). Use &lt;code&gt;position&lt;/code&gt; and &lt;code&gt;top&lt;/code&gt; instead of &lt;code&gt;margin&lt;/code&gt; to smoothly animate an item moving within its container.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 17 Aug 2015 06:33:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-17:2015/2015-08-17-0633.html</guid><category>software development</category><category>design</category></item><item><title>2015-06-23 19:54</title><link>http://www.chriskrycho.com/2015/2015-06-23-1954.html</link><description>&lt;p&gt;Finally giving FontStand a try.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Holy wow.&lt;/strong&gt; This is a &lt;em&gt;great&lt;/em&gt; tool—good software, good business plan.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 23 Jun 2015 19:54:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-23:2015/2015-06-23-1954.html</guid><category>design</category></item><item><title>2015-06-23 08:49</title><link>http://www.chriskrycho.com/2015/2015-06-23-0849.html</link><description>&lt;p&gt;I’ve been using Cardo as the typeface for theology posts for the last month or so; I’m thinking about switching again. The barrier? Greek and Hebrew support. Because of how &lt;code&gt;font-family&lt;/code&gt; and font-loading work, I may be able to get away with adding a custom font for them, though.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 23 Jun 2015 08:49:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-23:2015/2015-06-23-0849.html</guid><category>design</category></item><item><title>2015-05-23 15:30</title><link>http://www.chriskrycho.com/2015/2015-05-23-1530.html</link><description>&lt;p&gt;Currently on my mind: how to chunk up the Bible text with semantic blobs and chapter/verse trees in corresponding data structures, in order to present meaningful sections of content (paragraphs, etc.) without resorting to delivering a whole book.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 23 May 2015 15:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-23:2015/2015-05-23-1530.html</guid><category>software development</category><category>design</category></item><item><title>Open Source is Neat</title><link>http://www.chriskrycho.com/2015/open-source-is-neat.html</link><description>&lt;p&gt;I confess: my &lt;em&gt;first&lt;/em&gt; response to seeing &lt;a href="//andrewcamenga.com/"&gt;this page&lt;/a&gt; was a flash of anger: &lt;em&gt;Hey, he didn’t just learn from my site configuration, he actually stole my site &lt;/em&gt;&lt;strong&gt;design&lt;/strong&gt;&lt;em&gt;!&lt;/em&gt; And then I remembered: I open-sourced the design precisely so people could do that. This was just the first time I’ve ever actually had someone reuse something I did and shared like this. It was a strange (but ultimately wonderful) feeling. I hope to have it again many more times.&lt;/p&gt;
 &lt;p&gt;In any case, I rather like the tweaks Andrew Comenga made to my design to make it his own; &lt;a href="//andrewcamenga.com/"&gt;go take a look&lt;/a&gt;!&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 17 May 2015 22:52:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-17:2015/open-source-is-neat.html</guid><category>links</category><category>software development</category><category>design</category></item><item><title>2015-05-16 19:30</title><link>http://www.chriskrycho.com/2015/2015-05-16-1930.html</link><description>&lt;p&gt;Updated the websites today. Did a bunch of back end work that &lt;em&gt;should&lt;/em&gt; be basically invisible or make a change seamlessly on the front end for both &lt;a href="//www.chriskrycho.com"&gt;chriskrycho.com&lt;/a&gt; and &lt;a href="//www.winningslowly.org"&gt;winningslowly.org&lt;/a&gt;. Very satisfying day; nice to be working on things just because I can.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 16 May 2015 19:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-16:2015/2015-05-16-1930.html</guid><category>software development</category><category>design</category></item><item><title>Tolle Lege!</title><link>http://www.chriskrycho.com/2015/tolle-lege.html</link><description>&lt;p&gt;I was delighted to be able to give a talk at &lt;a href="http://bibletechconference.com/"&gt;BibleTech&lt;/a&gt; this year. I spoke for almost exactly 40 minutes on the subject of digital typography, with a focus on some of the nitty-gritty details that make texts readable… or not. Here is the screen capture and audio from the talk!&lt;/p&gt;
@@ -103,7 +103,7 @@
 &lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;You can also access the &lt;a href="/talks/bibletech2015/"&gt;slides&lt;/a&gt; whenever you like (though note that they were designed to be complements to the talk, &lt;em&gt;not&lt;/em&gt; the content of the talk, and as such they elide a great deal of the content).&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 01 May 2015 10:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-01:2015/tolle-lege.html</guid><category>design</category><category>typography</category></item><item><title>The Joy of Good Tools</title><link>http://www.chriskrycho.com/2015/joy-good-tools.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;Note: This started out as a &lt;a href="https://alpha.app.net/chriskrycho/post/47820144"&gt;series of posts on App.net&lt;/a&gt;, but as I realized that it was growing a bit, I decided to &lt;a href="/2014/a-few-theses-on-blogging.html"&gt;take my own advice&lt;/a&gt; and turn it into a short blog post. (The first four paragraphs of this post are the same as the posts that spawned it.) And then, as so often happens with my writing, it rather took on a life of its own. So much for short.&lt;/i&gt;&lt;/p&gt;
@@ -127,7 +127,7 @@
 &lt;hr /&gt;
 &lt;p&gt;There is something profound here, I think, something that goes even deeper than just the experience of being happy enough with a good tool to pay money to use it. I think human beings are meant for that profound joy—meant for it in every breath. That these kinds of delights are rare, and so often marred even at their best by little failures, is a mark of the imperfection—and, in human terms at least, the &lt;em&gt;imperfectibility&lt;/em&gt;—of the world in which we live. But the fact that such moments will be rare until the eschaton neither undoes nor diminishes the imperative to strive after them—especially for those of us who, as Christians, affirm the goodness and the &lt;em&gt;telos&lt;/em&gt; of the created world. Quite the contrary. We have a responsibility and a charge as subcreators always to be able to say of the work we have done, “It is good.”&lt;/p&gt;
 &lt;p&gt;I am not there yet. I hope very much, though, that the work I do this year will be—for at least one person—a little sip from that deep well of delight. Whether I succeed or no, at least the bar is set where it ought to be.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;
@@ -178,7 +178,7 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
   CONSTRAINT unique_file UNIQUE (file_name, file_location)
 );&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It is not just that the PostgreSQL example is shorter and clearer—it is that it is shorter and clearer because its designers and developers have taken the time to make sure that the shorter, cleaner way works well, and have documented it so you can know how to use that shorter cleaner way without too much difficulty.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;/section&gt;
@@ -199,7 +199,7 @@ SET TERM ; +&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Surfing as I remember it in the late ’90s and early ’00s was inherently the experience of getting lost along that timeline, finding myself dozens of links along the chain and wondering how I had ended up there, and then being able to trace my way back. With tabs, that traceability was gone. With it went the inherent tension that we faced with every link: to follow, or not? To get sucked down into &lt;em&gt;this&lt;/em&gt; vortex or &lt;em&gt;that&lt;/em&gt;? Because in all likelihood, we knew, we were not going to be coming back to this page. With tabs, though, I could open both of those pages without ever leaving this one. I could start new journeys without ending the old. But there was a hidden cost: that newly opened tab had no history. It was a clean slate; before that newly opened link there was only a blank page. If I closed the original from which I had opened it, there was no going back.&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; If I closed this new tabs, there was no going forward to them. The line was broken.&lt;/p&gt;
 &lt;p&gt;From there it was only a short step to the idea of a single site being the center from which one ventured out to other points on the web before returning: the Facebooks and Twitters of the world. In some sense, Facebook’s entire model is predicated on the idea that it is natural to open a new tab with that juicy Buzzfeed content while keeping Facebook itself open in a background tab. Would it work in that old linear model? Sort of. Would it feel natural? Never.&lt;/p&gt;
 &lt;p&gt;All of this because of tabs. Invention’s most significant results are rarely those the minds behind it expect. When we are designing things—whether a piece of furniture or a piece of the web—we have to remember that design decisions all have repercussions that we may not see. Technology is never neutral. Particular innovations may or may not be &lt;em&gt;morally&lt;/em&gt; significant, but they always produce changes in people’s behavior. Design has consequences.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 &lt;section class="footnotes"&gt;

@@ -18,16 +18,16 @@
     <meta name="twitter:title" content="Rust and Swift (ii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
@@ -74,37 +74,20 @@
     </header>
 
 
-<article class="software-development listicles tech">
+<article class="software-development listicles rust swift rust-and-swift tech">
 
     <header>
 <h1>Rust and Swift (ii)</h1>
 <h2>Basic types and the syntax around them.</h2>    </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html"><i class="fa fa-fw fa-link"></i></a>September 06, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/listicles/">#listicles</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html"><i class="fa fa-fw fa-link"></i></a>September 06, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/listicles/">#listicles</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
 
         <div class="content">
 
-<p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine.</i></p>
-<section id="parts-in-the-series" class="level2">
-<h2>Parts in the Series</h2>
-<ol type="1">
-<li><a href="/2015/rust-and-swift-i.html">Thoughts after reading the introduction to the Swift book.</a></li>
-<li>Basic types and the syntax around them.</li>
-<li><a href="/2015/rust-and-swift-iii.html">Operators, including overloading, and thoughts on brevity.</a></li>
-<li><a href="/2015/rust-and-swift-iv.html">Language design tradeoffs, highlighted by string manipulation.</a></li>
-<li><a href="/2015/rust-and-swift-v.html">The value (and challenge) of learning languages in parallel.</a></li>
-<li><a href="/2015/rust-and-swift-vi.html">Collection types and the difference between syntax and semantics.</a></li>
-<li><a href="/2015/rust-and-swift-vii.html">Pattern matching and the value of expression blocks.</a></li>
-<li><a href="/2015/rust-and-swift-viii.html">Functions, closures, and an awful lot of Swift syntax.</a></li>
-<li><a href="/2015/rust-and-swift-ix.html">Sum types (<code>enum</code>s) and more on pattern matching.</a></li>
-<li><a href="/2015/rust-and-swift-x.html">Classes and structs (product types), and reference and value types.</a></li>
-<li><a href="/2016/rust-and-swift-xi.html">Hopes for the next generation of systems programming.</a></li>
-<li><a href="/2016/rust-and-swift-xii.html">Properties: type and instance, stored and computed.</a></li>
-<li><a href="/2016/rust-and-swift-xiii.html">Methods, instance and otherwise.</a></li>
-</ol>
+<p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. <a href="/rust-and-swift.html">(See all parts in the series.)</a></i></p>
 <hr />
 <ul>
 <li><p>At first blush, I find the extra syntax around optionals in Swift more confusing than helpful. I think this comes down to my preference for a more Python-like approach: “Explicit is better than implicit” and “There should be one– and preferably only one –obvious way to do it” both militate against the multiple different ways you can handle optional values in Swift. Optional types are created in one of two ways:</p>
@@ -136,13 +119,12 @@
 </ul>
 <hr />
 <ul>
-<li><a href="/2015/rust-and-swift-i.html"><strong>Previous:</strong> Thoughts after reading the introduction to the Swift book.</a></li>
-<li><a href="/2015/rust-and-swift-iii.html"><strong>Next:</strong> Operators, including overloading, and thoughts on brevity.</a></li>
+<li>[<strong>Previous:</strong> Thoughts after reading the introduction to the Swift book.][1]</li>
+<li>[<strong>Next:</strong> Operators, including overloading, and thoughts on brevity.][3]</li>
 </ul>
 <div id="refs" class="references">
 
 </div>
-</section>
 <section class="footnotes">
 <hr />
 <ol>

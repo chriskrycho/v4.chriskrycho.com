@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Apps as a Service &middot; Chris Krycho</title>
-    <meta name="description" content="Last week, software tools developer Jetbrains announced their intent to drop permanent licenses entirely in favor of a subscription model. In the new approach, users could pay a lower price than the previous annual upgrade fee to get access to the same software. JetBrains also introduced a bundle to let ..."/>
+    <title>Rust and Swift &middot; Chris Krycho</title>
+    <meta name="description" content="Rust and Swift are in a similar phase in their development, and they look pretty similar in a lot of ways. But how similar are they actually? Where does each excel relative to the other, and what do they do differently?"/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/drafts/apps-as-a-service.html"/>
-    <meta property="og:title" content="Apps as a Service"/>
-    <meta property="og:description" content="Last week, software tools developer Jetbrains announced their intent to drop permanent licenses entirely in favor of a subscription model. In the new approach, users could pay a lower price than the previous annual upgrade fee to get access to the same software. JetBrains also introduced a bundle to let ..."/>
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/rust-and-swift.html"/>
+    <meta property="og:title" content="Rust and Swift"/>
+    <meta property="og:description" content="Rust and Swift are in a similar phase in their development, and they look pretty similar in a lot of ways. But how similar are they actually? Where does each excel relative to the other, and what do they do differently?"/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/>
 <link rel="me" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-    <meta name="twitter:title" content="Apps as a Service"/>
-    <meta name="twitter:description" content="Last week, software tools developer Jetbrains announced their intent to drop permanent licenses entirely in favor of a subscription model. In the new approach, users could pay a lower price than the previous annual upgrade fee to get access to the same software. JetBrains also introduced a bundle to let ..."/>
+    <meta name="twitter:title" content="Rust and Swift"/>
+    <meta name="twitter:description" content="Rust and Swift are in a similar phase in their development, and they look pretty similar in a lot of ways. But how similar are they actually? Where does each excel relative to the other, and what do they do differently?"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -74,37 +74,60 @@
     </header>
 
 
-<article class="software-development business-models tech">
+<article class="pages">
 
     <header>
-<h1>Apps as a Service</h1>
-<h2>Subscription-based pricing: JetBrains, Adobe, Microsoft, and the future of software</h2>    </header>
+<h1>Rust and Swift</h1>
+<h2>Comparing two exciting, new, apparently (but not always <em>actually</em>) similar programming languages.</h2>    </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/drafts/apps-as-a-service.html"><i class="fa fa-fw fa-link"></i></a>August 07, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/business-models/">#business models</a></span><span><a href="http://www.chriskrycho.com/2015/apps-as-a-service.txt">Markdown source</a></span></div>
+    <div class="meta"></div>
 
     <div class="content-wrapper">
 
 
         <div class="content">
 
-<p>Last week, software tools developer Jetbrains announced their intent to drop permanent licenses entirely in favor of a subscription model. In the new approach, users could pay a lower price than the previous annual upgrade fee to get access to the same software. JetBrains also introduced a bundle to let users get access to all of their tools at a <em>much</em> lower price than it would have taken to buy them all together. So far so good; but they also introduced a wrinkle familiar to users of other subscription model software: if the user stops paying, the tools stop working.</p>
-<p>To put it mildly, this caused some serious backlash—and rightly so.</p>
-<p>They’ve since promised to revisit the decision, in light of the quick and loud backlash against their annoucement. Thus, this is not so much directed at JetBrains as it is taking their announcement—just the latest such in a long string that includes far larger software developers like Adobe and Microsoft—to discuss the advent of subscription-based business models for discrete software applications.</p>
-<p>There are many reasons why these models look attractive to software vendors, and they can actually provide a lot of benefits to consumers as well. However, there are several problems with the subscription model as implemented by most vendors today:</p>
-<ul>
-<li>They provide clear value to the software creator, but are generally neutral at best for users.</li>
-<li>They conflate two distinct responses from users: wanting to use the app, and wanting the particular upgrades you’re offering at any given time.</li>
-<li>They mix up the business models appropriate to <em>services</em> and <em>applications</em> respectively.</li>
-</ul>
-<p>These problems affect consumers of the software product first, but in the long run, they will hurt the vendors, too.</p>
-<section id="value-to-whom" class="level2">
-<h2>Value to Whom?</h2>
+<section id="background" class="level2">
+<h2>Background</h2>
+<p>In summer 2015, I started learning <a href="https://www.rust-lang.org">Rust</a>. Then, in September 2015, I started learning <a href="https://swift.org">Swift</a>. The superficial similarities between the two languages are obvious, and they hit their stride at roughly the same time: Rust’s 1.0 release was in May 2015 and Swift’s 2.0 release<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> was in June 2015. Both cite inspiration from languages like Haskell, while retaining a C-like<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> syntax which is more approachable to many of the developers inclined to pick up the language.</p>
+<p>So, when I started reading the <a href="https://swift.org/documentation/#the-swift-programming-language">Swift book</a>, comparisons were inevitable. For all that the two are very similar at a superficial level, they also make some very different choices in terms of language design and philosophy—and those choices are interesting!</p>
 </section>
-<section id="conflating-different-values" class="level2">
-<h2>Conflating Different Values</h2>
+<section id="parts-in-the-series" class="level2">
+<h2>Parts in the Series</h2>
+<p>This list is updated whenever I publish a new post in the series. You can also subscribe to the dedicated <a href="/feeds/rust-and-swift.xml">#rust-and-swift</a> RSS feed, or to the more general <a href="/feeds/rust.xml">#rust</a> and <a href="/feeds/swift.xml">#swift</a> RSS feeds.</p>
+<ol type="1">
+<li><a href="/2015/rust-and-swift-i.html">Thoughts after reading the introduction to the Swift book.</a></li>
+<li><a href="/2015/rust-and-swift-ii.html">Basic types and the syntax around them.</a></li>
+<li><a href="/2015/rust-and-swift-iii.html">Operators, including overloading, and thoughts on brevity.</a></li>
+<li><a href="/2015/rust-and-swift-iv.html">Language design tradeoffs, highlighted by string manipulation.</a></li>
+<li><a href="/2015/rust-and-swift-v.html">The value (and challenge) of learning languages in parallel.</a></li>
+<li><a href="/2015/rust-and-swift-vi.html">Collection types and the difference between syntax and semantics.</a></li>
+<li><a href="/2015/rust-and-swift-vii.html">Pattern matching and the value of expression blocks.</a></li>
+<li><a href="/2015/rust-and-swift-viii.html">Functions, closures, and an awful lot of Swift syntax.</a></li>
+<li><a href="/2015/rust-and-swift-ix.html">Sum types (<code>enum</code>s) and more on pattern matching.</a></li>
+<li><a href="/2015/rust-and-swift-x.html">Classes and structs (product types), and reference and value types.</a></li>
+<li><a href="/2016/rust-and-swift-xi.html">Hopes for the next generation of systems programming.</a></li>
+<li><a href="/2016/rust-and-swift-xii.html">Properties: type and instance, stored and computed.</a></li>
+<li><a href="/2016/rust-and-swift-xiii.html">Methods, instance and otherwise.</a></li>
+</ol>
 </section>
-<section id="services-and-applications" class="level2 references unnumbered">
-<h2>Services and Applications</h2>
+<section id="some-notes-on-the-series" class="level2">
+<h2>Some Notes on the Series</h2>
+<p>I am not by any means a programming language theory nut. (Or, at least, I <em>wasn’t</em>. This project, alongside a few other things, might be making one of me.) I am also not an expert. My opinions are considered, but not necessarily deeply <em>informed</em>, and you’ll see places where I have added corrections along the way as I got new information from feedback received along the way.</p>
+<p>I also freely admit to a bit of a bias toward Rust, between the two. I <em>like</em> Swift, but I <em>really like</em> Rust. I think I come by this fairly, in that it’s just a matter of my own language-design preferences. I like Python better than Ruby, and in terms of how the languages <em>feel</em>, Rust is more like Python and Swift more like Ruby.</p>
+<p>But—full disclosure—I’ve also made something of a personal investment in the future of Rust, in that I run <a href="http://www.newrustacean.com">a podcast</a> focused on the language, from which I actually <a href="https://patreon.com/newrustacean">earn</a> (a very small amount of) money.</p>
+<p>One other thing: as of February 2016, I haven’t had a chance to build anything serious in <em>either</em> language—though I hope to change that over the course of this year. So these are very much surface-level impressions of the two languages. My thoughts and feelings about the two may change over time.</p>
+<p>One last bit: the series <a href="/2015/rust-and-swift-i.html">literally started</a> as a series of comments in a Slack team I participate in. You’ll note a substantial shift in the tone, structure, and content as I went along. The first post was really just off-the-cuff responses as I started reading. Starting with the second post, I was a good deal more intentional about what I was doing. As the series goes along, there is more and more of this, and it’s also informed by my work on <a href="http://www.newrustacean.com">New Rustacean</a>.</p>
+<div id="refs" class="references">
+
+</div>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>which functioned somewhat like its 1.0, since its actual 1.0 was the point it was announced and served as a public beta<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>really, ALGOL-like, of course 😉<a href="#fnref2">↩</a></p></li>
+</ol>
 </section>
         </div>
     </div>

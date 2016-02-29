@@ -18,16 +18,16 @@
     <meta name="twitter:title" content="If-expressions in Rust"/>
     <meta name="twitter:description" content="I love the fact that all if statements in Rust are expressions. It gives you a great deal of expressitivity in the language. Let’s contrast with Python (which I love, for the record). In Python, you can do something like this: some_condition = True if some_condition: a_value = "Yeah!" else: a_value ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
@@ -125,7 +125,7 @@ else {
 <p>Obviously this is totally contrived and silly; the point is that no matter what the internals are, <code>if</code> blocks are expressions, and their final expressions can be assigned like any other.</p>
 <hr />
 <p>As a note: I got here because I was originally thinking you couldn’t do a one-liner like you can in Python. As shown above, that’s totally false, and in fact the Rust version is much more capable than Python’s, because you don’t need a dedicated ternary when all <code>if</code> blocks are expressions. Rust used to have a C-style ternary (<code>&lt;condition&gt; ? &lt;value if true&gt; : &lt;value if false&gt;</code>) but it was <a href="https://github.com/rust-lang/rust/issues/1698">removed</a> during the lead-up to the 1.0 release—a decision I wholeheartedly affirm.</p>
-<div class="references">
+<div id="refs" class="references">
 
 </div>
 <section class="footnotes">

@@ -72,35 +72,35 @@
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 19 Oct 2015 20:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-19:2015/css-fallback-for-opentype-small-caps.html</guid><category>design</category><category>software development</category><category>typography</category></item><item><title>2015-09-14 15:56</title><link>http://www.chriskrycho.com/2015/2015-09-14-1556.html</link><description>&lt;p&gt;I’m extremely impressed with the recently released &lt;a href="http://sourcefoundry.org/hack/"&gt;Hack&lt;/a&gt; typeface. I’m currently using it at 11pt in my terminal, at 1920 by 1200 on my retina MacBook Pro—and it’s totally usable.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 14 Sep 2015 15:56:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-14:2015/2015-09-14-1556.html</guid><category>typography</category></item><item><title>2015-09-11 12:56</title><link>http://www.chriskrycho.com/2015/2015-09-11-1256.html</link><description>&lt;p&gt;I’ve been thinking about publishing my blog content in physical form, and of course I want to match the typeface. Time to start saving up to purchase a &lt;a href="http://www.linotype.com/191926/SabonCompleteFamilyPack-product.html"&gt;desktop license for Sabon&lt;/a&gt;, it seems.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 11 Sep 2015 12:56:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-11:2015/2015-09-11-1256.html</guid><category>typography</category></item><item><title>2015-08-17 17:40</title><link>http://www.chriskrycho.com/2015/2015-08-17-1740.html</link><description>&lt;p&gt;I’ve been using &lt;a href="http://input.fontbureau.com"&gt;Input&lt;/a&gt; for &lt;a href="http://www.chriskrycho.com/2015/2015-08-07-2137.html"&gt;about ten days now&lt;/a&gt;. It grew on me slowly, but I &lt;em&gt;really&lt;/em&gt; like it. Using it everywhere now!&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 17 Aug 2015 17:40:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-17:2015/2015-08-17-1740.html</guid><category>typography</category><category>software development</category></item><item><title>2015-08-11 22:37</title><link>http://www.chriskrycho.com/2015/2015-08-11-2237.html</link><description>&lt;p&gt;Dear Washington Post: &lt;a href="http://typedia.com/explore/typeface/georgia/"&gt;Georgia&lt;/a&gt; was designed for high legibility on screens. You may think it’s “newspapery” to squish the letters together with &lt;code&gt;letter-spacing: -1.75px&lt;/code&gt;, but actually it’s just ugly.&lt;/p&gt;
 &lt;figure&gt;
 &lt;img src="/images/nolig.png" title="&amp;#39;Unfinished&amp;#39; set in Georgia with bad letter-spacing" alt="This is bad and should not be mistaken for kerning or a ligature" /&gt;&lt;figcaption&gt;This is bad and should not be mistaken for kerning or a ligature&lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 11 Aug 2015 22:37:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-11:2015/2015-08-11-2237.html</guid><category>typography</category></item><item><title>2015-08-08 18:27</title><link>http://www.chriskrycho.com/2015/2015-08-08-1827.html</link><description>&lt;p&gt;I followed up on my research &lt;a href="/2015/2015-08-07-2145.html"&gt;from last night&lt;/a&gt; about using &lt;a href="http://input.fontbureau.com"&gt;Input&lt;/a&gt; on the New Rustacean typeface. I don’t love the subscription model, but individual faces are $2.50/year at my scale. I think I can swing that. So I’m going to!&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 08 Aug 2015 18:27:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-08:2015/2015-08-08-1827.html</guid><category>typography</category></item><item><title>2015-08-07 21:45</title><link>http://www.chriskrycho.com/2015/2015-08-07-2145.html</link><description>&lt;p&gt;Well, blast. I was thinking I might also use Input for the website design for &lt;a href="http://newrustacean.com" title="As of publication time, not live yet!"&gt;NewRustacean.com&lt;/a&gt;. But &lt;a href="http://www.webtype.com"&gt;Webtype&lt;/a&gt; doesn’t offer a purchase model, only a subscription model, and I’d really—&lt;em&gt;really&lt;/em&gt;—rather not. Not least because it locks me in well past whatever point I end the show.&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 07 Aug 2015 21:45:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-07:2015/2015-08-07-2145.html</guid><category>typography</category></item><item><title>2015-08-07 21:37</title><link>http://www.chriskrycho.com/2015/2015-08-07-2137.html</link><description>&lt;p&gt;Thinking about setting &lt;a href="http://input.fontbureau.com"&gt;Input&lt;/a&gt; as my typeface for doing my development for a week or two, see how it goes.&lt;/p&gt;
 &lt;p&gt;Anybody tried it? Bugs or problems to report?&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 07 Aug 2015 21:37:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-07:2015/2015-08-07-2137.html</guid><category>software development</category><category>typography</category></item><item><title>Tolle Lege!</title><link>http://www.chriskrycho.com/2015/tolle-lege.html</link><description>&lt;p&gt;I was delighted to be able to give a talk at &lt;a href="http://bibletechconference.com/"&gt;BibleTech&lt;/a&gt; this year. I spoke for almost exactly 40 minutes on the subject of digital typography, with a focus on some of the nitty-gritty details that make texts readable… or not. Here is the screen capture and audio from the talk!&lt;/p&gt;
@@ -109,7 +109,7 @@
 &lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;You can also access the &lt;a href="/talks/bibletech2015/"&gt;slides&lt;/a&gt; whenever you like (though note that they were designed to be complements to the talk, &lt;em&gt;not&lt;/em&gt; the content of the talk, and as such they elide a great deal of the content).&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 01 May 2015 10:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-05-01:2015/tolle-lege.html</guid><category>design</category><category>typography</category></item></channel></rss>

@@ -5,7 +5,7 @@
 &lt;/iframe&gt;
 &lt;/div&gt;
 &lt;p&gt;You can also access the &lt;a href="/talks/bibletech2015/"&gt;slides&lt;/a&gt; whenever you like (though note that they were designed to be complements to the talk, &lt;em&gt;not&lt;/em&gt; the content of the talk, and as such they elide a great deal of the content).&lt;/p&gt;
-&lt;div class="references"&gt;
+&lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
 </summary><category term="design"></category><category term="typography"></category></entry></feed>

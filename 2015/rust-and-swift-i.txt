@@ -3,7 +3,7 @@ Title: Rust and Swift (i)
 Subtitle: Thoughts after reading the introduction to the Swift book.
 Date: 2015-09-04 22:59
 Category: Tech
-Tags: listicles, software development
+Tags: listicles, software development, rust, swift, rust-and-swift
 Series:
   Title: Rust and Swift
   Part: 1
@@ -19,35 +19,9 @@ read; this is by no means expert opinion.</i>
 [Swift]: https://developer.apple.com/swift/
 [book]: https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/
 
-Parts in the Series
--------------------
+<i class=editorial>I later turned this into the first part of a whole [series] comparing Rust and Swift!</i>
 
-1.  Thoughts after reading the introduction to the Swift book.
-2.  [Basic types and the syntax around them.][2]
-3.  [Operators, including overloading, and thoughts on brevity.][3]
-4.  [Language design tradeoffs, highlighted by string manipulation.][4]
-5.  [The value (and challenge) of learning languages in parallel.][5]
-6.  [Collection types and the difference between syntax and semantics.][6]
-7.  [Pattern matching and the value of expression blocks.][7]
-8.  [Functions, closures, and an awful lot of Swift syntax.][8]
-9.  [Sum types (`enum`s) and more on pattern matching.][9]
-10. [Classes and structs (product types), and reference and value types.][10]
-11. [Hopes for the next generation of systems programming.][11]
-12. [Properties: type and instance, stored and computed.][12]
-13. [Methods, instance and otherwise.][13]
-
-[2]: /2015/rust-and-swift-ii.html
-[3]: /2015/rust-and-swift-iii.html
-[4]: /2015/rust-and-swift-iv.html
-[5]: /2015/rust-and-swift-v.html
-[6]: /2015/rust-and-swift-vi.html
-[7]: /2015/rust-and-swift-vii.html
-[8]: /2015/rust-and-swift-viii.html
-[9]: /2015/rust-and-swift-ix.html
-[10]: /2015/rust-and-swift-x.html
-[11]: /2016/rust-and-swift-xi.html
-[12]: /2016/rust-and-swift-xii.html
-[13]: /2016/rust-and-swift-xiii.html
+[series]: /rust-and-swift.html
 
 ---
 
