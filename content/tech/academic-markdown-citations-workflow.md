@@ -251,7 +251,7 @@ class='tex'>BibT<span class="texE">E</span>X</span>:
 
 [BibDesk]: http://bibdesk.sourceforge.net
 
-![BibDesk -- open to the library for my Revelation paper]({filename}/images/bibdesk.png "Not very pretty, but it does work")
+![BibDesk -- open to the library for my Revelation paper](//cdn.chriskrycho.com/images/bibdesk.png "Not very pretty, but it does work")
 
 Once I filled in the details for each item and set a citekey for it, I was ready
 to go: BibDesk just stores the files in a standard `.bib` file on the disk,
