@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Mon, 29 Feb 2016 08:10:00 -0500</lastBuildDate><item><title>2016-02-29 08:10</title><link>http://www.chriskrycho.com/2016/2016-02-29-0810.html</link><description>&lt;p&gt;I have an ongoing internal debate whether to hard-wrap lines in the source Markdown documents for my website (and everything else). Upside: it can be helpful when viewed in a terminal. Downside: it’s not very &lt;a href="http://ami.responsivedesign.is/?url=http%3A%2F%2Fwww.chriskrycho.com%2F2016%2Frust-and-swift-xiii.txt"&gt;responsive&lt;/a&gt; in other editors or small phone views.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Wed, 02 Mar 2016 08:13:00 -0500</lastBuildDate><item><title>2016-03-02 08:13</title><link>http://www.chriskrycho.com/2016/2016-03-02-0813.html</link><description>&lt;p&gt;I have had a “cold” for almost a month now. Between that and some secondary symptoms, I’m beginning to worry that what I actually have is a mono relapse. May it not be so…&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 02 Mar 2016 08:13:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-03-02:2016/2016-03-02-0813.html</guid></item><item><title>2016-02-29 08:10</title><link>http://www.chriskrycho.com/2016/2016-02-29-0810.html</link><description>&lt;p&gt;I have an ongoing internal debate whether to hard-wrap lines in the source Markdown documents for my website (and everything else). Upside: it can be helpful when viewed in a terminal. Downside: it’s not very &lt;a href="http://ami.responsivedesign.is/?url=http%3A%2F%2Fwww.chriskrycho.com%2F2016%2Frust-and-swift-xiii.txt"&gt;responsive&lt;/a&gt; in other editors or small phone views.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -386,7 +390,7 @@ directly and playing it in iTunes or another media app.&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 06 Feb 2016 13:45:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-06:2016/2016-02-06-1345.html</guid><category>software development</category></item><item><title>2016-02-06 13:40</title><link>http://www.chriskrycho.com/2016/2016-02-06-1340.html</link><description>&lt;p&gt;The setup I used to get reasonable-sounding audio out of Skype this morning. God bless &lt;a href="https://rogueamoeba.com/"&gt;Rogue Amoeba&lt;/a&gt;’s &lt;a href="https://rogueamoeba.com/audiohijack/"&gt;Audio Hijack&lt;/a&gt;.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="/images/hijack-skype-problems.png" alt="Solving Skype Problems with Audio Hijack" /&gt;&lt;figcaption&gt;Solving Skype Problems with Audio Hijack&lt;/figcaption&gt;
+&lt;img src="//cdn.chriskrycho.com/images/hijack-skype-problems.png" alt="Solving Skype Problems with Audio Hijack" /&gt;&lt;figcaption&gt;Solving Skype Problems with Audio Hijack&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -486,7 +490,7 @@ directly and playing it in iTunes or another media app.&lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
 &lt;p&gt;A thing I’d really, really like to see change—this is from the &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt; Twitter data. Unsurprising, but awful:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="/images/new-rustacean-followers.png" alt="@newrustacean Twitter follower gender data" /&gt;&lt;figcaption&gt;&lt;a href="https://www.twitter.com/newrustacean"&gt;@newrustacean&lt;/a&gt; Twitter follower gender data&lt;/figcaption&gt;
+&lt;img src="//cdn.chriskrycho.com/images/new-rustacean-followers.png" alt="@newrustacean Twitter follower gender data" /&gt;&lt;figcaption&gt;&lt;a href="https://www.twitter.com/newrustacean"&gt;@newrustacean&lt;/a&gt; Twitter follower gender data&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/blockquote&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href="https://twitter.com/chriskrycho/status/686007729371148289"&gt;∞ January 9, 2016 21:12&lt;/a&gt;&lt;/p&gt;
@@ -1231,7 +1235,7 @@ fn main() {
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 09 Oct 2015 13:46:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-10-09:2015/2015-10-09-1346.html</guid><category>software development</category></item><item><title>2015-10-06 08:36</title><link>http://www.chriskrycho.com/2015/2015-10-06-0836.html</link><description>&lt;p&gt;Here’s a thing I’m &lt;em&gt;quite&lt;/em&gt; okay with:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="/images/new-and-noteworthy.png" title="Screenshot of iTunes Podcast list" alt="Sap.py and New Rustacean in New and Noteworthy on the iTunes Podcast list" /&gt;&lt;figcaption&gt;Sap.py and New Rustacean in New and Noteworthy on the iTunes Podcast list&lt;/figcaption&gt;
+&lt;img src="//cdn.chriskrycho.com/images/new-and-noteworthy.png" title="Screenshot of iTunes Podcast list" alt="Sap.py and New Rustacean in New and Noteworthy on the iTunes Podcast list" /&gt;&lt;figcaption&gt;Sap.py and New Rustacean in New and Noteworthy on the iTunes Podcast list&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -1429,7 +1433,7 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 13 Sep 2015 15:47:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-13:2015/2015-09-13-1547.html</guid><category>fitness</category></item><item><title>2015-09-12 21:20</title><link>http://www.chriskrycho.com/2015/2015-09-12-2120.html</link><description>&lt;p&gt;I’m so glad Google Fiber is building out in Raleigh-Durham. That pushed Time Warner Cable to bump its speeds a month or so ago, and this still makes me &lt;em&gt;so&lt;/em&gt; happy:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="/images/speedtest_2015-09-12.png" title="Speedtest.net results" alt="100Mbps? Oh, yes!" /&gt;&lt;figcaption&gt;100Mbps? Oh, yes!&lt;/figcaption&gt;
+&lt;img src="//cdn.chriskrycho.com/images/speedtest_2015-09-12.png" title="Speedtest.net results" alt="100Mbps? Oh, yes!" /&gt;&lt;figcaption&gt;100Mbps? Oh, yes!&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -1581,7 +1585,7 @@ Even so, I step out the door again:&lt;br /&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 10 Sep 2015 12:22:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-10:2015/2015-09-10-1222.html</guid><category>software development</category></item><item><title>2015-09-10 07:18</title><link>http://www.chriskrycho.com/2015/2015-09-10-0718.html</link><description>&lt;p&gt;That’s kind of brutal—the new Apple Pencil with &lt;a href="http://www.fiftythree.com"&gt;FiftyThree&lt;/a&gt;’s Paper app:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="/images/apple-pencil-53-paper.png" title="Promo photo from Apple website" alt="Apple Pencil with Paper app" /&gt;&lt;figcaption&gt;Apple Pencil with Paper app&lt;/figcaption&gt;
+&lt;img src="//cdn.chriskrycho.com/images/apple-pencil-53-paper.png" title="Promo photo from Apple website" alt="Apple Pencil with Paper app" /&gt;&lt;figcaption&gt;Apple Pencil with Paper app&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -1857,7 +1861,7 @@ turns back to its grassy feast&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 12 Aug 2015 07:40:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-12:2015/one-deer-standing-in-a-field.html</guid><category>poetry</category></item><item><title>2015-08-11 22:37</title><link>http://www.chriskrycho.com/2015/2015-08-11-2237.html</link><description>&lt;p&gt;Dear Washington Post: &lt;a href="http://typedia.com/explore/typeface/georgia/"&gt;Georgia&lt;/a&gt; was designed for high legibility on screens. You may think it’s “newspapery” to squish the letters together with &lt;code&gt;letter-spacing: -1.75px&lt;/code&gt;, but actually it’s just ugly.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="/images/nolig.png" title="&amp;#39;Unfinished&amp;#39; set in Georgia with bad letter-spacing" alt="This is bad and should not be mistaken for kerning or a ligature" /&gt;&lt;figcaption&gt;This is bad and should not be mistaken for kerning or a ligature&lt;/figcaption&gt;
+&lt;img src="//cdn.chriskrycho.com/images/nolig.png" title="&amp;#39;Unfinished&amp;#39; set in Georgia with bad letter-spacing" alt="This is bad and should not be mistaken for kerning or a ligature" /&gt;&lt;figcaption&gt;This is bad and should not be mistaken for kerning or a ligature&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -1952,7 +1956,7 @@ turns back to its grassy feast&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 05 Aug 2015 21:05:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-05:2015/2015-08-05-2105.html</guid><category>podcasting</category><category>music</category><category>Jaimie</category><category>software development</category></item><item><title>2015-08-05 08:46</title><link>http://www.chriskrycho.com/2015/2015-08-05-0846.html</link><description>&lt;p&gt;Don’t blame me: it’s all &lt;a href="https://alpha.app.net/manton"&gt;@manton&lt;/a&gt;’s fault. He started this.&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="/images/microblogging.png" alt="Crosspost from microblog to everywhere" /&gt;&lt;figcaption&gt;Crosspost from microblog to everywhere&lt;/figcaption&gt;
+&lt;img src="//cdn.chriskrycho.com/images/microblogging.png" alt="Crosspost from microblog to everywhere" /&gt;&lt;figcaption&gt;Crosspost from microblog to everywhere&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -2003,7 +2007,7 @@ turns back to its grassy feast&lt;/p&gt;
 &lt;/div&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 01 Aug 2015 10:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-08-01:2015/straining-gnats-and-siding-with-pharaoh-over-the-midwives.html</guid><category>links</category></item><item><title>2015-08-01 09:18</title><link>http://www.chriskrycho.com/2015/2015-08-01-0918.html</link><description>&lt;p&gt;I started looking into bespoke publishers for that blog-post-book idea. &lt;a href="http://www.thebookpatch.com"&gt;First one I found&lt;/a&gt; has this for a logo:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="/images/book-patch.png" alt="The Book Patch" /&gt;&lt;figcaption&gt;The Book Patch&lt;/figcaption&gt;
+&lt;img src="//cdn.chriskrycho.com/images/book-patch.png" alt="The Book Patch" /&gt;&lt;figcaption&gt;The Book Patch&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Yes, that &lt;em&gt;is&lt;/em&gt; Comic Sans. Immediately filed under &lt;em&gt;nope nope nope&lt;/em&gt;.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
@@ -2160,7 +2164,7 @@ What is this? Yet *another* citation?[@krycho:revelation:2015]&lt;/code&gt;&lt;/
         Year = {2015}}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;While there is a lot of utility in having that data available in text, on disk, no one wants to &lt;em&gt;edit&lt;/em&gt; that by hand.&lt;a href="#fn8" class="footnoteRef" id="fnref8"&gt;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt; Gladly, editing it by hand is not necessary. For this project, I used the freely available &lt;a href="http://bibdesk.sourceforge.net"&gt;BibDesk&lt;/a&gt; tool, which is a workable (albeit not very pretty and not &lt;em&gt;very&lt;/em&gt; capable) manager for &lt;span class="tex"&gt;BibT&lt;span class="texE"&gt;E&lt;/span&gt;X&lt;/span&gt;:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="%7Bfilename%7D/images/bibdesk.png" title="Not very pretty, but it does work" alt="BibDesk – open to the library for my Revelation paper" /&gt;&lt;figcaption&gt;BibDesk – open to the library for my Revelation paper&lt;/figcaption&gt;
+&lt;img src="//cdn.chriskrycho.com/images/bibdesk.png" title="Not very pretty, but it does work" alt="BibDesk – open to the library for my Revelation paper" /&gt;&lt;figcaption&gt;BibDesk – open to the library for my Revelation paper&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Once I filled in the details for each item and set a citekey for it, I was ready to go: BibDesk just stores the files in a standard &lt;code&gt;.bib&lt;/code&gt; file on the disk, which I specified per the Pandoc command above.&lt;/p&gt;
 &lt;p&gt;BibDesk gets the job done alright, but only alright. Using a citation and reference management tool was a big win, though, and I fully intend to use one for every remaining project while in seminary—and, quite possibly, for other projects as well. Whether that tool is BibDesk or something else is a different matter entirely. (More on this below.)&lt;/p&gt;

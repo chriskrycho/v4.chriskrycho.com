@@ -164,7 +164,7 @@ fn main() {
 &lt;blockquote&gt;
 &lt;p&gt;A thing I’d really, really like to see change—this is from the &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt; Twitter data. Unsurprising, but awful:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="/images/new-rustacean-followers.png" alt="@newrustacean Twitter follower gender data" /&gt;&lt;figcaption&gt;&lt;a href="https://www.twitter.com/newrustacean"&gt;@newrustacean&lt;/a&gt; Twitter follower gender data&lt;/figcaption&gt;
+&lt;img src="//cdn.chriskrycho.com/images/new-rustacean-followers.png" alt="@newrustacean Twitter follower gender data" /&gt;&lt;figcaption&gt;&lt;a href="https://www.twitter.com/newrustacean"&gt;@newrustacean&lt;/a&gt; Twitter follower gender data&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;/blockquote&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href="https://twitter.com/chriskrycho/status/686007729371148289"&gt;∞ January 9, 2016 21:12&lt;/a&gt;&lt;/p&gt;
@@ -1006,7 +1006,7 @@ What is this? Yet *another* citation?[@krycho:revelation:2015]&lt;/code&gt;&lt;/
         Year = {2015}}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;While there is a lot of utility in having that data available in text, on disk, no one wants to &lt;em&gt;edit&lt;/em&gt; that by hand.&lt;a href="#fn8" class="footnoteRef" id="fnref8"&gt;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt; Gladly, editing it by hand is not necessary. For this project, I used the freely available &lt;a href="http://bibdesk.sourceforge.net"&gt;BibDesk&lt;/a&gt; tool, which is a workable (albeit not very pretty and not &lt;em&gt;very&lt;/em&gt; capable) manager for &lt;span class="tex"&gt;BibT&lt;span class="texE"&gt;E&lt;/span&gt;X&lt;/span&gt;:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="%7Bfilename%7D/images/bibdesk.png" title="Not very pretty, but it does work" alt="BibDesk – open to the library for my Revelation paper" /&gt;&lt;figcaption&gt;BibDesk – open to the library for my Revelation paper&lt;/figcaption&gt;
+&lt;img src="//cdn.chriskrycho.com/images/bibdesk.png" title="Not very pretty, but it does work" alt="BibDesk – open to the library for my Revelation paper" /&gt;&lt;figcaption&gt;BibDesk – open to the library for my Revelation paper&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Once I filled in the details for each item and set a citekey for it, I was ready to go: BibDesk just stores the files in a standard &lt;code&gt;.bib&lt;/code&gt; file on the disk, which I specified per the Pandoc command above.&lt;/p&gt;
 &lt;p&gt;BibDesk gets the job done alright, but only alright. Using a citation and reference management tool was a big win, though, and I fully intend to use one for every remaining project while in seminary—and, quite possibly, for other projects as well. Whether that tool is BibDesk or something else is a different matter entirely. (More on this below.)&lt;/p&gt;

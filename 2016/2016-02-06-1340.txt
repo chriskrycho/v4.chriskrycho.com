@@ -7,7 +7,7 @@ Tags: podcasting
 The setup I used to get reasonable-sounding audio out of Skype this morning. God
 bless [Rogue Amoeba]'s [Audio Hijack].
 
-![Solving Skype Problems with Audio Hijack](/images/hijack-skype-problems.png)
+![Solving Skype Problems with Audio Hijack](//cdn.chriskrycho.com/images/hijack-skype-problems.png)
 
 [Rogue Amoeba]: https://rogueamoeba.com/
 [Audio Hijack]: https://rogueamoeba.com/audiohijack/

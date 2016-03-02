@@ -14,7 +14,7 @@ on my [main account].</i>
     > A thing I'd really, really like to see change---this is from the [New
     > Rustacean] Twitter data. Unsurprising, but awful:
     >
-    > ![[\@newrustacean] Twitter follower gender data](/images/new-rustacean-followers.png)
+    > ![[\@newrustacean] Twitter follower gender data](//cdn.chriskrycho.com/images/new-rustacean-followers.png)
 
   - [∞ January 9, 2016 21:12][2]
 
