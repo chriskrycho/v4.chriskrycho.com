@@ -13,8 +13,8 @@
 
 (You know, one of the hardest problems in computer science...)
 
-- "JavaScript"
-- "ECMAScript"
+- "JavaScript" -- 1995, Brendan Eich, and Netscape
+- "ECMAScript" -- standardization of JavaScript, JScript (Microsoft), ActionScript (Adobe)
 
 ------
 
@@ -121,7 +121,7 @@ Block scoping:
 ```javascript
 console.log(tenToDonna);  // throws a `ReferenceError`
 if (true) {
-  var tenToDonna = "TARDIS. Time Lord. Yeah";
+  let tenToDonna = "TARDIS. Time Lord. Yeah";
 }
 console.log(tenToDonna);  // *also* throws a `ReferenceError`
 ```
@@ -193,3 +193,75 @@ There is essentially no reason to use `var` if you can write ES2015.
 
 # Arrow-functions
 ## Or: how `this` just `=>` both easier and harder
+
+------
+
+### The problem
+
+- Closures, anonymous functions, etc. common.
+- `this` (analogous but not identical to C♯ `self`) is tied to `function`
+
+```javascript
+function takesAFunction(internal_fn) {
+    this.name = "takesAFunction";
+    console.log(this.name);
+    internal_fn();
+    console.log(this.name);
+}
+
+function anotherFunction() {
+    this.name = "anotherFunction";
+}
+```
+
+------
+
+### How is that a problem?
+
+What if you want to access the outer self?
+
+People use `this = self` to get around it. Especially common in jQuery.
+
+```javascript
+function outer() {
+    this.mightBeImportant = true;
+    var self = this;
+    someThingTakingACallback(function() {
+        console.log(this.mightBeImportant);  // undefined
+        console.log(self.mightBeImportant);  // true
+    })
+}
+```
+
+------
+
+### ES6 Arrow functions
+
+```javascript
+function outer() {
+    this.mightBeImportant = true;
+    someThingTakingACallback(() => {
+        console.log(this.mightBeImportant);  // true
+    });
+}
+```
+
+------
+
+### Syntax overview:
+
+```javascript
+let foo = (some, list, ofArgs) => {
+    console.log("cool");
+};
+
+let bar = anArg => { console.log("yeah!"); };
+let baz = (someArg) => true;  // implicit return
+
+```
+
+------
+
+### Etc.
+
+Other stuff coming, but sadly I ran out of time putting together the slides!
