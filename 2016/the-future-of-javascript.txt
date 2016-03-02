@@ -12,3 +12,5 @@ I gave a short tech talk at my new employer [Olo] today, covering a number of th
 
 [Olo]: http://www.olo.com
 [slides]: //www.chriskrycho.com/talks/es-future-olo
+
+And yes, there *were* a lot of really delightful _Doctor Who_ references in this talk. Because *of course* there were!
