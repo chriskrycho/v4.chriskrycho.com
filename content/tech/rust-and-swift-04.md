@@ -1,7 +1,7 @@
 ---
 Title: Rust and Swift (iv)
 Subtitle: Language design tradeoffs, highlighted by string manipulation.
-Tags: software development, listicles
+Tags: software development, listicles, rust, swift, rust-and-swift
 Date: 2015-09-10 21:05
 Series:
   Title: Rust and Swift
@@ -12,37 +12,10 @@ Series:
 Rust, which I have also been learning over the past month. As with the other
 posts in this series, these are off-the-cuff impressions, which may be
 inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my
-preferences are just that: preferences. Your tastes may differ from mine.</i>
+preferences are just that: preferences. Your tastes may differ from mine. [(See
+all parts in the series.)][series]</i>
 
-Parts in the Series
--------------------
-
-1.  [Thoughts after reading the introduction to the Swift book.][1]
-2.  [Basic types and the syntax around them.][2]
-3.  [Operators, including overloading, and thoughts on brevity.][3]
-4.  Language design tradeoffs, highlighted by string manipulation.
-5.  [The value (and challenge) of learning languages in parallel.][5]
-6.  [Collection types and the difference between syntax and semantics.][6]
-7.  [Pattern matching and the value of expression blocks.][7]
-8.  [Functions, closures, and an awful lot of Swift syntax.][8]
-9.  [Sum types (`enum`s) and more on pattern matching.][9]
-10. [Classes and structs (product types), and reference and value types.][10]
-11. [Hopes for the next generation of systems programming.][11]
-12. [Properties: type and instance, stored and computed.][12]
-13. [Methods, instance and otherwise.][13]
-
-[1]: /2015/rust-and-swift-i.html
-[2]: /2015/rust-and-swift-ii.html
-[3]: /2015/rust-and-swift-iii.html
-[5]: /2015/rust-and-swift-v.html
-[6]: /2015/rust-and-swift-vi.html
-[7]: /2015/rust-and-swift-vii.html
-[8]: /2015/rust-and-swift-viii.html
-[9]: /2015/rust-and-swift-ix.html
-[10]: /2015/rust-and-swift-x.html
-[11]: /2016/rust-and-swift-xi.html
-[12]: /2016/rust-and-swift-xii.html
-[13]: /2016/rust-and-swift-xiii.html
+[series]: /rust-and-swift.html
 
 ---
 
