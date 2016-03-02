@@ -5,7 +5,7 @@ Status: hidden
 ...
 
 
-Christopher Krycho  
+Christopher Krycho
 240 McDowell Dr, Wake Forest, North Carolina, 27587
 
 Overview
@@ -21,13 +21,13 @@ functional programming and user interface design.
 Areas of Expertise
 ------------------
 ### Primary Skills
-Python, JavaScript (Angular & Node), C, html, scss, Git, Mercurial
+Python, JavaScript (Ember, Angular, Node), C, <abbr>HTML</abbr>, <abbr>SCSS</abbr>, Git, Mercurial
 
 ### Recent Interests
-Rust, EmberJS, Elixir, Haskell
+Rust, Elixir, Haskell, F♯
 
 ### Other Technologies
-PostgreSQL, PHP, jQuery, Fortran, MySQL, JIRA, Confluence, Subversion
+PostgreSQL, C++, PHP, jQuery, Fortran, MySQL, JIRA, Confluence, Subversion
 
 Qualifications
 --------------
@@ -48,6 +48,9 @@ and strong personal ethics. Works well with a team. Excels in acquisition of new
 techniques, languages, frameworks, and tools.
 
 ### Relevant Experience
+
+  - Olo (January 2016--present)  
+    Front-end Software Engineer
 
   - Software Development & Web Design (January 2010--present)
     www.chriskrycho.com
