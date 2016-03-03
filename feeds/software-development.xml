@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Mar 2016 08:22:00 -0500</lastBuildDate><item><title>2016-03-03 08:22</title><link>http://www.chriskrycho.com/2016/2016-03-03-0822.html</link><description>&lt;p&gt;If you’re contributing regularly to open source on GitHub, and you use the git command line &lt;em&gt;at all&lt;/em&gt;, do yourself a favor and go install &lt;a href="https://hub.github.com"&gt;Hub&lt;/a&gt; &lt;em&gt;right. now.&lt;/em&gt; Makes life so much easier.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/software-development.xml" rel="self"></atom:link><lastBuildDate>Thu, 03 Mar 2016 08:43:00 -0500</lastBuildDate><item><title>2016-03-03 08:43</title><link>http://www.chriskrycho.com/2016/2016-03-03-0843.html</link><description>&lt;p&gt;Every time I do Node development, I conclude again—loudly—that purely callback-driven APIs are incredibly annoying.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 03 Mar 2016 08:43:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-03-03:2016/2016-03-03-0843.html</guid><category>software development</category></item><item><title>2016-03-03 08:22</title><link>http://www.chriskrycho.com/2016/2016-03-03-0822.html</link><description>&lt;p&gt;If you’re contributing regularly to open source on GitHub, and you use the git command line &lt;em&gt;at all&lt;/em&gt;, do yourself a favor and go install &lt;a href="https://hub.github.com"&gt;Hub&lt;/a&gt; &lt;em&gt;right. now.&lt;/em&gt; Makes life so much easier.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
