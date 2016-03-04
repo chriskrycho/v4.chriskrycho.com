@@ -1,10 +1,6 @@
 @import "base";
 @import "mixins";
 
-@media only screen and (min-width: 1280px) and (min-height: 800px) {
-    html { font-size: 150%; }
-}
-
 @media only screen and (max-width: 920px) {
     #site-header {
         .hgroup {
@@ -86,7 +82,7 @@
 
 @media only screen and (max-width: 680px), only screen and (max-height: 480px) {
     html {
-        font-size: 16px;
+        font-size: 100%;
         line-height: $line_height_small;
     }
 
