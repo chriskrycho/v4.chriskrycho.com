@@ -432,6 +432,11 @@ body::before {
     &.micro { display: none; }
 }
 
+.section-title.divider::after {
+    content: "//";
+    letter-spacing: -0.1em;
+}
+
 // Article
 article {
     padding-bottom: $fs2;
