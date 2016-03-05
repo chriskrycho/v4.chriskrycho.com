@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (xii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -92,7 +92,7 @@
 <p><i class="editorial">A note on publication: I had this drafted in early January and sold forgot to publish it. Whoops!</i></p>
 <hr />
 <ul>
-<li><p>As noted in [my discussion of the product types in Rust and Swift][10], Swift distinguishes between classes and structs, with the former being reference types and the latter being value types. All structs are value types in Rust. (That you can wrap them in a pointer for heap-allocation with one of the smart pointer types, e.g. <code>Box</code> or <code>Rc</code> or <code>Arc</code>, doesn’t change this fundamental reality.) This underlying difference gives rise to one the big difference between Swift classes and Rust structs: a constant <code>class</code> instance in Swift can still have its fields mutated; not so with a Rust <code>struct</code> instance. But also not so with a <em>Swift</em> <code>struct</code> instance, as it turns out! There isn’t a straightforward way to do this with <code>Box&lt;T&gt;</code> in Rust; you <em>could</em> do it with something like an <code>Rc&lt;T&gt;</code> or <code>Arc&lt;T&gt;</code>, though.</p></li>
+<li><p>As noted in <a href="http://www.chriskrycho.com/2016/rust-and-swift-x.html">my discussion of the product types in Rust and Swift</a>, Swift distinguishes between classes and structs, with the former being reference types and the latter being value types. All structs are value types in Rust. (That you can wrap them in a pointer for heap-allocation with one of the smart pointer types, e.g. <code>Box</code> or <code>Rc</code> or <code>Arc</code>, doesn’t change this fundamental reality.) This underlying difference gives rise to one the big difference between Swift classes and Rust structs: a constant <code>class</code> instance in Swift can still have its fields mutated; not so with a Rust <code>struct</code> instance. But also not so with a <em>Swift</em> <code>struct</code> instance, as it turns out! There isn’t a straightforward way to do this with <code>Box&lt;T&gt;</code> in Rust; you <em>could</em> do it with something like an <code>Rc&lt;T&gt;</code> or <code>Arc&lt;T&gt;</code>, though.</p></li>
 <li><p>Swift’s <code>lazy</code> keyword, and associated delayed initialization of properties has, as far as I know, no equivalent whatsoever in Rust. And while I can see the utility in principle, I’m hard-pressed to think of any time in my working experience where the behavior would actually be useful. Rather than having <code>lazy</code> properties, I would be far more inclined to separate the behavior which should be initialized at a later time into its own data structure, and supplying it via <em>inversion of control</em> if it is necessary for an actions taken by other data structures. (This seems—at first blush at least—to be a way of supporting the un- or partially-initialized data types possible in Objective C?)</p></li>
 <li><p>Swift has computed properties, a concept familiar to Python developers (and relatively recently introduced in JavaScript). These can e quite handy, as they let you define a property to be accessed like any other (<code>someInstance.theProperty</code>) while being defined with functions which compute the value dynamically. A common, trivial example: if you defined a <code>Person</code> with <code>firstName</code> and <code>lastName</code> members, you could define a computed property, <code>fullName</code>, which was built using the existing values.</p></li>
 <li><p>Rust doesn’t have computed properties at all. This is because of its design decision to deeply separate <em>data</em> from <em>behavior</em>, essentially stealing a page from more pure-functional languages (Haskell etc.). This is (one reason) why you don’t define the implementation of a <code>struct</code> method in the same block as the members of the struct. See an excellent explanation <a href="https://www.reddit.com/r/rust/comments/2uvfic/why_doesnt_rust_have_properti">here</a>.</p></li>
@@ -113,8 +113,8 @@
 <p>es/cocmunq [Rust]: https://github.com/rust-lang/rust [Swift]: https://github.com/apple/swift</p>
 <hr />
 <ul>
-<li>[<strong>Previous:</strong> Hopes for the next generation of systems programming.][11]</li>
-<li>[<strong>Next:</strong> Methods, instance and otherwise.][13]</li>
+<li><a href="http://www.chriskrycho.com/2016/rust-and-swift-xi.html"><strong>Previous:</strong> Hopes for the next generation of systems programming.</a></li>
+<li><a href="http://www.chriskrycho.com/2016/rust-and-swift-xiii.html"><strong>Next:</strong> Methods, instance and otherwise.</a></li>
 </ul>
 <div id="refs" class="references">
 

@@ -106,5 +106,9 @@ only be a good thing, as far as I'm concerned.
 -   [**Next:** Properties: type and instance, stored and computed.][12]
 
 
+[10]: http://www.chriskrycho.com/2016/rust-and-swift-x.html
+[12]: http://www.chriskrycho.com/2016/rust-and-swift-xii.html
+
+
 [^oop]: It is of course entirely possible to do non-classical OOP; the point is
     that C entirely lacks *language-level* facilities for OOP, inheritance, etc.

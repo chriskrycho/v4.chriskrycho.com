@@ -202,3 +202,7 @@ all parts in the series.)][series]</i>
 ---
 
 -  [**Previous:** Properties: type and instance, stored and computed.][12]
+
+[8]: http://www.chriskrycho.com/2016/rust-and-swift-viii.html
+[10]: http://www.chriskrycho.com/2016/rust-and-swift-x.html
+[12]: http://www.chriskrycho.com/2016/rust-and-swift-xii.html

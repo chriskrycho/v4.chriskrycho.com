@@ -309,5 +309,8 @@ all parts in the series.)][series]</i>
 -  [**Previous:** Sum types (`enum`s) and more on pattern matching.][9]
 -  [**Next:** Hopes for the next generation of systems programming.][11]
 
+
 [midori]: http://joeduffyblog.com/2015/12/19/safe-native-code/
 [C♯]: https://msdn.microsoft.com/en-us/library/0taef578.aspx
+[9]: http://www.chriskrycho.com/2016/rust-and-swift-ix.html
+[11]: http://www.chriskrycho.com/2016/rust-and-swift-xi.html

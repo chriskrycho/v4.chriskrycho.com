@@ -158,6 +158,11 @@ es/cocmunq
 -  [**Next:** Methods, instance and otherwise.][13]
 
 
+[10]: http://www.chriskrycho.com/2016/rust-and-swift-x.html
+[11]: http://www.chriskrycho.com/2016/rust-and-swift-xi.html
+[13]: http://www.chriskrycho.com/2016/rust-and-swift-xiii.html
+
+
 
 [^always]: leaving aside details about `trait` specialization [still being
     hashed out][specialization] in Rust

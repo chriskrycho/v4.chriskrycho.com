@@ -26,8 +26,8 @@
 &lt;p&gt;Having a robust, thriving set of competitors in the market will be good for the languages themselves. But it will also be good for developers. It will take off some of the blinders that come from a single language (or a pair of very closely related languages) dominating the ecosystem. It will make it likelier that people will be more familiar with different programming paradigms. And that can only be a good thing, as far as I’m concerned.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Classes and structs (product types), and reference and value types.][10]&lt;/li&gt;
-&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Properties: type and instance, stored and computed.][12]&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-x.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -38,9 +38,8 @@
 &lt;li id="fn1"&gt;&lt;p&gt;It is of course entirely possible to do non-classical OOP; the point is that C entirely lacks &lt;em&gt;language-level&lt;/em&gt; facilities for OOP, inheritance, etc.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 10 Jan 2016 10:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-01-10:2016/rust-and-swift-xi.html</guid><category>software development</category><category>rust</category><category>swift</category><category>rust-and-swift</category><category>programming-languages</category></item><item><title>Rust and Swift (v)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-v.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]&lt;/i&gt;&lt;/p&gt;
-&lt;section id="series-rust-and-swift.html" class="level2"&gt;
-&lt;h2&gt;[series]: /rust-and-swift.html&lt;/h2&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 10 Jan 2016 10:00:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-01-10:2016/rust-and-swift-xi.html</guid><category>software development</category><category>rust</category><category>swift</category><category>rust-and-swift</category><category>programming-languages</category></item><item><title>Rust and Swift (v)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-v.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;I’ve been working on learning Swift over the past couple weeks, and had spent the month prior to that doing a deep first dive on Rust. This kind of approach, learning two languages basically at the same time, is entirely new to me, and for good reason. Programming languages are not trivial to learn, and to learn them meaningfully one must practice with them a great deal.&lt;/p&gt;
 &lt;p&gt;I’m doing this largely of necessity. I’m hoping to build an application with a very capable, performant cross-platform core language (Rust), but planning to ship a native OS X app (first) when all is said and done. My desire to make the core libraries portable rules out Swift immediately. To be frank, so does the fact that it’s an Apple language: I am happy to use Apple’s tools on its platform, but I don’t want to shackle myself to their choices in the long run. Too, having good Rust experience is likely to be valuable in many other contexts.&lt;/p&gt;
 &lt;p&gt;So I need to learn both.&lt;/p&gt;
@@ -49,11 +48,10 @@
 &lt;p&gt;I have a long way to go in both languages, of course. Reading on nights and weekends, and the little bit of playing I’ve been able to do with each of them, is no replacement for just sinking my teeth into a project and finding the pain points. Nonetheless, I’m really glad to be learning these two languages &lt;em&gt;together&lt;/em&gt;. If you’re up for a challenge, try it sometime! You’ll be surprised how much you learn.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;[&lt;strong&gt;Previous:&lt;/strong&gt; Language design tradeoffs, highlighted by string manipulation.][4]&lt;/li&gt;
-&lt;li&gt;[&lt;strong&gt;Next:&lt;/strong&gt; Collection types and the difference between syntax and semantics.][6]&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-iv.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-vi.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-&lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 12 Sep 2015 13:45:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-12:2015/rust-and-swift-v.html</guid><category>software development</category><category>rust</category><category>swift</category><category>rust-and-swift</category><category>programming languages</category></item></channel></rss>

@@ -152,3 +152,7 @@ all parts in the series.)][series]</i>
 
 -  [**Previous:** Functions, closures, and an awful lot of Swift syntax.][8]
 -  [**Next:** Classes and structs (product types), and reference and value types.][10]
+
+
+[8]: http://www.chriskrycho.com/2016/rust-and-swift-viii.html
+[10]: http://www.chriskrycho.com/2016/rust-and-swift-x.html
