@@ -71,8 +71,11 @@ Modified: 2016-03-06 13:20
         mutating func next() {
             switch self {
             case First:
-                self = Second case Second:
-                self = Third case Third self = First
+                self = Second
+            case Second:
+                self = Third
+            case Third
+                self = First
             }
         }
     }

@@ -36,8 +36,11 @@ impl Point {
     mutating func next() {
         switch self {
         case First:
-            self = Second case Second:
-            self = Third case Third self = First
+            self = Second
+        case Second:
+            self = Third
+        case Third
+            self = First
         }
     }
 }&lt;/code&gt;&lt;/pre&gt;
