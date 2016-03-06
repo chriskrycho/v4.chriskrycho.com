@@ -547,6 +547,13 @@ article {
 
     &.micro, &.links { font-family: $sans; }
 
+    &.links,
+    &.archive.links {
+        header h1 {
+            font: normal normal 400 #{$fs4}/#{$line_height_small} $serif;
+        }
+    }
+
     .meta {
         color: $light_gray;
         padding-bottom: $fsp_abs;
