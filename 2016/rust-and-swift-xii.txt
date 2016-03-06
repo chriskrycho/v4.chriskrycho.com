@@ -12,7 +12,7 @@ Series:
 
 [series]: /rust-and-swift.html
 
-<i class="editorial">A note on publication: I had this drafted in early January and sold forgot to publish it. Whoops!</i>
+<i class="editorial">A note on publication: I had this drafted in early January and simply forgot to publish it. Whoops!</i>
 
 ---
 

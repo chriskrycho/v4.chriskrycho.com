@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (xii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -89,7 +89,7 @@
         <div class="content">
 
 <p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. <a href="/rust-and-swift.html">(See all parts in the series.)</a></i></p>
-<p><i class="editorial">A note on publication: I had this drafted in early January and sold forgot to publish it. Whoops!</i></p>
+<p><i class="editorial">A note on publication: I had this drafted in early January and simply forgot to publish it. Whoops!</i></p>
 <hr />
 <ul>
 <li><p>As noted in <a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html">my discussion of the product types in Rust and Swift</a>, Swift distinguishes between classes and structs, with the former being reference types and the latter being value types. All structs are value types in Rust. (That you can wrap them in a pointer for heap-allocation with one of the smart pointer types, e.g. <code>Box</code> or <code>Rc</code> or <code>Arc</code>, doesn’t change this fundamental reality.) This underlying difference gives rise to one the big difference between Swift classes and Rust structs: a constant <code>class</code> instance in Swift can still have its fields mutated; not so with a Rust <code>struct</code> instance. But also not so with a <em>Swift</em> <code>struct</code> instance, as it turns out! There isn’t a straightforward way to do this with <code>Box&lt;T&gt;</code> in Rust; you <em>could</em> do it with something like an <code>Rc&lt;T&gt;</code> or <code>Arc&lt;T&gt;</code>, though.</p></li>
