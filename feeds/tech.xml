@@ -473,9 +473,8 @@ let matchedValue = match matchee {
 &lt;a href="#fnref3"&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</summary><category term="design"></category><category term="software development"></category><category term="typography"></category></entry><entry><title>Rust and Swift (viii)</title><link href="http://www.chriskrycho.com/2015/rust-and-swift-viii.html" rel="alternate"></link><updated>2015-10-19T20:15:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-10-18:2015/rust-and-swift-viii.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]&lt;/i&gt;&lt;/p&gt;
-&lt;section id="series-rust-and-swift.html" class="level2"&gt;
-&lt;h2&gt;[series]: /rust-and-swift.html&lt;/h2&gt;
+</summary><category term="design"></category><category term="software development"></category><category term="typography"></category></entry><entry><title>Rust and Swift (viii)</title><link href="http://www.chriskrycho.com/2015/rust-and-swift-viii.html" rel="alternate"></link><updated>2015-10-19T20:15:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-10-18:2015/rust-and-swift-viii.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Rust and Swift handle function definition fairly similarly, at least for basic function definitions. In fact, for most basic functions, the only difference between the two is the keyword used to indicate that you’re declaring a function: &lt;code&gt;fn&lt;/code&gt; in Rust and &lt;code&gt;func&lt;/code&gt; in Swift.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Likewise, both return an empty tuple, &lt;code&gt;()&lt;/code&gt;, called the &lt;em&gt;unit type&lt;/em&gt; in Rust or &lt;code&gt;Void&lt;/code&gt; in Swift. Note, however, that this unit/&lt;code&gt;Void&lt;/code&gt; type is &lt;em&gt;not&lt;/em&gt; like C(++)’s &lt;code&gt;void&lt;/code&gt; or Java’s &lt;code&gt;null&lt;/code&gt;: you cannot coerce other types to it; it really is an empty tuple.&lt;/p&gt;&lt;/li&gt;
@@ -565,7 +564,6 @@ fn main() {
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-&lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
@@ -622,9 +620,8 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="software development"></category><category term="listicles"></category><category term="rust"></category><category term="swift"></category><category term="rust-and-swift"></category></entry><entry><title>Rust and Swift (vi)</title><link href="http://www.chriskrycho.com/2015/rust-and-swift-vi.html" rel="alternate"></link><updated>2015-09-19T09:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-19:2015/rust-and-swift-vi.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]&lt;/i&gt;&lt;/p&gt;
-&lt;section id="series-rust-and-swift.html" class="level2"&gt;
-&lt;h2&gt;[series]: /rust-and-swift.html&lt;/h2&gt;
+</summary><category term="software development"></category><category term="listicles"></category><category term="rust"></category><category term="swift"></category><category term="rust-and-swift"></category></entry><entry><title>Rust and Swift (vi)</title><link href="http://www.chriskrycho.com/2015/rust-and-swift-vi.html" rel="alternate"></link><updated>2015-09-19T09:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-19:2015/rust-and-swift-vi.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;It kind of feels like this summarizes a &lt;em&gt;lot&lt;/em&gt; of things about the overall design of Swift:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -682,7 +679,6 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-&lt;/section&gt;
 </summary><category term="software development"></category><category term="listicles"></category><category term="rust"></category><category term="swift"></category><category term="rust-and-swift"></category></entry><entry><title>Rust and Swift (v)</title><link href="http://www.chriskrycho.com/2015/rust-and-swift-v.html" rel="alternate"></link><updated>2015-09-12T13:45:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-09-12:2015/rust-and-swift-v.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;I’ve been working on learning Swift over the past couple weeks, and had spent the month prior to that doing a deep first dive on Rust. This kind of approach, learning two languages basically at the same time, is entirely new to me, and for good reason. Programming languages are not trivial to learn, and to learn them meaningfully one must practice with them a great deal.&lt;/p&gt;

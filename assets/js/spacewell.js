@@ -9,7 +9,7 @@
       return;
     }
 
-    var patt = /([\w\d‘’“”\)\]]+)(—|&mdash;|&#8212;|&x2014;)([\w\d‘’“”\(\]]+)/g;
+    var patt = /([\w\d‘’“”\)]+)(—|&mdash;|&#8212;|&x2014;)([\w\d‘’“”\(]+)/g;
     var repl = '<span style="white-space: nowrap">$1&hairsp;$2&hairsp;$3</span>';
 
     // TODO: Account for e.g. when followed by another <span>, etc.
