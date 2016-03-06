@@ -224,5 +224,5 @@ Modified: 2015-12-22 13:30
 
 [midori]: http://joeduffyblog.com/2015/12/19/safe-native-code/
 [C♯]: https://msdn.microsoft.com/en-us/library/0taef578.aspx
-[9]: http://www.chriskrycho.com/2016/rust-and-swift-ix.html
+[9]: http://www.chriskrycho.com/2015/rust-and-swift-ix.html
 [11]: http://www.chriskrycho.com/2016/rust-and-swift-xi.html

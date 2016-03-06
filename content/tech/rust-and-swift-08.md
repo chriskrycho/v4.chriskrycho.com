@@ -177,8 +177,8 @@ This post is incredibly long, but I blame that on the (frankly incredible) numbe
   - [**Next:** Sum types (`enum`s) and more on pattern matching.][9]
 
 
-[7]: http://www.chriskrycho.com/2016/rust-and-swift-vii.html
-[9]: http://www.chriskrycho.com/2016/rust-and-swift-ix.html
+[7]: http://www.chriskrycho.com/2015/rust-and-swift-vii.html
+[9]: http://www.chriskrycho.com/2015/rust-and-swift-ix.html
 
 
 

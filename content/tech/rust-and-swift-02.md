@@ -58,8 +58,8 @@ Series:
   - [**Next:** Operators, including overloading, and thoughts on brevity.][3]
 
 
-[1]: http://www.chriskrycho.com/2016/rust-and-swift-i.html
-[3]: http://www.chriskrycho.com/2016/rust-and-swift-iii.html
+[1]: http://www.chriskrycho.com/2015/rust-and-swift-i.html
+[3]: http://www.chriskrycho.com/2015/rust-and-swift-iii.html
 
 
 

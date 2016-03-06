@@ -12,7 +12,7 @@ Series:
 
 [series]: /rust-and-swift.html
 
-<i class="editorial">A note on publication: I had this drafted in early January and sold forgot to publish it. Whoops!</i>
+<i class="editorial">A note on publication: I had this drafted in early January and simply forgot to publish it. Whoops!</i>
 
 ---
 
@@ -63,7 +63,7 @@ Series:
 -  [**Next:** Methods, instance and otherwise.][13]
 
 
-[10]: http://www.chriskrycho.com/2016/rust-and-swift-x.html
+[10]: http://www.chriskrycho.com/2015/rust-and-swift-x.html
 [11]: http://www.chriskrycho.com/2016/rust-and-swift-xi.html
 [13]: http://www.chriskrycho.com/2016/rust-and-swift-xiii.html
 

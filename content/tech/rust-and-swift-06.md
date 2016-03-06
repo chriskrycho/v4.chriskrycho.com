@@ -74,5 +74,5 @@ Series:
   - [**Previous:** The value (and challenge) of learning languages in parallel.][5]
   - [**Next:** Pattern matching and the value of expression blocks.][7]
 
-[5]: http://www.chriskrycho.com/2016/rust-and-swift-v.html
-[7]: http://www.chriskrycho.com/2016/rust-and-swift-vii.html
+[5]: http://www.chriskrycho.com/2015/rust-and-swift-v.html
+[7]: http://www.chriskrycho.com/2015/rust-and-swift-vii.html
