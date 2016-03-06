@@ -107,9 +107,9 @@
 &lt;li&gt;&lt;p&gt;This goes to one of the philosophical differences between the two languages. As we’ve discussed often in the series, Rust reuses a smaller set of concepts—language-level primitives—to build up its functionality. So methods on a type and methods for a trait on a type are basically the same thing in Rust; they’re defined in almost exactly the same way (the latter includes &lt;code&gt;for SomeTrait&lt;/code&gt; in the &lt;code&gt;impl&lt;/code&gt; expression). In Swift, a method is defined differently from a protocol definition, which we’ll get to in the future. The point is simply this: the two take distinct approaches to the relationship between a given type definition and the implementations of any functions which may be attached to it.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Another important difference: access to other members of a given data type from within a method is &lt;em&gt;explicit&lt;/em&gt; in Rust and &lt;em&gt;implicit&lt;/em&gt; in Swift. In Rust, the first parameter to an instance method is always &lt;code&gt;self&lt;/code&gt; or &lt;code&gt;&amp;amp;self&lt;/code&gt; (or a mutable version of either of course), much as in Python. This explicitness distinction is by now exactly what we expect from the two languages.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Both use dot notation, in line with most other languages with a C-like syntax, for method calls, e.g. &lt;code&gt;instance.method()&lt;/code&gt; in Swift and &lt;code&gt;instance.method()&lt;/code&gt; in Rust. The latter is just syntactical sugar for &lt;code&gt;T::method(&amp;amp;instance)&lt;/code&gt; or &lt;code&gt;T::method(instance)&lt;/code&gt; where &lt;code&gt;T&lt;/code&gt; is the type of the instance (depending on whether the item is being borrowed or moved). Given its implicit knowledge of/access to instance-local data, and the distinctive behavior of Swift methods (see below), I don’t &lt;em&gt;think&lt;/em&gt; the same is, or even could be, true of Swift.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;All of Swift’s &lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-viii.html"&gt;other behaviors around functions&lt;/a&gt;—internal and external names, and all the distinctions that go with those—are equally applicable to methods. Similarly, with the sole change that the first parameter is always the instance being acted on, a Rust methods follow all the same rules as ordinary Rust functions (which is why you can call the struct or enum method with an instance parameter as in the example above).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;All of Swift’s &lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-viii.html"&gt;other behaviors around functions&lt;/a&gt;—internal and external names, and all the distinctions that go with those—are equally applicable to methods. Similarly, with the sole change that the first parameter is always the instance being acted on, a Rust methods follow all the same rules as ordinary Rust functions (which is why you can call the struct or enum method with an instance parameter as in the example above).&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift does &lt;em&gt;have&lt;/em&gt; a &lt;code&gt;self&lt;/code&gt;—it is, of course, implicit. It’s useful at times for disambiguation—basically, when a parameter name shadows an instance name. This will look familiar to people coming from Ruby.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The strong distinction Swift makes &lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-x.html"&gt;between reference and value types&lt;/a&gt; comes into play on methods, as you might expect, as does its approach to mutability. Methods which change the values in value types (&lt;code&gt;struct&lt;/code&gt; or &lt;code&gt;enum&lt;/code&gt; instances) have to be declared &lt;code&gt;mutating func&lt;/code&gt;. This kind of explicit-ness is good. In Rust, as we discussed in &lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-x.html"&gt;Part 10&lt;/a&gt;, Rust approaches this entire problem differently: types are not value or reference types; they are either mutably and passed mutably (including as &lt;code&gt;mut self&lt;/code&gt; or &lt;code&gt;&amp;amp;mut self&lt;/code&gt;), or they are not. If an instance is mutable and passed mutably, a method is free to act on instance data. And in fact both languages require that the instance in question not be immutable. In fact, everyone we said in Part 10 about both languages applies here, just with the addendum that private properties are available to methods.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The strong distinction Swift makes &lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html"&gt;between reference and value types&lt;/a&gt; comes into play on methods, as you might expect, as does its approach to mutability. Methods which change the values in value types (&lt;code&gt;struct&lt;/code&gt; or &lt;code&gt;enum&lt;/code&gt; instances) have to be declared &lt;code&gt;mutating func&lt;/code&gt;. This kind of explicit-ness is good. In Rust, as we discussed in &lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html"&gt;Part 10&lt;/a&gt;, Rust approaches this entire problem differently: types are not value or reference types; they are either mutably and passed mutably (including as &lt;code&gt;mut self&lt;/code&gt; or &lt;code&gt;&amp;amp;mut self&lt;/code&gt;), or they are not. If an instance is mutable and passed mutably, a method is free to act on instance data. And in fact both languages require that the instance in question not be immutable. In fact, everyone we said in Part 10 about both languages applies here, just with the addendum that private properties are available to methods.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The distinction, you’ll note, is in where the indication that there’s a mutation happens. Swift has a special keyword combination (&lt;code&gt;mutating func&lt;/code&gt;) for this. With Rust, it’s the same as every other function which mutates an argument. This makes Rust slightly more verbose, but it also means that in cases like this, the existing language tooling is perfectly capable of handling what has to be a special syntactical case in Swift.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Both Swift and Rust let you out-and-out change the instance by assigning to &lt;code&gt;self&lt;/code&gt;, albeit in fairly different ways. In Swift, you’d write a mutating method which updates the instance proper like this:&lt;/p&gt;
 &lt;pre class="swift"&gt;&lt;code&gt;struct Point {
@@ -183,7 +183,7 @@ fn main() {
 &lt;p&gt;&lt;i class="editorial"&gt;A note on publication: I had this drafted in early January and sold forgot to publish it. Whoops!&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;As noted in &lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-x.html"&gt;my discussion of the product types in Rust and Swift&lt;/a&gt;, Swift distinguishes between classes and structs, with the former being reference types and the latter being value types. All structs are value types in Rust. (That you can wrap them in a pointer for heap-allocation with one of the smart pointer types, e.g. &lt;code&gt;Box&lt;/code&gt; or &lt;code&gt;Rc&lt;/code&gt; or &lt;code&gt;Arc&lt;/code&gt;, doesn’t change this fundamental reality.) This underlying difference gives rise to one the big difference between Swift classes and Rust structs: a constant &lt;code&gt;class&lt;/code&gt; instance in Swift can still have its fields mutated; not so with a Rust &lt;code&gt;struct&lt;/code&gt; instance. But also not so with a &lt;em&gt;Swift&lt;/em&gt; &lt;code&gt;struct&lt;/code&gt; instance, as it turns out! There isn’t a straightforward way to do this with &lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; in Rust; you &lt;em&gt;could&lt;/em&gt; do it with something like an &lt;code&gt;Rc&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code&gt;Arc&amp;lt;T&amp;gt;&lt;/code&gt;, though.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;As noted in &lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html"&gt;my discussion of the product types in Rust and Swift&lt;/a&gt;, Swift distinguishes between classes and structs, with the former being reference types and the latter being value types. All structs are value types in Rust. (That you can wrap them in a pointer for heap-allocation with one of the smart pointer types, e.g. &lt;code&gt;Box&lt;/code&gt; or &lt;code&gt;Rc&lt;/code&gt; or &lt;code&gt;Arc&lt;/code&gt;, doesn’t change this fundamental reality.) This underlying difference gives rise to one the big difference between Swift classes and Rust structs: a constant &lt;code&gt;class&lt;/code&gt; instance in Swift can still have its fields mutated; not so with a Rust &lt;code&gt;struct&lt;/code&gt; instance. But also not so with a &lt;em&gt;Swift&lt;/em&gt; &lt;code&gt;struct&lt;/code&gt; instance, as it turns out! There isn’t a straightforward way to do this with &lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; in Rust; you &lt;em&gt;could&lt;/em&gt; do it with something like an &lt;code&gt;Rc&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code&gt;Arc&amp;lt;T&amp;gt;&lt;/code&gt;, though.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift’s &lt;code&gt;lazy&lt;/code&gt; keyword, and associated delayed initialization of properties has, as far as I know, no equivalent whatsoever in Rust. And while I can see the utility in principle, I’m hard-pressed to think of any time in my working experience where the behavior would actually be useful. Rather than having &lt;code&gt;lazy&lt;/code&gt; properties, I would be far more inclined to separate the behavior which should be initialized at a later time into its own data structure, and supplying it via &lt;em&gt;inversion of control&lt;/em&gt; if it is necessary for an actions taken by other data structures. (This seems—at first blush at least—to be a way of supporting the un- or partially-initialized data types possible in Objective C?)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift has computed properties, a concept familiar to Python developers (and relatively recently introduced in JavaScript). These can e quite handy, as they let you define a property to be accessed like any other (&lt;code&gt;someInstance.theProperty&lt;/code&gt;) while being defined with functions which compute the value dynamically. A common, trivial example: if you defined a &lt;code&gt;Person&lt;/code&gt; with &lt;code&gt;firstName&lt;/code&gt; and &lt;code&gt;lastName&lt;/code&gt; members, you could define a computed property, &lt;code&gt;fullName&lt;/code&gt;, which was built using the existing values.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Rust doesn’t have computed properties at all. This is because of its design decision to deeply separate &lt;em&gt;data&lt;/em&gt; from &lt;em&gt;behavior&lt;/em&gt;, essentially stealing a page from more pure-functional languages (Haskell etc.). This is (one reason) why you don’t define the implementation of a &lt;code&gt;struct&lt;/code&gt; method in the same block as the members of the struct. See an excellent explanation &lt;a href="https://www.reddit.com/r/rust/comments/2uvfic/why_doesnt_rust_have_properti%20es/cocmunq"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
@@ -582,7 +582,7 @@ directly and playing it in iTunes or another media app.&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Having a robust, thriving set of competitors in the market will be good for the languages themselves. But it will also be good for developers. It will take off some of the blinders that come from a single language (or a pair of very closely related languages) dominating the ecosystem. It will make it likelier that people will be more familiar with different programming paradigms. And that can only be a good thing, as far as I’m concerned.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-x.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
@@ -908,7 +908,7 @@ fn main() {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-ix.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-ix.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xi.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
@@ -1004,7 +1004,9 @@ fn main() {
 &lt;/blockquote&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Initialization of Swift’s raw-valued enum type is quite similar, and pleasantly so, to Python’s initialization of enums.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;In a surprising change from the usual, Swift’s syntax for binding variable names when pattern matching against an enum is &lt;em&gt;more&lt;/em&gt; verbose than Rust’s, requiring the use of either a leading &lt;code&gt;let&lt;/code&gt; on the &lt;code&gt;case&lt;/code&gt; statement if all the elements are of the same type, or a &lt;code&gt;let&lt;/code&gt; in front of each element otherwise:&lt;/p&gt;
-&lt;pre class="swift"&gt;&lt;code&gt;var matchedValue: String let matchee = 3.14159 switch matchee {
+&lt;pre class="swift"&gt;&lt;code&gt;var matchedValue: String
+let matchee = 3.14159
+switch matchee {
 case 3.14159:
     matchedValue = &amp;quot;pi&amp;quot;
 case _:
@@ -1029,8 +1031,8 @@ let matchedValue = match matchee {
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-viii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-x.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-viii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Classes and structs (product types), and reference and value types.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -1227,8 +1229,8 @@ fn main() {
 &lt;p&gt;This post is incredibly long, but I blame that on the (frankly incredible) number of variants Swift has on the same concept.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-vii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-ix.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-vii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-ix.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Sum types (&lt;code&gt;enum&lt;/code&gt;s) and more on pattern matching.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -1387,8 +1389,8 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-vi.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-viii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-vi.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-viii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Functions, closures, and an awful lot of Swift syntax.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -1450,8 +1452,8 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-v.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-vii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-v.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-vii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Pattern matching and the value of expression blocks.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -1503,8 +1505,8 @@ println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;p&gt;I have a long way to go in both languages, of course. Reading on nights and weekends, and the little bit of playing I’ve been able to do with each of them, is no replacement for just sinking my teeth into a project and finding the pain points. Nonetheless, I’m really glad to be learning these two languages &lt;em&gt;together&lt;/em&gt;. If you’re up for a challenge, try it sometime! You’ll be surprised how much you learn.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-iv.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-vi.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-iv.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-vi.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Collection types and the difference between syntax and semantics.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -1599,8 +1601,8 @@ else {
 &lt;p&gt;This was the first section where it didn’t feel like Rust was just a clear overall “winner” over Swift. Some of the trade offs between the language designs are more apparent here, and I do appreciate the “ergonomics” of Swift in a number of these things.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-iii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-v.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-iii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-v.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; The value (and challenge) of learning languages in parallel.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -1665,7 +1667,7 @@ Even so, I step out the door again:&lt;br /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;I just hit operators in the Swift book. First question: are operators special syntax, or are they sugar for &lt;code&gt;protocol&lt;/code&gt;s? (Every modern language I use or even have played with handles them as sugar for another language construct—Python, Ruby, Io, Elixir, and Rust, to name just a few ranging over a substantial variety of ages and styles.)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Oh. I did the requisite digging, and operators are functions (which is okay) defined in the global namespace (&lt;em&gt;:sigh:&lt;/em&gt;). I say “okay” rather than good because the justification offered is that this is the only way to make the operators work as binary operators between existing instances of types. But that elides the fact that, if that’s the case, it is so because of other language design decisions. This seems like a perfect place to use a &lt;code&gt;protocol&lt;/code&gt;, but perhaps (unlike Rust’s &lt;code&gt;trait&lt;/code&gt;) they’re not sufficiently capable to handle this? That’s an open question; I have no idea about the answer.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Interestingly, Rust has several fewer operators than Swift, even apart from those mentioned in my &lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-ii.html"&gt;previous post&lt;/a&gt;. It drops the pre- and post-increment operators entirely (as does Python), since their results can always be accomplished in other ways with less potential for confusion. Swift keeps them, no doubt in part because most (Objective) C programs are deeply familiar with them and with idioms associated with them.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Interestingly, Rust has several fewer operators than Swift, even apart from those mentioned in my &lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html"&gt;previous post&lt;/a&gt;. It drops the pre- and post-increment operators entirely (as does Python), since their results can always be accomplished in other ways with less potential for confusion. Swift keeps them, no doubt in part because most (Objective) C programs are deeply familiar with them and with idioms associated with them.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;I learned a few new things about Rust’s operators as well: the Boolean &lt;code&gt;||&lt;/code&gt; and &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; operators and its bit wise &lt;code&gt;|&lt;/code&gt; and &lt;code&gt;&amp;amp;&lt;/code&gt; operators differ not only in that the former are &lt;em&gt;short-circuit&lt;/em&gt; operators and the latter are not. Obviously you can also do things like bit-wise flag operations with the latter, but the reference emphasizes the short-circuiting behavior. This makes perfect sense, but it wasn’t something I’d ever considered explicitly before.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;There is no ternary operator in Rust, because of how it handles the relationship between expressions and statements. Swift keeps it. That’s an interesting reflection of differences in design: Rust dropped it because &lt;code&gt;if&lt;/code&gt; blocks are expressions, so it’s redundant, and they have had a goal of removing unnecessary features. (See the discussion on dropping the ternary operator—with an interesting aside from Brendan Eich on JavaScript—&lt;a href="https://github.com/rust-lang/rust/issues/1698"&gt;here&lt;/a&gt;). Note that this is not a criticism of Swift, just an observation, though I do really like Rust’s expression-driven approach.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The &lt;code&gt;??&lt;/code&gt; “nil coalescing operator”, on the other hand, I actively dislike. This seems like shorthand for the sake of shorthand, partly necessitated by the existing drive toward shorthand with optional types in Swift. Sometimes brevity can lead to decreased clarity. Eliding too much, or subsuming it into shorthand, makes the language harder to hold in your head and requires you to slow down more for parsing each line.&lt;/p&gt;&lt;/li&gt;
@@ -1674,8 +1676,8 @@ Even so, I step out the door again:&lt;br /&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-ii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-iv.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-iv.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Language design tradeoffs, highlighted by string manipulation.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -1716,8 +1718,8 @@ Even so, I step out the door again:&lt;br /&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-i.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-iii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-i.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Thoughts after reading the introduction to the Swift book.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-iii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Operators, including overloading, and thoughts on brevity.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 
@@ -1751,7 +1753,7 @@ Even so, I step out the door again:&lt;br /&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-ii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; Basic types and the syntax around them.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id="refs" class="references"&gt;
 

@@ -40,5 +40,5 @@ This was the first section where it didn't feel like Rust was just a clear overa
   - [**Next:** The value (and challenge) of learning languages in parallel.][5]
 
 
-[3]: http://www.chriskrycho.com/2016/rust-and-swift-iii.html
-[5]: http://www.chriskrycho.com/2016/rust-and-swift-v.html
+[3]: http://www.chriskrycho.com/2015/rust-and-swift-iii.html
+[5]: http://www.chriskrycho.com/2015/rust-and-swift-v.html

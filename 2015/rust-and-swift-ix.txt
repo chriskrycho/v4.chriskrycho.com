@@ -52,7 +52,9 @@ Series:
 -   In a surprising change from the usual, Swift's syntax for binding variable names when pattern matching against an enum is *more* verbose than Rust's, requiring the use of either a leading `let` on the `case` statement if all the elements are of the same type, or a `let` in front of each element otherwise:
 
     ```swift
-    var matchedValue: String let matchee = 3.14159 switch matchee {
+    var matchedValue: String
+    let matchee = 3.14159
+    switch matchee {
     case 3.14159:
         matchedValue = "pi"
     case _:
@@ -96,5 +98,5 @@ Series:
 -  [**Next:** Classes and structs (product types), and reference and value types.][10]
 
 
-[8]: http://www.chriskrycho.com/2016/rust-and-swift-viii.html
-[10]: http://www.chriskrycho.com/2016/rust-and-swift-x.html
+[8]: http://www.chriskrycho.com/2015/rust-and-swift-viii.html
+[10]: http://www.chriskrycho.com/2015/rust-and-swift-x.html

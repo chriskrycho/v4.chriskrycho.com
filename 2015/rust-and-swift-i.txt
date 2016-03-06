@@ -57,4 +57,4 @@ modified: 2015-09-07 13:45
 
   - [**Next:** Basic types and the syntax around them.][2]
 
-[2]: http://www.chriskrycho.com/2016/rust-and-swift-ii.html
+[2]: http://www.chriskrycho.com/2015/rust-and-swift-ii.html
