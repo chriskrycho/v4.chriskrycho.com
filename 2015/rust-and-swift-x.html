@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (x)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -101,8 +101,7 @@
 <li><p>Rust differs not only from Swift but from every other modern language I have used in not having a constructor <em>syntax</em> for its instantiations. Whereas C++ has <code>new NameOfType()</code> and Python has <code>NameOfType()</code> and Swift has <code>NameOfType()</code>, “constructors” for Rust <code>struct</code>s are just functions which return an instance constructed using literal syntax, by convention <code>NameOfType::new()</code>.</p></li>
 <li><p>Let’s make a <code>struct</code> defining a location in a plane, you might do this in Swift (leaving aside initializer values; I’ll come back to those later). These definitions look <em>very</em> similar. Swift:</p>
 <pre class="swift"><code>struct Point {
-    var x: Double
-    var y: Double
+    var x: Double var y: Double
 }</code></pre>
 <p>Rust:</p>
 <pre class="rust"><code>struct Point {
@@ -125,8 +124,7 @@ let another_point = Point::new(0, 0);</code></pre>
 <p>Observe: these two things in Rust are the same under the covers (though if <code>Point</code>s had non-public internals, they would be non-trivially different: you couldn’t construct it with its private members externally). As usual, Rust opts to keep the language relatively small in these core areas. Given the plethora of ways you can construct something in e.g. C++, I count that a big win.</p></li>
 <li><p>Another difference: Swift has <em>syntax</em> for default values; Rust uses a <code>trait</code> instead. In Swift, you simply supply the default value in the definition of the <code>struct</code> or <code>class</code>:</p>
 <pre class="swift"><code>struct Point {
-    var x = 0.0
-    var y = 0.0
+    var x = 0.0 var y = 0.0
 }
 
 let point = Point()</code></pre>
@@ -163,14 +161,11 @@ let point = Point::default();</code></pre>
 <pre class="rust"><code>println!(&quot;The point is {:}, {:}&quot;, point.x, point.y);</code></pre></li>
 <li><p>Swift lets you define items <em>within</em> a struct as mutable or constant. So you can create a variable struct instance, with some of its items immutable:</p>
 <pre class="swift"><code>struct PointOnZAxis {
-    var x: Double
-    var y: Double
-    let z = 0.0
+    var x: Double var y: Double let z = 0.0
 }
 
 var point = PointOnZAxis(x: 4.0, 5.0)
-point.x = 5.0
-point.y = 6.0
+point.x = 5.0 point.y = 6.0
 // This wouldn&#39;t compile, though:
 // point.z = 1.0</code></pre>
 <p>This is pretty handy for a lot of object-oriented programming approaches.</p></li>
@@ -221,7 +216,7 @@ fn main() {
 <li><p>This is an interesting way of handling this issue. Rust takes the fairly standard use of information hiding (one of the basic principles of most object-oriented programming techniques) and combines it with the language’s normal mutability rules to make it so that the mutability of any given instance data is quite clear: all public members are just as mutable as the struct. If a member isn’t potentially publicly mutable, it isn’t publicly accessible. I really like this, though it took some mental readjustment.</p></li>
 <li><p>There’s one other difference here, and it’s actually one of the areas Swift and Rust diverge substantially. Rust has <code>struct</code> for all product types; Swift splits them into <code>struct</code> types and <code>class</code> types.</p></li>
 <li><p>Swift <code>class</code>es have inheritance; there is presently <em>no</em> inheritance in Rust.</p></li>
-<li><p>Additionally, whereas Rust determines whether to use pass-by-reference or -value depending on details of the type (whether it implements the <code>Copy</code> <code>trait</code>) and expected arguments to a function, Swift makes that distinction between <code>class</code> (pass-by-reference) and <code>struct</code> (pass-by-value) types. Quirky.</p></li>
+<li><p>Additionally, whereas Rust determines whether to use pass-by-reference or-value depending on details of the type (whether it implements the <code>Copy</code> <code>trait</code>) and expected arguments to a function, Swift makes that distinction between <code>class</code> (pass-by-reference) and <code>struct</code> (pass-by-value) types. Quirky.</p></li>
 <li><p>Not bad, <em>per se</em>. But quirky.</p>
 <p><strong>Edit:</strong> I recently bumped into some discussion of data types in C♯ along with C, C++, and Java (<a href="http://joeduffyblog.com/2015/12/19/safe-native-code/">here</a>) and discovered that Swift is stealing this idea from C♯, which <a href="https://msdn.microsoft.com/en-us/library/0taef578.aspx">makes the same copy/reference distinction</a> between <code>struct</code> and <code>class</code>.</p></li>
 <li><p>One consequence of this: in Rust, you’re always rather explicit about whether you’re accessing things by value vs. by reference. Not so in Swift; you have to remember whether the item you’re touching is a <code>struct</code> type or a <code>class</code> type, so that you can <em>remember</em> whether a given assignment or function call results in a reference or a copy. This is necessary because Swift doesn’t let you make that explicit (trying to hide the memory management from you). And it’s not alone in that, of course; many other high-level languages obscure that for convenience but still require you to think about it in certain circumstances. I’ve been bitten in the past by the value/reference distinction when thinking through the behavior of Python objects, for example, so that’s not a critique of Swift. Moreover, having the distinction between <code>struct</code> and <code>class</code> types does let you be <em>more</em> explicit than you might in e.g. Python about how given data will be handled.</p></li>

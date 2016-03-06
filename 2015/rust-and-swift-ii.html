@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (ii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -91,7 +91,7 @@
 <p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. <a href="/rust-and-swift.html">(See all parts in the series.)</a></i></p>
 <hr />
 <ul>
-<li><p>At first blush, I find the extra syntax around optionals in Swift more confusing than helpful. I think this comes down to my preference for a more Python-like approach: “Explicit is better than implicit” and “There should be one– and preferably only one –obvious way to do it” both militate against the multiple different ways you can handle optional values in Swift. Optional types are created in one of two ways:</p>
+<li><p>At first blush, I find the extra syntax around optionals in Swift more confusing than helpful. I think this comes down to my preference for a more Python-like approach: “Explicit is better than implicit” and “There should be one– and preferably only one –obvious way to do it” both militate against the multiple different ways you can handle optional values in Swift. <code>Optional</code> types are created in one of two ways:</p>
 <ul>
 <li>with the <code>?</code> operator on a type definition, creating an explicitly wrapped type which must be checked in some way.</li>
 <li>with the <code>!</code> operator on a type definition, creating an “implicitly unwrapped optional” by forcibly unwrapping it (and creating a runtime error if the optional is empty)</li>

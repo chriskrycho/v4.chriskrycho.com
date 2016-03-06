@@ -53,112 +53,28 @@
 &lt;li id="fn3"&gt;&lt;p&gt;Technically, Rust’s documentation tool is &lt;code&gt;rustdoc&lt;/code&gt;, which &lt;code&gt;cargo doc&lt;/code&gt; wraps around. I never actually use &lt;code&gt;rustdoc&lt;/code&gt; directly, though.&lt;a href="#fnref3"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 28 Feb 2016 12:50:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-28:2016/static-site-generators-and-podcasting.html</guid><category>software development</category><category>podcasting</category></item><item><title>Rust and Swift (xiii)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xiii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Rust and Swift both have methods which are attached to given data types. However, whereas Rust takes its notion of separation of data and functions rather strictly, Swift implements them on the relevant data structures (classes, structs, or enums) directly. In other words, the implementation of a given type’s methods is within his e body of the type definition itself in swift, whereas in Rust it is in an &lt;code&gt;impl&lt;/code&gt; block, usually but not always immediately adjacent in the code.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;This goes to one of the philosophical differences between the two languages. As we’ve discussed often in the series, Rust reuses a smaller set of concepts—language-level primitives—to build up its functionality. So methods on a type and methods for a trait on a type are basically the same thing in Rust; they’re defined in almost exactly the same way (the latter includes &lt;code&gt;for SomeTrait&lt;/code&gt; in the &lt;code&gt;impl&lt;/code&gt; expression). In Swift, a method is defined differently from a protocol definition, which we’ll get to in the future. The point is simply this: the two take distinct approaches to the relationship between a given type definition and the implementations of any functions which may be attached to it.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Another important difference: access to other members of a given data type from within a method is &lt;em&gt;explicit&lt;/em&gt; in Rust and &lt;em&gt;implicit&lt;/em&gt; in Swift. In Rust, the first parameter to an instance method is always &lt;code&gt;self&lt;/code&gt; or &lt;code&gt;&amp;amp;self&lt;/code&gt; (or a mutable version of either of course), much as in Python. This explicitness distinction is by now exactly what we expect from the two languages.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Both use dot notation, in line with most other languages with a C-like syntax, for method calls, e.g. &lt;code&gt;instance.method()&lt;/code&gt; in Swift and &lt;code&gt;instance.method()&lt;/code&gt; in Rust. The latter is just syntactical sugar for &lt;code&gt;T::method(&amp;amp;instance)&lt;/code&gt; or &lt;code&gt;T::method(instance)&lt;/code&gt; where &lt;code&gt;T&lt;/code&gt; is the type of the instance (depending on whether the item is being borrowed or moved). Given its implicit knowledge of/access to instance-local data, and the distinctive behavior of Swift methods (see below), I don’t &lt;em&gt;think&lt;/em&gt; the same is, or even could be, true of Swift.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;All of Swift’s &lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-viii.html"&gt;other behaviors around functions&lt;/a&gt;—internal and external names, and all the distinctions that go with those—are equally applicable to methods. Similarly, with the sole change that the first parameter is always the instance being acted on, a Rust methods follow all the same rules as ordinary Rust functions (which is why you can call the struct or enum method with an instance parameter as in the example above).&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Swift does &lt;em&gt;have&lt;/em&gt; a &lt;code&gt;self&lt;/code&gt;—it is, of course, implicit. It’s useful at times for disambiguation—basically, when a parameter name shadows an instance name. This will look familiar to people coming from Ruby.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The strong distinction Swift makes &lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-x.html"&gt;between reference and value types&lt;/a&gt; comes into play on methods, as you might expect, as does its approach to mutability. Methods which change the values in value types (&lt;code&gt;struct&lt;/code&gt; or &lt;code&gt;enum&lt;/code&gt; instances) have to be declared &lt;code&gt;mutating func&lt;/code&gt;. This kind of explicit-ness is good. In Rust, as we discussed in &lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-x.html"&gt;Part 10&lt;/a&gt;, Rust approaches this entire problem differently: types are not value or reference types; they are either mutably and passed mutably (including as &lt;code&gt;mut self&lt;/code&gt; or &lt;code&gt;&amp;amp;mut self&lt;/code&gt;), or they are not. If an instance is mutable and passed mutably, a method is free to act on instance data. And in fact both languages require that the instance in question not be immutable. In fact, everyone we said in Part 10 about both languages applies here, just with the addendum that private properties are available to methods.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The distinction, you’ll note, is in where the indication that there’s a mutation happens. Swift has a special keyword combination (&lt;code&gt;mutating func&lt;/code&gt;) for this. With Rust, it’s the same as every other function which mutates an argument. This makes Rust slightly more verbose, but it also means that in cases like this, the existing language tooling is perfectly capable of handling what has to be a special syntactical case in Swift.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Both Swift and Rust let you out-and-out change the instance by assigning to &lt;code&gt;self&lt;/code&gt;, albeit in fairly different ways. In Swift, you’d write a mutating method which updates the instance proper like this:&lt;/p&gt;
-&lt;pre class="swift"&gt;&lt;code&gt;struct Point {
-    var x = 0.0, y = 0.0
-    mutating func changeSelf(x: Double, y: Double) {
-        self = Point(x: x, y: y)
-    }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In Rust, you’d need to explicit pass a mutable reference and dereference it. (If you tried to pass &lt;code&gt;mut self&lt;/code&gt; instead of &lt;code&gt;&amp;amp;mut self&lt;/code&gt;, it would fail unless you returned the newly created object and assigned it outside.) Note that while the full implementation here is a couple lines longer, because of the data-vs.-method separation discussed earlier, the implementation of the method itself is roughly the same length.&lt;/p&gt;
-&lt;pre class="rust"&gt;&lt;code&gt;pub struct Point {
-    pub x: f64,
-    pub y: f64,
-}
-
-impl Point {
-    pub fn change_self(&amp;amp;mut self, x: i32, y: i32) {
-        *self = Point { x: x, y: y };
-    }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Note that though you &lt;em&gt;can&lt;/em&gt; do this, I’m not sure it’s particularly Rustic. My own instinct would be to get a &lt;em&gt;new&lt;/em&gt; &lt;code&gt;Point&lt;/code&gt; rather than mutating an existing one, in either language, and let the other be cleaned up “behind the scenes” as it were (with automatic memory management in Swift or the compiler’s automatic destruction of the type in Rust)—purer functions being my preference these days.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;You can do this with &lt;code&gt;enum&lt;/code&gt; types as well, which the Swift book illustrates with a three-state switch which updates the value type passed to a new value when calling pits &lt;code&gt;next()&lt;/code&gt; method. You can do the same in Rust, with the same reference/dereference approach as above.&lt;/p&gt;
-&lt;p&gt;Here’s a three-state switch in Swift:&lt;/p&gt;
-&lt;pre class="swift"&gt;&lt;code&gt;enum ThreeState {
-    case First, Second, Third
-    mutating func next() {
-        switch self {
-        case First:
-            self = Second
-        case Second:
-            self = Third
-        case Third
-            self = First
-        }
-    }
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;And the same in Rust:&lt;/p&gt;
-&lt;pre class="rust"&gt;&lt;code&gt;enum ThreeState { First, Second, Third }
-impl ThreeState {
-    pub fn next(&amp;amp;mut self) {
-        use ThreeState::*;  // for brevity/clarity
-        match *self {
-            First =&amp;gt; *self = Second,
-            Second =&amp;gt; *self = Third,
-            Third =&amp;gt; *self = First,
-        }
-    }
-}&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Both languages also have what Swift calls “type methods”, and which you might think of as “static class methods” coming from a language like Java or C♯. In Swift, you define them by adding the &lt;code&gt;static&lt;/code&gt; or &lt;code&gt;class&lt;/code&gt; keywords to the &lt;code&gt;func&lt;/code&gt; definition. The &lt;code&gt;class func&lt;/code&gt; keyword combo is only applicable in &lt;code&gt;class&lt;/code&gt; bodies, and indicates that sub-classes may override the method definition.&lt;/p&gt;
-&lt;pre class="swift"&gt;&lt;code&gt;struct Bar {
-    static func quux { print(&amp;quot;Seriously, what&amp;#39;s a `quux`?&amp;quot;) }
-}
-
-func main() {
-    Bar.quux()
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;In Rust, you simply drop &lt;code&gt;self&lt;/code&gt; as a first parameter and call it with &lt;code&gt;::&lt;/code&gt; syntax instead of &lt;code&gt;.&lt;/code&gt; syntax:&lt;/p&gt;
-&lt;pre class="rust"&gt;&lt;code&gt;struct Bar;
-impl Bar {
-    pub fn quux { println!(&amp;quot;Seriously, what&amp;#39;s a `quux`?&amp;quot;); }
-}
-
-fn main() {
-    Bar::quux();
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As usual, Rust chooses to use existing language machinery; Swift uses new (combinations of) keywords.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Properties: type and instance, stored and computed.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id="refs" class="references"&gt;
-
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 28 Feb 2016 11:15:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-28:2016/rust-and-swift-xiii.html</guid><category>listicles</category><category>software development</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>Rust and Swift (xii)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 28 Feb 2016 12:50:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-02-28:2016/static-site-generators-and-podcasting.html</guid><category>software development</category><category>podcasting</category></item><item><title>Rust and Swift (xii)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class="editorial"&gt;A note on publication: I had this drafted in early January and sold forgot to publish it. Whoops!&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;As noted in &lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-x.html"&gt;my discussion of the product types in Rust and Swift&lt;/a&gt;, Swift distinguishes between classes and structs, with the former being reference types and the latter being value types. All structs are value types in Rust. (That you can wrap them in a pointer for heap-allocation with one of the smart pointer types, e.g. &lt;code&gt;Box&lt;/code&gt; or &lt;code&gt;Rc&lt;/code&gt; or &lt;code&gt;Arc&lt;/code&gt;, doesn’t change this fundamental reality.) This underlying difference gives rise to one the big difference between Swift classes and Rust structs: a constant &lt;code&gt;class&lt;/code&gt; instance in Swift can still have its fields mutated; not so with a Rust &lt;code&gt;struct&lt;/code&gt; instance. But also not so with a &lt;em&gt;Swift&lt;/em&gt; &lt;code&gt;struct&lt;/code&gt; instance, as it turns out! There isn’t a straightforward way to do this with &lt;code&gt;Box&amp;lt;T&amp;gt;&lt;/code&gt; in Rust; you &lt;em&gt;could&lt;/em&gt; do it with something like an &lt;code&gt;Rc&amp;lt;T&amp;gt;&lt;/code&gt; or &lt;code&gt;Arc&amp;lt;T&amp;gt;&lt;/code&gt;, though.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift’s &lt;code&gt;lazy&lt;/code&gt; keyword, and associated delayed initialization of properties has, as far as I know, no equivalent whatsoever in Rust. And while I can see the utility in principle, I’m hard-pressed to think of any time in my working experience where the behavior would actually be useful. Rather than having &lt;code&gt;lazy&lt;/code&gt; properties, I would be far more inclined to separate the behavior which should be initialized at a later time into its own data structure, and supplying it via &lt;em&gt;inversion of control&lt;/em&gt; if it is necessary for an actions taken by other data structures. (This seems—at first blush at least—to be a way of supporting the un- or partially-initialized data types possible in Objective C?)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift has computed properties, a concept familiar to Python developers (and relatively recently introduced in JavaScript). These can e quite handy, as they let you define a property to be accessed like any other (&lt;code&gt;someInstance.theProperty&lt;/code&gt;) while being defined with functions which compute the value dynamically. A common, trivial example: if you defined a &lt;code&gt;Person&lt;/code&gt; with &lt;code&gt;firstName&lt;/code&gt; and &lt;code&gt;lastName&lt;/code&gt; members, you could define a computed property, &lt;code&gt;fullName&lt;/code&gt;, which was built using the existing values.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Rust doesn’t have computed properties at all. This is because of its design decision to deeply separate &lt;em&gt;data&lt;/em&gt; from &lt;em&gt;behavior&lt;/em&gt;, essentially stealing a page from more pure-functional languages (Haskell etc.). This is (one reason) why you don’t define the implementation of a &lt;code&gt;struct&lt;/code&gt; method in the same block as the members of the struct. See an excellent explanation &lt;a href="https://www.reddit.com/r/rust/comments/2uvfic/why_doesnt_rust_have_properti"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Rust doesn’t have computed properties at all. This is because of its design decision to deeply separate &lt;em&gt;data&lt;/em&gt; from &lt;em&gt;behavior&lt;/em&gt;, essentially stealing a page from more pure-functional languages (Haskell etc.). This is (one reason) why you don’t define the implementation of a &lt;code&gt;struct&lt;/code&gt; method in the same block as the members of the struct. See an excellent explanation &lt;a href="https://www.reddit.com/r/rust/comments/2uvfic/why_doesnt_rust_have_properti%20es/cocmunq"&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;It’s also closely related the way Rust favors composition over inheritance (by making the latter impossible, at least for now!). By separating &lt;code&gt;impl&lt;/code&gt; from &lt;code&gt;struct&lt;/code&gt; and &lt;code&gt;enum&lt;/code&gt;, Rust makes it not only straightforward but &lt;em&gt;normal&lt;/em&gt; to define new behavior for a given item separately from the data description. This, combined with the use of traits (like Swift’s protocols) as the primary way of sharing behavior between objects, means that you don’t have to worry about conforming to some interface when you define a given type; it can always&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; be defined later, even by entirely other modules or even other crates (packages).&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;In any case, the result is that it’s not at all Rustic&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; to have something like getters or setters or computed properties. It makes sense to have them in Swift, though, which has a more traditionally object-oriented type system (though with some neat additions in the form of its &lt;code&gt;protocol&lt;/code&gt; type classes, which are analogous to Rust’s &lt;code&gt;trait&lt;/code&gt;s—but we’ll come to those in a future post). This is a wash: it’s just a function of the slightly different approaches taken in object design in the two systems. If you have a Swift-style type system, you should have computed properties. If you have a Rust-like type system, you shouldn’t.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;I’m shocked—utterly shocked!—to find that Swift provides a default &lt;code&gt;newValue&lt;/code&gt; argument for setters for computed properties, and shorthand for defining read-only properties. By which I mean: I find this kind of thing entirely unsurprising at this point in Swift, but I don’t like it any better. Making so much implicit just rubs me the wrong way. Once you know the language, it’s fine of course: you’ll recognize all the patterns. It just seems, in an interesting way, to add cognitive load rather than reducing it. That may just be me, though!&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Interestingly, Swift also allows you to set watchers on given properties— functions called with the new or the removed value whenever the value of the computed property is updated or touched for any reason. It has two of these built in: &lt;code&gt;willSet&lt;/code&gt; and &lt;code&gt;didSet&lt;/code&gt;. You can override these to get custom behavior when a normal property is about to change. (You can of course just implement the desired behavior yourself in the &lt;code&gt;set&lt;/code&gt; method for a computed property.)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Interestingly, Swift also allows you to set watchers on given properties—functions called with the new or the removed value whenever the value of the computed property is updated or touched for any reason. It has two of these built in: &lt;code&gt;willSet&lt;/code&gt; and &lt;code&gt;didSet&lt;/code&gt;. You can override these to get custom behavior when a normal property is about to change. (You can of course just implement the desired behavior yourself in the &lt;code&gt;set&lt;/code&gt; method for a computed property.)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Since Rust doesn’t have properties, it doesn’t have anything analogous. I can’t think of a particularly straightforward way to implement it, either, though you might be able do some chicanery with a trait. Of course you can always define a setter method which takes a value and optional callbacks for actions to take before and after setting the value; the thing that’s nice in Swift is that it gives you these as built-in capabilities within the language itself. (Now I’m wondering if or how you could implement an &lt;code&gt;Observable&lt;/code&gt; trait, though! Might have to play with that idea more later.) It’s worth remembering , in any case, that Rust doesn’t have these &lt;em&gt;because it doesn’t have properties&lt;/em&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Curiously, Swift provides the same functionality for “global” and “local” variables in a given context. In both cases, this is suggestive of the underlying object model for both modules and functions in Swift.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Now I’m curious what the representation of a module is in Swift; is it part of the general object system in some way?&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;This likewise gets me asking: what &lt;em&gt;is&lt;/em&gt; a module in Rust? It’s a block item, clearly, and accordingly defines a scope (as do functions, if and match expressions, and so on). It’s &lt;em&gt;not&lt;/em&gt; a compilation unit (as it is in C or C++). What other machinery is attached to it?&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Both of these questions can be answered by reading the source code for the languages ([Rust], [Swift]), of course. Putting that on my to-do list.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Both of these questions can be answered by reading the source code for the languages (&lt;a href="https://github.com/rust-lang/rust"&gt;Rust&lt;/a&gt;, &lt;a href="https://github.com/apple/swift"&gt;Swift&lt;/a&gt;), of course. Putting that on my to-do list.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift also has &lt;em&gt;type properties&lt;/em&gt;: values common to all instances of a given type. These are directly analogous to &lt;em&gt;class properties&lt;/em&gt; (or &lt;em&gt;class attributes&lt;/em&gt;) in Python or prototype properties in JavaScript.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Rust doesn’t have anything like this to my knowledge. You could accomplish something similar using a module-level variable with a &lt;code&gt;'static&lt;/code&gt; lifetime,&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; much as you could in C—but that wouldn’t be an item on the type itself, of course.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The &lt;code&gt;static&lt;/code&gt; declaration of item in Swift suggests what a possible implementation might look like in Rust: defining a member like &lt;code&gt;a_static_long: 'static i64&lt;/code&gt;. There might be some interesting challenges around that, though; I don’t know enough to comment meaningfully. At the least, it seems like it would be an odd fit with the rest of the memory management approach Rust takes, and it would make it a bit harder to reason correctly about the behavior of data in a given type. (There are certainly issues there around mutability guarantees and lifetime checking!)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Because of the differences in underlying approach to data types and implementation, this is one of the areas where the superficially (and sometimes actually) similar languages diverge &lt;em&gt;a lot&lt;/em&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;es/cocmunq [Rust]: https://github.com/rust-lang/rust [Swift]: https://github.com/apple/swift&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xi.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Hopes for the next generation of systems programming.&lt;/a&gt;&lt;/li&gt;
@@ -289,8 +205,7 @@ fn main() {
 &lt;li&gt;&lt;p&gt;Rust differs not only from Swift but from every other modern language I have used in not having a constructor &lt;em&gt;syntax&lt;/em&gt; for its instantiations. Whereas C++ has &lt;code&gt;new NameOfType()&lt;/code&gt; and Python has &lt;code&gt;NameOfType()&lt;/code&gt; and Swift has &lt;code&gt;NameOfType()&lt;/code&gt;, “constructors” for Rust &lt;code&gt;struct&lt;/code&gt;s are just functions which return an instance constructed using literal syntax, by convention &lt;code&gt;NameOfType::new()&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Let’s make a &lt;code&gt;struct&lt;/code&gt; defining a location in a plane, you might do this in Swift (leaving aside initializer values; I’ll come back to those later). These definitions look &lt;em&gt;very&lt;/em&gt; similar. Swift:&lt;/p&gt;
 &lt;pre class="swift"&gt;&lt;code&gt;struct Point {
-    var x: Double
-    var y: Double
+    var x: Double var y: Double
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Rust:&lt;/p&gt;
 &lt;pre class="rust"&gt;&lt;code&gt;struct Point {
@@ -313,8 +228,7 @@ let another_point = Point::new(0, 0);&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Observe: these two things in Rust are the same under the covers (though if &lt;code&gt;Point&lt;/code&gt;s had non-public internals, they would be non-trivially different: you couldn’t construct it with its private members externally). As usual, Rust opts to keep the language relatively small in these core areas. Given the plethora of ways you can construct something in e.g. C++, I count that a big win.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Another difference: Swift has &lt;em&gt;syntax&lt;/em&gt; for default values; Rust uses a &lt;code&gt;trait&lt;/code&gt; instead. In Swift, you simply supply the default value in the definition of the &lt;code&gt;struct&lt;/code&gt; or &lt;code&gt;class&lt;/code&gt;:&lt;/p&gt;
 &lt;pre class="swift"&gt;&lt;code&gt;struct Point {
-    var x = 0.0
-    var y = 0.0
+    var x = 0.0 var y = 0.0
 }
 
 let point = Point()&lt;/code&gt;&lt;/pre&gt;
@@ -351,14 +265,11 @@ let point = Point::default();&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class="rust"&gt;&lt;code&gt;println!(&amp;quot;The point is {:}, {:}&amp;quot;, point.x, point.y);&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift lets you define items &lt;em&gt;within&lt;/em&gt; a struct as mutable or constant. So you can create a variable struct instance, with some of its items immutable:&lt;/p&gt;
 &lt;pre class="swift"&gt;&lt;code&gt;struct PointOnZAxis {
-    var x: Double
-    var y: Double
-    let z = 0.0
+    var x: Double var y: Double let z = 0.0
 }
 
 var point = PointOnZAxis(x: 4.0, 5.0)
-point.x = 5.0
-point.y = 6.0
+point.x = 5.0 point.y = 6.0
 // This wouldn&amp;#39;t compile, though:
 // point.z = 1.0&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This is pretty handy for a lot of object-oriented programming approaches.&lt;/p&gt;&lt;/li&gt;
@@ -409,7 +320,7 @@ fn main() {
 &lt;li&gt;&lt;p&gt;This is an interesting way of handling this issue. Rust takes the fairly standard use of information hiding (one of the basic principles of most object-oriented programming techniques) and combines it with the language’s normal mutability rules to make it so that the mutability of any given instance data is quite clear: all public members are just as mutable as the struct. If a member isn’t potentially publicly mutable, it isn’t publicly accessible. I really like this, though it took some mental readjustment.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;There’s one other difference here, and it’s actually one of the areas Swift and Rust diverge substantially. Rust has &lt;code&gt;struct&lt;/code&gt; for all product types; Swift splits them into &lt;code&gt;struct&lt;/code&gt; types and &lt;code&gt;class&lt;/code&gt; types.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift &lt;code&gt;class&lt;/code&gt;es have inheritance; there is presently &lt;em&gt;no&lt;/em&gt; inheritance in Rust.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Additionally, whereas Rust determines whether to use pass-by-reference or -value depending on details of the type (whether it implements the &lt;code&gt;Copy&lt;/code&gt; &lt;code&gt;trait&lt;/code&gt;) and expected arguments to a function, Swift makes that distinction between &lt;code&gt;class&lt;/code&gt; (pass-by-reference) and &lt;code&gt;struct&lt;/code&gt; (pass-by-value) types. Quirky.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Additionally, whereas Rust determines whether to use pass-by-reference or-value depending on details of the type (whether it implements the &lt;code&gt;Copy&lt;/code&gt; &lt;code&gt;trait&lt;/code&gt;) and expected arguments to a function, Swift makes that distinction between &lt;code&gt;class&lt;/code&gt; (pass-by-reference) and &lt;code&gt;struct&lt;/code&gt; (pass-by-value) types. Quirky.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Not bad, &lt;em&gt;per se&lt;/em&gt;. But quirky.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; I recently bumped into some discussion of data types in C♯ along with C, C++, and Java (&lt;a href="http://joeduffyblog.com/2015/12/19/safe-native-code/"&gt;here&lt;/a&gt;) and discovered that Swift is stealing this idea from C♯, which &lt;a href="https://msdn.microsoft.com/en-us/library/0taef578.aspx"&gt;makes the same copy/reference distinction&lt;/a&gt; between &lt;code&gt;struct&lt;/code&gt; and &lt;code&gt;class&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;One consequence of this: in Rust, you’re always rather explicit about whether you’re accessing things by value vs. by reference. Not so in Swift; you have to remember whether the item you’re touching is a &lt;code&gt;struct&lt;/code&gt; type or a &lt;code&gt;class&lt;/code&gt; type, so that you can &lt;em&gt;remember&lt;/em&gt; whether a given assignment or function call results in a reference or a copy. This is necessary because Swift doesn’t let you make that explicit (trying to hide the memory management from you). And it’s not alone in that, of course; many other high-level languages obscure that for convenience but still require you to think about it in certain circumstances. I’ve been bitten in the past by the value/reference distinction when thinking through the behavior of Python objects, for example, so that’s not a critique of Swift. Moreover, having the distinction between &lt;code&gt;struct&lt;/code&gt; and &lt;code&gt;class&lt;/code&gt; types does let you be &lt;em&gt;more&lt;/em&gt; explicit than you might in e.g. Python about how given data will be handled.&lt;/p&gt;&lt;/li&gt;
@@ -447,9 +358,7 @@ fn main() {
 &lt;/blockquote&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Initialization of Swift’s raw-valued enum type is quite similar, and pleasantly so, to Python’s initialization of enums.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;In a surprising change from the usual, Swift’s syntax for binding variable names when pattern matching against an enum is &lt;em&gt;more&lt;/em&gt; verbose than Rust’s, requiring the use of either a leading &lt;code&gt;let&lt;/code&gt; on the &lt;code&gt;case&lt;/code&gt; statement if all the elements are of the same type, or a &lt;code&gt;let&lt;/code&gt; in front of each element otherwise:&lt;/p&gt;
-&lt;pre class="swift"&gt;&lt;code&gt;var matchedValue: String
-let matchee = 3.14159
-switch matchee {
+&lt;pre class="swift"&gt;&lt;code&gt;var matchedValue: String let matchee = 3.14159 switch matchee {
 case 3.14159:
     matchedValue = &amp;quot;pi&amp;quot;
 case _:
@@ -585,26 +494,45 @@ let matchedValue = match matchee {
 &lt;li&gt;&lt;p&gt;Swift’s variable parameters are… interesting. I can see the utility, sort of, but (probably from years of habit with C and Python and pass-by-reference types), it’s just not a pattern that makes a lot of sense to me right now. No doubt I’ll get used to them in idiomatic Swift, but while Rust doesn’t have a similar feature, I suspect I won’t miss it.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;In/out parameters—that is, mutable pass-by-reference types—are available in both languages. The syntax is &lt;em&gt;very&lt;/em&gt; different here, as are the semantics.&lt;/p&gt;
 &lt;p&gt;Swift has the &lt;code&gt;inout&lt;/code&gt; keyword, supplied before a parameter definition:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;swift func adds4ToInput(inout num: Int) {     num += 4; }&lt;/code&gt;&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;func adds4ToInput(inout num: Int) {
+    num += 4;
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Rust has instead a variation on every other type definition, declaring the type in this case to be a mutable reference:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;rust fn adds_4_to_input(num: &amp;amp;mut i32) {     num += 4; }&lt;/code&gt;&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;fn adds_4_to_input(num: &amp;amp;mut i32) {
+    num += 4;
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;As usual, in other words, Swift opts to use new syntax (in this case, a dedicated keyword) while Rust opts to use the same syntax used everywhere else to denote a mutable reference. In fairness to Swift, though, this is something of a necessity there. From what I’ve seen so far, Swift generally doesn’t (and perhaps can’t?) do pointers or references explicitly (though of course it’s handling lots of things that way under the covers); arguments to functions are a special case, presumably present primarily for interoperability with Objective-C.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift’s function type definitions, as used in e.g. function parameter definitions, are quite nice, and reminiscent of Haskell in the best way. Rust’s are pretty similar, and add in its &lt;code&gt;trait&lt;/code&gt; usage—because functions types &lt;em&gt;are&lt;/em&gt; &lt;code&gt;trait&lt;/code&gt;s. Once again, I really appreciate how Rust builds more complicated pieces of functionality on lower-level constructs in the language. (Swift may be doing similar under the covers, but the Swift book doesn’t say.)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Again, though, the downside to Rust’s sophistication is that it sometimes bundles in some complexity. Returning a function in Swift is incredibly straightforward:&lt;/p&gt;
-&lt;p&gt;```swift func getDoubler() -&amp;gt; (Int) -&amp;gt; Int { func doubler(number: Int) -&amp;gt; Int { return number * 2 }&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;return doubler&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;}&lt;/p&gt;
-&lt;p&gt;func main() { let doubler = getDoubler() println(“(doubler(14))”) // -&amp;gt; 28 } ```&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;func getDoubler() -&amp;gt; (Int) -&amp;gt; Int {
+    func doubler(number: Int) -&amp;gt; Int {
+        return number * 2
+    }
+
+    return doubler
+}
+
+func main() {
+    let doubler = getDoubler()
+    println(&amp;quot;\(doubler(14))&amp;quot;)  // -&amp;gt; 28
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Doing the same in Rust is a bit harder, because—as of the 1.3 stable/1.5 nightly timeframe—it requires you to explicitly heap-allocate the function. Swift just takes care of this for you.&lt;/p&gt;
-&lt;p&gt;```rust fn get_doubler() -&amp;gt; Box&lt;Fn(i32) -&gt; i32&amp;gt; { fn doubler(number: i32) -&amp;gt; i32 { number * 2 }&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Box::new(doubler)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;}&lt;/p&gt;
-&lt;p&gt;fn main() { let doubler = get_doubler(); println!(“{:}”, doubler(14)); // -&amp;gt; 28 } ```&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;fn get_doubler() -&amp;gt; Box&amp;lt;Fn(i32) -&amp;gt; i32&amp;gt; {
+    fn doubler(number: i32) -&amp;gt; i32 {
+        number * 2
+    }
+
+    Box::new(doubler)
+}
+
+fn main() {
+    let doubler = get_doubler();
+    println!(&amp;quot;{:}&amp;quot;, doubler(14));  // -&amp;gt; 28
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you understand what’s going on under the covers here, this makes sense: Rust normally stack-allocates a function in a scope, and therefore the &lt;code&gt;doubler&lt;/code&gt; function goes out of scope entirely when the &lt;code&gt;get_doubler&lt;/code&gt; function returns if you don’t heap-allocate it with &lt;code&gt;Box::new&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;In both languages, closures and “ordinary” functions are variations on the same underlying functionality (as it should be). In Rust’s case, functions and closures both implement the &lt;code&gt;Fn&lt;/code&gt; trait. In Swift’s case, named functions are a special case of closures.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The Swift syntax for a closure is, well, a bit odd to my eye. The basic form is like this (with the same “doubler” functionality as above):&lt;/p&gt;
-&lt;pre class="swift"&gt;&lt;code&gt;{ (n: Int) -&amp;gt; Int in return n * 2
-}&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;{ (n: Int) -&amp;gt; Int in return n * 2 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;For brevity, this can collapse down to the shorter form with types inferred from context, parentheses dropped and the &lt;code&gt;return&lt;/code&gt; keyword inferred from the fact that the closure has only a single expression (note that this wouldn’t be valid unless in a context where the type of &lt;code&gt;n&lt;/code&gt; could be inferred):&lt;/p&gt;
 &lt;pre class="swift"&gt;&lt;code&gt;{ n in n * 2 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The simplicity here is nice, reminiscent in a good way of closures/lambdas in other languages.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; The fact that it’s a special case is less to my taste.&lt;/p&gt;&lt;/li&gt;
@@ -618,9 +546,9 @@ let matchedValue = match matchee {
 &lt;li&gt;&lt;p&gt;If that weren’t enough, Swift will go so far as to simply reuse operators (which are special syntax for functions) as closures. So a closure call could simply be &lt;code&gt;+&lt;/code&gt; for a function expecting a closure operating on two numbers; Swift will infer that it needs to map back to the relevant method definition on the appropriate type.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;The upside to this is that the code can be incredibly brief, and—once you’re used to it, at least—still fairly clear. The downside to this is yet &lt;em&gt;more&lt;/em&gt; syntax for Swift, and the ever-growing list of things to remember and ways to write the same thing I expect will lead to quite a bit of instability as the community sorts out some expectations for what is idiomatic in any given instance.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;And if that weren’t enough, there is more than one way to supply the body of a closure to a Swift function that expects it: you can supply a block (&lt;code&gt;{ /* closure body */ }&lt;/code&gt;) &lt;em&gt;after&lt;/em&gt; the function which expects it. Yes, this can end up looking nearly identical to the form for declaring a function:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;swift someFunctionExpectingAnIntegerClosure() { n * 2 }&lt;/code&gt;&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;someFunctionExpectingAnIntegerClosure() { n * 2 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;But you can also drop the parentheses if that’s the only argument.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;swift someFunctionExpectingAnIntegerClosure { n * 2 }&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;someFunctionExpectingAnIntegerClosure { n * 2 }&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;In terms of the &lt;em&gt;mechanics&lt;/em&gt; of closures, and not just the syntax, the one significant difference between Rust and Swift is the same one we’ve seen in general between the two languages: Swift handles the memory issues automatically; Rust makes you be explicit about ownership. That is, as noted above about the closures themselves, in Rust you may have to &lt;code&gt;move&lt;/code&gt; ownership to get the expected behavior. Both behave basically like closures in any other language, though; nothing surprising here. Both also automatically copy values, rather than using references, whever it makes sense to do so.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift autoclosures allow for lazy evaluation, which is neat, but: &lt;em&gt;yet more syntax&lt;/em&gt;! Seriously. But I think all its other closure syntaxes &lt;em&gt;also&lt;/em&gt; allow for lazy evaluation. The only reason I can see to have the special attribute (&lt;code&gt;@autoclosure&lt;/code&gt;) here is because they added this syntax. And this syntax exists so that you can call functions which take closures as if they &lt;em&gt;don’t&lt;/em&gt; take closures, but rather the argument the closure itself takes. But of course, this leads the Swift book to include the following warning:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -683,9 +611,22 @@ let matchedValue = match matchee {
 &lt;p&gt;&lt;strong&gt;Edit the second:&lt;/strong&gt; I was mixed up, because Rust actually has &lt;em&gt;both&lt;/em&gt; of those options. You can either match directly, e.g. when getting the value of an &lt;code&gt;Option&lt;/code&gt; type: &lt;code&gt;Some(value)&lt;/code&gt; as the pattern will bind &lt;code&gt;value&lt;/code&gt;. But if you need to bind a specific part of more complicated data structure, the &lt;code&gt;@&lt;/code&gt; operator is present to let you do it in a fairly straightforward way.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Both languages allow for the use of &lt;code&gt;_&lt;/code&gt; as a “wildcard” in match definitions. Since match definitions in Rust use the patterns directly, the equivalent of Swift’s C-like &lt;code&gt;default&lt;/code&gt; is simply a wildcard match pattern (&lt;code&gt;_ =&amp;gt; &amp;lt;-expression|statement&amp;gt;&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;One significant difference: like its &lt;code&gt;if&lt;/code&gt; blocks, Rust’s &lt;code&gt;match&lt;/code&gt; blocks are expressions, so they can be assigned. I.e., you can write this:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;rust let test = 5u32; let description = match test {     0..10 =&amp;gt; &amp;quot;less than ten&amp;quot;,         _ =&amp;gt; &amp;quot;greater than ten&amp;quot;, } println!(&amp;quot;{?:}&amp;quot;);  // &amp;quot;less than ten&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;let test = 5u32;
+let description = match test {
+    0..10 =&amp;gt; &amp;quot;less than ten&amp;quot;,
+        _ =&amp;gt; &amp;quot;greater than ten&amp;quot;,
+}
+println!(&amp;quot;{?:}&amp;quot;);  // &amp;quot;less than ten&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Swift doesn’t let you do this; the same thing there would be written like this:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;swift let test: UInt32 = 5 var description: String switch test {     case 0..&amp;lt;10:         description = &amp;quot;less than ten&amp;quot;     default:         description = &amp;quot;greater than ten&amp;quot; } println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;let test: UInt32 = 5
+var description: String
+switch test {
+    case 0..&amp;lt;10:
+        description = &amp;quot;less than ten&amp;quot;
+    default:
+        description = &amp;quot;greater than ten&amp;quot;
+}
+println(&amp;quot;\(description)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Both languages have &lt;code&gt;break&lt;/code&gt; statements, but in Rust they’re only used in loop constructs, while Swift (like C) uses them to escape &lt;code&gt;case&lt;/code&gt;s as well. The Swift book gives an example of one place they’re necessary in a &lt;code&gt;switch&lt;/code&gt;: to match a case and do nothing there (e.g. &lt;code&gt;default: break&lt;/code&gt;). In Rust, you would simply supply an empty block for that scenario (e.g. &lt;code&gt;_ =&amp;gt; {}&lt;/code&gt;).&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Correctly, both languages force you to match exhaustively on relevant patterns. If you’re matching an enumerated type, for example, you must handle every enumerated value. You can of course do this with wildcard patterns or with Swift’s &lt;code&gt;default&lt;/code&gt;, but the good thing is that both languages will refuse even to compile if a given pattern isn’t matched.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Swift’s default behavior around its &lt;code&gt;switch&lt;/code&gt; statements is sane: it does &lt;em&gt;not&lt;/em&gt; automatically fall through into the next statement. It does let you do this, without checking the condition on the next statement (as in C), using the &lt;code&gt;fallthrough&lt;/code&gt; keyword. Rust, by contrast, simply doesn’t allow this at all.&lt;/p&gt;&lt;/li&gt;
@@ -878,7 +819,7 @@ else {
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 07 Sep 2015 11:55:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-09-07:2015/rust-and-swift-iii.html</guid><category>software development</category><category>listicles</category><category>rust</category><category>swift</category><category>rust-and-swift</category></item><item><title>Rust and Swift (ii)</title><link>http://www.chriskrycho.com/2015/rust-and-swift-ii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;At first blush, I find the extra syntax around optionals in Swift more confusing than helpful. I think this comes down to my preference for a more Python-like approach: “Explicit is better than implicit” and “There should be one– and preferably only one –obvious way to do it” both militate against the multiple different ways you can handle optional values in Swift. Optional types are created in one of two ways:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;At first blush, I find the extra syntax around optionals in Swift more confusing than helpful. I think this comes down to my preference for a more Python-like approach: “Explicit is better than implicit” and “There should be one– and preferably only one –obvious way to do it” both militate against the multiple different ways you can handle optional values in Swift. &lt;code&gt;Optional&lt;/code&gt; types are created in one of two ways:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;with the &lt;code&gt;?&lt;/code&gt; operator on a type definition, creating an explicitly wrapped type which must be checked in some way.&lt;/li&gt;
 &lt;li&gt;with the &lt;code&gt;!&lt;/code&gt; operator on a type definition, creating an “implicitly unwrapped optional” by forcibly unwrapping it (and creating a runtime error if the optional is empty)&lt;/li&gt;

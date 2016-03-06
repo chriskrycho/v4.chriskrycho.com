@@ -21,14 +21,14 @@ eries:
 
     **Edit:** that's not *quite* right. In Rust, you use the `@` operator with the variable name you want to bind in the match.
 
-    **Edit the second:** I was mixed up, because Rust actually has *both* of those options. You can either match directly, e.g. when getting the value of an `Option` type: `Some(value)` as the pattern will bind `value`. But if you need to bind a specific part of more complicated data structure, the `@`
-    operator is present to let you do it in a fairly straightforward way.
+    **Edit the second:** I was mixed up, because Rust actually has *both* of those options. You can either match directly, e.g. when getting the value of an `Option` type: `Some(value)` as the pattern will bind `value`. But if you need to bind a specific part of more complicated data structure, the `@` operator is present to let you do it in a fairly straightforward way.
 
   - Both languages allow for the use of `_` as a "wildcard" in match definitions. Since match definitions in Rust use the patterns directly, the equivalent of Swift's C-like `default` is simply a wildcard match pattern (`_ => <-expression|statement>`).
 
   - One significant difference: like its `if` blocks, Rust's `match` blocks are expressions, so they can be assigned. I.e., you can write this:
 
-    ```rust let test = 5u32;
+    ```rust
+    let test = 5u32;
     let description = match test {
         0..10 => "less than ten",
             _ => "greater than ten",
@@ -38,7 +38,10 @@ eries:
 
     Swift doesn't let you do this; the same thing there would be written like this:
 
-    ```swift let test: UInt32 = 5 var description: String switch test {
+    ```swift
+    let test: UInt32 = 5
+    var description: String
+    switch test {
         case 0..<10:
             description = "less than ten"
         default:

@@ -31,12 +31,9 @@ modified: 2015-09-07 13:45
 
     In Rust, there is just the `struct` type to handle both of those. They're immutable unless you declare them with `mut`, and you can pass them via copy simply by implementing the `Copy` `trait` (which seems roughly analogous to Swift's `protocol`, but I've not yet dig deeply enough to see how they differ). Those things aren't baked into the language, but use simpler language building blocks to define behavior into he library.
 
-  - I saw someone do a write up a while back arguing that Go isn't a *bad*
-    language, it just isn't a *good* language. My first impression of Swift,
-    after having spent the last month with Rust, is very much along those lines.
+  - I saw someone do a write up a while back arguing that Go isn't a *bad* language, it just isn't a *good* language. My first impression of Swift, after having spent the last month with Rust, is very much along those lines.
 
-  - Huh. Here's something that I appreciate about Rust, Haskell, and others now that I didn't before: there's a difference between implicitly/automatically importing a prelude or a given set of standard library functions, and having actually global functions. Does Swift actually have functions like `print`
-    in a global namespace, as the book seems to imply, or they being imported automatically _a la_ Rust/Haskell/etc.?
+  - Huh. Here's something that I appreciate about Rust, Haskell, and others now that I didn't before: there's a difference between implicitly/automatically importing a prelude or a given set of standard library functions, and having actually global functions. Does Swift actually have functions like `print` in a global namespace, as the book seems to imply, or they being imported automatically _a la_ Rust/Haskell/etc.?
 
     **Edit:** it appears Swift does likewise, but that you can't access the relevant module directly. Which is halfway there.
 
@@ -44,18 +41,15 @@ modified: 2015-09-07 13:45
 
     **Edit:** follow-up from a conversation with a friend: it's because you have 32- and 64-bit architectures out there; sometimes you don't want 64 bits of floating point precision for that reason. Note that Rust *also* has this distinction; you can declare things as `f32` or `f64`.
 
-  - Extending the above note on `class`es and `struct`s and `protocol`s vs.
-    Rust's approach: the same thing is true about `extension`, which is a distinct concept from implementing a `protocol`; again, in Rust these are both just handled with a single language construct, `impl`. That's not because `impl` is overloaded, but rather because the underlying language machinery is the same for the two things. (edited)
+  - Extending the above note on `class`es and `struct`s and `protocol`s vs. Rust's approach: the same thing is true about `extension`, which is a distinct concept from implementing a `protocol`; again, in Rust these are both just handled with a single language construct, `impl`. That's not because `impl` is overloaded, but rather because the underlying language machinery is the same for the two things. (edited)
 
   - (I've a feeling learning Swift is going to turn me into even more of a Rust fanboy.)
 
-  - Reading the two books in close sequence like this is proving really productive mentally for thinking about how the two handle the same issues.
-    I've never done anything quite like this before, and it's fascinating.
+  - Reading the two books in close sequence like this is proving really productive mentally for thinking about how the two handle the same issues. I've never done anything quite like this before, and it's fascinating.
 
   - I have an increased appreciation for Rust's use of semi-colons to turn expressions into statements, and thereby to distinguish clearly between the two (among other things, allowing for implicit return of anything that's an expression).
 
-  - Another interesting comparison: Rust's `match` and Swift's `switch` and
-    `case` fill the same role of pattern matching. I'm curious to see how they differ. Does Swift do matching on arbitrary expressions?
+  - Another interesting comparison: Rust's `match` and Swift's `switch` and `case` fill the same role of pattern matching. I'm curious to see how they differ. Does Swift do matching on arbitrary expressions?
 
     Also, I see where the syntax choices came from in both, and while I slightly prefer Rust's, I think both make reasonably good sense; Swift's will understandably be more familiar to C and ObjC programmers, and that's a perfectly defensible approach. Seen that way, it is expanding on the C-style construct (even if it's actually doing something substantially more sophisticated than that under the hood by being a form of actual pattern matching).
 

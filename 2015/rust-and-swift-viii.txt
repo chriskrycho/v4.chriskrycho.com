@@ -40,14 +40,16 @@ Series:
 
     Swift has the `inout` keyword, supplied before a parameter definition:
 
-    ```swift func adds4ToInput(inout num: Int) {
+    ```swift
+    func adds4ToInput(inout num: Int) {
         num += 4;
     }
     ```
 
     Rust has instead a variation on every other type definition, declaring the type in this case to be a mutable reference:
 
-    ```rust fn adds_4_to_input(num: &mut i32) {
+    ```rust
+    fn adds_4_to_input(num: &mut i32) {
         num += 4;
     }
     ```
@@ -58,7 +60,8 @@ Series:
 
   - Again, though, the downside to Rust's sophistication is that it sometimes bundles in some complexity. Returning a function in Swift is incredibly straightforward:
 
-    ```swift func getDoubler() -> (Int) -> Int {
+    ```swift
+    func getDoubler() -> (Int) -> Int {
         func doubler(number: Int) -> Int {
             return number * 2
         }
@@ -74,7 +77,8 @@ Series:
 
     Doing the same in Rust is a bit harder, because---as of the 1.3 stable/1.5 nightly timeframe---it requires you to explicitly heap-allocate the function. Swift just takes care of this for you.
 
-    ```rust fn get_doubler() -> Box<Fn(i32) -> i32> {
+    ```rust
+    fn get_doubler() -> Box<Fn(i32) -> i32> {
         fn doubler(number: i32) -> i32 {
             number * 2
         }
@@ -88,18 +92,14 @@ Series:
     }
     ```
 
-    If you understand what's going on under the covers here, this makes sense:
-    Rust normally stack-allocates a function in a scope, and therefore the
-    `doubler` function goes out of scope entirely when the `get_doubler`
-    function returns if you don't heap-allocate it with `Box::new`.
+    If you understand what's going on under the covers here, this makes sense: Rust normally stack-allocates a function in a scope, and therefore the `doubler` function goes out of scope entirely when the `get_doubler` function returns if you don't heap-allocate it with `Box::new`.
 
   - In both languages, closures and "ordinary" functions are variations on the same underlying functionality (as it should be). In Rust's case, functions and closures both implement the `Fn` trait. In Swift's case, named functions are a special case of closures.
 
   - The Swift syntax for a closure is, well, a bit odd to my eye. The basic form is like this (with the same "doubler" functionality as above):
 
     ```swift
-    { (n: Int) -> Int in return n * 2
-    }
+    { (n: Int) -> Int in return n * 2 }
     ```
 
     For brevity, this can collapse down to the shorter form with types inferred from context, parentheses dropped and the `return` keyword inferred from the fact that the closure has only a single expression (note that this wouldn't be valid unless in a context where the type of `n` could be inferred):
@@ -136,12 +136,14 @@ Series:
 
   - And if that weren't enough, there is more than one way to supply the body of a closure to a Swift function that expects it: you can supply a block (`{ /* closure body */ }`) *after* the function which expects it. Yes, this can end up looking nearly identical to the form for declaring a function:
 
-    ```swift someFunctionExpectingAnIntegerClosure() { n * 2 }
+    ```swift
+    someFunctionExpectingAnIntegerClosure() { n * 2 }
     ```
 
     But you can also drop the parentheses if that's the only argument.
 
-    ```swift someFunctionExpectingAnIntegerClosure { n * 2 }
+    ```swift
+    someFunctionExpectingAnIntegerClosure { n * 2 }
     ```
 
   - In terms of the *mechanics* of closures, and not just the syntax, the one significant difference between Rust and Swift is the same one we've seen in general between the two languages: Swift handles the memory issues automatically; Rust makes you be explicit about ownership. That is, as noted above about the closures themselves, in Rust you may have to `move` ownership to get the expected behavior. Both behave basically like closures in any other language, though; nothing surprising here. Both also automatically copy values, rather than using references, whever it makes sense to do so.
@@ -152,8 +154,7 @@ Series:
 
     Yes, care needed indeed. (Or, perhaps, you could just avoid adding more special syntax that leads to unexpected behaviors?)
 
-  - Good grief. I'm tired now. That's a half-dozen variants on *closure syntax*
-    in Swift.
+  - Good grief. I'm tired now. That's a half-dozen variants on *closure syntax* in Swift.
 
   - Remember: there's still just one way to write and use a closure in Rust.
 
@@ -161,19 +162,15 @@ Series:
 
   - I'm a Python guy, through and through. Perl drives me crazy every time I try to learn it. You could guess (even if you hadn't already seen) where this lands me between Rust and Swift.
 
-This post is incredibly long, but I blame that on the (frankly incredible)
-number of variants Swift has on the same concept.
+This post is incredibly long, but I blame that on the (frankly incredible) number of variants Swift has on the same concept.
+
 
 [early on]: /2015/rust-and-swift-ii.html
-
-[^closures]: Compare the closure syntaxes especially in Ruby and ES6+.
-
-[^elixir]: For a similar example in another up-and-coming language, see [Elixir],
-    which does almost exactly the same but with `&` in place of `$`.
-
 [Elixir]: http://elixir-lang.org/getting-started/modules.html#function-capturing
 
+
 ---
+
 
   - [**Previous:** Pattern matching and the value of expression blocks.][7]
   - [**Next:** Sum types (`enum`s) and more on pattern matching.][9]
@@ -181,3 +178,9 @@ number of variants Swift has on the same concept.
 
 [7]: http://www.chriskrycho.com/2016/rust-and-swift-vii.html
 [9]: http://www.chriskrycho.com/2016/rust-and-swift-ix.html
+
+
+
+[^closures]: Compare the closure syntaxes especially in Ruby and ES6+.
+
+[^elixir]: For a similar example in another up-and-coming language, see [Elixir], which does almost exactly the same but with `&` in place of `$`.
