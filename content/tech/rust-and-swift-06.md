@@ -11,6 +11,7 @@ Series:
 <i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]</i>
 
 [series]: /rust-and-swift.html
+
 ---
 
   - It kind of feels like this summarizes a *lot* of things about the overall design of Swift:
