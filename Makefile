@@ -2,7 +2,9 @@ PY=python3
 PELICAN=pelican
 PELICANOPTS=
 
-SCSS=scss
+SCSS=sass
+
+THEME=2014_theme
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
@@ -10,27 +12,13 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-FTP_HOST=localhost
-FTP_USER=anonymous
-FTP_TARGET_DIR=/
-
-SSH_HOST=chriskrycho.com
-SSH_PORT=22
-SSH_USER=chriskry
-SSH_TARGET_DIR=/home/chriskry/domains/chriskrycho.com
-
-S3_BUCKET=my_s3_bucket
-
-CLOUDFILES_USERNAME=my_rackspace_username
-CLOUDFILES_API_KEY=my_rackspace_api_key
-CLOUDFILES_CONTAINER=my_cloudfiles_container
-
-DROPBOX_DIR=~/Dropbox/Public/
-
 THEME_DIR=$(BASEDIR)/2014_theme
 STYLE_SRC_DIR=$(THEME_DIR)/sass
 STYLE_INCLUDES=$(STYLE_SRC_DIR)/$(wildcard _*.scss)
 STYLE_OBJ=$(STYLE_SOURCES:.scss=.css)
+
+JS_SRC_DIR=$(THEME_DIR)/scripts
+
 STATIC_DIR=$(THEME_DIR)/static
 
 DEBUG ?= 0
@@ -104,26 +92,14 @@ stopserver:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
-ssh_upload: publish
-	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
-
-rsync: publish
-	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
-
-dropbox_upload: publish
-	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
-
-ftp_upload: publish
-	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
-
-s3_upload: publish
-	s3cmd sync $(OUTPUTDIR)/ s3://$(S3_BUCKET) --acl-public --delete-removed
-
-cf_upload: publish
-	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
-
 github: publish
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 
-.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
+js: $(JS_SRC)
+	echo "Not yet implemented"
+	# TODO: Run Babel
+	# TODO: Run Browserify
+
+
+.PHONY: html help clean regenerate serve devserver publish rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github

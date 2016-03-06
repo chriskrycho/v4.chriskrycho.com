@@ -1,14 +1,13 @@
 /**
- * Apply a wrapping span with class `smcp` to the first five words in the
- * paragraph.
- *
- * @param  {Element} p The paragraph element on which to work.
- * @return {Element}   The paragraph with the span inserted.
+  Apply a wrapping span with class `smcp` to the first five words in the
+  paragraph.
+
+  @param  {Element} p The paragraph element on which to work.
+  @return {Element}   The paragraph with the span inserted.
  */
-let smallCapitalize = (p) => {
+function smallCapitalize(p) {
 
-};
-
+}
 
 
 export default function() {
