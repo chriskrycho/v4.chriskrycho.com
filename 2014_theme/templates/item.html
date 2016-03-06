@@ -55,12 +55,5 @@ hljs.initHighlightingOnLoad();
 </script>
 
 {# Apply spacing rules. #}
-<script type="text/javascript" src="{{ JS_DIR }}/spacewell.js"></script>
-<script type="text/javascript">
-var articles = document.getElementsByTagName('article');
-var options = {'emDashes': true, 'enDashes': true};
-for (var a in articles) {
-  if (articles.hasOwnProperty(a)) { spacewell(articles[a], options); }
-}
-</script>
+<script type="text/javascript" src="{{ JS_DIR }}/lib.js"></script>
 {% endblock %}
