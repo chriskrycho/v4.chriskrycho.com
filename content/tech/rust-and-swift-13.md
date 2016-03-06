@@ -6,6 +6,7 @@ Tags: listicles, software development, rust, swift, rust-and-swift
 Series:
   Title: Rust and Swift
   Part: 13
+Modified: 2016-03-06 13:20
 ---
 
 <i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]</i>
@@ -27,7 +28,7 @@ Series:
 
 -   Swift does *have* a `self`---it is, of course, implicit. It's useful at times for disambiguation---basically, when a parameter name shadows an instance name. This will look familiar to people coming from Ruby.
 
--   The strong distinction Swift makes [between reference and value types][10] comes into play on methods, as you might expect, as does its approach to mutability. Methods which change the values in value types (`struct` or `enum` instances) have to be declared `mutating func`. This kind of explicit-ness is good. In Rust, as we discussed in [Part 10][10], Rust approaches this entire problem differently: types are not value or reference types; they are either mutably and passed mutably (including as `mut self` or `&mut self`), or they are not. If an instance is mutable and passed mutably, a method is free to act on instance data. And in fact both languages require that the instance in question not be immutable. In fact, everyone we said in Part 10 about both languages applies here, just with the addendum that private properties are available to methods.
+-   The strong distinction Swift makes [between reference and value types][10] comes into play on methods, as you might expect, as does its approach to mutability. Methods which change the values in value types (`struct` or `enum` instances) have to be declared `mutating func`. This kind of explicit-ness is good. As we discussed in [Part 10][10], Rust approaches this entire problem differently: types are not value or reference types; they are either mutably and passed mutably (including as `mut self` or `&mut self`), or they are not. If an instance is mutable and passed mutably, a method is free to act on instance data. And in fact both languages require that the instance in question not be immutable. In fact, everyone we said in Part 10 about both languages applies here, just with the addendum that private properties are available to methods.
 
 -   The distinction, you'll note, is in where the indication that there's a mutation happens. Swift has a special keyword combination (`mutating func`) for this. With Rust, it's the same as every other function which mutates an argument. This makes Rust slightly more verbose, but it also means that in cases like this, the existing language tooling is perfectly capable of handling what has to be a special syntactical case in Swift.
 
@@ -70,8 +71,11 @@ Series:
         mutating func next() {
             switch self {
             case First:
-                self = Second case Second:
-                self = Third case Third self = First
+                self = Second
+            case Second:
+                self = Third
+            case Third
+                self = First
             }
         }
     }
@@ -128,6 +132,6 @@ Series:
 -  [**Previous:** Properties: type and instance, stored and computed.][12]
 
 
-[8]: http://www.chriskrycho.com/2016/rust-and-swift-viii.html
-[10]: http://www.chriskrycho.com/2016/rust-and-swift-x.html
+[8]: http://www.chriskrycho.com/2015/rust-and-swift-viii.html
+[10]: http://www.chriskrycho.com/2015/rust-and-swift-x.html
 [12]: http://www.chriskrycho.com/2016/rust-and-swift-xii.html

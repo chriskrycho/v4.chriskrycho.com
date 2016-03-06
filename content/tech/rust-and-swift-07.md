@@ -71,5 +71,5 @@ eries:
   - [**Next:** Functions, closures, and an awful lot of Swift syntax.][8]
 
 
-[6]: http://www.chriskrycho.com/2016/rust-and-swift-vi.html
-[8]: http://www.chriskrycho.com/2016/rust-and-swift-viii.html
+[6]: http://www.chriskrycho.com/2015/rust-and-swift-vi.html
+[8]: http://www.chriskrycho.com/2015/rust-and-swift-viii.html

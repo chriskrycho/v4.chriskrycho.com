@@ -37,5 +37,5 @@ Series:
   - [**Previous:** Basic types and the syntax around them.][2]
   - [**Next:** Language design tradeoffs, highlighted by string manipulation.][4]
 
-[2]: http://www.chriskrycho.com/2016/rust-and-swift-ii.html
-[4]: http://www.chriskrycho.com/2016/rust-and-swift-iv.html
+[2]: http://www.chriskrycho.com/2015/rust-and-swift-ii.html
+[4]: http://www.chriskrycho.com/2015/rust-and-swift-iv.html
