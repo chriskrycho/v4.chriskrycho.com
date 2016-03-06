@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (xiii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -81,7 +81,7 @@
 <h1>Rust and Swift (xiii)</h1>
 <h2>Methods, instance and otherwise.</h2>    </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2016/rust-and-swift-xiii.html"><i class="fa fa-fw fa-link"></i></a>February 28, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/listicles/">#listicles</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a></span><span><a href="http://www.chriskrycho.com/2016/rust-and-swift-xiii.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2016/rust-and-swift-xiii.html"><i class="fa fa-fw fa-link"></i></a>February 28, 2016 (updated March 06, 2016)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/listicles/">#listicles</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a></span><span><a href="http://www.chriskrycho.com/2016/rust-and-swift-xiii.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
@@ -97,7 +97,7 @@
 <li><p>Both use dot notation, in line with most other languages with a C-like syntax, for method calls, e.g. <code>instance.method()</code> in Swift and <code>instance.method()</code> in Rust. The latter is just syntactical sugar for <code>T::method(&amp;instance)</code> or <code>T::method(instance)</code> where <code>T</code> is the type of the instance (depending on whether the item is being borrowed or moved). Given its implicit knowledge of/access to instance-local data, and the distinctive behavior of Swift methods (see below), I don’t <em>think</em> the same is, or even could be, true of Swift.</p></li>
 <li><p>All of Swift’s <a href="http://www.chriskrycho.com/2015/rust-and-swift-viii.html">other behaviors around functions</a>—internal and external names, and all the distinctions that go with those—are equally applicable to methods. Similarly, with the sole change that the first parameter is always the instance being acted on, a Rust methods follow all the same rules as ordinary Rust functions (which is why you can call the struct or enum method with an instance parameter as in the example above).</p></li>
 <li><p>Swift does <em>have</em> a <code>self</code>—it is, of course, implicit. It’s useful at times for disambiguation—basically, when a parameter name shadows an instance name. This will look familiar to people coming from Ruby.</p></li>
-<li><p>The strong distinction Swift makes <a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html">between reference and value types</a> comes into play on methods, as you might expect, as does its approach to mutability. Methods which change the values in value types (<code>struct</code> or <code>enum</code> instances) have to be declared <code>mutating func</code>. This kind of explicit-ness is good. In Rust, as we discussed in <a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html">Part 10</a>, Rust approaches this entire problem differently: types are not value or reference types; they are either mutably and passed mutably (including as <code>mut self</code> or <code>&amp;mut self</code>), or they are not. If an instance is mutable and passed mutably, a method is free to act on instance data. And in fact both languages require that the instance in question not be immutable. In fact, everyone we said in Part 10 about both languages applies here, just with the addendum that private properties are available to methods.</p></li>
+<li><p>The strong distinction Swift makes <a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html">between reference and value types</a> comes into play on methods, as you might expect, as does its approach to mutability. Methods which change the values in value types (<code>struct</code> or <code>enum</code> instances) have to be declared <code>mutating func</code>. This kind of explicit-ness is good. As we discussed in <a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html">Part 10</a>, Rust approaches this entire problem differently: types are not value or reference types; they are either mutably and passed mutably (including as <code>mut self</code> or <code>&amp;mut self</code>), or they are not. If an instance is mutable and passed mutably, a method is free to act on instance data. And in fact both languages require that the instance in question not be immutable. In fact, everyone we said in Part 10 about both languages applies here, just with the addendum that private properties are available to methods.</p></li>
 <li><p>The distinction, you’ll note, is in where the indication that there’s a mutation happens. Swift has a special keyword combination (<code>mutating func</code>) for this. With Rust, it’s the same as every other function which mutates an argument. This makes Rust slightly more verbose, but it also means that in cases like this, the existing language tooling is perfectly capable of handling what has to be a special syntactical case in Swift.</p></li>
 <li><p>Both Swift and Rust let you out-and-out change the instance by assigning to <code>self</code>, albeit in fairly different ways. In Swift, you’d write a mutating method which updates the instance proper like this:</p>
 <pre class="swift"><code>struct Point {
