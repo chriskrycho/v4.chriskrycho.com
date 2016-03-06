@@ -12,6 +12,7 @@ Series:
 <i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]</i>
 
 [series]: /rust-and-swift.html
+
 ---
 
   - Rust and Swift handle function definition fairly similarly, at least for basic function definitions. In fact, for most basic functions, the only difference between the two is the keyword used to indicate that you're declaring a function: `fn` in Rust and `func` in Swift.
