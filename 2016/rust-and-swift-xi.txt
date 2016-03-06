@@ -25,7 +25,7 @@ Something I've been thinking about for several months, and which the [brief disc
 [overcast]: https://overcast.fm/+CdSzsTIY/1:16:42
 [ATP]: http://atp.fm/episodes/151
 
-Don't get me wrong: both languages (and perhaps especially C) do many things exceptionally well. For all that they are (justly) maligned for some of their problems, the logevity of both C and C++ has a great deal to do with how well they fit the problem domain, and how much they've empowered developers to accomplish within that space (which is very, *very* large).
+Don't get me wrong: both languages (and perhaps especially C) do many things exceptionally well. For all that they are (justly) maligned for some of their problems, the longevity of both C and C++ has a great deal to do with how well they fit the problem domain, and how much they've empowered developers to accomplish within that space (which is very, *very* large).
 
 The problem, though, at least as I see it, is that the existence of only two really serious systems programming languages for the last several decades has led a lot of developers to think that C and C++'s ways of solving problems are the *only* way to solve problems. The languages we use shape the way we think about possible solutions, and when a given language doesn't recognize entire classes of different approaches, that deeply limits developers' ability to tackle certain issues. (See also the interesting CppCast [interview with D's Andrei Alexandrescu][D] in which he makes similar points.)
 

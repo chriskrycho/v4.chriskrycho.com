@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (xi)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -92,7 +92,7 @@
 <hr />
 <p>I’ve still been (slowly) working through the Swift book and comparing Swift and Rust; I have another draft started which I’ll hopefully finish this week. And I still find the comparison deeply profitable. The two languages continue to evolve in interesting ways, and the comparison is all the more interesting <a href="https://github.com/apple/swift">now that Swift is open-source</a> and its future <a href="https://github.com/apple/swift-evolution">open for community input</a> (just as <a href="https://github.com/rust-lang/rfcs">Rust is</a>).</p>
 <p>Something I’ve been thinking about for several months, and which the <a href="https://overcast.fm/+CdSzsTIY/1:16:42">brief discussion of Swift, Go, and Rust</a> at the end of the latest <a href="http://atp.fm/episodes/151">Accidental Tech Podcast</a> brought back to my mind, is the question of what the next generation of systems-level programming language should be. And my answer is: there shouldn’t be <em>just one</em>. The best possible thing for the space, in many ways, is for there to be a healthy diversity of options and lots of competition in the space. We don’t want to have <em>ten</em> different systems programming languages to deal with, I think—but three or four or five would be <em>much</em> preferable to having one or two (closely related) as we have in the decades of C and C++ dominance.</p>
-<p>Don’t get me wrong: both languages (and perhaps especially C) do many things exceptionally well. For all that they are (justly) maligned for some of their problems, the logevity of both C and C++ has a great deal to do with how well they fit the problem domain, and how much they’ve empowered developers to accomplish within that space (which is very, <em>very</em> large).</p>
+<p>Don’t get me wrong: both languages (and perhaps especially C) do many things exceptionally well. For all that they are (justly) maligned for some of their problems, the longevity of both C and C++ has a great deal to do with how well they fit the problem domain, and how much they’ve empowered developers to accomplish within that space (which is very, <em>very</em> large).</p>
 <p>The problem, though, at least as I see it, is that the existence of only two really serious systems programming languages for the last several decades has led a lot of developers to think that C and C++‘s ways of solving problems are the <em>only</em> way to solve problems. The languages we use shape the way we think about possible solutions, and when a given language doesn’t recognize entire classes of different approaches, that deeply limits developers’ ability to tackle certain issues. (See also the interesting CppCast <a href="http://cppcast.com/2015/10/andrei-alexandrescu/">interview with D’s Andrei Alexandrescu</a> in which he makes similar points.)</p>
 <p>The most obvious thing missing from both is the ability to do truly functional-style programming. C of course is also lacking classes and thus is much more difficult to use for any sort of object-oriented programming.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> Neither has anything remotely like Rust’s traits or Swift’s extensions; C++ has only gotten lambdas recently.</p>
 <p>All of this comes out to mean that the set of <em>tools</em> available to systems programmer has necessarily been missing any number of things available in languages outside that context. In some cases, this may be a necessary consequence of the kinds of programming being done: when you need totally deterministic memory and compiler behavior, dynamic typing and a non-trivial runtime are simply not options. But in many cases, they are simply a function of the history of the languages’ development and history. Being an ALGOL descendant, and especially a C descendant, means there are some fundamental choices about the language which will differ from those made in a language descended from ML.</p>
