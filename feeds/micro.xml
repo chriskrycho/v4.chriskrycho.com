@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-03-06T12:21:00-05:00</updated><entry><title>2016-03-06 12:21</title><link href="http://www.chriskrycho.com/2016/2016-03-06-1221.html" rel="alternate"></link><updated>2016-03-06T12:21:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-06:2016/2016-03-06-1221.html</id><summary type="html">&lt;p&gt;Seriously. All I want to do is transpile ES6 to ES5 and make it runnable in browser. And I need Browserify or Webpack for this? &lt;em&gt;sigh&lt;/em&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-03-07T08:30:00-05:00</updated><entry><title>2016-03-07 08:30</title><link href="http://www.chriskrycho.com/2016/2016-03-07-0830.html" rel="alternate"></link><updated>2016-03-07T08:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-07:2016/2016-03-07-0830.html</id><summary type="html">&lt;p&gt;Sites which rely on Adobe or Google Tag Manager for their basic functionality infuriate me. Stop. Just stop.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="software development"></category></entry><entry><title>2016-03-06 12:21</title><link href="http://www.chriskrycho.com/2016/2016-03-06-1221.html" rel="alternate"></link><updated>2016-03-06T12:21:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-06:2016/2016-03-06-1221.html</id><summary type="html">&lt;p&gt;Seriously. All I want to do is transpile ES6 to ES5 and make it runnable in browser. And I need Browserify or Webpack for this? &lt;em&gt;sigh&lt;/em&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
