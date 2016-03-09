@@ -10,8 +10,8 @@
         <copyright>2016 Chris Krycho</copyright>
         <managingEditor>chris@krycho.com (Chris Krycho)</managingEditor>
         <webMaster>chris@krycho.com (Chris Krycho)</webMaster>
-        <pubDate>Wed, 02 Mar 2016 14:15:04 -0500</pubDate>
-        <lastBuildDate>Wed, 02 Mar 2016 14:15:05 -0500</lastBuildDate>
+        <pubDate>Wed, 09 Mar 2016 09:54:21 -0500</pubDate>
+        <lastBuildDate>Wed, 09 Mar 2016 09:54:22 -0500</lastBuildDate>
         <image>
             <url>http://cdn.chriskrycho.com/sermons-3000.png</url>
             <title>Chris Krycho</title>
@@ -33,6 +33,23 @@
             <itunes:category text="Christianity"/>
         </itunes:category>
         <item>
+            <title>A Strange and Messy Deliverance</title>
+            <link>http://www.chriskrycho.com/2016/a-strange-and-messy-deliverance.html</link>
+            <description><![CDATA[<p>Judges 3:7–31: Three stories, three judges and deliverers, one saving God.</p>
+<p>The following was delivered in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.</p>
+<p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is from my iPhone, in my pocket.</p>
+]]></description>
+            <pubDate>Tue, 08 Mar 2016 20:00:00 -0500</pubDate>
+            <enclosure url="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/2016-03-08.m4a" length="6552905" type="audio/x-m4a"/>
+            <guid isPermaLink="false">59367FA6-9E82-4BD2-B431-BA875D6D99E9</guid>
+            <itunes:summary><![CDATA[Judges 3:7–31: Three stories, three judges and deliverers, one saving God.
+
+The following was delivered in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.
+
+The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is from my iPhone, in my pocket.]]></itunes:summary>
+            <itunes:duration>21:01</itunes:duration>
+        </item>
+        <item>
             <title>A Humble, Selfless, Unity</title>
             <link>http://www.chriskrycho.com/2016/a-humble-selfless-unity.html</link>
             <description><![CDATA[<p>Believers are called to a <em>humble, selfless, unity</em> which reflects the <em>humble, selfless, unity</em> of the Trinity.</p>
@@ -40,7 +57,7 @@
 <p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from an epistle. Audio is from an old MacBook Pro pointed at the podium.</p>
 ]]></description>
             <pubDate>Tue, 09 Feb 2016 18:45:00 -0500</pubDate>
-            <enclosure url="http://media.blubrry.com/sermons_by_chris_krycho/cdn.chriskrycho.com/2016-02-09.m4a" length="17108682" type="audio/x-m4a"/>
+            <enclosure url="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/2016-02-09.m4a" length="17108682" type="audio/x-m4a"/>
             <guid isPermaLink="false">E20E92FA-793F-49B2-9E94-ACA1B5A47976</guid>
             <itunes:subtitle>Philippians 2:1–11</itunes:subtitle>
             <itunes:summary><![CDATA[Believers are called to a *humble, selfless, unity* which reflects the *humble, selfless, unity* of the Trinity.

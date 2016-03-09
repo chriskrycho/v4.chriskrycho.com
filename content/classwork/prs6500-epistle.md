@@ -32,6 +32,7 @@ MacBook Pro pointed at the podium.</i>
 </audio>
 
 ### Video
+
 <div class="iframe-wrapper four-to-three">
 <iframe src="https://player.vimeo.com/video/154810219" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/154810219">A Humble, Selfless Unity (Philippians 2:1&ndash;11)</a> from <a href="https://vimeo.com/chriskrycho">Chris Krycho</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
@@ -323,7 +324,7 @@ Let us pray to our loving, selfless, humble God of unity.
 ---
 
 <i>God we praise you, who are love and light forever. Thank you for your
-love---for sharing it with us, humbly and selflessly; for drawing us into your 
-love and restoring us to what you designed us for. Thank you for building us 
+love---for sharing it with us, humbly and selflessly; for drawing us into your
+love and restoring us to what you designed us for. Thank you for building us
 into a temple for your Spirit. Help us walk in this same humble, selfless unity.
 </i>
