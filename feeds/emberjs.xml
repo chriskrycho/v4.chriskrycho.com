@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/emberjs.xml" rel="self"></atom:link><lastBuildDate>Wed, 09 Mar 2016 12:36:00 -0500</lastBuildDate><item><title>2016-03-09 12:36</title><link>http://www.chriskrycho.com/2016/2016-03-09-1236.html</link><description>&lt;p&gt;Pro tip for tracking down oddities with &lt;a href="http://emberjs.com"&gt;Ember.js&lt;/a&gt; during testing: &lt;code&gt;ember test --serve --filter '&amp;lt;some pattern&amp;gt;'&lt;/code&gt; is &lt;em&gt;great&lt;/em&gt;. E.g. &lt;code&gt;ember t -s --filter 'Unit'&lt;/code&gt; for just unit tests.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 09 Mar 2016 12:36:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-03-09:2016/2016-03-09-1236.html</guid><category>software development</category><category>javascript</category><category>emberjs</category></item></channel></rss>
