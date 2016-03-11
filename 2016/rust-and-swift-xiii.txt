@@ -130,8 +130,10 @@ Modified: 2016-03-06 13:20
 
 
 -  [**Previous:** Properties: type and instance, stored and computed.][12]
+-  [**Next:** Indexing and subscripts, or: traits vs. keywords again.][14]
 
 
 [8]: http://www.chriskrycho.com/2015/rust-and-swift-viii.html
 [10]: http://www.chriskrycho.com/2015/rust-and-swift-x.html
 [12]: http://www.chriskrycho.com/2016/rust-and-swift-xii.html
+[14]: http://www.chriskrycho.com/2016/rust-and-swift-xiv.html
