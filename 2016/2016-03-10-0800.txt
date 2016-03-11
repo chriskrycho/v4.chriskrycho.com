@@ -11,3 +11,5 @@ I've been using it for [Winning Slowly] and [New Rustacean] downloads for 9 mont
 
 [DreamHost]: https://www.dreamhost.com
 [DreamObjects]: https://www.dreamhost.com/cloud/storage/
+[Winning Slowly]: http://www.winningslowly.org
+[New Rustacean]: http://www.newrustacean.com
