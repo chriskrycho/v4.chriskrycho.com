@@ -41,6 +41,7 @@ This list is updated whenever I publish a new post in the series. You can also s
 11. [Hopes for the next generation of systems programming.][11]
 12. [Properties: type and instance, stored and computed.][12]
 13. [Methods, instance and otherwise.][13]
+14. [Indexing and subscripts, or: traits vs. keywords again.][14]
 
 [1]: /2015/rust-and-swift-i.html
 [2]: /2015/rust-and-swift-ii.html
@@ -55,6 +56,7 @@ This list is updated whenever I publish a new post in the series. You can also s
 [11]: /2016/rust-and-swift-xi.html
 [12]: /2016/rust-and-swift-xii.html
 [13]: /2016/rust-and-swift-xiii.html
+[14]: /2016/rust-and-swift-xiv.html
 
 
 Some Notes on the Series
