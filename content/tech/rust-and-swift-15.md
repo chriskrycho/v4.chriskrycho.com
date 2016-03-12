@@ -2,11 +2,10 @@
 Title: Rust and Swift (xv)
 Subtitle: "Inheritance: a Swiftian specialty (for now)."
 Tags: rust, swift, rust-and-swift, programming languages
-Date: 2016-03-11 23:19
+Date: 2016-03-12 14:45
 Series:
   Title: Rust and Swift
   Part: 15
-Status: draft
 ...
 
 <i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]</i>
