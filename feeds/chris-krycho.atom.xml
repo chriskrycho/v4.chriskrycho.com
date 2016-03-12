@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-03-12T11:56:00-05:00</updated><entry><title>2016-03-12 11:56</title><link href="http://www.chriskrycho.com/2016/2016-03-12-1156.html" rel="alternate"></link><updated>2016-03-12T11:56:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-12:2016/2016-03-12-1156.html</id><summary type="html">&lt;p&gt;I’m at the point where I honestly hope that this election cycle in the U.S. just fractures both parties and we can have some geniune alternatives rather than two nearly-identical monoliths. I’m not counting on it, but I’m wishing for it.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-03-12T11:56:00-05:00</updated><entry><title>2016-03-12 11:56</title><link href="http://www.chriskrycho.com/2016/2016-03-12-1156.html" rel="alternate"></link><updated>2016-03-12T11:56:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-12:2016/2016-03-12-1156.html</id><summary type="html">&lt;p&gt;I’m at the point where I honestly hope that this election cycle in the U.S. just fractures both parties and we can have some genuine alternatives rather than two nearly-identical monoliths. I’m not counting on it, but I’m wishing for it.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -7,20 +7,7 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="emberjs"></category><category term="conferences"></category></entry><entry><title>Rust and Swift (xiv)</title><link href="http://www.chriskrycho.com/2016/rust-and-swift-xiv.html" rel="alternate"></link><updated>2016-03-11T23:19:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-11:2016/rust-and-swift-xiv.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;The next chapter in the Swift book focuses on &lt;em&gt;inheritance&lt;/em&gt;, a concept which does not yet exist in Rust.&lt;/p&gt;
-&lt;p&gt;Swift embraces classical inheritance for &lt;code&gt;class&lt;/code&gt; data types. As noted &lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html"&gt;previously&lt;/a&gt;, Rust’s &lt;code&gt;struct&lt;/code&gt; covers much of the ground covered by Swift’s &lt;code&gt;struct&lt;/code&gt; and &lt;code&gt;class&lt;/code&gt; types together (value and reference types, etc.). However, what Swift’s &lt;code&gt;class&lt;/code&gt; types bring to the table is inheritance-based (and not just composition-based) extension of types.&lt;/p&gt;
-&lt;p&gt;This is a bit of an interesting point: it is an area where, &lt;em&gt;as of today&lt;/em&gt;, Swift can do something that is flat impossible in Rust—a rarity.&lt;/p&gt;
-&lt;p&gt;However, the &lt;em&gt;status quo&lt;/em&gt; will be changing sometime in the next year or so, as there is a [Rust RFC for inheritance][rfc] which has been accepted.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xiii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Methods, instance and otherwise.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id="refs" class="references"&gt;
-
-&lt;/div&gt;
-</summary><category term="rust"></category><category term="swift"></category><category term="rust-and-swift"></category><category term="programming languages"></category></entry><entry><title>2016-03-10 21:30</title><link href="http://www.chriskrycho.com/2016/2016-03-10-2130.html" rel="alternate"></link><updated>2016-03-10T21:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-10:2016/2016-03-10-2130.html</id><summary type="html">&lt;p&gt;I’ve now written over 14,000 words in my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;series on Rust and Swift&lt;/a&gt;, and while I’ve done some revisions sitting at my main machine, nearly all of them have been written on my iPad Mini. And quite enjoyably, at that.&lt;/p&gt;
+</summary><category term="emberjs"></category><category term="conferences"></category></entry><entry><title>2016-03-10 21:30</title><link href="http://www.chriskrycho.com/2016/2016-03-10-2130.html" rel="alternate"></link><updated>2016-03-10T21:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-10:2016/2016-03-10-2130.html</id><summary type="html">&lt;p&gt;I’ve now written over 14,000 words in my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;series on Rust and Swift&lt;/a&gt;, and while I’ve done some revisions sitting at my main machine, nearly all of them have been written on my iPad Mini. And quite enjoyably, at that.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;

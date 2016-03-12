@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (xiv)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -75,24 +75,28 @@
     </header>
 
 
-<article class="listicles software-development rust swift rust-and-swift tech">
+<article class="rust swift rust-and-swift programming-languages tech">
 
     <header>
 <h1>Rust and Swift (xiv)</h1>
-<h2>Subscripts</h2>    </header>
+<h2>Inheritance: a Swiftian specialty (for now).</h2>    </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/drafts/rust-and-swift-xiv.html"><i class="fa fa-fw fa-link"></i></a>March 10, 2016 (updated March 06, 2016)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/listicles/">#listicles</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a></span><span><a href="http://www.chriskrycho.com/2016/rust-and-swift-xiv.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/drafts/rust-and-swift-xiv.html"><i class="fa fa-fw fa-link"></i></a>March 11, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a></span><span><a href="http://www.chriskrycho.com/2016/rust-and-swift-xiv.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
 
         <div class="content">
 
-<p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. <a href="/rust-and-swift.html">(See all parts in the series.)</a></i></p>
+<p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. <a href="http://www.chriskrycho.com/rust-and-swift.html">(See all parts in the series.)</a></i></p>
+<hr />
+<p>The next chapter in the Swift book focuses on <em>inheritance</em>, a concept which does not yet exist in Rust.</p>
+<p>Swift embraces classical inheritance for <code>class</code> data types. As noted <a href="http://www.chriskrycho.com/2015/rust-and-swift-x.html">previously</a>, Rust’s <code>struct</code> covers much of the ground covered by Swift’s <code>struct</code> and <code>class</code> types together (value and reference types, etc.). However, what Swift’s <code>class</code> types bring to the table is inheritance-based (and not just composition-based) extension of types.</p>
+<p>This is a bit of an interesting point: it is an area where, <em>as of today</em>, Swift can do something that is flat impossible in Rust—a rarity.</p>
+<p>However, the <em>status quo</em> will be changing sometime in the next year or so, as there is a <a href="">Rust RFC for inheritance</a> which has been accepted.</p>
 <hr />
 <ul>
-<li>Rust and Swift both support defining subscript access to a given data type, like <code>SomeType[accessedByIndex]</code>. Unsurprisingly, given <a href="/rust-and-swift.html">everything we’ve seen so far</a>, Rust does this with traits, and Swift with keywords.</li>
-<li>In Rust, you can define subscript-style access to a type by implementing the <code>Index</code> and/or <code>IndexMut</code> traits, which allow <em>indexing</em> into a given location in a kind of type. The implementation simply requires one function, which is called when you use the <code>[]</code> operator. That function, <code>index</code> or <code>index_mut</code>, implements how to do the lookup, while the trait specifies what the lookup ie</li>
+<li><a href="http://www.chriskrycho.com/2016/rust-and-swift-xiii.html"><strong>Previous:</strong> Methods, instance and otherwise.</a></li>
 </ul>
 <div id="refs" class="references">
 
