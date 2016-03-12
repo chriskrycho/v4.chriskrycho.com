@@ -2,7 +2,7 @@
 Title: Rust and Swift (xiii)
 Subtitle: Methods, instance and otherwise.
 Date: 2016-02-28 11:15
-Tags: software development, rust, swift, rust-and-swift
+Tags: programming languages, rust, swift, rust-and-swift
 Series:
   Title: Rust and Swift
   Part: 13
