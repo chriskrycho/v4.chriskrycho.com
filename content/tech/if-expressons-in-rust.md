@@ -1,12 +1,12 @@
 ---
 Title: If-expressions in Rust
 Date: 2015-09-12 11:05
-Tags: software development
+Tags: software development, programming languages, rust, python
 Modified: 2015-09-12 11:10
 ...
 
 I love the fact that all `if` statements in Rust are expressions. It gives you a
-great deal of expressitivity in the language. 
+great deal of expressitivity in the language.
 
 Let's contrast with Python (which I love, for the record). In Python, you can do
 something like this:
@@ -43,7 +43,7 @@ else {
 }
 ```
 
-(You could also write this with a `let mut a_value` and then set its value 
+(You could also write this with a `let mut a_value` and then set its value
 inside the conditional blocks, but that's not at all good form in Rust.)
 
 And of course, you can shorten that rather nicely where the expressions are
@@ -55,7 +55,7 @@ let a_value = if some_condition { "Yeah!" } else { "Oh, sads." }
 ```
 
 But this gets really nice when you have more complicated work to do in a Rust
-conditional. It doesn't matter how many things going on inside an `if` 
+conditional. It doesn't matter how many things going on inside an `if`
 expression; it's still an expression. As such, you can also write this:[^compiler]
 
 ```rust
@@ -88,5 +88,5 @@ affirm.
 
 [removed]: https://github.com/rust-lang/rust/issues/1698
 
-[^compiler]: Note that under normal conditions the compiler won't actually 
+[^compiler]: Note that under normal conditions the compiler won't actually
     accept this because of the unused names.

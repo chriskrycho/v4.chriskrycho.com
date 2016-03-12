@@ -2,7 +2,7 @@
 Title: Lessons Learned
 Subtitle: 9 Months With HolyBible.com
 Date: 2015-04-12 13:49
-Tags: software development
+Tags: software development, javascript, angularjs
 ...
 
 Since mid July 2015, I have been working on a complete redesign and re-build of
@@ -69,10 +69,10 @@ next time around."
     community---no slam meant on the Angular crowd, but the Ember folks are just
     doing that really well. That matters, too. (I can't speak for other
     communities, of course; these are just the groups I've watched the most.)
-    
+
     All in all, Ember would have been the better fit between these two (even
     though, as noted above, it also wouldn't have been the *best* fit).
-    
+
  4. *Unit tests really are the best.* I did a vast majority of this project with
     unit tests---the first time I've ever been able to do that for a whole
     project. In other projects, I've been able to do it for parts, but never

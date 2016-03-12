@@ -3,7 +3,7 @@ Title: Rust and Swift (i)
 Subtitle: Thoughts after reading the introduction to the Swift book.
 Date: 2015-09-04 22:59
 Category: Tech
-Tags: listicles, software development, rust, swift, rust-and-swift
+Tags: listicles, programming languages, rust, swift, rust-and-swift
 Series:
   Title: Rust and Swift
   Part: 1

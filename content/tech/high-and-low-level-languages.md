@@ -2,7 +2,7 @@
 Title: High- and Low-Level Programming Languages
 Subtitle: Python, Ruby, C, C++, and... Rust. Hmm.
 Date: 2015-08-07 20:00
-Tags: software development
+Tags: programming languages, rust, python, ruby, c, cplusplus
 ...
 
 It occurred to me while listening to [Edwin Brady] talk about [Idris] on the

@@ -1,7 +1,7 @@
 ---
 Title: Rust and Swift (ii)
 Subtitle: Basic types and the syntax around them.
-Tags: software development, listicles, rust, swift, rust-and-swift
+Tags: rust, swift, rust-and-swift, programming languages
 Date: 2015-09-06 10:20
 Series:
   Title: Rust and Swift
@@ -14,37 +14,37 @@ Series:
 
 ---
 
-  - At first blush, I find the extra syntax around optionals in Swift more confusing than helpful. I think this comes down to my preference for a more Python-like approach: "Explicit is better than implicit" and "There should be one-- and preferably only one --obvious way to do it" both militate against the multiple different ways you can handle optional values in Swift. `Optional` types are created in one of two ways:
+At first blush, I find the extra syntax around optionals in Swift more confusing than helpful. I think this comes down to my preference for a more Python-like approach: "Explicit is better than implicit" and "There should be one-- and preferably only one --obvious way to do it" both militate against the multiple different ways you can handle optional values in Swift. `Optional` types are created in one of two ways:
 
-      + with the `?` operator on a type definition, creating an explicitly wrapped type which must be checked in some way.
-      + with the `!` operator on a type definition, creating an "implicitly unwrapped optional" by forcibly unwrapping it (and creating a runtime error if the optional is empty)
+- with the `?` operator on a type definition, creating an explicitly wrapped type which must be checked in some way.
+- with the `!` operator on a type definition, creating an "implicitly unwrapped optional" by forcibly unwrapping it (and creating a runtime error if the optional is empty)
 
-    After creating an optional, you can get at its contents by:
+After creating an optional, you can get at its contents by:
 
-      + using the `if let` or `while let` constructs to bind the optional value's non-`nil` value for a block
-      + using the `!` operator on a variable name, explicitly unwrapping it (and creating a runtime error if the optional is empty)
+- using the `if let` or `while let` constructs to bind the optional value's non-`nil` value for a block
+- using the `!` operator on a variable name, explicitly unwrapping it (and creating a runtime error if the optional is empty)
 
-    By contrast, in Rust you always have to explicitly unwrap the item, using the `unwrap` method or pattern matching. There are no implicitly unwrapped types. Moreover, there is no special syntax around creating optional types in Rust: you just declare them with an `Option` type or another type that `impl`s the `Option` behavior. The "shortcut" behavior around error handling, `try!`, isn't special syntax, but application of another standard language construct (in this case, a macro).
+By contrast, in Rust you always have to explicitly unwrap the item, using the `unwrap` method or pattern matching. There are no implicitly unwrapped types. Moreover, there is no special syntax around creating optional types in Rust: you just declare them with an `Option` type or another type that `impl`s the `Option` behavior. The "shortcut" behavior around error handling, `try!`, isn't special syntax, but application of another standard language construct (in this case, a macro).
 
-  - The discussion of `assert` in the Swift book re-raises the question about the global namespace:
+The discussion of `assert` in the Swift book re-raises the question about the global namespace:
 
-    > "You write an assertion by calling the global `assert(_:_:)` function."
+> "You write an assertion by calling the global `assert(_:_:)` function."
 
-    This continues to suggest strongly that Swift does in fact have a true global namespace, *not* an automatically-imported prelude. That can make a big difference for applications in certain spaces (e.g. systems programming), when you might have good reason to want to replace the standard library's approach with a different one. (See Rust's [`#[no_std]`] docs and the [related RFC].)
+This continues to suggest strongly that Swift does in fact have a true global namespace, *not* an automatically-imported prelude. That can make a big difference for applications in certain spaces (e.g. systems programming), when you might have good reason to want to replace the standard library's approach with a different one. (See Rust's [`#[no_std]`] docs and the [related RFC].)
 
-  - In Rust, `assert!` is a macro, not a function, which is an interesting but perhaps not *especially* important distinction in this particular case. (It might be, though; I'd have to see the implementation of each to see how they play out differently.)
+In Rust, `assert!` is a macro, not a function, which is an interesting but perhaps not *especially* important distinction in this particular case. (It might be, though; I'd have to see the implementation of each to see how they play out differently.)
 
-  - In any case, this also highlights another large difference between the two: testing is [front and center][rust-tests] in Rust, and barely receives a mention so far in the Swift book (and isn't in the table of contents). Having language-level support for testing is a big deal.
+In any case, this also highlights another large difference between the two: testing is [front and center][rust-tests] in Rust, and barely receives a mention so far in the Swift book (and isn't in the table of contents). Having language-level support for testing is a big deal.
 
-  - Language tour and first chapter of the language guide down, my sense is that Swift is a substantially better language than C or C++ (and presumably than Objective C, but since I don't know that language I can't speak to it) for app design, but that Rust is a better language yet. Both a far more modern than their predecessors, but they approach the same problems in surprisingly different ways, relatively similar syntax notwithstanding. So far, I like the Rust approach better.
+Language tour and first chapter of the language guide down, my sense is that Swift is a substantially better language than C or C++ (and presumably than Objective C, but since I don't know that language I can't speak to it) for app design, but that Rust is a better language yet. Both a far more modern than their predecessors, but they approach the same problems in surprisingly different ways, relatively similar syntax notwithstanding. So far, I like the Rust approach better.
 
-  - In particular, more syntax is not my preferred way to tackle these things.
-    Providing good language constructs and primitives on which to build seems better in *many* ways:
+In particular, more syntax is not my preferred way to tackle these things.
+Providing good language constructs and primitives on which to build seems better in *many* ways:
 
-      + It substantially reduces the cognitive load for the developer, by keeping the number of constructs small and simply varying how they are applied.
-      + It increases the quality of those primitives, because it forces the language deadness to make sure they actually address the full problem space.
-      + It lets developers approach the same problem in ways the language design team may not have anticipated, and over time the community may find shared conventions that improve on the `std` approach, and nothing has to change in the language spec (or the compiler!) to adopt those changes.
-      + In general, then, it makes change much easier to manage, and change can be community-driven rather than requiring the language design team to manage it.[^1]
+- It substantially reduces the cognitive load for the developer, by keeping the number of constructs small and simply varying how they are applied.
+- It increases the quality of those primitives, because it forces the language deadness to make sure they actually address the full problem space.
+- It lets developers approach the same problem in ways the language design team may not have anticipated, and over time the community may find shared conventions that improve on the `std` approach, and nothing has to change in the language spec (or the compiler!) to adopt those changes.
+- In general, then, it makes change much easier to manage, and change can be community-driven rather than requiring the language design team to manage it.[^1]
 
 [rust-tests]: https://doc.rust-lang.org/stable/book/testing.html
 [`#[no_std]`]: https://doc.rust-lang.org/book/no-stdlib.html
@@ -54,8 +54,8 @@ Series:
 ---
 
 
-  - [**Previous:** Thoughts after reading the introduction to the Swift book.][1]
-  - [**Next:** Operators, including overloading, and thoughts on brevity.][3]
+- [**Previous:** Thoughts after reading the introduction to the Swift book.][1]
+- [**Next:** Operators, including overloading, and thoughts on brevity.][3]
 
 
 [1]: http://www.chriskrycho.com/2015/rust-and-swift-i.html
