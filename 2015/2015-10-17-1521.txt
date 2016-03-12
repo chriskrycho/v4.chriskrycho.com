@@ -1,7 +1,7 @@
 ---
 Title: 2015-10-17 15:21
 Date: 2015-10-17 15:21
-Tags: software development
+Tags: programming languages, rust, fsharp
 Template: formats/micro
 ...
 

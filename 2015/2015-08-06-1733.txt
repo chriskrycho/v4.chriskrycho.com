@@ -1,12 +1,12 @@
 ---
 Title: 2015-08-06 17:33
 Date: 2015-08-06 17:33
-Tags: software development
+Tags: programming languages, rust
 Template: formats/micro
 ...
 
-☑ Finished reading the [Rust by Example] book.  
-☑ Submitted a couple [pull requests].  
+☑ Finished reading the [Rust by Example] book.
+☑ Submitted a couple [pull requests].
 ☑ Concluded that I *really* like this language.
 
 [Rust by Example]: http://rustbyexample.com

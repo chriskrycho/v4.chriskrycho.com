@@ -1,7 +1,7 @@
 ---
 Title: 2016-02-07 16:00
 Date: 2016-02-07 16:00
-Tags: podcasting, software development
+Tags: podcasting, programming languages, rust
 ...
 
 Spent the last little bit reading about Rust's type system for the next episode

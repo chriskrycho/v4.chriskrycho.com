@@ -1,7 +1,7 @@
 ---
 Title: 2015-08-08 18:11
 Date: 2015-08-08 18:11
-Tags: software development
+Tags: software development, programming languages, rust
 Template: formats/micro
 ...
 
