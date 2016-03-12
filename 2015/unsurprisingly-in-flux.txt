@@ -8,7 +8,7 @@ Summary: >
 Author: Chris Krycho
 Date: 2015-04-08 16:05
 Modified: 2015-08-28 19:50
-Tags: software development
+Tags: software development, javascript, angularjs, emberjs, react
 ...
 
 <i class="editorial">This started as a [series of posts] on App.net. I

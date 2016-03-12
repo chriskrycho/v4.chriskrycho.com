@@ -163,7 +163,7 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="software development"></category></entry><entry><title>2016-02-20 08:14</title><link href="http://www.chriskrycho.com/2016/2016-02-20-0814.html" rel="alternate"></link><updated>2016-02-20T08:14:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-02-20:2016/2016-02-20-0814.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.chriskrycho.com/2016/2016-02-20-0802.html"&gt;The upside to stepping away for a bit&lt;/a&gt;: I just found a bug in this code… which I introduced in December 2014. &lt;em&gt;:sigh:&lt;/em&gt;&lt;/p&gt;
+</summary><category term="software development"></category><category term="javascript"></category></entry><entry><title>2016-02-20 08:14</title><link href="http://www.chriskrycho.com/2016/2016-02-20-0814.html" rel="alternate"></link><updated>2016-02-20T08:14:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-02-20:2016/2016-02-20-0814.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.chriskrycho.com/2016/2016-02-20-0802.html"&gt;The upside to stepping away for a bit&lt;/a&gt;: I just found a bug in this code… which I introduced in December 2014. &lt;em&gt;:sigh:&lt;/em&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -930,7 +930,7 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="software development"></category></entry><entry><title>2015-05-28 08:43</title><link href="http://www.chriskrycho.com/2015/2015-05-28-0843.html" rel="alternate"></link><updated>2015-05-28T08:43:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-28:2015/2015-05-28-0843.html</id><summary type="html">&lt;p&gt;&lt;a href="http://worrydream.com/#!/KillMath"&gt;Question:&lt;/a&gt;&lt;/p&gt;
+</summary><category term="software development"></category><category term="angularjs"></category></entry><entry><title>2015-05-28 08:43</title><link href="http://www.chriskrycho.com/2015/2015-05-28-0843.html" rel="alternate"></link><updated>2015-05-28T08:43:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2015-05-28:2015/2015-05-28-0843.html</id><summary type="html">&lt;p&gt;&lt;a href="http://worrydream.com/#!/KillMath"&gt;Question:&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Why do we need to model the world using abstractions invented for pencil and paper? Can we solve quantitative problems &lt;strong&gt;without manipulating symbols&lt;/strong&gt;?&lt;/p&gt;
 &lt;/blockquote&gt;
