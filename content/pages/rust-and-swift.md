@@ -42,6 +42,7 @@ This list is updated whenever I publish a new post in the series. You can also s
 12. [Properties: type and instance, stored and computed.][12]
 13. [Methods, instance and otherwise.][13]
 14. [Indexing and subscripts, or: traits vs. keywords again.][14]
+15. [Inheritance: a Swiftian specialty (for now).][15]
 
 [1]: /2015/rust-and-swift-i.html
 [2]: /2015/rust-and-swift-ii.html
@@ -57,6 +58,7 @@ This list is updated whenever I publish a new post in the series. You can also s
 [12]: /2016/rust-and-swift-xii.html
 [13]: /2016/rust-and-swift-xiii.html
 [14]: /2016/rust-and-swift-xiv.html
+[15]: /2016/rust-and-swift-xv.html
 
 
 Some Notes on the Series
