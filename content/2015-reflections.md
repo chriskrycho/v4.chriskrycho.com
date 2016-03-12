@@ -1,6 +1,7 @@
 ---
 Title: Thoughts on 2015 (and 2016)
 Date: 2015-12-26 13:30
+Tags: family, rust, podcasting
 ...
 
 As we come to the end of the year, I have been reflecting on the things I set
