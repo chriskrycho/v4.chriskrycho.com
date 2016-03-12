@@ -2,7 +2,7 @@
 Title: “I Don't Know When I'd Use That”
 Subtitle: Learning new languages as a way of stretching your brain.
 Date: 2016-01-17 10:00
-Tags: software development, programming languages
+Tags: software development, programming languages, rust, haskell
 ...
 
 I was reading an interesting Stack Overflow [discussion] of the value of
