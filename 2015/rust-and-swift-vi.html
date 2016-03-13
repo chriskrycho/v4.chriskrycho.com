@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (vi)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -75,13 +75,13 @@
     </header>
 
 
-<article class="software-development listicles rust swift rust-and-swift tech">
+<article class="software-development rust swift rust-and-swift tech">
 
     <header>
 <h1>Rust and Swift (vi)</h1>
 <h2>Collection types and the difference between syntax and semantics.</h2>    </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-vi.html"><i class="fa fa-fw fa-link"></i></a>September 19, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/listicles/">#listicles</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-vi.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-vi.html"><i class="fa fa-fw fa-link"></i></a>September 19, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-vi.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
@@ -90,14 +90,13 @@
 
 <p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. <a href="/rust-and-swift.html">(See all parts in the series.)</a></i></p>
 <hr />
-<ul>
-<li><p>It kind of feels like this summarizes a <em>lot</em> of things about the overall design of Swift:</p>
+<p>It kind of feels like this summarizes a <em>lot</em> of things about the overall design of Swift:</p>
 <blockquote>
 <p>Although the two forms are functionally identical, the shorthand form is preferred and is used throughout this guide when referring to the type of an array. —<em>The Swift Programming Language (Swift 2 Prerelease)</em></p>
-</blockquote></li>
-<li><p>The documentation for the various types in Rust’s <code>std::collections</code> module is hilarious and great. Highly recommended.</p></li>
-<li><p>One thing that jumped out at me reading this chapter of the Swift book (though I don’t think it’s been explicitly discussed yet): Rust doesn’t have named parameters; Swift does. There are good reasons for that in both cases, but I suspect this is one of the small details I’ll miss the most in Rust. I’ve been spoiled by Python.</p></li>
-<li><p>Swift’s <code>Array</code> type is analogous to Rust’s <code>Vec</code> type (usually created with the <code>vec!</code> macro), <em>not</em> its <code>Array</code> type. Rust <code>Vec</code>s and Swift <code>Array</code>s are dynamically sized and created on the heap, whereas Rust’s <code>Array</code>s are statically sized and created on the stack. Syntax for creating <code>Array</code>s in both languages is quite similar (though the results are different):</p>
+</blockquote>
+<p>The documentation for the various types in Rust’s <code>std::collections</code> module is hilarious and great. Highly recommended.</p>
+<p>One thing that jumped out at me reading this chapter of the Swift book (though I don’t think it’s been explicitly discussed yet): Rust doesn’t have named parameters; Swift does. There are good reasons for that in both cases, but I suspect this is one of the small details I’ll miss the most in Rust. I’ve been spoiled by Python.</p>
+<p>Swift’s <code>Array</code> type is analogous to Rust’s <code>Vec</code> type (usually created with the <code>vec!</code> macro), <em>not</em> its <code>Array</code> type. Rust <code>Vec</code>s and Swift <code>Array</code>s are dynamically sized and created on the heap, whereas Rust’s <code>Array</code>s are statically sized and created on the stack. Syntax for creating <code>Array</code>s in both languages is quite similar (though the results are different):</p>
 <ul>
 <li>Swift:
 <ul>
@@ -109,8 +108,8 @@
 <li>Array: <code>let an_array: [i32, 3] = [1, 2, 3];</code></li>
 <li>Vector: <code>let a_vector: Vec&lt;i32&gt; = vec![1, 2, 3];</code></li>
 </ul></li>
-</ul></li>
-<li><p>That’s the long form, of course; both languages have type inference, so you’d rarely write it like that. The usual form would be with the type in all of those cases:</p>
+</ul>
+<p>That’s the long form, of course; both languages have type inference, so you’d rarely write it like that. The usual form would be with the type in all of those cases:</p>
 <ul>
 <li>Swift:
 <ul>
@@ -122,23 +121,22 @@
 <li>Array: <code>let an_array = [1, 2, 3];</code></li>
 <li>Vector: <code>let a_vector = vec![1, 2, 3];</code></li>
 </ul></li>
-</ul></li>
-<li><p>Rust also adds the concept of “slices,” which provide access to segments of arrays, and are heap-allocated as pointers to a given item in the array and a length (number of elements) included.</p></li>
-<li><p><code>Array</code> operations in Swift are all pretty reasonable, and surprisingly descriptive. They remind me in a good way of Python’s <code>list</code> methods.</p></li>
-<li><p>There are a <em>lot</em> of <a href="http://doc.rust-lang.org/stable/std/vec/struct.Vec.html">ways to interact with <code>Vec</code>s in Rust</a>. (That’s not a bad thing.) A bit surprising to me was the absence of an <code>enumerate</code> method, on <code>Vec</code> itself, but then I discovered that it exists in the <code>IntoIter</code> struct in the same module, which fully implements the <code>Iterator</code> <code>trait</code>. As a result, it has an <code>enumerate</code> function returning an <code>Enumerate</code> <code>struct</code> instance. (Under the covers, I suspect Swift <code>Array</code>s just implement an <code>Iterable</code> <code>protocol</code>, which is similar to this approach in some ways.)</p></li>
-<li><p>This makes a point I’m coming back to fairly often: Rust doesn’t necessarily put everything on a single object definition, but rather into a set of related <code>struct</code> or <code>enum</code> types and <code>trait</code>s. This is really powerful, but it’s going to take some mental adjustment. In this way, Swift’s structure and semantics are much more like the languages I’m used to than Rust’s are (but even there, the use of <code>protocols</code> gives it considerable new flexibility).</p></li>
-<li><p>Note that I said <em>semantics</em>, not syntax. Swift and Rust are a great example of how very similar syntax can mask differences in semantics. (For another such example, compare JavaScript’s syntax and semantics to Java’s: they’re superficially similar syntactically, and light years apart semantically.)</p></li>
-<li><p>Swift’s <code>Set</code> type and Rust’s roughly analogous <code>HashSet</code> b <code>contains</code> method which behaves much like Python’s <code>in</code> keyword. Indeed, and perhaps unsurprisingly, the two types implement many of the same methods in general. This is perhaps to be expected given that the language around sets (as a mathematical concept being mapped down into a representation in a program) is quite standardized.</p></li>
-<li><p>Because of their stricter typing systems, both Rust and Swift require you to specify the types used in their mapping constructs (Rust has <code>HashMap</code> and Swift has <code>Dictionary</code>), though of course both can infer this as well in certain cases. At the most basic level, you can’t use arbitrary (hashable) types as keys in mixed fashion like you can in e.g. Python’s <code>dict</code> type, but in practice this shouldn’t matter, for two reasons:</p>
+</ul>
+<p>Rust also adds the concept of “slices,” which provide access to segments of arrays, and are heap-allocated as pointers to a given item in the array and a length (number of elements) included.</p>
+<p><code>Array</code> operations in Swift are all pretty reasonable, and surprisingly descriptive. They remind me in a good way of Python’s <code>list</code> methods.</p>
+<p>There are a <em>lot</em> of <a href="http://doc.rust-lang.org/stable/std/vec/struct.Vec.html">ways to interact with <code>Vec</code>s in Rust</a>. (That’s not a bad thing.) A bit surprising to me was the absence of an <code>enumerate</code> method, on <code>Vec</code> itself, but then I discovered that it exists in the <code>IntoIter</code> struct in the same module, which fully implements the <code>Iterator</code> <code>trait</code>. As a result, it has an <code>enumerate</code> function returning an <code>Enumerate</code> <code>struct</code> instance. (Under the covers, I suspect Swift <code>Array</code>s just implement an <code>Iterable</code> <code>protocol</code>, which is similar to this approach in some ways.)</p>
+<p>This makes a point I’m coming back to fairly often: Rust doesn’t necessarily put everything on a single object definition, but rather into a set of related <code>struct</code> or <code>enum</code> types and <code>trait</code>s. This is really powerful, but it’s going to take some mental adjustment. In this way, Swift’s structure and semantics are much more like the languages I’m used to than Rust’s are (but even there, the use of <code>protocols</code> gives it considerable new flexibility).</p>
+<p>Note that I said <em>semantics</em>, not syntax. Swift and Rust are a great example of how very similar syntax can mask differences in semantics. (For another such example, compare JavaScript’s syntax and semantics to Java’s: they’re superficially similar syntactically, and light years apart semantically.)</p>
+<p>Swift’s <code>Set</code> type and Rust’s roughly analogous <code>HashSet</code> both have a <code>contains</code> method which behaves much like Python’s <code>in</code> keyword. Indeed, and perhaps unsurprisingly, the two types implement many of the same methods in general. This is perhaps to be expected given that the language around sets (as a mathematical concept being mapped down into a representation in a program) is quite standardized.</p>
+<p>Because of their stricter typing systems, both Rust and Swift require you to specify the types used in their mapping constructs (Rust has <code>HashMap</code> and Swift has <code>Dictionary</code>), though of course both can infer this as well in certain cases. At the most basic level, you can’t use arbitrary (hashable) types as keys in mixed fashion like you can in e.g. Python’s <code>dict</code> type, but in practice this shouldn’t matter, for two reasons:</p>
 <ol type="1">
 <li>It’s generally inadvisable to use different types for keys in the same dictionary anyway. To me, at least, that usually indicates the need to step back and think more carefully about the types and data structures I’m using.</li>
 <li>For the occasional case where it <em>is</em> appropriate, I wonder if you could declare the type as generic in either Rust or Swift. I’m putting this down as a TODO item for myself to find out!</li>
-</ol></li>
-<li><p>I really wish that Swift used the Python-style curly-brace delimited syntax (<code>{'key': 'value'}</code>) for its dictionary literal initializers. I can see, from a syntax reason, why it doesn’t: that would overload the block syntax (which Python can avoid because it’s white-space delimited). But it’s <em>really</em> convenient.</p></li>
-<li><p>Along similar lines, I can see why the Swift designers chose to make all iterables have literal initializers using braces (<code>[...]</code>); it makes parsing fairly straightforward. However, the result is that it’s pretty difficult to see at first glance what you’re dealing with. It could quite easily be an <code>Array</code>, a <code>Set</code>, or a <code>Dictionary</code>.</p></li>
-<li><p>This highlights a too-little-appreciated aspect of programming language design: <em>readability</em>. However much we programmers enjoy writing code, the reality is that we will all spend a great deal of our time—probably even a majority of it—reading it instead. Thus, while we should care about conveniences for writing code, and being overly verbose can be a pain, we should also concern ourselves with the ease of comprehending code when it is read, and the syntax and conventions a language embraces are a big part of this.</p></li>
-<li><p>The <code>Dictionary</code> type in Swift is a pretty close analog to Python’s <code>dict</code>, right down to several of the method names. the same is true of Rust’s <code>HashMap</code>. That’s not a bad thing by any stretch of the imagination.</p></li>
-</ul>
+</ol>
+<p>I really wish that Swift used the Python-style curly-brace delimited syntax (<code>{'key': 'value'}</code>) for its dictionary literal initializers. I can see, from a syntax reason, why it doesn’t: that would overload the block syntax (which Python can avoid because it’s white-space delimited). But it’s <em>really</em> convenient.</p>
+<p>Along similar lines, I can see why the Swift designers chose to make all iterables have literal initializers using braces (<code>[...]</code>); it makes parsing fairly straightforward. However, the result is that it’s pretty difficult to see at first glance what you’re dealing with. It could quite easily be an <code>Array</code>, a <code>Set</code>, or a <code>Dictionary</code>.</p>
+<p>This highlights a too-little-appreciated aspect of programming language design: <em>readability</em>. However much we programmers enjoy writing code, the reality is that we will all spend a great deal of our time—probably even a majority of it—reading it instead. Thus, while we should care about conveniences for writing code, and being overly verbose can be a pain, we should also concern ourselves with the ease of comprehending code when it is read, and the syntax and conventions a language embraces are a big part of this.</p>
+<p>The <code>Dictionary</code> type in Swift is a pretty close analog to Python’s <code>dict</code>, right down to several of the method names. the same is true of Rust’s <code>HashMap</code>. That’s not a bad thing by any stretch of the imagination.</p>
 <hr />
 <ul>
 <li><a href="http://www.chriskrycho.com/2015/rust-and-swift-v.html"><strong>Previous:</strong> The value (and challenge) of learning languages in parallel.</a></li>

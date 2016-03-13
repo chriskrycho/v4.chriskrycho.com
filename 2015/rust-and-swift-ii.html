@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (ii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -81,7 +81,7 @@
 <h1>Rust and Swift (ii)</h1>
 <h2>Basic types and the syntax around them.</h2>    </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html"><i class="fa fa-fw fa-link"></i></a>September 06, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html"><i class="fa fa-fw fa-link"></i></a>September 06, 2015 (updated March 12, 2016)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a></span><span><a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
@@ -106,6 +106,7 @@
 <p>“You write an assertion by calling the global <code>assert(_:_:)</code> function.”</p>
 </blockquote>
 <p>This continues to suggest strongly that Swift does in fact have a true global namespace, <em>not</em> an automatically-imported prelude. That can make a big difference for applications in certain spaces (e.g. systems programming), when you might have good reason to want to replace the standard library’s approach with a different one. (See Rust’s <a href="https://doc.rust-lang.org/book/no-stdlib.html"><code>#[no_std]</code></a> docs and the <a href="https://github.com/rust-lang/rfcs/blob/master/text/1184-stabilize-no_std.md">related RFC</a>.)</p>
+<p><strong>Edit:</strong> “strongly suggests” or no, I have now been <a href="https://twitter.com/jckarter/status/708765262309228544" title="Tweet by one of the Swift developers">reliably informed</a> that I was mistaken—and am happy to have been wrong here. As in Haskell, these functions are implicitly imported and belong to the <code>Swift</code> module.</p>
 <p>In Rust, <code>assert!</code> is a macro, not a function, which is an interesting but perhaps not <em>especially</em> important distinction in this particular case. (It might be, though; I’d have to see the implementation of each to see how they play out differently.)</p>
 <p>In any case, this also highlights another large difference between the two: testing is <a href="https://doc.rust-lang.org/stable/book/testing.html">front and center</a> in Rust, and barely receives a mention so far in the Swift book (and isn’t in the table of contents). Having language-level support for testing is a big deal.</p>
 <p>Language tour and first chapter of the language guide down, my sense is that Swift is a substantially better language than C or C++ (and presumably than Objective C, but since I don’t know that language I can’t speak to it) for app design, but that Rust is a better language yet. Both a far more modern than their predecessors, but they approach the same problems in surprisingly different ways, relatively similar syntax notwithstanding. So far, I like the Rust approach better.</p>
