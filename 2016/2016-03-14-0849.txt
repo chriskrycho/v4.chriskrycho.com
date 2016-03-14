@@ -1,0 +1,10 @@
+---
+Title: 2016-03-14 08:49
+Date: 2016-03-14 08:49
+Tags: javascript, software development
+Template: formats/micro
+...
+
+Apparently, [`debugger;`] is a thing. My life would have been *so* much easier if I had known about this sooner than ten minutes ago.
+
+[`debugger;`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger
