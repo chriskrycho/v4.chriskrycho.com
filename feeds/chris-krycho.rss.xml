@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 15 Mar 2016 08:05:00 -0400</lastBuildDate><item><title>2016-03-15 08:05</title><link>http://www.chriskrycho.com/2016/2016-03-15-0805.html</link><description>&lt;p&gt;I was reading some C++ yesterday, and I can’t put my finger on what it is about the language, but I just find it unbearably &lt;em&gt;ugly&lt;/em&gt;. Rust’s syntax isn’t that different, but I don’t have the same visceral reaction. I wonder why that is?&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 15 Mar 2016 17:22:00 -0400</lastBuildDate><item><title>2016-03-15 17:22</title><link>http://www.chriskrycho.com/2016/2016-03-15-1722.html</link><description>&lt;p&gt;The new &lt;a href="https://overcast.fm"&gt;Overcast&lt;/a&gt; feature which lets patrons upload custom files is &lt;em&gt;the best&lt;/em&gt; for podcasters verifying episodes before release.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 15 Mar 2016 17:22:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-03-15:2016/2016-03-15-1722.html</guid><category>podcasting</category></item><item><title>2016-03-15 08:05</title><link>http://www.chriskrycho.com/2016/2016-03-15-0805.html</link><description>&lt;p&gt;I was reading some C++ yesterday, and I can’t put my finger on what it is about the language, but I just find it unbearably &lt;em&gt;ugly&lt;/em&gt;. Rust’s syntax isn’t that different, but I don’t have the same visceral reaction. I wonder why that is?&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
