@@ -57,6 +57,6 @@ All of this, among other things, raises the very interesting question of what th
 ---
 
 
-- [**Previous:** Methods, instance and otherwise.][13]
+- [**Previous:** Indexing and subscripts, or: traits vs. keywords again.][14]
 
-[13]: http://www.chriskrycho.com/2016/rust-and-swift-xiii.html
+[14]: http://www.chriskrycho.com/2016/rust-and-swift-xiv.html
