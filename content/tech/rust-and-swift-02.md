@@ -6,6 +6,7 @@ Date: 2015-09-06 10:20
 Series:
   Title: Rust and Swift
   Part: 2
+Modified: 2016-03-12 23:15
 ...
 
 <i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]</i>
@@ -31,6 +32,10 @@ The discussion of `assert` in the Swift book re-raises the question about the gl
 > "You write an assertion by calling the global `assert(_:_:)` function."
 
 This continues to suggest strongly that Swift does in fact have a true global namespace, *not* an automatically-imported prelude. That can make a big difference for applications in certain spaces (e.g. systems programming), when you might have good reason to want to replace the standard library's approach with a different one. (See Rust's [`#[no_std]`] docs and the [related RFC].)
+
+**Edit:** "strongly suggests" or no, I have now been [reliably informed] that I was mistaken---and am happy to have been wrong here. As in Haskell, these functions are implicitly imported and belong to the `Swift` module.
+
+[reliably informed]: https://twitter.com/jckarter/status/708765262309228544 "Tweet by one of the Swift developers"
 
 In Rust, `assert!` is a macro, not a function, which is an interesting but perhaps not *especially* important distinction in this particular case. (It might be, though; I'd have to see the implementation of each to see how they play out differently.)
 
