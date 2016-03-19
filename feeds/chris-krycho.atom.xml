@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-03-15T17:22:00-04:00</updated><entry><title>2016-03-15 17:22</title><link href="http://www.chriskrycho.com/2016/2016-03-15-1722.html" rel="alternate"></link><updated>2016-03-15T17:22:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-15:2016/2016-03-15-1722.html</id><summary type="html">&lt;p&gt;The new &lt;a href="https://overcast.fm"&gt;Overcast&lt;/a&gt; feature which lets patrons upload custom files is &lt;em&gt;the best&lt;/em&gt; for podcasters verifying episodes before release.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-03-19T16:15:00-04:00</updated><entry><title>2016-03-19 16:15</title><link href="http://www.chriskrycho.com/2016/2016-03-19-1615.html" rel="alternate"></link><updated>2016-03-19T16:15:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-19:2016/2016-03-19-1615.html</id><summary type="html">&lt;p&gt;Well, paper-writing today may have pushed me to the breaking point. An app idea that’s been bubbling for months… I think I’m going to start actually building pieces of it and learning for other bits this week.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="software development"></category><category term="swift"></category><category term="rust"></category></entry><entry><title>2016-03-19 13:45</title><link href="http://www.chriskrycho.com/2016/2016-03-19-1345.html" rel="alternate"></link><updated>2016-03-19T13:45:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-19:2016/2016-03-19-1345.html</id><summary type="html">&lt;p&gt;T.F. Torrance and Karl Rahner make for wonderful, fascinating dialog partners on the Trinity. Not least because of their disagreements!&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="Trinity"></category></entry><entry><title>2016-03-18 13:50</title><link href="http://www.chriskrycho.com/2016/2016-03-18-1350.html" rel="alternate"></link><updated>2016-03-18T13:50:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-18:2016/2016-03-18-1350.html</id><summary type="html">&lt;p&gt;Tip: if you get a very specific piece of feedback and have a standard workaround, it probably means you have a product design issue to fix.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="software development"></category></entry><entry><title>2016-03-15 17:22</title><link href="http://www.chriskrycho.com/2016/2016-03-15-1722.html" rel="alternate"></link><updated>2016-03-15T17:22:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-15:2016/2016-03-15-1722.html</id><summary type="html">&lt;p&gt;The new &lt;a href="https://overcast.fm"&gt;Overcast&lt;/a&gt; feature which lets patrons upload custom files is &lt;em&gt;the best&lt;/em&gt; for podcasters verifying episodes before release.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
