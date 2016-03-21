@@ -90,7 +90,7 @@ That's it!
     anyway, but honestly, I don't love Pelican. The reasons have little to do
     with Pelican for itself, and a lot more to do with my particular and
     somewhat peculiar needs. That's a post for another day. In any case, I'm
-    likelier to use anothe generator---even one I write myself!---than to do the
+    likelier to use another generator---even one I write myself!---than to do the
     work to make Pelican do what I want.
 
 [^rustdoc]: Technically, Rust's documentation tool is `rustdoc`, which
