@@ -16,7 +16,7 @@ Modified: 2016-03-06 13:20
 ---
 
 
-Rust and Swift both have methods which are attached to given data types. However, whereas Rust takes its notion of separation of data and functions rather strictly, Swift implements them on the relevant data structures (classes, structs, or enums) directly. In other words, the implementation of a given type's methods is within his e body of the type definition itself in swift, whereas in Rust it is in an `impl` block, usually but not always immediately adjacent in the code.
+Rust and Swift both have methods which are attached to given data types. However, whereas Rust takes its notion of separation of data and functions rather strictly, Swift implements them on the relevant data structures (classes, structs, or enums) directly. In other words, the implementation of a given type's methods is within the body of the type definition itself in swift, whereas in Rust it is in an `impl` block, usually but not always immediately adjacent in the code.
 
 This goes to one of the philosophical differences between the two languages. As we've discussed often in the series, Rust reuses a smaller set of concepts---language-level primitives---to build up its functionality. So methods on a type and methods for a trait on a type are basically the same thing in Rust; they're defined in almost exactly the same way (the latter includes `for SomeTrait` in the `impl` expression). In Swift, a method is defined differently from a protocol definition, which we'll get to in the future. The point is simply this: the two take distinct approaches to the relationship between a given type definition and the implementations of any functions which may be attached to it.
 
@@ -28,7 +28,7 @@ All of Swift's [other behaviors around functions][8]---internal and external nam
 
 Swift does *have* a `self`---it is, of course, implicit. It's useful at times for disambiguation---basically, when a parameter name shadows an instance name. This will look familiar to people coming from Ruby.
 
-The strong distinction Swift makes [between reference and value types][10] comes into play on methods, as you might expect, as does its approach to mutability. Methods which change the values in value types (`struct` or `enum` instances) have to be declared `mutating func`. This kind of explicit-ness is good. As we discussed in [Part 10][10], Rust approaches this entire problem differently: types are not value or reference types; they are either mutably and passed mutably (including as `mut self` or `&mut self`), or they are not. If an instance is mutable and passed mutably, a method is free to act on instance data. And in fact both languages require that the instance in question not be immutable. In fact, everyone we said in Part 10 about both languages applies here, just with the addendum that private properties are available to methods.
+The strong distinction Swift makes [between reference and value types][10] comes into play on methods, as you might expect, as does its approach to mutability. Methods which change the values in value types (`struct` or `enum` instances) have to be declared `mutating func`. This kind of explicit-ness is good. As we discussed in [Part 10][10], Rust approaches this entire problem differently: types are not value or reference types; they are either mutable and passed mutably (including as `mut self` or `&mut self`), or they are not. If an instance is mutable and passed mutably, a method is free to act on instance data. And in fact both languages require that the instance in question not be immutable. In fact, everything we said in Part 10 about both languages applies here, just with the addendum that private properties are available to methods.
 
 The distinction, you'll note, is in where the indication that there's a mutation happens. Swift has a special keyword combination (`mutating func`) for this. With Rust, it's the same as every other function which mutates an argument. This makes Rust slightly more verbose, but it also means that in cases like this, the existing language tooling is perfectly capable of handling what has to be a special syntactical case in Swift.
 
@@ -43,7 +43,7 @@ struct Point {
 }
 ```
 
-In Rust, you'd need to explicit pass a mutable reference and dereference it. (If you tried to pass `mut self` instead of `&mut self`, it would fail unless you returned the newly created object and assigned it outside.) Note that while the full implementation here is a couple lines longer, because of the data-vs.-method separation discussed earlier, the implementation of the method itself is roughly the same length.
+In Rust, you'd need to explicitly pass a mutable reference and dereference it. (If you tried to pass `mut self` instead of `&mut self`, it would fail unless you returned the newly created object and assigned it outside.) Note that while the full implementation here is a couple lines longer, because of the data-vs.-method separation discussed earlier, the implementation of the method itself is roughly the same length.
 
 ```rust
 pub struct Point {
@@ -59,9 +59,9 @@ impl Point {
 ```
 
 Note that though you *can* do this, I'm not sure it's particularly Rustic.
-My own instinct would be to get a *new* `Point` rather than mutating an existing one, in either language, and let the other be cleaned up "behind the scenes" as it were (with automatic memory management in Swift or the compiler's automatic destruction of the type in Rust)---purer functions being my preference these days.
+My own instinct would be to get a *new* `Point` rather than mutate an existing one, in either language, and let the other be cleaned up "behind the scenes" as it were (with automatic memory management in Swift or the compiler's automatic destruction of the type in Rust)---purer functions being my preference these days.
 
-You can do this with `enum` types as well, which the Swift book illustrates with a three-state switch which updates the value type passed to a new value when calling pits `next()` method. You can do the same in Rust, with the same reference/dereference approach as above.
+You can do this with `enum` types as well, which the Swift book illustrates with a three-state switch which updates the value type passed to a new value when calling its `next()` method. You can do the same in Rust, with the same reference/dereference approach as above.
 
 Here's a three-state switch in Swift:
 
