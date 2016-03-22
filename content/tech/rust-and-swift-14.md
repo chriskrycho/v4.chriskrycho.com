@@ -24,11 +24,11 @@ Since the trait is defined generically, you can implement whatever kinds of acce
 
 It is perhaps telling that in Rust you just find these traits in the general `std::ops` module, where all the core language operations and associated operators are defined. Rust doesn't do "operator overloading" so much as it simply provides operators as one more class of trait  potentially applicable to your type. (The family resemblance to Haskell's type classes and similar in other languages is obvious.)
 
-In Swift, you define indexing behavior with the `subscript` keyword. Subscripts act very salary to Swift's [computed properties][12]. They can be made read- or write-only by including or excluding `get` and `set` function definitions, just like computed properties.
+In Swift, you define indexing behavior with the `subscript` keyword. Subscripts act very similarly to Swift's [computed properties][12]. They can be made read- or write-only by including or excluding `get` and `set` function definitions, just like computed properties.
 
 The behavior is in fact so closely aligned with the computed property syntax and behavior that I initially wondered if it wasn't just a special case. It is not (though I'm sure much of the parsing machinery can be shared). As the designation of `subscript` as a keyword strongly implies, and unlike in Rust, this is a separate language construct, not building on existing language machinery.
 
-Swift , like Rust, allows you to define arbitrary accessors. However, since the behavior relies on the `subscript` construct rather than generics and protocols (Swift's equivalent to Rust's traits), you define different kinds of accessors via multiple `subscript` blocks. (Presumably these could take generic arguments, but I haven't tested that to be sure.)
+Swift, like Rust, allows you to define arbitrary accessors. However, since the behavior relies on the `subscript` construct rather than generics and protocols (Swift's equivalent to Rust's traits), you define different kinds of accessors via multiple `subscript` blocks. (Presumably these could take generic arguments, but I haven't tested that to be sure.)
 
 Both languages proceed to use these as ways of accessing types as makes sense---e.g. for not only arrays or vectors, but also dictionaries in Swift and `HashMap` types in Rust.
 
