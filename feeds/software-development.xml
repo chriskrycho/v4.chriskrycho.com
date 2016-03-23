@@ -86,7 +86,7 @@
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id="fn1"&gt;&lt;p&gt;And, incidentally, &lt;a href="http://www.sap-py.com"&gt;Sap.py&lt;/a&gt; and my &lt;a href="http://www.chriskrycho.com/sermons.xml"&gt;sermons&lt;/a&gt; feed.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn2"&gt;&lt;p&gt;If I stick with Pelican long-term, I might look into adding it anyway, but honestly, I don’t love Pelican. The reasons have little to do with Pelican for itself, and a lot more to do with my particular and somewhat peculiar needs. That’s a post for another day. In any case, I’m likelier to use anothe generator—even one I write myself!—than to do the work to make Pelican do what I want.&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;If I stick with Pelican long-term, I might look into adding it anyway, but honestly, I don’t love Pelican. The reasons have little to do with Pelican for itself, and a lot more to do with my particular and somewhat peculiar needs. That’s a post for another day. In any case, I’m likelier to use another generator—even one I write myself!—than to do the work to make Pelican do what I want.&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id="fn3"&gt;&lt;p&gt;Technically, Rust’s documentation tool is &lt;code&gt;rustdoc&lt;/code&gt;, which &lt;code&gt;cargo doc&lt;/code&gt; wraps around. I never actually use &lt;code&gt;rustdoc&lt;/code&gt; directly, though.&lt;a href="#fnref3"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
