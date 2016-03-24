@@ -25,7 +25,7 @@ Modified: 2015-12-22 13:30
 
     Because there's such a long list of languages not directly descended from C which do that, right? 😉
 
--   Rust differs not only from Swift but from every other modern language I have used in not having a constructor *syntax* for its instantiations. Whereas C++ has `new NameOfType()` and Python has `NameOfType()` and Swift has `NameOfType()`, "constructors" for Rust `struct`s are just functions which return an instance constructed using literal syntax, by convention `NameOfType::new()`.
+-   Rust differs not only from Swift but from every other modern language I have used in not having a constructor *syntax* for its instantiations. Whereas C++ has `new NameOfType()` and Python and Swift both have `NameOfType()`, "constructors" for Rust `struct`s are just functions which return an instance constructed using literal syntax, by convention `NameOfType::new()`.
 
 -   Let's make a `struct` defining a location in a plane, you might do this in Swift (leaving aside initializer values; I'll come back to those later). These definitions look *very* similar. Swift:
 

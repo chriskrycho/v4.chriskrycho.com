@@ -33,7 +33,7 @@ Series:
 
   - That's doubly so given that Swift's rules for default-valued parameters map exactly to Python's: they need to go at the end, after any parameters which don't have default values.
 
-  - Swift's variadic parameters are nice---though of course limited, since if you have more than one, the compiler may not know how to resolve which destination parameter a given argument belongs with. (I imagine the compiler *could* be extended to be able to handle multiple variadic parameters as long as hey we're all of different types, but that's probably not worth the work or the potential confusion it would introduce.) In any case, it's a small nicety that I do wish Rust had.
+  - Swift's variadic parameters are nice---though of course limited, since if you have more than one, the compiler may not know how to resolve which destination parameter a given argument belongs with. (I imagine the compiler *could* be extended to be able to handle multiple variadic parameters as long as they were all of different types, but that's probably not worth the work or the potential confusion it would introduce.) In any case, it's a small nicety that I do wish Rust had.
 
   - Swift's variable parameters are... interesting. I can see the utility, sort of, but (probably from years of habit with C and Python and pass-by-reference types), it's just not a pattern that makes a lot of sense to me right now. No doubt I'll get used to them in idiomatic Swift, but while Rust doesn't have a similar feature, I suspect I won't miss it.
 
