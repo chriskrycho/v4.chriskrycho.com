@@ -18,16 +18,16 @@
     <meta name="twitter:title" content="Rust and Swift (viii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://app.net/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://app.net/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
@@ -100,7 +100,7 @@
 <li><p>We’ll see how I feel once I’ve been writing both for a while, but initially I <em>strongly</em> prefer Rust’s more-obvious (if also somewhat longer) <code>-&gt; Option&lt;i32&gt;</code> to return an optional integer to Swift’s <code>-&gt; Int?</code>. I am quite confident that I’ll miss that trailing <code>?</code> somewhere along the way.</p></li>
 <li><p>I’m sure there’s a reason for Swift’s internal and external parameter names and the rules about using <code>_</code> to elide the need to use keyword arguments (but automatically eliding the first one) and so on… but I really can’t see the utility, overall. It seems like it would be better just to have Python-like args and keyword args.</p></li>
 <li><p>That’s doubly so given that Swift’s rules for default-valued parameters map exactly to Python’s: they need to go at the end, after any parameters which don’t have default values.</p></li>
-<li><p>Swift’s variadic parameters are nice—though of course limited, since if you have more than one, the compiler may not know how to resolve which destination parameter a given argument belongs with. (I imagine the compiler <em>could</em> be extended to be able to handle multiple variadic parameters as long as hey we’re all of different types, but that’s probably not worth the work or the potential confusion it would introduce.) In any case, it’s a small nicety that I do wish Rust had.</p></li>
+<li><p>Swift’s variadic parameters are nice—though of course limited, since if you have more than one, the compiler may not know how to resolve which destination parameter a given argument belongs with. (I imagine the compiler <em>could</em> be extended to be able to handle multiple variadic parameters as long as they were all of different types, but that’s probably not worth the work or the potential confusion it would introduce.) In any case, it’s a small nicety that I do wish Rust had.</p></li>
 <li><p>Swift’s variable parameters are… interesting. I can see the utility, sort of, but (probably from years of habit with C and Python and pass-by-reference types), it’s just not a pattern that makes a lot of sense to me right now. No doubt I’ll get used to them in idiomatic Swift, but while Rust doesn’t have a similar feature, I suspect I won’t miss it.</p></li>
 <li><p>In/out parameters—that is, mutable pass-by-reference types—are available in both languages. The syntax is <em>very</em> different here, as are the semantics.</p>
 <p>Swift has the <code>inout</code> keyword, supplied before a parameter definition:</p>
