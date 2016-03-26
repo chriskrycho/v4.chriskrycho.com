@@ -8,6 +8,7 @@ Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
+Category: Theology
 ...
 
 The Holy Spirit is the member of the Triune Godhead who actively brings about
