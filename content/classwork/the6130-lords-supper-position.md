@@ -8,6 +8,7 @@ Class: Christian Theology III
 Professor: Dr. Keith Whitfield
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
+Category: Theology
 ---
 
 The Lord's Table---that microcosm of the great Wedding Supper of the Lamb, the

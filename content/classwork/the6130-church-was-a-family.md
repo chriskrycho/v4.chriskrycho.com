@@ -11,6 +11,7 @@ Template: formats/class
 Class: Christian Theology III
 Professor: Dr. Keith Whitfield
 School: Southeastern Baptist Theological Seminary
+Category: Theology
 ...
 
 In *When the Church Was a Family*, Joseph D. Hellerman argues that the health of
