@@ -12,6 +12,7 @@ Template: formats/class
 Class: Christian Theology III
 Professor: Dr. Keith Whitfield
 School: Southeastern Baptist Theological Seminary
+Category: Theology
 ...
 
 Dan C. Barber and Robert A. Peterson’s *Life Everlasting* is an introductory
