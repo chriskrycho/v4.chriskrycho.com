@@ -3,7 +3,28 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</summary></entry><entry><title>2016-03-21 14:45</title><link href="http://www.chriskrycho.com/2016/2016-03-21-1445.html" rel="alternate"></link><updated>2016-03-21T14:45:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-21:2016/2016-03-21-1445.html</id><summary type="html">&lt;p&gt;Throwing this out there: don’t organize your apps by ‘kind of item’ (view, controller, etc.). Organize by &lt;em&gt;concern&lt;/em&gt;. A component’s template, controller, etc. should be right next to each other.&lt;/p&gt;
+</summary></entry><entry><title>Ulysses, Byword, and “Just Right”</title><link href="http://www.chriskrycho.com/2016/ulysses-byword-and-just-right.html" rel="alternate"></link><updated>2016-03-26T00:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-26:2016/ulysses-byword-and-just-right.html</id><summary type="html">&lt;p&gt;I think the main thing to say about this is that it’s gorgeous and a really great editor, and that there is nonetheless something about it which makes it feel not quite as &lt;em&gt;fluid&lt;/em&gt; as Byword always has.&lt;/p&gt;
+&lt;p&gt;Neither of them quite &lt;em&gt;nails&lt;/em&gt; it for my purposes, though:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Neither is quite there for text that includes a lot of code samples. (Basically: neither supports the GitHub variations on Markdown, which are incredibly important for &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;a lot of my writing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Neither has the ability to do things like autocompletion of citations from something like BibLatex. (No standalone app does, to my knowledge.)&lt;/li&gt;
+&lt;li&gt;Ulysses’ most powerful features only work in its iCloud bucket. And they’re not standard: rather than embracing &lt;a href="http://criticmarkup.com"&gt;CriticMarkup&lt;/a&gt; for comments, they have their own. The same is true of e.g. their code blocks.&lt;/li&gt;
+&lt;li&gt;Ulysses &lt;em&gt;converts&lt;/em&gt; any other Markdown documents to its own custom variant when you open them. Had those documents formatted a way you liked (e.g. with specific kinds of link or footnote formatting)? Don’t expect them to still be that way.&lt;/li&gt;
+&lt;li&gt;Byword really does one thing well: opening and writing single documents. It does this extremely well, but it also has none of the library management that is useful for larger projects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both of these apps are really wonderful in many ways, and I think it’s fair to say that they’re &lt;em&gt;perfect&lt;/em&gt; for many writers. &lt;a href="http://jaimiekrycho.com/"&gt;My wife&lt;/a&gt;, for example, does nearly all her fiction writing in Ulysses; it works wonderfully for her. But for the kinds of writing I do—usually technical in one way or another—it is limited in its utility. That’s not really a critique of the apps. It’s more the recognition that I have some pretty unusual requirements of my writing apps.&lt;/p&gt;
+&lt;p&gt;That said, I don’t think I’m the only person out there who has these particular needs. I am, for example, hardly the only person working with citations and academic text, or writing Markup with lots of code samples in it. And as much as you can bend general-purpose text editors like &lt;a href="https://atom.io"&gt;Atom&lt;/a&gt; to your will,&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; it’s not the same as a dedicated writing app that focuses—in the ways that Ulysses and Byword both do—on just being a great tool for &lt;em&gt;writing&lt;/em&gt;. Writing and writing &lt;em&gt;code&lt;/em&gt; are not the same, after all. A tool that’s really well-optimized for the latter isn’t necessarily well-optimized for the former.&lt;/p&gt;
+&lt;p&gt;Keep your ears open. You might just be hearing more about this in the future.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;Trust me, I have: I have Zen mode installed, a custom Byword-like theme I use when I just want to write, and even a citation autocompletion package integrated with it. It’s not bad. But I still don’t love it as a first-choice &lt;em&gt;writing&lt;/em&gt; tool.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</summary><category term="design"></category><category term="software development"></category><category term="writing"></category></entry><entry><title>2016-03-21 14:45</title><link href="http://www.chriskrycho.com/2016/2016-03-21-1445.html" rel="alternate"></link><updated>2016-03-21T14:45:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-03-21:2016/2016-03-21-1445.html</id><summary type="html">&lt;p&gt;Throwing this out there: don’t organize your apps by ‘kind of item’ (view, controller, etc.). Organize by &lt;em&gt;concern&lt;/em&gt;. A component’s template, controller, etc. should be right next to each other.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
