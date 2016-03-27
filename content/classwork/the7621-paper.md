@@ -27,6 +27,8 @@ Tags: SEBTS, M. Div., papers,
 Class: The Doctrine of the Trinity
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
+bibliography: /Users/chris/Dropbox/writing/library.bib
+csl: /Users/chris/Dropbox/writing/chicago.csl
 ...
 
 
@@ -96,6 +98,9 @@ Conclusion
 ----------
 
 If the persons of the Trinity are not Father, Son, and Spirit in and of themselves, then Christians know nothing of the inner life of the God we profess to worship. The notion of Scripture as divine self-revelation is a sham. The actions of God in history do not reveal God himself. In that case, Jesus' claim to reveal the Father would be more than suspect; it would be false. Moreover, it must have been the Son, the Logos, who was the climactic revelation of God (Heb. 1:3), and the Spirit who is the indwelling presence of Father and Son in God's people. "The divine Word is the divine speaking. The divine gift is the divine giving."[@barth:dogmatics:I.1 321]
+
+
+-----
 
 
 Bibliography
