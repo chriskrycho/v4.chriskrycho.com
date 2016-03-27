@@ -37,13 +37,13 @@ Introduction
 
 Rahner's Rule famously states that "the 'economic' Trinity is the 'immanent' Trinity, and the 'immanent' Trinity is the 'economic' Trinity."[@rahner:trinity:1997 22] The dictum has been much debated and stands as a major point of consideration---not to say contention!---in modern Trinitarian doctrinal discussion. This paper will establish that Rahner's rule, rightly understood and articulated,[^on-rahner] is correct and essential for the Christian faith, and leads inexorably to the conclusion that the names "Father," "Son," and "Spirit" are titles of God in being, and not only in activity. The triune *actions* of God are the result of his triune *being*; therefore, God's work in salvation history is truly self-revelatory. Thus, Christians may claim to have right and proper, though not exhaustive, knowledge of the divine nature through his mighty works in history. The one true, Triune God has acted in history as the Father of Jesus Christ, the Incarnate Logos, and the Spirit of the Father and the Son---and in this he has not presented a charade, but the Godhead as it truly is. Thus, Christians are right to understand God as being *in essence and being*, and not merely in *action*---that is, _in se_---Father, Son, and Spirit.
 
-[^on-rahner]: Which is not necesarily to say "as Rahner himself understood or articulated it" or "as it is interpretedy by his most famous interpreters".
+[^on-rahner]: Which is not necesarily to say "as Rahner himself understood or articulated it" or "as it is interpreted by his most famous interpreters".
 
 A definition of the terms may be helpful: the "economic" Trinity is the Trinity at work in history (and especially salvation history). The "immanent Trinity" is God present to himself (_in se_); it might well be termed the "ontological" Trinity or "eternal" Trinity.[^giles-summary-terms] Thus, Rahner's claim entails at least 3 sub-claims: God is Trinity in being; God's Triune nature is revealed *only* through (salvation) history; and God's Triune nature is *truly* revealed through salvation history.[^giles-summary-responses] Responses to Rahner's dictum since its 1970 publication in _The Trinity_ have taken it in one of two major directions: "radicalizing" and "restricting." Authors following the radicalizing course reduce the immanent Trinity to the economic trinity. As a consequence, they often tie human knowledge of (and sometimes the actual being of) God to his development along with the cosmos, or to human experience of God in the Incarnation specifically. In constrast, the "restricting" interpreters affirm Rahner's rule but note its limits. In particular, they tend to emphasize that the being of the Trinity is independent of salvation history, though rightly revealed in it.[@sanders:immanent-trinity:2005 83--84] This paper takes the later stance.
 
-[^giles-summary-terms]: For a helpful summary of the history of the development of the terms, see @giles:jesus-father:2006, 246--249.
+[^giles-summary-terms]: For a helpful summary of the history of the development of the terms, see @giles:jesus-father:2006 246--249.
 
-[^giles-summary-responses]: For a similar summary of this development, see @giles:jesus-father:2006, 250--265.
+[^giles-summary-responses]: For a similar summary of this development, see @giles:jesus-father:2006 250--265.
 
 
 Analysis
