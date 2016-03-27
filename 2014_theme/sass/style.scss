@@ -110,7 +110,7 @@ abbr {
 
 // Paragraph styles
 p {
-    text-indent: $fs3;
+    margin-top: $fsp;
 }
 
 .citation { text-align: right; }
@@ -543,8 +543,6 @@ article {
 
         a { display: inline; }
     }
-
-    &.poetry p { text-indent: 0; }
 
     &.micro, &.links { font-family: $sans; }
 
