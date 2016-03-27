@@ -248,6 +248,7 @@ sup {
     line-height: 0; // Fixes vertical alignment issues
     vertical-align: 0.558em;
     font-size: $fs_smaller;
+    font-feature-settings: "onum" 0;
 }
 
 em, i, cite {
