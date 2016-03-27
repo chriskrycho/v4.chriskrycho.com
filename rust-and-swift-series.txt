@@ -1,5 +1,6 @@
 ---
 Title: Rust and Swift
+Slug: rust-and-swift-series
 Subtitle: >
   Comparing two exciting, new, apparently (but not always <em>actually</em>) similar programming languages.
 Summary: >
