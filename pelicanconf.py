@@ -30,8 +30,8 @@ CATEGORY_FEED_RSS = None
 TRANSLATION_FEED_RSS = None
 
 # Social networking/sharing settings
-IDENTITY = {'App.net': 'https://app.net/chriskrycho',
-            'Bitbucket': 'https://bitbucket.org/chriskrycho',
+IDENTITY = {'Bitbucket': 'https://bitbucket.org/chriskrycho',
+            'Email': 'mailto:chris at chriskrycho dot com',
             'Facebook': 'https://www.facebook.com/chriskrycho',
             'GitHub': 'https://github.com/chriskrycho',
             'Instagram': 'http://instagram.com/chriskrycho',
@@ -116,4 +116,4 @@ PANDOC_ARGS = ['--smart',  # use smart typography
                '--no-highlight',  # use highlight.js instead
                '-t', 'html5',  # use HTML and its corresponding attributes
                '--section-divs',  # wrap heading-blocks with <section>
-               '--filter', 'pandoc-citeproc']
+               '--filter', 'pandoc-citeproc']  # pre-filter for @citations
