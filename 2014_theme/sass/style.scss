@@ -516,15 +516,15 @@ article {
                 color: lighten($light_gray, 39.1%);
             }
 
-            &:first-child {
-                padding-top: 0.244em;
-
-                &:before { content: none; }
-            }
-
             + h2 {
                 padding-top: 0;
             }
+        }
+
+        .section:first-child h1 {
+            padding-top: 0.244em;
+
+            &:before { content: none; }
         }
 
         hr + h1 { padding-top: $fs_very_small_abs; }
