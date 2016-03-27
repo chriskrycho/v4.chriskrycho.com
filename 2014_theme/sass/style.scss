@@ -542,6 +542,10 @@ article {
         p { @include hyphens(auto); }
 
         a { display: inline; }
+
+        li {
+            margin-bottom: $fsp;
+        }
     }
 
     &.micro, &.links { font-family: $sans; }
