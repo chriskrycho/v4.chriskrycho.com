@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (xvi)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -89,7 +89,7 @@
         <div class="content">
 
 <p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. <a href="http://www.chriskrycho.com/rust-and-swift.html">(See all parts in the series.)</a></i></p>
-<p><i class="editorial">Thanks to ubsan, aatch, and niconii on the [#rust-lang IRC] for a fascinating discussion of the current status of Rust’s initialization analysis, as well as some very interesting comments on what might be possible to do in the future. Everything actually interesting about Rust in this post comes from the conversation I had with them on the evening of March 13.</i></p>
+<p><i class="editorial">Thanks to ubsan, aatch, and niconii on the <a href="">#rust-lang IRC</a> for a fascinating discussion of the current status of Rust’s initialization analysis, as well as some very interesting comments on what might be possible to do in the future. Everything actually interesting about Rust in this post comes from the conversation I had with them on the evening of March 13.</i></p>
 <hr />
 <p>The rules various languages have around construction and destruction of objects are <em>extremely</em> important for programmer safety and ergonomics. I think it’s fair to say that both Swift and rust are actively trying to avoid some of the mistakes made in e.g. C++ which poorly affect both its safety and its ease of use for developers, albeit it in some superficially different ways.</p>
 <p>The basic aim both Rust and Swift have in this area seems to be the same: avoid <em>partially</em> initialized objects.</p>
@@ -111,7 +111,7 @@ fn main() {
     // 3. treating uninitialized variables the same as moved-from variables.
     // println!(&quot;{:?}&quot;, foo);
 }</code></pre>
-<p>As a result, especially with more complex data types, providing standard constructor-style methods like <code>new</code> or <code>default</code> is conventional and helpful.</p>
+<p>As a result, especially with more complex data types, providing standard constructor-style methods like <code>new</code> or <code>default</code> is conventional and helpful. (If the type has non-public members, it’s also strictly necessary.)</p>
 <p>Swift has a number of options for initializers, which correspond to things you variously can odd in Rust, but in a very different way.</p>
 <p>First, Swift allows you to overload the <code>init</code> method on a type, so that you can have different constructors for different starting conditions. (This is, to my recollection, the first time any kind of overloading has come up so far in the Swift book—but that could just be my memory failing me. Certainly I haven’t referenced it in any previous discussion, though.)</p>
 <p>The example offered by the Swift book is illuminating for the different approaches the languages take, so we’ll run with it. Here’s a class defining a Celsius type in Swift:</p>
