@@ -13,8 +13,7 @@ Tags: SEBTS, M. Div., papers,
 Class: The Doctrine of the Trinity
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
-bibliography: content/bib/the7621.yaml  # path from content root
-bib: bib/the7621.yaml  # path on site
+bibliography: bib/the7621.yaml  # path from content root
 csl: /Users/chris/Dropbox/writing/chicago.csl
 ...
 
