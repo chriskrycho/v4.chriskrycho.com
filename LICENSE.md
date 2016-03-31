@@ -1,12 +1,51 @@
 Copyright (c) 2014 Chris Krycho
 
+
+Software
+========
+
+Human-readable Summary
+----------------------
+
+As with the content portion of the site, you can remix this material as you
+like. Just give me credit.
+
+That goes for all the layout and styling. **Note**, however, that it does *not*
+include the fonts, which I license for this site only. If you want to use the
+same typefaces, you are of course welcome to do so; but you must acquire your
+own license to the typefaces, rather than using my license.
+
+
+Legalese
+--------
+
+The MIT License (MIT)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
 Content
 =======
 
 Human-readable Summary
 ----------------------
 
-All content in the `content` and `output` directories is licensed under a
+All *content* in the `content` and `output` directories is licensed under a
 [Creative Commons Attribution 4.0 International][CC BY 4.0] license.
 
 The short version of that license is as follows: remix or reuse my content
@@ -24,7 +63,7 @@ The slightly longer version (quoting from the Creative Commons website):
 > terms.
 >
 > ### Under the following terms:
-> 
+>
 > - **Attribution** — You must give appropriate credit, provide a link to the
 >   license, and indicate if changes were made. You may do so in any reasonable
 >   manner, but not in any way that suggests the licensor endorses you or your
@@ -317,35 +356,3 @@ Creative Commons may be contacted at [creativecommons.org][20].
 [18]: http://creativecommons.org#s8
 [19]: http://creativecommons.org/policies
 [20]: http://creativecommons.org/
-  
-
-Software
-========
-
-Human-readable Summary
-----------------------
-
-As with the content portion of the site, you can remix this material as you
-like. Just give me credit.
-
-Legalese
---------
-
-The MIT License (MIT)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
