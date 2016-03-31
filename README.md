@@ -44,7 +44,6 @@ time.
 [the `gh-pages` branch]: https://github.com/chriskrycho/chriskrycho.com/tree/gh-pages
 [GitHub Pages]: https://pages.github.com
 
-If you have any questions, feel free to ping me on [App.net] or [Twitter].
+If you have any questions, feel free to ping me on [Twitter].
 
-[App.net]: https://alpha.app.net/chriskrych
 [Twitter]: https://www.twitter.com/chriskrycho
