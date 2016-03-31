@@ -42,12 +42,6 @@ IDENTITY = {'Bitbucket': 'https://bitbucket.org/chriskrycho',
             'Twitter': 'https://twitter.com/chriskrycho',
             'Vimeo': 'https://vimeo.com/chriskrycho'}
 
-BROADCAST = {'all': 'https://broadcast.app.net/46224/chriskrychocom-all/',
-             'art': 'https://broadcast.app.net/46225/chriskrychocom-art/',
-             'blog': 'https://broadcast.app.net/46226/chriskrychocom-blog/',
-             'tech': 'https://broadcast.app.net/46227/chriskrychocom-tech/',
-             'theology': 'https://broadcast.app.net/46228/chriskrychocom-theology/'}
-
 DEFAULT_SHARE_IMAGE = ''
 
 # Category settings
