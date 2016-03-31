@@ -115,14 +115,6 @@ p {
 
 .citation { text-align: right; }
 
-h1, h2, h3, h4, h5, h6, ul, ol, blockquote, pre, hr, figure, iframe {
-    + p { text-indent: 0; }
-}
-
-p:first-child, p:first-of-type {
-    text-indent: 0;
-}
-
 p + ul,
 p + ol {
     margin-top: 1em;
@@ -478,7 +470,6 @@ article {
 
     @mixin pre-content-p {
         padding-bottom: $fsp;
-        text-indent: 0;
         line-height: $line_height_small;
     }
 
@@ -522,6 +513,8 @@ article {
             }
         }
 
+        p:first-child { margin-top: 0; }
+
         .section:first-child h1 {
             padding-top: 0.244em;
 
@@ -542,10 +535,6 @@ article {
         p { @include hyphens(auto); }
 
         a { display: inline; }
-
-        li {
-            margin-bottom: $fsp;
-        }
     }
 
     &.micro, &.links { font-family: $sans; }
@@ -661,6 +650,8 @@ article {
             border: 1px solid lighten($light_gray, 39.1%);
             white-space: pre;
         }
+
+        &+ p { margin-top: 0; }
     }
 
     figure {
