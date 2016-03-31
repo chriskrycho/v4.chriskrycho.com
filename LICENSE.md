@@ -1,11 +1,11 @@
-Copyright (c) 2014 Chris Krycho
+# License
+
+Copyright 2014–2016 Chris Krycho
 
 
-Software
-========
+## Software
 
-Human-readable Summary
-----------------------
+### Human-readable Summary
 
 As with the content portion of the site, you can remix this material as you
 like. Just give me credit.
@@ -16,8 +16,7 @@ same typefaces, you are of course welcome to do so; but you must acquire your
 own license to the typefaces, rather than using my license.
 
 
-Legalese
---------
+### Legalese
 
 The MIT License (MIT)
 
@@ -39,11 +38,9 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-Content
-=======
+## Content
 
-Human-readable Summary
-----------------------
+### Human-readable Summary
 
 All *content* in the `content` and `output` directories is licensed under a
 [Creative Commons Attribution 4.0 International][CC BY 4.0] license.
@@ -84,12 +81,9 @@ The slightly longer version (quoting from the Creative Commons website):
 
 [CC BY 4.0]: http://creativecommons.org/licenses/by/4.0/deed.en_US
 
-Legalese
---------
+### Legalese
 
-# Creative Commons — Attribution 4.0 International — CC BY 4.0
-
-### Creative Commons Attribution 4.0 International Public License
+#### Creative Commons Attribution 4.0 International Public License — CC BY 4.0
 
 By exercising the Licensed Rights (defined below), You accept and agree to be
 bound by the terms and conditions of this Creative Commons Attribution 4.0
