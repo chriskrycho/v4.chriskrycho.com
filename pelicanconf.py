@@ -85,7 +85,8 @@ AUTHORS_SAVE_AS = ''
 DEFAULT_PAGINATION = False
 
 # Path configuration
-STATIC_PATHS = ['images',
+STATIC_PATHS = ['bib',
+                'images',
                 'downloads',
                 'extra',
                 'talks/lib',
@@ -102,13 +103,8 @@ EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
                        'extra/favicon.ico': {'path': 'favicon.ico'},
                        'extra/sermons.xml': {'path': 'sermons.xml'}}
 
-READERS = {'html': None}
-
-import os
-from pathlib import Path
-writing_path = Path(os.environ['HOME']) / 'Dropbox' / 'writing'
-bibliography_path = (writing_path / 'library.bib').resolve()
-csl_path = (writing_path / 'chicago.csl').resolve()
+READERS = {'html': None,
+           'yaml': None}
 
 PLUGIN_PATHS = ['../../pelican-plugins']
 PLUGINS = ['pandoc_reader']
