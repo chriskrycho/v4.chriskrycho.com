@@ -4,6 +4,22 @@
   (factory());
 }(this, function () { 'use strict';
 
+  function quotes(content) {
+    if (!content) {
+      console.error('spacewell::quotes(): no content supplied.');
+      return;
+    }
+
+    var dquo_patt = /(“|&ldquo;|&#8220;)/g;
+    var dquo_repl = "<dquo-push></dquo-push><dquo-pull> $1</dquo-pull>";
+    var squo_patt = /(‘|&lsquo;|&#8216;)/g;
+    var squo_repl = "<squo-push></squo-push><squo-pull> $1</squo-pull>";
+
+    var dquo_pulled = content.replace(dquo_patt, dquo_repl);
+    var squo_pulled = dquo_pulled.replace(squo_patt, squo_repl);
+    return squo_pulled;
+  }
+
   // Wrap em dashes and their immediate neighbors in non-breaking span and
   // hair spaces.
   function emDashes(content) {
@@ -81,10 +97,10 @@
     // TODO: expand to support broader functionality, e.g. the kind of space to
     //       use in wrapping a given element and exceptions (e.g. to turn off the
     //       rule for given element types).
-    var defaultOpts = { emDashes: true, enDashes: true, initials: true };
+    var defaultOpts = { emDashes: true, enDashes: true, initials: true, quotes: true };
     var config = options || defaultOpts;
 
-    var functions = { emDashes: emDashes, enDashes: enDashes, initials: initials };
+    var functions = { emDashes: emDashes, enDashes: enDashes, initials: initials, quotes: quotes };
 
     var content = container.innerHTML;
     for (var opt in config) {
@@ -99,7 +115,7 @@
   // import smcp from 'scmp';
 
   var articles = document.getElementsByTagName('article');
-  var options = { 'emDashes': true, 'enDashes': true };
+  var options = { emDashes: true, enDashes: true, quotes: true };
   for (var a in articles) {
     if (articles.hasOwnProperty(a)) {
       spacewell(articles[a], options);
