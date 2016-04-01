@@ -1,3 +1,19 @@
+function quotes(content) {
+  if (!content) {
+    console.error('spacewell::quotes(): no content supplied.');
+    return;
+  }
+
+  const dquo_patt = /(“|&ldquo;|&#8220;)/g;
+  const dquo_repl = "<dquo-push></dquo-push><dquo-pull> $1</dquo-pull>";
+  const squo_patt = /(‘|&lsquo;|&#8216;)/g;
+  const squo_repl = "<squo-push></squo-push><squo-pull> $1</squo-pull>";
+
+  const dquo_pulled = content.replace(dquo_patt, dquo_repl);
+  const squo_pulled = dquo_pulled.replace(squo_patt, squo_repl);
+  return squo_pulled;
+}
+
 // Wrap em dashes and their immediate neighbors in non-breaking span and
 // hair spaces.
 function emDashes(content) {
@@ -76,10 +92,10 @@ function spacewell(container, options) {
   // TODO: expand to support broader functionality, e.g. the kind of space to
   //       use in wrapping a given element and exceptions (e.g. to turn off the
   //       rule for given element types).
-  const defaultOpts = { emDashes: true, enDashes: true, initials: true };
+  const defaultOpts = { emDashes: true, enDashes: true, initials: true, quotes: true };
   const config = options || defaultOpts;
 
-  const functions = { emDashes, enDashes, initials };
+  const functions = { emDashes, enDashes, initials, quotes };
 
   var content = container.innerHTML;
   for (const opt in config) {

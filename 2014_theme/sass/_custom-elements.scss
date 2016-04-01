@@ -1,5 +1,9 @@
 // Style definitions for custom elements.
 
-dash-wrap {
-    white-space: nowrap;
-}
+dash-wrap { white-space: nowrap; }
+
+dquo-push { margin-left: 0.5em; }
+dquo-pull { margin-left: -0.5em; }
+
+squo-push { margin-left: 0.25em; }
+squo-pull { margin-left: -0.25em; }
