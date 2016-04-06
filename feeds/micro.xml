@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-04-06T11:35:00-04:00</updated><entry><title>2016-04-06 11:35</title><link href="http://www.chriskrycho.com/2016/2016-04-06-1135.html" rel="alternate"></link><updated>2016-04-06T11:35:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-04-06:2016/2016-04-06-1135.html</id><summary type="html">&lt;p&gt;Ellie just spotted a bald eagle out our back window. How cool is that?&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-04-06T12:28:00-04:00</updated><entry><title>2016-04-06 12:28</title><link href="http://www.chriskrycho.com/2016/2016-04-06-1228.html" rel="alternate"></link><updated>2016-04-06T12:28:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-04-06:2016/2016-04-06-1228.html</id><summary type="html">&lt;p&gt;&lt;em&gt;Why isn’t this updating?&lt;/em&gt; :looks around for five minutes: Oh. It’s because I’m just serving an old version, and don’t have it rebuilding as I make changes.&lt;/p&gt;
+&lt;p&gt;Yeah…&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="javascript"></category><category term="software development"></category></entry><entry><title>2016-04-06 11:35</title><link href="http://www.chriskrycho.com/2016/2016-04-06-1135.html" rel="alternate"></link><updated>2016-04-06T11:35:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-04-06:2016/2016-04-06-1135.html</id><summary type="html">&lt;p&gt;Ellie just spotted a bald eagle out our back window. How cool is that?&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;

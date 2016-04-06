@@ -1,0 +1,10 @@
+---
+Title: 2016-04-06 12:28
+Date: 2016-04-06 12:28
+Tags: javascript, software development
+Template: formats/micro
+...
+
+_Why isn't this updating?_ :looks around for five minutes: Oh. It's because I'm just serving an old version, and don't have it rebuilding as I make changes.
+
+Yeah...
