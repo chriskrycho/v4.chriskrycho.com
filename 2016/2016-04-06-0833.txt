@@ -1,0 +1,8 @@
+---
+Title: 2016-04-06 08:33
+Date: 2016-04-06 08:33
+Tags: podcasting
+Template: formats/micro
+...
+
+I would love a simple, static, podcast-friendly site generator. (Pelican *works*, and I know it well enough, but I don’t love it.) Thoughts?
