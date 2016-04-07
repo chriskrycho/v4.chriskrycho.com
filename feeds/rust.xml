@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/rust.xml" rel="self"></atom:link><lastBuildDate>Sat, 19 Mar 2016 16:15:00 -0400</lastBuildDate><item><title>2016-03-19 16:15</title><link>http://www.chriskrycho.com/2016/2016-03-19-1615.html</link><description>&lt;p&gt;Well, paper-writing today may have pushed me to the breaking point. An app idea that’s been bubbling for months… I think I’m going to start actually building pieces of it and learning for other bits this week.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/rust.xml" rel="self"></atom:link><lastBuildDate>Thu, 07 Apr 2016 08:45:00 -0400</lastBuildDate><item><title>2016-04-07 08:45</title><link>http://www.chriskrycho.com/2016/2016-04-07-0845.html</link><description>&lt;p&gt;I 💙 the Rust team. So much.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/rust-lang/rust/pull/32756" title="Overhaul borrowck error messages and compiler error formatting generally"&gt;This is just fantastic.&lt;/a&gt;&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 07 Apr 2016 08:45:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-04-07:2016/2016-04-07-0845.html</guid><category>programming languages</category><category>rust</category></item><item><title>2016-03-19 16:15</title><link>http://www.chriskrycho.com/2016/2016-03-19-1615.html</link><description>&lt;p&gt;Well, paper-writing today may have pushed me to the breaking point. An app idea that’s been bubbling for months… I think I’m going to start actually building pieces of it and learning for other bits this week.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;

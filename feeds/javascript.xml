@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/javascript.xml" rel="self"></atom:link><lastBuildDate>Wed, 06 Apr 2016 12:28:00 -0400</lastBuildDate><item><title>2016-04-06 12:28</title><link>http://www.chriskrycho.com/2016/2016-04-06-1228.html</link><description>&lt;p&gt;&lt;em&gt;Why isn’t this updating?&lt;/em&gt; :looks around for five minutes: Oh. It’s because I’m just serving an old version, and don’t have it rebuilding as I make changes.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/javascript.xml" rel="self"></atom:link><lastBuildDate>Thu, 07 Apr 2016 08:30:00 -0400</lastBuildDate><item><title>2016-04-07 08:30</title><link>http://www.chriskrycho.com/2016/2016-04-07-0830.html</link><description>&lt;p&gt;The more time I spend with languages with pattern matching and expressive type systems, the more I feel frustrated by things I just can’t express in JavaScript. If I could write Ember in something &lt;a href="http://elm-lang.org"&gt;Elm&lt;/a&gt;… I think I’d be &lt;em&gt;giddy&lt;/em&gt;.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 07 Apr 2016 08:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-04-07:2016/2016-04-07-0830.html</guid><category>software development</category><category>programming languages</category><category>javascript</category></item><item><title>2016-04-06 12:28</title><link>http://www.chriskrycho.com/2016/2016-04-06-1228.html</link><description>&lt;p&gt;&lt;em&gt;Why isn’t this updating?&lt;/em&gt; :looks around for five minutes: Oh. It’s because I’m just serving an old version, and don’t have it rebuilding as I make changes.&lt;/p&gt;
 &lt;p&gt;Yeah…&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
