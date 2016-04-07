@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Thu, 07 Apr 2016 08:45:00 -0400</lastBuildDate><item><title>2016-04-07 08:45</title><link>http://www.chriskrycho.com/2016/2016-04-07-0845.html</link><description>&lt;p&gt;I 💙 the Rust team. So much.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Thu, 07 Apr 2016 13:22:00 -0400</lastBuildDate><item><title>2016-04-07 13:22</title><link>http://www.chriskrycho.com/2016/2016-04-07-1322.html</link><description>&lt;p&gt;Discovered lately: the British English voice for Siri is much more fun for this American to listen to than the defautlt American voice is.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 07 Apr 2016 13:22:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-04-07:2016/2016-04-07-1322.html</guid></item><item><title>2016-04-07 08:45</title><link>http://www.chriskrycho.com/2016/2016-04-07-0845.html</link><description>&lt;p&gt;I 💙 the Rust team. So much.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/rust-lang/rust/pull/32756" title="Overhaul borrowck error messages and compiler error formatting generally"&gt;This is just fantastic.&lt;/a&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
