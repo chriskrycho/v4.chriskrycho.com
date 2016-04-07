@@ -5,4 +5,7 @@ Tags: software development
 Template: formats/micro
 ...
 
-When you don't know where to start on a programming issue, write some tests. You might throw them out and write different ones later, but the process will kick your brain into the right gear and you'll be moving along in no time.
+When you don't know where to start on a programming issue, write some tests. You might throw them out and write different ones later, but the process will kick your brain into the right gear and you'll be moving along in no time. (Hat tip to [Eric Farkas] and [Matt Green].)
+
+[Eric Farkas]: //twitter.com/ericfarkas
+[Matt Green]: //twitter.com/mattgreenrocsk
