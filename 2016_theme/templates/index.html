@@ -9,7 +9,7 @@
 </figure>
 <ul class=''>
   {% for category, articles in categories %}
-    <li class=''>
+    <li class='{{category.slug}}'>
       <header>
         {{category.name}}
         <a href='' class=''>(read all)</a>
