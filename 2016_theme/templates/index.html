@@ -1,1 +1,25 @@
-{% extends "archives.html" %}
+{% extends "base.html" %}
+
+{% block content %}
+{# 1. About text #}
+<article class=''></article>
+<figure>
+    <img srcset=''>
+    <figcaption></figcaption>
+</figure>
+<ul class=''>
+  {% for category, articles in categories %}
+    <li class=''>
+      <header>
+        {{category.name}}
+        <a href='' class=''>(read all)</a>
+        <a href='' class=''>(feed)</a>
+      </header>
+      <h3 class=''>{{articles[0].title}}</h3>
+      <p class=''>{{articles[0].summary}}</p>
+    </li>
+  {% endfor %}
+</ul>
+{# 2. Profile image #}
+{# 3. Most recent post from categories #}
+{% endblock %}
