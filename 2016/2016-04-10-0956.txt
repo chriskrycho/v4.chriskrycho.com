@@ -1,0 +1,11 @@
+---
+Title: 2016-04-10 09:56
+Date: 2016-04-10 09:56
+Tags: ellie, space
+Template: formats/micro
+...
+
+Watching the [SpaceX] [Dragon installation] with my four-year-old. This is amazing.
+
+[SpaceX]: http://www.spacex.com
+[Dragon installation]:http://www.nasa.gov/content/spacex-crs-8-briefings-and-events
