@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/design.xml" rel="self"></atom:link><lastBuildDate>Fri, 08 Apr 2016 18:06:00 -0400</lastBuildDate><item><title>2016-04-08 18:06</title><link>http://www.chriskrycho.com/2016/2016-04-08-1806.html</link><description>&lt;p&gt;Experimenting a bit with &lt;a href="http://getbem.com/introduction/"&gt;BEM&lt;/a&gt; for CSS in a small tweak I’m doing to this site’s design. Not 100% sold.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/design.xml" rel="self"></atom:link><lastBuildDate>Sun, 10 Apr 2016 12:40:00 -0400</lastBuildDate><item><title>2016-04-10 12:40</title><link>http://www.chriskrycho.com/2016/2016-04-10-1240.html</link><description>&lt;p&gt;&lt;a href="https://affinity.serif.com/en-us/photo/"&gt;Affinity Photo&lt;/a&gt; is &lt;em&gt;fantastic&lt;/em&gt;. They &lt;em&gt;will&lt;/em&gt; be getting my money sometime this year.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 10 Apr 2016 12:40:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-04-10:2016/2016-04-10-1240.html</guid><category>design</category></item><item><title>2016-04-08 18:06</title><link>http://www.chriskrycho.com/2016/2016-04-08-1806.html</link><description>&lt;p&gt;Experimenting a bit with &lt;a href="http://getbem.com/introduction/"&gt;BEM&lt;/a&gt; for CSS in a small tweak I’m doing to this site’s design. Not 100% sold.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
