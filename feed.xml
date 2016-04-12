@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Mon, 11 Apr 2016 21:02:00 -0400</lastBuildDate><item><title>2016-04-11 21:02</title><link>http://www.chriskrycho.com/2016/2016-04-11-2102.html</link><description>&lt;p&gt;This was one of those days that didn’t feel like I worked a lot, but I just checked, and I did about 9 hours of work today. I just didn’t accomplish everything I wanted to (brain was in a fog all day). Strange how those can overlap mentally like that.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Mon, 11 Apr 2016 21:35:00 -0400</lastBuildDate><item><title>Run With Me!</title><link>http://www.chriskrycho.com/2016/run-with-me.html</link><description>&lt;p&gt;I may have gone mad with power or something, but I launched another podcast today! Crazy, I know.&lt;/p&gt;
+&lt;p&gt;It’s both more and less crazy than it might sound, though. More, because of what the podcast is, and less, because of what the podcast is. So what is it?&lt;/p&gt;
+&lt;p&gt;&lt;a href="//runwith.chriskrycho.com"&gt;&lt;em&gt;Run With Me&lt;/em&gt;&lt;/a&gt; is a microcast, with 3–5-minute long episodes &lt;em&gt;about&lt;/em&gt; running, recorded &lt;em&gt;while&lt;/em&gt; running.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="//cdn.chriskrycho.com/runwith/cover-web.jpg" title="_Run With Me_ cover art" alt="Run With Me" /&gt;&lt;figcaption&gt;&lt;em&gt;Run With Me&lt;/em&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;I allow myself an absolute maximum of ten minutes to edit and publish the episodes. (So far, I’ve never needed more than about &lt;em&gt;three&lt;/em&gt; minutes.) So, for anyone worried that I’m unnecessarily or unwisely adding something more to my already-full plate: don’t be. Apart from spending some of my relaxation time this weekend building the site, the only time I’ll spend on this will be time I would already be spending running or cooling down after a run.&lt;/p&gt;
+&lt;p&gt;So far (two episodes in!) it’s a ton of fun. I’ve enjoyed the process of recording it, and it’s nice to be able to talk about running confident that whoever listens is actually interested. (As I explain further on the show, that interest in not boring my audience is part of why I’m doing this, rather than just talking to people I know.)&lt;/p&gt;
+&lt;p&gt;If you have any interest in running, and especially if you like listening to podcasts while you run, I think you’ll enjoy this. I’d love it if you subscribed!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://itunes.apple.com/us/podcast/run-with-me/id1102273878?mt=2"&gt;&lt;i class="fa fa-fw fa-music"&gt;&lt;/i&gt; iTunes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://overcast.fm/p418939-N58r18"&gt;&lt;i class="fa fa-fw fa-play-circle"&gt;&lt;/i&gt; Overcast&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pca.st/5toh"&gt;&lt;i class="fa fa-fw fa-play-circle-o"&gt;&lt;/i&gt; PocketCasts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://runwith.chriskrycho.com/feed.xml"&gt;&lt;i class="fa fa-fw fa-rss"&gt;&lt;/i&gt; Old-fashioned RSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;p&gt;A few comments on the podcast from a form/genre angle, and a few from a technical angel:&lt;/p&gt;
+&lt;p&gt;You can think of &lt;a href="//www.manton.org/2016/01/new-podcast-timetable.html"&gt;“microcasts”&lt;/a&gt; as being not terribly dissimilar from a &lt;a href="//www.chriskrycho.com/micro/"&gt;microblog post&lt;/a&gt; in its own way. I’m happily stealing the idea of a microcast from &lt;a href="//www.manton.org"&gt;Manton Reece&lt;/a&gt;, whose &lt;a href="//timetable.manton.org"&gt;Timetable&lt;/a&gt; show is a delightful little thing. (It’s not original to him; a quick [Google search] will turn up instances of the term dating back several years at least, but he’s where I got the idea, and I think he’s certainly one of the first to be popularizing the form.)&lt;/p&gt;
+&lt;p&gt;I find podcasting as a medium extremely interesting in general (I’m &lt;a href="//www.winningslowly.org"&gt;sure&lt;/a&gt; you would &lt;a href="//www.newrustacean.com"&gt;never&lt;/a&gt; have &lt;a href="//www.sap-py.com"&gt;guessed&lt;/a&gt; that), and I think microcasts will proliferate rapidly. As my friend &lt;a href="http://oluseyi.info"&gt;Oluseyi Sonaiya&lt;/a&gt; and I have often discussed, brevity is a real virtue in podcasting, and one too-little appreciated by many amateur producers in the space. &lt;a href="http://independentclauses.com"&gt;Stephen&lt;/a&gt; and I aim for that balance with &lt;a href="//www.winningslowly.org"&gt;Winning Slowly&lt;/a&gt;, and it’s always been a part of my consideration with &lt;a href="//www.newrustacean.com"&gt;New Rustacean&lt;/a&gt; as well. People’s time is valuable. Saying something and then &lt;em&gt;being done&lt;/em&gt; is a kindness to your audience.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And then, practically speaking, there’s the simple reality that it’s just &lt;em&gt;harder&lt;/em&gt; to record a long-form podcast while running. Especially a good one.&lt;/p&gt;
+&lt;p&gt;At a tech level, producing the podcast is incredibly simple: I use the built-in microphone in the headphones that come with an iPhone to record, and do the recording and (extremely minimal) audio production in &lt;a href="https://geo.itunes.apple.com/us/app/ferrite-recording-studio/id1018780185?mt=8&amp;amp;at=1001l4KM"&gt;Ferrite&lt;/a&gt;. When I say minimal, I mean really minimal: I chop off the bits before I start talking, and the bits after I start talking, and I do all of that on my iPhone. Then I export to Dropbox, and from there to my CDN. That’s it.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;No comments about the length of my blog posts, please.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 11 Apr 2016 21:35:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-04-11:2016/run-with-me.html</guid><category>fitness</category><category>podcasting</category><category>design</category></item><item><title>2016-04-11 21:02</title><link>http://www.chriskrycho.com/2016/2016-04-11-2102.html</link><description>&lt;p&gt;This was one of those days that didn’t feel like I worked a lot, but I just checked, and I did about 9 hours of work today. I just didn’t accomplish everything I wanted to (brain was in a fog all day). Strange how those can overlap mentally like that.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
