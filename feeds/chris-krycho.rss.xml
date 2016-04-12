@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 11 Apr 2016 08:46:00 -0400</lastBuildDate><item><title>2016-04-11 08:46</title><link>http://www.chriskrycho.com/2016/2016-04-11-0846.html</link><description>&lt;p&gt;Betting I’m not the only one who thinks it a little weird that the &lt;code&gt;Event.target&lt;/code&gt; in the DOM APIs is the &lt;em&gt;source&lt;/em&gt; of the event.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 11 Apr 2016 21:02:00 -0400</lastBuildDate><item><title>2016-04-11 21:02</title><link>http://www.chriskrycho.com/2016/2016-04-11-2102.html</link><description>&lt;p&gt;This was one of those days that didn’t feel like I worked a lot, but I just checked, and I did about 9 hours of work today. I just didn’t accomplish everything I wanted to (brain was in a fog all day). Strange how those can overlap mentally like that.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 11 Apr 2016 21:02:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-04-11:2016/2016-04-11-2102.html</guid></item><item><title>2016-04-11 08:46</title><link>http://www.chriskrycho.com/2016/2016-04-11-0846.html</link><description>&lt;p&gt;Betting I’m not the only one who thinks it a little weird that the &lt;code&gt;Event.target&lt;/code&gt; in the DOM APIs is the &lt;em&gt;source&lt;/em&gt; of the event.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
