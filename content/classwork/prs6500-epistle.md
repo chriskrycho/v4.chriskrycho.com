@@ -11,7 +11,7 @@ School: Southeastern Baptist Theological Seminary
 Summary: >
     We are called to a humble, selfless unity which reflects the humble,
     selfless unity of our Triune God.
-...
+---
 
 <i class="editorial">The only constraints on this sermon were that it be between
 15 and 25 minutes long, and be on a text from an epistle. Video is from an old
@@ -19,13 +19,13 @@ MacBook Pro pointed at the podium.</i>
 
 ### Audio
 
-[Download](http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/2016-02-09.m4a)
+[Download](http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-02-09.m4a)
 
 <audio
     title="A Humble, Selfless, Unity"
     controls="controls"
     preload="metadata"
-    src="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/2016-02-09.m4a"
+    src="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-02-09.m4a"
     type="audio/m4a">
     Sorry; your browser doesn't support m4a files. Try downloading the file
     directly and playing it in iTunes or another media app.
