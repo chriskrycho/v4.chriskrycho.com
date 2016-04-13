@@ -17,13 +17,13 @@ School: Southeastern Baptist Theological Seminary
 
 ### Audio
 
-[Download](http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/2016-03-08.m4a)
+[Download](http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-03-08.m4a)
 
 <audio
     title="A Strange and Messy Deliverance"
     controls="controls"
     preload="metadata"
-    src="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/2016-03-08.m4a"
+    src="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-03-08.m4a"
     type="audio/m4a">
     Sorry; your browser doesn't support m4a files. Try downloading the file
     directly and playing it in iTunes or another media app.

@@ -4,14 +4,14 @@
         <title>Sermons by Chris Krycho</title>
         <link>http://www.chriskrycho.com/sermons/</link>
         <description>Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a Reformed, evangelical Baptist currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.</description>
-        <generator>Feeder 3 3.1.7(2646); Mac OS X Version 10.11.4 (Build 15E65) http://reinventedsoftware.com/feeder/</generator>
+        <generator>Feeder 3 3.1.8(2650); Mac OS X Version 10.11.4 (Build 15E65) http://reinventedsoftware.com/feeder/</generator>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <language>en</language>
         <copyright>2016 Chris Krycho</copyright>
         <managingEditor>chris@krycho.com (Chris Krycho)</managingEditor>
         <webMaster>chris@krycho.com (Chris Krycho)</webMaster>
-        <pubDate>Mon, 04 Apr 2016 08:33:31 -0400</pubDate>
-        <lastBuildDate>Mon, 04 Apr 2016 08:33:32 -0400</lastBuildDate>
+        <pubDate>Tue, 12 Apr 2016 23:00:00 -0400</pubDate>
+        <lastBuildDate>Tue, 12 Apr 2016 23:00:01 -0400</lastBuildDate>
         <image>
             <url>http://cdn.chriskrycho.com/sermons/3000.png</url>
             <title>Chris Krycho</title>
@@ -32,6 +32,24 @@
         <itunes:category text="Religion &amp; Spirituality">
             <itunes:category text="Christianity"/>
         </itunes:category>
+        <item>
+            <title>God Is With Us</title>
+            <link>http://www.chriskrycho.com/2016/god-is-with-us.html</link>
+            <description><![CDATA[<p><strong>John 14:15–31:</strong> We love and obey God; God dwells with us.</p>
+<p>This sermon was delivered in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.</p>
+<p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is recorded with <a href="https://geo.itunes.apple.com/us/app/ferrite-recording-studio/id1018780185?mt=8&amp;at=1001l4KM">Ferrite</a>, using an <a href="http://www.apple.com/iphone-se/">iPhone SE</a> placed on the podium.</p>
+]]></description>
+            <pubDate>Tue, 12 Apr 2016 19:15:00 -0400</pubDate>
+            <enclosure url="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-04-12.m4a" length="21552435" type="audio/x-m4a"/>
+            <guid isPermaLink="false">FB3C78ED-C8E2-4A5A-B8A7-54C05586FA80</guid>
+            <itunes:subtitle>John 14:15–31: We love and obey God; God dwells with us</itunes:subtitle>
+            <itunes:summary><![CDATA[John 14:15–31: We love and obey God; God dwells with us.
+
+This sermon was delivered in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.
+
+The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is recorded with Ferrite, using an iPhone SE placed on the podium.]]></itunes:summary>
+            <itunes:duration>21:31</itunes:duration>
+        </item>
         <item>
             <title>A Strange and Messy Deliverance</title>
             <link>http://www.chriskrycho.com/2016/a-strange-and-messy-deliverance.html</link>
