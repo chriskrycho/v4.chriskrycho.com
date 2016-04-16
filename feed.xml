@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 16 Apr 2016 16:22:00 -0400</lastBuildDate><item><title>2016-04-16 16:22</title><link>http://www.chriskrycho.com/2016/2016-04-16-1622.html</link><description>&lt;p&gt;My Windows VM for work is now stuck in an endless cycle of reboots after a blue screen of death after an update.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Sat, 16 Apr 2016 16:41:00 -0400</lastBuildDate><item><title>2016-04-16 16:41</title><link>http://www.chriskrycho.com/2016/2016-04-16-1641.html</link><description>&lt;p&gt;A bit of &lt;a href="http://www.chriskrycho.com/2016/2016-04-16-1622.html"&gt;follow-up&lt;/a&gt;: that solution ended up being insoluble. Suffice it to say I’m &lt;em&gt;very&lt;/em&gt; glad my Windows machine is just a VM; I restored a Time Machine backup and moved on with my life. Ugh.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 16 Apr 2016 16:41:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-04-16:2016/2016-04-16-1641.html</guid></item><item><title>2016-04-16 16:22</title><link>http://www.chriskrycho.com/2016/2016-04-16-1622.html</link><description>&lt;p&gt;My Windows VM for work is now stuck in an endless cycle of reboots after a blue screen of death after an update.&lt;/p&gt;
 &lt;p&gt;Between that and its starting the update without asking me, I’m not feeling especially happy with Microsoft today.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
