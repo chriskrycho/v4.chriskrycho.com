@@ -9,6 +9,7 @@ Professor: Dr. Marty Jacobin
 Class: Sermon Delivery
 School: Southeastern Baptist Theological Seminary
 Tags: sermons, SEBTS, M. Div.
+Category: theology
 ---
 
 <i class="editorial">The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is recorded with [Ferrite], using an [iPhone SE] placed on the podium.</i>
