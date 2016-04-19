@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/javascript.xml" rel="self"></atom:link><lastBuildDate>Thu, 14 Apr 2016 14:54:00 -0400</lastBuildDate><item><title>2016-04-14 14:54</title><link>http://www.chriskrycho.com/2016/2016-04-14-1454.html</link><description>&lt;p&gt;Things I want basically &lt;em&gt;all the time&lt;/em&gt; when writing JavaScript:&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/javascript.xml" rel="self"></atom:link><lastBuildDate>Tue, 19 Apr 2016 17:44:00 -0400</lastBuildDate><item><title>2016-04-19 17:44</title><link>http://www.chriskrycho.com/2016/2016-04-19-1744.html</link><description>&lt;p&gt;I still love EmberJS—but if I have one complaint, it’s that it’s &lt;em&gt;slightly&lt;/em&gt; too heavy on convention-based magic. I want it to be a little more explicit, so that I can have a little more insight into what it’s going. Yes, even if that means a little more boilerplate. Explicit is better than implicit.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 19 Apr 2016 17:44:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-04-19:2016/2016-04-19-1744.html</guid><category>javascript</category><category>emberjs</category><category>software development</category></item><item><title>2016-04-14 14:54</title><link>http://www.chriskrycho.com/2016/2016-04-14-1454.html</link><description>&lt;p&gt;Things I want basically &lt;em&gt;all the time&lt;/em&gt; when writing JavaScript:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;strong types&lt;/li&gt;
 &lt;li&gt;enums with values (tagged unions)&lt;/li&gt;
