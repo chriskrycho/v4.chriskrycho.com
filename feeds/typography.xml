@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/typography.xml" rel="self"></atom:link><lastBuildDate>Thu, 31 Mar 2016 08:57:00 -0400</lastBuildDate><item><title>2016-03-31 08:57</title><link>http://www.chriskrycho.com/2016/2016-03-31-0857.html</link><description>&lt;p&gt;On the “typography should be invisible” bit that’s been going around lately, Matthew Butterick is &lt;a href="http://practicaltypography.com/drowning-the-crystal-goblet.html"&gt;on point&lt;/a&gt;:&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/typography.xml" rel="self"></atom:link><lastBuildDate>Fri, 22 Apr 2016 07:13:00 -0400</lastBuildDate><item><title>2016-04-22 07:13</title><link>http://www.chriskrycho.com/2016/2016-04-22-0713.html</link><description>&lt;p&gt;After a few months of using Hasklig, reading code &lt;em&gt;without&lt;/em&gt; code ligatures seems really weird to me.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 22 Apr 2016 07:13:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-04-22:2016/2016-04-22-0713.html</guid><category>typography</category><category>software development</category></item><item><title>2016-03-31 08:57</title><link>http://www.chriskrycho.com/2016/2016-03-31-0857.html</link><description>&lt;p&gt;On the “typography should be invisible” bit that’s been going around lately, Matthew Butterick is &lt;a href="http://practicaltypography.com/drowning-the-crystal-goblet.html"&gt;on point&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Ty­pog­ra­phy isn’t in­vis­i­ble. By em­brac­ing that fact rather than deny­ing it, we can cre­ate bet­ter typography.&lt;/p&gt;
 &lt;/blockquote&gt;

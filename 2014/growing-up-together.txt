@@ -57,7 +57,7 @@ inheritance---trip me up though it sometimes still does---is a fascinating
 variation on the idea of inheritance and one that I think I like rather better
 than classical inheritance.[^io]
 
-There are still things I don't love about JavaScript. Its syntax owes far too
+There are still things I don't love about JavaScript. Its syntax owes far too
 much to the C family of languages to make me happy; I quite like the way that
 CoffeeScript borrows from Python (white-space-delimited blocks, use of equality
 words like `is` and boolean rules like `and` rather than `===` and `&&`
