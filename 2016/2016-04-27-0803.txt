@@ -5,6 +5,6 @@ Tags: software development
 Template: formats/micro
 ...
 
-I think I'm sold on [fish]. The autocompletion alone is just delightful. Need to tweak it a bit, but ieven its defaults are pretty great.
+I think I'm sold on [fish]. The autocompletion alone is just delightful. Need to tweak it a bit, but even its defaults are pretty great.
 
-[fish]: http://fishshell.com
+[fish]: http://fishshell.com/docs/current/tutorial.html
