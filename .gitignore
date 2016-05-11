@@ -58,3 +58,7 @@ output
 
 # Development files
 *.pid
+
+# CDN
+cdn
+
