@@ -1,0 +1,23 @@
+---
+Title: Science and Pseudo-Science
+Subtitle: The demarcation problem, fuzzy lines, and mild discomfort.
+Template: formats/class
+Class: "Philosophy: Science and Religion"
+Professor: Dr. Greg Welty
+School: Southeastern Baptist Theological Seminary
+Date: 2016-05-12 21:01
+Category: theology
+Tags: M. Div., SEBTS, philosophy, science
+---
+
+<i class="editorial">The following was prepared as a one-page, single-spaced short response to a question from the readings for this class.</i>
+
+Many differences do not admit of clear or hard distinctions. The difference between science and pseudo-science is just such a difference. There is a clear and intuitively obvious difference between astronomy and astrology, between medical research and homeopathic remedies, between chemistry and alchemy. This is so even though it is difficult (if not impossible) to specify exactly what set of criteria are both necessary and sufficient to constitute one thing as a pseudo-science and another as actual science. This is not a difficulty specific to this differentiation; few categories are truly binary. Instead, humans normally and rationally distinguish between kinds of things on the basis of sets of criteria. So, as the well-known example from discussions of realism and anti-realism makes clear: humans can tell a bald man from a man with a full-head of hair, even though there is no single point at which one stops being hirsute and starts being bald. Likewise, we can recognize a sunny day from a cloudy day, even though there is a spectrum ranging from *not a cloud in the sky* to *clouds so thick and dark it seems like twilight at midday*.
+
+In the case of science and pseudo-science, there are a broad set of criteria which form a sort of diagnostic battery. Different (though overlapping) sets of tests are applicable in different fields. There is one set of discriminants between astronomy and astrology. There is another set between chemistry and alchemy, and another between pharmaceutical research and homeopathy. All share commonalities, but are not identical. For example, astronomy and astrology both rely on observation of the same celestial phenomena; pharmaceutical research and homeopathy both aim to treat physical ills by way of some external treatment.
+
+In the astronomy/astrology divide, the major distinction is *applicability*. Astronomy applies the observed data to understanding the subject under observation: stars, galaxies, and so on. Astrology applies the observed data to *other* subjects (namely human lives). The applicability of observations about stars to analysis of stars is straightforward and obvious. The applicability of those observations to predicting human affairs involves a substantial leap from the observation to a non-(physically-)associated subject. The latter is not logically inconceivable: even in a purely physical system of causation, it is possible that the stars' positions were designed by some creative force to provide just such indicators. However, the claim advanced is much stronger relative to the relationship between the data and the purported effect; the applicability much less obvious; and (last but not least) the claim as usually advanced is *not* physical but mystical. Again: this does not in and of itself mean astrology is not *true*. It does mean that it advances claims that are both outside the means by which science is conducted (which, when prediction is involved, usually involve some degree of falsifiability), and also outside the normal *application* of observations within science.
+
+The pharmaceutical research and homeopathy distinction shares some but not all of these difference-markers. There is certainly an element of repeatability and falsifiability in play, for one. (How effective this actually is, given recent studies in repeatability in pharmaceutical work especially but the sciences in general, is an important related question, but not ultimately final.) However, they do not share the applicability issue in the astronomy/astrology divide. The subject---sick humans---is the same. So is the treatment pattern. Nor is there generally an appeal to non-physical realities. The distinction here seems to be *only* one of methodology and empiricism. The differences between chemistry and alchemy are of a similar nature. But other science/pseudo-science distinctions will look different.
+
+The problem, then, is not that it is *impossible* to distinguish between science and pseudo-science, but that there are a broad set of criteria involved in making those distinctions, and the criteria are overlapping but not identical in different fields.

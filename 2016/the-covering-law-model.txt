@@ -2,17 +2,17 @@
 Title: The 'Covering Law' Model
 Subtitle: Why it is defective, and what a good alternative might be.
 Summary: >
-    The ‘covering law’ model of scientific explanation demands explanations be deductive arguments with sound premises referring to natural laws. It founders on the issue of causality.
+    The 'covering law' model of scientific explanation demands explanations be deductive arguments with sound premises referring to natural laws. It founders on the issue of causality.
 Template: formats/class
 Class: "Philosophy: Science and Religion"
 Professor: Dr. Greg Welty
 School: Southeastern Baptist Theological Seminary
 Date: 2016-03-15 12:30
 Category: theology
-Tags: M. Div., SEBTS
+Tags: M. Div., SEBTS, philosophy, science
 ...
 
-<i>What is the ‘covering law’ model of scientific explanation and what are two reasons it seems to be defective? How do these defects point to a better model of scientific explanation?</i>
+<i>What is the 'covering law' model of scientific explanation and what are two reasons it seems to be defective? How do these defects point to a better model of scientific explanation?</i>
 
 The 'covering law' model of scientific explanation is the view that scientific explanations consist of three elements: *deductive* arguments, with *sound* premises, which make referent to (at least) one natural law. That is, for an explanation to count as "scientific," it must first of all be in the from of an argument, "If A is true then B is the case; A is true, therefore B is the case." Second, the premises of the argument must be valid. In other words, "If A and B are both true, then C is the case; A and B are true, therefore C is the case" is deductively valid, but if either of the premises A or B are false, the argument is not sound and it does not serve as a scientific explanation. Finally, the explanation must refer to one or more general laws in the course of its argument. That is, in the same formulation, "If A and B are both true, then C is the case; A and B are true, therefore C is the case," the explanation may be both deductive and sound but *unscientific* if neither A nor B are natural laws of some sort.
 
