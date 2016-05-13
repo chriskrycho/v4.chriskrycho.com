@@ -9,10 +9,10 @@ Professor: Dr. Greg Welty
 School: Southeastern Baptist Theological Seminary
 Date: 2016-03-15 12:30
 Category: theology
-Tags: M. Div., SEBTS
+Tags: M. Div., SEBTS, philosophy, science
 ...
 
-<i>Adjudicating the realism/anti-realism debate in science often involves discussion of ‘miracles,’ the ‘observable/unobservable distinction,’ and ‘underdetermination’. Pick one of these three areas and develop an argument for realism or anti-realism in terms of it. Don’t forget to assess the argument.</i>
+<i>Adjudicating the realism/anti-realism debate in science often involves discussion of 'miracles,' the 'observable/unobservable distinction,' and 'underdetermination'. Pick one of these three areas and develop an argument for realism or anti-realism in terms of it. Don't forget to assess the argument.</i>
 
 The realism/anti-realism debate in science often hinges on the nature of and relationship between observables and unobservables. Anti-realists argue that scientists can have no actual knowledge of unobservables, and therefore should treat theories about unobservables agnostically: however useful the models may be, they should not be considered to correspond to *truth* about reality. For example, anti-realists argue that hypotheses about the nature of fundamental particles such as quarks and electrons should not be taken as if quarks and electrons actually exist, but only as pragmatically useful, with no way even in principle of determining whether such things actually exist.
 

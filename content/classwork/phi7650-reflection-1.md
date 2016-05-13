@@ -1,0 +1,23 @@
+---
+Title: Corpuscularianism and Atomism
+Subtitle: How science and philosophy seek to answer questions.
+Template: formats/class
+Class: "Philosophy: Science and Religion"
+Professor: Dr. Greg Welty
+School: Southeastern Baptist Theological Seminary
+Date: 2016-05-12 20:58
+Category: theology
+Tags: M. Div., SEBTS, philosophy, science
+---
+
+<i class="editorial">The following was prepared as a one-page, single-spaced short response to a question from the readings for this class.</i>
+
+One possible point of difference between philosophy and science is the way they proceed toward answering questions and understanding the world. For example, "Corpuscularianism was mere philosophy. Atomism is science," suggests an important difference: between reasoning from first principles and reasoning from observed phenomena in the world. The idea is that the corpuscularian idea derived not from observations about the world external to the thinker, but from abstract reasoning about the world---that is, not from *data* but from *first principles*. This distinction, while initially appealing, has several problems.
+
+First, it simply does not square with the actual history of science. A number of significant advances have come from reasoning about the world. Einstein's analyses, across all fields (including some related to atomistic views of the world) were famously the product of initial thought experiments *followed* rather than *preceded* by mathematical derivation and finally observational data. To be sure, there are many times when scientific understandings change because of data. But this is not the only way scientific interpretations shift. Rather, changes in epistemology, metaphysics, and other prior commitments may lead to substantial reinterpretations of the same data.
+
+Moreover, those reevaluations may themselves produce further scientific work. One thinks of the way quantum mechanics developed over the twentieth century---including the substantial resistance to it from those enamored of more classical and determinist models, Einstein among them; and the multiple interpretive schemes for dealing philosophically with the implications of quantum mechanics' findings. These are themselves conditioned by the evidence---but do *and must* supersede it in explanatory power and scope. The various interpretations of quantum mechanics are interpretations not only of the data but the world in which the data lives. A radical indeterminism view, an observer-affected data view, a hidden variable view, and so on all offer up points of view which inform the work done by the scientists themselves in an inherent feedback loop. Philosophy and science are not the same, but they are inextricable from each other; one's prior commitments inevitably shape the answers one will find to some degree or another.
+
+As such, this view fails to deal with the way that those philosophical commitments drove scientific exploration. The belief in a corpuscularian was part and parcel of the discovery of atomism. That there were philosophical reasons for accepting the view prior to observational evidence for it actually serves to reinforce rather than undercut the view. Indeed, the phrasing of the proposition itself is suspect. "Mere" philosophizing, as noted above, necessarily underlies all scientific research programs. At the most basic level: a commitment to the existence of an external world to be interacted with and discovered, the reliability of experience as a kind of evidence, and the generalizability of data via induction and inference to the best explanation are all necessary for the practice of science.
+
+Moreover, if one entirely rejected in an *a priori* sense that it was possible to discover anything not directly observable (say, because one rejected any sort of corpuscularianism, or because one was a strict anti-realist, or for any number of other reasons), one would simply not look for evidence in that direction. Whatever experiments revealed, an individual with those commitments would not go looking for atoms or evidence of them. The evidence might, over time, suggest a revision of the worldview, and this sort of empirical refutation of the paradigm is of course the point of the proposition. Unfortunately for the proposition, this is not a distinction between philosophy and science, but between unrelenting dogmatism and critical realism. Science may be deeply dogmatic, and philosophy may readily revise its conclusions in the face of new evidence. Such evidence may differ in kind: it might be a a logical proof rather than physical data, as Gödel's incompleteness theorem forced a revision in logical positivism. It does not, however, lead to an in-principle difference in method.
