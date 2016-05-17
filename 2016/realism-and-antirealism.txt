@@ -56,6 +56,10 @@ First, the fact that science is an iterative and approximative process does not 
 
 Second, even if Laudan's point is granted, it does not disprove realism. It simply proves naïve realism false---naïve, even. True: empirical success does not guarantee the truthlikeness of a theory, and vice versa. It does not follow that there is *no* correspondence between the two. Laudan insists that the truthlikeness of a given theory has zero bearing on its empirical fruitfulness, but it is at least possible that it is instead a contributory factor.[^1-4]
 
+---
+# "The atomic theory lets..." could use some clarification in later drafts. If the reader doesn't know the relevant science, this isn't sufficiently clear.
+---
+
 Finally, what about later theories which do *not* make special cases of the earlier theory? When Laudan, Kuhn, van Fraassen, and others examine e.g. the fluid and aether theories and compare them to the atomic theories now held by most physicists, they note that science has been empirically useful without being true in the past; the same may be true today. However, later views, currently held by realists to be accurate, can often explain the success of the earlier theory even without claiming it as a subset.[Cf. @putnam:three-kinds-of-realism 197--199] The atomic theory lets scientists explain the appearance of the aether. Newton's mechanics can be applied to show why Ptolemy's epicycles worked, even though they were false. The later theory not only has greater empirical success; its explanatory power also includes the now disconfirmed theory---whether as a special case or not. To be sure, the idea that all science proceeds linearly and that every theory is this kind of empirical superset of the former is incorrect.[^1-5] Still, the fact that later theories *often* can do so is further evidence that truthlikeness is a contributory factor in the success of scientific theories.
 
 ## 3. Alternatives to Realism
