@@ -1,0 +1,340 @@
+---
+references:
+- id: diegues-lucena:laudan:2006
+  type: article-journal
+  author:
+  - family: Diéguez-Lucena
+    given: Antonio
+  issued:
+  - year: '2006'
+  title: Why does laudan’s confutation of convergent realism fail?
+  container-title: Journal for General Philosophy of Science
+  publisher: Springer Science & Business Media B.V.
+  page: '393-403'
+  volume: '37'
+  issue: '2'
+  annote: 'Accession Number: 24152238; Diééguez-Lucena, Antonio 1; Email Address:
+    dieguez6464uma.es; Affiliation: 1: Departamento de Filosofíía Facultad de Filosofíía
+    y Letras , Universidad de Máálaga , E-29071 Máálaga Spain; Source Info: 2006,
+    Vol. 37 Issue 2, p393; Subject Term: REALISM; Subject Term: SCIENTIFIC knowledge;
+    Subject Term: EXPLANATION; Subject Term: CRITICISM; Author-Supplied Keyword: convergent
+    realism; Author-Supplied Keyword: Larry Laudan; Author-Supplied Keyword: pessimistic
+    meta-induction; Author-Supplied Keyword: scientific realism; Author-Supplied Keyword:
+    scientific success; People: LAUDAN, Larry; Number of Pages: 11p; Document Type:
+    Articlehttp://search.ebscohost.com/login.aspx?direct=true&db=aph&AN=24152238&site=ehost-live&scope=site'
+  abstract: In his paper “A Confutation of Convergent Realism”, Larry Laudan offered
+    one of the most powerful criticisms of scientific realism. I defend here that
+    although Laudan’s criticism is right, this does not refute the realist position.
+    The thesis that Laudan confutes is a much stronger thesis than realist needs to
+    maintain. As I will exemplify with Salmon’s statistical-relevance model, a less
+    strict notion of explanation would allow us to claim that (approximate) truth
+    is the best explanation for such success, even if it is accepted that there can
+    be cases of unsuccessful (approximately) true theories and cases of successful
+    false theories. $[$ABSTRACT FROM AUTHOR$]$; Copyright of Journal for General Philosophy
+    of Science is the property of Springer Science & Business Media B.V. and its content
+    may not be copied or emailed to multiple sites or posted to a listserv without
+    the copyright holder’s express written permission. However, users may print, download,
+    or email articles for individual use. This abstract may be abridged. No warranty
+    is given about the accuracy of the copy. Users should refer to the original published
+    version of the material for the full abstract. (Copyright applies to all Abstracts.)
+  keyword: realism, scientific knowledge, explanation, philosophy of science
+  ISBN: '09254560'
+
+- id: vanfraassen:halvorson:2014
+  type: article-journal
+  author:
+  - family: Fraassen
+    given: Bas C.
+    dropping-particle: van
+  issued:
+  - year: '2014'
+  title: One or two gentle remarks about hans halvorson’s critique of the semantic
+    view.
+  container-title: Philosophy of Science
+  page: 276 - 283
+  volume: '81'
+  issue: '2'
+  annote: EBSCO\_host\_ (accessed April 29, 2016).http://ezproxy.sebts.edu/login?url=http://search.ebscohost.com/login.aspx?direct=true&db=aph&AN=96156852&site=eds-live&scope=site
+  abstract: In recent papers Hans Halvorson has offered a critique of the semantic
+    view of theories, showing that theories may be the same although the corresponding
+    sets of models are different and, conversely, that theories may be different although
+    the corresponding sets of models are the same. This critique will be assessed,
+    first, as it pertains to issues concerning scientific models in the empirical
+    sciences and, second, independent of any concern with empirical science. \[ABSTRACT
+    FROM AUTHOR\]
+  keyword: semantics, theory, philosophy of science, scientific models
+  ISSN: '00318248'
+
+- id: vanfraassen:modeling-measurement
+  type: article-journal
+  author:
+  - family: Fraassen
+    given: Bas C.
+    dropping-particle: van
+  issued:
+  - year: '2012'
+    month: December
+  title: 'Modeling and measurement: The criterion of empirical grounding'
+  title-short: Modeling and measurement
+  container-title: Philosophy of Science
+  page: '773-784'
+  volume: '79'
+  issue: '5'
+  abstract: A scientific theory offers models for the phenomena in its domain; these
+    models involve theoretical quantities, and a model’s structure is the set of relations
+    it imposes on these quantities. A fundamental demand in scientific practice is
+    for those quantities to be clearly and feasibly related to measurement. This demand
+    for empirical grounding can be artic- ulated by displaying the theory-dependent
+    criteria for a procedure to count as a measure- ment and for identifying the quantity
+    it measures.
+  keyword: philosophy of science, empiricism
+
+- id: vanfraassen:qm-empiricist
+  type: book
+  author:
+  - family: Fraassen
+    given: Bas C.
+    dropping-particle: van
+  issued:
+  - year: '1991'
+  title: 'Quantum mechanics : An empiricist view.'
+  title-short: Quantum mechanics
+  publisher: Clarendon Press
+  annote: http://ezproxy.sebts.edu/login?url=http://search.ebscohost.com/login.aspx?direct=true&db=e000xna&AN=273480&site=eds-live&scope=site
+  abstract: After introducing the empiricist point of view in philosophy of science,
+    and the concepts and methods of the semantic approach to scientific theories,
+    Professor van Fraassen discusses quantum theory in three stages. He first examines
+    the question of whether and how empirical phenomena require a non-classical theory,
+    and what sort of theory they require. He then discusses the mathematical foundations
+    of quantum theory with special reference to developments in themodelling of interaction,
+    composite systems, and measurement. Finally, the author broaches the main questions
+    of interpretation. After offering a critique of earlier interpretations, he develops
+    a new one - the modal interpretation - which attempts to stay close to the original
+    Copenhagen ideaswithout implying a radical incompleteness in quantum theory. He
+    gives special attention to the character of composite, many-body systems and especially
+    to the peculiar character of assemblies of identical particles in quantum statistics.
+  keyword: realism, empiricism, philosophy of science
+  ISBN: '9780198248613'
+
+- id: vanfraassen:scientific-image
+  type: book
+  author:
+  - family: Fraassen
+    given: Bas C.
+    dropping-particle: van
+  issued:
+  - year: '1980'
+  title: The scientific image.
+  collection-title: Clarendon library of logic and philosophy
+  publisher: OUP Premium
+  annote: EBSCO\_host\_ (accessed April 29, 2016).http://ezproxy.sebts.edu/login?url=http://search.ebscohost.com/login.aspx?direct=true&db=nlebk&AN=273464&site=eds-live&scope=site
+  keyword: realism, empiricism, philosophy of science
+  ISBN: '9780198244240'
+
+- id: kuhn:revolutions:2012
+  type: book
+  author:
+  - family: Kuhn
+    given: Thomas S.
+  issued:
+  - year: '2012'
+  original-date:
+  - year: '1962'
+  title: The structure of scientific revolutions
+  publisher: The University of Chicago Press
+  edition: 50th Anniversary Edition
+  keyword: philosophy of science
+
+- id: laudan:beyond-realism
+  type: chapter
+  author:
+  - family: Laudan
+    given: Larry
+  editor:
+  - family: Cushing
+    given: J. T.
+  - family: Delaney
+    given: C. F.
+  - family: Gutting
+    given: G.
+  issued:
+  - year: '1984'
+  title: 'Explaining the success of science: Beyond epistemic realism and relativism'
+  title-short: Explaining the success of science
+  container-title: 'Science and reality: Recent work in the philosophy of science'
+  publisher: University of Notre Dame Press
+  publisher-place: Notre Dame
+  page: '83-105'
+  keyword: philosophy of science, instrumentalism, realism
+
+- id: laudan:confutation
+  type: article-journal
+  author:
+  - family: Laudan
+    given: Larry
+  issued:
+  - year: '1981'
+    month: March
+  title: A confutation of convergent realism
+  container-title: Philosophy of Science
+  page: '19-49'
+  volume: '48'
+  issue: '1'
+  keyword: philosophy of science, instrumentalism, realism
+
+- id: maxwell:theoretical-entities
+  type: chapter
+  author:
+  - family: Maxwell
+    given: Grover
+  editor:
+  - family: Feigl
+    given: Herbert
+  - family: Maxwell
+    given: Grover
+  issued:
+  - year: '1962'
+  title: The ontological status of theoretical entities
+  container-title: Scientific explanation, space & time
+  collection-title: Minnesota studies in philosophy of science
+  publisher: University of Minnesota Press
+  page: '3-27'
+  volume: III
+  keyword: philosophy of science, realism
+
+- id: moreland:science:1989
+  type: book
+  author:
+  - family: Moreland
+    given: J. P.
+  issued:
+  - year: '1989'
+  title: 'Christianity and the nature of science: A philosophical investigation'
+  title-short: Christianity and the nature of science
+  publisher: Baker Book House
+  publisher-place: Grand Rapids, Michigan
+  keyword: philosophy of science
+
+- id: okasha:science-introduction
+  type: book
+  author:
+  - family: Okasha
+    given: Samir
+  issued:
+  - year: '2002'
+  title: 'Philosophy of science: A very short introduction'
+  title-short: Philosophy of science
+  collection-title: Very short introductions
+  publisher: Oxford University Press
+  publisher-place: New York
+  keyword: philosophy of science
+
+- id: plantinga:conflict
+  type: book
+  author:
+  - family: Plantinga
+    given: Alvin
+  issued:
+  - year: '2011'
+  title: 'Where the conflict really lies: Science, religion, and naturalism'
+  title-short: Where the conflict really lies
+  publisher: Oxford University Press
+  publisher-place: New York
+  keyword: philosophy of science
+
+- id: putnam:epistemology-hypothesis
+  type: article-journal
+  author:
+  - family: Putnam
+    given: Hilary
+  - family: Putnam
+    given: Ruth Anna
+  issued:
+  - year: '1990'
+  title: Epistemology as hypothesis
+  container-title: Transactions of the Charles S. Peirce Society
+  page: '407'
+  volume: '26'
+  issue: '4'
+  annote: http://search.ebscohost.com.ezproxy.sebts.edu/login.aspx?direct=true&db=aph&AN=10085574&site=ehost-live&scope=site
+  abstract: Discusses a theory of science according to philosopher John Dewey. Details
+    of Dewey’s theory of inquiry; Implications of his theory for the dispute about
+    whether there can be rational choice ends; Objections to Dewey’s theory.
+  keyword: epistemology, philosophy of science
+  ISSN: '00091774'
+
+- id: putnam:mathematics:1979
+  type: chapter
+  author:
+  - family: Putnam
+    given: Hilary
+  issued:
+  - year: '1979'
+  title: Mathematics, matter and method
+  collection-title: Philosophical papers
+  publisher: Cambridge University Press
+  page: '60-78'
+  volume: '1'
+  chapter-number: 4 - What is mathematical truth?
+  edition: Second edition
+  keyword: realism, mathematics, philosophy of science
+
+- id: putnam:three-kinds-of-realism
+  type: article-journal
+  author:
+  - family: Putnam
+    given: Hilary
+  issued:
+  - year: '1982'
+  title: Three kinds of scientific realism
+  container-title: Philosophical Quarterly
+  page: 195 - 200
+  volume: '32'
+  issue: '128'
+  annote: http://search.ebscohost.com.ezproxy.sebts.edu/login.aspx?direct=true&db=aph&AN=13409439&site=ehost-live&scope=site
+  abstract: Physicalists argued that “intentional” or semantical properties can be
+    reduced to physical ones of the appropriate type. The familiar problem is that
+    the physicalist is going to have difficulty specifying what counts as the “appropriate
+    type” without using semantical notions. The notion of “cause,” used in mathematical
+    physics is “causation,” and is a precise relation between “states” of a system,
+    involving the existence of a transformation function, which deterministically
+    “carries” the earlier state into the later state.
+  keyword: realism, philosophy of science
+  ISSN: '00318094'
+
+- id: rosenberg:philosophy-of-science:2012
+  type: book
+  author:
+  - family: Rosenberg
+    given: Alex
+  editor:
+  - family: Moser
+    given: Paul K.
+  issued:
+  - year: '2012'
+  original-date:
+  - year: '2000'
+  title: 'Philosophy of science: A contemporary introduction'
+  title-short: Philosophy of science
+  collection-title: Routledge contemporary introductions to philosophy
+  publisher: Routledge
+  publisher-place: New York
+  edition: Third edition
+  keyword: philosophy of science
+
+- id: torrance:reality-scientific-theology:1985
+  type: book
+  author:
+  - family: Torrance
+    given: Thomas F.
+  editor:
+  - family: Torrance
+    given: T. F.
+  issued:
+  - year: '1985'
+  title: Reality and scientific theology
+  collection-title: Theology and science at the frontiers of knowledge
+  publisher: Scottish Academic Press
+  publisher-place: Edinburgh
+  keyword: realism, philosophy of science
+...
