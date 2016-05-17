@@ -44,7 +44,7 @@ Second, a realist view rightly makes sense of the way "observability" lies along
 
 The anti-realist may object: the fact that the distinction between observables and unobservables is blurry does not mean it does not exist. As Samir Okasha notes, the line between "bald" and "hirsute" may be fuzzy (pun intended), but it is still possible to identify a bald man.[-@okasha:science-introduction 69--70] Even granting the in-principle distinction between "observable" and "unobservable," however, the objection fails to establish the strong claim made by antirealists. It does not establish that the items in question are in fact unobservable (especially when confronted with the realist argument for indirect observation). Nor does it establish that scientists would be in principle incapable of correctly modeling unobservables. At most, it establishes that unobservables *may* exist.[@okasha:science-introduction 70]
 
-Thus, it is reasonable to suppose that though current models of astronomical behavior, or of quantum mechanics, or gravity, or any other only-indirectly-observable phenomena may be incomplete or partial, they nonetheless represent something *actual*.  There really an electron leaving a trail in the gas chamber.
+Thus, it is reasonable to suppose that though current models of astronomical behavior, or of quantum mechanics, or gravity, or any other only-indirectly-observable phenomena may be incomplete or partial, they nonetheless represent something *actual*.  There really is an electron leaving a trail in the gas chamber.
 
 ### c. No Miracles
 
