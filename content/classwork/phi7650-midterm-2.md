@@ -7,7 +7,7 @@ Template: formats/class
 Class: "Philosophy: Science and Religion"
 Professor: Dr. Greg Welty
 School: Southeastern Baptist Theological Seminary
-Date: 2016-03-15 12:30
+Date: 2016-03-15 12:31
 Category: theology
 Tags: M. Div., SEBTS, philosophy, science
 ...
