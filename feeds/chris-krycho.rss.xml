@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 19 May 2016 19:28:00 -0400</lastBuildDate><item><title>2016-05-19 19:28</title><link>http://www.chriskrycho.com/2016/2016-05-19-1928.html</link><description>&lt;p&gt;I needed to write a tiny server to test out some quirky single-page app stuff I’m doing for Olo right now. So I did it with Python and Flask.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 19 May 2016 19:32:00 -0400</lastBuildDate><item><title>2016-05-19 19:32</title><link>http://www.chriskrycho.com/2016/2016-05-19-1932.html</link><description>&lt;p&gt;P.S. I wrote that post on my iMac via SSH from an airplane somewhere over the Midwest. Crazy&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 19 May 2016 19:32:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-1932.html</guid><category>software development</category></item><item><title>2016-05-19 19:28</title><link>http://www.chriskrycho.com/2016/2016-05-19-1928.html</link><description>&lt;p&gt;I needed to write a tiny server to test out some quirky single-page app stuff I’m doing for Olo right now. So I did it with Python and Flask.&lt;/p&gt;
 &lt;p&gt;And you know what? Python is still—and forever, I suspect—so much better than JavaScript.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
