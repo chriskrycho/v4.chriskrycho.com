@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/rust.xml" rel="self"></atom:link><lastBuildDate>Tue, 10 May 2016 19:42:00 -0400</lastBuildDate><item><title>2016-05-10 19:42</title><link>http://www.chriskrycho.com/2016/2016-05-10-1942.html</link><description>&lt;p&gt;Wrote the first draft of my &lt;a href="http://rustconf.com"&gt;RustConf 2016&lt;/a&gt; proposal. Because I don’t skip chances to chat about Rust. Not ever. You know that by now.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/rust.xml" rel="self"></atom:link><lastBuildDate>Wed, 18 May 2016 22:41:00 -0400</lastBuildDate><item><title>2016-05-18 22:41</title><link>http://www.chriskrycho.com/2016/2016-05-18-2241.html</link><description>&lt;p&gt;Finally at a spot where I have both the time and the mental energy to pick back up my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;Rust and Swift&lt;/a&gt; series. Initializers, I’m coming for you.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 18 May 2016 22:41:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-18:2016/2016-05-18-2241.html</guid><category>writing</category><category>programming languages</category><category>rust</category><category>swift</category></item><item><title>2016-05-10 19:42</title><link>http://www.chriskrycho.com/2016/2016-05-10-1942.html</link><description>&lt;p&gt;Wrote the first draft of my &lt;a href="http://rustconf.com"&gt;RustConf 2016&lt;/a&gt; proposal. Because I don’t skip chances to chat about Rust. Not ever. You know that by now.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
