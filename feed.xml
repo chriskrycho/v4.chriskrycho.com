@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Thu, 19 May 2016 19:32:00 -0400</lastBuildDate><item><title>2016-05-19 19:32</title><link>http://www.chriskrycho.com/2016/2016-05-19-1932.html</link><description>&lt;p&gt;P.S. I wrote that post on my iMac via SSH from an airplane somewhere over the Midwest. Crazy&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Thu, 19 May 2016 21:25:00 -0400</lastBuildDate><item><title>2016-05-19 21:25</title><link>http://www.chriskrycho.com/2016/2016-05-19-2125.html</link><description>&lt;p&gt;Oh, hey, Colorado—nice to see you again; it’s been a while!&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 19 May 2016 21:25:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-2125.html</guid><category>travel</category></item><item><title>2016-05-19 19:32</title><link>http://www.chriskrycho.com/2016/2016-05-19-1932.html</link><description>&lt;p&gt;P.S. I wrote that post on my iMac via SSH from an airplane somewhere over the Midwest. Crazy&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -8,7 +12,11 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 19 May 2016 19:28:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-1928.html</guid><category>software development</category><category>programming languages</category><category>python</category><category>javascript</category></item><item><title>2016-05-18 22:41</title><link>http://www.chriskrycho.com/2016/2016-05-18-2241.html</link><description>&lt;p&gt;Finally at a spot where I have both the time and the mental energy to pick back up my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;Rust and Swift&lt;/a&gt; series. Initializers, I’m coming for you.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 19 May 2016 19:28:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-1928.html</guid><category>software development</category><category>programming languages</category><category>python</category><category>javascript</category></item><item><title>2016-05-19 18:33 GMT-0700</title><link>http://www.chriskrycho.com/2016/2016-05-19-1833-gmt-0700.html</link><description>&lt;p&gt;It’s amazing how much daylight sets your body’s clock. I’m flying west in early evening, and it barely feels like it’s getting later.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 19 May 2016 18:33:00 +0700</pubDate><guid>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-1833-gmt-0700.html</guid><category>travel</category></item><item><title>2016-05-18 22:41</title><link>http://www.chriskrycho.com/2016/2016-05-18-2241.html</link><description>&lt;p&gt;Finally at a spot where I have both the time and the mental energy to pick back up my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;Rust and Swift&lt;/a&gt; series. Initializers, I’m coming for you.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;

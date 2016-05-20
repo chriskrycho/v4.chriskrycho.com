@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-05-19T19:32:00-04:00</updated><entry><title>2016-05-19 19:32</title><link href="http://www.chriskrycho.com/2016/2016-05-19-1932.html" rel="alternate"></link><updated>2016-05-19T19:32:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-1932.html</id><summary type="html">&lt;p&gt;P.S. I wrote that post on my iMac via SSH from an airplane somewhere over the Midwest. Crazy&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-05-19T21:25:00-04:00</updated><entry><title>2016-05-19 21:25</title><link href="http://www.chriskrycho.com/2016/2016-05-19-2125.html" rel="alternate"></link><updated>2016-05-19T21:25:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-2125.html</id><summary type="html">&lt;p&gt;Oh, hey, Colorado—nice to see you again; it’s been a while!&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="travel"></category></entry><entry><title>2016-05-19 19:32</title><link href="http://www.chriskrycho.com/2016/2016-05-19-1932.html" rel="alternate"></link><updated>2016-05-19T19:32:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-1932.html</id><summary type="html">&lt;p&gt;P.S. I wrote that post on my iMac via SSH from an airplane somewhere over the Midwest. Crazy&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -8,7 +12,11 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="software development"></category><category term="programming languages"></category><category term="python"></category><category term="javascript"></category></entry><entry><title>2016-05-18 22:41</title><link href="http://www.chriskrycho.com/2016/2016-05-18-2241.html" rel="alternate"></link><updated>2016-05-18T22:41:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-05-18:2016/2016-05-18-2241.html</id><summary type="html">&lt;p&gt;Finally at a spot where I have both the time and the mental energy to pick back up my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;Rust and Swift&lt;/a&gt; series. Initializers, I’m coming for you.&lt;/p&gt;
+</summary><category term="software development"></category><category term="programming languages"></category><category term="python"></category><category term="javascript"></category></entry><entry><title>2016-05-19 18:33 GMT-0700</title><link href="http://www.chriskrycho.com/2016/2016-05-19-1833-gmt-0700.html" rel="alternate"></link><updated>2016-05-19T18:33:00+07:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-1833-gmt-0700.html</id><summary type="html">&lt;p&gt;It’s amazing how much daylight sets your body’s clock. I’m flying west in early evening, and it barely feels like it’s getting later.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="travel"></category></entry><entry><title>2016-05-18 22:41</title><link href="http://www.chriskrycho.com/2016/2016-05-18-2241.html" rel="alternate"></link><updated>2016-05-18T22:41:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-05-18:2016/2016-05-18-2241.html</id><summary type="html">&lt;p&gt;Finally at a spot where I have both the time and the mental energy to pick back up my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;Rust and Swift&lt;/a&gt; series. Initializers, I’m coming for you.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
