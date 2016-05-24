@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (xvi)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -129,7 +129,7 @@ fn main() {
 let freezing = Celsius(temp: 0)
 let balmy = Celsius(fromFahrenheit: 75.0)
 let absoluteZero = Celsius(fromKelvin: 0.0)</code></pre>
-<p>And the same in Rust:</p>
+<p>Note the internal and external parameter names. This is a common idiom Swift keeps (albeit with some non-trivial modification, and with <a href="%7B%3E%3E%20TODO:%20Swift%203%20naming%20changes%20%3C%3C%7D">more to come</a>). More on this below; first, the same basic functionality in Rust:</p>
 <pre class="rust"><code>struct Celsius {
     temp: f64
 }
@@ -150,12 +150,13 @@ let balmy = Celsius::from_fahrenheit(75.0);
 let absoluteZero = Celsius::from_kelvin(0.0);</code></pre>
 <p>(Note that there might be other considerations in implementing such types, like using a <code>Temperature</code> base <code>trait</code> or <code>protocol</code>, or employing type aliases, but those are for later entries!)</p>
 <p>You can see a point I made about Swift’s initializer syntax back in <a href="http://www.chriskrycho.com/2016/rust-and-swift-x.html">part x</a>: the way Rust reuses normal struct methods while Swift has the special initializers. Neither is clearly the “winner” here. Rust gets to use existing language machinery, simplifying our mental model a bit by not adding more syntax. On the other hand, the addition of initializer syntax lets Swift use a fairly familiar type construction syntax even for special initializer cases, and a leaves us with a bit less noise in the constructor method. Note, though, that initializers in Swift <em>are</em> special syntax; they’re not just a special kind of method (as the absence of the <code>func</code> keyword emphasizes)—unlike Rust, where initializers really are just normal struct or instance methods.</p>
-<p>The Swodt book papers notes this distinction:</p>
+<p>The Swift book papers notes this distinction:</p>
 <blockquote>
 <p>In its simplest form, an initializer is like an instance method with no parameters, written using the <code>init</code> keyword.</p>
 </blockquote>
 <p>The new keyword is the thing I could do without. Perhaps it’s just years of writing Python, but I really prefer it when constructors for types are just sugar and you can therefore reimplement them yourself, provide custom variations, etc. as it suits you. Introducing syntax instead of just picking a standard function to call at object instantiation means you lose that. At the same time, and in Swift’s defense, I’ve only rarely wanted or needed to use those facilities in work in Python. It’s a pragmatic decision—and it makes sense as such; it’s just not where my preference lies and I think the cost is a bit higher than I’d prefer relative to the gain in convenience.</p>
-<p>Both languages support supplying default values for a constructed type. Swift does this via default values defined at the site of the property definition itself, or simply set directly from within an initializer:</p>
+<p>Back to the initializers and the issue of overloading: the external parameter names (the <em>first</em> parameter) is one of the main ways Swift tells apart the initializers. (This is necessitated, of course, by the choice of a keyword for the initializer; Rust doesn’t have any <em>need</em> for this.) One other important thing falls out of this: the external parameter names are <em>required</em> when initializing a type in Swift</p>
+<p>Second, both languages support supplying default values for a constructed type. Swift does this via default values defined at the site of the property definition itself, or simply set directly from within an initializer:</p>
 <pre class="swift"><code>struct Kelvin {
     var temp: Double = 0.0  // zero kinetic energy!!!
     init () {
