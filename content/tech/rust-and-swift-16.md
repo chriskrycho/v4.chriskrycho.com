@@ -15,13 +15,13 @@ Status: draft
 
 <i class="editorial">Thanks to ubsan, aatch, and niconii on the [#rust-lang IRC] for a fascinating discussion of the current status of Rust's initialization analysis, as well as some very interesting comments on what might be possible to do in the future. Everything actually interesting about Rust in this post comes from the conversation I had with them on the evening of March 13.</i>
 
-[#rust-lang IRC]: 
+[#rust-lang IRC]: https://client00.chat.mibbit.com/?server=irc.mozilla.org&channel=%23rust
 
 ---
 
-The rules various languages have around construction and destruction of objects are *extremely* important for programmer safety and ergonomics. I think it's fair to say that both Swift and rust are actively trying to avoid some of the mistakes made in e.g. C++ which poorly affect both its safety and its ease of use for developers, albeit it in some superficially different ways.
+The rules various languages have around construction and destruction of objects are *extremely* important for programmer safety and ergonomics. I think it's fair to say that both Swift and rust are actively trying to avoid some of the mistakes made in e.g. C++ which poorly affect both its safety and its ease of use for developers, albeit it in some superficially different ways. Both languages also support defining how types are destroyed, which we'll come back to in a future discussion. 
 
-The basic aim both Rust and Swift have in this area seems to be the same: avoid *partially* initialized objects.
+The basic aim both Rust and Swift have in this area seems to be the same: avoid *partially* initialized objects. (You don't want partially initialized objects. Ask Objective C developers.)
 
 Swift does this via its rules around *initializers*. Rust does it by requiring that all the values of a type be initialized at its creation. So, for example, the following *looks* like it should work, but as the comment explains, it doesn't. You can initialize the variable piecemeal, but you cannot *use* it.
 
@@ -47,7 +47,7 @@ fn main() {
 
 As a result, especially with more complex data types, providing standard constructor-style methods like `new` or `default` is conventional and helpful. (If the type has non-public members, it's also strictly necessary.)
 
-Swift has a number of options for initializers, which correspond to things you variously can odd in Rust, but in a very different way.
+Swift has a number of options for initializers, which correspond to things you in most cases can do in Rust, but in a very different way.
 
 First, Swift allows you to overload the `init` method on a type, so that you can have different constructors for different starting conditions. (This is, to my recollection, the first time any kind of overloading has come up so far in the Swift book---but that could just be my memory failing me. Certainly I haven't referenced it in any previous discussion, though.)
 
@@ -72,7 +72,9 @@ let balmy = Celsius(fromFahrenheit: 75.0)
 let absoluteZero = Celsius(fromKelvin: 0.0)
 ```
 
-And the same in Rust:
+Note the internal and external parameter names. This is a common idiom Swift keeps (albeit with some non-trivial modification, and with [more to come]). More on this below; first, the same basic functionality in Rust:
+
+[more to come]: {>> TODO: Swift 3 naming changes <<}
 
 ```rust
 struct Celsius {
@@ -80,11 +82,11 @@ struct Celsius {
 }
 
 impl Celsius {
-    fn from_fahrenheit(f: f64) {
+    fn from_fahrenheit(f: f64) -> Celsius {
         Celsius { temp: 1.8 * (f - 32.0) }
     }
     
-    fn from_kelvin(k: f64) {
+    fn from_kelvin(k: f64) -> Celsius {
         Celsius { temp: k - 273.15 }
     }
 }
@@ -97,7 +99,52 @@ let absoluteZero = Celsius::from_kelvin(0.0);
 
 (Note that there might be other considerations in implementing such types, like using a `Temperature` base `trait` or `protocol`, or employing type aliases, but those are for later entries!)
 
-You can see a point I made about Swift's initializer syntax back in [part x][10]: the way Rust reuses normal struct methods while Swift has the special initializers. Neither is clearly the "winner" here: Rust gets to use existing language machinery, simplifying the model a bit, but the addition of initializer syntax lets Swift use a fairly familiar type construction syntax even for special initializer cases, and a bit less noise in the constructor method. Note, though, that initializers in Swift *are* special syntax; they re not just a special kind of method (as the absence of the `func` keyword emphasizes).
+You can see a point I made about Swift's initializer syntax back in [part x][10]: the way Rust reuses normal struct methods while Swift has the special initializers. Neither is clearly the "winner" here. Rust gets to use existing language machinery, simplifying our mental model a bit by not adding more syntax. On the other hand, the addition of initializer syntax lets Swift use a fairly familiar type construction syntax even for special initializer cases, and a leaves us with a bit less noise in the constructor method. Note, though, that initializers in Swift *are* special syntax; they're not just a special kind of method (as the absence of the `func` keyword emphasizes)---unlike Rust, where initializers really are just normal struct or instance methods.
+
+The Swift book papers notes this distinction:
+
+> In its simplest form, an initializer is like an instance method with no parameters, written using the `init` keyword.
+
+The new keyword is the thing I could do without. Perhaps it's just years of writing Python, but I really prefer it when constructors for types are just sugar and you can therefore reimplement them yourself, provide custom variations, etc. as it suits you. Introducing syntax instead of just picking a standard function to call at object instantiation means you lose that. At the same time, and in Swift's defense, I've only rarely wanted or needed to use those facilities in work in Python. It's a pragmatic decision---and it makes sense as such; it's just not where my preference lies and I think the cost is a bit higher than I'd prefer relative to the gain in convenience.
+
+Back to the initializers and the issue of overloading: the external parameter names (the *first* parameter) is one of the main ways Swift tells apart the initializers. (This is necessitated, of course, by the choice of a keyword for the initializer; Rust doesn't have any *need* for this.) One other important thing falls out of this: the external parameter names are *required* when initializing a type in Swift 
+
+Second, both languages support supplying default values for a constructed type. Swift does this via default values defined at the site of the property definition itself, or simply set directly from within an initializer:
+
+```swift
+struct Kelvin {
+    var temp: Double = 0.0  // zero kinetic energy!!!
+    init () {
+        temp= 305.0  // Change of plans: maybe just freezing is better
+    }
+}
+```
+
+In Rust, you can not supply default values directly on a property, but you can define any number of custom constructors:
+
+```rust
+struct Kelvin {
+    temp: f64,
+}
+
+impl Kelvin {
+    fn abs_zero() -> Kelvin {
+        Kelvin { temp: 0.0 }
+    }
+
+    fn freezing() -> Kelvin {
+        Kelvin { temp: 305.0 }
+    }
+}
+```
+
+We could of course shorten each of those two one line, so:
+
+```rust
+fn abs_zero() -> Kelvin { Kelvin { temp: 0.0 } }
+```
+
+The Rust is definitely a little noisier, and that is the downside of this tack. The upside is that these are just functions like any other.
 
 
 
