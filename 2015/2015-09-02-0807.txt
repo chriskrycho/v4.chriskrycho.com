@@ -1,5 +1,6 @@
 ---
-Title: 2015-09-02 08:07
+Title: ""
+Slug: 2015-09-02-0807
 Date: 2015-09-02 08:07
 Tags: programming languages, rust
 Template: formats/micro

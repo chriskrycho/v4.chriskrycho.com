@@ -1,5 +1,6 @@
 ---
-Title: 2016-03-30 21:03
+Title: ""
+Slug: 2016-03-30-2103
 Date: 2016-03-30 21:03
 Tags: space, ellie
 Template: formats/micro

@@ -1,5 +1,6 @@
 ---
-Title: 2015-10-13 10:59
+Title: ""
+Slug: 2015-10-13-1059
 Date: 2015-10-13 10:59
 Tags: software development
 Template: formats/micro

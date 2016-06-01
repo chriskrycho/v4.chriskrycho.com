@@ -1,5 +1,6 @@
 ---
-Title: 2016-03-10 08:00
+Title: ""
+Slug: 2016-03-10-0800
 Date: 2016-03-10 08:00
 Tags: podcasting
 Template: formats/micro

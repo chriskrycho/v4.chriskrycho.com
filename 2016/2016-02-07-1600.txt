@@ -1,5 +1,6 @@
 ---
-Title: 2016-02-07 16:00
+Title: ""
+Slug: 2016-02-07-1600
 Date: 2016-02-07 16:00
 Tags: podcasting, programming languages, rust
 Template: formats/micro

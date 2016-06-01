@@ -1,5 +1,6 @@
 ---
-Title: 2016-04-10 09:56
+Title: ""
+Slug: 2016-04-10-0956
 Date: 2016-04-10 09:56
 Tags: ellie, space
 Template: formats/micro

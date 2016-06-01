@@ -1,5 +1,6 @@
 ---
-Title: 2015-07-29 20:47
+Title: ""
+Slug: 2015-07-29-2047
 Date: 2015-07-29 20:47
 Tags: software development
 Template: formats/micro

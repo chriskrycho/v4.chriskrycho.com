@@ -1,5 +1,6 @@
 ---
-Title: 2016-05-23 23:03
+Title: ""
+Slug: 2016-05-23-2303
 Date: 2016-05-23 23:03
 Tags: travel, family
 Template: formats/micro

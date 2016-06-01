@@ -1,5 +1,6 @@
 ---
-Title: 2016-04-05 08:00
+Title: ""
+Slug: 2016-04-05-0800
 Date: 2016-04-05 08:00
 Tags: writing, sermons, M. Div., SEBTS
 Template: formats/micro

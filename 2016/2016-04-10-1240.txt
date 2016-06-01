@@ -1,5 +1,6 @@
 ---
-Title: 2016-04-10 12:40
+Title: ""
+Slug: 2016-04-10-1240
 Date: 2016-04-10 12:40
 Tags: design
 Template: formats/micro

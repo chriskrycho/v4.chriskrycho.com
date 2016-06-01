@@ -1,5 +1,6 @@
 ---
-Title: 2016-05-15 16:36
+Title: ""
+Slug: 2016-05-15-1636
 Date: 2016-05-15 16:36
 Tags: writing
 Template: formats/micro

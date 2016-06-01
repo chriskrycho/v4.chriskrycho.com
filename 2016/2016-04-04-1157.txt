@@ -1,5 +1,6 @@
 ---
-Title: 2016-04-04 11:57
+Title: ""
+Slug: 2016-04-04-1157
 Date: 2016-04-04 11:57
 Tags: business
 Template: formats/micro

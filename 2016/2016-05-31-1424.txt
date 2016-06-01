@@ -1,5 +1,6 @@
 ---
-Title: 2016-05-31 14:24
+Title: ""
+Slug: 2016-05-31-1424
 Date: 2016-05-31 14:24
 Tags: rust, podcasting
 Template: formats/micro

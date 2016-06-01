@@ -1,5 +1,6 @@
 ---
-Title: 2016-04-23 17:07
+Title: ""
+Slug: 2016-04-23-1707
 Date: 2016-04-23 17:07
 Tags: podcasting, typography, music, Rust
 Template: formats/micro

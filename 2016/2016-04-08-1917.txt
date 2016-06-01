@@ -1,5 +1,6 @@
 ---
-Title: 2016-04-08 19:17
+Title: ""
+Slug: 2016-04-08-1917
 Date: 2016-04-08 19:17
 Tags: space
 Template: formats/micro

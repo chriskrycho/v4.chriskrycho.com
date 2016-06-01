@@ -1,5 +1,6 @@
 ---
-Title: 2015-09-12 21:04
+Title: ""
+Slug: 2015-09-12-2104
 Date: 2015-09-12 21:04
 Tags: podcasting
 Template: formats/micro

@@ -1,5 +1,6 @@
 ---
-Title: 2016-05-29 10:07
+Title: ""
+Slug: 2016-05-29-1007
 Date: 2016-05-29 10:07
 Tags: listicles
 Template: formats/micro

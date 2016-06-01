@@ -1,5 +1,6 @@
 ---
-Title: 2015-07-01 10:39
+Title: ""
+Slug: 2015-07-01-1039
 Date: 2015-07-01 10:39
 Tags: fitness
 Template: formats/micro

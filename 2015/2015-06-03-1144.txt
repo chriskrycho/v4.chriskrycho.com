@@ -1,5 +1,6 @@
 ---
-Title: 2015-06-03 11:44
+Title: ""
+Slug: 2015-06-03-1144
 Date: 2015-06-03 11:44
 Template: formats/micro
 Category: micro

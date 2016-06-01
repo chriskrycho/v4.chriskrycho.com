@@ -1,5 +1,6 @@
 ---
-Title: 2016-03-05 07:11
+Title: ""
+Slug: 2016-03-05-0711
 Date: 2016-03-05 07:11
 Tags: family, ellie, kate
 Template: formats/micro

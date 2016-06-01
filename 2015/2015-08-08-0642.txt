@@ -1,5 +1,6 @@
 ---
-Title: 2015-08-08 06:42
+Title: ""
+Slug: 2015-08-08-0642
 Date: 2015-08-08 06:42
 Tags: family, kate, ellie
 Template: formats/micro

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/angularjs.xml" rel="self"></atom:link><lastBuildDate>Thu, 21 Apr 2016 20:03:00 -0400</lastBuildDate><item><title>2016-04-21 20:03</title><link>http://www.chriskrycho.com/2016/2016-04-21-2003.html</link><description>&lt;p&gt;Just finished a massive cleanup of about 4000 lines of an AngularJS codebase. It’s not &lt;em&gt;amazing&lt;/em&gt;, but it’s a heck of a lot easier to deal with now.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/angularjs.xml" rel="self"></atom:link><lastBuildDate>Thu, 21 Apr 2016 20:03:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/2016-04-21-2003.html</link><description>&lt;p&gt;Just finished a massive cleanup of about 4000 lines of an AngularJS codebase. It’s not &lt;em&gt;amazing&lt;/em&gt;, but it’s a heck of a lot easier to deal with now.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -43,7 +43,7 @@
 &lt;p&gt;Even this, however, only &lt;em&gt;hints&lt;/em&gt; at the root of the SVG issue.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 02 Jul 2015 22:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-20:2015/html5-location-base-and-svg.html</guid><category>software development</category><category>angularjs</category><category>javascript</category></item><item><title>2015-05-29 09:38</title><link>http://www.chriskrycho.com/2015/2015-05-29-0938.html</link><description>&lt;p&gt;One of (many) irritations with using Angular: every search turns up Bootstrap solutions.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 02 Jul 2015 22:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-06-20:2015/html5-location-base-and-svg.html</guid><category>software development</category><category>angularjs</category><category>javascript</category></item><item><title></title><link>http://www.chriskrycho.com/2015/2015-05-29-0938.html</link><description>&lt;p&gt;One of (many) irritations with using Angular: every search turns up Bootstrap solutions.&lt;/p&gt;
 &lt;p&gt;I’m not using Bootstrap.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;:sigh:&lt;/em&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;

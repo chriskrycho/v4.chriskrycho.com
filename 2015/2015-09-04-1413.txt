@@ -1,5 +1,6 @@
 ---
-Title: 2015-09-04 14:13
+Title: ""
+Slug: 2015-09-04-1413
 Date: 2015-09-04 14:13
 Tags: politics
 Template: formats/micro

@@ -1,5 +1,6 @@
 ---
-Title: 2016-03-19 16:15
+Title: ""
+Slug: 2016-03-19-1615
 Date: 2016-03-19 16:15
 Tags: software development, swift, rust
 Template: formats/micro

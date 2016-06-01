@@ -1,5 +1,6 @@
 ---
-Title: 2015-08-27 14:40
+Title: ""
+Slug: 2015-08-27-1440
 Date: 2015-08-27 14:40
 Tags: music
 Template: formats/micro

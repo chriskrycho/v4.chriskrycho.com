@@ -1,5 +1,6 @@
 ---
-Title: 2015-08-17 17:40
+Title: ""
+Slug: 2015-08-17-1740
 Date: 2015-08-17 17:40
 Tags: typography, software development
 Template: formats/micro

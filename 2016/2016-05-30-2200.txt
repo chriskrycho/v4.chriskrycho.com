@@ -1,5 +1,6 @@
 ---
-Title: 2016-05-30 22:00
+Title: ""
+Slug: 2016-05-30-2200
 Date: 2016-05-30 22:00
 Tags: rust, software development, listicles
 Template: formats/micro

@@ -1,5 +1,6 @@
 ---
-Title: 2016-04-25 07:27
+Title: ""
+Slug: 2016-04-25-0727
 Date: 2016-04-25 07:27
 Tags: politics
 Template: formats/micro

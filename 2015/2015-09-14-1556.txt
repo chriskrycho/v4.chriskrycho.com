@@ -1,5 +1,6 @@
 ---
-Title: 2015-09-14 15:56
+Title: ""
+Slug: 2015-09-14-1556
 Date: 2015-09-14 15:56
 Tags: typography
 Template: formats/micro

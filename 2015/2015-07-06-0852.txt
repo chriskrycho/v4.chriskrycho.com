@@ -1,5 +1,6 @@
 ---
-Title: 2015-07-06 08:52
+Title: ""
+Slug: 2015-07-06-0852
 Date: 2015-07-06 08:52
 Tags: Ellie
 Template: formats/micro

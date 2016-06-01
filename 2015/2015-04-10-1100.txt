@@ -1,5 +1,6 @@
 ---
-Title: 2015-04-10-1100
+Title: ""
+Slug: 2015-04-10-1100
 Author: Chris Krycho
 Date: 2015-04-10 11:00
 Template: formats/micro

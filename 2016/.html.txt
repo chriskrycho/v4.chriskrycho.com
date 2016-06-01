@@ -1,0 +1,8 @@
+---
+Title: ""
+Date: 2016-06-01 16:59
+Tags: bargle, foo
+Template: formats/micro
+---
+
+This is a test.

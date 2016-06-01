@@ -1,5 +1,6 @@
 ---
-Title: 2016-04-28 07:55
+Title: ""
+Slug: 2016-04-28-0755
 Date: 2016-04-28 07:55
 Tags: programming languages, rust, links
 Template: formats/micro

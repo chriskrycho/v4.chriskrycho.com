@@ -1,5 +1,6 @@
 ---
-Title: 2015-09-30 06:29
+Title: ""
+Slug: 2015-09-30-0629
 Date: 2015-09-30 06:29
 Tags: family, kate
 Template: formats/micro

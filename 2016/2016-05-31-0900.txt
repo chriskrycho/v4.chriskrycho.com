@@ -1,5 +1,6 @@
 ---
-Title: 2016-05-31 09:00
+Title: ""
+Slug: 2016-05-31-0900
 Date: 2016-05-31 09:00
 Tags: python, ruby, programming languages, listicles
 Template: formats/micro

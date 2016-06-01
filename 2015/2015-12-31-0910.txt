@@ -1,5 +1,6 @@
 ---
-Title: 2015-12-31 09:10
+Title: ""
+Slug: 2015-12-31-0910
 Date: 2015-12-31 09:10
 Template: formats/micro
 Category: micro

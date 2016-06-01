@@ -1,5 +1,6 @@
 ---
-Title: 2016-03-14 08:49
+Title: ""
+Slug: 2016-03-14-0849
 Date: 2016-03-14 08:49
 Tags: javascript, software development
 Template: formats/micro
