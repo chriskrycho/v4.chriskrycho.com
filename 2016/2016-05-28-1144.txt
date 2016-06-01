@@ -5,11 +5,11 @@ Template: formats/micro
 Category: micro
 ---
 
-☑ [SEBTS] semester books shelved
-☑ Reconciled and budgeted with [YNAB]
-☑ Office space cleaned
-☑ Email inbox zero; important replies sent
-☐ Nap
+| ☑ [SEBTS] semester books shelved
+| ☑ Reconciled and budgeted with [YNAB]
+| ☑ Office space cleaned
+| ☑ Email inbox zero; important replies sent
+| ☐ Nap
 
 [SEBTS]: http://www.sebts.edu
 [YNAB]: https://www.youneedabudget.com
