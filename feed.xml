@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Wed, 01 Jun 2016 16:59:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/06-01-1659.html</link><description>&lt;p&gt;This is a test.&lt;/p&gt;
-&lt;div id="refs" class="references"&gt;
-
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 01 Jun 2016 16:59:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-01:2016/06-01-1659.html</guid><category>bargle</category><category>foo</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-06-01-1358.html</link><description>&lt;p&gt;I was looking at the &lt;a href="https://github.com/chriskrycho/chriskrycho.com"&gt;GitHub repository&lt;/a&gt; for my blog, and noted that it doesn’t include Markdown in its language stats. Which means its stats are &lt;em&gt;hilariously&lt;/em&gt; misleading when you’re looking at the language breakdown for a content-oriented repository.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Wed, 01 Jun 2016 13:58:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/2016-06-01-1358.html</link><description>&lt;p&gt;I was looking at the &lt;a href="https://github.com/chriskrycho/chriskrycho.com"&gt;GitHub repository&lt;/a&gt; for my blog, and noted that it doesn’t include Markdown in its language stats. Which means its stats are &lt;em&gt;hilariously&lt;/em&gt; misleading when you’re looking at the language breakdown for a content-oriented repository.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
