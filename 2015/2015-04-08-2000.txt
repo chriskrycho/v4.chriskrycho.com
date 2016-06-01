@@ -1,6 +1,7 @@
 ---
 Title: 2015-04-08-2000
 Template: formats/micro
+Category: micro
 Date: 2015-04-08 20:00
 Author: Chris Krycho
 ...

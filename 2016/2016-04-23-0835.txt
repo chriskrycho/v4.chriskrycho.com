@@ -3,6 +3,7 @@ Title: 2016-04-23 08:35
 Date: 2016-04-23 08:35
 Tags: programming languages, purescript
 Template: formats/micro
+Category: micro
 ...
 
 And then I discovered that [PureScript][ps] [uses Bower][Bower] for its package management tool.

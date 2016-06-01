@@ -2,6 +2,7 @@
 Title: 2016-01-30 22:45
 Date: 2016-01-30 22:45
 Template: formats/micro
+Category: micro
 ...
 
 *Actually* cleaning up my desk area—because I (a) got a new desk and (b) am

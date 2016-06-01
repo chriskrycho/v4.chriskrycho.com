@@ -3,6 +3,7 @@ Title: 2015-10-09 13:46
 Date: 2015-10-09 13:46
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 Inversion of control is a beautiful thing. Not least because it makes it so much

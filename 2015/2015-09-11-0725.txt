@@ -2,6 +2,7 @@
 Title: 2015-09-11 07:25
 Date: 2015-09-11 07:25
 Template: formats/micro
+Category: micro
 ...
 
 Filed my quarterly taxes. The North Carolina Department of Revenue's website is

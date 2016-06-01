@@ -2,6 +2,7 @@
 Title: 2015-07-20 10:00
 Date: 2015-07-20 10:00
 Template: formats/micro
+Category: micro
 ...
 
 Pro tip: it turns out that generic versions of psychotropic medications may not

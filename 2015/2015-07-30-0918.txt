@@ -2,6 +2,7 @@
 Title: 2015-07-30 09:18
 Date: 2015-07-30 09:18
 Template: formats/micro
+Category: micro
 ...
 
 If you're running Windows 10, you should be aware of its [defaults] with sharing

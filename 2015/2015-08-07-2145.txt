@@ -3,6 +3,7 @@ Title: 2015-08-07 21:45
 Date: 2015-08-07 21:45
 Tags: typography
 Template: formats/micro
+Category: micro
 ...
 
 Well, blast. I was thinking I might also use Input for the website design for

@@ -3,6 +3,7 @@ Title: 2015-10-13 10:59
 Date: 2015-10-13 10:59
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 Today I did a code review on my iPad while walking from school to a coffee shop,

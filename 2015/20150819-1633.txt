@@ -2,6 +2,7 @@
 Title: 2015/08/19 16:33
 Date: 2015-08-19 16:33
 Template: formats/micro
+Category: micro
 Tags: design, software development
 ...
 

@@ -2,6 +2,7 @@
 Title: 2015-07-30 09:16
 Date: 2015-07-30 09:16
 Template: formats/micro
+Category: micro
 ...
 
 An advantage to running Windows 10 in a VM: [this boondoggle] isn't a problem

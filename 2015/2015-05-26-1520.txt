@@ -2,6 +2,7 @@
 Title: 2015-05-26 15:20
 Date: 2015-05-26 15:20
 Template: formats/micro
+Category: micro
 ...
 
 Neat! I just created a simple workflow in Workflows on my iPhone, which lets me 

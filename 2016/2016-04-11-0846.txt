@@ -3,6 +3,7 @@ Title: 2016-04-11 08:46
 Date: 2016-04-11 08:46
 Tags: software development, javascript
 Template: formats/micro
+Category: micro
 ---
 
 Betting I'm not the only one who thinks it a little weird that the `Event.target` in the DOM APIs is the *source* of the event.

@@ -1,6 +1,7 @@
 Title: 2015-04-17-2117
 Date: 2015-04-17 21:17
 Template: formats/micro
+Category: micro
 
 Yet again, Atlassian [demonstrates] that they couldn't care less what their
 customers [actually want]---at least, the small business customers like me.

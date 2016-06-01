@@ -3,6 +3,7 @@ Title: 2016-02-29 08:10
 Date: 2016-02-29 08:10
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 I have an ongoing internal debate whether to hard-wrap lines in the source Markdown documents for my website (and everything else). Upside: it can be helpful when viewed in a terminal. Downside: it's not very [responsive] in other editors or small phone views.

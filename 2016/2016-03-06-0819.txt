@@ -2,6 +2,7 @@
 Title: 2016-03-06 08:19
 Date: 2016-03-06 08:19
 Template: formats/micro
+Category: micro
 Tags: family, ellie
 ...
 

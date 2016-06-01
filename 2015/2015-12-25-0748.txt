@@ -2,6 +2,7 @@
 Title: 2015-12-25 07:48
 Date: 2015-12-25 07:48
 Template: formats/micro
+Category: micro
 ...
 
 

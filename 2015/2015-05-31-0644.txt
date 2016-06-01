@@ -2,6 +2,7 @@
 Title: 2015-05-31 06:44
 Date: 2015-05-31 06:44
 Template: formats/micro
+Category: micro
 ...
 
 I am slowly working out a system for using Evernote to manage notes, books to

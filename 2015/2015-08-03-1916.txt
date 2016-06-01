@@ -2,6 +2,7 @@
 Title: 2015-08-03 19:16
 Date: 2015-08-03 19:16
 Template: formats/micro
+Category: micro
 ...
 
 Very interesting: Bartender works with [System Integrity Protection]... if you

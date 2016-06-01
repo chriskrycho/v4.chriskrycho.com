@@ -3,7 +3,8 @@ Title: 2016-06-01 12:11
 Date: 2016-06-01 12:11
 Tags: indie web
 Template: formats/micro
-...
+Category: micro
+---
 
 I just republished a *bunch* of tweets I've written over the last few weeks on my own website. Two observations:
 

@@ -3,6 +3,7 @@ Title: 2015-05-25 20:06
 Date: 2015-05-25 20:06
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 That [project] I started on the other day? It's still going... and swimmingly.

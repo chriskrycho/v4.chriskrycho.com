@@ -2,6 +2,7 @@
 Title: 2015-06-03 12:49
 Date: 2015-06-03 12:49
 Template: formats/micro
+Category: micro
 ...
 
 I just discovered that [Jason Snell] and [John Siracusa] are actually doing

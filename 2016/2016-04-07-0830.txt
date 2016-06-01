@@ -3,6 +3,7 @@ Title: 2016-04-07 08:30
 Date: 2016-04-07 08:30
 Tags: software development, programming languages, javascript
 Template: formats/micro
+Category: micro
 ---
 
 The more time I spend with languages with pattern matching and expressive type systems, the more I feel frustrated by things I just can't express in JavaScript. If I could write Ember in something [Elm]... I think I'd be *giddy*.

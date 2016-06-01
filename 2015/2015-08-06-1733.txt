@@ -3,6 +3,7 @@ Title: 2015-08-06 17:33
 Date: 2015-08-06 17:33
 Tags: programming languages, rust
 Template: formats/micro
+Category: micro
 ...
 
 ☑ Finished reading the [Rust by Example] book.

@@ -2,6 +2,7 @@
 Title: 2015-08-04 18:29
 Date: 2015-08-04 18:29
 Template: formats/micro
+Category: micro
 ...
 
 So far, at least, System Integrity Protect ("rootless" mode) is causing quite a

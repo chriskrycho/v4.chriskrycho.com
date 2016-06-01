@@ -3,6 +3,7 @@ Title: 2015-08-27 14:40
 Date: 2015-08-27 14:40
 Tags: music
 Template: formats/micro
+Category: micro
 ...
 
 James Newton Howard's _After Earth_ score is fairly generic action movie music.

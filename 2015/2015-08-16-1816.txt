@@ -3,6 +3,7 @@ Title: 2015-08-16 18:16
 Date: 2015-08-16 18:16
 Tags: podcasting
 Template: formats/micro
+Category: micro
 ...
 
 CDN configured. Sites both 80% done. These podcasts *will* launch this week,

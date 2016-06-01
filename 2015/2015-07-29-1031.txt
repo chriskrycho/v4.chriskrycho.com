@@ -2,6 +2,7 @@
 Title: 2015-07-29 10:31
 Date: 2015-07-29 10:31
 Template: formats/micro
+Category: micro
 ...
 
 Per [\@manton]’s [suggestion], I've set up IFTTT recipes for ADN and Twitter to

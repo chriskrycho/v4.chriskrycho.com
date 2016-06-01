@@ -2,6 +2,7 @@
 Title: 2016-01-12 17:52
 Date: 2016-01-12 17:52
 Template: formats/micro
+Category: micro
 Tags: music
 ...
 

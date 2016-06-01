@@ -3,6 +3,7 @@ Title: 2016-02-27 20:54
 Date: 2016-02-27 20:54
 Tags: podcasting
 Template: formats/micro
+Category: micro
 ...
 
 One of these days I should write up the slightly arcane workflow I use to

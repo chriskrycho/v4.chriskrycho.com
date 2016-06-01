@@ -2,6 +2,7 @@
 Title: 2015-05-17 07:45
 Date: 2015-05-17 07:45
 Template: formats/micro
+Category: micro
 Tags: M. Div., SEBTS
 ...
 

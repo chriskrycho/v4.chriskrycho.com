@@ -2,6 +2,7 @@
 Title: 2015-06-23 06:59
 Date: 2015-06-23 06:59
 Template: formats/micro
+Category: micro
 Tags: coffee
 ...
 

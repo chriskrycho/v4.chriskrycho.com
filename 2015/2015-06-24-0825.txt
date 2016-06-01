@@ -2,6 +2,7 @@
 Title: 2015-06-24 08:25
 Date: 2015-06-24 08:25
 Template: formats/micro
+Category: micro
 ...
 
 Depression is an awful, awful part of our fallen existence. I'd do almost

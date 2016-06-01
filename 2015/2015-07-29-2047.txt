@@ -3,6 +3,7 @@ Title: 2015-07-29 20:47
 Date: 2015-07-29 20:47
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 I just realized that one of the reason [Rust] so strongly appeals to me is that

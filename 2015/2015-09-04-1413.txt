@@ -3,6 +3,7 @@ Title: 2015-09-04 14:13
 Date: 2015-09-04 14:13
 Tags: politics
 Template: formats/micro
+Category: micro
 ...
 
 More than 2⨉ as many people live in NYC today than did in the 13 states when the

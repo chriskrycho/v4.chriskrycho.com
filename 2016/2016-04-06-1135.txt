@@ -3,6 +3,7 @@ Title: 2016-04-06 11:35
 Date: 2016-04-06 11:35
 Tags: ellie
 Template: formats/micro
+Category: micro
 ...
 
 Ellie just spotted a bald eagle out our back window. How cool is that?

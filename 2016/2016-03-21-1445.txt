@@ -3,6 +3,7 @@ Title: 2016-03-21 14:45
 Date: 2016-03-21 14:45
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 Throwing this out there: don't organize your apps by 'kind of item' (view, controller, etc.). Organize by *concern*. A component's template, controller, etc. should be right next to each other.

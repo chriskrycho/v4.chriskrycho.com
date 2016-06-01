@@ -2,6 +2,7 @@
 Title: 2015-05-31 16:50
 Date: 2015-05-31 16:50
 Template: formats/micro
+Category: micro
 ...
 
 One of the tricks as I'm trying to work out what I want to do with Evernote: I

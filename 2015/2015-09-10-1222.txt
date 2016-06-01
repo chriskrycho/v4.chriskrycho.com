@@ -3,6 +3,7 @@ Title: 2015-09-10 12:22
 Date: 2015-09-10 12:22
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 Needed to set up a simple test bed for a Python distribution with `setuptools`,

@@ -3,6 +3,7 @@ Title: 2015-09-11 12:50
 Date: 2015-09-11 12:50
 Tags: programming languages, rust
 Template: formats/micro
+Category: micro
 Modified: 2015-09-11 13:30
 ...
 

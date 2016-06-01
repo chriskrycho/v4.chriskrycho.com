@@ -3,6 +3,7 @@ Title: 2015-09-13 19:20
 Date: 2015-09-13 19:20
 Tags: fitness
 Template: formats/micro
+Category: micro
 ...
 
 Ever since that [18-mile run] earlier, I have been craving (and therefore

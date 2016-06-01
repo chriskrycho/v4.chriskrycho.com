@@ -2,6 +2,7 @@
 Title: 2015-07-22 22:03
 Date: 2015-07-22 22:03
 Template: formats/micro
+Category: micro
 ...
 
 I did something new with the [paper] I just published: I used [BibTeX] and

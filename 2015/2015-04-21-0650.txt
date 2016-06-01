@@ -1,6 +1,7 @@
 Title: 2015-04-21 06:50
 Date: 2015-04-21 06:50
 Template: formats/micro
+Category: micro
 
 What I want---what I really, really want---is the text and layout of the [BHQ]
 and [NA^28^], sans apparatus, in a single binding, to use for my devotional

@@ -3,6 +3,7 @@ Title: 2016-05-30 22:00
 Date: 2016-05-30 22:00
 Tags: rust, software development, listicles
 Template: formats/micro
+Category: micro
 ---
 
 <i class=editorial>I originally posted this as a [tweetstorm], but I'm treating *this* as the canonical and adding a tweet to the end of that "topic" linking back here. [Indie web] forever.</i>

@@ -3,6 +3,7 @@ Title: 2015-08-18 17:49
 Date: 2015-08-18 17:49
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 Ugh. I just discovered that a support email address has been sitting unattended

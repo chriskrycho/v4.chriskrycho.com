@@ -2,6 +2,7 @@
 Title: 2016-01-08 12:08
 Date: 2016-01-08 12:08
 Template: formats/micro
+Category: micro
 ...
 
 Just wrapped up 3.5 years of working for one company. I'll start elsewhere on

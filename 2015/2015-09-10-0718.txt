@@ -2,6 +2,7 @@
 Title: 2015-09-10 07:18
 Date: 2015-09-10 07:18
 Template: formats/micro
+Category: micro
 ...
 
 That’s kind of brutal---the new Apple Pencil with [FiftyThree]'s Paper app:

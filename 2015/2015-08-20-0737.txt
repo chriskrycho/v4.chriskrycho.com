@@ -2,6 +2,7 @@
 Title: 2015-08-20 07:37
 Date: 2015-08-20 07:37
 Template: formats/micro
+Category: micro
 ...
 
 Thank goodness for [Backblaze]. After a bad OS X 10.11 beta install, I had to

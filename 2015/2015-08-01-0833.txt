@@ -3,6 +3,7 @@ Title: 2015-08-01 08:33
 Date: 2015-08-01 08:33
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 People often point to [this (*hilariously accurate*) flowchart][xkcd] to explain

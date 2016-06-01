@@ -3,6 +3,7 @@ Title: 2015-09-12 12:55
 Date: 2015-09-12 12:55
 Tags: music
 Template: formats/micro
+Category: micro
 ...
 
 I just realized: I have *no idea* how to listen to music the way "kids these

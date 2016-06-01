@@ -3,6 +3,7 @@ Title: 2015-09-25 07:33
 Date: 2015-09-25 07:33
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 I find that I solve many software problems faster by writing them out with pen

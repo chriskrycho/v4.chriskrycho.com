@@ -3,6 +3,7 @@ Title: 2015-09-13 15:47
 Date: 2015-09-13 15:47
 Tags: fitness
 Template: formats/micro
+Category: micro
 ...
 
 I took an 18-mile run today---the longest of my life so far. If you'd told me a

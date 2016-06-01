@@ -3,6 +3,7 @@ Title: 2016-03-03 08:22
 Date: 2016-03-03 08:22
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 If you're contributing regularly to open source on GitHub, and you use the git command line *at all*, do yourself a favor and go install [Hub] *right. now.* Makes life so much easier.

@@ -3,6 +3,7 @@ Title: 2016-03-07 12:37
 Date: 2016-03-07 12:37
 Tags: coffee
 Template: formats/micro
+Category: micro
 ...
 
 12oz home-made pour-over of [Counter Culture]'s [Buziraguhindwa]. *Now* I'm ready to handle this afternoon.

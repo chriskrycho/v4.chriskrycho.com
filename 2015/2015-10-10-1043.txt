@@ -3,6 +3,7 @@ Title: 2015-10-10 10:43
 Date: 2015-10-10 10:43
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 I'm suddenly finding myself with an interest in parsers and compilers. *What is

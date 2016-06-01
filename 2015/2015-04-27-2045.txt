@@ -1,6 +1,7 @@
 Title: 2015-04-27 20:45
 Date: 2015-04-27 20:45
 Template: formats/micro
+Category: micro
 
 The screen on Jaimie's Kindle Keyboard cracked. Now we have to figure out what
 we're going to do to replace it... and since we've basically sworn off of

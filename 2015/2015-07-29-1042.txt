@@ -2,6 +2,7 @@
 Title: 2015-07-29 10:42
 Date: 2015-07-29 10:42
 Template: formats/micro
+Category: micro
 Tags: software development
 ...
 

@@ -3,6 +3,7 @@ Title: 2016-04-16 16:22
 Date: 2016-04-16 16:22
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 My Windows VM for work is now stuck in an endless cycle of reboots after a blue screen of death after an update.

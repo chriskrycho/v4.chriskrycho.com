@@ -3,6 +3,7 @@ Title: 2016-02-22 08:24
 Date: 2016-02-22 08:24
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 I'm feeling the itch: to tweak both the information architecture and the visuals

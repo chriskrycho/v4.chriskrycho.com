@@ -2,6 +2,7 @@
 Title: 2015-09-22 21:28
 Date: 2015-09-22 21:28
 Template: formats/micro
+Category: micro
 ...
 
 4 hours of work, 6.5 hours of school, an hour of hanging out with my little

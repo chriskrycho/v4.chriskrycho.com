@@ -2,6 +2,7 @@
 Title: 2015/08/19 12:17
 Date: 2015-08-19 12:17
 Template: formats/micro
+Category: micro
 ...
 
 I've been wearing my [Garmin] outside my runs a little the past few days, and it

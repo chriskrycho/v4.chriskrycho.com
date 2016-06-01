@@ -3,6 +3,7 @@ Title: 2015-08-28 19:05
 Date: 2015-08-28 19:05
 Tags: Ellie, music
 Template: formats/micro
+Category: micro
 ...
 
 Last night as we were coming home from dinner with friends, the CD changer

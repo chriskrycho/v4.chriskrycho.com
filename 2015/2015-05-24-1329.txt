@@ -2,6 +2,7 @@
 Title: 2015-05-24 13:29
 Date: 2015-05-24 13:29
 Template: formats/micro
+Category: micro
 ...
 
 I've come to the conclusion that I really need to find a good way to organize

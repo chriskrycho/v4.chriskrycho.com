@@ -1,6 +1,7 @@
 Title: 2015-04-25 14:18
 Date: 2015-04-25 14:18
 Template: formats/micro
+Category: micro
 
 There are things I want to do with my website that I just *can't* do effectively
 in [Pelican] \(like art-directed, multi-part presentations of certain content),

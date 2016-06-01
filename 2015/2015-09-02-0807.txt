@@ -3,6 +3,7 @@ Title: 2015-09-02 08:07
 Date: 2015-09-02 08:07
 Tags: programming languages, rust
 Template: formats/micro
+Category: micro
 ...
 
 I'm writing a bunch of C that *needs* to handle error returns. I'm really

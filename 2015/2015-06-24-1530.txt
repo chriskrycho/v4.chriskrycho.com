@@ -2,6 +2,7 @@
 Title: 2015-06-24 15:30
 Date: 2015-06-24 15:30
 Template: formats/micro
+Category: micro
 ...
 
 **Q:** What is the chief end of man?  

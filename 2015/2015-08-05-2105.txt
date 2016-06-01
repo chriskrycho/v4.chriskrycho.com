@@ -3,6 +3,7 @@ Title: 2015-08-05 21:05
 Date: 2015-08-05 21:05
 Tags: podcasting, music, Jaimie, software development
 Template: formats/micro
+Category: micro
 ...
 
 Hooked up my digital piano to Logic Pro X tonight and wrote [the theme] for a

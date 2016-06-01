@@ -2,6 +2,7 @@
 Title: 2015-07-30 08:23
 Date: 2015-07-30 08:23
 Template: formats/micro
+Category: micro
 ...
 
 El Cap public beta 2 was all sorts of broken. Things like copy and paste weren't

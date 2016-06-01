@@ -2,6 +2,7 @@
 Title: 2015-07-01 21:15
 Date: 2015-07-01 21:15
 Template: formats/micro
+Category: micro
 ...
 
 A wished-for future Apple laptop lineup: 12- and 14-inch MacBooks, 13- and

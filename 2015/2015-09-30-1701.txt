@@ -2,6 +2,7 @@
 Title: 2015-09-30 17:01
 Date: 2015-09-30 17:01
 Template: formats/micro
+Category: micro
 ...
 
 Tip for copying large files between Macs (like, say, a new OS installer): just

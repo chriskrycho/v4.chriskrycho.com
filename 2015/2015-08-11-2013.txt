@@ -3,6 +3,7 @@ Title: 2015-08-11 20:13
 Date: 2015-08-11 20:13
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 If you're delivering images over the web, you *need* to be using something

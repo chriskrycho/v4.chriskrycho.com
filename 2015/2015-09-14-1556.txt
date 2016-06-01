@@ -3,6 +3,7 @@ Title: 2015-09-14 15:56
 Date: 2015-09-14 15:56
 Tags: typography
 Template: formats/micro
+Category: micro
 ...
 
 I'm extremely impressed with the recently released [Hack] typeface. I'm 

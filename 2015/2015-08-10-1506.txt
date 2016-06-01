@@ -3,6 +3,7 @@ Title: 2015-08-10 15:06
 Date: 2015-08-10 15:06
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 Tradeoffs time: whether 'tis better to drop in an off-the-shelf open source

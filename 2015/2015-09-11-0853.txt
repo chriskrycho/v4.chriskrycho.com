@@ -3,6 +3,7 @@ Title: 2015-09-11 08:53
 Date: 2015-09-11 08:53
 Tags: music
 Template: formats/micro
+Category: micro
 ...
 
 Listening to the _Noah_ soundtrack this morning makes me want to get around

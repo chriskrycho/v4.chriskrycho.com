@@ -3,6 +3,7 @@ Title: 2015-10-03 16:18
 Date: 2015-10-03 16:18
 Tags: podcasting
 Template: formats/micro
+Category: micro
 ...
 
 Today, I edited and published [Sap.py 1] and recorded, edited, and published

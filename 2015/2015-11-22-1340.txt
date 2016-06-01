@@ -3,6 +3,7 @@ Title: 2015-11-22 13:40
 Date: 2015-11-22 13:40
 Tags: typography
 Template: formats/micro
+Category: micro
 ...
 
 It's telling of the kind of nerd I am that one of the first thoughts I had on

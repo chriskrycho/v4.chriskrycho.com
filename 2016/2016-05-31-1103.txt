@@ -3,6 +3,7 @@ Title: 2016-05-31 11:03
 Date: 2016-05-31 11:03
 Tags: rust, podcasting
 Template: formats/micro
+Category: micro
 ---
 
 Recorded another [New Rustacean] episode at last; it should be up this afternoon. Rust FTW!

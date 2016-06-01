@@ -3,6 +3,7 @@ Title: 2015-06-09 10:46
 Date: 2015-06-09 10:46
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 Tip: if you're using Mercurial's bookmarks to track lightweight branches,

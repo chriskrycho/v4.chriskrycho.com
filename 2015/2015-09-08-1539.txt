@@ -2,6 +2,7 @@
 Title: 2015-09-08 15:39
 Date: 2015-09-08 15:39
 Template: formats/micro
+Category: micro
 Tags: fitness
 ...
 

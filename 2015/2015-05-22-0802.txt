@@ -1,6 +1,7 @@
 ---
 Title: 2015-05-22 08:02
 Template: formats/micro
+Category: micro
 Date: 2015-05-22 08:02
 ...
 

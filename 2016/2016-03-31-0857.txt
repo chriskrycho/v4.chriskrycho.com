@@ -3,6 +3,7 @@ Title: 2016-03-31 08:57
 Date: 2016-03-31 08:57
 Tags: typography, design
 Template: formats/micro
+Category: micro
 ...
 
 On the "typography should be invisible" bit that’s been going around lately, Matthew Butterick is [on point]:

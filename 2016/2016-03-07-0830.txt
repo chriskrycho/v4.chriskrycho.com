@@ -3,6 +3,7 @@ Title: 2016-03-07 08:30
 Date: 2016-03-07 08:30
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 Sites which rely on Adobe or Google Tag Manager for their basic functionality infuriate me. Stop. Just stop.

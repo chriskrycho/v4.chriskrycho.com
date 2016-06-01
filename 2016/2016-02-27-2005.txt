@@ -3,6 +3,7 @@ Title: 2016-02-27 20:05
 Date: 2016-02-27 20:05
 Tags: software development, programming languages, rust, gaming
 Template: formats/micro
+Category: micro
 ...
 
 <i class=editorial>I posted these as a series of tweets.</i>

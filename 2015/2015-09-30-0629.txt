@@ -3,6 +3,7 @@ Title: 2015-09-30 06:29
 Date: 2015-09-30 06:29
 Tags: family, kate
 Template: formats/micro
+Category: micro
 ...
 
 This week Kate learned to walk. Also, she decided to go on a

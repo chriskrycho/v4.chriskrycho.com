@@ -2,6 +2,7 @@
 Title: 2015-08-05 07:57
 Date: 2015-08-05 07:57
 Template: formats/micro
+Category: micro
 ...
 
 New modem installed and configured. 120Mbps is something else. Now, to set up

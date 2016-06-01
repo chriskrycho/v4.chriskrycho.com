@@ -3,6 +3,7 @@ Title: 2016-04-18 08:43
 Date: 2016-04-18 08:43
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 On fire this morning: just knocking things out left and right.

@@ -3,6 +3,7 @@ Title: 2015-08-04 18:55
 Date: 2015-08-04 18:55
 Tags: family, ellie, kate, podcasting
 Template: formats/micro
+Category: micro
 ...
 
 A minute ago, Ellie asked me to play with her and Kate. I started to answer,

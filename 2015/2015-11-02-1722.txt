@@ -3,6 +3,7 @@ Title: 2015-11-02 17:22
 Date: 2015-11-02 17:22
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 Got the [JetBrains Toolbox] license for *everything*. And then realized I now

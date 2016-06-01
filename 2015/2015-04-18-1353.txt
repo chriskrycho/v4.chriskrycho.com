@@ -1,5 +1,6 @@
 Title: 2015-04-18 13:53
 Template: formats/micro
+Category: micro
 Date: 2015-04-18 13:53
 Author: Chris Krycho
 

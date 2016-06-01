@@ -1,6 +1,7 @@
 Title: 2015-04-27 20:50
 Date: 2015-04-27 20:50
 Template: formats/micro
+Category: micro
 
 One of the small joys of running my site through GitHub Pages is that you can
 trivially see the entire history of this site since I started doing it this way:

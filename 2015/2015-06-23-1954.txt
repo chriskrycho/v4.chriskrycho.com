@@ -3,6 +3,7 @@ Title: 2015-06-23 19:54
 Date: 2015-06-23 19:54
 Tags: design
 Template: formats/micro
+Category: micro
 ...
 
 Finally giving FontStand a try.

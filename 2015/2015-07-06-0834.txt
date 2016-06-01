@@ -2,6 +2,7 @@
 Title: 2015-07-06 08:34
 Date: 2015-07-06 08:34
 Template: formats/micro
+Category: micro
 ...
 
 Woke up to my alarm with my head feeling stuffed with gauze, went back to sleep,

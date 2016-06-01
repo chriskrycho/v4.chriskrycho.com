@@ -3,6 +3,7 @@ Title: 2016-04-08 19:17
 Date: 2016-04-08 19:17
 Tags: space
 Template: formats/micro
+Category: micro
 ...
 
 On a 1-to-10 scale of "interestingness" for things Elon Musk companies are doing, last week's Tesla announcement is about a 4. [This is about a 9.][spacex]

@@ -3,6 +3,7 @@ Title: 2016-03-08 07:31
 Date: 2016-03-08 07:31
 Tags: podcasting
 Template: formats/micro
+Category: micro
 ...
 
 [Speaking of podcasting], the episode of [Winning Slowly] we published today---and interview with [Ghost]'s co-founder John O'Nolan---is one of my favorite episodes of the show we've done. He's cogent, thoughtful, and on point throughout; [the episode is well worth your time]!

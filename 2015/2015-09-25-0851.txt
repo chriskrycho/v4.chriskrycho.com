@@ -2,6 +2,7 @@
 Title: 2015-09-25 08:51
 Date: 2015-09-25 08:51
 Template: formats/micro
+Category: micro
 ...
 
 The guy sitting next to me at the coffee shop is using Outlook 2015. What a

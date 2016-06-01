@@ -2,6 +2,7 @@
 Title: 2016-04-07 08:45
 Date: 2016-04-07 08:45
 Template: formats/micro
+Category: micro
 Tags: programming languages, rust
 ---
 

@@ -3,6 +3,7 @@ Title: 2015-08-08 15:33
 Date: 2015-08-08 15:33
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 I found a `CEditDlg` instance and went looking for it in the MSDN docs, and was

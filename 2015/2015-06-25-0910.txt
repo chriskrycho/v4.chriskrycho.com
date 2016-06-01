@@ -3,6 +3,7 @@ Title: 2015-06-25 09:10
 Date: 2015-06-25 09:10
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 One of the things that annoys me most when writing C is how difficult (really,

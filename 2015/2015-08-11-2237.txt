@@ -3,6 +3,7 @@ Title: 2015-08-11 22:37
 Date: 2015-08-11 22:37
 Tags: typography
 Template: formats/micro
+Category: micro
 ...
 
 Dear Washington Post: [Georgia] was designed for high legibility on screens.

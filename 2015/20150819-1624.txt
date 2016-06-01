@@ -2,6 +2,7 @@
 Title: 2015/08/19 16:24
 Date: 2015-08-19 16:24
 Template: formats/micro
+Category: micro
 ...
 
 One of the great perils of our age is to opine publicly on matters that once we

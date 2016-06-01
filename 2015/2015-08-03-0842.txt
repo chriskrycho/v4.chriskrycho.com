@@ -2,6 +2,7 @@
 Title: 2015-08-03 08:42
 Date: 2015-08-03 08:42
 Template: formats/micro
+Category: micro
 ...
 
 I've now migrated all my chriskrycho.com emails to [Fastmail]. Still have some

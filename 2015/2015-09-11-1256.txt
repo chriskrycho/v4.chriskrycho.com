@@ -2,6 +2,7 @@
 Title: 2015-09-11 12:56
 Date: 2015-09-11 12:56
 Template: formats/micro
+Category: micro
 Tags: typography
 ...
 

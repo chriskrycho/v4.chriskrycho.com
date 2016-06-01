@@ -2,6 +2,7 @@
 Title: 2015-06-06 21:53
 Date: 2015-06-06 21:53
 Template: formats/micro
+Category: micro
 ...
 
 Thinking about how to structure the content on my blog. Layout, categories, etc.

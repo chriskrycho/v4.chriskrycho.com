@@ -3,6 +3,7 @@ Title: 2016-04-16 16:14
 Date: 2016-04-16 16:14
 Tags: music
 Template: formats/micro
+Category: micro
 ...
 
 Out of everything from the original _The Terminator_, I think it's undeniable that the thing that holds up best is the main theme.

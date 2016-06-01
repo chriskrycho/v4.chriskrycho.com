@@ -3,6 +3,7 @@ Title: 2016-02-25 07:58
 Date: 2016-02-25 07:58
 Tags: software development, programming languages, rust, javascript
 Template: formats/micro
+Category: micro
 ...
 
 I have an irrational-but-ridiculously-strong desire to build an Atom package

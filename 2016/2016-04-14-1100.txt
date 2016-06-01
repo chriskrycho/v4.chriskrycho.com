@@ -3,6 +3,7 @@ Title: 2016-04-14 11:00
 Date: 2016-04-14 11:00
 Tags: programming languages, javascript, purescript, elm
 Template: formats/micro
+Category: micro
 ...
 
 After looking at [Elm] a little, and discovering it doesn't have [Haskell]-style [typeclasses] (_a la_ [Rust]'s [traits]), I was a bit disappointed. Then I discovered [PureScript], which *does*. Intrigued all over again.

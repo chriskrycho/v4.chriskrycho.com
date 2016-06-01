@@ -3,6 +3,7 @@ Title: 2015-08-07 21:37
 Date: 2015-08-07 21:37
 Tags: software development, typography
 Template: formats/micro
+Category: micro
 ...
 
 Thinking about setting [Input] as my typeface for doing my development for a

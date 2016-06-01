@@ -3,6 +3,7 @@ Title: 2015-08-10 15:33
 Date: 2015-08-10 15:33
 Tags: ellie
 Template: formats/micro
+Category: micro
 ...
 
 Just a few minutes ago, I heard Ellie singing a song that mashed together "Let

@@ -1,6 +1,7 @@
 Title: 2015-04-17-2030
 Date: 2015-04-17 20:30
 Template: formats/micro
+Category: micro
 Author: Chris Krycho
 
 I've been playing with [pyenv]. I think I'm sold. By which I mean: "How long

@@ -1,6 +1,7 @@
 Title: 2015-04-24 10:55
 Date: 2015-04-24 10:55
 Template: formats/micro
+Category: micro
 
 A major irritation of writing Hebrew papers in Word: unlike every other tool on
 my Mac, Word does not properly transition between left-to-right and

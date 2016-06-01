@@ -3,6 +3,7 @@ Title: 2016-05-29 10:07
 Date: 2016-05-29 10:07
 Tags: listicles
 Template: formats/micro
+Category: micro
 ---
 
 <i class=editorial>I originally posted this as a [tweetstorm], but unlike in the past, where I've treated those tweets as the canonical form and linked them here, I'm now treating *this* as the canonical and adding a tweet to the end of that "topic" linking back here. [Indie web] forever.</i>

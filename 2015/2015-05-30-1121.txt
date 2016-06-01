@@ -2,6 +2,7 @@
 Title: 2015-05-30 11:21
 Date: 2015-05-30 11:21
 Template: formats/micro
+Category: micro
 ...
 
 Wait, what's that? The sound of an update to the [about page], and one that

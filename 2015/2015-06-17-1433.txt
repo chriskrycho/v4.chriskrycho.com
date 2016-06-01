@@ -2,6 +2,7 @@
 Title: 2015-06-17 14:33
 Date: 2015-06-17 14:33
 Template: formats/micro
+Category: micro
 ...
 
 I have been using a small notebook to jot down ideas and thoughts as they come

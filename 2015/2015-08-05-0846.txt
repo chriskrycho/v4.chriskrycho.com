@@ -2,6 +2,7 @@
 Title: 2015-08-05 08:46
 Date: 2015-08-05 08:46
 Template: formats/micro
+Category: micro
 ...
 
 Don't blame me: it's all [\@manton]’s fault. He started this.

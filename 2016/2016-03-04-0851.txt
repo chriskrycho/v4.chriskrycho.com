@@ -3,6 +3,7 @@ Title: 2016-03-04 08:51
 Date: 2016-03-04 08:51
 Tags: software development, javascript
 Template: formats/micro
+Category: micro
 ...
 
 I ran into a [Medium post] arguing against ES6's `class` implementation, and got linked to [this argument] against `super()`. *Strongly concur.*

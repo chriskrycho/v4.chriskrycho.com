@@ -2,6 +2,7 @@
 Title: 2015-06-03 07:44
 Date: 2015-06-03 07:44
 Template: formats/micro
+Category: micro
 ...
 
 In ["Web Decay Graph"], Tim Bray says pretty much *exactly* what Stephen and I

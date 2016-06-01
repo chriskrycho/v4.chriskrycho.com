@@ -3,6 +3,7 @@ Title: 2016-04-14 14:54
 Date: 2016-04-14 14:54
 Tags: javascript, programming languages, software development
 Template: formats/micro
+Category: micro
 ...
 
 Things I want basically *all the time* when writing JavaScript:

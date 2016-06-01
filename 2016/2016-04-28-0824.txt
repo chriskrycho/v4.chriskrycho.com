@@ -3,6 +3,7 @@ Title: 2016-04-28 08:24
 Date: 2016-04-28 08:24
 Tags: programming languages, rust
 Template: formats/micro
+Category: micro
 ...
 
 [Also], I keep forgetting how incredible <https://play.rust-lang.org> is. Built-in ability to view not only the result of the code, but also the new mid-level intermediate representation (MIR), the LLVM IR, and the assembly? Amazing.

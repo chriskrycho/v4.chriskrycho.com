@@ -2,6 +2,7 @@
 Title: 2015-10-17 14:15
 Date: 2015-10-17 14:15
 Template: formats/micro
+Category: micro
 ...
 
 I ended up spending large chunks of the last two hours reading about American

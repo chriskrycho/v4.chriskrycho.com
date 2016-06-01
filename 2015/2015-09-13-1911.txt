@@ -2,6 +2,7 @@
 Title: 2015-09-13 19:11
 Date: 2015-09-13 19:11
 Template: formats/micro
+Category: micro
 ...
 
 I installed the OS X 10.11 "El Capitan" GM today. Apple's advertised performance

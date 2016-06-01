@@ -2,6 +2,7 @@
 Title: 2016-02-17 08:55
 Date: 2016-02-17 08:55
 Template: formats/micro
+Category: micro
 ...
 
 [Brandon Sanderson] kept me up way too late last night by springing [_Mistborn:

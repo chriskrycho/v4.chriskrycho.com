@@ -3,6 +3,7 @@ Title: 2016-03-15 07:34
 Date: 2016-03-15 07:34
 Tags: podcasting
 Template: formats/micro
+Category: micro
 ...
 
 A [really nice update][update] to [the podcast app I use every day][overcast]. Props to Marco Arment!

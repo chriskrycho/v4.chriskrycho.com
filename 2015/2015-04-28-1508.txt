@@ -1,6 +1,7 @@
 Title: 2015-04-28 15:08
 Date: 2015-04-28 15:08
 Template: formats/micro
+Category: micro
 
 Current status: buried in the weeds of `extern "C"` and DLL linkage.
 

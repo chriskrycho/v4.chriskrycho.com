@@ -3,6 +3,7 @@ Title: 2016-03-10 08:00
 Date: 2016-03-10 08:00
 Tags: podcasting
 Template: formats/micro
+Category: micro
 ...
 
 If you want cloud storage---e.g. to back a CDN---and want an alternative to Amazon S3, check out [DreamHost]'s [DreamObjects]. It's great---and inexpensive!

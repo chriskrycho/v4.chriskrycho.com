@@ -2,6 +2,7 @@
 Title: 2015-08-11 10:57
 Date: 2015-08-11 10:57
 Template: formats/micro
+Category: micro
 ...
 
 I give up. This is clearly a not-getting-work-work-done kind of day, so I'm

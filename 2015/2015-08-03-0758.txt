@@ -3,6 +3,7 @@ Title: 2015-08-03 07:58
 Date: 2015-08-03 07:58
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 Whoa! After years of demand, Confluence *finally* added support for importing

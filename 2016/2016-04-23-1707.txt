@@ -3,6 +3,7 @@ Title: 2016-04-23 17:07
 Date: 2016-04-23 17:07
 Tags: podcasting, typography, music, Rust
 Template: formats/micro
+Category: micro
 ...
 
 I'm totally working a reference to [Daniel Spreadbury]'s [SMuFL] work into a discussion of Rust's Unicode support in [New Rustacean] e014.

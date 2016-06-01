@@ -3,6 +3,7 @@ Title: 2015-06-18 21:54
 Date: 2015-06-18 21:54
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 To my great delight, and thanks to a [suggestion] from App.net friend [\@jnm], I

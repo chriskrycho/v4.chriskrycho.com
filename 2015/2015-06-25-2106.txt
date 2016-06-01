@@ -3,6 +3,7 @@ Title: 2015-06-25 21:06
 Date: 2015-06-25 21:06
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 Reading JavaScript Allongé. Just got to combinatorial logic (kestrel and idiot

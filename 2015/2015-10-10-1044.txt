@@ -3,6 +3,7 @@ Title: 2015-10-10 10:44
 Date: 2015-10-10 10:44
 Tags: software development
 Template: formats/micro
+Category: micro
 ...
 
 Related to my [previous post]---I really, *really* wish more of the fundamental

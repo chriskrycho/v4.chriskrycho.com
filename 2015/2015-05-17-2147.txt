@@ -2,6 +2,7 @@
 Title: 2015-05-17 21:47
 Date: 2015-05-17 21:47
 Template: formats/micro
+Category: micro
 ...
 
 A friend of my complimented me tonight, describing me as "intelligent and
