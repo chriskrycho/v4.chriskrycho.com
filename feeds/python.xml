@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/python.xml" rel="self"></atom:link><lastBuildDate>Thu, 19 May 2016 19:28:00 -0400</lastBuildDate><item><title>2016-05-19 19:28</title><link>http://www.chriskrycho.com/2016/2016-05-19-1928.html</link><description>&lt;p&gt;I needed to write a tiny server to test out some quirky single-page app stuff I’m doing for Olo right now. So I did it with Python and Flask.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/python.xml" rel="self"></atom:link><lastBuildDate>Tue, 31 May 2016 09:00:00 -0400</lastBuildDate><item><title>2016-05-31 09:00</title><link>http://www.chriskrycho.com/2016/2016-05-31-0900.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/737629809241645056"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;Seeing gradual typing come to both Ruby and Python at around the same time is fascinating.&lt;/li&gt;
+&lt;li&gt;Seeing some responses (“If I wanted static types I’d use a &lt;em&gt;real&lt;/em&gt; statically typed language”) which just completely miss the point.&lt;/li&gt;
+&lt;li&gt;The idea is that you can add these kinds of type annotations where—and only where—they’re useful.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 09:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/2016-05-31-0900.html</guid><category>python</category><category>ruby</category><category>programming languages</category><category>listicles</category></item><item><title>2016-05-19 19:28</title><link>http://www.chriskrycho.com/2016/2016-05-19-1928.html</link><description>&lt;p&gt;I needed to write a tiny server to test out some quirky single-page app stuff I’m doing for Olo right now. So I did it with Python and Flask.&lt;/p&gt;
 &lt;p&gt;And you know what? Python is still—and forever, I suspect—so much better than JavaScript.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 

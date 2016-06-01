@@ -31,7 +31,19 @@
 &lt;li id="fn7"&gt;&lt;p&gt;This tiny post has a &lt;em&gt;hilarious&lt;/em&gt; number of footnotes. I noticed this early on, and instead of reworking it… I just ran with it.&lt;a href="#fnref7"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</summary></entry><entry><title>2016-05-12 13:01</title><link href="http://www.chriskrycho.com/2016/2016-05-12-1301.html" rel="alternate"></link><updated>2016-05-12T13:01:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-05-12:2016/2016-05-12-1301.html</id><summary type="html">&lt;p&gt;This bit from the &lt;a href="http://fishshell.com"&gt;fish&lt;/a&gt; &lt;a href="http://fishshell.com/docs/current/design.html#ortho"&gt;design document&lt;/a&gt; perfectly captures what git does wrong (emphasis mine):&lt;/p&gt;
+</summary></entry><entry><title>SpaceX: "First-stage landing | Onboard camera"</title><link href="http://www.chriskrycho.com/2016/spacex-first-stage-landing-onboard-camera.html" rel="alternate"></link><updated>2016-05-28T20:58:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-05-28:2016/spacex-first-stage-landing-onboard-camera.html</id><summary type="html">&lt;p&gt;OH WOW: &lt;a href="http://www.spacex.com"&gt;SpaceX&lt;/a&gt; first-stage landing footage… &lt;a href="https://youtu.be/4jEz03Z8azc"&gt;from the onboard camera&lt;/a&gt;. This is blow-your-mind incredible.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="links"></category></entry><entry><title>Ben Thompson: "Peter Thiel, Comic Book Hero"</title><link href="http://www.chriskrycho.com/2016/ben-thompson-peter-thiel-comic-book-hero.html" rel="alternate"></link><updated>2016-05-28T20:50:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-05-28:2016/ben-thompson-peter-thiel-comic-book-hero.html</id><summary type="html">&lt;p&gt;I always appreciate Ben Thompson’s takes, but &lt;a href="https://stratechery.com/2016/peter-thiel-comic-book-hero/"&gt;this&lt;/a&gt;—on the Thiel/Gawker imbroglio—is one of his best posts ever.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="links"></category></entry><entry><title>Ember.js: "Introducing Subteams"</title><link href="http://www.chriskrycho.com/2016/emberjs-introducing-subteams.html" rel="alternate"></link><updated>2016-05-24T19:10:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-05-24:2016/emberjs-introducing-subteams.html</id><summary type="html">&lt;p&gt;In which one tech I really like (&lt;a href="http://emberjs.com"&gt;Ember.js&lt;/a&gt;) steals a great idea from another tech I really like (&lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt;).&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="links"></category><category term="programming languages"></category><category term="emberjs"></category><category term="rust"></category></entry><entry><title>2016-05-12 13:01</title><link href="http://www.chriskrycho.com/2016/2016-05-12-1301.html" rel="alternate"></link><updated>2016-05-12T13:01:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-05-12:2016/2016-05-12-1301.html</id><summary type="html">&lt;p&gt;This bit from the &lt;a href="http://fishshell.com"&gt;fish&lt;/a&gt; &lt;a href="http://fishshell.com/docs/current/design.html#ortho"&gt;design document&lt;/a&gt; perfectly captures what git does wrong (emphasis mine):&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;When designing a program, one should first think about how to make a intuitive and powerful program. Implementation issues should only be considered once a user interface has been designed.&lt;/p&gt;
 &lt;p&gt;Rationale:&lt;/p&gt;

@@ -1,0 +1,8 @@
+---
+Title: 2016-05-26 19:27
+Date: 2016-05-26 19:27
+Template: formats/micro
+Tags: software development
+---
+
+Time zones: the bane of a software developer's existence.

@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/links.xml" rel="self"></atom:link><lastBuildDate>Thu, 28 Apr 2016 07:55:00 -0400</lastBuildDate><item><title>2016-04-28 07:55</title><link>http://www.chriskrycho.com/2016/2016-04-28-0755.html</link><description>&lt;p&gt;&lt;a href="http://blog.rust-lang.org/2016/04/19/MIR.html"&gt;This blog post&lt;/a&gt; on recent compiler work in Rust is incredible: great work, and great technical writing. 💙 Rust.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/links.xml" rel="self"></atom:link><lastBuildDate>Sat, 28 May 2016 20:58:00 -0400</lastBuildDate><item><title>SpaceX: "First-stage landing | Onboard camera"</title><link>http://www.chriskrycho.com/2016/spacex-first-stage-landing-onboard-camera.html</link><description>&lt;p&gt;OH WOW: &lt;a href="http://www.spacex.com"&gt;SpaceX&lt;/a&gt; first-stage landing footage… &lt;a href="https://youtu.be/4jEz03Z8azc"&gt;from the onboard camera&lt;/a&gt;. This is blow-your-mind incredible.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 28 May 2016 20:58:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-28:2016/spacex-first-stage-landing-onboard-camera.html</guid><category>links</category></item><item><title>Ben Thompson: "Peter Thiel, Comic Book Hero"</title><link>http://www.chriskrycho.com/2016/ben-thompson-peter-thiel-comic-book-hero.html</link><description>&lt;p&gt;I always appreciate Ben Thompson’s takes, but &lt;a href="https://stratechery.com/2016/peter-thiel-comic-book-hero/"&gt;this&lt;/a&gt;—on the Thiel/Gawker imbroglio—is one of his best posts ever.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 28 May 2016 20:50:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-28:2016/ben-thompson-peter-thiel-comic-book-hero.html</guid><category>links</category></item><item><title>Ember.js: "Introducing Subteams"</title><link>http://www.chriskrycho.com/2016/emberjs-introducing-subteams.html</link><description>&lt;p&gt;In which one tech I really like (&lt;a href="http://emberjs.com"&gt;Ember.js&lt;/a&gt;) steals a great idea from another tech I really like (&lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt;).&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 24 May 2016 19:10:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-24:2016/emberjs-introducing-subteams.html</guid><category>links</category><category>programming languages</category><category>emberjs</category><category>rust</category></item><item><title>2016-04-28 07:55</title><link>http://www.chriskrycho.com/2016/2016-04-28-0755.html</link><description>&lt;p&gt;&lt;a href="http://blog.rust-lang.org/2016/04/19/MIR.html"&gt;This blog post&lt;/a&gt; on recent compiler work in Rust is incredible: great work, and great technical writing. 💙 Rust.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;

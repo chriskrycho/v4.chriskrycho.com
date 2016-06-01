@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 31 May 2016 21:18:00 -0400</lastBuildDate><item><title>Ask</title><link>http://www.chriskrycho.com/2016/ask.html</link><description>&lt;p&gt;&lt;i class='editorial'&gt;My wife and a few others regularly do a 30-minute writing challenge every Tuesday evening. This week, since I’m taking some time off, I got to participate! The prompt was: &lt;em&gt;Write a story about trees which whisper poems to those who know how to hear them. (It’s not allowed to be scary.)&lt;/em&gt;&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/chris-krycho.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 31 May 2016 22:21:00 -0400</lastBuildDate><item><title>A brake on our enthusiasm</title><link>http://www.chriskrycho.com/2016/a-brake-on-our-enthusiasm.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;One of the reasons we do history… is because it acts as a brake… on our otherwise unbridled enthusiasm for our own ideas.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 22:21:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/a-brake-on-our-enthusiasm.html</guid><category>quotes</category><category>history</category></item><item><title>Ask</title><link>http://www.chriskrycho.com/2016/ask.html</link><description>&lt;p&gt;&lt;i class='editorial'&gt;My wife and a few others regularly do a 30-minute writing challenge every Tuesday evening. This week, since I’m taking some time off, I got to participate! The prompt was: &lt;em&gt;Write a story about trees which whisper poems to those who know how to hear them. (It’s not allowed to be scary.)&lt;/em&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Her first question was: “Who taught the trees to speak?”&lt;/p&gt;
 &lt;p&gt;Her second, of course, was: “Any why only in such &lt;em&gt;awful&lt;/em&gt; poetry?”&lt;/p&gt;
@@ -130,15 +136,103 @@
 &lt;li id="fn7"&gt;&lt;p&gt;This tiny post has a &lt;em&gt;hilarious&lt;/em&gt; number of footnotes. I noticed this early on, and instead of reworking it… I just ran with it.&lt;a href="#fnref7"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 20:10:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/free-dynamic-dns-for-remote-login-via-ssh.html</guid></item><item><title>2016-05-23 23:03</title><link>http://www.chriskrycho.com/2016/2016-05-23-2303.html</link><description>&lt;p&gt;Astounding as it is to be able to work from the middle of a bus in the sky… I’m ready to be home, for so many reasons. Working in my own office again will be nice. Having my sweet little girls come say hello while I’m working will be even better.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 20:10:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/free-dynamic-dns-for-remote-login-via-ssh.html</guid></item><item><title>2016-05-31 14:57</title><link>http://www.chriskrycho.com/2016/2016-05-31-1457.html</link><description>&lt;p&gt;So, &lt;a href="https://twitter.com/jsnell"&gt;Jason Snell&lt;/a&gt;’s pepperoni and pineapple pizza recommendation is great; we’ve been doing it for years. Add jalapeños for extra pizzazz!&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 23 May 2016 23:03:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-23:2016/2016-05-23-2303.html</guid><category>travel</category><category>family</category></item><item><title>2016-05-19 21:25</title><link>http://www.chriskrycho.com/2016/2016-05-19-2125.html</link><description>&lt;p&gt;Oh, hey, Colorado—nice to see you again; it’s been a while!&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 14:57:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/2016-05-31-1457.html</guid></item><item><title>2016-05-31 14:24</title><link>http://www.chriskrycho.com/2016/2016-05-31-1424.html</link><description>&lt;p&gt;When I podcast, I don’t do “just news.” I do “news I MEAN describe how &lt;a href="http://blog.rust-lang.org/2016/04/19/MIR.html"&gt;MIR&lt;/a&gt; changes the &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt; compiler flow”:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.newrustacean.com/show_notes/news/_1/"&gt;▶ New Rustacean News 1: One year and counting—on Rust a year in, including an overview of how the compiler works&lt;/a&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 19 May 2016 21:25:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-2125.html</guid><category>travel</category></item><item><title>2016-05-19 19:32</title><link>http://www.chriskrycho.com/2016/2016-05-19-1932.html</link><description>&lt;p&gt;P.S. I wrote that post on my iMac via SSH from an airplane somewhere over the Midwest. Crazy&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 14:24:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/2016-05-31-1424.html</guid><category>rust</category><category>podcasting</category></item><item><title>2016-05-31 11:03</title><link>http://www.chriskrycho.com/2016/2016-05-31-1103.html</link><description>&lt;p&gt;Recorded another &lt;a href="http://www.newrustacean.com/show_notes/news/_1/"&gt;New Rustacean&lt;/a&gt; episode at last; it should be up this afternoon. Rust FTW!&lt;/p&gt;
+&lt;p&gt;And, me being me, this “news” episode ended up with a description of how the Rust compiler works. 🤓 It’ll post later!&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 11:03:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/2016-05-31-1103.html</guid><category>rust</category><category>podcasting</category></item><item><title>2016-05-31 09:00</title><link>http://www.chriskrycho.com/2016/2016-05-31-0900.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/737629809241645056"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;Seeing gradual typing come to both Ruby and Python at around the same time is fascinating.&lt;/li&gt;
+&lt;li&gt;Seeing some responses (“If I wanted static types I’d use a &lt;em&gt;real&lt;/em&gt; statically typed language”) which just completely miss the point.&lt;/li&gt;
+&lt;li&gt;The idea is that you can add these kinds of type annotations where—and only where—they’re useful.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 09:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/2016-05-31-0900.html</guid><category>python</category><category>ruby</category><category>programming languages</category><category>listicles</category></item><item><title>2016-05-30 22:00</title><link>http://www.chriskrycho.com/2016/2016-05-30-2200.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/737463108898312192"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;Was able to write some Rust for myself (not just to figure something out for &lt;a href="http://www.newrustacean.com"&gt;New Rustacean&lt;/a&gt;) for the first time in months tonight.&lt;/li&gt;
+&lt;li&gt;Feeling Rust under my fingertips again was really nice but (pun fully intended) I am &lt;em&gt;so&lt;/em&gt; rusty right now.&lt;/li&gt;
+&lt;li&gt;But of course that’s just life. I’ve written gobs of JavaScript for work, of course, but the &lt;em&gt;only&lt;/em&gt; non-work writing I’ve done has been actual writing of the “uses words and not just as keywords” variety.&lt;/li&gt;
+&lt;li&gt;So it was nice to write some Rust for fun tonight. Even if it took me a ridiculously long time to do something super simple.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 30 May 2016 22:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-30:2016/2016-05-30-2200.html</guid><category>rust</category><category>software development</category><category>listicles</category></item><item><title>2016-05-29 10:07</title><link>http://www.chriskrycho.com/2016/2016-05-29-1007.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/736921791940177920"&gt;tweetstorm&lt;/a&gt;, but unlike in the past, where I’ve treated those tweets as the canonical form and linked them here, I’m now treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;I was going to pull all my data from my long-since defunct GoodReads account to do something with the data locally.&lt;/li&gt;
+&lt;li&gt;Unfortunately, I didn’t just stop using the account. As near as I can tell/recall, I completely deleted it—without downloading the data.&lt;/li&gt;
+&lt;li&gt;Why I did this, I have &lt;em&gt;no&lt;/em&gt; idea. I deleted it because the Amazon acquisition turned me off and I’d been growing bored with it anyway.&lt;/li&gt;
+&lt;li&gt;But failing to download the data? This is just an enormous :facepalm: moment.&lt;/li&gt;
+&lt;li&gt;Who knows, maybe I have it in an archive somewhere. I’m going to go looking. But I’m annoyed at myself anyway.&lt;/li&gt;
+&lt;li&gt;One thing this reminded me: I’m increasingly a fan of “indie web” solutions. This data is &lt;em&gt;mine&lt;/em&gt;, not Amazon’s—even if I trade it to them.&lt;/li&gt;
+&lt;li&gt;The trick is: the trade had to be worth it, and (just as importantly) the data still has to be retrievable when I’m ready to move on.&lt;/li&gt;
+&lt;li&gt;In this case, it is retrievable, and it’s my own fault if I don’t have it. But entities like Twitter and Facebook make that anything from “much harder” to “basically or actually impossible”. Let’s say I wanted to pull everything I’ve posted to Facebook to archive it. Could I?&lt;/li&gt;
+&lt;li&gt;And, just as importantly, could someone who doesn’t know how to write a program to access a web API?&lt;/li&gt;
+&lt;li&gt;(The answers there are: &lt;em&gt;maybe&lt;/em&gt; I could, but definitely no one who’s isn’t a programmer could. And that’s simply bad for users.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A friend &lt;a href="https://twitter.com/sleepy_keita/status/736931883884253185"&gt;comments&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;FWIW you can download a big fat zip file with all the stuff you’ve ever uploaded to Facebook&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/sleepy_keita/status/736932109403574274"&gt;and&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;it comes in a pretty simple HTML layout. I do it every 6 months or so for backup.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 29 May 2016 10:07:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-29:2016/2016-05-29-1007.html</guid><category>listicles</category></item><item><title>SpaceX: "First-stage landing | Onboard camera"</title><link>http://www.chriskrycho.com/2016/spacex-first-stage-landing-onboard-camera.html</link><description>&lt;p&gt;OH WOW: &lt;a href="http://www.spacex.com"&gt;SpaceX&lt;/a&gt; first-stage landing footage… &lt;a href="https://youtu.be/4jEz03Z8azc"&gt;from the onboard camera&lt;/a&gt;. This is blow-your-mind incredible.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 28 May 2016 20:58:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-28:2016/spacex-first-stage-landing-onboard-camera.html</guid><category>links</category></item><item><title>Ben Thompson: "Peter Thiel, Comic Book Hero"</title><link>http://www.chriskrycho.com/2016/ben-thompson-peter-thiel-comic-book-hero.html</link><description>&lt;p&gt;I always appreciate Ben Thompson’s takes, but &lt;a href="https://stratechery.com/2016/peter-thiel-comic-book-hero/"&gt;this&lt;/a&gt;—on the Thiel/Gawker imbroglio—is one of his best posts ever.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 28 May 2016 20:50:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-28:2016/ben-thompson-peter-thiel-comic-book-hero.html</guid><category>links</category></item><item><title>2016-05-28 11:44</title><link>http://www.chriskrycho.com/2016/2016-05-28-1144.html</link><description>&lt;p&gt;☑ &lt;a href="http://www.sebts.edu"&gt;SEBTS&lt;/a&gt; semester books shelved ☑ Reconciled and budgeted with &lt;a href="https://www.youneedabudget.com"&gt;YNAB&lt;/a&gt; ☑ Office space cleaned ☑ Email inbox zero; important replies sent ☐ Nap&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 28 May 2016 11:44:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-28:2016/2016-05-28-1144.html</guid></item><item><title>2016-05-26 19:27</title><link>http://www.chriskrycho.com/2016/2016-05-26-1927.html</link><description>&lt;p&gt;Time zones: the bane of a software developer’s existence.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 26 May 2016 19:27:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-26:2016/2016-05-26-1927.html</guid><category>software development</category></item><item><title>Ember.js: "Introducing Subteams"</title><link>http://www.chriskrycho.com/2016/emberjs-introducing-subteams.html</link><description>&lt;p&gt;In which one tech I really like (&lt;a href="http://emberjs.com"&gt;Ember.js&lt;/a&gt;) steals a great idea from another tech I really like (&lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt;).&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 24 May 2016 19:10:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-24:2016/emberjs-introducing-subteams.html</guid><category>links</category><category>programming languages</category><category>emberjs</category><category>rust</category></item><item><title>2016-05-23 23:03</title><link>http://www.chriskrycho.com/2016/2016-05-23-2303.html</link><description>&lt;p&gt;Astounding as it is to be able to work from the middle of a bus in the sky… I’m ready to be home, for so many reasons. Working in my own office again will be nice. Having my sweet little girls come say hello while I’m working will be even better.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 23 May 2016 23:03:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-23:2016/2016-05-23-2303.html</guid><category>travel</category><category>family</category></item><item><title>2016-05-22 13:18</title><link>http://www.chriskrycho.com/2016/2016-05-22-1318.html</link><description>&lt;p&gt;Wrote ~1,000 words of the next &lt;a href="http://www.newrustacean.com"&gt;New Rustacean&lt;/a&gt; episode—including a new (occasional) episode format on recent news in the &lt;a href="http://rust-lang.org"&gt;Rust&lt;/a&gt; community!&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 22 May 2016 13:18:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-22:2016/2016-05-22-1318.html</guid><category>podcasting</category><category>rust</category></item><item><title>2016-05-19 21:25</title><link>http://www.chriskrycho.com/2016/2016-05-19-2125.html</link><description>&lt;p&gt;Oh, hey, Colorado—nice to see you again; it’s been a while!&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 19 May 2016 21:25:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-2125.html</guid><category>travel</category></item><item><title>2016-05-19 20:33</title><link>http://www.chriskrycho.com/2016/2016-05-19-2033.html</link><description>&lt;p&gt;It’s amazing how much daylight sets your body’s clock. I’m flying west in early evening, and it barely feels like it’s getting later.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 19 May 2016 20:33:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-2033.html</guid><category>travel</category></item><item><title>2016-05-19 19:32</title><link>http://www.chriskrycho.com/2016/2016-05-19-1932.html</link><description>&lt;p&gt;P.S. I wrote that post on my iMac via SSH from an airplane somewhere over the Midwest. Crazy&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -147,11 +241,7 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 19 May 2016 19:28:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-1928.html</guid><category>software development</category><category>programming languages</category><category>python</category><category>javascript</category></item><item><title>2016-05-19 18:33 GMT-0700</title><link>http://www.chriskrycho.com/2016/2016-05-19-1833-gmt-0700.html</link><description>&lt;p&gt;It’s amazing how much daylight sets your body’s clock. I’m flying west in early evening, and it barely feels like it’s getting later.&lt;/p&gt;
-&lt;div id="refs" class="references"&gt;
-
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 19 May 2016 18:33:00 +0700</pubDate><guid>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-1833-gmt-0700.html</guid><category>travel</category></item><item><title>2016-05-18 22:41</title><link>http://www.chriskrycho.com/2016/2016-05-18-2241.html</link><description>&lt;p&gt;Finally at a spot where I have both the time and the mental energy to pick back up my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;Rust and Swift&lt;/a&gt; series. Initializers, I’m coming for you.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 19 May 2016 19:28:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-19:2016/2016-05-19-1928.html</guid><category>software development</category><category>programming languages</category><category>python</category><category>javascript</category></item><item><title>2016-05-18 22:41</title><link>http://www.chriskrycho.com/2016/2016-05-18-2241.html</link><description>&lt;p&gt;Finally at a spot where I have both the time and the mental energy to pick back up my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;Rust and Swift&lt;/a&gt; series. Initializers, I’m coming for you.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;

@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/rust.xml" rel="self"></atom:link><lastBuildDate>Wed, 18 May 2016 22:41:00 -0400</lastBuildDate><item><title>2016-05-18 22:41</title><link>http://www.chriskrycho.com/2016/2016-05-18-2241.html</link><description>&lt;p&gt;Finally at a spot where I have both the time and the mental energy to pick back up my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;Rust and Swift&lt;/a&gt; series. Initializers, I’m coming for you.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/rust.xml" rel="self"></atom:link><lastBuildDate>Tue, 31 May 2016 14:24:00 -0400</lastBuildDate><item><title>2016-05-31 14:24</title><link>http://www.chriskrycho.com/2016/2016-05-31-1424.html</link><description>&lt;p&gt;When I podcast, I don’t do “just news.” I do “news I MEAN describe how &lt;a href="http://blog.rust-lang.org/2016/04/19/MIR.html"&gt;MIR&lt;/a&gt; changes the &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt; compiler flow”:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.newrustacean.com/show_notes/news/_1/"&gt;▶ New Rustacean News 1: One year and counting—on Rust a year in, including an overview of how the compiler works&lt;/a&gt;&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 14:24:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/2016-05-31-1424.html</guid><category>rust</category><category>podcasting</category></item><item><title>2016-05-31 11:03</title><link>http://www.chriskrycho.com/2016/2016-05-31-1103.html</link><description>&lt;p&gt;Recorded another &lt;a href="http://www.newrustacean.com/show_notes/news/_1/"&gt;New Rustacean&lt;/a&gt; episode at last; it should be up this afternoon. Rust FTW!&lt;/p&gt;
+&lt;p&gt;And, me being me, this “news” episode ended up with a description of how the Rust compiler works. 🤓 It’ll post later!&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 11:03:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/2016-05-31-1103.html</guid><category>rust</category><category>podcasting</category></item><item><title>2016-05-30 22:00</title><link>http://www.chriskrycho.com/2016/2016-05-30-2200.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/737463108898312192"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;Was able to write some Rust for myself (not just to figure something out for &lt;a href="http://www.newrustacean.com"&gt;New Rustacean&lt;/a&gt;) for the first time in months tonight.&lt;/li&gt;
+&lt;li&gt;Feeling Rust under my fingertips again was really nice but (pun fully intended) I am &lt;em&gt;so&lt;/em&gt; rusty right now.&lt;/li&gt;
+&lt;li&gt;But of course that’s just life. I’ve written gobs of JavaScript for work, of course, but the &lt;em&gt;only&lt;/em&gt; non-work writing I’ve done has been actual writing of the “uses words and not just as keywords” variety.&lt;/li&gt;
+&lt;li&gt;So it was nice to write some Rust for fun tonight. Even if it took me a ridiculously long time to do something super simple.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 30 May 2016 22:00:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-30:2016/2016-05-30-2200.html</guid><category>rust</category><category>software development</category><category>listicles</category></item><item><title>Ember.js: "Introducing Subteams"</title><link>http://www.chriskrycho.com/2016/emberjs-introducing-subteams.html</link><description>&lt;p&gt;In which one tech I really like (&lt;a href="http://emberjs.com"&gt;Ember.js&lt;/a&gt;) steals a great idea from another tech I really like (&lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt;).&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 24 May 2016 19:10:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-24:2016/emberjs-introducing-subteams.html</guid><category>links</category><category>programming languages</category><category>emberjs</category><category>rust</category></item><item><title>2016-05-22 13:18</title><link>http://www.chriskrycho.com/2016/2016-05-22-1318.html</link><description>&lt;p&gt;Wrote ~1,000 words of the next &lt;a href="http://www.newrustacean.com"&gt;New Rustacean&lt;/a&gt; episode—including a new (occasional) episode format on recent news in the &lt;a href="http://rust-lang.org"&gt;Rust&lt;/a&gt; community!&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 22 May 2016 13:18:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-22:2016/2016-05-22-1318.html</guid><category>podcasting</category><category>rust</category></item><item><title>2016-05-18 22:41</title><link>http://www.chriskrycho.com/2016/2016-05-18-2241.html</link><description>&lt;p&gt;Finally at a spot where I have both the time and the mental energy to pick back up my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;Rust and Swift&lt;/a&gt; series. Initializers, I’m coming for you.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;

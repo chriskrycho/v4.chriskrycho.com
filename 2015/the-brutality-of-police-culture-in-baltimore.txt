@@ -9,7 +9,7 @@ Template: formats/link
 Summary: >
     Link: Connor Friedersdort, writing at The Atlantic on the systemic culture
     of police brutality in Baltimore.
-...
+---
 
 When the police beat an 87-year-old grandmother who called 911 to get medical
 help for her grandson who had been shot---just because they don't believe
@@ -23,4 +23,3 @@ Connor Friedersdorf has a lot more; [you need to read it], even though---or
 rather, precisely because---it is such a mess.
 
 [you need to read it]: http://www.theatlantic.com/politics/archive/2015/04/the-brutality-of-police-culture-in-baltimore/391158/
-

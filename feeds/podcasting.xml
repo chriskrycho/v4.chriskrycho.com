@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/podcasting.xml" rel="self"></atom:link><lastBuildDate>Sat, 23 Apr 2016 17:07:00 -0400</lastBuildDate><item><title>2016-04-23 17:07</title><link>http://www.chriskrycho.com/2016/2016-04-23-1707.html</link><description>&lt;p&gt;I’m totally working a reference to &lt;a href="http://blog.steinberg.net"&gt;Daniel Spreadbury&lt;/a&gt;’s &lt;a href="http://www.smufl.org"&gt;SMuFL&lt;/a&gt; work into a discussion of Rust’s Unicode support in &lt;a href="//www.newrustacean.com"&gt;New Rustacean&lt;/a&gt; e014.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/podcasting.xml" rel="self"></atom:link><lastBuildDate>Tue, 31 May 2016 14:24:00 -0400</lastBuildDate><item><title>2016-05-31 14:24</title><link>http://www.chriskrycho.com/2016/2016-05-31-1424.html</link><description>&lt;p&gt;When I podcast, I don’t do “just news.” I do “news I MEAN describe how &lt;a href="http://blog.rust-lang.org/2016/04/19/MIR.html"&gt;MIR&lt;/a&gt; changes the &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt; compiler flow”:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.newrustacean.com/show_notes/news/_1/"&gt;▶ New Rustacean News 1: One year and counting—on Rust a year in, including an overview of how the compiler works&lt;/a&gt;&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 14:24:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/2016-05-31-1424.html</guid><category>rust</category><category>podcasting</category></item><item><title>2016-05-31 11:03</title><link>http://www.chriskrycho.com/2016/2016-05-31-1103.html</link><description>&lt;p&gt;Recorded another &lt;a href="http://www.newrustacean.com/show_notes/news/_1/"&gt;New Rustacean&lt;/a&gt; episode at last; it should be up this afternoon. Rust FTW!&lt;/p&gt;
+&lt;p&gt;And, me being me, this “news” episode ended up with a description of how the Rust compiler works. 🤓 It’ll post later!&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 11:03:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/2016-05-31-1103.html</guid><category>rust</category><category>podcasting</category></item><item><title>2016-05-22 13:18</title><link>http://www.chriskrycho.com/2016/2016-05-22-1318.html</link><description>&lt;p&gt;Wrote ~1,000 words of the next &lt;a href="http://www.newrustacean.com"&gt;New Rustacean&lt;/a&gt; episode—including a new (occasional) episode format on recent news in the &lt;a href="http://rust-lang.org"&gt;Rust&lt;/a&gt; community!&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 22 May 2016 13:18:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-22:2016/2016-05-22-1318.html</guid><category>podcasting</category><category>rust</category></item><item><title>2016-04-23 17:07</title><link>http://www.chriskrycho.com/2016/2016-04-23-1707.html</link><description>&lt;p&gt;I’m totally working a reference to &lt;a href="http://blog.steinberg.net"&gt;Daniel Spreadbury&lt;/a&gt;’s &lt;a href="http://www.smufl.org"&gt;SMuFL&lt;/a&gt; work into a discussion of Rust’s Unicode support in &lt;a href="//www.newrustacean.com"&gt;New Rustacean&lt;/a&gt; e014.&lt;/p&gt;
 &lt;p&gt;(This has to be the nerdiest thing I’ve ever done. Even in context, this is over the top.)&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 

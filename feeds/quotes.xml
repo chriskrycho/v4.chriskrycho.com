@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/quotes.xml" rel="self"></atom:link><lastBuildDate>Thu, 12 May 2016 13:01:00 -0400</lastBuildDate><item><title>2016-05-12 13:01</title><link>http://www.chriskrycho.com/2016/2016-05-12-1301.html</link><description>&lt;p&gt;This bit from the &lt;a href="http://fishshell.com"&gt;fish&lt;/a&gt; &lt;a href="http://fishshell.com/docs/current/design.html#ortho"&gt;design document&lt;/a&gt; perfectly captures what git does wrong (emphasis mine):&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/quotes.xml" rel="self"></atom:link><lastBuildDate>Tue, 31 May 2016 22:21:00 -0400</lastBuildDate><item><title>A brake on our enthusiasm</title><link>http://www.chriskrycho.com/2016/a-brake-on-our-enthusiasm.html</link><description>&lt;blockquote&gt;
+&lt;p&gt;One of the reasons we do history… is because it acts as a brake… on our otherwise unbridled enthusiasm for our own ideas.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 22:21:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-05-31:2016/a-brake-on-our-enthusiasm.html</guid><category>quotes</category><category>history</category></item><item><title>2016-05-12 13:01</title><link>http://www.chriskrycho.com/2016/2016-05-12-1301.html</link><description>&lt;p&gt;This bit from the &lt;a href="http://fishshell.com"&gt;fish&lt;/a&gt; &lt;a href="http://fishshell.com/docs/current/design.html#ortho"&gt;design document&lt;/a&gt; perfectly captures what git does wrong (emphasis mine):&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;When designing a program, one should first think about how to make a intuitive and powerful program. Implementation issues should only be considered once a user interface has been designed.&lt;/p&gt;
 &lt;p&gt;Rationale:&lt;/p&gt;
