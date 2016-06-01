@@ -2,7 +2,9 @@
 Title: 2016-02-06 13:40
 Date: 2016-02-06 13:40
 Tags: podcasting
-...
+Template: formats/micro
+Category: micro
+---
 
 The setup I used to get reasonable-sounding audio out of Skype this morning. God
 bless [Rogue Amoeba]'s [Audio Hijack].
