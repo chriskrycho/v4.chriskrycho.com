@@ -1,7 +1,7 @@
 ---
 Title: 2016-05-16 10:25
 Date: 2016-05-16 10:25
-Tags: writing, music, SEBTS, papers, M. Div., coffee
+Tags: writing, music, coffee
 Template: formats/micro
 Category: micro
 ---
