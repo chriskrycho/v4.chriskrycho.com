@@ -766,7 +766,7 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="writing"></category><category term="sebts"></category><category term="papers"></category><category term="m. div."></category></entry><entry><title>2016-04-19 17:44</title><link href="http://www.chriskrycho.com/2016/2016-04-19-1744.html" rel="alternate"></link><updated>2016-04-19T17:44:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-04-19:2016/2016-04-19-1744.html</id><summary type="html">&lt;p&gt;I still love EmberJS—but if I have one complaint, it’s that it’s &lt;em&gt;slightly&lt;/em&gt; too heavy on convention-based magic. I want it to be a little more explicit, so that I can have a little more insight into what it’s going. Yes, even if that means a little more boilerplate. Explicit is better than implicit.&lt;/p&gt;
+</summary><category term="writing"></category></entry><entry><title>2016-04-19 17:44</title><link href="http://www.chriskrycho.com/2016/2016-04-19-1744.html" rel="alternate"></link><updated>2016-04-19T17:44:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-04-19:2016/2016-04-19-1744.html</id><summary type="html">&lt;p&gt;I still love EmberJS—but if I have one complaint, it’s that it’s &lt;em&gt;slightly&lt;/em&gt; too heavy on convention-based magic. I want it to be a little more explicit, so that I can have a little more insight into what it’s going. Yes, even if that means a little more boilerplate. Explicit is better than implicit.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
