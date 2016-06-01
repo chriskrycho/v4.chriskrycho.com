@@ -11,7 +11,7 @@ Tags: fiction, poetry
 
 Her first question was: "Who taught the trees to speak?"
 
-Her second, of course, was: "Any why only in such **awful** poetry?"
+Her second, of course, was: "Any why only in such *awful* poetry?"
 
 I didn't always know about the whispers, and of course I didn't believe old Dallet when he told me about it, and it took me six weeks to hear them for the first time myself---so I didn't particularly expect Annyth to hear them immediately after I mentioned them to her. I probably should have. She'd always been a little odd. But whatever the reason, she just blinked those round not-quite-brown, not-quite-green eyes at me a few times, like some slightly startled owl caught out in daylight, and then giggled.
 
@@ -28,7 +28,7 @@ You get the idea. The *worst* kinds of puns and rhymes, for hours on end. Annyth
 
 Apparently, I'd gotten lost in my own mind again, listening to the rhymes, because she repeated her questions.
 
-"Who taught the trees to speak? Any why only in such **awful** poetry?"
+"Who taught the trees to speak? Any why only in such *awful* poetry?"
 
 I shrugged. "No one knows who taught them. Maybe they've always known." She somehow managed to furrow her brows *and* quirk them at me at the same time. "Okay, probably not, but Dallet said his grandfather taught him, and that *his* great-uncle taught him, and so on back a thousand years, and either the first one forgot to tell anyone that he was the one responsible for it all, or everyone else---"
 
