@@ -4,6 +4,7 @@ Subtitle: A key debate in the philosophy of science (with interesting implicatio
 Author: Chris Krycho
 Template: formats/class
 Date: 2016-05-16 23:55
+Modified: 2016-06-01 21:24
 Category: Theology
 Tags: SEBTS, M. Div., papers, philosophy, science
 Class: Religion and Science
@@ -78,11 +79,11 @@ Finally Laudan shows how the scientific methodologies developed over the past se
 
 In Bas C. van Fraassen's constructive empiricist model, science is (or at least should be) concerned solely with explaining the empirical data available to the human senses. Theories are useful but not true; they "do much besides answer the factual questions about regularities in the observable phenomena which, according to empiricism, are the scientist's basic topic of concern."[@vanfraassen:scientific-image 70]
 
-At least three major problems confront van Fraassen's view. One is van Fraassen's prior commitment to materialist empiricism. He asserts, for example, that criteria such as mathematical elegance, simplicity, scope, completion, unification, and explanatory "provide reasons for using a theory... and *cannot* rationally guide our epistemic attitudes and decisions,"[@vanfraassen:scientific-image 87] Why? Because he has regards human observational powers as the sole grounds of knowledge. As such, he also rejects any critique of the limitations of "sense data" or problems with human perception as "armchair psychology" which can safely be ignored.[@vanfraassen:scientific-image 72] The *sole* point of interest, for van Fraassen, is explaining those regularities in observable phenomena. As Grover Maxwell comments, though:
+At least three major problems confront van Fraassen's view. One is van Fraassen's prior commitment to materialist empiricism. He asserts, for example, that criteria such as mathematical elegance, simplicity, scope, completion, unification, and explanatory "provide reasons for using a theory... and *cannot* rationally guide our epistemic attitudes and decisions."[@vanfraassen:scientific-image 87] Why? Because he regards human observational powers as the sole grounds of knowledge. As such, he also rejects any critique of the limitations of "sense data" or problems with human perception as "armchair psychology" which can safely be ignored.[@vanfraassen:scientific-image 72] The *sole* point of interest, for van Fraassen, is explaining those regularities in observable phenomena. As Grover Maxwell comments, though:
 
-> Surely the main concerns of, say, a theoretical physicist involve such things as the actual properties and varieties of subatomic particles rather than mere predictions about where and how intense a certain spectral line will be.[-@maxwell:theoretical-entities 19--20].
+> Surely the main concerns of, say, a theoretical physicist involve such things as the actual properties and varieties of subatomic particles rather than mere predictions about where and how intense a certain spectral line will be.[-@maxwell:theoretical-entities 19--20]
 
-Indeed, theoretical physicists and chemists are concerned, even in conducting their ordinary research, with things they think actually exist. However much van Fraassen thinks science *should* only concern itself with those regularities, realism seems basic to the scientific endeavor as actually practiced.[^1-7]
+Indeed, even in conducting their ordinary research, theoretical physicists and chemists are concerned with things they think actually exist. However much van Fraassen thinks science *should* only concern itself with those regularities, realism seems basic to the scientific endeavor as actually practiced.[^1-7]
 
 The second problem for van Fraassen is closely related to the first: "empirical adequacy" is a necessary but insufficient condition for the acceptance of a scientific theory. Scientists do (and must) embrace those other conditions for accepting theories as true, and rightly so. Nothing about using those criteria to decide between theories is irrational in the least apart from van Fraassen's prior commitment to empiricism.
 
