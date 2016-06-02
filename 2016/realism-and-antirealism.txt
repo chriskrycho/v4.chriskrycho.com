@@ -4,13 +4,13 @@ Subtitle: A key debate in the philosophy of science (with interesting implicatio
 Author: Chris Krycho
 Template: formats/class
 Date: 2016-05-16 23:55
-Modified: 2016-06-01 23:25
+Modified: 2016-06-01 23:30
 Category: Theology
 Tags: SEBTS, M. Div., papers, philosophy, science
 Class: Religion and Science
 Professor: Dr. Greg Welty
 Summary: >
-    Critical scientific realism, though it has serious challenges, is the best explanation of the success of science and model of scientific knowledge. Applying this to the question of creationism may yield helpful insights.
+    Critical scientific realism, though it has serious challenges, is the best explanation of the success of science and model of scientific knowledge. Applying this to the question of creationism yields helpful insights into the debate.
 School: Southeastern Baptist Theological Seminary
 bibliography: content/bib/phi7650.yaml  # path from content root
 bib: bib/phi7650.yaml
