@@ -4,7 +4,7 @@ Subtitle: A key debate in the philosophy of science (with interesting implicatio
 Author: Chris Krycho
 Template: formats/class
 Date: 2016-05-16 23:55
-Modified: 2016-06-01 23:19
+Modified: 2016-06-01 23:25
 Category: Theology
 Tags: SEBTS, M. Div., papers, philosophy, science
 Class: Religion and Science
@@ -21,7 +21,7 @@ csl: /Users/chris/Dropbox/writing/chicago.csl
 
 ## 1. Introduction, Definition, Constraints
 
-> Because these facts... are so striking, because there was no reason *a priori* to expect man to be able to achieve such cognitive feats, because no undertaking can guarantee success *of this particular sort*, we are confronted with a genuine problem: why is science so successful?[-@laudan:beyond-realism 89]
+> Because these facts... are so striking, because there was no reason *a priori* to expect man to be able to achieve such cognitive feats, because no undertaking can guarantee success *of this particular sort*, we are confronted with a genuine problem: why is science so successful?[@laudan:beyond-realism 89]
 
 The success of science over the last four hundred years has produced a radical increase in effective prediction of natural phenomena across a wide array of domains. It has also yielded a striking ability to intervene successfully in the natural world in areas as diverse as biology and medicine on the one hand, and particle physics and the development of computing technology on the other. Yet, when scientists speak of electrons, quarks, dark matter, and so on---phenomena not directly accessible to ordinary human experience, but in many cases directly related to this empirical and technological success---it is an open question in philosophy of science whether such entities really exist, or are merely useful ways of solving problems and dealing with data. Scientific realism is the affirmation that the entities postulated by scientific theories actually do exist. This claim does not entail the success of all scientific theories, and is therefore not compromised by the failure and replacement of some scientific theories. Nor does it require that all theories be embraced equally firmly. It simply means the claims and practice of science do really, if only approximately, describe the world. This paper will argue that critical realism is the best explanation for science's success, and that it correctly characterizes the relationship between scientific models and the world they describe.
 
