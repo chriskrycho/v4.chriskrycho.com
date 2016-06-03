@@ -1,6 +1,6 @@
 ---
 Title: Rust and C++ function definitions
-Subtitle: A small study in syntax and legitibility.
+Subtitle: A small study in syntax and legibility.
 Date: 2016-06-03 18:01
 Tags: programming languages, rust, c++
 Slug: 03-1801
