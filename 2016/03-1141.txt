@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-06-03 11:41
+Tags: software development
+Template: formats/micro
+Slug: 03-1141
+Category: micro
+---
+
+When looking at an intimidatingly large software project, just ask: what is the *very* smallest thing I can build that is still useful? Once you have that, you can build on top of it, and you'll have momentum. You might rework it later, but that's okay---you'll have *started*.
