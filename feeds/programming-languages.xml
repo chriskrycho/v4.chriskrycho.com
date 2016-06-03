@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/programming-languages.xml" rel="self"></atom:link><lastBuildDate>Tue, 31 May 2016 09:00:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-31-0900.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/737629809241645056"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/programming-languages.xml" rel="self"></atom:link><lastBuildDate>Fri, 03 Jun 2016 18:01:00 -0400</lastBuildDate><item><title>Rust and C++ function definitions</title><link>http://www.chriskrycho.com/2016/03-1801.html</link><description>&lt;p&gt;I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare—&lt;/p&gt;
+&lt;p&gt;Rust has:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fn foo() -&amp;gt; i32 {…}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fn bar() -&amp;gt; f32 {…}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;C++ has:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;int foo() {…}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;double bar() {…}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That consistency adds up over many lines of code. There are many other such choices; the net effect is that Rust is &lt;em&gt;much&lt;/em&gt; more pleasant to read than C++.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 03 Jun 2016 18:01:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-03:2016/03-1801.html</guid><category>programming languages</category><category>rust</category><category>c++</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-31-0900.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/737629809241645056"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;Seeing gradual typing come to both Ruby and Python at around the same time is fascinating.&lt;/li&gt;

@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/rust.xml" rel="self"></atom:link><lastBuildDate>Tue, 31 May 2016 14:24:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-31-1424.html</link><description>&lt;p&gt;When I podcast, I don’t do “just news.” I do “news I MEAN describe how &lt;a href="http://blog.rust-lang.org/2016/04/19/MIR.html"&gt;MIR&lt;/a&gt; changes the &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt; compiler flow”:&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/rust.xml" rel="self"></atom:link><lastBuildDate>Fri, 03 Jun 2016 18:01:00 -0400</lastBuildDate><item><title>Rust and C++ function definitions</title><link>http://www.chriskrycho.com/2016/03-1801.html</link><description>&lt;p&gt;I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare—&lt;/p&gt;
+&lt;p&gt;Rust has:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fn foo() -&amp;gt; i32 {…}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fn bar() -&amp;gt; f32 {…}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;C++ has:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;int foo() {…}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;double bar() {…}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That consistency adds up over many lines of code. There are many other such choices; the net effect is that Rust is &lt;em&gt;much&lt;/em&gt; more pleasant to read than C++.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 03 Jun 2016 18:01:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-03:2016/03-1801.html</guid><category>programming languages</category><category>rust</category><category>c++</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-31-1424.html</link><description>&lt;p&gt;When I podcast, I don’t do “just news.” I do “news I MEAN describe how &lt;a href="http://blog.rust-lang.org/2016/04/19/MIR.html"&gt;MIR&lt;/a&gt; changes the &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt; compiler flow”:&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.newrustacean.com/show_notes/news/_1/"&gt;▶ New Rustacean News 1: One year and counting—on Rust a year in, including an overview of how the compiler works&lt;/a&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 

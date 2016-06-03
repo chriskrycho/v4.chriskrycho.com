@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 03 Jun 2016 11:41:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/03-1141.html</link><description>&lt;p&gt;When looking at an intimidatingly large software project, just ask: what is the &lt;em&gt;very&lt;/em&gt; smallest thing I can build that is still useful? Once you have that, you can build on top of it, and you’ll have momentum. You might rework it later, but that’s okay—you’ll have &lt;em&gt;started&lt;/em&gt;.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Fri, 03 Jun 2016 18:01:00 -0400</lastBuildDate><item><title>Rust and C++ function definitions</title><link>http://www.chriskrycho.com/2016/03-1801.html</link><description>&lt;p&gt;I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare—&lt;/p&gt;
+&lt;p&gt;Rust has:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;fn foo() -&amp;gt; i32 {…}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fn bar() -&amp;gt; f32 {…}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;C++ has:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;int foo() {…}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;double bar() {…}&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That consistency adds up over many lines of code. There are many other such choices; the net effect is that Rust is &lt;em&gt;much&lt;/em&gt; more pleasant to read than C++.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 03 Jun 2016 18:01:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-03:2016/03-1801.html</guid><category>programming languages</category><category>rust</category><category>c++</category></item><item><title></title><link>http://www.chriskrycho.com/2016/03-1141.html</link><description>&lt;p&gt;When looking at an intimidatingly large software project, just ask: what is the &lt;em&gt;very&lt;/em&gt; smallest thing I can build that is still useful? Once you have that, you can build on top of it, and you’ll have momentum. You might rework it later, but that’s okay—you’ll have &lt;em&gt;started&lt;/em&gt;.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;

@@ -1,0 +1,21 @@
+---
+Title: Rust and C++ function definitions
+Subtitle: A small study in syntax and legitibility.
+Date: 2016-06-03 18:01
+Tags: programming languages, rust, c++
+Slug: 03-1801
+---
+
+I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare---
+
+Rust has:
+
+- `fn foo() -> i32 {…}`
+- `fn bar() -> f32 {…}`
+
+C++ has:
+
+- `int foo() {…}`
+- `double bar() {…}`
+
+That consistency adds up over many lines of code. There are many other such choices; the net effect is that Rust is *much* more pleasant to read than C++.
