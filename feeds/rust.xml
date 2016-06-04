@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/rust.xml" rel="self"></atom:link><lastBuildDate>Fri, 03 Jun 2016 20:56:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/03-2056.html</link><description>&lt;p&gt;Here I am, at the end of the week off, and what am I doing? Writing a Rust &lt;a href="https://github.com/rust-lang/rfcs"&gt;RFC&lt;/a&gt;. Yep.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/rust.xml" rel="self"></atom:link><lastBuildDate>Fri, 03 Jun 2016 22:47:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/03-2247.html</link><description>&lt;p&gt;I wrote a &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt; &lt;a href="https://github.com/rust-lang/rfcs"&gt;RFC&lt;/a&gt;! See it here: &lt;a href="https://github.com/rust-lang/rfcs/pull/1636"&gt;“Require all new features to be documented”&lt;/a&gt;&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 03 Jun 2016 22:47:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-03:2016/03-2247.html</guid><category>programming languages</category><category>rust</category></item><item><title></title><link>http://www.chriskrycho.com/2016/03-2056.html</link><description>&lt;p&gt;Here I am, at the end of the week off, and what am I doing? Writing a Rust &lt;a href="https://github.com/rust-lang/rfcs"&gt;RFC&lt;/a&gt;. Yep.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
