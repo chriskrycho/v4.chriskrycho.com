@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-06-03T22:47:00-04:00</updated><entry><title></title><link href="http://www.chriskrycho.com/2016/03-2247.html" rel="alternate"></link><updated>2016-06-03T22:47:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-06-03:2016/03-2247.html</id><summary type="html">&lt;p&gt;I wrote a &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt; &lt;a href="https://github.com/rust-lang/rfcs"&gt;RFC&lt;/a&gt;! See it here: &lt;a href="https://github.com/rust-lang/rfcs/pull/1636"&gt;“Require all new features to be documented”&lt;/a&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-06-05T09:17:00-04:00</updated><entry><title>Mornings like this</title><link href="http://www.chriskrycho.com/2016/mornings-like-this.html" rel="alternate"></link><updated>2016-06-05T09:17:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-06-05:2016/mornings-like-this.html</id><summary type="html">&lt;p&gt;Mornings like this—oh, mornings like this&lt;br /&gt;
+I need the Word preached, and the Table&lt;br /&gt;
+And (not least) the People of God&lt;br /&gt;
+Mornings like this perhaps most of all&lt;br /&gt;
+When I want nothing more than solitude&lt;br /&gt;
+And to rest, to be all alone&lt;br /&gt;
+Mornings like this: faithfulness proves out.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="poetry"></category></entry><entry><title></title><link href="http://www.chriskrycho.com/2016/03-2247.html" rel="alternate"></link><updated>2016-06-03T22:47:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-06-03:2016/03-2247.html</id><summary type="html">&lt;p&gt;I wrote a &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt; &lt;a href="https://github.com/rust-lang/rfcs"&gt;RFC&lt;/a&gt;! See it here: &lt;a href="https://github.com/rust-lang/rfcs/pull/1636"&gt;“Require all new features to be documented”&lt;/a&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
