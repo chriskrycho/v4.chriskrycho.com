@@ -4,7 +4,7 @@ Subtitle: A key debate in the philosophy of science (with interesting implicatio
 Author: Chris Krycho
 Template: formats/class
 Date: 2016-05-16 23:55
-Modified: 2016-06-01 23:30
+Modified: 2016-06-06 07:35
 Category: Theology
 Tags: SEBTS, M. Div., papers, philosophy, science
 Class: Religion and Science
@@ -15,6 +15,12 @@ School: Southeastern Baptist Theological Seminary
 bibliography: content/bib/phi7650.yaml  # path from content root
 bib: bib/phi7650.yaml
 csl: /Users/chris/Dropbox/writing/chicago.csl
+---
+
+<i class=editorial>N.B. This copy of the paper has been lightly revised for grammar, spelling, etc. You can see the full revision history [here][gh].</i>
+
+[gh]: https://github.com/chriskrycho/chriskrycho.com/commits/master/content/classwork/phi7650-paper.md
+
 ---
 
 # Part I: Argument for Realism
@@ -180,7 +186,7 @@ Scientists at times maintain their views in the face of contrary evidence, or be
 
 [^2-1]:	In this author's experience, instrumentalism is far more common among Christians trained in engineering than to those trained in the sciences---perhaps (and this is merely speculation) because the engineering disciplines *already* instrumentalize science. Cf. @torrance:reality-scientific-theology:1985 22.
 
-[^2-2]:	Cf. @laudan:beyond-realism. Interestingly, Laudan's view comports in this area with van Fraassen's constructive empiricism.
+[^2-2]:	Cf. @laudan:beyond-realism Interestingly, Laudan's view comports in this area with van Fraassen's constructive empiricism.
 
 [^2-3]:	To be sure, there are related fields which are quite young and, in this author's view, quite suspect, e.g. evolutionary psychology. But the field's findings are irrelevant to the age of the earth, and thus to the question at hand.
 
