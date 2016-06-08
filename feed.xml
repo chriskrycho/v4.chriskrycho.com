@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Mon, 06 Jun 2016 07:35:00 -0400</lastBuildDate><item><title>Mornings like this</title><link>http://www.chriskrycho.com/2016/mornings-like-this.html</link><description>&lt;p&gt;Mornings like this—oh, mornings like this&lt;br /&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Tue, 07 Jun 2016 23:13:00 -0400</lastBuildDate><item><title>Mornings like this</title><link>http://www.chriskrycho.com/2016/mornings-like-this.html</link><description>&lt;p&gt;Mornings like this—oh, mornings like this&lt;br /&gt;
 I need the Word preached, and the Table&lt;br /&gt;
 And (not least) the People of God&lt;br /&gt;
 Mornings like this perhaps most of all&lt;br /&gt;
@@ -29,10 +29,24 @@ Mornings like this: faithfulness proves out.&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;double bar() {…}&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;That consistency adds up over many lines of code. There are many other such choices; the net effect is that Rust is &lt;em&gt;much&lt;/em&gt; more pleasant to read than C++.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Note: I’m aware that C++11 added the &lt;code&gt;auto foo() -&amp;gt; &amp;lt;type&amp;gt;&lt;/code&gt; syntax. But this actually &lt;em&gt;worsens&lt;/em&gt; the problem. A totally new codebase which uses that form exclusively (which may not always be possible, because the semantics aren’t the same) would have roughly the same visual consistency as Rust &lt;em&gt;in that particular category&lt;/em&gt;. (Plenty of others would still be a mess.) But the vast majority of C++ codebases are &lt;em&gt;not&lt;/em&gt; totally new. Adding the form means your codebase is more likely to look this this:&lt;/p&gt;
+&lt;pre class="cpp"&gt;&lt;code&gt;int foo() {
+    // stuff
+}
+
+auto quux() -&amp;gt; uint32_t {
+    // stuff
+}
+
+double bar() {
+    // stuff
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That is, for the record, &lt;em&gt;more&lt;/em&gt; visual inconsistency—not less!&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 03 Jun 2016 18:01:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-03:2016/03-1801.html</guid><category>programming languages</category><category>rust</category><category>c++</category></item><item><title></title><link>http://www.chriskrycho.com/2016/03-1141.html</link><description>&lt;p&gt;When looking at an intimidatingly large software project, just ask: what is the &lt;em&gt;very&lt;/em&gt; smallest thing I can build that is still useful? Once you have that, you can build on top of it, and you’ll have momentum. You might rework it later, but that’s okay—you’ll have &lt;em&gt;started&lt;/em&gt;.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 07 Jun 2016 23:13:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-03:2016/03-1801.html</guid><category>programming languages</category><category>rust</category><category>c++</category></item><item><title></title><link>http://www.chriskrycho.com/2016/03-1141.html</link><description>&lt;p&gt;When looking at an intimidatingly large software project, just ask: what is the &lt;em&gt;very&lt;/em&gt; smallest thing I can build that is still useful? Once you have that, you can build on top of it, and you’ll have momentum. You might rework it later, but that’s okay—you’ll have &lt;em&gt;started&lt;/em&gt;.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
