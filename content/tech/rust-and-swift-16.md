@@ -6,6 +6,7 @@ Date: 2016-06-07 23:30
 Series:
   Title: Rust and Swift
   Part: 16
+Modified: 2016-06-07 23:46
 ---
 
 <i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]</i>
@@ -141,7 +142,7 @@ Second, both languages support supplying default values for a constructed type. 
 struct Kelvin {
     var temp: Double = 0.0  // zero kinetic energy!!!
     init () {
-        temp= 305.0  // Change of plans: maybe just freezing is better
+        temp = 305.0  // Change of plans: maybe just freezing is better
     }
 }
 ```
@@ -172,7 +173,31 @@ fn abs_zero() -> Kelvin { Kelvin { temp: 0.0 } }
 
 The Rust is definitely a little noisier, and that is the downside of this tack. The upside is that these are just functions like any other. This is, in short, *exactly* the usual trade off we see in the languages.
 
-There's actually a lot more to say about initializers---there are *many* more pages in the Swift book about them---but this is already 1,500 words long, and I've been slowly chipping away so I'm going to post it now and follow up with another post on (maybe just another big chunk of) that content in the future.
+Rust also has the `Default` trait and the `#[derive(default)]` attribute for getting some basic defaults for a given value. You can either define a `Default` implementation yourself, or let Rust automatically do so if the underlying types have `Default` implemented:
+
+```rust
+struct Kelvin {
+    temp: f64,
+}
+
+// Do it ourselves
+impl Default for Kelvin {
+    fn default() -> Kelvin { 
+        Kelvin { temp: 305.0 }
+    }
+}
+
+// Let Rust do it for us: calling `Celsius::default()` will get us a default
+// temp of 0.0, since that's what `f64::default()` returns.
+#[derive(default)]
+struct Celsius {
+    temp: f64,
+}
+```
+
+This doesn't get you quite the same thing as Swift's initializer values. It requires you to be slightly more explicit, but the tradeoff is that you also get a bit more control and flexibility.
+
+There's actually a lot more to say about initializers---there are *many* more pages in the Swift book about them---but this is already about 1,700 words long, and I've been slowly chipping away at it since March (!), so I'm going to split this chapter of the Swift book into multiple posts. More to come shortly!
 
 ---
 
