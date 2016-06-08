@@ -36,7 +36,7 @@ double bar() {
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 07 Jun 2016 23:13:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-03:2016/03-1801.html</guid><category>programming languages</category><category>rust</category><category>c++</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-31-1424.html</link><description>&lt;p&gt;When I podcast, I don’t do “just news.” I do “news I MEAN describe how &lt;a href="http://blog.rust-lang.org/2016/04/19/MIR.html"&gt;MIR&lt;/a&gt; changes the &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt; compiler flow”:&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 07 Jun 2016 23:13:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-03:2016/03-1801.html</guid><category>programming languages</category><category>rust</category><category>cplusplus</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-31-1424.html</link><description>&lt;p&gt;When I podcast, I don’t do “just news.” I do “news I MEAN describe how &lt;a href="http://blog.rust-lang.org/2016/04/19/MIR.html"&gt;MIR&lt;/a&gt; changes the &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt; compiler flow”:&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.newrustacean.com/show_notes/news/_1/"&gt;▶ New Rustacean News 1: One year and counting—on Rust a year in, including an overview of how the compiler works&lt;/a&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 

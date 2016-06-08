@@ -46,7 +46,7 @@ double bar() {
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 07 Jun 2016 23:13:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-03:2016/03-1801.html</guid><category>programming languages</category><category>rust</category><category>c++</category></item><item><title></title><link>http://www.chriskrycho.com/2016/03-1141.html</link><description>&lt;p&gt;When looking at an intimidatingly large software project, just ask: what is the &lt;em&gt;very&lt;/em&gt; smallest thing I can build that is still useful? Once you have that, you can build on top of it, and you’ll have momentum. You might rework it later, but that’s okay—you’ll have &lt;em&gt;started&lt;/em&gt;.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 07 Jun 2016 23:13:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-03:2016/03-1801.html</guid><category>programming languages</category><category>rust</category><category>cplusplus</category></item><item><title></title><link>http://www.chriskrycho.com/2016/03-1141.html</link><description>&lt;p&gt;When looking at an intimidatingly large software project, just ask: what is the &lt;em&gt;very&lt;/em&gt; smallest thing I can build that is still useful? Once you have that, you can build on top of it, and you’ll have momentum. You might rework it later, but that’s okay—you’ll have &lt;em&gt;started&lt;/em&gt;.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;

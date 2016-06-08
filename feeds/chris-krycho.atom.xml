@@ -46,7 +46,7 @@ double bar() {
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</summary><category term="programming languages"></category><category term="rust"></category><category term="c++"></category></entry><entry><title></title><link href="http://www.chriskrycho.com/2016/03-1141.html" rel="alternate"></link><updated>2016-06-03T11:41:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-06-03:2016/03-1141.html</id><summary type="html">&lt;p&gt;When looking at an intimidatingly large software project, just ask: what is the &lt;em&gt;very&lt;/em&gt; smallest thing I can build that is still useful? Once you have that, you can build on top of it, and you’ll have momentum. You might rework it later, but that’s okay—you’ll have &lt;em&gt;started&lt;/em&gt;.&lt;/p&gt;
+</summary><category term="programming languages"></category><category term="rust"></category><category term="cplusplus"></category></entry><entry><title></title><link href="http://www.chriskrycho.com/2016/03-1141.html" rel="alternate"></link><updated>2016-06-03T11:41:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-06-03:2016/03-1141.html</id><summary type="html">&lt;p&gt;When looking at an intimidatingly large software project, just ask: what is the &lt;em&gt;very&lt;/em&gt; smallest thing I can build that is still useful? Once you have that, you can build on top of it, and you’ll have momentum. You might rework it later, but that’s okay—you’ll have &lt;em&gt;started&lt;/em&gt;.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
