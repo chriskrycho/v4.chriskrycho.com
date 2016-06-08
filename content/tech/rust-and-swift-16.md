@@ -2,12 +2,11 @@
 Title: Rust and Swift (xvi)
 Subtitle: "Initialization: another area where Swift has a lot more going on than Rust."
 Tags: rust, swift, rust-and-swift, programming languages
-Date: 2016-03-19 22:00
+Date: 2016-06-07 23:30
 Series:
   Title: Rust and Swift
   Part: 16
-Status: draft
-...
+---
 
 <i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]</i>
 
@@ -101,13 +100,40 @@ let absoluteZero = Celsius::from_kelvin(0.0);
 
 You can see a point I made about Swift's initializer syntax back in [part x][10]: the way Rust reuses normal struct methods while Swift has the special initializers. Neither is clearly the "winner" here. Rust gets to use existing language machinery, simplifying our mental model a bit by not adding more syntax. On the other hand, the addition of initializer syntax lets Swift use a fairly familiar type construction syntax even for special initializer cases, and a leaves us with a bit less noise in the constructor method. Note, though, that initializers in Swift *are* special syntax; they're not just a special kind of method (as the absence of the `func` keyword emphasizes)---unlike Rust, where initializers really are just normal struct or instance methods.
 
-The Swift book papers notes this distinction:
+The Swift book notes this distinction:
 
 > In its simplest form, an initializer is like an instance method with no parameters, written using the `init` keyword.
 
-The new keyword is the thing I could do without. Perhaps it's just years of writing Python, but I really prefer it when constructors for types are just sugar and you can therefore reimplement them yourself, provide custom variations, etc. as it suits you. Introducing syntax instead of just picking a standard function to call at object instantiation means you lose that. At the same time, and in Swift's defense, I've only rarely wanted or needed to use those facilities in work in Python. It's a pragmatic decision---and it makes sense as such; it's just not where my preference lies and I think the cost is a bit higher than I'd prefer relative to the gain in convenience.
+The new keyword is the thing I could do without. Perhaps it's just years of writing Python, but I really prefer it when constructors for types are just sugar and you can therefore reimplement them yourself, provide custom variations, etc. as it suits you. Introducing syntax instead of just picking a standard function to call at object instantiation means you lose that. At the same time, and in Swift's defense, I've only rarely wanted or needed to use those facilities in work in Python. It's a pragmatic decision---and it makes sense as such; it's just not where my preference lies. The cost is a bit higher than I'd prefer relative to the gain in convenience.
 
-Back to the initializers and the issue of overloading: the external parameter names (the *first* parameter) is one of the main ways Swift tells apart the initializers. (This is necessitated, of course, by the choice of a keyword for the initializer; Rust doesn't have any *need* for this.) One other important thing falls out of this: the external parameter names are *required* when initializing a type in Swift 
+Back to the initializers and the issue of overloading: the external parameter names (the *first* parameter) is one of the main ways Swift tells apart the initializers. This is necessitated, of course, by the choice of a keyword for the initializer; Rust doesn't have any *need* for this, and since Rust doesn't have overloading, it also *can't* do this. In Rust, different constructors/initializers will have different names, because they will simply be different methods.
+
+One other important thing falls out of this: the external parameter names are *required* when initializing a type in Swift. Because those parameter names are used to tell apart the constructor, this is not just necessary for the compiler. It's also an essential element of making the item readable for humans. Imagine if this were *not* the case---look again at the `Celsius` example:
+
+```swift
+struct Celsius {
+    let temp: Double
+    
+    init(fromFahrenheit f: Double) {
+       temp = 1.8 * (f - 32.0)
+    }
+    
+    init(fromKelvin k: Double) {
+        temp = k - 273.15
+    }
+}
+
+// Create an instance each way
+let freezing = Celsius(0)
+let balmy = Celsius(75.0)  // our old fromFahrenheit example
+let absoluteZero = Celsius(0.0)  // our old "fromKelvin example
+```
+
+We as humans would have no idea what the constructors are supposed to do, and really at this point there would *necessarily* just be one constructor unless the later options took elements of another *type*. That would be fairly similar to how overloading works in C++, Java, or C#, and while method overloading in those langauges is very *powerful*, it can also make it incredibly difficult to figure out exactly what method is being called. That includes when the constructor is being called. Take a look at the *long* list of [C# `DateTime` constructors][MSDN], for example: you have to either have this memorized, have the documentation open, or be able simply to infer from context what is going on.
+
+[MSDN]: https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110)
+
+*Given* the choice of a keyword to mark initializers, then, Swift's rule about external parameter name usage wherever there is more than one initializer is quite sensible.
 
 Second, both languages support supplying default values for a constructed type. Swift does this via default values defined at the site of the property definition itself, or simply set directly from within an initializer:
 
@@ -144,9 +170,9 @@ We could of course shorten each of those two one line, so:
 fn abs_zero() -> Kelvin { Kelvin { temp: 0.0 } }
 ```
 
-The Rust is definitely a little noisier, and that is the downside of this tack. The upside is that these are just functions like any other.
+The Rust is definitely a little noisier, and that is the downside of this tack. The upside is that these are just functions like any other. This is, in short, *exactly* the usual trade off we see in the languages.
 
-
+There's actually a lot more to say about initializers---there are *many* more pages in the Swift book about them---but this is already 1,500 words long, and I've been slowly chipping away so I'm going to post it now and follow up with another post on (maybe just another big chunk of) that content in the future.
 
 ---
 
