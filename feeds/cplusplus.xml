@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/cplusplus.xml" rel="self"></atom:link><lastBuildDate>Tue, 07 Jun 2016 23:13:00 -0400</lastBuildDate><item><title>Rust and C++ function definitions</title><link>http://www.chriskrycho.com/2016/03-1801.html</link><description>&lt;p&gt;I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare—&lt;/p&gt;
 &lt;p&gt;Rust has:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;fn foo() -&amp;gt; i32 {…}&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;fn bar() -&amp;gt; f32 {…}&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;fn foo() -&amp;gt; i32 {
+    // stuff
+}
+fn bar() -&amp;gt; f32 {
+    // stuff
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;C++ has:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;int foo() {…}&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;double bar() {…}&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;pre class="cpp"&gt;&lt;code&gt;int foo() {
+    // stuff
+}
+
+double bar() {
+    // stuff
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;That consistency adds up over many lines of code. There are many other such choices; the net effect is that Rust is &lt;em&gt;much&lt;/em&gt; more pleasant to read than C++.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Note: I’m aware that C++11 added the &lt;code&gt;auto foo() -&amp;gt; &amp;lt;type&amp;gt;&lt;/code&gt; syntax. But this actually &lt;em&gt;worsens&lt;/em&gt; the problem. A totally new codebase which uses that form exclusively (which may not always be possible, because the semantics aren’t the same) would have roughly the same visual consistency as Rust &lt;em&gt;in that particular category&lt;/em&gt;. (Plenty of others would still be a mess.) But the vast majority of C++ codebases are &lt;em&gt;not&lt;/em&gt; totally new. Adding the form means your codebase is more likely to look this this:&lt;/p&gt;
