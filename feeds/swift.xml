@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/swift.xml" rel="self"></atom:link><lastBuildDate>Tue, 07 Jun 2016 23:30:00 -0400</lastBuildDate><item><title>Rust and Swift (xvi)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xvi.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/swift.xml" rel="self"></atom:link><lastBuildDate>Tue, 07 Jun 2016 23:46:00 -0400</lastBuildDate><item><title>Rust and Swift (xvi)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xvi.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class="editorial"&gt;Thanks to ubsan, aatch, and niconii on the &lt;a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;amp;channel=%23rust"&gt;#rust-lang IRC&lt;/a&gt; for a fascinating discussion of the current status of Rust’s initialization analysis, as well as some very interesting comments on what might be possible to do in the future. Everything actually interesting about Rust in this post comes from the conversation I had with them on the evening of March 13.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;The rules various languages have around construction and destruction of objects are &lt;em&gt;extremely&lt;/em&gt; important for programmer safety and ergonomics. I think it’s fair to say that both Swift and rust are actively trying to avoid some of the mistakes made in e.g. C++ which poorly affect both its safety and its ease of use for developers, albeit it in some superficially different ways. Both languages also support defining how types are destroyed, which we’ll come back to in a future discussion.&lt;/p&gt;
@@ -92,7 +92,7 @@ let absoluteZero = Celsius(0.0)  // our old &amp;quot;fromKelvin example&lt;/cod
 &lt;pre class="swift"&gt;&lt;code&gt;struct Kelvin {
     var temp: Double = 0.0  // zero kinetic energy!!!
     init () {
-        temp= 305.0  // Change of plans: maybe just freezing is better
+        temp = 305.0  // Change of plans: maybe just freezing is better
     }
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In Rust, you can not supply default values directly on a property, but you can define any number of custom constructors:&lt;/p&gt;
@@ -112,7 +112,26 @@ impl Kelvin {
 &lt;p&gt;We could of course shorten each of those two one line, so:&lt;/p&gt;
 &lt;pre class="rust"&gt;&lt;code&gt;fn abs_zero() -&amp;gt; Kelvin { Kelvin { temp: 0.0 } }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The Rust is definitely a little noisier, and that is the downside of this tack. The upside is that these are just functions like any other. This is, in short, &lt;em&gt;exactly&lt;/em&gt; the usual trade off we see in the languages.&lt;/p&gt;
-&lt;p&gt;There’s actually a lot more to say about initializers—there are &lt;em&gt;many&lt;/em&gt; more pages in the Swift book about them—but this is already 1,500 words long, and I’ve been slowly chipping away so I’m going to post it now and follow up with another post on (maybe just another big chunk of) that content in the future.&lt;/p&gt;
+&lt;p&gt;Rust also has the &lt;code&gt;Default&lt;/code&gt; trait and the &lt;code&gt;#[derive(default)]&lt;/code&gt; attribute for getting some basic defaults for a given value. You can either define a &lt;code&gt;Default&lt;/code&gt; implementation yourself, or let Rust automatically do so if the underlying types have &lt;code&gt;Default&lt;/code&gt; implemented:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;struct Kelvin {
+    temp: f64,
+}
+
+// Do it ourselves
+impl Default for Kelvin {
+    fn default() -&amp;gt; Kelvin { 
+        Kelvin { temp: 305.0 }
+    }
+}
+
+// Let Rust do it for us: calling `Celsius::default()` will get us a default
+// temp of 0.0, since that&amp;#39;s what `f64::default()` returns.
+#[derive(default)]
+struct Celsius {
+    temp: f64,
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This doesn’t get you quite the same thing as Swift’s initializer values. It requires you to be slightly more explicit, but the tradeoff is that you also get a bit more control and flexibility.&lt;/p&gt;
+&lt;p&gt;There’s actually a lot more to say about initializers—there are &lt;em&gt;many&lt;/em&gt; more pages in the Swift book about them—but this is already about 1,700 words long, and I’ve been slowly chipping away at it since March (!), so I’m going to split this chapter of the Swift book into multiple posts. More to come shortly!&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xv.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Inheritance: a Swiftian specialty (for now).&lt;/a&gt;&lt;/li&gt;
@@ -120,7 +139,7 @@ impl Kelvin {
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 07 Jun 2016 23:30:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-07:2016/rust-and-swift-xvi.html</guid><category>rust</category><category>swift</category><category>rust-and-swift</category><category>programming languages</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-18-2241.html</link><description>&lt;p&gt;Finally at a spot where I have both the time and the mental energy to pick back up my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;Rust and Swift&lt;/a&gt; series. Initializers, I’m coming for you.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 07 Jun 2016 23:46:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-07:2016/rust-and-swift-xvi.html</guid><category>rust</category><category>swift</category><category>rust-and-swift</category><category>programming languages</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-18-2241.html</link><description>&lt;p&gt;Finally at a spot where I have both the time and the mental energy to pick back up my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;Rust and Swift&lt;/a&gt; series. Initializers, I’m coming for you.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;

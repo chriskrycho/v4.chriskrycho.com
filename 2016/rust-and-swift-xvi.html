@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (xvi)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -79,7 +79,7 @@
 <h1>Rust and Swift (xvi)</h1>
 <h2>Initialization: another area where Swift has a lot more going on than Rust.</h2>    </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2016/rust-and-swift-xvi.html"><i class="fa fa-fw fa-link"></i></a>June 07, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a></span><span><a href="http://www.chriskrycho.com/2016/rust-and-swift-xvi.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2016/rust-and-swift-xvi.html"><i class="fa fa-fw fa-link"></i></a>June 07, 2016 (updated June 07, 2016)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a></span><span><a href="http://www.chriskrycho.com/2016/rust-and-swift-xvi.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
@@ -179,7 +179,7 @@ let absoluteZero = Celsius(0.0)  // our old &quot;fromKelvin example</code></pre
 <pre class="swift"><code>struct Kelvin {
     var temp: Double = 0.0  // zero kinetic energy!!!
     init () {
-        temp= 305.0  // Change of plans: maybe just freezing is better
+        temp = 305.0  // Change of plans: maybe just freezing is better
     }
 }</code></pre>
 <p>In Rust, you can not supply default values directly on a property, but you can define any number of custom constructors:</p>
@@ -199,7 +199,26 @@ impl Kelvin {
 <p>We could of course shorten each of those two one line, so:</p>
 <pre class="rust"><code>fn abs_zero() -&gt; Kelvin { Kelvin { temp: 0.0 } }</code></pre>
 <p>The Rust is definitely a little noisier, and that is the downside of this tack. The upside is that these are just functions like any other. This is, in short, <em>exactly</em> the usual trade off we see in the languages.</p>
-<p>There’s actually a lot more to say about initializers—there are <em>many</em> more pages in the Swift book about them—but this is already 1,500 words long, and I’ve been slowly chipping away so I’m going to post it now and follow up with another post on (maybe just another big chunk of) that content in the future.</p>
+<p>Rust also has the <code>Default</code> trait and the <code>#[derive(default)]</code> attribute for getting some basic defaults for a given value. You can either define a <code>Default</code> implementation yourself, or let Rust automatically do so if the underlying types have <code>Default</code> implemented:</p>
+<pre class="rust"><code>struct Kelvin {
+    temp: f64,
+}
+
+// Do it ourselves
+impl Default for Kelvin {
+    fn default() -&gt; Kelvin { 
+        Kelvin { temp: 305.0 }
+    }
+}
+
+// Let Rust do it for us: calling `Celsius::default()` will get us a default
+// temp of 0.0, since that&#39;s what `f64::default()` returns.
+#[derive(default)]
+struct Celsius {
+    temp: f64,
+}</code></pre>
+<p>This doesn’t get you quite the same thing as Swift’s initializer values. It requires you to be slightly more explicit, but the tradeoff is that you also get a bit more control and flexibility.</p>
+<p>There’s actually a lot more to say about initializers—there are <em>many</em> more pages in the Swift book about them—but this is already about 1,700 words long, and I’ve been slowly chipping away at it since March (!), so I’m going to split this chapter of the Swift book into multiple posts. More to come shortly!</p>
 <hr />
 <ul>
 <li><a href="http://www.chriskrycho.com/2016/rust-and-swift-xv.html"><strong>Previous:</strong> Inheritance: a Swiftian specialty (for now).</a></li>
