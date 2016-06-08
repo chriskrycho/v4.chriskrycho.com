@@ -58,5 +58,7 @@ All of this, among other things, raises the very interesting question of what th
 
 
 - [**Previous:** Indexing and subscripts, or: traits vs. keywords again.][14]
+- [**Next:** Initialization: another area where Swift has a lot more going on than Rust.][16]
 
 [14]: http://www.chriskrycho.com/2016/rust-and-swift-xiv.html
+[16]: http://www.chriskrycho.com/2016/rust-and-swift-xvi.html
