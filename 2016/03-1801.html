@@ -2,33 +2,33 @@
 <html lang="en">
 <head>
     <title>Rust and C++ function definitions &middot; Chris Krycho</title>
-    <meta name="description" content="I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare— Rust has: fn foo() -> i32 { // stuff } fn bar() -> f32 { // stuff } C++ has: int foo() { // stuff } double bar() { // stuff } That consistency adds up over many lines of ..."/>
+    <meta name="description" content="I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare— Rust has: fn foo() -> i32 { /* implementation */ } fn bar() -> f32 { /* implementation */ } C++ has: int foo() { /* implementation */ } double bar() { /* implementation */ } That consistency adds up over many lines of ..."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
 <link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2016/03-1801.html"/>
     <meta property="og:title" content="Rust and C++ function definitions"/>
-    <meta property="og:description" content="I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare— Rust has: fn foo() -> i32 { // stuff } fn bar() -> f32 { // stuff } C++ has: int foo() { // stuff } double bar() { // stuff } That consistency adds up over many lines of ..."/>
+    <meta property="og:description" content="I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare— Rust has: fn foo() -> i32 { /* implementation */ } fn bar() -> f32 { /* implementation */ } C++ has: int foo() { /* implementation */ } double bar() { /* implementation */ } That consistency adds up over many lines of ..."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/>
 <link rel="me" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
     <meta name="twitter:title" content="Rust and C++ function definitions"/>
-    <meta name="twitter:description" content="I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare— Rust has: fn foo() -> i32 { // stuff } fn bar() -> f32 { // stuff } C++ has: int foo() { // stuff } double bar() { // stuff } That consistency adds up over many lines of ..."/>
+    <meta name="twitter:description" content="I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare— Rust has: fn foo() -> i32 { /* implementation */ } fn bar() -> f32 { /* implementation */ } C++ has: int foo() { /* implementation */ } double bar() { /* implementation */ } That consistency adds up over many lines of ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -88,34 +88,17 @@
 
 <p>I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare—</p>
 <p>Rust has:</p>
-<pre class="rust"><code>fn foo() -&gt; i32 {
-    // stuff
-}
-fn bar() -&gt; f32 {
-    // stuff
-}</code></pre>
+<pre class="rust"><code>fn foo() -&gt; i32 { /* implementation */ }
+fn bar() -&gt; f32 { /* implementation */ }</code></pre>
 <p>C++ has:</p>
-<pre class="cpp"><code>int foo() {
-    // stuff
-}
-
-double bar() {
-    // stuff
-}</code></pre>
+<pre class="cpp"><code>int foo() { /* implementation */ }
+double bar() { /* implementation */ }</code></pre>
 <p>That consistency adds up over many lines of code. There are many other such choices; the net effect is that Rust is <em>much</em> more pleasant to read than C++.</p>
 <hr />
 <p>Note: I’m aware that C++11 added the <code>auto foo() -&gt; &lt;type&gt;</code> syntax. But this actually <em>worsens</em> the problem. A totally new codebase which uses that form exclusively (which may not always be possible, because the semantics aren’t the same) would have roughly the same visual consistency as Rust <em>in that particular category</em>. (Plenty of others would still be a mess.) But the vast majority of C++ codebases are <em>not</em> totally new. Adding the form means your codebase is more likely to look this this:</p>
-<pre class="cpp"><code>int foo() {
-    // stuff
-}
-
-auto quux() -&gt; uint32_t {
-    // stuff
-}
-
-double bar() {
-    // stuff
-}</code></pre>
+<pre class="cpp"><code>int foo() { /* implementation */ }
+auto quux() -&gt; uint32_t { /* implementation */ }
+double bar() { /* implementation */ }</code></pre>
 <p>That is, for the record, <em>more</em> visual inconsistency—not less!</p>
 <div id="refs" class="references">
 
