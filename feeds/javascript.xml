@@ -4,41 +4,7 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 09 Jun 2016 12:42:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-09:2016/09-1242.html</guid><category>javascript</category><category>programming languages</category></item><item><title>Testing Ember.js Mixins With a Container</title><link>http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.html</link><description>&lt;p&gt;Today I was working on an Ember.js &lt;a href="http://emberjs.com/api/classes/Ember.Mixin.html#content"&gt;mixin&lt;/a&gt; for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it.&lt;/p&gt;
-&lt;p&gt;When you’re testing mixins, you’re generally not working with the normal Ember container.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; In fact, the default test setup for mixins doesn’t have &lt;em&gt;any&lt;/em&gt; container in play. It just looks like this (assuming you ran &lt;code&gt;ember generate mixin bar&lt;/code&gt; in an app named &lt;code&gt;foo&lt;/code&gt;):&lt;/p&gt;
-&lt;pre class="js"&gt;&lt;code&gt;import Ember from &amp;#39;ember&amp;#39;;
-import BarMixin from &amp;#39;foo/mixins/bar&amp;#39;;
-import { module, test } from &amp;#39;qunit&amp;#39;;
-
-module(&amp;#39;Unit | Mixin | bar&amp;#39;);
-
-// Replace this with your real tests.
-test(&amp;#39;it works&amp;#39;, function(assert) {
-  let BarObject = Ember.Object.extend(BarMixin);
-  let subject = BarObject.create();
-  assert.ok(subject);
-});&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Note two things:&lt;/p&gt;
-&lt;ol type="1"&gt;
-&lt;li&gt;It uses the basic Qunit &lt;code&gt;module&lt;/code&gt; setup, not the ember-qunit &lt;code&gt;moduleFor&lt;/code&gt; setup.&lt;/li&gt;
-&lt;li&gt;It assumes you’re generating a new object instance for every single test.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Both of those assumptions are fine, &lt;em&gt;if you don’t need to interact with the container&lt;/em&gt;. In many cases, that’s perfectly reasonable—I’d go so far as to say that most mixins probably &lt;em&gt;shoudln’t&lt;/em&gt; have any dependency on the container.&lt;/p&gt;
-&lt;p&gt;In the specific case I was working on, however, the point of the mixin was to abstract some common behavior which included all the interactions with a &lt;a href="https://guides.emberjs.com/v2.6.0/applications/services/"&gt;service&lt;/a&gt;. This meant making sure the dependency injection worked in the unit test. This in turn meant dealing with the container. So let’s see what was involved in that.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;Side note:&lt;/strong&gt; The documentation around testing mixins is relatively weak, and in general the testing docs are the weak bits in the Ember guides right now.&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; After a conversation with &lt;a href="https://github.com/rwjblue"&gt;@rwjblue&lt;/a&gt; on the &lt;a href="https://ember-community-slackin.herokuapp.com"&gt;Ember Community Slack&lt;/a&gt;, though, I was able to get a handle on the issue, and here we are. Since it stumped me, I’m guessing I’m not the only one.&lt;/p&gt;
-&lt;p&gt;When this happens, &lt;em&gt;write it up&lt;/em&gt;. I’ve been guilty of this too often in the past few months: learning something new that I couldn’t find anywhere online, and then leaving it stored in my own head. It doesn’t take a particularly long time to write a blog post like this, and if you’re stuck, chances are &lt;em&gt;very&lt;/em&gt; good someone else is too.&lt;/p&gt;
-&lt;div id="refs" class="references"&gt;
-
-&lt;/div&gt;
-&lt;section class="footnotes"&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id="fn1"&gt;&lt;p&gt;If you’re not familiar with the “container”, this is where all the various dependencies are registered, and where Ember looks them up to inject them when you use methods like &lt;code&gt;Ember.inject.service()&lt;/code&gt;.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn2"&gt;&lt;p&gt;Something I intend to help address in the next week or two via a pull request, so if you’re my Ember.js documentation team friend and you’re reading this… it’s coming. 😉&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 08 Jun 2016 23:15:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-08:2016/testing-emberjs-mixins-with-a-container.html</guid><category>emberjs</category><category>javascript</category><category>software development</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-19-1928.html</link><description>&lt;p&gt;I needed to write a tiny server to test out some quirky single-page app stuff I’m doing for Olo right now. So I did it with Python and Flask.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 09 Jun 2016 12:42:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-09:2016/09-1242.html</guid><category>javascript</category><category>programming languages</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-19-1928.html</link><description>&lt;p&gt;I needed to write a tiny server to test out some quirky single-page app stuff I’m doing for Olo right now. So I did it with Python and Flask.&lt;/p&gt;
 &lt;p&gt;And you know what? Python is still—and forever, I suspect—so much better than JavaScript.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 

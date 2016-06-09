@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Five Things Proverbs 6 Teaches &middot; Chris Krycho</title>
-    <meta name="description" content="Proverbs 6 makes 5 points, rather distinctly and sharply. First a summary and then a few thoughts on each. Verses 1–5: Being security for your neighbor—still less for a stranger—is a bad idea. This first point is perhaps the least obviously applicable to me today. I don ..."/>
+    <title>Testing Ember.js Mixins With a Container &middot; Chris Krycho</title>
+    <meta name="description" content="Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it. When you’re testing mixins, you’re generally not working with the normal Ember container.1 In fact ..."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2014/five-things-proverbs-six.html"/>
-    <meta property="og:title" content="Five Things Proverbs 6 Teaches"/>
-    <meta property="og:description" content="Proverbs 6 makes 5 points, rather distinctly and sharply. First a summary and then a few thoughts on each. Verses 1–5: Being security for your neighbor—still less for a stranger—is a bad idea. This first point is perhaps the least obviously applicable to me today. I don ..."/>
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/drafts/testing-emberjs-mixins-with-a-container.html"/>
+    <meta property="og:title" content="Testing Ember.js Mixins With a Container"/>
+    <meta property="og:description" content="Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it. When you’re testing mixins, you’re generally not working with the normal Ember container.1 In fact ..."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/>
 <link rel="me" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-    <meta name="twitter:title" content="Five Things Proverbs 6 Teaches"/>
-    <meta name="twitter:description" content="Proverbs 6 makes 5 points, rather distinctly and sharply. First a summary and then a few thoughts on each. Verses 1–5: Being security for your neighbor—still less for a stranger—is a bad idea. This first point is perhaps the least obviously applicable to me today. I don ..."/>
+    <meta name="twitter:title" content="Testing Ember.js Mixins With a Container"/>
+    <meta name="twitter:description" content="Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it. When you’re testing mixins, you’re generally not working with the normal Ember container.1 In fact ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
@@ -73,44 +73,53 @@
     </header>
 
 
-<article class="devotions theology">
+<article class="emberjs javascript software-development tech">
 
     <header>
-<h1>Five Things Proverbs 6 Teaches</h1>
+<h1>Testing Ember.js Mixins With a Container</h1>
     </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2014/five-things-proverbs-six.html"><i class="fa fa-fw fa-link"></i></a>January 06, 2014</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/theology/">theology</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/devotions/">#devotions</a></span><span><a href="http://www.chriskrycho.com/2014/five-things-proverbs-six.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/drafts/testing-emberjs-mixins-with-a-container.html"><i class="fa fa-fw fa-link"></i></a>June 08, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
-    <p class="context">
-        I have made it my goal to write short posts reflecting on my devotional
-        reading every day. These posts are composed off the cuff, in 30 minutes or
-        less. The following is one such post.
-            Before writing this post, I read: 2 Kings 11–15, Psalm 6, Proverbs 6.
-    </p>
-    <hr/>
 
 
         <div class="content">
 
-<p>Proverbs 6 makes 5 points, rather distinctly and sharply. First a summary and then a few thoughts on each.</p>
+<p>Today I was working on an Ember.js <a href="http://emberjs.com/api/classes/Ember.Mixin.html#content">mixin</a> for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it.</p>
+<p>When you’re testing mixins, you’re generally not working with the normal Ember container.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> In fact, the default test setup for mixins doesn’t have <em>any</em> container in play. It just looks like this (assuming you ran <code>ember generate mixin bar</code> in an app named <code>foo</code>):</p>
+<pre class="js"><code>import Ember from &#39;ember&#39;;
+import BarMixin from &#39;foo/mixins/bar&#39;;
+import { module, test } from &#39;qunit&#39;;
+
+module(&#39;Unit | Mixin | bar&#39;);
+
+// Replace this with your real tests.
+test(&#39;it works&#39;, function(assert) {
+  let BarObject = Ember.Object.extend(BarMixin);
+  let subject = BarObject.create();
+  assert.ok(subject);
+});</code></pre>
+<p>Note two things:</p>
 <ol type="1">
-<li><p><strong>Verses 1–5:</strong> <em>Being security for your neighbor—still less for a stranger—is a bad idea.</em></p>
-<p>This first point is perhaps the least obviously applicable to me today. I don’t make a habit of pledging money or possessions for a friend’s (still less a stranger’s) poor money decisions. I might <em>give</em> a friend (or even a stranger) money, but I can’t imagine putting myself in the position of guaranteeing a loan for someone else. That just seems like a terrible idea. Of course, that’s the point of these verses: it <em>is</em> a terrible idea. The counsel here is to get out of that kind of situation as fast as possible (and, by implication, to avoid getting into such a situation in the first place).</p></li>
-<li><p><strong>Verses 6–11:</strong> <em>Laziness will prove ruinous. Industriousness will produce good results.</em></p>
-<p>I have seen this proven true time and again in the lives of those around me. As a general rule, people who work hard do well for themselves, and people who are lazy do very poorly for themselves. As a rule, I say, because there are times when this is not true—there really are times when systemic injustices undermine even people’s best efforts. This proverb is a proverb, not an iron-clad guarantee, and we would all do well to remember as much. That said: we would <em>all</em> do well to remember as much: if the political conservative’s typical response is to simply point to this verse as a promise (which it is not), the political liberal’s typical response is to act as though this verse has no bearing whatsoever. Sometimes, poverty has complex, structural, societal roots—but sometimes, people are just lazy. God calls us <em>not</em> to be lazy; work is a good thing that was instituted before the Fall.</p></li>
-<li><p><strong>Verses 12–15:</strong> <em>The ultimate fate of a wicked person is calamity.</em></p>
-<p>There is nothing terribly complicated here. There is, however, a great deal of hope here for those of us who have watched wicked people go around behaving wickedly and seemingly coming off no worse for wear every time. There will come a day of recompense for every wicked deed. Lord willing, for some of those people, that day came when Christ came, and they will join us in the company of saints as they abandon their wickedness and turn to God. But for those who don’t, justice will come, and it will come swiftly.</p></li>
-<li><p><strong>Verses 16–19:</strong> <em>There are some things God truly hates.</em></p>
-<p>It is almost <em>passe</em> to note how distasteful this idea is in our culture today, but the words on the page could not be clearer. There are things that Yahweh hates, things that are an abomination to him. He hates pride. He abominates deceit. He hates the shedding of innocent blood. He abominates the plotting of wickedness. He hates the doing of evil. He abominates false witness to be borne. He hates dissension between brothers.</p>
-<p>But more than this: he hates those who <em>do</em> these things. This is dreadful —apart from the grace he shows us in Christ.</p></li>
-<li><p><strong>Verses 20–35:</strong> <em>Adultery is folly. Wisdom runs the other way.</em></p>
-<p><a href="/2014/01/folly-of-sin">Once again</a>, the proverbs hammer home the folly of adultery. It is not only that it does not give what it promises and brings spiritual ruin. It is that it also produces, at a purely practical level, destruction. A spouse’s jealousy is (rightly) a fearful thing. Who in his right mind would sleep with another man’s wife, knowing what the response would be? What woman would sleep with another woman’s husband, knowing how her own rage would be? The implications just for one’s own health—still less any other part of one’s life—ought to be enough to warn us away.</p></li>
+<li>It uses the basic Qunit <code>module</code> setup, not the ember-qunit <code>moduleFor</code> setup.</li>
+<li>It assumes you’re generating a new object instance for every single test.</li>
 </ol>
-<p>The Proverbs remind me again and again that God cares about my life at every level. He is not distant or unengaged with these details; he cares about every aspect of human flourishing, and takes pains to make clear to us what that flourishing looks like—and what it doesn’t.</p>
+<p>Both of those assumptions are fine, <em>if you don’t need to interact with the container</em>. In many cases, that’s perfectly reasonable—I’d go so far as to say that most mixins probably <em>shoudln’t</em> have any dependency on the container.</p>
+<p>In the specific case I was working on, however, the point of the mixin was to abstract some common behavior which included all the interactions with a <a href="https://guides.emberjs.com/v2.6.0/applications/services/">service</a>. This meant making sure the dependency injection worked in the unit test. This in turn meant dealing with the container. So let’s see what was involved in that.</p>
+<hr />
+<p><strong>Side note:</strong> The documentation around testing mixins is relatively weak, and in general the testing docs are the weak bits in the Ember guides right now.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> After a conversation with <a href="https://github.com/rwjblue">@rwjblue</a> on the <a href="https://ember-community-slackin.herokuapp.com">Ember Community Slack</a>, though, I was able to get a handle on the issue, and here we are. Since it stumped me, I’m guessing I’m not the only one.</p>
+<p>When this happens, <em>write it up</em>. I’ve been guilty of this too often in the past few months: learning something new that I couldn’t find anywhere online, and then leaving it stored in my own head. It doesn’t take a particularly long time to write a blog post like this, and if you’re stuck, chances are <em>very</em> good someone else is too.</p>
 <div id="refs" class="references">
 
 </div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>If you’re not familiar with the “container”, this is where all the various dependencies are registered, and where Ember looks them up to inject them when you use methods like <code>Ember.inject.service()</code>.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Something I intend to help address in the next week or two via a pull request, so if you’re my Ember.js documentation team friend and you’re reading this… it’s coming. 😉<a href="#fnref2">↩</a></p></li>
+</ol>
+</section>
         </div>
     </div>
 </article>
