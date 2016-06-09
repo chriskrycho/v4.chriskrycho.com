@@ -4,35 +4,38 @@
 &lt;hr /&gt;
 &lt;p&gt;The rules various languages have around construction and destruction of objects are &lt;em&gt;extremely&lt;/em&gt; important for programmer safety and ergonomics. I think it’s fair to say that both Swift and rust are actively trying to avoid some of the mistakes made in e.g. C++ which poorly affect both its safety and its ease of use for developers, albeit it in some superficially different ways. Both languages also support defining how types are destroyed, which we’ll come back to in a future discussion.&lt;/p&gt;
 &lt;p&gt;The basic aim both Rust and Swift have in this area seems to be the same: avoid &lt;em&gt;partially&lt;/em&gt; initialized objects. (You don’t want partially initialized objects. Ask Objective C developers.)&lt;/p&gt;
-&lt;p&gt;Swift does this via its rules around &lt;em&gt;initializers&lt;/em&gt;. Rust does it by requiring that all the values of a type be initialized at its creation. So, for example, the following &lt;em&gt;looks&lt;/em&gt; like it should work, but as the comment explains, it doesn’t. You can initialize the variable piecemeal, but you cannot &lt;em&gt;use&lt;/em&gt; it.&lt;/p&gt;
-&lt;pre class="rust"&gt;&lt;code&gt;#[derive(Debug)]
+&lt;p&gt;Swift does this via its rules around &lt;em&gt;initializers&lt;/em&gt;. Rust does it by requiring that all the values of a type be initialized at its creation. So, for example, the following &lt;em&gt;looks&lt;/em&gt; like it should work, but it doesn’t. You can initialize the variable piecemeal, but you cannot &lt;em&gt;use&lt;/em&gt; it:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;#[derive(Debug)]  // to make it printable.
 struct Foo {
     pub a: i32,
     pub b: f64,
 }
 
 fn main() {
+    // This will compmile, but `foo` will be useless.
     let mut foo: Foo;
     foo.a = 14;
     foo.b = 42.0;
 
-    // You can&amp;#39;t do this because of the following:
-    // 1. the ability to move out of a struct per-field
-    // 2. the ability to re-initialize moved variables.
-    // 3. treating uninitialized variables the same as moved-from variables.
+    // This would actually fail to compile. Surprising? A bit!
     // println!(&amp;quot;{:?}&amp;quot;, foo);
+
+    // This will work, though, because it fully constructs the type.
+    let foo2 = Foo { a: 14, b: 42.0 };
+    println!(&amp;quot;{:?}&amp;quot;, foo);
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As a result, especially with more complex data types, providing standard constructor-style methods like &lt;code&gt;new&lt;/code&gt; or &lt;code&gt;default&lt;/code&gt; is conventional and helpful. (If the type has non-public members, it’s also strictly necessary.)&lt;/p&gt;
+&lt;p&gt;(The reasons why this is so are fairly complicated. See the addendum at the end for a brief discussion.)&lt;/p&gt;
+&lt;p&gt;In any case, this means that especially with more complex data types, providing standard constructor-style methods like &lt;code&gt;new&lt;/code&gt; or &lt;code&gt;default&lt;/code&gt; is conventional and helpful. (If the type has non-public members, it’s also strictly necessary.)&lt;/p&gt;
 &lt;p&gt;Swift has a number of options for initializers, which correspond to things you in most cases can do in Rust, but in a very different way.&lt;/p&gt;
 &lt;p&gt;First, Swift allows you to overload the &lt;code&gt;init&lt;/code&gt; method on a type, so that you can have different constructors for different starting conditions. (This is, to my recollection, the first time any kind of overloading has come up so far in the Swift book—but that could just be my memory failing me. Certainly I haven’t referenced it in any previous discussion, though.)&lt;/p&gt;
 &lt;p&gt;The example offered by the Swift book is illuminating for the different approaches the languages take, so we’ll run with it. Here’s a class defining a Celsius type in Swift:&lt;/p&gt;
 &lt;pre class="swift"&gt;&lt;code&gt;struct Celsius {
     let temp: Double
-    
+
     init(fromFahrenheit f: Double) {
        temp = 1.8 * (f - 32.0)
     }
-    
+
     init(fromKelvin k: Double) {
         temp = k - 273.15
     }
@@ -51,7 +54,7 @@ impl Celsius {
     fn from_fahrenheit(f: f64) -&amp;gt; Celsius {
         Celsius { temp: 1.8 * (f - 32.0) }
     }
-    
+
     fn from_kelvin(k: f64) -&amp;gt; Celsius {
         Celsius { temp: k - 273.15 }
     }
@@ -69,14 +72,14 @@ let absoluteZero = Celsius::from_kelvin(0.0);&lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;The new keyword is the thing I could do without. Perhaps it’s just years of writing Python, but I really prefer it when constructors for types are just sugar and you can therefore reimplement them yourself, provide custom variations, etc. as it suits you. Introducing syntax instead of just picking a standard function to call at object instantiation means you lose that. At the same time, and in Swift’s defense, I’ve only rarely wanted or needed to use those facilities in work in Python. It’s a pragmatic decision—and it makes sense as such; it’s just not where my preference lies. The cost is a bit higher than I’d prefer relative to the gain in convenience.&lt;/p&gt;
 &lt;p&gt;Back to the initializers and the issue of overloading: the external parameter names (the &lt;em&gt;first&lt;/em&gt; parameter) is one of the main ways Swift tells apart the initializers. This is necessitated, of course, by the choice of a keyword for the initializer; Rust doesn’t have any &lt;em&gt;need&lt;/em&gt; for this, and since Rust doesn’t have overloading, it also &lt;em&gt;can’t&lt;/em&gt; do this. In Rust, different constructors/initializers will have different names, because they will simply be different methods.&lt;/p&gt;
-&lt;p&gt;One other important thing falls out of this: the external parameter names are &lt;em&gt;required&lt;/em&gt; when initializing a type in Swift. Because those parameter names are used to tell apart the constructor, this is not just necessary for the compiler. It’s also an essential element of making the item readable for humans. Imagine if this were &lt;em&gt;not&lt;/em&gt; the case—look again at the &lt;code&gt;Celsius&lt;/code&gt; example:&lt;/p&gt;
+&lt;p&gt;[&lt;i class='editorial'&gt;&lt;strong&gt;Edit:&lt;/strong&gt; I’m leaving this here for posterity, but it’s incomplete. See below.&lt;/i&gt;] One other important thing falls out of this: the external parameter names are &lt;em&gt;required&lt;/em&gt; when initializing a type in Swift. Because those parameter names are used to tell apart the constructor, this is not just necessary for the compiler. It’s also an essential element of making the item readable for humans. Imagine if this were &lt;em&gt;not&lt;/em&gt; the case—look again at the &lt;code&gt;Celsius&lt;/code&gt; example:&lt;/p&gt;
 &lt;pre class="swift"&gt;&lt;code&gt;struct Celsius {
     let temp: Double
-    
+
     init(fromFahrenheit f: Double) {
        temp = 1.8 * (f - 32.0)
     }
-    
+
     init(fromKelvin k: Double) {
         temp = k - 273.15
     }
@@ -86,8 +89,9 @@ let absoluteZero = Celsius::from_kelvin(0.0);&lt;/code&gt;&lt;/pre&gt;
 let freezing = Celsius(0)
 let balmy = Celsius(75.0)  // our old fromFahrenheit example
 let absoluteZero = Celsius(0.0)  // our old &amp;quot;fromKelvin example&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We as humans would have no idea what the constructors are supposed to do, and really at this point there would &lt;em&gt;necessarily&lt;/em&gt; just be one constructor unless the later options took elements of another &lt;em&gt;type&lt;/em&gt;. That would be fairly similar to how overloading works in C++, Java, or C#, and while method overloading in those langauges is very &lt;em&gt;powerful&lt;/em&gt;, it can also make it incredibly difficult to figure out exactly what method is being called. That includes when the constructor is being called. Take a look at the &lt;em&gt;long&lt;/em&gt; list of &lt;a href="https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110)"&gt;C# &lt;code&gt;DateTime&lt;/code&gt; constructors&lt;/a&gt;, for example: you have to either have this memorized, have the documentation open, or be able simply to infer from context what is going on.&lt;/p&gt;
+&lt;p&gt;We as humans would have no idea what the constructors are supposed to do, and really at this point there would &lt;em&gt;necessarily&lt;/em&gt; just be one constructor unless the later options took elements of another &lt;em&gt;type&lt;/em&gt;. That would be fairly similar to how overloading works in C++, Java, or C&lt;sup&gt;♯&lt;/sup&gt;, and while method overloading in those langauges is very &lt;em&gt;powerful&lt;/em&gt;, it can also make it incredibly difficult to figure out exactly what method is being called. That includes when the constructor is being called. Take a look at the &lt;em&gt;long&lt;/em&gt; list of &lt;a href="https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110)"&gt;C&lt;sup&gt;♯&lt;/sup&gt; &lt;code&gt;DateTime&lt;/code&gt; constructors&lt;/a&gt;, for example: you have to either have this memorized, have the documentation open, or be able simply to infer from context what is going on.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Given&lt;/em&gt; the choice of a keyword to mark initializers, then, Swift’s rule about external parameter name usage wherever there is more than one initializer is quite sensible.&lt;/p&gt;
+&lt;p&gt;[&lt;i class='editorial'&gt;&lt;strong&gt;Edit:&lt;/strong&gt; several readers, most notably including &lt;a href="https://twitter.com/jckarter/status/740763363626586112"&gt;Joe Groff&lt;/a&gt;, who works on Swift for Apple, pointed out that Swift &lt;em&gt;does&lt;/em&gt; support overloading, including in &lt;code&gt;init()&lt;/code&gt; calls, and uses types to distinguish them. Moreover, you can leave off the label for the parameter. My initial summary was simply incorrect. I think this is a function of my not having finished the chapter yet.&lt;/i&gt;]&lt;/p&gt;
 &lt;p&gt;Second, both languages support supplying default values for a constructed type. Swift does this via default values defined at the site of the property definition itself, or simply set directly from within an initializer:&lt;/p&gt;
 &lt;pre class="swift"&gt;&lt;code&gt;struct Kelvin {
     var temp: Double = 0.0  // zero kinetic energy!!!
@@ -119,7 +123,7 @@ impl Kelvin {
 
 // Do it ourselves
 impl Default for Kelvin {
-    fn default() -&amp;gt; Kelvin { 
+    fn default() -&amp;gt; Kelvin {
         Kelvin { temp: 305.0 }
     }
 }
@@ -136,9 +140,36 @@ struct Celsius {
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xv.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Inheritance: a Swiftian specialty (for now).&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr /&gt;
+&lt;section id="addendum-no-late-initialization-in-rust" class="level2"&gt;
+&lt;h2&gt;Addendum: No Late Initialization in Rust&lt;/h2&gt;
+&lt;p&gt;Returning to the first Rust example—&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;#[derive(Debug)]  // to make it printable.
+struct Foo {
+    pub a: i32,
+    pub b: f64,
+}
+
+fn main() {
+    // This will compmile, but `foo` will be useless.
+    let mut foo: Foo;
+    foo.a = 14;
+    foo.b = 42.0;
+
+    // This would actually fail to compile. Surprising? A bit!
+    // println!(&amp;quot;{:?}&amp;quot;, foo);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can’t do anything with that data for a few reasons (most of this discussion coming from ubsan, aatch, and niconii on the &lt;a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;amp;channel=%23rust"&gt;#rust-lang IRC&lt;/a&gt; back in March):&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Rust lets you “move” data out of a struct on a per-field basis. (Rust’s concept of “ownership” and “borrowing” is something we haven’t discussed a lot so far in this series; my &lt;a href="http://www.newrustacean.com/show_notes/e002/index.html" title="New Rustacean e002: Something borrowed, something... moved?"&gt;podcast episode&lt;/a&gt; about it is probably a good starting point.) The main takeaway here is that you could return &lt;code&gt;foo.a&lt;/code&gt; distinctly from returning &lt;code&gt;foo&lt;/code&gt;, and doing so would hand that data over while running the &lt;code&gt;foo&lt;/code&gt; destructor mechanism. Likewise, you could pass &lt;code&gt;foo.b&lt;/code&gt; to the function created by the &lt;code&gt;println!&lt;/code&gt; macro&lt;/li&gt;
+&lt;li&gt;Rust allows you to re-initialize moved variables. I haven’t dug enough to have an idea of what that would look like in practice.&lt;/li&gt;
+&lt;li&gt;Rust treats uninitialized variables the same as moved-from variables. This seems to be closely related to reason #2. The same “I’m not sure how to elaborate” qualification applies here.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I’ll see if I can add some further comments on (2) and (3) as I hit the later points in the Swift initialization chapter.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
+&lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 07 Jun 2016 23:46:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-07:2016/rust-and-swift-xvi.html</guid><category>rust</category><category>swift</category><category>rust-and-swift</category><category>programming languages</category></item><item><title></title><link>http://www.chriskrycho.com/2016/03-2247.html</link><description>&lt;p&gt;I wrote a &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt; &lt;a href="https://github.com/rust-lang/rfcs"&gt;RFC&lt;/a&gt;! See it here: &lt;a href="https://github.com/rust-lang/rfcs/pull/1636"&gt;“Require all new features to be documented”&lt;/a&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 

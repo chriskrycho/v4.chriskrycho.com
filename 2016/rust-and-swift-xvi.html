@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (xvi)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -91,35 +91,38 @@
 <hr />
 <p>The rules various languages have around construction and destruction of objects are <em>extremely</em> important for programmer safety and ergonomics. I think it’s fair to say that both Swift and rust are actively trying to avoid some of the mistakes made in e.g. C++ which poorly affect both its safety and its ease of use for developers, albeit it in some superficially different ways. Both languages also support defining how types are destroyed, which we’ll come back to in a future discussion.</p>
 <p>The basic aim both Rust and Swift have in this area seems to be the same: avoid <em>partially</em> initialized objects. (You don’t want partially initialized objects. Ask Objective C developers.)</p>
-<p>Swift does this via its rules around <em>initializers</em>. Rust does it by requiring that all the values of a type be initialized at its creation. So, for example, the following <em>looks</em> like it should work, but as the comment explains, it doesn’t. You can initialize the variable piecemeal, but you cannot <em>use</em> it.</p>
-<pre class="rust"><code>#[derive(Debug)]
+<p>Swift does this via its rules around <em>initializers</em>. Rust does it by requiring that all the values of a type be initialized at its creation. So, for example, the following <em>looks</em> like it should work, but it doesn’t. You can initialize the variable piecemeal, but you cannot <em>use</em> it:</p>
+<pre class="rust"><code>#[derive(Debug)]  // to make it printable.
 struct Foo {
     pub a: i32,
     pub b: f64,
 }
 
 fn main() {
+    // This will compmile, but `foo` will be useless.
     let mut foo: Foo;
     foo.a = 14;
     foo.b = 42.0;
 
-    // You can&#39;t do this because of the following:
-    // 1. the ability to move out of a struct per-field
-    // 2. the ability to re-initialize moved variables.
-    // 3. treating uninitialized variables the same as moved-from variables.
+    // This would actually fail to compile. Surprising? A bit!
     // println!(&quot;{:?}&quot;, foo);
+
+    // This will work, though, because it fully constructs the type.
+    let foo2 = Foo { a: 14, b: 42.0 };
+    println!(&quot;{:?}&quot;, foo);
 }</code></pre>
-<p>As a result, especially with more complex data types, providing standard constructor-style methods like <code>new</code> or <code>default</code> is conventional and helpful. (If the type has non-public members, it’s also strictly necessary.)</p>
+<p>(The reasons why this is so are fairly complicated. See the addendum at the end for a brief discussion.)</p>
+<p>In any case, this means that especially with more complex data types, providing standard constructor-style methods like <code>new</code> or <code>default</code> is conventional and helpful. (If the type has non-public members, it’s also strictly necessary.)</p>
 <p>Swift has a number of options for initializers, which correspond to things you in most cases can do in Rust, but in a very different way.</p>
 <p>First, Swift allows you to overload the <code>init</code> method on a type, so that you can have different constructors for different starting conditions. (This is, to my recollection, the first time any kind of overloading has come up so far in the Swift book—but that could just be my memory failing me. Certainly I haven’t referenced it in any previous discussion, though.)</p>
 <p>The example offered by the Swift book is illuminating for the different approaches the languages take, so we’ll run with it. Here’s a class defining a Celsius type in Swift:</p>
 <pre class="swift"><code>struct Celsius {
     let temp: Double
-    
+
     init(fromFahrenheit f: Double) {
        temp = 1.8 * (f - 32.0)
     }
-    
+
     init(fromKelvin k: Double) {
         temp = k - 273.15
     }
@@ -138,7 +141,7 @@ impl Celsius {
     fn from_fahrenheit(f: f64) -&gt; Celsius {
         Celsius { temp: 1.8 * (f - 32.0) }
     }
-    
+
     fn from_kelvin(k: f64) -&gt; Celsius {
         Celsius { temp: k - 273.15 }
     }
@@ -156,14 +159,14 @@ let absoluteZero = Celsius::from_kelvin(0.0);</code></pre>
 </blockquote>
 <p>The new keyword is the thing I could do without. Perhaps it’s just years of writing Python, but I really prefer it when constructors for types are just sugar and you can therefore reimplement them yourself, provide custom variations, etc. as it suits you. Introducing syntax instead of just picking a standard function to call at object instantiation means you lose that. At the same time, and in Swift’s defense, I’ve only rarely wanted or needed to use those facilities in work in Python. It’s a pragmatic decision—and it makes sense as such; it’s just not where my preference lies. The cost is a bit higher than I’d prefer relative to the gain in convenience.</p>
 <p>Back to the initializers and the issue of overloading: the external parameter names (the <em>first</em> parameter) is one of the main ways Swift tells apart the initializers. This is necessitated, of course, by the choice of a keyword for the initializer; Rust doesn’t have any <em>need</em> for this, and since Rust doesn’t have overloading, it also <em>can’t</em> do this. In Rust, different constructors/initializers will have different names, because they will simply be different methods.</p>
-<p>One other important thing falls out of this: the external parameter names are <em>required</em> when initializing a type in Swift. Because those parameter names are used to tell apart the constructor, this is not just necessary for the compiler. It’s also an essential element of making the item readable for humans. Imagine if this were <em>not</em> the case—look again at the <code>Celsius</code> example:</p>
+<p>[<i class='editorial'><strong>Edit:</strong> I’m leaving this here for posterity, but it’s incomplete. See below.</i>] One other important thing falls out of this: the external parameter names are <em>required</em> when initializing a type in Swift. Because those parameter names are used to tell apart the constructor, this is not just necessary for the compiler. It’s also an essential element of making the item readable for humans. Imagine if this were <em>not</em> the case—look again at the <code>Celsius</code> example:</p>
 <pre class="swift"><code>struct Celsius {
     let temp: Double
-    
+
     init(fromFahrenheit f: Double) {
        temp = 1.8 * (f - 32.0)
     }
-    
+
     init(fromKelvin k: Double) {
         temp = k - 273.15
     }
@@ -173,8 +176,9 @@ let absoluteZero = Celsius::from_kelvin(0.0);</code></pre>
 let freezing = Celsius(0)
 let balmy = Celsius(75.0)  // our old fromFahrenheit example
 let absoluteZero = Celsius(0.0)  // our old &quot;fromKelvin example</code></pre>
-<p>We as humans would have no idea what the constructors are supposed to do, and really at this point there would <em>necessarily</em> just be one constructor unless the later options took elements of another <em>type</em>. That would be fairly similar to how overloading works in C++, Java, or C#, and while method overloading in those langauges is very <em>powerful</em>, it can also make it incredibly difficult to figure out exactly what method is being called. That includes when the constructor is being called. Take a look at the <em>long</em> list of <a href="https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110)">C# <code>DateTime</code> constructors</a>, for example: you have to either have this memorized, have the documentation open, or be able simply to infer from context what is going on.</p>
+<p>We as humans would have no idea what the constructors are supposed to do, and really at this point there would <em>necessarily</em> just be one constructor unless the later options took elements of another <em>type</em>. That would be fairly similar to how overloading works in C++, Java, or C<sup>♯</sup>, and while method overloading in those langauges is very <em>powerful</em>, it can also make it incredibly difficult to figure out exactly what method is being called. That includes when the constructor is being called. Take a look at the <em>long</em> list of <a href="https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110)">C<sup>♯</sup> <code>DateTime</code> constructors</a>, for example: you have to either have this memorized, have the documentation open, or be able simply to infer from context what is going on.</p>
 <p><em>Given</em> the choice of a keyword to mark initializers, then, Swift’s rule about external parameter name usage wherever there is more than one initializer is quite sensible.</p>
+<p>[<i class='editorial'><strong>Edit:</strong> several readers, most notably including <a href="https://twitter.com/jckarter/status/740763363626586112">Joe Groff</a>, who works on Swift for Apple, pointed out that Swift <em>does</em> support overloading, including in <code>init()</code> calls, and uses types to distinguish them. Moreover, you can leave off the label for the parameter. My initial summary was simply incorrect. I think this is a function of my not having finished the chapter yet.</i>]</p>
 <p>Second, both languages support supplying default values for a constructed type. Swift does this via default values defined at the site of the property definition itself, or simply set directly from within an initializer:</p>
 <pre class="swift"><code>struct Kelvin {
     var temp: Double = 0.0  // zero kinetic energy!!!
@@ -206,7 +210,7 @@ impl Kelvin {
 
 // Do it ourselves
 impl Default for Kelvin {
-    fn default() -&gt; Kelvin { 
+    fn default() -&gt; Kelvin {
         Kelvin { temp: 305.0 }
     }
 }
@@ -223,9 +227,36 @@ struct Celsius {
 <ul>
 <li><a href="http://www.chriskrycho.com/2016/rust-and-swift-xv.html"><strong>Previous:</strong> Inheritance: a Swiftian specialty (for now).</a></li>
 </ul>
+<hr />
+<section id="addendum-no-late-initialization-in-rust" class="level2">
+<h2>Addendum: No Late Initialization in Rust</h2>
+<p>Returning to the first Rust example—</p>
+<pre class="rust"><code>#[derive(Debug)]  // to make it printable.
+struct Foo {
+    pub a: i32,
+    pub b: f64,
+}
+
+fn main() {
+    // This will compmile, but `foo` will be useless.
+    let mut foo: Foo;
+    foo.a = 14;
+    foo.b = 42.0;
+
+    // This would actually fail to compile. Surprising? A bit!
+    // println!(&quot;{:?}&quot;, foo);
+}</code></pre>
+<p>You can’t do anything with that data for a few reasons (most of this discussion coming from ubsan, aatch, and niconii on the <a href="https://client00.chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust">#rust-lang IRC</a> back in March):</p>
+<ol type="1">
+<li>Rust lets you “move” data out of a struct on a per-field basis. (Rust’s concept of “ownership” and “borrowing” is something we haven’t discussed a lot so far in this series; my <a href="http://www.newrustacean.com/show_notes/e002/index.html" title="New Rustacean e002: Something borrowed, something... moved?">podcast episode</a> about it is probably a good starting point.) The main takeaway here is that you could return <code>foo.a</code> distinctly from returning <code>foo</code>, and doing so would hand that data over while running the <code>foo</code> destructor mechanism. Likewise, you could pass <code>foo.b</code> to the function created by the <code>println!</code> macro</li>
+<li>Rust allows you to re-initialize moved variables. I haven’t dug enough to have an idea of what that would look like in practice.</li>
+<li>Rust treats uninitialized variables the same as moved-from variables. This seems to be closely related to reason #2. The same “I’m not sure how to elaborate” qualification applies here.</li>
+</ol>
+<p>I’ll see if I can add some further comments on (2) and (3) as I hit the later points in the Swift initialization chapter.</p>
 <div id="refs" class="references">
 
 </div>
+</section>
         </div>
     </div>
 </article>
@@ -273,7 +304,7 @@ struct Celsius {
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2016/mornings-like-this.html">Mornings like this</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2016/a-brake-on-our-enthusiasm.html">A brake on our enthusiasm</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2016/rust-and-swift-xvi.html">Rust and Swift (xvi)</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.html">Testing Ember.js Mixins With a Container</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2016/irreducible-complexity-and-design-discourse.html">Irreducible Complexity and Design Discourse</a></li>
     </ul>
 </section></footer>

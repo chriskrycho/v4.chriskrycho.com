@@ -19,33 +19,37 @@ Modified: 2016-06-07 23:46
 
 ---
 
-The rules various languages have around construction and destruction of objects are *extremely* important for programmer safety and ergonomics. I think it's fair to say that both Swift and rust are actively trying to avoid some of the mistakes made in e.g. C++ which poorly affect both its safety and its ease of use for developers, albeit it in some superficially different ways. Both languages also support defining how types are destroyed, which we'll come back to in a future discussion. 
+The rules various languages have around construction and destruction of objects are *extremely* important for programmer safety and ergonomics. I think it's fair to say that both Swift and rust are actively trying to avoid some of the mistakes made in e.g. C++ which poorly affect both its safety and its ease of use for developers, albeit it in some superficially different ways. Both languages also support defining how types are destroyed, which we'll come back to in a future discussion.
 
 The basic aim both Rust and Swift have in this area seems to be the same: avoid *partially* initialized objects. (You don't want partially initialized objects. Ask Objective C developers.)
 
-Swift does this via its rules around *initializers*. Rust does it by requiring that all the values of a type be initialized at its creation. So, for example, the following *looks* like it should work, but as the comment explains, it doesn't. You can initialize the variable piecemeal, but you cannot *use* it.
+Swift does this via its rules around *initializers*. Rust does it by requiring that all the values of a type be initialized at its creation. So, for example, the following *looks* like it should work, but it doesn't. You can initialize the variable piecemeal, but you cannot *use* it:
 
 ```rust
-#[derive(Debug)]
+#[derive(Debug)]  // to make it printable.
 struct Foo {
     pub a: i32,
     pub b: f64,
 }
 
 fn main() {
+    // This will compmile, but `foo` will be useless.
     let mut foo: Foo;
     foo.a = 14;
     foo.b = 42.0;
 
-    // You can't do this because of the following:
-    // 1. the ability to move out of a struct per-field
-    // 2. the ability to re-initialize moved variables.
-    // 3. treating uninitialized variables the same as moved-from variables.
+    // This would actually fail to compile. Surprising? A bit!
     // println!("{:?}", foo);
+
+    // This will work, though, because it fully constructs the type.
+    let foo2 = Foo { a: 14, b: 42.0 };
+    println!("{:?}", foo);
 }
 ```
 
-As a result, especially with more complex data types, providing standard constructor-style methods like `new` or `default` is conventional and helpful. (If the type has non-public members, it's also strictly necessary.)
+(The reasons why this is so are fairly complicated. See the addendum at the end for a brief discussion.)
+
+In any case, this means that especially with more complex data types, providing standard constructor-style methods like `new` or `default` is conventional and helpful. (If the type has non-public members, it's also strictly necessary.)
 
 Swift has a number of options for initializers, which correspond to things you in most cases can do in Rust, but in a very different way.
 
@@ -56,11 +60,11 @@ The example offered by the Swift book is illuminating for the different approach
 ```swift
 struct Celsius {
     let temp: Double
-    
+
     init(fromFahrenheit f: Double) {
        temp = 1.8 * (f - 32.0)
     }
-    
+
     init(fromKelvin k: Double) {
         temp = k - 273.15
     }
@@ -85,7 +89,7 @@ impl Celsius {
     fn from_fahrenheit(f: f64) -> Celsius {
         Celsius { temp: 1.8 * (f - 32.0) }
     }
-    
+
     fn from_kelvin(k: f64) -> Celsius {
         Celsius { temp: k - 273.15 }
     }
@@ -109,16 +113,16 @@ The new keyword is the thing I could do without. Perhaps it's just years of writ
 
 Back to the initializers and the issue of overloading: the external parameter names (the *first* parameter) is one of the main ways Swift tells apart the initializers. This is necessitated, of course, by the choice of a keyword for the initializer; Rust doesn't have any *need* for this, and since Rust doesn't have overloading, it also *can't* do this. In Rust, different constructors/initializers will have different names, because they will simply be different methods.
 
-One other important thing falls out of this: the external parameter names are *required* when initializing a type in Swift. Because those parameter names are used to tell apart the constructor, this is not just necessary for the compiler. It's also an essential element of making the item readable for humans. Imagine if this were *not* the case---look again at the `Celsius` example:
+[<i class='editorial'>**Edit:** I'm leaving this here for posterity, but it's incomplete. See below.</i>] One other important thing falls out of this: the external parameter names are *required* when initializing a type in Swift. Because those parameter names are used to tell apart the constructor, this is not just necessary for the compiler. It's also an essential element of making the item readable for humans. Imagine if this were *not* the case---look again at the `Celsius` example:
 
 ```swift
 struct Celsius {
     let temp: Double
-    
+
     init(fromFahrenheit f: Double) {
        temp = 1.8 * (f - 32.0)
     }
-    
+
     init(fromKelvin k: Double) {
         temp = k - 273.15
     }
@@ -130,11 +134,15 @@ let balmy = Celsius(75.0)  // our old fromFahrenheit example
 let absoluteZero = Celsius(0.0)  // our old "fromKelvin example
 ```
 
-We as humans would have no idea what the constructors are supposed to do, and really at this point there would *necessarily* just be one constructor unless the later options took elements of another *type*. That would be fairly similar to how overloading works in C++, Java, or C#, and while method overloading in those langauges is very *powerful*, it can also make it incredibly difficult to figure out exactly what method is being called. That includes when the constructor is being called. Take a look at the *long* list of [C# `DateTime` constructors][MSDN], for example: you have to either have this memorized, have the documentation open, or be able simply to infer from context what is going on.
+We as humans would have no idea what the constructors are supposed to do, and really at this point there would *necessarily* just be one constructor unless the later options took elements of another *type*. That would be fairly similar to how overloading works in C++, Java, or C^♯^, and while method overloading in those langauges is very *powerful*, it can also make it incredibly difficult to figure out exactly what method is being called. That includes when the constructor is being called. Take a look at the *long* list of [C^♯^ `DateTime` constructors][MSDN], for example: you have to either have this memorized, have the documentation open, or be able simply to infer from context what is going on.
 
 [MSDN]: https://msdn.microsoft.com/en-us/library/system.datetime(v=vs.110)
 
 *Given* the choice of a keyword to mark initializers, then, Swift's rule about external parameter name usage wherever there is more than one initializer is quite sensible.
+
+[<i class='editorial'>**Edit:** several readers, most notably including [Joe Groff], who works on Swift for Apple, pointed out that Swift *does* support overloading, including in `init()` calls, and uses types to distinguish them. Moreover, you can leave off the label for the parameter. My initial summary was simply incorrect. I think this is a function of my not having finished the chapter yet.</i>]
+
+[Joe Groff]: https://twitter.com/jckarter/status/740763363626586112
 
 Second, both languages support supplying default values for a constructed type. Swift does this via default values defined at the site of the property definition itself, or simply set directly from within an initializer:
 
@@ -182,7 +190,7 @@ struct Kelvin {
 
 // Do it ourselves
 impl Default for Kelvin {
-    fn default() -> Kelvin { 
+    fn default() -> Kelvin {
         Kelvin { temp: 305.0 }
     }
 }
@@ -205,3 +213,37 @@ There's actually a lot more to say about initializers---there are *many* more pa
 
 [10]: http://www.chriskrycho.com/2016/rust-and-swift-x.html
 [15]: http://www.chriskrycho.com/2016/rust-and-swift-xv.html
+
+---
+
+## Addendum: No Late Initialization in Rust
+
+Returning to the first Rust example---
+
+```rust
+#[derive(Debug)]  // to make it printable.
+struct Foo {
+    pub a: i32,
+    pub b: f64,
+}
+
+fn main() {
+    // This will compmile, but `foo` will be useless.
+    let mut foo: Foo;
+    foo.a = 14;
+    foo.b = 42.0;
+
+    // This would actually fail to compile. Surprising? A bit!
+    // println!("{:?}", foo);
+}
+```
+
+You can't do anything with that data for a few reasons (most of this discussion coming from ubsan, aatch, and niconii on the [#rust-lang IRC] back in March):
+
+1. Rust lets you "move" data out of a struct on a per-field basis. (Rust's concept of "ownership" and "borrowing" is something we haven't discussed a lot so far in this series; my [podcast episode] about it is probably a good starting point.) The main takeaway here is that you could return `foo.a` distinctly from returning `foo`, and doing so would hand that data over while running the `foo` destructor mechanism. Likewise, you could pass `foo.b` to the function created by the `println!` macro
+2. Rust allows you to re-initialize moved variables. I haven't dug enough to have an idea of what that would look like in practice.
+3. Rust treats uninitialized variables the same as moved-from variables. This seems to be closely related to reason #2. The same "I'm not sure how to elaborate" qualification applies here.
+
+I'll see if I can add some further comments on (2) and (3) as I hit the later points in the Swift initialization chapter.
+
+[podcast episode]: http://www.newrustacean.com/show_notes/e002/index.html "New Rustacean e002: Something borrowed, something... moved?"

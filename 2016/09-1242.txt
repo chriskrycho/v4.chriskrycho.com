@@ -1,0 +1,14 @@
+---
+Title: ""
+Date: 2016-06-09 12:42
+Tags: javascript, programming languages
+Template: formats/micro
+Slug: 09-1242
+Category: micro
+---
+
+JavaScript with semicolons written by hand is such a *sad* language. Almost every line, it’s crying:
+
+```
+);
+```
