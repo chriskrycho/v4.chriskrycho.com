@@ -91,7 +91,7 @@ test('it uses quux somehow', function(assert) {
 });
 ```
 
-{>> TODO: add the specific error message. SEO, man! <<}
+Specifically, you will see `Attempting to lookup an injected property on an object without a container` if you look in your console.
 
 Taking advantage of the two `ember-qunit` features, though, we can handle all of this.
 

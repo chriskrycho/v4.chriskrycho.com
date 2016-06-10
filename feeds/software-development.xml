@@ -52,7 +52,7 @@ export default Ember.Mixin.create({
   const subject = BarObject.create();
   const quux = subject.get(&amp;#39;quux&amp;#39;);  // throws Error
 });&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;{&amp;gt;&amp;gt; TODO: add the specific error message. SEO, man! &amp;lt;&amp;lt;}&lt;/p&gt;
+&lt;p&gt;Specifically, you will see &lt;code&gt;Attempting to lookup an injected property on an object without a container&lt;/code&gt; if you look in your console.&lt;/p&gt;
 &lt;p&gt;Taking advantage of the two &lt;code&gt;ember-qunit&lt;/code&gt; features, though, we can handle all of this.&lt;/p&gt;
 &lt;pre class="js"&gt;&lt;code&gt;import Ember from &amp;#39;ember&amp;#39;;
 import { moduleFor, test } from &amp;#39;ember-qunit&amp;#39;;

@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Testing Ember.js Mixins With a Container"/>
     <meta name="twitter:description" content="Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it. When you’re testing mixins, you’re generally not working with the normal Ember container.1 In fact ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -139,7 +139,7 @@ export default Ember.Mixin.create({
   const subject = BarObject.create();
   const quux = subject.get(&#39;quux&#39;);  // throws Error
 });</code></pre>
-<p>{&gt;&gt; TODO: add the specific error message. SEO, man! &lt;&lt;}</p>
+<p>Specifically, you will see <code>Attempting to lookup an injected property on an object without a container</code> if you look in your console.</p>
 <p>Taking advantage of the two <code>ember-qunit</code> features, though, we can handle all of this.</p>
 <pre class="js"><code>import Ember from &#39;ember&#39;;
 import { moduleFor, test } from &#39;ember-qunit&#39;;
