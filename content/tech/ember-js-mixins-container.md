@@ -1,6 +1,8 @@
 ---
 Title: Testing Ember.js Mixins With a Container
+Subtitle: Fixing "Attempting to lookup an injected property on an object without a container" errors in mixin tests.
 Date: 2016-06-09 20:35
+Modified: 2016-06-10 07:30
 Tags: emberjs, javascript, software development
 Category: tech
 ---
@@ -33,7 +35,7 @@ Note two things:
 1. It uses the basic Qunit `module` setup, not the ember-qunit `moduleFor` setup.
 2. It assumes you're generating a new object instance for every single test.
 
-Both of those assumptions are fine, *if you don't need to interact with the container*. In many cases, that's perfectly reasonable---I'd go so far as to say that most mixins probably *shoudln't* have any dependency on the container.
+Both of those assumptions are fine, *if you don't need to interact with the container*. In many cases, that's perfectly reasonable---I'd go so far as to say that most mixins probably *shouldn't* have any dependency on the container.
 
 In the specific case I was working on, however, the point of the mixin was to abstract some common behavior which included all the interactions with a [service]. This meant making sure the dependency injection worked in the unit test. This in turn meant dealing with the container. So let's see what was involved in that.
 
@@ -46,7 +48,6 @@ We start by switching from the basic `qunit` helpers to using the `ember-qunit` 
 import { module, test } from 'qunit';
 module('Unit | Mixin | bar');
 
-module('
 // with this:
 import { moduleFor, test } from 'ember-qunit';
 moduleFor('mixin:bar', 'Unit | Mixin | Bar');
@@ -91,7 +92,7 @@ test('it uses quux somehow', function(assert) {
 });
 ```
 
-{>> TODO: add the specific error message. SEO, man! <<}
+Specifically, you will see `Attempting to lookup an injected property on an object without a container` if you look in your console.
 
 Taking advantage of the two `ember-qunit` features, though, we can handle all of this.
 
