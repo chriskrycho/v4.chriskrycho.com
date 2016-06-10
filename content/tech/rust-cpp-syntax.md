@@ -12,24 +12,15 @@ I just put my finger on one of the (many) reasons Rust reads better than C++: th
 Rust has:
 
 ```rust
-fn foo() -> i32 {
-    // stuff
-}
-fn bar() -> f32 {
-    // stuff
-}
+fn foo() -> i32 { /* implementation */ }
+fn bar() -> f32 { /* implementation */ }
 ```
 
 C++ has:
 
 ```cpp
-int foo() {
-    // stuff
-}
-
-double bar() {
-    // stuff
-}
+int foo() { /* implementation */ }
+double bar() { /* implementation */ }
 ```
 
 That consistency adds up over many lines of code. There are many other such choices; the net effect is that Rust is *much* more pleasant to read than C++.
@@ -39,17 +30,9 @@ That consistency adds up over many lines of code. There are many other such choi
 Note: I'm aware that C++11 added the `auto foo() -> <type>` syntax. But this actually *worsens* the problem. A totally new codebase which uses that form exclusively (which may not always be possible, because the semantics aren't the same) would have roughly the same visual consistency as Rust *in that particular category*. (Plenty of others would still be a mess.) But the vast majority of C++ codebases are *not* totally new. Adding the form means your codebase is more likely to look this this:
 
 ```cpp
-int foo() {
-    // stuff
-}
-
-auto quux() -> uint32_t {
-    // stuff
-}
-
-double bar() {
-    // stuff
-}
+int foo() { /* implementation */ }
+auto quux() -> uint32_t { /* implementation */ }
+double bar() { /* implementation */ }
 ```
 
 That is, for the record, *more* visual inconsistency---not less!
