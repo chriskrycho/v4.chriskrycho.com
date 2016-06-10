@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Testing Ember.js Mixins With a Container"/>
     <meta name="twitter:description" content="Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it. When you’re testing mixins, you’re generally not working with the normal Ember container.1 In fact ..."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -79,7 +79,7 @@
 <h1>Testing Ember.js Mixins With a Container</h1>
     </header>
 
-    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.html"><i class="fa fa-fw fa-link"></i></a>June 08, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.txt">Markdown source</a></span></div>
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.html"><i class="fa fa-fw fa-link"></i></a>June 09, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.txt">Markdown source</a></span></div>
 
     <div class="content-wrapper">
 
@@ -107,6 +107,99 @@ test(&#39;it works&#39;, function(assert) {
 </ol>
 <p>Both of those assumptions are fine, <em>if you don’t need to interact with the container</em>. In many cases, that’s perfectly reasonable—I’d go so far as to say that most mixins probably <em>shoudln’t</em> have any dependency on the container.</p>
 <p>In the specific case I was working on, however, the point of the mixin was to abstract some common behavior which included all the interactions with a <a href="https://guides.emberjs.com/v2.6.0/applications/services/">service</a>. This meant making sure the dependency injection worked in the unit test. This in turn meant dealing with the container. So let’s see what was involved in that.</p>
+<p>We start by switching from the basic <code>qunit</code> helpers to using the <code>ember-qunit</code> helpers.</p>
+<pre class="js"><code>// Replace this...
+import { module, test } from &#39;qunit&#39;;
+module(&#39;Unit | Mixin | bar&#39;);
+
+module(&#39;
+// with this:
+import { moduleFor, test } from &#39;ember-qunit&#39;;
+moduleFor(&#39;mixin:bar&#39;, &#39;Unit | Mixin | Bar&#39;);</code></pre>
+<p>The <code>moduleFor()</code> helper has two things going for it—one of which we <em>need</em>, and one of which isn’t strictly <em>necessary</em>, but has some nice functionality. In any case, this will help when registering a container. Those two features:</p>
+<ol type="1">
+<li>It does support the use of the container. In fact, it’s declaring how this mixin relates to the container in the first argument to the helper function: <code>'mixin:foo'</code> is the definition of the mixin for injection into the container.</li>
+<li>Any functions we define on the options argument we can pass to the <code>moduleFor()</code> helper are available on the <code>this</code> of the test.</li>
+</ol>
+<p>Now, in the first version of this, I had set up a common <code>Ember.Object</code> which had mixed in the <code>BarMixin</code>, so:</p>
+<pre class="js"><code>const BarObject = Ember.Object.extend(BarMixin);</code></pre>
+<p>Then, in each test, I created instances of this to use:</p>
+<pre class="js"><code>test(&#39;test some feature or another&#39;, function(assert) {
+  const subject = BarObject.create();
+  // ...do stuff and test it with `assert.ok()`, etc.
+});</code></pre>
+<p>The problem was that any of those tests which required a container injection always failed. Assume we have a service named <code>quux</code>, and that it’s injected into the mixin like this in <code>foo/app/mixins/bar.js</code>:</p>
+<pre class="js"><code>import Ember from &#39;ember&#39;;
+
+export default Ember.Mixin.create({
+  quux: Ember.inject.service()
+});</code></pre>
+<p>Any test which actually tried to <em>use</em> <code>quux</code> would simply fail because of the missing container (even if you specified in the test setup that you needed the service):</p>
+<pre><code>test(&#39;it uses quux somehow&#39;, function(assert) {
+  const subject = BarObject.create();
+  const quux = subject.get(&#39;quux&#39;);  // throws Error
+});</code></pre>
+<p>{&gt;&gt; TODO: add the specific error message. SEO, man! &lt;&lt;}</p>
+<p>Taking advantage of the two <code>ember-qunit</code> features, though, we can handle all of this.</p>
+<pre class="js"><code>import Ember from &#39;ember&#39;;
+import { moduleFor, test } from &#39;ember-qunit&#39;;
+
+const { getOwner } = Ember;
+
+moduleFor(&#39;mixin:bar&#39;, &#39;Unit | Mixin | bar&#39;, {
+  // The `needs` property in the options argument tells the test
+  // framework that it needs to go find and instantiate the `quux`
+  // service. (Note that if `quux` depends on other injected
+  // services, you have to specify that here as well.)
+  needs: [&#39;service:quux&#39;],
+
+  // Again: any object we create in this options object will be
+  // available on the `this` of every `test` function below. Here,
+  // we want to get a &quot;test subject&quot; which is attached to the
+  // Ember container, so that the container is available to the
+  // test subject itself for retrieving the dependencies injected
+  // into it (and defined above in `needs`).
+  subject() {
+    BarObject = Ember.Object.extend(BarMixin);
+
+    // This whole thing works because, since we&#39;re in a
+    // `moduleFor()`, `this` has the relevant method we need to
+    // attach items to the container: `register()`.
+    this.register(&#39;test-container:bar-object&#39;, BarObject);
+
+    // `Ember.getOwner` is the public API for getting the
+    // container to do this kind of lookup. You can use it in lots
+    // of places, including but not limited to tests. Note that
+    // that because of how the dependency injection works, what we
+    // get back from the lookup is not `BarObject`, but an
+    // instance of `BarObject`. That means that we don&#39;t need to
+    // do `BarObject.create()` when we use this below; Ember
+    // already did that for us.
+    return getOwner(this).lookup(&#39;test-container:bar-object&#39;);
+  }
+});
+
+test(&#39;the mixin+service does what it should&#39;, function(assert) {
+  // We start by running the subject function defined above. We
+  // now have an instance of an `Ember.Object` which has
+  // `BarMixin` applied.
+  const subject = this.subject();
+
+  // Now, because we used a test helper that made the container
+  // available, declared the dependencies of the mixin in `needs`,
+  // and registered the object we&#39;re dealing with here, we don&#39;t
+  // get an error anymore.
+  const quux = subject.get(&#39;quux&#39;);
+});</code></pre>
+<p>So, in summary:</p>
+<ol type="1">
+<li>Use the <code>ember-qunit</code> helpers if you need the container.</li>
+<li>Define whatever dependencies you have in <code>needs</code>, just as you would in any other test.</li>
+<li>Register the mixin-derived object (whether <code>Ember.Object</code>, <code>Ember.Route</code>, <code>Ember.Component</code>, or whatever else) in a method on the options argument for <code>moduleFor()</code>. Use that to get an instance of the object and you’re off to the races!</li>
+</ol>
+<p>One final consideration: while in this case it made good sense to use this approach and make the service injection available for the test, there’s a reason that the tests generated by Ember CLI don’t use <code>moduleFor()</code> by default. It’s a quiet but clear signal that you should reevaluate whether this <em>is</em> in fact the correct approach.</p>
+<p>In general, mixins are best used for self-contained units of functionality. If you <em>need</em> dependency injection for them, it may mean that you should think about structuring things in a different way. Can all the functionality live on the service itself? Can all of it live in the mixin instead of requiring a service? Can the service calls be delegated to whatever type is using the mixin?</p>
+<p>But if not, and you <em>do</em> need a mixin which injects a service, now you know how to do it!</p>
 <hr />
 <p><strong>Side note:</strong> The documentation around testing mixins is relatively weak, and in general the testing docs are the weak bits in the Ember guides right now.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> After a conversation with <a href="https://github.com/rwjblue">@rwjblue</a> on the <a href="https://ember-community-slackin.herokuapp.com">Ember Community Slack</a>, though, I was able to get a handle on the issue, and here we are. Since it stumped me, I’m guessing I’m not the only one.</p>
 <p>When this happens, <em>write it up</em>. I’ve been guilty of this too often in the past few months: learning something new that I couldn’t find anywhere online, and then leaving it stored in my own head. It doesn’t take a particularly long time to write a blog post like this, and if you’re stuck, chances are <em>very</em> good someone else is too.</p>
