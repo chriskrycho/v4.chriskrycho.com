@@ -1,5 +1,6 @@
 ---
 Title: Testing Ember.js Mixins With a Container
+Subtitle: How to deal with ""
 Date: 2016-06-09 20:35
 Tags: emberjs, javascript, software development
 Category: tech
@@ -46,7 +47,6 @@ We start by switching from the basic `qunit` helpers to using the `ember-qunit` 
 import { module, test } from 'qunit';
 module('Unit | Mixin | bar');
 
-module('
 // with this:
 import { moduleFor, test } from 'ember-qunit';
 moduleFor('mixin:bar', 'Unit | Mixin | Bar');

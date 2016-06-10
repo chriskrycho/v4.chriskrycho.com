@@ -25,7 +25,6 @@ test(&amp;#39;it works&amp;#39;, function(assert) {
 import { module, test } from &amp;#39;qunit&amp;#39;;
 module(&amp;#39;Unit | Mixin | bar&amp;#39;);
 
-module(&amp;#39;
 // with this:
 import { moduleFor, test } from &amp;#39;ember-qunit&amp;#39;;
 moduleFor(&amp;#39;mixin:bar&amp;#39;, &amp;#39;Unit | Mixin | Bar&amp;#39;);&lt;/code&gt;&lt;/pre&gt;
