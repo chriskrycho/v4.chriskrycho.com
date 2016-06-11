@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/programming-languages.xml" rel="self"></atom:link><lastBuildDate>Thu, 09 Jun 2016 12:45:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/09-1242.html</link><description>&lt;p&gt;JavaScript with semicolons written by hand is such a &lt;em&gt;sad&lt;/em&gt; language. Almost every line, it’s crying:&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/programming-languages.xml" rel="self"></atom:link><lastBuildDate>Fri, 10 Jun 2016 20:54:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/10-2054.html</link><description>&lt;p&gt;We’re sitting here with a friend, talking about two’s complement representation of negative numbers in binary. We are &lt;em&gt;nerds&lt;/em&gt;, people.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 10 Jun 2016 20:54:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-10:2016/10-2054.html</guid><category>programming languages</category><category>family</category></item><item><title></title><link>http://www.chriskrycho.com/2016/09-1242.html</link><description>&lt;p&gt;JavaScript with semicolons written by hand is such a &lt;em&gt;sad&lt;/em&gt; language. Almost every line, it’s crying:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;);&lt;/code&gt;&lt;/pre&gt;
 &lt;div id="refs" class="references"&gt;
 
