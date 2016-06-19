@@ -1,5 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-06-16T20:59:00-04:00</updated><entry><title>Vectors and Iterator Access in Rust</title><link href="http://www.chriskrycho.com/2016/vectors-and-iterator-access-in-rust.html" rel="alternate"></link><updated>2016-06-16T20:59:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-06-16:2016/vectors-and-iterator-access-in-rust.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;In the midst of doing my reading and research for New Rustacean episode 15 (which will be out fairly soon after I post this), I bumped into this little tidbit. It doesn’t fit in the episode, so I thought I’d share it here.&lt;/i&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-06-19T09:20:00-04:00</updated><entry><title>Y Combinators, how do they even work?</title><link href="http://www.chriskrycho.com/2016/y-combinators-how-do-they-even-work.html" rel="alternate"></link><updated>2016-06-19T09:20:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-06-19:2016/y-combinators-how-do-they-even-work.html</id><summary type="html">&lt;p&gt;&lt;i class=editorial&gt;I was reading &lt;a href="http://matt.might.net/articles/implementation-of-recursive-fixed-point-y-combinator-in-javascript-for-memoization/"&gt;a post&lt;/a&gt; by &lt;a href="http://matt.might.net"&gt;Matt Might&lt;/a&gt;, a computer science professor at the University of Utah, about Y Combinators, and I was having a hard time tracking with some of it just by reading. The way I normally solve this problem is to write it out—and, optimally, to write it out in something roughly like &lt;a href="https://wiki.haskell.org/Literate_programming"&gt;Literate Haskell&lt;/a&gt; or &lt;a href="http://coffeescript.org/#literate"&gt;Literate CoffeeScript&lt;/a&gt;. That’s exactly what you’ll find below; this is basically &lt;em&gt;commentary&lt;/em&gt; on Might’s original post.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class=editorial&gt;A few other prefatory notes:&lt;/i&gt;&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;i class=editorial&gt;Since this is commentary, I’m not focusing on explaining combinators in general. For a very helpful explanation, though, both of what combinators are and why you’d ever want to use them, &lt;a href="http://programmers.stackexchange.com/a/117575"&gt;read this&lt;/a&gt;.&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=editorial&gt;The Y Combinator itself isn’t all that useful for ordinary programming. It &lt;em&gt;is&lt;/em&gt; really useful as a way of thinking about how programming &lt;em&gt;works&lt;/em&gt;, and that’s why I was reading about it and trying to figure out what was going on in Might’s original post.&lt;/i&gt;&lt;/li&gt;
+&lt;li&gt;&lt;i class=editorial&gt;This didn’t actually all make sense to me until I also read Might’s post, &lt;a href="http://matt.might.net/articles/python-church-y-combinator/"&gt;“Equational derivations of the Y combinator and Church encodings in Python”&lt;/a&gt;. Which is a crazy post. But kind of fun. &lt;/i&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr /&gt;
+&lt;p&gt;Note for background (this was new to me today): &lt;span class="math inline"&gt;&lt;em&gt;λ&lt;/em&gt;&lt;em&gt;v&lt;/em&gt;.&lt;em&gt;e&lt;/em&gt;&lt;/span&gt; is the function which maps v to e. In ECMAScript 2015 or later (hereafter just JS):&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const λv_e = v =&amp;gt; e&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The Y Combinator is a higher-order functional: it is a function which takes a functional/higher-order function. Quoting from Might:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The Y combinator takes a functional as input, and it returns the (unique) fixed point of that functional as its output. A functional is a function that takes a function for its input. Therefore, the fixed point of a functional is going to be a function.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And a “fixed point” is an input to a function equal to the &lt;em&gt;output&lt;/em&gt; of the function. (Not all functions have such.) A fixed point is where &lt;span class="math inline"&gt;&lt;em&gt;f&lt;/em&gt;(&lt;em&gt;x&lt;/em&gt;)=&lt;em&gt;x&lt;/em&gt;&lt;/span&gt;. He uses the example &lt;span class="math inline"&gt;&lt;em&gt;x&lt;/em&gt; = &lt;em&gt;x&lt;/em&gt;&lt;sup&gt;2&lt;/sup&gt; − 1&lt;/span&gt;, which has two solutions, two &lt;em&gt;fixed points&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;He starts out with the total recursion form—also known as the “crash all the things!” form—of the Y-combinator. (I’m using letters to denote the version of the combinator; this is Y-naive.)&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const Yn = (F) =&amp;gt; F(Yn(F))  // all the recursing!&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;“Crash all the things”… because of one pesky little detail: it calls itself immediately, and so recurses infinitely. Which is actually kind of a problem.&lt;/p&gt;
+&lt;p&gt;Might then asks: What if we transformed this a bit? He notes that we can &lt;em&gt;transform&lt;/em&gt; with lambda calculus to expand what we’re doing, so:&lt;/p&gt;
+&lt;figure&gt;
+&lt;span class="math inline"&gt;&lt;em&gt;Y&lt;/em&gt;(&lt;em&gt;F&lt;/em&gt;)=&lt;em&gt;F&lt;/em&gt;(&lt;em&gt;λ&lt;/em&gt;&lt;em&gt;x&lt;/em&gt;.(&lt;em&gt;Y&lt;/em&gt;(&lt;em&gt;F&lt;/em&gt;))(&lt;em&gt;x&lt;/em&gt;))&lt;/span&gt;
+&lt;/figure&gt;
+&lt;p&gt;(I haven’t done this kind of thing since undergraduate math work I did for physics, but as I was thinking about it, it made sense. I’m used to trying to &lt;em&gt;remove&lt;/em&gt; extraneous variables when dealing with software, but in this case we’re using it as a tool for transforming the equation into a form that is &lt;em&gt;equivalent&lt;/em&gt; but &lt;em&gt;expressed differently&lt;/em&gt;.)&lt;/p&gt;
+&lt;p&gt;And &lt;span class="math inline"&gt;&lt;em&gt;λ&lt;/em&gt;&lt;em&gt;x&lt;/em&gt;.(&lt;em&gt;Y&lt;/em&gt;(&lt;em&gt;F&lt;/em&gt;))(&lt;em&gt;x&lt;/em&gt;)&lt;/span&gt; is equivalent to the fixed point. It’s the function which takes &lt;span class="math inline"&gt;&lt;em&gt;x&lt;/em&gt;&lt;/span&gt; as an argument and results in &lt;span class="math inline"&gt;&lt;em&gt;Y&lt;/em&gt;(&lt;em&gt;F&lt;/em&gt;)(&lt;em&gt;x&lt;/em&gt;)&lt;/span&gt;; but &lt;span class="math inline"&gt;&lt;em&gt;Y&lt;/em&gt;(&lt;em&gt;F&lt;/em&gt;)&lt;/span&gt; is just another argument, so this looks just like our original &lt;span class="math inline"&gt;&lt;em&gt;f&lt;/em&gt;(&lt;em&gt;x&lt;/em&gt;)=&lt;em&gt;x&lt;/em&gt;&lt;/span&gt;, but with &lt;span class="math inline"&gt;&lt;em&gt;Y&lt;/em&gt;(&lt;em&gt;F&lt;/em&gt;)&lt;/span&gt; substituted for &lt;span class="math inline"&gt;&lt;em&gt;f&lt;/em&gt;&lt;/span&gt;. Can we write this in JS?&lt;/p&gt;
+&lt;p&gt;Here’s my implementation, using modern JS; note that it still recurses. (I’m calling this updated Y-transformed, so &lt;code&gt;Yt&lt;/code&gt;.)&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const Yt = (F) =&amp;gt; F((x) =&amp;gt; Yt(F)(x))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;His version:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;function Y(F) { return F(function(x) { return Y(F)(x); }); }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Mine and his are equivalent; here’s his version transformed to modern JS:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const Y = (F) =&amp;gt; F((x) =&amp;gt; Y(F)(x))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Might then says:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Using another construct called the U combinator, we can eliminate the recursive call inside the Y combinator, which, with a couple more transformations gets us to:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I hated it when profs (or books!) did this when I was in college, and it frustrates me here, too. I want to &lt;em&gt;see&lt;/em&gt; the transformation. I really wish Might didn’t skip how the U combinator works or what transformations he applies, because then he jumps to this form:&lt;/p&gt;
+&lt;figure&gt;
+&lt;span class="math inline"&gt;&lt;em&gt;Y&lt;/em&gt; = (&lt;em&gt;λ&lt;/em&gt;&lt;em&gt;h&lt;/em&gt;.&lt;em&gt;λ&lt;/em&gt;&lt;em&gt;F&lt;/em&gt;.&lt;em&gt;F&lt;/em&gt;(&lt;em&gt;λ&lt;/em&gt;&lt;em&gt;x&lt;/em&gt;.((&lt;em&gt;h&lt;/em&gt;(&lt;em&gt;h&lt;/em&gt;))(&lt;em&gt;F&lt;/em&gt;))(&lt;em&gt;x&lt;/em&gt;)))(&lt;em&gt;λ&lt;/em&gt;&lt;em&gt;h&lt;/em&gt;.&lt;em&gt;λ&lt;/em&gt;&lt;em&gt;F&lt;/em&gt;.&lt;em&gt;F&lt;/em&gt;(&lt;em&gt;λ&lt;/em&gt;&lt;em&gt;x&lt;/em&gt;.((&lt;em&gt;h&lt;/em&gt;(&lt;em&gt;h&lt;/em&gt;))(&lt;em&gt;F&lt;/em&gt;))(&lt;em&gt;x&lt;/em&gt;)))&lt;/span&gt;
+&lt;/figure&gt;
+&lt;p&gt;Writing this out in JS is going to be a real bear. More to the point, I don’t know how he got to it; now I need to go look up the U Combinator it seems.&lt;/p&gt;
+&lt;p&gt;…which I’ve &lt;a href="http://www.ucombinator.org"&gt;now done&lt;/a&gt;. So:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In the theory of programming languages, the U combinator, &lt;span class="math inline"&gt;&lt;em&gt;U&lt;/em&gt;&lt;/span&gt;, is the mathematical function that applies its argument to its argument; that is &lt;span class="math inline"&gt;&lt;em&gt;U&lt;/em&gt;(&lt;em&gt;f&lt;/em&gt;)=&lt;em&gt;f&lt;/em&gt;(&lt;em&gt;f&lt;/em&gt;)&lt;/span&gt;, or equivalently, &lt;span class="math inline"&gt;&lt;em&gt;U&lt;/em&gt; = &lt;em&gt;λ&lt;/em&gt;&lt;em&gt;f&lt;/em&gt;.&lt;em&gt;f&lt;/em&gt;(&lt;em&gt;f&lt;/em&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;That is, the U Combinator is the case where you apply a function to itself: &lt;span class="math inline"&gt;&lt;em&gt;U&lt;/em&gt;(&lt;em&gt;f&lt;/em&gt;)=&lt;em&gt;f&lt;/em&gt;(&lt;em&gt;f&lt;/em&gt;)&lt;/span&gt;—you can see that in the result there, where the first expression is the same as the argument handed to it (and both are functions). It’s also there in the &lt;span class="math inline"&gt;&lt;em&gt;h&lt;/em&gt;(&lt;em&gt;h&lt;/em&gt;)&lt;/span&gt; calls.&lt;/li&gt;
+&lt;li&gt;The transformations are just transforming from a function-argument for to a lambda form, I think. The kind of thing where you go from &lt;code&gt;function a(b) { return c }&lt;/code&gt; to &lt;code&gt;var a = function(b) { return c }&lt;/code&gt; in JS. (Better, in &lt;em&gt;modern&lt;/em&gt; JS, to &lt;code&gt;const a = (b) =&amp;gt; c&lt;/code&gt;.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I’ll return to that in a moment. First, writing up the JS. The innermost term is (repeated) &lt;span class="math inline"&gt;&lt;em&gt;λ&lt;/em&gt;&lt;em&gt;x&lt;/em&gt;.((&lt;em&gt;h&lt;/em&gt;(&lt;em&gt;h&lt;/em&gt;))(&lt;em&gt;F&lt;/em&gt;))(&lt;em&gt;x&lt;/em&gt;)&lt;/span&gt;, so we’ll start by writing this out.&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const λ_inner = (x) =&amp;gt; (h(h)(F))(x)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We need the definition of &lt;span class="math inline"&gt;&lt;em&gt;h&lt;/em&gt;&lt;/span&gt; next; this comes from further out, the transformation &lt;span class="math inline"&gt;&lt;em&gt;λ&lt;/em&gt;&lt;em&gt;h&lt;/em&gt;.&lt;em&gt;λ&lt;/em&gt;&lt;em&gt;F&lt;/em&gt;.&lt;em&gt;F&lt;/em&gt;(&lt;em&gt;λ&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;em&gt;n&lt;/em&gt;&lt;em&gt;n&lt;/em&gt;&lt;em&gt;e&lt;/em&gt;&lt;em&gt;r&lt;/em&gt;)&lt;/span&gt; (where we’re substituting the &lt;code&gt;λ_inner&lt;/code&gt; we just wrote to make this a bit easier to get our heads around).&lt;/p&gt;
+&lt;p&gt;Remembering that each “.” in the equation represents a mapping, i.e. a JS function call, we have this (writing it with function definitions starting new lines to clarify):&lt;/p&gt;
+&lt;p&gt;Here’s what I came up with as a fairly direct translation into JS:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const Y = (
+  (h) =&amp;gt;
+    (F) =&amp;gt; F((x) =&amp;gt; (h(h)(F))(x))  // substituting λ_inner from above
+) (
+  (h) =&amp;gt;
+    (F) =&amp;gt; F((x) =&amp;gt; (h(h)(F))(x))  // substituting λ_inner from above
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;His (note that things are aligned as they are so that it’s clear which functions match up):&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;var Y = function (F) {
+ return (function (x) {
+  return F(function (y) { return (x(x))(y);});
+  })
+        (function (x) {
+  return F(function (y) { return (x(x))(y);});
+  }) ;
+} ;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;His transformed to modern JS:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const Y = (F) =&amp;gt; (
+  (x) =&amp;gt; F((y) =&amp;gt; x(x)(y))
+) (
+  (x) =&amp;gt; F((y) =&amp;gt; x(x)(y))
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;His and mine are not &lt;em&gt;quite&lt;/em&gt; the same (though I know they’re equivalent because they both work). I really wish he’d explained how he got &lt;em&gt;this&lt;/em&gt; substitution as well! More importantly, I wish he’d been consistent in his notation; changing variable names is… frustrating when you’re trying to follow someone’s work.&lt;/p&gt;
+&lt;p&gt;&lt;i class=editorial&gt;When I get stuck on something like &lt;em&gt;this&lt;/em&gt;, the way I figure it out is by writing out how the substitutions would work at each step. See below.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;In any case, now that we have the Y combinator, we can use it with &lt;code&gt;FactGen&lt;/code&gt;, a functional which, if you pass it the factorial function, passes back the factorial function. &lt;code&gt;FactGen&lt;/code&gt; itself isn’t recursive. But with the Y Combinator, it builds a function which is &lt;em&gt;not&lt;/em&gt; recursive; it doesn’t reference itself anywhere. It just needs the right kind of “factory”: a function which returns &lt;em&gt;another&lt;/em&gt; funtion which itself &lt;em&gt;is&lt;/em&gt; recursive. Here’s a standard recursive factorial implementation (identical to the one Might supplies, though modernized):&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const FactGen =
+  (fact) =&amp;gt;
+    (n) =&amp;gt; n === 0 ? 1 : n * fact(n - 1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You call that like this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;Y(FactGen)(5)  // 120&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;Y(FactGen)&lt;/code&gt; call gets back a function which then runs on whatever input you hand it (a fairly standard pattern with curried arguments), so you could also write it like this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const factorial = Y(FactGen)
+factorial(5)  // 120&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But I’m still not sure how his and mine are equivalent.&lt;/p&gt;
+&lt;p&gt;A note: wrapping things in &lt;code&gt;(...)&lt;/code&gt; in JS defines that wrapped content as a distinct &lt;em&gt;expression&lt;/em&gt;. As long as the type of a given expression is a function, it can be called with an argument. So &lt;code&gt;(function() {})()&lt;/code&gt; or &lt;code&gt;(() =&amp;gt; {})()&lt;/code&gt; takes a no-operation function and immediately executes it.&lt;/p&gt;
+&lt;p&gt;So in his Y combinator, the substitution goes like this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const Y = (F) =&amp;gt; (  // F is FactGen
+  // x is the identical function passed as argument below
+  (x) =&amp;gt;
+    // Run FactGen by taking the function below as its `fact`
+    // argument.
+    F(
+      // `y` is the argument passed to the result of Y, e.g.
+      // `fact(5)`. Recall that `x` is the function below; we
+      // call it with itself. Calling x(x) will get the actual
+      // factorial function returned by `FactGen`.
+      (y) =&amp;gt; x(x)(y)
+    )
+// We close the *expression* which defines the outer function,
+// and call it with this next expression as an argument.
+) (
+  // and x here is the same function, passed as argument
+  (x) =&amp;gt;
+    // Again, run `FactGen` with this function as its argument.
+    F(
+      // `y`, again, will be the integer. `x(x)` again will be
+      // the actual factorial function.
+      (y) =&amp;gt; x(x)(y)
+    )
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is pretty funky! But it works; the two anonymous functions call &lt;em&gt;each other&lt;/em&gt; rather than recursing directly.&lt;/p&gt;
+&lt;p&gt;In mine, it goes like this, instead:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const Ymine = (
+  // Where in Might&amp;#39;s example, the `x` function was where the
+  // U Combinator was applied, here (because I followed the
+  // original notation he gave) it&amp;#39;s `h`. So it&amp;#39;s `h` which is
+  // the same function handed back and forth as argument
+  // to itself.
+  (h) =&amp;gt;
+    // `h` takes a functional, which takes `FactGen` as its
+    // parameter. This is similar to the outermost function in
+    // Might&amp;#39;s version.
+    (F) =&amp;gt;
+      // As in Might&amp;#39;s version, we call `FactGen` here.
+      F(
+        // The form is *similar* but not identical to his,
+        // because of the extra call structure. `h(h)(F)` is the
+        // factorial function.
+        //
+        // Note that then he has `y` where I have `x`; my `x`
+        // and his `y` are just the result of the computation
+        // (in this case, the integer factorial).
+        (x) =&amp;gt; (h(h)(F))(x))
+) (
+  // This is identical to the above; it&amp;#39;s using the U Combinator.
+  (h) =&amp;gt; (F) =&amp;gt; F((x) =&amp;gt; (h(h)(F))(x))
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is how his simplification worked: instead of generating the factorial function each time, it generated it just the once and then &lt;em&gt;used&lt;/em&gt; it.&lt;/p&gt;
+&lt;p&gt;I still couldn’t &lt;em&gt;do&lt;/em&gt; the simplification he did myself. It’ll take more practice using and thinking about combinators and combinatorial logic before I get there, but that’s okay. That’s how learning works.&lt;/p&gt;
+&lt;p&gt;And that’s enough playing with combinatorials for now. (Except that I’m kind of tempted to see if I can go implement the U or Y combinators—or both—in Rust.)&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;i class=editorial&gt;If you’re curious how I worked this out… I expanded the JS representations of the final forms (&lt;a href="//www.chriskrycho.com/extra/ycombinator.js"&gt;here’s the code&lt;/a&gt;) and then stepped through the result in my JavaScript dev tools, watching how the function calls worked and what the values of each intermediate value were. It’s fascinating, and well worth your time.&lt;/i&gt;&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="javascript"></category><category term="software development"></category><category term="programming languages"></category></entry><entry><title>Vectors and Iterator Access in Rust</title><link href="http://www.chriskrycho.com/2016/vectors-and-iterator-access-in-rust.html" rel="alternate"></link><updated>2016-06-16T20:59:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-06-16:2016/vectors-and-iterator-access-in-rust.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;In the midst of doing my reading and research for New Rustacean episode 15 (which will be out fairly soon after I post this), I bumped into this little tidbit. It doesn’t fit in the episode, so I thought I’d share it here.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;When you’re dealing with vectors in Rust, a common misstep when working with them via iterators is to &lt;em&gt;move&lt;/em&gt; them when you only to &lt;em&gt;borrow&lt;/em&gt; them. If you write &lt;code&gt;for i in x&lt;/code&gt; where &lt;code&gt;x&lt;/code&gt; is an iterator, you’ll &lt;em&gt;move&lt;/em&gt; the iterator into the looping construct. Instead, you should nearly always write &lt;code&gt;for i in &amp;amp;x&lt;/code&gt; to borrow a reference to the iterator, or &lt;code&gt;for i in &amp;amp;mut x&lt;/code&gt; if you need to get a mutable reference to it.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 

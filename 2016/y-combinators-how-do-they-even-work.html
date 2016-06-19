@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Y Combinators, how do they even work? &middot; Chris Krycho</title>
+    <meta name="description" content="I was reading a post by Matt Might, a computer science professor at the University of Utah, about Y Combinators, and I was having a hard time tracking with some of it just by reading. The way I normally solve this problem is to write it out—and, optimally, to ..."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2016/y-combinators-how-do-they-even-work.html"/>
+    <meta property="og:title" content="Y Combinators, how do they even work?"/>
+    <meta property="og:description" content="I was reading a post by Matt Might, a computer science professor at the University of Utah, about Y Combinators, and I was having a hard time tracking with some of it just by reading. The way I normally solve this problem is to write it out—and, optimally, to ..."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Y Combinators, how do they even work?"/>
+    <meta name="twitter:description" content="I was reading a post by Matt Might, a computer science professor at the University of Utah, about Y Combinators, and I was having a hard time tracking with some of it just by reading. The way I normally solve this problem is to write it out—and, optimally, to ..."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="javascript software-development programming-languages tech">
+
+    <header>
+<h1>Y Combinators, how do they even work?</h1>
+<h2>A commentary on a blog post by Matt Might, or: learning out loud.</h2>    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/2016/y-combinators-how-do-they-even-work.html"><i class="fa fa-fw fa-link"></i></a>June 19, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2016/y-combinators-how-do-they-even-work.txt">Markdown source</a></span></div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class=editorial>I was reading <a href="http://matt.might.net/articles/implementation-of-recursive-fixed-point-y-combinator-in-javascript-for-memoization/">a post</a> by <a href="http://matt.might.net">Matt Might</a>, a computer science professor at the University of Utah, about Y Combinators, and I was having a hard time tracking with some of it just by reading. The way I normally solve this problem is to write it out—and, optimally, to write it out in something roughly like <a href="https://wiki.haskell.org/Literate_programming">Literate Haskell</a> or <a href="http://coffeescript.org/#literate">Literate CoffeeScript</a>. That’s exactly what you’ll find below; this is basically <em>commentary</em> on Might’s original post.</i></p>
+<p><i class=editorial>A few other prefatory notes:</i></p>
+<ol type="1">
+<li><i class=editorial>Since this is commentary, I’m not focusing on explaining combinators in general. For a very helpful explanation, though, both of what combinators are and why you’d ever want to use them, <a href="http://programmers.stackexchange.com/a/117575">read this</a>.</i></li>
+<li><i class=editorial>The Y Combinator itself isn’t all that useful for ordinary programming. It <em>is</em> really useful as a way of thinking about how programming <em>works</em>, and that’s why I was reading about it and trying to figure out what was going on in Might’s original post.</i></li>
+<li><i class=editorial>This didn’t actually all make sense to me until I also read Might’s post, <a href="http://matt.might.net/articles/python-church-y-combinator/">“Equational derivations of the Y combinator and Church encodings in Python”</a>. Which is a crazy post. But kind of fun. </i></li>
+</ol>
+<hr />
+<p>Note for background (this was new to me today): <span class="math inline"><em>λ</em><em>v</em>.<em>e</em></span> is the function which maps v to e. In ECMAScript 2015 or later (hereafter just JS):</p>
+<pre class="js"><code>const λv_e = v =&gt; e</code></pre>
+<p>The Y Combinator is a higher-order functional: it is a function which takes a functional/higher-order function. Quoting from Might:</p>
+<blockquote>
+<p>The Y combinator takes a functional as input, and it returns the (unique) fixed point of that functional as its output. A functional is a function that takes a function for its input. Therefore, the fixed point of a functional is going to be a function.</p>
+</blockquote>
+<p>And a “fixed point” is an input to a function equal to the <em>output</em> of the function. (Not all functions have such.) A fixed point is where <span class="math inline"><em>f</em>(<em>x</em>)=<em>x</em></span>. He uses the example <span class="math inline"><em>x</em> = <em>x</em><sup>2</sup> − 1</span>, which has two solutions, two <em>fixed points</em>.</p>
+<p>He starts out with the total recursion form—also known as the “crash all the things!” form—of the Y-combinator. (I’m using letters to denote the version of the combinator; this is Y-naive.)</p>
+<pre class="js"><code>const Yn = (F) =&gt; F(Yn(F))  // all the recursing!</code></pre>
+<p>“Crash all the things”… because of one pesky little detail: it calls itself immediately, and so recurses infinitely. Which is actually kind of a problem.</p>
+<p>Might then asks: What if we transformed this a bit? He notes that we can <em>transform</em> with lambda calculus to expand what we’re doing, so:</p>
+<figure>
+<span class="math inline"><em>Y</em>(<em>F</em>)=<em>F</em>(<em>λ</em><em>x</em>.(<em>Y</em>(<em>F</em>))(<em>x</em>))</span>
+</figure>
+<p>(I haven’t done this kind of thing since undergraduate math work I did for physics, but as I was thinking about it, it made sense. I’m used to trying to <em>remove</em> extraneous variables when dealing with software, but in this case we’re using it as a tool for transforming the equation into a form that is <em>equivalent</em> but <em>expressed differently</em>.)</p>
+<p>And <span class="math inline"><em>λ</em><em>x</em>.(<em>Y</em>(<em>F</em>))(<em>x</em>)</span> is equivalent to the fixed point. It’s the function which takes <span class="math inline"><em>x</em></span> as an argument and results in <span class="math inline"><em>Y</em>(<em>F</em>)(<em>x</em>)</span>; but <span class="math inline"><em>Y</em>(<em>F</em>)</span> is just another argument, so this looks just like our original <span class="math inline"><em>f</em>(<em>x</em>)=<em>x</em></span>, but with <span class="math inline"><em>Y</em>(<em>F</em>)</span> substituted for <span class="math inline"><em>f</em></span>. Can we write this in JS?</p>
+<p>Here’s my implementation, using modern JS; note that it still recurses. (I’m calling this updated Y-transformed, so <code>Yt</code>.)</p>
+<pre class="js"><code>const Yt = (F) =&gt; F((x) =&gt; Yt(F)(x))</code></pre>
+<p>His version:</p>
+<pre class="js"><code>function Y(F) { return F(function(x) { return Y(F)(x); }); }</code></pre>
+<p>Mine and his are equivalent; here’s his version transformed to modern JS:</p>
+<pre class="js"><code>const Y = (F) =&gt; F((x) =&gt; Y(F)(x))</code></pre>
+<p>Might then says:</p>
+<blockquote>
+<p>Using another construct called the U combinator, we can eliminate the recursive call inside the Y combinator, which, with a couple more transformations gets us to:</p>
+</blockquote>
+<p>I hated it when profs (or books!) did this when I was in college, and it frustrates me here, too. I want to <em>see</em> the transformation. I really wish Might didn’t skip how the U combinator works or what transformations he applies, because then he jumps to this form:</p>
+<figure>
+<span class="math inline"><em>Y</em> = (<em>λ</em><em>h</em>.<em>λ</em><em>F</em>.<em>F</em>(<em>λ</em><em>x</em>.((<em>h</em>(<em>h</em>))(<em>F</em>))(<em>x</em>)))(<em>λ</em><em>h</em>.<em>λ</em><em>F</em>.<em>F</em>(<em>λ</em><em>x</em>.((<em>h</em>(<em>h</em>))(<em>F</em>))(<em>x</em>)))</span>
+</figure>
+<p>Writing this out in JS is going to be a real bear. More to the point, I don’t know how he got to it; now I need to go look up the U Combinator it seems.</p>
+<p>…which I’ve <a href="http://www.ucombinator.org">now done</a>. So:</p>
+<blockquote>
+<p>In the theory of programming languages, the U combinator, <span class="math inline"><em>U</em></span>, is the mathematical function that applies its argument to its argument; that is <span class="math inline"><em>U</em>(<em>f</em>)=<em>f</em>(<em>f</em>)</span>, or equivalently, <span class="math inline"><em>U</em> = <em>λ</em><em>f</em>.<em>f</em>(<em>f</em>)</span>.</p>
+</blockquote>
+<ul>
+<li>That is, the U Combinator is the case where you apply a function to itself: <span class="math inline"><em>U</em>(<em>f</em>)=<em>f</em>(<em>f</em>)</span>—you can see that in the result there, where the first expression is the same as the argument handed to it (and both are functions). It’s also there in the <span class="math inline"><em>h</em>(<em>h</em>)</span> calls.</li>
+<li>The transformations are just transforming from a function-argument for to a lambda form, I think. The kind of thing where you go from <code>function a(b) { return c }</code> to <code>var a = function(b) { return c }</code> in JS. (Better, in <em>modern</em> JS, to <code>const a = (b) =&gt; c</code>.)</li>
+</ul>
+<p>I’ll return to that in a moment. First, writing up the JS. The innermost term is (repeated) <span class="math inline"><em>λ</em><em>x</em>.((<em>h</em>(<em>h</em>))(<em>F</em>))(<em>x</em>)</span>, so we’ll start by writing this out.</p>
+<pre class="js"><code>const λ_inner = (x) =&gt; (h(h)(F))(x)</code></pre>
+<p>We need the definition of <span class="math inline"><em>h</em></span> next; this comes from further out, the transformation <span class="math inline"><em>λ</em><em>h</em>.<em>λ</em><em>F</em>.<em>F</em>(<em>λ</em><sub><em>i</em></sub><em>n</em><em>n</em><em>e</em><em>r</em>)</span> (where we’re substituting the <code>λ_inner</code> we just wrote to make this a bit easier to get our heads around).</p>
+<p>Remembering that each “.” in the equation represents a mapping, i.e. a JS function call, we have this (writing it with function definitions starting new lines to clarify):</p>
+<p>Here’s what I came up with as a fairly direct translation into JS:</p>
+<pre class="js"><code>const Y = (
+  (h) =&gt;
+    (F) =&gt; F((x) =&gt; (h(h)(F))(x))  // substituting λ_inner from above
+) (
+  (h) =&gt;
+    (F) =&gt; F((x) =&gt; (h(h)(F))(x))  // substituting λ_inner from above
+)</code></pre>
+<p>His (note that things are aligned as they are so that it’s clear which functions match up):</p>
+<pre class="js"><code>var Y = function (F) {
+ return (function (x) {
+  return F(function (y) { return (x(x))(y);});
+  })
+        (function (x) {
+  return F(function (y) { return (x(x))(y);});
+  }) ;
+} ;</code></pre>
+<p>His transformed to modern JS:</p>
+<pre class="js"><code>const Y = (F) =&gt; (
+  (x) =&gt; F((y) =&gt; x(x)(y))
+) (
+  (x) =&gt; F((y) =&gt; x(x)(y))
+)</code></pre>
+<p>His and mine are not <em>quite</em> the same (though I know they’re equivalent because they both work). I really wish he’d explained how he got <em>this</em> substitution as well! More importantly, I wish he’d been consistent in his notation; changing variable names is… frustrating when you’re trying to follow someone’s work.</p>
+<p><i class=editorial>When I get stuck on something like <em>this</em>, the way I figure it out is by writing out how the substitutions would work at each step. See below.</i></p>
+<p>In any case, now that we have the Y combinator, we can use it with <code>FactGen</code>, a functional which, if you pass it the factorial function, passes back the factorial function. <code>FactGen</code> itself isn’t recursive. But with the Y Combinator, it builds a function which is <em>not</em> recursive; it doesn’t reference itself anywhere. It just needs the right kind of “factory”: a function which returns <em>another</em> funtion which itself <em>is</em> recursive. Here’s a standard recursive factorial implementation (identical to the one Might supplies, though modernized):</p>
+<pre class="js"><code>const FactGen =
+  (fact) =&gt;
+    (n) =&gt; n === 0 ? 1 : n * fact(n - 1)</code></pre>
+<p>You call that like this:</p>
+<pre class="js"><code>Y(FactGen)(5)  // 120</code></pre>
+<p>The <code>Y(FactGen)</code> call gets back a function which then runs on whatever input you hand it (a fairly standard pattern with curried arguments), so you could also write it like this:</p>
+<pre class="js"><code>const factorial = Y(FactGen)
+factorial(5)  // 120</code></pre>
+<p>But I’m still not sure how his and mine are equivalent.</p>
+<p>A note: wrapping things in <code>(...)</code> in JS defines that wrapped content as a distinct <em>expression</em>. As long as the type of a given expression is a function, it can be called with an argument. So <code>(function() {})()</code> or <code>(() =&gt; {})()</code> takes a no-operation function and immediately executes it.</p>
+<p>So in his Y combinator, the substitution goes like this:</p>
+<pre class="js"><code>const Y = (F) =&gt; (  // F is FactGen
+  // x is the identical function passed as argument below
+  (x) =&gt;
+    // Run FactGen by taking the function below as its `fact`
+    // argument.
+    F(
+      // `y` is the argument passed to the result of Y, e.g.
+      // `fact(5)`. Recall that `x` is the function below; we
+      // call it with itself. Calling x(x) will get the actual
+      // factorial function returned by `FactGen`.
+      (y) =&gt; x(x)(y)
+    )
+// We close the *expression* which defines the outer function,
+// and call it with this next expression as an argument.
+) (
+  // and x here is the same function, passed as argument
+  (x) =&gt;
+    // Again, run `FactGen` with this function as its argument.
+    F(
+      // `y`, again, will be the integer. `x(x)` again will be
+      // the actual factorial function.
+      (y) =&gt; x(x)(y)
+    )
+)</code></pre>
+<p>This is pretty funky! But it works; the two anonymous functions call <em>each other</em> rather than recursing directly.</p>
+<p>In mine, it goes like this, instead:</p>
+<pre class="js"><code>const Ymine = (
+  // Where in Might&#39;s example, the `x` function was where the
+  // U Combinator was applied, here (because I followed the
+  // original notation he gave) it&#39;s `h`. So it&#39;s `h` which is
+  // the same function handed back and forth as argument
+  // to itself.
+  (h) =&gt;
+    // `h` takes a functional, which takes `FactGen` as its
+    // parameter. This is similar to the outermost function in
+    // Might&#39;s version.
+    (F) =&gt;
+      // As in Might&#39;s version, we call `FactGen` here.
+      F(
+        // The form is *similar* but not identical to his,
+        // because of the extra call structure. `h(h)(F)` is the
+        // factorial function.
+        //
+        // Note that then he has `y` where I have `x`; my `x`
+        // and his `y` are just the result of the computation
+        // (in this case, the integer factorial).
+        (x) =&gt; (h(h)(F))(x))
+) (
+  // This is identical to the above; it&#39;s using the U Combinator.
+  (h) =&gt; (F) =&gt; F((x) =&gt; (h(h)(F))(x))
+)</code></pre>
+<p>This is how his simplification worked: instead of generating the factorial function each time, it generated it just the once and then <em>used</em> it.</p>
+<p>I still couldn’t <em>do</em> the simplification he did myself. It’ll take more practice using and thinking about combinators and combinatorial logic before I get there, but that’s okay. That’s how learning works.</p>
+<p>And that’s enough playing with combinatorials for now. (Except that I’m kind of tempted to see if I can go implement the U or Y combinators—or both—in Rust.)</p>
+<hr />
+<p><i class=editorial>If you’re curious how I worked this out… I expanded the JS representations of the final forms (<a href="//www.chriskrycho.com/extra/ycombinator.js">here’s the code</a>) and then stepped through the result in my JavaScript dev tools, watching how the function calls worked and what the values of each intermediate value were. It’s fascinating, and well worth your time.</i></p>
+<div id="refs" class="references">
+
+</div>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/theology.xml"><i class="fa fa-fw fa-rss"></i>theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2016/mornings-like-this.html">Mornings like this</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2016/a-brake-on-our-enthusiasm.html">A brake on our enthusiasm</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2016/y-combinators-how-do-they-even-work.html">Y Combinators, how do they even work?</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2016/irreducible-complexity-and-design-discourse.html">Irreducible Complexity and Design Discourse</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
