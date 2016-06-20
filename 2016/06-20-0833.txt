@@ -1,0 +1,12 @@
+---
+Title: ""
+Date: 2016-06-20 08:33
+Tags: software development
+Template: formats/micro
+Slug: 06-20-0833
+Category: micro
+---
+
+Got a weird diff report on a change in GitHub. Tracked it down to find it was a byte-order mark issue.
+
+Thanks, Windows. I HATE YOU.
