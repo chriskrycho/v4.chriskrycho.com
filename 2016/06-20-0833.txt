@@ -9,4 +9,6 @@ Category: micro
 
 Got a weird diff report on a change in GitHub. Tracked it down to find it was a byte-order mark issue.
 
-Thanks, Windows. I HATE YOU.
+Thanks, Windows. *I hate you.*
+
+Also, to be fair, ST3 gets a little of my ire for changing the encoding on the fly. **Don't do that.**
