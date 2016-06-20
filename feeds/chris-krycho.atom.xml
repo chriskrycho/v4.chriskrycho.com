@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-06-20T08:33:00-04:00</updated><entry><title></title><link href="http://www.chriskrycho.com/2016/06-20-0833.html" rel="alternate"></link><updated>2016-06-20T08:33:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-06-20:2016/06-20-0833.html</id><summary type="html">&lt;p&gt;Got a weird diff report on a change in GitHub. Tracked it down to find it was a byte-order mark issue.&lt;/p&gt;
 &lt;p&gt;Thanks, Windows. &lt;em&gt;I hate you.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Also, to be fair, ST3 gets a little of my ire for changing the encoding on the fly. &lt;strong&gt;Don’t do that.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Also, to be fair, Sublime Text 3 gets a little of my ire for changing the encoding on the fly. &lt;strong&gt;Don’t do that.&lt;/strong&gt;&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
