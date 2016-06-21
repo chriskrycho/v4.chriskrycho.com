@@ -248,6 +248,15 @@ em, i, cite {
     em, i, cite { font-style: normal; }
 }
 
+dt {
+  font-style: italic;
+  margin-top: 1em;
+}
+
+dd {
+  margin-left: 2em;
+}
+
 
 cite.bibleref { font-style: normal; }
 
