@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/programming-languages.xml" rel="self"></atom:link><lastBuildDate>Tue, 21 Jun 2016 21:45:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/06-21-2145.html</link><description>&lt;p&gt;Playing with Elm a little bit (&lt;a href="http://www.chriskrycho.com/2016/2016-04-14-1100.html"&gt;I know, I know&lt;/a&gt;) and bumped into the idea of &lt;a href="https://en.m.wikipedia.org/wiki/Structural_type_system"&gt;structural typing&lt;/a&gt;. Do want.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/programming-languages.xml" rel="self"></atom:link><lastBuildDate>Wed, 22 Jun 2016 07:44:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/06-22-0744.html</link><description>&lt;p&gt;So I love the Rust compiler (and it’s improving all the time). But the &lt;a href="http://elm-lang.org"&gt;Elm&lt;/a&gt; compiler is a revelation. Just… wow.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 22 Jun 2016 07:44:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-22:2016/06-22-0744.html</guid><category>programming languages</category><category>elm</category><category>rust</category></item><item><title></title><link>http://www.chriskrycho.com/2016/06-21-2145.html</link><description>&lt;p&gt;Playing with Elm a little bit (&lt;a href="http://www.chriskrycho.com/2016/2016-04-14-1100.html"&gt;I know, I know&lt;/a&gt;) and bumped into the idea of &lt;a href="https://en.m.wikipedia.org/wiki/Structural_type_system"&gt;structural typing&lt;/a&gt;. Do want.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
