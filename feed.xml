@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Wed, 22 Jun 2016 07:47:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/06-22-0747.html</link><description>&lt;p&gt;The first thing I do when I start playing with a new language/framework/etc. (like I just did with Elm) is download the &lt;a href="https://kapeli.com/dash"&gt;Dash&lt;/a&gt; docset for it. The time it saves is extraordinary.&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feed.xml" rel="self"></atom:link><lastBuildDate>Wed, 22 Jun 2016 15:10:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/06-22-1510.html</link><description>&lt;p&gt;The build worked on &lt;code&gt;develop&lt;/code&gt; last night. We have made no commits. Now it fails.&lt;/p&gt;
+&lt;p&gt;Current best guess: transitive dependencies. Thanks, npm.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 22 Jun 2016 15:10:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2016-06-22:2016/06-22-1510.html</guid><category>software development</category><category>javascript</category></item><item><title></title><link>http://www.chriskrycho.com/2016/06-22-0747.html</link><description>&lt;p&gt;The first thing I do when I start playing with a new language/framework/etc. (like I just did with Elm) is download the &lt;a href="https://kapeli.com/dash"&gt;Dash&lt;/a&gt; docset for it. The time it saves is extraordinary.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
