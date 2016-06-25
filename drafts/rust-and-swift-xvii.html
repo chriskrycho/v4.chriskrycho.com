@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rust and Swift (xvii) &middot; Chris Krycho</title>
+    <meta name="description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/drafts/rust-and-swift-xvii.html"/>
+    <meta property="og:title" content="Rust and Swift (xvii)"/>
+    <meta property="og:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Rust and Swift (xvii)"/>
+    <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="rust swift rust-and-swift programming-languages tech">
+
+    <header>
+<h1>Rust and Swift (xvii)</h1>
+<h2>More on initializers!</h2>    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/drafts/rust-and-swift-xvii.html"><i class="fa fa-fw fa-link"></i></a>June 20, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a></span><span><a href="http://www.chriskrycho.com/2016/rust-and-swift-xvii.txt">Markdown source</a></span></div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. <a href="http://www.chriskrycho.com/rust-and-swift.html">(See all parts in the series.)</a></i></p>
+<hr />
+<p>In the <a href="http://www.chriskrycho.com/2016/rust-and-swift-xvi.html">last part</a>, I talked through the first chunk of the Swift book’s material on initializers. But it’s a long section, and I definitely didn’t cover everything. (I also got a few bits incorrect, and thankfully got great feedback to tighten it up from Twitter, so if you read it right after I posted it, you might skim back through and find the places where I added “<strong>Edit:</strong> …”)</p>
+<p>Picking up from where we left on, then. Swift has a number of further initializer types, some of which map rather directly to the way initializers work in Rust, and some of which have no <em>direct</em> analog at all.</p>
+<p>In the first category are the memberwise initializers Swift supplies by default for <em>all</em> types. The most basic <code>init</code> method just uses the names of the members of any given <code>struct</code> or <code>class</code> type in Swift (as in the previous section, I’m going to use the types the Swift book uses for simplicity):</p>
+<pre class="swift"><code>struct Size {
+    var height = 0.0, width = 0.0
+}
+
+someSize = Size(height: 1.0, width: 2.0)</code></pre>
+<p>This actually looks almost exactly like the normal way we construct types in Rust, where the same basic pattern would look like this:</p>
+<pre class="rust"><code>struct Size {
+    height: f64,
+    width: f64,
+}
+
+some_size = Size { height: 1.0, width: 2.0 }</code></pre>
+<p>There are two big differences between the languages here. The first, and most immediately apparent, is syntactical: in this case, Rust doesn’t have a function-call type syntax, and Swift does. Swift’s syntax is similar to one of the several C++ constructor patterns, or especially to Python’s initializer calls (if we made a point to be explicit about the keyword arguments):</p>
+<pre class="python"><code>class Size:
+    height = 0.0
+    width = 0.0
+    def __init__(height, width):
+        self.height = height
+        self.width = width
+
+someSize = Size(height=1.0, width=2.0)  # unnecessarily explicit</code></pre>
+<p>The second, and more significant, is that the default, memberwise initializer in in Swift is only available <em>if you have not defined any other initializers</em>. This is very, <em>very</em> different from Rust, where there’s not really any such thing as a dedicated initializer—just methods. If we defined <code>Size::new</code> or <code>Size::default</code> or <code>Size::any_other_funky_initializer</code>, it wouldn’t make a whit of difference in our ability to define the type this way.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> However, and this is important: because Rust has field-level public vs. private considerations, we cannot always do memberwise initialization of any given <code>struct</code> type there, either; it is just that the reasons are different. So:</p>
+<p>{&gt;&gt; TODO: confirm all this with a simple test &lt;&lt;}</p>
+<pre class="rust"><code>struct Size {
+    pub height: f64,
+    pub width: f64,
+    area: f64,
+}
+
+// This won&#39;t work: we haven&#39;t constructed `Size::area`, and as we noted
+// last time, you cannot partially initialize a struct.
+let some_size = Size { height: 1.0, width: 2.0 };
+
+// But neither will this, because `area` isn&#39;t public:
+let some_other_size = Size { height: </code></pre>
+<p>Swift lets you refer to <em>other</em> initializers on the same type (reinforcing that <code>init()</code> is basically a kind of method, albeit one with some special rules and some special sugar). You do that by calling <code>self.init()</code>, and—very importantly—you can only call it from within another initializer. No funky reinitializations or anything like that.</p>
+<p>With Rust, again, we just have methods, so you <em>could</em> of course call them wherever you like. However, those methods are distinguished as being type-level or instance-level methods by their signatures: if the first argument is (some variant on) <code>self</code>, it’s an instance method, otherwise, a type-level method. This eliminates any potential confusion around the initializers:</p>
+<pre class="rust"><code>struct Foo {
+    pub a: i32
+}
+
+impl Foo {
+    pub fn new(a: i32) -&gt; Foo {
+        Foo { a: a }
+    }
+
+    pub fn bar(&amp;self) {
+        // yes:
+        let another_foo = Foo::new();
+        // no (won&#39;t even compile):
+        // let self_foo = self.new();
+    }
+}</code></pre>
+<p>You can (of course!) build up a type through multiple layers of methods which are useful to compose an instance <em>together</em>. This is what the <a href="http://doc.rust-lang.org/stable/style/ownership/builders.html"><em>builder pattern</em></a> is all about. There are definitely times when you want to be able to tweak how your initialization plays out, and being able to do that without just passing in some hairy set of options in a special data type is nice.</p>
+<p>One other important qualification on the Swift initializers: those default, memberwise constructors you get for free? You <em>only</em> get them for free if you don’t define your own initializers. (The closest analogy to this in Rust is that you’ll have issues if you try to both <code>#[derive(Default)]</code> <em>and</em> <code>impl Default for Foo</code>, since both will give you an implementation of <code>Foo::default()</code>.) You can get around this in Swift by using an <em>extension</em>. We’ll come back to that in a future post; extensions are something that Rust doesn’t really have any direct analogs to. You can also get around it by supplying a parameter-less, body-less initializer in addition to any other initializers you supply, so: <code>init() {}</code>. (This, frankly, seems like a hack to me. It’s a <em>useful</em> hack, given the other constraints, but these kinds of things pile up.)</p>
+<hr />
+<ul>
+<li><a href="http://www.chriskrycho.com/2016/rust-and-swift-xvi.html"><strong>Previous:</strong> Initialization: another area where Swift has a lot more going on than Rust.</a></li>
+</ul>
+<div id="refs" class="references">
+
+</div>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Also recall that in Rust, we would set the default values either by using the <code>#[derive(Default)]</code> annotation or by implementing the <code>Default</code> trait ourselves.<a href="#fnref1">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2016/mornings-like-this.html">Mornings like this</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2016/a-brake-on-our-enthusiasm.html">A brake on our enthusiasm</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2016/y-combinators-how-do-they-even-work.html">Y Combinators, how do they even work?</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2016/a-simple-childrens-catechism.html">A Simple Children's Catechism</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

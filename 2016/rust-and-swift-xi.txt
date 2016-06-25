@@ -2,6 +2,7 @@
 Title: Rust and Swift (xi)
 Subtitle: Hopes for the next generation of systems programming.
 Date: 2016-01-10 10:00
+Category: Tech
 Tags: software development, rust, swift, rust-and-swift, programming-languages
 Series:
   Title: Rust and Swift
