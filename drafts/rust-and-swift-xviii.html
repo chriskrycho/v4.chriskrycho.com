@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rust and Swift (xviii) &middot; Chris Krycho</title>
+    <meta name="description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/drafts/rust-and-swift-xviii.html"/>
+    <meta property="og:title" content="Rust and Swift (xviii)"/>
+    <meta property="og:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Rust and Swift (xviii)"/>
+    <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note ..."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="rust swift rust-and-swift programming-languages rust-and-swift">
+
+    <header>
+<h1>Rust and Swift (xviii)</h1>
+<h2>Deinitialization: drop semantics and automatic reference counting</h2>    </header>
+
+    <div class="meta"><span class="date"><a href="http://www.chriskrycho.com/drafts/rust-and-swift-xviii.html"><i class="fa fa-fw fa-link"></i></a>June 29, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/rust-and-swift/">rust-and-swift</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a></span><span><a href="http://www.chriskrycho.com/2016/rust-and-swift-xviii.txt">Markdown source</a></span></div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. <a href="http://www.chriskrycho.com/rust-and-swift.html">(See all parts in the series.)</a></i></p>
+<hr />
+<p>Perhaps unsurprisingly, the Swift book follows on from its discussion of initialization with a discussion of deinitialization, and here the differences between Rust and Swift are substantial, but so are the analogies.</p>
+<p>In Rust, all types are automatically <em>dropped</em>, or deconstructed, when they go out of scope. This is part of the fundamental data model in Rust, with its notion of ownership and borrowing. The Rust compiler tracks the <em>ownership</em> of every given item in the program, and runs its destructors automatically when it goes out of scope. It also tracks references (“borrows”) to those, and will warn you if you try to reference data in a place where it has already gone out of scope and been “dropped”/cleaned up.</p>
+<p>In Swift, all class instances (which are pass-by-reference types) are tracked with <em>automatic reference counting</em> and cleaned up automatically when there are no more references to them. This isn’t quite the same as having a garbage-collected runtime like you’d see in Java, C#, Python, Ruby, JavaScript, etc., but it does mean that in general you don’t have to think about memory allocation and deallocation specifically.</p>
+<p>We could, if we so desired, get this same basic behavior in Rust. We can easily imagine <a href="TODO/post%20on" title="garbage collection">a world</a> in which every type was automatically wrapped in <code>Rc</code> or <code>Arc</code> (the non-thread-safe and thread-safe smart pointer types, respectively).[^refcount-it-up]</p>
+<p>[^refcount-it-up] In fact, I’d be very interested to see a language which was only the thinnest layer over Rust, keeping all its semantics but wrapping some or all non-stack-allocated types in <code>Rc</code> or <code>Arc</code> as appropriate. You’d incur some performance coasts, but with the benefit that you’d have an <em>extremely</em> ergonomic, practical, ML-descended language quite appropriate for more non-low-level tasks.</p>
+<p>Both Rust and Swift recognize that, the ordinary case notwithstanding, there are many times when you <em>do</em> need to run some cleanup as part of tearing down an object. For example, if you had an open database connection attached to an object, you should return it to the collection pool before finishing tear-down of the object.</p>
+<p>In Rust, this is accomplished by implementing the <code>Drop</code> trait and supplying the requisite <code>drop</code> method. Imagine we had imported a type <code>Conn</code> for a database. Our implementation might look something like this:</p>
+<pre class="rust"><code>struct ThingThatConnects {
+    conn: Option&lt;Conn&gt;,
+}
+
+impl ThingThatConnects {
+    pub fn new() -&gt; ThingThatConnects {
+        let conn = Conn::new();
+        ThingThatConnects { conn: conn }
+    }
+}
+
+impl Drop for ThingThatConnects {
+    fn drop(self) {
+        self.conn.close();
+    }
+}</code></pre>
+<p>In Swift, class types can have deinitializers, which behave in much the same way:</p>
+<pre class="swift"><code>class ThingThatConnects {
+    var conn: Conn?
+    init() {
+        conn = Conn.new()
+    }
+
+    deinit {
+        conn.close()
+    }
+}</code></pre>
+<p>Curiously, <code>struct</code> and <code>enum</code> types <em>cannot</em> have deinitializers in Swift. I expect this has something to do with their being value types rather than reference types, but the book offers no comment.</p>
+<p>Much as in the discussion of of initializers, the usual patterns with Rust and Swift’s approach come into play. Rust opts to build the pattern on the same basic language machinery (traits). Swift uses a bit of syntactical sugar dedicated to the purpose. It’s undeniable that the Swift is a bit briefer.</p>
+<p>However, there are a couple upsides to Rust’s approach. First, it is applicable on <em>all</em> types, where Swift’s applies only to classes. Second, there is no additional syntax to remember. <code>Drop</code> is just a trait like any other, and <code>drop</code> a method like any other. Third, then, this means that you can run it explicitly elsewhere if you need to, and as a result you can define whatever kind of custom deconstruction behavior you might need. If we’d created <code>a_thing_that_connects</code> above in Rust, we could simply write <code>a_thing_that_connects.drop()</code> anywhere. Or we could define a <code>custom_drop()</code> method which called <code>drop()</code> itself. Or, really, define <em>any</em> behavior which culminated in a <code>drop()</code> call. That’s enormously powerful.</p>
+<p>That takes us back to one of the fundamental differences in design between the two languages. Rust goes out of its way to leave power in the hands of the user, at the cost of requiring the user to be a bit more explicit. Swift prioritizes brevity and productivity, but it gets there by taking some of the power out of the hands of the developer. Neither of these is wrong, <em>per se</em>. They’re just aiming for (and fairly successfully landing in) somewhat different spots on a spectrum of tradeoffs.</p>
+<hr />
+<ul>
+<li><a href="http://www.chriskrycho.com/2016/rust-and-swift-xvii.html"><strong>Previous:</strong> TODO</a></li>
+</ul>
+<div id="refs" class="references">
+
+</div>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2016/mornings-like-this.html">Mornings like this</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2016/a-brake-on-our-enthusiasm.html">A brake on our enthusiasm</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2016/rust-and-swift-xvii.html">Rust and Swift (xvii)</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2016/a-simple-childrens-catechism.html">A Simple Children's Catechism</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
