@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><atom:link href="http://www.chriskrycho.com/feeds/tweetstorm.xml" rel="self"></atom:link><lastBuildDate>Sun, 10 Jan 2016 15:25:00 -0500</lastBuildDate><item><title>Women in Rust</title><link>http://www.chriskrycho.com/2016/women-in-rust.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I posted these bullet points last night as a series of tweets on my &lt;a href="https://www.twitter.com/chriskrycho"&gt;main account&lt;/a&gt;.&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - tweetstorm</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 10 Jan 2016 15:25:00 -0500</lastBuildDate><item><title>Women in Rust</title><link>http://www.chriskrycho.com/2016/women-in-rust.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I posted these bullet points last night as a series of tweets on my &lt;a href="https://www.twitter.com/chriskrycho"&gt;main account&lt;/a&gt;.&lt;/i&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href="https://twitter.com/chriskrycho/status/686007510147309568"&gt;∞ January 9, 2016 21:11&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -24,7 +24,7 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 10 Jan 2016 15:25:00 -0500</pubDate><guid>tag:www.chriskrycho.com,2016-01-10:2016/women-in-rust.html</guid><category>podcasting</category><category>tweetstorm</category><category>rust</category></item><item><title>Tweets on Psych Medication</title><link>http://www.chriskrycho.com/2015/tweets-on-psych-medication.html</link><description>&lt;p&gt;Yesterday evening, I saw Peter Leithart (&lt;a href="https://twitter.com/PLeithart"&gt;@PLeithart&lt;/a&gt;) retweet this from the &lt;a href="https://twitter.com/_Theopolis"&gt;@_Theopolis&lt;/a&gt; account:&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 10 Jan 2016 15:25:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-01-10:2016/women-in-rust.html</guid><category>podcasting</category><category>tweetstorm</category><category>rust</category></item><item><title>Tweets on Psych Medication</title><link>http://www.chriskrycho.com/2015/tweets-on-psych-medication.html</link><description>&lt;p&gt;Yesterday evening, I saw Peter Leithart (&lt;a href="https://twitter.com/PLeithart"&gt;@PLeithart&lt;/a&gt;) retweet this from the &lt;a href="https://twitter.com/_Theopolis"&gt;@_Theopolis&lt;/a&gt; account:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Psych meds are a lobotomy in a bottle. -Rich Bledsoe&lt;br/&gt; &lt;a href="https://twitter.com/_Theopolis/status/623671327447248896"&gt;∞&lt;/a&gt; July 21, 2015 21:50&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -52,4 +52,4 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 22 Jul 2015 08:34:00 -0400</pubDate><guid>tag:www.chriskrycho.com,2015-07-22:2015/tweets-on-psych-medication.html</guid><category>tweetstorm</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 22 Jul 2015 08:34:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-07-22:2015/tweets-on-psych-medication.html</guid><category>tweetstorm</category></item></channel></rss>
