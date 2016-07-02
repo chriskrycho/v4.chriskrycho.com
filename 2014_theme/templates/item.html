@@ -15,7 +15,12 @@
         {% block item_subtitle %}{% if item.subtitle is defined %}<h2>{{ item.subtitle }}</h2>{% endif %}{% endblock item_subtitle %}
     </header>
 
-    <div class="meta">{% block meta %}{% endblock %}</div>
+    <div class="meta">
+      {% block meta %}{% endblock %}
+      {% if item.tools is defined %}
+        {% include "includes/version-badge.html" %}
+      {% endif %}
+    </div>
 
     <div class="content-wrapper">
     {% block context %}{% endblock %}

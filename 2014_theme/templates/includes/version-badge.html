@@ -1,0 +1,16 @@
+{% if article.tools is defined %}
+<versions>
+  {% for tool in article.tools %}
+    {% if tool['url'] is defined %}
+      <a href="{{ tool['url'] }}">
+    {% endif %}
+    <version-badge>
+      <version-badge-info class='tool'>{{ tool['name'] }}</version-badge-info><!--
+   --><version-badge-info class='version'>{{ tool['version'] }}</version-badge-info>
+    </version-badge>
+    {% if tool['url'] is defined %}
+      </a>
+    {% endif %}
+  {% endfor %}
+</versions>
+{% endif %}

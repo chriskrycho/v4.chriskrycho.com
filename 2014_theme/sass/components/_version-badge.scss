@@ -1,0 +1,32 @@
+versions {
+  display: block;
+  text-align: center;
+  max-width: 32rem;
+  margin-top: 1rem;
+}
+
+version-badge {
+  display: inline-block;
+  color: #fefefe;
+  border-radius: .25em;
+  margin: 0;
+  font-family: "Cronos Pro";
+  line-height: 1;
+  font-size: 1em;
+
+  &-info {
+    padding: 0.25em 0.5em 0.15em;
+
+    &.tool {
+      border-top-left-radius: 0.25em;
+      border-bottom-left-radius: 0.25em;
+      background: #333;  // TODO: per-language override
+    }
+
+    &.version {
+      border-top-right-radius: 0.25em;
+      border-bottom-right-radius: 0.25em;
+      background: #5592C9;  // TODO: per-language override
+    }
+  }
+}
