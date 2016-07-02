@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-07-02 16:19
+Tags: software development, pedagogy
+Template: formats/micro
+Slug: 07-02-1619
+Category: micro
+---
+
+I know the `Vehicle` example is sort of canonical in teaching object-oriented programming. But it's wildly disconnected from real software development problems. I don't like it.
