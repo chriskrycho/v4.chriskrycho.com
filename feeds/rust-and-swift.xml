@@ -150,12 +150,13 @@ match foo {
 }
 
 impl Waffles {
-    fn properly(supplies_available: bool) -&amp;gt; Result&amp;lt;Waffles, &amp;amp;str&amp;gt;) {
+    fn properly(supplies_available: bool) -&amp;gt; Result&amp;lt;Waffles, String&amp;gt;) {
         if supplies_available {
             Ok(Waffles { syrup: true, butter: true } )
         }
         else {
-            Err(&amp;quot;Who makes waffles this way???&amp;quot;)
+            let msg = &amp;quot;Who makes waffles this way???&amp;quot;;
+            Err(msg.to_string())
         }
     }
 }

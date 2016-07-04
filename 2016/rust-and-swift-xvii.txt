@@ -235,12 +235,13 @@ struct Waffles {
 }
 
 impl Waffles {
-    fn properly(supplies_available: bool) -> Result<Waffles, &str>) {
+    fn properly(supplies_available: bool) -> Result<Waffles, String>) {
         if supplies_available {
             Ok(Waffles { syrup: true, butter: true } )
         }
         else {
-            Err("Who makes waffles this way???")
+            let msg = "Who makes waffles this way???";
+            Err(msg.to_string())
         }
     }
 }
