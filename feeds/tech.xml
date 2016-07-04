@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-06-30T23:00:00-04:00</updated><entry><title>Rust and Swift (xvii)</title><link href="http://www.chriskrycho.com/2016/rust-and-swift-xvii.html" rel="alternate"></link><published>2016-06-30T23:00:00-04:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-06-30:2016/rust-and-swift-xvii.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-07-04T09:55:00-04:00</updated><entry><title>Rust and Swift (xvii)</title><link href="http://www.chriskrycho.com/2016/rust-and-swift-xvii.html" rel="alternate"></link><published>2016-06-30T23:00:00-04:00</published><updated>2016-07-04T09:55:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-06-30:2016/rust-and-swift-xvii.html</id><summary type="html">&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;In the &lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xvi.html"&gt;last part&lt;/a&gt;, I talked through the first chunk of the Swift book’s material on initializers. But it’s a long section, and I definitely didn’t cover everything. (I also got a few bits incorrect, and thankfully got great feedback to tighten it up from Twitter, so if you read it right after I posted it, you might skim back through and find the places where I added “&lt;strong&gt;Edit:&lt;/strong&gt; …”)&lt;/p&gt;
 &lt;p&gt;Picking up from where we left on, then. Swift has a number of further initializer types, some of which map rather directly to the way initializers work in Rust, and some of which have no &lt;em&gt;direct&lt;/em&gt; analog at all.&lt;/p&gt;
@@ -125,6 +125,7 @@ print(&amp;quot;\(foo?.bar)&amp;quot;)  // 42
 let quux = Foo(false)
 Print(&amp;quot;\(foo?.bar)&amp;quot;)  // nil&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This is another of the places where Swift’s choice to treat initialization as a special case, not just another kind of method, ends up having some weird side effects. If &lt;code&gt;init&lt;/code&gt; calls were &lt;em&gt;methods&lt;/em&gt;, they would always just be &lt;em&gt;returning the type&lt;/em&gt;. This is exactly what we see in Rust, of course. To be clear, there are reasons why the Swift team made that choice, and many of them we’ve already touched on incidentally; the long and short of it is that inheritance adds some wrinkles. These aren’t &lt;em&gt;constructors&lt;/em&gt;, they’re &lt;em&gt;initializers&lt;/em&gt;. The point, per the Swift book, is “to ensure that &lt;code&gt;self&lt;/code&gt; is fully and correctly initializer by the time that initialization ends.” If you’re familiar with Python, you can think of Swift initializers as being quite analogous to &lt;code&gt;__init__(self)&lt;/code&gt; methods, which similarly are responsible for &lt;em&gt;initialization&lt;/em&gt; but not &lt;em&gt;construction&lt;/em&gt;. When we build a type in Rust, by contrast, we’re doing something much more like calling Python &lt;code&gt;__new__(cls)&lt;/code&gt; methods, which &lt;em&gt;do&lt;/em&gt; construct the type.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Edit:&lt;/strong&gt; interestingly, I’m &lt;a href="https://twitter.com/austinzheng/status/749831726122217473"&gt;informed via Twitter&lt;/a&gt; that Swift initializers can also throw errors. (Thanks, Austin!) The Swift book doesn’t mention this because it hasn’t gotten to error-handling yet (and so, neither have we).&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;You can of course write failable constructors in Rust, too:&lt;/p&gt;
 &lt;pre class="rust"&gt;&lt;code&gt;struct Foo {
     bar: i64,
@@ -143,23 +144,22 @@ match foo {
     None =&amp;gt; println!(&amp;quot;None&amp;quot;),
 };&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;There are conditions in both languages where you’d want to do this: places where an initialization &lt;em&gt;can&lt;/em&gt; fail, e.g. trying to open a file, or open a websocket, or anything where the type represents something that is not guaranteed to return a valid result. It makes sense then that in both cases, returning an &lt;em&gt;optional&lt;/em&gt; value is the outcome. Of course, Rust can equally well have an initializer return a &lt;code&gt;Result&amp;lt;T, E&amp;gt;&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;struct Waffles {
+&lt;pre class="rust"&gt;&lt;code&gt;struct Waffles {
     syrup: bool,
     butter: bool,
 }
 
 impl Waffles {
-    fn properly(supplies_available: bool) -&amp;gt; Result&amp;lt;Waffles, String&amp;gt;) {
+    fn properly(supplies_available: bool) -&amp;gt; Result&amp;lt;Waffles, &amp;amp;str&amp;gt;) {
         if supplies_available {
             Ok(Waffles { syrup: true, butter: true } )
         }
         else {
-            let msg = &amp;quot;Who makes waffles without butter of syrup???&amp;quot;;
-            Err(msg.to_string())
+            Err(&amp;quot;Who makes waffles this way???&amp;quot;)
         }
     }
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This is simply not the kind of thing you can do in Swift, as far as I can tell. The upside to Swift’s approach is that there is one, standard path. The downside is that if you have a scenario where it makes sense to return an error—i.e., to indicate &lt;em&gt;why&lt;/em&gt; a class failed to initialize and not merely &lt;em&gt;that&lt;/em&gt; it failed—you’re going to have to jump through many more hoops.&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; The downside for Rust is that there’s no shorthand; everything is explicit. The upside is the flexibility to do as makes the most sense in a given context. That in turn flows out of building even higher level language features on lower-level features and not introducing new syntax for the most part. Trade offs!&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;This is simply not the kind of thing you can do in Swift, as far as I can tell. The upside to Swift’s approach is that there is one, standard path. The downside is that if you have a scenario where it makes sense to return an error—i.e., to indicate &lt;em&gt;why&lt;/em&gt; a class failed to initialize and not merely &lt;em&gt;that&lt;/em&gt; it failed—you’re going to have to jump through many more hoops.&lt;a href="#fn5" class="footnoteRef" id="fnref5"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;&lt;/del&gt; &lt;em&gt;&lt;strong&gt;Edit:&lt;/strong&gt; See above; Swift &lt;em&gt;can&lt;/em&gt; do this. Moreover, the underlying semantics aren’t especially different from Rust’s. However, it does introduce &lt;em&gt;yet more&lt;/em&gt; syntax, rather than just being a normal return. But we’ll talk about that in more detail when we get to error-handling.&lt;/em&gt;&lt;a href="#fn4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; The downside for Rust is that there’s no shorthand; everything is explicit. The upside is the flexibility to do as makes the most sense in a given context, including defining whatever types you need and returning them as you see fit. If you need a type like &lt;code&gt;PartialSuccessPossible&amp;lt;C, P, E&amp;gt;&lt;/code&gt; where &lt;code&gt;C&lt;/code&gt; is a complete type, &lt;code&gt;P&lt;/code&gt; a partial type, and &lt;code&gt;E&lt;/code&gt; an error, you can do that. (I’m not saying that’s a good idea, for the record.) That in turn flows out of building even higher level language features on lower-level features and not introducing new syntax for the most part. Trade-offs!&lt;/p&gt;
 &lt;p&gt;And with that, we’re done talking about initializers. This was a &lt;em&gt;huge&lt;/em&gt; topic—but it makes sense. If you don’t nail this down carefully, you’ll be in for a world of hurt later, and that goes whether you’re designing a language or just using it to build things.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
@@ -174,7 +174,45 @@ impl Waffles {
 &lt;li id="fn1"&gt;&lt;p&gt;Also recall that in Rust, we would set the default values either by using the &lt;code&gt;#[derive(Default)]&lt;/code&gt; annotation or by implementing the &lt;code&gt;Default&lt;/code&gt; trait ourselves.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id="fn2"&gt;&lt;p&gt;I’m including a module because of a quirk around the public/private rules: within the same module, &lt;code&gt;area&lt;/code&gt; isn’t hidden and you can actually go ahead and initialize the object.&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id="fn3"&gt;&lt;p&gt;Depending on how you think about extensions, &lt;em&gt;either&lt;/em&gt; Rust doesn’t have anything quite like them… &lt;em&gt;or&lt;/em&gt; every type implementation is just an extension, because &lt;code&gt;impl&lt;/code&gt; allows you to extend &lt;em&gt;any&lt;/em&gt; data type in basically arbitrary ways (a few caveats of course). More on all of this when we get there.&lt;a href="#fnref3"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn4"&gt;&lt;p&gt;It’s conceivable this is actually possible, but nothing in &lt;em&gt;The Swift Programming Language&lt;/em&gt; even hints at it, if so.&lt;a href="#fnref4"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn4"&gt;&lt;p&gt;Here’s a preview of what that would look like, though (fair warning, there’s a lot going on here we haven’t talked about!):&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;enum Setup {
+    case succeed
+    case error
+    case fail
+}
+
+enum BarSetupError: ErrorProtocol {
+    case argh
+}
+
+class Bar {
+    let blah: Int
+    init?(setup: Setup) throws {
+        switch setup {
+        case .succeed:
+            blah = 42
+        case .error:
+            throw BarSetupError.argh
+        case .fail:
+            return nil
+        }
+    }
+}
+
+do {
+    let bar = try Bar(setup: .succeed)
+    print(&amp;quot;\(bar!.blah)&amp;quot;)
+
+    let baz = try Bar(setup: .fail)
+    print(&amp;quot;\(baz?.blah)&amp;quot;)
+
+    let quux = try Bar(setup: .error)
+    print(&amp;quot;\(quux?.blah)&amp;quot;)
+} catch BarSetupError.argh {
+    print(&amp;quot;Oh teh noes!&amp;quot;)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The output from this would be &lt;code&gt;42&lt;/code&gt;, &lt;code&gt;nil&lt;/code&gt;, and &lt;code&gt;Oh teh noes!&lt;/code&gt;.&lt;a href="#fnref4"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn5"&gt;&lt;p&gt;&lt;del&gt;It’s conceivable this is actually possible, but nothing in &lt;em&gt;The Swift Programming Language&lt;/em&gt; even hints at it, if so.&lt;/del&gt; See above!&lt;a href="#fnref5"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </summary><category term="rust"></category><category term="swift"></category><category term="rust-and-swift"></category><category term="programming languages"></category></entry><entry><title>Y Combinators, how do they even work?</title><link href="http://www.chriskrycho.com/2016/y-combinators-how-do-they-even-work.html" rel="alternate"></link><published>2016-06-19T09:20:00-04:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-06-19:2016/y-combinators-how-do-they-even-work.html</id><summary type="html">&lt;p&gt;&lt;i class=editorial&gt;I was reading &lt;a href="http://matt.might.net/articles/implementation-of-recursive-fixed-point-y-combinator-in-javascript-for-memoization/"&gt;a post&lt;/a&gt; by &lt;a href="http://matt.might.net"&gt;Matt Might&lt;/a&gt;, a computer science professor at the University of Utah, about Y Combinators, and I was having a hard time tracking with some of it just by reading. The way I normally solve this problem is to write it out—and, optimally, to write it out in something roughly like &lt;a href="https://wiki.haskell.org/Literate_programming"&gt;Literate Haskell&lt;/a&gt; or &lt;a href="http://coffeescript.org/#literate"&gt;Literate CoffeeScript&lt;/a&gt;. That’s exactly what you’ll find below; this is basically &lt;em&gt;commentary&lt;/em&gt; on Might’s original post.&lt;/i&gt;&lt;/p&gt;
