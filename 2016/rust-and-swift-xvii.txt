@@ -2,7 +2,7 @@
 Title: Rust and Swift (xvii)
 Subtitle: "More on initializers!"
 Date: 2016-06-30 23:00
-Modified: 2016-07-04 09:55
+Modified: 2016-07-04 10:00
 Series:
   Title: Rust and Swift
   Part: 17
@@ -244,6 +244,12 @@ impl Waffles {
         }
     }
 }
+
+let waffles = Waffles::properly(true);
+match waffles {
+    Ok(_) => println!("Got some waffles, yeah!"),
+    Err(s) => println!("{:}", s),
+};
 ```
 
 ~~This is simply not the kind of thing you can do in Swift, as far as I can tell. The upside to Swift's approach is that there is one, standard path. The downside is that if you have a scenario where it makes sense to return an error---i.e., to indicate *why* a class failed to initialize and not merely *that* it failed---you're going to have to jump through many more hoops.[^outside-info]~~ _**Edit:** See above; Swift *can* do this. Moreover, the underlying semantics aren't especially different from Rust's. However, it does introduce *yet more* syntax, rather than just being a normal return. But we'll talk about that in more detail when we get to error-handling._[ ^4^](#fn4) The downside for Rust is that there's no shorthand; everything is explicit. The upside is the flexibility to do as makes the most sense in a given context, including defining whatever types you need and returning them as you see fit. If you need a type like `PartialSuccessPossible<C, P, E>` where `C` is a complete type, `P` a partial type, and `E` an error, you can do that. (I'm not saying that's a good idea, for the record.) That in turn flows out of building even higher level language features on lower-level features and not introducing new syntax for the most part. Trade-offs!
