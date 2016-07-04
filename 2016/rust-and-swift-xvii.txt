@@ -235,7 +235,7 @@ struct Waffles {
 }
 
 impl Waffles {
-    fn properly(supplies_available: bool) -> Result<Waffles, String>) {
+    fn properly(all_supplies: bool) -> Result<Waffles, String>) {
         if supplies_available {
             Ok(Waffles { syrup: true, butter: true } )
         }
