@@ -150,7 +150,7 @@ match foo {
 }
 
 impl Waffles {
-    fn properly(all_supplies: bool) -&amp;gt; Result&amp;lt;Waffles, String&amp;gt;) {
+    fn properly(all_supplies: bool) -&amp;gt; Result&amp;lt;Waffles, String&amp;gt; {
         if all_supplies {
             Ok(Waffles { syrup: true, butter: true } )
         }
