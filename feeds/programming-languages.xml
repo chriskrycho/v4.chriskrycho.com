@@ -530,6 +530,7 @@ struct Celsius {
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xv.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Inheritance: a Swiftian specialty (for now).&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/2016/rust-and-swift-xvii.html"&gt;&lt;strong&gt;Next:&lt;/strong&gt; More on initializers!&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;section id="addendum-no-late-initialization-in-rust" class="level2"&gt;
