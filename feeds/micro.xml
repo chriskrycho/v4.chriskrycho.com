@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - micro</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-07-14T07:56:00-04:00</updated><entry><title></title><link href="http://www.chriskrycho.com/2016/07-14-0756.html" rel="alternate"></link><published>2016-07-14T07:56:00-04:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-07-14:2016/07-14-0756.html</id><summary type="html">&lt;p&gt;I really, &lt;em&gt;really&lt;/em&gt; prefer codebases which remember that readability matters. Getting everything on one line, at the expense of the line being 234 characters long, is not a win.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - micro</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-07-14T21:31:00-04:00</updated><entry><title></title><link href="http://www.chriskrycho.com/2016/07-14-2131.html" rel="alternate"></link><published>2016-07-14T21:31:00-04:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-07-14:2016/07-14-2131.html</id><summary type="html">&lt;p&gt;Things I did tonight:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keep working on actually building a small app in Swift (not just playing with the language for little things, but starting to learn the macOS frameworks too).&lt;/li&gt;
+&lt;li&gt;Start writing New Rustacean e015.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</summary><category term="learning"></category><category term="software development"></category><category term="programming languages"></category><category term="rust"></category><category term="swift"></category></entry><entry><title></title><link href="http://www.chriskrycho.com/2016/07-14-0756.html" rel="alternate"></link><published>2016-07-14T07:56:00-04:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-07-14:2016/07-14-0756.html</id><summary type="html">&lt;p&gt;I really, &lt;em&gt;really&lt;/em&gt; prefer codebases which remember that readability matters. Getting everything on one line, at the expense of the line being 234 characters long, is not a win.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
