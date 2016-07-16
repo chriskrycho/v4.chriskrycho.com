@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - software development</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Fri, 15 Jul 2016 10:37:00 -0400</lastBuildDate><item><title>Consistency in User Interfaces</title><link>http://www.chriskrycho.com/2016/07-15-1037.html</link><description>&lt;p&gt;People sometimes ask what I mean when I say Git’s UI is maddeningly inconsistent. Here’s a concrete example: what are the commands to list tags, branches, and stashes?&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - software development</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 16 Jul 2016 12:53:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/07-16-1253.html</link><description>&lt;p&gt;I am trying to fix a bug in a Node.js back end I wrote 18 months ago. And I have never been so tempted in my life to rip out the entire Node back end and replace it with one written in Rust.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 16 Jul 2016 12:53:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-07-16:2016/07-16-1253.html</guid><category>software development</category><category>javascript</category><category>rust</category></item><item><title>Consistency in User Interfaces</title><link>http://www.chriskrycho.com/2016/07-15-1037.html</link><description>&lt;p&gt;People sometimes ask what I mean when I say Git’s UI is maddeningly inconsistent. Here’s a concrete example: what are the commands to list tags, branches, and stashes?&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;git tag --list&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;git branch --list&lt;/code&gt;&lt;/li&gt;
