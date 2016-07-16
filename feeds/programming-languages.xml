@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - programming languages</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Thu, 14 Jul 2016 21:31:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/07-14-2131.html</link><description>&lt;p&gt;Things I did tonight:&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - programming languages</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 16 Jul 2016 10:00:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/07-16-1000.html</link><description>&lt;p&gt;I was looking at a bunch of the inbound changes to &lt;a href="https://github.com/dotnet/roslyn/issues/2136"&gt;C♯&lt;/a&gt;, and while they’re all quite nice… I realized that playing with a bunch of &lt;a href="https://en.wikipedia.org/wiki/ML_(programming_language)"&gt;ML&lt;/a&gt;-descended languages has basically ruined me for C-descended languages.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 16 Jul 2016 10:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-07-16:2016/07-16-1000.html</guid><category>programming languages</category><category>csharp</category></item><item><title></title><link>http://www.chriskrycho.com/2016/07-14-2131.html</link><description>&lt;p&gt;Things I did tonight:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Keep working on actually building a small app in Swift (not just playing with the language for little things, but starting to learn the macOS frameworks too).&lt;/li&gt;
 &lt;li&gt;Start writing New Rustacean e015.&lt;/li&gt;
