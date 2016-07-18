@@ -2,10 +2,11 @@
 Title: A New Schedule
 Subtitle: Trying to make better use of my time toward my goals.
 Date: 2016-07-16 22:10
+Modified: 2016-07-18 11:45
 Tags: productivity
 ---
 
-I tried something this week; we will see if it sticks. In the aim of being *much* more productive with my time, I made the following changes:
+I tried something this week; we will see if it sticks. In the aim of being *much* more productive with my time, and with the idea that I hit a minimum of 40 hours a week between school and work,[^40-hours] I made the following changes:
 
 1. I embraced a weekly schedule, where each week day includes:
     - the time I get up, and a goal for how long it takes me to go from when my alarm goes off to when I have breakfast made for Jaimie and me
@@ -13,7 +14,7 @@ I tried something this week; we will see if it sticks. In the aim of being *much
     - five minutes to read the news
     - five minutes to plan my day
     - two hours of reading and writing for school
-    - six hours of software development work for Olo
+    - six hours of software development work for Olo[^olo-hours]
     - a specific workout in my self-designed training plan for the [half marathon][city of oaks] I am running this fall
     - an hour dedicated to creative projects I am working on---I'll fill this with things like writing blog posts, prepping New Rustacean episodes, recording and editing Winning Slowly, and working on building a modern iOS and macOS app
     - roughly 90 minutes devoted entirely to spending time with my family, over dinner and afterward until our girls go to bed
@@ -65,3 +66,8 @@ However, I *do* care about accomplishing the particular things I want to do, and
 [previously]: http://www.chriskrycho.com/2014/boosting-my-productivity.html
 
 A lot of the things I wrote about before I still do, and they work well for me. I still use OmniFocus to manage my tasks; I still use the pomodoro approach for keeping my brain moving throughout a whole day, and I still refuse to use email as a task manager (though I've been less disciplined about hitting "Inbox Zero" than I'd like of late). However, I found in the past few months that, while good, those habits aren't quite *enough* for everything I have going. They are necessary but insufficient.
+
+
+[^40-hours]: If I can manage more on the school front over the weekends, that's a win, but this breakdown is usually enough to get done everthing I need to.
+
+[^olo-hours]: Olo is a *fantastic* employer. Among many other things Olo does exceptionally well, they were willing to hire me as a salaried, full-time type employee with full benefits, but working 30 hours instead of 40 while I'm finishing my M. Div. I have pro-rated pay and vacation (though, pro-rated vacation just means I have the same amount of functional time off as everyone else does), but otherwise am just like every other employee in terms of health-care, training availability, laptop, etc. Olo is the best place I've ever worked, bar none, and by a *large* margin.

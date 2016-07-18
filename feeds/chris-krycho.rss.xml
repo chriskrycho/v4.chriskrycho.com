@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 17 Jul 2016 20:07:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/07-17-2007.html</link><description>&lt;p&gt;I do not eat KFC often—but every year, on the day I take my longest run of the year, I eat KFC, and I am glad. This year, today was that day. I just ate KFC. I am glad.&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Mon, 18 Jul 2016 11:45:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/07-17-2007.html</link><description>&lt;p&gt;I do not eat KFC often—but every year, on the day I take my longest run of the year, I eat KFC, and I am glad. This year, today was that day. I just ate KFC. I am glad.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -7,7 +7,7 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 17 Jul 2016 16:34:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-07-17:2016/07-17-1634.html</guid><category>fitness</category></item><item><title>A New Schedule</title><link>http://www.chriskrycho.com/2016/a-new-schedule.html</link><description>&lt;p&gt;I tried something this week; we will see if it sticks. In the aim of being &lt;em&gt;much&lt;/em&gt; more productive with my time, I made the following changes:&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 17 Jul 2016 16:34:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-07-17:2016/07-17-1634.html</guid><category>fitness</category></item><item><title>A New Schedule</title><link>http://www.chriskrycho.com/2016/a-new-schedule.html</link><description>&lt;p&gt;I tried something this week; we will see if it sticks. In the aim of being &lt;em&gt;much&lt;/em&gt; more productive with my time, and with the idea that I hit a minimum of 40 hours a week between school and work,&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; I made the following changes:&lt;/p&gt;
 &lt;ol type="1"&gt;
 &lt;li&gt;I embraced a weekly schedule, where each week day includes:
 &lt;ul&gt;
@@ -16,7 +16,7 @@
 &lt;li&gt;five minutes to read the news&lt;/li&gt;
 &lt;li&gt;five minutes to plan my day&lt;/li&gt;
 &lt;li&gt;two hours of reading and writing for school&lt;/li&gt;
-&lt;li&gt;six hours of software development work for Olo&lt;/li&gt;
+&lt;li&gt;six hours of software development work for Olo&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;a specific workout in my self-designed training plan for the &lt;a href="http://cityofoaksmarathon.com"&gt;half marathon&lt;/a&gt; I am running this fall&lt;/li&gt;
 &lt;li&gt;an hour dedicated to creative projects I am working on—I’ll fill this with things like writing blog posts, prepping New Rustacean episodes, recording and editing Winning Slowly, and working on building a modern iOS and macOS app&lt;/li&gt;
 &lt;li&gt;roughly 90 minutes devoted entirely to spending time with my family, over dinner and afterward until our girls go to bed&lt;/li&gt;
@@ -58,6 +58,13 @@ All that notwithstanding, Slack can also be a huge time-sink and distraction, so
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;If I can manage more on the school front over the weekends, that’s a win, but this breakdown is usually enough to get done everthing I need to.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;Olo is a &lt;em&gt;fantastic&lt;/em&gt; employer. Among many other things Olo does exceptionally well, they were willing to hire me as a salaried, full-time type employee with full benefits, but working 30 hours instead of 40 while I’m finishing my M. Div. I have pro-rated pay and vacation (though, pro-rated vacation just means I have the same amount of functional time off as everyone else does), but otherwise am just like every other employee in terms of health-care, training availability, laptop, etc. Olo is the best place I’ve ever worked, bar none, and by a &lt;em&gt;large&lt;/em&gt; margin.&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 16 Jul 2016 22:10:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-07-16:2016/a-new-schedule.html</guid><category>productivity</category></item><item><title></title><link>http://www.chriskrycho.com/2016/07-16-1253.html</link><description>&lt;p&gt;I am trying to fix a bug in a Node.js back end I wrote 18 months ago. And I have never been so tempted in my life to rip out the entire Node back end and replace it with one written in Rust.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
