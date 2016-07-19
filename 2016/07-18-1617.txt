@@ -9,7 +9,7 @@ Category: micro
 
 The day you accidentally run 20 miles, and then the day after...
 
-![pedometer data](https://cdn.chriskrycho.com/images/30k-no-k-steps.png "33,413 steps one day, 526 the next")
+![pedometer data](//cdn.chriskrycho.com/images/30k-no-k-steps.png "33,413 steps one day, 526 the next")
 
 
 
