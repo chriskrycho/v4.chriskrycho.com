@@ -9,7 +9,7 @@ Series:
   Part: 18
 Tools:
 - name: Rust
-  version: "1.10"
+  version: "1.10.0"
   url: https://doc.rust-lang.org/1.10.0/book/
 - name: Swift
   version: "3.0 pre"
