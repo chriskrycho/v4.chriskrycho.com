@@ -10,7 +10,7 @@ Category: micro
 
 Fun things in Rust land: the code from [the latest episode] of New Rustacean, in [Raph Levien]'s [Xi editor][xi]!
 
-![[(see the full image)][full]][thumb]
+[![][thumb]][full]
 
 [the latest episode]: http://www.newrustacean.com/show_notes/e016/
 [Raph Levien]: http://www.levien.com
