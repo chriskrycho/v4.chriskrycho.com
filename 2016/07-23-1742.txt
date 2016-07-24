@@ -1,0 +1,19 @@
+---
+Title: ""
+Date: 2016-07-23 17:42
+Tags: software development, rust
+Template: formats/micro
+Slug: 07-23-1742
+Category: micro
+---
+
+
+Fun things in Rust land: the code from [the latest episode] of New Rustacean, in [Raph Levien]'s [Xi editor][xi]!
+
+![[(see the full image)][full]][thumb]
+
+[the latest episode]: http://www.newrustacean.com/show_notes/e016/
+[Raph Levien]: http://www.levien.com
+[xi]: https://github.com/google/xi-editor
+[thumb]: http://cdn.chriskrycho.com/images/xi-nr-thumb.png "xi-editor thumbnail"
+[full]: http://cdn.chriskrycho.com/images/xi-nr.png
