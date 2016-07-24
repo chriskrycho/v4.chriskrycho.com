@@ -45,7 +45,7 @@ This list is updated whenever I publish a new post in the series. You can also s
 15. [Inheritance: a Swiftian specialty (for now).][15]
 16. [Initialization: another area where Swift has a lot more going on than Rust.][16]
 17. [More on initializers!][17]
-18. [Deinitialization: drop semantics and automatic reference counting][18]
+18. [Deinitialization: ownership semantics and automatic reference counting][18]
 
 [1]: /2015/rust-and-swift-i.html
 [2]: /2015/rust-and-swift-ii.html

@@ -1,6 +1,6 @@
 ---
 Title: Rust and Swift (xviii)
-Subtitle: "Deinitialization: drop semantics and automatic reference counting"
+Subtitle: "Deinitialization: ownership semantics and automatic reference counting"
 Category: Tech
 Tags: rust, swift, rust-and-swift, programming languages
 Date: 2016-07-24 15:10

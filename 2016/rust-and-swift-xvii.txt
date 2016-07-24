@@ -307,7 +307,7 @@ And with that, we're done talking about initializers. This was a *huge* topic---
 
 
 - [**Previous:** Initialization: another area where Swift has a lot more going on than Rust.][16]
-- [**Next: Deinitialization: drop semantics and automatic reference counting][18]
+- [**Next: Deinitialization: ownership semantics and automatic reference counting][18]
 
 [15]: http://www.chriskrycho.com/2016/rust-and-swift-xv.html
 [16]: http://www.chriskrycho.com/2016/rust-and-swift-xvi.html
