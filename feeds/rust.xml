@@ -1,5 +1,393 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - rust</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 23 Jul 2016 17:42:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/07-23-1742.html</link><description>&lt;p&gt;Fun things in Rust land: the code from &lt;a href="http://www.newrustacean.com/show_notes/e016/"&gt;the latest episode&lt;/a&gt; of New Rustacean, in &lt;a href="http://www.levien.com"&gt;Raph Levien&lt;/a&gt;’s &lt;a href="https://github.com/google/xi-editor"&gt;Xi editor&lt;/a&gt;!&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - rust</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 24 Jul 2016 15:10:00 -0400</lastBuildDate><item><title>Rust and Swift (xviii)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xviii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;section id="part-i-ownership-semantics-vs.reference-counting" class="level2"&gt;
+&lt;h2&gt;Part I: Ownership Semantics vs. Reference Counting&lt;/h2&gt;
+&lt;p&gt;Perhaps unsurprisingly, the Swift book follows on from its discussion of initialization with a discussion of deinitialization, and here the differences between Rust and Swift are substantial, but (as has so often been the case) so are the analogies.&lt;/p&gt;
+&lt;p&gt;In Rust, memory is, by default, stack-allocated and -deallocated, but with a very impressive system for tracking the lifetime of that data and allowing its to be moved from one function to another. The Rust compiler tracks the &lt;em&gt;ownership&lt;/em&gt; of every given item in the program as it is passed from one function to another, allowing other parts of the program to “borrow” the data safely, until a given piece of data goes out of scope entirely. At that point, Rust runs its destructors automatically. As part of its system for managing memory safely, Rust also tracks where and when a program attempts to access any given piece of data (whether directly or via reference), and will refuse to compile if you try to reference data in a place where it has already gone out of scope and been cleaned up (“dropped,” in Rust-speak).&lt;/p&gt;
+&lt;p&gt;If this was a bit fuzzy, don’t worry: there’s a lot to say here. It’s arguably the most distinctive feature of the language, and it’s also the main thing that tends to trip up newcomers to the language. If you’re interested in further material on the topic, My own most succinct treatment of it is in &lt;a href="http://www.newrustacean.com/show_notes/e002/index.html" title="e002: Something borrowed, something... moved?"&gt;an early episode&lt;/a&gt; of New Rustacean, my Rust developer podcast, and &lt;a href="https://doc.rust-lang.org/book/ownership.html"&gt;the official documentation&lt;/a&gt; is &lt;em&gt;very&lt;/em&gt; good. For now, suffice it to say: Rust does extremely rigorous &lt;em&gt;compile-time&lt;/em&gt; checks to let you do C or C++-style memory management, but with absolute guarantees that you won’t have e.g. use-after-free bugs, with a default to handling everything on the stack.&lt;/p&gt;
+&lt;p&gt;It is of course impossible to handle &lt;em&gt;everything&lt;/em&gt; on the stack, so there are heap-allocated types (e.g. vectors, a dynamically sized array-like type), which are fundamentally reference (or pointer) types. But those follow the same basic rules: Rust tracks the &lt;em&gt;pointers&lt;/em&gt; throughout their uses, and when they go out of scope, Rust automatically tears down not only the pointer but also the data behind it. There are times, though, when you can’t comply with Rust’s normal rules for handling multiple-access to the same data. For those situations, it also supplies some “smart pointer” container types, &lt;code&gt;Rc&lt;/code&gt; and &lt;code&gt;Arc&lt;/code&gt;, the &lt;em&gt;reference-counted&lt;/em&gt; (non-thread-safe) and &lt;em&gt;atomically reference-counted&lt;/em&gt; (thread-safe) types. Both types just wrap up a type that you intend to put on the heap with reference-counters, which increment and decrement as various pieces of a program get access to them. Note that, unlike the compiler-level, &lt;em&gt;compile-time&lt;/em&gt; checks mentioned earlier, these are &lt;em&gt;run-time&lt;/em&gt; counts and they therefore incur a small but real runtime performance penalty. (The distinctions between the two types have to do with how they guarantee their memory safety and what kinds of a guarantees are required for cross-thread safety, and they’re important for writing Rust but not so important for this comparison, so I’ll leave them aside.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;In Swift, all class instances (which are pass-by-reference types) are tracked with &lt;em&gt;automatic reference counting&lt;/em&gt; and cleaned up automatically when there are no more references to them. Don’t confuse Rust’s “&lt;em&gt;atomically&lt;/em&gt; reference-counted” type with Swift’s “&lt;em&gt;automatically&lt;/em&gt; reference-counted” type. Unlike Rust’s behavior in having everything checked at compile-time. Reference counting is a run-time check in Swift, just as it is with the &lt;code&gt;Rc&lt;/code&gt; and &lt;code&gt;Arc&lt;/code&gt; types in Rust.&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; But it happens for all reference types all the time in Swift, not just when specified manually as in Rust. It’s &lt;em&gt;automatic&lt;/em&gt; in that the compiler and runtime handle it “behind the scenes” from the developer’s perspective.&lt;/p&gt;
+&lt;p&gt;Swift’s approach here isn’t quite the same as having a full-on garbage-collected runtime like you’d see in Java, C#, Python, Ruby, JavaScript, etc. (and so doesn’t have the performance issues those often can). But it also isn’t like Rust’s default of having &lt;em&gt;no&lt;/em&gt; runtime cost. It’s somewhere in the middle, with a goal of very good performance but good developer ergonomics. I think it achieves that latter goal: for the most part, it means that you don’t have to think about memory allocation and deallocation explicitly. Certainly there are times when you have to think about how your program handles those issues, but neither is it right up in your face like it is in Rust,&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; nor does it come with the costs of a heavier runtime (from startup, to GC pauses, to non-deterministic performance characteristics).&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To make it concrete, the following snippets do &lt;em&gt;basically&lt;/em&gt; the same thing—but note that the reference counting is explicit in Rust. We’ll start with Rust, doing it the normal way:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;struct WouldBeJedi {
+    name: String,
+    rank: u8,
+    description: String,
+}
+
+impl WouldBeJedi {
+    fn new(name: &amp;amp;str, rank: u8, description: &amp;amp;str) -&amp;gt; WouldBeJedi {
+        WouldBeJedi {
+            name: name.to_string(),
+            rank: rank,
+            description: description.to_string()
+        }
+    }
+}
+
+fn main() {
+    let trainee = WouldBeJedi::new(
+        &amp;quot;Zayne Carrick&amp;quot;, 1, &amp;quot;not very competent, but still a great hero&amp;quot;);
+
+    // When calling the function, we pass it a reference, and it
+    // &amp;quot;borrows&amp;quot; access to the data. But the validity of that access
+    // is checked at compile time. `main()` keeps the &amp;quot;ownership&amp;quot;
+    // of the data.
+    describe(&amp;amp;trainee);
+
+    // When `main` ends, nothing owns the data anymore, so
+    // Rust cleans it up. If something were still borrowing the
+    // data (say, if we&amp;#39;d passed a reference into another thread),
+    // this would actually be a compile error, because references
+    // have to be guaranteed to live as long as the thing they
+    // point back to. Rust has tools for managing that, as well,
+    // its &amp;quot;lifetimes&amp;quot;, but we can leave them aside for this example.
+}
+
+fn describe(trainee: &amp;amp;WouldBeJedi) {
+    // Rust checks at compile time to make sure there are no
+    // mutable &amp;quot;borrows&amp;quot; of the data, and therefore knows
+    // that it is safe to reference the data here, because it can
+    // be *sure* nothing will change it at the same time.
+
+    // Under the covers, this macro will actually call a
+    // function with the data we pass it, so Rust actually checks
+    // the ownership and borrowing state here, too. Again, all
+    // at compile time, and therefore with no runtime penalty.
+    println!(&amp;quot;{} (rank {}) is {}.&amp;quot;,
+             trainee.name,
+             trainee.rank,
+             trainee.description);
+
+    // When we exit the function, Rust notes that it is no
+    // longer &amp;quot;borrowing&amp;quot; the data.
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And here’s the Swift code—note as well that we use a &lt;code&gt;class&lt;/code&gt; not a &lt;code&gt;struct&lt;/code&gt; here:&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;class WouldBeJedi {
+    let name: String
+    let rank: UInt8
+    let description: String
+
+    init(name: String, rank: UInt8, description: String) {
+        self.name = name
+        self.rank = rank
+        self.description = description
+    }
+}
+
+func main() {
+    let aTrainee = WouldBeJedi(
+        name: &amp;quot;Zayne Carrick&amp;quot;,
+        rank: 1,
+        description: &amp;quot;not very competent, but a great hero&amp;quot;)
+
+    // When calling the function, the reference count goes up
+    // here, too, but it&amp;#39;s implicit, rather than explicit.
+    describe(aTrainee)
+
+    // The implicit reference count Swift maintains for `aTrainee`
+    // will go from 1 to 0 here, and Swift will do its cleanup of the
+    // object data.
+}
+
+func describe(_ trainee: WouldBeJedi) {
+    // When we enter this function, Swift bumps the reference
+    // count, from 1 to 2. Both `main` and `describe` now have a
+    // reference to the data.
+
+    // No need for the unwrapping or any of that; Swift handles it
+    // all automatically... thus the name of the technology!
+    print(&amp;quot;\(trainee.name) (rank \(trainee.rank)) is \(trainee.description).&amp;quot;)
+
+    // When we exit the function, Swift bumps the reference count
+    // back down to 1 automatically.
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, here is the (much longer, because all the reference counting is done explicitly) reference-counted Rust version:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;use std::rc::Rc;
+
+pub struct WouldBeJedi {
+    name: String,
+    rank: u8,
+    description: String,
+}
+
+fn main() {
+    let trainee = WouldBeJedi {
+        name: &amp;quot;Zayne Carrick&amp;quot;.to_string(),
+        rank: 1,
+        description: &amp;quot;not very competent, but a great hero&amp;quot;.to_string()
+    };
+    let wrapped_trainee = Rc::new(trainee);
+
+    // When calling the function, the reference count in the
+    // wrapped trainee will go up by one. When the function
+    // returns, it will go down by one.
+    describe(wrapped_trainee);
+
+    // When `main` ends, several things will happen in order:
+    // 1. The reference count on the `wrapped_trainee` will go to zero.
+    //    As a result, the `wrapped_trainee` pointer---the `Rc` type we
+    //    created---will get cleaned up.
+    // 2. Once `wrapped_trainee` has been cleaned up, Rust will notice
+    //    that there are no more references anywhere to `trainee` and
+    //    clean it up as well. (More on this below.)
+}
+
+fn describe(trainee: Rc&amp;lt;WouldBeJedi&amp;gt;) {
+    // When we enter this function, Rust bumps the reference
+    // count, from 1 to 2. Both `main` and `describe`
+    // now have a reference to the data.
+
+    // For convenience, we shadow the outer variable here.
+    // We first unwrap it, then handle the `Result&amp;lt;T&amp;gt;` returned
+    // by `try_unwrap`, where `T` is whatever the `Rc` contains,
+    // so in this case, `Result&amp;lt;WouldBeJedi&amp;gt;`. (We know there&amp;#39;s
+    // one here because it&amp;#39;s a toy example.)
+    if let Ok(trainee) = Rc::try_unwrap(trainee) {
+        println!(&amp;quot;{} (rank {}) is {}.&amp;quot;,
+                 trainee.name,
+                 trainee.rank,
+                 trainee.description);
+    }
+
+    // When we exit the function, Rust bumps the reference count
+    // back down to 1 automatically.
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that if we strip out all the explanatory comments and details, the &lt;em&gt;normal&lt;/em&gt; versions of the Rust and Swift code are pretty similar.&lt;/p&gt;
+&lt;p&gt;Rust—&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;struct WouldBeJedi {
+    name: String,
+    rank: u8,
+    description: String,
+}
+
+impl WouldBeJedi {
+    fn new(name: &amp;amp;str, rank: u8, description: &amp;amp;str) -&amp;gt; WouldBeJedi {
+        WouldBeJedi {
+            name: name.to_string(),
+            rank: rank,
+            description: description.to_string()
+        }
+    }
+}
+
+fn main() {
+    let trainee = WouldBeJedi::new(
+        &amp;quot;Zayne Carrick&amp;quot;, 1, &amp;quot;not very competent, but still a great hero&amp;quot;);
+
+    describe(&amp;amp;trainee);
+}
+
+fn describe(trainee: &amp;amp;WouldBeJedi) {
+    println!(&amp;quot;{} (rank {}) is {}.&amp;quot;, trainee.name, trainee.rank, trainee.description);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Swift (as usual, is &lt;em&gt;slightly&lt;/em&gt; briefer than Rust)—&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;class WouldBeJedi {
+    let name: String
+    let rank: UInt8
+    let description: String
+
+    init(name: String, rank: UInt8, description: String) {
+        self.name = name
+        self.rank = rank
+        self.description = description
+    }
+}
+
+func main() {
+    let aTrainee = WouldBeJedi(
+        name: &amp;quot;Zayne Carrick&amp;quot;,
+        rank: 1,
+        description: &amp;quot;not very competent, but a great hero&amp;quot;)
+
+    describe(aTrainee)
+}
+
+func describe(_ trainee: WouldBeJedi) {
+    print(&amp;quot;\(trainee.name) (rank \(trainee.rank)) is \(trainee.description).&amp;quot;)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that in both of these implementations, all the actual cleanup of the memory is handled behind the scenes—this feels much more like writing Python than writing C, &lt;em&gt;especially&lt;/em&gt; for complex data types. Not least because this same kind of nice cleanup can happen for complex, heap-allocated types like dynamically-sized vectors/arrays, etc. Both languages just manage it automatically. (The same is true of modern C++, for the most part, but it has a more complicated story there because of its relationship with C, where &lt;code&gt;malloc&lt;/code&gt; and &lt;code&gt;free&lt;/code&gt; and friends run rampant and are quite necessary for writing a lot of kinds of code.) Most of the time, when you’re done using data, you just &lt;em&gt;stop using it&lt;/em&gt;, and both Rust and Swift will clean it up for you. The feel of using either language is fairly similar, though the underlying semantics are quite different.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/section&gt;
+&lt;section id="part-2-deconstructiondeinitialization" class="level2"&gt;
+&lt;h2&gt;Part 2: Deconstruction/Deinitialization&lt;/h2&gt;
+&lt;p&gt;Both Rust and Swift recognize that, the ordinary case notwithstanding, there are many times when you &lt;em&gt;do&lt;/em&gt; need to run some cleanup as part of tearing down an object. For example, if you had an open database connection attached to an object, you should return it to the collection pool before finishing tear-down of the object.&lt;/p&gt;
+&lt;p&gt;In Rust, this is accomplished by implementing the &lt;code&gt;Drop&lt;/code&gt; trait and supplying the requisite &lt;code&gt;drop&lt;/code&gt; method. Imagine we had defined a &lt;code&gt;Jedi&lt;/code&gt; type, with a bunch of details about the Jedi’s lightsaber (including whether the Jedi even &lt;em&gt;has&lt;/em&gt; a lightsaber. We know from the &lt;em&gt;Star Wars&lt;/em&gt; movies that lightsabers turn off automatically when the Jedi dies, or even just drops it for that matter. We can implement &lt;em&gt;all&lt;/em&gt; of this in Rust using just the &lt;code&gt;Drop&lt;/code&gt; trait. Here’s a pretty full example.&lt;a href="#fn5" class="footnoteRef" id="fnref5"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; (Note that both of these implementations draw heavily on material I covered in &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;previous posts&lt;/a&gt;.)&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;#[derive(Debug)]
+enum Color {
+    Red,
+    Blue,
+    Green,
+    Purple,
+    Yellow
+}
+
+enum SaberState {
+    On,
+    Off,
+}
+
+struct Lightsaber {
+    color: Color,
+    blades: u8,
+    state: SaberState
+}
+
+impl Lightsaber {
+    pub fn new(color: Color, blades: u8) -&amp;gt; Lightsaber {
+        if blades &amp;gt; 2 {
+            panic!(&amp;quot;That&amp;#39;s just silly. Looking at you, Kylo.&amp;quot;);
+        }
+
+        Lightsaber { color: color, blades: blades, state: SaberState::Off }
+    }
+
+    pub fn on(&amp;amp;mut self) {
+        self.state = SaberState::On;
+    }
+
+    pub fn off(&amp;amp;mut self) {
+        self.state = SaberState::Off;
+    }
+}
+
+struct WouldBeJedi {
+    name: String,
+    lightsaber: Option&amp;lt;Lightsaber&amp;gt;,
+}
+
+impl WouldBeJedi {
+    pub fn new(name: &amp;amp;str, lightsaber: Option&amp;lt;Lightsaber&amp;gt;) -&amp;gt; WouldBeJedi {
+        WouldBeJedi { name: name.to_string(), lightsaber: lightsaber }
+    }
+
+    pub fn describe(&amp;amp;self) {
+        let lightsaber = match self.lightsaber {
+            Some(ref saber) =&amp;gt;
+                format!(&amp;quot;a {:?} lightsaber with {:} blades.&amp;quot;, saber.color, saber.blades),
+            None =&amp;gt; &amp;quot;no lightsaber.&amp;quot;.to_string()
+        };
+
+        println!(&amp;quot;{} has {}&amp;quot;, self.name, lightsaber)
+    }
+}
+
+// Here&amp;#39;s the actually important bit.
+impl Drop for WouldBeJedi {
+    fn drop(&amp;amp;mut self) {
+        if let Some(ref mut lightsaber) = self.lightsaber {
+            lightsaber.off();
+        }
+    }
+}
+
+
+fn main() {
+    let saber = Lightsaber::new(Color::Yellow, 1);
+    let a_jedi = WouldBeJedi::new(&amp;quot;Zayne Carrick&amp;quot;, Some(saber));
+    a_jedi.describe();
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can do much the same in Swift, using its deinitializers, which are fairly analogous to (but much simpler than) &lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xvii.html"&gt;its initializers&lt;/a&gt;, and fulfill the same role as Rust’s &lt;code&gt;Drop&lt;/code&gt; trait and &lt;code&gt;drop()&lt;/code&gt; method.&lt;/p&gt;
+&lt;pre class="swift"&gt;&lt;code&gt;enum Color {
+    case red, blue, green, purple, yellow
+}
+
+enum SaberState {
+    case on, off
+}
+
+struct Lightsaber {
+    let color: Color
+    let blades: UInt8
+    var state: SaberState = .off
+
+    init?(color: Color, blades: UInt8) {
+        if blades &amp;gt; 2 {
+            print(&amp;quot;That&amp;#39;s just silly. Looking at you, Kylo.&amp;quot;)
+            return nil
+        }
+
+        self.color = color
+        self.blades = blades
+    }
+
+    mutating func on() {
+        state = .on
+    }
+
+    mutating func off() {
+        state = .off
+    }
+}
+
+class WouldBeJedi {
+    let name: String
+    var lightsaber: Lightsaber?
+
+    init(name: String, lightsaber: Lightsaber?) {
+        self.name = name
+        self.lightsaber = lightsaber
+    }
+
+    deinit {
+        self.lightsaber?.off()
+    }
+
+    func describe() {
+        let saberDescription: String
+        if let saber = self.lightsaber {
+            saberDescription = &amp;quot;a \(saber.color) lightsaber with \(saber.blades) blades.&amp;quot;
+        } else {
+            saberDescription = &amp;quot;no lightsaber.&amp;quot;
+        }
+
+        print(&amp;quot;\(name) has \(saberDescription)&amp;quot;)
+    }
+}
+
+func main() {
+    let saber = Lightsaber(color: .yellow, blades: 1)
+    let aJedi = WouldBeJedi(name: &amp;quot;Zayne Carrick&amp;quot;, lightsaber: saber)
+    aJedi.describe();
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is a bit briefer, but that’s mostly down to Swift’s shorthand for optionals (the &lt;code&gt;?&lt;/code&gt; operator), which we’ll get to in a future post.&lt;/p&gt;
+&lt;p&gt;Curiously, &lt;code&gt;struct&lt;/code&gt; and &lt;code&gt;enum&lt;/code&gt; types &lt;em&gt;cannot&lt;/em&gt; have deinitializers in Swift. I expect this has something to do with their being value types rather than reference types, but the book offers no comment. (If a reader knows the answer, I’d welcome clarification.)&lt;/p&gt;
+&lt;p&gt;Much as in the discussion of of initializers, the usual patterns with Rust and Swift’s approach come into play. Rust opts to build the pattern on the same basic language machinery (traits). Swift uses a bit of syntactical sugar dedicated to the purpose. It’s undeniable that the Swift is a bit briefer.&lt;/p&gt;
+&lt;p&gt;However, there are a couple upsides to Rust’s approach. First, it is applicable on &lt;em&gt;all&lt;/em&gt; types, where Swift’s applies only to classes. Second, there is no additional syntax to remember. &lt;code&gt;Drop&lt;/code&gt; is just a trait like any other, and &lt;code&gt;drop&lt;/code&gt; a method like any other. Third, then, this means that you can run it explicitly elsewhere if you need to, and as a result you can define whatever kind of custom deconstruction behavior you might need. If we’d created &lt;code&gt;a_jedi&lt;/code&gt; above in Rust, we could simply write &lt;code&gt;a_jedi.drop()&lt;/code&gt; anywhere:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;fn prove_incompetent(a_jedi: WouldBeJedi) {
+    // make some series of grievous mistakes which mean
+    // you&amp;#39;re no longer able to be a Jedi and as such,
+    // among other things, lose your lightsaber...
+    a_jedi.drop();
+    // other stuff
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or (going a bit more abstract) we could define a &lt;code&gt;daring_derring_do()&lt;/code&gt; method which called &lt;code&gt;drop()&lt;/code&gt; itself:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;impl WouldBeJedi {
+    pub fn daring_derring_do(self) {
+        // do some other operation, like freeing slaves from
+        // a secret colony of slavers. But if it fails...
+        self.drop();
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or, really, define &lt;em&gt;any&lt;/em&gt; behavior which culminated in a &lt;code&gt;drop()&lt;/code&gt; call. That’s extremely powerful, and it’s the upside that comes with its just being a trait whose behavior we have to define ourselves.&lt;/p&gt;
+&lt;p&gt;That takes us back to one of the fundamental differences in design between the two languages. Rust goes out of its way to leave power in the hands of the user, at the cost of requiring the user to be a bit more explicit. Swift prioritizes brevity and productivity, but it gets there by taking some of the power out of the hands of the developer. Neither of these is wrong, &lt;em&gt;per se&lt;/em&gt;. They’re just aiming for (and in this case, I think, fairly successfully landing in) somewhat different spots on a spectrum of tradeoffs.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xvii.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; More on initializers!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;I did, however, cover them &lt;a href="http://www.newrustacean.com/show_notes/e015/index.html" title="e015: Not dumb pointers"&gt;quite recently&lt;/a&gt; on my podcast. Yes, this &lt;em&gt;is&lt;/em&gt; another shameless plug.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;Mostly, anyway. I believe the Swift compiler also does some degree of static analysis similar to that done by Rust—though to a &lt;em&gt;much&lt;/em&gt; lesser extent and, speaking purely descriptively, much less rigorously (it just has different goals). Swift then uses that analysis to handle things at compile time rather than via reference counts if it’s able to determine that it can do so.&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn3"&gt;&lt;p&gt;We could, if we so desired, get this same basic behavior in Rust. We can easily imagine a world in which every type was automatically wrapped in &lt;code&gt;Rc&lt;/code&gt; or &lt;code&gt;Arc&lt;/code&gt;, and in fact, I’d be very interested to see just such a language—something which was only a thin layer over Rust, keeping all its semantics but wrapping some or all non-stack-allocated types in &lt;code&gt;Rc&lt;/code&gt; or &lt;code&gt;Arc&lt;/code&gt; as appropriate. (Something like &lt;a href="http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/"&gt;this&lt;/a&gt;, but done behind the scenes rather than manually opted into.) You’d incur some performance coasts, but with the benefit that you’d have an &lt;em&gt;extremely&lt;/em&gt; ergonomic, practical, ML-descended language quite appropriate for slightly higher-level tasks, and without the radical shift required by switching to a lazily-evaluated, purely functional language like Haskell.&lt;a href="#fnref3"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn4"&gt;&lt;p&gt;Notably, those tradeoffs are often entirely worth it, and high-performance VMs have astoundingly good characteristics in many ways. The JVM, the CLR, and all the JavaScript VMs have astonishingly excellent performance at this point.&lt;a href="#fnref4"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn5"&gt;&lt;p&gt;I &lt;em&gt;might&lt;/em&gt; have gotten slightly carried away in the details here. I’m just a little bit of a nerd.&lt;a href="#fnref5"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 24 Jul 2016 15:10:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-07-24:2016/rust-and-swift-xviii.html</guid><category>rust</category><category>swift</category><category>rust-and-swift</category><category>programming languages</category></item><item><title></title><link>http://www.chriskrycho.com/2016/07-23-1742.html</link><description>&lt;p&gt;Fun things in Rust land: the code from &lt;a href="http://www.newrustacean.com/show_notes/e016/"&gt;the latest episode&lt;/a&gt; of New Rustacean, in &lt;a href="http://www.levien.com"&gt;Raph Levien&lt;/a&gt;’s &lt;a href="https://github.com/google/xi-editor"&gt;Xi editor&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://cdn.chriskrycho.com/images/xi-nr.png"&gt;&lt;img src="http://cdn.chriskrycho.com/images/xi-nr-thumb.png" title="xi-editor thumbnail" /&gt;&lt;/a&gt;&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 23 Jul 2016 17:42:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-07-23:2016/07-23-1742.html</guid><category>software development</category><category>rust</category></item><item><title></title><link>http://www.chriskrycho.com/2016/07-21-0928.html</link><description>&lt;p&gt;Note to self: don’t forget to use the &lt;code&gt;-j&lt;/code&gt;/&lt;code&gt;--jobs&lt;/code&gt; flag when doing builds with &lt;a href="https://doc.rust-lang.org/book/getting-started.html#hello-cargo"&gt;Cargo&lt;/a&gt;. Parallel = faster when building a bunch of things.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 21 Jul 2016 09:28:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-07-21:2016/07-21-0928.html</guid><category>rust</category></item><item><title></title><link>http://www.chriskrycho.com/2016/07-16-1253.html</link><description>&lt;p&gt;I am trying to fix a bug in a Node.js back end I wrote 18 months ago. And I have never been so tempted in my life to rip out the entire Node back end and replace it with one written in Rust.&lt;/p&gt;
@@ -186,10 +574,8 @@ match waffles {
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2016/rust-and-swift-xvi.html"&gt;&lt;strong&gt;Previous:&lt;/strong&gt; Initialization: another area where Swift has a lot more going on than Rust.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[**Next: Deinitialization: drop semantics and automatic reference counting][18]&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div id="refs" class="references"&gt;
-
-&lt;/div&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;

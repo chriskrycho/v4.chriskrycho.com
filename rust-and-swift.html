@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift"/>
     <meta name="twitter:description" content="Rust and Swift are in a similar phase in their development, and they look pretty similar in a lot of ways. But how similar are they actually? Where does each excel relative to the other, and what do they do differently?"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -46,7 +46,7 @@
         <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
         <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
         <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
-        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
         <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
 </head>
 <body>
@@ -63,7 +63,7 @@
             <ul>
                 <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
-                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
                 <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
@@ -114,6 +114,7 @@
 <li><a href="/2016/rust-and-swift-xv.html">Inheritance: a Swiftian specialty (for now).</a></li>
 <li><a href="/2016/rust-and-swift-xvi.html">Initialization: another area where Swift has a lot more going on than Rust.</a></li>
 <li><a href="/2016/rust-and-swift-xvii.html">More on initializers!</a></li>
+<li><a href="/2016/rust-and-swift-xviii.html">Deinitialization: drop semantics and automatic reference counting</a></li>
 </ol>
 </section>
 <section id="some-notes-on-the-series" class="level2">
@@ -123,9 +124,6 @@
 <p>But—full disclosure—I’ve also made something of a personal investment in the future of Rust, in that I run <a href="http://www.newrustacean.com">a podcast</a> focused on the language, from which I actually <a href="https://patreon.com/newrustacean">earn</a> (a very small amount of) money.</p>
 <p>One other thing: as of February 2016, I haven’t had a chance to build anything serious in <em>either</em> language—though I hope to change that over the course of this year. So these are very much surface-level impressions of the two languages. My thoughts and feelings about the two may change over time.</p>
 <p>One last bit: the series <a href="/2015/rust-and-swift-i.html">literally started</a> as a series of comments in a Slack team I participate in. You’ll note a substantial shift in the tone, structure, and content as I went along. The first post was really just off-the-cuff responses as I started reading. Starting with the second post, I was a good deal more intentional about what I was doing. As the series goes along, there is more and more of this, and it’s also informed by my work on <a href="http://www.newrustacean.com">New Rustacean</a>.</p>
-<div id="refs" class="references">
-
-</div>
 </section>
 <section class="footnotes">
 <hr />
@@ -169,7 +167,7 @@
             <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
         </li>
         <li class="section-title">
-            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
         </li>
         <li class="section-title">
             <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
@@ -181,7 +179,7 @@
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2016/mornings-like-this.html">Mornings like this</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2016/a-new-schedule.html">A New Schedule</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2016/consistency-in-user-interfaces.html">Consistency in User Interfaces</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2016/rust-and-swift-xviii.html">Rust and Swift (xviii)</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2016/a-simple-childrens-catechism.html">A Simple Children's Catechism</a></li>
     </ul>
 </section></footer>
