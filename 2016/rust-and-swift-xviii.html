@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust and Swift (xviii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -43,7 +43,7 @@
     <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
 
     <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
-        <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
         <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
         <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
         <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
@@ -62,7 +62,7 @@
         <nav>
             <ul>
                 <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
-                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -220,39 +220,38 @@ fn main() {
     };
     let wrapped_trainee = Rc::new(trainee);
 
-    // When calling the function, the reference count in the
-    // wrapped trainee will go up by one. When the function
-    // returns, it will go down by one.
-    describe(wrapped_trainee);
+    // Start by calling `clone()` to get a *reference* to the
+    // trainee. This increases the reference count by one.
+    let ref_trainee = wrapped_trainee.clone();
+    // Then pass the reference to the `describe()` function.
+    // Note that we *move* the reference to the function, so
+    // once the function returns, the reference will go out
+    // of scope, and the reference count will decrement.
+    describe(ref_trainee);
 
     // When `main` ends, several things will happen in order:
-    // 1. The reference count on the `wrapped_trainee` will go to zero.
-    //    As a result, the `wrapped_trainee` pointer---the `Rc` type we
-    //    created---will get cleaned up.
-    // 2. Once `wrapped_trainee` has been cleaned up, Rust will notice
-    //    that there are no more references anywhere to `trainee` and
-    //    clean it up as well. (More on this below.)
+    // 1. The reference count on the `wrapped_trainee` will
+    //    go to zero. As a result, the `wrapped_trainee`
+    //    pointer---the `Rc` type we created---will get
+    //    cleaned up.
+    // 2. Once `wrapped_trainee` has been cleaned up, Rust
+    //    will notice that there are no more references
+    //    anywhere to `trainee` and clean it up as well.
+    //    (More on this below.)
 }
 
 fn describe(trainee: Rc&lt;WouldBeJedi&gt;) {
-    // When we enter this function, Rust bumps the reference
-    // count, from 1 to 2. Both `main` and `describe`
-    // now have a reference to the data.
+    // We now have a *reference* to the underlying data, and
+    // therefore can freely access the underlying data.
+    println!(&quot;{} (rank {}) is {}.&quot;,
+             trainee.name,
+             trainee.rank,
+             trainee.description);
 
-    // For convenience, we shadow the outer variable here.
-    // We first unwrap it, then handle the `Result&lt;T&gt;` returned
-    // by `try_unwrap`, where `T` is whatever the `Rc` contains,
-    // so in this case, `Result&lt;WouldBeJedi&gt;`. (We know there&#39;s
-    // one here because it&#39;s a toy example.)
-    if let Ok(trainee) = Rc::try_unwrap(trainee) {
-        println!(&quot;{} (rank {}) is {}.&quot;,
-                 trainee.name,
-                 trainee.rank,
-                 trainee.description);
-    }
 
-    // When we exit the function, Rust bumps the reference count
-    // back down to 1 automatically.
+    // When we exit the function, Rust destroys this *owned*
+    // clone of the reference, and that bumps the reference
+    // count back down to 1 automatically.
 }</code></pre>
 <p>Note that if we strip out all the explanatory comments and details, the <em>normal</em> versions of the Rust and Swift code are pretty similar.</p>
 <p>Rust—</p>
@@ -274,13 +273,18 @@ impl WouldBeJedi {
 
 fn main() {
     let trainee = WouldBeJedi::new(
-        &quot;Zayne Carrick&quot;, 1, &quot;not very competent, but still a great hero&quot;);
+        &quot;Zayne Carrick&quot;,
+        1,
+        &quot;not very competent, but still a great hero&quot;);
 
     describe(&amp;trainee);
 }
 
 fn describe(trainee: &amp;WouldBeJedi) {
-    println!(&quot;{} (rank {}) is {}.&quot;, trainee.name, trainee.rank, trainee.description);
+    println!(&quot;{} (rank {}) is {}.&quot;,
+             trainee.name,
+             trainee.rank,
+             trainee.description);
 }</code></pre>
 <p>Swift (as usual, is <em>slightly</em> briefer than Rust)—</p>
 <pre class="swift"><code>class WouldBeJedi {
@@ -513,7 +517,7 @@ func main() {
             <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
         </li>
         <li class="section-title">
-            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
         </li>
         <li class="section-title">
             <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
@@ -532,7 +536,7 @@ func main() {
 <section id="recent">
     <h2>Recent</h2>
     <ul>
-        <li>Art: <a href="http://www.chriskrycho.com/2016/mornings-like-this.html">Mornings like this</a></li>
+        <li>Art: <a href="http://www.chriskrycho.com/2016/escape-modernity.html"></a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2016/a-new-schedule.html">A New Schedule</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2016/rust-and-swift-xviii.html">Rust and Swift (xviii)</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2016/misreading-tolkien-and-misreading-scripture-responding-to-okeefe-and-reno.html">Misreading Tolkien and Misreading Scripture: Responding to O’Keefe and Reno</a></li>

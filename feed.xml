@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Tue, 26 Jul 2016 08:08:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/07-26-0808.html</link><description>&lt;p&gt;The more time I spend looking at F&lt;sup&gt;♯&lt;/sup&gt;, the more I like almost everything about it. The only pain point… is that Microsoft foolishly choose to PascalCaseAllTheThings. 🙄&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Wed, 27 Jul 2016 08:56:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/escape-modernity.html</link><description>&lt;p&gt;struggle as i may&lt;br /&gt;
+i cannot escape my&lt;br /&gt;
+modernity&lt;br /&gt;
+for even the attempt&lt;br /&gt;
+is but another symptom&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 27 Jul 2016 08:56:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-07-27:2016/escape-modernity.html</guid><category>poetry</category></item><item><title></title><link>http://www.chriskrycho.com/2016/07-26-0808.html</link><description>&lt;p&gt;The more time I spend looking at F&lt;sup&gt;♯&lt;/sup&gt;, the more I like almost everything about it. The only pain point… is that Microsoft foolishly choose to PascalCaseAllTheThings. 🙄&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 26 Jul 2016 08:08:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-07-26:2016/07-26-0808.html</guid><category>programming languages</category><category>fsharp</category></item><item><title>Misreading Tolkien and Misreading Scripture: Responding to O’Keefe and Reno</title><link>http://www.chriskrycho.com/2016/misreading-tolkien-and-misreading-scripture-responding-to-okeefe-and-reno.html</link><description>&lt;p&gt;It turns out the fastest way to get me to write &lt;a href="https://mereorthodoxy.com/misreading-tolkien-hermeneutics-allegory-lord-rings/"&gt;1,700 words on hermeneutics&lt;/a&gt; is to misread Tolkien.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I am reading John J. O’Keefe and R. R. Reno’s Sanctified Vision for the independent study on hermeneutics and theological method I am doing this summer. I have found the book fairly helpful overall, and think the authors are right to commend the church Fathers as models for Biblical interpretation in many ways. The authors do good (albeit somewhat tendentious) work arguing for whole-Bible/“intensive reading” strategies and the validity of typology as part of theological method. When they come to allegory, though, their argument almost immediately goes off the rails with a deeply misguided interpretation of The Lord of the Rings….&lt;/p&gt;
@@ -126,39 +131,38 @@ fn main() {
     };
     let wrapped_trainee = Rc::new(trainee);
 
-    // When calling the function, the reference count in the
-    // wrapped trainee will go up by one. When the function
-    // returns, it will go down by one.
-    describe(wrapped_trainee);
+    // Start by calling `clone()` to get a *reference* to the
+    // trainee. This increases the reference count by one.
+    let ref_trainee = wrapped_trainee.clone();
+    // Then pass the reference to the `describe()` function.
+    // Note that we *move* the reference to the function, so
+    // once the function returns, the reference will go out
+    // of scope, and the reference count will decrement.
+    describe(ref_trainee);
 
     // When `main` ends, several things will happen in order:
-    // 1. The reference count on the `wrapped_trainee` will go to zero.
-    //    As a result, the `wrapped_trainee` pointer---the `Rc` type we
-    //    created---will get cleaned up.
-    // 2. Once `wrapped_trainee` has been cleaned up, Rust will notice
-    //    that there are no more references anywhere to `trainee` and
-    //    clean it up as well. (More on this below.)
+    // 1. The reference count on the `wrapped_trainee` will
+    //    go to zero. As a result, the `wrapped_trainee`
+    //    pointer---the `Rc` type we created---will get
+    //    cleaned up.
+    // 2. Once `wrapped_trainee` has been cleaned up, Rust
+    //    will notice that there are no more references
+    //    anywhere to `trainee` and clean it up as well.
+    //    (More on this below.)
 }
 
 fn describe(trainee: Rc&amp;lt;WouldBeJedi&amp;gt;) {
-    // When we enter this function, Rust bumps the reference
-    // count, from 1 to 2. Both `main` and `describe`
-    // now have a reference to the data.
+    // We now have a *reference* to the underlying data, and
+    // therefore can freely access the underlying data.
+    println!(&amp;quot;{} (rank {}) is {}.&amp;quot;,
+             trainee.name,
+             trainee.rank,
+             trainee.description);
 
-    // For convenience, we shadow the outer variable here.
-    // We first unwrap it, then handle the `Result&amp;lt;T&amp;gt;` returned
-    // by `try_unwrap`, where `T` is whatever the `Rc` contains,
-    // so in this case, `Result&amp;lt;WouldBeJedi&amp;gt;`. (We know there&amp;#39;s
-    // one here because it&amp;#39;s a toy example.)
-    if let Ok(trainee) = Rc::try_unwrap(trainee) {
-        println!(&amp;quot;{} (rank {}) is {}.&amp;quot;,
-                 trainee.name,
-                 trainee.rank,
-                 trainee.description);
-    }
 
-    // When we exit the function, Rust bumps the reference count
-    // back down to 1 automatically.
+    // When we exit the function, Rust destroys this *owned*
+    // clone of the reference, and that bumps the reference
+    // count back down to 1 automatically.
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Note that if we strip out all the explanatory comments and details, the &lt;em&gt;normal&lt;/em&gt; versions of the Rust and Swift code are pretty similar.&lt;/p&gt;
 &lt;p&gt;Rust—&lt;/p&gt;
@@ -180,13 +184,18 @@ impl WouldBeJedi {
 
 fn main() {
     let trainee = WouldBeJedi::new(
-        &amp;quot;Zayne Carrick&amp;quot;, 1, &amp;quot;not very competent, but still a great hero&amp;quot;);
+        &amp;quot;Zayne Carrick&amp;quot;,
+        1,
+        &amp;quot;not very competent, but still a great hero&amp;quot;);
 
     describe(&amp;amp;trainee);
 }
 
 fn describe(trainee: &amp;amp;WouldBeJedi) {
-    println!(&amp;quot;{} (rank {}) is {}.&amp;quot;, trainee.name, trainee.rank, trainee.description);
+    println!(&amp;quot;{} (rank {}) is {}.&amp;quot;,
+             trainee.name,
+             trainee.rank,
+             trainee.description);
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Swift (as usual, is &lt;em&gt;slightly&lt;/em&gt; briefer than Rust)—&lt;/p&gt;
 &lt;pre class="swift"&gt;&lt;code&gt;class WouldBeJedi {

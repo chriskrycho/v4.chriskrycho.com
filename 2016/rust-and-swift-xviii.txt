@@ -171,39 +171,38 @@ fn main() {
     };
     let wrapped_trainee = Rc::new(trainee);
 
-    // When calling the function, the reference count in the
-    // wrapped trainee will go up by one. When the function
-    // returns, it will go down by one.
-    describe(wrapped_trainee);
+    // Start by calling `clone()` to get a *reference* to the
+    // trainee. This increases the reference count by one.
+    let ref_trainee = wrapped_trainee.clone();
+    // Then pass the reference to the `describe()` function.
+    // Note that we *move* the reference to the function, so
+    // once the function returns, the reference will go out
+    // of scope, and the reference count will decrement.
+    describe(ref_trainee);
 
     // When `main` ends, several things will happen in order:
-    // 1. The reference count on the `wrapped_trainee` will go to zero.
-    //    As a result, the `wrapped_trainee` pointer---the `Rc` type we
-    //    created---will get cleaned up.
-    // 2. Once `wrapped_trainee` has been cleaned up, Rust will notice
-    //    that there are no more references anywhere to `trainee` and
-    //    clean it up as well. (More on this below.)
+    // 1. The reference count on the `wrapped_trainee` will
+    //    go to zero. As a result, the `wrapped_trainee`
+    //    pointer---the `Rc` type we created---will get
+    //    cleaned up.
+    // 2. Once `wrapped_trainee` has been cleaned up, Rust
+    //    will notice that there are no more references
+    //    anywhere to `trainee` and clean it up as well.
+    //    (More on this below.)
 }
 
 fn describe(trainee: Rc<WouldBeJedi>) {
-    // When we enter this function, Rust bumps the reference
-    // count, from 1 to 2. Both `main` and `describe`
-    // now have a reference to the data.
+    // We now have a *reference* to the underlying data, and
+    // therefore can freely access the underlying data.
+    println!("{} (rank {}) is {}.",
+             trainee.name,
+             trainee.rank,
+             trainee.description);
 
-    // For convenience, we shadow the outer variable here.
-    // We first unwrap it, then handle the `Result<T>` returned
-    // by `try_unwrap`, where `T` is whatever the `Rc` contains,
-    // so in this case, `Result<WouldBeJedi>`. (We know there's
-    // one here because it's a toy example.)
-    if let Ok(trainee) = Rc::try_unwrap(trainee) {
-        println!("{} (rank {}) is {}.",
-                 trainee.name,
-                 trainee.rank,
-                 trainee.description);
-    }
 
-    // When we exit the function, Rust bumps the reference count
-    // back down to 1 automatically.
+    // When we exit the function, Rust destroys this *owned*
+    // clone of the reference, and that bumps the reference
+    // count back down to 1 automatically.
 }
 ```
 
@@ -230,13 +229,18 @@ impl WouldBeJedi {
 
 fn main() {
     let trainee = WouldBeJedi::new(
-        "Zayne Carrick", 1, "not very competent, but still a great hero");
+        "Zayne Carrick",
+        1,
+        "not very competent, but still a great hero");
 
     describe(&trainee);
 }
 
 fn describe(trainee: &WouldBeJedi) {
-    println!("{} (rank {}) is {}.", trainee.name, trainee.rank, trainee.description);
+    println!("{} (rank {}) is {}.",
+             trainee.name,
+             trainee.rank,
+             trainee.description);
 }
 ```
 
