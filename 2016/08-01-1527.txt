@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-08-01 15:27
+Tags: software development, markdown, jira
+Template: formats/micro
+Slug: 08-01-1527
+Category: micro
+---
+
+I hate JIRA's Wiki markup so much. Why in the world they feel the need to stick to that instead of just supporting Markdown, I do not understand.
