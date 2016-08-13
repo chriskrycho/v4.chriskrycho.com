@@ -1,0 +1,27 @@
+---
+Title: ""
+Date: 2016-08-09 12:57
+Slug: 08-09-1257
+Template: formats/micro
+Category: micro
+Tags: writing
+---
+
+<i class=editorial>I originally posted this as a [tweetstorm], but I'm treating *this* as the canonical and adding a tweet to the end of that "topic" linking back here. [Indie web] forever.</i>
+
+[tweetstorm]: https://twitter.com/chriskrycho/status/763056742460755971
+[Indie web]: http://indiewebcamp.com
+
+---
+
+- [AsciiDoc]: a typical programmer-first, not writer-first, tool. Just try to find text formatting on [the site][AsciiDoc]. It's §10 in the user guide. §10!
+
+[AsciiDoc]: http://asciidoc.org
+
+- The "user guide" is an *implementor's* guide, not a *user's* guide. <i>:sigh:</i>
+
+- Gladly, [asciidoctor.org][asciidoctor] makes it easier: "What is AsciiDoc" and "Writer's Guide" and "Syntax Reference" are all on the front page.
+
+[asciidoctor]: http://asciidoctor.org
+
+But if you've ever wondered why Markdown caught on and AsciiDoc didn't... well, there are many reasons, but this highlights the most basic: Markdown prioritizes the needs of the *writer*, not the implementor. Plain and simple as that.
