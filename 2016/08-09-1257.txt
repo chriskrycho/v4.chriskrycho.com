@@ -24,4 +24,4 @@ Tags: writing
 
 [asciidoctor]: http://asciidoctor.org
 
-But if you've ever wondered why Markdown caught on and AsciiDoc didn't... well, there are many reasons, but this highlights the most basic: Markdown prioritizes the needs of the *writer*, not the implementor. Plain and simple as that.
+- But if you've ever wondered why Markdown caught on and AsciiDoc didn't... well, there are many reasons, but this highlights the most basic: Markdown prioritizes the needs of the *writer*, not the implementor. Plain and simple as that.
