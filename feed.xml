@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 14 Aug 2016 12:58:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/08-14-1258.html</link><description>&lt;p&gt;After a few weeks of noodling around with an idea, I nailed down the hook for the processional I’m writing for my sister’s wedding. Love that feeling. Now: to turn it into 2 minutes of music!&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Mon, 15 Aug 2016 06:28:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/08-15-0628.html</link><description>&lt;p&gt;My &lt;a href="https://twitter.com/hashtag/firstsevenlanguages"&gt;#firstsevenlanguages&lt;/a&gt;—looking strictly at what I’d used &lt;em&gt;at all&lt;/em&gt;; ignoring HTML and CSS):&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Visual Basic&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;li&gt;Fortran&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In terms of what I learned well enough to use, though:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Fortran&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;/ol&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 15 Aug 2016 06:28:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-08-15:2016/08-15-0628.html</guid><category>programming languages</category><category>visual basic</category><category>cplusplus</category><category>fortran</category><category>java</category><category>c</category><category>php</category><category>javascript</category><category>python</category></item><item><title></title><link>http://www.chriskrycho.com/2016/08-14-2016.html</link><description>&lt;p&gt;Discovered I can use the Apple Pencil to input hand-written music notation with &lt;a href="http://www.presonus.com"&gt;PreSonus&lt;/a&gt; &lt;a href="http://www.presonus.com/products/Notion-for-iOS"&gt;Notion&lt;/a&gt;—wow. Imperfect as it is, it’s still a revelation.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 14 Aug 2016 20:16:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-08-14:2016/08-14-2016.html</guid><category>music</category></item><item><title></title><link>http://www.chriskrycho.com/2016/08-14-1258.html</link><description>&lt;p&gt;After a few weeks of noodling around with an idea, I nailed down the hook for the processional I’m writing for my sister’s wedding. Love that feeling. Now: to turn it into 2 minutes of music!&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 14 Aug 2016 12:58:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-08-14:2016/08-14-1258.html</guid><category>music</category></item><item><title></title><link>http://www.chriskrycho.com/2016/08-14-1218.html</link><description>&lt;p&gt;I was just messaging a friend about &lt;em&gt;parsing&lt;/em&gt;, using text-to-speech; it came out, “So, I am trying to get up to speed on &lt;em&gt;cursing&lt;/em&gt; in general…” Whoops.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 14 Aug 2016 12:18:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-08-14:2016/08-14-1218.html</guid></item><item><title></title><link>http://www.chriskrycho.com/2016/08-13-1928.html</link><description>&lt;p&gt;The latest JetBrains &lt;a href="https://www.jetbrains.com/rider/"&gt;Rider&lt;/a&gt; EAP build is pretty fantastic. Nice work, &lt;a href="https://www.jetbrains.com"&gt;JetBrains&lt;/a&gt;.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 13 Aug 2016 19:28:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-08-13:2016/08-13-1928.html</guid><category>software development</category></item><item><title></title><link>http://www.chriskrycho.com/2016/08-13-09.html</link><description>&lt;p&gt;I’m reading a book featuring an in-house debate between progressive and traditional dispensationalists on hermeneutics and theology.&lt;/p&gt;

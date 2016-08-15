@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - micro</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-08-14T12:58:00-04:00</updated><entry><title></title><link href="http://www.chriskrycho.com/2016/08-14-1258.html" rel="alternate"></link><published>2016-08-14T12:58:00-04:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-08-14:2016/08-14-1258.html</id><summary type="html">&lt;p&gt;After a few weeks of noodling around with an idea, I nailed down the hook for the processional I’m writing for my sister’s wedding. Love that feeling. Now: to turn it into 2 minutes of music!&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - micro</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/micro.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-08-15T06:28:00-04:00</updated><entry><title></title><link href="http://www.chriskrycho.com/2016/08-15-0628.html" rel="alternate"></link><published>2016-08-15T06:28:00-04:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-08-15:2016/08-15-0628.html</id><summary type="html">&lt;p&gt;My &lt;a href="https://twitter.com/hashtag/firstsevenlanguages"&gt;#firstsevenlanguages&lt;/a&gt;—looking strictly at what I’d used &lt;em&gt;at all&lt;/em&gt;; ignoring HTML and CSS):&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Visual Basic&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;li&gt;Fortran&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In terms of what I learned well enough to use, though:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Fortran&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;/ol&gt;
+</summary><category term="programming languages"></category><category term="visual basic"></category><category term="cplusplus"></category><category term="fortran"></category><category term="java"></category><category term="c"></category><category term="php"></category><category term="javascript"></category><category term="python"></category></entry><entry><title></title><link href="http://www.chriskrycho.com/2016/08-14-2016.html" rel="alternate"></link><published>2016-08-14T20:16:00-04:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-08-14:2016/08-14-2016.html</id><summary type="html">&lt;p&gt;Discovered I can use the Apple Pencil to input hand-written music notation with &lt;a href="http://www.presonus.com"&gt;PreSonus&lt;/a&gt; &lt;a href="http://www.presonus.com/products/Notion-for-iOS"&gt;Notion&lt;/a&gt;—wow. Imperfect as it is, it’s still a revelation.&lt;/p&gt;
+</summary><category term="music"></category></entry><entry><title></title><link href="http://www.chriskrycho.com/2016/08-14-1258.html" rel="alternate"></link><published>2016-08-14T12:58:00-04:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-08-14:2016/08-14-1258.html</id><summary type="html">&lt;p&gt;After a few weeks of noodling around with an idea, I nailed down the hook for the processional I’m writing for my sister’s wedding. Love that feeling. Now: to turn it into 2 minutes of music!&lt;/p&gt;
 </summary><category term="music"></category></entry><entry><title></title><link href="http://www.chriskrycho.com/2016/08-14-1218.html" rel="alternate"></link><published>2016-08-14T12:18:00-04:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-08-14:2016/08-14-1218.html</id><summary type="html">&lt;p&gt;I was just messaging a friend about &lt;em&gt;parsing&lt;/em&gt;, using text-to-speech; it came out, “So, I am trying to get up to speed on &lt;em&gt;cursing&lt;/em&gt; in general…” Whoops.&lt;/p&gt;
 </summary></entry><entry><title></title><link href="http://www.chriskrycho.com/2016/08-13-1928.html" rel="alternate"></link><published>2016-08-13T19:28:00-04:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-08-13:2016/08-13-1928.html</id><summary type="html">&lt;p&gt;The latest JetBrains &lt;a href="https://www.jetbrains.com/rider/"&gt;Rider&lt;/a&gt; EAP build is pretty fantastic. Nice work, &lt;a href="https://www.jetbrains.com"&gt;JetBrains&lt;/a&gt;.&lt;/p&gt;
 </summary><category term="software development"></category></entry><entry><title></title><link href="http://www.chriskrycho.com/2016/08-13-09.html" rel="alternate"></link><published>2016-08-13T17:09:00-04:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-08-13:2016/08-13-09.html</id><summary type="html">&lt;p&gt;I’m reading a book featuring an in-house debate between progressive and traditional dispensationalists on hermeneutics and theology.&lt;/p&gt;

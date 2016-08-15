@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - javascript</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 30 Jul 2016 10:48:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/07-30-1048.html</link><description>&lt;p&gt;I’m quickly discovering a desire for actual, enforceable types as I’m trying to compose a series of functions. It’s &lt;em&gt;hard&lt;/em&gt; without them.&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - javascript</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Mon, 15 Aug 2016 06:28:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/08-15-0628.html</link><description>&lt;p&gt;My &lt;a href="https://twitter.com/hashtag/firstsevenlanguages"&gt;#firstsevenlanguages&lt;/a&gt;—looking strictly at what I’d used &lt;em&gt;at all&lt;/em&gt;; ignoring HTML and CSS):&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Visual Basic&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;li&gt;Fortran&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In terms of what I learned well enough to use, though:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Fortran&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;/ol&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 15 Aug 2016 06:28:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-08-15:2016/08-15-0628.html</guid><category>programming languages</category><category>visual basic</category><category>cplusplus</category><category>fortran</category><category>java</category><category>c</category><category>php</category><category>javascript</category><category>python</category></item><item><title></title><link>http://www.chriskrycho.com/2016/07-30-1048.html</link><description>&lt;p&gt;I’m quickly discovering a desire for actual, enforceable types as I’m trying to compose a series of functions. It’s &lt;em&gt;hard&lt;/em&gt; without them.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 30 Jul 2016 10:48:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-07-30:2016/07-30-1048.html</guid><category>software development</category><category>javascript</category><category>programming languages</category></item><item><title></title><link>http://www.chriskrycho.com/2016/07-28-2040.html</link><description>&lt;p&gt;I’m so used to dealing with layout distinctly from &lt;em&gt;behavior&lt;/em&gt; with the HTML/CSS/JS separation that learning how to lay things out in macOS apps feels &lt;em&gt;weird&lt;/em&gt;.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 28 Jul 2016 20:40:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-07-28:2016/07-28-2040.html</guid><category>javascript</category><category>swift</category><category>software development</category><category>html</category><category>css</category></item><item><title></title><link>http://www.chriskrycho.com/2016/07-16-1253.html</link><description>&lt;p&gt;I am trying to fix a bug in a Node.js back end I wrote 18 months ago. And I have never been so tempted in my life to rip out the entire Node back end and replace it with one written in Rust.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
