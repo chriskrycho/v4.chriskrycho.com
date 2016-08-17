@@ -13,7 +13,7 @@ I recently published [a long piece][podcasting-theses] on the costs and challeng
 
 Three caveats:
 
-1. I'm not a professional, just a highly motivated amateur. (But then, probably neither are you.) Regardless, take this for what it's worth---there may be even *better* ways of tackling these issues, and if so I'd love to hear about them.
+1. I'm not a professional, just a highly motivated amateur. (But then, probably so are you if you're reading this.) Regardless, take this for what it's worth---there may be even *better* ways of tackling these issues, and if so I'd love to hear about them.
 2. This is going to be long, probably at least as long as the original post.
 3. {>> TODO: there was another one... <<}
 
