@@ -1,4 +1,4 @@
-# TDD-ing a Small Ember Feature
+# TDD-ing a <br>Small Ember Feature
 ## How to test-drive through a feature with Ember's test tools
 
 - - - - -
@@ -155,6 +155,7 @@ moduleForAcceptance('Acceptance | upsell');
 
 test('visiting /upsell', function(assert) {
   visit('/upsell');
+  let foo = () => {};
 
   andThen(function() {
     assert.equal(currentURL(), '/upsell');

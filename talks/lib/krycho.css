@@ -18,7 +18,7 @@ body {
   background-color: #01295C; }
 
 .reveal {
-  font-family: 'Gill Sans';
+  font-family: 'Cronos Pro';
   font-size: 38px;
   font-weight: normal;
   color: #FEFEFE; }
@@ -38,7 +38,7 @@ body {
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   margin: 0 0 20px 0;
   color: #5592C9;
-  font-family: Merriweather;
+  font-family: Sabon;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
