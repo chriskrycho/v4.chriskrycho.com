@@ -128,37 +128,202 @@ But sometimes you have to repeat phases. Iteration is normal. <!-- .element: cla
 
 # Walkthrough
 
-## Upsell Support
+## Custom menubar nav links
 
-(I actually built this last month.)
+(I actually built this within the last two weeks.)
+
+(Also, it's going to be lots of code---but I'll keep it in small chunks.)
 
 - - - - -
 
-### Upsell Support: Acceptance Tests
+### Custom menubar nav links: Acceptance Tests
 
 ```sh
-$ ember generate acceptance-test upsell
+$ ember generate acceptance-test custom-nav-menu-link
 version: 2.4.2
 installing acceptance-test
-  create tests/acceptance/upsell-test.js
+  create tests/acceptance/custom-nav-menu-link-test.js
 ```
+
+(Shhhh: I actually ran this from inside Atom, and could have done it from inside a JetBrains IDE, too. The tools are good.)
 
 - - -
 
-#### Upsell Support: Acceptance Tests
+### Acceptance Tests
+#### Start with a stub...
+
+It generates the default stub:
 
 ```js
 import { test } from 'qunit';
 import moduleForAcceptance from 'mobile-web/tests/helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | upsell');
+moduleForAcceptance('Acceptance | custom nav menu link');
 
-test('visiting /upsell', function(assert) {
-  visit('/upsell');
-  let foo = () => {};
+test('visiting /custom-nav-menu-link', function(assert) {
+  visit('/custom-nav-menu-link');
 
   andThen(function() {
-    assert.equal(currentURL(), '/upsell');
+    assert.equal(currentURL(), '/custom-nav-menu-link');
   });
 });
 ```
+
+- - -
+
+### Acceptance Tests
+#### Stub out acceptance criteria
+
+```js
+
+import { test } from 'qunit';
+import moduleForAcceptance from 'mobile-web/tests/helpers/module-for-acceptance';
+
+moduleForAcceptance('Acceptance | custom nav menu link');
+
+test('when there are no custom nav-menu dictionary elements', function(assert) {
+  visit('/');
+  andThen(() => {
+    assert.ok(false, 'TODO');
+  });
+});
+
+test('when there are custom nav-menu dictionary elements', function(assert) {
+  visit('/');
+  andThen(() => {
+    assert.ok(false, 'TODO')
+  });
+});
+```
+
+- - -
+
+### Acceptance Tests
+#### Fill out acceptance criteria (negative)
+
+```js
+test('when there are no custom nav-menu dictionary elements', function(assert) {
+  visit('/');
+  andThen(() => {
+    const customElements = find(testSelector('navMenuCustomElements'));
+    assert.equal(customElements.length, 0, 'There are no one custom elements');
+  });
+});
+```
+
+(I *always* write negative versions of the acceptance criteria.)<!-- .element: class="fragment" data-fragment-index="1" -->
+
+- - -
+
+### Acceptance Tests
+#### Fill out acceptance criteria (positive)
+
+```js
+test('when there are custom nav-menu dictionary elements', function(assert) {
+  // TODO: set MOBILE_NUTRITIONAL_LABEL
+  // TODO: set MOBILE_NUTRITIONAL_HTML
+
+  visit('/');
+  andThen(() => {
+    const customElements = find(testSelector('navMenuCustomElements'));
+    assert.equal(customElements.length, 1, 'There is one custom element');
+    assert.equal(customElements.text().trim(), "What's in your food, bro?");
+    assert.equal(customElements.children('a').attr('href'), '#food-links');
+  });
+});
+```
+
+- - -
+
+### Acceptance Tests
+#### Further analysis
+
+What do we know now?
+
+- We need to stub out a response for the dictionary elements.
+- We need to render the custom element(s) on the page.
+
+- - -
+
+### Acceptance Tests
+#### Further analysis (cont'd.)
+
+What don't we know now?
+
+- The total list of these kinds of elements (clients can ask for more)<!-- .element: class="fragment" data-fragment-index="1" -->
+- Therefore: the number of items in the list<!-- .element: class="fragment" data-fragment-index="2" -->
+
+We need to wrap this up nicely somehow<!-- .element: class="fragment" data-fragment-index="3" -->
+
+- - -
+
+### Acceptance Tests
+#### Refinement (i)
+
+Make constants to use later.
+
+```js
+test('when there are custom nav-menu dictionary elements', function(assert) {
+  // TODO: set MOBILE_NUTRITIONAL_LABEL response on server.
+  // TODO: set MOBILE_NUTRITIONAL_HTML response on server.
+  const MOBILE_NUTRITIONAL_HTML = '#food-links';
+  const MOBILE_NUTRITIONAL_LABEL = 'Just what do they put in this?';
+  const NUTRITION = `<a href='${MOBILE_NUTRITIONAL_HTML}'>${MOBILE_NUTRITIONAL_LABEL}</a>`;
+
+  const toRender = [NUTRITION];
+
+  // ...
+});
+```
+
+- - -
+
+### Acceptance Tests
+#### Refinement (ii)
+
+Rewrite the actual expectation so it accounts for this.
+
+```js
+test('when there are custom nav-menu dictionary elements', function(assert) {
+  // ...
+
+  visit('/');
+  andThen(() => {
+    const customElements = find(testSelector('navMenuCustomElements'));
+    assert.equal(customElements.length, toRender.length, 'There is one custom element');
+
+    const link = customElements.children('a').first();
+    assert.equal(link.text().trim(), MOBILE_NUTRITIONAL_LABEL);
+    assert.equal(link.attr('href'), MOBILE_NUTRITIONAL_HTML);
+  });
+});
+```
+
+- - -
+
+### Acceptance Tests
+#### Further analysis (cont'd.)
+
+What do we already have?
+
+- A `nav-menu` component (but it's *very full*)
+- A component for dictionary content
+
+- - -
+
+### Acceptance Tests
+#### Further refinement
+
+We need to make sure it is where it belongs.
+
+```js
+
+```
+
+- - -
+
+### Acceptance Tests
+
+{>> TODO <<}
+
+- - - - -
