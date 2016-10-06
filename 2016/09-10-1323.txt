@@ -9,7 +9,7 @@ Category: micro
 
 My writing setup as I'm working on my new Rust and Swift project (click/tap the image to see the full screenshot):
 
-P
+[![][img]][click]
 
 [click]: http://cdn.chriskrycho.com/images/writing-setup.png
 [img]: http://cdn.chriskrycho.com/images/writing-setup-thumb.png "writing setup thumbnail"
