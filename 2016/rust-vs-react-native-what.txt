@@ -12,14 +12,16 @@ Category: Tech
 
 > Here’s the thing: I don’t *care* what’s eating the world today, for three reasons:
 >
-> 1. I just want to build the best stuff I can build, and native UIs are still massively better than React and even React Native in innumerable ways. There are clear advantages to React Native + JavaScript, and times when you absolutely should take that approach. But there are also a lot of times and reasons why you shouldn’t. Heck, even if you just want killer performance *in browsers*, our future includes things like Rust-to-WebAssembly, and that’s a good thing.
+> 1. I just want to build the best stuff I can build, and native UIs are still massively better than React and even React Native[^rn] in innumerable ways. There are clear advantages to React Native + JavaScript, and times when you absolutely should take that approach. But there are also a lot of times and reasons why you shouldn’t. Heck, even if you just want killer performance *in browsers*, our future includes things like Rust-to-WebAssembly, and that’s a good thing.
 > 2. What was eating the world five years ago? Ten? Is it still eating the world today? I don’t feel obliged to follow those trends (not least because, not being a consultancy, following those trends doesn’t buy me anything for the things I want to do; your tradeoffs and mine look way different).
 > 3. I’m actually getting really tired of just treating as acceptable or normative the performance characteristics of browsers. Browsers are awesome. But we can (and should) do a _lot_ better in terms of user experience, and I don’t see browsers catching up to what you can do with e.g. Cocoa (Touch). Sure, that doesn’t matter that much for building yet-another-storefront. (Again, there are different tradeoffs for every single app!) But why in the world are we in a spot now where one of the most popular text editors in the world is _slower_ than any text editor of five years ago? That’s not a *necessary* decision, and you can (and should) go after the same degree of ease-of-extensibility that Atom has had—perhaps even using things like HTML and CSS for skinning!—while not tying yourself to the browser and its upsides and downsides for _everything_. We have _incredibly_ powerful machines, and the user experience is often getting _slower_. I’m looking for ways to change that.
 >
 > Again, JS+React[^or-ember] may be *exactly* the right tradeoff for a lot of apps, and given what consultancies (like my friends’s!) are doing, I think doing that with ReactNative for apps is a *very* good move. It makes good sense business-wise, and it makes good sense in terms of the apps you’re likely to be delivering. Don’t hear me for a second saying Rust is the best for *everything*. I think it, or something like it, is a very good choice for *many* things, though, and it shouldn’t be dismissed simply because it’s a very different world from doing Ruby or Elixir or JavaScript.
 >
 
-[^or-ember]: or, frankly, Ember or whatever else; React is  great, but it is also overhyped.
+[^rn]: I'm aware that React-Native ultimately binds down to native widgets. It's still not quite the same.
+
+[^or-ember]: or, frankly, Ember or whatever else; React is great, but it is also overhyped.
 
 ---
 
