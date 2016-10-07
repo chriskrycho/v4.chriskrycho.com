@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Rust vs. React Native—What?"/>
     <meta name="twitter:description" content="I was recently discussing some thoughts I’ve had on building a top-notch application experience in a Slack team I belong to, and noted that I believe that a Rust core with native UIs is a massively winning strategy. A friend in the group responded that he thinks “React + JS …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -100,7 +100,7 @@
 </blockquote>
 <hr />
 <p><i class=editorial>So much for my initial response. On reflection, I wanted to expand it a bit. So here’s another few hundred words!</i></p>
-<p>Beyond this, I think there’s a bit of a false dichotomy here: the idea that “lots of speed and stability” <em>aren’t</em> values we should be seeking more aggressively for <em>all</em> our apps. Fully granted that not every app needs the same <em>degree</em> of each of those, and moreover that there are a lot of ways to get to those goals. Still: speed and stability are <em>core</em> user experience values. I don’t really care how you get at those goals, whether it’s with Rust, or Elixir or Clojure, or, yes, React with TypeScript or <a href="https://flowtype.org">Flow</a>. I <em>do</em> think that Rust is, for the moment at least, uniquely positioned to add real value in this space because it gives screaming performance but with so many niceties we’re used to when writing languages like Python or Ruby and so much of the power you get in languages like OCaml or F♯.[^swift ] But at the end of the day, I think <em>all</em> apps should focus much more on speed and stability than they do today. We have supercomputers in our pockets, and we’re often shipping apps that are slower and more finicky.</p>
+<p>Beyond this, I think there’s a bit of a false dichotomy here: the idea that “lots of speed and stability” <em>aren’t</em> values we should be seeking more aggressively for <em>all</em> our apps. Fully granted that not every app needs the same <em>degree</em> of each of those, and moreover that there are a lot of ways to get to those goals. Still: speed and stability are <em>core</em> user experience values. I don’t really care how you get at those goals, whether it’s with Rust, or Elixir or Clojure, or, yes, React with TypeScript or <a href="https://flowtype.org">Flow</a>. I <em>do</em> think that Rust is, for the moment at least, uniquely positioned to add real value in this space because it gives screaming performance but with so many niceties we’re used to when writing languages like Python or Ruby and so much of the power you get in languages like OCaml or F♯.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> But at the end of the day, I think <em>all</em> apps should focus much more on speed and stability than they do today. We have supercomputers in our pockets, and we’re often shipping apps that are slower and more finicky.</p>
 <p>But I have this dream of a world where apps aren’t needlessly power-hungry or memory-intensive, where every swipe and or click or scroll results in buttery-smooth responses. We won’t get there by saying, “You know, Facebook is doing <em>x</em> so that’s good enough for me.”</p>
 <p>Of course every developer, and any given product shop or consultancy, is going to have to make decisions about which stacks it invests in. If you’re primarily shipping web applications, investing in Elixir and React with React Native for your apps is a very sensible move. Most of your clients’ native apps may not <em>need</em> the degree of polished performance you might get from writing their iOS app in Swift and their Android app in Kotlin and the core in Rust (or even C++). That tradeoff is a <em>tradeoff</em>.</p>
 <p>But let’s remember that there is real value there, and that some apps <em>do</em> deserve that investment. We should evaluate the tradeoffs at every turn, and our core considerations should enduringly include <em>speed and stability</em>. Don’t dismiss Rust (or Swift, or F♯) out of hand.</p>
@@ -110,6 +110,7 @@
 <hr />
 <ol>
 <li id="fn1"><p>or, frankly, Ember or whatever else; React is great, but it is also overhyped.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Swift too, and honestly for a lot of things Swift is an easier experience for not <em>that</em> much less performance than Rust. But as of today you <em>can’t</em> ship core functionality in Swift for Android or Windows.<a href="#fnref2">↩</a></p></li>
 </ol>
 </section>
         </div>
