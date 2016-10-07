@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rust vs. React Native—What? &middot; Chris Krycho</title>
+    <meta name="description" content="I was recently discussing some thoughts I’ve had on building a top-notch application experience in a Slack team I belong to, and noted that I believe that a Rust core with native UIs is a massively winning strategy. A friend in the group responded that he thinks “React + JS …"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2016/rust-vs-react-native-what.html"/>
+    <meta property="og:title" content="Rust vs. React Native—What?"/>
+    <meta property="og:description" content="I was recently discussing some thoughts I’ve had on building a top-notch application experience in a Slack team I belong to, and noted that I believe that a Rust core with native UIs is a massively winning strategy. A friend in the group responded that he thinks “React + JS …"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Rust vs. React Native—What?"/>
+    <meta name="twitter:description" content="I was recently discussing some thoughts I’ve had on building a top-notch application experience in a Slack team I belong to, and noted that I believe that a Rust core with native UIs is a massively winning strategy. A friend in the group responded that he thinks “React + JS …"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="javascript rust swift f-sharp software-development tech">
+
+    <header>
+<h1>Rust vs. React Native—What?</h1>
+<h2>Tradeoffs, or: Speed and stability are for everyone</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2016/rust-vs-react-native-what.html"><i class="fa fa-fw fa-link"></i></a>October 07, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/f-sharp/">#f sharp</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a></span><span><a href="http://www.chriskrycho.com/2016/rust-vs-react-native-what.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class=editorial>I was recently discussing some thoughts I’ve had on building a top-notch application experience in a Slack team I belong to, and noted that I believe that a Rust core with native UIs is a <em>massively</em> winning strategy. A friend in the group responded that he thinks “React + JS is eating the world right now” and that “Rust as awesome for if you want to write a JS vm, or something like that… or a compiler… anything involving lots of speed and stability.” What follows is my response, lightly edited to remove details specific to that friend and to add a few further thoughts.</i></p>
+<hr />
+<blockquote>
+<p>Here’s the thing: I don’t <em>care</em> what’s eating the world today, for three reasons:</p>
+<ol type="1">
+<li>I just want to build the best stuff I can build, and native UIs are still massively better than React and even React Native in innumerable ways. There are clear advantages to React Native + JavaScript, and times when you absolutely should take that approach. But there are also a lot of times and reasons why you shouldn’t. Heck, even if you just want killer performance <em>in browsers</em>, our future includes things like Rust-to-WebAssembly, and that’s a good thing.</li>
+<li>What was eating the world five years ago? Ten? Is it still eating the world today? I don’t feel obliged to follow those trends (not least because, not being a consultancy, following those trends doesn’t buy me anything for the things I want to do; your tradeoffs and mine look way different).</li>
+<li>I’m actually getting really tired of just treating as acceptable or normative the performance characteristics of browsers. Browsers are awesome. But we can (and should) do a <em>lot</em> better in terms of user experience, and I don’t see browsers catching up to what you can do with e.g. Cocoa (Touch). Sure, that doesn’t matter that much for building yet-another-storefront. (Again, there are different tradeoffs for every single app!) But why in the world are we in a spot now where one of the most popular text editors in the world is <em>slower</em> than any text editor of five years ago? That’s not a <em>necessary</em> decision, and you can (and should) go after the same degree of ease-of-extensibility that Atom has had—perhaps even using things like HTML and CSS for skinning!—while not tying yourself to the browser and its upsides and downsides for <em>everything</em>. We have <em>incredibly</em> powerful machines, and the user experience is often getting <em>slower</em>. I’m looking for ways to change that.</li>
+</ol>
+<p>Again, JS+React<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> may be <em>exactly</em> the right tradeoff for a lot of apps, and given what consultancies (like my friends’s!) are doing, I think doing that with ReactNative for apps is a <em>very</em> good move. It makes good sense business-wise, and it makes good sense in terms of the apps you’re likely to be delivering. Don’t hear me for a second saying Rust is the best for <em>everything</em>. I think it, or something like it, is a very good choice for <em>many</em> things, though, and it shouldn’t be dismissed simply because it’s a very different world from doing Ruby or Elixir or JavaScript.</p>
+</blockquote>
+<hr />
+<p><i class=editorial>So much for my initial response. On reflection, I wanted to expand it a bit. So here’s another few hundred words!</i></p>
+<p>Beyond this, I think there’s a bit of a false dichotomy here: the idea that “lots of speed and stability” <em>aren’t</em> values we should be seeking more aggressively for <em>all</em> our apps. Fully granted that not every app needs the same <em>degree</em> of each of those, and moreover that there are a lot of ways to get to those goals. Still: speed and stability are <em>core</em> user experience values. I don’t really care how you get at those goals, whether it’s with Rust, or Elixir or Clojure, or, yes, React with TypeScript or <a href="https://flowtype.org">Flow</a>. I <em>do</em> think that Rust is, for the moment at least, uniquely positioned to add real value in this space because it gives screaming performance but with so many niceties we’re used to when writing languages like Python or Ruby and so much of the power you get in languages like OCaml or F♯.[^swift ] But at the end of the day, I think <em>all</em> apps should focus much more on speed and stability than they do today. We have supercomputers in our pockets, and we’re often shipping apps that are slower and more finicky.</p>
+<p>But I have this dream of a world where apps aren’t needlessly power-hungry or memory-intensive, where every swipe and or click or scroll results in buttery-smooth responses. We won’t get there by saying, “You know, Facebook is doing <em>x</em> so that’s good enough for me.”</p>
+<p>Of course every developer, and any given product shop or consultancy, is going to have to make decisions about which stacks it invests in. If you’re primarily shipping web applications, investing in Elixir and React with React Native for your apps is a very sensible move. Most of your clients’ native apps may not <em>need</em> the degree of polished performance you might get from writing their iOS app in Swift and their Android app in Kotlin and the core in Rust (or even C++). That tradeoff is a <em>tradeoff</em>.</p>
+<p>But let’s remember that there is real value there, and that some apps <em>do</em> deserve that investment. We should evaluate the tradeoffs at every turn, and our core considerations should enduringly include <em>speed and stability</em>. Don’t dismiss Rust (or Swift, or F♯) out of hand.</p>
+<p>Equally importantly, we need to stop assuming that just because something is eating the world today means it’s also the future. Betting big on Flash in the mid-2000s wasn’t a <em>bad</em> move by a long shot. But its massive popularity then wasn’t a good predictor for its future. That goes double, frankly, for projects coming out of Facebook or Google or similar: big companies like that have the resources to drop everything and use a new language, or a new tool, as it suits them. If you don’t believe me, look at the actual open-source records of both of those companies! What’s hot today is far more relevant to a consultancy than to a product shop. And in both cases, choosing tech suitable for the job at hand is more important yet.</p>
+<p>My friend gets that, for what it’s worth. He’s making the right moves for his business as the owner of a consultancy. I just want him—and lots of other people—to see where languages like Rust and Swift and F♯ might be worth considering. And speed and stability matter in a lot of places besides just compilers and VMs.</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>or, frankly, Ember or whatever else; React is great, but it is also overhyped.<a href="#fnref1">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2016/escape-modernity.html">escape modernity</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2016/winning-slowly-season-5.html">Winning Slowly Season 5</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2016/rust-vs-react-native-what.html">Rust vs. React Native—What?</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2016/constant-evaluation.html">Constant Evaluation</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
