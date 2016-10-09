@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-10-08 07:40
+Tags: javascript, software development, reactjs
+Template: formats/micro
+Slug: 10-08-0740
+Category: micro
+---
+
+People, React is great---truly! But the fact that you only learned about the ideas it uses from React doesn't make React itself the paradigm.

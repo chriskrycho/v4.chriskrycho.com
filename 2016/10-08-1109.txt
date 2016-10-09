@@ -1,0 +1,12 @@
+---
+Title: ""
+Date: 2016-10-08 11:09
+Tags: writing, rust-and-swift, rust, swift
+Template: formats/micro
+Slug: 10-08-1109
+Category: micro
+---
+
+And, on evaluating [that table][previous]... I need to pull about half of it out: too much code.
+
+[previous]: http://www.chriskrycho.com/2016/10-08-1109.html
