@@ -23,7 +23,7 @@ The pain of that moment was realizing, that like so many other things in tech, t
 1. It's too hard or too painful to change it. (That's a big one here; the web has a pretty firm commitment to absolute backwards compatibility forever, _modulo_ a few things like killing Flash.)
 2. We get used to it, and just come to accept the ten thousand papercuts as normal, and eventually even forget about them until something comes up again and *forces* us to see them. Usually in the form of someone learning for the first time.
 
-(1) we can't necessarily do a lot about. We don't have infinite time or money, and reinventing everything really is impossible. We can do wacky experiments, and iterate toward better solutions that can gradually replace what was there originally.
+We can't necessarily do a lot about (1). We don't have infinite time or money, and reinventing everything really is impossible. We can do wacky experiments, and iterate toward better solutions that can gradually replace what was there originally.
 
 But (2) is the bigger one. We need to stop accepting the papercuts as just part of how things are---and especially, stop seeing our acclimation to them as a badge of honor to be earned---and start treating them as rough edges that ought to be sanded off over time wherever possible. Notice the things that trip up new learners, and if you can, *get rid of them*. If you can't get rid of them, make note so that you are sure to cover it when you're helping someone in the future. And explain the *whys* for those little edge cases: even worse than not knowing them, in some ways, is knowing them but not understanding them---having a bag of little tricks you can use but never being able to progress because you can't see how they fit together.
 
