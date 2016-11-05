@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-11-05 15:24
+Tags: software development, javascript
+Template: formats/micro
+Slug: 11-05-1524
+Category: micro
+---
+
+Pro tip: use `Map` and not `Object` for dictionaries/hash-tables in JavaScript. Performance difference is A LOT. (I haven’t measured, but for a simple example I was playing with (~12k items) it was at least a couple orders of magnitude.)
