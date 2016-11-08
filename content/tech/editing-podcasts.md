@@ -38,9 +38,7 @@ From his piece:
 > (4) People using pointless audio-production tricks to make a pedestrian story
 > seem cutting-edge (e.g. Radiolab).
 
-I actually happen to basically agree with those critiques. However, one category
-he left out is: *people podcasting the way people blog*. And this is where many
-of the most interesting podcasts I listen to come in. It's also basically where
+I actually happen to basically agree with those critiques. However, one category he left out is: *people podcasting the way people blog*. And this is where many of the most interesting podcasts I listen to come in. It's also basically where
 Winning Slowly fits: you can think of our show like an audio version of a blog
 post. It's not as carefully considered or edited as a long-form magazine piece
 (or, in its respective medium, a professionally produced radio show). But like
