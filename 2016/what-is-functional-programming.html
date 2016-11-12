@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="What is Functional Programming?"/>
     <meta name="twitter:description" content="Functional programming—though not a panacea—is a really great tool to have in our toolbelt. (And you don’t have to be a mathematician to use it.)"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -239,7 +239,7 @@ const total = order.getTotal();</code></pre>
 }
 
 const getTotal = (subTotal, taxRate) =&gt; subTotal * (1 + taxRate);
-const total = orderTotal(order.subTotal, order.taxes);</code></pre>
+const total = getTotal(order.subTotal, order.taxRate);</code></pre>
 <p>Note that the object is <em>just data</em>. It’s a <em>record</em>. And the function just takes a couple of arguments. If there needed to be a more complicated transformation internally, we could do that just as easily. Note that it also decouples the structure of the data from the actual computation (though we could pass in a record as well if we had a good reason to).</p>
 <p>This makes it easily testable, for free. Want to make sure different tax rates get the correct output? Just… pass in a different tax rate. You don’t have to do any complicated work setting up an object instance first (which is especially important for more complex data types). It also makes it easier to chase down any bugs: the only thing you have to care about is that simple function body. There’s no other state to think about, because there’s no state at all here from the perspective of the function: just inputs and outputs.</p>
 <p>This has one other <em>really</em> important consequence, which goes by the name <strong>referential transparency</strong>. All that means is that anywhere you see a pure function, you can always substitute the value it produces, or vice versa. This is quite unlike the <code>Order::getTotal()</code> method, where (a) it’s attached to an object instance and (b) it’s dependent on other things about that object. You can’t just substitute it in, or freely move it around, when you’re doing a refactor. <em>Maybe</em> you can, but you’d better hope that all the other state is shuffled around with it correctly. Whereas, with the standalone <code>getTotal()</code> function, all you need is its arguments, and you’ll always get the same thing back.</p>

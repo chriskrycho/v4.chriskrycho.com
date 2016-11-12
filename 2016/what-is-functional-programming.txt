@@ -216,7 +216,7 @@ const order = {
 }
 
 const getTotal = (subTotal, taxRate) => subTotal * (1 + taxRate);
-const total = orderTotal(order.subTotal, order.taxes);
+const total = getTotal(order.subTotal, order.taxRate);
 ```
 
 Note that the object is *just data*. It's a *record*. And the function just takes a couple of arguments. If there needed to be a more complicated transformation internally, we could do that just as easily. Note that it also decouples the structure of the data from the actual computation (though we could pass in a record as well if we had a good reason to).
