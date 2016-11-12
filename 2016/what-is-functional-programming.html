@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="What is Functional Programming?"/>
     <meta name="twitter:description" content="Functional programming—though not a panacea—is a really great tool to have in our toolbelt. (And you don’t have to be a mathematician to use it.)"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -512,6 +512,7 @@ getBurgers()
 <li><p>Those pieces are easy to test. If something isn’t working, I can easily take those pieces apart and test them individually, or test the result of any combination of them. As a result, I can test any part of that pipe chain, and I can <em>fix</em> pieces independent of each other. No part depends on being in the middle of a looper where transformations are done to other parts.</p></li>
 <li><p>Because they’re small and do one simple things, I can recombine those pieces any way I like. And you see that in the Ramda examples in particular: most of what we’re doing in those examples is not even something we wrote ourselves. They’re also <em>really</em> basic building blocks, available in basically every standard library.</p></li>
 </ol>
+<p>One last thing: if you’re curious about performance… you should know that it doesn’t matter. In my (extremely unscientific) tests, I found that the time it took to run these was all fairly similar. (Unfortunately, I couldn’t get JSPerf running nicely with this particular set of variations.) Compilers, including JavaScript JITs, are incredibly smart. Mostly you can just trust them; come back and profile before you even <em>think</em> about optimizing things.</p>
 </section>
 </section>
 </section>

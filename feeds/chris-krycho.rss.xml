@@ -424,6 +424,7 @@ getBurgers()
 &lt;li&gt;&lt;p&gt;Those pieces are easy to test. If something isn’t working, I can easily take those pieces apart and test them individually, or test the result of any combination of them. As a result, I can test any part of that pipe chain, and I can &lt;em&gt;fix&lt;/em&gt; pieces independent of each other. No part depends on being in the middle of a looper where transformations are done to other parts.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Because they’re small and do one simple things, I can recombine those pieces any way I like. And you see that in the Ramda examples in particular: most of what we’re doing in those examples is not even something we wrote ourselves. They’re also &lt;em&gt;really&lt;/em&gt; basic building blocks, available in basically every standard library.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;One last thing: if you’re curious about performance… you should know that it doesn’t matter. In my (extremely unscientific) tests, I found that the time it took to run these was all fairly similar. (Unfortunately, I couldn’t get JSPerf running nicely with this particular set of variations.) Compilers, including JavaScript JITs, are incredibly smart. Mostly you can just trust them; come back and profile before you even &lt;em&gt;think&lt;/em&gt; about optimizing things.&lt;/p&gt;
 &lt;/section&gt;
 &lt;/section&gt;
 &lt;/section&gt;
