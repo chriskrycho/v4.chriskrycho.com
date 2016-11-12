@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="What is Functional Programming?"/>
     <meta name="twitter:description" content="Functional programming—though not a panacea—is a really great tool to have in our toolbelt. (And you don’t have to be a mathematician to use it.)"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -173,7 +173,7 @@ export function getSomething() {
 <li>Pure functions</li>
 <li>Immutable data</li>
 </ol>
-<p>The combination of these things leads us to a <em>very</em> different style of programming than traditional OOP. Let’s define them.</p>
+<p>The combination of these things leads us to a <em>very</em> different style of programming than traditional <abbr>OOP</abbr>. Let’s define them.</p>
 <section id="first-class-functions-and-higher-order-functions" class="level4">
 <h4>First class functions and higher-order functions</h4>
 <p>We’ll start by looking at the things that are probably most familiar to you if you’re a JavaScript developer (even if you haven’t necessarily heard the names): first-class functions and higher-order functions.</p>
@@ -207,7 +207,7 @@ const setFoo = (newValue) =&gt; {
 };
 
 const getFoo = () =&gt; foo;</code></pre>
-<p>So a pure function is one whose output is <em>solely</em> determined by its input That means no talking to a database, no making API calls, no reading from or writing to disk.</p>
+<p>So a pure function is one whose output is <em>solely</em> determined by its input That means no talking to a database, no making <abbr>API</abbr> calls, no reading from or writing to disk.</p>
 <p>And of course, you can’t do anything meaningful with <em>just</em> pure functions. We need user input, and we need to put the results of our computation somewhere. So the goal isn’t to write <em>only</em> pure functions. It’s to write <em>mostly</em> pure functions and to <em>isolate</em> all impure functions.</p>
 <p>What this gets us is two things:</p>
 <ol type="1">
@@ -242,7 +242,7 @@ const getTotal = (subTotal, taxRate) =&gt; subTotal * (1 + taxRate);
 const total = orderTotal(order.subTotal, order.taxes);</code></pre>
 <p>Note that the object is <em>just data</em>. It’s a <em>record</em>. And the function just takes a couple of arguments. If there needed to be a more complicated transformation internally, we could do that just as easily. Note that it also decouples the structure of the data from the actual computation (though we could pass in a record as well if we had a good reason to).</p>
 <p>This makes it easily testable, for free. Want to make sure different tax rates get the correct output? Just… pass in a different tax rate. You don’t have to do any complicated work setting up an object instance first (which is especially important for more complex data types). It also makes it easier to chase down any bugs: the only thing you have to care about is that simple function body. There’s no other state to think about, because there’s no state at all here from the perspective of the function: just inputs and outputs.</p>
-<p>This has one other <em>really</em> important consequence, which goes by the name <strong>referential transparency</strong>. All that means is that anywhere you see a pure function, you can always substitute the value it produces, or vice versa. So unlike the <code>Order::getTotal()</code> method, where (a) it’s attached to an object instance and (b) it’s dependent on other things about that object, so you can’t just substitute it in, or freely move it around, when you’re doing a refactor. <em>Maybe</em> you can, but you’d better hope that all the other state is shuffled around with it correctly. Whereas, with the standalone <code>getTotal()</code> function, all you need is its arguments, and you’ll always get the same thing back.</p>
+<p>This has one other <em>really</em> important consequence, which goes by the name <strong>referential transparency</strong>. All that means is that anywhere you see a pure function, you can always substitute the value it produces, or vice versa. This is quite unlike the <code>Order::getTotal()</code> method, where (a) it’s attached to an object instance and (b) it’s dependent on other things about that object. You can’t just substitute it in, or freely move it around, when you’re doing a refactor. <em>Maybe</em> you can, but you’d better hope that all the other state is shuffled around with it correctly. Whereas, with the standalone <code>getTotal()</code> function, all you need is its arguments, and you’ll always get the same thing back.</p>
 <p>This is just like math: if you say, <span class="math inline"><em>x</em> = 5</span> when solving an algebraic equation, you can put <span class="math inline">5</span> <em>anywhere you see <span class="math inline"><em>x</em></span></em>; or, if it’s useful for factoring the equation or something, you can just as easily put <span class="math inline"><em>x</em></span> anywhere you see <span class="math inline">5</span>. And in math, that’s true for <span class="math inline"><em>f</em>(<em>x</em>)</span> as well. When we use pure functions, it’s true for programming, too! That makes refactoring much easier.</p>
 <p>As we’ll see in the example I walk through in a minute, it also lets us <em>compose</em> functions together far more easily. If all we have are inputs and outputs, then I can take the output from one function and use it as the input to the next.</p>
 </section>
@@ -504,7 +504,7 @@ getBurgers()
   .then(getTop10Burgers)
   .then(sortedPairsToConsole);  // (5)</code></pre>
 <p>Notice that, because each step is just composing together functions, “refactoring” is easy. And, to be sure, you have to be mindful about what comes in and out of each function. But that’s true in the imperative approach, too: you always have to keep track of the state of the object you’re building up, but there you’re doing it in the middle of a loop, so you’re keeping track of a lot <em>more</em> state at any given time. Functions with simple inputs and outputs give us a more explicit way of specifying the structure and state of the data at any given time. That’s true even in JavaScript, but it goes double if we’re in a typed language like F<sup>♯</sup>, Elm, etc., where we can specify those types for the function as a way of designing the flow of the program. (That’s such a helpful way of solving problems, in fact, that I may also do a talk on type-driven design in the future!)</p>
-<p>Note, as well, that we’ve now completely isolated our input and output from everything else. The middle there is a chain of pure functions, built out of other pure functions, which neither know nor care that the data came in from an API call, or that we’re going to print it to the console when we finish.</p>
+<p>Note, as well, that we’ve now completely isolated our input and output from everything else. The middle there is a chain of pure functions, built out of other pure functions, which neither know nor care that the data came in from an <abbr>API</abbr> call, or that we’re going to print it to the console when we finish.</p>
 <hr />
 <p>So this takes us back around to that first question: why do we care? At the end of the day, is this really a win over the imperative style? Is the final version, using Ramda, really better than the pure-JavaScript mostly-functional version we used at first?</p>
 <p>Obviously, I think the answers there are yes. The Ramda version there at the end is <em>way</em> better than the imperative version, and substantially better than even the first “functional” JavaScript versions we wrote.</p>

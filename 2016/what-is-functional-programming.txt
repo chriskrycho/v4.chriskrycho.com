@@ -118,7 +118,7 @@ Functional programming is basically combining four bigs ideas:
 3. Pure functions
 4. Immutable data
 
-The combination of these things leads us to a *very* different style of programming than traditional OOP. Let's define them.
+The combination of these things leads us to a *very* different style of programming than traditional <abbr>OOP</abbr>. Let's define them.
 
 #### First class functions and higher-order functions
 
@@ -174,7 +174,7 @@ const setFoo = (newValue) => {
 const getFoo = () => foo;
 ```
 
-So a pure function is one whose output is *solely* determined by its input That means no talking to a database, no making API calls, no reading from or writing to disk.
+So a pure function is one whose output is *solely* determined by its input That means no talking to a database, no making <abbr>API</abbr> calls, no reading from or writing to disk.
 
 And of course, you can't do anything meaningful with *just* pure functions. We need user input, and we need to put the results of our computation somewhere. So the goal isn't to write *only* pure functions. It's to write *mostly* pure functions and to *isolate* all impure functions.
 
@@ -223,7 +223,7 @@ Note that the object is *just data*. It's a *record*. And the function just take
 
 This makes it easily testable, for free. Want to make sure different tax rates get the correct output? Just... pass in a different tax rate. You don't have to do any complicated work setting up an object instance first (which is especially important for more complex data types). It also makes it easier to chase down any bugs: the only thing you have to care about is that simple function body. There's no other state to think about, because there's no state at all here from the perspective of the function: just inputs and outputs.
 
-This has one other *really* important consequence, which goes by the name **referential transparency**. All that means is that anywhere you see a pure function, you can always substitute the value it produces, or vice versa. So unlike the `Order::getTotal()` method, where (a) it's attached to an object instance and (b) it's dependent on other things about that object, so you can't just substitute it in, or freely move it around, when you're doing a refactor. *Maybe* you can, but you'd better hope that all the other state is shuffled around with it correctly. Whereas, with the standalone `getTotal()` function, all you need is its arguments, and you'll always get the same thing back.
+This has one other *really* important consequence, which goes by the name **referential transparency**. All that means is that anywhere you see a pure function, you can always substitute the value it produces, or vice versa. This is quite unlike the `Order::getTotal()` method, where (a) it's attached to an object instance and (b) it's dependent on other things about that object. You can't just substitute it in, or freely move it around, when you're doing a refactor. *Maybe* you can, but you'd better hope that all the other state is shuffled around with it correctly. Whereas, with the standalone `getTotal()` function, all you need is its arguments, and you'll always get the same thing back.
 
 This is just like math: if you say, $x = 5$ when solving an algebraic equation, you can put $5$ *anywhere you see $x$*; or, if it's useful for factoring the equation or something, you can just as easily put $x$ anywhere you see $5$. And in math, that's true for $f(x)$ as well. When we use pure functions, it's true for programming, too! That makes refactoring much easier.
 
@@ -572,7 +572,7 @@ getBurgers()
 
 Notice that, because each step is just composing together functions, "refactoring" is easy. And, to be sure, you have to be mindful about what comes in and out of each function. But that's true in the imperative approach, too: you always have to keep track of the state of the object you're building up, but there you're doing it in the middle of a loop, so you're keeping track of a lot *more* state at any given time. Functions with simple inputs and outputs give us a more explicit way of specifying the structure and state of the data at any given time. That's true even in JavaScript, but it goes double if we're in a typed language like F^♯^, Elm, etc., where we can specify those types for the function as a way of designing the flow of the program. (That's such a helpful way of solving problems, in fact, that I may also do a talk on type-driven design in the future!)
 
-Note, as well, that we've now completely isolated our input and output from everything else. The middle there is a chain of pure functions, built out of other pure functions, which neither know nor care that the data came in from an API call, or that we're going to print it to the console when we finish.
+Note, as well, that we've now completely isolated our input and output from everything else. The middle there is a chain of pure functions, built out of other pure functions, which neither know nor care that the data came in from an <abbr>API</abbr> call, or that we're going to print it to the console when we finish.
 
 ---
 
