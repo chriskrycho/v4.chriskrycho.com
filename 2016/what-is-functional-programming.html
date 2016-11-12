@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="What is Functional Programming?"/>
     <meta name="twitter:description" content="Functional programming—though not a panacea—is a really great tool to have in our toolbelt. (And you don’t have to be a mathematician to use it.)"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -426,7 +426,7 @@ getBurgers().then(burgers =&gt; {
   _.forEach(forOutput, output);
 });</code></pre>
 <p>But it seems like we lost something when we moved away from the object-oriented approach. Being able to chain things, so that each item worked with the previous item, was actually pretty nice. And needing all these intermediate variables is <em>not</em> so nice.</p>
-<p>One way around this is to use Lodash’s <code>_.chain</code> method. That would have let use write it like this:</p>
+<p>One way around this is to use Lodash’s <code>_.chain</code> method. That would have let us write it like this:</p>
 <pre class="js"><code>getBurgers().then(burgers =&gt; {
   const foo = _.chain(burgers)
     .map(toCondiments)

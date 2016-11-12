@@ -338,7 +338,7 @@ getBurgers().then(burgers =&amp;gt; {
   _.forEach(forOutput, output);
 });&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;But it seems like we lost something when we moved away from the object-oriented approach. Being able to chain things, so that each item worked with the previous item, was actually pretty nice. And needing all these intermediate variables is &lt;em&gt;not&lt;/em&gt; so nice.&lt;/p&gt;
-&lt;p&gt;One way around this is to use Lodash’s &lt;code&gt;_.chain&lt;/code&gt; method. That would have let use write it like this:&lt;/p&gt;
+&lt;p&gt;One way around this is to use Lodash’s &lt;code&gt;_.chain&lt;/code&gt; method. That would have let us write it like this:&lt;/p&gt;
 &lt;pre class="js"&gt;&lt;code&gt;getBurgers().then(burgers =&amp;gt; {
   const foo = _.chain(burgers)
     .map(toCondiments)

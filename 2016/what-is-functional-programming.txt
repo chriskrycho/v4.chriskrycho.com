@@ -469,7 +469,7 @@ getBurgers().then(burgers => {
 
 But it seems like we lost something when we moved away from the object-oriented approach. Being able to chain things, so that each item worked with the previous item, was actually pretty nice. And needing all these intermediate variables is *not* so nice.
 
-One way around this is to use Lodash's `_.chain` method. That would have let use write it like this:
+One way around this is to use Lodash's `_.chain` method. That would have let us write it like this:
 
 ```js
 getBurgers().then(burgers => {
