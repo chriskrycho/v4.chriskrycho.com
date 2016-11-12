@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="What is Functional Programming?"/>
     <meta name="twitter:description" content="Functional programming—though not a panacea—is a really great tool to have in our toolbelt. (And you don’t have to be a mathematician to use it.)"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -377,7 +377,7 @@ const output = value =&gt; { console.log(value); };</code></pre>
   const update = { [description]: count };
   return Object.assign({}, totals, update);
 };</code></pre>
-<p>Unfortunately, given the amount of data we’re dealing with, that’s prohibitively expensive. We end up spending a <em>lot</em> of time allocating objects and garbage-collecting them. As a result, it’s thousands, if not millions, of times slower. Running it on my 4GHz iMac, the in-place version takes less than 40ms. Doing it the strictly pure way—returning copies every time—takes ~53s. And if you profile it, almost all of that time is spent in <code>assign</code> (52.95s).</p>
+<p>Unfortunately, given the amount of data we’re dealing with, that’s prohibitively expensive. We end up spending a <em>lot</em> of time allocating objects and garbage-collecting them. As a result, it’s tens of thousands of times slower. Running it on my 4GHz iMac, the in-place version takes less than 40ms. Doing it the strictly pure way—returning copies every time—takes ~53s. And if you profile it, almost all of that time is spent in <code>assign</code> (52.95s).</p>
 <p>This takes us to an important point, though: it’s actually not a particularly big deal to have this particular data changed in place, because we’re not going to do anything <em>else</em> with it. And in fact, under the hood, this is exactly what pure functional languages do with these kinds of transformations—precisely because it’s perfectly safe to do so, because we’re the only ones who have access to this data. We’re generating a <em>new</em> data structure from the data that we were originally handed, and the next function will make its own new data structure (whether a copy or something else).</p>
 <p>In other words, when we’re talking about a <em>pure function</em>, we don’t really care about internal mutability (though of course, that can bite us if we’re not careful). We’re really concerned about <em>external</em> mutability. As long as the same inputs get the same outputs every time, the rest of the world doesn’t have to care how we got that result.</p>
 <p>Now let’s see how we use these functions.</p>

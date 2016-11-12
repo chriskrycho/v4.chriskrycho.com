@@ -401,7 +401,7 @@ const toTotals = (totals, description) => {
 };
 ```
 
-Unfortunately, given the amount of data we're dealing with, that's prohibitively expensive. We end up spending a *lot* of time allocating objects and garbage-collecting them. As a result, it's thousands, if not millions, of times slower. Running it on my 4GHz iMac, the in-place version takes less than 40ms. Doing it the strictly pure way—returning copies every time—takes ~53s. And if you profile it, almost all of that time is spent in `assign` (52.95s).
+Unfortunately, given the amount of data we're dealing with, that's prohibitively expensive. We end up spending a *lot* of time allocating objects and garbage-collecting them. As a result, it's tens of thousands of times slower. Running it on my 4GHz iMac, the in-place version takes less than 40ms. Doing it the strictly pure way—returning copies every time—takes ~53s. And if you profile it, almost all of that time is spent in `assign` (52.95s).
 
 This takes us to an important point, though: it's actually not a particularly big deal to have this particular data changed in place, because we're not going to do anything *else* with it. And in fact, under the hood, this is exactly what pure functional languages do with these kinds of transformations—precisely because it's perfectly safe to do so, because we're the only ones who have access to this data. We're generating a *new* data structure from the data that we were originally handed, and the next function will make its own new data structure (whether a copy or something else).
 
