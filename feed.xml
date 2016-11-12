@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Fri, 11 Nov 2016 22:30:00 -0500</lastBuildDate><item><title>What is Functional Programming?</title><link>http://www.chriskrycho.com/2016/what-is-functional-programming.html</link><description>&lt;p&gt;&lt;i class='editorial'&gt;The following is a script I wrote for a tech talk I gave on functional programming. The recording isn’t (and won’t be) publicly available; but a script is often easier to reference anyway!&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Fri, 11 Nov 2016 23:30:00 -0500</lastBuildDate><item><title>What is Functional Programming?</title><link>http://www.chriskrycho.com/2016/what-is-functional-programming.html</link><description>&lt;p&gt;&lt;i class='editorial'&gt;The following is a script I wrote for a tech talk I gave on functional programming. The recording isn’t (and won’t be) publicly available; but a script is often easier to reference anyway!&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='editorial'&gt;&lt;strong&gt;Edit:&lt;/strong&gt; updated with corrected performance characterstics.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Hello, everyone. Today, we are going to talk about functional programming—asking what it is, and why we should care.&lt;/p&gt;
 &lt;section id="clearing-the-table-fps-reputation" class="level2"&gt;
@@ -424,7 +425,15 @@ getBurgers()
 &lt;li&gt;&lt;p&gt;Those pieces are easy to test. If something isn’t working, I can easily take those pieces apart and test them individually, or test the result of any combination of them. As a result, I can test any part of that pipe chain, and I can &lt;em&gt;fix&lt;/em&gt; pieces independent of each other. No part depends on being in the middle of a looper where transformations are done to other parts.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Because they’re small and do one simple things, I can recombine those pieces any way I like. And you see that in the Ramda examples in particular: most of what we’re doing in those examples is not even something we wrote ourselves. They’re also &lt;em&gt;really&lt;/em&gt; basic building blocks, available in basically every standard library.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;One last thing: if you’re curious about performance… you should know that it doesn’t matter. In my (extremely unscientific) tests, I found that the time it took to run these was all fairly similar. (Unfortunately, I couldn’t get JSPerf running nicely with this particular set of variations.) Compilers, including JavaScript JITs, are incredibly smart. Mostly you can just trust them; come back and profile before you even &lt;em&gt;think&lt;/em&gt; about optimizing things.&lt;/p&gt;
+&lt;p&gt;One last thing: if you’re curious about performance… you should know that it doesn’t matter. In my tests (which are admittedly extremely unscientific; unfortunately, I couldn’t get JSPerf running nicely with this particular set of variations), I found that the time it took to run these varied depending on the approach &lt;em&gt;and&lt;/em&gt; the library. With a ~10k-record data set:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The imperative version, unsurprisingly, was the fastest, taking ~16–17ms.&lt;/li&gt;
+&lt;li&gt;After that, the chained lodash version and the pure-JS version were comparable, at ~32–36ms, or around twice as long to finish as the imperative version.&lt;/li&gt;
+&lt;li&gt;The plain lodash version was consistently a &lt;em&gt;little&lt;/em&gt; slower yet, at ~38–43ms.&lt;/li&gt;
+&lt;li&gt;Ramda is &lt;em&gt;slow&lt;/em&gt;: both variations consistently took over 90ms to finish.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Those differences added up on larger data sets: dealing with ~10,000,000 records, the times ranged from ~12s for the imperative version, to ~15s for the lodash and pure-JS variants, to ~50s for the Ramda version.&lt;/p&gt;
+&lt;p&gt;They were all pretty darn quick. Compilers, including JavaScript JITs, are incredibly smart. Mostly you can just trust them; come back and profile before you even &lt;em&gt;think&lt;/em&gt; about optimizing things. But you &lt;em&gt;should&lt;/em&gt; know the performance characteristics of different libraries and consider the implications of what the language does well and what it doesn’t. Ramda is likely slower because of the way it curries every function—something that works well in languages with native support for it, e.g. F&lt;sup&gt;♯&lt;/sup&gt; or Elm or Haskell, but imposes a penalty in languages which don’t… like JavaScript. That said, if you’re not in the habit of processing tens of thousands of records, you’re probably okay using any of them.&lt;/p&gt;
 &lt;/section&gt;
 &lt;/section&gt;
 &lt;/section&gt;
