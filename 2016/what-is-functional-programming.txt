@@ -1,7 +1,7 @@
 ---
 Title: What is Functional Programming?
 Subtitle: (And why should we care about it?)
-Date: 2016-11-11 22:10
+Date: 2016-11-11 22:30
 Category: tech
 Tags: functional programming, javascript
 Summary: >
