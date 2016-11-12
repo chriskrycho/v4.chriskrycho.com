@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="What is Functional Programming?"/>
     <meta name="twitter:description" content="Functional programming—though not a panacea—is a really great tool to have in our toolbelt. (And you don’t have to be a mathematician to use it.)"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -91,8 +91,8 @@
 <p><i class='editorial'><strong>Edit:</strong> updated with corrected performance characterstics.</i></p>
 <hr />
 <p>Hello, everyone. Today, we are going to talk about functional programming—asking what it is, and why we should care.</p>
-<section id="clearing-the-table-fps-reputation" class="level2">
-<h2>Clearing the Table: FP’s Reputation</h2>
+<section id="clearing-the-table-functional-programmings-reputation" class="level2">
+<h2>Clearing the Table: Functional Programming’s Reputation</h2>
 <p>Functional programming has something of a reputation: on the one hand, as incredible difficult, dense, full of mathematical jargon, applicable only to certain fields like machine learning or massive data analysis; on the other hand, as a kind of panacea that solves all of your problems. The reality, I think, is a little bit of both.</p>
 <p>The world of functional programming <em>does</em> include a lot of jargon from the math world, and there are good reasons for that, but there is also a lot we could do to make it more approachable to people who don’t have a background in, say category. Category theory is useful, of course, and I think there are times when we might want to be able to draw on it. But gladly, functional programming doesn’t require you to know what an <em>applicative functor</em> is to be able to use it. (And, gladly, there’s a lot of increasingly-solid teaching material out there about functional programming which <em>doesn’t</em> lean on math concepts.)</p>
 <p>On the other side, functional programming does give us some real and serious benefits, and that’s what I’m going to spend the first third or so of this talk looking at. But of course, it’s still just a tool, and even though it is a very helpful and very powerful tool, it can’t keep us from writing bugs. Still, every tool we can add to our belt for writing correct software is a win.</p>
@@ -103,7 +103,7 @@
 <li>Monoid</li>
 <li>Monad</li>
 </ul>
-<p>And in truth, a number of those could have better names. <em>But</em> we have plenty of terminology we throw around in the world of imperative, object-oriented programming. To pick just one, obvious and easy example—what are the SOLID principles?</p>
+<p>And in truth, a number of those could have better names. <em>But</em> we have plenty of terminology we throw around in the world of imperative, object-oriented programming. To pick just one, obvious and easy example—what are the <abbr>SOLID</abbr> principles?</p>
 <ul>
 <li>Single reponsibility</li>
 <li>Open/closed</li>
@@ -119,7 +119,7 @@
 <p>Functional programming is a style of programming that uses <em>pure functions</em> and <em>immutable data</em> for as many things as possible, and builds programs primarily out of <em>functions</em> rather than other abstractions. I’ll define all of those terms in a moment, but first…</p>
 <section id="why-do-we-care" class="level3">
 <h3>Why do we care?</h3>
-<p>We care, frankly, because <em>we’re not that smart</em>. Let’s think about some of the kinds of things we’re doing with, say, restaurant software: clients, with locations, building baskets, composed of products with options and modifiers, which have a set of rules for what combinations are allowed both of products and of their elements as making up a basket, which turn into orders, which have associated payment schemes (sometimes a lot of them), which generate data to send to a POS as well as summaries for the customer who ordered it, and so on. There are a <em>lot</em> of moving pieces there. I’m sure a missed some non-trivial pieces, too. And if all of that is <em>stateful</em>, that’s a lot of state to hold in your head.</p>
+<p>We care, frankly, because <em>we’re not that smart</em>. Let’s think about some of the kinds of things we’re doing with, say, restaurant software: clients, with locations, building baskets, composed of products with options and modifiers, which have a set of rules for what combinations are allowed both of products and of their elements as making up a basket, which turn into orders, which have associated payment schemes (sometimes a lot of them), which generate data to send to a point-of-sale as well as summaries for the customer who ordered it, and so on. There are a <em>lot</em> of moving pieces there. I’m sure a missed some non-trivial pieces, too. And if all of that is <em>stateful</em>, that’s a lot of state to hold in your head.</p>
 <p>Let me be a bit provocative for a moment. Imagine you were reading a JavaScript module and it looked like this:</p>
 <pre class="js"><code>var foo = 12;
 var bar = &#39;blah&#39;;
@@ -155,7 +155,7 @@ export function getSomething() {
   }
 }</code></pre>
 <p>We have some “internal” data, just like we had in the module up above. And we have some public methods which change that state. In terms of these internals, it’s the same. There are differences in terms of having <em>instances</em> and things like that, but in terms of understanding the behavior of the system—understanding the state involved—it’s the same. It’s global, mutable state. Now it’s not global like attaching something to the <code>window</code> object in JavaScript, and that’s good, but still: at the module or class level, it’s just global mutable state, with no guarantees about how anything works. And this is normal—endemic, even—in object-oriented code. We encapsulate our state, but we have <em>tons</em> of state, it’s all mutable, and as far as any given class method call is concerned, it’s all global to that class.</p>
-<p>You have no idea, when you call a given object method, what it might do. The fact that you call it with an <code>Int</code> and get out a <code>String</code> tells you almost nothing. For all you know, it’s triggering a JSON-RPC call using the int as the ID for the endpoint, which in turn triggers an operation, responds with another ID, which you then use to query a database, and load a string from there, which you then set on some other member of the object instance, and then return. Should you write a method that does that? Probably not. But you can; nothing stops you.</p>
+<p>You have no idea, when you call a given object method, what it might do. The fact that you call it with an <code>Int</code> and get out a <code>String</code> tells you almost nothing. For all you know, it’s triggering a <abbr>JSON-RPC</abbr> call using the int as the <abbr>ID</abbr> for the endpoint, which in turn triggers an operation, responds with another <abbr>ID</abbr>, which you then use to query a database, and load a string from there, which you then set on some other member of the object instance, and then return. Should you write a method that does that? Probably not. But you can; nothing stops you.</p>
 <p>When you call a method, you have no idea what it will do. JavaScript, TypeScript, C<sup>♯</sup>, it doesn’t matter. You have literally no idea. And that makes things <em>hard</em>.</p>
 <ul>
 <li>It often makes fixing bugs hard, because it means you have to figure out which particular <em>state</em> caused the issue, and find a way to reproduce that state. Which usually means calling methods in a particular order.</li>
@@ -186,11 +186,11 @@ const doubledValues = initialValues.map(value =&gt; value * 2);</code></pre>
 <pre class="js"><code>const double = value =&gt; value * 2;
 const initialValues = [1, 2, 3];
 const doubledValues = initialValues.map(double);</code></pre>
-<p>This is possible because <em>functions are just data</em>—they’re first-class members of the language—and therefore <em>functions can be arguments or return values</em>—the language supports <em>higher-order functions</em>.</p>
+<p>This is possible because <em>functions are just data</em>—they’re first-class members of the language—and therefore <em>functions can be arguments or return values</em>—the language supports higher-order functions.</p>
 </section>
 <section id="pure-functions" class="level4">
 <h4>Pure functions</h4>
-<p>What about <em>pure functions</em>? Pure functions are functions with <em>no effects</em>. The input directly translates to the output, every time. The examples we looked at just a moment ago with <code>map</code> are all pure functions (and it’s a really weird antipattern to use effectful functions with <code>map</code>!). Here are a few more super simple examples:</p>
+<p>What about <em>pure functions</em>? Pure functions are functions with <em>no effects</em>. The input directly translates to the output, every time. The examples we looked at just a moment ago with <code>map</code> are all pure functions (and it’s a really weird antipattern to use effectful functions with <code>map</code>! Don’t do that! Use <code>forEach</code> if you must have an effect). Here are a few more super simple examples:</p>
 <pre class="js"><code>const add = (a, b) =&gt; a + b;
 const toString = (number) =&gt; `The value is ${number}`;
 const toLength = (list) =&gt; list.length;</code></pre>
@@ -214,8 +214,8 @@ const getFoo = () =&gt; foo;</code></pre>
 <li>A much smaller list of things to worry about when we’re looking at a given function.</li>
 <li>The ability to <em>compose</em> functions together more easily.</li>
 </ol>
-<p>We have fewer things to keep in our heads when we look at any given pure function, because we don’t have to worry at all about whether something it touches has been changed by another function or not. We have inputs. We transform them into outputs. That’s it. Compare these two things:</p>
-<p>Here’s a traditional OOP approach:</p>
+<p>We have fewer things to keep in our heads when we look at any given pure function, because we don’t have to worry at all about whether something it touches has been changed by another function or not. We have inputs. We transform them into outputs. That’s it. Compare these two things in practice.</p>
+<p>Here’s a traditional <abbr>OOP</abbr> approach:</p>
 <pre class="js"><code>class Order {
   constructor() {
     this.subTotal = 0.0;
@@ -256,7 +256,7 @@ const total = orderTotal(order.subTotal, order.taxes);</code></pre>
 </section>
 <section id="a-worked-example" class="level2">
 <h2>A Worked Example</h2>
-<p>Let’s get down to a real example of these ideas. Most everyone here should be familiar with the burger test we use as part of our hiring process. For anyone who isn’t, the idea is, you get a list of burger orders which looks like this:</p>
+<p>Let’s get down to a real example of these ideas. This is a ‘code kata’ I do every so often. In this particular kata, you get a list of burger orders which looks like this:</p>
 <pre class="js"><code>[
   { condiments: [&#39;ketchup&#39;, &#39;mustard&#39;, &#39;pickles&#39;] },
   { condiments: [&#39;tomatoes&#39;] },

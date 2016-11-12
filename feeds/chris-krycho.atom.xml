@@ -3,8 +3,8 @@
 &lt;p&gt;&lt;i class='editorial'&gt;&lt;strong&gt;Edit:&lt;/strong&gt; updated with corrected performance characterstics.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Hello, everyone. Today, we are going to talk about functional programming—asking what it is, and why we should care.&lt;/p&gt;
-&lt;section id="clearing-the-table-fps-reputation" class="level2"&gt;
-&lt;h2&gt;Clearing the Table: FP’s Reputation&lt;/h2&gt;
+&lt;section id="clearing-the-table-functional-programmings-reputation" class="level2"&gt;
+&lt;h2&gt;Clearing the Table: Functional Programming’s Reputation&lt;/h2&gt;
 &lt;p&gt;Functional programming has something of a reputation: on the one hand, as incredible difficult, dense, full of mathematical jargon, applicable only to certain fields like machine learning or massive data analysis; on the other hand, as a kind of panacea that solves all of your problems. The reality, I think, is a little bit of both.&lt;/p&gt;
 &lt;p&gt;The world of functional programming &lt;em&gt;does&lt;/em&gt; include a lot of jargon from the math world, and there are good reasons for that, but there is also a lot we could do to make it more approachable to people who don’t have a background in, say category. Category theory is useful, of course, and I think there are times when we might want to be able to draw on it. But gladly, functional programming doesn’t require you to know what an &lt;em&gt;applicative functor&lt;/em&gt; is to be able to use it. (And, gladly, there’s a lot of increasingly-solid teaching material out there about functional programming which &lt;em&gt;doesn’t&lt;/em&gt; lean on math concepts.)&lt;/p&gt;
 &lt;p&gt;On the other side, functional programming does give us some real and serious benefits, and that’s what I’m going to spend the first third or so of this talk looking at. But of course, it’s still just a tool, and even though it is a very helpful and very powerful tool, it can’t keep us from writing bugs. Still, every tool we can add to our belt for writing correct software is a win.&lt;/p&gt;
@@ -15,7 +15,7 @@
 &lt;li&gt;Monoid&lt;/li&gt;
 &lt;li&gt;Monad&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;And in truth, a number of those could have better names. &lt;em&gt;But&lt;/em&gt; we have plenty of terminology we throw around in the world of imperative, object-oriented programming. To pick just one, obvious and easy example—what are the SOLID principles?&lt;/p&gt;
+&lt;p&gt;And in truth, a number of those could have better names. &lt;em&gt;But&lt;/em&gt; we have plenty of terminology we throw around in the world of imperative, object-oriented programming. To pick just one, obvious and easy example—what are the &lt;abbr&gt;SOLID&lt;/abbr&gt; principles?&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Single reponsibility&lt;/li&gt;
 &lt;li&gt;Open/closed&lt;/li&gt;
@@ -31,7 +31,7 @@
 &lt;p&gt;Functional programming is a style of programming that uses &lt;em&gt;pure functions&lt;/em&gt; and &lt;em&gt;immutable data&lt;/em&gt; for as many things as possible, and builds programs primarily out of &lt;em&gt;functions&lt;/em&gt; rather than other abstractions. I’ll define all of those terms in a moment, but first…&lt;/p&gt;
 &lt;section id="why-do-we-care" class="level3"&gt;
 &lt;h3&gt;Why do we care?&lt;/h3&gt;
-&lt;p&gt;We care, frankly, because &lt;em&gt;we’re not that smart&lt;/em&gt;. Let’s think about some of the kinds of things we’re doing with, say, restaurant software: clients, with locations, building baskets, composed of products with options and modifiers, which have a set of rules for what combinations are allowed both of products and of their elements as making up a basket, which turn into orders, which have associated payment schemes (sometimes a lot of them), which generate data to send to a POS as well as summaries for the customer who ordered it, and so on. There are a &lt;em&gt;lot&lt;/em&gt; of moving pieces there. I’m sure a missed some non-trivial pieces, too. And if all of that is &lt;em&gt;stateful&lt;/em&gt;, that’s a lot of state to hold in your head.&lt;/p&gt;
+&lt;p&gt;We care, frankly, because &lt;em&gt;we’re not that smart&lt;/em&gt;. Let’s think about some of the kinds of things we’re doing with, say, restaurant software: clients, with locations, building baskets, composed of products with options and modifiers, which have a set of rules for what combinations are allowed both of products and of their elements as making up a basket, which turn into orders, which have associated payment schemes (sometimes a lot of them), which generate data to send to a point-of-sale as well as summaries for the customer who ordered it, and so on. There are a &lt;em&gt;lot&lt;/em&gt; of moving pieces there. I’m sure a missed some non-trivial pieces, too. And if all of that is &lt;em&gt;stateful&lt;/em&gt;, that’s a lot of state to hold in your head.&lt;/p&gt;
 &lt;p&gt;Let me be a bit provocative for a moment. Imagine you were reading a JavaScript module and it looked like this:&lt;/p&gt;
 &lt;pre class="js"&gt;&lt;code&gt;var foo = 12;
 var bar = &amp;#39;blah&amp;#39;;
@@ -67,7 +67,7 @@ export function getSomething() {
   }
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We have some “internal” data, just like we had in the module up above. And we have some public methods which change that state. In terms of these internals, it’s the same. There are differences in terms of having &lt;em&gt;instances&lt;/em&gt; and things like that, but in terms of understanding the behavior of the system—understanding the state involved—it’s the same. It’s global, mutable state. Now it’s not global like attaching something to the &lt;code&gt;window&lt;/code&gt; object in JavaScript, and that’s good, but still: at the module or class level, it’s just global mutable state, with no guarantees about how anything works. And this is normal—endemic, even—in object-oriented code. We encapsulate our state, but we have &lt;em&gt;tons&lt;/em&gt; of state, it’s all mutable, and as far as any given class method call is concerned, it’s all global to that class.&lt;/p&gt;
-&lt;p&gt;You have no idea, when you call a given object method, what it might do. The fact that you call it with an &lt;code&gt;Int&lt;/code&gt; and get out a &lt;code&gt;String&lt;/code&gt; tells you almost nothing. For all you know, it’s triggering a JSON-RPC call using the int as the ID for the endpoint, which in turn triggers an operation, responds with another ID, which you then use to query a database, and load a string from there, which you then set on some other member of the object instance, and then return. Should you write a method that does that? Probably not. But you can; nothing stops you.&lt;/p&gt;
+&lt;p&gt;You have no idea, when you call a given object method, what it might do. The fact that you call it with an &lt;code&gt;Int&lt;/code&gt; and get out a &lt;code&gt;String&lt;/code&gt; tells you almost nothing. For all you know, it’s triggering a &lt;abbr&gt;JSON-RPC&lt;/abbr&gt; call using the int as the &lt;abbr&gt;ID&lt;/abbr&gt; for the endpoint, which in turn triggers an operation, responds with another &lt;abbr&gt;ID&lt;/abbr&gt;, which you then use to query a database, and load a string from there, which you then set on some other member of the object instance, and then return. Should you write a method that does that? Probably not. But you can; nothing stops you.&lt;/p&gt;
 &lt;p&gt;When you call a method, you have no idea what it will do. JavaScript, TypeScript, C&lt;sup&gt;♯&lt;/sup&gt;, it doesn’t matter. You have literally no idea. And that makes things &lt;em&gt;hard&lt;/em&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;It often makes fixing bugs hard, because it means you have to figure out which particular &lt;em&gt;state&lt;/em&gt; caused the issue, and find a way to reproduce that state. Which usually means calling methods in a particular order.&lt;/li&gt;
@@ -98,11 +98,11 @@ const doubledValues = initialValues.map(value =&amp;gt; value * 2);&lt;/code&gt;
 &lt;pre class="js"&gt;&lt;code&gt;const double = value =&amp;gt; value * 2;
 const initialValues = [1, 2, 3];
 const doubledValues = initialValues.map(double);&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This is possible because &lt;em&gt;functions are just data&lt;/em&gt;—they’re first-class members of the language—and therefore &lt;em&gt;functions can be arguments or return values&lt;/em&gt;—the language supports &lt;em&gt;higher-order functions&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This is possible because &lt;em&gt;functions are just data&lt;/em&gt;—they’re first-class members of the language—and therefore &lt;em&gt;functions can be arguments or return values&lt;/em&gt;—the language supports higher-order functions.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="pure-functions" class="level4"&gt;
 &lt;h4&gt;Pure functions&lt;/h4&gt;
-&lt;p&gt;What about &lt;em&gt;pure functions&lt;/em&gt;? Pure functions are functions with &lt;em&gt;no effects&lt;/em&gt;. The input directly translates to the output, every time. The examples we looked at just a moment ago with &lt;code&gt;map&lt;/code&gt; are all pure functions (and it’s a really weird antipattern to use effectful functions with &lt;code&gt;map&lt;/code&gt;!). Here are a few more super simple examples:&lt;/p&gt;
+&lt;p&gt;What about &lt;em&gt;pure functions&lt;/em&gt;? Pure functions are functions with &lt;em&gt;no effects&lt;/em&gt;. The input directly translates to the output, every time. The examples we looked at just a moment ago with &lt;code&gt;map&lt;/code&gt; are all pure functions (and it’s a really weird antipattern to use effectful functions with &lt;code&gt;map&lt;/code&gt;! Don’t do that! Use &lt;code&gt;forEach&lt;/code&gt; if you must have an effect). Here are a few more super simple examples:&lt;/p&gt;
 &lt;pre class="js"&gt;&lt;code&gt;const add = (a, b) =&amp;gt; a + b;
 const toString = (number) =&amp;gt; `The value is ${number}`;
 const toLength = (list) =&amp;gt; list.length;&lt;/code&gt;&lt;/pre&gt;
@@ -126,8 +126,8 @@ const getFoo = () =&amp;gt; foo;&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;A much smaller list of things to worry about when we’re looking at a given function.&lt;/li&gt;
 &lt;li&gt;The ability to &lt;em&gt;compose&lt;/em&gt; functions together more easily.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;We have fewer things to keep in our heads when we look at any given pure function, because we don’t have to worry at all about whether something it touches has been changed by another function or not. We have inputs. We transform them into outputs. That’s it. Compare these two things:&lt;/p&gt;
-&lt;p&gt;Here’s a traditional OOP approach:&lt;/p&gt;
+&lt;p&gt;We have fewer things to keep in our heads when we look at any given pure function, because we don’t have to worry at all about whether something it touches has been changed by another function or not. We have inputs. We transform them into outputs. That’s it. Compare these two things in practice.&lt;/p&gt;
+&lt;p&gt;Here’s a traditional &lt;abbr&gt;OOP&lt;/abbr&gt; approach:&lt;/p&gt;
 &lt;pre class="js"&gt;&lt;code&gt;class Order {
   constructor() {
     this.subTotal = 0.0;
@@ -168,7 +168,7 @@ const total = orderTotal(order.subTotal, order.taxes);&lt;/code&gt;&lt;/pre&gt;
 &lt;/section&gt;
 &lt;section id="a-worked-example" class="level2"&gt;
 &lt;h2&gt;A Worked Example&lt;/h2&gt;
-&lt;p&gt;Let’s get down to a real example of these ideas. Most everyone here should be familiar with the burger test we use as part of our hiring process. For anyone who isn’t, the idea is, you get a list of burger orders which looks like this:&lt;/p&gt;
+&lt;p&gt;Let’s get down to a real example of these ideas. This is a ‘code kata’ I do every so often. In this particular kata, you get a list of burger orders which looks like this:&lt;/p&gt;
 &lt;pre class="js"&gt;&lt;code&gt;[
   { condiments: [&amp;#39;ketchup&amp;#39;, &amp;#39;mustard&amp;#39;, &amp;#39;pickles&amp;#39;] },
   { condiments: [&amp;#39;tomatoes&amp;#39;] },

@@ -17,7 +17,7 @@ Modified: 2016-11-11 23:30
 
 Hello, everyone. Today, we are going to talk about functional programming—asking what it is, and why we should care.
 
-## Clearing the Table: FP's Reputation
+## Clearing the Table: Functional Programming's Reputation
 
 Functional programming has something of a reputation: on the one hand, as incredible difficult, dense, full of mathematical jargon, applicable only to certain fields like machine learning or massive data analysis; on the other hand, as a kind of panacea that solves all of your problems. The reality, I think, is a little bit of both.
 
@@ -32,7 +32,7 @@ One more prefatory note before we get into the meat of this talk: unfamiliar ter
 - Monoid
 - Monad
 
-And in truth, a number of those could have better names. *But* we have plenty of terminology we throw around in the world of imperative, object-oriented programming. To pick just one, obvious and easy example—what are the SOLID principles?
+And in truth, a number of those could have better names. *But* we have plenty of terminology we throw around in the world of imperative, object-oriented programming. To pick just one, obvious and easy example—what are the <abbr>SOLID</abbr> principles?
 
 - Single reponsibility
 - Open/closed
@@ -50,7 +50,7 @@ Functional programming is a style of programming that uses *pure functions* and 
 
 ### Why do we care?
 
-We care, frankly, because *we're not that smart*. Let's think about some of the kinds of things we're doing with, say, restaurant software: clients, with locations, building baskets, composed of products with options and modifiers, which have a set of rules for what combinations are allowed both of products and of their elements as making up a basket, which turn into orders, which have associated payment schemes (sometimes a lot of them), which generate data to send to a POS as well as summaries for the customer who ordered it, and so on. There are a *lot* of moving pieces there. I'm sure a missed some non-trivial pieces, too. And if all of that is *stateful*, that's a lot of state to hold in your head.
+We care, frankly, because *we're not that smart*. Let's think about some of the kinds of things we're doing with, say, restaurant software: clients, with locations, building baskets, composed of products with options and modifiers, which have a set of rules for what combinations are allowed both of products and of their elements as making up a basket, which turn into orders, which have associated payment schemes (sometimes a lot of them), which generate data to send to a point-of-sale as well as summaries for the customer who ordered it, and so on. There are a *lot* of moving pieces there. I'm sure a missed some non-trivial pieces, too. And if all of that is *stateful*, that's a lot of state to hold in your head.
 
 Let me be a bit provocative for a moment. Imagine you were reading a JavaScript module and it looked like this:
 
@@ -98,7 +98,7 @@ class AThing {
 
 We have some "internal" data, just like we had in the module up above. And we have some public methods which change that state. In terms of these internals, it's the same. There are differences in terms of having *instances* and things like that, but in terms of understanding the behavior of the system—understanding the state involved—it's the same. It's global, mutable state. Now it's not global like attaching something to the `window` object in JavaScript, and that's good, but still: at the module or class level, it's just global mutable state, with no guarantees about how anything works. And this is normal—endemic, even—in object-oriented code. We encapsulate our state, but we have *tons* of state, it's all mutable, and as far as any given class method call is concerned, it's all global to that class.
 
-You have no idea, when you call a given object method, what it might do. The fact that you call it with an `Int` and get out a `String` tells you almost nothing. For all you know, it's triggering a JSON-RPC call using the int as the ID for the endpoint, which in turn triggers an operation, responds with another ID, which you then use to query a database, and load a string from there, which you then set on some other member of the object instance, and then return. Should you write a method that does that? Probably not. But you can; nothing stops you.
+You have no idea, when you call a given object method, what it might do. The fact that you call it with an `Int` and get out a `String` tells you almost nothing. For all you know, it's triggering a <abbr>JSON-RPC</abbr> call using the int as the <abbr>ID</abbr> for the endpoint, which in turn triggers an operation, responds with another <abbr>ID</abbr>, which you then use to query a database, and load a string from there, which you then set on some other member of the object instance, and then return. Should you write a method that does that? Probably not. But you can; nothing stops you.
 
 When you call a method, you have no idea what it will do. JavaScript, TypeScript, C^♯^, it doesn't matter. You have literally no idea. And that makes things *hard*.
 
@@ -145,11 +145,11 @@ const initialValues = [1, 2, 3];
 const doubledValues = initialValues.map(double);
 ```
 
-This is possible because *functions are just data*—they're first-class members of the language—and therefore *functions can be arguments or return values*—the language supports *higher-order functions*.
+This is possible because *functions are just data*—they're first-class members of the language—and therefore *functions can be arguments or return values*—the language supports higher-order functions.
 
 #### Pure functions
 
-What about *pure functions*? Pure functions are functions with *no effects*. The input directly translates to the output, every time. The examples we looked at just a moment ago with `map` are all pure functions (and it's a really weird antipattern to use effectful functions with `map`!). Here are a few more super simple examples:
+What about *pure functions*? Pure functions are functions with *no effects*. The input directly translates to the output, every time. The examples we looked at just a moment ago with `map` are all pure functions (and it's a really weird antipattern to use effectful functions with `map`! Don't do that! Use `forEach` if you must have an effect). Here are a few more super simple examples:
 
 ```js
 const add = (a, b) => a + b;
@@ -183,9 +183,9 @@ What this gets us is two things:
 1. A much smaller list of things to worry about when we're looking at a given function.
 2. The ability to *compose* functions together more easily.
 
-We have fewer things to keep in our heads when we look at any given pure function, because we don't have to worry at all about whether something it touches has been changed by another function or not. We have inputs. We transform them into outputs. That's it. Compare these two things:
+We have fewer things to keep in our heads when we look at any given pure function, because we don't have to worry at all about whether something it touches has been changed by another function or not. We have inputs. We transform them into outputs. That's it. Compare these two things in practice.
 
-Here's a traditional OOP approach:
+Here's a traditional <abbr>OOP</abbr> approach:
 
 ```js
 class Order {
@@ -239,7 +239,7 @@ You're probably wondering how in the world this can work (and also how you avoid
 
 ## A Worked Example
 
-Let's get down to a real example of these ideas. Most everyone here should be familiar with the burger test we use as part of our hiring process. For anyone who isn't, the idea is, you get a list of burger orders which looks like this:
+Let's get down to a real example of these ideas. This is a 'code kata' I do every so often. In this particular kata, you get a list of burger orders which looks like this:
 
 ```js
 [
