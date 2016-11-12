@@ -161,7 +161,7 @@ const total = orderTotal(order.subTotal, order.taxes);&lt;/code&gt;&lt;/pre&gt;
 &lt;section id="immutable-data" class="level4"&gt;
 &lt;h4&gt;Immutable data&lt;/h4&gt;
 &lt;p&gt;Complementing the use of mostly pure functions is to use &lt;em&gt;immutable data&lt;/em&gt;. Instead of having objects which we mutate, we create copies of the data as we transform it.&lt;/p&gt;
-&lt;p&gt;You’re probably wondering how in the world this can work (and also how you avoid it being incredibly computationally expensive).&lt;/p&gt;
+&lt;p&gt;You’re probably wondering how in the world this can work (and also how you avoid it being incredibly computationally expensive). For the most part, we can rely on two things: smart compilers and runtimes, and the fact that we often don’t need to reuse the &lt;em&gt;exact&lt;/em&gt; same data because we’re transforming it. However, as we’ll see below, in languages which don’t have native support for immutability, it can impose a performance penalty. Gladly, there are ways to work around this!&lt;/p&gt;
 &lt;hr /&gt;
 &lt;/section&gt;
 &lt;/section&gt;

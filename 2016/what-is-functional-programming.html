@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="What is Functional Programming?"/>
     <meta name="twitter:description" content="Functional programming—though not a panacea—is a really great tool to have in our toolbelt. (And you don’t have to be a mathematician to use it.)"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -249,7 +249,7 @@ const total = orderTotal(order.subTotal, order.taxes);</code></pre>
 <section id="immutable-data" class="level4">
 <h4>Immutable data</h4>
 <p>Complementing the use of mostly pure functions is to use <em>immutable data</em>. Instead of having objects which we mutate, we create copies of the data as we transform it.</p>
-<p>You’re probably wondering how in the world this can work (and also how you avoid it being incredibly computationally expensive).</p>
+<p>You’re probably wondering how in the world this can work (and also how you avoid it being incredibly computationally expensive). For the most part, we can rely on two things: smart compilers and runtimes, and the fact that we often don’t need to reuse the <em>exact</em> same data because we’re transforming it. However, as we’ll see below, in languages which don’t have native support for immutability, it can impose a performance penalty. Gladly, there are ways to work around this!</p>
 <hr />
 </section>
 </section>

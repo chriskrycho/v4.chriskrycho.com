@@ -233,7 +233,7 @@ As we'll see in the example I walk through in a minute, it also lets us *compose
 
 Complementing the use of mostly pure functions is to use *immutable data*. Instead of having objects which we mutate, we create copies of the data as we transform it.
 
-You're probably wondering how in the world this can work (and also how you avoid it being incredibly computationally expensive).
+You're probably wondering how in the world this can work (and also how you avoid it being incredibly computationally expensive). For the most part, we can rely on two things: smart compilers and runtimes, and the fact that we often don't need to reuse the *exact* same data because we're transforming it. However, as we'll see below, in languages which don't have native support for immutability, it can impose a performance penalty. Gladly, there are ways to work around this!
 
 ---
 
