@@ -310,7 +310,7 @@ getBurgers().then(burgers => {
 });
 ```
 
-That's pretty well-factored (and it's a sight better than what I actually turned in last year). But it's pretty wrapped up on the specific details of this problem, and there's basically nothing here I could reuse. It's also relatively hard to test. There aren't really a lot of pieces there we could break up into smaller functions if we wanted to figure out why something was broken. The way you'd end up fixing a bug here is probably by dropping `debugger` or `console.log()` statements in there to see what the values are at any given spot.
+That's pretty well-factored. But it's pretty wrapped up on the specific details of this problem, and there's basically nothing here I could reuse. It's also relatively hard to test. There aren't really a lot of pieces there we could break up into smaller functions if we wanted to figure out why something was broken. The way you'd end up fixing a bug here is probably by dropping `debugger` or `console.log()` statements in there to see what the values are at any given spot.
 
 And this is where functional programming really does give us a better way.
 

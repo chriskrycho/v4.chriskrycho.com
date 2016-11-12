@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="What is Functional Programming?"/>
     <meta name="twitter:description" content="Functional programming—though not a panacea—is a really great tool to have in our toolbelt. (And you don’t have to be a mathematician to use it.)"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -313,7 +313,7 @@ const total = orderTotal(order.subTotal, order.taxes);</code></pre>
     console.log(descAndCountToOutput(descAndCount));
   }
 });</code></pre>
-<p>That’s pretty well-factored (and it’s a sight better than what I actually turned in last year). But it’s pretty wrapped up on the specific details of this problem, and there’s basically nothing here I could reuse. It’s also relatively hard to test. There aren’t really a lot of pieces there we could break up into smaller functions if we wanted to figure out why something was broken. The way you’d end up fixing a bug here is probably by dropping <code>debugger</code> or <code>console.log()</code> statements in there to see what the values are at any given spot.</p>
+<p>That’s pretty well-factored. But it’s pretty wrapped up on the specific details of this problem, and there’s basically nothing here I could reuse. It’s also relatively hard to test. There aren’t really a lot of pieces there we could break up into smaller functions if we wanted to figure out why something was broken. The way you’d end up fixing a bug here is probably by dropping <code>debugger</code> or <code>console.log()</code> statements in there to see what the values are at any given spot.</p>
 <p>And this is where functional programming really does give us a better way.</p>
 </section>
 <section id="functional" class="level3">
