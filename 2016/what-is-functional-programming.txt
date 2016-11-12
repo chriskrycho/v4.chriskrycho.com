@@ -439,7 +439,7 @@ When we're dealing with the `Array` type, everything is fine, but when we conver
 
 There's another issue here, though, and it's the way that using the method-style calling convention obscures something important. When we call *most* of those methods, we're doing something quite different from what most *methods* do. A method normally is an operation on an object. These methods—most of them—are operations that return *new* objects. So it's nice from a syntax perspective, but if we're not *already* familiar with the behavior of a given method, it won't be clear at all that we're actually generating a bunch of totally new data by calling those methods.
 
-And... two of these methods *are* not doing that, but are modifying an array in place instead. Who knows which they are? (`sort` and `forEach`).
+And... two of these methods (`sort` and `forEach`) *are* not doing that, but are modifying an array in place instead.
 
 #### Lodash
 
