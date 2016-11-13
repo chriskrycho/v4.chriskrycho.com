@@ -443,4 +443,4 @@ getBurgers()
 &lt;li id="fn1"&gt;&lt;p&gt;or &lt;a href="https://github.com/lodash/lodash/wiki/FP-Guide"&gt;lodash-fp&lt;/a&gt;, but Ramda is a bit better documented and I just like it a little better&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 11 Nov 2016 22:30:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-11-11:2016/what-is-functional-programming.html</guid><category>functional programming</category><category>javascript</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 11 Nov 2016 22:30:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-11-11:2016/what-is-functional-programming.html</guid><category>software development</category><category>functional programming</category><category>javascript</category></item></channel></rss>

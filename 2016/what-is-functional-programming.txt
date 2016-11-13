@@ -3,7 +3,7 @@ Title: What is Functional Programming?
 Subtitle: (And why should we care about it?)
 Date: 2016-11-11 22:30
 Category: tech
-Tags: functional programming, javascript
+Tags: software development, functional programming, javascript
 Summary: >
     Functional programming—though not a panacea—is a really great tool to have in our toolbelt. (And you don’t have to be a mathematician to use it.)
 Modified: 2016-11-11 23:30
