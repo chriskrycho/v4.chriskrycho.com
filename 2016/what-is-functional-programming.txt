@@ -6,7 +6,7 @@ Category: tech
 Tags: software development, functional programming, javascript
 Summary: >
     Functional programming—though not a panacea—is a really great tool to have in our toolbelt. (And you don’t have to be a mathematician to use it.)
-Modified: 2016-11-11 23:30
+Modified: 2016-11-13 15:15
 ---
 
 <i class='editorial'>The following is a script I wrote for a tech talk I gave on functional programming. The recording isn't (and won't be) publicly available; but a script is often easier to reference anyway!</i>
