@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="What is Functional Programming?"/>
     <meta name="twitter:description" content="Functional programming—though not a panacea—is a really great tool to have in our toolbelt. (And you don’t have to be a mathematician to use it.)"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -367,7 +367,7 @@ const output = value =&gt; { console.log(value); };</code></pre>
   });
 })</code></pre>
 <p>This is a trivial example, of course, but it gets the point across: all we have to do to test this is pass in an object. It doesn’t depend on anything else. It doesn’t have <em>any knowledge</em> of how we’re going to use it. It doesn’t know that it’s going to be used with data coming from an array. All it knows is that if you give it an object with a <code>condiments</code> property, it’ll hand you back the array attached to that property.</p>
-<p>The result is that, with all of these functions, we don’t have to deal with mocks or stubs or anything like that to be testable. Input produces output. Pure functions are great for this. Now, some of you may be thinking, “That’s great, but what about IO, or databases, or any other time we actually interact with the world? What about talking to a point-of-sale?” I actually have some tentative thoughts about a future tech talk to look at how to do that in some detail, but for today, just remember that the goal is to write as many pure functions as possible, and to isolate the rest of your code from knowing about that. And of course, that’s best practice anyway! We’re just codifying it. We’ll see what that looks like in practice in jus ta minute.</p>
+<p>The result is that, with all of these functions, we don’t have to deal with mocks or stubs or anything like that to be testable. Input produces output. Pure functions are great for this. Now, some of you may be thinking, “That’s great, but what about <abbr>I/O</abbr>, or databases, or any other time we actually interact with the world? What about talking to a point-of-sale?” I actually have some tentative thoughts about a future tech talk to look at how to do that in some detail, but for today, just remember that the goal is to write as many pure functions as possible, and to isolate the rest of your code from knowing about that. And of course, that’s best practice anyway! We’re just codifying it. We’ll see what that looks like in practice in jus ta minute.</p>
 <p>Now, while we’re on the topic of pure functions, some of you with quick eyes may have noticed that two of these little functions we laid out are actually <em>not</em> pure: JavaScript’s <code>Array.sort</code> method operates in-place, for performance reasons, and so does our <code>toTotals</code> function. So a truly pure version of the sorting function looks like this:</p>
 <pre class="js"><code>const toSortedCondiments = condiments =&gt; condiments.concat().sort();</code></pre>
 <p>Similarly, we <em>could</em> define the <code>toTotals</code> to return a new object every time, like this:</p>
