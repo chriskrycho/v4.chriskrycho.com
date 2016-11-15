@@ -1,7 +1,7 @@
 ---
 Title: Using Rust for ‘Scripting’
 Subtitle: "With a bonus: cross-compiling from macOS to Windows!"
-Date: 2016-11-14 21:50
+Date: 2016-11-14 22:00
 Category: Tech
 Tags: rust, software development, programming languages
 Summary: >
