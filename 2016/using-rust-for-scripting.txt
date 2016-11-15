@@ -129,11 +129,13 @@ Once again, let's do this step by step. Three notes: First, I got pretty much ev
 
     - `C:\Program Files\Windows Kits\10\Lib\10.0.<something>\ucrt\x64`
     - `C:\Program Files\Windows Kits\10\Lib\10.0.<something>\um\x64`
-    - `C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib`
+    - `C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\amd64`
 
     Note that if you don't already have <abbr>MSVC</abbr> installed, you'll need to install it. If you don't have Visual Studio installed on a Windows machine *at all*, you can do that by using the links [here][msvc]. Otherwise, on Windows, go to **Add/Remove Programs** and opting to Modify the Visual Studio installation. There, you can choose to add the C++ tools to the installation.
 
-5. Set the `LIB` environment variable to include those paths and build the program. Let's say you put them in something like `/Users/chris/lib/windows` (which is where I put mine). Your
+    Note also that if you're building for 32-bit Windows you'll want to grab *those* libraries instead of the 64-bit libraries.
+
+5. Set the `LIB` environment variable to include those paths and build the program. Let's say you put them in something like `/Users/chris/lib/windows` (which is where I put mine). Your Cargo invocation will look like this:
 
     ```sh
     env LIB="/Users/chris/lib/windows/ucrt/x64/;/Users/chris/lib/windows/um/x64/;/Users/chris/lib/windows/VC_lib/amd64/" \

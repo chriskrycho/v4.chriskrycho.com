@@ -81,10 +81,11 @@ fn main() {
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;C:\Program Files\Windows Kits\10\Lib\10.0.&amp;lt;something&amp;gt;\ucrt\x64&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;C:\Program Files\Windows Kits\10\Lib\10.0.&amp;lt;something&amp;gt;\um\x64&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\amd64&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Note that if you don’t already have &lt;abbr&gt;MSVC&lt;/abbr&gt; installed, you’ll need to install it. If you don’t have Visual Studio installed on a Windows machine &lt;em&gt;at all&lt;/em&gt;, you can do that by using the links &lt;a href="http://landinghub.visualstudio.com/visual-cpp-build-tools"&gt;here&lt;/a&gt;. Otherwise, on Windows, go to &lt;strong&gt;Add/Remove Programs&lt;/strong&gt; and opting to Modify the Visual Studio installation. There, you can choose to add the C++ tools to the installation.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Set the &lt;code&gt;LIB&lt;/code&gt; environment variable to include those paths and build the program. Let’s say you put them in something like &lt;code&gt;/Users/chris/lib/windows&lt;/code&gt; (which is where I put mine). Your&lt;/p&gt;
+&lt;p&gt;Note that if you don’t already have &lt;abbr&gt;MSVC&lt;/abbr&gt; installed, you’ll need to install it. If you don’t have Visual Studio installed on a Windows machine &lt;em&gt;at all&lt;/em&gt;, you can do that by using the links &lt;a href="http://landinghub.visualstudio.com/visual-cpp-build-tools"&gt;here&lt;/a&gt;. Otherwise, on Windows, go to &lt;strong&gt;Add/Remove Programs&lt;/strong&gt; and opting to Modify the Visual Studio installation. There, you can choose to add the C++ tools to the installation.&lt;/p&gt;
+&lt;p&gt;Note also that if you’re building for 32-bit Windows you’ll want to grab &lt;em&gt;those&lt;/em&gt; libraries instead of the 64-bit libraries.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Set the &lt;code&gt;LIB&lt;/code&gt; environment variable to include those paths and build the program. Let’s say you put them in something like &lt;code&gt;/Users/chris/lib/windows&lt;/code&gt; (which is where I put mine). Your Cargo invocation will look like this:&lt;/p&gt;
 &lt;pre class="sh"&gt;&lt;code&gt;env LIB=&amp;quot;/Users/chris/lib/windows/ucrt/x64/;/Users/chris/lib/windows/um/x64/;/Users/chris/lib/windows/VC_lib/amd64/&amp;quot; \
 cargo build --release --target=x86_64-pc-windows-msvc&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Note that the final &lt;code&gt;/&lt;/code&gt; on each path and the enclosing quotation marks are all important!&lt;/p&gt;&lt;/li&gt;
