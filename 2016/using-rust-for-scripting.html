@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Using Rust for ‘Scripting’"/>
     <meta name="twitter:description" content="Why I might use Rust instead of Python, with walkthroughs for building a simple "script"-like program and a guide for cross-compiling Rust code to Windows from macOS."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -80,13 +80,14 @@
 <h2>With a bonus: cross-compiling from macOS to Windows!</h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/2016/using-rust-for-scripting.html"><i class="fa fa-fw fa-link"></i></a>November 14, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2016/using-rust-for-scripting.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/2016/using-rust-for-scripting.html"><i class="fa fa-fw fa-link"></i></a>November 14, 2016 (updated November 15, 2016)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2016/using-rust-for-scripting.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
 
         <div class="content">
 
+<p><i class=editorial><strong>Edit</strong>: fixed some typos, cleaned up implementation a bit based on feedback around the internet.</i></p>
 <section id="i.-using-rust-instead-of-python" class="level2">
 <h2>I. Using Rust Instead of Python</h2>
 <p>A friend asked me today about writing a little script to do a simple conversion of the names of some files in a nested set of directories. Everything with one file extension needed to get another file extension. After asking if it was the kind of thing where he had time to and/or wanted to learn how to do it himself (always important when someone has expressed that interest more generally), I said, “Why don’t I do this in Rust?”</p>
@@ -120,6 +121,7 @@ use std::fs;
 
 use clap::{Arg, App, AppSettings};
 
+
 fn main() {
   let path_arg_name = &quot;path&quot;;
   let args = App::new(&quot;cha-to-txt&quot;)
@@ -129,16 +131,11 @@ fn main() {
       .help(&quot;path to the top directory with .cha files&quot;))
     .get_matches();
 
-  let path = match args.value_of(path_arg_name) {
-    Some(path) =&gt; path,
-    None =&gt; panic!(&quot;You didn&#39;t supply a path&quot;),
-  };
-
+  let path = args.value_of(path_arg_name).expect(&quot;You didn&#39;t supply a path&quot;);
   let search = String::from(path) + &quot;/**/*.cha&quot;;
-  let paths = match glob(&amp;search) {
-    Ok(paths) =&gt; paths.map(|p| p.expect(&quot;Bad path&quot;)),
-    Err(reason) =&gt; panic!(&quot;{}&quot;, reason),
-  };
+  let paths = glob(&amp;search)
+    .expect(&quot;Could not find paths in glob&quot;)
+    .map(|p| p.expect(&quot;Bad individual path in glob&quot;));
 
   for path in paths {
     match fs::rename(&amp;path, &amp;path.with_extension(&quot;txt&quot;)) {
