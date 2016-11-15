@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - rust</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Tue, 15 Nov 2016 07:45:00 -0500</lastBuildDate><item><title>Using Rust for ‘Scripting’</title><link>http://www.chriskrycho.com/2016/using-rust-for-scripting.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;&lt;strong&gt;Edit&lt;/strong&gt;: fixed some typos, cleaned up implementation a bit based on feedback around the internet.&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - rust</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Tue, 15 Nov 2016 09:00:00 -0500</lastBuildDate><item><title>Using Rust for ‘Scripting’</title><link>http://www.chriskrycho.com/2016/using-rust-for-scripting.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;&lt;strong&gt;Edit&lt;/strong&gt;: fixed some typos, cleaned up implementation a bit based on feedback around the internet.&lt;/i&gt;&lt;/p&gt;
 &lt;section id="i.-using-rust-instead-of-python" class="level2"&gt;
 &lt;h2&gt;I. Using Rust Instead of Python&lt;/h2&gt;
 &lt;p&gt;A friend asked me today about writing a little script to do a simple conversion of the names of some files in a nested set of directories. Everything with one file extension needed to get another file extension. After asking if it was the kind of thing where he had time to and/or wanted to learn how to do it himself (always important when someone has expressed that interest more generally), I said, “Why don’t I do this in Rust?”&lt;/p&gt;
@@ -44,7 +44,8 @@ fn main() {
       .help(&amp;quot;path to the top directory with .cha files&amp;quot;))
     .get_matches();
 
-  let path = args.value_of(path_arg_name).expect(&amp;quot;You didn&amp;#39;t supply a path&amp;quot;);
+  let path = args.value_of(path_arg_name)
+    .expect(&amp;quot;You didn&amp;#39;t supply a path&amp;quot;);
   let search = String::from(path) + &amp;quot;/**/*.cha&amp;quot;;
   let paths = glob(&amp;amp;search)
     .expect(&amp;quot;Could not find paths in glob&amp;quot;)

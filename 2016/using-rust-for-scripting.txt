@@ -6,7 +6,7 @@ Category: Tech
 Tags: rust, software development, programming languages
 Summary: >
     Why I might use Rust instead of Python, with walkthroughs for building a simple "script"-like program and a guide for cross-compiling Rust code to Windows from macOS.
-Modified: 2016-11-15 07:45
+Modified: 2016-11-15 09:00
 ---
 
 <i class=editorial>**Edit**: fixed some typos, cleaned up implementation a bit based on feedback around the internet.</i>
@@ -71,7 +71,8 @@ Building a "script"-style tool in Rust is pretty easy, gladly. I'll walk through
           .help("path to the top directory with .cha files"))
         .get_matches();
 
-      let path = args.value_of(path_arg_name).expect("You didn't supply a path");
+      let path = args.value_of(path_arg_name)
+        .expect("You didn't supply a path");
       let search = String::from(path) + "/**/*.cha";
       let paths = glob(&search)
         .expect("Could not find paths in glob")
