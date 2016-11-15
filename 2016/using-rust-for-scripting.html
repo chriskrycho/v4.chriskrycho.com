@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Using Rust for ‘Scripting’"/>
     <meta name="twitter:description" content="Why I might use Rust instead of Python, with walkthroughs for building a simple "script"-like program and a guide for cross-compiling Rust code to Windows from macOS."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -95,6 +95,7 @@
 <p>I could have asked him to install Python. But, on reflection, I thought: <i class=thought>Why would I do that? I can write this in Rust.</i></p>
 <p>Writing it in Rust means I can compile it and hand it to him, and he can run it. And that’s it. As wonderful as they are, the fact that languages like Python, Perl, Ruby, JavaScript, etc. require having the runtime bundled up with them makes just shipping a tool a lot harder—<em>especially</em> on systems which aren’t a Unix derivative and don’t have them installed by default. (Yes, I know that <em>mostly</em> means Windows, but it doesn’t <em>solely</em> mean Windows. And, more importantly: the vast majority of the desktop-type computers in the world <em>still run Windows</em>. So that’s a big reason all by itself.)</p>
 <p>So there’s the justification for shipping a compiled binary. Why Rust specifically? Well, because I’m a fanboy. (But I’m a fanboy because Rust often gives you roughly the feel of using a high-level language like Python, but lets you ship standalone binaries. The same is true of a variety of other languages, too, like Haskell; but Rust is the one I know and like right now.)</p>
+<p><i class=editorial><strong>Edit the second:</strong> this is getting a lot of views from Hacker News, and it’s worth note: I’m not actually advocating that everyone stop using shell scripts for this kind of thing. I’m simply noting that it’s <em>possible</em> (and sometimes even <em>nice</em>) to be able to do this kind of thing in Rust, cross-compile it, and just ship it. And hey, types are nice when you’re trying to do more sophisticated things than I’m doing here! Also, for those worried about running untrusted binaries: I handed my friend the code, and would happily teach him how to build it.</i></p>
 </section>
 <section id="ii.-building-a-simple-script" class="level2">
 <h2>II. Building a Simple “Script”</h2>

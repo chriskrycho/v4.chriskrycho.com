@@ -23,6 +23,8 @@ Writing it in Rust means I can compile it and hand it to him, and he can run it.
 
 So there's the justification for shipping a compiled binary. Why Rust specifically? Well, because I'm a fanboy. (But I'm a fanboy because Rust often gives you roughly the feel of using a high-level language like Python, but lets you ship standalone binaries. The same is true of a variety of other languages, too, like Haskell; but Rust is the one I know and like right now.)
 
+<i class=editorial>**Edit the second:** this is getting a lot of views from Hacker News, and it's worth note: I'm not actually advocating that everyone stop using shell scripts for this kind of thing. I'm simply noting that it's *possible* (and sometimes even *nice*) to be able to do this kind of thing in Rust, cross-compile it, and just ship it. And hey, types are nice when you're trying to do more sophisticated things than I'm doing here! Also, for those worried about running untrusted binaries: I handed my friend the code, and would happily teach him how to build it.</i>
+
 ## II. Building a Simple "Script"
 
 Building a "script"-style tool in Rust is pretty easy, gladly. I'll walk through exactly what I did to create this "script"-like tool for my friend. My goal here was to rename every file in a directory from `*.cha` to `*.txt`.
