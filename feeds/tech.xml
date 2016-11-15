@@ -1,5 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-11-13T15:15:00-05:00</updated><entry><title>What is Functional Programming?</title><link href="http://www.chriskrycho.com/2016/what-is-functional-programming.html" rel="alternate"></link><published>2016-11-11T22:30:00-05:00</published><updated>2016-11-13T15:15:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-11-11:2016/what-is-functional-programming.html</id><summary type="html">&lt;p&gt;&lt;i class='editorial'&gt;The following is a script I wrote for a tech talk I gave on functional programming. The recording isn’t (and won’t be) publicly available; but a script is often easier to reference anyway!&lt;/i&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-11-14T21:50:00-05:00</updated><entry><title>Using Rust for ‘Scripting’</title><link href="http://www.chriskrycho.com/2016/using-rust-for-scripting.html" rel="alternate"></link><published>2016-11-14T21:50:00-05:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-11-14:2016/using-rust-for-scripting.html</id><summary type="html">&lt;section id="i.-using-rust-instead-of-python" class="level2"&gt;
+&lt;h2&gt;I. Using Rust Instead of Python&lt;/h2&gt;
+&lt;p&gt;A friend asked me today about writing a little script to do a simple conversion of the names of some files in a nested set of directories. Everything with one file extension needed to get another file extension. After asking if it was the kind of thing where he had time to and/or wanted to learn how to do it himself (always important when someone has expressed that interest more generally), I said, “Why don’t I do this in Rust?”&lt;/p&gt;
+&lt;p&gt;Now, given the description, you might think, &lt;i class=thought&gt;Wouldn’t it make more sense to do that in Python or Perl or even just a shell script?&lt;/i&gt; And the answer would be: it depends—on what the target operating system is, for example, and what the person’s current setup is. I knew, for example, that my friend is running Windows, which means he doesn’t have Python or Perl installed. I’m not a huge fan of either batch scripts or PowerShell (and I don’t know either of them all that well, either).&lt;/p&gt;
+&lt;p&gt;I could have asked him to install Python. But, on reflection, I thought: &lt;i class=thought&gt;Why would I do that? I can write this in Rust.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;Writing it in Rust means I can compile it and hand it to him, and he can run it. And that’s it. As wonderful as they are, the fact that languages like Python, Perl, Ruby, JavaScript, etc. require having the runtime bundled up with them makes just shipping a tool a lot harder—&lt;em&gt;especially&lt;/em&gt; on systems which aren’t a Unix derivative and don’t have them installed by default. (Yes, I know that &lt;em&gt;mostly&lt;/em&gt; means Windows, but it doesn’t &lt;em&gt;solely&lt;/em&gt; mean Windows. And, more importantly: the vast majority of the desktop-type computers in the world &lt;em&gt;still run Windows&lt;/em&gt;. So that’s a big reason all by itself.)&lt;/p&gt;
+&lt;p&gt;So there’s the justification for shipping a compiled binary. Why Rust specifically? Well, because I’m a fanboy. (But I’m a fanboy because Rust often gives you roughly the feel of using a high-level language like Python, but lets you ship standalone binaries. The same is true of a variety of other languages, too, like Haskell; but Rust is the one I know and like right now.)&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="ii.-building-a-simple-script" class="level2"&gt;
+&lt;h2&gt;II. Building a Simple “Script”&lt;/h2&gt;
+&lt;p&gt;Building a “script”-style tool in Rust is pretty easy, gladly. I’ll walk through exactly what I did to create this “script”-like tool for my friend. My goal here was to rename every file in a directory from &lt;code&gt;*.cha&lt;/code&gt; to &lt;code&gt;*.txt&lt;/code&gt;.&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.rust-lang.org/en-US/downloads.html"&gt;Install Rust.&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create a new binary:&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;cargo new --bin rename-it&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Add the dependencies to the Cargo.toml file. I used the &lt;a href="https://doc.rust-lang.org/glob/glob/index.html"&gt;glob&lt;/a&gt; crate for finding all the &lt;code&gt;.cha&lt;/code&gt; files and the &lt;a href="https://clap.rs"&gt;clap&lt;/a&gt; crate for argument parsing.&lt;/p&gt;
+&lt;pre class="toml"&gt;&lt;code&gt;[package]
+name = &amp;quot;rename-it&amp;quot;
+version = &amp;quot;0.1.0&amp;quot;
+authors = [&amp;quot;Chris Krycho &amp;lt;chris@chriskrycho.com&amp;gt;&amp;quot;]
+
+[dependencies]
+clap = &amp;quot;2.15.0&amp;quot;
+glob = &amp;quot;0.2&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Add the actual implementation to the &lt;code&gt;main.rs&lt;/code&gt; file (iterating till you get it the way you want, of course).&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;extern crate clap;
+extern crate glob;
+
+use glob::glob;
+use std::fs;
+
+use clap::{Arg, App, AppSettings};
+
+fn main() {
+  let path_arg_name = &amp;quot;path&amp;quot;;
+  let args = App::new(&amp;quot;cha-to-txt&amp;quot;)
+    .about(&amp;quot;Rename .cha to .txt&amp;quot;)
+    .setting(AppSettings::ArgRequiredElseHelp)
+    .arg(Arg::with_name(path_arg_name)
+      .help(&amp;quot;path to the top directory with .cha files&amp;quot;))
+    .get_matches();
+
+  let path = match args.value_of(path_arg_name) {
+    Some(path) =&amp;gt; path,
+    None =&amp;gt; panic!(&amp;quot;You didn&amp;#39;t supply a path&amp;quot;),
+  };
+
+  let search = String::from(path) + &amp;quot;/**/*.cha&amp;quot;;
+  let paths = match glob(&amp;amp;search) {
+    Ok(paths) =&amp;gt; paths.map(|p| p.expect(&amp;quot;Bad path&amp;quot;)),
+    Err(reason) =&amp;gt; panic!(&amp;quot;{}&amp;quot;, reason),
+  };
+
+  for path in paths {
+    match fs::rename(&amp;amp;path, &amp;amp;path.with_extension(&amp;quot;txt&amp;quot;)) {
+      Ok(_) =&amp;gt; (),
+      Err(reason) =&amp;gt; panic!(&amp;quot;{}&amp;quot;, reason),
+    };
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Compile it.&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;cargo build --release&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Copy the executable to hand to a friend.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In my case, I actually added in the step of &lt;em&gt;recompiling&lt;/em&gt; it on Windows after doing all the development on macOS. This is one of the real pieces of magic with Rust: you can &lt;em&gt;easily&lt;/em&gt; write cross-platform code. The combination of Cargo and native-compiled-code makes it super easy to write this kind of thing—and, honestly, easier to do so in a cross-platform way than it would be with a traditional scripting language.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;But what’s really delightful is that we can do better. I don’t even need to install Rust on Windows to compile a Rust binary for Windows.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="iii.-cross-compiling-to-windows-from-macos" class="level2"&gt;
+&lt;h2&gt;III. Cross-Compiling to Windows from macOS&lt;/h2&gt;
+&lt;p&gt;Once again, let’s do this step by step. Three notes: First, I got pretty much everything other than the first and last steps here from WindowsBunny on the &lt;a href="https://botbot.me/mozilla/rust/"&gt;#rust&lt;/a&gt; &lt;abbr&gt;IRC&lt;/abbr&gt; channel. (If you’ve never hopped into #rust, you should: it’s amazing.) Second, you’ll need a Windows installation to make this work, as you’ll need some libraries. (That’s a pain, but it’s a one-time pain.) Third, this is the setup for doing in on macOS Sierra; steps may look a little different on an earlier version of macOS or on Linux.&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;Install the Windows compilation target with &lt;code&gt;rustup&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;rustup target add x86_64-pc-windows-msvc&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install the required linker (&lt;a href="http://lld.llvm.org"&gt;&lt;code&gt;lld&lt;/code&gt;&lt;/a&gt;) by way of installing the LLVM toolchain.&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;brew install llvm&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create a symlink somewhere on your &lt;code&gt;PATH&lt;/code&gt; to the newly installed linker, specifically with the name &lt;code&gt;link.exe&lt;/code&gt;. I have &lt;code&gt;~/bin&lt;/code&gt; on my &lt;code&gt;PATH&lt;/code&gt; for just this kind of thing, so I can do that like so:&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;ln -s /usr/local/opt/llvm/bin/lld-link ~/bin/link.exe&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(We have to do this because the Rust compiler &lt;a href="https://github.com/rust-lang/rust/blob/master/src/librustc_trans/back/msvc/mod.rs#L300"&gt;specifically goes looking for &lt;code&gt;link.exe&lt;/code&gt; on non-Windows targets&lt;/a&gt;.)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Copy the target files for the Windows build to link against. Those are in these directories, where &lt;code&gt;&amp;lt;something&amp;gt;&lt;/code&gt; will be a number like &lt;code&gt;10586.0&lt;/code&gt; or similar (you should pick the highest one if there is more than one):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;C:\Program Files\Windows Kits\10\Lib\10.0.&amp;lt;something&amp;gt;\ucrt\x64&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\Program Files\Windows Kits\10\Lib\10.0.&amp;lt;something&amp;gt;\um\x64&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note that if you don’t already have &lt;abbr&gt;MSVC&lt;/abbr&gt; installed, you’ll need to install it. If you don’t have Visual Studio installed on a Windows machine &lt;em&gt;at all&lt;/em&gt;, you can do that by using the links &lt;a href="http://landinghub.visualstudio.com/visual-cpp-build-tools"&gt;here&lt;/a&gt;. Otherwise, on Windows, go to &lt;strong&gt;Add/Remove Programs&lt;/strong&gt; and opting to Modify the Visual Studio installation. There, you can choose to add the C++ tools to the installation.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Set the &lt;code&gt;LIB&lt;/code&gt; environment variable to include those paths and build the program. Let’s say you put them in something like &lt;code&gt;/Users/chris/lib/windows&lt;/code&gt; (which is where I put mine). Your&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;env LIB=&amp;quot;/Users/chris/lib/windows/ucrt/x64/;/Users/chris/lib/windows/um/x64/;/Users/chris/lib/windows/VC_lib/amd64/&amp;quot; \
+cargo build --release --target=x86_64-pc-windows-msvc&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that the final &lt;code&gt;/&lt;/code&gt; on each path and the enclosing quotation marks are all important!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Copy the binary to hand to a friend, without ever having had to leave your Mac.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;To be sure, there was a little extra work involved in getting cross-compilation set up. (This is the kind of thing I’d love to see further automated with &lt;code&gt;rustup&lt;/code&gt; in 2017!) But what we have at the end is pretty magical. Now we can just compile cross-platform code and hand it to our friends.&lt;/p&gt;
+&lt;p&gt;Given that, I expect not to be using Python for these kinds of tools much going forward.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;Again: you can do similar with Haskell or OCaml or a number of other languages. And those are great options; they are in &lt;em&gt;some&lt;/em&gt; ways easier than Rust—but Cargo is really magical for this.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</summary><category term="rust"></category><category term="software development"></category><category term="programming languages"></category></entry><entry><title>What is Functional Programming?</title><link href="http://www.chriskrycho.com/2016/what-is-functional-programming.html" rel="alternate"></link><published>2016-11-11T22:30:00-05:00</published><updated>2016-11-14T07:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-11-11:2016/what-is-functional-programming.html</id><summary type="html">&lt;p&gt;&lt;i class='editorial'&gt;The following is a script I wrote for a tech talk I gave on functional programming. The recording isn’t (and won’t be) publicly available; but a script is often easier to reference anyway!&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='editorial'&gt;&lt;strong&gt;Edit:&lt;/strong&gt; updated with corrected performance characterstics.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Hello, everyone. Today, we are going to talk about functional programming—asking what it is, and why we should care.&lt;/p&gt;
@@ -279,7 +379,7 @@ const output = value =&amp;gt; { console.log(value); };&lt;/code&gt;&lt;/pre&gt;
   });
 })&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This is a trivial example, of course, but it gets the point across: all we have to do to test this is pass in an object. It doesn’t depend on anything else. It doesn’t have &lt;em&gt;any knowledge&lt;/em&gt; of how we’re going to use it. It doesn’t know that it’s going to be used with data coming from an array. All it knows is that if you give it an object with a &lt;code&gt;condiments&lt;/code&gt; property, it’ll hand you back the array attached to that property.&lt;/p&gt;
-&lt;p&gt;The result is that, with all of these functions, we don’t have to deal with mocks or stubs or anything like that to be testable. Input produces output. Pure functions are great for this. Now, some of you may be thinking, “That’s great, but what about &lt;abbr&gt;I/O&lt;/abbr&gt;, or databases, or any other time we actually interact with the world? What about talking to a point-of-sale?” I actually have some tentative thoughts about a future tech talk to look at how to do that in some detail, but for today, just remember that the goal is to write as many pure functions as possible, and to isolate the rest of your code from knowing about that. And of course, that’s best practice anyway! We’re just codifying it. We’ll see what that looks like in practice in jus ta minute.&lt;/p&gt;
+&lt;p&gt;The result is that, with all of these functions, we don’t have to deal with mocks or stubs or anything like that to be testable. Input produces output. Pure functions are great for this. Now, some of you may be thinking, “That’s great, but what about &lt;abbr&gt;I/O&lt;/abbr&gt;, or databases, or any other time we actually interact with the world? What about talking to a point-of-sale?” I actually have some tentative thoughts about a future tech talk to look at how to do that in some detail, but for today, just remember that the goal is to write as many pure functions as possible, and to isolate the rest of your code from knowing about that. And of course, that’s best practice anyway! We’re just codifying it. We’ll see what that looks like in practice in just a minute.&lt;/p&gt;
 &lt;p&gt;Now, while we’re on the topic of pure functions, some of you with quick eyes may have noticed that two of these little functions we laid out are actually &lt;em&gt;not&lt;/em&gt; pure: JavaScript’s &lt;code&gt;Array.sort&lt;/code&gt; method operates in-place, for performance reasons, and so does our &lt;code&gt;toTotals&lt;/code&gt; function. So a truly pure version of the sorting function looks like this:&lt;/p&gt;
 &lt;pre class="js"&gt;&lt;code&gt;const toSortedCondiments = condiments =&amp;gt; condiments.concat().sort();&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Similarly, we &lt;em&gt;could&lt;/em&gt; define the &lt;code&gt;toTotals&lt;/code&gt; to return a new object every time, like this:&lt;/p&gt;

@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="What is Functional Programming?"/>
     <meta name="twitter:description" content="Functional programming—though not a panacea—is a really great tool to have in our toolbelt. (And you don’t have to be a mathematician to use it.)"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -46,7 +46,7 @@
         <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
         <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
         <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
-        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
         <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
 </head>
 <body>
@@ -63,7 +63,7 @@
             <ul>
                 <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
-                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
                 <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
@@ -80,7 +80,7 @@
 <h2>(And why should we care about it?)</h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/2016/what-is-functional-programming.html"><i class="fa fa-fw fa-link"></i></a>November 11, 2016 (updated November 13, 2016)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/functional-programming/">#functional programming</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2016/what-is-functional-programming.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/2016/what-is-functional-programming.html"><i class="fa fa-fw fa-link"></i></a>November 11, 2016 (updated November 14, 2016)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/functional-programming/">#functional programming</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2016/what-is-functional-programming.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
@@ -367,7 +367,7 @@ const output = value =&gt; { console.log(value); };</code></pre>
   });
 })</code></pre>
 <p>This is a trivial example, of course, but it gets the point across: all we have to do to test this is pass in an object. It doesn’t depend on anything else. It doesn’t have <em>any knowledge</em> of how we’re going to use it. It doesn’t know that it’s going to be used with data coming from an array. All it knows is that if you give it an object with a <code>condiments</code> property, it’ll hand you back the array attached to that property.</p>
-<p>The result is that, with all of these functions, we don’t have to deal with mocks or stubs or anything like that to be testable. Input produces output. Pure functions are great for this. Now, some of you may be thinking, “That’s great, but what about <abbr>I/O</abbr>, or databases, or any other time we actually interact with the world? What about talking to a point-of-sale?” I actually have some tentative thoughts about a future tech talk to look at how to do that in some detail, but for today, just remember that the goal is to write as many pure functions as possible, and to isolate the rest of your code from knowing about that. And of course, that’s best practice anyway! We’re just codifying it. We’ll see what that looks like in practice in jus ta minute.</p>
+<p>The result is that, with all of these functions, we don’t have to deal with mocks or stubs or anything like that to be testable. Input produces output. Pure functions are great for this. Now, some of you may be thinking, “That’s great, but what about <abbr>I/O</abbr>, or databases, or any other time we actually interact with the world? What about talking to a point-of-sale?” I actually have some tentative thoughts about a future tech talk to look at how to do that in some detail, but for today, just remember that the goal is to write as many pure functions as possible, and to isolate the rest of your code from knowing about that. And of course, that’s best practice anyway! We’re just codifying it. We’ll see what that looks like in practice in just a minute.</p>
 <p>Now, while we’re on the topic of pure functions, some of you with quick eyes may have noticed that two of these little functions we laid out are actually <em>not</em> pure: JavaScript’s <code>Array.sort</code> method operates in-place, for performance reasons, and so does our <code>toTotals</code> function. So a truly pure version of the sorting function looks like this:</p>
 <pre class="js"><code>const toSortedCondiments = condiments =&gt; condiments.concat().sort();</code></pre>
 <p>Similarly, we <em>could</em> define the <code>toTotals</code> to return a new object every time, like this:</p>
@@ -566,7 +566,7 @@ getBurgers()
             <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
         </li>
         <li class="section-title">
-            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
         </li>
         <li class="section-title">
             <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
@@ -578,7 +578,7 @@ getBurgers()
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2016/abis-processional.html">“Abi’s Processional”</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2016/winning-slowly-5-05-faint-not.html">Winning Slowly 5.05: “Faint Not”</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2016/what-is-functional-programming.html">What is Functional Programming?</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2016/using-rust-for-scripting.html">Using Rust for ‘Scripting’</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2016/constant-evaluation.html">Constant Evaluation</a></li>
     </ul>
 </section></footer>

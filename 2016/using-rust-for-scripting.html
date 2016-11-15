@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Using Rust for ‘Scripting’ &middot; Chris Krycho</title>
+    <meta name="description" content="Why I might use Rust instead of Python, with walkthroughs for building a simple "script"-like program and a guide for cross-compiling Rust code to Windows from macOS."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2016/using-rust-for-scripting.html"/>
+    <meta property="og:title" content="Using Rust for ‘Scripting’"/>
+    <meta property="og:description" content="Why I might use Rust instead of Python, with walkthroughs for building a simple "script"-like program and a guide for cross-compiling Rust code to Windows from macOS."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Using Rust for ‘Scripting’"/>
+    <meta name="twitter:description" content="Why I might use Rust instead of Python, with walkthroughs for building a simple "script"-like program and a guide for cross-compiling Rust code to Windows from macOS."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="rust software-development programming-languages tech">
+
+    <header>
+<h1>Using Rust for ‘Scripting’</h1>
+<h2>With a bonus: cross-compiling from macOS to Windows!</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2016/using-rust-for-scripting.html"><i class="fa fa-fw fa-link"></i></a>November 14, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2016/using-rust-for-scripting.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<section id="i.-using-rust-instead-of-python" class="level2">
+<h2>I. Using Rust Instead of Python</h2>
+<p>A friend asked me today about writing a little script to do a simple conversion of the names of some files in a nested set of directories. Everything with one file extension needed to get another file extension. After asking if it was the kind of thing where he had time to and/or wanted to learn how to do it himself (always important when someone has expressed that interest more generally), I said, “Why don’t I do this in Rust?”</p>
+<p>Now, given the description, you might think, <i class=thought>Wouldn’t it make more sense to do that in Python or Perl or even just a shell script?</i> And the answer would be: it depends—on what the target operating system is, for example, and what the person’s current setup is. I knew, for example, that my friend is running Windows, which means he doesn’t have Python or Perl installed. I’m not a huge fan of either batch scripts or PowerShell (and I don’t know either of them all that well, either).</p>
+<p>I could have asked him to install Python. But, on reflection, I thought: <i class=thought>Why would I do that? I can write this in Rust.</i></p>
+<p>Writing it in Rust means I can compile it and hand it to him, and he can run it. And that’s it. As wonderful as they are, the fact that languages like Python, Perl, Ruby, JavaScript, etc. require having the runtime bundled up with them makes just shipping a tool a lot harder—<em>especially</em> on systems which aren’t a Unix derivative and don’t have them installed by default. (Yes, I know that <em>mostly</em> means Windows, but it doesn’t <em>solely</em> mean Windows. And, more importantly: the vast majority of the desktop-type computers in the world <em>still run Windows</em>. So that’s a big reason all by itself.)</p>
+<p>So there’s the justification for shipping a compiled binary. Why Rust specifically? Well, because I’m a fanboy. (But I’m a fanboy because Rust often gives you roughly the feel of using a high-level language like Python, but lets you ship standalone binaries. The same is true of a variety of other languages, too, like Haskell; but Rust is the one I know and like right now.)</p>
+</section>
+<section id="ii.-building-a-simple-script" class="level2">
+<h2>II. Building a Simple “Script”</h2>
+<p>Building a “script”-style tool in Rust is pretty easy, gladly. I’ll walk through exactly what I did to create this “script”-like tool for my friend. My goal here was to rename every file in a directory from <code>*.cha</code> to <code>*.txt</code>.</p>
+<ol type="1">
+<li><p><a href="https://www.rust-lang.org/en-US/downloads.html">Install Rust.</a></p></li>
+<li><p>Create a new binary:</p>
+<pre class="sh"><code>cargo new --bin rename-it</code></pre></li>
+<li><p>Add the dependencies to the Cargo.toml file. I used the <a href="https://doc.rust-lang.org/glob/glob/index.html">glob</a> crate for finding all the <code>.cha</code> files and the <a href="https://clap.rs">clap</a> crate for argument parsing.</p>
+<pre class="toml"><code>[package]
+name = &quot;rename-it&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;Chris Krycho &lt;chris@chriskrycho.com&gt;&quot;]
+
+[dependencies]
+clap = &quot;2.15.0&quot;
+glob = &quot;0.2&quot;</code></pre></li>
+<li><p>Add the actual implementation to the <code>main.rs</code> file (iterating till you get it the way you want, of course).</p>
+<pre class="rust"><code>extern crate clap;
+extern crate glob;
+
+use glob::glob;
+use std::fs;
+
+use clap::{Arg, App, AppSettings};
+
+fn main() {
+  let path_arg_name = &quot;path&quot;;
+  let args = App::new(&quot;cha-to-txt&quot;)
+    .about(&quot;Rename .cha to .txt&quot;)
+    .setting(AppSettings::ArgRequiredElseHelp)
+    .arg(Arg::with_name(path_arg_name)
+      .help(&quot;path to the top directory with .cha files&quot;))
+    .get_matches();
+
+  let path = match args.value_of(path_arg_name) {
+    Some(path) =&gt; path,
+    None =&gt; panic!(&quot;You didn&#39;t supply a path&quot;),
+  };
+
+  let search = String::from(path) + &quot;/**/*.cha&quot;;
+  let paths = match glob(&amp;search) {
+    Ok(paths) =&gt; paths.map(|p| p.expect(&quot;Bad path&quot;)),
+    Err(reason) =&gt; panic!(&quot;{}&quot;, reason),
+  };
+
+  for path in paths {
+    match fs::rename(&amp;path, &amp;path.with_extension(&quot;txt&quot;)) {
+      Ok(_) =&gt; (),
+      Err(reason) =&gt; panic!(&quot;{}&quot;, reason),
+    };
+  }
+}</code></pre></li>
+<li><p>Compile it.</p>
+<pre class="sh"><code>cargo build --release</code></pre></li>
+<li><p>Copy the executable to hand to a friend.</p></li>
+</ol>
+<p>In my case, I actually added in the step of <em>recompiling</em> it on Windows after doing all the development on macOS. This is one of the real pieces of magic with Rust: you can <em>easily</em> write cross-platform code. The combination of Cargo and native-compiled-code makes it super easy to write this kind of thing—and, honestly, easier to do so in a cross-platform way than it would be with a traditional scripting language.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>But what’s really delightful is that we can do better. I don’t even need to install Rust on Windows to compile a Rust binary for Windows.</p>
+</section>
+<section id="iii.-cross-compiling-to-windows-from-macos" class="level2">
+<h2>III. Cross-Compiling to Windows from macOS</h2>
+<p>Once again, let’s do this step by step. Three notes: First, I got pretty much everything other than the first and last steps here from WindowsBunny on the <a href="https://botbot.me/mozilla/rust/">#rust</a> <abbr>IRC</abbr> channel. (If you’ve never hopped into #rust, you should: it’s amazing.) Second, you’ll need a Windows installation to make this work, as you’ll need some libraries. (That’s a pain, but it’s a one-time pain.) Third, this is the setup for doing in on macOS Sierra; steps may look a little different on an earlier version of macOS or on Linux.</p>
+<ol type="1">
+<li><p>Install the Windows compilation target with <code>rustup</code>.</p>
+<pre class="sh"><code>rustup target add x86_64-pc-windows-msvc</code></pre></li>
+<li><p>Install the required linker (<a href="http://lld.llvm.org"><code>lld</code></a>) by way of installing the LLVM toolchain.</p>
+<pre class="sh"><code>brew install llvm</code></pre></li>
+<li><p>Create a symlink somewhere on your <code>PATH</code> to the newly installed linker, specifically with the name <code>link.exe</code>. I have <code>~/bin</code> on my <code>PATH</code> for just this kind of thing, so I can do that like so:</p>
+<pre class="sh"><code>ln -s /usr/local/opt/llvm/bin/lld-link ~/bin/link.exe</code></pre>
+<p>(We have to do this because the Rust compiler <a href="https://github.com/rust-lang/rust/blob/master/src/librustc_trans/back/msvc/mod.rs#L300">specifically goes looking for <code>link.exe</code> on non-Windows targets</a>.)</p></li>
+<li><p>Copy the target files for the Windows build to link against. Those are in these directories, where <code>&lt;something&gt;</code> will be a number like <code>10586.0</code> or similar (you should pick the highest one if there is more than one):</p>
+<ul>
+<li><code>C:\Program Files\Windows Kits\10\Lib\10.0.&lt;something&gt;\ucrt\x64</code></li>
+<li><code>C:\Program Files\Windows Kits\10\Lib\10.0.&lt;something&gt;\um\x64</code></li>
+<li><code>C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib</code></li>
+</ul>
+<p>Note that if you don’t already have <abbr>MSVC</abbr> installed, you’ll need to install it. If you don’t have Visual Studio installed on a Windows machine <em>at all</em>, you can do that by using the links <a href="http://landinghub.visualstudio.com/visual-cpp-build-tools">here</a>. Otherwise, on Windows, go to <strong>Add/Remove Programs</strong> and opting to Modify the Visual Studio installation. There, you can choose to add the C++ tools to the installation.</p></li>
+<li><p>Set the <code>LIB</code> environment variable to include those paths and build the program. Let’s say you put them in something like <code>/Users/chris/lib/windows</code> (which is where I put mine). Your</p>
+<pre class="sh"><code>env LIB=&quot;/Users/chris/lib/windows/ucrt/x64/;/Users/chris/lib/windows/um/x64/;/Users/chris/lib/windows/VC_lib/amd64/&quot; \
+cargo build --release --target=x86_64-pc-windows-msvc</code></pre>
+<p>Note that the final <code>/</code> on each path and the enclosing quotation marks are all important!</p></li>
+<li><p>Copy the binary to hand to a friend, without ever having had to leave your Mac.</p></li>
+</ol>
+<p>To be sure, there was a little extra work involved in getting cross-compilation set up. (This is the kind of thing I’d love to see further automated with <code>rustup</code> in 2017!) But what we have at the end is pretty magical. Now we can just compile cross-platform code and hand it to our friends.</p>
+<p>Given that, I expect not to be using Python for these kinds of tools much going forward.</p>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Again: you can do similar with Haskell or OCaml or a number of other languages. And those are great options; they are in <em>some</em> ways easier than Rust—but Cargo is really magical for this.<a href="#fnref1">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2016/abis-processional.html">“Abi’s Processional”</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2016/winning-slowly-5-05-faint-not.html">Winning Slowly 5.05: “Faint Not”</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2016/using-rust-for-scripting.html">Using Rust for ‘Scripting’</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2016/constant-evaluation.html">Constant Evaluation</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
