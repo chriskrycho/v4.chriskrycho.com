@@ -1,0 +1,16 @@
+---
+Title: ""
+Date: 2016-10-26 22:29
+Slug: 10-26-2229
+Template: formats/micro
+Category: micro
+Tags: software development
+---
+
+Just used LetsEncrypt for the first time.
+
+This is wonderful. ENCRYPT ALL THE THINGS!
+
+![](//cdn.chriskrycho.com/images/encrypt-all-the-things.jpg)
+
+And then I set up a cron job to renew it every three months. My maintenance burden for this app just went *waaaay* down.

@@ -1,0 +1,12 @@
+---
+Title: ""
+Date: 2016-10-29 15:52
+Slug: 10-29-1552
+Template: formats/micro
+Category: micro
+Tags: software development, programming languages, ML
+---
+
+Using ML-style types to reason through things—even *just* as a reasoning tool, without language support—makes such a huge difference.
+
+I’m rewriting a hairy, often-buggy section of HolyBible.com’s user logic, and using type definitions for reasoning was invaluable.
