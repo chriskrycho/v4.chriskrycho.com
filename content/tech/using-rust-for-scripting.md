@@ -1,12 +1,15 @@
 ---
 Title: Using Rust for ‘Scripting’
 Subtitle: "With a bonus: cross-compiling from macOS to Windows!"
-Date: 2016-11-14 21:50
+Date: 2016-11-14 22:00
 Category: Tech
 Tags: rust, software development, programming languages
 Summary: >
     Why I might use Rust instead of Python, with walkthroughs for building a simple "script"-like program and a guide for cross-compiling Rust code to Windows from macOS.
+Modified: 2016-11-15 09:00
 ---
+
+<i class=editorial>**Edit**: fixed some typos, cleaned up implementation a bit based on feedback around the internet.</i>
 
 ## I. Using Rust Instead of Python
 
@@ -19,6 +22,8 @@ I could have asked him to install Python. But, on reflection, I thought: <i clas
 Writing it in Rust means I can compile it and hand it to him, and he can run it. And that's it. As wonderful as they are, the fact that languages like Python, Perl, Ruby, JavaScript, etc. require having the runtime bundled up with them makes just shipping a tool a lot harder—*especially* on systems which aren't a Unix derivative and don't have them installed by default. (Yes, I know that *mostly* means Windows, but it doesn't *solely* mean Windows. And, more importantly: the vast majority of the desktop-type computers in the world *still run Windows*. So that's a big reason all by itself.)
 
 So there's the justification for shipping a compiled binary. Why Rust specifically? Well, because I'm a fanboy. (But I'm a fanboy because Rust often gives you roughly the feel of using a high-level language like Python, but lets you ship standalone binaries. The same is true of a variety of other languages, too, like Haskell; but Rust is the one I know and like right now.)
+
+<i class=editorial>**Edit the second:** this is getting a lot of views from Hacker News, and it's worth note: I'm not actually advocating that everyone stop using shell scripts for this kind of thing. I'm simply noting that it's *possible* (and sometimes even *nice*) to be able to do this kind of thing in Rust, cross-compile it, and just ship it. And hey, types are nice when you're trying to do more sophisticated things than I'm doing here! Also, for those worried about running untrusted binaries: I handed my friend the code, and would happily teach him how to build it.</i>
 
 ## II. Building a Simple "Script"
 
@@ -56,6 +61,7 @@ Building a "script"-style tool in Rust is pretty easy, gladly. I'll walk through
 
     use clap::{Arg, App, AppSettings};
 
+
     fn main() {
       let path_arg_name = "path";
       let args = App::new("cha-to-txt")
@@ -65,16 +71,12 @@ Building a "script"-style tool in Rust is pretty easy, gladly. I'll walk through
           .help("path to the top directory with .cha files"))
         .get_matches();
 
-      let path = match args.value_of(path_arg_name) {
-        Some(path) => path,
-        None => panic!("You didn't supply a path"),
-      };
-
+      let path = args.value_of(path_arg_name)
+        .expect("You didn't supply a path");
       let search = String::from(path) + "/**/*.cha";
-      let paths = match glob(&search) {
-        Ok(paths) => paths.map(|p| p.expect("Bad path")),
-        Err(reason) => panic!("{}", reason),
-      };
+      let paths = glob(&search)
+        .expect("Could not find paths in glob")
+        .map(|p| p.expect("Bad individual path in glob"));
 
       for path in paths {
         match fs::rename(&path, &path.with_extension("txt")) {
@@ -129,11 +131,13 @@ Once again, let's do this step by step. Three notes: First, I got pretty much ev
 
     - `C:\Program Files\Windows Kits\10\Lib\10.0.<something>\ucrt\x64`
     - `C:\Program Files\Windows Kits\10\Lib\10.0.<something>\um\x64`
-    - `C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib`
+    - `C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\amd64`
 
     Note that if you don't already have <abbr>MSVC</abbr> installed, you'll need to install it. If you don't have Visual Studio installed on a Windows machine *at all*, you can do that by using the links [here][msvc]. Otherwise, on Windows, go to **Add/Remove Programs** and opting to Modify the Visual Studio installation. There, you can choose to add the C++ tools to the installation.
 
-5. Set the `LIB` environment variable to include those paths and build the program. Let's say you put them in something like `/Users/chris/lib/windows` (which is where I put mine). Your
+    Note also that if you're building for 32-bit Windows you'll want to grab *those* libraries instead of the 64-bit libraries.
+
+5. Set the `LIB` environment variable to include those paths and build the program. Let's say you put them in something like `/Users/chris/lib/windows` (which is where I put mine). Your Cargo invocation will look like this:
 
     ```sh
     env LIB="/Users/chris/lib/windows/ucrt/x64/;/Users/chris/lib/windows/um/x64/;/Users/chris/lib/windows/VC_lib/amd64/" \
