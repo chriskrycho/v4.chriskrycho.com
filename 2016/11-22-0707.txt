@@ -1,0 +1,11 @@
+---
+Title: ""
+Date: 2016-11-22 07:07
+Slug: 11-22-0707
+Template: formats/micro
+Category: micro
+---
+
+Ben Sasse's strategy for getting things done, discussed in [this Twitter thread], is roughly the same as mine.
+
+[this Twitter thread]: https://twitter.com/BenSasse/status/800853251151302657
