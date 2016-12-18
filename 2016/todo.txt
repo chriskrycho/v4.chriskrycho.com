@@ -1,10 +1,232 @@
 ---
-Title: "TODO"
-Subtitle: A plea for 
-Date: 2016-08-27 21:00
-Tags: emberjs, javascript
+Title: TODO
+Subtitle: Some neat things you can do with <code>keyof</code> and mapped types in TypeScript 2.1
+Date: 2016-12-17 22:00
+Tags: javascript, typescript
 ---
 
-Over the past six months working at Olo, I've repeatedly run into scenarios where an Ember CLI add-on was *perfect* for our needs... except that it assumed that a given add-on could have configuration set at build time.
+In the last few months, I've been playing with both [Flow] and [TypeScript] as tools for increasing the quality and reliability of the JavaScript I write at Olo. Both of these are syntax that sits on top of normal JavaScript to add type analysis—basically, a form of [gradual typing] for JS.
 
-That's a pretty big "except" for us, because we use a white-labeling strategy for the applications we ship. A number of pieces of the required configuration data are supplied to the app at runtime.
+[Flow]: https://flowtype.org
+[TypeScript]: http://www.typescriptlang.org
+[gradual typing]: https://en.wikipedia.org/wiki/Gradual_typing
+
+Although TypeScript's tooling has been better all along (it's no surprise that Microsoft's developer tooling is stronger than Facebook's!) I initially preferred Flow's type system quite a bit: it has historically been much more focused on [soundness], especially around the *many* problems caused by `null` and `undefined`, than TypeScript. And it had earlier support for [tagged unions], a tool I've come to find invaluable since picking them up from my time with especially Rust but also other ML-descended languages (Haskell, F^♯^, and Elm in particular). But the 2.0 and 2.1 releases of TypeScript have changed the game substantially, and it's now a *very* compelling language in its own right—not to mention a great tool for writing better JavaScript. So I thought I'd highlight a really neat thing you can do with some of those new features: *tagged unions*, the *`keyof` operator* and *mapped types*.
+
+[soundness]: http://stackoverflow.com/questions/21437015/soundness-and-completeness-of-systems
+[tagged unions]: https://flowtype.org/docs/disjoint-unions.html
+
+In many contexts in JavaScript,[^redux] it’s convenient to define types that are kind of like pseudo-enums or pseudo-simple-unions, like so:
+
+[^redux]: perhaps the most obvious being [Redux actions](http://redux.js.org/docs/basics/Actions.html), but I get a lot of mileage out of the pattern in Ember, as well.
+
+```javascript
+const STATES = {
+  Pending: 'Pending',
+  Started: 'Started',
+  Completed: 'Completed',
+};
+```
+
+Aside: to be extra safe and prevent any confusion or mucking around, you should probably call `Object.freeze()` on the object literal, too:
+
+```javascript
+const STATES = Object.freeze({
+  Pending: 'Pending',
+  Started: 'Started',
+  Completed: 'Completed',
+})
+```
+
+Both convention and linters make it unlikely you'll modify something like this directly---but impossible is better than unlikely.
+
+Once you've defined a type this way, instead of using strings directly (`'Started'`), you can use the object definition---and as a result, you can get some help from your editor, linter, etc., as well as meaningful error messages if you type the wrong thing. For example, you might have a function to go from each of those states to the next, like this:
+
+```javascript
+function nextState(state) {
+  switch(state) {
+    case 'Pending': return 'Started';
+    case 'Started': return 'Completed';
+    case 'Completed': return 'Completed';
+    default: throw new Error(`Bad state: ${state}`);
+  }
+}
+```
+
+This will work, and it'll even throw an error if you hand it the wrong thing. But you'll find out at runtime if you accidentally typed `nextState('Pednign')` instead of `nextState('Pending')`---something I've done more than once in the past. You'd have a similar problem if you'd accidentally written `case 'Strated'` instead of `case 'Started'`. Using the object and its keys instead gets you something like a namespaced constant. You can rewrite the function and all function calls to use the object definition instead:
+
+```javascript
+function nextState(state) {
+  switch(state) {
+    case STATES.Pending: return STATES.Started;
+    case STATES.Started: return STATES.Completed;
+    case STATES.Completed: return STATES.Completed;
+    default: throw new Error(`Bad state: ${state}`);
+  }
+}
+```
+
+Then, if you type `STATES.Strated` instead of `States.Started`, any good editor will give you an error---especially if you're using a linter. We use [ESLint], and we have it [set up][ember-cli-eslint] so that this kind of thing won't even pass our test suite (and we never merge changes that don't pass our test suite!). This is about as good a setup as you can get in plain-old JavaScript. As long as you're disciplined and always use the object, you get some real benefits from using this pattern. But you always have to be disciplined that way, and if somewhere someone who's unfamiliar with the pattern types `nextState('Complete')` instead of `nextState(STATES.Completed)` or even `nextState('Completed')`, well, we're back to blowing up at runtime. Hopefully your test suite caches *that*.
+
+[ESLint]: http://eslint.org
+[ember-cli-eslint]: https://github.com/ember-cli/ember-cli-eslint/
+
+TypeScript gives us the ability to both *guarantee* that the contract is met (that we're not passing the wrong value in) and---as of the latest release---even to make sure that the initial object is set up the way we expect (and get some neat tooling benefits on top of it, as we'll see).
+
+As of the 2.1 release, TypeScript lets you define types in terms of keys, so you can write a type like this:[^flow]
+
+[^flow]: Flow has supported this feature for some time; you can write `$Keys<typeof STATES>`---but the feature is entirely undocumented.
+
+```typescript
+type State = keyof typeof STATES;
+```
+
+Then you can use that type any place you need to constrain the type of a variable, or a return, or whatever:
+
+```typescript
+const goodState: State = STATES.Pending;
+const badState: State = 'Blah'; // error: type '"Blah"' is not assignable to type 'State'
+
+interface StateMachine {
+    (state: State): State;
+}
+```
+
+The upside to this is that now you can guarantee that anywhere you're supposed to be passing one of those strings, you *are* passing one of those strings. If you pass `'Compelte'` in, you'll get an actual error---which will at a minimum be helpful feedback in your editor, and depending on how you have your project configured, it may not even generate any JavaScript output.[^no-emit] So that's a significant step forward beyond what we had even with the best linting rules in pure JavaScript.
+
+[^no-emit]: Set your `"compilerOptions"` key in your `tsconfig.json` to include `"noEmitOnError": true,`.
+
+But wait, we can do more! TypeScript 2.1 *also* came with a neat ability to define “mapped types,” which map one object type to another. They have a few [interesting examples][mapped types] which are worth reading. What's interesting to us here is that you can write a type like this:
+
+[mapped types]: http://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#mapped-types
+
+```typescript
+type StatesAsMap = {
+    [K in keyof typeof STATES]: K
+}
+```
+
+And of course, you can simplify that using the type we defined above:
+
+```typescript
+type StatesAsMap = {
+    [K in State]: K
+}
+```
+
+What this does is define an object type where the *key* has to be one of the items in the `State` type.
+
+Now, by itself, this isn't all that useful. Above, we defined that as the keys on the `STATES` object, but if we tried to use that in conjunction with this new type definition, we'd just end up with a recursive type definition: `States` defined as the keys of `STATES`, `StatesAsMap` defined in terms of the elements of `States`, and then `STATES` defined as a `StatesAsMap`...
+
+```typescript
+const STATES: StatesAsMap = {
+    Pending: 'Pending',
+    Active: 'Active',
+    Completed: 'Completed',
+}
+
+type States = keyof typeof STATES;
+type StatesAsMap = {
+  [K in State]: K
+}
+```
+
+You end up with multiple compiler errors here, because of the circular references. This approach won't work. If we take a step back, though, we can work through this.
+
+First, let's start by defining the mapping generically. After all, the idea here was to be able to use this concept all over the place---e.g. for *any* Redux action, not just one specific on. We don't need this particular `State`; we just need a constrained set of strings (or numbers) to be used as the key of an object:
+
+```typescript
+type MapKeyAsValue<Key extends string> = {
+  [K in Key]: K
+};
+```
+
+In principle, if we didn't have to worry about the circular references, we could use that to constrain our definition of the original `STATES` itself:
+
+```typescript
+const STATES: MapKeyAsValue<State> = {
+    Pending: 'Pending',
+    Started: 'Started',
+    Completed: 'Completed',
+};
+```
+
+So how to get around the problem we had with circular definitions? Well, it turns out that the `K` values in these two approaches are equivalent:
+
+```typescript
+// Approach 1, using an object
+const STATES = {
+    Pending: 'Pending',
+    Started: 'Started',
+    Completed: 'Completed',
+};
+
+type ObjectStates = keyof typeof STATES;
+type MapStateKeyToValue = {
+  [K in ObjectStates]: K
+};
+
+// Approach 2, using unions
+type StatesUnion
+    = 'Pending'
+    | 'Started'
+    | 'Completed';
+
+type MapUnionKeyToValue = {
+  [K in StatesUnion]: K
+};
+```
+
+So we can combine these two with our idea about generics above to constrain the *object* type definition as well as all the usages. We need to constrain the union to be one that extends `string` (remember: union types in TypeScript can include *lots* of kind of types), but otherwise, we can basically just substitute a generic type parameter `U` (for "union") where we had `StatesUnion` before:
+
+```typescript
+type UnionKeyToValue<U extends string> = {
+    [K in U]: K
+};
+```
+
+That's really all we need! Now anything we constrain as conforming to this type will take a union as its type parameter, and every key must have exactly the same value as the key name. Let's apply it.
+
+```typescript
+type States
+    = 'Pending'
+    | 'Started'
+    | 'Completed';
+
+const STATES: UnionKeyToValue<States> = {
+    Pending: 'Pending',
+    Started: 'Started',
+    Completed: 'Completed',
+}
+```
+
+If any of those don't have *exactly* the same value as the key name, you'll get an error:
+
+```typescript
+const BAD_STATES: UnionKeyToValue<State> = {
+    Pending: 'pending',
+    Started: 'started',
+    Completed: 'completed',
+};
+```
+
+Then the compiler reports:
+
+```plain
+[ts]
+Type '{ Pending: "pending"; Started: "started"; Completed: "completed" }' is not assignable to type 'UnionKeyToValue<State>'.
+  Types of property 'Pending' are incompatible.
+    Type '"pending"' is not assignable to type '"Pending"'.
+```
+
+Since the key and the name don't match, the compiler tells us we didn't keep the constraint we defined on what these types should look like. Similarly, if you forget an item from the union, you'll get an error. If you add an item that isn't in the original union, you'll get an error. Among other things, this means that you can be confident that if you add a value to the union, the rest of your code won't compile until you include cases for it. You get all the power and utility of using union types, *and* you get the utility of being able to use the object as a namespace of sorts.[^namespace]
+
+[^namespace]: For namespacing in a more general sense, you should use... [namespaces].
+
+[namespaces]: http://www.typescriptlang.org/docs/handbook/namespaces.html
+
+And the TypeScript language service---which you can use from just about any editor out there if it integrates with it; VS Code, Atom, and the JetBrains IDEs all do---will actually give you the correct completion when you start definition a type. So imagine we were defining some other union type elsewhere in our program to handle events. Now we can use the same `UnionKeyToValue` type to construct this type, with immediate, *correct* feedback from the TypeScript language service:
+
+![TypeScript live code completion](http://cdn.chriskrycho.com/images/completion.gif "video of constrained completion")
+
+By inverting our original approach of using `keyof` (itself powerful and worth using in quite a few circumstances) and instead using the new mapped types, we get a *ton* of mileage in terms of productivity when using these types---errors prevented, and speed of writing the code in the first place increased as well.
