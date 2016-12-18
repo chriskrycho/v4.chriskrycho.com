@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-12-17T23:25:00-05:00</updated><entry><title>keyof and Mapped Types In TypeScript 2.1</title><link href="http://www.chriskrycho.com/2016/keyof-and-mapped-types-in-typescript-21.html" rel="alternate"></link><published>2016-12-17T23:25:00-05:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-12-17:2016/keyof-and-mapped-types-in-typescript-21.html</id><summary type="html">&lt;p&gt;In the last few months, I’ve been playing with both &lt;a href="https://flowtype.org"&gt;Flow&lt;/a&gt; and &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; as tools for increasing the quality and reliability of the JavaScript I write at Olo. Both of these are syntax that sits on top of normal JavaScript to add type analysis—basically, a form of &lt;a href="https://en.wikipedia.org/wiki/Gradual_typing"&gt;gradual typing&lt;/a&gt; for JS.&lt;/p&gt;
-&lt;p&gt;Although TypeScript’s tooling has been better all along (it’s no surprise that Microsoft’s developer tooling is stronger than Facebook’s!) I initially preferred Flow’s type system quite a bit: it has historically been much more focused on &lt;a href="http://stackoverflow.com/questions/21437015/soundness-and-completeness-of-systems"&gt;soundness&lt;/a&gt;, especially around the &lt;em&gt;many&lt;/em&gt; problems caused by &lt;code&gt;null&lt;/code&gt; and &lt;code&gt;undefined&lt;/code&gt;, than TypeScript. And it had earlier support for &lt;a href="https://flowtype.org/docs/disjoint-unions.html"&gt;tagged unions&lt;/a&gt;, a tool I’ve come to find invaluable since picking them up from my time with especially Rust but also other ML-descended languages (Haskell, F&lt;sup&gt;♯&lt;/sup&gt;, and Elm in particular). But the 2.0 and 2.1 releases of TypeScript have changed the game substantially, and it’s now a &lt;em&gt;very&lt;/em&gt; compelling language in its own right—not to mention a great tool for writing better JavaScript. So I thought I’d highlight a really neat thing you can do with some of those new features: &lt;em&gt;tagged unions&lt;/em&gt;, the &lt;em&gt;&lt;code&gt;keyof&lt;/code&gt; operator&lt;/em&gt; and &lt;em&gt;mapped types&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;i&gt;Some readers may note that what I’m doing here is wrangling TypeScript into giving me the kinds of things you get for free in an ML-descended language. Yep. That’s right. That’s exactly what I’m doing. But hey: at least you &lt;em&gt;can&lt;/em&gt; wrangle it into doing this.&lt;/i&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2016-12-18T09:55:00-05:00</updated><entry><title>keyof and Mapped Types In TypeScript 2.1</title><link href="http://www.chriskrycho.com/2016/keyof-and-mapped-types-in-typescript-21.html" rel="alternate"></link><published>2016-12-17T23:25:00-05:00</published><updated>2016-12-18T09:55:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-12-17:2016/keyof-and-mapped-types-in-typescript-21.html</id><summary type="html">&lt;p&gt;In the last few months, I’ve been playing with both &lt;a href="https://flowtype.org"&gt;Flow&lt;/a&gt; and &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; as tools for increasing the quality and reliability of the JavaScript I write at Olo. Both of these are syntax that sits on top of normal JavaScript to add type analysis—basically, a form of &lt;a href="https://en.wikipedia.org/wiki/Gradual_typing"&gt;gradual typing&lt;/a&gt; for JS.&lt;/p&gt;
+&lt;p&gt;Although TypeScript’s tooling has been better all along&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; I initially preferred Flow’s type system quite a bit: it has historically been much more focused on &lt;a href="http://stackoverflow.com/questions/21437015/soundness-and-completeness-of-systems"&gt;soundness&lt;/a&gt;, especially around the &lt;em&gt;many&lt;/em&gt; problems caused by &lt;code&gt;null&lt;/code&gt; and &lt;code&gt;undefined&lt;/code&gt;, than TypeScript. And it had earlier support for &lt;a href="https://flowtype.org/docs/disjoint-unions.html"&gt;tagged unions&lt;/a&gt;, a tool I’ve come to find invaluable since picking them up from my time with Rust.&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; But the 2.0 and 2.1 releases of TypeScript have changed the game substantially, and it’s now a &lt;em&gt;very&lt;/em&gt; compelling language in its own right—not to mention a great tool for writing better JavaScript. So I thought I’d highlight how you can get a lot of the benefits you would get from the type systems of languages like Elm with some of those new TypeScript features: the &lt;em&gt;&lt;code&gt;keyof&lt;/code&gt; operator&lt;/em&gt; and &lt;em&gt;mapped types&lt;/em&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;i&gt;Some readers may note that what I’m doing here is a &lt;em&gt;lot&lt;/em&gt; of wrangling to cajole TypeScript into giving me the kinds of things you get for free in an ML-descended language. Yep. The point is that you &lt;em&gt;can&lt;/em&gt; wrangle it into doing this.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
 &lt;section id="plain-old-javascript" class="level3"&gt;
 &lt;h3&gt;Plain old JavaScript&lt;/h3&gt;
 &lt;p&gt;Let’s say we want to write a little state machine in terms of a function to go from one state to the next, like this:&lt;/p&gt;
@@ -14,7 +16,7 @@
   }
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This will work, and it’ll even throw an error if you hand it the wrong thing. But you’ll find out at runtime if you accidentally typed &lt;code&gt;nextState('Pednign')&lt;/code&gt; instead of &lt;code&gt;nextState('Pending')&lt;/code&gt;—something I’ve done more than once in the past. You’d have a similar problem if you’d accidentally written &lt;code&gt;case 'Strated'&lt;/code&gt; instead of &lt;code&gt;case 'Started'&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;There are many contexts like this one in JavaScript—perhaps the most obvious being &lt;a href="http://redux.js.org/docs/basics/Actions.html"&gt;Redux actions&lt;/a&gt;, but I get a lot of mileage out of the pattern in Ember, as well. In these contexts, I find it’s convenient to define types that are kind of like pseudo-enums or pseudo-simple-unions, like so:&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There are many contexts like this one in JavaScript—perhaps the most obvious being &lt;a href="http://redux.js.org/docs/basics/Actions.html"&gt;Redux actions&lt;/a&gt;, but I get a lot of mileage out of the pattern in Ember, as well. In these contexts, I find it’s convenient to define types that are kind of like pseudo-enums or pseudo-simple-unions, like so:&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;pre class="javascript"&gt;&lt;code&gt;const STATE = {
   Pending: &amp;#39;Pending&amp;#39;,
   Started: &amp;#39;Started&amp;#39;,
@@ -44,7 +46,7 @@ function nextState(state: State): State {
 &lt;pre class="typescript"&gt;&lt;code&gt;type State = &amp;#39;Pending&amp;#39; | &amp;#39;Started&amp;#39; | &amp;#39;Completed&amp;#39;;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Unfortunately, you can’t write something like &lt;code&gt;State.Pending&lt;/code&gt; somewhere; you have to write the plain string &lt;code&gt;'Pending'&lt;/code&gt; instead. You still get some of the linting benefits you got with the approach outlined above via TypeScript’s actual type-checking, but you don’t get &lt;em&gt;any&lt;/em&gt; help with autocompletion. Can we get the benefits of both?&lt;/p&gt;
 &lt;p&gt;Yes! (This would be a weird blog post if I just got this far and said, “Nope, sucks to be us; go use Elm instead.”)&lt;/p&gt;
-&lt;p&gt;As of the 2.1 release, TypeScript lets you define types in terms of keys, so you can write a type like this:&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As of the 2.1 release, TypeScript lets you define types in terms of keys, so you can write a type like this:&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;const STATE = {
   Pending: &amp;#39;Pending&amp;#39;,
   Started: &amp;#39;Started&amp;#39;,
@@ -59,30 +61,30 @@ type StateFromKeys = keyof typeof STATE;&lt;/code&gt;&lt;/pre&gt;
 const badState: StateFromKeys = &amp;#39;Blah&amp;#39;;
 
 interface StateMachine {
-    (state: StateFromKeys): StateFromKeys;
+  (state: StateFromKeys): StateFromKeys;
 }
 
 const nextState: StateMachine = (state) =&amp;gt; {
   // ...
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The upside to this is that now you can guarantee that anywhere you’re supposed to be passing one of those strings, you &lt;em&gt;are&lt;/em&gt; passing one of those strings. If you pass in &lt;code&gt;'Compelte'&lt;/code&gt;, you’ll get an actual error—just like if we had used the union definition above. At a minimum, that will be helpful feedback in your editor. Maximally, depending on how you have your project configured, it may not even generate any JavaScript output.&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; So that’s a significant step forward beyond what we had even with the best linting rules in pure JavaScript.&lt;/p&gt;
+&lt;p&gt;The upside to this is that now you can guarantee that anywhere you’re supposed to be passing one of those strings, you &lt;em&gt;are&lt;/em&gt; passing one of those strings. If you pass in &lt;code&gt;'Compelte'&lt;/code&gt;, you’ll get an actual error—just like if we had used the union definition above. At a minimum, that will be helpful feedback in your editor. Maximally, depending on how you have your project configured, it may not even generate any JavaScript output.&lt;a href="#fn5" class="footnoteRef" id="fnref5"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; So that’s a significant step forward beyond what we had even with the best linting rules in pure JavaScript.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="going-in-circles" class="level3"&gt;
 &lt;h3&gt;Going in circles&lt;/h3&gt;
 &lt;p&gt;But wait, we can do more! TypeScript 2.1 &lt;em&gt;also&lt;/em&gt; came with a neat ability to define “mapped types,” which map one object type to another. They have a few &lt;a href="http://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-1.html#mapped-types"&gt;interesting examples&lt;/a&gt; which are worth reading. What’s interesting to us here is that you can write a type like this:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;type StateAsMap = {
-    [K in keyof typeof STATE]: K
+  [K in keyof typeof STATE]: K
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;And of course, you can simplify that using the type we defined above, since &lt;code&gt;StateFromKeys&lt;/code&gt; was just &lt;code&gt;keyof typeof STATE&lt;/code&gt;:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;type StateAsMap = {
-    [K in StateFromKeys]: K
+  [K in StateFromKeys]: K
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;We’ve now defined an object type whose the &lt;em&gt;key&lt;/em&gt; has to be one of the items in the &lt;code&gt;State&lt;/code&gt; type.&lt;/p&gt;
 &lt;p&gt;Now, by itself, this isn’t all that useful. Above, we defined that as the keys on the &lt;code&gt;STATE&lt;/code&gt; object, but if we tried to use that in conjunction with this new type definition, we’d just end up with a recursive type definition: &lt;code&gt;StateFromKeys&lt;/code&gt; defined as the keys of &lt;code&gt;STATE&lt;/code&gt;, &lt;code&gt;StateAsMap&lt;/code&gt; defined in terms of the elements of &lt;code&gt;StateFromKeys&lt;/code&gt;, and then &lt;code&gt;STATE&lt;/code&gt; defined as a &lt;code&gt;StateAsMap&lt;/code&gt;…&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;const STATE: StateAsMap = {
-    Pending: &amp;#39;Pending&amp;#39;,
-    Active: &amp;#39;Active&amp;#39;,
-    Completed: &amp;#39;Completed&amp;#39;,
+  Pending: &amp;#39;Pending&amp;#39;,
+  Active: &amp;#39;Active&amp;#39;,
+  Completed: &amp;#39;Completed&amp;#39;,
 }
 
 type StateFromKeys = keyof typeof STATE;
@@ -100,29 +102,29 @@ type StateAsMap = {
 };&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In principle, if we didn’t have to worry about the circular references, we could use that to constrain our definition of the original &lt;code&gt;STATE&lt;/code&gt; itself:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;const STATE: MapKeyAsValue&amp;lt;State&amp;gt; = {
-    Pending: &amp;#39;Pending&amp;#39;,
-    Started: &amp;#39;Started&amp;#39;,
-    Completed: &amp;#39;Completed&amp;#39;,
+  Pending: &amp;#39;Pending&amp;#39;,
+  Started: &amp;#39;Started&amp;#39;,
+  Completed: &amp;#39;Completed&amp;#39;,
 };&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;So how to get around the problem of circular type definitions? Well, it turns out that the &lt;code&gt;K&lt;/code&gt; values in these &lt;code&gt;StateObjectKeyToValue&lt;/code&gt; and &lt;code&gt;StateUnionKeyToValue&lt;/code&gt; types are equivalent:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;// Approach 1, using an object
 const STATE = {
-    Pending: &amp;#39;Pending&amp;#39;,
-    Started: &amp;#39;Started&amp;#39;,
-    Completed: &amp;#39;Completed&amp;#39;,
+  Pending: &amp;#39;Pending&amp;#39;,
+  Started: &amp;#39;Started&amp;#39;,
+  Completed: &amp;#39;Completed&amp;#39;,
 };
 
 type StateFromKeys = keyof typeof STATE;
 type StateObjectKeyToValue = {
-  [K in StateFromKeys]: K
+  [K in StateFromKeys]: K  // &amp;lt;- K is just the keys!
 };
 
 // Approach 2, using unions
 type StateUnion = &amp;#39;Pending&amp;#39; | &amp;#39;Started&amp;#39; | &amp;#39;Completed&amp;#39;;
 type StateUnionKeyToValue = {
-  [K in StateUnion]: K
+  [K in StateUnion]: K  // &amp;lt;- K is also just the keys!
 };&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Notice that &lt;code&gt;StateUnionKeyToValue&lt;/code&gt; doesn’t make any reference to the &lt;code&gt;STATE&lt;/code&gt; object. So we can use &lt;code&gt;StateUnionKeyToValue&lt;/code&gt; to constrain &lt;code&gt;STATE&lt;/code&gt;, and then just use &lt;code&gt;StateUnion&lt;/code&gt; to constrain all the places we want to &lt;em&gt;use&lt;/em&gt; one of those states. Once we put it all together, that would look like this:&lt;/p&gt;
+&lt;p&gt;Notice that, unlike the &lt;code&gt;StateObjectKeyToValue&lt;/code&gt; version, &lt;code&gt;StateUnionKeyToValue&lt;/code&gt; doesn’t make any reference to the &lt;code&gt;STATE&lt;/code&gt; object. So we can use &lt;code&gt;StateUnionKeyToValue&lt;/code&gt; to constrain &lt;code&gt;STATE&lt;/code&gt;, and then just use &lt;code&gt;StateUnion&lt;/code&gt; to constrain all the places we want to &lt;em&gt;use&lt;/em&gt; one of those states. Once we put it all together, that would look like this:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;type StateUnion = &amp;#39;Pending&amp;#39; | &amp;#39;Started&amp;#39; | &amp;#39;Completed&amp;#39;;
 
 type StateUnionKeyToValue = {
@@ -130,28 +132,29 @@ type StateUnionKeyToValue = {
 };
 
 const STATE: StateUnionKeyToValue = {
-    Pending: &amp;#39;Pending&amp;#39;,
-    Started: &amp;#39;Started&amp;#39;,
-    Completed: &amp;#39;Completed&amp;#39;,
+  Pending: &amp;#39;Pending&amp;#39;,
+  Started: &amp;#39;Started&amp;#39;,
+  Completed: &amp;#39;Completed&amp;#39;,
 };&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;And now we can also make this generic, so that it works for things besides just this one set of states—so that it’ll work for &lt;em&gt;any&lt;/em&gt; union type with string keys. (That string-key constraint is important because objects in TypeScript can currently only use strings or numbers as keys; whereas union types can be all sorts of things.) Apart from that constraint on the union, though, we can basically just substitute a generic type parameter &lt;code&gt;U&lt;/code&gt;, for “union,” where we had &lt;code&gt;StateUnion&lt;/code&gt; before.&lt;/p&gt;
+&lt;p&gt;By doing this, we get two benefits. First, &lt;code&gt;STATE&lt;/code&gt; now has to supply the key and value for &lt;em&gt;all&lt;/em&gt; the union’s variants. Second, we know that the key and value are the same, and that they map to the union’s variants. These two facts mean that we can be 100% sure that wherever we define something as requiring a &lt;code&gt;State&lt;/code&gt;, we can supply one of the items on &lt;code&gt;STATE&lt;/code&gt; and it will be guaranteed to be correct. If we change the &lt;code&gt;State&lt;/code&gt; union definition, everything else will need to be updated, too.&lt;/p&gt;
+&lt;p&gt;Now we can make this generic, so it works for types besides just this one set of states—so that it’ll work for &lt;em&gt;any&lt;/em&gt; union type with string keys, in fact. (That string-key constraint is important because objects in TypeScript can currently only use strings or numbers as keys; whereas union types can be all sorts of things.) Apart from that constraint on the union, though, we can basically just substitute a generic type parameter &lt;code&gt;U&lt;/code&gt;, for “union,” where we had &lt;code&gt;StateUnion&lt;/code&gt; before.&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;type UnionKeyToValue&amp;lt;U extends string&amp;gt; = {
-    [K in U]: K
+  [K in U]: K
 };&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then any object we say conforms to this type will take a union as its type parameter, and every key on the object must have exactly the same value as the key name:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;type State = &amp;#39;Pending&amp;#39; | &amp;#39;Started&amp;#39; | &amp;#39;Completed&amp;#39;;
 
 // Use `State` as the type parameter to `UnionKeyToValue`.
 const STATE: UnionKeyToValue&amp;lt;State&amp;gt; = {
-    Pending: &amp;#39;Pending&amp;#39;,
-    Started: &amp;#39;Started&amp;#39;,
-    Completed: &amp;#39;Completed&amp;#39;,
+  Pending: &amp;#39;Pending&amp;#39;,
+  Started: &amp;#39;Started&amp;#39;,
+  Completed: &amp;#39;Completed&amp;#39;,
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If any of those don’t have &lt;em&gt;exactly&lt;/em&gt; the same value as the key name, you’ll get an error. So, each of the following value assignments would fail to compile, albeit for different reasons (top to bottom: capitalization, misspelling, and missing a letter).&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;const BAD_STATE: UnionKeyToValue&amp;lt;State&amp;gt; = {
-    Pending: &amp;#39;pending&amp;#39;,  // look ma, no capitals
-    Started: &amp;#39;Strated&amp;#39;,  // St-rated = whuh?
-    Completed: &amp;#39;Complete&amp;#39;,  // so tense
+  Pending: &amp;#39;pending&amp;#39;,  // look ma, no capitals
+  Started: &amp;#39;Strated&amp;#39;,  // St-rated = whuh?
+  Completed: &amp;#39;Complete&amp;#39;,  // so tense
 };&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You’ll see a compiler error that looks something like this:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -160,13 +163,13 @@ Type ‘{ Pending: “pending”; Started: “Strated”; Completed: “Complete
   Types of property ‘Pending’ are incompatible.
     Type ‘“pending”’ is not assignable to type ‘“Pending”’.&lt;/div&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Since the key and the name don’t match, the compiler tells us we didn’t keep the constraint we defined on what these types should look like. Similarly, if you forget an item from the union, you’ll get an error. If you add an item that isn’t in the original union, you’ll get an error. Among other things, this means that you can be confident that if you add a value to the union, the rest of your code won’t compile until you include cases for it. You get all the power and utility of using union types, &lt;em&gt;and&lt;/em&gt; you get the utility of being able to use the object as a namespace of sorts.&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Since the key and the name don’t match, the compiler tells us we didn’t keep the constraint we defined on what these types should look like. Similarly, if you forget an item from the union, you’ll get an error. If you add an item that isn’t in the original union, you’ll get an error. Among other things, this means that you can be confident that if you add a value to the union, the rest of your code won’t compile until you include cases for it. You get all the power and utility of using union types, &lt;em&gt;and&lt;/em&gt; you get the utility of being able to use the object as a namespace of sorts.&lt;a href="#fn6" class="footnoteRef" id="fnref6"&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;And the TypeScript language service—which you can use from a &lt;em&gt;lot&lt;/em&gt; of editors, including VS Code, Atom, Sublime Text, and the JetBrains IDEs—will actually give you the correct completion when you start definition a type. So imagine we were defining some other union type elsewhere in our program to handle events. Now we can use the same &lt;code&gt;UnionKeyToValue&lt;/code&gt; type to construct this type, with immediate, &lt;em&gt;correct&lt;/em&gt; feedback from the TypeScript language service:&lt;/p&gt;
 &lt;figure&gt;
 &lt;img src="http://cdn.chriskrycho.com/images/completion.gif" title="video of constrained completion" alt="TypeScript live code completion of the mapped type" /&gt;&lt;figcaption&gt;TypeScript live code completion of the mapped type&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;By inverting our original approach of using &lt;code&gt;keyof&lt;/code&gt; (itself powerful and worth using in quite a few circumstances) and instead using the new mapped types, we get a &lt;em&gt;ton&lt;/em&gt; of mileage in terms of productivity when using these types—errors prevented, and speed of writing the code in the first place increased as well.&lt;/p&gt;
-&lt;p&gt;Yes, it’s a little verbose and it does require duplicating the strings whenever you define one of these types.&lt;a href="#fn5" class="footnoteRef" id="fnref5"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; But, and this is what I find most important: there is only one &lt;em&gt;source&lt;/em&gt; for those string keys, the union type, and it is definitive. If you change that central union type, everything else that references it, including the namespace-like object, will fail to compile until you make the same change there.&lt;/p&gt;
+&lt;p&gt;Yes, it’s a little verbose and it does require duplicating the strings whenever you define one of these types.&lt;a href="#fn7" class="footnoteRef" id="fnref7"&gt;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt; But, and this is what I find most important: there is only one &lt;em&gt;source&lt;/em&gt; for those string keys, the union type, and it is definitive. If you change that central union type, everything else that references it, including the namespace-like object, will fail to compile until you make the same change there.&lt;/p&gt;
 &lt;figure&gt;
 &lt;img src="http://cdn.chriskrycho.com/images/change-union.gif" title="video of union update" alt="Updating a union" /&gt;&lt;figcaption&gt;Updating a union&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -176,20 +179,22 @@ Type ‘{ Pending: “pending”; Started: “Strated”; Completed: “Complete
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1"&gt;&lt;p&gt;Aside: to be extra safe and prevent any confusion or mucking around, you should probably call &lt;code&gt;Object.freeze()&lt;/code&gt; on the object literal, too:&lt;/p&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;it’s no surprise that Microsoft’s developer tooling is stronger than Facebook’s&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;along with all the other ML-descended languages I’ve played with, including Haskell, F&lt;sup&gt;♯&lt;/sup&gt;, PureScript, and Elm.&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn3"&gt;&lt;p&gt;Aside: to be extra safe and prevent any confusion or mucking around, you should probably call &lt;code&gt;Object.freeze()&lt;/code&gt; on the object literal, too:&lt;/p&gt;
 &lt;pre class="javascript"&gt;&lt;code&gt;const STATE = Object.freeze({
   Pending: &amp;#39;Pending&amp;#39;,
   Started: &amp;#39;Started&amp;#39;,
   Completed: &amp;#39;Completed&amp;#39;,
 })&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Both convention and linters make it unlikely you’ll modify something like this directly—but impossible is better than unlikely.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn2"&gt;&lt;p&gt;Flow has supported this feature for some time; you can write &lt;code&gt;$Keys&amp;lt;typeof STATE&amp;gt;&lt;/code&gt;—but the feature is entirely undocumented.&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn3"&gt;&lt;p&gt;Set your &lt;code&gt;&amp;quot;compilerOptions&amp;quot;&lt;/code&gt; key in your &lt;code&gt;tsconfig.json&lt;/code&gt; to include &lt;code&gt;&amp;quot;noEmitOnError&amp;quot;: true,&lt;/code&gt;.&lt;a href="#fnref3"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn4"&gt;&lt;p&gt;For namespacing in a more general sense, you should use… &lt;a href="http://www.typescriptlang.org/docs/handbook/namespaces.html"&gt;namespaces&lt;/a&gt;.&lt;a href="#fnref4"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn5"&gt;&lt;p&gt;It would be great if we could get these benefits without the duplication—maybe someday we’ll all be writing Elm!&lt;a href="#fnref5"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;Both convention and linters make it unlikely you’ll modify something like this directly—but impossible is better than unlikely.&lt;a href="#fnref3"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn4"&gt;&lt;p&gt;Flow has supported this feature for some time; you can write &lt;code&gt;$Keys&amp;lt;typeof STATE&amp;gt;&lt;/code&gt;—but the feature is entirely undocumented.&lt;a href="#fnref4"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn5"&gt;&lt;p&gt;Set your &lt;code&gt;&amp;quot;compilerOptions&amp;quot;&lt;/code&gt; key in your &lt;code&gt;tsconfig.json&lt;/code&gt; to include &lt;code&gt;&amp;quot;noEmitOnError&amp;quot;: true,&lt;/code&gt;.&lt;a href="#fnref5"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn6"&gt;&lt;p&gt;For namespacing in a more general sense, you should use… &lt;a href="http://www.typescriptlang.org/docs/handbook/namespaces.html"&gt;namespaces&lt;/a&gt;.&lt;a href="#fnref6"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn7"&gt;&lt;p&gt;It would be great if we could get these benefits without the duplication—maybe someday we’ll have better support in JS or TS natively.&lt;a href="#fnref7"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</summary><category term="javascript"></category><category term="typescript"></category></entry><entry><title>Rust development using VS Code on OS X, debugging included</title><link href="http://www.chriskrycho.com/2016/rust-development-using-vs-code-on-os-x-debugging-included.html" rel="alternate"></link><published>2016-11-18T20:48:00-05:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-11-18:2016/rust-development-using-vs-code-on-os-x-debugging-included.html</id><summary type="html">&lt;p&gt;&lt;a href="https://medium.com/@royalstream/rust-development-using-vs-code-on-os-x-debugging-included-bc10c9863777#.wgjbgie5a"&gt;Super handy guide for getting a debugging/IDE environment set up for Rust.&lt;/a&gt;&lt;/p&gt;
+</summary><category term="javascript"></category><category term="typescript"></category><category term="software development"></category><category term="programming languages"></category></entry><entry><title>Rust development using VS Code on OS X, debugging included</title><link href="http://www.chriskrycho.com/2016/rust-development-using-vs-code-on-os-x-debugging-included.html" rel="alternate"></link><published>2016-11-18T20:48:00-05:00</published><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-11-18:2016/rust-development-using-vs-code-on-os-x-debugging-included.html</id><summary type="html">&lt;p&gt;&lt;a href="https://medium.com/@royalstream/rust-development-using-vs-code-on-os-x-debugging-included-bc10c9863777#.wgjbgie5a"&gt;Super handy guide for getting a debugging/IDE environment set up for Rust.&lt;/a&gt;&lt;/p&gt;
 </summary><category term="software development"></category><category term="rust"></category><category term="links"></category></entry><entry><title>Using Rust for ‘Scripting’</title><link href="http://www.chriskrycho.com/2016/using-rust-for-scripting.html" rel="alternate"></link><published>2016-11-14T22:00:00-05:00</published><updated>2016-11-15T09:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-11-14:2016/using-rust-for-scripting.html</id><summary type="html">&lt;p&gt;&lt;i class=editorial&gt;&lt;strong&gt;Edit&lt;/strong&gt;: fixed some typos, cleaned up implementation a bit based on feedback around the internet.&lt;/i&gt;&lt;/p&gt;
 &lt;section id="i.-using-rust-instead-of-python" class="level2"&gt;
 &lt;h2&gt;I. Using Rust Instead of Python&lt;/h2&gt;

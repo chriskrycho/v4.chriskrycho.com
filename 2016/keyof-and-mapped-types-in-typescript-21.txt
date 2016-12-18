@@ -2,7 +2,8 @@
 Title: keyof and Mapped Types In TypeScript 2.1
 Subtitle: Making JavaScript dance to an ML-ic tune.
 Date: 2016-12-17 23:25
-Tags: javascript, typescript
+Modified: 2016-12-18 09:55
+Tags: javascript, typescript, software development, programming languages
 ---
 
 In the last few months, I've been playing with both [Flow] and [TypeScript] as tools for increasing the quality and reliability of the JavaScript I write at Olo. Both of these are syntax that sits on top of normal JavaScript to add type analysis—basically, a form of [gradual typing] for JS.
@@ -11,13 +12,20 @@ In the last few months, I've been playing with both [Flow] and [TypeScript] as t
 [TypeScript]: http://www.typescriptlang.org
 [gradual typing]: https://en.wikipedia.org/wiki/Gradual_typing
 
-Although TypeScript's tooling has been better all along (it's no surprise that Microsoft's developer tooling is stronger than Facebook's!) I initially preferred Flow's type system quite a bit: it has historically been much more focused on [soundness], especially around the *many* problems caused by `null` and `undefined`, than TypeScript. And it had earlier support for [tagged unions], a tool I've come to find invaluable since picking them up from my time with especially Rust but also other ML-descended languages (Haskell, F^♯^, and Elm in particular). But the 2.0 and 2.1 releases of TypeScript have changed the game substantially, and it's now a *very* compelling language in its own right—not to mention a great tool for writing better JavaScript. So I thought I'd highlight a really neat thing you can do with some of those new features: *tagged unions*, the *`keyof` operator* and *mapped types*.
+Although TypeScript's tooling has been better all along[^tooling] I initially preferred Flow's type system quite a bit: it has historically been much more focused on [soundness], especially around the *many* problems caused by `null` and `undefined`, than TypeScript. And it had earlier support for [tagged unions], a tool I've come to find invaluable since picking them up from my time with Rust.[^ml-descended] But the 2.0 and 2.1 releases of TypeScript have changed the game substantially, and it's now a *very* compelling language in its own right—not to mention a great tool for writing better JavaScript. So I thought I'd highlight how you can get a lot of the benefits you would get from the type systems of languages like Elm with some of those new TypeScript features: the *`keyof` operator* and *mapped types*.
 
 [soundness]: http://stackoverflow.com/questions/21437015/soundness-and-completeness-of-systems
 [tagged unions]: https://flowtype.org/docs/disjoint-unions.html
 
-<i>Some readers may note that what I'm doing here is wrangling TypeScript into giving me the kinds of things you get for free in an ML-descended language. Yep. That's right. That's exactly what I'm doing. But hey: at least you *can* wrangle it into doing this.</i>
+[^tooling]: it's no surprise that Microsoft's developer tooling is stronger than Facebook's
 
+[^ml-descended]: along with all the other ML-descended languages I've played with, including Haskell, F^♯^, PureScript, and Elm.
+
+---
+
+<i>Some readers may note that what I'm doing here is a *lot* of wrangling to cajole TypeScript into giving me the kinds of things you get for free in an ML-descended language. Yep. The point is that you *can* wrangle it into doing this.</i>
+
+---
 
 ### Plain old JavaScript
 
@@ -128,7 +136,7 @@ const goodState: StateFromKeys = STATE.Pending;
 const badState: StateFromKeys = 'Blah';
 
 interface StateMachine {
-    (state: StateFromKeys): StateFromKeys;
+  (state: StateFromKeys): StateFromKeys;
 }
 
 const nextState: StateMachine = (state) => {
@@ -149,7 +157,7 @@ But wait, we can do more! TypeScript 2.1 *also* came with a neat ability to defi
 
 ```typescript
 type StateAsMap = {
-    [K in keyof typeof STATE]: K
+  [K in keyof typeof STATE]: K
 }
 ```
 
@@ -157,7 +165,7 @@ And of course, you can simplify that using the type we defined above, since `Sta
 
 ```typescript
 type StateAsMap = {
-    [K in StateFromKeys]: K
+  [K in StateFromKeys]: K
 }
 ```
 
@@ -167,9 +175,9 @@ Now, by itself, this isn't all that useful. Above, we defined that as the keys o
 
 ```typescript
 const STATE: StateAsMap = {
-    Pending: 'Pending',
-    Active: 'Active',
-    Completed: 'Completed',
+  Pending: 'Pending',
+  Active: 'Active',
+  Completed: 'Completed',
 }
 
 type StateFromKeys = keyof typeof STATE;
@@ -196,9 +204,9 @@ In principle, if we didn't have to worry about the circular references, we could
 
 ```typescript
 const STATE: MapKeyAsValue<State> = {
-    Pending: 'Pending',
-    Started: 'Started',
-    Completed: 'Completed',
+  Pending: 'Pending',
+  Started: 'Started',
+  Completed: 'Completed',
 };
 ```
 
@@ -207,24 +215,24 @@ So how to get around the problem of circular type definitions? Well, it turns ou
 ```typescript
 // Approach 1, using an object
 const STATE = {
-    Pending: 'Pending',
-    Started: 'Started',
-    Completed: 'Completed',
+  Pending: 'Pending',
+  Started: 'Started',
+  Completed: 'Completed',
 };
 
 type StateFromKeys = keyof typeof STATE;
 type StateObjectKeyToValue = {
-  [K in StateFromKeys]: K
+  [K in StateFromKeys]: K  // <- K is just the keys!
 };
 
 // Approach 2, using unions
 type StateUnion = 'Pending' | 'Started' | 'Completed';
 type StateUnionKeyToValue = {
-  [K in StateUnion]: K
+  [K in StateUnion]: K  // <- K is also just the keys!
 };
 ```
 
-Notice that `StateUnionKeyToValue` doesn't make any reference to the `STATE` object. So we can use `StateUnionKeyToValue` to constrain `STATE`, and then just use `StateUnion` to constrain all the places we want to *use* one of those states. Once we put it all together, that would look like this:
+Notice that, unlike the `StateObjectKeyToValue` version, `StateUnionKeyToValue` doesn't make any reference to the `STATE` object. So we can use `StateUnionKeyToValue` to constrain `STATE`, and then just use `StateUnion` to constrain all the places we want to *use* one of those states. Once we put it all together, that would look like this:
 
 ```typescript
 type StateUnion = 'Pending' | 'Started' | 'Completed';
@@ -234,17 +242,19 @@ type StateUnionKeyToValue = {
 };
 
 const STATE: StateUnionKeyToValue = {
-    Pending: 'Pending',
-    Started: 'Started',
-    Completed: 'Completed',
+  Pending: 'Pending',
+  Started: 'Started',
+  Completed: 'Completed',
 };
 ```
 
-And now we can also make this generic, so that it works for things besides just this one set of states---so that it'll work for *any* union type with string keys. (That string-key constraint is important because objects in TypeScript can currently only use strings or numbers as keys; whereas union types can be all sorts of things.) Apart from that constraint on the union, though, we can basically just substitute a generic type parameter `U`, for "union," where we had `StateUnion` before.
+By doing this, we get two benefits. First, `STATE` now has to supply the key and value for *all* the union's variants. Second, we know that the key and value are the same, and that they map to the union's variants. These two facts mean that we can be 100% sure that wherever we define something as requiring a `State`, we can supply one of the items on `STATE` and it will be guaranteed to be correct. If we change the `State` union definition, everything else will need to be updated, too.
+
+Now we can make this generic, so it works for types besides just this one set of states---so that it'll work for *any* union type with string keys, in fact. (That string-key constraint is important because objects in TypeScript can currently only use strings or numbers as keys; whereas union types can be all sorts of things.) Apart from that constraint on the union, though, we can basically just substitute a generic type parameter `U`, for "union," where we had `StateUnion` before.
 
 ```typescript
 type UnionKeyToValue<U extends string> = {
-    [K in U]: K
+  [K in U]: K
 };
 ```
 
@@ -255,9 +265,9 @@ type State = 'Pending' | 'Started' | 'Completed';
 
 // Use `State` as the type parameter to `UnionKeyToValue`.
 const STATE: UnionKeyToValue<State> = {
-    Pending: 'Pending',
-    Started: 'Started',
-    Completed: 'Completed',
+  Pending: 'Pending',
+  Started: 'Started',
+  Completed: 'Completed',
 }
 ```
 
@@ -265,9 +275,9 @@ If any of those don't have *exactly* the same value as the key name, you'll get 
 
 ```typescript
 const BAD_STATE: UnionKeyToValue<State> = {
-    Pending: 'pending',  // look ma, no capitals
-    Started: 'Strated',  // St-rated = whuh?
-    Completed: 'Complete',  // so tense
+  Pending: 'pending',  // look ma, no capitals
+  Started: 'Strated',  // St-rated = whuh?
+  Completed: 'Complete',  // so tense
 };
 ```
 
@@ -290,9 +300,9 @@ And the TypeScript language service---which you can use from a *lot* of editors,
 
 By inverting our original approach of using `keyof` (itself powerful and worth using in quite a few circumstances) and instead using the new mapped types, we get a *ton* of mileage in terms of productivity when using these types---errors prevented, and speed of writing the code in the first place increased as well.
 
-Yes, it's a little verbose and it does require duplicating the strings whenever you define one of these types.[^elm] But, and this is what I find most important: there is only one *source* for those string keys, the union type, and it is definitive. If you change that central union type, everything else that references it, including the namespace-like object, will fail to compile until you make the same change there.
+Yes, it's a little verbose and it does require duplicating the strings whenever you define one of these types.[^duplication] But, and this is what I find most important: there is only one *source* for those string keys, the union type, and it is definitive. If you change that central union type, everything else that references it, including the namespace-like object, will fail to compile until you make the same change there.
 
-[^elm]: It would be great if we could get these benefits without the duplication---maybe someday we'll all be writing Elm!
+[^duplication]: It would be great if we could get these benefits without the duplication---maybe someday we'll have better support in JS or TS natively.
 
 ![Updating a union](http://cdn.chriskrycho.com/images/change-union.gif "video of union update")
 
