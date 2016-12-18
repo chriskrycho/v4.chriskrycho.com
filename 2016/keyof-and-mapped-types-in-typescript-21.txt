@@ -1,7 +1,7 @@
 ---
 Title: keyof and Mapped Types In TypeScript 2.1
 Subtitle: Making JavaScript dance to an ML-ic tune.
-Date: 2016-12-17 22:45
+Date: 2016-12-17 23:25
 Tags: javascript, typescript
 ---
 
