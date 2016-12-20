@@ -96,7 +96,7 @@ type StateAsMap = {
 &lt;/section&gt;
 &lt;section id="join-forces" class="level3"&gt;
 &lt;h3&gt;Join forces!&lt;/h3&gt;
-&lt;p&gt;First, let’s start by defining the mapping generically. After all, the idea here was to be able to use this concept all over the place—e.g. for &lt;em&gt;any&lt;/em&gt; Redux action, not just one specific on. We don’t need this particular &lt;code&gt;State&lt;/code&gt;; we just need a constrained set of strings (or numbers) to be used as the key of an object:&lt;/p&gt;
+&lt;p&gt;First, let’s start by defining the mapping generically. After all, the idea here was to be able to use this concept all over the place—e.g. for &lt;em&gt;any&lt;/em&gt; Redux action, not just one specific one. We don’t need this particular &lt;code&gt;State&lt;/code&gt;; we just need a constrained set of strings (or numbers) to be used as the key of an object:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;type MapKeyAsValue&amp;lt;Key extends string&amp;gt; = {
   [K in Key]: K
 };&lt;/code&gt;&lt;/pre&gt;

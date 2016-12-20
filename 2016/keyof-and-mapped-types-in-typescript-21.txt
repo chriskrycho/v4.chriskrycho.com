@@ -192,7 +192,7 @@ You end up with multiple compiler errors here, because of the circular reference
 
 ### Join forces!
 
-First, let's start by defining the mapping generically. After all, the idea here was to be able to use this concept all over the place---e.g. for *any* Redux action, not just one specific on. We don't need this particular `State`; we just need a constrained set of strings (or numbers) to be used as the key of an object:
+First, let's start by defining the mapping generically. After all, the idea here was to be able to use this concept all over the place---e.g. for *any* Redux action, not just one specific one. We don't need this particular `State`; we just need a constrained set of strings (or numbers) to be used as the key of an object:
 
 ```typescript
 type MapKeyAsValue<Key extends string> = {

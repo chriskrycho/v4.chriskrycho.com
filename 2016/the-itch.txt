@@ -1,0 +1,22 @@
+---
+Title: The Itch
+Subtitle: How typed functional programming is what I was looking for all along.
+Date: 2016-12-19 21:45
+Summary: >
+  Learning functional programming has been simultaneously wildly new and deeply familiar. It's the answer to questions I've been asking for most of a decade.
+Tags: software development, functional programming, Rust, JavaScript
+---
+
+It took me until just a few weeks ago to put my finger on why typed functional programming, as a style and approach, has appealed to me so much as I started picking it up over the last year. For all its novelty, typed FP feels---over and over again---*familiar*. Strange to say, but it's true.
+
+This came home to me again when reading a [short post on functors](https://medium.com/@dtinth/what-is-a-functor-dcf510b098b6#.e887yz63p)---i.e., *mappable* types. I've written a lot of JavaScript in the last few years, and it has been a source of constant frustration to me that `Array` implements the `map` method, but `Object` does not. Countless times, I have wanted to take an object shaped like `{ count: <number> }` and transform that `count`. I'm not alone in that. There's a reason that libraries like [Underscore](http://underscorejs.org), [Lodash](https://lodash.com), and [Ramda](http://ramdajs.com) all supply utilities to allow you to map over objects.[^constraints] There are also good reasons why it *isn't* implemented for on `Object.prototype`: the reality is that coming up with a predictable *and* useful API for *all* `Object` instances is difficult at best: Objects are used for everything from dictionaries to records and strange combinations of the two. But still: there's something there.
+
+And reading this post on functors, it struck me what that "something" is: object types are, in principle, functors. Maybe it doesn't make sense to have a single `map` implementation for every `Object` instance out there. But they're perfectly mappable. I didn't have a word for this before tonight, but now I do. Over and over again, this is my experience with functional programming.
+
+There's this familiar feeling of frustration I'm slowly coming to recognize---a mental sensation which is a little like the intellectual equivalent of an itch in a spot you can't quite reach. You're reaching for an abstraction to express an idea, but you don't even know that there *is* an abstraction for it. You want to map over objects, and you don't know why that seems so reasonable, but it does. And then someone explains functors to you. It scratches the itch.
+
+Another example. Since I started programming eight and a half years ago, I've worked seriously with Fortran, C, C++ PHP, Python, and JavaScript. In each of those languages (and especially in the C-descended languages), I have found myself reaching for enums or things like them as a way of trying to represent types and states in my system in a more comprehensive way. I figured out that you should [use enums not booleans](http://wiki.c2.com/?UseEnumsNotBooleans) a long time before I found the advice on the internet. I was encoding error types as enum values instead of just using `int`s almost as soon as I started, because it was obvious to me that `ErrorCode someFunction() { ... }` was far more meaningful than `int someFunction() { ... }` (even if the context of C meant that the latter often implied the former, and even if it was trivial to coerce one to the other).
+
+Then I read [_Maybe Haskell_](https://gumroad.com/l/maybe-haskell/), a book I've mentioned often on this blog because it was so revelatory for me. This is what I had been reaching for all those years---and then some. Handing data around with the constraints? Yes, please! I had played with unions, enums, structs with enums inside them, anything to try to get some type-level clarity and guarantees about what my code was doing. Haskell showed me the way; and since then Rust and Elm and F# have reinforced it many times over. [Tagged unions](https://guide.elm-lang.org/types/union_types.html) are a joy. They let me say what I mean---finally.
+
+I can still feel that itch. It's shifted a little, but it's still there: reaching for higher abstractions to let me tell the machine more clearly what I intend. Half a dozen times this year, I've realized: *Here* is where dependent types would be useful. They're far beyond me, but close enough now I can see. I'm sure a year from now, I'll have find some tools to scratch *these* itches, only to discover a few more.

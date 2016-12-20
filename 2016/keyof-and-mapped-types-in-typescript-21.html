@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="keyof and Mapped Types In TypeScript 2.1"/>
     <meta name="twitter:description" content="In the last few months, I’ve been playing with both Flow and TypeScript as tools for increasing the quality and reliability of the JavaScript I write at Olo. Both of these are syntax that sits on top of normal JavaScript to add type analysis—basically, a form of gradual …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -184,7 +184,7 @@ type StateAsMap = {
 </section>
 <section id="join-forces" class="level3">
 <h3>Join forces!</h3>
-<p>First, let’s start by defining the mapping generically. After all, the idea here was to be able to use this concept all over the place—e.g. for <em>any</em> Redux action, not just one specific on. We don’t need this particular <code>State</code>; we just need a constrained set of strings (or numbers) to be used as the key of an object:</p>
+<p>First, let’s start by defining the mapping generically. After all, the idea here was to be able to use this concept all over the place—e.g. for <em>any</em> Redux action, not just one specific one. We don’t need this particular <code>State</code>; we just need a constrained set of strings (or numbers) to be used as the key of an object:</p>
 <pre class="typescript"><code>type MapKeyAsValue&lt;Key extends string&gt; = {
   [K in Key]: K
 };</code></pre>
@@ -329,7 +329,7 @@ Type ‘{ Pending: “pending”; Started: “Strated”; Completed: “Complete
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2016/i-am-not-a-grinch.html">I am not a Grinch</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2016/winning-slowly-5-05-faint-not.html">Winning Slowly 5.05: “Faint Not”</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2016/keyof-and-mapped-types-in-typescript-21.html">keyof and Mapped Types In TypeScript 2.1</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2016/the-itch.html">The Itch</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2016/11-20-0930.html"></a></li>
     </ul>
 </section></footer>
