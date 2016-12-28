@@ -72,6 +72,7 @@ CATEGORY_URL = '{slug}/'
 CATEGORY_SAVE_AS = '{slug}/index.html'
 TAG_URL = '{slug}/'
 TAG_SAVE_AS = '{slug}/index.html'
+ARCHIVE_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
 AUTHORS_SAVE_AS = ''
 
