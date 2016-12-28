@@ -76,3 +76,5 @@ A few big lessons I learned from this:
 2. Be *even more* clear up-front about the terms and goals of a project. I don't know how we ended up with the crossed wires we did, but it was extremely frustrating.
 
 3. If you can get an advance, get an advance. Just saying.
+
+In general, I'm quite pleased with the *volume* of my output in 2016 (who wouldn't be, right?). I'd definitely like a lot more of that to be public-facing in 2017, even if it's lower in overall volume. I hope to take the material from that _Rust vs. Swift_ project, expand it slightly, and self-publish it. I also hope to put together at least one substantive essay for Mere Orthodoxy next year. And of course there will probably be thousands of words in this space, too---inevitably more than I even realize.
