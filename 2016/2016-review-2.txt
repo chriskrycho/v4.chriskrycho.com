@@ -1,0 +1,76 @@
+---
+Title: 2016 in Review, Part 2 of 6
+Subtitle: "So. many. words. I had no idea how many words."
+Date: 2016-12-28 07:00
+Tags: writing, podcasting, software development, family, productivity, fitness, 2016-in-review
+Slug: 2016-review-2
+Category: Blog
+---
+
+<i class='editorial'>I originally drafted a single, mammoth post reflecting on this whole year---but at 5,000 words, that seemed like a bit much. As such, I've broken it into a series of posts, to be published daily through the start of the new year. Hopefully they're a bit more digestible that way!</i>
+
+- [Introduction, or: a ridiculous year summarized][intro]
+- [Part 1: Running headfirst into a wall of pneumonia.][part-1]
+- Part 2: So. many. words. I had no idea how many words.
+- Part 3: Podcasting: Winning Slowly, New Rustacean, and more!
+- Part 4: Writing software for Olo and for open source.
+- Part 5: Getting things done in 2016 and beyond.
+- Part 6: Plans for 2017!
+
+[intro]: http://www.chriskrycho.com/2016/2016-review-intro.html
+[part-1]: http://www.chriskrycho.com/2016/2016-review-1.html
+[part-2]: http://www.chriskrycho.com/2016/2016-review-2.html
+[part-3]: http://www.chriskrycho.com/2016/2016-review-3.html
+[part-4]: http://www.chriskrycho.com/2016/2016-review-4.html
+[part-5]: http://www.chriskrycho.com/2016/2016-review-5.html
+[part-6]: http://www.chriskrycho.com/2017/2016-review-6.html
+
+---
+
+One of my goals for 2016 was to continue writing not only on this blog but in other outlets. I did a *lot* of writing this year, but relatively little of it is published. But here's a look at some of the numbers! Note that "This site" excludes republication of school papers, and that I don't have an exact count for the school papers because I've already discarded a few of the shorter pieces, but their average length is well-known to me. More on the unpublished _Rust vs. Swift_ project below.[^excluded]
+
+[^excluded]: Note as well that this excludes all the [podcast scripts] I wrote this year! Those would add well over 10,000 more words to this count.
+
+[podcast scripts]: https://github.com/chriskrycho/newrustacean.com/tree/589cd13225cde91f92bfca93f6679f2395d78886/docs
+
+|         Category         |     Words     |
+|:------------------------:|:-------------:|
+|      [School][m-div]     |   ~130,500    |
+|     [Mere Orthodoxy]     |    ~6000      |
+|        This site         |   ~62,600[^#] |
+| _Rust vs. Swift_ project |    ~9350      |
+|         **Total**        | **~207,850**  |
+
+[m-div]: http://www.chriskrycho.com/m-div/
+[Mere Orthodoxy]: https://mereorthodoxy.com/author/chris-krycho/
+
+[^#]: Yes, that number includes these posts!
+
+Of the writing for school, only a small fraction of it is [published here][m-div], unlike previous years. Roughly 75,000 words of that content is research notes I put together for an independent study I did---which was deeply profitable for me in terms of thinking through hermeneutical and theological systems, and which will hopefully be helpful for the professor for whom I prepared them, but which are not at all publishable. Another 10,000 of those words fit in a category charitably describable as "busy-work" and publishing them is *possible* but would have no *value*. The school-writing also includes the notes and manuscripts for my sermon-delivery class. You can find those sermons [on this site][sermons] as well well, with audio, video, and the manuscripts available---but the notes are not worth publishing, as they're entirely internal. Still: they're words, I wrote them, and there are a lot of them.
+
+[sermons]: http://www.chriskrycho.com/sermons/
+
+On the plus side, I wrote one of the papers I'm proudest of from my entire seminary career in the spring: [Realism and Antirealism---A key debate in the philosophy of science (with interesting implications for young-earth creationism)][philosophy-paper]. I'm happy with it not least because I wrote it in a very compressed fashion because of some family health issues that hit at the end of that semester, and it still turned out extremely well because I had *planned* it meticulously. Despite having only a single draft with one typo-level revision pass, it's easily the best paper I've ever written. It turns out that doing a really careful outline helps when you're working at this scale. I've not normally been a fan of outlining (and I've not normally found it helpful when I've tried it), but for any longer, more sustained argument, it's absolutely necessary.
+
+[philosophy-paper]: http://www.chriskrycho.com/2016/realism-and-antirealism.html
+
+Of the content on this site (excluding republication of school papers), an astounding ~14,000 of those words are in my "microblog" content. It's amazing how much those little posts add up. That said, I'm surprised to see that I've put out as many *other* words as I have this year on this site, and the total there is rather staggering. Writing on this site includes everything from [fiction] and [poetry] to [a simple children's catechism] to [an introduction to functional programming]. I'm exceptionally pleased in retrospect to see how this came out, and I look forward to writing on equally varied terms in the year ahead.
+
+[fiction]: http://www.chriskrycho.com/2016/ask.html "Ask: a short story"
+[poetry]: http://www.chriskrycho.com/2016/to-paint-god-as-a-man.html "To paint God as a man: an Advent poem"
+[a simple children's catechism]: http://www.chriskrycho.com/2016/a-simple-childrens-catechism.html
+[an introduction to functional programming]: http://www.chriskrycho.com/2016/what-is-functional-programming.html
+
+Some 13,000 of the words I wrote for this site were in my [Rust and Swift] series, a project I've enjoyed enormously since starting it in 2015 and would like to get back to in 2017. It went on hold because I was offered, and accepted, a contract to write a 30--40 page report for O'Reilly comparing the two languages, which was intended to come out this fall. Unfortunately, somewhere along the way some wires got crossed and my pitch and what they wanted didn't end up being the same. Once that became clear (at the beginning of October), they opted to drop the project. This was a huge disappointment to me: it was a small hit financially, but a big one time-wise, as I sunk a *lot* of hours into it in what was an already-very-busy fall; the project was over ¾ done when it was dropped.[^oreilly]
+
+[Rust and Swift]: http://www.chriskrycho.com/rust-and-swift.html
+
+[^oreilly]: They wanted an analysis of when you'd choose each language; I pitched a comparison along similar lines to my blog series, looking at the language design choices as a view into software engineering tradeoffs. When the mismatch became clear, I pointed out that "when to choose Rust vs. Swift" is, generally speaking, a roughly two-sentence answer: "Choose Rust for cross-platform, high-performance/low-level code. Choose Swift if you're writing apps on an Apple platform." This was not, apparently, obvious to everyone else involved. In the words of the internet: <span style="whitespace: nowrap">¯\\\_(ツ)_/¯</span>
+
+A few big lessons I learned from this:
+
+1. Don't overcommit. Even if the project had gone through without issue, it would have been more on my plate than I could reasonably handle. The fact that it was canceled after having done a lot of the work meant it was also *financially* frustrating, but I had overcommitted regardless. Won't do that again.
+
+2. Be *even more* clear up-front about the terms and goals of a project. I don't know how we ended up with the crossed wires we did, but it was extremely frustrating.
+
+3. If you can get an advance, get an advance. Just saying.
