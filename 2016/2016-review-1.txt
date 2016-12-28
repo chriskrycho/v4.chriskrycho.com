@@ -5,9 +5,11 @@ Date: 2016-12-27 17:00
 Tags: writing, podcasting, software development, family, productivity, fitness, 2016-in-review
 Slug: 2016-review-1
 Category: Blog
+Summary: >
+    Accidental 20-mile runs, walking pneumonia, gaining weight because of metabolic shifts, and other adventures in my "fitness" in 2016.
 ---
 
-<i class='editorial'>I originally drafted a single, mammoth post reflecting on this whole year---but at 5,000 words, that seemed like a bit much. As such, I've broken it into a series of posts, to be published daily through the start of the new year. Hopefully they're a bit more digestible that way!</i>
+<i class='editorial'>I originally drafted a single, mammoth post reflecting on this whole year---but at more than 6,000 words, that seemed like a bit much. As such, I've broken it into a series of posts, to be published daily through the start of the new year. Hopefully they're a bit more digestible that way!</i>
 
 - [Introduction, or: a ridiculous year summarized][intro]
 - [Part 1: Running headfirst into a wall of pneumonia.][part-1]
