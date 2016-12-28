@@ -37,7 +37,7 @@ One of my goals for 2016 was to continue writing not only on this blog but in ot
 |:------------------------:|:-------------:|
 |      [School][m-div]     |   ~130,500    |
 |     [Mere Orthodoxy]     |    ~6000      |
-|        This site         |   ~62,600[^#] |
+|        This site         |   ~63,000[^#] |
 | _Rust vs. Swift_ project |    ~9350      |
 |         **Total**        | **~207,850**  |
 
