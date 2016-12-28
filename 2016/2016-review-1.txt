@@ -4,6 +4,7 @@ Subtitle: "Or: a ridiculous year summarized!"
 Date: 2016-12-27 16:00
 Tags: writing, podcasting, software development, family, productivity, fitness
 Slug: 2016-review-1
+Category: Blog
 ---
 
 2016 was a long, difficult, strange, sometimes wonderful and sometimes dreadful year for me. It was one of the most professionally and scholastically enjoyable and rewarding years of my life, and also one of the most exhausting. As I often do at years-end, I am taking stock publicly of what went well, what went poorly, and what I might do different in a variety of categories---here, mostly in terms of my public-facing endeavors. This year's summing-up post will also (for, I think, the first time) include some numbers! But first, a few comments on the big picture.
