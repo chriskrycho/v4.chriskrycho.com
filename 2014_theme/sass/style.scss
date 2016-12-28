@@ -280,6 +280,35 @@ hr {
     }
 }
 
+table {
+  width: 100%;
+  table-layout: fixed;
+  margin: {
+    top: 1em;
+    bottom: 1em;
+    left: auto;
+    right: auto;
+  }
+}
+
+thead {
+  background-color: lighten($light_gray, 40%);
+}
+
+th {
+  font-weight: bold;
+}
+
+th, td {
+  border: 1px solid;
+  padding: {
+    top: 0;
+    bottom: 0;
+    left: 1em;
+    right: 1em;
+  }
+}
+
 // Special styles
 .proper-name {
     white-space: nowrap;
