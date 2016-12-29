@@ -1,0 +1,63 @@
+---
+Title: 2016 in Review, Part 3 of 6
+Subtitle: "Podcasting: Winning Slowly, New Rustacean, and more!"
+Date: 2016-12-29 10:30
+Tags: writing, podcasting, software development, family, productivity, fitness, 2016-in-review
+Slug: 2016-review-3
+Category: Blog
+Summary: >
+    On top of my 200,000 words of writing this year, I also published some 66 episodes and almost 20 hours of podcasting across four different shows.
+---
+
+<i class='editorial'>I originally drafted a single, mammoth post reflecting on this whole year---but at more than 6,000 words, that seemed like a bit much. As such, I've broken it into a series of posts, to be published daily through the start of the new year. Hopefully they're a bit more digestible that way!</i>
+
+- [Introduction, or: a ridiculous year summarized][intro]
+- [Part 1: Running headfirst into a wall of pneumonia.][part-1]
+- [Part 2: So. many. words. I had no idea how many words.][part-2]
+- [Part 3: Podcasting: Winning Slowly, New Rustacean, and more!][part-3] (this post)
+- Part 4: Writing software for Olo and for open source.
+- Part 5: Getting things done in 2016 and beyond.
+- Part 6: Plans for 2017!
+
+[intro]: http://www.chriskrycho.com/2016/2016-review-intro.html
+[part-1]: http://www.chriskrycho.com/2016/2016-review-1.html
+[part-2]: http://www.chriskrycho.com/2016/2016-review-2.html
+[part-3]: http://www.chriskrycho.com/2016/2016-review-3.html
+[part-4]: http://www.chriskrycho.com/2016/2016-review-4.html
+[part-5]: http://www.chriskrycho.com/2016/2016-review-5.html
+[part-6]: http://www.chriskrycho.com/2017/2016-review-6.html
+
+---
+
+Beyond [the written word][part-2], the other "writing"-type work I had this year---some of it including *actual* writing in the form of detailed scripts---was podcasting!
+
+|       Show       | Episodes |  Total time  |
+|:----------------:|:--------:|:------------:|
+| [Winning Slowly] |    25    |   11h 40m    |
+| [New Rustacean]  |    21    |    6h 25m    |
+|  [Run With Me]   |    19    |    1h 1m     |
+|    [sap.py]      |    1     |     12m      |
+|    **Total**     |  **66**  | **19h 18m**  |
+
+[Winning Slowly]: http://www.winningslowly.org
+[New Rustacean]: http://www.newrustacean.com
+[Run With Me]: http://runwith.chriskrycho.com
+[sap.py]: http://www.sap-py.com
+
+Again, several of those numbers surprised me a bit. For one thing, I had to put New Rustacean on hiatus starting in October courtesy of the crunch I ended up with from the _Rust vs. Swift_ project colliding with the other summer-and-fall commitments I had. For another Stephen and I paused Winning Slowly between Seasons 4 and 5 (as we usually do) and also have taken a mid-season pause on Season 5 because of end-of-semester crunches for both of us and then his wife having a baby a few weeks earlier than expected. Yet in spite of that, almost 20 hours of audio content this year! If I hit that again in 2017, I'll be happy.
+
+Whether [sap.py] will be back, I have no idea. I love making the show with Jaimie, but it's really up to her whether she wants to keep working on Python. Of late, she's been working on [printable art] instead, and that's delightful in its own right. I've [just] gotten [Run With Me] going again in the past day; I got off track when my headphone microphone stopped working for a bit and never got back *on* track when it started working again. I'm looking forward to once again talking about running while running.
+
+[printable art]: https://www.etsy.com/shop/PemberlyPrintables "Jaimie's printable shop on Etsy"
+[just]: http://runwith.chriskrycho.com/runs/14/
+
+I expect to be publishing an even wider variety of kinds of episodes of New Rustacean in 2017. Listeners should get another couple of interviews, a lot more of the "here is a Rust concept in detail" episodes (at least one a month in general, I hope!), news episodes, undoubtedly a few bonus episodes, and a new "Crates You Should Know" format designed to highlight crates I've found useful in my own Rust work. I continue to find Rust a wonderful language, and I hear regularly that this is one of people's favorite programming podcasts. I hope to keep it that way!
+
+We expect to wrap up [Season 5] of [Winning Slowly] mid-spring, and then begin recording Season 6 mid-to-late summer. All of that is pending how things go as Stephen finishes his dissertation and likely prepares to move across the country to take a job as a professor somewhere, of course. But that's the plan---and yes, we already know the rough shape of Season 6, even this far out. We know the season topic, and have some basic ideas of where we want to go with it. As is usually the case with our "seasons" now, it will take ideas we've touched on here and there and turn them into a full-blown, months-long exploration of those ideas as applied to specific issues. Winning Slowly remains one of my very favorite projects, not least because there is (to our knowledge) nothing else out there doing quite the same thing. Tackling long-term trends in technology with a distinctively (though not always overtly) Christian perspective (but *not* a reductionist one) is apparently our gap to fill. We'll take it.
+
+[Season 5]: http://www.winningslowly.org/season-5.html "Winning Slowly Season 5: Structure and Agency"
+
+Two other podcasting-related bits. First, I wrote a [~5,000-word piece for Mere Orthodoxy][podcasting-mere-o] explaining how the medium works, what its constraints are, and what is involved in doing it well. If podcasting is interesting to you, I think the piece is well worth your time---precisely because of, and not in spite of, its length! Second, I gave a pair of guest lectures for Stephen at N.C. State University this fall, which are both available in the [bonus section] on [Winning Slowly]. Those cover some of the same ground as the piece at Mere O, but they also talk a lot more about the details of finding a topic, an "authorial voice", and an angle for your show.
+
+[podcasting-mere-o]: https://mereorthodoxy.com/theses-on-podcasting/ "32 Theses (and several more words) on Podcasting"
+[bonus section]: http://www.winningslowly.org/season-bonus.html
