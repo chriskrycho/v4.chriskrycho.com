@@ -34,10 +34,10 @@ Beyond [the written word][part-2], the other "writing"-type work I had this year
 |       Show       | Episodes |  Total time  |
 |:----------------:|:--------:|:------------:|
 | [Winning Slowly] |    25    |   11h 40m    |
-| [New Rustacean]  |    21    |    6h 25m    |
+| [New Rustacean]  |    22    |    6h 46m    |
 |  [Run With Me]   |    19    |    1h 1m     |
 |    [sap.py]      |    1     |     12m      |
-|    **Total**     |  **66**  | **19h 18m**  |
+|    **Total**     |  **67**  | **19h 39m**  |
 
 [Winning Slowly]: http://www.winningslowly.org
 [New Rustacean]: http://www.newrustacean.com
