@@ -1,0 +1,58 @@
+---
+Title: 2016 in Review, Part 5 of 6
+Subtitle: "Getting things done in 2016 and beyond."
+Date: 2016-12-31 07:00
+Tags: writing, podcasting, software development, family, productivity, fitness, 2016-in-review
+Slug: 2016-review-5
+Category: Blog
+Summary: >
+    My strategy for productivity: less social media, careful use of my time, and embracing the "pomodoro technique".
+---
+
+<i class='editorial'>I originally drafted a single, mammoth post reflecting on this whole year---but at more than 6,000 words, that seemed like a bit much. As such, I've broken it into a series of posts, to be published daily through the start of the new year. Hopefully they're a bit more digestible that way!</i>
+
+- [Introduction, or: a ridiculous year summarized][intro]
+- [Part 1: Or: a ridiculous year summarized!][part-1]
+- [Part 2: So. many. words. I had no idea how many words.][part-2]
+- [Part 3: Podcasting: Winning Slowly, New Rustacean, and more!][part-3]
+- [Part 4: Writing software for Olo and for open source.][part-4]
+- [Part 5: Getting things done in 2016 and beyond.][part-5] (this post)
+- Part 6: Plans for 2017!
+
+[intro]: http://www.chriskrycho.com/2016/2016-review-intro.html
+[part-1]: http://www.chriskrycho.com/2016/2016-review-1.html
+[part-2]: http://www.chriskrycho.com/2016/2016-review-2.html
+[part-3]: http://www.chriskrycho.com/2016/2016-review-3.html
+[part-4]: http://www.chriskrycho.com/2016/2016-review-4.html
+[part-5]: http://www.chriskrycho.com/2016/2016-review-5.html
+[part-6]: http://www.chriskrycho.com/2017/2016-review-6.html
+
+---
+
+At a number of points over the last few years, I've tackled the question of productivity. I always have far more I *want* to get done than I'm able to actually get to. A few of those posts:
+
+- [Boosting My Productivity][productivity-12-2014] (December, 2014)
+- [A New Schedule: Trying to make better use of my time toward my goals][productivity-07-2016] (July 2016)
+
+[productivity-12-2014]: http://www.chriskrycho.com/2014/boosting-my-productivity.html "Boosting My Productivity"
+[productivity-07-2016]: http://www.chriskrycho.com/2016/a-new-schedule.html "A New Schedule"
+
+A common theme of all productivity plans, of course, is that one can get more focused on the details of the plan than on actually being productive! I'm happy to say, however, that this *wasn't* the case for me with these productivity approaches. First, I have never allowed myself to be slavish about them. If I need to do something different on a given day, I do something different. Second, I am generally able to remember that the point of the plan is *what I'm getting done*. So with that in mind, some comments particularly on the plan I sketched out [mid-year this year][productivity-07-2016].
+
+I fell off that wagon almost immediately. Readers who've stuck with me through these various updates will note that this ambitious plan preceded my disastrous 20-mile run and the ensuing bout of walking pneumonia by a matter of days. It took me until September to get back on the horse, so to speak, because even after I got over being sick, I was traveling---and nothing throws off my schedule like traveling! Happily, I got quite a bit done both during the conference trip I took and during the week I was in Colorado for my youngest sister's wedding, but it wasn't until after both of those that I was able to settle back into the routine I'd aimed for.
+
+The major themes of that post were a detailed plan for my days, cutting out a lot of my social media, and thinking about weekends. The detailed plan for my days I kept off and on. I never consistently managed to have the block of time-for-side-projects at the end of my days, and that increasingly meant those things cut into weekends (impacting that goal as well). As for social media, that's largely been a success: I now rarely get on Facebook, and only check Twitter from time to time. Certainly neither is much of a timesink anymore. I do continue to make heavy use of Slack outside of work, but I've found a good balance there (and the main communities I'm a part of have gone through their own adjustments as we've *all* found the need for this kind of focus and balance).
+
+So it wasn't perfect, but I did find it a very useful approach overall. I fully expect to stick with something very like it in 2017. Hopefully I won't be pulling as many 10--11 hour days as I was in the latter half of 2016---but regardless, building this new discipline around the overall structure of each day was very helpful.
+
+One *big* part of my approach to productivity that I'm definitely going to keep is the "pomodoro" technique. I first mentioned this in the [first][productivity-12-2014] discussion I posted about this, but I've embraced it more and more. I work in 25-minute blocks, punctuated by 5-minute breaks. Nearly all of those 5-minute breaks entail walking, and as a result I get about 2--3 miles of walking in every day on top of my runs. That helps enormously with focus. This fall, I also embraced the *other* half of the pomodoro technique: writing down goals and outcomes for each of those 25-minute blocks. Even more than the daily goals I discussed in the opening post of this series, this lower level of tracking has proved very helpful. It has given me a sense of what I have actually accomplished each day, and it has also helped me *focus* as I'm trying to keep moving on various tasks each day. I highly recommend using the pomodoro approach (adapted as necessary to your particular circumstances, of course) as a tool for that kind of focus and productivity.
+
+I'd be remiss if I didn't also note the following *very* substantial factors in my productivity:
+
+- **fitness/health:** if I'm active, I focus better. People say they don't have time to exercise; I mean it when I say I don't have time *not* to. I keep it pretty simple: running, cycling, swimming, and body-weight strength stuff. But I do it basically every day. And we eat fairly healthily. Both of those are incredibly important.
+
+- **sleep:** no matter how busy I am, I don't pull all-nighters or anything of the sort. I get a minimum of 6 and usually 7--7½ hours of sleep every night. Even when I'm tired from pulling week after week of 10-hour work days, I can keep going because I get enough sleep.
+
+- **no commute:** working remotely is awesome for a lot of reasons, but one of them is that I don't lose the hour or three every day to the road/subway/etc. that many people I know do. That's a *lot* of time over the course of a year. 48 working weeks means if you commute for an hour total every day, that's 240 hours a year---that's 30 8-hour days worth of "getting things done".
+
+Perhaps at some point after I finish seminary I will expand the various things I do in productivity into a more complete series, but this gives you a good idea of what 2016 looked like, and what I expect 2017 to look like!

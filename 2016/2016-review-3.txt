@@ -16,7 +16,7 @@ Summary: >
 - [Part 2: So. many. words. I had no idea how many words.][part-2]
 - [Part 3: Podcasting: Winning Slowly, New Rustacean, and more!][part-3] (this post)
 - [Part 4: Writing software for Olo and for open source.][part-4]
-- Part 5: Getting things done in 2016 and beyond.
+- [Part 5: Getting things done in 2016 and beyond.][part-5]
 - Part 6: Plans for 2017!
 
 [intro]: http://www.chriskrycho.com/2016/2016-review-intro.html
