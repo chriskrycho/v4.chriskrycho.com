@@ -11,13 +11,13 @@ Summary: >
 
 <i class='editorial'>I originally drafted a single, mammoth post reflecting on this whole year---but at more than 6,000 words, that seemed like a bit much. As such, I've broken it into a series of posts, to be published daily through the start of the new year. Hopefully they're a bit more digestible that way! This first day, you're getting two posts; the rest of the year, one (at least: in this series!).</i>
 
-- [Introduction, or: a ridiculous year summarized][intro] (this post)
+- Introduction, or: a ridiculous year summarized (this post)
 - [Part 1: Running headfirst into a wall of pneumonia.][part-1]
 - [Part 2: So. many. words. I had no idea how many words.][part-2]
 - [Part 3: Podcasting: Winning Slowly, New Rustacean, and more!][part-3]
 - [Part 4: Writing software for Olo and for open source.][part-4]
 - [Part 5: Getting things done in 2016 and beyond.][part-5]
-- Part 6: Plans for 2017!
+- [Part 6: Plans for 2017!][part-6]
 
 [intro]: http://www.chriskrycho.com/2016/2016-review-intro.html
 [part-1]: http://www.chriskrycho.com/2016/2016-review-1.html
