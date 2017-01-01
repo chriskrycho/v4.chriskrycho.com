@@ -63,7 +63,7 @@ const STATE = {
       Completed: 'Completed',
     })
     ```
-    
+
     Both convention and linters make it unlikely you'll modify something like this directly---but impossible is better than unlikely.
 
 Once you've defined an object this way, instead of using strings directly in functions that take it as an argument, like `nextState('Started')`, you can use the object property: `nextState(STATE.Started)`. You can rewrite the function body to use the object definition instead as well:
@@ -169,7 +169,7 @@ type StateAsMap = {
 }
 ```
 
-We've now defined an object type whose the *key* has to be one of the items in the `State` type.
+We've now defined an object type whose *key* has to be one of the items in the `State` type.
 
 Now, by itself, this isn't all that useful. Above, we defined that as the keys on the `STATE` object, but if we tried to use that in conjunction with this new type definition, we'd just end up with a recursive type definition: `StateFromKeys` defined as the keys of `STATE`, `StateAsMap` defined in terms of the elements of `StateFromKeys`, and then `STATE` defined as a `StateAsMap`...
 
@@ -283,9 +283,9 @@ const BAD_STATE: UnionKeyToValue<State> = {
 
 You'll see a compiler error that looks something like this:
 
-> | [ts]  
-> | Type '{ Pending: "pending"; Started: "Strated"; Completed: "Complete" }' is not assignable to type 'UnionKeyToValue<State>'.  
-> |   Types of property 'Pending' are incompatible.  
+> | [ts]
+> | Type '{ Pending: "pending"; Started: "Strated"; Completed: "Complete" }' is not assignable to type 'UnionKeyToValue<State>'.
+> |   Types of property 'Pending' are incompatible.
 > |     Type '"pending"' is not assignable to type '"Pending"'.
 
 Since the key and the name don't match, the compiler tells us we didn't keep the constraint we defined on what these types should look like. Similarly, if you forget an item from the union, you'll get an error. If you add an item that isn't in the original union, you'll get an error. Among other things, this means that you can be confident that if you add a value to the union, the rest of your code won't compile until you include cases for it. You get all the power and utility of using union types, *and* you get the utility of being able to use the object as a namespace of sorts.[^namespace]

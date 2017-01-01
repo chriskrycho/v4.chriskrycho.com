@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="keyof and Mapped Types In TypeScript 2.1"/>
     <meta name="twitter:description" content="In the last few months, I’ve been playing with both Flow and TypeScript as tools for increasing the quality and reliability of the JavaScript I write at Olo. Both of these are syntax that sits on top of normal JavaScript to add type analysis—basically, a form of gradual …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -168,7 +168,7 @@ const nextState: StateMachine = (state) =&gt; {
 <pre class="typescript"><code>type StateAsMap = {
   [K in StateFromKeys]: K
 }</code></pre>
-<p>We’ve now defined an object type whose the <em>key</em> has to be one of the items in the <code>State</code> type.</p>
+<p>We’ve now defined an object type whose <em>key</em> has to be one of the items in the <code>State</code> type.</p>
 <p>Now, by itself, this isn’t all that useful. Above, we defined that as the keys on the <code>STATE</code> object, but if we tried to use that in conjunction with this new type definition, we’d just end up with a recursive type definition: <code>StateFromKeys</code> defined as the keys of <code>STATE</code>, <code>StateAsMap</code> defined in terms of the elements of <code>StateFromKeys</code>, and then <code>STATE</code> defined as a <code>StateAsMap</code>…</p>
 <pre class="typescript"><code>const STATE: StateAsMap = {
   Pending: &#39;Pending&#39;,

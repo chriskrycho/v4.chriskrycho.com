@@ -79,7 +79,7 @@ const nextState: StateMachine = (state) =&amp;gt; {
 &lt;pre class="typescript"&gt;&lt;code&gt;type StateAsMap = {
   [K in StateFromKeys]: K
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;We’ve now defined an object type whose the &lt;em&gt;key&lt;/em&gt; has to be one of the items in the &lt;code&gt;State&lt;/code&gt; type.&lt;/p&gt;
+&lt;p&gt;We’ve now defined an object type whose &lt;em&gt;key&lt;/em&gt; has to be one of the items in the &lt;code&gt;State&lt;/code&gt; type.&lt;/p&gt;
 &lt;p&gt;Now, by itself, this isn’t all that useful. Above, we defined that as the keys on the &lt;code&gt;STATE&lt;/code&gt; object, but if we tried to use that in conjunction with this new type definition, we’d just end up with a recursive type definition: &lt;code&gt;StateFromKeys&lt;/code&gt; defined as the keys of &lt;code&gt;STATE&lt;/code&gt;, &lt;code&gt;StateAsMap&lt;/code&gt; defined in terms of the elements of &lt;code&gt;StateFromKeys&lt;/code&gt;, and then &lt;code&gt;STATE&lt;/code&gt; defined as a &lt;code&gt;StateAsMap&lt;/code&gt;…&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;const STATE: StateAsMap = {
   Pending: &amp;#39;Pending&amp;#39;,

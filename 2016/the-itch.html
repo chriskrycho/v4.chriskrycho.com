@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="The Itch"/>
     <meta name="twitter:description" content="Learning functional programming has been simultaneously wildly new and deeply familiar. It's the answer to questions I've been asking for most of a decade."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -89,7 +89,7 @@
         <div class="content">
 
 <p>It took me until just a few weeks ago to put my finger on why typed functional programming, as a style and approach, has appealed to me so much as I started picking it up over the last year. For all its novelty, typed FP feels—over and over again—<em>familiar</em>. Strange to say, but it’s true.</p>
-<p>This came home to me again when reading a <a href="https://medium.com/@dtinth/what-is-a-functor-dcf510b098b6#.e887yz63p">short post on functors</a>—i.e., <em>mappable</em> types. I’ve written a lot of JavaScript in the last few years, and it has been a source of constant frustration to me that <code>Array</code> implements the <code>map</code> method, but <code>Object</code> does not. Countless times, I have wanted to take an object shaped like <code>{ count: &lt;number&gt; }</code> and transform that <code>count</code>. I’m not alone in that. There’s a reason that libraries like <a href="http://underscorejs.org">Underscore</a>, <a href="https://lodash.com">Lodash</a>, and <a href="http://ramdajs.com">Ramda</a> all supply utilities to allow you to map over objects.[^constraints] There are also good reasons why it <em>isn’t</em> implemented for on <code>Object.prototype</code>: the reality is that coming up with a predictable <em>and</em> useful API for <em>all</em> <code>Object</code> instances is difficult at best: Objects are used for everything from dictionaries to records and strange combinations of the two. But still: there’s something there.</p>
+<p>This came home to me again when reading a <a href="https://medium.com/@dtinth/what-is-a-functor-dcf510b098b6#.e887yz63p">short post on functors</a>—i.e., <em>mappable</em> types. I’ve written a lot of JavaScript in the last few years, and it has been a source of constant frustration to me that <code>Array</code> implements the <code>map</code> method, but <code>Object</code> does not. Countless times, I have wanted to take an object shaped like <code>{ count: &lt;number&gt; }</code> and transform that <code>count</code>. I’m not alone in that. There’s a reason that libraries like <a href="http://underscorejs.org">Underscore</a>, <a href="https://lodash.com">Lodash</a>, and <a href="http://ramdajs.com">Ramda</a> all supply utilities to allow you to map over objects. There are also good reasons why it <em>isn’t</em> implemented for on <code>Object.prototype</code>: the reality is that coming up with a predictable <em>and</em> useful API for <em>all</em> <code>Object</code> instances is difficult at best: Objects are used for everything from dictionaries to records and strange combinations of the two. But still: there’s something there.</p>
 <p>And reading this post on functors, it struck me what that “something” is: object types are, in principle, functors. Maybe it doesn’t make sense to have a single <code>map</code> implementation for every <code>Object</code> instance out there. But they’re perfectly mappable. I didn’t have a word for this before tonight, but now I do. Over and over again, this is my experience with functional programming.</p>
 <p>There’s this familiar feeling of frustration I’m slowly coming to recognize—a mental sensation which is a little like the intellectual equivalent of an itch in a spot you can’t quite reach. You’re reaching for an abstraction to express an idea, but you don’t even know that there <em>is</em> an abstraction for it. You want to map over objects, and you don’t know why that seems so reasonable, but it does. And then someone explains functors to you. It scratches the itch.</p>
 <p>Another example. Since I started programming eight and a half years ago, I’ve worked seriously with Fortran, C, C++ PHP, Python, and JavaScript. In each of those languages (and especially in the C-descended languages), I have found myself reaching for enums or things like them as a way of trying to represent types and states in my system in a more comprehensive way. I figured out that you should <a href="http://wiki.c2.com/?UseEnumsNotBooleans">use enums not booleans</a> a long time before I found the advice on the internet. I was encoding error types as enum values instead of just using <code>int</code>s almost as soon as I started, because it was obvious to me that <code>ErrorCode someFunction() { ... }</code> was far more meaningful than <code>int someFunction() { ... }</code> (even if the context of C meant that the latter often implied the former, and even if it was trivial to coerce one to the other).</p>
