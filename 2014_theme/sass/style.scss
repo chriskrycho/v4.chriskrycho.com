@@ -663,28 +663,37 @@ article {
     }
 
     code {
-        font-family: 'Source Code Pro',
+        font-family: Hack,
                      'DejaVu Sans Mono',
                      'Bitstream Vera Sans Mono',
                      monospace;
-        background: #efefef;
-        border-radius: 2px;
-        margin: $fsp 0;
+        border: {
+          style: solid;
+          width: 1px;
+          color: #e0e3e8;
+          radius: 2px;
+        }
+        margin: $fsp 0.1345em;
         overflow: scroll;
-        padding: 0 0.269em;
-        font-size: $fs6;
+        padding: 0.269em 0.269em 0.1345em;
+        font-size: $fs_small_abs;
     }
 
     pre {
-        padding: {
-            top: 0.558em;
-            bottom: 0.558em;
+        padding: 0.279em 0.558em;
+        margin: 0.558em 0;
+
+        border: {
+          style: solid;
+          width: 1px;
+          color: #e0e3e8;
+          radius: 2px;
         }
 
         code {
-            padding: $fsp 0.558em;
-            font-size: $fs_small_abs;
-            border: 1px solid lighten($light_gray, 39.1%);
+            padding: 0;
+            background: none;
+            border: none;
             white-space: pre;
         }
 
