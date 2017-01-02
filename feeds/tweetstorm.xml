@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - tweetstorm</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Fri, 16 Dec 2016 16:45:00 -0500</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/12-16-1645.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/809892171063103488"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - tweetstorm</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Mon, 26 Dec 2016 12:17:00 -0500</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/December%2026,%202016%20at%2012:17PM.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/813448664349818880"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;I’ve spent the last couple weeks using &lt;a href="https://code.visualstudio.com"&gt;VS Code&lt;/a&gt; instead of &lt;a href="https://www.appveyor.com"&gt;Atom&lt;/a&gt;. It has a lot of things to recommend it, especially speed. It’s fast.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;However, I have to say: it’s painfully obvious to me on macOS that Code is developed by people who &lt;em&gt;aren’t&lt;/em&gt; Mac-native. Atom is.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;And that’s okay—but it means that as many things as I like about Code over Atom, it always just feels a little &lt;em&gt;off&lt;/em&gt; to me.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Ultimately, what I want is the extensibility promised by both Code and Atom, but with actually native UIs and native performance.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;So on that note… &lt;a href="https://twitter.com/raphlinus"&gt;@raphlinus&lt;/a&gt;, how’s XiEditor coming along? Because its approach is what we all really want, I think.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;p&gt;And he replied!&lt;/p&gt;
+&lt;blockquote class="twitter-tweet" data-lang="en"&gt;
+&lt;p lang="en" dir="ltr"&gt;
+&lt;a href="https://twitter.com/chriskrycho"&gt;@chriskrycho&lt;/a&gt; I've been focused on porting it to Fuchsia, less lately on the core or Mac port. I expect to get back to those soon.
+&lt;/p&gt;
+— Raph Levien (@raphlinus) &lt;a href="https://twitter.com/raphlinus/status/813634657459716096"&gt;December 27, 2016&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 26 Dec 2016 12:17:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-12-26:2016/December 26, 2016 at 12:17PM.html</guid><category>tweetstorm</category><category>software development</category><category>text editors</category></item><item><title></title><link>http://www.chriskrycho.com/2016/12-16-1645.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/809892171063103488"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;JavaScript experiences which induce profound frustration in me:&lt;/p&gt;&lt;/li&gt;
