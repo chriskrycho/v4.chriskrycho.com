@@ -1,0 +1,12 @@
+---
+Title: ""
+Date: December 08, 2016 at 06:26AM
+Slug: 12-08-0626
+Category: micro
+Template: formats/micro
+---
+
+Make [VS Code] behave a lot more like you’re used to on macOS—get the Emacs keybindings available in CoreText apps [here].
+
+[VS Code]: https://code.visualstudio.com
+[here]: https://github.com/nana4gonta/emacs-visual-studio-code/tree/master/keybindings
