@@ -1,0 +1,12 @@
+---
+Title: ""
+Date: 2016-12-29 17:51
+Slug: 12-29-1751
+Category: micro
+Template: formats/micro
+Tags: software development, programming languages, rust
+---
+
+A thing I just learned: `cargo doc --open`: full, local docs for every dependency your Rust crate has.
+
+Mind. blown.
