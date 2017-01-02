@@ -1,0 +1,11 @@
+---
+Title: ""
+Date: 2016-11-28 14:17
+Slug: 28-1417
+Category: micro
+Template: formats/micro
+---
+
+JavaScript hero of the day. (Seriously.)
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Just released v0.6.0 of ember-exam with support for Mocha! ember-cli-mocha users can get parallel tests now! <a href="https://t.co/bUtYwjzInG">https://t.co/bUtYwjzInG</a></p>&mdash; Trent Willis (\@trentmwillis) <a href="https://twitter.com/trentmwillis/status/802989512221605888">November 27, 2016</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
