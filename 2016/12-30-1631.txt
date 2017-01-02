@@ -1,0 +1,13 @@
+---
+Title: ""
+Date: 2016-12-30 16:31
+Slug: 12-30-1631
+Category: micro
+Template: formats/micro
+Tags: oss, software development, rust, lightning-rs
+---
+
+Learning a bunch from [Matt Brubeck]'s [lovely PR] reducing allocations and copies on Lightning.
+
+[Matt Brubeck]: https://github.com/mbrubeck
+[lovely PR]: https://github.com/chriskrycho/lightning-rs/pull/29
