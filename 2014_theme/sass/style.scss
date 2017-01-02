@@ -676,11 +676,13 @@ article {
         margin: $fsp 0.1345em;
         overflow: scroll;
         padding: 0.269em 0.269em 0.1345em;
-        font-size: $fs_small_abs;
+        font-size: $fs_small;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     pre {
-        padding: 0.279em 0.558em;
+        padding: 0.558em;
         margin: 0.558em 0;
 
         border: {
@@ -695,6 +697,11 @@ article {
             background: none;
             border: none;
             white-space: pre;
+
+            &.hljs {
+              padding: 0;
+              margin: 0;
+            }
         }
 
         &+ p { margin-top: 0; }
