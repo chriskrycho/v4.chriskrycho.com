@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - tweetstorm</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Fri, 21 Oct 2016 13:32:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/10-21-1332.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/737629809241645056"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - tweetstorm</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Fri, 16 Dec 2016 16:45:00 -0500</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/12-16-1645.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/809892171063103488"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;JavaScript experiences which induce profound frustration in me:&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I had gotten in an insane state where things just &lt;em&gt;stopped working&lt;/em&gt; that had previously been working as I updated to &lt;a href="https://ember-cli.com"&gt;Ember CLI&lt;/a&gt; 2.6.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;After much tearing of hair, I started over from scratch and repeated the upgrade process.&lt;/p&gt;
+&lt;p&gt;Everything works now.&lt;/p&gt;
+&lt;p&gt;¯\_(ツ)_/¯&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Then: &lt;code&gt;rm -rf node_modules bower_components&lt;/code&gt; and test again.&lt;/p&gt;
+&lt;p&gt;Nothing works now.&lt;/p&gt;
+&lt;p&gt;¯\_(ツ)_/¯&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Consistently, it works fine after the upgrade and &lt;code&gt;ember init&lt;/code&gt; finishes. Then, if I do a clean install of the dependencies, it fails.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;And it fails in the &lt;em&gt;same ways&lt;/em&gt;. So ultimately I’ll be chasing those, because we’re not going to get stuck here.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;But this is an &lt;em&gt;infuriating&lt;/em&gt; experience. If you’ve ever believed npm’s claim that non-deterministic installs aren’t a problem… consider this a data point in the opposite direction.&lt;/p&gt;
+&lt;p&gt;┻━┻ ︵╰(°□°)╯︵ ┻━┻&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 16 Dec 2016 16:45:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-12-16:2016/12-16-1645.html</guid><category>javascript</category><category>software development</category><category>tweetstorm</category></item><item><title></title><link>http://www.chriskrycho.com/2016/10-21-1332.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/737629809241645056"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;My online writing needs are weird. I have searched for years, and unfortunately… I need to write a custom CMS.&lt;/p&gt;
