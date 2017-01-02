@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-12-24 13:10
+Slug: 12-24-1310
+Category: micro
+Template: formats/micro
+Tags: rust
+---
+
+Just had my first experience of writing a lifetime-requiring function in @rustlang and inherently knowing exactly what lifetimes it needed.

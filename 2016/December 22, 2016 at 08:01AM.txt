@@ -1,0 +1,12 @@
+---
+Title: ""
+Date: December 22, 2016 at 08:01AM
+Slug: December 22, 2016 at 08:01AM
+Category: micro
+Template: formats/micro
+Tags: photography, instagram
+---
+
+[Perspective on a mother, by a four-year-old child.][pic]
+
+[pic]: https://www.instagram.com/p/BOUm-W3gEn2/

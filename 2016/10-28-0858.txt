@@ -7,4 +7,6 @@ Category: micro
 Tags: rust, travel
 ---
 
-I’m simultaneously incredibly sad to be missing @rustbeltrust and *so relieved* not to be traveling any more this year.
+I’m simultaneously incredibly sad to be missing [Rust Belt Rust] and *so relieved* not to be traveling any more this year.
+
+[Rust Belt Rust]: http://www.rust-belt-rust.com

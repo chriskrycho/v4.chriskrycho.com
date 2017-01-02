@@ -7,4 +7,4 @@ Slug: 10-08-0922
 Category: micro
 ---
 
-People, React is great—truly! But the fact that you only learned about the ideas it uses from React doesn’t make React itself the paradigm.
+People, React is great---truly! But the fact that you only learned about the ideas it uses from React doesn’t make React itself the paradigm.
