@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2017-01-01 21:06
+Tags: writing
+Template: formats/micro
+Slug: 01-01-2106
+Category: micro
+---
+
+Setting up MailChimp so people (like my wife!) can track with my blog without having to set up an RSS reader. MailChimp is impressive.
