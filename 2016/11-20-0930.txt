@@ -9,4 +9,3 @@ Source: Tony Merida, sermon on November 20, 2016
 ...
 
 > If you're waiting to get out of trouble to praise God, *you will never praise God*.
-
