@@ -1,0 +1,41 @@
+---
+Title: TypeScript <code>keyof</code> Follow-Up
+Subtitle: Better ways and problems with the last approach.
+Tags: programming languages, software development, typescript, javascript
+Category: Tech
+Date: 2017-01-03 20:35
+---
+
+I recently wrote up some neat things you can do with [`keyof` and mapped types][prev] in TypeScript 2.1. In playing further with those bits, I ran into some interesting limitations to the approach I outlined there, so here we are.
+
+[prev]: http://www.chriskrycho.com/2016/keyof-and-mapped-types-in-typescript-21.html
+
+In the previous post, I concluded with an example that looked like this:
+
+```typescript
+type UnionKeyToValue<U extends string> = {
+  [K in U]: K
+};
+
+type State
+  = 'Pending'
+  | 'Started'
+  | 'Completed';
+
+// Use `State` as the type parameter to `UnionKeyToValue`.
+const STATE: UnionKeyToValue<State> = {
+  Pending: 'Pending',
+  Started: 'Started',
+  Completed: 'Completed',
+}
+```
+
+That `UnionKeyToValue<State>` type constraint requires us to fill out the `STATE` object as expected. The whole point of this exercise was to give us the benefit of code completion with that STATE type so we could use it and not be worried about the kinds of typos that too-often bite us with stringly-typed arguments in JavaScript.
+
+It turns out we don't *need* that to get completion, though. All editors which use the TypeScript language service will give us the same degree of completion if we start typing a string and then trigger completion:
+
+![string completion with TypeScript 2.1](http://cdn.chriskrycho.com/images/more-ts.gif "screen capture of string completion in VS Code")
+
+Granted that you have to know this is a string (though the JetBrains IDEs will actually go a step further and suggest the right thing *without* needing the string key). But that's roughly equivalent to knowing you need to import the object literal constant to get the completion that way. Six one, half dozen the other, I think.
+
+This makes it something of a wash with the original approach, as long as you're dealing in a pure-TypeScript environment. The big advantage that the original approach still has, of course, is that it also plays nicely with a mixed TypeScript and JavaScript environment. If you're just progressively adding TypeScript to an existing JavaScript codebase, that's possibly reason enough to stick with it.
