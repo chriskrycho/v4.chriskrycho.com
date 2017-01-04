@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - programming languages</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Tue, 03 Jan 2017 18:45:00 -0500</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2017/01-03-1845.html</link><description>&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=_ahvzDzKdB0"&gt;Growing a Language, by Guy Steele&lt;/a&gt; is without competition the single best technical talk I have ever seen.&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - programming languages</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Tue, 03 Jan 2017 20:35:00 -0500</lastBuildDate><item><title>TypeScript keyof Follow-Up</title><link>http://www.chriskrycho.com/2017/typescript-keyof-follow-up.html</link><description>&lt;p&gt;I recently wrote up some neat things you can do with &lt;a href="http://www.chriskrycho.com/2016/keyof-and-mapped-types-in-typescript-21.html"&gt;&lt;code&gt;keyof&lt;/code&gt; and mapped types&lt;/a&gt; in TypeScript 2.1. In playing further with those bits, I ran into some interesting limitations to the approach I outlined there, so here we are.&lt;/p&gt;
+&lt;p&gt;In the previous post, I concluded with an example that looked like this:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;type UnionKeyToValue&amp;lt;U extends string&amp;gt; = {
+  [K in U]: K
+};
+
+type State
+  = &amp;#39;Pending&amp;#39;
+  | &amp;#39;Started&amp;#39;
+  | &amp;#39;Completed&amp;#39;;
+
+// Use `State` as the type parameter to `UnionKeyToValue`.
+const STATE: UnionKeyToValue&amp;lt;State&amp;gt; = {
+  Pending: &amp;#39;Pending&amp;#39;,
+  Started: &amp;#39;Started&amp;#39;,
+  Completed: &amp;#39;Completed&amp;#39;,
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That &lt;code&gt;UnionKeyToValue&amp;lt;State&amp;gt;&lt;/code&gt; type constraint requires us to fill out the &lt;code&gt;STATE&lt;/code&gt; object as expected. The whole point of this exercise was to give us the benefit of code completion with that STATE type so we could use it and not be worried about the kinds of typos that too-often bite us with stringly-typed arguments in JavaScript.&lt;/p&gt;
+&lt;p&gt;It turns out we don’t &lt;em&gt;need&lt;/em&gt; that to get completion, though. All editors which use the TypeScript language service will give us the same degree of completion if we start typing a string and then trigger completion:&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="http://cdn.chriskrycho.com/images/more-ts.gif" title="screen capture of string completion in VS Code" alt="string completion with TypeScript 2.1" /&gt;&lt;figcaption&gt;string completion with TypeScript 2.1&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Granted that you have to know this is a string (though the JetBrains IDEs will actually go a step further and suggest the right thing &lt;em&gt;without&lt;/em&gt; needing the string key). But that’s roughly equivalent to knowing you need to import the object literal constant to get the completion that way. Six one, half dozen the other, I think.&lt;/p&gt;
+&lt;p&gt;This makes it something of a wash with the original approach, as long as you’re dealing in a pure-TypeScript environment. The big advantage that the original approach still has, of course, is that it also plays nicely with a mixed TypeScript and JavaScript environment. If you’re just progressively adding TypeScript to an existing JavaScript codebase, that’s possibly reason enough to stick with it.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 03 Jan 2017 20:35:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-01-03:2017/typescript-keyof-follow-up.html</guid><category>programming languages</category><category>software development</category><category>typescript</category><category>javascript</category></item><item><title></title><link>http://www.chriskrycho.com/2017/01-03-1845.html</link><description>&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=_ahvzDzKdB0"&gt;Growing a Language, by Guy Steele&lt;/a&gt; is without competition the single best technical talk I have ever seen.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 03 Jan 2017 18:45:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-01-03:2017/01-03-1845.html</guid><category>software development</category><category>programming languages</category><category>links</category></item><item><title></title><link>http://www.chriskrycho.com/2016/12-29-2130.html</link><description>&lt;p&gt;The thing &lt;a href="https://twitter.com/jamonholmgren"&gt;Jamon Holmgren&lt;/a&gt; and I did today (with a slight visual snazziness boost) in &lt;a href="http://elm-lang.org"&gt;Elm&lt;/a&gt; in GIF form:&lt;/p&gt;
 &lt;figure&gt;
 &lt;img src="https://cloud.githubusercontent.com/assets/2403023/21559081/776ed304-ce13-11e6-8339-0120fee11041.gif" title="animation of A* path finding" alt="A* Path Finding in Elm" /&gt;&lt;figcaption&gt;A* Path Finding in Elm&lt;/figcaption&gt;
