@@ -6,7 +6,7 @@ Category: Tech
 Date: 2017-01-03 20:35
 ---
 
-I recently wrote up some neat things you can do with [`keyof` and mapped types][prev] in TypeScript 2.1. In playing further with those bits, I ran into some interesting limitations to the approach I outlined there, so here we are.
+I recently wrote up some neat things you can do with [`keyof` and mapped types][prev] in TypeScript 2.1. In playing further with those bits, I ran into some interesting variations on the approach I outlined there, so here we are.
 
 [prev]: http://www.chriskrycho.com/2016/keyof-and-mapped-types-in-typescript-21.html
 
