@@ -1,6 +1,6 @@
 ---
 Title: TypeScript <code>keyof</code> Follow-Up
-Subtitle: Better ways and problems with the last approach.
+Subtitle: Autocomplete all the things in all the ways!
 Tags: programming languages, software development, typescript, javascript
 Category: Tech
 Date: 2017-01-03 20:35
