@@ -1,0 +1,12 @@
+---
+Title: ""
+Date: 2017-01-07 12:55
+Tags: family, productivity
+Template: formats/micro
+Slug: 01-07-1255
+Category: micro
+---
+
+An important elaboration on [my productivity this week][prev]: 30 hours under those circumstances is a bit more notable when you remember that *Monday was a holiday*. 😜
+
+[prev]: http://www.chriskrycho.com/2017/01-06-2357.html
