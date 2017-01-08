@@ -1,0 +1,12 @@
+---
+Title: ""
+Date: 2017-01-01 18:12
+Slug: 01-01-1812
+Template: formats/micro
+Category: Micro
+Tags: productivity, instagram
+---
+
+[How I hope to keep [my inbox] all year.][link]
+
+[link]: https://www.instagram.com/p/BOvVuhggCk0/
