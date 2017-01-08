@@ -64,7 +64,7 @@ const STATE: UnionKeyToValue&amp;lt;State&amp;gt; = {
 &lt;figure&gt;
 &lt;img src="http://cdn.chriskrycho.com/images/more-ts.gif" title="screen capture of string completion in VS Code" alt="string completion with TypeScript 2.1" /&gt;&lt;figcaption&gt;string completion with TypeScript 2.1&lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;p&gt;Granted that you have to know this is a string (though the JetBrains IDEs will actually go a step further and suggest the right thing &lt;em&gt;without&lt;/em&gt; needing the string key). But that’s roughly equivalent to knowing you need to import the object literal constant to get the completion that way. Six one, half dozen the other, I think.&lt;/p&gt;
+&lt;p&gt;Granted that you have to know this is a string (though the JetBrains &lt;abbr title="integrated development environment"&gt;IDE&lt;/abbr&gt;s will actually go a step further and suggest the right thing &lt;em&gt;without&lt;/em&gt; needing the string key). But that’s roughly equivalent to knowing you need to import the object literal constant to get the completion that way. Six one, half dozen the other, I think.&lt;/p&gt;
 &lt;p&gt;This makes it something of a wash with the original approach, as long as you’re dealing in a pure-TypeScript environment. The big advantage that the original approach still has, of course, is that it also plays nicely with a mixed TypeScript and JavaScript environment. If you’re just progressively adding TypeScript to an existing JavaScript codebase, that’s possibly reason enough to stick with it.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edit&lt;/strong&gt;: an additional reason to prefer my original solution:&lt;/p&gt;
 &lt;blockquote class="twitter-tweet" data-lang="en"&gt;
