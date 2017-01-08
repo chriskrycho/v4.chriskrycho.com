@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0"><channel><title>Chris Krycho - TypeScript</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 08 Jan 2017 17:47:00 -0500</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2017/01-04-1046.html</link><description>&lt;p&gt;Follow-up from Twitter &lt;a href="http://www.chriskrycho.com/2017/typescript-keyof-follow-up.html"&gt;on my latest bit on TypeScript and &lt;code&gt;keyof&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote class="twitter-tweet" data-lang="en"&gt;
-&lt;p lang="en" dir="ltr"&gt;
-&lt;a href="https://twitter.com/chriskrycho"&gt;@chriskrycho&lt;/a&gt; &lt;a href="https://twitter.com/typescriptlang"&gt;@typescriptlang&lt;/a&gt; I think a benefit of your previous solution is that you can rename keys and all their usages.
-&lt;/p&gt;
-— Timm (@timmpreetz) &lt;a href="https://twitter.com/timmpreetz/status/816672215924097024"&gt;January 4, 2017&lt;/a&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://twitter.com/chriskrycho"&gt;@chriskrycho&lt;/a&gt; &lt;a href="https://twitter.com/typescriptlang"&gt;@typescriptlang&lt;/a&gt; I think a benefit of your previous solution is that you can rename keys and all their usages.&lt;/p&gt;
+&lt;p&gt;— Timm (@timmpreetz) &lt;a href="https://twitter.com/timmpreetz/status/816672215924097024"&gt;January 4, 2017&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 04 Jan 2017 10:46:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-01-04:2017/01-04-1046.html</guid><category>TypeScript</category></item><item><title>TypeScript keyof Follow-Up</title><link>http://www.chriskrycho.com/2017/typescript-keyof-follow-up.html</link><description>&lt;p&gt;I recently wrote up some neat things you can do with &lt;a href="http://www.chriskrycho.com/2016/keyof-and-mapped-types-in-typescript-21.html"&gt;&lt;code&gt;keyof&lt;/code&gt; and mapped types&lt;/a&gt; in TypeScript 2.1. In playing further with those bits, I ran into some interesting variations on the approach I outlined there, so here we are.&lt;/p&gt;
 &lt;p&gt;In the previous post, I concluded with an example that looked like this:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;type UnionKeyToValue&amp;lt;U extends string&amp;gt; = {

@@ -9,4 +9,6 @@ Tags: programming languages, rust
 
 This is a great summary of what I enjoy about Rust: it just lets me get stuff done---quickly, usually elegantly, and it's always speedy:
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">All the cool kids are writing <a href="https://twitter.com/rustlang">\@rustlang</a> think pieces, so I wrote one too: Rust is about productivity: <a href="https://t.co/OPwfWfpVic">https://t.co/OPwfWfpVic</a></p>&mdash; nrc (\@nick_r_cameron) <a href="https://twitter.com/nick_r_cameron/status/814664685224005632">December 30, 2016</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+> All the cool kids are writing <a href="https://twitter.com/rustlang">\@rustlang</a> think pieces, so I wrote one too: Rust is about productivity: <a href="https://t.co/OPwfWfpVic">https://t.co/OPwfWfpVic</a>
+>
+> &mdash; nrc (\@nick_r_cameron) <a href="https://twitter.com/nick_r_cameron/status/814664685224005632">December 30, 2016</a>

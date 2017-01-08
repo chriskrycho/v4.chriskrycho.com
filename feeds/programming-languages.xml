@@ -37,13 +37,10 @@ const STATE: UnionKeyToValue&amp;lt;State&amp;gt; = {
 &lt;img src="https://cloud.githubusercontent.com/assets/2403023/21559081/776ed304-ce13-11e6-8339-0120fee11041.gif" title="animation of A* path finding" alt="A* Path Finding in Elm" /&gt;&lt;figcaption&gt;A* Path Finding in Elm&lt;/figcaption&gt;
 &lt;/figure&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 29 Dec 2016 21:30:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-12-29:2016/12-29-2130.html</guid><category>programming languages</category><category>live-coding</category><category>elm</category></item><item><title></title><link>http://www.chriskrycho.com/2016/12-29-2126.html</link><description>&lt;p&gt;This is a great summary of what I enjoy about Rust: it just lets me get stuff done—quickly, usually elegantly, and it’s always speedy:&lt;/p&gt;
-&lt;blockquote class="twitter-tweet" data-lang="en"&gt;
-&lt;p lang="en" dir="ltr"&gt;
-All the cool kids are writing &lt;a href="https://twitter.com/rustlang"&gt;@rustlang&lt;/a&gt; think pieces, so I wrote one too: Rust is about productivity: &lt;a href="https://t.co/OPwfWfpVic"&gt;https://t.co/OPwfWfpVic&lt;/a&gt;
-&lt;/p&gt;
-— nrc (@nick_r_cameron) &lt;a href="https://twitter.com/nick_r_cameron/status/814664685224005632"&gt;December 30, 2016&lt;/a&gt;
+&lt;blockquote&gt;
+&lt;p&gt;All the cool kids are writing &lt;a href="https://twitter.com/rustlang"&gt;@rustlang&lt;/a&gt; think pieces, so I wrote one too: Rust is about productivity: &lt;a href="https://t.co/OPwfWfpVic"&gt;https://t.co/OPwfWfpVic&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;— nrc (@nick_r_cameron) &lt;a href="https://twitter.com/nick_r_cameron/status/814664685224005632"&gt;December 30, 2016&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 29 Dec 2016 21:26:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-12-29:2016/12-29-2126.html</guid><category>programming languages</category><category>rust</category></item><item><title></title><link>http://www.chriskrycho.com/2016/12-29-1751.html</link><description>&lt;p&gt;A thing I just learned: &lt;code&gt;cargo doc --open&lt;/code&gt;: full, local docs for every dependency your Rust crate has.&lt;/p&gt;
 &lt;p&gt;Mind. blown.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 29 Dec 2016 17:51:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-12-29:2016/12-29-1751.html</guid><category>software development</category><category>programming languages</category><category>rust</category></item><item><title></title><link>http://www.chriskrycho.com/2016/12-18-1614.html</link><description>&lt;p&gt;Spent a chunk of the afternoon figuring out how to implement Rust’s &lt;code&gt;Result&lt;/code&gt; type in TypeScript. Pretty cool!&lt;/p&gt;
