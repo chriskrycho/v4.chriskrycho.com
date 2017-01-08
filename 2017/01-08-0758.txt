@@ -7,7 +7,7 @@ Slug: 01-08-0758
 Category: micro
 ---
 
-Here’s someone else [making one of the same points][link] I made last week about the indie---but much more succinctly!
+Here’s someone else [making one of the same points][link] I made last week about the indie web---but much more succinctly!
 
  >Oh man, I wrote a blog post only to find out later that <a href="https://twitter.com/chriskrycho">\@chriskrycho</a> has written a much better version of it... ["Even With a cool domain name, RSS-Powered Micro Blogging Is Still a Mirage"][link]
  >
