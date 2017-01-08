@@ -1,12 +1,13 @@
 ---
 Title: TypeScript <code>keyof</code> Follow-Up
-Subtitle: Better ways and problems with the last approach.
+Subtitle: Autocomplete all the things in all the ways!
 Tags: programming languages, software development, typescript, javascript
 Category: Tech
 Date: 2017-01-03 20:35
+Modified: 2017-01-08 17:47
 ---
 
-I recently wrote up some neat things you can do with [`keyof` and mapped types][prev] in TypeScript 2.1. In playing further with those bits, I ran into some interesting limitations to the approach I outlined there, so here we are.
+I recently wrote up some neat things you can do with [`keyof` and mapped types][prev] in TypeScript 2.1. In playing further with those bits, I ran into some interesting variations on the approach I outlined there, so here we are.
 
 [prev]: http://www.chriskrycho.com/2016/keyof-and-mapped-types-in-typescript-21.html
 
@@ -39,3 +40,7 @@ It turns out we don't *need* that to get completion, though. All editors which u
 Granted that you have to know this is a string (though the JetBrains IDEs will actually go a step further and suggest the right thing *without* needing the string key). But that's roughly equivalent to knowing you need to import the object literal constant to get the completion that way. Six one, half dozen the other, I think.
 
 This makes it something of a wash with the original approach, as long as you're dealing in a pure-TypeScript environment. The big advantage that the original approach still has, of course, is that it also plays nicely with a mixed TypeScript and JavaScript environment. If you're just progressively adding TypeScript to an existing JavaScript codebase, that's possibly reason enough to stick with it.
+
+**Edit**: an additional reason to prefer my original solution:
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/chriskrycho">\@chriskrycho</a> <a href="https://twitter.com/typescriptlang">\@typescriptlang</a> I think a benefit of your previous solution is that you can rename keys and all their usages.</p>&mdash; Timm (\@timmpreetz) <a href="https://twitter.com/timmpreetz/status/816672215924097024">January 4, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
