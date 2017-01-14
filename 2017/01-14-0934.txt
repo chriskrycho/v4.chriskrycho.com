@@ -8,4 +8,5 @@ Category: micro
 
 It's been well over a year since I switched to [FastMail], and I remain *extremely* happy with the service.
 
-[FastMail]: https://www.fastmail.com
+[FastMail]: https://www.fastmail.com/?STKI=14660385
+
