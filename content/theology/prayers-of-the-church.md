@@ -1,13 +1,13 @@
 ---
 Title: The Prayers of the Church
 Date: 2017-01-03 06:08
-Template: formats/quotations
+Template: formats/quotation
 Category: Theology
-Tags: quotations, prayer
+Tags: quotes, prayer
 Source: Morning Prayer from the Common Worship of the Church of England
 ---
 
-The Collect of the day:
+The prayers of the Church are a gift.
 
 > | Almighty God,
 > | who wonderfully created us in your own image
