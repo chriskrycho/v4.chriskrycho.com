@@ -574,7 +574,9 @@ article {
         a { display: inline; }
     }
 
-    &.micro, &.links { font-family: $sans; }
+    &.micro, &.links {
+      .content { font-size: 0.9em; }
+    }
 
     &.links,
     &.archive.links {
