@@ -1,0 +1,11 @@
+---
+Title: ""
+Date: 2017-01-14 09:34
+Template: formats/micro
+Slug: 01-14-0934
+Category: micro
+---
+
+It's been well over a year since I switched to [FastMail], and I remain *extremely* happy with the service.
+
+[FastMail]: https://www.fastmail.com
