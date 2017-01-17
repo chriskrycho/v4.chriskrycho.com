@@ -9,4 +9,4 @@ Category: micro
 
 Was delighted to be a guest on the new [Remote Works Podcast]! These guys are making a great show. (My episode will be out in February.)
 
-[Remote Works]: https://remote.works
+[Remote Works Podcast]: https://remote.works
