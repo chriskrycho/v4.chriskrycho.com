@@ -7,3 +7,4 @@ Slug: 01-19-1641
 Category: micro
 ---
 
+Programming (/life) pro tip: if you can't see the value in a pattern someone else finds useful, assume you have something to learn, instead of concluding that the pattern itself is useless.
