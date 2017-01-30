@@ -7,3 +7,8 @@ Category: micro
 ---
 
 Minimalist/keyboard-shortcut-happy tip for using Mail.app on macOS: just turn off the toolbar and favorites bar.
+
+<img src='http://cdn.chriskrycho.com/images/mail.jpeg'
+     srcset='http://cdn.chriskrycho.com/images/mail-708.jpeg 354w,
+             http://cdn.chriskrycho.com/images/mail-1416.jpeg 708w,
+             http://cdn.chriskrycho.com/images/mail.jpeg 1416w'>
