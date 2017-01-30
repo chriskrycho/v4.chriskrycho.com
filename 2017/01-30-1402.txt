@@ -1,0 +1,9 @@
+---
+Title: ""
+Date: 2017-01-30 14:02
+Template: formats/micro
+Slug: 01-30-1402
+Category: micro
+---
+
+Minimalist/keyboard-shortcut-happy tip for using Mail.app on macOS: just turn off the toolbar and favorites bar.
