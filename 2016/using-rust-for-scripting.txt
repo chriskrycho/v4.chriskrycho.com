@@ -7,9 +7,17 @@ Tags: rust, software development, programming languages
 Summary: >
     Why I might use Rust instead of Python, with walkthroughs for building a simple "script"-like program and a guide for cross-compiling Rust code to Windows from macOS.
 Modified: 2016-11-15 09:00
+
 ---
 
+
 <i class=editorial>**Edit**: fixed some typos, cleaned up implementation a bit based on feedback around the internet.</i>
+
+<i class=editorial>A lightly edited version of this post was syndicated in [Hacker Bits, Issue 13](https://hackerbits.com/chris-krycho-using-rust-for-scripting/).</i>
+
+
+---
+
 
 ## I. Using Rust Instead of Python
 

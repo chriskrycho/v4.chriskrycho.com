@@ -1,0 +1,56 @@
+---
+Title: Set up a .NET Core F♯ Suave Project with Paket
+Subtitle: With some extra details on <code>paket.dependencies</code>, <code>paket.references</code>, and MSBuild
+Author: Chris Krycho
+Date: 2017-02-04 20:00
+Category: Tech
+Tags: software development, fsharp, dotnet
+---
+
+I just set up a [Suave] project in F♯ with [Paket] on [.NET Core][dotnet-core] running on macOS for the first time. All of this information is out there on the internet, but none of it is all in one place. In particular, figuring out what content `paket.references` requires in order to  sync `paket.dependencies` with `.fsproj` MSBuild files was not obvious! So here is a minimal process to go from zero to a working Suave project!
+
+[dotnet-core]: https://www.microsoft.com/net/core
+[Suave]: https://suave.io
+
+---
+
+1. Download and run the latest [.NET Core installer]. (I know, this isn't *at all* the Mac or Linux way of doing things. Hopefully [eventually] this will just be `brew install dotnet`.)
+
+2. Install [paket]: `brew install paket`.
+
+    ```sh
+    $ brew install paket
+    ```
+
+3. Create a new project:
+
+    ```sh
+    $ mkdir my-project
+    $ cd my-project
+    $ dotnet new -l F#
+    ```
+
+4. Run `paket init` in the root of your project. This will create a `paket.dependencies` file for you, [which specifies the dependencies][dependencies] to install. 
+
+5. Add Suave as a dependency by adding it to the `paket.dependencies` file:
+
+    ```
+    source https://www.nuget.org/api/v2
+    nuget suave
+    ```
+
+6. Manually create a `paket.references` file. This is the file Paket [uses to keep its things in sync][references] with MSBuild projects. Since .NET Core [is transitioning] away from the project.json format back to MSBuild (and so to `.fsproj` files), you need this to keep the .NET Core build tools in sync with Paket and therefore for building your project (if I understand correctly---still new here!).
+
+    For our purposes, the file just needs the *names* of the packages to keep in sync. Paket will use that in combination with the [lockfile] here is simple, so you can just do `echo Suave > paket.references`.
+
+7. Run `paket install`. This will download and install the dependencies, configure your `paket.lock` [file][lockfile] to specify exactly what dependencies were installed and make reproducible builds, and update your `.fsproj` file with the references it needs for Suave.
+
+8. Open 
+
+[.NET Core installer]: https://github.com/dotnet/cli#installers-and-binaries
+[eventually]: https://github.com/dotnet/cli/issues/533
+[paket]: https://fsprojects.github.io/Paket/
+[dependencies]: https://fsprojects.github.io/Paket/dependencies-file.html
+[references]: https://fsprojects.github.io/Paket/references-files.html
+[is transitioning]: http://ivanz.com/2016/05/17/farewell-project-json-hello-msbuild-and-csproj
+[lockfile]: https://fsprojects.github.io/Paket/lock-file.html

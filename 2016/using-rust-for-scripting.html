@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Using Rust for ‘Scripting’"/>
     <meta name="twitter:description" content="Why I might use Rust instead of Python, with walkthroughs for building a simple "script"-like program and a guide for cross-compiling Rust code to Windows from macOS."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -89,6 +89,8 @@
         <div class="content">
 
 <p><i class=editorial><strong>Edit</strong>: fixed some typos, cleaned up implementation a bit based on feedback around the internet.</i></p>
+<p><i class=editorial>A lightly edited version of this post was syndicated in <a href="https://hackerbits.com/chris-krycho-using-rust-for-scripting/">Hacker Bits, Issue 13</a>.</i></p>
+<hr />
 <section id="i.-using-rust-instead-of-python" class="level2">
 <h2>I. Using Rust Instead of Python</h2>
 <p>A friend asked me today about writing a little script to do a simple conversion of the names of some files in a nested set of directories. Everything with one file extension needed to get another file extension. After asking if it was the kind of thing where he had time to and/or wanted to learn how to do it himself (always important when someone has expressed that interest more generally), I said, “Why don’t I do this in Rust?”</p>
