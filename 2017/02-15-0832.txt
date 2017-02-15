@@ -7,4 +7,4 @@ Slug: 02-15-0832
 Category: micro
 ---
 
-One of the biggest changes from learning Rust/Elm/F♯/etc. in my JavaScript is that I now think *constantly* about what can fail.
+One of the biggest changes in my JavaScript from learning Rust/Elm/F♯/etc. is that I now think *constantly* about what can fail.
