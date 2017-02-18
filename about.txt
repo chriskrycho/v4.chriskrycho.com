@@ -6,7 +6,9 @@ Summary: Creativity, reflection, & passionate endeavors by a peculiar fellow
 Slug: about
 ...
 
-![My wonderful family!](//cdn.chriskrycho.com/images/family-2016.jpg "Family photo 2016")
+<a href='http://cdn.chriskrycho.com/images/family-2016.jpg'>
+![My wonderful family!](http://cdn.chriskrycho.com/images/family-2016-thumb.jpg "Family photo 2016")
+</a>
 
 Good day (or evening, as the case may be), and welcome to my home on the
 interwebs!
