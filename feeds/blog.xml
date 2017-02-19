@@ -4,11 +4,17 @@
 &lt;p&gt;I have more than a few large project-style blog posts I have not finished—most regrettably, at present, one about podcasting which I told a friend I was working on some weeks ago—in part because I have tried to treat them like blog posts &lt;em&gt;and&lt;/em&gt; essays or projects at the same time.&lt;/p&gt;
 &lt;p&gt;What I think I’d like to end up with is &lt;em&gt;something&lt;/em&gt; like this, in terms of structure in the new site:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Journal&lt;/strong&gt;—something like a &lt;a href="https://en.wikipedia.org/wiki/Commonplace_book"&gt;“commonplace journal”&lt;/a&gt;, but shared publicly. This would include several kinds of content:&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Journal&lt;/strong&gt;—something like a &lt;a href="https://en.wikipedia.org/wiki/Commonplace_book"&gt;“commonplace journal”&lt;/a&gt;, but shared publicly. This would include several kinds of content:
+&lt;ul&gt;
 &lt;li&gt;blog posts—things like this little piece, of course, but also the &lt;em&gt;vast&lt;/em&gt; majority of the content I put on the site&lt;/li&gt;
 &lt;li&gt;links to &lt;em&gt;other&lt;/em&gt; blog posts&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Projects &lt;em&gt;&amp;amp;&lt;/em&gt; Series&lt;/strong&gt;—the home for more substantive chunks of content&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Projects &lt;em&gt;&amp;amp;&lt;/em&gt; Series&lt;/strong&gt;—the home for more substantive chunks of content
+&lt;ul&gt;
 &lt;li&gt;long-running series like my &lt;a href="http://www.chriskrycho.com/rust-and-swift.html"&gt;Rust and Swift&lt;/a&gt; posts, which are not particularly &lt;em&gt;bloggy&lt;/em&gt; (for lack of a better word)&lt;/li&gt;
+&lt;li&gt;things like my &lt;a href="http://www.chriskrycho.com/2016/2016-review-intro.html"&gt;2016 in Review&lt;/a&gt; series&lt;/li&gt;
+&lt;li&gt;some projects more like some of the things &lt;a href="http://craigmod.com"&gt;Craig Mod&lt;/a&gt; has done over the years: curated collections of materials that complement each other&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Articles&lt;/strong&gt;—call this aspirational; if or when I have things published in a more formal way, I’d like them to have a home on my website as well&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This structure has some challenges of its own, of course. Where does a poem go? Is it part of my “journal” or is it more of a one-off “project”? And within those, I shall want both overlapping “categories” as well as cross-cutting “subjects”: it is impossible to cleanly separate &lt;em&gt;all&lt;/em&gt; of my Tech and Theology writing from each other, yet having &lt;em&gt;some&lt;/em&gt; high-level categories grows increasingly important for navigating the site as its content grows. (This becomes a problem even just for me as I look for old posts to link thme—much less for any &lt;em&gt;other&lt;/em&gt; reader of my site!)&lt;/p&gt;

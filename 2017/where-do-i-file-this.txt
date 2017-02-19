@@ -20,14 +20,18 @@ I have more than a few large project-style blog posts I have not finished---most
 What I think I'd like to end up with is *something* like this, in terms of structure in the new site:
 
 - **Journal**---something like a ["commonplace journal"][journal], but shared publicly. This would include several kinds of content:
-  - blog posts---things like this little piece, of course, but also the *vast* majority of the content I put on the site
-  - links to *other* blog posts
+    + blog posts---things like this little piece, of course, but also the *vast* majority of the content I put on the site
+    + links to *other* blog posts
 - **Projects *&* Series**---the home for more substantive chunks of content
-  - long-running series like my [Rust and Swift][ras] posts, which are not particularly *bloggy* (for lack of a better word)
+    + long-running series like my [Rust and Swift][ras] posts, which are not particularly *bloggy* (for lack of a better word)
+    + things like my [2016 in Review][review] series
+    + some projects more like some of the things [Craig Mod][mod] has done over the years: curated collections of materials that complement each other
 - **Articles**---call this aspirational; if or when I have things published in a more formal way, I'd like them to have a home on my website as well
 
 [journal]: https://en.wikipedia.org/wiki/Commonplace_book
 [ras]: http://www.chriskrycho.com/rust-and-swift.html
+[review]: http://www.chriskrycho.com/2016/2016-review-intro.html
+[mod]: http://craigmod.com
 
 This structure has some challenges of its own, of course. Where does a poem go? Is it part of my "journal" or is it more of a one-off "project"? And within those, I shall want both overlapping "categories" as well as cross-cutting "subjects": it is impossible to cleanly separate *all* of my Tech and Theology writing from each other, yet having *some* high-level categories grows increasingly important for navigating the site as its content grows. (This becomes a problem even just for me as I look for old posts to link thme---much less for any *other* reader of my site!)
 
