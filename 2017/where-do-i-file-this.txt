@@ -44,5 +44,5 @@ And this is not merely a digital problem: filing cabinets have the same constrai
 So: more to come as I continue to chew on these problems of information architecture and user interface. [Links to others' thoughts][twitter] and [more detailed comments of your own][email] most welcome.
 
 [twitter]: https://twitter.com/chriskrycho
-[email]: "mailto:hello@chriskrycho.com?subject=Structuring content"
+[email]: mailto:hello@chriskrycho.com?subject=Structuring content
 
