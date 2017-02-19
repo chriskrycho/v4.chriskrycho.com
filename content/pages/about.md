@@ -4,9 +4,12 @@ Subtitle: Enjoy your stay; watch out for typographical nerdery.
 Author: Chris Krycho
 Summary: Creativity, reflection, & passionate endeavors by a peculiar fellow
 Slug: about
-...
 
-![My wonderful family!](//cdn.chriskrycho.com/images/family_2014.jpg "Family photo 2014")
+---
+
+
+![My wonderful family! [(see full size)](http://cdn.chriskrycho.com/images/family-2016.jpg)](http://cdn.chriskrycho.com/images/family-2016-thumb.jpg "Family photo 2016")
+
 
 Good day (or evening, as the case may be), and welcome to my home on the
 interwebs!
