@@ -6,7 +6,7 @@ Tags: fsharp, software development, rust, functional programming
 Category: Tech
 ---
 
-I saw this post on error-handling in F♯, ["You’re better off using Exceptions"][post] making the rounds on Twitter:
+I saw this post on error-handling in F^♯^, ["You’re better off using Exceptions"][post] making the rounds on Twitter:
 
 [post]: https://eiriktsarpalis.wordpress.com/2017/02/19/youre-better-off-using-exceptions/ "You’re better off using Exceptions"
 
@@ -14,11 +14,11 @@ I saw this post on error-handling in F♯, ["You’re better off using Exception
 >
 > Such concerns resonate particularly well within FP communities, often taken to the extreme: we should reject exceptions Show more…
 
-And I get the argument, and in the specific context of F♯—especially given how much C♯-interoperating and therefore exception-throwing-code-interoperating there is there—it’s reasonable.
+And I get the argument, and in the specific context of F^♯^—especially given how much C^♯^-interoperating and therefore exception-throwing-code-interoperating there is there—it’s reasonable.
 
 But it still makes me sad. (To be clear: exceptions were and are a big win over what you get in languages like C. I'll take them any day over `goto` or `segfault`.)
 
-You need to embrace exceptions in F♯ _because F♯ has exceptions_ and because _many of its libraries rely on exceptions_. But my experience with Rust and other non-exception-using languages is that you *don’t* need exceptions in the general case.
+You need to embrace exceptions in F^♯^ _because F^♯^ has exceptions_ and because _many of its libraries rely on exceptions_. But my experience with Rust and other non-exception-using languages is that you *don’t* need exceptions in the general case.
 
 The questions are: whether your language has good support for things like flat-mapping, and whether you’re willing to commit to letting the compiler help you with these problems.
 
@@ -30,6 +30,6 @@ Rust's model gives you something like exceptions for truly unrecoverable errors,
 
 It's well-understood in my circles that you shouldn't use exceptions for things you can recover from; you should use them for things you *can't* recover from. But in most languages which lean heavily on exceptions, you inevitably start using them for control flow. I say: if you can recover from an error... just recover from it! Account for recoverable errors as possible conditions in your program and carry on! If you can't recover... don't. Die and let some other part of your system kick things back off.
 
-In summary: yes, if you're in F♯, use exceptions. It *is* the right thing to do in many cases (and you don't have a choice in many others). But I'm hopeful for a future where we handle recoverable errors locally, and [act like Erlang or Elixir otherwise][just-crash].
+In summary: yes, if you're in F^♯^, use exceptions. It *is* the right thing to do in many cases (and you don't have a choice in many others). But I'm hopeful for a future where we handle recoverable errors locally, and [act like Erlang or Elixir otherwise][just-crash].
 
 [just-crash]: http://elixir-lang.org/getting-started/mix-otp/supervisor-and-application.html

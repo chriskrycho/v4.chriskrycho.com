@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Better Off Using Exceptions?"/>
     <meta name="twitter:description" content="I saw this post on error-handling in F♯, “You’re better off using Exceptions” making the rounds on Twitter: Exception handling is an error management paradigm that has often been met with criticism. Such criticisms typically revolve around scoping considerations, exceptions-as-control-flow abuse or even the assertion that exceptions are really …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -88,19 +88,19 @@
 
         <div class="content">
 
-<p>I saw this post on error-handling in F♯, <a href="https://eiriktsarpalis.wordpress.com/2017/02/19/youre-better-off-using-exceptions/" title="You’re better off using Exceptions">“You’re better off using Exceptions”</a> making the rounds on Twitter:</p>
+<p>I saw this post on error-handling in F<sup>♯</sup>, <a href="https://eiriktsarpalis.wordpress.com/2017/02/19/youre-better-off-using-exceptions/" title="You’re better off using Exceptions">“You’re better off using Exceptions”</a> making the rounds on Twitter:</p>
 <blockquote>
 <p>Exception handling is an error management paradigm that has often been met with criticism. Such criticisms typically revolve around scoping considerations, exceptions-as-control-flow abuse or even the assertion that exceptions are really just a type safe version of goto. To an extent, these seem like valid concerns but it is not within the scope of this article to address those per se.</p>
 <p>Such concerns resonate particularly well within FP communities, often taken to the extreme: we should reject exceptions Show more…</p>
 </blockquote>
-<p>And I get the argument, and in the specific context of F♯—especially given how much C♯-interoperating and therefore exception-throwing-code-interoperating there is there—it’s reasonable.</p>
+<p>And I get the argument, and in the specific context of F<sup>♯</sup>—especially given how much C<sup>♯</sup>-interoperating and therefore exception-throwing-code-interoperating there is there—it’s reasonable.</p>
 <p>But it still makes me sad. (To be clear: exceptions were and are a big win over what you get in languages like C. I’ll take them any day over <code>goto</code> or <code>segfault</code>.)</p>
-<p>You need to embrace exceptions in F♯ <em>because F♯ has exceptions</em> and because <em>many of its libraries rely on exceptions</em>. But my experience with Rust and other non-exception-using languages is that you <em>don’t</em> need exceptions in the general case.</p>
+<p>You need to embrace exceptions in F<sup>♯</sup> <em>because F<sup>♯</sup> has exceptions</em> and because <em>many of its libraries rely on exceptions</em>. But my experience with Rust and other non-exception-using languages is that you <em>don’t</em> need exceptions in the general case.</p>
 <p>The questions are: whether your language has good support for things like flat-mapping, and whether you’re willing to commit to letting the compiler help you with these problems.</p>
 <p>To be sure: there’s more work involved up front to deal with that. But that’s a tradeoff I’m <em>always</em> willing to make. I’d rather have the compiler tell me if I’m failing to account for something than learn because I saw a runtime error report come up in <a href="https://raygun.com">Raygun</a>, especially because that tends to mean an error that affects the user in some way.</p>
 <p>Rust’s model gives you something like exceptions for truly unrecoverable errors, “panics.” A panic gives you all the context you’d get from an exception (one of the virtues of exceptions highlighted in that post), but you can only “catch” it at thread boundaries, and it otherwise just kills the program. Because it’s catastrophic, you only use it where you don’t have any way to recover in your immediate context. But where you can recover in your immediate context… using something like a highly descriptive enum (just as suggested at the end of <a href="https://eiriktsarpalis.wordpress.com/2017/02/19/youre-better-off-using-exceptions/" title="You’re better off using Exceptions">that original post</a>!) is a better option.</p>
 <p>It’s well-understood in my circles that you shouldn’t use exceptions for things you can recover from; you should use them for things you <em>can’t</em> recover from. But in most languages which lean heavily on exceptions, you inevitably start using them for control flow. I say: if you can recover from an error… just recover from it! Account for recoverable errors as possible conditions in your program and carry on! If you can’t recover… don’t. Die and let some other part of your system kick things back off.</p>
-<p>In summary: yes, if you’re in F♯, use exceptions. It <em>is</em> the right thing to do in many cases (and you don’t have a choice in many others). But I’m hopeful for a future where we handle recoverable errors locally, and <a href="http://elixir-lang.org/getting-started/mix-otp/supervisor-and-application.html">act like Erlang or Elixir otherwise</a>.</p>
+<p>In summary: yes, if you’re in F<sup>♯</sup>, use exceptions. It <em>is</em> the right thing to do in many cases (and you don’t have a choice in many others). But I’m hopeful for a future where we handle recoverable errors locally, and <a href="http://elixir-lang.org/getting-started/mix-otp/supervisor-and-application.html">act like Erlang or Elixir otherwise</a>.</p>
         </div>
     </div>
 </article>
