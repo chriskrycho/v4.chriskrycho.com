@@ -299,7 +299,6 @@ And the TypeScript language service---which you can use from a *lot* of editors,
 <figure>
   <video autoplay=autoplay muted=muted playsinline=playsinline loop=loop>
     <source type='video/mp4' src='http://cdn.chriskrycho.com/images/completion.mp4'>
-    <img src='http://cdn.chriskrycho.com/images/completion.gif' title='video of constrained completion' alt='TypeScript live code completion of the mapped type'>
   </video>
   <figcaption>TypeScript live code completion of the mapped type</figcaption>
 </figure>
@@ -313,7 +312,6 @@ Yes, it's a little verbose and it does require duplicating the strings whenever 
 <figure>
   <video autoplay=autoplay muted=muted playsinline=playsinline loop=loop>
     <source type='video/mp4' src='http://cdn.chriskrycho.com/images/change-union.mp4'>
-    <img src='http://cdn.chriskrycho.com/images/change-union.gif' title='Updating a union' alt='video of union update'/>
   </video>
   <figcaption>Updating a union</figcaption>
 </figure>

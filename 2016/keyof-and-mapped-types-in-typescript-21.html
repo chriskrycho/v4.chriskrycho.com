@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="keyof and Mapped Types In TypeScript 2.1"/>
     <meta name="twitter:description" content="In the last few months, I’ve been playing with both Flow and TypeScript as tools for increasing the quality and reliability of the JavaScript I write at Olo. Both of these are syntax that sits on top of normal JavaScript to add type analysis—basically, a form of gradual …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -255,7 +255,7 @@ Type ‘{ Pending: “pending”; Started: “Strated”; Completed: “Complete
 <p>Since the key and the name don’t match, the compiler tells us we didn’t keep the constraint we defined on what these types should look like. Similarly, if you forget an item from the union, you’ll get an error. If you add an item that isn’t in the original union, you’ll get an error. Among other things, this means that you can be confident that if you add a value to the union, the rest of your code won’t compile until you include cases for it. You get all the power and utility of using union types, <em>and</em> you get the utility of being able to use the object as a namespace of sorts.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a></p>
 <p>And the TypeScript language service—which you can use from a <em>lot</em> of editors, including VS Code, Atom, Sublime Text, and the JetBrains IDEs—will actually give you the correct completion when you start definition a type. So imagine we were defining some other union type elsewhere in our program to handle events. Now we can use the same <code>UnionKeyToValue</code> type to construct this type, with immediate, <em>correct</em> feedback from the TypeScript language service:</p>
 <figure>
-<video autoplay=autoplay muted=muted playsinline=playsinline loop=loop> <source type='video/mp4' src='http://cdn.chriskrycho.com/images/completion.mp4'> <img src='http://cdn.chriskrycho.com/images/completion.gif' title='video of constrained completion' alt='TypeScript live code completion of the mapped type'> </video>
+<video autoplay=autoplay muted=muted playsinline=playsinline loop=loop> <source type='video/mp4' src='http://cdn.chriskrycho.com/images/completion.mp4'> </video>
 <figcaption>
 TypeScript live code completion of the mapped type
 </figcaption>
@@ -263,7 +263,7 @@ TypeScript live code completion of the mapped type
 <p>By inverting our original approach of using <code>keyof</code> (itself powerful and worth using in quite a few circumstances) and instead using the new mapped types, we get a <em>ton</em> of mileage in terms of productivity when using these types—errors prevented, and speed of writing the code in the first place increased as well.</p>
 <p>Yes, it’s a little verbose and it does require duplicating the strings whenever you define one of these types.<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> But, and this is what I find most important: there is only one <em>source</em> for those string keys, the union type, and it is definitive. If you change that central union type, everything else that references it, including the namespace-like object, will fail to compile until you make the same change there.</p>
 <figure>
-<video autoplay=autoplay muted=muted playsinline=playsinline loop=loop> <source type='video/mp4' src='http://cdn.chriskrycho.com/images/change-union.mp4'> <img src='http://cdn.chriskrycho.com/images/change-union.gif' title='Updating a union' alt='video of union update'/> </video>
+<video autoplay=autoplay muted=muted playsinline=playsinline loop=loop> <source type='video/mp4' src='http://cdn.chriskrycho.com/images/change-union.mp4'> </video>
 <figcaption>
 Updating a union
 </figcaption>

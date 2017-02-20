@@ -258,7 +258,7 @@ Type ‘{ Pending: “pending”; Started: “Strated”; Completed: “Complete
 &lt;p&gt;Since the key and the name don’t match, the compiler tells us we didn’t keep the constraint we defined on what these types should look like. Similarly, if you forget an item from the union, you’ll get an error. If you add an item that isn’t in the original union, you’ll get an error. Among other things, this means that you can be confident that if you add a value to the union, the rest of your code won’t compile until you include cases for it. You get all the power and utility of using union types, &lt;em&gt;and&lt;/em&gt; you get the utility of being able to use the object as a namespace of sorts.&lt;a href="#fn6" class="footnoteRef" id="fnref6"&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;And the TypeScript language service—which you can use from a &lt;em&gt;lot&lt;/em&gt; of editors, including VS Code, Atom, Sublime Text, and the JetBrains IDEs—will actually give you the correct completion when you start definition a type. So imagine we were defining some other union type elsewhere in our program to handle events. Now we can use the same &lt;code&gt;UnionKeyToValue&lt;/code&gt; type to construct this type, with immediate, &lt;em&gt;correct&lt;/em&gt; feedback from the TypeScript language service:&lt;/p&gt;
 &lt;figure&gt;
-&lt;video autoplay=autoplay muted=muted playsinline=playsinline loop=loop&gt; &lt;source type='video/mp4' src='http://cdn.chriskrycho.com/images/completion.mp4'&gt; &lt;img src='http://cdn.chriskrycho.com/images/completion.gif' title='video of constrained completion' alt='TypeScript live code completion of the mapped type'&gt; &lt;/video&gt;
+&lt;video autoplay=autoplay muted=muted playsinline=playsinline loop=loop&gt; &lt;source type='video/mp4' src='http://cdn.chriskrycho.com/images/completion.mp4'&gt; &lt;/video&gt;
 &lt;figcaption&gt;
 TypeScript live code completion of the mapped type
 &lt;/figcaption&gt;
@@ -266,7 +266,7 @@ TypeScript live code completion of the mapped type
 &lt;p&gt;By inverting our original approach of using &lt;code&gt;keyof&lt;/code&gt; (itself powerful and worth using in quite a few circumstances) and instead using the new mapped types, we get a &lt;em&gt;ton&lt;/em&gt; of mileage in terms of productivity when using these types—errors prevented, and speed of writing the code in the first place increased as well.&lt;/p&gt;
 &lt;p&gt;Yes, it’s a little verbose and it does require duplicating the strings whenever you define one of these types.&lt;a href="#fn7" class="footnoteRef" id="fnref7"&gt;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt; But, and this is what I find most important: there is only one &lt;em&gt;source&lt;/em&gt; for those string keys, the union type, and it is definitive. If you change that central union type, everything else that references it, including the namespace-like object, will fail to compile until you make the same change there.&lt;/p&gt;
 &lt;figure&gt;
-&lt;video autoplay=autoplay muted=muted playsinline=playsinline loop=loop&gt; &lt;source type='video/mp4' src='http://cdn.chriskrycho.com/images/change-union.mp4'&gt; &lt;img src='http://cdn.chriskrycho.com/images/change-union.gif' title='Updating a union' alt='video of union update'/&gt; &lt;/video&gt;
+&lt;video autoplay=autoplay muted=muted playsinline=playsinline loop=loop&gt; &lt;source type='video/mp4' src='http://cdn.chriskrycho.com/images/change-union.mp4'&gt; &lt;/video&gt;
 &lt;figcaption&gt;
 Updating a union
 &lt;/figcaption&gt;
