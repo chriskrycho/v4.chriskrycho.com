@@ -12,8 +12,8 @@ preliminaries:
 
 <figure>
   <video autoplay=autoplay muted=muted playsinline=playsinline loop=loop>
-    <source type='video/mp4' src='http://cdn.chriskrycho.com/joker.mp4'>
-    <img src='http://cdn.chriskrycho.com/joker.gif' title='And here. we. go.' alt='Joker saying "And here. we. go."'/>
+    <source type='video/mp4' src='http://cdn.chriskrycho.com/images/joker.mp4'>
+    <img src='http://cdn.chriskrycho.com/images/joker.gif' title='And here. we. go.' alt='Joker saying "And here. we. go."'/>
   </video>
   <figcaption></figcaption>
 </figure>
