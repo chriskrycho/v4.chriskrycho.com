@@ -1,0 +1,13 @@
+---
+Title: ""
+Date: 2017-02-20 13:22
+Tags: writing
+Template: formats/micro
+Slug: 02-20-1322
+Category: micro
+---
+
+Resolved ([again]): to [*just write a blog post*][latest] when I start tweeting or Slack-ing more than a sentence of commentary on some other post.
+
+[again]: http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html
+[latest]: http://www.chriskrycho.com/2017/better-off-using-exceptions.html
