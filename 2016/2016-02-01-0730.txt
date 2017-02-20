@@ -11,8 +11,8 @@ Seems about right for the primary season actually kicking into gear, given the
 preliminaries:
 
 <figure>
-  <video>
-    <source src='http://cdn.chriskrycho.com/joker.mp4' type='video/mp4'>
+  <video autoplay=autoplay muted=muted playsinline=playsinline loop=loop>
+    <source type='video/mp4' src='http://cdn.chriskrycho.com/joker.mp4'>
     <img src='http://cdn.chriskrycho.com/joker.gif' title='And here. we. go.' alt='Joker saying "And here. we. go."'/>
   </video>
   <figcaption></figcaption>

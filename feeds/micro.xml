@@ -2420,13 +2420,13 @@ Just released v0.6.0 of ember-exam with support for Mocha! ember-cli-mocha users
 &lt;/div&gt;
 </content></entry><entry><title></title><link href="http://www.chriskrycho.com/2016/2016-02-01-0730.html" rel="alternate"></link><published>2016-02-01T07:30:00-05:00</published><updated>2016-02-01T07:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2016-02-01:/2016/2016-02-01-0730.html</id><summary type="html">&lt;p&gt;Seems about right for the primary season actually kicking into gear, given the preliminaries:&lt;/p&gt;
 &lt;figure&gt;
-&lt;video&gt; &lt;source src='http://cdn.chriskrycho.com/joker.mp4' type='video/mp4'&gt; &lt;img src='http://cdn.chriskrycho.com/joker.gif' title='And here. we. go.' alt='Joker saying "And here. we. go."'/&gt; &lt;/video&gt;
+&lt;video autoplay=autoplay muted=muted playsinline=playsinline loop=loop&gt; &lt;source type='video/mp4' src='http://cdn.chriskrycho.com/joker.mp4'&gt; &lt;img src='http://cdn.chriskrycho.com/joker.gif' title='And here. we. go.' alt='Joker saying "And here. we. go."'/&gt; &lt;/video&gt;
 &lt;figcaption&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 </summary><content type="html">&lt;p&gt;Seems about right for the primary season actually kicking into gear, given the preliminaries:&lt;/p&gt;
 &lt;figure&gt;
-&lt;video&gt; &lt;source src='http://cdn.chriskrycho.com/joker.mp4' type='video/mp4'&gt; &lt;img src='http://cdn.chriskrycho.com/joker.gif' title='And here. we. go.' alt='Joker saying "And here. we. go."'/&gt; &lt;/video&gt;
+&lt;video autoplay=autoplay muted=muted playsinline=playsinline loop=loop&gt; &lt;source type='video/mp4' src='http://cdn.chriskrycho.com/joker.mp4'&gt; &lt;img src='http://cdn.chriskrycho.com/joker.gif' title='And here. we. go.' alt='Joker saying "And here. we. go."'/&gt; &lt;/video&gt;
 &lt;figcaption&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
