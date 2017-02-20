@@ -10,4 +10,10 @@ Category: micro
 Seems about right for the primary season actually kicking into gear, given the
 preliminaries:
 
-!["And here. we. go."](https://media.giphy.com/media/YPIrsRqqO7oB2/giphy.gif)
+<figure>
+  <video>
+    <source src='http://cdn.chriskrycho.com/joker.mp4' type='video/mp4'>
+    <img src='http://cdn.chriskrycho.com/joker.gif' title='And here. we. go.' alt='Joker saying "And here. we. go."'/>
+  </video>
+  <figcaption></figcaption>
+</figure>
