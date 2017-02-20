@@ -296,7 +296,13 @@ Since the key and the name don't match, the compiler tells us we didn't keep the
 
 And the TypeScript language service---which you can use from a *lot* of editors, including VS Code, Atom, Sublime Text, and the JetBrains IDEs---will actually give you the correct completion when you start definition a type. So imagine we were defining some other union type elsewhere in our program to handle events. Now we can use the same `UnionKeyToValue` type to construct this type, with immediate, *correct* feedback from the TypeScript language service:
 
-![TypeScript live code completion of the mapped type](http://cdn.chriskrycho.com/images/completion.gif "video of constrained completion")
+<figure>
+  <video autoplay=autoplay muted=muted playsinline=playsinline loop=loop>
+    <source type='video/mp4' src='http://cdn.chriskrycho.com/images/completion.mp4'>
+    <img src='http://cdn.chriskrycho.com/images/completion.gif' title='video of constrained completion' alt='TypeScript live code completion of the mapped type'>
+  </video>
+  <figcaption>TypeScript live code completion of the mapped type</figcaption>
+</figure>
 
 By inverting our original approach of using `keyof` (itself powerful and worth using in quite a few circumstances) and instead using the new mapped types, we get a *ton* of mileage in terms of productivity when using these types---errors prevented, and speed of writing the code in the first place increased as well.
 
@@ -304,7 +310,14 @@ Yes, it's a little verbose and it does require duplicating the strings whenever 
 
 [^duplication]: It would be great if we could get these benefits without the duplication---maybe someday we'll have better support in JS or TS natively.
 
-![Updating a union](http://cdn.chriskrycho.com/images/change-union.gif "video of union update")
+<figure>
+  <video autoplay=autoplay muted=muted playsinline=playsinline loop=loop>
+    <source type='video/mp4' src='http://cdn.chriskrycho.com/images/change-union.mp4'>
+    <img src='http://cdn.chriskrycho.com/images/change-union.gif' title='Updating a union' alt='video of union update'/>
+  </video>
+  <figcaption>Updating a union</figcaption>
+</figure>
+
 
 So it's a lot more work than it would be in, say, Elm. But it's also a lot more guarantees than I'd get in plain-old-JavaScript, or even TypeScript two months ago.
 
