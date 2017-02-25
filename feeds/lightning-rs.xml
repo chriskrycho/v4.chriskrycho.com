@@ -17,4 +17,26 @@
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 22 Oct 2016 20:20:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-10-22:/2016/10-22-2020.html</guid><category>rust</category><category>software development</category><category>lightning-rs</category></item><item><title></title><link>http://www.chriskrycho.com/2016/10-21-1332.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/737629809241645056"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;My online writing needs are weird. I have searched for years, and unfortunately… I need to write a custom …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 21 Oct 2016 13:32:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-10-21:/2016/10-21-1332.html</guid><category>rust</category><category>software development</category><category>tweetstorm</category><category>lightning-rs</category></item></channel></rss>
+&lt;li&gt;&lt;p&gt;My online writing needs are weird. I have searched for years, and unfortunately… I need to write a custom CMS.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="http://reactiongif.org/wp-content/uploads/GIF/2014/12/Darth-Vader-NOOO-GIF.gif" title="NOOOOOOOO!" /&gt;
+&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I thought briefly about hammering together what I need with Metalsmith.io and its plugins. But that would be a stopgap.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;So the inevitable comes to pass: I commit to, however slowly, build the CMS I need.&lt;/p&gt;
+&lt;p&gt;Probably in Rust—so it should be crazy fast.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If you want to follow along on this site generator/CMS adventure (it’ll move slowly), you can do so &lt;a href="https://github.com/chriskrycho/lightning-rs"&gt;here&lt;/a&gt;.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Status: looking at C bindings for Pandoc and thinking about implementing a Rust wrapper for libpandoc vs. shelling out to pandoc. 🤔&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;First pass: just going to shell out on the command line. Second pass… well, if speed is what I’m going for…&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I’ve guessed this for a while, but I can confirm it now: &lt;a href="https://clap.rs"&gt;Clap&lt;/a&gt; is a &lt;em&gt;really&lt;/em&gt; fantastic command-line argument library.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;For posterity’s sake (ha!) it’s worth note that the original link here was to &lt;code&gt;yassg-btwir&lt;/code&gt; not &lt;code&gt;lightning-rs&lt;/code&gt;. I actually noted as much, writing:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;That repo name is for “Yet Another Static Site Generator (This One’s In Rust)” because I feel &lt;em&gt;so&lt;/em&gt; creative today.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Note the headdesk-worthy initialism failure: it should have been &lt;code&gt;btoir&lt;/code&gt; not &lt;code&gt;btwir&lt;/code&gt;. ¯\_(ツ)_/¯&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 21 Oct 2016 13:32:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-10-21:/2016/10-21-1332.html</guid><category>rust</category><category>software development</category><category>tweetstorm</category><category>lightning-rs</category></item></channel></rss>

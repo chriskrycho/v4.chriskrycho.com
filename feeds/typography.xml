@@ -22,7 +22,72 @@
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 22 Nov 2015 13:40:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-11-22:/2015/2015-11-22-1340.html</guid><category>typography</category></item><item><title>CSS Fallback for OpenType Small Caps</title><link>http://www.chriskrycho.com/2015/css-fallback-for-opentype-small-caps.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I wrote this up as &lt;a href="http://stackoverflow.com/questions/24846264/css-fallback-for-opentype-small-caps/25172932#25172932"&gt;a question on Stack Overflow&lt;/a&gt; a bit over a year ago. It has continued to get a fair bit of traffic, so I’ve republished it here and cleaned it up a bit.&lt;/i&gt;&lt;/p&gt;
 &lt;section id="the-problem" class="level2"&gt;
 &lt;h2&gt;The Problem&lt;/h2&gt;
-&lt;p&gt;Over the last year, I’ve worked on &lt;a href="//holybible.com"&gt;a site …&lt;/a&gt;&lt;/p&gt;&lt;/section&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 19 Oct 2015 20:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-10-19:/2015/css-fallback-for-opentype-small-caps.html</guid><category>design</category><category>software development</category><category>typography</category></item><item><title></title><link>http://www.chriskrycho.com/2015/2015-09-14-1556.html</link><description>&lt;p&gt;I’m extremely impressed with the recently released &lt;a href="http://sourcefoundry.org/hack/"&gt;Hack&lt;/a&gt; typeface. I’m currently using it at 11pt in my terminal, at 1920 by 1200 on my retina MacBook Pro—and it’s totally usable.&lt;/p&gt;
+&lt;p&gt;Over the last year, I’ve worked on &lt;a href="//holybible.com"&gt;a site&lt;/a&gt; where small caps are important: setting the text of the Bible. In the Old Testament the name of God is transliterated as &lt;code&gt;Lord&lt;/code&gt; but in small caps—not “LORD” but &lt;span class="divine-name"&gt;Lord&lt;/span&gt; (RSS readers will want to click through and see this on my site). However, the state of OpenType small caps support at the moment is… less than optimal. Safari (even up through Safari 9 on El Capitan, from which I am typing this) still doesn’t support the &lt;code&gt;-webkit-font-feature-settings: 'smcp'&lt;/code&gt; option, and a lot of the hits for this website will be coming from mobile.&lt;/p&gt;
+&lt;p&gt;Unfortunately, “graceful degradation” is problematic here: if you specify both &lt;code&gt;font-variant: small-caps&lt;/code&gt; and &lt;code&gt;font-feature-settings: 'smcp'&lt;/code&gt; in a browser that supports the latter (e.g. Chrome), the &lt;code&gt;font-variant&lt;/code&gt; declaration overrides it, so the horribly ugly old-style version still comes into play. (Note: this is as it should be per the &lt;a href="http://www.w3.org/TR/css-fonts-3/#feature-precedence"&gt;spec&lt;/a&gt;: the &lt;code&gt;font-variant&lt;/code&gt; declaration has a higher priority than the &lt;code&gt;font-feature-settings&lt;/code&gt; declaration). Given the current implementations of &lt;code&gt;font-variant: small-caps&lt;/code&gt;, though—shrunken capitals rather than actual small capitals—the result is that using &lt;code&gt;font-variant: small-caps&lt;/code&gt; realists in not-so-gracefully degrading &lt;em&gt;everyone’s&lt;/em&gt; reading experience.&lt;/p&gt;
+&lt;p&gt;In the past, I have exported the small caps as a distinct webfont and specified them directly; see &lt;a href="http://www.chriskrycho.com/2014/learning-qml-part-1.html"&gt;this post&lt;/a&gt; for a simple example: the first line of each paragraph is specified that way.&lt;/p&gt;
+&lt;p&gt;While I &lt;em&gt;can&lt;/em&gt; do the same thing here (and at least in theory could deliver a pretty small typeface, since I really only need three characters: &lt;code&gt;o&lt;/code&gt;, &lt;code&gt;r&lt;/code&gt;, and &lt;code&gt;d&lt;/code&gt;), I’d prefer simply to enable sane fallbacks. As noted above, however, that’s not possible. I am &lt;em&gt;open to&lt;/em&gt; but would very much prefer to avoid server-side solutions (browser detection, etc.) as a point of complexity that is better to minimize, especially given how rapidly browsers change. How else might one solve this problem, and especially are there existing solutions for it?&lt;/p&gt;
+&lt;p&gt;In the future, &lt;code&gt;font-variant: small-caps&lt;/code&gt; will handle this nicely, as per &lt;a href="http://www.w3.org/TR/css3-fonts/#small-caps"&gt;the spec&lt;/a&gt; it should display a small-capitals-variant of the typeface if the typeface supplies it. However, at present, &lt;em&gt;no browser supports this&lt;/em&gt; (at least, none that I can find!). This means that instead, they all render fake small capitals simply by scaling down actual capitals. The result is typographically unpleasant, and unacceptable on this project.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="the-solutions" class="level2"&gt;
+&lt;h2&gt;The Solution(s)&lt;/h2&gt;
+&lt;p&gt;I spent a considerable amount of time researching this and wrestling with it. After digging around as best I could, the top solutions for now are:&lt;/p&gt;
+&lt;section id="supports" class="level3"&gt;
+&lt;h3&gt;&lt;code&gt;@supports&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Take advantage of the &lt;code&gt;@supports&lt;/code&gt; rule in browsers. This is what I initially opted to do on this project.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; You use the rule this way:&lt;/p&gt;
+&lt;pre class="css"&gt;&lt;code&gt;.some-class {
+    font-variant: small-caps;
+}
+
+@supports(font-feature-settings: &amp;#39;smcp&amp;#39;) {
+    .some-class {
+        font-variant: normal;
+        font-feature-settings: &amp;#39;smcp&amp;#39;;
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(I’ve simplified by leaving out the prefixed versions; you’ll need to add the &lt;code&gt;-webkit-&lt;/code&gt; and &lt;code&gt;-moz-&lt;/code&gt; prefixes to get this actually working.) This has the advantage that support for real small caps and support for the &lt;code&gt;@supports&lt;/code&gt; rule are very similar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;@supports&lt;/code&gt;: &lt;a href="http://caniuse.com/#feat=css-featurequeries"&gt;Can I Use Feature Queries?&lt;/a&gt;: Chrome 31+, Firefox 29+, Opera 23+, Android 4.4+, Safari 9+, Edge 12+, Chrome for Android&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;font-feature-settings&lt;/code&gt;: &lt;a href="http://usabilitypost.com/2014/05/10/using-small-caps-and-text-figures-on-the-web/"&gt;Using Small Caps &amp;amp; Text Figures on the Web&lt;/a&gt;: Chrome, Firefox, IE10+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This isn’t perfect: since IE10/11 don’t implement &lt;code&gt;@supports&lt;/code&gt;, you miss one browser—sort of. At this point, IE is a legacy browser, and Edge has had &lt;code&gt;@supports&lt;/code&gt; available from the start. Thus, this gets you most of the way there, and it should be future-facing: this should progressively enhance the site nicely. The normal (bad, but functional) small caps are displayed in the meantime, and when browsers eventually get around to using OpenType small caps by default for &lt;code&gt;font-variant: small-caps&lt;/code&gt;, this will continue to work just fine. It’s “progressive enhancement” and it’ll work nicely for most purposes.&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="typeface-subsetting" class="level3"&gt;
+&lt;h3&gt;Typeface subsetting&lt;/h3&gt;
+&lt;p&gt;As mentioned above, one can create a subset of the typeface that includes only small capitals. This is what I have done for the small caps on this site; see the example in the first paragraph.&lt;/p&gt;
+&lt;p&gt;To pull this off, you’ll need to start by subsetting the typeface. You can do this manually with a font tool, or (the simpler way) you can use FontSquirrel’s custom subsetting tool in their &lt;a href="http://www.fontsquirrel.com/tools/webfont-generator"&gt;webfont generator&lt;/a&gt;. (&lt;strong&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/strong&gt; You &lt;em&gt;must&lt;/em&gt; check the license and confirm that the typeface in question allows this kind of modification. See below.) In the web font generator, first upload the file you wish to modify. Then choose the &lt;strong&gt;Expert&lt;/strong&gt; radio button. Most of the settings you can leave as they are; they’re good sane defaults. Midway down the page you’ll see &lt;strong&gt;OpenType Flattening&lt;/strong&gt; options. Here, select only “Small Caps”. Run the generator. The result will be a complete replacement of the normal lowercase letters with the small caps set.&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In that case, you can simply apply a style to the elements you want to have small capitals, e.g.:&lt;/p&gt;
+&lt;pre class="css"&gt;&lt;code&gt;.divine-name {
+    font-family: &amp;#39;my_typeface_smcp&amp;#39;, &amp;#39;my_typeface&amp;#39;, serif;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The major advantage to this approach is consistency: that typeface is going to display on every browser out there, back to IE5.5, as long as you deliver it correctly using the various hooks required by &lt;code&gt;@font-face&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;There are a few disadvantages to this approach, though:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;It means delivering another font file. In my case, this would be an acceeptably low size (since I actually only need four characters), but it’s still something to consider in general. It is in any case another HTTP request, which is going to further slow the page load time or at least give you some flash of unstyled text when it reloads.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It may violate the licenses of the typefaces in question. For at least one of the fonts I used on this project, it &lt;em&gt;does&lt;/em&gt;: the license explicitly forbids rebuilding the font using tools like FontSquirrel. (FontSquirrel was the tool I used for this approach before, and it works quite well.) This is a make-or-break issue for using a subset of a typeface to accomplish the goal. That being said, if you have a good reason to do it, you may be able to get support from the vendor (especially if they’re a small shop). For the project that prompted this question, I was able to do just that with a nice email—the designer is a great guy.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The other major reason not to do it this way is that it has a significantly higher maintenance cost. If at any point you need to change or update the typeface, you have to go through the subsetting process all over again. By contrast, the first option will simply &lt;em&gt;work&lt;/em&gt;, though admittedly not as pleasantly as one might hope, and will not only continue to work but will actually improve over time as browsers increase their implementation of the CSS3 standard.&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="conclusion" class="level2"&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;I opted for the second solution on HolyBible.com—typography was one of the driving differentiators for the site, so I prioritized it and did the necessary legwork for it. In general, though, the first option should work well for most sites. In any case, both ways work, though the first one is a &lt;em&gt;better&lt;/em&gt; example of progressive enhancement. And we can all look forward to the day when true small-caps support is available on every browser, right?&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;For various reasons (especially see note 2 below), I actually opted for the second approach outlined here, which is the same approach I was trying to avoid. Alas.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;Issues remain: even in the latest Chrome (46 as of the time of this post), using the &lt;code&gt;font-feature-settings: 'smcp'&lt;/code&gt; approach has some issues. For example, if you turn on &lt;code&gt;letter-spacing&lt;/code&gt; (a fairly common &lt;a href="http://practicaltypography.com/letterspacing.html"&gt;recommendation&lt;/a&gt; for small caps), the small caps will revert to normal lowercase letters.&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn3"&gt;&lt;p&gt;From the FontSquirrel blog post that introduced the feature:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you have a font with OpenType features, you can now flatten some of them into your webfont. For instance, some fonts have small caps built in, but they are completely inaccessible in a web browser. By selecting the “Small Cap” option, the Generator will replace all the lowercase glyphs with the small cap variants, giving you a small cap font. Please note that not all OpenType features are supported and if the font lacks OpenType features, using these options won’t create them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a href="#fnref3"&gt;↩&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 19 Oct 2015 20:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-10-19:/2015/css-fallback-for-opentype-small-caps.html</guid><category>design</category><category>software development</category><category>typography</category></item><item><title></title><link>http://www.chriskrycho.com/2015/2015-09-14-1556.html</link><description>&lt;p&gt;I’m extremely impressed with the recently released &lt;a href="http://sourcefoundry.org/hack/"&gt;Hack&lt;/a&gt; typeface. I’m currently using it at 11pt in my terminal, at 1920 by 1200 on my retina MacBook Pro—and it’s totally usable.&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
@@ -45,9 +110,22 @@
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 08 Aug 2015 18:27:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-08-08:/2015/2015-08-08-1827.html</guid><category>typography</category></item><item><title></title><link>http://www.chriskrycho.com/2015/2015-08-07-2145.html</link><description>&lt;p&gt;Well, blast. I was thinking I might also use Input for the website design for &lt;a href="http://newrustacean.com" title="As of publication time, not live yet!"&gt;NewRustacean.com&lt;/a&gt;. But &lt;a href="http://www.webtype.com"&gt;Webtype&lt;/a&gt; doesn’t offer a purchase model, only a subscription model, and I’d really—&lt;em&gt;really&lt;/em&gt;—rather not. Not least because it locks me in well past whatever point I end the …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 07 Aug 2015 21:45:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-08-07:/2015/2015-08-07-2145.html</guid><category>typography</category></item><item><title></title><link>http://www.chriskrycho.com/2015/2015-08-07-2137.html</link><description>&lt;p&gt;Thinking about setting &lt;a href="http://input.fontbureau.com"&gt;Input&lt;/a&gt; as my typeface for doing my development for a week or two, see how it goes.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 08 Aug 2015 18:27:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-08-08:/2015/2015-08-08-1827.html</guid><category>typography</category></item><item><title></title><link>http://www.chriskrycho.com/2015/2015-08-07-2145.html</link><description>&lt;p&gt;Well, blast. I was thinking I might also use Input for the website design for &lt;a href="http://newrustacean.com" title="As of publication time, not live yet!"&gt;NewRustacean.com&lt;/a&gt;. But &lt;a href="http://www.webtype.com"&gt;Webtype&lt;/a&gt; doesn’t offer a purchase model, only a subscription model, and I’d really—&lt;em&gt;really&lt;/em&gt;—rather not. Not least because it locks me in well past whatever point I end the show.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 07 Aug 2015 21:45:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-08-07:/2015/2015-08-07-2145.html</guid><category>typography</category></item><item><title></title><link>http://www.chriskrycho.com/2015/2015-08-07-2137.html</link><description>&lt;p&gt;Thinking about setting &lt;a href="http://input.fontbureau.com"&gt;Input&lt;/a&gt; as my typeface for doing my development for a week or two, see how it goes.&lt;/p&gt;
 &lt;p&gt;Anybody tried it? Bugs or problems to report?&lt;/p&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 07 Aug 2015 21:37:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-08-07:/2015/2015-08-07-2137.html</guid><category>software development</category><category>typography</category></item><item><title>Tolle Lege!</title><link>http://www.chriskrycho.com/2015/tolle-lege.html</link><description>Designing Readable Bibles with Digital Typography (BibleTech 2015 conference talk)</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 01 May 2015 10:30:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-05-01:/2015/tolle-lege.html</guid><category>design</category><category>typography</category><category>talks</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 07 Aug 2015 21:37:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-08-07:/2015/2015-08-07-2137.html</guid><category>software development</category><category>typography</category></item><item><title>Tolle Lege!</title><link>http://www.chriskrycho.com/2015/tolle-lege.html</link><description>&lt;p&gt;I was delighted to be able to give a talk at &lt;a href="http://bibletechconference.com/"&gt;BibleTech&lt;/a&gt; this year. I spoke for almost exactly 40 minutes on the subject of digital typography, with a focus on some of the nitty-gritty details that make texts readable… or not. Here is the screen capture and audio from the talk!&lt;/p&gt;
+&lt;div class="iframe-wrapper four-to-three"&gt;
+&lt;iframe src="https://player.vimeo.com/video/126655499" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;You can also access the &lt;a href="/talks/bibletech2015/"&gt;slides&lt;/a&gt; whenever you like (though note that they were designed to be complements to the talk, &lt;em&gt;not&lt;/em&gt; the content of the talk, and as such they elide a great deal of the content).&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 01 May 2015 10:30:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-05-01:/2015/tolle-lege.html</guid><category>design</category><category>typography</category><category>talks</category></item></channel></rss>

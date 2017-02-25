@@ -1,0 +1,13 @@
+---
+Title: ""
+Date: 2017-02-25 13:50
+Tags: music
+Template: formats/micro
+Slug: 02-25-1350
+Category: micro
+---
+
+Just discovered [LJOVA] via his [Clarinet Quintet]. Wow. Absolutely marvelous.
+
+[LJOVA]: http://www.ljova.com
+[Clarinet Quintet]: https://soundcloud.com/ljova/clarinet-quintet-world-premiere

@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2017-02-24 07:00
+Tags: logic, programming languages
+Template: formats/micro
+Slug: 02-24-0700
+Category: micro
+---
+
+In the last week I found several blogs that explained _logic_ (as a discipline, and some of its particulars too) *well*. Unsurprisingly, given my enjoyment of software development and programming languages, I really like logic. Too bad none of my prior introductions were any good!
