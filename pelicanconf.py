@@ -21,6 +21,10 @@ IMAGE_DIR = SITEURL + '/' + THEME_STATIC_DIR + '/images'
 
 LOGO = IMAGE_DIR + '/ck.png'
 
+# Always supply full posts. Truncated posts are annoying; this is a stupid
+# default -- don't replicate it in Lightning!
+RSS_FEED_SUMMARY_ONLY = False
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
