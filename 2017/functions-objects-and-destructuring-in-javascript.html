@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Functions, Objects, and Destructuring in JavaScript &middot; Chris Krycho</title>
+    <meta name="description" content="A colleague just getting his feet wet with JavaScript, and coming from a background with much more C# than JavaScript, sent me a question on Slack the other day, and I realized the answer I’d written up was more generally helpful, so here you go! I’m including the …"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2017/functions-objects-and-destructuring-in-javascript.html"/>
+    <meta property="og:title" content="Functions, Objects, and Destructuring in JavaScript"/>
+    <meta property="og:description" content="A colleague just getting his feet wet with JavaScript, and coming from a background with much more C# than JavaScript, sent me a question on Slack the other day, and I realized the answer I’d written up was more generally helpful, so here you go! I’m including the …"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Functions, Objects, and Destructuring in JavaScript"/>
+    <meta name="twitter:description" content="A colleague just getting his feet wet with JavaScript, and coming from a background with much more C# than JavaScript, sent me a question on Slack the other day, and I realized the answer I’d written up was more generally helpful, so here you go! I’m including the …"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="javascript tech">
+
+    <header>
+<h1>Functions, Objects, and Destructuring in JavaScript</h1>
+<h2>On functions in JS and some fun bits in ES2015 in particular</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2017/functions-objects-and-destructuring-in-javascript.html"><i class="fa fa-fw fa-link"></i></a>March 27, 2017</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a></span><span><a href="http://www.chriskrycho.com/2017/functions-objects-and-destructuring-in-javascript.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class=editorial>A colleague just getting his feet wet with JavaScript, and coming from a background with much more C# than JavaScript, sent me a question on Slack the other day, and I realized the answer I’d written up was more generally helpful, so here you go!</i></p>
+<p>I’m including the context of original question because I want to call out something really important: there are no dumb questions. When you’re just coming up to speed on <em>any</em> technology, stuff is going to be confusing. That goes double when making the jump as far as between something like C# and something like modern JS.</p>
+<blockquote>
+<p>Hey this may be a really dumb question</p>
+<p>but I’m a JavaScript n00b, and I have no idea what’s going on here</p>
+<p>I’m not used to this syntax</p>
+<p>I have this program:</p>
+<pre class="js"><code>function ab() {
+   function fa() { console.log(&quot;A&quot;); };
+   function fb() { console.log(&quot;B&quot;); };
+   return {fa, fb};
+};
+
+let {fa, fb} = ab();
+
+fa();
+fb();</code></pre>
+<p>and it outputs</p>
+<pre><code>A
+B</code></pre>
+<p>(as expected)</p>
+<p>What I don’t understand is the syntax for the <code>let</code> part (or maybe even the return from <code>ab()</code>)</p>
+<ol type="A">
+<li><p>What is <code>ab()</code> actually returning? An object with 2 function pointers?</p></li>
+<li><p>What can’t I do a <code>let {a, b} = ab()</code> and then call <code>a()</code> and <code>b()</code>? I get syntax errors that <code>a</code> and <code>b</code> aren’t defined</p></li>
+</ol>
+<p><em>edit to show code that doesn’t work (definition of ab() remains the same):</em></p>
+<pre class="js"><code>let {a, b} = ab();
+
+a(); // will throw an error here
+b();</code></pre>
+<p>I don’t understand why the names for <code>fa</code> and <code>fb</code> have to be the same across all scopes/closures (? am I using those terms correctly? JavaScript is an odd dance partner at times)</p>
+</blockquote>
+<hr />
+<p>First, your (A) is <em>basically</em> correct, but the phrase “function pointers” is one you should banish from your mind entirely in this context. In JavaScript, functions are just items like any other. From the language’s perspective, there’s no difference between these things other than what you can do with them:</p>
+<pre class="js"><code>let foo = &quot;a string&quot;;
+function quux(blah) { console.log(&quot;blah is &quot; + blah); }
+let bar = quux;</code></pre>
+<p>Both <code>foo</code> and <code>bar</code> are just variables. (<code>quux</code> is a variable, too, but it behaves a little differently; I’ll cover that in a minute.) They have different types, and therefore different things you can do on them. <code>foo</code> has the <code>length</code> property and a bunch of string-specific methods attached. <code>bar</code> is callable. But both of them are just <em>things</em> in the same way, and at the same level in the program.</p>
+<p>So in your original <code>function ab() { ... }</code>, what you’re doing is declaring two functions, <code>fa</code> and <code>fb</code>, and returning them attached to an object.</p>
+<p>For various reasons which aren’t especially interesting, functions can have <em>names</em>…</p>
+<pre class="js"><code>function fa() { ... }</code></pre>
+<p>…and can be <em>assigned to other variables</em>…</p>
+<pre class="js"><code>let trulyISayToYou = function waffles() { console.log(&quot;are so tasty&quot;); };</code></pre>
+<p>…and in fact you can define the functions <em>themselves</em> anonymously, that is, without any name attached to the function declaration itself: combine those:</p>
+<pre class="js"><code>let lookMa = function() { console.log(&quot;no function name!&quot;); };</code></pre>
+<p>Doing <code>function ab() { ... }</code> simultaneously <em>declares</em> the function and <em>hoists</em> it, that is, it makes it available in that entire scope, regardless of where it is defined. So you can do this, even though it’s kind of insane most of the time and you shouldn’t:</p>
+<pre class="js"><code>quux();
+function quux() { console.log(&#39;SRSLY?&#39;); }</code></pre>
+<hr />
+<p>Now, about returning <code>fa</code> and <code>fb</code> from the function.</p>
+<p>First, note that you normally define objects in a long form, like so:</p>
+<pre class="js"><code>let someObject = {
+  a: true,
+  b: &#39;some string&#39;
+};
+
+console.log(someObject.a);  // prints true
+console.log(someObject.b);  // prints &quot;some string&quot;</code></pre>
+<p>However, very, <em>very</em> often, you find yourself doing something like this:</p>
+<pre class="js"><code>// do some work to define what `a` and `b` should be, then...
+let someObject = {
+  a: a,
+  b: b
+};</code></pre>
+<p>Because this is such a common pattern, the 2015 version of JS introduced a “shorthand,” which lets you just write that last assignment like this:</p>
+<pre class="js"><code>let someObject = {
+  a,
+  b
+};</code></pre>
+<p>And of course, for convenience we often write that on one line:</p>
+<pre class="js"><code>let someObject = { a, b };</code></pre>
+<p>Then you can combine that with the fact that you declared two items (functions, but again: that <em>really</em> doesn’t matter, they could be anything) with the names <code>fa</code> and <code>fb</code>, and what you’re doing is returning an object containing those two items in it: <code>return {fa, fb}</code> is equivalent to this:</p>
+<pre class="js"><code>let theFunctions = {
+  fa: fa,
+  fb: fb, 
+};
+return theFunctions;</code></pre>
+<hr />
+<p>What about the <code>let</code> assignment?</p>
+<p>JS has three kinds of name bindings: <code>var</code>, <code>let</code>, and <code>const</code>. <code>var</code> bindings act like <code>function</code>: the names you use get “hoisted”. So:</p>
+<pre class="js"><code>console.log(neverDefined);  // throws an error
+console.log(definedLater);  // prints undefined
+var definedLater = &quot;what&quot;;
+console.log(definedLater);  // prints &quot;what&quot;</code></pre>
+<p><code>let</code> and <code>const</code> behave much more like you’d expect: they’re only valid <em>after</em> they’re defined, and they’re scoped to the blocks they appear in. (<code>var</code> will escape things like <code>if</code> blocks, too. It’s crazy-pants.) The difference between <code>let</code> and <code>const</code> is that they create <em>mutable</em> or <em>immutable</em> <em>bindings</em> to a name.</p>
+<p>So <code>let a = true;</code> is just creating a name, <code>a</code>, and binding the value <code>true</code> to it. Likewise, with <code>const b = false;</code> it’s creating a name, <code>b</code>, and binding the value <code>false</code> to it. And those <em>won’t</em> be hosted. Now, having done <code>let a = true;</code> we could on the next line write <code>a = false;</code> and that’s fine: <code>let</code> bindings are mutable; they can change. We’ll get an error if we try to do <code>b = true;</code> though, because <code>const</code> bindings are <em>not</em> mutable.</p>
+<p>One thing to beware of with that: things like objects and arrays, being reference types, are not themselves created as immutable when you use <code>const</code>. Rather, the specific <em>instance</em> is immutably bound to the name. So:</p>
+<pre class="js"><code>const foo = { a: true };
+foo.b = &#39;I can add properties!&#39;;  // okay
+delete foo.a;  // okay
+foo = { c: &quot;assign a new object&quot; };  // will error</code></pre>
+<p>You can change the internals of the item bound to the name, but not assign a new item to the name. For value types (numbers, booleans, etc.), that makes them behave like <em>constants</em> in other languages. You have to use something like <code>Object.freeze</code> to get actually constant object types.</p>
+<p>That was a long digression to explain what you’re seeing in a general sense with <code>let</code>.</p>
+<hr />
+<p>Finally, let’s come back around and talk about that assignment and why you need the names <code>fa</code> and <code>fb</code>.</p>
+<p>As noted, <code>ab()</code> returns an object with two items attached, <code>fa</code> and <code>fb</code>. (And again: functions are <em>just</em> items in JS.) So you could also write that like this:</p>
+<pre class="js"><code>let theFunctions = ab();  // theFunctions is now the object returned
+theFunctions.fa();  // and it has the `fa` item on it
+theFunctions.fb();  // and the `fb` item, too</code></pre>
+<p>Of course, if your original <code>ab()</code> function had returned other properties, they’d be accessible there, too, in just the same way (though they wouldn’t be callable if they weren’t functions).</p>
+<p>Again, this is a super common pattern: you want to immediately do something with the values returned on an object by some function, and you don’t necessarily want to type out the name of the object every time. So ES2015 introduced <em>destructuring</em> to help with this problem. I’ll do it without the function in the way to show how it works at the simplest level first.</p>
+<pre class="js"><code>let someObject = {
+  foo: &#39;what is a foo anyway&#39;,
+  bar: &#39;hey, a place to drink *or* a thing to hit people with&#39;,
+  quux: &#39;is this like a duck&#39;
+};
+
+console.log(someObject.foo);  // etc.</code></pre>
+<p>Now, if we wanted to get at <code>foo</code>, <code>bar</code>, and <code>quux</code>, we could always do that with <code>someObject.quux</code> and so on. But, especially if we have some large object floating around, we often just want a couple properties from it—say, in this case, <code>foo</code> and <code>quux</code>. We could do that like this:</p>
+<pre class="js"><code>let foo = someObject.foo;
+let quux = someObject.quux;</code></pre>
+<p>And of course those new names <em>don’t</em> have to match:</p>
+<pre class="js"><code>let whatever = someObject.foo;
+let weLike = someObject.quux;</code></pre>
+<p>However, because wanting to snag just a couple items off of objects like this is so common, the shorthand is available. In the case of the shorthand for <em>destructuring</em>, just like the case of the shorthand for object creation, the names have to match: otherwise, it wouldn’t know what to match them with.</p>
+<pre class="js"><code>let { foo, quux } = someObject;</code></pre>
+<p>So, going back to your original example: <code>ab()</code> returns an object which has the items <code>fa</code> and <code>fb</code> on it. You’re using the destructuring assignment there to get just <code>fa</code> and <code>fb</code>. There’s no reason they <em>have</em> to be those names in the outer scope, other than that you’re using the destructuring assignment. You could also do this:</p>
+<pre class="js"><code>let theFunctions = ab();
+let oneOfThem = theFunctions.fa;
+let theOtherOne = theFunctions.fb;
+oneOfThem();  // does what fa() does
+theOtherOne();  // does what fb() does</code></pre>
+<hr />
+<p>I <em>think</em> that covers everything your questions brought up; but please feel free to ask more!</p>
+<p>The most important thing to take away is that even though yes, those are pointers to functions under the hood, in JS that’s <em>absolutely</em> no different than the fact that there are pointers to objects and arrays under the hood. Functions are just more items you can do things with. You can put them on objects, you can return them directly, you can take them as arguments, etc.</p>
+<p>Hopefully that’s helpful!</p>
+<hr />
+<p>Bonus content: in ES2015 and later, you can also define anonymous functions like this:</p>
+<pre class="js"><code>let someFunction = (someArg) =&gt; { console.log(someArg); };</code></pre>
+<p>This has some interesting side effects about the value of <code>this</code> in the body of the function you declare… but that’s for another time.</p>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2016/to-paint-god-as-a-man.html">To paint God as a man</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2017/corraling-my-coffee-habit.html">Corraling My Coffee Habit</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2017/functions-objects-and-destructuring-in-javascript.html">Functions, Objects, and Destructuring in JavaScript</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2017/01-16-collect.html">The Collect of the Day</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

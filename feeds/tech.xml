@@ -1,5 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2017-03-17T22:00:00-04:00</updated><entry><title>Pick the Right Tool for the Job</title><link href="http://www.chriskrycho.com/2017/pick-the-right-tool-for-the-job.html" rel="alternate"></link><published>2017-03-17T22:00:00-04:00</published><updated>2017-03-17T22:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2017-03-17:/2017/pick-the-right-tool-for-the-job.html</id><summary type="html">&lt;p&gt;Over the past few years, I’ve been experimenting with publishing microblog posts here on my website as the “canonical” source for them, inspired by some of Manton Reece’s &lt;a href="http://www.manton.org/2014/09/owning-the-microblog.html"&gt;early experiments&lt;/a&gt; that way. I have also spent a considerable amount of time trying to come up with a good …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Over the past few years, I’ve been experimenting with publishing microblog posts here on my website as the “canonical” source for them, inspired by some of Manton Reece’s &lt;a href="http://www.manton.org/2014/09/owning-the-microblog.html"&gt;early experiments&lt;/a&gt; that way. I have also spent a considerable amount of time trying to come up with a good way to share links, and have been rather stymied by the limitations of the static site generator I use (&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;): it does not support customizing the link target of RSS items.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2017-03-27T18:00:00-04:00</updated><entry><title>Functions, Objects, and Destructuring in JavaScript</title><link href="http://www.chriskrycho.com/2017/functions-objects-and-destructuring-in-javascript.html" rel="alternate"></link><published>2017-03-27T18:00:00-04:00</published><updated>2017-03-27T18:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2017-03-27:/2017/functions-objects-and-destructuring-in-javascript.html</id><summary type="html">&lt;p&gt;&lt;i class=editorial&gt;A colleague just getting his feet wet with JavaScript, and coming from a background with much more C# than JavaScript, sent me a question on Slack the other day, and I realized the answer I’d written up was more generally helpful, so here you go!&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;I’m including the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;i class=editorial&gt;A colleague just getting his feet wet with JavaScript, and coming from a background with much more C# than JavaScript, sent me a question on Slack the other day, and I realized the answer I’d written up was more generally helpful, so here you go!&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;I’m including the context of original question because I want to call out something really important: there are no dumb questions. When you’re just coming up to speed on &lt;em&gt;any&lt;/em&gt; technology, stuff is going to be confusing. That goes double when making the jump as far as between something like C# and something like modern JS.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hey this may be a really dumb question&lt;/p&gt;
+&lt;p&gt;but I’m a JavaScript n00b, and I have no idea what’s going on here&lt;/p&gt;
+&lt;p&gt;I’m not used to this syntax&lt;/p&gt;
+&lt;p&gt;I have this program:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;function ab() {
+   function fa() { console.log(&amp;quot;A&amp;quot;); };
+   function fb() { console.log(&amp;quot;B&amp;quot;); };
+   return {fa, fb};
+};
+
+let {fa, fb} = ab();
+
+fa();
+fb();&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and it outputs&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;A
+B&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(as expected)&lt;/p&gt;
+&lt;p&gt;What I don’t understand is the syntax for the &lt;code&gt;let&lt;/code&gt; part (or maybe even the return from &lt;code&gt;ab()&lt;/code&gt;)&lt;/p&gt;
+&lt;ol type="A"&gt;
+&lt;li&gt;&lt;p&gt;What is &lt;code&gt;ab()&lt;/code&gt; actually returning? An object with 2 function pointers?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What can’t I do a &lt;code&gt;let {a, b} = ab()&lt;/code&gt; and then call &lt;code&gt;a()&lt;/code&gt; and &lt;code&gt;b()&lt;/code&gt;? I get syntax errors that &lt;code&gt;a&lt;/code&gt; and &lt;code&gt;b&lt;/code&gt; aren’t defined&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;edit to show code that doesn’t work (definition of ab() remains the same):&lt;/em&gt;&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let {a, b} = ab();
+
+a(); // will throw an error here
+b();&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I don’t understand why the names for &lt;code&gt;fa&lt;/code&gt; and &lt;code&gt;fb&lt;/code&gt; have to be the same across all scopes/closures (? am I using those terms correctly? JavaScript is an odd dance partner at times)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;p&gt;First, your (A) is &lt;em&gt;basically&lt;/em&gt; correct, but the phrase “function pointers” is one you should banish from your mind entirely in this context. In JavaScript, functions are just items like any other. From the language’s perspective, there’s no difference between these things other than what you can do with them:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let foo = &amp;quot;a string&amp;quot;;
+function quux(blah) { console.log(&amp;quot;blah is &amp;quot; + blah); }
+let bar = quux;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Both &lt;code&gt;foo&lt;/code&gt; and &lt;code&gt;bar&lt;/code&gt; are just variables. (&lt;code&gt;quux&lt;/code&gt; is a variable, too, but it behaves a little differently; I’ll cover that in a minute.) They have different types, and therefore different things you can do on them. &lt;code&gt;foo&lt;/code&gt; has the &lt;code&gt;length&lt;/code&gt; property and a bunch of string-specific methods attached. &lt;code&gt;bar&lt;/code&gt; is callable. But both of them are just &lt;em&gt;things&lt;/em&gt; in the same way, and at the same level in the program.&lt;/p&gt;
+&lt;p&gt;So in your original &lt;code&gt;function ab() { ... }&lt;/code&gt;, what you’re doing is declaring two functions, &lt;code&gt;fa&lt;/code&gt; and &lt;code&gt;fb&lt;/code&gt;, and returning them attached to an object.&lt;/p&gt;
+&lt;p&gt;For various reasons which aren’t especially interesting, functions can have &lt;em&gt;names&lt;/em&gt;…&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;function fa() { ... }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…and can be &lt;em&gt;assigned to other variables&lt;/em&gt;…&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let trulyISayToYou = function waffles() { console.log(&amp;quot;are so tasty&amp;quot;); };&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…and in fact you can define the functions &lt;em&gt;themselves&lt;/em&gt; anonymously, that is, without any name attached to the function declaration itself: combine those:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let lookMa = function() { console.log(&amp;quot;no function name!&amp;quot;); };&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Doing &lt;code&gt;function ab() { ... }&lt;/code&gt; simultaneously &lt;em&gt;declares&lt;/em&gt; the function and &lt;em&gt;hoists&lt;/em&gt; it, that is, it makes it available in that entire scope, regardless of where it is defined. So you can do this, even though it’s kind of insane most of the time and you shouldn’t:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;quux();
+function quux() { console.log(&amp;#39;SRSLY?&amp;#39;); }&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;p&gt;Now, about returning &lt;code&gt;fa&lt;/code&gt; and &lt;code&gt;fb&lt;/code&gt; from the function.&lt;/p&gt;
+&lt;p&gt;First, note that you normally define objects in a long form, like so:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let someObject = {
+  a: true,
+  b: &amp;#39;some string&amp;#39;
+};
+
+console.log(someObject.a);  // prints true
+console.log(someObject.b);  // prints &amp;quot;some string&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However, very, &lt;em&gt;very&lt;/em&gt; often, you find yourself doing something like this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;// do some work to define what `a` and `b` should be, then...
+let someObject = {
+  a: a,
+  b: b
+};&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Because this is such a common pattern, the 2015 version of JS introduced a “shorthand,” which lets you just write that last assignment like this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let someObject = {
+  a,
+  b
+};&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And of course, for convenience we often write that on one line:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let someObject = { a, b };&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then you can combine that with the fact that you declared two items (functions, but again: that &lt;em&gt;really&lt;/em&gt; doesn’t matter, they could be anything) with the names &lt;code&gt;fa&lt;/code&gt; and &lt;code&gt;fb&lt;/code&gt;, and what you’re doing is returning an object containing those two items in it: &lt;code&gt;return {fa, fb}&lt;/code&gt; is equivalent to this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let theFunctions = {
+  fa: fa,
+  fb: fb, 
+};
+return theFunctions;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;p&gt;What about the &lt;code&gt;let&lt;/code&gt; assignment?&lt;/p&gt;
+&lt;p&gt;JS has three kinds of name bindings: &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;let&lt;/code&gt;, and &lt;code&gt;const&lt;/code&gt;. &lt;code&gt;var&lt;/code&gt; bindings act like &lt;code&gt;function&lt;/code&gt;: the names you use get “hoisted”. So:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;console.log(neverDefined);  // throws an error
+console.log(definedLater);  // prints undefined
+var definedLater = &amp;quot;what&amp;quot;;
+console.log(definedLater);  // prints &amp;quot;what&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;let&lt;/code&gt; and &lt;code&gt;const&lt;/code&gt; behave much more like you’d expect: they’re only valid &lt;em&gt;after&lt;/em&gt; they’re defined, and they’re scoped to the blocks they appear in. (&lt;code&gt;var&lt;/code&gt; will escape things like &lt;code&gt;if&lt;/code&gt; blocks, too. It’s crazy-pants.) The difference between &lt;code&gt;let&lt;/code&gt; and &lt;code&gt;const&lt;/code&gt; is that they create &lt;em&gt;mutable&lt;/em&gt; or &lt;em&gt;immutable&lt;/em&gt; &lt;em&gt;bindings&lt;/em&gt; to a name.&lt;/p&gt;
+&lt;p&gt;So &lt;code&gt;let a = true;&lt;/code&gt; is just creating a name, &lt;code&gt;a&lt;/code&gt;, and binding the value &lt;code&gt;true&lt;/code&gt; to it. Likewise, with &lt;code&gt;const b = false;&lt;/code&gt; it’s creating a name, &lt;code&gt;b&lt;/code&gt;, and binding the value &lt;code&gt;false&lt;/code&gt; to it. And those &lt;em&gt;won’t&lt;/em&gt; be hosted. Now, having done &lt;code&gt;let a = true;&lt;/code&gt; we could on the next line write &lt;code&gt;a = false;&lt;/code&gt; and that’s fine: &lt;code&gt;let&lt;/code&gt; bindings are mutable; they can change. We’ll get an error if we try to do &lt;code&gt;b = true;&lt;/code&gt; though, because &lt;code&gt;const&lt;/code&gt; bindings are &lt;em&gt;not&lt;/em&gt; mutable.&lt;/p&gt;
+&lt;p&gt;One thing to beware of with that: things like objects and arrays, being reference types, are not themselves created as immutable when you use &lt;code&gt;const&lt;/code&gt;. Rather, the specific &lt;em&gt;instance&lt;/em&gt; is immutably bound to the name. So:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const foo = { a: true };
+foo.b = &amp;#39;I can add properties!&amp;#39;;  // okay
+delete foo.a;  // okay
+foo = { c: &amp;quot;assign a new object&amp;quot; };  // will error&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can change the internals of the item bound to the name, but not assign a new item to the name. For value types (numbers, booleans, etc.), that makes them behave like &lt;em&gt;constants&lt;/em&gt; in other languages. You have to use something like &lt;code&gt;Object.freeze&lt;/code&gt; to get actually constant object types.&lt;/p&gt;
+&lt;p&gt;That was a long digression to explain what you’re seeing in a general sense with &lt;code&gt;let&lt;/code&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Finally, let’s come back around and talk about that assignment and why you need the names &lt;code&gt;fa&lt;/code&gt; and &lt;code&gt;fb&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;As noted, &lt;code&gt;ab()&lt;/code&gt; returns an object with two items attached, &lt;code&gt;fa&lt;/code&gt; and &lt;code&gt;fb&lt;/code&gt;. (And again: functions are &lt;em&gt;just&lt;/em&gt; items in JS.) So you could also write that like this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let theFunctions = ab();  // theFunctions is now the object returned
+theFunctions.fa();  // and it has the `fa` item on it
+theFunctions.fb();  // and the `fb` item, too&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Of course, if your original &lt;code&gt;ab()&lt;/code&gt; function had returned other properties, they’d be accessible there, too, in just the same way (though they wouldn’t be callable if they weren’t functions).&lt;/p&gt;
+&lt;p&gt;Again, this is a super common pattern: you want to immediately do something with the values returned on an object by some function, and you don’t necessarily want to type out the name of the object every time. So ES2015 introduced &lt;em&gt;destructuring&lt;/em&gt; to help with this problem. I’ll do it without the function in the way to show how it works at the simplest level first.&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let someObject = {
+  foo: &amp;#39;what is a foo anyway&amp;#39;,
+  bar: &amp;#39;hey, a place to drink *or* a thing to hit people with&amp;#39;,
+  quux: &amp;#39;is this like a duck&amp;#39;
+};
+
+console.log(someObject.foo);  // etc.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, if we wanted to get at &lt;code&gt;foo&lt;/code&gt;, &lt;code&gt;bar&lt;/code&gt;, and &lt;code&gt;quux&lt;/code&gt;, we could always do that with &lt;code&gt;someObject.quux&lt;/code&gt; and so on. But, especially if we have some large object floating around, we often just want a couple properties from it—say, in this case, &lt;code&gt;foo&lt;/code&gt; and &lt;code&gt;quux&lt;/code&gt;. We could do that like this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let foo = someObject.foo;
+let quux = someObject.quux;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And of course those new names &lt;em&gt;don’t&lt;/em&gt; have to match:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let whatever = someObject.foo;
+let weLike = someObject.quux;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However, because wanting to snag just a couple items off of objects like this is so common, the shorthand is available. In the case of the shorthand for &lt;em&gt;destructuring&lt;/em&gt;, just like the case of the shorthand for object creation, the names have to match: otherwise, it wouldn’t know what to match them with.&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let { foo, quux } = someObject;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So, going back to your original example: &lt;code&gt;ab()&lt;/code&gt; returns an object which has the items &lt;code&gt;fa&lt;/code&gt; and &lt;code&gt;fb&lt;/code&gt; on it. You’re using the destructuring assignment there to get just &lt;code&gt;fa&lt;/code&gt; and &lt;code&gt;fb&lt;/code&gt;. There’s no reason they &lt;em&gt;have&lt;/em&gt; to be those names in the outer scope, other than that you’re using the destructuring assignment. You could also do this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let theFunctions = ab();
+let oneOfThem = theFunctions.fa;
+let theOtherOne = theFunctions.fb;
+oneOfThem();  // does what fa() does
+theOtherOne();  // does what fb() does&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;p&gt;I &lt;em&gt;think&lt;/em&gt; that covers everything your questions brought up; but please feel free to ask more!&lt;/p&gt;
+&lt;p&gt;The most important thing to take away is that even though yes, those are pointers to functions under the hood, in JS that’s &lt;em&gt;absolutely&lt;/em&gt; no different than the fact that there are pointers to objects and arrays under the hood. Functions are just more items you can do things with. You can put them on objects, you can return them directly, you can take them as arguments, etc.&lt;/p&gt;
+&lt;p&gt;Hopefully that’s helpful!&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Bonus content: in ES2015 and later, you can also define anonymous functions like this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;let someFunction = (someArg) =&amp;gt; { console.log(someArg); };&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This has some interesting side effects about the value of &lt;code&gt;this&lt;/code&gt; in the body of the function you declare… but that’s for another time.&lt;/p&gt;
+</content><category term="javascript"></category></entry><entry><title>Pick the Right Tool for the Job</title><link href="http://www.chriskrycho.com/2017/pick-the-right-tool-for-the-job.html" rel="alternate"></link><published>2017-03-17T22:00:00-04:00</published><updated>2017-03-17T22:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2017-03-17:/2017/pick-the-right-tool-for-the-job.html</id><summary type="html">&lt;p&gt;Over the past few years, I’ve been experimenting with publishing microblog posts here on my website as the “canonical” source for them, inspired by some of Manton Reece’s &lt;a href="http://www.manton.org/2014/09/owning-the-microblog.html"&gt;early experiments&lt;/a&gt; that way. I have also spent a considerable amount of time trying to come up with a good …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Over the past few years, I’ve been experimenting with publishing microblog posts here on my website as the “canonical” source for them, inspired by some of Manton Reece’s &lt;a href="http://www.manton.org/2014/09/owning-the-microblog.html"&gt;early experiments&lt;/a&gt; that way. I have also spent a considerable amount of time trying to come up with a good way to share links, and have been rather stymied by the limitations of the static site generator I use (&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt;): it does not support customizing the link target of RSS items.&lt;/p&gt;
 &lt;p&gt;Both of these desires, combined with the breadth of my interests, have been motivating factors in my desire to &lt;a href="http://www.chriskrycho.com/lightning-rs/"&gt;build my own CMS/site generator&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;But as of today, I think I am setting aside those two needs, at least for the present (though the underlying information architecture needs for my site are not thereby particularly diminished, so Lightning will still aim for roughly the same goals when i get back to it).&lt;/p&gt;
 &lt;p&gt;My reasoning here is two-fold.&lt;/p&gt;
