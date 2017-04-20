@@ -1,10 +1,18 @@
 ---
-Title: Testing Ember.js Mixins With a Container
-Subtitle: Fixing "Attempting to lookup an injected property on an object without a container" errors in mixin tests.
+Title: Testing Ember.js Mixins (and Helpers) With a Container
+Subtitle: Fixing "Attempting to lookup an injected property on an object without a container" errors in mixin and helper tests.
 Date: 2016-06-09 20:35
-Modified: 2016-06-10 07:30
+Modified: 2017-04-20 07:15
 Tags: emberjs, javascript, software development
 Category: tech
+Slug: testing-emberjs-mixins-with-a-container
+
+---
+
+<i>Updated to note that the same concerns apply to helpers. You can always see the full revision history of this item [here][history].</i>
+
+[history]: https://github.com/chriskrycho/chriskrycho.com/commits/master/content/tech/ember-js-mixins-container.md 
+
 ---
 
 Today I was working on an Ember.js [mixin] for the new mobile web application we're shipping at Olo, and I ran into an interesting problem when trying to test it.
@@ -13,7 +21,7 @@ Today I was working on an Ember.js [mixin] for the new mobile web application we
 [\@rwjblue]: https://github.com/rwjblue
 [Ember Community Slack]: https://ember-community-slackin.herokuapp.com
 
-When you're testing mixins, you're generally not working with the normal Ember container.[^container] In fact, the default test setup for mixins doesn't have *any* container in play. It just looks like this (assuming you ran `ember generate mixin bar` in an app named `foo`):
+When you're testing mixins (or helpers), you're generally not working with the normal Ember container.[^container] In fact, the default test setup for mixins doesn't have *any* container in play. It just looks like this (assuming you ran `ember generate mixin bar` in an app named `foo`):
 
 ```js
 import Ember from 'ember';
@@ -35,9 +43,9 @@ Note two things:
 1. It uses the basic Qunit `module` setup, not the ember-qunit `moduleFor` setup.
 2. It assumes you're generating a new object instance for every single test.
 
-Both of those assumptions are fine, *if you don't need to interact with the container*. In many cases, that's perfectly reasonable---I'd go so far as to say that most mixins probably *shouldn't* have any dependency on the container.
+Both of those assumptions are fine, *if you don't need to interact with the container*. In many cases, that's perfectly reasonable---I'd go so far as to say that most mixins and helpers probably *shouldn't* have any dependency on the container.
 
-In the specific case I was working on, however, the point of the mixin was to abstract some common behavior which included all the interactions with a [service]. This meant making sure the dependency injection worked in the unit test. This in turn meant dealing with the container. So let's see what was involved in that.
+In the specific case I was working on, however, the point of the mixin was to abstract some common behavior which included all the interactions with a [service]. This meant making sure the dependency injection worked in the unit test. This in turn meant dealing with the container. So let's see what was involved in that. (You can generalize this approach to any place in the Ember ecosystem where you need to test something which doesn't normally have the container set up.)
 
 [service]: https://guides.emberjs.com/v2.6.0/applications/services/
 
