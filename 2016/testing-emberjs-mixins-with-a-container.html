@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Testing Ember.js Mixins With a Container &middot; Chris Krycho</title>
-    <meta name="description" content="Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it. When you’re testing mixins, you’re generally not working with the normal Ember container.1 In fact …"/>
+    <title>Testing Ember.js Mixins (and Helpers) With a Container &middot; Chris Krycho</title>
+    <meta name="description" content="Updated to note that the same concerns apply to helpers. You can always see the full revision history of this item here. Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when …"/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
 <link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.html"/>
-    <meta property="og:title" content="Testing Ember.js Mixins With a Container"/>
-    <meta property="og:description" content="Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it. When you’re testing mixins, you’re generally not working with the normal Ember container.1 In fact …"/>
+    <meta property="og:title" content="Testing Ember.js Mixins (and Helpers) With a Container"/>
+    <meta property="og:description" content="Updated to note that the same concerns apply to helpers. You can always see the full revision history of this item here. Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when …"/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/>
 <link rel="me" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-    <meta name="twitter:title" content="Testing Ember.js Mixins With a Container"/>
-    <meta name="twitter:description" content="Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it. When you’re testing mixins, you’re generally not working with the normal Ember container.1 In fact …"/>
+    <meta name="twitter:title" content="Testing Ember.js Mixins (and Helpers) With a Container"/>
+    <meta name="twitter:description" content="Updated to note that the same concerns apply to helpers. You can always see the full revision history of this item here. Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -77,19 +77,21 @@
 <article class="emberjs javascript software-development tech">
 
     <header>
-<h1>Testing Ember.js Mixins With a Container</h1>
-<h2>Fixing "Attempting to lookup an injected property on an object without a container" errors in mixin tests.</h2>    </header>
+<h1>Testing Ember.js Mixins (and Helpers) With a Container</h1>
+<h2>Fixing "Attempting to lookup an injected property on an object without a container" errors in mixin and helper tests.</h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.html"><i class="fa fa-fw fa-link"></i></a>June 09, 2016 (updated June 10, 2016)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.html"><i class="fa fa-fw fa-link"></i></a>June 09, 2016 (updated April 20, 2017)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
 
         <div class="content">
 
+<p><i>Updated to note that the same concerns apply to helpers. You can always see the full revision history of this item <a href="https://github.com/chriskrycho/chriskrycho.com/commits/master/content/tech/ember-js-mixins-container.md">here</a>.</i></p>
+<hr />
 <p>Today I was working on an Ember.js <a href="http://emberjs.com/api/classes/Ember.Mixin.html#content">mixin</a> for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it.</p>
-<p>When you’re testing mixins, you’re generally not working with the normal Ember container.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> In fact, the default test setup for mixins doesn’t have <em>any</em> container in play. It just looks like this (assuming you ran <code>ember generate mixin bar</code> in an app named <code>foo</code>):</p>
+<p>When you’re testing mixins (or helpers), you’re generally not working with the normal Ember container.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> In fact, the default test setup for mixins doesn’t have <em>any</em> container in play. It just looks like this (assuming you ran <code>ember generate mixin bar</code> in an app named <code>foo</code>):</p>
 <pre class="js"><code>import Ember from &#39;ember&#39;;
 import BarMixin from &#39;foo/mixins/bar&#39;;
 import { module, test } from &#39;qunit&#39;;
@@ -107,8 +109,8 @@ test(&#39;it works&#39;, function(assert) {
 <li>It uses the basic Qunit <code>module</code> setup, not the ember-qunit <code>moduleFor</code> setup.</li>
 <li>It assumes you’re generating a new object instance for every single test.</li>
 </ol>
-<p>Both of those assumptions are fine, <em>if you don’t need to interact with the container</em>. In many cases, that’s perfectly reasonable—I’d go so far as to say that most mixins probably <em>shouldn’t</em> have any dependency on the container.</p>
-<p>In the specific case I was working on, however, the point of the mixin was to abstract some common behavior which included all the interactions with a <a href="https://guides.emberjs.com/v2.6.0/applications/services/">service</a>. This meant making sure the dependency injection worked in the unit test. This in turn meant dealing with the container. So let’s see what was involved in that.</p>
+<p>Both of those assumptions are fine, <em>if you don’t need to interact with the container</em>. In many cases, that’s perfectly reasonable—I’d go so far as to say that most mixins and helpers probably <em>shouldn’t</em> have any dependency on the container.</p>
+<p>In the specific case I was working on, however, the point of the mixin was to abstract some common behavior which included all the interactions with a <a href="https://guides.emberjs.com/v2.6.0/applications/services/">service</a>. This meant making sure the dependency injection worked in the unit test. This in turn meant dealing with the container. So let’s see what was involved in that. (You can generalize this approach to any place in the Ember ecosystem where you need to test something which doesn’t normally have the container set up.)</p>
 <p>We start by switching from the basic <code>qunit</code> helpers to using the <code>ember-qunit</code> helpers.</p>
 <pre class="js"><code>// Replace this...
 import { module, test } from &#39;qunit&#39;;
@@ -204,9 +206,6 @@ test(&#39;the mixin+service does what it should&#39;, function(assert) {
 <hr />
 <p><strong>Side note:</strong> The documentation around testing mixins is relatively weak, and in general the testing docs are the weak bits in the Ember guides right now.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> After a conversation with <a href="https://github.com/rwjblue">@rwjblue</a> on the <a href="https://ember-community-slackin.herokuapp.com">Ember Community Slack</a>, though, I was able to get a handle on the issue, and here we are. Since it stumped me, I’m guessing I’m not the only one.</p>
 <p>When this happens, <em>write it up</em>. I’ve been guilty of this too often in the past few months: learning something new that I couldn’t find anywhere online, and then leaving it stored in my own head. It doesn’t take a particularly long time to write a blog post like this, and if you’re stuck, chances are <em>very</em> good someone else is too.</p>
-<div id="refs" class="references">
-
-</div>
 <section class="footnotes">
 <hr />
 <ol>
