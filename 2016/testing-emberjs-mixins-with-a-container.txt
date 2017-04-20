@@ -11,7 +11,7 @@ Slug: testing-emberjs-mixins-with-a-container
 
 <i>Updated to note that the same concerns apply to helpers. You can always see the full revision history of this item [here][history].</i>
 
-[history]: https://github.com/chriskrycho/chriskrycho.com/commits/gh-pages/2016/testing-emberjs-mixins-with-a-container.txt 
+[history]: https://github.com/chriskrycho/chriskrycho.com/commits/master/content/tech/ember-js-mixins-container.md 
 
 ---
 

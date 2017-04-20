@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Testing Ember.js Mixins (and Helpers) With a Container"/>
     <meta name="twitter:description" content="Updated to note that the same concerns apply to helpers. You can always see the full revision history of this item here. Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -88,7 +88,7 @@
 
         <div class="content">
 
-<p><i>Updated to note that the same concerns apply to helpers. You can always see the full revision history of this item <a href="https://github.com/chriskrycho/chriskrycho.com/commits/gh-pages/2016/testing-emberjs-mixins-with-a-container.txt">here</a>.</i></p>
+<p><i>Updated to note that the same concerns apply to helpers. You can always see the full revision history of this item <a href="https://github.com/chriskrycho/chriskrycho.com/commits/master/content/tech/ember-js-mixins-container.md">here</a>.</i></p>
 <hr />
 <p>Today I was working on an Ember.js <a href="http://emberjs.com/api/classes/Ember.Mixin.html#content">mixin</a> for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it.</p>
 <p>When you’re testing mixins (or helpers), you’re generally not working with the normal Ember container.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> In fact, the default test setup for mixins doesn’t have <em>any</em> container in play. It just looks like this (assuming you ran <code>ember generate mixin bar</code> in an app named <code>foo</code>):</p>
