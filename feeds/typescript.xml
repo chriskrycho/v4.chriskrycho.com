@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - TypeScript</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 08 Jan 2017 17:47:00 -0500</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2017/01-04-1046.html</link><description>&lt;p&gt;Follow-up from Twitter &lt;a href="http://www.chriskrycho.com/2017/typescript-keyof-follow-up.html"&gt;on my latest bit on TypeScript and &lt;code&gt;keyof&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - TypeScript</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 23 Apr 2017 17:20:00 -0400</lastBuildDate><item><title>Why Elm Instead of TypeScript?</title><link>http://www.chriskrycho.com/2017/why-elm-instead-of-typescript.html</link><description>&lt;p&gt;A few weeks ago, an acquaintance asked in a Slack channel we’re both in:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Can I ask a noob type Elm / JS question?&lt;/p&gt;
+&lt;p&gt;Why Elm instead of Typescript? The dev stack and functional programming?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I responded as follows, with only light tweaks to clarify a couple things (and I’ll be reusing some of this material as the basis of an internal tech talk I’m giving on the same subject at Olo in a few weeks):&lt;/p&gt;
+&lt;p&gt;A couple things Elm gives you:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;It’s not tied to JS directly, which means it’s free to just do what is the best fit for the language rather than needing to be able to express all the quirks and oddities of JS. That’s the single biggest thing I find all the time with TS (which I use every day and do quite like): as good as it is, and as both powerful and expressive as its type system is, at the end of the day it’s… still a superset of JavaScript, and that can mean some really nice things, but it also means a lot of &lt;em&gt;weird&lt;/em&gt; things.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Elm’s type system is &lt;em&gt;sound&lt;/em&gt;; TypeScript’s is not. At a practical level, that means that if an Elm program type-checks (and thus compiles), you can be &lt;em&gt;sure&lt;/em&gt; – not mostly sure, 100% sure – that it is free of things like &lt;code&gt;undefined is not a function&lt;/code&gt;. TypeScript does not (and by design cannot) give you that guarantee. And when I say “by design,” I mean that its designers believed from the outset that soundness was in tension with developer productivity, so they intentionally left a number of “soundness holes” in the type system—there’s still a lot of opportunity for &lt;code&gt;undefined is not a function&lt;/code&gt;, sad to say. You can make it &lt;em&gt;less&lt;/em&gt; than in JS… but not none. (That’s even still true in the TypeScript 2.x series, though the various soundness flags they added in 2.0 and the &lt;code&gt;--strict&lt;/code&gt; option &lt;a href="https://blogs.msdn.microsoft.com/typescript/2017/04/10/announcing-typescript-2-3-rc/"&gt;coming in 2.3&lt;/a&gt;) In Elm, you can make it truly &lt;em&gt;none&lt;/em&gt;. It’s just a sort of known fact at this point that Elm codebases tend to &lt;em&gt;have zero runtime errors&lt;/em&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Elm’s language design is a huge win.&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;Elm is a &lt;em&gt;pure functional language&lt;/em&gt;. Because non-pure things are offloaded to the Elm runtime, every single function &lt;em&gt;you&lt;/em&gt; write is pure. Same input means the same output.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Elm supports first-class currying and partial application. This makes it much, much easier to do the kind of functional-building-block approach that is natural in FP and which is &lt;em&gt;attractive&lt;/em&gt; in (but a lot more work in) JS or TS. Example code to show what I mean:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const add = (a, b) =&amp;gt; a + b;
+const add2 = (c) =&amp;gt; add(2, c);
+const five = add2(3);&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;add a b = a + b
+add2 = add 2
+five = add2 3&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The combination of the above means that you can refactor and &lt;em&gt;always be sure you get everything&lt;/em&gt;, which is truly magical. And the compiler errors are the best in the world (and that’s no exaggeration).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The way I’d summarize it is to say that Elm makes it easy to do the right thing and hard or impossible to do the wrong thing. TypeScript makes it possible to do the right thing, and gives you a couple switches you can flip to make it harder to do the wrong things, but will ultimately let you do anything.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 23 Apr 2017 17:20:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-04-23:/2017/why-elm-instead-of-typescript.html</guid><category>Elm</category><category>JavaScript</category><category>TypeScript</category><category>programming languages</category><category>functional programming</category></item><item><title></title><link>http://www.chriskrycho.com/2017/01-04-1046.html</link><description>&lt;p&gt;Follow-up from Twitter &lt;a href="http://www.chriskrycho.com/2017/typescript-keyof-follow-up.html"&gt;on my latest bit on TypeScript and &lt;code&gt;keyof&lt;/code&gt;&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href="https://twitter.com/chriskrycho"&gt;@chriskrycho&lt;/a&gt; &lt;a href="https://twitter.com/typescriptlang"&gt;@typescriptlang&lt;/a&gt; I think a benefit of your previous solution is that you can rename keys and all their usages.&lt;/p&gt;
 &lt;p&gt;— Timm (@timmpreetz) &lt;a href="https://twitter.com/timmpreetz/status/816672215924097024"&gt;January 4, 2017&lt;/a&gt;&lt;/p&gt;

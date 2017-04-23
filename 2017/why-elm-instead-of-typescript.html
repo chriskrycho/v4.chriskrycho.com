@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Why Elm Instead of TypeScript? &middot; Chris Krycho</title>
+    <meta name="description" content="A few weeks ago, an acquaintance asked in a Slack channel we’re both in: Can I ask a noob type Elm / JS question? Why Elm instead of Typescript? The dev stack and functional programming? I responded as follows, with only light tweaks to clarify a couple things (and I …"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2017/why-elm-instead-of-typescript.html"/>
+    <meta property="og:title" content="Why Elm Instead of TypeScript?"/>
+    <meta property="og:description" content="A few weeks ago, an acquaintance asked in a Slack channel we’re both in: Can I ask a noob type Elm / JS question? Why Elm instead of Typescript? The dev stack and functional programming? I responded as follows, with only light tweaks to clarify a couple things (and I …"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Why Elm Instead of TypeScript?"/>
+    <meta name="twitter:description" content="A few weeks ago, an acquaintance asked in a Slack channel we’re both in: Can I ask a noob type Elm / JS question? Why Elm instead of Typescript? The dev stack and functional programming? I responded as follows, with only light tweaks to clarify a couple things (and I …"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="elm javascript typescript programming-languages functional-programming tech">
+
+    <header>
+<h1>Why Elm Instead of TypeScript?</h1>
+<h2>Or, yet another long comment in Slack turned into a blog post.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2017/why-elm-instead-of-typescript.html"><i class="fa fa-fw fa-link"></i></a>April 23, 2017</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/elm/">#elm</a><a class="hashtags" href="http://www.chriskrycho.com/functional-programming/">#functional programming</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2017/why-elm-instead-of-typescript.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>A few weeks ago, an acquaintance asked in a Slack channel we’re both in:</p>
+<blockquote>
+<p>Can I ask a noob type Elm / JS question?</p>
+<p>Why Elm instead of Typescript? The dev stack and functional programming?</p>
+</blockquote>
+<p>I responded as follows, with only light tweaks to clarify a couple things (and I’ll be reusing some of this material as the basis of an internal tech talk I’m giving on the same subject at Olo in a few weeks):</p>
+<p>A couple things Elm gives you:</p>
+<ol type="1">
+<li><p>It’s not tied to JS directly, which means it’s free to just do what is the best fit for the language rather than needing to be able to express all the quirks and oddities of JS. That’s the single biggest thing I find all the time with TS (which I use every day and do quite like): as good as it is, and as both powerful and expressive as its type system is, at the end of the day it’s… still a superset of JavaScript, and that can mean some really nice things, but it also means a lot of <em>weird</em> things.</p></li>
+<li><p>Elm’s type system is <em>sound</em>; TypeScript’s is not. At a practical level, that means that if an Elm program type-checks (and thus compiles), you can be <em>sure</em> – not mostly sure, 100% sure – that it is free of things like <code>undefined is not a function</code>. TypeScript does not (and by design cannot) give you that guarantee. And when I say “by design,” I mean that its designers believed from the outset that soundness was in tension with developer productivity, so they intentionally left a number of “soundness holes” in the type system—there’s still a lot of opportunity for <code>undefined is not a function</code>, sad to say. You can make it <em>less</em> than in JS… but not none. (That’s even still true in the TypeScript 2.x series, though the various soundness flags they added in 2.0 and the <code>--strict</code> option <a href="https://blogs.msdn.microsoft.com/typescript/2017/04/10/announcing-typescript-2-3-rc/">coming in 2.3</a>) In Elm, you can make it truly <em>none</em>. It’s just a sort of known fact at this point that Elm codebases tend to <em>have zero runtime errors</em>.</p></li>
+<li><p>Elm’s language design is a huge win.</p>
+<ol type="1">
+<li><p>Elm is a <em>pure functional language</em>. Because non-pure things are offloaded to the Elm runtime, every single function <em>you</em> write is pure. Same input means the same output.</p></li>
+<li><p>Elm supports first-class currying and partial application. This makes it much, much easier to do the kind of functional-building-block approach that is natural in FP and which is <em>attractive</em> in (but a lot more work in) JS or TS. Example code to show what I mean:</p>
+<pre class="js"><code>const add = (a, b) =&gt; a + b;
+const add2 = (c) =&gt; add(2, c);
+const five = add2(3);</code></pre>
+<pre class="elm"><code>add a b = a + b
+add2 = add 2
+five = add2 3</code></pre></li>
+<li><p>The combination of the above means that you can refactor and <em>always be sure you get everything</em>, which is truly magical. And the compiler errors are the best in the world (and that’s no exaggeration).</p></li>
+</ol></li>
+</ol>
+<p>The way I’d summarize it is to say that Elm makes it easy to do the right thing and hard or impossible to do the wrong thing. TypeScript makes it possible to do the right thing, and gives you a couple switches you can flip to make it harder to do the wrong things, but will ultimately let you do anything.</p>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/theology.xml"><i class="fa fa-fw fa-rss"></i>theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2016/to-paint-god-as-a-man.html">To paint God as a man</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2017/corraling-my-coffee-habit.html">Corraling My Coffee Habit</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2017/why-elm-instead-of-typescript.html">Why Elm Instead of TypeScript?</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2017/odd-bits-and-the-occasional-long-form-essay.html">Odd Bits and the Occasional Long-Form Essay</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
