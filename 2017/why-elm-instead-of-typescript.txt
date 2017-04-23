@@ -25,13 +25,17 @@ A couple things Elm gives you:
 
     1. Elm is a *pure functional language*. Because non-pure things are offloaded to the Elm runtime, every single function *you* write is pure. Same input means the same output.
 
-    2. Elm supports first-class currying and partial application. This makes it much, much easier to do the kind of functional-building-block approach that is natural in FP and which is *attractive* in (but a lot more work in) JS or TS. Example code to show what I mean:
+    2. Elm supports first-class currying and partial application. This makes it much, much easier to do the kind of functional-building-block approach that is natural in FP and which is *attractive* in (but a lot more work in) JS or TS. Example code to show what I mean---
+
+        Javascript:
 
         ```js
         const add = (a, b) => a + b;
         const add2 = (c) => add(2, c);
         const five = add2(3);
         ```
+
+        Elm:
 
         ```elm
         add a b = a + b

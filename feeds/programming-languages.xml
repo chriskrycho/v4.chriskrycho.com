@@ -12,10 +12,12 @@
 &lt;li&gt;&lt;p&gt;Elm’s language design is a huge win.&lt;/p&gt;
 &lt;ol type="1"&gt;
 &lt;li&gt;&lt;p&gt;Elm is a &lt;em&gt;pure functional language&lt;/em&gt;. Because non-pure things are offloaded to the Elm runtime, every single function &lt;em&gt;you&lt;/em&gt; write is pure. Same input means the same output.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Elm supports first-class currying and partial application. This makes it much, much easier to do the kind of functional-building-block approach that is natural in FP and which is &lt;em&gt;attractive&lt;/em&gt; in (but a lot more work in) JS or TS. Example code to show what I mean:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Elm supports first-class currying and partial application. This makes it much, much easier to do the kind of functional-building-block approach that is natural in FP and which is &lt;em&gt;attractive&lt;/em&gt; in (but a lot more work in) JS or TS. Example code to show what I mean—&lt;/p&gt;
+&lt;p&gt;Javascript:&lt;/p&gt;
 &lt;pre class="js"&gt;&lt;code&gt;const add = (a, b) =&amp;gt; a + b;
 const add2 = (c) =&amp;gt; add(2, c);
 const five = add2(3);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Elm:&lt;/p&gt;
 &lt;pre class="elm"&gt;&lt;code&gt;add a b = a + b
 add2 = add 2
 five = add2 3&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;

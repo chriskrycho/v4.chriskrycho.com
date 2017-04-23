@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Why Elm Instead of TypeScript?"/>
     <meta name="twitter:description" content="A few weeks ago, an acquaintance asked in a Slack channel we’re both in: Can I ask a noob type Elm / JS question? Why Elm instead of Typescript? The dev stack and functional programming? I responded as follows, with only light tweaks to clarify a couple things (and I …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -101,10 +101,12 @@
 <li><p>Elm’s language design is a huge win.</p>
 <ol type="1">
 <li><p>Elm is a <em>pure functional language</em>. Because non-pure things are offloaded to the Elm runtime, every single function <em>you</em> write is pure. Same input means the same output.</p></li>
-<li><p>Elm supports first-class currying and partial application. This makes it much, much easier to do the kind of functional-building-block approach that is natural in FP and which is <em>attractive</em> in (but a lot more work in) JS or TS. Example code to show what I mean:</p>
+<li><p>Elm supports first-class currying and partial application. This makes it much, much easier to do the kind of functional-building-block approach that is natural in FP and which is <em>attractive</em> in (but a lot more work in) JS or TS. Example code to show what I mean—</p>
+<p>Javascript:</p>
 <pre class="js"><code>const add = (a, b) =&gt; a + b;
 const add2 = (c) =&gt; add(2, c);
 const five = add2(3);</code></pre>
+<p>Elm:</p>
 <pre class="elm"><code>add a b = a + b
 add2 = add 2
 five = add2 3</code></pre></li>
