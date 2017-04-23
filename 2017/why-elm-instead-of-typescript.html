@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Why Elm Instead of TypeScript?"/>
     <meta name="twitter:description" content="A few weeks ago, an acquaintance asked in a Slack channel we’re both in: Can I ask a noob type Elm / JS question? Why Elm instead of Typescript? The dev stack and functional programming? I responded as follows, with only light tweaks to clarify a couple things (and I …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -97,7 +97,7 @@
 <p>A couple things Elm gives you:</p>
 <ol type="1">
 <li><p>It’s not tied to JS directly, which means it’s free to just do what is the best fit for the language rather than needing to be able to express all the quirks and oddities of JS. That’s the single biggest thing I find all the time with TS (which I use every day and do quite like): as good as it is, and as both powerful and expressive as its type system is, at the end of the day it’s… still a superset of JavaScript, and that can mean some really nice things, but it also means a lot of <em>weird</em> things.</p></li>
-<li><p>Elm’s type system is <em>sound</em>; TypeScript’s is not. At a practical level, that means that if an Elm program type-checks (and thus compiles), you can be <em>sure</em> – not mostly sure, 100% sure – that it is free of things like <code>undefined is not a function</code>. TypeScript does not (and by design cannot) give you that guarantee. And when I say “by design,” I mean that its designers believed from the outset that soundness was in tension with developer productivity, so they intentionally left a number of “soundness holes” in the type system—there’s still a lot of opportunity for <code>undefined is not a function</code>, sad to say. You can make it <em>less</em> than in JS… but not none. (That’s even still true in the TypeScript 2.x series, though the various soundness flags they added in 2.0 and the <code>--strict</code> option <a href="https://blogs.msdn.microsoft.com/typescript/2017/04/10/announcing-typescript-2-3-rc/">coming in 2.3</a>) In Elm, you can make it truly <em>none</em>. It’s just a sort of known fact at this point that Elm codebases tend to <em>have zero runtime errors</em>.</p></li>
+<li><p>Elm’s type system is <em>sound</em>; TypeScript’s is not. At a practical level, that means that if an Elm program type-checks (and thus compiles), you can be <em>sure</em> – not mostly sure, 100% sure – that it is free of things like <code>undefined is not a function</code>. TypeScript does not (and by design cannot) give you that guarantee. And when I say “by design,” I mean that its designers believed from the outset that soundness was in tension with developer productivity, so they intentionally left a number of “soundness holes” in the type system—there’s still a lot of opportunity for <code>undefined is not a function</code>, sad to say. You can make it <em>less</em> than in JS… but not none. (That’s even still true in the TypeScript 2.x series, though the various soundness flags they added in 2.0 and the <code>--strict</code> option <a href="https://blogs.msdn.microsoft.com/typescript/2017/04/10/announcing-typescript-2-3-rc/">coming in 2.3</a> do get you closer.) In Elm, you can make it truly <em>none</em>. It’s just a sort of known fact at this point that Elm codebases tend to <em>have zero runtime errors</em>.</p></li>
 <li><p>Elm’s language design is a huge win.</p>
 <ol type="1">
 <li><p>Elm is a <em>pure functional language</em>. Because non-pure things are offloaded to the Elm runtime, every single function <em>you</em> write is pure. Same input means the same output.</p></li>
