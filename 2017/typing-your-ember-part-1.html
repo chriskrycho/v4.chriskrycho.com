@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Typing Your Ember, Part 1"/>
     <meta name="twitter:description" content="You write Ember.js apps. You think TypeScript would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work. This is the series for you! I’ll talk through everything …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -101,18 +101,19 @@
 <pre class="sh"><code>npm install --global ember-cli</code></pre></li>
 <li><p>Create an Ember app.</p>
 <pre class="sh"><code>ember new my-ts-app --yarn</code></pre>
-<p>Using the <code>--yarn</code> flag will make it so your app uses <a href="https://yarnpkg.com">Yarn</a> and creates a <code>yarn.lock</code> file instead of using npm when it installs its dependencies.</p></li>
-<li><p>Add the <a href="https://emberobserver.com/addons/ember-cli-typescript"><code>ember-cli-typescript</code> add-on</a>. From within the root of the newly created application directory (where we’ll carry out everything from this point forward):</p>
+<p>(Using the <code>--yarn</code> flag will make it so your app uses <a href="https://yarnpkg.com"><code>yarn</code></a> and creates a <code>yarn.lock</code> file instead of using <code>npm</code> when it installs its dependencies.)</p></li>
+<li><p>Now move to the root of the newly created app: this is where we’ll do everything else in the post.</p>
+<pre class="sh"><code>cd my-ts-app</code></pre></li>
+<li><p>Add the <a href="https://emberobserver.com/addons/ember-cli-typescript"><em>ember-cli-typescript</em> add-on</a>.</p>
 <pre class="sh"><code>ember install ember-cli-typescript</code></pre></li>
-<li><p>Generate your first UI component.</p></li>
-</ol>
-<p><code>sh    $ ember generate component some-input</code></p>
-<ol start="6" type="1">
+<li><p>Generate your first UI component.</p>
+<pre class="sh"><code>ember generate component some-input</code></pre></li>
 <li>Rename the files it generated from <code>.js</code> to <code>.ts</code>:
 <ul>
 <li><code>app/components/some-input.js</code> → <code>app/components/some-input.ts</code></li>
 <li><code>tests/integration/components/some-input-test.js</code> → <code>tests/integration/components/some-input-test.ts</code></li>
-</ul></li>
+</ul>
+<p>(Eventually, we’ll make it so that you get TypeScript for all newly generated components when using <em>ember-cli-typescript</em>.)</p></li>
 <li><p>Add some content to the files:</p>
 <pre class="handlebars"><code>{{!-- some-input.hbs --}}
 {{input value=theValue change=(mut theValue)}}
@@ -124,10 +125,10 @@ export default Ember.Component.extend({
   theValue: &#39;&#39;,
 });</code></pre></li>
 <li><p>Update your <code>application.hbs</code> file to remove the default <code>{{welcome}}</code> template and replace it with <code>{{some-input}}</code></p></li>
-<li><p>Serve the Ember application. In the root of your application directory:</p>
+<li><p>Spin up the Ember application with Ember CLI’s development server:</p>
 <pre class="sh"><code>ember serve</code></pre>
 <p>You’ll likely note some warnings: the TypeScript compiler won’t be able to find some of the modules imported in your files. I’ll have more to say about this in a future post. For now, suffice it to say: don’t worry, Ember CLI is still resolving and compiling your modules just fine.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p></li>
-<li><p>Load the application by going to <code>localhost:4200</code> in your browser. You should see a blank white screen with an input in it. Type in it, and see the input rendered to the page. Simple enough, but that’s using a TypeScript file compiled along the way!</p></li>
+<li><p>Load the application by going to <code>localhost:4200</code> in your browser. You should see a blank white screen with an input in it. Type in it, and see the input rendered to the page. Simple enough, but it’s using a TypeScript file compiled along the way!</p></li>
 </ol>
 <p>And that’s it: we’re done setting up an Ember.js app to use TypeScript! In the next post, I’ll talk a bit about strategies for migrating an existing app to TypeScript—not just the mechanics of it, but also where and how to start actually integrating types into your code.</p>
 <section class="footnotes">

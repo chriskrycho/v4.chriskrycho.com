@@ -12,18 +12,19 @@
 &lt;pre class="sh"&gt;&lt;code&gt;npm install --global ember-cli&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Create an Ember app.&lt;/p&gt;
 &lt;pre class="sh"&gt;&lt;code&gt;ember new my-ts-app --yarn&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Using the &lt;code&gt;--yarn&lt;/code&gt; flag will make it so your app uses &lt;a href="https://yarnpkg.com"&gt;Yarn&lt;/a&gt; and creates a &lt;code&gt;yarn.lock&lt;/code&gt; file instead of using npm when it installs its dependencies.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Add the &lt;a href="https://emberobserver.com/addons/ember-cli-typescript"&gt;&lt;code&gt;ember-cli-typescript&lt;/code&gt; add-on&lt;/a&gt;. From within the root of the newly created application directory (where we’ll carry out everything from this point forward):&lt;/p&gt;
+&lt;p&gt;(Using the &lt;code&gt;--yarn&lt;/code&gt; flag will make it so your app uses &lt;a href="https://yarnpkg.com"&gt;&lt;code&gt;yarn&lt;/code&gt;&lt;/a&gt; and creates a &lt;code&gt;yarn.lock&lt;/code&gt; file instead of using &lt;code&gt;npm&lt;/code&gt; when it installs its dependencies.)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Now move to the root of the newly created app: this is where we’ll do everything else in the post.&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;cd my-ts-app&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Add the &lt;a href="https://emberobserver.com/addons/ember-cli-typescript"&gt;&lt;em&gt;ember-cli-typescript&lt;/em&gt; add-on&lt;/a&gt;.&lt;/p&gt;
 &lt;pre class="sh"&gt;&lt;code&gt;ember install ember-cli-typescript&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Generate your first UI component.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;code&gt;sh    $ ember generate component some-input&lt;/code&gt;&lt;/p&gt;
-&lt;ol start="6" type="1"&gt;
+&lt;li&gt;&lt;p&gt;Generate your first UI component.&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;ember generate component some-input&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;Rename the files it generated from &lt;code&gt;.js&lt;/code&gt; to &lt;code&gt;.ts&lt;/code&gt;:
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;app/components/some-input.js&lt;/code&gt; → &lt;code&gt;app/components/some-input.ts&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;tests/integration/components/some-input-test.js&lt;/code&gt; → &lt;code&gt;tests/integration/components/some-input-test.ts&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(Eventually, we’ll make it so that you get TypeScript for all newly generated components when using &lt;em&gt;ember-cli-typescript&lt;/em&gt;.)&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Add some content to the files:&lt;/p&gt;
 &lt;pre class="handlebars"&gt;&lt;code&gt;{{!-- some-input.hbs --}}
 {{input value=theValue change=(mut theValue)}}
@@ -35,10 +36,10 @@ export default Ember.Component.extend({
   theValue: &amp;#39;&amp;#39;,
 });&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Update your &lt;code&gt;application.hbs&lt;/code&gt; file to remove the default &lt;code&gt;{{welcome}}&lt;/code&gt; template and replace it with &lt;code&gt;{{some-input}}&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Serve the Ember application. In the root of your application directory:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Spin up the Ember application with Ember CLI’s development server:&lt;/p&gt;
 &lt;pre class="sh"&gt;&lt;code&gt;ember serve&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You’ll likely note some warnings: the TypeScript compiler won’t be able to find some of the modules imported in your files. I’ll have more to say about this in a future post. For now, suffice it to say: don’t worry, Ember CLI is still resolving and compiling your modules just fine.&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Load the application by going to &lt;code&gt;localhost:4200&lt;/code&gt; in your browser. You should see a blank white screen with an input in it. Type in it, and see the input rendered to the page. Simple enough, but that’s using a TypeScript file compiled along the way!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Load the application by going to &lt;code&gt;localhost:4200&lt;/code&gt; in your browser. You should see a blank white screen with an input in it. Type in it, and see the input rendered to the page. Simple enough, but it’s using a TypeScript file compiled along the way!&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;And that’s it: we’re done setting up an Ember.js app to use TypeScript! In the next post, I’ll talk a bit about strategies for migrating an existing app to TypeScript—not just the mechanics of it, but also where and how to start actually integrating types into your code.&lt;/p&gt;
 &lt;section class="footnotes"&gt;
