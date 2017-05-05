@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - emberjs</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Thu, 20 Apr 2017 07:15:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/11-22-1320.html</link><description>&lt;p&gt;Current status: Counter Culture coffee and &lt;a href="https://www.viderichocolatefactory.com"&gt;Videri Chocolate&lt;/a&gt; 70% dark chocolate and Ember.js for Olo. This is a good Tuesday afternoon.&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - emberjs</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Fri, 05 May 2017 00:10:00 -0400</lastBuildDate><item><title>Typing Your Ember, Part 1</title><link>http://www.chriskrycho.com/2017/typing-your-ember-part-1.html</link><description>&lt;p&gt;&lt;i class='intro'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='intro'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;In this first post in the series, we’re going to keep things simple and easy: we’re going to get an Ember.js app configured to use TypeScript. Later posts will cover some of the other details.&lt;/p&gt;
+&lt;p&gt;Because of the lovely &lt;a href="https://ember-cli.com"&gt;Ember CLI&lt;/a&gt; ecosystem, this is a pretty straightforward process. I’m going to start from &lt;em&gt;zero&lt;/em&gt; so that even if you’ve never written an Ember app before, you can get this up and running by following these instructions. These instructions have also been tested and confirmed to work across platforms—you can do this equally on Windows, macOS, or Linux.&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;Make sure you have Ember’s prerequisites installed. Get &lt;a href="https://nodejs.org/en/"&gt;Node&lt;/a&gt; for your platform. Optionally (but highly recommended) install &lt;a href="https://yarnpkg.com"&gt;Yarn&lt;/a&gt; to manage your Node packages.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install the Ember command lines tools globally:&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;yarn global add ember-cli&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;npm install --global ember-cli&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create an Ember app.&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;ember new my-ts-app --yarn&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Using the &lt;code&gt;--yarn&lt;/code&gt; flag will make it so your app uses &lt;a href="https://yarnpkg.com"&gt;Yarn&lt;/a&gt; and creates a &lt;code&gt;yarn.lock&lt;/code&gt; file instead of using npm when it installs its dependencies.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Add the &lt;a href="https://emberobserver.com/addons/ember-cli-typescript"&gt;&lt;code&gt;ember-cli-typescript&lt;/code&gt; add-on&lt;/a&gt;. From within the root of the newly created application directory (where we’ll carry out everything from this point forward):&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;ember install ember-cli-typescript&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Generate your first UI component.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;sh    $ ember generate component some-input&lt;/code&gt;&lt;/p&gt;
+&lt;ol start="6" type="1"&gt;
+&lt;li&gt;Rename the files it generated from &lt;code&gt;.js&lt;/code&gt; to &lt;code&gt;.ts&lt;/code&gt;:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;app/components/some-input.js&lt;/code&gt; → &lt;code&gt;app/components/some-input.ts&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tests/integration/components/some-input-test.js&lt;/code&gt; → &lt;code&gt;tests/integration/components/some-input-test.ts&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Add some content to the files:&lt;/p&gt;
+&lt;pre class="handlebars"&gt;&lt;code&gt;{{!-- some-input.hbs --}}
+{{input value=theValue change=(mut theValue)}}
+{{theValue}}&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;// some-input.ts
+import Ember from &amp;#39;ember&amp;#39;;
+
+export default Ember.Component.extend({
+  theValue: &amp;#39;&amp;#39;,
+});&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Update your &lt;code&gt;application.hbs&lt;/code&gt; file to remove the default &lt;code&gt;{{welcome}}&lt;/code&gt; template and replace it with &lt;code&gt;{{some-input}}&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Serve the Ember application. In the root of your application directory:&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;ember serve&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You’ll likely note some warnings: the TypeScript compiler won’t be able to find some of the modules imported in your files. I’ll have more to say about this in a future post. For now, suffice it to say: don’t worry, Ember CLI is still resolving and compiling your modules just fine.&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Load the application by going to &lt;code&gt;localhost:4200&lt;/code&gt; in your browser. You should see a blank white screen with an input in it. Type in it, and see the input rendered to the page. Simple enough, but that’s using a TypeScript file compiled along the way!&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And that’s it: we’re done setting up an Ember.js app to use TypeScript! In the next post, I’ll talk a bit about strategies for migrating an existing app to TypeScript—not just the mechanics of it, but also where and how to start actually integrating types into your code.&lt;/p&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;I strongly prefer to use &lt;code&gt;yarn&lt;/code&gt; over &lt;code&gt;npm&lt;/code&gt; because &lt;code&gt;yarn&lt;/code&gt; installs are predictable and repeatable, and if there’s one thing I don’t need to spend time on when developing our Ember.js app at Olo, it’s chasing problems with transitive dependencies that are different in the build server than in my local development environment. Yarn’s lockfiles mean what ends up built on the server is &lt;em&gt;exactly&lt;/em&gt; what ended up built on my machine.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;But if you’re curious, here’s a preview: we really need more &lt;a href="http://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html"&gt;type definitions&lt;/a&gt; for the Ember ecosystem. I’ll be covering &lt;em&gt;how&lt;/em&gt; we build those in much more detail in a future installment.&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 05 May 2017 00:10:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-05-05:/2017/typing-your-ember-part-1.html</guid><category>typescript</category><category>emberjs</category></item><item><title></title><link>http://www.chriskrycho.com/2016/11-22-1320.html</link><description>&lt;p&gt;Current status: Counter Culture coffee and &lt;a href="https://www.viderichocolatefactory.com"&gt;Videri Chocolate&lt;/a&gt; 70% dark chocolate and Ember.js for Olo. This is a good Tuesday afternoon.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 22 Nov 2016 13:20:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-11-22:/2016/11-22-1320.html</guid><category>coffee</category><category>emberjs</category></item><item><title></title><link>http://www.chriskrycho.com/2016/08-17-0825.html</link><description>&lt;p&gt;I’m writing a talk on test-driven development with &lt;a href="http://emberjs.com"&gt;Ember.js&lt;/a&gt; for &lt;a href="http://www.olo.com"&gt;Olo&lt;/a&gt;’s in-house tech talks. How? By building a real feature and capturing the process!&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 17 Aug 2016 08:25:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-08-17:/2016/08-17-0825.html</guid><category>software development</category><category>testing</category><category>javascript</category><category>emberjs</category></item><item><title>Testing Ember.js Mixins (and Helpers) With a Container</title><link>http://www.chriskrycho.com/2016/testing-emberjs-mixins-with-a-container.html</link><description>&lt;p&gt;&lt;i&gt;Updated to note that the same concerns apply to helpers. You can always see the full revision history of this item &lt;a href="https://github.com/chriskrycho/chriskrycho.com/commits/master/content/tech/ember-js-mixins-container.md"&gt;here&lt;/a&gt;.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
