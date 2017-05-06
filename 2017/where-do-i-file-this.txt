@@ -9,7 +9,7 @@ I want to write more. Blogging does me good. [I say this][repeating] often, but 
 
 [repeating]: http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html "A Few Theses on Blogging"
 
-In the case of blogging, I have no doubt it's something I want to continue. But I need to think about *how* and *why* I want to use it, and this relates closely to some of my goals for an information architecture-level restructuring of the site I want to do when I finish building [Lighting][lx]. *Blogging*, at its best, isn't long-form articles (though there is certainly room for those on my website as a whole), but [short, cogent pieces which pack a punch and move on][sjd], or [thinking out loud][aj]. Even in my own experience, the best *blog posts* I have written are quite different from the best *essays* I have written. Embracing that seems like a helpful first step.
+In the case of blogging, I have no doubt it's something I want to continue. But I need to think about *how* and *why* I want to use it, and this relates closely to some of my goals for an information architecture-level restructuring of the site I want to do when I finish building [lightning-rs][lx]. *Blogging*, at its best, isn't long-form articles (though there is certainly room for those on my website as a whole), but [short, cogent pieces which pack a punch and move on][sjd], or [thinking out loud][aj]. Even in my own experience, the best *blog posts* I have written are quite different from the best *essays* I have written. Embracing that seems like a helpful first step.
 
 [lx]: https://github.com/chriskrycho/lightning-rs
 [sjd]: http://blogs.mereorthodoxy.com/samuel/2017/02/17/4-requests-young-evangelical-writers/ "4 Requests to Young Evangelical Writers"
