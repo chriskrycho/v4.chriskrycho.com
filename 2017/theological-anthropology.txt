@@ -1,9 +1,11 @@
 ---
 Title: Theological Anthropology
-Subtitle: Alan Jacobs’ current project, faithful extension, and an important project for our day.
+Subtitle: Alan Jacobs’ current project, “faithful extension”, and an important project for our day.
 Date: 2017-05-06 10:50
 Category: Theology
 Tags: technology, algorithism, alan jacobs, Christology, ressourcement
+Description: >
+    We need to faithfully extend our doctrine of humanity—to think harder about Creation and Incarnation as our lenses into human nature as we confront "technologism" and "algorithmism" and the ways they distort our understanding of ourselves.
 ---
 
 A bit of context for this post: Off and on over the past year, and with some frequency since he picked up blogging again after Lent, Alan Jacobs has been tackling what he has variously called a "technological history of modernity" and the problems of the ["Anthropocene Era"][anthropocene-theology], i.e. a world in which humanity so dominates the world we inhabit that we are physically remaking it, but in which we increasingly feel cut off from our humanity. (I'm eliding an enormous amount; you should really take a close look at the whole series of posts on [Text Patterns].)
@@ -16,7 +18,7 @@ A few posts recently have asked questions and thrown out some curious thoughts a
 
 ---
 
-[Jacobs latest post][restocking] returns to a broader question that seems to be underpinning his whole project, and which I would argue is one of the essential: how do we even *do* this kind of theology? And how do we answer the particular questions of our age in a way that faithfully extends the foundation laid for us from the Apostles' time till now?[^faithful-extension] From his [original post][anthropocene-theology] on the subject:
+[Jacobs' latest post][restocking] returns to a broader question that seems to be underpinning his whole project, and which I would argue is one of the essential: how do we even *do* this kind of theology? And how do we answer the particular questions of our age in a way that faithfully extends the foundation laid for us from the Apostles' time till now?[^faithful-extension] From his [original post][anthropocene-theology] on the subject:
 
 > To this claim there may be the immediate response, especially from orthodox Christians, that theology need not be different in this age than in any other, for human nature does not change: it remains true now as it has been since the angels with their flaming swords were posted at the gates of Eden that we are made in the image of God and yet have defaced that image, and that what theologians call “the Christ event” — the incarnation, preaching, healing, death, resurrection, ascension, and ultimate return of the second person of the Trinity — is the means by which that image will be restored and the wounds we have inflicted on the Creation healed. And indeed all that does, I believe, remain true. Yet it does not follow from such foundational salvation history that “theology need not be different in this age than any other.” 
 > 
