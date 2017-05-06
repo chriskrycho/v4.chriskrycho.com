@@ -6,3 +6,4 @@ I sometimes go in for not just one-off posts, but also longer series connected t
 
   - [Rust and Swift](/rust-and-swift.html)
   - [2016 in Review](/2016/2016-review-intro.html)
+  - [Typing Your Ember](/typing-your-ember.html)
