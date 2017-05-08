@@ -1,9 +1,0 @@
----
-Title: ""
-Date: 2016-10-03 13:06
-Template: formats/micro
-Slug: 10-03-1306
-Category: micro
----
-
-Dear North Carolina, it is October. It is time for you to stop being 80° now.

@@ -1,9 +1,0 @@
----
-Title: ""
-Date: 2017-01-01 10:56
-Template: formats/micro
-Slug: 01-01-1056
-Category: micro
----
-
-For the record: LifeWay has the single most user-hostile ebook policy I’ve encountered *anywhere*. Shame on whoever made these decisions.
