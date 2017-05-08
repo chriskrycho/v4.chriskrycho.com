@@ -4,7 +4,7 @@ Subtitle: Personal blogging, “permanency” online, and the importance of cura
 Date: 2017-05-07 21:15
 Category: Theology
 Tags: writing
-Description: It might behoove use to take down some of our old posts after a while, and also to print the things worth keeping from our digital publishing.
+Summary: It might behoove use to take down some of our old posts after a while, and also to print the things worth keeping from our digital publishing.
 
 ---
 
