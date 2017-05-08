@@ -1,5 +1,5 @@
 ---
-Title: Typing Your Ember, Part 1
+Title: Typing Your Ember, Part 2
 Subtitle: Adding TypeScript to an existing Ember.js project.
 Category: Tech
 Tags: typescript, emberjs, typing-your-ember
