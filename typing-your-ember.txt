@@ -26,6 +26,7 @@ This list is updated whenever I publish a new post in the series. You can also s
 [#emberjs]: /feeds/emberjs.xml
 
 1. [Set your Ember.js project up to use TypeScript.][1]
-
+2. [Adding TypeScript to an existing Ember.js project.][2]
 
 [1]: /2017/typing-your-ember-part-1.html
+[2]: /2017/typing-your-ember-part-2.html
