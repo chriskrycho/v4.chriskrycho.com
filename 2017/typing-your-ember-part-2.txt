@@ -24,7 +24,7 @@ Summary: >
 
 ---
 
-In the [first part] of this series, I described how to set up a brand new Ember.js app to use TypeScript. In this part, I'm going to talk about starting to use TypeScript in the context of an existing Ember.js app.
+In the [first part][part-1] of this series, I described how to set up a brand new Ember.js app to use TypeScript. In this part, I'm going to talk about starting to use TypeScript in the context of an existing Ember.js app.
 
 [part-1]: /2017/typing-your-ember-part-1
 

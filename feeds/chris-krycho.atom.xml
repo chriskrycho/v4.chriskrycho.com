@@ -4,7 +4,7 @@
 &lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;In the [first part] of this series, I described how to set up a brand new Ember.js app to use TypeScript. In this part, I’m going to talk about starting to use TypeScript in the context of an existing Ember.js app.&lt;/p&gt;
+&lt;p&gt;In the &lt;a href="/2017/typing-your-ember-part-1"&gt;first part&lt;/a&gt; of this series, I described how to set up a brand new Ember.js app to use TypeScript. In this part, I’m going to talk about starting to use TypeScript in the context of an existing Ember.js app.&lt;/p&gt;
 &lt;p&gt;This is, in many ways, even simpler than setting up an app for the first time, because you already have almost everything you need. The steps here are exactly what you’re used to if you’re used to using the Ember CLI ecosystem:&lt;/p&gt;
 &lt;ol type="1"&gt;
 &lt;li&gt;&lt;p&gt;Install &lt;code&gt;ember-cli-typescript&lt;/code&gt;:&lt;/p&gt;
