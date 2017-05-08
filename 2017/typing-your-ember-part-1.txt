@@ -6,6 +6,9 @@ Tags: typescript, emberjs, typing-your-ember
 Series: Typing Your Ember
 Date: 2017-05-05 00:10
 Slug: typing-your-ember-part-1
+Summary: >
+  In this first post in the series, we're going to keep things simple and easy: we're going to get an Ember.js app configured to use TypeScript. Later posts will cover some of the other details.
+
 ---
 
 <i class='series-overview'>You write [Ember.js] apps. You think [TypeScript] would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i>
@@ -112,3 +115,7 @@ And that's it: we're done setting up an Ember.js app to use TypeScript! In the n
 [^typings]: But if you're curious, here's a preview: we really need more [type definitions] for the Ember ecosystem. I'll be covering *how* we build those in much more detail in a future installment.
 
 [type definitions]: http://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html
+
+- [**Next:** Part 2 –  Adding TypeScript to an existing Ember.js project.][part-2]
+
+[part-2]: /2017/typing-your-ember-part-2

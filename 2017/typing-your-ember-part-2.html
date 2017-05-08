@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Typing Your Ember, Part 1 &middot; Chris Krycho</title>
+    <meta name="description" content="Adding TypeScript to your existing Ember.js app is easy!—here's how to do it, some of the current "gotchas," and a few tips to make the on-ramp a bit easier."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2017/typing-your-ember-part-2.html"/>
+    <meta property="og:title" content="Typing Your Ember, Part 1"/>
+    <meta property="og:description" content="Adding TypeScript to your existing Ember.js app is easy!—here's how to do it, some of the current "gotchas," and a few tips to make the on-ramp a bit easier."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Typing Your Ember, Part 1"/>
+    <meta name="twitter:description" content="Adding TypeScript to your existing Ember.js app is easy!—here's how to do it, some of the current "gotchas," and a few tips to make the on-ramp a bit easier."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="typescript emberjs typing-your-ember tech">
+
+    <header>
+<h1>Typing Your Ember, Part 1</h1>
+<h2>Adding TypeScript to an existing Ember.js project.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2017/typing-your-ember-part-2.html"><i class="fa fa-fw fa-link"></i></a>May 08, 2017</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2017/typing-your-ember-part-2.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class='series-overview'>You write <a href="https://emberjs.com">Ember.js</a> apps. You think <a href="http://www.typescriptlang.org">TypeScript</a> would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i></p>
+<p><i class='series-overview'>This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.</i></p>
+<p><i class='series-overview'><a href="/typing-your-ember.html">(See the rest of the series. →)</a></i></p>
+<hr />
+<p>In the [first part] of this series, I described how to set up a brand new Ember.js app to use TypeScript. In this part, I’m going to talk about starting to use TypeScript in the context of an existing Ember.js app.</p>
+<p>This is, in many ways, even simpler than setting up an app for the first time, because you already have almost everything you need. The steps here are exactly what you’re used to if you’re used to using the Ember CLI ecosystem:</p>
+<ol type="1">
+<li><p>Install <code>ember-cli-typescript</code>:</p>
+<pre class="sh"><code>ember install ember-cli-typescript</code></pre></li>
+<li><p>Start using TypeScript wherever you want in your app.</p></li>
+</ol>
+<p>It really is that simple, for the most part. There are a couple qualifications, and a couple tips, though.</p>
+<p>Let’s start with <strong>qualifications</strong>. There are open, unresolved <a href="https://github.com/emberwatch/ember-cli-typescript/issues/">issues</a> about using <code>ember-cli-typescript</code> in your app in certain contexts. For example: <a href="https://github.com/emberwatch/ember-cli-typescript/issues/8">using it with <code>ember-browserify</code></a>. While everything will <em>build</em> correctly in that case (even if the TypeScript compiler complains about being unable to resolve some things, the Ember CLI build pipeline will still work as expected), your editor integration won’t. There are a bunch of corners like this we’re still hammering out; those are the main things we need to get resolved before we can call this a “1.0.” We have the <em>main</em> stuff working, but, well… there’s more to do.</p>
+<p>Along those same lines, you should take a close look at the <a href="https://github.com/emberwatch/ember-cli-typescript#not-yet-supported"><strong>Not yet supported</strong></a> section of the README. There are parts of Ember’s programming model which TypeScript certainly <em>can</em> support, but which we haven’t done the lifting to get the type declaration file to help with yet. (Looking for a place to pitch in and already comfortable doing some heavy lifting with some of TypeScript’s <a href="http://www.typescriptlang.org/docs/handbook/mixins.html">most advanced type features</a>? We could use the help.)</p>
+<p>One other thing to be aware of is that your <code>tsconfig.json</code> settings will affect what kind of resolution your editor gives you. If you have <code>allowJs</code> set to <code>true</code> in your <code>tsconfig.json</code>, your editors will resolve JS modules. Otherwise, they’ll <em>only</em> resolve TS modules. This can be incredibly annoying at times. However, this isn’t something we’ve nailed down in terms of what the default should be yet. (You can <a href="https://github.com/emberwatch/ember-cli-typescript/issues/">come tell us</a> on GitHub if you have thoughts or insights there!) And the fact that Microsoft has left this configurable is suggestive: different projects may have different preferences here.</p>
+<p>Now, for the <strong>tips</strong>. Note that these are just a couple quick pointers; I’ll come back and talk about structuring your project and more sophisticated uses of TypeScript in the future.</p>
+<ul>
+<li><p>Don’t turn on <code>--strict</code> or the corresponding individual flags on day 1. Unless you have an extremely unusual and disciplined Ember.js codebase, you’ll have an incredible set of errors to deal with.</p></li>
+<li><p>Don’t set the the <code>noEmitOnError</code> flag to <code>true</code> in your <code>tsconfig.json</code>, for much the same reason. Since the state of type declaration files for Ember is best described as <em>nascent</em> at present, many of your files will have errors in them just from failed imports!</p></li>
+<li><p>Don’t try to convert everything at once. Just pick the next feature or bug you’re working on, and start with the files you’re touching for that bug. Rename it to <code>.ts</code>, fix any major issues it flags up that you can—but stick as locally as possible. You’re apt to find a <em>lot</em> of small bugs as you start migrating, and some of them are things which are apt to affect your whole system because they touch central data types. It’s okay. You can come back to those later. For today, you can just be explicit about the weirdnesses.</p></li>
+<li><p>As part of that: get comfortable—really, really comfortable—with <a href="http://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types">union types</a>. They’ll make it much easier to express the kind of code you’ve <em>actually</em> written.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p></li>
+<li><p>Don’t worry about adding explicit types to <em>everything.</em> In fact, depending on how comfortable you are already with typed languages, you should probably take a pretty different tack with this:</p>
+<ul>
+<li><p>If you’re just stepping into the world of typed programming languages, you might start adding types where they’re the <em>lowest risk</em>: some place like your automated tests. That’ll help you start to see how to take advantage of them, while not impacting the way you write your app code until you have a better idea how best to employ the types.</p></li>
+<li><p>If you’re already really comfortable with typed programming languages, you might employ types where they’re <em>most helpful:</em> start with some types in the hairiest or trickiest spots of your app.</p></li>
+</ul></li>
+</ul>
+<p>There is plenty more I could say, but I think that’s a good start for now. I’ll have lots more to add in later posts about the details of how specifically to get the most mileage out of types within an Ember.js app today.</p>
+<hr />
+<ul>
+<li><a href="/2017/typing-your-ember-part-1"><strong>Previous:</strong> Part 1 – Set your Ember.js project up to use TypeScript.</a></li>
+</ul>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Also, I <em>strongly</em> encourage you to write types in terms of unions of types rather than in terms of <a href="http://www.typescriptlang.org/docs/handbook/interfaces.html#optional-properties">optional properties on types</a>. That might be surprising; I’ll explain it in more detail in a future post.<a href="#fnref1">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2016/to-paint-god-as-a-man.html">To paint God as a man</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2017/corraling-my-coffee-habit.html">Corraling My Coffee Habit</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2017/typing-your-ember-part-2.html">Typing Your Ember, Part 1</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2017/on-public-theological-histories.html">On Public (Theological) Histories</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+---
+Title: Typing Your Ember, Part 1
+Subtitle: Adding TypeScript to an existing Ember.js project.
+Category: Tech
+Tags: typescript, emberjs, typing-your-ember
+Series: Typing Your Ember
+Date: 2017-05-08 22:00
+Slug: typing-your-ember-part-2
+Summary: >
+  Adding TypeScript to your existing Ember.js app is easy!—here's how to do it, some of the current "gotchas," and a few tips to make the on-ramp a bit easier.
+
+---
+
+<i class='series-overview'>You write [Ember.js] apps. You think [TypeScript] would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i>
+
+[Ember.js]: https://emberjs.com
+[TypeScript]: http://www.typescriptlang.org
+
+<i class='series-overview'>This is the series for you! I'll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today---and I'll be pretty clear about the current tradeoffs and limitations, too.</i>
+
+<i class='series-overview'>[(See the rest of the series. →)][series]</i>
+
+[series]: /typing-your-ember.html
+
+---
+
+In the [first part] of this series, I described how to set up a brand new Ember.js app to use TypeScript. In this part, I'm going to talk about starting to use TypeScript in the context of an existing Ember.js app.
+
+[part-1]: /2017/typing-your-ember-part-1
+
+This is, in many ways, even simpler than setting up an app for the first time, because you already have almost everything you need. The steps here are exactly what you're used to if you're used to using the Ember CLI ecosystem:
+
+1. Install `ember-cli-typescript`:
+    
+    ```sh
+    ember install ember-cli-typescript
+    ```
+
+2. Start using TypeScript wherever you want in your app.
+
+It really is that simple, for the most part. There are a couple qualifications, and a couple tips, though.
+
+Let's start with **qualifications**. There are open, unresolved [issues] about using `ember-cli-typescript` in your app in certain contexts. For example: [using it with `ember-browserify`][#8]. While everything will *build* correctly in that case (even if the TypeScript compiler complains about being unable to resolve some things, the Ember CLI build pipeline will still work as expected), your editor integration won't. There are a bunch of corners like this we're still hammering out; those are the main things we need to get resolved before we can call this a "1.0." We have the *main* stuff working, but, well... there's more to do.
+
+[issues]: https://github.com/emberwatch/ember-cli-typescript/issues/
+[#8]: https://github.com/emberwatch/ember-cli-typescript/issues/8
+
+Along those same lines, you should take a close look at the [**Not yet supported**][nys] section of the README. There are parts of Ember's programming model which TypeScript certainly *can* support, but which we haven't done the lifting to get the type declaration file to help with yet. (Looking for a place to pitch in and already comfortable doing some heavy lifting with some of TypeScript's [most advanced type features][type features]? We could use the help.)
+
+[nys]: https://github.com/emberwatch/ember-cli-typescript#not-yet-supported
+[type features]: http://www.typescriptlang.org/docs/handbook/mixins.html
+
+One other thing to be aware of is that your `tsconfig.json` settings will affect what kind of resolution your editor gives you. If you have `allowJs` set to `true` in your `tsconfig.json`, your editors will resolve JS modules. Otherwise, they'll *only* resolve TS modules. This can be incredibly annoying at times. However, this isn't something we've nailed down in terms of what the default should be yet. (You can [come tell us][issues] on GitHub if you have thoughts or insights there!) And the fact that Microsoft has left this configurable is suggestive: different projects may have different preferences here.
+
+Now, for the **tips**. Note that these are just a couple quick pointers; I'll come back and talk about structuring your project and more sophisticated uses of TypeScript in the future.
+
+- Don't turn on `--strict` or the corresponding individual flags on day 1. Unless you have an extremely unusual and disciplined Ember.js codebase, you'll have an incredible set of errors to deal with.
+
+- Don't set the the `noEmitOnError` flag to `true` in your `tsconfig.json`, for much the same reason. Since the state of type declaration files for Ember is best described as _nascent_ at present, many of your files will have errors in them just from failed imports!
+
+- Don't try to convert everything at once. Just pick the next feature or bug you're working on, and start with the files you're touching for that bug. Rename it to `.ts`, fix any major issues it flags up that you can---but stick as locally as possible. You're apt to find a *lot* of small bugs as you start migrating, and some of them are things which are apt to affect your whole system because they touch central data types. It's okay. You can come back to those later. For today, you can just be explicit about the weirdnesses.
+
+- As part of that: get comfortable---really, really comfortable---with [union types]. They'll make it much easier to express the kind of code you've *actually* written.[^union-vs-optional]
+
+- Don't worry about adding explicit types to *everything.* In fact, depending on how comfortable you are already with typed languages, you should probably take a pretty different tack with this:
+
+    + If you're just stepping into the world of typed programming languages, you might start adding types where they're the *lowest risk*: some place like your automated tests. That'll help you start to see how to take advantage of them, while not impacting the way you write your app code until you have a better idea how best to employ the types.
+
+    + If you're already really comfortable with typed programming languages, you might employ types where they're *most helpful:* start with some types in the hairiest or trickiest spots of your app.
+
+There is plenty more I could say, but I think that's a good start for now. I'll have lots more to add in later posts about the details of how specifically to get the most mileage out of types within an Ember.js app today.
+
+[^union-vs-optional]: Also, I *strongly* encourage you to write types in terms of unions of types rather than in terms of [optional properties on types][optional]. That might be surprising; I'll explain it in more detail in a future post.
+
+[union types]: http://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types
+[optional]: http://www.typescriptlang.org/docs/handbook/interfaces.html#optional-properties
+
+---
+
+- [**Previous:** Part 1 – Set your Ember.js project up to use TypeScript.][part-1]
