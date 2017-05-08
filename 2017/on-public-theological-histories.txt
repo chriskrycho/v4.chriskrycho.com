@@ -26,7 +26,7 @@ This highlights another reality, though: when you start to consider what, exactl
 
 But what this points to is not the need for universal preservation, for holding on for dear life to everything I have published online. Rather, it suggests that *curation* is valuable. Or, to use a word we might have used in an earlier time with a less haphazard and hyper-individualized approach to publishing: *editing* is valuable. In this case, that editorial work might simply be my own culling and deciding what to keep and what not to. But the more material I generate, the more valuable I think that kind of trimming is. With it comes the work of figuring out to present that kind of "archival" material---what qualifiers to prepend to it, for example, and where on the site it should live, and how to make sure that links still work even if I move the actual content around on the site... in short, doing this well is a lot of work. But more and more I think: do that work, or shut it all down. There's too much noise as it is.
 
-So then, as I have suggested before:[^1] I need to print these things (if only for my own long-term curiosity). And then, as I have not suggested before: I need to 
+So then, as I have suggested before:[^1] I need to print these things (if only for my own long-term curiosity). And then, as I have not suggested before: I need to throw some things away, as well.
 
 [^1]:	Ironically, given the content of this post: perhaps only in a microblog post I am apt to delete entirely from my site in short order.
 
