@@ -1,0 +1,34 @@
+---
+Title: On Public (Theological) Histories
+Subtitle: Personal blogging, “permanency” online, and the importance of curation (editing).
+Date: 2017-05-07 21:15
+Category: Theology
+Tags: writing
+
+---
+
+Over the past decade---yes, a full decade, and more at this point---I have been blogging about theology. That means that at this point I have over a decade of theological thought "on record" as it were. You can look at things I wrote in 2006 and have some idea where I landed on many a theological issue, and for that matter in my slow maturation in my faith.
+
+I am increasingly unsure about the tradeoffs that go with this. Being able to trace someone's theological and personal trajectory has its upsides, in the case of significant theological figures. But I am not a significant theological figure, and even to speculate that someday I might be seems hubristic in the extreme.
+
+Many of the things I have written have a great deal of standing in the eyes of Google and other search engines: they are old, have various links which point their way, and in several cases are one of only a few posts (or posts still up) on a given book. I feel---and feel the more keenly the further distant from their writing I get---the weight of responsibility for those words. They are public and they have some influence (even if small); if I mislead by leaving them online, that certainly outweighs whatever "benefit" I or someone else might find in their being online.
+
+I have written and talked before about the problems of link-rot, and those problems are real. But there is also this: link-rot is a problem for content of *significance*, of *importance*. Even granting that what is significant or important to one person may be very different from what is significant or important to another, much of what I have written online certainly is neither significant nor important. Would it be so bad a thing for some random ramble---[this one][1], say, from a decade ago---to go away? No. It wouldn't.
+
+Two things occur to me here:
+
+**First**, if things are worth saving, they are likely worth saving in a form that is not merely digital. [Excellent][2] as the work of the [Internet Archive][3] is, and diligently as any individual may work at preserving their own content (as I have to date), things do break. If Blogger shuts down, I will have archives of my old site, but if in some horrible event my machine and all its backups *also* failed... well, that content would be last. Things truly worth keeping are probably worth keeping physically.
+
+This highlights another reality, though: when you start to consider what, exactly, you consider valuable enough to *print*, you start to realize how little of value is on a website like my old blogs. That's not to say they didn't have value of all sorts when I originally wrote them---perhaps they did and perhaps they didn't---but if, a decade on, you can't see a reason to keep them around in hard copy, you might well wonder if there's a reason to keep them around at all. More and more, I think the answer is probably _no_.
+
+**Second**, there is no reason to make this an all-or-nothing affair. There *are* things on that old site I'd keep around---book reviews, mostly, but also perhaps a few other relatively high-traffic posts with which I still largely agree, or others with which I now disagree but which that is useful to me in some way. For example, I can readily enough think of times when it might actually be helpful to me at times to be able to point to two different posts from different times in my intellectual development and say: I was *wrong* here and I now think *this* instead.
+
+But what this points to is not the need for universal preservation, for holding on for dear life to everything I have published online. Rather, it suggests that *curation* is valuable. Or, to use a word we might have used in an earlier time with a less haphazard and hyper-individualized approach to publishing: *editing* is valuable. In this case, that editorial work might simply be my own culling and deciding what to keep and what not to. But the more material I generate, the more valuable I think that kind of trimming is. With it comes the work of figuring out to present that kind of "archival" material---what qualifiers to prepend to it, for example, and where on the site it should live, and how to make sure that links still work even if I move the actual content around on the site... in short, doing this well is a lot of work. But more and more I think: do that work, or shut it all down. There's too much noise as it is.
+
+So then, as I have suggested before:[^1] I need to print these things (if only for my own long-term curiosity). And then, as I have not suggested before: I need to 
+
+[^1]:	Ironically, given the content of this post: perhaps only in a microblog post I am apt to delete entirely from my site in short order.
+
+[1]:	http://blog.chriskrycho.com/2007/01/dangerous-obsessions.html
+[2]:	http://www.newyorker.com/magazine/2015/01/26/cobweb ""The Cobweb: Can the Internet be Archived? by Jill Lepore""
+[3]:	https://archive.org
