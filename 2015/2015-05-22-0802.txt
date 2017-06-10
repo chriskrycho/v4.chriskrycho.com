@@ -1,0 +1,12 @@
+---
+Title: ""
+Slug: 2015-05-22-0802
+Template: formats/micro
+Category: micro
+Date: 2015-05-22 08:02
+...
+
+I've only been using [tmux] for about a week. I can't even *imagine* trying to
+work without it anymore.
+
+[tmux]: http://tmux.sourceforge.net

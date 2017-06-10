@@ -1,0 +1,12 @@
+---
+Title: ""
+Date: 2016-10-30 09:23
+Slug: 10-30-0923
+Template: formats/micro
+Category: micro
+Tags: software development, programming languages, ML
+---
+
+I’ll go a step further on [yesterday’s comments][prev]: I would *love* to use [Reason](https://facebook.github.io/reason/) in a future project.
+
+[prev]: /2016/10-29-1552.html

@@ -1,0 +1,14 @@
+---
+Title: ""
+Date: 2016-12-23 20:12
+Slug: 12-23-2012
+Category: micro
+Template: formats/micro
+Tags: rust
+---
+
+I keep trying to read documentation about templating engines in Rust and getting distracted by e.g. restyling [rustdoc] output.
+
+[rustdoc]: https://doc.rust-lang.org/book/documentation.html#about-rustdoc
+
+(That’s not a thing that’s happening, though I’d happily chip in if it were, just a thing that distracted me. Web Inspector.)

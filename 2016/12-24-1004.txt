@@ -1,0 +1,13 @@
+---
+Title: ""
+Date: 2016-12-24 10:04
+Slug: 12-24-1004
+Category: micro
+Template: formats/micro
+Tags: software development, rust, text editors
+---
+
+Tip for doing Rust dev in VS Code: check out [this fork] of [RustyCode], which is currently more actively maintained.
+
+[this fork]: https://github.com/KalitaAlexey/vscode-rust
+[RustyCode]: https://github.com/saviorisdead/RustyCode

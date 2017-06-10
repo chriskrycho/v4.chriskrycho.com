@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-08-06 21:00
+Tags: podcasting
+Template: formats/micro
+Slug: 08-06-2100
+Category: micro
+---
+
+Speaking of podcasting: my current goal is to ship an episode of New Rustacean every other week (the off weeks from Winning Slowly), after this coming week (when they'll hopefully both have an episode). Lots to do!

@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - cplusplus</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Tue, 07 Jun 2016 23:16:00 -0400</lastBuildDate><item><title>Rust and C++ function definitions</title><link>http://www.chriskrycho.com/2016/03-1801.html</link><description>&lt;p&gt;I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare—&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - cplusplus</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Mon, 15 Aug 2016 06:28:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/08-15-0628.html</link><description>&lt;p&gt;My &lt;a href="https://twitter.com/hashtag/firstsevenlanguages"&gt;#firstsevenlanguages&lt;/a&gt;—looking strictly at what I’d used &lt;em&gt;at all&lt;/em&gt;; ignoring HTML and CSS):&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Visual Basic&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;li&gt;Fortran&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In terms of what I learned well enough to use, though:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Fortran&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;/ol&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 15 Aug 2016 06:28:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-08-15:/2016/08-15-0628.html</guid><category>programming languages</category><category>visual basic</category><category>cplusplus</category><category>fortran</category><category>java</category><category>c</category><category>php</category><category>javascript</category><category>python</category></item><item><title>Rust and C++ function definitions</title><link>http://www.chriskrycho.com/2016/03-1801.html</link><description>&lt;p&gt;I just put my finger on one of the (many) reasons Rust reads better than C++: the visual consistency of its function definitions. Compare—&lt;/p&gt;
 &lt;p&gt;Rust has:&lt;/p&gt;
 &lt;pre class="rust"&gt;&lt;code&gt;fn foo() -&amp;gt; i32 { /* implementation */ }
 fn bar() -&amp;gt; f32 { /* implementation */ }&lt;/code&gt;&lt;/pre&gt;
@@ -16,7 +36,11 @@ double bar() { /* implementation */ }&lt;/code&gt;&lt;/pre&gt;
 &lt;div id="refs" class="references"&gt;
 
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 03 Jun 2016 18:01:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-06-03:/2016/03-1801.html</guid><category>programming languages</category><category>rust</category><category>cplusplus</category></item><item><title>High- and Low-Level Programming Languages</title><link>http://www.chriskrycho.com/2015/high-and-low-level-programming-languages.html</link><description>&lt;p&gt;It occurred to me while listening to &lt;a href="https://edwinb.wordpress.com"&gt;Edwin Brady&lt;/a&gt; talk about &lt;a href="http://www.idris-lang.org"&gt;Idris&lt;/a&gt; on the &lt;a href="http://typetheorypodcast.com"&gt;Type Theory Podcast&lt;/a&gt;,&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; having just spent a few weeks starting to learn &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt;: “low-level” has at least two meanings in software. One is whether something has manual memory management or is garbage collected, reference counted, or otherwise manages memory itself. This is what people often mean when they talk about C, C++, etc. as being “low-level” and languages like Python or Ruby or C♯ being high-level.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 03 Jun 2016 18:01:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-06-03:/2016/03-1801.html</guid><category>programming languages</category><category>rust</category><category>cplusplus</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-03-15-0805.html</link><description>&lt;p&gt;I was reading some C++ yesterday, and I can’t put my finger on what it is about the language, but I just find it unbearably &lt;em&gt;ugly&lt;/em&gt;. Rust’s syntax isn’t that different, but I don’t have the same visceral reaction. I wonder why that is?&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 15 Mar 2016 08:05:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-03-15:/2016/2016-03-15-0805.html</guid><category>programming languages</category><category>cplusplus</category><category>rust</category></item><item><title>High- and Low-Level Programming Languages</title><link>http://www.chriskrycho.com/2015/high-and-low-level-programming-languages.html</link><description>&lt;p&gt;It occurred to me while listening to &lt;a href="https://edwinb.wordpress.com"&gt;Edwin Brady&lt;/a&gt; talk about &lt;a href="http://www.idris-lang.org"&gt;Idris&lt;/a&gt; on the &lt;a href="http://typetheorypodcast.com"&gt;Type Theory Podcast&lt;/a&gt;,&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; having just spent a few weeks starting to learn &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt;: “low-level” has at least two meanings in software. One is whether something has manual memory management or is garbage collected, reference counted, or otherwise manages memory itself. This is what people often mean when they talk about C, C++, etc. as being “low-level” and languages like Python or Ruby or C♯ being high-level.&lt;/p&gt;
 &lt;p&gt;But then you toss in a language like &lt;a href="https://www.rust-lang.org"&gt;Rust&lt;/a&gt;, and things start to get a little more complicated. Rust can do the same kind of direct memory management that makes C or C++ a good language for things like writing operating system kernels. [&lt;a href="https://github.com/torvalds/linux"&gt;1&lt;/a&gt;,&lt;a href="https://en.wikipedia.org/wiki/Architecture_of_Windows_NT"&gt;2&lt;/a&gt;,&lt;a href="http://www.opensource.apple.com/source/xnu/xnu-2782.10.72/"&gt;3&lt;/a&gt;] But it is also memory-safe, at least in ordinary usage. Like C♯, you have to be explicit about any unsafe code, with the &lt;code&gt;unsafe&lt;/code&gt; keyword on any blocks that do memory management that isn’t safe. And the vast majority of Rust code &lt;em&gt;is&lt;/em&gt; safe.&lt;/p&gt;
 &lt;p&gt;More than that, though, Rust &lt;em&gt;feels&lt;/em&gt; like a high-level language. It gives you higher-kinded functions, generics, traits-based composition of types, hygienic macros, and the implementation of many important parts the essentials of the language in the library. If you need to patch something, or extend something, you can do that in a straightforward way. In short, it gives you lots of good abstractions like you would expect in a high-level language.&lt;/p&gt;
 &lt;p&gt;Rust is low-level in that you can write (and people are writing) systems-level programs in it. It is high-level in that it lets you express things in ways normally associated with languages like Haskell or OCaml or Python or Ruby. To put it simply: it’s &lt;em&gt;low-level&lt;/em&gt; in its ability to address the computer, and &lt;em&gt;high-level&lt;/em&gt; in the abstractions it hands to a programmer. That’s a powerful combination, and I hope more languages embrace it in the years to come.&lt;/p&gt;

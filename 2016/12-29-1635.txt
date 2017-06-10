@@ -1,0 +1,14 @@
+---
+Title: ""
+Date: 2016-12-29 16:35
+Slug: 12-29-1635
+Category: micro
+Template: formats/micro
+Tags: software development, live-coding, elm
+---
+
+Thanks to everyone who watched [Jamon Holmgren] and me live-coding in [Elm] today. Intro to us and to Elm [here].
+
+[Jamon Holmgren]: https://twitter.com/jamonholmgren
+[Elm]: http://elm-lang.org
+[here]: https://youtu.be/s8dH7k0Zggo?t=13m43s

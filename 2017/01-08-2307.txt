@@ -1,0 +1,15 @@
+---
+Title: ""
+Date: 2017-01-08 23:07
+Tags: podcasting, rust
+Template: formats/micro
+Slug: 01-08-2307
+Category: micro
+---
+
+I’m *extremely* excited to be adding a new format to [New Rustacean]: discussing good crates in the Rust ecosystem. Suggestions wanted!
+
+[Crates You Should Know: quick-xml---A pull-parser for reading and writing XML.][cysk-1]
+
+[New Rustacean]: http://www.newrustacean.com/
+[cysk-1]: http://www.newrustacean.com/show_notes/crates_you_should_know/_1/

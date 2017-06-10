@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-12-23 22:52
+Slug: 12-23-2252
+Category: micro
+Template: formats/micro
+Tags: lightning-rs, rust
+---
+
+One of the great joys in programming is when you start to feel even just a little bit *fluent* in a technology.

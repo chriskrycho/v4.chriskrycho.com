@@ -1,0 +1,14 @@
+---
+Title: ""
+Slug: 2015-06-23-0659
+Date: 2015-06-23 06:59
+Template: formats/micro
+Category: micro
+Tags: coffee
+...
+
+The [Counter Culture][cc] [Finca Al Puente][fap] Honduran I ground for my Chemex
+this morning was amazing---one of the best cups of coffee I’ve ever had.
+
+[cc]: https://counterculturecoffee.com/
+[fap]: https://counterculturecoffee.com/store/coffee/finca-el-puente

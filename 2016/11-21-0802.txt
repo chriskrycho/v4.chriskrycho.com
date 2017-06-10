@@ -1,0 +1,12 @@
+---
+Title: ""
+Date: 2016-11-21 08:02
+Slug: 11-21-0802
+Template: formats/micro
+Category: micro
+Tags: lightning-rs, Rust, software development
+---
+
+One of the things I most enjoyed working more on [Lightning] this weekend: the Rust compiler is so *helpful*.
+
+[Lightning]: https://github.com/chriskrycho/lightning-rs

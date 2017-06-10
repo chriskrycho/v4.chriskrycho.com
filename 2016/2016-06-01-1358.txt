@@ -1,0 +1,11 @@
+---
+Title: ""
+Slug: 2016-06-01-1358
+Date: 2016-06-01 13:58
+Template: formats/micro
+Category: micro
+---
+
+I was looking at the [GitHub repository] for my blog, and noted that it doesn't include Markdown in its language stats. Which means its stats are *hilariously* misleading when you're looking at the language breakdown for a content-oriented repository.
+
+[GitHub repository]: https://github.com/chriskrycho/chriskrycho.com

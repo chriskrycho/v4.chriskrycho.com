@@ -1,0 +1,11 @@
+---
+Title: ""
+Slug: 2015-06-27-1411
+Date: 2015-06-27 14:11
+Tags: software development
+Template: formats/micro
+Category: micro
+...
+
+Playing with CSS transforms and transitions while I listen to a lecture
+on Romans for my New Testament class. Keep myself awake...

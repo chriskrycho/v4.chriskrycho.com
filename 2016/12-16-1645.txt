@@ -1,0 +1,42 @@
+---
+Title: ""
+Date: 2016-12-16 16:45
+Template: formats/micro
+Slug: 12-16-1645
+Category: micro
+Tags: javascript, software development, tweetstorm
+---
+
+<i class=editorial>I originally posted this as a [tweetstorm], but I'm treating *this* as the canonical and adding a tweet to the end of that "topic" linking back here. [Indie web] forever.</i>
+
+[tweetstorm]: https://twitter.com/chriskrycho/status/809892171063103488
+[Indie web]: http://indiewebcamp.com
+
+---
+
+
+- JavaScript experiences which induce profound frustration in me:
+
+- I had gotten in an insane state where things just *stopped working* that had previously been working as I updated to [Ember CLI] 2.6.
+
+- After much tearing of hair, I started over from scratch and repeated the upgrade process.
+
+    Everything works now.
+
+    ¯\\\_(ツ)_/¯
+
+- Then: `rm -rf node_modules bower_components` and test again.
+
+    Nothing works now.
+
+    ¯\\\_(ツ)_/¯
+
+- Consistently, it works fine after the upgrade and `ember init` finishes. Then, if I do a clean install of the dependencies, it fails.
+
+- And it fails in the *same ways*. So ultimately I’ll be chasing those, because we’re not going to get stuck here.
+
+- But this is an *infuriating* experience. If you’ve ever believed npm’s claim that non-deterministic installs aren’t a problem... consider this a data point in the opposite direction.
+
+    ┻━┻ ︵╰(°□°)╯︵ ┻━┻
+
+[Ember CLI]: https://ember-cli.com

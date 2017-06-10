@@ -1,0 +1,12 @@
+---
+Title: ""
+Date: 2016-10-01 15:19
+Template: formats/micro
+Slug: 10-01-1519
+Category: micro
+---
+
+Wanted: someone to build a business like [Slack]’s but on an open protocol. [Matrix] is a neat protocol, but the clients are *not good*.
+
+[Slack]: https://slack.com
+[Matrix]: http://matrix.org

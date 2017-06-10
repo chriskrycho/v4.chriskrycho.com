@@ -1,0 +1,18 @@
+---
+Title: ""
+Date: 2016-12-20 08:03
+Slug: 12-20-0803
+Category: micro
+Template: formats/micro
+Tags: software development, text editors
+---
+
+Things VS Code still needs to fix to be awesome:
+
+- font-smoothing settings on macOS
+- the color of the status bar
+- ability to cut-to-EOL
+
+And let me turn off the ridiculous smiley-face feedback icon!
+
+To be clear: Code is already *very good*. But it’s not quite *awesome*. (It’ll get there.)

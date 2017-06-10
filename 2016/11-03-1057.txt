@@ -1,0 +1,12 @@
+---
+Title: ""
+Date: 2016-11-03 10:57
+Template: formats/micro
+Slug: 11-03-1057
+Category: micro
+Tags: software development
+---
+
+Front-end web development in one screenshot: macOS Safari on the left, iOS Safari on the right.
+
+![](//cdn.chriskrycho.com/images/web-dev.jpg)

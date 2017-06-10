@@ -1,0 +1,11 @@
+---
+Title: ""
+Slug: 2015-10-20-0755
+Date: 2015-10-20 07:55
+Tags: software development
+Template: formats/micro
+Category: micro
+...
+
+I really hate that a *constant expression* and `const`-*qualified* aren’t the
+same thing in C and C++.

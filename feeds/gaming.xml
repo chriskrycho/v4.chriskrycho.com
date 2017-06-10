@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Chris Krycho - gaming</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 27 Feb 2016 20:05:00 -0500</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/2016-02-27-2005.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I posted these as a series of tweets.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Fired up and played the demo for &lt;a href="https://www.elitedangerous.com"&gt;Elite Dangerous&lt;/a&gt; on my Parallels VM. Made me want to buy it. But of course, I’d prefer to play it natively.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Of course, it’s available for Mac. But my (more than a decade old) joystick doesn’t have any support on OS X. No drivers, full stop.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;You can find software out there which recognizes it, of course—but it’s quirky and doesn’t behave well.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Looks like opportunity calling.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;I might—might, I say, not &lt;em&gt;will&lt;/em&gt;—end up seeing if I can write the requisite pieces in Rust. Because that seems like a good plan.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 27 Feb 2016 20:05:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-02-27:/2016/2016-02-27-2005.html</guid><category>software development</category><category>programming languages</category><category>rust</category><category>gaming</category></item></channel></rss>

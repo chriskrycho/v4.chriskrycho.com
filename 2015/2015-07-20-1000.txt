@@ -1,0 +1,11 @@
+---
+Title: ""
+Slug: 2015-07-20-1000
+Date: 2015-07-20 10:00
+Template: formats/micro
+Category: micro
+...
+
+Pro tip: it turns out that generic versions of psychotropic medications may not
+be as effective as the brand-name version. Lessons we've learned the hard way in
+the last two months.

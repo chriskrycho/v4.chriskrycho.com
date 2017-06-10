@@ -1,0 +1,11 @@
+---
+Title: ""
+Slug: 2015-05-31-1728
+Date: 2015-05-31 17:28
+Template: formats/micro
+Category: micro
+...
+
+I think I'm going to give up on Evernote again. UI problems left and right.
+
+So... what’s a good taggable, hierarchical, searchable notes app?

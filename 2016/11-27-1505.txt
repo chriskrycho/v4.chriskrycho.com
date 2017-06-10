@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-11-27 15:05
+Slug: 11-27-1505
+Template: formats/micro
+Category: micro
+Tags: software development
+---
+
+There’s nothing like building something *real* in a language to find all the weird little corners. Even something small will get you there.

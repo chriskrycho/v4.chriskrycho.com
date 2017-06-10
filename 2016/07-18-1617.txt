@@ -1,0 +1,16 @@
+---
+Title: ""
+Date: 2016-07-18 16:17
+Tags: fitness
+Template: formats/micro
+Slug: 07-18-1617
+Category: micro
+---
+
+The day you accidentally run 20 miles, and then the day after...
+
+![pedometer data](//cdn.chriskrycho.com/images/30k-no-k-steps.png "33,413 steps one day, 526 the next")
+
+
+
+

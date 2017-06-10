@@ -1,0 +1,10 @@
+---
+Title: ""
+Slug: 2015-07-21-1305
+Date: 2015-07-21 13:05
+Template: formats/micro
+Category: micro
+...
+
+So... Apple Music is going to have some serious issues if it can't get "playing
+music on demand" separate from iTunes store issues.

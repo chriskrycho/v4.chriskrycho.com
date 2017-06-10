@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2017-02-15 08:32
+Tags: programming languages, javascript, functional programming, rust, elm, fsharp
+Template: formats/micro
+Slug: 02-15-0832
+Category: micro
+---
+
+One of the biggest changes in my JavaScript from learning Rust/Elm/F♯/etc. is that I now think *constantly* about what can fail.

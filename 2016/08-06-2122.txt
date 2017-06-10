@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-08-06 21:22
+Tags: podcasting
+Template: formats/micro
+Slug: 08-06-2122
+Category: micro
+---
+
+Wrote 700 words of the script for New Rustacean e017. Should finish that script tomorrow (and maybe record, too!).

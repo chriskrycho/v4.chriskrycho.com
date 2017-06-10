@@ -1,5 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - python</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 28 Feb 2016 12:50:00 -0500</lastBuildDate><item><title>Static Site Generators and Podcasting</title><link>http://www.chriskrycho.com/2016/static-site-generators-and-podcasting.html</link><description>&lt;p&gt;Presently, I publish both &lt;a href="http://www.winningslowly.org/"&gt;Winning Slowly&lt;/a&gt; and &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt;&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; using what is admittedly a bit of a quirky approach. It works well for me, and I think it’s worth documenting for other nerdy types out there, but if you’re just getting going with podcasting and you’re looking for the easy way to do it, let me warn you: &lt;em&gt;this isn’t it&lt;/em&gt;. Something like &lt;a href="https://soundcloud.com/for/podcasting"&gt;SoundCloud&lt;/a&gt; and a blog for show notes, or &lt;a href="https://wordpress.org"&gt;WordPress&lt;/a&gt; with &lt;a href="https://wordpress.org/plugins/powerpress/"&gt;Blubrry PowerPress&lt;/a&gt; is what you want instead. This approach works &lt;em&gt;extremely&lt;/em&gt; well for statically-generated sites, however, and I imagine a few people out there might find it useful.&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - python</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Mon, 15 Aug 2016 06:28:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/08-15-0628.html</link><description>&lt;p&gt;My &lt;a href="https://twitter.com/hashtag/firstsevenlanguages"&gt;#firstsevenlanguages&lt;/a&gt;—looking strictly at what I’d used &lt;em&gt;at all&lt;/em&gt;; ignoring HTML and CSS):&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Visual Basic&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;li&gt;Fortran&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In terms of what I learned well enough to use, though:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Fortran&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;li&gt;C&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;/ol&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 15 Aug 2016 06:28:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-08-15:/2016/08-15-0628.html</guid><category>programming languages</category><category>visual basic</category><category>cplusplus</category><category>fortran</category><category>java</category><category>c</category><category>php</category><category>javascript</category><category>python</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-31-0900.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/737629809241645056"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;Seeing gradual typing come to both Ruby and Python at around the same time is fascinating.&lt;/li&gt;
+&lt;li&gt;Seeing some responses (“If I wanted static types I’d use a &lt;em&gt;real&lt;/em&gt; statically typed language”) which just completely miss the point.&lt;/li&gt;
+&lt;li&gt;The idea is that you can add these kinds of type annotations where—and only where—they’re useful.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 09:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-05-31:/2016/2016-05-31-0900.html</guid><category>python</category><category>ruby</category><category>programming languages</category><category>listicles</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-19-1928.html</link><description>&lt;p&gt;I needed to write a tiny server to test out some quirky single-page app stuff I’m doing for Olo right now. So I did it with Python and Flask.&lt;/p&gt;
+&lt;p&gt;And you know what? Python is still—and forever, I suspect—so much better than JavaScript.&lt;/p&gt;
+&lt;div id="refs" class="references"&gt;
+
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 19 May 2016 19:28:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-05-19:/2016/2016-05-19-1928.html</guid><category>software development</category><category>programming languages</category><category>python</category><category>javascript</category></item><item><title>Static Site Generators and Podcasting</title><link>http://www.chriskrycho.com/2016/static-site-generators-and-podcasting.html</link><description>&lt;p&gt;Presently, I publish both &lt;a href="http://www.winningslowly.org/"&gt;Winning Slowly&lt;/a&gt; and &lt;a href="http://www.newrustacean.com/"&gt;New Rustacean&lt;/a&gt;&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; using what is admittedly a bit of a quirky approach. It works well for me, and I think it’s worth documenting for other nerdy types out there, but if you’re just getting going with podcasting and you’re looking for the easy way to do it, let me warn you: &lt;em&gt;this isn’t it&lt;/em&gt;. Something like &lt;a href="https://soundcloud.com/for/podcasting"&gt;SoundCloud&lt;/a&gt; and a blog for show notes, or &lt;a href="https://wordpress.org"&gt;WordPress&lt;/a&gt; with &lt;a href="https://wordpress.org/plugins/powerpress/"&gt;Blubrry PowerPress&lt;/a&gt; is what you want instead. This approach works &lt;em&gt;extremely&lt;/em&gt; well for statically-generated sites, however, and I imagine a few people out there might find it useful.&lt;/p&gt;
 &lt;section id="the-short-version" class="level2"&gt;
 &lt;h2&gt;The short version&lt;/h2&gt;
 &lt;ul&gt;
