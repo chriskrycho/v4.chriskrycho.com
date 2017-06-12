@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <title>TDD-ing a Small Ember Feature</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="How to test-drive through a feature with Ember's test tools" />
+    <meta name="author" content="Chris Krycho" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css">
+    
+    <!-- defaults; TODO: replace with own variation -->
+    <link rel="stylesheet" href="/talks/lib/reveal.css">
+    <link rel="stylesheet" href="/talks/lib/krycho.css" id="theme">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown="talk.md"
+                     data-separator="^\n- - - - -\n"
+                     data-separator-vertical="^\n- - -\n"
+                     data-separator-notes="^Note:\n"
+                     data-charset="UTF-8">
+        </div>
+    </div>
+
+    <!-- Pull in and set up Reveal.js -->
+    <script type="text/javascript" src="/talks/lib/head.min.js"></script>
+    <script type="text/javascript" src="/talks/lib/reveal.min.js"></script>
+    <script type="text/javascript">
+        Reveal.initialize({
+            width: 1024,
+            height: 768,
+            controls: true,
+            history: true,
+            center: true,
+            transition: "convex",
+            dependencies: [
+                {
+                  src: '/talks/lib/plugin/marked.js',
+                  condition: () => !!document.querySelector( '[data-markdown]' )
+                },
+                {
+                  src: '/talks/lib/plugin/markdown.js',
+                  condition: () => !!document.querySelector( '[data-markdown]' )
+                },
+                {
+                  src: '/talks/lib/plugin/highlight.js',
+                  async: true,
+                  condition: () => !!document.querySelector( 'pre code' ),
+                  callback: () => hljs.initHighlightingOnLoad()
+                },
+                { src: '/talks/lib/plugin/zoom.js', async: true },
+                { src: '/talks/lib/plugin/notes.js', async: true }
+            ]
+        });
+    </script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/tomorrow-night-blue.min.css">
+    <script src="/assets/js/highlight.pack.js"></script>
+    <script type="text/javascript">
+    // Get all the <pre><code> elements, and use the <pre> element to set the <code>
+    // element's class so hljs will use it rather than trying to figure it out.
+    var preEls = document.getElementsByTagName('pre');
+    for (var e in preEls) {
+        var pre = preEls[e];
+        if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+            var code = pre.firstChild;
+            code.className = pre.className;
+        }
+    }
+
+    // Then run hljs.
+    hljs.initHighlightingOnLoad();
+    </script>
+</body>
+</html>
