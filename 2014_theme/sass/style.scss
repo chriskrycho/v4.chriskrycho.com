@@ -123,9 +123,10 @@ ul {
     list-style-type: circle;
 
     li {
+        p,
         p:first-child {
             display: block;
-            margin-top: 1em;
+            margin-bottom: 1em;
         }
     }
 
@@ -149,6 +150,14 @@ ul {
 }
 
 ol { list-style: decimal;
+
+    li {
+        p,
+        p:first-child {
+            display: block;
+            margin-bottom: 1em;
+        }
+    }
 
     ol { list-style: upper-latin;
 
@@ -467,6 +476,10 @@ body::before {
     letter-spacing: -0.1em;
 }
 
+video {
+    max-width: 100%;
+}
+
 // Article
 article {
     padding-bottom: $fs2;
@@ -616,11 +629,13 @@ article {
         }
 
         .hashtag a {
+            display: inline-block;
+
             margin: {
                 left: 0.13em;
-                right: 0.13em
+                right: 0.13em;
             }
-            ;
+
             &:first-of-type {
                 margin-left: 0;
             }
