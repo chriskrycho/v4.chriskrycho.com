@@ -16,7 +16,6 @@ const uniqueLetters = _.flow([
 console.log(uniqueLetters(breakfasts))&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;That gets the job done, but wouldn’t it be nice if we didn’t have to have all those anonymous functions (lambdas) throughout?&lt;/p&gt;
 &lt;pre class="javascript"&gt;&lt;code&gt;// lodash-fp
-
 const uniqueLettersFp = _.flow([
   _.map(words),
   _.flatten,
