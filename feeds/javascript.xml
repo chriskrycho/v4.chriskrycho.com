@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - JavaScript</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 23 Apr 2017 17:20:00 -0400</lastBuildDate><item><title>Why Elm Instead of TypeScript?</title><link>http://www.chriskrycho.com/2017/why-elm-instead-of-typescript.html</link><description>&lt;p&gt;A few weeks ago, an acquaintance asked in a Slack channel we’re both in:&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - javascript</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 24 Jun 2017 17:35:00 -0400</lastBuildDate><item><title>“Collection-Last Auto-Curried Functions”</title><link>http://www.chriskrycho.com/2017/collection-last-auto-curried-functions.html</link><description>&lt;p&gt;I’ve been using &lt;a href="https://lodash.com"&gt;lodash&lt;/a&gt; for a while at work, and I love having it in our toolbox. But, as I increasingly embrace &lt;em&gt;composition of smaller functions&lt;/em&gt; as a helpful approach to building up the final version of an overall transformation of some piece of data, I’ve increasingly wanted to be using &lt;a href="https://github.com/lodash/lodash/wiki/FP-Guide"&gt;lodash-fp&lt;/a&gt; instead—those “auto-curried… data-last methods” are &lt;em&gt;nice&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;I could belabor the difference with words, but a code sample will do better. Here’s how I would write the same basic transformation in both Lodash and lodash-fp.&lt;/p&gt;
+&lt;pre class="javascript"&gt;&lt;code&gt;// Lodash
+const breakfasts = [&amp;#39;pancakes&amp;#39;, &amp;#39;waffles&amp;#39;, &amp;#39;french toast&amp;#39;]
+
+const uniqueLetters = _.flow([
+  bs =&amp;gt; _.map(bs, words),
+  _.flatten,
+  bs =&amp;gt; _.map(bs, b =&amp;gt; split(b, &amp;#39;&amp;#39;)),
+  _.flatten,
+  _.uniq,
+  ls =&amp;gt; _.sortBy(ls, id),
+])
+
+console.log(uniqueLetters(breakfasts))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That gets the job done, but wouldn’t it be nice if we didn’t have to have all those anonymous functions (lambdas) throughout?&lt;/p&gt;
+&lt;pre class="javascript"&gt;&lt;code&gt;// lodash-fp
+
+const uniqueLettersFp = _.flow([
+  _.map(words),
+  _.flatten,
+  _.map(split(&amp;#39;&amp;#39;)),
+  _.flatten,
+  _.uniq,
+  _.sortBy(id),
+])
+
+const breakfasts = [&amp;#39;pancakes&amp;#39;, &amp;#39;waffles&amp;#39;, &amp;#39;french toast&amp;#39;]
+
+console.log(uniqueLettersFp(breakfasts))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Suddenly the intent is much clearer with the noise introduced by the lambdas gone. You get this because the lodash-fp functions are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;auto-curried:&lt;/strong&gt; that is, even though &lt;code&gt;_.split&lt;/code&gt; takes the splitter and then a string, you can just write &lt;code&gt;_.split('')&lt;/code&gt; and get back a function which takes a string as an argument.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;data-last:&lt;/strong&gt; because &lt;code&gt;_.split&lt;/code&gt; takes the string to split &lt;em&gt;last&lt;/em&gt;, it can be passed into an auto-curried function.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You need &lt;em&gt;both&lt;/em&gt; to get that nice clean call to &lt;code&gt;_.flow&lt;/code&gt;. But once you have both, it’s really, really hard ever to go back, because it’s so much nicer for building pipelines of functions.&lt;/p&gt;
+&lt;p&gt;…I need to see if I can help &lt;a href="https://github.com/mike-north/ember-lodash/issues/21"&gt;do the work&lt;/a&gt; to make lodash-fp available in Ember.js.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 24 Jun 2017 17:35:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-06-24:/2017/collection-last-auto-curried-functions.html</guid><category>javascript</category><category>funtional programming</category></item><item><title>Why Elm Instead of TypeScript?</title><link>http://www.chriskrycho.com/2017/why-elm-instead-of-typescript.html</link><description>&lt;p&gt;A few weeks ago, an acquaintance asked in a Slack channel we’re both in:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Can I ask a noob type Elm / JS question?&lt;/p&gt;
 &lt;p&gt;Why Elm instead of Typescript? The dev stack and functional programming?&lt;/p&gt;

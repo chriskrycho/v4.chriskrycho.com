@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 10 Jun 2017 10:00:00 -0400</lastBuildDate><item><title>On Decompression</title><link>http://www.chriskrycho.com/2017/on-decompression.html</link><description>&lt;p&gt;I’ve been thinking about reading plans and book lists. And about rest.&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 24 Jun 2017 17:35:00 -0400</lastBuildDate><item><title>“Collection-Last Auto-Curried Functions”</title><link>http://www.chriskrycho.com/2017/collection-last-auto-curried-functions.html</link><description>&lt;p&gt;I’ve been using &lt;a href="https://lodash.com"&gt;lodash&lt;/a&gt; for a while at work, and I love having it in our toolbox. But, as I increasingly embrace &lt;em&gt;composition of smaller functions&lt;/em&gt; as a helpful approach to building up the final version of an overall transformation of some piece of data, I’ve increasingly wanted to be using &lt;a href="https://github.com/lodash/lodash/wiki/FP-Guide"&gt;lodash-fp&lt;/a&gt; instead—those “auto-curried… data-last methods” are &lt;em&gt;nice&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;I could belabor the difference with words, but a code sample will do better. Here’s how I would write the same basic transformation in both Lodash and lodash-fp.&lt;/p&gt;
+&lt;pre class="javascript"&gt;&lt;code&gt;// Lodash
+const breakfasts = [&amp;#39;pancakes&amp;#39;, &amp;#39;waffles&amp;#39;, &amp;#39;french toast&amp;#39;]
+
+const uniqueLetters = _.flow([
+  bs =&amp;gt; _.map(bs, words),
+  _.flatten,
+  bs =&amp;gt; _.map(bs, b =&amp;gt; split(b, &amp;#39;&amp;#39;)),
+  _.flatten,
+  _.uniq,
+  ls =&amp;gt; _.sortBy(ls, id),
+])
+
+console.log(uniqueLetters(breakfasts))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That gets the job done, but wouldn’t it be nice if we didn’t have to have all those anonymous functions (lambdas) throughout?&lt;/p&gt;
+&lt;pre class="javascript"&gt;&lt;code&gt;// lodash-fp
+
+const uniqueLettersFp = _.flow([
+  _.map(words),
+  _.flatten,
+  _.map(split(&amp;#39;&amp;#39;)),
+  _.flatten,
+  _.uniq,
+  _.sortBy(id),
+])
+
+const breakfasts = [&amp;#39;pancakes&amp;#39;, &amp;#39;waffles&amp;#39;, &amp;#39;french toast&amp;#39;]
+
+console.log(uniqueLettersFp(breakfasts))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Suddenly the intent is much clearer with the noise introduced by the lambdas gone. You get this because the lodash-fp functions are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;auto-curried:&lt;/strong&gt; that is, even though &lt;code&gt;_.split&lt;/code&gt; takes the splitter and then a string, you can just write &lt;code&gt;_.split('')&lt;/code&gt; and get back a function which takes a string as an argument.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;data-last:&lt;/strong&gt; because &lt;code&gt;_.split&lt;/code&gt; takes the string to split &lt;em&gt;last&lt;/em&gt;, it can be passed into an auto-curried function.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You need &lt;em&gt;both&lt;/em&gt; to get that nice clean call to &lt;code&gt;_.flow&lt;/code&gt;. But once you have both, it’s really, really hard ever to go back, because it’s so much nicer for building pipelines of functions.&lt;/p&gt;
+&lt;p&gt;…I need to see if I can help &lt;a href="https://github.com/mike-north/ember-lodash/issues/21"&gt;do the work&lt;/a&gt; to make lodash-fp available in Ember.js.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 24 Jun 2017 17:35:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-06-24:/2017/collection-last-auto-curried-functions.html</guid><category>javascript</category><category>funtional programming</category></item><item><title>On Decompression</title><link>http://www.chriskrycho.com/2017/on-decompression.html</link><description>&lt;p&gt;I’ve been thinking about reading plans and book lists. And about rest.&lt;/p&gt;
 &lt;p&gt;Plans and lists may not sound like rest to you; that’s fine: they don’t to me, either. I’ve been eager to move back into the kinds of reading I’m actively interested in doing now that I’m done with my seminary degree. But one of the challenges is that I need—and I’m &lt;em&gt;very&lt;/em&gt; aware of this need—to decompress a bit.&lt;/p&gt;
 &lt;p&gt;The last roughly 8 years have been &lt;em&gt;going&lt;/em&gt; fairly constantly. I began my first job after college the day after Jaimie and I got back from our honeymoon. For the next two years I worked full-time there &lt;em&gt;and&lt;/em&gt; taught myself web development and then did 8–10 hours a week of web development consulting on the side while she finished school. I kept up that pace for another year and a half after that other than a slight break just after Ellie was born, and then we moved to North Carolina for me to get an M. Div. from &lt;a href="http://www.sebts.edu"&gt;SEBTS&lt;/a&gt;. Since we moved here, I’ve always been working—anywhere from 20 to 60 hours a week, always in at least one class a semester and often as many as three. All along the way, I’ve also been reading and writing for myself: these things are relaxing for me. And for the sheer joy and need of a good outlet, I added podcasting along the way as a hobby.&lt;/p&gt;
 &lt;p&gt;But the takeaway of all of that is that I’ve had to be &lt;em&gt;extremely&lt;/em&gt; structured and disciplined with my time. I have always had a detailed schedule and an idea of what I wanted or needed to be working on at any given time: from learning new things in software to writing blog posts, and from actually programming as a job to writing papers for seminary.&lt;/p&gt;

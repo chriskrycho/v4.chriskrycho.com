@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>“Collection-Last Auto-Curried Functions” &middot; Chris Krycho</title>
+    <meta name="description" content="I’ve been using lodash for a while at work, and I love having it in our toolbox. But, as I increasingly embrace composition of smaller functions as a helpful approach to building up the final version of an overall transformation of some piece of data, I’ve increasingly wanted …"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2017/collection-last-auto-curried-functions.html"/>
+    <meta property="og:title" content="“Collection-Last Auto-Curried Functions”"/>
+    <meta property="og:description" content="I’ve been using lodash for a while at work, and I love having it in our toolbox. But, as I increasingly embrace composition of smaller functions as a helpful approach to building up the final version of an overall transformation of some piece of data, I’ve increasingly wanted …"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="“Collection-Last Auto-Curried Functions”"/>
+    <meta name="twitter:description" content="I’ve been using lodash for a while at work, and I love having it in our toolbox. But, as I increasingly embrace composition of smaller functions as a helpful approach to building up the final version of an overall transformation of some piece of data, I’ve increasingly wanted …"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="javascript funtional-programming tech">
+
+    <header>
+<h1>“Collection-Last Auto-Curried Functions”</h1>
+<h2>You want your data last, and you want your functions “partially applied.” Here’s why.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2017/collection-last-auto-curried-functions.html"><i class="fa fa-fw fa-link"></i></a>June 24, 2017</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/funtional-programming/">#funtional programming</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a></span><span><a href="http://www.chriskrycho.com/2017/collection-last-auto-curried-functions.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>I’ve been using <a href="https://lodash.com">lodash</a> for a while at work, and I love having it in our toolbox. But, as I increasingly embrace <em>composition of smaller functions</em> as a helpful approach to building up the final version of an overall transformation of some piece of data, I’ve increasingly wanted to be using <a href="https://github.com/lodash/lodash/wiki/FP-Guide">lodash-fp</a> instead—those “auto-curried… data-last methods” are <em>nice</em>.</p>
+<p>I could belabor the difference with words, but a code sample will do better. Here’s how I would write the same basic transformation in both Lodash and lodash-fp.</p>
+<pre class="javascript"><code>// Lodash
+const breakfasts = [&#39;pancakes&#39;, &#39;waffles&#39;, &#39;french toast&#39;]
+
+const uniqueLetters = _.flow([
+  bs =&gt; _.map(bs, words),
+  _.flatten,
+  bs =&gt; _.map(bs, b =&gt; split(b, &#39;&#39;)),
+  _.flatten,
+  _.uniq,
+  ls =&gt; _.sortBy(ls, id),
+])
+
+console.log(uniqueLetters(breakfasts))</code></pre>
+<p>That gets the job done, but wouldn’t it be nice if we didn’t have to have all those anonymous functions (lambdas) throughout?</p>
+<pre class="javascript"><code>// lodash-fp
+
+const uniqueLettersFp = _.flow([
+  _.map(words),
+  _.flatten,
+  _.map(split(&#39;&#39;)),
+  _.flatten,
+  _.uniq,
+  _.sortBy(id),
+])
+
+const breakfasts = [&#39;pancakes&#39;, &#39;waffles&#39;, &#39;french toast&#39;]
+
+console.log(uniqueLettersFp(breakfasts))</code></pre>
+<p>Suddenly the intent is much clearer with the noise introduced by the lambdas gone. You get this because the lodash-fp functions are:</p>
+<ul>
+<li><strong>auto-curried:</strong> that is, even though <code>_.split</code> takes the splitter and then a string, you can just write <code>_.split('')</code> and get back a function which takes a string as an argument.</li>
+<li><strong>data-last:</strong> because <code>_.split</code> takes the string to split <em>last</em>, it can be passed into an auto-curried function.</li>
+</ul>
+<p>You need <em>both</em> to get that nice clean call to <code>_.flow</code>. But once you have both, it’s really, really hard ever to go back, because it’s so much nicer for building pipelines of functions.</p>
+<p>…I need to see if I can help <a href="https://github.com/mike-north/ember-lodash/issues/21">do the work</a> to make lodash-fp available in Ember.js.</p>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2016/to-paint-god-as-a-man.html">To paint God as a man</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2017/on-decompression.html">On Decompression</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2017/collection-last-auto-curried-functions.html">“Collection-Last Auto-Curried Functions”</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2017/on-public-theological-histories.html">On Public (Theological) Histories</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

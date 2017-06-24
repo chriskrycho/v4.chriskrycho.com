@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2017-05-07T22:00:00-04:00</updated><entry><title>Typing Your Ember, Part 2</title><link href="http://www.chriskrycho.com/2017/typing-your-ember-part-2.html" rel="alternate"></link><published>2017-05-07T22:00:00-04:00</published><updated>2017-05-07T22:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2017-05-07:/2017/typing-your-ember-part-2.html</id><summary type="html">Adding TypeScript to your existing Ember.js app is easy!—here's how to do it, some of the current "gotchas," and a few tips to make the on-ramp a bit easier.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2017-06-24T17:35:00-04:00</updated><entry><title>“Collection-Last Auto-Curried Functions”</title><link href="http://www.chriskrycho.com/2017/collection-last-auto-curried-functions.html" rel="alternate"></link><published>2017-06-24T17:35:00-04:00</published><updated>2017-06-24T17:35:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2017-06-24:/2017/collection-last-auto-curried-functions.html</id><summary type="html">&lt;p&gt;I’ve been using &lt;a href="https://lodash.com"&gt;lodash&lt;/a&gt; for a while at work, and I love having it in our toolbox. But, as I increasingly embrace &lt;em&gt;composition of smaller functions&lt;/em&gt; as a helpful approach to building up the final version of an overall transformation of some piece of data, I’ve increasingly wanted …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’ve been using &lt;a href="https://lodash.com"&gt;lodash&lt;/a&gt; for a while at work, and I love having it in our toolbox. But, as I increasingly embrace &lt;em&gt;composition of smaller functions&lt;/em&gt; as a helpful approach to building up the final version of an overall transformation of some piece of data, I’ve increasingly wanted to be using &lt;a href="https://github.com/lodash/lodash/wiki/FP-Guide"&gt;lodash-fp&lt;/a&gt; instead—those “auto-curried… data-last methods” are &lt;em&gt;nice&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;I could belabor the difference with words, but a code sample will do better. Here’s how I would write the same basic transformation in both Lodash and lodash-fp.&lt;/p&gt;
+&lt;pre class="javascript"&gt;&lt;code&gt;// Lodash
+const breakfasts = [&amp;#39;pancakes&amp;#39;, &amp;#39;waffles&amp;#39;, &amp;#39;french toast&amp;#39;]
+
+const uniqueLetters = _.flow([
+  bs =&amp;gt; _.map(bs, words),
+  _.flatten,
+  bs =&amp;gt; _.map(bs, b =&amp;gt; split(b, &amp;#39;&amp;#39;)),
+  _.flatten,
+  _.uniq,
+  ls =&amp;gt; _.sortBy(ls, id),
+])
+
+console.log(uniqueLetters(breakfasts))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That gets the job done, but wouldn’t it be nice if we didn’t have to have all those anonymous functions (lambdas) throughout?&lt;/p&gt;
+&lt;pre class="javascript"&gt;&lt;code&gt;// lodash-fp
+
+const uniqueLettersFp = _.flow([
+  _.map(words),
+  _.flatten,
+  _.map(split(&amp;#39;&amp;#39;)),
+  _.flatten,
+  _.uniq,
+  _.sortBy(id),
+])
+
+const breakfasts = [&amp;#39;pancakes&amp;#39;, &amp;#39;waffles&amp;#39;, &amp;#39;french toast&amp;#39;]
+
+console.log(uniqueLettersFp(breakfasts))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Suddenly the intent is much clearer with the noise introduced by the lambdas gone. You get this because the lodash-fp functions are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;auto-curried:&lt;/strong&gt; that is, even though &lt;code&gt;_.split&lt;/code&gt; takes the splitter and then a string, you can just write &lt;code&gt;_.split('')&lt;/code&gt; and get back a function which takes a string as an argument.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;data-last:&lt;/strong&gt; because &lt;code&gt;_.split&lt;/code&gt; takes the string to split &lt;em&gt;last&lt;/em&gt;, it can be passed into an auto-curried function.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You need &lt;em&gt;both&lt;/em&gt; to get that nice clean call to &lt;code&gt;_.flow&lt;/code&gt;. But once you have both, it’s really, really hard ever to go back, because it’s so much nicer for building pipelines of functions.&lt;/p&gt;
+&lt;p&gt;…I need to see if I can help &lt;a href="https://github.com/mike-north/ember-lodash/issues/21"&gt;do the work&lt;/a&gt; to make lodash-fp available in Ember.js.&lt;/p&gt;
+</content><category term="javascript"></category><category term="funtional programming"></category></entry><entry><title>Typing Your Ember, Part 2</title><link href="http://www.chriskrycho.com/2017/typing-your-ember-part-2.html" rel="alternate"></link><published>2017-05-07T22:00:00-04:00</published><updated>2017-05-07T22:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2017-05-07:/2017/typing-your-ember-part-2.html</id><summary type="html">Adding TypeScript to your existing Ember.js app is easy!—here's how to do it, some of the current "gotchas," and a few tips to make the on-ramp a bit easier.
 </summary><content type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
