@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Write! app review"/>
     <meta name="twitter:description" content="As I’ve noted in the past, I’m always on the lookout for top-notch writing environments. I was recently contacted by the team behind Write! and asked if I would take a look at and review their app, and I was happy to obliged. I tested the app out …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
     <link rel="me" href="http://instagram.com/chriskrycho"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -140,7 +140,7 @@
 </section>
 <section id="keyboard-shortcuts" class="level3">
 <h3>Keyboard shortcuts</h3>
-<p>Similarly, a number of standard keyboard shortcuts don’t work the same way, or don’t work at all, in Write as they do in native Mac apps. Navigation controls aren’t quite right: <kbd>⌥</kbd><kbd>→</kbd> jumps to the start of the next word instead of the end of the current word; <kbd></kbd>⌥<kbd>←</kbd> doesn’t skip over punctuation; both stop on e.g. apostrophes in Write (they skip over them natively). Other common shortcuts are bound to the wrong things: <kbd>Shift</kbd><kbd>⌥</kbd><kbd>-</kbd>, for example, increases heading size instead of inserting an em dash. <kbd>⌘</kbd><kbd>Delete</kbd> doesn’t do anything; neither do <kbd>^</kbd><kbd>⌘</kbd><kbd>Space</kbd>, normally used for bringing up the special-character selector, or my beloved <kbd>^</kbd><kbd>T</kbd> (“kill to end of line”) or <kbd>^</kbd><kbd>T</kbd> (“transpose characters around cursor) combos.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> I imagine the list is longer; that’s just what I noticed in the course of writing this review!</p>
+<p>Similarly, a number of standard keyboard shortcuts don’t work the same way, or don’t work at all, in Write as they do in native Mac apps. Navigation controls aren’t quite right: <kbd>⌥</kbd><kbd>→</kbd> jumps to the start of the next word instead of the end of the current word; <kbd>⌥</kbd><kbd>←</kbd> doesn’t skip over punctuation; both stop on e.g. apostrophes in Write (they skip over them natively). Other common shortcuts are bound to the wrong things: <kbd>Shift</kbd><kbd>⌥</kbd><kbd>-</kbd>, for example, increases heading size instead of inserting an em dash. <kbd>⌘</kbd><kbd>Delete</kbd> doesn’t do anything; neither do <kbd>^</kbd><kbd>⌘</kbd><kbd>Space</kbd>, normally used for bringing up the special-character selector, or my beloved <kbd>^</kbd><kbd>T</kbd> (“kill to end of line”) or <kbd>^</kbd><kbd>T</kbd> (“transpose characters around cursor) combos.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> I imagine the list is longer; that’s just what I noticed in the course of writing this review!</p>
 <p>Most egregiously, Write! steals the keyboard shortcut <kbd>⌘</kbd><kbd>`</kbd>, normally used to switch between windows on macOS, to focus itself. Failing to implement and indeed overriding text input commands is one (very bad) thing; this is another kind of failure entirely. Apps should <em>never</em> override core system behavior with their shortcuts! The fact that you can customize them doesn’t make this better; and the one time I <em>tried</em> to customize it (to turn off stealing the switch-window shortcut) it ended up overriding the <kbd>A</kbd> key’s behavior to create new documents instead of to, well, enter the letter “a”.</p>
 <p>A lot of apps get some of those more obscure ones wrong, sadly, but proper use of <a href="https://developer.apple.com/documentation/coretext">Core Text</a> is a <em>must</em> for a native app in my book—and missing those super common ones is a big no-no. I simply won’t use an app long term that doesn’t do that, because I find the mismatch between the rest of the OS (and my muscle memory!) and what the apps do too frustrating.</p>
 </section>
