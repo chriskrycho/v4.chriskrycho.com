@@ -1,6 +1,6 @@
 ---
 Title: Write! app review
-Date: 2017-06-25 18:00
+Date: 2017-06-26 21:15
 Tags: app reviews, writing, design, macOS, Windows
 Category: Tech
 ---
