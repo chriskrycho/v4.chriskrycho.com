@@ -1,8 +1,10 @@
 ---
 Title: Write! app review
+Subtitle: Not too shabby on Windows, not what you want on macOS.
 Date: 2017-06-26 21:15
 Tags: app reviews, writing, design, macOS, Windows
 Category: Tech
+Summary: Write! app is a distraction-free text editor—solid enough, but entering a very crowded field, at least on macOS.
 ---
 
 As I've noted in the past, I'm always [on the lookout](http://www.chriskrycho.com/2016/ulysses-byword-and-just-right.html) for top-notch writing environments. I was recently contacted by the team behind [Write!](https://writeapp.co) and asked if I would take a look at and review their app, and I was happy to obliged. I tested the app out fairly thoroughly by doing what I normally do with my writing apps: putting together a blog post or the like. I've written this review from start to finish in it, across my two Mac machines. I promised the authors an unbiased review, so here we go!
