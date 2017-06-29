@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Chris Krycho - sysadmin</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Thu, 29 Jun 2017 08:10:00 -0400</lastBuildDate><item><title>Set Up Mosh on macOS</title><link>http://www.chriskrycho.com/2017/set-up-mosh-on-macos.html</link><description>&lt;p&gt;Last night I bumped back into &lt;a href="https://mosh.org"&gt;Mosh&lt;/a&gt; (by way of &lt;a href="https://medium.com/@searls/giving-the-ipad-a-full-time-job-3ae2440e1810"&gt;this post&lt;/a&gt;), and decided to give it a whirl – I had seen it before, and in fact had even installed it, but had never gotten around to giving it a try.&lt;/p&gt;
+&lt;p&gt;If you’re not familiar with Mosh, it’s like SSH: a remote (terminal) connection to another machine. Unlike SSH, though, a single session can survive disconnects: it sets up a small server on the host machine and will reestablish the connection if it drops. It also responds immediately when you’re typing, even if there’s serious lag to the other server – it just gives you a nice visual signal (underlining) to let you know the other side hasn’t received what you’ve typed. This seems pretty nice, so I thought I’d set it up on my iMac so I could hit it from my iPad.&lt;/p&gt;
+&lt;p&gt;This isn’t complicated, but it also isn’t well-documented after the first step!&lt;/p&gt;
+&lt;section id="steps" class="level2"&gt;
+&lt;h2&gt;Steps&lt;/h2&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;Install mosh.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;via the &lt;a href="https://mosh.org/#getting"&gt;binary&lt;/a&gt; on their site&lt;/li&gt;
+&lt;li&gt;by running &lt;code&gt;brew install mosh&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Find the install location for the server from your Terminal:&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;$ which mosh-server&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Configure the firewall to allow the mosh server to install connections.&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Open the &lt;strong&gt;Security and Privacy&lt;/strong&gt; pane of the &lt;strong&gt;System Preferences&lt;/strong&gt; app.&lt;/li&gt;
+&lt;li&gt;Choose the &lt;strong&gt;Firewall&lt;/strong&gt; tab. Unlock it to make changes.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Firewall Options&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;On the pane that opens, click the &lt;strong&gt;+&lt;/strong&gt; button to add a new rule.&lt;/li&gt;
+&lt;li&gt;Navigate to the location you got in step 2 above. (One easy way to do this: hit &lt;kbd&gt;⌘ Cmd&lt;/kbd&gt;&lt;kbd&gt;⇧ Shift&lt;/kbd&gt;&lt;kbd&gt;G&lt;/kbd&gt;, and paste in the output from the &lt;code&gt;which&lt;/code&gt; command.) Click &lt;strong&gt;Add&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Find “mosh-server” in the list, and set it to &lt;strong&gt;Allow incoming connections&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Hit &lt;strong&gt;OK&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Persuade macOS to reload its firewall rules. (This &lt;em&gt;may&lt;/em&gt; not be necessary, but it was for me.) You can do one of the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;restart your machine&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;reload the normal rules manually:&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;$ sudo pfctl -f /etc/pf.conf&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That should be all you need!&lt;/p&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 29 Jun 2017 08:10:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-06-29:/2017/set-up-mosh-on-macos.html</guid><category>macos</category><category>sysadmin</category></item></channel></rss>
