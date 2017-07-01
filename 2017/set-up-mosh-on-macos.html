@@ -18,17 +18,17 @@
     <meta name="twitter:title" content="Set Up Mosh on macOS"/>
     <meta name="twitter:description" content="Last night I bumped back into Mosh (by way of this post), and decided to give it a whirl – I had seen it before, and in fact had even installed it, but had never gotten around to giving it a try. If you’re not familiar with Mosh, it’s …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
-    <link rel="me" href="https://medium.com/@chriskrycho"/>
-    <link rel="me" href="http://instagram.com/chriskrycho"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -117,6 +117,9 @@
 <li><p>reload the normal rules manually:</p>
 <pre class="sh"><code>$ sudo pfctl -f /etc/pf.conf</code></pre></li>
 </ul></li>
+<li><p>You may also need to open these ports on your router‘s firewall. You should consider carefully whether you want a bunch of open ports sitting there or whether you want to just use a specific port and then always target that specific port by running mosh with the <code>-p</code> option:</p>
+<pre class="sh"><code>$ mosh -p 60000 some-user@some-host.example.com</code></pre>
+<p>If you can connect locally but not remotely, this is probably what you need!</p></li>
 </ol>
 <p>That should be all you need!</p>
 </section>
