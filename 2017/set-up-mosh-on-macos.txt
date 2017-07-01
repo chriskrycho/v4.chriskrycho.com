@@ -46,7 +46,7 @@ This isn't complicated, but it also isn't well-documented after the first step!
         $ sudo pfctl -f /etc/pf.conf
         ```
 
-5. You may also need to open these ports on your router‘s firewall. You should consider carefully whether you want a bunch of open ports sitting there or whether you want to just use a specific port and then always target that specific port by running mosh with the `-p` option:
+5. You may also need to open these ports on your router firewall. You should consider carefully whether you want a bunch of open ports sitting there or whether you want to just use a specific port and then always target that specific port by running mosh with the `-p` option:
 
     ```sh
     $ mosh -p 60000 some-user@some-host.example.com

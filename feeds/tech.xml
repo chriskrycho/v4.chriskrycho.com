@@ -29,7 +29,7 @@
 &lt;li&gt;&lt;p&gt;reload the normal rules manually:&lt;/p&gt;
 &lt;pre class="sh"&gt;&lt;code&gt;$ sudo pfctl -f /etc/pf.conf&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;You may also need to open these ports on your router‘s firewall. You should consider carefully whether you want a bunch of open ports sitting there or whether you want to just use a specific port and then always target that specific port by running mosh with the &lt;code&gt;-p&lt;/code&gt; option:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;You may also need to open these ports on your router firewall. You should consider carefully whether you want a bunch of open ports sitting there or whether you want to just use a specific port and then always target that specific port by running mosh with the &lt;code&gt;-p&lt;/code&gt; option:&lt;/p&gt;
 &lt;pre class="sh"&gt;&lt;code&gt;$ mosh -p 60000 some-user@some-host.example.com&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If you can connect locally but not remotely, this is probably what you need!&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
