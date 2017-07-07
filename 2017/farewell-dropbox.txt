@@ -9,6 +9,8 @@ Date: 2017-07-06 21:00
 
 Over the last few years, I've grown increasingly annoyed with Dropbox. There have been a number of fairly high-profile misbehaviors on their part---most notably, [this one][1]---and then this past week, they started sending me notifications advertising Dropbox for Business.
 
+![Notification ads are the worst.](http://cdn.chriskrycho.com/images/bad-dropbox.png)
+
 So, as I was with Google a few years ago [when they pushed me over the edge][2]---*also* with notifications!---I'm out.
 
 I don't mind Dropbox's wanting to have a sustainable business. To the contrary: as I often note, I'm quite willing to pay for software I use, and I currently use a number of paid services where free alternatives exist because I'd rather do that than pay for ads.[^1] I *do* mind when a company---*any* company---decides that building their business means mistreating their users and customers. And harassing me with notifications about a variant of their product I don't care about certainly crosses that line. Combine that with the misbehavior *and* the fact that Dropbox has a tendency to hammer my system for no apparent reason, and, well, I'm out.
