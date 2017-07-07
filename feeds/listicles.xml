@@ -1,51 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - listicles</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Tue, 31 May 2016 09:00:00 -0400</lastBuildDate><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-31-0900.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/737629809241645056"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;Seeing gradual typing come to both Ruby and Python at around the same time is fascinating.&lt;/li&gt;
-&lt;li&gt;Seeing some responses (“If I wanted static types I’d use a &lt;em&gt;real&lt;/em&gt; statically typed language”) which just completely miss the point.&lt;/li&gt;
-&lt;li&gt;The idea is that you can add these kinds of type annotations where—and only where—they’re useful.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id="refs" class="references"&gt;
-
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 31 May 2016 09:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-05-31:/2016/2016-05-31-0900.html</guid><category>python</category><category>ruby</category><category>programming languages</category><category>listicles</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-30-2200.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/737463108898312192"&gt;tweetstorm&lt;/a&gt;, but I’m treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;Was able to write some Rust for myself (not just to figure something out for &lt;a href="http://www.newrustacean.com"&gt;New Rustacean&lt;/a&gt;) for the first time in months tonight.&lt;/li&gt;
-&lt;li&gt;Feeling Rust under my fingertips again was really nice but (pun fully intended) I am &lt;em&gt;so&lt;/em&gt; rusty right now.&lt;/li&gt;
-&lt;li&gt;But of course that’s just life. I’ve written gobs of JavaScript for work, of course, but the &lt;em&gt;only&lt;/em&gt; non-work writing I’ve done has been actual writing of the “uses words and not just as keywords” variety.&lt;/li&gt;
-&lt;li&gt;So it was nice to write some Rust for fun tonight. Even if it took me a ridiculously long time to do something super simple.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id="refs" class="references"&gt;
-
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 30 May 2016 22:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-05-30:/2016/2016-05-30-2200.html</guid><category>rust</category><category>software development</category><category>listicles</category></item><item><title></title><link>http://www.chriskrycho.com/2016/2016-05-29-1007.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;I originally posted this as a &lt;a href="https://twitter.com/chriskrycho/status/736921791940177920"&gt;tweetstorm&lt;/a&gt;, but unlike in the past, where I’ve treated those tweets as the canonical form and linked them here, I’m now treating &lt;em&gt;this&lt;/em&gt; as the canonical and adding a tweet to the end of that “topic” linking back here. &lt;a href="http://indiewebcamp.com"&gt;Indie web&lt;/a&gt; forever.&lt;/i&gt;&lt;/p&gt;
-&lt;hr /&gt;
-&lt;ul&gt;
-&lt;li&gt;I was going to pull all my data from my long-since defunct GoodReads account to do something with the data locally.&lt;/li&gt;
-&lt;li&gt;Unfortunately, I didn’t just stop using the account. As near as I can tell/recall, I completely deleted it—without downloading the data.&lt;/li&gt;
-&lt;li&gt;Why I did this, I have &lt;em&gt;no&lt;/em&gt; idea. I deleted it because the Amazon acquisition turned me off and I’d been growing bored with it anyway.&lt;/li&gt;
-&lt;li&gt;But failing to download the data? This is just an enormous :facepalm: moment.&lt;/li&gt;
-&lt;li&gt;Who knows, maybe I have it in an archive somewhere. I’m going to go looking. But I’m annoyed at myself anyway.&lt;/li&gt;
-&lt;li&gt;One thing this reminded me: I’m increasingly a fan of “indie web” solutions. This data is &lt;em&gt;mine&lt;/em&gt;, not Amazon’s—even if I trade it to them.&lt;/li&gt;
-&lt;li&gt;The trick is: the trade had to be worth it, and (just as importantly) the data still has to be retrievable when I’m ready to move on.&lt;/li&gt;
-&lt;li&gt;In this case, it is retrievable, and it’s my own fault if I don’t have it. But entities like Twitter and Facebook make that anything from “much harder” to “basically or actually impossible”. Let’s say I wanted to pull everything I’ve posted to Facebook to archive it. Could I?&lt;/li&gt;
-&lt;li&gt;And, just as importantly, could someone who doesn’t know how to write a program to access a web API?&lt;/li&gt;
-&lt;li&gt;(The answers there are: &lt;em&gt;maybe&lt;/em&gt; I could, but definitely no one who’s isn’t a programmer could. And that’s simply bad for users.)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;A friend &lt;a href="https://twitter.com/sleepy_keita/status/736931883884253185"&gt;comments&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;FWIW you can download a big fat zip file with all the stuff you’ve ever uploaded to Facebook&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;a href="https://twitter.com/sleepy_keita/status/736932109403574274"&gt;and&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;it comes in a pretty simple HTML layout. I do it every 6 months or so for backup.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div id="refs" class="references"&gt;
-
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 29 May 2016 10:07:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-05-29:/2016/2016-05-29-1007.html</guid><category>listicles</category></item><item><title>Rust and Swift (xii)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - listicles</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 27 Feb 2016 22:30:00 -0500</lastBuildDate><item><title>Rust and Swift (xii)</title><link>http://www.chriskrycho.com/2016/rust-and-swift-xii.html</link><description>&lt;p&gt;&lt;i class="editorial"&gt;I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. &lt;a href="/rust-and-swift.html"&gt;(See all parts in the series.)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class="editorial"&gt;A note on publication: I had this drafted in early January and simply forgot to publish it. Whoops!&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;ul&gt;
