@@ -11,7 +11,6 @@ Books I'm reading right now. Listed in the order I started them.
 - _The Book of F♯: Breaking Free with Managed Functional Programming_, Dave Fancher
 - _Evolution and the Fall_, eds. William T. Cavanaugh and James K. A. Smith
 - _Type-Driven Development with Idris_, Edwin Brady
-- _Thinking, Fast and Slow_, Daniel Kahneman
 - _Beren and Lúthien_, J. R. R. Tolkien, ed. Christopher Tolkien
 - _Theology and the Mirror of Scripture_, Kevin J. Vanhoozer and Daniel Treier
 
@@ -23,6 +22,7 @@ Books I finished, in the order I finished them.
 - _Reading Genesis 1–2: An Evangelical Conversation_, J. Daryl Charles (classwork)
 - _Four Views on the Historical Adam_, eds. Matthew Barret and Ardel B. Caneday (classwork)
 - _The Master Plan of Evangelism_, Robert Coleman (classwork, reread)
+- _Discipleshift_, Jim Putnam and Bobby Harrington (classwork)
 - _Rediscovering Discipleship: Making Jesus' Final Words Our First Work_, Robby Gallaty (classwork)
 - _Mentor_, Chuck Lawless (classwork)
 - _Putting on the Armor_, Chuck Lawless (classwork)
@@ -30,6 +30,7 @@ Books I finished, in the order I finished them.
 - _The Three-Body Problem_, Cixin Liu, trans. Ken Liu
 - _Shards of Honor_, Lois McMaster Bujold
 - _Old Man's War_, John Scalzi
+- _Thinking, Fast and Slow_, Daniel Kahneman -- [review](/2017/thinking-fast-and-slow-a-review.html)
 
 ## Partial
 
