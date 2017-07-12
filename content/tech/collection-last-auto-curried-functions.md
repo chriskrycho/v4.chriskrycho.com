@@ -1,0 +1,54 @@
+---
+Title: “Collection-Last Auto-Curried Functions”
+Subtitle: You want your data last, and you want your functions “partially applied.” Here’s why.
+Date: 2017-06-24 17:35
+Tags: javascript, functional programming
+Category: Tech
+---
+
+I've been using [lodash](https://lodash.com) for a while at work, and I love having it in our toolbox. But, as I increasingly embrace *composition of smaller functions* as a helpful approach to building up the final version of an overall transformation of some piece of data, I've increasingly wanted to be using [lodash-fp](https://github.com/lodash/lodash/wiki/FP-Guide) instead---those "auto-curried... data-last methods" are *nice*.
+
+I could belabor the difference with words, but a code sample will do better. Here's how I would write the same basic transformation in both Lodash and lodash-fp.
+
+```javascript
+// Lodash
+const breakfasts = ['pancakes', 'waffles', 'french toast']
+
+const uniqueLetters = _.flow([
+  bs => _.map(bs, words),
+  _.flatten,
+  bs => _.map(bs, b => split(b, '')),
+  _.flatten,
+  _.uniq,
+  ls => _.sortBy(ls, id),
+])
+
+console.log(uniqueLetters(breakfasts))
+```
+
+That gets the job done, but wouldn't it be nice if we didn't have to have all those anonymous functions (lambdas) throughout?
+
+```javascript
+// lodash-fp
+const uniqueLettersFp = _.flow([
+  _.map(words),
+  _.flatten,
+  _.map(split('')),
+  _.flatten,
+  _.uniq,
+  _.sortBy(id),
+])
+
+const breakfasts = ['pancakes', 'waffles', 'french toast']
+
+console.log(uniqueLettersFp(breakfasts))
+```
+
+Suddenly the intent is much clearer with the noise introduced by the lambdas gone. You get this because the lodash-fp functions are:
+
+- **auto-curried:** that is, even though `_.split` takes the splitter and then a string, you can just write `_.split('')` and get back a function which takes a string as an argument.
+- **data-last:** because `_.split` takes the string to split *last*, it can be passed into an auto-curried function.
+
+You need *both* to get that nice clean call to `_.flow`. But once you have both, it's really, really hard ever to go back, because it's so much nicer for building pipelines of functions.
+
+...I need to see if I can help [do the work](https://github.com/mike-north/ember-lodash/issues/21) to make lodash-fp available in Ember.js.
