@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Typing Your Ember, Part 3 &middot; Chris Krycho</title>
+    <meta name="description" content="You write Ember.js apps. You think TypeScript would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work. This is the series for you! I’ll talk through everything …"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2017/typing-your-ember-part-3.html"/>
+    <meta property="og:title" content="Typing Your Ember, Part 3"/>
+    <meta property="og:description" content="You write Ember.js apps. You think TypeScript would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work. This is the series for you! I’ll talk through everything …"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Typing Your Ember, Part 3"/>
+    <meta name="twitter:description" content="You write Ember.js apps. You think TypeScript would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work. This is the series for you! I’ll talk through everything …"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="emberjs typescript typing-your-ember tech">
+
+    <header>
+<h1>Typing Your Ember, Part 3</h1>
+<h2>How to actually use types effectively in Ember today.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2017/typing-your-ember-part-3.html"><i class="fa fa-fw fa-link"></i></a>July 28, 2017</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2017/typing-your-ember-part-3.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class='series-overview'>You write <a href="https://emberjs.com">Ember.js</a> apps. You think <a href="http://www.typescriptlang.org">TypeScript</a> would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i></p>
+<p><i class='series-overview'>This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.</i></p>
+<p><i class='series-overview'><a href="/typing-your-ember.html">(See the rest of the series. →)</a></i></p>
+<hr />
+<p>In the <a href="/2017/typing-your-ember-part-1">first</a> of this series, I described how to set up a brand new Ember.js app to use TypeScript. In the <a href="/2017/typing-your-ember-part-2">second</a> part, walked through adding TypeScript to an existing Ember.js app. In this part, I’m going to talk about using TypeScript effectively in a modern Ember.js app.</p>
+<section id="heavy-lifting-so-so-results" class="level2">
+<h2>Heavy lifting, so-so results</h2>
+<p>Let’s get this out of the way up front: right now, using types in anything which extends <code>Ember.Object</code> is going to be a lot of work for a relatively low reward. <code>Ember.Object</code> laid the foundation for the modern JavaScript class system (and thus the TypeScript class system), but it has a huge downside: it’s string keys and referennces all the way down. This kind of thing is just normal Ember code—and note all the string keys:<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<pre class="javascript"><code>import Component from &#39;@ember/component&#39;;
+import { computed, get } from &#39;@ember/object&#39;;
+
+export default Component.extend({
+  someProperty: &#39;with a string value&#39;,
+  someOther: computed(&#39;someProperty&#39;, function() {
+    const someProperty = get(this, &#39;someProperty&#39;);
+    return someProperty + &#39; that you can append to&#39;;
+  }),
+});</code></pre>
+<p>What this comes out to—even with a lot of the very helpful changes made to TypeScript itself in the 2.x series to help support object models like this one—is a lot of work adding types inline, and having to be really, really careful that your types are <em>correct</em>. If that property you’re <code>Ember.get</code>-ing can ever be <code>undefined</code> or <code>null</code>, you’d better write the type as <code>string | void</code> instead of just <code>string</code>. For example: this code is written with the correct types:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import { computed, get } from &#39;@ember/object&#39;;
+
+export default Component.extend({
+  someProperty: &#39;with a string value&#39;,  // no type annotation
+  someOther: computed(&#39;someProperty&#39;, function() {
+    const someProperty: string = get(this, &#39;property&#39;);
+    return someProperty + &#39; that you can append to&#39;;
+  }),
+});</code></pre>
+<p>Note two important things about it, however:</p>
+<ol type="1">
+<li>TypeScript does not (and, with the <em>current</em> typings for Ember, cannot) figure out the type of <code>someProperty</code> from this definition; <code>get</code> currently just hands back <code>any</code> as the type of these kinds of things. That type annotation is necessary for you to get any mileage out of TypeScript <em>at all</em> in a computed property like this.</li>
+<li>If, anywhere in your code, you <em>set</em> the value of <code>someProperty</code>—including to <code>undefined</code> or <code>null</code>, or to <code>{ some: 'object' }</code>—this could fail.</li>
+</ol>
+<p>Unfortunately, this second point means that TypeScript actually <em>can’t</em> guarantee this the way we’d like. There’s hope coming for this in the future in several ways—more on that in a moment—but for now, I’ll summarize this by saying TypeScript is really helpful <em>within</em> a function, once you’ve correctly defined the types you’re using. That means that you have to continue to be <em>very</em> careful in what you’re doing in the context of any <code>Ember.Object</code> instance, including all the Ember types which descend from <code>Object</code>, and therefore also any types <em>you</em> define which extend those in turn.</p>
+</section>
+<section id="future-niceties" class="level2">
+<h2>Future niceties</h2>
+<p>In the future, we’ll be able to get away from a lot of these difficulties by way of two changes coming down the line: Ember embracing ES6 classes to replace its current custom object system, and embracing decorators as a way of replacing the current approach to computed properties. Let’s take those in turn.</p>
+<section id="class-syntax" class="level3">
+<h3><code>class</code> syntax</h3>
+<p>When Ember was birthed in the early 2010s (first as “SproutCore 2” and then “Amber.js” and finally “Ember.js”), the JavaScript world was a <em>remarkably</em> different place. The current pace of change year to year is nothing short of astounding for any language, but doubly so for one that sat languishing for so long. When Ember came around, something like today’s <code>class</code> syntax was unimaginable, and so essentially every framework had its own class system of some sort. Over the past few years, with the proposal and standardization of the <code>class</code> syntax as nice sugar for JavaScript’s prototypal inheritance, the need for a custom object and inheritance model has essentially gone away entirely. However, Ember doesn’t do breaking changes to its API just because; we as a community and the core team in particular have chosen to place a high priority on backwards compatibility. So any adoption of ES6 classes had to work in such a way that we got it <em>without</em> making everyone rewrite their code from scratch.</p>
+<p>All of this impacts our story with TypeScript because, well, TypeScript for a long time couldn’t even begin to handle this kind of complexity (it’s a lot for a static type system to be able to express, given how <em>very</em> dynamic the types here can be). As of TS 2.3, it can express <em>most</em> of this object model, which is great… but it’s forever out of step with the rest of the JS/TS ecosystem, which is not so great. ES6 classes are first-class items in TypeScript and the support for getting types right within them is much, <em>much</em> stronger than the support for the mixin/extension style object model Ember currently uses. So moving over to ES6 classes will make it much easier for TS to do the work of telling you <em>you’re doing it wrong with that class</em>—and most importantly, it’ll be able to do that automatically, without needing the incredibly hairy type definition files that we’re still trying to write to get Ember’s current model represented. It Will Just Work. That means less maintenance work and fewer places for bugs to creep in.</p>
+<p>Gladly, we’re getting there! Already today, in the most recent versions of Ember, you can write this, and it will work:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+
+export default class MyComponent extends Component {
+  theAnswer = 42;
+  andTheQuestionIs =
+    &quot;What is the meaning of life, the universe, and everything?&quot;;
+}</code></pre>
+<p>When I say “it will work,” I mean you can then turn around and write this in your <code>my-component.hbs</code> and it’ll be exactly what you would expect from the old <code>Ember.Component.extend()</code> approach:</p>
+<pre class="hbs"><code>{{andTheQuestionIs}} {{the Answer}}</code></pre>
+<p>There is one serious limitation of that today: you can’t do that with a class you need to extend <em>further</em>. So if, for example, you do like we do and customize the application route rinstance and then reuse that in a couple places, you’ll still have to use the old syntax:</p>
+<pre class="typescript"><code>import Route from &#39;@ember/route&#39;;
+
+export default Route.extend({
+  // your customizations...
+});</code></pre>
+<p>But everywhere you consume that, you can use the new declaration:</p>
+<pre class="typescript"><code>import ApplicationRoute from &#39;my-app/routes/application&#39;;
+
+export default class JustSomeRoute extends ApplicationRoute {
+  model() {
+    // etc.
+  }
+}</code></pre>
+<p>There’s more work afoot here, too, to make it so that these restrictions can go away entirely… but those changes will undoubtedly be covered in considerable detail on <a href="http://www.emberjs.com/blog/">the official Ember blog</a> when they roll out.</p>
+</section>
+<section id="decorators" class="level3">
+<h3>Decorators</h3>
+<p>Now, that’s all well and good, but it doesn’t necessarily help with this scenario:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import { computed, get } from &#39;@ember/object&#39;;
+
+export default class MyComponent extends Component {
+  someProperty = &#39;is just a string&#39;;
+
+  someOtherProperty = computed(&#39;someProperty&#39;, function() {
+    const someProperty = get(this, &#39;someProperty&#39;);
+    return someProperty + &#39; and now I have appended to it&#39;;
+  });
+}</code></pre>
+<p>We’re back in the same spot of having unreliable types there. And again: some really careful work writing type definitions to make sure that <code>computed</code> and <code>get</code> both play nicely together with the class definition would help somewhat, but… well, it’d be nice if the types could just be determined automatically by TypeScript. (Also, there’s an <a href="https://github.com/Microsoft/TypeScript/issues/16699">open bug</a> on the TypeScript repository for trying to deal with <code>computed</code>; suffice it to say that computed as it currently stands is a sufficiently complicated thing that even with all the incredible type machinery TS 2.1, 2.2, and 2.3 have brought to bear on exactly these kinds of problems… it still can’t actually model <code>computed</code> correctly.)</p>
+<p>For several years now, Rob Jackson has maintained [a small library] that let you write computed properties with decorators. Up till recently, those were incompatible with TypeScript, because they used to work in the context of object literals rather than classes—and TypeScript never supported that. However, as of about a month ago as I’m writing this, they’ve been updated and they <em>do</em> work with ES6 classes. So, given the class syntax discussed above, you can now <code>ember install ember-decorators</code> and then do this:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import { computed } from &#39;ember-decorators/object&#39;;
+
+export default class MyComponent extends Component {
+  someProperty = &#39;with a string value&#39;;
+
+  @computed(&#39;someProperty&#39;)
+  someOther(someProperty: string) {
+    return someProperty + &#39; that you can append to&#39;;
+  }
+}</code></pre>
+<p>Here, we can provide a type on the parameter to <code>someOther</code>, which at a minimum makes this enormously cleaner and less repetitive syntactically. More interestingly, however, we <em>should</em> (though no one has done it just yet, to my knowledge) be able to write a type definition for <code>@computed</code> such that TypeScript will already know that <code>someProperty</code> here <em>is</em> a string, because it’ll have the context of the class in which it’s operating. So that example will be even simpler:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import { computed } from &#39;ember-decorators/object&#39;;
+
+export default class MyComponent extends Component {
+  someProperty = &#39;with a string value&#39;;
+
+  @computed(&#39;someProperty&#39;)
+  someOther(someProperty) {
+    return someProperty + &#39; that you can append to&#39;;
+  }
+}</code></pre>
+<p>And in that imagined, wonderful future world, if we tried to do something that isn’t a valid string operation—say, we tried <code>someProperty / 3</code>—TypeScript would complain to us, loudly.</p>
+<p>Although this is still a future plan, rather than a present reality, it’s not <em>that</em> far off. We just need someone to write that type definition for the decorators, and we’ll be off to the races wherever we’re using the new ES6 class approach instead of the existing <code>Ember.Object</code> approach. So: <em>soon</em>. I don’t know how soon, but soon.</p>
+</section>
+</section>
+<section id="current-ameliorations" class="level2">
+<h2>Current ameliorations</h2>
+<p>In the meantime, of course, many of us are maintaining large codebases. I just checked, and our app (between the app itself and the tests) has around 850 files and 34,000 lines of code. Even as those new abilities land, we’re not going to be converting all of them all at once. And we want to get some real mileage out of TypeScript in the meantime. One of the best ways I’ve found to do this is to take a step back and think about the pieces of the puzzle which Ember is solving for you, and which it <em>isn’t</em>. That is, Ember is really concerned with managing application state and lifecycle, and with rendering the UI. And it’s <em>fabulous</em> about those things. What it’s not particularly concerned with (and what it shouldn’t be) is the particulars of how your business logic is implemented. And there’s no particular reason, <em>especially</em> if most of that business logic is implemented in terms of a bunch of pure, straightforward, input-to-output functions that operate on well-defined data types, for all of your business logic to live in <code>Ember.Object</code>-descended classes.</p>
+<p>Instead, we have increasingly chosen to write our business logic in bog-standard TypeScript files. These days, our app has a <code>lib</code> directory in it, with packages like <code>utilities</code> for commonly used tools… but also like <code>billing</code>, where we implement <em>all</em> of our client-side billing business logic. The display logic goes in the <code>Ember.Controller</code> and <code>Ember.Component</code> classes, and the routing and state management goes in the <code>Ember.Route</code> and <code>Ember.Data</code> pieces as you’d expect. But none of the business logic lives there. That means that we’re entirely free of the aforementioned constraints for the majority of the time dealing with that data. If we do a good job making sure the data is good at the boundaries—route loads, for example, and when we send it back to the server—then we can effectively treat everything else as just boring old (new?) TypeScript.</p>
+<p>So far we’ve only taken that approach with about a quarter of our app, but it’s all the latest pieces of our app, and it has been incredibly effective. Even once we’re able to take advantage of all those shiny new features, we’re going to keep leaning heavily on this approach, because it lets Ember do what Ember is best at, and keeps us from coupling our business logic to the application state management or view rendering details.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2>Conclusion</h2>
+<p>So that’s the state of things in Ember with TypeScript today. Your best bet for getting real mileage out of TypeScript today is to use the new class syntax support and decorators wherever you can within Ember-specific code, and then to write as much of your business logic outside the Ember system as possible. Gladly, all of that points you right at the future (in the case of syntax) and just good practice (in the case of separating out your business logic). So: not too shabby overall. It’s working well for us, and I hope it does for you as well!</p>
+<p>Next time: how we got here with the <code>ember-cli-typescript</code> compiler, and where we hope to go from here!</p>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Note that here and throughout, I’m using the <a href="https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md#addendum-1---table-of-module-names-and-exports-by-global">RFC #176 Module API</a>, which you can use today via <a href="https://github.com/ember-cli/babel-plugin-ember-modules-api-polyfill">this polyfill</a>.<a href="#fnref1">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/art.xml"><i class="fa fa-fw fa-rss"></i>art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2016/to-paint-god-as-a-man.html">To paint God as a man</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2017/thinking-fast-and-slow-a-review.html">Thinking, Fast and Slow: A Review</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2017/typing-your-ember-part-3.html">Typing Your Ember, Part 3</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2017/on-public-theological-histories.html">On Public (Theological) Histories</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

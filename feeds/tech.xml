@@ -1,5 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2017-07-21T19:30:00-04:00</updated><entry><title>The Book of F♯</title><link href="http://www.chriskrycho.com/2017/the-book-of-f.html" rel="alternate"></link><published>2017-07-21T19:30:00-04:00</published><updated>2017-07-21T19:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2017-07-21:/2017/the-book-of-f.html</id><summary type="html">Recommended With Qualifications: This book is just okay, and at this point it’s a bit outdated—but if you're in its fairly narrow target audience, it’s a decent way to get up to speed on F♯.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2017-07-28T12:00:00-04:00</updated><entry><title>Typing Your Ember, Part 3</title><link href="http://www.chriskrycho.com/2017/typing-your-ember-part-3.html" rel="alternate"></link><published>2017-07-28T12:00:00-04:00</published><updated>2017-07-28T12:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2017-07-28:/2017/typing-your-ember-part-3.html</id><summary type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything …&lt;/i&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;In the &lt;a href="/2017/typing-your-ember-part-1"&gt;first&lt;/a&gt; of this series, I described how to set up a brand new Ember.js app to use TypeScript. In the &lt;a href="/2017/typing-your-ember-part-2"&gt;second&lt;/a&gt; part, walked through adding TypeScript to an existing Ember.js app. In this part, I’m going to talk about using TypeScript effectively in a modern Ember.js app.&lt;/p&gt;
+&lt;section id="heavy-lifting-so-so-results" class="level2"&gt;
+&lt;h2&gt;Heavy lifting, so-so results&lt;/h2&gt;
+&lt;p&gt;Let’s get this out of the way up front: right now, using types in anything which extends &lt;code&gt;Ember.Object&lt;/code&gt; is going to be a lot of work for a relatively low reward. &lt;code&gt;Ember.Object&lt;/code&gt; laid the foundation for the modern JavaScript class system (and thus the TypeScript class system), but it has a huge downside: it’s string keys and referennces all the way down. This kind of thing is just normal Ember code—and note all the string keys:&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="javascript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { computed, get } from &amp;#39;@ember/object&amp;#39;;
+
+export default Component.extend({
+  someProperty: &amp;#39;with a string value&amp;#39;,
+  someOther: computed(&amp;#39;someProperty&amp;#39;, function() {
+    const someProperty = get(this, &amp;#39;someProperty&amp;#39;);
+    return someProperty + &amp;#39; that you can append to&amp;#39;;
+  }),
+});&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What this comes out to—even with a lot of the very helpful changes made to TypeScript itself in the 2.x series to help support object models like this one—is a lot of work adding types inline, and having to be really, really careful that your types are &lt;em&gt;correct&lt;/em&gt;. If that property you’re &lt;code&gt;Ember.get&lt;/code&gt;-ing can ever be &lt;code&gt;undefined&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;, you’d better write the type as &lt;code&gt;string | void&lt;/code&gt; instead of just &lt;code&gt;string&lt;/code&gt;. For example: this code is written with the correct types:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { computed, get } from &amp;#39;@ember/object&amp;#39;;
+
+export default Component.extend({
+  someProperty: &amp;#39;with a string value&amp;#39;,  // no type annotation
+  someOther: computed(&amp;#39;someProperty&amp;#39;, function() {
+    const someProperty: string = get(this, &amp;#39;property&amp;#39;);
+    return someProperty + &amp;#39; that you can append to&amp;#39;;
+  }),
+});&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note two important things about it, however:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;TypeScript does not (and, with the &lt;em&gt;current&lt;/em&gt; typings for Ember, cannot) figure out the type of &lt;code&gt;someProperty&lt;/code&gt; from this definition; &lt;code&gt;get&lt;/code&gt; currently just hands back &lt;code&gt;any&lt;/code&gt; as the type of these kinds of things. That type annotation is necessary for you to get any mileage out of TypeScript &lt;em&gt;at all&lt;/em&gt; in a computed property like this.&lt;/li&gt;
+&lt;li&gt;If, anywhere in your code, you &lt;em&gt;set&lt;/em&gt; the value of &lt;code&gt;someProperty&lt;/code&gt;—including to &lt;code&gt;undefined&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;, or to &lt;code&gt;{ some: 'object' }&lt;/code&gt;—this could fail.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Unfortunately, this second point means that TypeScript actually &lt;em&gt;can’t&lt;/em&gt; guarantee this the way we’d like. There’s hope coming for this in the future in several ways—more on that in a moment—but for now, I’ll summarize this by saying TypeScript is really helpful &lt;em&gt;within&lt;/em&gt; a function, once you’ve correctly defined the types you’re using. That means that you have to continue to be &lt;em&gt;very&lt;/em&gt; careful in what you’re doing in the context of any &lt;code&gt;Ember.Object&lt;/code&gt; instance, including all the Ember types which descend from &lt;code&gt;Object&lt;/code&gt;, and therefore also any types &lt;em&gt;you&lt;/em&gt; define which extend those in turn.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="future-niceties" class="level2"&gt;
+&lt;h2&gt;Future niceties&lt;/h2&gt;
+&lt;p&gt;In the future, we’ll be able to get away from a lot of these difficulties by way of two changes coming down the line: Ember embracing ES6 classes to replace its current custom object system, and embracing decorators as a way of replacing the current approach to computed properties. Let’s take those in turn.&lt;/p&gt;
+&lt;section id="class-syntax" class="level3"&gt;
+&lt;h3&gt;&lt;code&gt;class&lt;/code&gt; syntax&lt;/h3&gt;
+&lt;p&gt;When Ember was birthed in the early 2010s (first as “SproutCore 2” and then “Amber.js” and finally “Ember.js”), the JavaScript world was a &lt;em&gt;remarkably&lt;/em&gt; different place. The current pace of change year to year is nothing short of astounding for any language, but doubly so for one that sat languishing for so long. When Ember came around, something like today’s &lt;code&gt;class&lt;/code&gt; syntax was unimaginable, and so essentially every framework had its own class system of some sort. Over the past few years, with the proposal and standardization of the &lt;code&gt;class&lt;/code&gt; syntax as nice sugar for JavaScript’s prototypal inheritance, the need for a custom object and inheritance model has essentially gone away entirely. However, Ember doesn’t do breaking changes to its API just because; we as a community and the core team in particular have chosen to place a high priority on backwards compatibility. So any adoption of ES6 classes had to work in such a way that we got it &lt;em&gt;without&lt;/em&gt; making everyone rewrite their code from scratch.&lt;/p&gt;
+&lt;p&gt;All of this impacts our story with TypeScript because, well, TypeScript for a long time couldn’t even begin to handle this kind of complexity (it’s a lot for a static type system to be able to express, given how &lt;em&gt;very&lt;/em&gt; dynamic the types here can be). As of TS 2.3, it can express &lt;em&gt;most&lt;/em&gt; of this object model, which is great… but it’s forever out of step with the rest of the JS/TS ecosystem, which is not so great. ES6 classes are first-class items in TypeScript and the support for getting types right within them is much, &lt;em&gt;much&lt;/em&gt; stronger than the support for the mixin/extension style object model Ember currently uses. So moving over to ES6 classes will make it much easier for TS to do the work of telling you &lt;em&gt;you’re doing it wrong with that class&lt;/em&gt;—and most importantly, it’ll be able to do that automatically, without needing the incredibly hairy type definition files that we’re still trying to write to get Ember’s current model represented. It Will Just Work. That means less maintenance work and fewer places for bugs to creep in.&lt;/p&gt;
+&lt;p&gt;Gladly, we’re getting there! Already today, in the most recent versions of Ember, you can write this, and it will work:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+
+export default class MyComponent extends Component {
+  theAnswer = 42;
+  andTheQuestionIs =
+    &amp;quot;What is the meaning of life, the universe, and everything?&amp;quot;;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When I say “it will work,” I mean you can then turn around and write this in your &lt;code&gt;my-component.hbs&lt;/code&gt; and it’ll be exactly what you would expect from the old &lt;code&gt;Ember.Component.extend()&lt;/code&gt; approach:&lt;/p&gt;
+&lt;pre class="hbs"&gt;&lt;code&gt;{{andTheQuestionIs}} {{the Answer}}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There is one serious limitation of that today: you can’t do that with a class you need to extend &lt;em&gt;further&lt;/em&gt;. So if, for example, you do like we do and customize the application route rinstance and then reuse that in a couple places, you’ll still have to use the old syntax:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Route from &amp;#39;@ember/route&amp;#39;;
+
+export default Route.extend({
+  // your customizations...
+});&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But everywhere you consume that, you can use the new declaration:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import ApplicationRoute from &amp;#39;my-app/routes/application&amp;#39;;
+
+export default class JustSomeRoute extends ApplicationRoute {
+  model() {
+    // etc.
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There’s more work afoot here, too, to make it so that these restrictions can go away entirely… but those changes will undoubtedly be covered in considerable detail on &lt;a href="http://www.emberjs.com/blog/"&gt;the official Ember blog&lt;/a&gt; when they roll out.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="decorators" class="level3"&gt;
+&lt;h3&gt;Decorators&lt;/h3&gt;
+&lt;p&gt;Now, that’s all well and good, but it doesn’t necessarily help with this scenario:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { computed, get } from &amp;#39;@ember/object&amp;#39;;
+
+export default class MyComponent extends Component {
+  someProperty = &amp;#39;is just a string&amp;#39;;
+
+  someOtherProperty = computed(&amp;#39;someProperty&amp;#39;, function() {
+    const someProperty = get(this, &amp;#39;someProperty&amp;#39;);
+    return someProperty + &amp;#39; and now I have appended to it&amp;#39;;
+  });
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We’re back in the same spot of having unreliable types there. And again: some really careful work writing type definitions to make sure that &lt;code&gt;computed&lt;/code&gt; and &lt;code&gt;get&lt;/code&gt; both play nicely together with the class definition would help somewhat, but… well, it’d be nice if the types could just be determined automatically by TypeScript. (Also, there’s an &lt;a href="https://github.com/Microsoft/TypeScript/issues/16699"&gt;open bug&lt;/a&gt; on the TypeScript repository for trying to deal with &lt;code&gt;computed&lt;/code&gt;; suffice it to say that computed as it currently stands is a sufficiently complicated thing that even with all the incredible type machinery TS 2.1, 2.2, and 2.3 have brought to bear on exactly these kinds of problems… it still can’t actually model &lt;code&gt;computed&lt;/code&gt; correctly.)&lt;/p&gt;
+&lt;p&gt;For several years now, Rob Jackson has maintained [a small library] that let you write computed properties with decorators. Up till recently, those were incompatible with TypeScript, because they used to work in the context of object literals rather than classes—and TypeScript never supported that. However, as of about a month ago as I’m writing this, they’ve been updated and they &lt;em&gt;do&lt;/em&gt; work with ES6 classes. So, given the class syntax discussed above, you can now &lt;code&gt;ember install ember-decorators&lt;/code&gt; and then do this:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { computed } from &amp;#39;ember-decorators/object&amp;#39;;
+
+export default class MyComponent extends Component {
+  someProperty = &amp;#39;with a string value&amp;#39;;
+
+  @computed(&amp;#39;someProperty&amp;#39;)
+  someOther(someProperty: string) {
+    return someProperty + &amp;#39; that you can append to&amp;#39;;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here, we can provide a type on the parameter to &lt;code&gt;someOther&lt;/code&gt;, which at a minimum makes this enormously cleaner and less repetitive syntactically. More interestingly, however, we &lt;em&gt;should&lt;/em&gt; (though no one has done it just yet, to my knowledge) be able to write a type definition for &lt;code&gt;@computed&lt;/code&gt; such that TypeScript will already know that &lt;code&gt;someProperty&lt;/code&gt; here &lt;em&gt;is&lt;/em&gt; a string, because it’ll have the context of the class in which it’s operating. So that example will be even simpler:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { computed } from &amp;#39;ember-decorators/object&amp;#39;;
+
+export default class MyComponent extends Component {
+  someProperty = &amp;#39;with a string value&amp;#39;;
+
+  @computed(&amp;#39;someProperty&amp;#39;)
+  someOther(someProperty) {
+    return someProperty + &amp;#39; that you can append to&amp;#39;;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And in that imagined, wonderful future world, if we tried to do something that isn’t a valid string operation—say, we tried &lt;code&gt;someProperty / 3&lt;/code&gt;—TypeScript would complain to us, loudly.&lt;/p&gt;
+&lt;p&gt;Although this is still a future plan, rather than a present reality, it’s not &lt;em&gt;that&lt;/em&gt; far off. We just need someone to write that type definition for the decorators, and we’ll be off to the races wherever we’re using the new ES6 class approach instead of the existing &lt;code&gt;Ember.Object&lt;/code&gt; approach. So: &lt;em&gt;soon&lt;/em&gt;. I don’t know how soon, but soon.&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="current-ameliorations" class="level2"&gt;
+&lt;h2&gt;Current ameliorations&lt;/h2&gt;
+&lt;p&gt;In the meantime, of course, many of us are maintaining large codebases. I just checked, and our app (between the app itself and the tests) has around 850 files and 34,000 lines of code. Even as those new abilities land, we’re not going to be converting all of them all at once. And we want to get some real mileage out of TypeScript in the meantime. One of the best ways I’ve found to do this is to take a step back and think about the pieces of the puzzle which Ember is solving for you, and which it &lt;em&gt;isn’t&lt;/em&gt;. That is, Ember is really concerned with managing application state and lifecycle, and with rendering the UI. And it’s &lt;em&gt;fabulous&lt;/em&gt; about those things. What it’s not particularly concerned with (and what it shouldn’t be) is the particulars of how your business logic is implemented. And there’s no particular reason, &lt;em&gt;especially&lt;/em&gt; if most of that business logic is implemented in terms of a bunch of pure, straightforward, input-to-output functions that operate on well-defined data types, for all of your business logic to live in &lt;code&gt;Ember.Object&lt;/code&gt;-descended classes.&lt;/p&gt;
+&lt;p&gt;Instead, we have increasingly chosen to write our business logic in bog-standard TypeScript files. These days, our app has a &lt;code&gt;lib&lt;/code&gt; directory in it, with packages like &lt;code&gt;utilities&lt;/code&gt; for commonly used tools… but also like &lt;code&gt;billing&lt;/code&gt;, where we implement &lt;em&gt;all&lt;/em&gt; of our client-side billing business logic. The display logic goes in the &lt;code&gt;Ember.Controller&lt;/code&gt; and &lt;code&gt;Ember.Component&lt;/code&gt; classes, and the routing and state management goes in the &lt;code&gt;Ember.Route&lt;/code&gt; and &lt;code&gt;Ember.Data&lt;/code&gt; pieces as you’d expect. But none of the business logic lives there. That means that we’re entirely free of the aforementioned constraints for the majority of the time dealing with that data. If we do a good job making sure the data is good at the boundaries—route loads, for example, and when we send it back to the server—then we can effectively treat everything else as just boring old (new?) TypeScript.&lt;/p&gt;
+&lt;p&gt;So far we’ve only taken that approach with about a quarter of our app, but it’s all the latest pieces of our app, and it has been incredibly effective. Even once we’re able to take advantage of all those shiny new features, we’re going to keep leaning heavily on this approach, because it lets Ember do what Ember is best at, and keeps us from coupling our business logic to the application state management or view rendering details.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="conclusion" class="level2"&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;So that’s the state of things in Ember with TypeScript today. Your best bet for getting real mileage out of TypeScript today is to use the new class syntax support and decorators wherever you can within Ember-specific code, and then to write as much of your business logic outside the Ember system as possible. Gladly, all of that points you right at the future (in the case of syntax) and just good practice (in the case of separating out your business logic). So: not too shabby overall. It’s working well for us, and I hope it does for you as well!&lt;/p&gt;
+&lt;p&gt;Next time: how we got here with the &lt;code&gt;ember-cli-typescript&lt;/code&gt; compiler, and where we hope to go from here!&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;Note that here and throughout, I’m using the &lt;a href="https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md#addendum-1---table-of-module-names-and-exports-by-global"&gt;RFC #176 Module API&lt;/a&gt;, which you can use today via &lt;a href="https://github.com/ember-cli/babel-plugin-ember-modules-api-polyfill"&gt;this polyfill&lt;/a&gt;.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content><category term="emberjs"></category><category term="typescript"></category><category term="typing-your-ember"></category></entry><entry><title>The Book of F♯</title><link href="http://www.chriskrycho.com/2017/the-book-of-f.html" rel="alternate"></link><published>2017-07-21T19:30:00-04:00</published><updated>2017-07-21T19:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2017-07-21:/2017/the-book-of-f.html</id><summary type="html">Recommended With Qualifications: This book is just okay, and at this point it’s a bit outdated—but if you're in its fairly narrow target audience, it’s a decent way to get up to speed on F♯.
 </summary><content type="html">&lt;p&gt;&lt;i class=editorial&gt;I keep my book review ratings simple—they’re either &lt;em&gt;required&lt;/em&gt;, &lt;em&gt;recommended&lt;/em&gt;, &lt;em&gt;recommended with qualifications&lt;/em&gt;, or &lt;em&gt;not recommended&lt;/em&gt;. If you want the TL;DR, this is it:&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Recommended With Qualifications:&lt;/strong&gt; This book is just okay, and at this point it’s a bit outdated—but if you’re in its fairly narrow target audience, it’s a decent way to get up to speed on F#.&lt;/p&gt;
 &lt;hr /&gt;
