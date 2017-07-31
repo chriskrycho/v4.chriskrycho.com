@@ -1,6 +1,7 @@
 ---
 Title: Typing Your Ember, Part 4
-Subtitle: The history and (planned!) future of ember-cli-typescript.
+Subtitle: >
+    Example: using Ember for view and lifecycle but plain-old TypeScript otherwise.
 Date: 2017-07-31 19:30
 Tags: emberjs, typescript, typing-your-ember
 Category: Tech
