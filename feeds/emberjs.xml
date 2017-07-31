@@ -1,5 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - emberjs</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Fri, 28 Jul 2017 12:00:00 -0400</lastBuildDate><item><title>Typing Your Ember, Part 3</title><link>http://www.chriskrycho.com/2017/typing-your-ember-part-3.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - emberjs</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Mon, 31 Jul 2017 19:30:00 -0400</lastBuildDate><item><title>Typing Your Ember, Part 4</title><link>http://www.chriskrycho.com/2017/typing-your-ember-part-4.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;In the &lt;a href="/2017/typing-your-ember-part-3"&gt;previous post&lt;/a&gt; in this series, I noted that one of the most effective current strategies for using TypeScript effectively in an Ember app is to push as much of your logic possible &lt;em&gt;out&lt;/em&gt; of the Ember layer and into plain-old-TypeScript. Unsurprisingly, people had some questions about how to do this, so here’s a brief example.&lt;/p&gt;
+&lt;p&gt;As I suggested in that post, we now have a &lt;code&gt;lib&lt;/code&gt; directory in our app, and all new business logic for the app lives there instead of directly on e.g. an &lt;code&gt;Ember.Service&lt;/code&gt; instance. Our current directory structure looks like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;app/
+  adapters/
+  components/
+  config/
+  controllers/
+  helpers/
+  initializers/
+  instance-initializers
+  lib/    &amp;lt;-- this is the one we care about
+    billing/
+    utilities/
+      numeric.ts
+  routes/
+  serializers/
+  services/
+  templates/
+  transforms
+  app.ts
+  router.ts
+tests/
+package.json
+bower.json
+// etc.&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The main thing to notice here is that &lt;code&gt;lib&lt;/code&gt; is just a directory in the app like any other, and its child directories likewise. This means that Ember CLI will resolve it just like normal, too—there’s no need to mess with the resolver or anything.&lt;/p&gt;
+&lt;p&gt;Say we had a set of numeric utilities in that &lt;code&gt;numeric.ts&lt;/code&gt; file like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Make text out of numbers, like &amp;quot;1st&amp;quot;, &amp;quot;2nd&amp;quot;, &amp;quot;3rd&amp;quot;, etc.
+export const withEnding = (val: number): string =&amp;gt; {
+  // boring implementation details elided
+};&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then using it in an Ember component might look like this (where &lt;code&gt;currentNumber&lt;/code&gt; is passed into the component):&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { get, set } from &amp;#39;@ember/object&amp;#39;;
+import * as Num from &amp;#39;../lib/utilities/numeric&amp;#39;;
+
+export default Component.extend({
+  init() {
+    const currentNumber = get(this, &amp;#39;currentNumber&amp;#39;);
+    const displayNumber = Num.withEnding(currentNumber);
+    set(this, &amp;#39;displayNumber&amp;#39;, displayNumber);
+  },
+})&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You might wonder why we’d do this instead of using an &lt;code&gt;Ember.Service&lt;/code&gt;. In the above example, I could of course make &lt;code&gt;Num&lt;/code&gt; a service and inject it…&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { getProperties, set } from &amp;#39;@ember/object&amp;#39;;
+import { inject } from &amp;#39;@ember/service&amp;#39;;
+
+export default Component.extend({
+  num: inject(),
+
+  init() {
+    const { currentNumber, num } =
+      getProperties(this, &amp;#39;currentNumber&amp;#39;, num&amp;#39;);
+
+    const displayNumber = num.withEnding(currentNumber);
+    set(this, &amp;#39;displayNumber&amp;#39;, displayNumber);
+  },
+})&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;…but that doesn’t actually &lt;em&gt;gain&lt;/em&gt; me anything—the service here is just a way of exposing a function, after all—and it actually makes everything a bit more verbose. It also decreases the overall analyzability of this for things like tree-shaking: that module dependency is now something that Ember itself has to manage, instead of being statically analyzable at build time. Taking this approach also diminishes the reusability of any numeric helpers I put in there. If we couple them to an &lt;code&gt;Ember.Service&lt;/code&gt;, instead of using an ES6 module, they would stop being things we can easily reuse in non-Ember projects. Instead, by using modules, we leave ourselves the ability to easily extract those numeric helpers, and publish them for either internal or external consumption.&lt;/p&gt;
+&lt;p&gt;Along those lines, we actually have a module to support &lt;a href="https://en.bem.info/methodology/quick-start/"&gt;BEM&lt;/a&gt; with Ember Components—and we plan to extract both the basic TypeScript library as well as a &lt;code&gt;BemComponent&lt;/code&gt; Ember-specific wrapper as open-source libraries in the near, and anyone will be able to consume and use the underlying TypeScript library, whatever their framework or library of choice. Importantly, that includes us in our other codebases, which include lots of old jQuery and some new React, and might include some Glimmer.js in the future. Any or all of our utilities for these kinds of things become reusable if they’re just TypeScript.&lt;/p&gt;
+&lt;p&gt;Pragmatically, it’s also just easier to do and get good help from TypeScript by going this way. It also means that unit-testing requires &lt;em&gt;no&lt;/em&gt; context from Ember whatsoever, which keeps those tests lighter and faster. Even though Ember’s unit tests are already super quick, when you have hundreds or thousands of unit tests, every little bit matters. It also, and probably even more importantly, means there are fewer places where you could mess things up when configuring tests—not that I have any experience messing up test configurations in Ember!&lt;/p&gt;
+&lt;p&gt;One important thing to note is that this all works best with Ember—by far—when your &lt;code&gt;lib&lt;/code&gt; modules aren’t managing stateful objects, but rather defining data structures and functions which just transform those structures in some way. This approach is a great fit for us, because we’re increasingly writing a lot of our business and even UI logic in terms of &lt;a href="http://www.chriskrycho.com/2016/what-is-functional-programming.html#pure-functions"&gt;pure functions&lt;/a&gt; which transform simple “record” types. That keeps each controller, route, component, or service doing relatively little work: they are responsible for getting and passing around data in the application, and for triggering actions—but they’re not responsible for &lt;em&gt;understanding&lt;/em&gt; or &lt;em&gt;manipulating&lt;/em&gt; that data. Meanwhile the module code doesn’t do &lt;em&gt;any&lt;/em&gt; stateful work; there’s no mutation—just boring, input-to-output functions.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; By contrast, if you’re dealing with stateful objects, you’re apt to end up running into places where you have lifecycle concerns, and that’s where Ember excels.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;In summary:&lt;/strong&gt; in this model, Ember handles all the lifecycle and view management, and is responsible for sending data in and out of the application. Plain old modules handle defining what the core internal data types are, and for manipulating, transforming, and creating data.&lt;/p&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;If you’re wondering: we’re not using anything like Redux or Immutable.js yet, but both &lt;a href="https://github.com/ember-redux/ember-redux"&gt;ember-redux&lt;/a&gt; and &lt;a href="https://github.com/rtfeldman/seamless-immutable"&gt;seamless-immutable&lt;/a&gt; would be great fits for the way we’re building the app at this point, and it’s likely at least &lt;a href="https://github.com/ember-redux/ember-redux"&gt;ember-redux&lt;/a&gt; will become part of our stack in the relatively near future.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 31 Jul 2017 19:30:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-07-31:/2017/typing-your-ember-part-4.html</guid><category>emberjs</category><category>typescript</category><category>typing-your-ember</category></item><item><title>Typing Your Ember, Part 3</title><link>http://www.chriskrycho.com/2017/typing-your-ember-part-3.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
