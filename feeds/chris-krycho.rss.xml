@@ -28,7 +28,7 @@ tests/
 package.json
 bower.json
 // etc.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The main thing to notice here is that &lt;code&gt;lib&lt;/code&gt; is just a directory in the app like any other, and its child directories likewise. This means that Ember CLI will resolve it just like normal, too—there’s no need to mess with the resolver or anything.&lt;/p&gt;
+&lt;p&gt;The main thing to notice here is that &lt;code&gt;lib&lt;/code&gt; is just a directory in the app like any other, and its child directories likewise. This means that Ember &lt;abbr title="command line interface"&gt;CLI&lt;/abbr&gt; will resolve it just like normal, too—there’s no need to mess with the resolver or anything.&lt;/p&gt;
 &lt;p&gt;Say we had a set of numeric utilities in that &lt;code&gt;numeric.ts&lt;/code&gt; file like this:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;// Make text out of numbers, like &amp;quot;1st&amp;quot;, &amp;quot;2nd&amp;quot;, &amp;quot;3rd&amp;quot;, etc.
 export const withEnding = (val: number): string =&amp;gt; {

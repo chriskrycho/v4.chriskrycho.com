@@ -55,7 +55,7 @@ bower.json
 // etc.
 ```
 
-The main thing to notice here is that `lib` is just a directory in the app like any other, and its child directories likewise. This means that Ember CLI will resolve it just like normal, too---there's no need to mess with the resolver or anything.
+The main thing to notice here is that `lib` is just a directory in the app like any other, and its child directories likewise. This means that Ember <abbr title="command line interface">CLI</abbr> will resolve it just like normal, too---there's no need to mess with the resolver or anything.
 
 Say we had a set of numeric utilities in that `numeric.ts` file like this:
 
