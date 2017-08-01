@@ -56,7 +56,7 @@ export default Component.extend({
 
   init() {
     const { currentNumber, num } =
-      getProperties(this, &amp;#39;currentNumber&amp;#39;, num&amp;#39;);
+      getProperties(this, &amp;#39;currentNumber&amp;#39;, &amp;#39;num&amp;#39;);
 
     const displayNumber = num.withEnding(currentNumber);
     set(this, &amp;#39;displayNumber&amp;#39;, displayNumber);

@@ -94,7 +94,7 @@ export default Component.extend({
 
   init() {
     const { currentNumber, num } =
-      getProperties(this, 'currentNumber', num');
+      getProperties(this, 'currentNumber', 'num');
 
     const displayNumber = num.withEnding(currentNumber);
     set(this, 'displayNumber', displayNumber);
