@@ -27,6 +27,10 @@ This list is updated whenever I publish a new post in the series. You can also s
 
 1. [Set your Ember.js project up to use TypeScript.][1]
 2. [Adding TypeScript to an existing Ember.js project.][2]
+3. [How to actually use types effectively in Ember today.][3]
+4. [Example: using Ember for view and lifecycle but plain-old TypeScript otherwise.][4]
 
 [1]: /2017/typing-your-ember-part-1.html
 [2]: /2017/typing-your-ember-part-2.html
+[3]: /2017/typing-your-ember-part-3.html
+[4]: /2017/typing-your-ember-part-4.html

@@ -1,0 +1,138 @@
+---
+Title: Typing Your Ember, Part 4
+Subtitle: >
+    Example: using Ember for view and lifecycle but plain-old TypeScript otherwise.
+Date: 2017-07-31 19:30
+Tags: emberjs, typescript, typing-your-ember
+Category: Tech
+Summary: >
+   In the last post, I mentioned putting your business logic outside Ember's tools and treating it as plain-old TypeScript. Here's what that might look like.
+
+---
+
+<i class='series-overview'>You write [Ember.js] apps. You think [TypeScript] would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i>
+
+[Ember.js]: https://emberjs.com
+[TypeScript]: http://www.typescriptlang.org
+
+<i class='series-overview'>This is the series for you! I'll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today---and I'll be pretty clear about the current tradeoffs and limitations, too.</i>
+
+<i class='series-overview'>[(See the rest of the series. →)][series]</i>
+
+[series]: /typing-your-ember.html
+
+---
+
+In the [previous post][part-3] in this series, I noted that one of the most effective current strategies for using TypeScript effectively in an Ember app is to push as much of your logic possible *out* of the Ember layer and into plain-old-TypeScript. Unsurprisingly, people had some questions about how to do this, so here's a brief example.
+
+[part-3]: /2017/typing-your-ember-part-3
+
+As I suggested in that post, we now have a `lib` directory in our app, and all new business logic for the app lives there instead of directly on e.g. an `Ember.Service` instance. Our current directory structure looks like this:
+
+```
+app/
+  adapters/
+  components/
+  config/
+  controllers/
+  helpers/
+  initializers/
+  instance-initializers
+  lib/    <-- this is the one we care about
+    billing/
+    utilities/
+      numeric.ts
+  routes/
+  serializers/
+  services/
+  templates/
+  transforms
+  app.ts
+  router.ts
+tests/
+package.json
+bower.json
+// etc.
+```
+
+The main thing to notice here is that `lib` is just a directory in the app like any other, and its child directories likewise. This means that Ember <abbr title="command line interface">CLI</abbr> will resolve it just like normal, too---there's no need to mess with the resolver or anything.
+
+Say we had a set of numeric utilities in that `numeric.ts` file like this:
+
+```
+// Make text out of numbers, like "1st", "2nd", "3rd", etc.
+export const withEnding = (val: number): string => {
+  // boring implementation details elided
+};
+```
+
+Then using it in an Ember component might look like this (where `currentNumber` is passed into the component):
+
+```typescript
+import Component from '@ember/component';
+import { get, set } from '@ember/object';
+import * as Num from '../lib/utilities/numeric';
+
+export default Component.extend({
+  init() {
+    const currentNumber = get(this, 'currentNumber');
+    const displayNumber = Num.withEnding(currentNumber);
+    set(this, 'displayNumber', displayNumber);
+  },
+})
+```
+
+You might wonder why we'd do this instead of using an `Ember.Service`. In the above example, I could of course make `Num` a service and inject it... 
+
+```typescript
+import Component from '@ember/component';
+import { getProperties, set } from '@ember/object';
+import { inject } from '@ember/service';
+
+export default Component.extend({
+  num: inject(),
+
+  init() {
+    const { currentNumber, num } =
+      getProperties(this, 'currentNumber', 'num');
+
+    const displayNumber = num.withEnding(currentNumber);
+    set(this, 'displayNumber', displayNumber);
+  },
+})
+```
+
+...but that doesn't actually *gain* me anything---the service here is just a way of exposing a function, after all---and it actually makes everything a bit more verbose. It also decreases the overall analyzability of this for things like tree-shaking: that module dependency is now something that Ember itself has to manage, instead of being statically analyzable at build time. Taking this approach also diminishes the reusability of any numeric helpers I put in there. If we couple them to an `Ember.Service`, instead of using an ES6 module, they would stop being things we can easily reuse in non-Ember projects. Instead, by using modules, we leave ourselves the ability to easily extract those numeric helpers, and publish them for either internal or external consumption.
+
+Along those lines, we actually have a module to support <abbr title="Block-Element-Modifier">[BEM]</abbr> with Ember Components---and we plan to extract both the basic TypeScript library as well as a `BemComponent` Ember-specific wrapper as open-source libraries in the near future. Besides the Ember addon, *anyone* will be able to consume and use the underlying TypeScript library, whatever their framework or library of choice. Importantly, that includes us in our other codebases, which include lots of old jQuery and some new React, and might include some Glimmer.js in the future. Any or all of our utilities for these kinds of things become reusable if they're just TypeScript.
+
+[BEM]: https://en.bem.info/methodology/quick-start/
+
+Pragmatically, it's also just easier to do and get good help from TypeScript by going this way. It also means that unit-testing requires *no* context from Ember whatsoever, which keeps those tests lighter and faster. Even though Ember's unit tests are already super quick, when you have hundreds or thousands of unit tests, every little bit matters. It also, and probably even more importantly, means there are fewer places where you could mess things up when configuring tests---not that I have any experience messing up test configurations in Ember!
+
+One important thing to note is that this all works best with Ember---by far---when your `lib` modules aren't managing stateful objects, but rather defining data structures and functions which just transform those structures in some way. This approach is a great fit for us, because we're increasingly writing a lot of our business and even <abbr title="user interface">UI</abbr> logic in terms of [pure functions] which transform simple "record" types. That keeps each controller, route, component, or service doing relatively little work: they are responsible for getting and passing around data in the application, and for triggering actions---but they're not responsible for *understanding* or *manipulating* that data. Meanwhile the module code doesn't do *any* stateful work; there's no mutation---just boring, input-to-output functions.[^immutable] By contrast, if you're dealing with stateful objects, you're apt to end up running into places where you have lifecycle concerns, and that's where Ember excels.
+
+[pure functions]: http://www.chriskrycho.com/2016/what-is-functional-programming.html#pure-functions
+
+[^immutable]: If you're wondering: we're not using anything like Redux or Immutable.js yet, but both [ember-redux] and [seamless-immutable] would be great fits for the way we're building the app at this point, and it's likely at least [ember-redux] will become part of our stack in the relatively near future.
+
+[ember-redux]: https://github.com/ember-redux/ember-redux
+[seamless-immutable]: https://github.com/rtfeldman/seamless-immutable
+
+**In summary:** in this model, Ember handles all the lifecycle and view management, and is responsible for sending data in and out of the application. Plain old modules handle defining what the core internal data types are, and for manipulating, transforming, and creating data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
