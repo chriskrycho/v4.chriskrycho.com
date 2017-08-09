@@ -1,9 +1,0 @@
----
-Title: ""
-Date: 2016-06-17 21:23
-Template: formats/micro
-Slug: 06-17-2123
-Category: micro
----
-
-When you go to the Y to get in an evening swim and only realize when you arrive that they close an hour earlier on Fridays: 
