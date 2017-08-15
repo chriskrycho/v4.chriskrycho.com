@@ -30,7 +30,8 @@ Books I finished, in the order I finished them.
 - _Old Man's War_, John Scalzi
 - _Thinking, Fast and Slow_, Daniel Kahneman -- [review](/2017/thinking-fast-and-slow-a-review.html)
 - _The Book of F♯: Breaking Free with Managed Functional Programming_, Dave Fancher -- [review](http://www.chriskrycho.com/2017/the-book-of-f.html)
-- _Beren and Lúthien_, J. R. R. Tolkien, ed. Christopher Tolkien
+- _Beren and Lúthien_, J. R. R. Tolkien, ed. Christopher Tolkien -- [review](http://www.chriskrycho.com/2017/beren-and-luthien.html)
+- _Icehenge_, Kim Stanley Robinson -- [review](http://www.chriskrycho.com/2017/icehenge.html)
 
 ## Partial
 
