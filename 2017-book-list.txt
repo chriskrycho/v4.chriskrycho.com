@@ -8,7 +8,6 @@ The books I read in 2017, with links to reviews or comments where I had them to 
 
 Books I'm reading right now. Listed in the order I started them.
 
-- _Evolution and the Fall_, eds. William T. Cavanaugh and James K. A. Smith
 - _Type-Driven Development with Idris_, Edwin Brady
 - _Theology and the Mirror of Scripture_, Kevin J. Vanhoozer and Daniel Treier
 
@@ -32,6 +31,7 @@ Books I finished, in the order I finished them.
 - _The Book of F♯: Breaking Free with Managed Functional Programming_, Dave Fancher -- [review](http://www.chriskrycho.com/2017/the-book-of-f.html)
 - _Beren and Lúthien_, J. R. R. Tolkien, ed. Christopher Tolkien -- [review](http://www.chriskrycho.com/2017/beren-and-luthien.html)
 - _Icehenge_, Kim Stanley Robinson -- [review](http://www.chriskrycho.com/2017/icehenge.html)
+- _Evolution and the Fall_, eds. William T. Cavanaugh and James K. A. Smith -- review forthcoming
 - _The Way of Kings_, Brandon Sanders (reread)
 
 ## Partial
