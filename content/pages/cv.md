@@ -11,17 +11,10 @@ Christopher Krycho
 Overview
 ========
 
-Objective
----------
-Seeking part-time contract software development position, where I can apply my
-creative and analytical skills to drive effective solutions for clients, where I
-can continue to develop technical expertise in areas of interest including
-functional programming and user interface design.
-
 Areas of Expertise
 ------------------
 ### Primary Skills
-Python, JavaScript (Ember, Angular, Node), C, <abbr>HTML</abbr>, <abbr>SCSS</abbr>, Git, Mercurial
+TypeScript, JavaScript (Ember.js, Node.js), Python, C, <abbr>HTML</abbr>, <abbr>SCSS</abbr>, Git, Mercurial
 
 ### Recent Interests
 Rust, Elixir, Haskell, F♯
@@ -49,7 +42,7 @@ techniques, languages, frameworks, and tools.
 
 ### Relevant Experience
 
-  - Olo (January 2016--present)  
+  - Olo (January 2016--present)
     Front-end Software Engineer
 
   - Software Development & Web Design (January 2010--present)
