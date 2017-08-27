@@ -7,8 +7,8 @@ Subtitle: What am I up to these days?
 ## Life
 
 - We're about to move to Colorado---probably heading out from North Carolina in mid to late October. We're buying a ridiculously amazing house on a ridiculously amazing lot: literally a mountain lake house in the foothills of the Front Range in Monument, Colorado.
-- We got to see the 2017 total solar eclipse!
-- I'm training for a full marathon. Mileage is getting there, but given the move I'm currently not sure I'll actually be able to participate.
+- We got to see totality in the 2017 total solar eclipse! It was the most amazing thing I've ever seen.
+- I'm training for a full marathon ([City of Oaks](http://cityofoaksmarathon.com), at which I've run the half marathon event 3 of the 4 years we've lived here). Mileage is getting there, but given the move I'm currently not sure I'll actually be able to participate.
 
 ## Podcasts
 
