@@ -20,7 +20,7 @@ I have so many of them.
 
 ## Projects
 
-- My main task right now is trying to make the experience of writing TypeScript and Ember.js awesome. [typed-ember](https://github.com/typed-ember) on GitHub is where all the action is at. I've also been writing a series of blog posts, ["Typing Your Ember"](http://www.chriskrycho.com/typing-your-ember/), to help people get off the ground.
+- My main non-work, non-family goal right now is to make the experience of writing TypeScript and Ember.js together awesome. [typed-ember](https://github.com/typed-ember) on GitHub is where all the action is at. I've also been writing a series of blog posts, ["Typing Your Ember"](http://www.chriskrycho.com/typing-your-ember/), to help people get off the ground.
 - I'm keeping track of my reading this year via my [2017 book list](http://www.chriskrycho.com/2017-book-list.html). One of my goals is, for new books I read, to write at least a *short* review of them.
 
 ### On Hold
