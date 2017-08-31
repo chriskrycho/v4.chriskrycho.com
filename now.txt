@@ -10,9 +10,15 @@ Subtitle: What am I up to these days?
 - We got to see totality in the 2017 total solar eclipse! It was the most amazing thing I've ever seen.
 - I'm training for a full marathon ([City of Oaks](http://cityofoaksmarathon.com), at which I've run the half marathon event 3 of the 4 years we've lived here). Mileage is getting there, but given the move I'm currently not sure I'll actually be able to participate.
 
-## Podcasts
+## Speaking
 
-I have so many of them.
+- I'm giving a talk titled "Becoming a Contributor" at Rust Belt Rust 2017, October 26–27. The abstract:
+    
+    > So, you’re new to the Rust community. (Or any community, really!) And you want to help, but, well, you’re new. So how exactly do you start contributing? What kinds of contributions are valuable? We’ll talk about everything from asking questions to writing documentation, from pitching in on forums and chat to writing blog posts, and from starting your own projects to contributing to other open-source projects.
+    
+    [Registration here](https://www.eventbrite.com/e/rust-belt-rust-conference-2017-registration-36237335847), and New Rustacean listeners can use code `newrustacean` to get 20% off.
+
+## Podcasts
 
 - [New Rustacean](http://www.newrustacean.com) -- a podcast about learning the Rust programming languare. Updates 2--3⨉ each month.
 - [Winning Slowly](http://www.winningslowly.org) -- taking the long view on technology, religion, ethics, and art; cohosted with [Stephen Carradini](http://stephencarradini.com). Usually updates biweekly; we've been in flux with Stephen finishing a Ph.D., his wife delivering their first baby, and their all moving from North Carolina to Arizona in the course of 2017. Getting back on the normal schedule this fall.
