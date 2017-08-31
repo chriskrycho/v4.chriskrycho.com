@@ -43,7 +43,11 @@ techniques, languages, frameworks, and tools.
 ### Relevant Experience
 
   - Olo (January 2016--present)
-    Front-end Software Engineer
+    Senior Software Engineer
+      + Spearheaded and shepherded use of TypeScript in both our Ember.js app
+        and the broader Ember.js ecosystem, as the maintainer of
+        [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript).
+      + Drove adoption of a test-driven development style.
 
   - Software Development & Web Design (January 2010--present)
     www.chriskrycho.com
