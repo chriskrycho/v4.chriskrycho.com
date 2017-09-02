@@ -32,7 +32,7 @@ Books I finished, in the order I finished them.
 - _Beren and Lúthien_, J. R. R. Tolkien, ed. Christopher Tolkien -- [review](http://www.chriskrycho.com/2017/beren-and-luthien.html)
 - _Icehenge_, Kim Stanley Robinson -- [review](http://www.chriskrycho.com/2017/icehenge.html)
 - _Evolution and the Fall_, eds. William T. Cavanaugh and James K. A. Smith -- review forthcoming
-- _The Way of Kings_, Brandon Sanders (reread)
+- _The Way of Kings_, Brandon Sanderson (reread)
 - _Words of Radiance_, Brandon Sanderson (reread)
 
 ## Partial
