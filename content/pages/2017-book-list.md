@@ -33,6 +33,7 @@ Books I finished, in the order I finished them.
 - _Icehenge_, Kim Stanley Robinson -- [review](http://www.chriskrycho.com/2017/icehenge.html)
 - _Evolution and the Fall_, eds. William T. Cavanaugh and James K. A. Smith -- review forthcoming
 - _The Way of Kings_, Brandon Sanders (reread)
+- _Words of Radiance_, Brandon Sanderson (reread)
 
 ## Partial
 
