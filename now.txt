@@ -13,9 +13,9 @@ Subtitle: What am I up to these days?
 ## Speaking
 
 - I'm giving a talk titled "Becoming a Contributor" at Rust Belt Rust 2017, October 26–27. The abstract:
-    
+
     > So, you’re new to the Rust community. (Or any community, really!) And you want to help, but, well, you’re new. So how exactly do you start contributing? What kinds of contributions are valuable? We’ll talk about everything from asking questions to writing documentation, from pitching in on forums and chat to writing blog posts, and from starting your own projects to contributing to other open-source projects.
-    
+
     [Registration here](https://www.eventbrite.com/e/rust-belt-rust-conference-2017-registration-36237335847), and New Rustacean listeners can use code `newrustacean` to get 20% off.
 
 ## Podcasts
@@ -28,10 +28,10 @@ Subtitle: What am I up to these days?
 
 - My main non-work, non-family goal right now is to make the experience of writing TypeScript and Ember.js together awesome. [typed-ember](https://github.com/typed-ember) on GitHub is where all the action is at. I've also been writing a series of blog posts, ["Typing Your Ember"](http://www.chriskrycho.com/typing-your-ember/), to help people get off the ground.
 - I'm keeping track of my reading this year via my [2017 book list](http://www.chriskrycho.com/2017-book-list.html). One of my goals is, for new books I read, to write at least a *short* review of them.
+- [lightning.rs](https://github.com/chriskrycho/lightning-rs/) -- my static site generator project in Rust, which I'm trying to spend one [pomodoro](http://www.chriskrycho.com/2017/log-all-the-things.html) session on every work day. I got tired of the project languishing.
 
 ### On Hold
 
-- [lightning.rs](https://github.com/chriskrycho/lightning-rs/) -- my static site generator project in Rust, basically tabled until I finish bootstrapping the TypeScript/Ember.js ecosystem.
 - [Rust and Swift](http://www.chriskrycho.com/rust-and-swift.html) -- I tabled this to work on a project of the same focus for O'Reilly, who ended up canceling the project. I'm not sure I'll ever go back to it. I was really enjoying it, but that really burned me out, and in the meantime both Swift and Rust have moved on, a *lot*.
 
 ## Career
