@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0"><channel><title>Chris Krycho - software development</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Wed, 01 Nov 2017 08:40:00 -0400</lastBuildDate><item><title>Announcing True Myth 1.0</title><link>http://www.chriskrycho.com/2017/announcing-true-myth-10.html</link><description>&lt;p&gt;I’m pleased to announce the release of &lt;a href="https://github.com/chriskrycho/true-myth"&gt;True Myth 1.0&lt;/a&gt;! True Myth is a library I’ve been working on over the last month or so, for saner programming in JavaScript, with first-class support for TypeScript (and Flow).&lt;/p&gt;
-&lt;p&gt;True Myth provides standard, type-safe wrappers and helper functions to help help you with two &lt;em&gt;extremely&lt;/em&gt; common cases in programming:&lt;/p&gt;
+&lt;p&gt;True Myth provides standard, type-safe wrappers and helper functions to help you with two &lt;em&gt;extremely&lt;/em&gt; common cases in programming:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;not having a value—which it solves with a &lt;code&gt;Maybe&lt;/code&gt; type and associated helper functions and methods&lt;/li&gt;
 &lt;li&gt;having a &lt;em&gt;result&lt;/em&gt; where you need to deal with either success or failure—which it solves with a &lt;code&gt;Result&lt;/code&gt; type and associated helper functions and methods&lt;/li&gt;
