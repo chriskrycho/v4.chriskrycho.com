@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Announcing True Myth 1.0 &middot; Chris Krycho</title>
+    <meta name="description" content="I’m pleased to announce the release of True Myth 1.0! True Myth is a library I’ve been working on over the last month or so, for saner programming in JavaScript, with first-class support for TypeScript (and Flow). True Myth provides standard, type-safe wrappers and helper functions to …"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2017/announcing-true-myth-10.html"/>
+    <meta property="og:title" content="Announcing True Myth 1.0"/>
+    <meta property="og:description" content="I’m pleased to announce the release of True Myth 1.0! True Myth is a library I’ve been working on over the last month or so, for saner programming in JavaScript, with first-class support for TypeScript (and Flow). True Myth provides standard, type-safe wrappers and helper functions to …"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Announcing True Myth 1.0"/>
+    <meta name="twitter:description" content="I’m pleased to announce the release of True Myth 1.0! True Myth is a library I’ve been working on over the last month or so, for saner programming in JavaScript, with first-class support for TypeScript (and Flow). True Myth provides standard, type-safe wrappers and helper functions to …"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="software-development libraries programming-languages typescript functional-programming tech">
+
+    <header>
+<h1>Announcing True Myth 1.0</h1>
+<h2>A library for saner programming in JavaScript, with first-class support for TypeScript (and Flow), with <code>Maybe</code> and <code>Result</code> types, and supporting both a functional style and a more traditional method-call style.
+</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2017/announcing-true-myth-10.html"><i class="fa fa-fw fa-link"></i></a>November 01, 2017</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/functional-programming/">#functional programming</a><a class="hashtags" href="http://www.chriskrycho.com/libraries/">#libraries</a><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2017/announcing-true-myth-10.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>I’m pleased to announce the release of <a href="https://github.com/chriskrycho/true-myuth">True Myth 1.0</a>! True Myth is a library I’ve been working on over the last month or so, for saner programming in JavaScript, with first-class support for TypeScript (and Flow).</p>
+<p>True Myth provides standard, type-safe wrappers and helper functions to help help you with two <em>extremely</em> common cases in programming:</p>
+<ul>
+<li>not having a value—which it solves with a <code>Maybe</code> type and associated helper functions and methods</li>
+<li>having a <em>result</em> where you need to deal with either success or failure—which it solves with a <code>Result</code> type and associated helper functions and methods</li>
+</ul>
+<p>You could implement all of these yourself – it’s not hard! – but it’s much easier to just have one extremely well-tested library you can use everywhere to solve this problem once and for all.</p>
+<p>Even better to get one of these with no runtime overhead for using it other than the very small cost of some little container objects—which we get by leaning hard on the type systems in TypeScript or Flow!</p>
+<p><strong>Aside:</strong> If you’re familiar with <a href="http://folktale.origamitower.com">Folktale</a> or <a href="https://sanctuary.js.org">Sanctuary</a>, this has a lot in common with them—its main differences are:</p>
+<ul>
+<li>True Myth has a much smaller API surface than they do</li>
+<li>True Myth aims to be much more approachable for people who aren’t already super familiar with functional programming concepts and jargon</li>
+<li>True Myth does <em>no</em> runtime checking of your types, whereas both those libraries do by default—it relies on TypeScript or Flow instead</li>
+</ul>
+<p>I really like both of those libraries, though, so you might check them out as well!</p>
+<section id="maybe" class="level2">
+<h2><code>Maybe</code></h2>
+<p>Sometimes you don’t have a value. In JavaScript land, we usually represent that with either <code>null</code> or <code>undefined</code>, and then trying to program defensively in the places we <em>think</em> we might get <code>null</code> or <code>undefined</code> as arguments to our functions. For example, imagine an endpoint which returns a JSON payload shaped like this:</p>
+<pre class="json"><code>{
+  &quot;hopefullyAString&quot;: &quot;Hello!&quot;
+}</code></pre>
+<p>But sometimes it might come over like this:</p>
+<pre class="json"><code>{
+  &quot;hopefullyAString&quot;: null
+}</code></pre>
+<p>Or even like this:</p>
+<pre class="json"><code>{}</code></pre>
+<p>Assume we were doing something simple, like logging the length of whatever string was there or logging a default value if it was absent. In normal JavaScript we’d write something like this:</p>
+<pre class="javascript"><code>function logThatValue(thePayload) {
+  const length = !!thePayload.hopefullyAString
+    ? thePayload.hopefullyAString.length
+    : 0;
+  
+  console.log(length);
+}
+
+fetch(someUrl)
+  .then(response =&gt; response.json())
+  .then(logThatValue);</code></pre>
+<p>This isn’t a big deal right here… but—and this <em>is</em> a big deal—we have to remember to do this <em>everywhere</em> we interact with this payload. <code>hopefullyAString</code> can <em>always</em> be <code>undefined</code> or <code>null</code> everywhere we interact with it, anywhere in our program. 😬</p>
+<p><code>Maybe</code> is our escape hatch. If, instead of just naively interacting with the payload, we do a <em>very small</em> amount of work up front to normalize the data and use a <code>Maybe</code> instead of passing around <code>null</code> or <code>undefined</code> values, we can operate safely on the data throughout our application. If we have something, we get an instance called <code>Just</code>—as in, “What’s in this field? Just a string” or “Just the string ‘hello’”. If there’s nothing there, we have an instance called <code>Nothing</code>. <code>Just</code> is a wrapper type that holds the actual value in it. <code>Nothing</code> is a wrapper type which has no value in it. But both of them are concrete types and you’ll never get an <code>undefined is not an object</code> error when trying to use them!</p>
+<p>Both of them have all the same methods available on them, and the same static functions to work on them. And, importantly, you can do a bunch of neat things with a <code>Maybe</code> instance without checking whether it’s a <code>Nothing</code> or a <code>Just</code>. For example, if you want to double a number if it’s present and do nothing if it isn’t, you can use the <code>Maybe.map</code> function:</p>
+<pre class="typescript"><code>import Maybe from &#39;true-myth/maybe&#39;;
+const hereIsANumber = Maybe.just(12);          // Just(12)
+const noNumberHere = Maybe.nothing&lt;number&gt;();  // Nothing
+
+const double = (n: number) =&gt; n * 2;
+hereIsANumber.map(double);  // Just(24)
+noNumberHere.map(double);   // Nothing</code></pre>
+<p>There are <a href="https://true-myth.js.org/modules/_maybe_.html">a <em>lot</em></a> of those helper functions and methods! Just about any way you would need to interact with a <code>Maybe</code> is there.</p>
+<p>So now that we have a little idea what <code>Maybe</code> is for and how to use it, here’s that same example, but rewritten to normalize the payload using a <code>Maybe</code> instance. We’re using TypeScript, so we will get a compiler error if we don’t handle any of these cases right—or if we try to use the value at <code>hopefullyAString</code> directly after we’ve normalized it!</p>
+<p>(Note that <code>Maybe.of</code> will construct either a <code>Maybe.Just</code> if the string is present, or <code>Maybe.Nothing</code> if the value supplied to it is <code>null</code> or <code>undefined</code>.)</p>
+<pre class="typescript"><code>import Maybe from &#39;true-myth/maybe&#39;;
+
+type Payload = { hopefullyAString?: string };
+type NormalizedPayload = { hopefullyAString: Maybe&lt;string&gt; };
+
+function normalize(payload: Payload): NormalizedPayload {
+  return {
+    hopefullyAString: Maybe.of(payload.hopefullyAString)
+  };
+}
+
+function logThatValue(payload: NormalizedPayload) {
+  const length = payload.hopefullyAString.mapOr(0, s =&gt; s.length);
+  console.log(length);
+}
+
+fetch(someUrl)
+  .then(response =&gt; response.json())
+  .then(normalize)
+  .then(logThatValue);</code></pre>
+<p>Now, you might be thinking, <em>Sure, but we could get the same effect by just supplying a default value when we deserialize the data.</em> That’s true, you could! Here, for example, you could just normalize it to an empty string. And of course, if just supplying a default value at the API boundary is the right move, you can still do that. <code>Maybe</code> is another tool in your toolbox, not something you’re <em>obligated</em> to use everywhere you can.</p>
+<p>However, sometimes there isn’t a single correct default value to use at the API boundary. You might need to handle that missing data in a variety of ways throughout your application. For example, what if you need to treat “no value” distinctly from “there’s a value present, and it’s an empty string”? <em>That’s</em> where <code>Maybe</code> comes in handy.</p>
+</section>
+<section id="result" class="level2">
+<h2><code>Result</code></h2>
+<p>Another common scenario we find ourselves in is dealing with operations which might fail. There are a couple patterns we often use to deal with this: <em>callbacks</em> and <em>exceptions</em>. There are major problems with both, especially around reusability and composability.</p>
+<p>The callback pattern (as in e.g. Node) encourages a style where literally every function starts with the exact same code:</p>
+<pre class="js"><code>function getMeAValue(err, data) {
+  if (err) {
+    return handleErr(err);
+  }
+  
+  // do whatever the *actual* point of the function is
+}</code></pre>
+<p>There are two major problems with this:</p>
+<ol type="1">
+<li><p>It’s incredibly repetitive – the very opposite of “Don’t Repeat Yourself”. We wouldn’t do this with <em>anything</em> else in our codebase!</p></li>
+<li><p>It puts the error-handling right up front and <em>not in a good way.</em> While we want to have a failure case in mind when designing the behavior of our functions, it’s not usually the <em>point</em> of most functions – things like <code>handleErr</code> in the above example being the exception and not the rule. The actual meat of the function is always after the error handling.</p></li>
+</ol>
+<p>But if we’re not using some similar kind of callback pattern, we usually resort to exceptions. But exceptions are unpredictable: you can’t know whether a given function invocation is going to throw an exception until runtime as someone calling the function. No big deal if it’s a small application and one person wrote all the code, but with even a few thousand lines of code or two developers, it’s very easy to miss that. And then this happens:</p>
+<pre class="js"><code>// in one part of the codebase
+function getMeAValue(url) {
+  if (isMalformed(url)) {
+    throw new Error(`The url `${url}` is malformed!`);
+  }
+  
+  // do something else to load data from the URL
+  return data;
+}
+
+function render(toRender) {
+  // if toRender can&#39;t generate valid HTML, throw Error(&quot;invalid HTML&quot;);
+  // if it can, theRenderedHTML;
+}
+
+function setDom(html) {
+  /* magic to render into DOM */
+}
+
+// somewhere else in the codebase -- throws an exception
+const badUrl = &#39;http:/www.google.com&#39;;  // missing a slash
+const response = getMeAValue(badUrl);  // throws here
+
+// we never get here, but it could throw too
+const htmlForPage = render(value);
+
+// so we definitely can&#39;t get here safely
+setDom(htmlForPage);</code></pre>
+<p>Notice: there’s no way for the caller to know that the function will throw. Perhaps you’re very disciplined and write good docstrings for every function – <em>and</em> moreover, perhaps everyone’s editor shows it to them <em>and</em> they pay attention to that briefly-available popover. More likely, though, this exception throws at runtime and probably as a result of user-entered data – and then you’re chasing down the problem through error logs.</p>
+<p>More, if you <em>do</em> want to account for the reality that any function anywhere in JavaScript might actually throw, you’re going to write something like this:</p>
+<pre class="js"><code>try {
+  const badUrl = &#39;http:/www.google.com&#39;;  // missing a slash
+  const response = getMeAValue(badUrl);  // throws here
+  
+  // we never get here, but it could throw too
+  const htmlForPage = render(value);
+  
+  // so we definitely can&#39;t get here safely
+  setDom(htmlForPage);
+} catch (e) {
+  handleErr(e);  // ends up here
+}</code></pre>
+<p>This is like the Node example <em>but even worse</em> for repetition!</p>
+<p>And TypeScript and Flow can’t help you here! They don’t have type signatures to say “This throws an exception!” (TypeScript’s <code>never</code> might come to mind, but it might mean lots of things, not just exception-throwing.)</p>
+<p>Instead, we can use a <code>Result</code> to get us a container type, much like <code>Maybe</code>, to let us deal with this scenario. A <code>Result</code> is either an <code>Ok</code> wrapping around a value (like <code>Just</code> does) or an <code>Err</code> wrapping around some type defining what went wrong (<em>not</em> like <code>Nothing</code>, which has no contents). Both of them have the same sets of methods on them, and the same static functions which can operate on them.</p>
+<pre class="typescript"><code>import Result from &#39;true-myth/result&#39;;
+
+type Payload = {/* details of the payload...*/}
+
+function getMeAValue(url: string): Result&lt;Payload, string&gt; {
+  if (isMalformed(url)) {
+    return Result.err(`The url &#39;${url}&#39; is malformed`);
+  }
+  
+  // do something else to load data from the url
+  return Result.ok(data);
+}
+
+function render(toRender: string): Result&lt;HTMLElement, string&gt; {
+  // if toRender can&#39;t generate valid HTML, return Err(&quot;invalid HTML&quot;);
+  // if it can, return Ok(theRenderedHTML);
+}
+
+function setDom(html: HTMLElement) {
+  
+}
+
+// somewhere else in the codebase -- no exception this time!
+const badUrl = &#39;http:/www.google.com&#39;;  // missing a slash
+
+// value = Err(The url &#39;${http:/www.google.com}&#39; is malformed)
+const value = getMeAValue(badUrl);
+
+// htmlForPage = the same error! or, if it was Ok, could be a different
+// `Err` (because of how `andThen` works).
+const htmlForPage = value.andThen(render);
+
+// we can&#39;t just invoke `setDom` because it doesn&#39;t take a `Result`.
+Result.match({
+  Ok: html =&gt; setDom(html);
+  Err: reason =&gt; alert(`Something went seriously wrong here! ${reason}`);
+})</code></pre>
+<p>When we have a <code>Result</code> instance, we can perform tons of operations on whether it’s <code>Ok</code> or <code>Err</code>, just as we could with <code>Maybe.Just</code> and <code>Maybe.Nothing</code>, until we <em>need</em> the value. Maybe that’s right away. Maybe we don’t need it until somewhere else deep in our application! Either way, we can deal with it easily enough, and have type safety throughout!</p>
+</section>
+<section id="conclusion" class="level2">
+<h2>Conclusion</h2>
+<p>Give it a spin!</p>
+<ul>
+<li><code>yarn add true-myth</code></li>
+<li><code>npm install true-myth</code></li>
+<li>You can even just <code>ember install true-myth</code> and use it if you’re using Ember (in which case I encourage you to also use <a href="https://github.com/typed-ember/ember-cli-typescript">ember-cli-typescript</a>)</li>
+</ul>
+<p>Let me know what you think – if there’s stuff missing, <a href="https://github.com/chriskrycho/true-myth">open issues</a>! And if it’s just not to your taste, again, I encourage you to take a look at <a href="http://folktale.origamitower.com">Folktale</a> and <a href="https://sanctuary.js.org">Sanctuary</a>, which are both excellent and land in very different design spaces in many ways.</p>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2017/thinking-fast-and-slow-a-review.html">Thinking, Fast and Slow: A Review</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2017/announcing-true-myth-10.html">Announcing True Myth 1.0</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2017/on-public-theological-histories.html">On Public (Theological) Histories</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

@@ -1,5 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2017-08-08T09:00:00-04:00</updated><entry><title>Announcing ember-cli-typescript 1.0.0</title><link href="http://www.chriskrycho.com/2017/announcing-ember-cli-typescript-100.html" rel="alternate"></link><published>2017-08-08T09:00:00-04:00</published><updated>2017-08-08T09:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2017-08-08:/2017/announcing-ember-cli-typescript-100.html</id><summary type="html">A stable foundation for building Ember.js apps with TypeScript, and a roadmap toward a flourishing, TypeScript-friendly ecosystem in the future!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2017-11-01T08:40:00-04:00</updated><entry><title>Announcing True Myth 1.0</title><link href="http://www.chriskrycho.com/2017/announcing-true-myth-10.html" rel="alternate"></link><published>2017-11-01T08:40:00-04:00</published><updated>2017-11-01T08:40:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2017-11-01:/2017/announcing-true-myth-10.html</id><summary type="html">&lt;p&gt;I’m pleased to announce the release of &lt;a href="https://github.com/chriskrycho/true-myuth"&gt;True Myth 1.0&lt;/a&gt;! True Myth is a library I’ve been working on over the last month or so, for saner programming in JavaScript, with first-class support for TypeScript (and Flow).&lt;/p&gt;
+&lt;p&gt;True Myth provides standard, type-safe wrappers and helper functions to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I’m pleased to announce the release of &lt;a href="https://github.com/chriskrycho/true-myuth"&gt;True Myth 1.0&lt;/a&gt;! True Myth is a library I’ve been working on over the last month or so, for saner programming in JavaScript, with first-class support for TypeScript (and Flow).&lt;/p&gt;
+&lt;p&gt;True Myth provides standard, type-safe wrappers and helper functions to help help you with two &lt;em&gt;extremely&lt;/em&gt; common cases in programming:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;not having a value—which it solves with a &lt;code&gt;Maybe&lt;/code&gt; type and associated helper functions and methods&lt;/li&gt;
+&lt;li&gt;having a &lt;em&gt;result&lt;/em&gt; where you need to deal with either success or failure—which it solves with a &lt;code&gt;Result&lt;/code&gt; type and associated helper functions and methods&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You could implement all of these yourself – it’s not hard! – but it’s much easier to just have one extremely well-tested library you can use everywhere to solve this problem once and for all.&lt;/p&gt;
+&lt;p&gt;Even better to get one of these with no runtime overhead for using it other than the very small cost of some little container objects—which we get by leaning hard on the type systems in TypeScript or Flow!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Aside:&lt;/strong&gt; If you’re familiar with &lt;a href="http://folktale.origamitower.com"&gt;Folktale&lt;/a&gt; or &lt;a href="https://sanctuary.js.org"&gt;Sanctuary&lt;/a&gt;, this has a lot in common with them—its main differences are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;True Myth has a much smaller API surface than they do&lt;/li&gt;
+&lt;li&gt;True Myth aims to be much more approachable for people who aren’t already super familiar with functional programming concepts and jargon&lt;/li&gt;
+&lt;li&gt;True Myth does &lt;em&gt;no&lt;/em&gt; runtime checking of your types, whereas both those libraries do by default—it relies on TypeScript or Flow instead&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I really like both of those libraries, though, so you might check them out as well!&lt;/p&gt;
+&lt;section id="maybe" class="level2"&gt;
+&lt;h2&gt;&lt;code&gt;Maybe&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Sometimes you don’t have a value. In JavaScript land, we usually represent that with either &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;undefined&lt;/code&gt;, and then trying to program defensively in the places we &lt;em&gt;think&lt;/em&gt; we might get &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;undefined&lt;/code&gt; as arguments to our functions. For example, imagine an endpoint which returns a JSON payload shaped like this:&lt;/p&gt;
+&lt;pre class="json"&gt;&lt;code&gt;{
+  &amp;quot;hopefullyAString&amp;quot;: &amp;quot;Hello!&amp;quot;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But sometimes it might come over like this:&lt;/p&gt;
+&lt;pre class="json"&gt;&lt;code&gt;{
+  &amp;quot;hopefullyAString&amp;quot;: null
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or even like this:&lt;/p&gt;
+&lt;pre class="json"&gt;&lt;code&gt;{}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Assume we were doing something simple, like logging the length of whatever string was there or logging a default value if it was absent. In normal JavaScript we’d write something like this:&lt;/p&gt;
+&lt;pre class="javascript"&gt;&lt;code&gt;function logThatValue(thePayload) {
+  const length = !!thePayload.hopefullyAString
+    ? thePayload.hopefullyAString.length
+    : 0;
+  
+  console.log(length);
+}
+
+fetch(someUrl)
+  .then(response =&amp;gt; response.json())
+  .then(logThatValue);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This isn’t a big deal right here… but—and this &lt;em&gt;is&lt;/em&gt; a big deal—we have to remember to do this &lt;em&gt;everywhere&lt;/em&gt; we interact with this payload. &lt;code&gt;hopefullyAString&lt;/code&gt; can &lt;em&gt;always&lt;/em&gt; be &lt;code&gt;undefined&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt; everywhere we interact with it, anywhere in our program. 😬&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Maybe&lt;/code&gt; is our escape hatch. If, instead of just naively interacting with the payload, we do a &lt;em&gt;very small&lt;/em&gt; amount of work up front to normalize the data and use a &lt;code&gt;Maybe&lt;/code&gt; instead of passing around &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;undefined&lt;/code&gt; values, we can operate safely on the data throughout our application. If we have something, we get an instance called &lt;code&gt;Just&lt;/code&gt;—as in, “What’s in this field? Just a string” or “Just the string ‘hello’”. If there’s nothing there, we have an instance called &lt;code&gt;Nothing&lt;/code&gt;. &lt;code&gt;Just&lt;/code&gt; is a wrapper type that holds the actual value in it. &lt;code&gt;Nothing&lt;/code&gt; is a wrapper type which has no value in it. But both of them are concrete types and you’ll never get an &lt;code&gt;undefined is not an object&lt;/code&gt; error when trying to use them!&lt;/p&gt;
+&lt;p&gt;Both of them have all the same methods available on them, and the same static functions to work on them. And, importantly, you can do a bunch of neat things with a &lt;code&gt;Maybe&lt;/code&gt; instance without checking whether it’s a &lt;code&gt;Nothing&lt;/code&gt; or a &lt;code&gt;Just&lt;/code&gt;. For example, if you want to double a number if it’s present and do nothing if it isn’t, you can use the &lt;code&gt;Maybe.map&lt;/code&gt; function:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Maybe from &amp;#39;true-myth/maybe&amp;#39;;
+const hereIsANumber = Maybe.just(12);          // Just(12)
+const noNumberHere = Maybe.nothing&amp;lt;number&amp;gt;();  // Nothing
+
+const double = (n: number) =&amp;gt; n * 2;
+hereIsANumber.map(double);  // Just(24)
+noNumberHere.map(double);   // Nothing&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are &lt;a href="https://true-myth.js.org/modules/_maybe_.html"&gt;a &lt;em&gt;lot&lt;/em&gt;&lt;/a&gt; of those helper functions and methods! Just about any way you would need to interact with a &lt;code&gt;Maybe&lt;/code&gt; is there.&lt;/p&gt;
+&lt;p&gt;So now that we have a little idea what &lt;code&gt;Maybe&lt;/code&gt; is for and how to use it, here’s that same example, but rewritten to normalize the payload using a &lt;code&gt;Maybe&lt;/code&gt; instance. We’re using TypeScript, so we will get a compiler error if we don’t handle any of these cases right—or if we try to use the value at &lt;code&gt;hopefullyAString&lt;/code&gt; directly after we’ve normalized it!&lt;/p&gt;
+&lt;p&gt;(Note that &lt;code&gt;Maybe.of&lt;/code&gt; will construct either a &lt;code&gt;Maybe.Just&lt;/code&gt; if the string is present, or &lt;code&gt;Maybe.Nothing&lt;/code&gt; if the value supplied to it is &lt;code&gt;null&lt;/code&gt; or &lt;code&gt;undefined&lt;/code&gt;.)&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Maybe from &amp;#39;true-myth/maybe&amp;#39;;
+
+type Payload = { hopefullyAString?: string };
+type NormalizedPayload = { hopefullyAString: Maybe&amp;lt;string&amp;gt; };
+
+function normalize(payload: Payload): NormalizedPayload {
+  return {
+    hopefullyAString: Maybe.of(payload.hopefullyAString)
+  };
+}
+
+function logThatValue(payload: NormalizedPayload) {
+  const length = payload.hopefullyAString.mapOr(0, s =&amp;gt; s.length);
+  console.log(length);
+}
+
+fetch(someUrl)
+  .then(response =&amp;gt; response.json())
+  .then(normalize)
+  .then(logThatValue);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, you might be thinking, &lt;em&gt;Sure, but we could get the same effect by just supplying a default value when we deserialize the data.&lt;/em&gt; That’s true, you could! Here, for example, you could just normalize it to an empty string. And of course, if just supplying a default value at the API boundary is the right move, you can still do that. &lt;code&gt;Maybe&lt;/code&gt; is another tool in your toolbox, not something you’re &lt;em&gt;obligated&lt;/em&gt; to use everywhere you can.&lt;/p&gt;
+&lt;p&gt;However, sometimes there isn’t a single correct default value to use at the API boundary. You might need to handle that missing data in a variety of ways throughout your application. For example, what if you need to treat “no value” distinctly from “there’s a value present, and it’s an empty string”? &lt;em&gt;That’s&lt;/em&gt; where &lt;code&gt;Maybe&lt;/code&gt; comes in handy.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="result" class="level2"&gt;
+&lt;h2&gt;&lt;code&gt;Result&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Another common scenario we find ourselves in is dealing with operations which might fail. There are a couple patterns we often use to deal with this: &lt;em&gt;callbacks&lt;/em&gt; and &lt;em&gt;exceptions&lt;/em&gt;. There are major problems with both, especially around reusability and composability.&lt;/p&gt;
+&lt;p&gt;The callback pattern (as in e.g. Node) encourages a style where literally every function starts with the exact same code:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;function getMeAValue(err, data) {
+  if (err) {
+    return handleErr(err);
+  }
+  
+  // do whatever the *actual* point of the function is
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are two major problems with this:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;It’s incredibly repetitive – the very opposite of “Don’t Repeat Yourself”. We wouldn’t do this with &lt;em&gt;anything&lt;/em&gt; else in our codebase!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It puts the error-handling right up front and &lt;em&gt;not in a good way.&lt;/em&gt; While we want to have a failure case in mind when designing the behavior of our functions, it’s not usually the &lt;em&gt;point&lt;/em&gt; of most functions – things like &lt;code&gt;handleErr&lt;/code&gt; in the above example being the exception and not the rule. The actual meat of the function is always after the error handling.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;But if we’re not using some similar kind of callback pattern, we usually resort to exceptions. But exceptions are unpredictable: you can’t know whether a given function invocation is going to throw an exception until runtime as someone calling the function. No big deal if it’s a small application and one person wrote all the code, but with even a few thousand lines of code or two developers, it’s very easy to miss that. And then this happens:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;// in one part of the codebase
+function getMeAValue(url) {
+  if (isMalformed(url)) {
+    throw new Error(`The url `${url}` is malformed!`);
+  }
+  
+  // do something else to load data from the URL
+  return data;
+}
+
+function render(toRender) {
+  // if toRender can&amp;#39;t generate valid HTML, throw Error(&amp;quot;invalid HTML&amp;quot;);
+  // if it can, theRenderedHTML;
+}
+
+function setDom(html) {
+  /* magic to render into DOM */
+}
+
+// somewhere else in the codebase -- throws an exception
+const badUrl = &amp;#39;http:/www.google.com&amp;#39;;  // missing a slash
+const response = getMeAValue(badUrl);  // throws here
+
+// we never get here, but it could throw too
+const htmlForPage = render(value);
+
+// so we definitely can&amp;#39;t get here safely
+setDom(htmlForPage);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Notice: there’s no way for the caller to know that the function will throw. Perhaps you’re very disciplined and write good docstrings for every function – &lt;em&gt;and&lt;/em&gt; moreover, perhaps everyone’s editor shows it to them &lt;em&gt;and&lt;/em&gt; they pay attention to that briefly-available popover. More likely, though, this exception throws at runtime and probably as a result of user-entered data – and then you’re chasing down the problem through error logs.&lt;/p&gt;
+&lt;p&gt;More, if you &lt;em&gt;do&lt;/em&gt; want to account for the reality that any function anywhere in JavaScript might actually throw, you’re going to write something like this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;try {
+  const badUrl = &amp;#39;http:/www.google.com&amp;#39;;  // missing a slash
+  const response = getMeAValue(badUrl);  // throws here
+  
+  // we never get here, but it could throw too
+  const htmlForPage = render(value);
+  
+  // so we definitely can&amp;#39;t get here safely
+  setDom(htmlForPage);
+} catch (e) {
+  handleErr(e);  // ends up here
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is like the Node example &lt;em&gt;but even worse&lt;/em&gt; for repetition!&lt;/p&gt;
+&lt;p&gt;And TypeScript and Flow can’t help you here! They don’t have type signatures to say “This throws an exception!” (TypeScript’s &lt;code&gt;never&lt;/code&gt; might come to mind, but it might mean lots of things, not just exception-throwing.)&lt;/p&gt;
+&lt;p&gt;Instead, we can use a &lt;code&gt;Result&lt;/code&gt; to get us a container type, much like &lt;code&gt;Maybe&lt;/code&gt;, to let us deal with this scenario. A &lt;code&gt;Result&lt;/code&gt; is either an &lt;code&gt;Ok&lt;/code&gt; wrapping around a value (like &lt;code&gt;Just&lt;/code&gt; does) or an &lt;code&gt;Err&lt;/code&gt; wrapping around some type defining what went wrong (&lt;em&gt;not&lt;/em&gt; like &lt;code&gt;Nothing&lt;/code&gt;, which has no contents). Both of them have the same sets of methods on them, and the same static functions which can operate on them.&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Result from &amp;#39;true-myth/result&amp;#39;;
+
+type Payload = {/* details of the payload...*/}
+
+function getMeAValue(url: string): Result&amp;lt;Payload, string&amp;gt; {
+  if (isMalformed(url)) {
+    return Result.err(`The url &amp;#39;${url}&amp;#39; is malformed`);
+  }
+  
+  // do something else to load data from the url
+  return Result.ok(data);
+}
+
+function render(toRender: string): Result&amp;lt;HTMLElement, string&amp;gt; {
+  // if toRender can&amp;#39;t generate valid HTML, return Err(&amp;quot;invalid HTML&amp;quot;);
+  // if it can, return Ok(theRenderedHTML);
+}
+
+function setDom(html: HTMLElement) {
+  
+}
+
+// somewhere else in the codebase -- no exception this time!
+const badUrl = &amp;#39;http:/www.google.com&amp;#39;;  // missing a slash
+
+// value = Err(The url &amp;#39;${http:/www.google.com}&amp;#39; is malformed)
+const value = getMeAValue(badUrl);
+
+// htmlForPage = the same error! or, if it was Ok, could be a different
+// `Err` (because of how `andThen` works).
+const htmlForPage = value.andThen(render);
+
+// we can&amp;#39;t just invoke `setDom` because it doesn&amp;#39;t take a `Result`.
+Result.match({
+  Ok: html =&amp;gt; setDom(html);
+  Err: reason =&amp;gt; alert(`Something went seriously wrong here! ${reason}`);
+})&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When we have a &lt;code&gt;Result&lt;/code&gt; instance, we can perform tons of operations on whether it’s &lt;code&gt;Ok&lt;/code&gt; or &lt;code&gt;Err&lt;/code&gt;, just as we could with &lt;code&gt;Maybe.Just&lt;/code&gt; and &lt;code&gt;Maybe.Nothing&lt;/code&gt;, until we &lt;em&gt;need&lt;/em&gt; the value. Maybe that’s right away. Maybe we don’t need it until somewhere else deep in our application! Either way, we can deal with it easily enough, and have type safety throughout!&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="conclusion" class="level2"&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Give it a spin!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;yarn add true-myth&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm install true-myth&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;You can even just &lt;code&gt;ember install true-myth&lt;/code&gt; and use it if you’re using Ember (in which case I encourage you to also use &lt;a href="https://github.com/typed-ember/ember-cli-typescript"&gt;ember-cli-typescript&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let me know what you think – if there’s stuff missing, &lt;a href="https://github.com/chriskrycho/true-myth"&gt;open issues&lt;/a&gt;! And if it’s just not to your taste, again, I encourage you to take a look at &lt;a href="http://folktale.origamitower.com"&gt;Folktale&lt;/a&gt; and &lt;a href="https://sanctuary.js.org"&gt;Sanctuary&lt;/a&gt;, which are both excellent and land in very different design spaces in many ways.&lt;/p&gt;
+&lt;/section&gt;
+</content><category term="software development"></category><category term="libraries"></category><category term="programming languages"></category><category term="typescript"></category><category term="functional programming"></category></entry><entry><title>Announcing ember-cli-typescript 1.0.0</title><link href="http://www.chriskrycho.com/2017/announcing-ember-cli-typescript-100.html" rel="alternate"></link><published>2017-08-08T09:00:00-04:00</published><updated>2017-08-08T09:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2017-08-08:/2017/announcing-ember-cli-typescript-100.html</id><summary type="html">A stable foundation for building Ember.js apps with TypeScript, and a roadmap toward a flourishing, TypeScript-friendly ecosystem in the future!
 </summary><content type="html">&lt;p&gt;I’m extremely pleased to announce the release of &lt;a href="https://github.com/typed-ember/ember-cli-typescript/releases/tag/v1.0.0"&gt;ember-cli-typescript 1.0.0&lt;/a&gt;! You can get it the same way you do &lt;em&gt;any&lt;/em&gt; Ember addon:&lt;/p&gt;
 &lt;pre class="sh"&gt;&lt;code&gt;$ ember install ember-cli-typescript&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;For a detailed walkthrough of adding TypeScript to your projects, see:&lt;/p&gt;
