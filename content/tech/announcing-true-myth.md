@@ -11,7 +11,7 @@ Category: Tech
 
 I'm pleased to announce the release of [True Myth 1.0][tm]! True Myth is a library I've been working on over the last month or so, for saner programming in JavaScript, with first-class support for TypeScript (and Flow).
 
-[tm]: https://github.com/chriskrycho/true-myuth
+[tm]: https://github.com/chriskrycho/true-myth
 
 True Myth provides standard, type-safe wrappers and helper functions to help help you with two *extremely* common cases in programming:
 
