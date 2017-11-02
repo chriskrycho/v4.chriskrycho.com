@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Becoming a Contributor &middot; Chris Krycho</title>
+    <meta name="description" content="The prepared script for my talk at Rust Belt Rust 2017, given October 27, 2017 in Columbus, Ohio."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2017/becoming-a-contributor.html"/>
+    <meta property="og:title" content="Becoming a Contributor"/>
+    <meta property="og:description" content="The prepared script for my talk at Rust Belt Rust 2017, given October 27, 2017 in Columbus, Ohio."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Becoming a Contributor"/>
+    <meta name="twitter:description" content="The prepared script for my talk at Rust Belt Rust 2017, given October 27, 2017 in Columbus, Ohio."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="talks software-development rust open-source-software tech">
+
+    <header>
+<h1>Becoming a Contributor</h1>
+<h2>The prepared script for my talk at Rust Belt Rust 2017, given October 27, 2017 in Columbus, Ohio.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2017/becoming-a-contributor.html"><i class="fa fa-fw fa-link"></i></a>November 02, 2017</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/open-source-software/">#open source software</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/talks/">#talks</a></span><span><a href="http://www.chriskrycho.com/2017/becoming-a-contributor.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class=editorial>Here is the full text of the talk I gave at Rust Belt Rust, as it was prepared; headings correspond to individual slides. You can see the slides as they were presented <a href="/talks/rust-belt-rust/">here</a>. Note that I extemporize fairly freely when actually giving a talk, so this is <em>not</em> a word-for-word equivalent of the talk as delivered, but the gist is the same!</i></p>
+<p><i class=editorial>I’ll update this post with the video once it’s available!</i></p>
+<hr />
+<figure>
+<img src="/talks/rust-belt-rust/img/family.jpg" alt="family" /><figcaption>family</figcaption>
+</figure>
+<p>Hello, everyone! It’s good to see all of you. We only have half an hour, and even if that’s ten to fifteen minutes longer than a normal New Rustacean episode, that’s still not much time, so let’s jump right in! Our theme is “Becoming a Contributor.” There are two prongs to this talk, two big ideas I hope you all walk away with.</p>
+<section id="introduction-the-big-ideas" class="level3">
+<h3>Introduction: The Big Ideas</h3>
+<p>The first thing I hope all of you take away is that <strong>there is no reason <em>you</em> cannot contribute meaningfully</strong> to the success of Rust – or indeed any open-source project you care about. Anyone can be a contributor. And not “even you” but perhaps “<em>especially</em> you”. The fact that you’re an outsider, or new to programming, or new to systems programming: sometimes that makes you a <em>better</em> contributor. Because you don’t necessarily share the biases of – you’re not wearing the same blinders that – someone who’s been writing systems-level code for 20 years have. So the first idea: <strong>you can contribute</strong>.</p>
+<p>The second idea I hope you take away is <strong>just <em>how many</em> ways there are to contribute meaningfully</strong>. It has almost become a cliche in the Rust community to say “code isn’t the only thing that matters,” but I want to show you today just how true that is. And I want to make that point again more forcefully, because for all that we often say that, the idea that <em>shipping code</em> is what really matters is the kind of pernicious lie that can come back and bite any of us. It certainly gets to me at times! But it’s a lie, and we’re going to see that in detail. That’s the second big idea: <strong>there are an <em>astounding</em> number of ways you can contribute</strong>.</p>
+</section>
+<section id="introduction-why" class="level3">
+<h3>Introduction: Why?</h3>
+<p>There are a lot of things to be passionate about in the world of software development. But at the end of the day, I care about software because I care about <em>people</em>. To borrow a label from Scott Wlaschin – a developer I admire enormously, mostly working over in the F# community – I am a <em>humanist</em>, not a <em>technologist</em>. The technologies are interesting in themselves to a degree; but I mostly care about the ways that technologies can help us serve people more effectively. As software developers, that takes a lot of shapes. But today I want to zoom in on just these two ideas about open-source software:</p>
+</section>
+<section id="introduction-the-big-ideas-1" class="level3">
+<h3>Introduction: The Big Ideas</h3>
+<p>So: why these two ideas? For one thing, because I think they are among the most applicable to everyone here. We have an enormous open-source focus. But for another, because they can also serve as windows into the ways we can – and should – think about software more generally. So: let’s talk about how you become a <em>contributor</em>.</p>
+</section>
+<section id="introduction-outline" class="level3">
+<h3>Introduction: Outline</h3>
+<p>We’re going to take this on in the good old grammar-school fashion: <em>who</em>, <em>what</em>, <em>when</em>, <em>where</em>, <em>why</em>, and <em>how</em>. We’re not going to take them in that order though, and we might smash a few of them together.</p>
+<ol type="1">
+<li>Introduction</li>
+<li>Why bother contributing? <!-- .element: class="fragment" data-fragment-index="1" --></li>
+<li>Who is a contributor? <!-- .element: class="fragment" data-fragment-index="2" --></li>
+<li>What is a contribution? How can you contribute? <!-- .element: class="fragment" data-fragment-index="3" -->
+<ul>
+<li>…so many things they won’t fit on this slide. <!-- .element: class="fragment" data-fragment-index="4" --></li>
+</ul></li>
+<li>When and where to contribute? <!-- .element: class="fragment" data-fragment-index="5" --></li>
+<li>Conclusion <!-- .element: class="fragment" data-fragment-index="6" --></li>
+</ol>
+</section>
+<section id="why-bother-contributing" class="level2">
+<h2>Why bother contributing?</h2>
+<p>The first question we might be asking is: <em>why contribute at all</em>? Why should you be interested in becoming a contributor? And the best answer I can offer is: because there is more work than hands to do it. Always. Every open-source maintainer can tell you the truth of this.</p>
+</section>
+<section id="who-is-a-contributor" class="level2">
+<h2>Who is a contributor?</h2>
+<p>People define this differently, but I have a very simple definition: <strong>A contributor is <em>anyone</em> who improves a project.</strong></p>
+<section id="who-is-a-contributor-examples" class="level3">
+<h3>Who is a contributor? Examples</h3>
+<p>For example:</p>
+<ul>
+<li>submit a patch to fix a typo <!-- .element: class="fragment" data-fragment-index="1" --></li>
+<li>add a small correction for a code sample in a project <!-- .element: class="fragment" data-fragment-index="2" --></li>
+<li>file an issue instead of just suffering through a problem in silence <!-- .element: class="fragment" data-fragment-index="3" --></li>
+<li>everything else we’re going to talk about today <!-- .element: class="fragment" data-fragment-index="4" --></li>
+</ul>
+</section>
+<section id="who-is-a-contributor-me" class="level3">
+<h3>Who is a contributor? Me!</h3>
+<p>That might sound overblown, but it’s really not. I am literally standing on this stage in front of you today because I submitted some small typo and code sample improvements to “Rust by Example” a few years ago, and realized: I can make a difference in this community. And that gave me the motivation I needed to <em>keep</em> contributing.</p>
+<p><img src="/talks/rust-belt-rust/img/first-commit.png" alt="my first Rust commit" /><!-- .element: class="fragment" data-fragment-index="1" --></p>
+</section>
+<section id="who-is-a-contributor-1" class="level3">
+<h3>Who is a contributor?</h3>
+<p>I don’t imagine the story is all that different for <em>most</em> people who are open-source contributors in this room. Something got them over the hump, and it was probably something small, insignificant-seeming at the time. They might be particularly skilled in this thing or that thing, but in fact a lot of them are in those roles just because they saw a need and stepped up to fill it. And then kept at it for a long time. But it made them a contributor. And that feeling – of helping build something bigger than you can build on your own – is a good one. I’d go so far as to say it’s part of what humans are <em>meant</em> for. It’s part of us in a deep, deep way.</p>
+</section>
+</section>
+<section id="who-is-a-contributor-2" class="level2">
+<h2>Who is a contributor?</h2>
+<p>If you’re inclined to quibble with that definition, I challenge you to ask <em>why?</em> I think, most often, it’s because we feel defensive about wanting to project our own particular kinds of contribution as the most important, or the most valuable. But I’m more of the mindset that, as I read recently, “anyone who would be first… must be last of all, and servant of all.” We should stop worrying about our own prestige and turf-marking, and start rejoicing in the many different ways people are able to make our projects better.</p>
+<p>There’s no magic that makes you qualified to be a contributor. There’s just a willingness to serve where you see a need.</p>
+</section>
+<section id="what-how-can-you-contribute" class="level2">
+<h2>What &amp; how can you contribute?</h2>
+<p>And that takes us into the “what” of all of this, the <em>how</em>. (Yes, I’m combining those two). <strong><em>What</em> is a contribution? <em>How</em> can you contribute?</strong> Turns out, this is a <em>long</em> list.</p>
+<section id="what-how-code" class="level3">
+<h3>What &amp; how: code</h3>
+<p>Let’s get this right out of the way up front, because it’s the most obvious: you can write code. You can fix bugs or help implement new features. You can do that even if you’re not an expert – especially in the Rust community. Many Rust projects have gone out of their way to mark issues as good-first-issues, or easy-to-tackle, or mentorship-available. Maybe it’s your first contribution to an open-source project: that’s okay. You can take a stab at it, and the fact that it might not be good <em>is okay</em>. The whole point of these kinds of issues is that they give you a place where you can jump in safely.</p>
+<p><img src="/talks/rust-belt-rust/img/good-first-issue.png" alt="good first issue" /> <img src="/talks/rust-belt-rust/img/mentored.png" alt="mentored" /> <img src="/talks/rust-belt-rust/img/easy.png" alt="easy" /></p>
+<p>That goes equally for everything from the Rust compiler itself to many of the other projects in the ecosystem. Look at the repository, for example! And it’s not just this project. <em>Lots</em> of projects in the Rust ecosystem are like this.</p>
+<section id="what-how-code-were-kind-here" class="level4">
+<h4>What &amp; how: code – we’re kind here</h4>
+<p>And no one is going to swear at you or insult for making a mistake here. Not even if you’re working on something important, and not even if you’ve been doing it for a while. That is not. how. we. roll. here. <em>Everyone</em> makes mistakes!</p>
+<p>Instead, we <em>want</em> people to show up, knowing nothing: we’re happy to help. Remember: we want people to contribute! So: try opening a PR and let people help you learn how to do it well! In fact, if you haven’t ever opened a PR on a Rust project, find one that looks interesting to you and has an issue tagged that way, and submit a PR before the weekend is out! You can do it!</p>
+<p><img src="/talks/rust-belt-rust/img/good-first-issue.png" alt="good first issue" /> <img src="/talks/rust-belt-rust/img/mentored.png" alt="mentored" /> <img src="/talks/rust-belt-rust/img/easy.png" alt="easy" /></p>
+</section>
+<section id="what-how-code-a-caveat" class="level4">
+<h4>What &amp; how: code – a caveat</h4>
+<p>But code is not the only thing that makes you a contributor. I put it up front because I think it’s worth doing – but I also wanted to get it out of the way. In every software community, it’s easy to <em>over</em>-value the code. That might sound crazy, given that it’s open-source <em>software</em>, but the reality is that no one fails to value the code. We <em>do</em> often fail to value all the other things that make an open-source software project actually useful. It’s certainly true that there’s no project without the code. But it’s also the case that there’s no <em>useful</em> software without a lot of other things besides the code, and we often undervalue those.</p>
+</section>
+</section>
+<section id="filing-bugs" class="level3">
+<h3>Filing bugs</h3>
+<p>So let’s take one step away from code, and talk about what is probably the single <em>easiest</em> way anyone can contribute. <em>File issues.</em> If you’re using a binary and it doesn’t work, open a ticket. If you’re integrating a library and it seems like the API doesn’t do what it should, or if it seems like it’s missing some functionality… well, you can suffer in silence, or you can open a bug ticket! Many times, the author of the software <em>doesn’t know there’s a problem</em>. The only way they can fix it is if they know about it!</p>
+<figure>
+<img src="/talks/rust-belt-rust/img/new-issue.png" alt="filing bugs" /><figcaption>filing bugs</figcaption>
+</figure>
+</section>
+<section id="docs" class="level3">
+<h3>Docs</h3>
+<p>Perhaps the thing most of you will be most persuaded of the utility of is <em>documentation</em>. All of us have faced the difficulty of trying to figure out how to integrate some poorly-documented (or undocumented!) library into our own codebase. That experience, in word, <em>sucks</em>.</p>
+<p>So working on documentation is one of the highest-value areas you can contribute to any project. It’s also really hard, in a bunch of ways – harder, in some ways, than writing the code is!</p>
+<section id="docs-who" class="level4">
+<h4>Docs: who?</h4>
+<p>One kind of documentation is <strong>explanation of how things work under the hood</strong>. The implementer is the most qualified there! That doesn’t mean they don’t still need help even with that, though! Some people are incredible implementors and terrible explainers; you can often do a great service by serving as an “interpreter” for them – taking their explanations and making the literary tweaks and cleanups and polish that they need.</p>
+<p>Another kind of documentation, though, developers and maintainers are often really poorly equipped to write, and that’s <strong>introductory documentation</strong>. This is the problem of expertise: when you know exactly how something is <em>meant</em> to work, and especially when you’re the one who implemented it, there are things that seem obvious to you which simply aren’t obvious to someone approaching it for the first time. And as hard as you try, you <em>can’t</em> escape that entirely. You can imagine what it might be like not to know something, but there’s no substitute for actually not knowing something.</p>
+</section>
+<section id="docs-how" class="level4">
+<h4>Docs – how?</h4>
+<p>What that means is that one of the most valuable things you can do as you learn a new library is <em>write down the things you don’t understand from the docs as you go</em>. And when you figure them out, <em>write that down, too</em>. If nothing else, writing up that experience – filing it as an issue on the bug tracker, or otherwise getting it in the hands of the maintainers – can help them make important changes to things like the order various concepts are introduced, or adding little notes to help people feel comfortable with not knowing something until it <em>can</em> be introduced later, and other things like that. It can help them recognize and fill in gaps in their docs – things they simply assumed but which they didn’t realize they were assuming – and fill those in. At the most extreme, you might even help them realize that some parts of the docs need full rewrites… and the work you’ve done in writing things down might just be the foundation or the actual content of those new docs.</p>
+<ol type="1">
+<li>Write down the things you don’t understand from the docs as you go.<!-- .element: class="fragment" data-fragment-index="1" --></li>
+<li>When you figure them out, write that down, too.<!-- .element: class="fragment" data-fragment-index="2" --></li>
+<li>Then: file an issue or write a PR to improve it!<!-- .element: class="fragment" data-fragment-index="3" --></li>
+</ol>
+</section>
+<section id="docs-varieties" class="level4">
+<h4>Docs: varieties</h4>
+<p>So what kinds of things would we call <em>documentation</em>?</p>
+<ul>
+<li>API documentation<!-- .element class="fragment" data-fragment-index="1" --></li>
+<li>READMEs<!-- .element class="fragment" data-fragment-index="2" --></li>
+<li>Tutorials<!-- .element class="fragment" data-fragment-index="3" --></li>
+<li>Books<!-- .element class="fragment" data-fragment-index="4" --></li>
+<li>The Rust Reference<!-- .element class="fragment" data-fragment-index="5" --></li>
+</ul>
+<p>Okay, books are a <em>huge</em> undertaking, but they can genuinely serve as documentation. Especially for large projects. In fact, several of the most important pieces of “documentation” the Rust project itself has are books: “The Rust Programming Language”, “Rust by Example”, and “The Rustonomicon”. But there are also important but totally unofficial books like Daniel Keep’s “A Practical Intro to Macros in Rust 1.0” and “The Little Book of Rust Macros”, or Jorge Aparicio’s book on microcontrollers with Rust.</p>
+<p>The Rust Reference: This is a special category, and one that’s especially important to me. The Rust Reference is supposed to be an exhaustive guide to the language, and the value of that being complete and accurate is hard to overstate. It’s also wildly out of date today. I wrote an RFC last year that said, basically, “We need to actually document everything! That includes updating the Reference!” The trick is: it’s a huge undertaking, and while I and a few others made a good start on it earlier this year, that effort got bogged down by life, and it needs to be resuscitated. And it’s not just Rust which could use investment in that area. Other languages and frameworks have the same issue. It’s <em>really</em> important that there be an answer other than “dive into the source and try to figure out what its intent is” – the more central the component is in the ecosystem, the more important that is.</p>
+</section>
+<section id="docs-translation" class="level4">
+<h4>Docs: Translation</h4>
+<p>Another huge place you can contribute to documentation is <em>translation</em>. For good or ill, English has become the sort of <em>primary</em> language of programming, but that doesn’t mean we should treat it as the <em>only</em> language, or as <em>more important</em> than other languages. Translating documentation is amazing and very needed work, and it’s work that not everyone is really capable of! I’m fluent in English and… ancient Hebrew and ancient Greek. For some reason, there’s not much demand for technical writing in Greek from the era when Plato was alive. So I’m not much use at translation.</p>
+<figure>
+<img src="/talks/rust-belt-rust/img/translation.png" alt="translation" /><figcaption>translation</figcaption>
+</figure>
+<p>But many of you out there <em>are</em> multilingual, and could take docs written in English and convert them for, say, Czech-speaking developers. Perhaps just as importantly, you can go the <em>other</em> direction, and help non-English-speaking maintainers reach a broader audience. Take an amazing project which only has documentation in Amharic (because its developers don’t feel comfortable enough in English to translate it themselves) and translate it to English: <em>use</em> the fact that English <em>is</em> the common language to increase the reach of non-Western developers!</p>
+</section>
+</section>
+<section id="visual-design" class="level3">
+<h3>Visual Design</h3>
+<p>One of the areas where you could move the ball down the field fastest in the Rust community is with <strong><em>visual</em> design</strong>. (To be clear, the <em>language</em> design is great!) But our websites could sometimes use some work.</p>
+<section id="visual-design-its-not-just-us" class="level4">
+<h4>Visual design: it’s not just us</h4>
+<p>Systems programming language types have historically <em>not</em> spent a lot of time on the <em>presentation</em> of their tools. In part this is just a matter of what these kinds of languages have been oriented towards: if you spend all day hacking on kernel code, you’re <em>likelier</em> to be a person for whom user interface and visual design is less interesting than, say, optimizing memory performance or minimizing the number of cache misses a given approach has. But presentation <em>does</em> matter, and it matters especially as we want to enable more and more people to be able to write this kind of code.</p>
+<p>Speaking frankly, though I’ve spent a large chunk of my career to date writing systems-level languages, I’ve found the way a lot of these tools are presented to be a huge turn-off, and at times a barrier even to getting them working for me locally. Perhaps the most egregious example of that was some of the “documentation” – I’m not sure I should even call it that! – for Fortran, when I was first getting started programming back in college. The presentation of the material was essentially hacker-ish in a <em>bad</em> way: no CSS, no attention to organization of the material, no structure to help you find your way through it.</p>
+</section>
+<section id="visual-design-how" class="level4">
+<h4>Visual design: how</h4>
+<p>If you’re an expert or just a talented amateur, please pitch in<!-- .element: class="fragment" data-fragment-index="1" --></p>
+<p>You can help here even if you’re not especially comfortable with visual design or even if you’re outright bad at it if you’re willing to spend just a little time on it! For example, you can simply help a team adopt something like Bootstrap. Yes, it’ll look like many other open-source projects out there. But it won’t be horribly, catastrophically ugly and unreadable! Or you can do use one of these simple starter kits:</p>
+<ul>
+<li><a href="http://usewing.ml">Wing</a></li>
+<li><a href="https://purecss.io">Pure.css</a></li>
+<li><a href="http://getskeleton.coma">Skeleton</a></li>
+</ul>
+<p>So don’t think that just because you aren’t a design expert means you can’t help here.</p>
+<p>Just as important as the <em>visual</em> design is thinking about and actively designing the <strong>information hierarchy</strong> of your content. What leads to what? Which pieces go together, and which pieces can be broken up into their own pages or sections within pages? Think about the content like an <em>outline</em>. Many sites don’t have any such structure to them; they’re kind of haphazardly cobbled together. If you can help the maintainers with the <em>structure</em> and <em>organization</em> of their content, that can make an enormous differences as well.</p>
+</section>
+</section>
+<section id="blogging" class="level3">
+<h3>Blogging</h3>
+<p>One of the other big ways you can help a project may not even end up in the repository at all. You can <em>blog</em>.</p>
+<p>I know blogging can seem intimidating, for many of the same reasons that writing documentation can. Technical writing is hard, and it’s a completely different skill from programming. But it doesn’t have to be amazing; it just has to get the information out there – and you’ll get better as you practice.</p>
+<section id="blogging-easy-mode" class="level4">
+<h4>Blogging: “Easy Mode”</h4>
+<p>You can start on “easy mode”, too. I mentioned this earlier when talking about documentation, but “just write down what you’re learning” is an incredibly effective technique for generating content. If you look at a lot of the technical blogging I’ve done over the years, it has been nothing more complicated than “here is what I just learned.” And if you want a <em>superb</em> example of this which is <em>very</em> different from mine, take a look at the work that Julia Evans does on her blog! She regularly writes down, in an inimitable way, highly technical ideas she’s just learning. If you want someone to make arcane Linux command line tools seem amazing and approachable, her blog is your ticket.</p>
+<blockquote>
+<p>Just write down what you’re learning.<br/> —Me, just now</p>
+</blockquote>
+</section>
+<section id="blogging-good-examples" class="level4">
+<h4>Blogging: good examples</h4>
+<p>But even beyond “what I just learned,” blogging is a superb way for teaching in general. Over the course of this year, for example, Vaidehi Joshi has been writing what is essentially a friendly introduction to computer science on her blog on Medium. This is a totally different style of <em>content</em> (as well as of presentation!) from the kind of “what I just learned” content that Julia Evans writes,but it’s also really effective, because she takes her knowledge and translates it into something others can pick up. That’s obviously more work than just writing down things you just learned, but it can also pay really high dividends as others are able to substantially deepen their knowledge.</p>
+</section>
+<section id="blogging-all-the-options" class="level4">
+<h4>Blogging: all the options!</h4>
+<p>In blogging, as in documentation, there is a whole spectrum of basic teaching content you can contribute! And communities need the whole spectrum for simple introductions to extremely thorough, advanced tutorials.</p>
+<p>But blog posts can also be much more versatile than traditional documentation.</p>
+<ul>
+<li><strong>They can be one-offs, or series.</strong> You can give a topic as much depth, or as little depth, as you <em>care about</em> or <em>think it deserves</em>. I wrote an 18-part series comparing Rust and Swift, and it could have been 30 parts if I hadn’t eventually gotten derailed. That’s not <em>documentation</em>, but there’s a lot people can learn from those kinds of things.</li>
+<li><strong>They can introduce a technology, or dig deep into how to use it, or how it’s built.</strong> You’re not limited to just one particular tack when blogging. Is your interest in the specific implementation details of some corner of the compiler? Write about that! Is your interest in how a given Rust library solves a specific kind of problem you’ve run into with another library, or with a similar library in another language? Write about that! You get the idea.</li>
+<li><strong>They can critique or highlight problems with specific pieces of the ecosystem!</strong> A careful, well-articulated, critical blog post can do wonders for showing the problems with a given approach and can even sometimes help suggest the right solutions to those problems. I’ve repeatedly watched, for example, as people have blogged about their struggles getting their heads around the Tokio tooling; the result has been a <em>lot</em> of work by the Tokio team to respond to those problems. The more thoughtful and careful you are in that kind of criticism, the better! Good criticism is <em>incredibly</em> valuable. Because we all have blind spots, and someone else’s perspective can help jar us out of those.</li>
+<li><strong>They can show how to <em>integrate</em> different parts of the ecosystem.</strong> For example, as part of the “Increasing Rust’s Reach” initiative, Ryan Blecher recently wrote up a detailed walk-through on how to use the Diesel ORM and the Rocket web framework together to build a small blogging engine. That’s <em>huge</em>! It makes it that much easier for someone who’s just starting out with Rust, coming in from something like Python or Ruby, to dive in and get that intensely rewarding feeling of <em>having built something</em> in a relatively small amount of time. That’s also helpful because (almost) no one is building something with <em>just</em> Diesel, or just <em>any</em> crate. A huge part of what every software developer does is about fitting together other pieces of software.</li>
+<li><strong>They can invite feedback on your own projects.</strong> Talk about what you’re doing, what your stumbling blocks are, what you don’t understand. People will often show up and help you with comments and clarifications!</li>
+</ul>
+<p>And that’s just scratching the surface. Blogs are incredibly versatile, and you should lean on that.</p>
+</section>
+</section>
+<section id="audio-and-video" class="level3">
+<h3>Audio and Video</h3>
+<p>Not just words! Noises and pictures, too!</p>
+<section id="audio-podcasts" class="level4">
+<h4>Audio: podcasts</h4>
+<ul>
+<li>Not everyone learns the same way.<!-- .element: class="fragment" data-fragment-index="1" --></li>
+<li>Lots of people have commutes.<!-- .element: class="fragment" data-fragment-index="2" --></li>
+</ul>
+</section>
+<section id="audio-but-there-are-already-podcasts" class="level4">
+<h4>Audio: but there are already podcasts</h4>
+<p>Everything I’ve talked about so far has been in written form. But audio and video media can also be really helpful. Not everyone learns best by reading. And not everyone has tons of time to sit down and read a book every day. One of the reasons I started the New Rustacean podcast is that it gives people a way to get up to speed on the language while on a daily commute. But there’s still a <em>huge</em> need for more audio and video content in this space!</p>
+<p>One podcast is not enough!</p>
+<figure>
+<img src="/talks/rust-belt-rust/img/newrustacean.png" alt="New Rustacean" /><figcaption>New Rustacean</figcaption>
+</figure>
+<p><em>Two</em> podcasts is not enough!</p>
+<figure>
+<img src="/talks/rust-belt-rust/img/rfe.png" alt="Request for Explanation" /><figcaption>Request for Explanation</figcaption>
+</figure>
+<p>Seriously, not even <em>three</em> podcasts is enough!</p>
+<figure>
+<img src="/talks/rust-belt-rust/img/rusty-spike.png" alt="Rusty Spike" /><figcaption>Rusty Spike</figcaption>
+</figure>
+<p>So I’m laying down another challenge: there’s plenty of room for more, and more kinds, of audio content in this ecosystem.</p>
+</section>
+<section id="video" class="level4">
+<h4>Video</h4>
+<p>Again: people have different learning styles!</p>
+<p>There’s also a huge opening for people to produce good video content. I’ve heard often from people that things like RailsCasts were essential in helping them learn the Ruby on Rails ecosystem. We <em>need</em> video tutorials which might look kind of like that, or like the kinds of things I’m doing on the podcast. If you have any skill that way, and any interest in teaching, you should make Rust videos – there aren’t many out there.</p>
+</section>
+<section id="video-what" class="level4">
+<h4>Video: what</h4>
+<p>There are lots of options here—not just live streaming!</p>
+<p>Another, totally different tack you can take with video is <em>live-streaming</em>. Sean Griffin has done this at times, and I’ve actually done it just once, and it’s a ton of fun – and it can be incredibly illuminating for other people to see how you work and how you solve problems. You can also do like I did and live-pair on something. It’s a pain to set up, but it’s also a lot of fun.</p>
+<p>And no doubt there are more ideas you have—please just go do them!</p>
+</section>
+</section>
+<section id="talk-to-people" class="level3">
+<h3>Talk to people</h3>
+<p>Just talking with people matters. And there are lots of places to do it:</p>
+<ul>
+<li>IRC/Gitter/Slack/Discourse</li>
+<li>Meetups</li>
+<li>Conferences</li>
+</ul>
+<p>You can also host or help with a local meet-up! For a lot of people, one of the major challenges of learning <em>any</em> new piece of technology is that – even with IRC and Gitter and Slack and so on – you can feel isolated and alone. And people can help you solve problems in person, and make you feel supported in person, in ways that even a great community can’t really manage online. So <em>go</em> to meet-ups, at a minimum. And help the organizers. And if there isn’t a meet-up in your community… you can start one! The #rust-community team has a ton of resources.</p>
+<p>Physicality matters. Presence matters. (We know this! We’re at a conference!)</p>
+</section>
+<section id="being-inviting" class="level3">
+<h3>Being inviting</h3>
+<p>Last but not least in this list of <em>how</em> to be a contributor, I want to take a minute and talk about “being a contributor” to those of you who’ve been contributors for a long time. Some of you have been shipping open-source software for years – some of you even for decades. Much of what I’ve said so far is old hat for you. Maybe not the design bits quite so much! But you’ve been doing this for a long time, and you’re not trying to get over the hump of making your first contribution. You have other things to contribute here:</p>
+<ul>
+<li><p>The most important thing you can do is practice <strong>welcome people.</strong> The Rust community does this well, in general, but it’s something we need to keep in front of us as a goal as the community grows. It’s easy to get frustrated with newcomers as your project grows, demands on your time increase, and your work as a maintainer seems less like fun and more like a second job. But continuing to actively welcome newcomers in is <em>incredibly</em> powerful. You can make it possible for people to go from zero to really making a difference. And remember: so once were you. None of us started out as magical wizards of Rust and open-source.</p></li>
+<li><p>The second big thing you can do is <strong>mentoring.</strong> As I mentioned, I’m now the maintainer of one of the core pieces necessary to make Ember.js and TypeScript play nicely together. But while I’ve done <em>some</em> writing-of-code with that, a much larger part of my current and future work there is about helping other people learn TypeScript well enough to start using it in their apps and add-ons. But the flip-side of that is: even a fair bit of the code I <em>have</em> written, I was able to write because someone more comfortable with some of the infrastructure mentored <em>me</em> through its quirks and oddities.</p></li>
+</ul>
+</section>
+</section>
+<section id="when-where-to-contribute" class="level2">
+<h2>When &amp; where to contribute</h2>
+<p>The last thing I want to touch on is <em>when and where</em> to contribute. There are two things I’d suggest you should consider here:</p>
+<section id="when-where-you" class="level3">
+<h3>When &amp; where: you</h3>
+<p>Where are <em>you</em> in the process of becoming comfortable with contributing?</p>
+<ul>
+<li>Just getting started?<!-- .element: class="fragment" data-fragment-index="1" --></li>
+<li>Already comfortable?<!-- .element: class="fragment" data-fragment-index="2" --></li>
+</ul>
+<p>If you’ve never done any open-source work at all before, that’s different than if you’ve gotten pretty comfortable with it in a different ecosystem and are just figuring out where to make yourself useful in <em>this</em> ecosystem.</p>
+<section id="when-where-if-youre-just-getting-started" class="level4">
+<h4>When &amp; where: if you’re just getting started</h4>
+<p>If you’re just getting started, I’d pick a big project with lots of those “Help Wanted” and “Mentoring” and “Easy” tags on issues, and let the size of the project help you out. Those are projects that are <em>used to</em> helping people make their first contributions. Crazy as it seems, something like Servo can actually be an <em>easier</em> place to start out that a much smaller project. Sure, the technical lift is higher, but there are also a lot more people actively invested in your success there.</p>
+<ol type="1">
+<li><p>Look for these!<!-- .element: class="fragment" data-fragment-index="1" --></p>
+<p class="fragment" data-fragment-index="1">
+<img src="/talks/rust-belt-rust/img/help-wanted.png" alt="help wanted" /> <img src="/talks/rust-belt-rust/img/easy.png" alt="help wanted" />
+</p></li>
+<li><p>Pick big projects!<!-- .element: class="fragment" data-fragment-index="2" --></p></li>
+</ol>
+</section>
+<section id="when-where-if-youre-experienced" class="level4">
+<h4>When &amp; where: if you’re experienced</h4>
+<p>On the other hand, if you’re already comfortable contributing and have some idea what you’re best at, you might look around and find smaller projects with fewer contributors which look interesting and <em>could use the help</em>. Because again, there’s always more work to do than hands to do it.</p>
+</section>
+<section id="when-where-project-lifecycles" class="level4">
+<h4>When &amp; where: project lifecycles</h4>
+<p>The second consideration dovetails nicely with that: <strong>where is a given project at in its life-cycle?</strong> As enthusiastic as you might be about some project, if it’s a small project and it’s already in a “basically done” state, well… that’s probably a lot less useful a place to invest your time <em>if</em> you’re focusing on code. On the other hand, it’s often the case that projects are “done” in terms of code, but desperately need help with documentation, their web site, etc. Big projects, or projects just starting out, are often better places to dig in if you’re really looking to flex your coding muscles (but both of them <em>also</em> usually have huge needs in terms of all those non-code avenues we talked about).</p>
+<p>Where is a given project at in its life-cycle?</p>
+<ul>
+<li>small project, basically done?<!-- .element: class="fragment" data-fragment-index="1" --></li>
+<li>need docs?<!-- .element: class="fragment" data-fragment-index="1" --></li>
+<li>big project, a billion needs?<!-- .element: class="fragment" data-fragment-index="1" --></li>
+<li>etc.<!-- .element: class="fragment" data-fragment-index="1" --></li>
+</ul>
+<p>Think about those, and then see if you can pick a project that’s a good fit for your current skillset and comfort level and jump in!</p>
+</section>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2>Conclusion</h2>
+<p>And that’s a good place to wrap things up! I hope you’re feeling like <em>you can do this</em>. Because you can. Open-source a project of your own and see where it goes. Write a blog post. Add some docs. Open a PR. Record a podcast. Make some videos. Start a meet up. Become a contributor! And remember:</p>
+<ul>
+<li>Anyone can contribute meaningfully.</li>
+<li>People can contribute in a stunning variety of ways.</li>
+</ul>
+</section>
+<section id="more-info" class="level2">
+<h2>More info</h2>
+<ul>
+<li><a href="https://www.rust-lang.org/en-US/contribute.html" class="uri">https://www.rust-lang.org/en-US/contribute.html</a></li>
+<li><a href="https://blog.rust-lang.org/2017/09/18-impl-future-for-rust.html" class="uri">https://blog.rust-lang.org/2017/09/18-impl-future-for-rust.html</a></li>
+<li><a href="https://internals.rust-lang.org/" class="uri">https://internals.rust-lang.org/</a></li>
+<li><code>#rust</code>, <code>#rust-community</code>, <code>#rust-internals</code>, etc. on irc.mozilla.org</li>
+</ul>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2017/thinking-fast-and-slow-a-review.html">Thinking, Fast and Slow: A Review</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2017/becoming-a-contributor.html">Becoming a Contributor</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2017/on-public-theological-histories.html">On Public (Theological) Histories</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

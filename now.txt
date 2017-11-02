@@ -12,11 +12,11 @@ Subtitle: What am I up to these days?
 
 ## Speaking
 
-- I'm giving a talk titled "Becoming a Contributor" at Rust Belt Rust 2017, October 26–27. The abstract:
+-   I gave a talk titled "Becoming a Contributor" at Rust Belt Rust 2017, October 26–27. The abstract:
 
     > So, you’re new to the Rust community. (Or any community, really!) And you want to help, but, well, you’re new. So how exactly do you start contributing? What kinds of contributions are valuable? We’ll talk about everything from asking questions to writing documentation, from pitching in on forums and chat to writing blog posts, and from starting your own projects to contributing to other open-source projects.
 
-    [Registration here](https://www.eventbrite.com/e/rust-belt-rust-conference-2017-registration-36237335847), and New Rustacean listeners can use code `newrustacean` to get 20% off.
+    You can see the slides for the talk [here](/talks/rust-belt-rust/) or read the prepared script [here](/2017/becoming-a-contributor.html).
 
 ## Podcasts
 
