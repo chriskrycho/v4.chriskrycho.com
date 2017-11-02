@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".idea": true,
+    ".sass-cache": true,
+    "cache": true,
+    "output": true,
+    "__pycache__": true,
+    "node_modules": true
+  }
+}
