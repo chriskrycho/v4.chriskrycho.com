@@ -90,10 +90,11 @@ STATIC_PATHS = ['bib',
                 'extra',
                 'talks/lib',
                 'talks/bibletech2015',
-                'talks/es-future-olo']
+                'talks/es-future-olo',
+                'talks/rust-belt-rust']
 STATIC_EXCLUDE_SOURCES = False
-PAGE_EXCLUDES = ['talks/bibletech2015', 'talks/es-future-olo']
-ARTICLE_EXCLUDES = ['talks/bibletech2015', 'talks/es-future-olo']
+PAGE_EXCLUDES = ['talks/bibletech2015', 'talks/es-future-olo', 'talks/rust-belt-rust']
+ARTICLE_EXCLUDES = ['talks/bibletech2015', 'talks/es-future-olo', 'talks/rust-belt-rust']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
                        'extra/sermons.xml': {'path': 'sermons.xml'},
                        'extra/.nojekyll': {'path': '.nojekyll'},
