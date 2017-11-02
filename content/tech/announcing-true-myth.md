@@ -13,7 +13,7 @@ I'm pleased to announce the release of [True Myth 1.0][tm]! True Myth is a libra
 
 [tm]: https://github.com/chriskrycho/true-myth
 
-True Myth provides standard, type-safe wrappers and helper functions to help help you with two *extremely* common cases in programming:
+True Myth provides standard, type-safe wrappers and helper functions to help you with two *extremely* common cases in programming:
 
 -   not having a value---which it solves with a `Maybe` type and associated helper functions and methods
 -   having a *result* where you need to deal with either success or failure---which it solves with a `Result` type and associated helper functions and methods
