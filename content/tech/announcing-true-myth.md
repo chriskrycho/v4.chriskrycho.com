@@ -239,7 +239,7 @@ const value = getMeAValue(badUrl);
 const htmlForPage = value.andThen(render);
 
 // we can't just invoke `setDom` because it doesn't take a `Result`.
-Result.match({
+value.match({
   Ok: html => setDom(html);
   Err: reason => alert(`Something went seriously wrong here! ${reason}`);
 })
