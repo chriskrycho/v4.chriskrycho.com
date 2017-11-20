@@ -8,9 +8,15 @@ The books I read in 2017, with links to reviews or comments where I had them to 
 
 Books I'm reading right now. Listed in the order I started them.
 
-- _Type-Driven Development with Idris_, Edwin Brady
 - _Theology and the Mirror of Scripture_, Kevin J. Vanhoozer and Daniel Treier
+- _Resurrection and Moral Order_, Oliver O'Donovan
+- _How Buildings Learn: What Happens After They're Built_, Stewart Brand
 
+## Paused
+
+Books I've started reading, and which are currently on hold, but which I do expect to get back to.
+
+- _Type-Driven Development with Idris_, Edwin Brady
 ## Finished
 
 Books I finished, in the order I finished them.
@@ -34,6 +40,7 @@ Books I finished, in the order I finished them.
 - _Evolution and the Fall_, eds. William T. Cavanaugh and James K. A. Smith -- review forthcoming
 - _The Way of Kings_, Brandon Sanderson (reread)
 - _Words of Radiance_, Brandon Sanderson (reread)
+- _Oathbringer_, Brandon Sanderson
 
 ## Partial
 
