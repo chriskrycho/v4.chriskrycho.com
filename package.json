@@ -18,8 +18,9 @@
     "rollup-plugin-babel": "^2.4.0"
   },
   "babel": {
-    "presets": [
-      "es2015"
-    ]
+    "presets": ["es2015"]
+  },
+  "prettier": {
+    "proseWrap": false
   }
 }

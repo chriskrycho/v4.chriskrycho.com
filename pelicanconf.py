@@ -108,7 +108,7 @@ READERS = {'html': None,
 
 PLUGIN_PATHS = ['../../pelican-plugins']
 PLUGINS = ['pandoc_reader']
-PANDOC_ARGS = ['--smart',  # use smart typography
+PANDOC_ARGS = [#'-f markdown+smart',  # use smart typography
                '--no-highlight',  # use highlight.js instead
                '-t', 'html5',  # use HTML and its corresponding attributes
                '--section-divs',  # wrap heading-blocks with <section>
