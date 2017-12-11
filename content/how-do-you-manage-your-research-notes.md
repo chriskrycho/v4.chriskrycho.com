@@ -1,6 +1,6 @@
 ---
 Title: How Do You Manage Your Research Notes?
-Date: 2017-12-12 10:25
+Date: 2017-12-10 10:25
 Tags: writing
 Summary: >
     I’m starting back in on serious reading and research… and I find the tools lacking. So: how in the world do you manage your research notes?
