@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chrome is Not the Standard &middot; Chris Krycho</title>
+    <meta name="description" content="No single browser vendor represents ”the future of the web.” Each ships in line with its own business priorities. And that's a good thing."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2017/chrome-is-not-the-standard.html"/>
+    <meta property="og:title" content="Chrome is Not the Standard"/>
+    <meta property="og:description" content="No single browser vendor represents ”the future of the web.” Each ships in line with its own business priorities. And that's a good thing."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Chrome is Not the Standard"/>
+    <meta name="twitter:description" content="No single browser vendor represents ”the future of the web.” Each ships in line with its own business priorities. And that's a good thing."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="web-development tech">
+
+    <header>
+<h1>Chrome is Not the Standard</h1>
+<h2>Developer infatuation with Chrome is not good—because competition between browsers is good.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2017/chrome-is-not-the-standard.html"><i class="fa fa-fw fa-link"></i></a>December 21, 2017</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/web-development/">#web development</a></span><span><a href="http://www.chriskrycho.com/2017/chrome-is-not-the-standard.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>Over the past few years, I’ve increasingly seen articles with headlines that run something like, “New Feature Coming To the Web”—followed by content which described how Chrome had implemented an experimental new feature. “You’ll be able to use this soon!” has been the promise.</p>
+<p>The reality is a bit more complicated. Sometimes, ideas the Chrome team pioneers make their way out to the rest of the browsers and become tools we can all use. Sometimes… they get shelved because none of the other browsers decide to implement them.</p>
+<p>Many times, when this latter tack happens, developers grouse about the other browser makers who are “holding the web back.” But there is a fundamental problem in this way of looking at things: <em>Chrome isn’t the standard.</em> The fact that Chrome proposes something, and even the fact that a bunch of developers like it, does not a standard make. Nor does it impose an obligation to other browsers to prioritize it, or even to ship it.</p>
+<p>As web developers, it can be easy to become focused on interesting new features for the platform we work on. That’s no different than the excitement Android and iOS developers have when Google and Apple release new SDKs for developing on their platforms. It’s healthy to be excited about possible new features, things that might make our jobs easier or enable us to do things we couldn’t do before.</p>
+<p>But there <em>is</em> an important difference between those platforms and the web. Those platforms are the domain of a single vendor. The web is a shared platform. This is its unique benefit, and its unique cost. It uniquely allows us to write software that can actually run, and run reasonably well, <em>everywhere</em>. But it also means that a minimum of four companies—the major browser vendors—get a say in whether a feature is a <em>feature</em> or whether it’s just an interesting idea one of the teams had.</p>
+<p>Let’s get concrete about an example that’s been extremely high-profile for the last couple years—and, to be clear, one I think is a <em>good</em> idea from Google: <a href="https://developers.google.com/web/progressive-web-apps/" title="Google’s PWA page">progressive web apps</a> (hereafter <abbr title='Progressive Web App'>PWA</abbr>). They have been pitched by Google and other supporters as an unambiguous win for the user experience of complex web applications. And, as a web developer myself, I’m actually inclined to agree with that assessment! However, I have fairly regularly seen people getting angry at especially Apple for not prioritizing support for <abbr title='Progressive Web App'>PWA</abbr>s in (especially iOS) Safari—Apple is, in this view, “holding back the future of the web.”</p>
+<p>Well… no. For any given idea Google pitches, Apple may or may not be sold on Google’s vision of the web, or they may even think it’s a good idea but not <em>more</em> important than other things they’re working on.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>And this is what it <em>means</em> to be part of the web platform. No single company gets to dominate the others in terms of setting the agenda for the web. Not Firefox, with its development and advocacy of <a href="http://webassembly.org/">WebAssembly</a>, dear to my heart though that is. Not Microsoft and the IE/Edge team, with its proposal of the CSS grid spec in <em>2011</em>, sad though I am that it languished for as long as it did. Not Apple, with its pitch for <a href="https://webkit.org/blog/7846/concurrent-javascript-it-can-work/" title="“Concurrent JavaScript: it can work!”">concurrent JavaScript</a>. And not—however good its developer relations team is—Chrome, with any of the many ideas it’s constantly trying out, including <abbr title='Progressive Web App'>PWA</abbr>s.</p>
+<p>It’s also worth recognizing how these decisions aren’t, in almost any case, unalloyed pushes for “the future of the web.” They reflect <em>business</em> priorities, just like any other technical prioritization. Google cares about <abbr title='Progressive Web App'>PWA</abbr>s because Google makes its money from the web and wants people to spend more of their time on the web. Apple cares about things like the battery life implications and the sheer speed of its iOS JavaScript engine because it makes money from hardware and it wants people to be happy with their iPhones and iPads.</p>
+<p>Does any one of those browser’s commitments map cleanly to <em>all</em> users’ (or even all <em>developers’</em>) priorities? Of course not! This is and always has been the beauty of a competitive browser landscape. I’m a web developer who wants <abbr title='Progressive Web App'>PWA</abbr> support everywhere—so I want Apple supporting it. But I’m also a smartphone user who wants those applications to <em>scream</em> on my device—not to crawl, like they do on Chrome on Android, which is still years behind iOS in performance. As an end user, not just a developer, it matters to me that running Safari on my laptop instead of Chrome can dramatically increase my battery life.</p>
+<p>These are tradeoffs, plain and simple. Chrome ships new features fast, but they’re not always stable and they often have performance costs. Safari ships new features on a much slower cadence, but they’re usually solid and always perform incredibly well. These are both engineering and business tradeoffs, and the companies behind the browsers are making because of their own business and engineering priorities. Don’t valorize any of the browser vendors, and don’t act as if <em>any</em> of them is the standard, or a reliable predictor of the future. Instead, value what each brings to the table, but also value the interplay <em>at</em> the table, and the ways each of these vendors pushes the others and challenges the others’ assumptions of what is most important. That’s what makes the web so great, even when it makes things move more slowly. Sometimes—often, even!—moving more slowly not in the <em>experimental</em> phase but in the <em>finalizing</em> phase makes for a much better outcome overall.</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>In this case, it seems to have been the latter, since yesterday’s release of Safari Tech Preview enabled Service Workers, one of the major pieces of the <abbr title='Progressive Web App'>PWA</abbr> push.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2017/star-wars-the-internet-and-me.html">Star Wars, The Internet, and Me</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2017/chrome-is-not-the-standard.html">Chrome is Not the Standard</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2017/on-public-theological-histories.html">On Public (Theological) Histories</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
