@@ -27,12 +27,14 @@ a {
     @include transition(border 0.224s $easeInOutCubic,
                         color 0.224s $easeInOutCubic);
 
-    &:link, &:visited {
+    &:link,
+    &:visited {
         color: $light_blue;
         border-bottom: 1px solid transparent;
     }
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
         color: $dark_blue;
         border-bottom: 1px solid $dark_gray;
 
@@ -41,9 +43,13 @@ a {
     }
 }
 
-b { font-weight: bold; }
+b {
+    font-weight: bold;
+}
 
-i { font-style: italic; }
+i {
+    font-style: italic;
+}
 
 img {
     max-height: 100%;
@@ -60,8 +66,8 @@ kbd {
     font-family: System, -apple-system, Avenir, Arial, Helvetica, sans-serif;
     font-size: 11px;
     line-height: 1.4;
-    margin: 0 .1em;
-    padding: .1em .6em;
+    margin: 0 0.1em;
+    padding: 0.1em 0.6em;
     text-shadow: 0 1px 0 #fff;
 }
 
@@ -91,7 +97,10 @@ kbd {
     width: 75%;
 }
 
-p, ul, ol, li {
+p,
+ul,
+ol,
+li {
     font-size: $fsp;
 }
 
@@ -120,6 +129,11 @@ abbr {
     font-family: $serif-smcp;
     text-transform: lowercase;
     letter-spacing: 0.2pt;
+
+    &[title] {
+        text-decoration: none;
+        border-bottom: 1px solid #33333333;
+    }
 }
 
 // Paragraph styles
@@ -127,7 +141,9 @@ p {
     margin-top: $fsp;
 }
 
-.citation { text-align: right; }
+.citation {
+    text-align: right;
+}
 
 p + ul,
 p + ol {
@@ -157,14 +173,17 @@ ul {
                 ul {
                     list-style-type: disc;
 
-                    ul { list-style-type: square; }
+                    ul {
+                        list-style-type: square;
+                    }
                 }
             }
         }
     }
 }
 
-ol { list-style: decimal;
+ol {
+    list-style: decimal;
 
     li {
         p,
@@ -174,19 +193,29 @@ ol { list-style: decimal;
         }
     }
 
-    ol { list-style: upper-latin;
+    ol {
+        list-style: upper-latin;
 
-        ol { list-style: lower-roman;
+        ol {
+            list-style: lower-roman;
 
-            ol { list-style: lower-latin;
+            ol {
+                list-style: lower-latin;
 
-                ol { list-style: lower-greek; }
+                ol {
+                    list-style: lower-greek;
+                }
             }
         }
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: $sans;
     line-height: 1;
 }
@@ -227,17 +256,21 @@ h4 {
     }
     padding-top: 1em;
 
-    + h5 { padding-top: 0.244em; }
+    + h5 {
+        padding-top: 0.244em;
+    }
 }
 
 h5 {
     padding-top: $fsp;
     font: {
         style: italic;
-        size: $fs5
+        size: $fs5;
     }
 
-    + h6 { padding-top: 0; }
+    + h6 {
+        padding-top: 0;
+    }
 }
 
 h6 {
@@ -252,12 +285,19 @@ h6 {
         right: $fs_very_small;
     }
 
-    + p { display: inline; }
+    + p {
+        display: inline;
+    }
 }
 
-pre { white-space: pre-wrap; }
+pre {
+    white-space: pre-wrap;
+}
 
-pre, code { @include hyphens(none !important); }
+pre,
+code {
+    @include hyphens(none !important);
+}
 
 sup {
     line-height: 0; // Fixes vertical alignment issues
@@ -266,26 +306,35 @@ sup {
     font-feature-settings: "onum" 0;
 }
 
-em, i, cite {
+em,
+i,
+cite {
     font-style: italic;
-    line-height: 1;  // Fix for different heights in Cardo.
+    line-height: 1; // Fix for different heights in Cardo.
 
-    em, i, cite { font-style: normal; }
+    em,
+    i,
+    cite {
+        font-style: normal;
+    }
 }
 
 dt {
-  font-style: italic;
-  margin-top: 1em;
+    font-style: italic;
+    margin-top: 1em;
 }
 
 dd {
-  margin-left: 2em;
+    margin-left: 2em;
 }
 
+cite.bibleref {
+    font-style: normal;
+}
 
-cite.bibleref { font-style: normal; }
-
-strong { font-weight: bold; }
+strong {
+    font-weight: bold;
+}
 
 hr {
     border: none;
@@ -305,32 +354,33 @@ hr {
 }
 
 table {
-  width: 100%;
-  table-layout: fixed;
-  margin: {
-    top: 1em;
-    bottom: 1em;
-    left: auto;
-    right: auto;
-  }
+    width: 100%;
+    table-layout: fixed;
+    margin: {
+        top: 1em;
+        bottom: 1em;
+        left: auto;
+        right: auto;
+    }
 }
 
 thead {
-  background-color: lighten($light_gray, 40%);
+    background-color: lighten($light_gray, 40%);
 }
 
 th {
-  font-weight: bold;
+    font-weight: bold;
 }
 
-th, td {
-  border: 1px solid;
-  padding: {
-    top: 0;
-    bottom: 0;
-    left: 1em;
-    right: 1em;
-  }
+th,
+td {
+    border: 1px solid;
+    padding: {
+        top: 0;
+        bottom: 0;
+        left: 1em;
+        right: 1em;
+    }
 }
 
 // Special styles
@@ -369,14 +419,16 @@ th, td {
 
 // ----- Layout -----
 body::before {
-    content: '';
+    content: "";
     width: 100%;
     display: block;
     height: $fs_very_small / 2;
-    background: linear-gradient(to right,
-                                $light_blue -15%,
-                                $dark_blue 35%,
-                                $light_blue);
+    background: linear-gradient(
+        to right,
+        $light_blue -15%,
+        $dark_blue 35%,
+        $light_blue
+    );
     border-bottom: 1px solid $light_gray;
 }
 
@@ -399,7 +451,8 @@ body::before {
             size: $fs5;
         }
 
-        a:hover, a:active {
+        a:hover,
+        a:active {
             border-bottom: 3px solid $dark_blue;
         }
 
@@ -428,7 +481,10 @@ body::before {
             left: $fs_large;
         }
 
-        a, a:hover, a:active, a:visited {
+        a,
+        a:hover,
+        a:active,
+        a:visited {
             border-bottom: none;
         }
     }
@@ -448,7 +504,7 @@ body::before {
             style: italic;
             size: $fs4;
         }
-        @include font-feature-settings('liga');
+        @include font-feature-settings("liga");
     }
 
     #section-head {
@@ -483,7 +539,9 @@ body::before {
 .section-title {
     text-transform: capitalize;
 
-    &.micro { display: none; }
+    &.micro {
+        display: none;
+    }
 }
 
 .section-title.divider::after {
@@ -529,7 +587,9 @@ article {
                 bottom: 0.465rem;
             }
 
-            cite { font-style: normal; }
+            cite {
+                font-style: normal;
+            }
         }
     }
 
@@ -565,7 +625,7 @@ article {
             text-align: center;
 
             &:before {
-                content: '\00A7';
+                content: "\00A7";
                 display: inline-block;
                 padding-right: 0.244em;
                 margin-left: -0.244em;
@@ -578,15 +638,21 @@ article {
             }
         }
 
-        p:first-child { margin-top: 0; }
+        p:first-child {
+            margin-top: 0;
+        }
 
         .section:first-child h1 {
             padding-top: 0.244em;
 
-            &:before { content: none; }
+            &:before {
+                content: none;
+            }
         }
 
-        hr + h1 { padding-top: $fs_very_small_abs; }
+        hr + h1 {
+            padding-top: $fs_very_small_abs;
+        }
 
         h2 {
             color: $light_gray;
@@ -595,15 +661,24 @@ article {
             margin-bottom: 0.323em;
         }
 
-        hr + h1 { padding-top: $fs_very_small; }
+        hr + h1 {
+            padding-top: $fs_very_small;
+        }
 
-        p { @include hyphens(auto); }
+        p {
+            @include hyphens(auto);
+        }
 
-        a { display: inline; }
+        a {
+            display: inline;
+        }
     }
 
-    &.micro, &.links {
-      .content { font-size: 0.9em; }
+    &.micro,
+    &.links {
+        .content {
+            font-size: 0.9em;
+        }
     }
 
     &.links,
@@ -634,7 +709,7 @@ article {
                     left: 0.244rem;
                     right: 0.244rem;
                 }
-                content: '\00A7';
+                content: "\00A7";
                 color: lighten($light_gray, 24.4%);
             }
 
@@ -658,17 +733,20 @@ article {
     }
 
     p {
-        @include font-feature-settings('liga', 'onum', 'pnum', 'kern');
+        @include font-feature-settings("liga", "onum", "pnum", "kern");
     }
 
-    ul, ol {
+    ul,
+    ol {
         margin: {
             top: $fsp;
             bottom: $fsp;
             left: $fs3;
         }
 
-        + hr { margin-top: 1.4em; }
+        + hr {
+            margin-top: 1.4em;
+        }
     }
 
     .references p {
@@ -677,7 +755,10 @@ article {
         line-height: $line_height_small;
     }
 
-    .footnote, .footnotes { font-size: $fs_small; }
+    .footnote,
+    .footnotes {
+        font-size: $fs_small;
+    }
 
     &.archive {
         width: auto;
@@ -695,15 +776,13 @@ article {
     }
 
     code {
-        font-family: Hack,
-                     'DejaVu Sans Mono',
-                     'Bitstream Vera Sans Mono',
-                     monospace;
+        font-family: Hack, "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+            monospace;
         border: {
-          style: solid;
-          width: 1px;
-          color: #e0e3e8;
-          radius: 2px;
+            style: solid;
+            width: 1px;
+            color: #e0e3e8;
+            radius: 2px;
         }
         margin: $fsp 0.1345em;
         overflow: scroll;
@@ -718,10 +797,10 @@ article {
         margin: 0.558em 0;
 
         border: {
-          style: solid;
-          width: 1px;
-          color: #e0e3e8;
-          radius: 2px;
+            style: solid;
+            width: 1px;
+            color: #e0e3e8;
+            radius: 2px;
         }
 
         code {
@@ -731,12 +810,14 @@ article {
             white-space: pre;
 
             &.hljs {
-              padding: 0;
-              margin: 0;
+                padding: 0;
+                margin: 0;
             }
         }
 
-        &+ p { margin-top: 0; }
+        & + p {
+            margin-top: 0;
+        }
     }
 
     figure {
@@ -747,7 +828,9 @@ article {
 
         text-align: center;
 
-        img { box-shadow: 0 0 0.625em $light_gray; }
+        img {
+            box-shadow: 0 0 0.625em $light_gray;
+        }
     }
 
     figcaption {
@@ -757,7 +840,7 @@ article {
 }
 
 sup[id^="fnref:"] a {
-    @include font-feature-settings('lnum', 'tnum');
+    @include font-feature-settings("lnum", "tnum");
 
     &:before {
         content: "[";
@@ -786,30 +869,36 @@ sup[id^="fnref:"] a {
     $footer-header-height: $fs3-abs + $fsp-abs;
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         z-index: 0;
         height: $footer-header-height;
         width: 100%;
         border-bottom: 1px solid $white;
-        background: linear-gradient(to right,
-                                    $light_blue -15%,
-                                    $dark_blue,
-                                    $light_blue 115%);
+        background: linear-gradient(
+            to right,
+            $light_blue -15%,
+            $dark_blue,
+            $light_blue 115%
+        );
     }
 
-    a:hover, a:active {
+    a:hover,
+    a:active {
         color: $white;
         border-bottom: 1px solid $light_gray;
     }
 
-    a .fa, a:visited .fa {
+    a .fa,
+    a:visited .fa {
         color: lighten($light_gray, 24.4%);
         @include transition(border 0.224s $easeInOutCubic,
                             color 0.224s $easeInOutCubic);
     }
 
-    a:hover .fa, a:active, .fa {
+    a:hover .fa,
+    a:active,
+    .fa {
         color: $white;
         @include transition(border 0.465s $easeInOutCubic,
                             color 0.465s $easeInOutCubic);
@@ -844,8 +933,11 @@ sup[id^="fnref:"] a {
         }
     }
 
-    h2 + ul, h2 + h3 {
-        &:first-of-type { padding-top: 0.465rem; }
+    h2 + ul,
+    h2 + h3 {
+        &:first-of-type {
+            padding-top: 0.465rem;
+        }
     }
 
     ul {
@@ -858,7 +950,6 @@ sup[id^="fnref:"] a {
                 bottom: $fsp/4;
                 left: 0;
             }
-
 
             &:before {
                 content: none;
@@ -876,7 +967,9 @@ sup[id^="fnref:"] a {
 }
 
 // miscellanies
-.tex { font-family: $serif-smcp; }
+.tex {
+    font-family: $serif-smcp;
+}
 
 .texA {
     position: relative;
@@ -894,6 +987,5 @@ sup[id^="fnref:"] a {
         right: -0.1em;
     }
 }
-
 
 @import "media";
