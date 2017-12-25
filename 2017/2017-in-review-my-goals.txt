@@ -98,5 +98,7 @@ I shipped a *massive* amount of code this year, including making some pretty sig
 
 ### In summary
 
+This year didn’t really go as we thought it would. A lot of that came down to finding a house plan we loved and could build on a lot that we equally loved—it shifted financial and temporal priorities alike. Add in some pretty serious family health issues in my extended family, and, well, no surprise some of my plans and goals didn’t pan out. That’s how it goes! The point of making these kinds of goals, for me, isn’t so much that I accomplish everything on my list as it is taking time to orient myself and to choose what I will and won’t *focus* on in the year ahead. And in 2017, I did focus on many of the things on this list. Some of them ended up more important than expected; others less. Interestingly and importantly, though, almost nothing I really spent my time focusing on *wasn’t* on the list. And that’s why I keep doing this year after year!
+
 [^1]:   750m swim, 20km (12mi) ride, 5km (3.1mi) run
 
