@@ -6,15 +6,13 @@ Summary: Creativity, reflection, & passionate endeavors by a peculiar fellow
 Slug: about
 ---
 
-# About
-
 Hello! I’m Chris Krycho (thus the URL).
 
 ![My wonderful family! [(see full size)](http://cdn.chriskrycho.com/images/family-2017.jpg)](http://cdn.chriskrycho.com/images/family-2017-thumb.jpg "Family photo 2017")
 
 A few things about me you might find interesting:
 
-* I’m a Christian: catholic, Reformed, and (recently) Presbyterian.
+* I’m a Christian: catholic, Reformed, and Presbyterian.
 
 * I’m the happy husband of [Jaimie Krycho](http://jaimiekrycho.com).
 
@@ -25,9 +23,16 @@ A few things about me you might find interesting:
 * I write software for a living—these days mostly [TypeScript](http://www.typescriptlang.org) (with a nice smattering of HTML and SCSS) in a large [Ember.js](https://emberjs.com) app. Past work has included Fortran, C, PHP, C++, Python, and JavaScript. As part of that, I maintain several open source projects, most importantly:
 
   * [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript) – use TypeScript in your Ember.js 2.x apps!
+
   * [True Myth](https://github.com/chriskrycho/true-myth/tree/master/src) – a library for safer programming in JavaScript, with first-class support for TypeScript. (`Maybe` and `Result` types and helpers!)
 
-* I host podcasts! - [Winning Slowly](http://www.winningslowly.org): a show I cohost with [Stephen Carradini](http://stephencarradini.com), taking the long view on technology, religion, ethics, and art—or, as I sometimes describe it to people, “everything humans do” - [New Rustacean](http://www.newrustacean.com): a show about the Rust programming language and the people using it - [Mass Affection](https://www.massaffection.com): a show about \_Mass Effect\_ which I cohost with my wife Jaimie (because we’re nerds!)
+* I host podcasts!
+
+  * [Winning Slowly](http://www.winningslowly.org): a show I cohost with [Stephen Carradini](http://stephencarradini.com), taking the long view on technology, religion, ethics, and art—or, as I sometimes describe it to people, “everything humans do”
+
+  * [New Rustacean](http://www.newrustacean.com): a show about the Rust programming language and the people using it
+
+  * [Mass Affection](https://www.massaffection.com): a show about _Mass Effect_ which I cohost with my wife Jaimie (because we’re nerds!)
 
 * I write extensively here about technology, art, and faith.
 
