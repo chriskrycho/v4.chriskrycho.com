@@ -21,6 +21,6 @@
     "presets": ["es2015"]
   },
   "prettier": {
-    "proseWrap": false
+    "proseWrap": "preserve"
   }
 }
