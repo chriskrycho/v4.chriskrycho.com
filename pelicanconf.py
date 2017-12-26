@@ -92,6 +92,7 @@ STATIC_PATHS = ['bib',
                 'talks/bibletech2015',
                 'talks/es-future-olo',
                 'talks/rust-belt-rust']
+STATIC_EXCLUDES = ['talks/rust-belt-rust/img']
 STATIC_EXCLUDE_SOURCES = False
 PAGE_EXCLUDES = ['talks/bibletech2015', 'talks/es-future-olo', 'talks/rust-belt-rust']
 ARTICLE_EXCLUDES = ['talks/bibletech2015', 'talks/es-future-olo', 'talks/rust-belt-rust']
