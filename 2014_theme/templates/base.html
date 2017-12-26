@@ -40,6 +40,11 @@
     {# Font tracking Script #}
     <script type="text/javascript" src="{{ JS_DIR }}/mtiFontTrackingCode.js"></script>
 
+    {# be nice when doing  #}
+    {% if item.canonical %}
+        <link rel="canonical" href="{{item.canonical}}">
+    {% endif %}
+
     {# RSS Feed(s) #}
     <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
     {% for category, _ in categories %}
