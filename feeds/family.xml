@@ -1,5 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - family</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 24 Dec 2017 17:50:00 -0500</lastBuildDate><item><title>2017 in Review: My Goals</title><link>http://www.chriskrycho.com/2017/2017-in-review-my-goals.html</link><description>&lt;p&gt;As has been my habit for a few years now, I’m taking some time to reflect on the year as it comes to a close. Thinking about how this year went and what I accomplished, and how I would like the next year to go and what I would like to accomplish &lt;em&gt;then&lt;/em&gt;, has become an important part of my life. There is value in taking stock and making plans—as long as you hold those plans loosely. And this particular set of reflections majors on holding plans loosely.&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - family</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Tue, 26 Dec 2017 09:35:00 -0500</lastBuildDate><item><title>2017 in Review: Looking Forward</title><link>http://www.chriskrycho.com/2017/2017-in-review-looking-forward.html</link><description>&lt;p&gt;As I do every year, I’ve been making some goals for myself for 2018. I’m breaking these down into three big categories this year, having learned from the experience of summarizing my goals for last year:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Standing aims&lt;/strong&gt;: things that I can’t exactly check off as &lt;em&gt;done&lt;/em&gt;, but which are extremely important to me.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Goals&lt;/strong&gt;: things I &lt;em&gt;can&lt;/em&gt; mark as done.
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Primary:&lt;/strong&gt; the most important of my goals—the ones I’ll count myself as having failed in some way if I don’t accomplish them over the course of the year (barring &lt;em&gt;major&lt;/em&gt; unforeseen goings-on, which are, well… impossible to foresee).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flexible&lt;/strong&gt;: other goals, which I’d &lt;em&gt;like&lt;/em&gt; to get to, but which it won’t bother me if I don’t get to them.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;section id="standing-aims" class="level2"&gt;
+&lt;h2&gt;Standing aims&lt;/h2&gt;
+&lt;/section&gt;
+&lt;section id="goals" class="level2"&gt;
+&lt;h2&gt;Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Integrate well into our new church—including finding specific ways and places to serve regularly, joining a small group, and making some good friends.&lt;/li&gt;
+&lt;li&gt;Spend more, better, and more consistent time with my family.&lt;/li&gt;
+&lt;li&gt;Work hard at Olo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;section id="primary" class="level3"&gt;
+&lt;h3&gt;Primary&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Podcasting:
+&lt;ul&gt;
+&lt;li&gt;[ ] Ship a minimum of 3 episodes of New Rustacean per month January–October.&lt;/li&gt;
+&lt;li&gt;[ ] Publish Winning Slowly Season 6.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Writing:
+&lt;ul&gt;
+&lt;li&gt;[ ] Publish at least 4 medium-length (2,000–3,500 words) at Mere Orthodoxy.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Software:
+&lt;ul&gt;
+&lt;li&gt;[ ] Get ember-cli-typescript “finished”—i.e. with full support for addons and fast incremental builds.&lt;/li&gt;
+&lt;li&gt;[ ] Ship a &lt;a href="https://alistapart.com/article/responsive-web-design"&gt;responsive&lt;/a&gt;, &lt;a href="https://developer.mozilla.org/en-US/Apps/Progressive"&gt;progressive&lt;/a&gt; version of a major application I work on.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Read, or finish reading, the following books:
+&lt;ul&gt;
+&lt;li&gt;[ ] &lt;em&gt;Resurrection and Moral Order&lt;/em&gt;, Oliver O’Donovan (started in 2017)&lt;/li&gt;
+&lt;li&gt;[ ] &lt;em&gt;Theology and the Mirror of Scripture&lt;/em&gt;, Kevin Vanhoozer and Daniel Treier (started in 2017)&lt;/li&gt;
+&lt;li&gt;[ ] &lt;em&gt;How Buildings Learn&lt;/em&gt;, Stewart Brand (started in 2017)&lt;/li&gt;
+&lt;li&gt;[ ] &lt;em&gt;City of God&lt;/em&gt;, Augustine&lt;/li&gt;
+&lt;li&gt;[ ] &lt;em&gt;The Technological Society&lt;/em&gt;, Jacques Ellul&lt;/li&gt;
+&lt;li&gt;[ ] &lt;em&gt;The Meaning of the City&lt;/em&gt;, Jacques Ellul&lt;/li&gt;
+&lt;li&gt;[ ] &lt;em&gt;The Ethics of Freedom&lt;/em&gt;, Jacques Ellul&lt;/li&gt;
+&lt;li&gt;[ ] &lt;em&gt;Blasphemy: A Radical Critique of our Technological Culture&lt;/em&gt;, Ivan Illich&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Fitness:
+&lt;ul&gt;
+&lt;li&gt;[ ] Run a half marathon.&lt;/li&gt;
+&lt;li&gt;[ ] Finish the &lt;a href="http://www.childrenscoloradofoundation.org/courage-classic/"&gt;Courage Classic&lt;/a&gt; with my dad.&lt;/li&gt;
+&lt;li&gt;[ ] Get back to my target/healthiest weight.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section id="flexible" class="level3"&gt;
+&lt;h3&gt;Flexible&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;[ ] Publish one essay at a larger publication (for money, if possible!).&lt;/li&gt;
+&lt;li&gt;[ ] Archive static versions of the prior versions of my website.&lt;/li&gt;
+&lt;li&gt;[ ] Improve the page load performance of this site (e.g. with progressive font-loading).&lt;/li&gt;
+&lt;li&gt;[ ] Make meaningful progress on &lt;a href="https://github.com/chriskrycho/lightning-rs"&gt;Lightning&lt;/a&gt; November–December.&lt;/li&gt;
+&lt;li&gt;[ ] Lead a book club at Olo.&lt;/li&gt;
+&lt;li&gt;[ ] Get up to 20 consecutive pull-ups and 100 consecutive push-ups.&lt;/li&gt;
+&lt;li&gt;[ ] Print hard copies of at least one year of my website archive.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;p&gt;That seems like &lt;em&gt;plenty&lt;/em&gt; to go after this year. One thing that isn’t apparent here is that a fair bit of this is aimed at goals that extend past this year. There are things I want to do in the first half of my thirties if possible, of which some of these are a part. I don’t have those kinds of things written down (and when I write them down, I probably won’t publish them here!) but as I come into the broad swath of life that is just “adulthood”—not &lt;em&gt;young&lt;/em&gt; adulthood or &lt;em&gt;old age&lt;/em&gt;—I am increasingly mindful of the kinds of things I want to do that take more than a single year to accomplish. Some of these move the needle substantially in that direction, so hopefully I’ll get there!&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 26 Dec 2017 09:35:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-12-26:/2017/2017-in-review-looking-forward.html</guid><category>productivity</category><category>writing</category><category>family</category><category>fitness</category><category>podcasting</category><category>software development</category><category>2017-review</category></item><item><title>2017 in Review: My Goals</title><link>http://www.chriskrycho.com/2017/2017-in-review-my-goals.html</link><description>&lt;p&gt;As has been my habit for a few years now, I’m taking some time to reflect on the year as it comes to a close. Thinking about how this year went and what I accomplished, and how I would like the next year to go and what I would like to accomplish &lt;em&gt;then&lt;/em&gt;, has become an important part of my life. There is value in taking stock and making plans—as long as you hold those plans loosely. And this particular set of reflections majors on holding plans loosely.&lt;/p&gt;
 &lt;p&gt;The best place to start seems to be with a review of my goals for 2017, set out &lt;a href="http://www.chriskrycho.com/2017/2016-review-6.html" title="2016 in Review, Part 6: Plans for 2017"&gt;here&lt;/a&gt;. In a post later this week, I’ll write up some thoughts on what I hope to accomplish in 2018—though, as you’ll see, there are some hints of that here.&lt;/p&gt;
 &lt;p&gt;One other note: there are many things going on in our lives that don’t end up in these reflections—because these reflections (as I conceive them at present, at least) are about the kind of public-facing things I did this year. A blog is not a journal, even if there are some analogies between the two.&lt;/p&gt;
 &lt;section id="major-goals" class="level2"&gt;
