@@ -10,6 +10,8 @@ Subtitle: Last updated Monday, November 13, 2017.
 
 ## Speaking
 
+* I'm giving a 3-hour workshop on using TypeScript in Ember.js applications at [EmberConf 2018](http://emberconf.com), in Portland, Oregon, on March 12, 2018. Hope to see you there—it's going to be a fabulous conference with a ton of really excellent speakers.
+
 * I gave a talk titled "Becoming a Contributor" at Rust Belt Rust 2017, October 26–27. The abstract:
 
   > So, you’re new to the Rust community. (Or any community, really!) And you want to help, but, well, you’re new. So how exactly do you start contributing? What kinds of contributions are valuable? We’ll talk about everything from asking questions to writing documentation, from pitching in on forums and chat to writing blog posts, and from starting your own projects to contributing to other open-source projects.

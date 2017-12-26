@@ -4,89 +4,38 @@ Subtitle: Enjoy your stay; watch out for typographical nerdery.
 Author: Chris Krycho
 Summary: Creativity, reflection, & passionate endeavors by a peculiar fellow
 Slug: about
-
 ---
 
+# About
 
-![My wonderful family! [(see full size)](http://cdn.chriskrycho.com/images/family-2016.jpg)](http://cdn.chriskrycho.com/images/family-2016-thumb.jpg "Family photo 2016")
+Hello! I’m Chris Krycho (thus the URL).
 
+![My wonderful family! [(see full size)](http://cdn.chriskrycho.com/images/family-2017.jpg)](http://cdn.chriskrycho.com/images/family-2017-thumb.jpg "Family photo 2017")
 
-Good day (or evening, as the case may be), and welcome to my home on the
-interwebs!
+A few things about me you might find interesting:
 
-If you've just stumbled onto this site from a bleary-eyed tumble through the
-wild wastes of the web, and have no idea who I am, this page will get you
-started. If you're already familiar with my particular quirks, oddities,
-interests, and hobbies, feel free to hop right on into whichever of the site's
-sections you came here seeking.
+* I’m a Christian: catholic, Reformed, and (recently) Presbyterian.
 
-Otherwise, a few words of introduction are likely in order. I am first of all a
-Christ-follower, a husband, a happy father of two little girls (one toddling
-around happily and the other working her way along through her first year of
-life, with all the craziness that entails). I work as a software developer and
-web designer, am also in pursuit of the Master of Divinity degree at
-[Southeastern Baptist Theological Seminary][sebts] in Wake Forest, North
-Carolina.[^nc]
+* I’m the happy husband of [Jaimie Krycho](http://jaimiekrycho.com).
 
-I am a Colorado native, and the mountains make my soul sing.[^sing] I had the
-pleasure of earning a bachelor's degree in physics from the University of
-Oklahoma---where I also took the rough equivalent of a minor in music
-composition from a school that does not offer music minors.[^minor] While in
-Oklahoma, I met my wonderfully Godly, intelligent, beautiful, nerdy wife Jaimie,
-whose [fiction][fiction] and [occasional blogging][jaimie] are both well worth
-your time. Our first daughter, Elayne Kaylee, was also born in Oklahoma.[^ok] In
-2013, we moved to North Carolina, a land we have been happy to call home ever
-since.
+* I’m the delighted dad of two little girls, Ellie and Kate.
 
-When I am not busy programming or studying biblical languages and theology, you
-can often find me writing,[^writing] running (I am a half marathoner, which is
-not the same as half a marathoner), playing Ultimate, rereading _The Lord of the
-Rings_ again, watching _Doctor Who_ or _Castle_ or _Firefly_ with Jaimie,
-playing Ultimate, working on my [podcast][ws],  or---very occasionally, when the
-stars align just right---[composing][soundcloud].
+* We live in Colorado.
 
-Please take a gander at the various things I've written, and feel free to
-contact me via any of the sundry media I have listed in the "Contact" section
-below.
+* I write software for a living—these days mostly [TypeScript](http://www.typescriptlang.org) (with a nice smattering of HTML and SCSS) in a large [Ember.js](https://emberjs.com) app. Past work has included Fortran, C, PHP, C++, Python, and JavaScript. As part of that, I maintain several open source projects, most importantly:
 
-- [Art](/art/)
-- [Technology](/tech/)
-- [Theology](/theology/)
-- [Blog posts](/blog/) -- a catchall for otherwise uncategorized posts,
-  including family, miscellaneous projects, etc.
+  * [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript) – use TypeScript in your Ember.js 2.x apps!
+  * [True Myth](https://github.com/chriskrycho/true-myth/tree/master/src) – a library for safer programming in JavaScript, with first-class support for TypeScript. (`Maybe` and `Result` types and helpers!)
 
-To see all of these in one place, take a look at the [archives](/archives.html).
-Enjoy your stay and try not to get too lost.
+* I host podcasts! - [Winning Slowly](http://www.winningslowly.org): a show I cohost with [Stephen Carradini](http://stephencarradini.com), taking the long view on technology, religion, ethics, and art—or, as I sometimes describe it to people, “everything humans do” - [New Rustacean](http://www.newrustacean.com): a show about the Rust programming language and the people using it - [Mass Affection](https://www.massaffection.com): a show about \_Mass Effect\_ which I cohost with my wife Jaimie (because we’re nerds!)
 
-[sebts]: http://www.sebts.edu/
-[jaimie]: http://jaimiedawn.blogspot.com
-[fiction]: http://jaimiekrycho.com
-[ws]: http://www.winningslowly.org/
-[soundcloud]: https://soundcloud.com/chriskrycho
+* I write extensively here about technology, art, and faith.
 
-[^nc]: A land I am happy to call my home. More on that in a moment. Yes, you can
-    expect footnotes to be a regular occurence even on standalone pages. I'm
-    *that* kind of guy.
+* I also sometimes also write at [Mere Orthodoxy](https://mereorthodoxy.com).
 
-[^sing]: My wife will attest to the singing, and also affirm that said singing
-    is usually loud. Worry not: I have no intent to post recordings of such
-    things.
+* I run—a lot! I try to do at least one half marathon every year. I also cycle a fair bit and sometimes even swim, with the occasional triathlon tossed in.
+* Every once in a long while, I also compose new music.
 
-[^minor]: Some might call this crazy. I called it *fun*.
+If you’re interested in the specific details of what I’m up to at any given moment, you can check out my [Now](http://www.chriskrycho.com/now.html) page, which I keep fairly up-to-date.
 
-[^ok]: There, I also had the <del>displeasure</del> *sanctifying challenge* of
-    living in Oklahoma for seven and a half years. Oklahoma is almost totally
-    flat, often quite brown, and its citizens think tornados are fun. They're
-    great people, really! But the state was not so much to my liking as was
-    Colorado or as is North Carolina. I need hills, and better yet mountains,
-    and I can do without the constant threat of tornadoes. At least here I have
-    some warning when the hurricanes are coming!
-
-    Also, I think I shall make this the last footnote: I am getting a bit
-    carried away.
-
-[^writing]: Writing *lots*. Just look around at this site. You'll see what I
-    mean in short order. And yes, I know I just wrote another footnote.
-
-    Does it make it any better that I started planning this footnote immediately
-    after penning the last one, just for humor's sake?
+Feel free to email me if you have questions, thoughts, etc. about the things I write about! You can reach me at [hello@chriskrycho.com](mailto:hello@chriskrycho.com).
