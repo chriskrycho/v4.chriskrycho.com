@@ -6,8 +6,6 @@ Summary: Creativity, reflection, & passionate endeavors by a peculiar fellow
 Slug: about
 ---
 
-# About
-
 Hello! I’m Chris Krycho (thus the URL).
 
 ![My wonderful family! [(see full size)](http://cdn.chriskrycho.com/images/family-2017.jpg)](http://cdn.chriskrycho.com/images/family-2017-thumb.jpg "Family photo 2017")
