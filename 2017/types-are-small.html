@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Constant Evaluation &middot; Chris Krycho</title>
-    <meta name="description" content="I’m reading John Frame’s The Doctrine of the Christian Life, and find a great deal to commend in it, but also some real head-scratchers. The same page, for example (287), includes both of these quotes— On rejecting mere traditionalism: This [Paul’s example of self-sacrifice for evangelism] means …"/>
+    <title>Types are Small &middot; Chris Krycho</title>
+    <meta name="description" content="A really fabulous quote from Scott Wlaschin's book Domain Modeling Made Functional crystallized an important point for me: types (in typed functional programming) are small."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2016/constant-evaluation.html"/>
-    <meta property="og:title" content="Constant Evaluation"/>
-    <meta property="og:description" content="I’m reading John Frame’s The Doctrine of the Christian Life, and find a great deal to commend in it, but also some real head-scratchers. The same page, for example (287), includes both of these quotes— On rejecting mere traditionalism: This [Paul’s example of self-sacrifice for evangelism] means …"/>
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2017/types-are-small.html"/>
+    <meta property="og:title" content="Types are Small"/>
+    <meta property="og:description" content="A really fabulous quote from Scott Wlaschin's book Domain Modeling Made Functional crystallized an important point for me: types (in typed functional programming) are small."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/>
 <link rel="me" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-    <meta name="twitter:title" content="Constant Evaluation"/>
-    <meta name="twitter:description" content="I’m reading John Frame’s The Doctrine of the Christian Life, and find a great deal to commend in it, but also some real head-scratchers. The same page, for example (287), includes both of these quotes— On rejecting mere traditionalism: This [Paul’s example of self-sacrifice for evangelism] means …"/>
+    <meta name="twitter:title" content="Types are Small"/>
+    <meta name="twitter:description" content="A really fabulous quote from Scott Wlaschin's book Domain Modeling Made Functional crystallized an important point for me: types (in typed functional programming) are small."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
@@ -76,32 +76,35 @@
     </header>
 
 
-<article class="classwork sebts mdiv reading theology">
+<article class="functional-programming software-development tech">
 
     <header>
-<h1>Constant Evaluation</h1>
-<h2>Or, John Frame as an example of how we ought to read carefully.</h2>    </header>
+<h1>Types are Small</h1>
+<h2>(Scott Wlaschin is really smart.)</h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/2016/constant-evaluation.html"><i class="fa fa-fw fa-link"></i></a>September 13, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/theology/">Theology</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/classwork/">#classwork</a><a class="hashtags" href="http://www.chriskrycho.com/mdiv/">#m.div.</a><a class="hashtags" href="http://www.chriskrycho.com/reading/">#reading</a><a class="hashtags" href="http://www.chriskrycho.com/sebts/">#sebts</a></span><span><a href="http://www.chriskrycho.com/2016/constant-evaluation.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/2017/types-are-small.html"><i class="fa fa-fw fa-link"></i></a>December 29, 2017</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/functional-programming/">#functional programming</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2017/types-are-small.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
 
         <div class="content">
 
-<p>I’m reading John Frame’s <em>The Doctrine of the Christian Life</em>, and find a great deal to commend in it, but also some real head-scratchers. The same page, for example (287), includes both of these quotes—</p>
-<p>On rejecting mere traditionalism:</p>
+<p>I’ve been reading through <a href="https://fsharpforfunandprofit.com" title="F♯ for Fun and Profit">Scott Wlaschin</a>’s really excellent book <a href="https://pragprog.com/book/swdddf/domain-modeling-made-functional"><em>Domain Modeling Made Functional</em></a> and this quote (from his chapter introducing the idea of <em>types</em> in <em>typed functional programming</em>) crystallized something for me:</p>
 <blockquote>
-<p>This [Paul’s example of self-sacrifice for evangelism] means that in our evangelistic methodology, and indeed in our worship (for that also has an evangelistic element, [1 Corinthians] 14:24–25), our goal must not be to please ourselves, but to bend and stretch, toa ccept discomfort and the trauma of change, in order to speak the Christian faith to the contemporary world.</p>
+<p>A type in functional programming is not the same as a class in object-oriented programming. It is much simpler. In fact, a type is just the name given to the set of possible values that can be used as inputs or outputs of a function.</p>
 </blockquote>
-<p>On the Fathers:</p>
-<blockquote>
-<p>We have had much more time to study Scripture than did the early church fathers like Clement and Justin Martyr. And in some ways, I think, contemporary orthodox Reformed theology has a far deeper and more precise understanding of the gospel than did the church fathers. I say this contrary to those evangelicals who are joining Eastern Orthodox churches in order to return to the supposedly more profound teachings of the early church fathers. Although the Fathers did wonderful work in their day, standing heroically for the faith amid terrible oppressions, their writings were confused on many important points, such as the Trinity and justification by faith. (287)</p>
-</blockquote>
-<p>The first quote is an <em>excellent</em> summary of the Christian obligation to continually reapply the testimony of Scripture to the present. The book is full of these kinds of enormously helpful bits; I have written far more ✓ than ✗ marks—i.e., many more affirmations than rejections—in this text.</p>
-<p>But that second quote makes me want to bang my head against the desk. When Frame waves his hand at “the Fathers” and declares “their writings” “confused on… the Trinity and justification by faith,” I am left saying: <em>Which Fathers?</em> and, even more importantly, <em>Frame, where do you think we <em>got</em> our doctrine of the Trinity, if not the Fathers?</em> To be sure, there is plenty of variation in quality and reliability of the Fathers. Origen is a brilliant, fascinating hot mess of a theologian, for example, while Irenaeus, Hillary, Augustine, Athanasius, and others are no less sure or reliable than any major Reformed author. Moreover: reading early Reformed writers makes it very clear that <em>they</em> thought the Fathers broadly reliable and helpful!</p>
-<p>Every author has strengths and weaknesses. Even the most helpful require <em>constant</em> evaluation.</p>
+<p>A lot of times when I’m trying to explain how I use types in a typed functional programming style, this is a serious point of confusion—both for the Java or C♯ OOP programmer and for the programmers coming from dynamic languages. When people think of “types” they tend to think of <em>classes and interfaces and methods, oh my!</em><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>One is the big heavy class. The other is a nice little LEGO block. The difference is <em>huge</em> in my day to day experience, but I’ve never been able to express it so clearly as Wlaschin’s quote.</p>
+<p>I suspect that when I’m talking to most people coming from dynamically typed languages <em>or</em> from the standard OOP languages, they hear “Write three interfaces and six classes” when I say “using types to help me with my program.” But what I mean is “Write three tiny little shapes, and then one more that shows how they snap together in a slightly bigger one.” Types are big heavy things. They’re just the shapes I want to flow through my program, written down like documentation for later… that gets checked for me to make sure it stays up to date, and lets me know if I missed something in my description of the shape of the data, or tried to do something I didn’t mean to before.</p>
+<p>You <em>can</em> write a language like F♯ or TypeScript or Elm like you would C♯, but it’s generally not going to be an especially <em>happy</em> experience (and it’ll be less happy the more “purely functional,” <em>a la</em> Elm, you go). But you don’t have to! Types are just tiny little descriptions of the shapes you plan to deal with in a particular spot—more concise and more dependable than writing a JSDoc or something like that.</p>
+<p>Types are small. You can build big things with them, but <em>types are small</em>.</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>In fact, nearly every “I’m just not into types” or even “I think types are worse for most things” talks I’ve seen—including <a href="https://www.youtube.com/watch?v=2V1FtfBDsLU">this recent and popular one by Rich Hickey</a>—tend to conflate <em>all</em> type systems together. But the experience of writing TypeScript is <em>very</em> different from the experience of writing C♯. (You’ll note that in that talk, for example, Hickey freely jumps back and forth between Java-style types and Haskell-style types when it suits his purposes, and he entirely skips past the structural type systems currently having something of a heyday.) In many cases, I <em>suspect</em> this is simply a lack of deep experience with the whole variety of type systems out there (though I’d not attribute that to any specific individual).<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
         </div>
     </div>
 </article>
