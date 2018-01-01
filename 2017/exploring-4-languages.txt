@@ -1,6 +1,6 @@
 ---
 Title: Exploring 4 Languages
-Subtitle: Rust, Elm, Reason, and F\<sup\>♯\</sup\> – a bunch of cousins!
+Subtitle: Rust, Elm, Reason, and F<sup>♯</sup> – a bunch of cousins!
 Date: 2017-12-31 20:20
 Tags: functional programming, rust, elm, fsharp, reasonml, domain-driven design
 Category: tech
