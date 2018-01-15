@@ -97,11 +97,12 @@ type productCode =
 &lt;pre class="rust"&gt;&lt;code&gt;// Make an empty enum (which you by definition cannot construct)
 enum Never {}
 
-// Use it throughout where we don&amp;#39;t know the type yet. It will
-// fail to compile anywhere we try to *use* this.
+// Use it throughout where we don&amp;#39;t know the type yet. It will fail to compile
+// anywhere we try to *use* this, because you can&amp;#39;t construct it.
 type OrderId = Never;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Elm (which has a built-in &lt;code&gt;Never&lt;/code&gt; type):&lt;/p&gt;
-&lt;pre class="elm"&gt;&lt;code&gt;--  It will fail to compile anywhere we try to *use* this.
+&lt;pre class="elm"&gt;&lt;code&gt;-- It will fail to compile anywhere we try to *use* this, because you cannot
+-- construct `Never`.
 type alias OrderId =
     Never&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;F&lt;sup&gt;♯&lt;/sup&gt; (which &lt;em&gt;sort&lt;/em&gt; of does):&lt;/p&gt;
@@ -111,14 +112,14 @@ type Undefined = exn
 type OrderId = Undefined&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Reason (which also &lt;em&gt;sort&lt;/em&gt; of does—identically with F&lt;sup&gt;♯&lt;/sup&gt;):&lt;/p&gt;
 &lt;pre class="reason"&gt;&lt;code&gt;/* Make a convenience type for the `exn`/`System.Exception` type */
-type undefined = exn
+type undefined = exn;
 
 /*
-  Use it throughout where we don&amp;#39;t know the type yet. It will
-  fail to compile anywhere we try to *use* this.
+  Use it throughout where we don&amp;#39;t know the type yet. It will compile, but fail
+  to run anywhere we try to *use* this.
  */
-type orderId = undefined&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;For both F&lt;sup&gt;♯&lt;/sup&gt; and Reason, that’s following Wlaschin’s example. The main reason to do that is to make explicit that we’re not wanting an unconstructable type in our domain model (weird though that idea is), but just something we haven’t &lt;em&gt;yet&lt;/em&gt; defined.&lt;/p&gt;
+type orderId = undefined;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For both F&lt;sup&gt;♯&lt;/sup&gt; and Reason, that’s following Wlaschin’s example. The main reason to do that is to make explicit that we’re not actually wanting an &lt;em&gt;exception&lt;/em&gt; type in our domain model, but just something we haven’t &lt;em&gt;yet&lt;/em&gt; defined. Anywhere we attempted to use it, we’d have to handle it like, well… an exception, instead of an actual type.&lt;/p&gt;
 &lt;pre class="rust"&gt;&lt;code&gt;type OrderId = !;&lt;/code&gt;&lt;/pre&gt;
 &lt;/section&gt;
 &lt;section id="workflows-and-functions" class="level2"&gt;
@@ -147,15 +148,18 @@ type ValidateOrder =
 
 type validateOrder = unvalidatedOrder =&amp;gt; validationResponse(validatedOrder);&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Once again Rust is much &lt;em&gt;more&lt;/em&gt; different here from the others than they are from each other. The biggest difference between Elm, F&lt;sup&gt;♯&lt;/sup&gt;, and Reason is how they handle generics and type parameters.&lt;/p&gt;
-&lt;p&gt;You’ll note that in Elm, they just follow the name of the wrapping type. This is a kind of syntactic symmetry: the way you &lt;em&gt;name&lt;/em&gt; a generic type like this is the same basic way you &lt;em&gt;construct&lt;/em&gt; it. It’s quite elegant. And as it turns out, the same is true of Reason; it’s just that its authors have chosen to follow OCaml and use parentheses for them instead of following Haskell with spaces—a reasonable choice, given Reason is surface syntax for OCaml and not Haskell. F&lt;sup&gt;♯&lt;/sup&gt; uses angle brackets, I strongly suspect, because that’s what C&lt;sup&gt;#&lt;/sup&gt; uses for generics, and keeping them syntactically aligned in things like this is very helpful.&lt;/p&gt;
-&lt;p&gt;Rust uses angle brackets for generics, just as F&lt;sup&gt;♯&lt;/sup&gt; does, but we haven’t written out a &lt;em&gt;type&lt;/em&gt; declaration here; we’ve actually written out a stub of a function, with the &lt;a href="https://doc.rust-lang.org/std/macro.unimplemented.html"&gt;&lt;code&gt;unimplemented!()&lt;/code&gt;&lt;/a&gt; &lt;a href="https://doc.rust-lang.org/1.17.0/reference/macros-by-example.html"&gt;macro&lt;/a&gt;. If you invoke this function, you’ll get a clear crash with an explanation of which function isn’t implemented.&lt;/p&gt;
+&lt;p&gt;You’ll note that in Elm, they just follow the name of the wrapping type. This is a kind of syntactic symmetry: the way you &lt;em&gt;name&lt;/em&gt; a generic type like this is the same basic way you &lt;em&gt;construct&lt;/em&gt; it. It’s quite elegant. And as it turns out, the same is true of Reason; it’s just that its authors have chosen to follow OCaml and use parentheses for them instead of following Haskell with spaces—a reasonable choice, given Reason is surface syntax for OCaml and not Haskell.&lt;/p&gt;
+&lt;p&gt;F&lt;sup&gt;♯&lt;/sup&gt; uses angle brackets, I strongly suspect, because that’s what C&lt;sup&gt;#&lt;/sup&gt; uses for generics, and keeping them syntactically aligned in things like this is very helpful. Rust similarly uses angle brackets for similarity with other languages which have similar surface syntax—especially C++ (with its templates).&lt;/p&gt;
+&lt;p&gt;The way you &lt;em&gt;name&lt;/em&gt; generic parameters differs between the languages as well. Elm, following Haskell, uses lowercase letters to name its generics (usually called &lt;em&gt;type parameters&lt;/em&gt; in Elm). F&lt;sup&gt;#&lt;/sup&gt; and Reason both (unsurprisingly) follow OCaml in using lowercase letters preceded by an apostrophe to name generics—in F&lt;sup&gt;#&lt;/sup&gt;, &lt;code&gt;TypeGenericOver&amp;lt;'a&amp;gt;&lt;/code&gt;; in Reason, &lt;code&gt;typeGenericOver('a)&lt;/code&gt;. Rust follows the convention from languages like C++, Java, and C&lt;sup&gt;#&lt;/sup&gt; and uses capital letters, &lt;code&gt;TypeGenericOver&amp;lt;T&amp;gt;&lt;/code&gt;. The use of specific letters is conventional, not mandated by the language (unlike the casing). The ML family usually starts with &lt;code&gt;a&lt;/code&gt; and moves through the alphabet; Rust and the languages it follows usually start with &lt;code&gt;T&lt;/code&gt; (for &lt;em&gt;type&lt;/em&gt;) and moves forward through the alphabet. (Sometimes you’ll also see different letters where it’s obviously a better fit for what’s contained.)&lt;/p&gt;
+&lt;p&gt;These languages also vary in the syntax for constructing a &lt;em&gt;list&lt;/em&gt; of things. In F&lt;sup&gt;#&lt;/sup&gt; has convenience syntax for a few built-ins (the most common being the &lt;code&gt;List&lt;/code&gt; and &lt;code&gt;Option&lt;/code&gt; types), allowing you to write them &lt;em&gt;either&lt;/em&gt; as e.g. &lt;code&gt;List&amp;lt;ConcreteType&amp;gt;&lt;/code&gt; or &lt;code&gt;ConcreteType list&lt;/code&gt; (as here in the example). Elm, Reason, and Rust all just use the standard syntax for generic types—&lt;code&gt;List a&lt;/code&gt;, &lt;code&gt;list('a)&lt;/code&gt;, and &lt;code&gt;Vec&amp;lt;T&amp;gt;&lt;/code&gt; respectively.&lt;/p&gt;
+&lt;p&gt;Finally, you’ll also note that we haven’t written out a &lt;em&gt;type&lt;/em&gt; declaration here for Rust; we’ve actually written out a stub of a function, with the &lt;a href="https://doc.rust-lang.org/std/macro.unimplemented.html"&gt;&lt;code&gt;unimplemented!()&lt;/code&gt;&lt;/a&gt; &lt;a href="https://doc.rust-lang.org/1.17.0/reference/macros-by-example.html"&gt;macro&lt;/a&gt;. If you invoke this function, you’ll get a clear crash with an explanation of which function isn’t implemented.&lt;/p&gt;
 &lt;p&gt;Now, Rust also &lt;em&gt;does&lt;/em&gt; let us write out the type of these functions as type aliases if we want:&lt;/p&gt;
 &lt;pre class="rust"&gt;&lt;code&gt;type ValidateOrder =
     Fn(UnvalidatedOrder) -&amp;gt; Box&amp;lt;ValidationResponse&amp;lt;ValidatedOrder&amp;gt;&amp;gt;;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You just don’t use these very often in idiomatic Rust; it’s much more conventional to simply write out what I did above. However, the one time you &lt;em&gt;might&lt;/em&gt; use a type alias like this is when you’re defining the type of a closure and you don’t want to write it inline. This is a pretty sharp difference between Rust and the other languages on display here, and it goes to the difference in their approaches.&lt;/p&gt;
 &lt;p&gt;Rust is &lt;em&gt;not&lt;/em&gt; a functional-first language in the way that each of the others are, though it certainly draws heavily on ideas from functional programming throughout and makes quite a few affordances for a functional style. Instead, it’s a programming language first and foremost interested in combining the most screaming performance possible with true safety, and leaning on ideas from the ML family (among others!) as part of achieving that.&lt;/p&gt;
 &lt;p&gt;Among other things, this is why you don’t have currying or partial application in Rust: those essentially &lt;em&gt;require&lt;/em&gt; you to have invisible heap-allocation to be ergonomic. We &lt;em&gt;don’t&lt;/em&gt; have that in Rust, as we do in Elm, Reason, and F&lt;sup&gt;♯&lt;/sup&gt;. If we want to pass around a function, we have to explicitly wrap it in a pointer to hand it around if we construct it in another function. (I won’t go into more of the details of this here; I’ve covered it some &lt;a href="http://www.newrustacean.com/show_notes/e004/index.html"&gt;on New Rustacean&lt;/a&gt; and some &lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-viii.html"&gt;in my Rust and Swift comparison&lt;/a&gt; a couple years ago.)&lt;/p&gt;
-&lt;p&gt;That same underlying focus on performance and explicitness is the reason we have &lt;code&gt;Box&amp;lt;ValidationResponse&amp;lt;ValidatedOrder&amp;gt;&amp;gt;&lt;/code&gt; in the Rust case: we’re explicitly returning a &lt;em&gt;pointer&lt;/em&gt; to the type here. In Elm, F&lt;sup&gt;♯&lt;/sup&gt;, and Reason, that’s &lt;em&gt;always&lt;/em&gt; the case. But in Rust, you can and often do return heap-allocated data and rely on “move” semantics to copy or alias it properly under the hood.&lt;/p&gt;
+&lt;p&gt;That same underlying focus on performance and explicitness is the reason we have &lt;code&gt;Box&amp;lt;ValidationResponse&amp;lt;ValidatedOrder&amp;gt;&amp;gt;&lt;/code&gt; in the Rust case: we’re explicitly returning a &lt;em&gt;pointer&lt;/em&gt; to the type here. In Elm, F&lt;sup&gt;♯&lt;/sup&gt;, and Reason, that’s &lt;em&gt;always&lt;/em&gt; the case. But in Rust, you can and often do return stack-allocated data and rely on “move” semantics to copy or alias it properly under the hood.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="summary" class="level2"&gt;
 &lt;h2&gt;Summary&lt;/h2&gt;
