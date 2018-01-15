@@ -219,11 +219,11 @@ fn validate_order(unvalidated: UnvalidatedOrder) -> Box<ValidationResponse<Valid
 }
 ```
 
-Elm (using the built-in `Task` type for eventual computation):
+Elm (using the built-in `Task` type for eventual computation; `Task`s encapsulate both eventuality and the possibility of failure):
 
 ```elm
 type ValidationResponse a
-    = Task a (List ValidationError)
+    = Task (List ValidationError) a
 
 type alias ValidateOrder =
     UnvalidatedOrder -> ValidationResponse ValidatedOrder

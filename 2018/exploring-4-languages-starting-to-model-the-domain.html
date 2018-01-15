@@ -222,9 +222,9 @@ type orderId = undefined;</code></pre>
 fn validate_order(unvalidated: UnvalidatedOrder) -&gt; Box&lt;ValidationResponse&lt;ValidatedOrder&gt;&gt; {
     unimplemented!()
 }</code></pre>
-<p>Elm (using the built-in <code>Task</code> type for eventual computation):</p>
+<p>Elm (using the built-in <code>Task</code> type for eventual computation; <code>Task</code>s encapsulate both eventuality and the possibility of failure):</p>
 <pre class="elm"><code>type ValidationResponse a
-    = Task a (List ValidationError)
+    = Task (List ValidationError) a
 
 type alias ValidateOrder =
     UnvalidatedOrder -&gt; ValidationResponse ValidatedOrder</code></pre>
