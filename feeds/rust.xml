@@ -1,5 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - rust</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Mon, 01 Jan 2018 13:00:00 -0500</lastBuildDate><item><title>Exploring 4 Languages: Project Setup</title><link>http://www.chriskrycho.com/2018/exploring-4-languages-project-setup.html</link><description>&lt;p&gt;In this post, I’m just going to briefly talk through the steps I needed to do to set up each of the languages and my editor setup for them. Gladly, it was pretty simple. At the end, I’ll offer a note on my thoughts on the setup processes. (Note that this isn’t “How to do this for anyone ever”—it’s “how I did it, with some notes where it might be relevant to you.”)&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - rust</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 14 Jan 2018 09:00:00 -0500</lastBuildDate><item><title>Exploring 4 Languages: Starting to Model the Domain</title><link>http://www.chriskrycho.com/2018/exploring-4-languages-starting-to-model-the-domain.html</link><description>&lt;p&gt;In the first three chapters of &lt;em&gt;Domain Modeling Made Functional&lt;/em&gt;, Wlaschin walks through the creation of a “domain model” for an order-taking system. (It’s well worth reading the book just for a bunch of the lessons in that section—I found them quite helpful!) Then, after spending a chapter introducing F&lt;sup&gt;♯&lt;/sup&gt;’s type system, he introduces the ways you can &lt;em&gt;use&lt;/em&gt; those type mechanics to express the domain. In today’s post, I’ll show the idiomatic implementations of these types in each of Rust, Elm, F&lt;sup&gt;#&lt;/sup&gt;, and ReasonML.&lt;/p&gt;
+&lt;section id="simple-values" class="level2"&gt;
+&lt;h2&gt;Simple values&lt;/h2&gt;
+&lt;p&gt;Simple wrapper types let you take simple types like strings, numbers, etc. and use types to represent part of the business domain you’re dealing with—the basic idea being that a Customer ID may be a number, but it’s not interchangeable with &lt;em&gt;other&lt;/em&gt; numbers such as Order IDs.&lt;/p&gt;
+&lt;p&gt;Here’s the most ergonomic and effective (and automatically-formatted in line with the language standards, where applicable!) way to do that in each of the languages:&lt;/p&gt;
+&lt;p&gt;Rust:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;struct CustomerId(i32);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Elm:&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;type CustomerId
+    = CustomerId Int&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;F&lt;sup&gt;♯&lt;/sup&gt;:&lt;/p&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;type CustomerId = CustomerId of int&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ReasonML:&lt;/p&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;type customerId =
+  | CustomerId(int);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note how similar these all are! The Rust implementation is the &lt;em&gt;most&lt;/em&gt; distinctive, though you can do it with the same kind of union type as the others. Here’s how that would look:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;enum CustomerId {
+  CustomerId(i32),
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For performance reasons, you might also choose to implement the F&lt;sup&gt;♯&lt;/sup&gt; type as a struct:&lt;/p&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;&amp;lt;Struct&amp;gt;
+type CustomerId = CustomerId of int&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="complex-data" class="level2"&gt;
+&lt;h2&gt;Complex data&lt;/h2&gt;
+&lt;p&gt;Wlaschin then moves on to showing how to model more complex data structures: types that “and” or “or” together other data. We “and” data together using record or struct types, and “or” data together using “union” or “enum” types.&lt;/p&gt;
+&lt;p&gt;Rust:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;// &amp;quot;and&amp;quot;
+struct Order {
+    customer_info: CustomerInfo,
+    shipping_address: ShippingAddress,
+    billing_address: BillingAddress,
+    order_lines: Vec&amp;lt;OrderLine&amp;gt;,
+    billing_amount: BillingAmount,
+}
+
+// &amp;quot;or&amp;quot;
+enum ProductCode {
+    Widget(WidgetCode),
+    Gizmo(GizmoCode),
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Elm:&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;-- &amp;quot;and&amp;quot;
+type alias Order =
+    { customer_info : CustomerInfo
+    , shipping_address : ShippingAddress
+    , billing_address : BillingAddress
+    , order_lines : List OrderLine
+    , billing_amount : BillingAmount
+    }
+
+-- &amp;quot;or&amp;quot;
+type ProductCode
+    = Widget WidgetCode
+    | Gizmo GizmoCode&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;F&lt;sup&gt;♯&lt;/sup&gt;:&lt;/p&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;// &amp;quot;and&amp;quot;
+type Order = {
+    CustomerInfo : CustomerInfo
+    ShippingAddress : ShippingAddress
+    BillingAddress : BillingAddress
+    OrderLines : OrderLine list
+    AmountToBill: BillingAmount
+}
+
+// &amp;quot;or&amp;quot;
+type ProductCode =
+    | Widget of WidgetCode
+    | Gizmo of GizmoCode&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ReasonML:&lt;/p&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;/* &amp;quot;and&amp;quot; */
+type order = {
+  customerInfo,
+  shippingAddress,
+  billingAddress,
+  orderLine,
+  billingAmount
+};
+
+/* &amp;quot;or&amp;quot; */
+type productCode =
+  | Widget(widgetCode)
+  | Gizmo(gizmoCode);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;An interesting aside: unless you planned to reuse these types, you wouldn’t usually write these as standalone types with this many wrapper types in it in Rust in particular (even if the compiler would often recognize that it could squash them down for you).&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Instead, you’d normally write &lt;em&gt;only&lt;/em&gt; the base enum type to start, and refactor out the &lt;code&gt;struct&lt;/code&gt; wrapper later only if you found you needed it elsewhere:&lt;/p&gt;
+&lt;pre class="diff"&gt;&lt;code&gt;enum ProductCode {
+-    Widget(WidgetCode),
++    Widget(String),
+-    Gizmo(GizmoCode),
++    Gizmo(String),
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That said: given how the book is tackling things, and the fact that you might want to &lt;em&gt;validate&lt;/em&gt; these types… having them as these low-cost wrappers is probably worth it. (In fact, having read a bit further than I’ve managed to write out yet, I can guarantee it.)&lt;/p&gt;
+&lt;p&gt;We work through the rest of the basic types this way. But what about the types where we don’t yet have a good idea how we want to handle them?&lt;/p&gt;
+&lt;p&gt;Each of these languages gives us an out (or more than one) for how to say “I don’t know what to put here yet.”&lt;/p&gt;
+&lt;p&gt;Rust (which does not have a built-in &lt;code&gt;Never&lt;/code&gt; type… yet; see below):&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;// Make an empty enum (which you by definition cannot construct)
+enum Never {}
+
+// Use it throughout where we don&amp;#39;t know the type yet. It will
+// fail to compile anywhere we try to *use* this.
+type OrderId = Never;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Elm (which has a built-in &lt;code&gt;Never&lt;/code&gt; type):&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;--  It will fail to compile anywhere we try to *use* this.
+type alias OrderId =
+    Never&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;F&lt;sup&gt;#&lt;/sup&gt; (which &lt;em&gt;sort&lt;/em&gt; of does):&lt;/p&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;// Make a convenience type for the `exn`/`System.Exception` type
+type Undefined = exn
+
+type OrderId = Undefined&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Reason (which also &lt;em&gt;sort&lt;/em&gt; of does—identically with F&lt;sup&gt;#&lt;/sup&gt;):&lt;/p&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;/* Make a convenience type for the `exn`/`System.Exception` type */
+type undefined = exn
+
+/*
+  Use it throughout where we don&amp;#39;t know the type yet. It will
+  fail to compile anywhere we try to *use* this.
+ */
+type orderId = undefined&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For both F&lt;sup&gt;#&lt;/sup&gt; and Reason, that’s following Wlaschin’s example. The main reason to do that is to make explicit that we’re not wanting an unconstructable type in our domain model (weird though that idea is), but just something we haven’t &lt;em&gt;yet&lt;/em&gt; defined.&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;type OrderId = !;&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="workflows-and-functions" class="level2"&gt;
+&lt;h2&gt;Workflows and functions&lt;/h2&gt;
+&lt;p&gt;Once we have the basic types themselves in place, we need to write down the ways we transform between them. In a functional style, we’re not going to implement instance methods—though as we’ll see in the next post, what we do in Rust will have &lt;em&gt;some&lt;/em&gt; similarities to class methods—we’re going to implement standalone functions which take types and return other types.&lt;/p&gt;
+&lt;p&gt;Again, you’ll note that despite the common lineage, there is a fair amount of variation here. (Note that we’d also have defined the &lt;code&gt;UnvalidatedOrder&lt;/code&gt;, &lt;code&gt;ValidationError&lt;/code&gt;, and &lt;code&gt;ValidatedOrder&lt;/code&gt; types for all of this; I’m mostly interested in showing &lt;em&gt;new&lt;/em&gt; differences here.)&lt;/p&gt;
+&lt;p&gt;Rust (using the &lt;a href="https://github.com/alexcrichton/futures-rs"&gt;Futures&lt;/a&gt; library to represent eventual computation):&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;type ValidationResponse&amp;lt;T&amp;gt; = Future&amp;lt;Item = T, Error = ValidationError&amp;gt;;
+
+fn validate_order(unvalidated: UnvalidatedOrder) -&amp;gt; Box&amp;lt;ValidationResponse&amp;lt;ValidatedOrder&amp;gt;&amp;gt; {
+    unimplemented!()
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Elm (using the built-in &lt;code&gt;Task&lt;/code&gt; type for eventual computation):&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;type ValidationResponse a
+    = Task a (List ValidationError)
+
+type alias ValidateOrder =
+    UnvalidatedOrder -&amp;gt; ValidationResponse ValidatedOrder&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;F&lt;sup&gt;#&lt;/sup&gt; (using the built-in &lt;code&gt;Async&lt;/code&gt; type for eventual computation):&lt;/p&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;type ValidationResponse&amp;lt;&amp;#39;a&amp;gt; = Async&amp;lt;Result&amp;lt;&amp;#39;a,ValidationError list&amp;gt;&amp;gt;
+
+type ValidateOrder =
+    UnvalidatedOrder -&amp;gt; ValidationResponse&amp;lt;ValidatedOrder&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Reason (using the built-in JavaScript-specific &lt;code&gt;Js.Promise&lt;/code&gt; type—which is exactly what it sounds like—for eventual computation):&lt;/p&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;type validationResponse(&amp;#39;a) = Js.Promise.t(Js.Result.t(&amp;#39;a, list(validationError)));
+
+type validateOrder = unvalidatedOrder =&amp;gt; validationResponse(validatedOrder);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once again Rust is much &lt;em&gt;more&lt;/em&gt; different here from the others than they are from each other. The biggest difference between Elm, F&lt;sup&gt;#&lt;/sup&gt;, and Reason is how they handle generics and type parameters.&lt;/p&gt;
+&lt;p&gt;You’ll note that in Elm, they just follow the name of the wrapping type. This is a kind of syntactic symmetry: the way you &lt;em&gt;name&lt;/em&gt; a generic type like this is the same basic way you &lt;em&gt;construct&lt;/em&gt; it. It’s quite elegant. And as it turns out, the same is true of Reason; it’s just that its authors have chosen to follow OCaml and use parentheses for them instead of following Haskell with spaces—a reasonable choice, given Reason is surface syntax for OCaml and not Haskell. F&lt;sup&gt;#&lt;/sup&gt; uses angle brackets, I strongly suspect, because that’s what C&lt;sup&gt;#&lt;/sup&gt; uses for generics, and keeping them syntactically aligned in things like this is very helpful.&lt;/p&gt;
+&lt;p&gt;Rust uses angle brackets for generics, just as F&lt;sup&gt;#&lt;/sup&gt; does, but we haven’t written out a &lt;em&gt;type&lt;/em&gt; declaration here; we’ve actually written out a stub of a function, with the &lt;a href="https://doc.rust-lang.org/std/macro.unimplemented.html"&gt;&lt;code&gt;unimplemented!()&lt;/code&gt;&lt;/a&gt; &lt;a href="https://doc.rust-lang.org/1.17.0/reference/macros-by-example.html"&gt;macro&lt;/a&gt;. If you invoke this function, you’ll get a clear crash with an explanation of which function isn’t implemented.&lt;/p&gt;
+&lt;p&gt;Now, Rust also &lt;em&gt;does&lt;/em&gt; let us write out the type of these functions as type aliases if we want:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;type VaidateOrder =
+    Fn(UnvalidatedOrder) -&amp;gt; Box&amp;lt;ValidationResponse&amp;lt;ValidatedOrder&amp;gt;&amp;gt;;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You just don’t use these very often in idiomatic Rust; it’s much more conventional to simply write out what I did above. However, the one time you &lt;em&gt;might&lt;/em&gt; use a type alias like this is when you’re defining the type of a closure and you don’t want to write it inline. This is a pretty sharp difference between Rust and the other languages on display here, and it goes to the difference in their approaches.&lt;/p&gt;
+&lt;p&gt;Rust is &lt;em&gt;not&lt;/em&gt; a functional-first language in the way that each of the others are, though it certainly draws heavily on ideas from functional programming throughout and makes quite a few affordances for a functional style. Instead, it’s a programming language first and foremost interested in combining the most screaming performance possible with true safety, and leaning on ideas from the ML family (among others!) as part of achieving that.&lt;/p&gt;
+&lt;p&gt;Among other things, this is why you don’t have currying or partial application in Rust: those essentially &lt;em&gt;require&lt;/em&gt; you to have invisible heap-allocation to be ergonomic. We &lt;em&gt;don’t&lt;/em&gt; have that in Rust, as we do in Elm, Reason, and F&lt;sup&gt;#&lt;/sup&gt;. If we want to pass around a function, we have to explicitly wrap it in a pointer to hand it around if we construct it in another function. (I won’t go into more of the details of this here; I’ve covered it some &lt;a href="http://www.newrustacean.com/show_notes/e004/index.html"&gt;on New Rustacean&lt;/a&gt; and some &lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-viii.html"&gt;in my Rust and Swift comparison&lt;/a&gt; a couple years ago.)&lt;/p&gt;
+&lt;p&gt;That same underlying focus on performance and explicitness is the reason we have &lt;code&gt;Box&amp;lt;ValidationResponse&amp;lt;ValidatedOrder&amp;gt;&amp;gt;&lt;/code&gt; in the Rust case: we’re explicitly returning a &lt;em&gt;pointer&lt;/em&gt; to the type here. In Elm, F&lt;sup&gt;#&lt;/sup&gt;, and Reason, that’s &lt;em&gt;always&lt;/em&gt; the case. But in Rust, you can and often do return heap-allocated data and rely on “move” semantics to copy or alias it properly under the hood.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="summary" class="level2"&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;So: lots of similarities here at first blush. The biggest differences that show up at this point are purely syntactical, other than some mildly sharper differences with Rust because of its focus on performance. The fact that these languages share a common lineage means it’s not hard to read any of them if you’re familiar with the others, and it’s actually quite easy to switch between them at the levels of both syntax and semantics.&lt;/p&gt;
+&lt;p&gt;As usual, when dealing with languages in a relatively similar family, it’s &lt;em&gt;most&lt;/em&gt; difficult to learn the &lt;em&gt;library&lt;/em&gt; differences. The most obvious example of that here is Reason’s &lt;code&gt;Js.Promise&lt;/code&gt;, Elm’s &lt;code&gt;Task&lt;/code&gt;, F&lt;sup&gt;#&lt;/sup&gt;’s &lt;code&gt;Async&lt;/code&gt;, and Rust’s &lt;code&gt;Future&lt;/code&gt; types: each of those has their own quirks, their own associated helper functions or methods, and their own ways of handling the same basic patterns.&lt;/p&gt;
+&lt;p&gt;Still, if you have played with any one of these, you could pretty easily pick up one of the others. It’s sort of like switching between Python and Ruby: there are some real differences there, but the similarities are greater than the differences. Indeed, if anything, these languages are &lt;em&gt;more&lt;/em&gt; similar than those.&lt;/p&gt;
+&lt;p&gt;Next time I’ll dig into Wlaschin’s chapter on &lt;em&gt;validating&lt;/em&gt; the domain model, and here some of the not-just-syntax-level differences in the languages will start to become more apparent.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;I can’t speak to what’s idiomatic this way in any of the non-Rust languages, because I just haven’t used them enough yet.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 14 Jan 2018 09:00:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-01-14:/2018/exploring-4-languages-starting-to-model-the-domain.html</guid><category>functional programming</category><category>rust</category><category>elm</category><category>fsharp</category><category>reasonml</category><category>domain-driven design</category><category>four-languages</category></item><item><title>Exploring 4 Languages: Project Setup</title><link>http://www.chriskrycho.com/2018/exploring-4-languages-project-setup.html</link><description>&lt;p&gt;In this post, I’m just going to briefly talk through the steps I needed to do to set up each of the languages and my editor setup for them. Gladly, it was pretty simple. At the end, I’ll offer a note on my thoughts on the setup processes. (Note that this isn’t “How to do this for anyone ever”—it’s “how I did it, with some notes where it might be relevant to you.”)&lt;/p&gt;
 &lt;p&gt;For context, I’m running macOS and using &lt;a href="https://code.visualstudio.com"&gt;VS Code&lt;/a&gt; as my editor. Whenever I say “Install the VS Code extension,” you can do it either by opening the extension side panel and searching for &lt;code&gt;&amp;lt;Extension Name&amp;gt;&lt;/code&gt;, or by typing &lt;code&gt;ext install &amp;lt;extension label&amp;gt;&lt;/code&gt;—I’ll write it like &lt;code&gt;&amp;lt;Extension Name&amp;gt;&lt;/code&gt;/&lt;code&gt;&amp;lt;extension label&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The source code as of what I’m describing in this post is &lt;a href="https://github.com/chriskrycho/dmmf/tree/project-setup"&gt;at the &lt;code&gt;project-setup&lt;/code&gt; tag&lt;/a&gt; in &lt;a href="https://github.com/chriskrycho/dmmf/"&gt;the repo&lt;/a&gt;.&lt;/p&gt;
 &lt;section id="rust" class="level2"&gt;

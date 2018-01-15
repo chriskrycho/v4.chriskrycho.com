@@ -1,5 +1,332 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Wed, 10 Jan 2018 19:30:00 -0500</lastBuildDate><item><title>Getting the Right Things Done</title><link>http://www.chriskrycho.com/2018/getting-the-right-things-done.html</link><description>&lt;p&gt;Americans overrate &lt;em&gt;productivity&lt;/em&gt;. We emphasize it at the expense of nearly everything else. That goes for the most individual evaluations to the structures and decisions of megacorporations. Our goal is to extract every last bit of &lt;em&gt;work&lt;/em&gt; from ourselves we can. And this is, in a word, &lt;em&gt;bad&lt;/em&gt;. It is bad not because work is bad, but because it is a good thing become the &lt;em&gt;only&lt;/em&gt; thing. (This is the usual way humans mess things up: we take good things and make them ultimate, when nothing we make or do can bear that weight.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;)&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 14 Jan 2018 09:00:00 -0500</lastBuildDate><item><title>Exploring 4 Languages: Starting to Model the Domain</title><link>http://www.chriskrycho.com/2018/exploring-4-languages-starting-to-model-the-domain.html</link><description>&lt;p&gt;In the first three chapters of &lt;em&gt;Domain Modeling Made Functional&lt;/em&gt;, Wlaschin walks through the creation of a “domain model” for an order-taking system. (It’s well worth reading the book just for a bunch of the lessons in that section—I found them quite helpful!) Then, after spending a chapter introducing F&lt;sup&gt;♯&lt;/sup&gt;’s type system, he introduces the ways you can &lt;em&gt;use&lt;/em&gt; those type mechanics to express the domain. In today’s post, I’ll show the idiomatic implementations of these types in each of Rust, Elm, F&lt;sup&gt;#&lt;/sup&gt;, and ReasonML.&lt;/p&gt;
+&lt;section id="simple-values" class="level2"&gt;
+&lt;h2&gt;Simple values&lt;/h2&gt;
+&lt;p&gt;Simple wrapper types let you take simple types like strings, numbers, etc. and use types to represent part of the business domain you’re dealing with—the basic idea being that a Customer ID may be a number, but it’s not interchangeable with &lt;em&gt;other&lt;/em&gt; numbers such as Order IDs.&lt;/p&gt;
+&lt;p&gt;Here’s the most ergonomic and effective (and automatically-formatted in line with the language standards, where applicable!) way to do that in each of the languages:&lt;/p&gt;
+&lt;p&gt;Rust:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;struct CustomerId(i32);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Elm:&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;type CustomerId
+    = CustomerId Int&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;F&lt;sup&gt;♯&lt;/sup&gt;:&lt;/p&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;type CustomerId = CustomerId of int&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ReasonML:&lt;/p&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;type customerId =
+  | CustomerId(int);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note how similar these all are! The Rust implementation is the &lt;em&gt;most&lt;/em&gt; distinctive, though you can do it with the same kind of union type as the others. Here’s how that would look:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;enum CustomerId {
+  CustomerId(i32),
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For performance reasons, you might also choose to implement the F&lt;sup&gt;♯&lt;/sup&gt; type as a struct:&lt;/p&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;&amp;lt;Struct&amp;gt;
+type CustomerId = CustomerId of int&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="complex-data" class="level2"&gt;
+&lt;h2&gt;Complex data&lt;/h2&gt;
+&lt;p&gt;Wlaschin then moves on to showing how to model more complex data structures: types that “and” or “or” together other data. We “and” data together using record or struct types, and “or” data together using “union” or “enum” types.&lt;/p&gt;
+&lt;p&gt;Rust:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;// &amp;quot;and&amp;quot;
+struct Order {
+    customer_info: CustomerInfo,
+    shipping_address: ShippingAddress,
+    billing_address: BillingAddress,
+    order_lines: Vec&amp;lt;OrderLine&amp;gt;,
+    billing_amount: BillingAmount,
+}
+
+// &amp;quot;or&amp;quot;
+enum ProductCode {
+    Widget(WidgetCode),
+    Gizmo(GizmoCode),
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Elm:&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;-- &amp;quot;and&amp;quot;
+type alias Order =
+    { customer_info : CustomerInfo
+    , shipping_address : ShippingAddress
+    , billing_address : BillingAddress
+    , order_lines : List OrderLine
+    , billing_amount : BillingAmount
+    }
+
+-- &amp;quot;or&amp;quot;
+type ProductCode
+    = Widget WidgetCode
+    | Gizmo GizmoCode&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;F&lt;sup&gt;♯&lt;/sup&gt;:&lt;/p&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;// &amp;quot;and&amp;quot;
+type Order = {
+    CustomerInfo : CustomerInfo
+    ShippingAddress : ShippingAddress
+    BillingAddress : BillingAddress
+    OrderLines : OrderLine list
+    AmountToBill: BillingAmount
+}
+
+// &amp;quot;or&amp;quot;
+type ProductCode =
+    | Widget of WidgetCode
+    | Gizmo of GizmoCode&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ReasonML:&lt;/p&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;/* &amp;quot;and&amp;quot; */
+type order = {
+  customerInfo,
+  shippingAddress,
+  billingAddress,
+  orderLine,
+  billingAmount
+};
+
+/* &amp;quot;or&amp;quot; */
+type productCode =
+  | Widget(widgetCode)
+  | Gizmo(gizmoCode);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;An interesting aside: unless you planned to reuse these types, you wouldn’t usually write these as standalone types with this many wrapper types in it in Rust in particular (even if the compiler would often recognize that it could squash them down for you).&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Instead, you’d normally write &lt;em&gt;only&lt;/em&gt; the base enum type to start, and refactor out the &lt;code&gt;struct&lt;/code&gt; wrapper later only if you found you needed it elsewhere:&lt;/p&gt;
+&lt;pre class="diff"&gt;&lt;code&gt;enum ProductCode {
+-    Widget(WidgetCode),
++    Widget(String),
+-    Gizmo(GizmoCode),
++    Gizmo(String),
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That said: given how the book is tackling things, and the fact that you might want to &lt;em&gt;validate&lt;/em&gt; these types… having them as these low-cost wrappers is probably worth it. (In fact, having read a bit further than I’ve managed to write out yet, I can guarantee it.)&lt;/p&gt;
+&lt;p&gt;We work through the rest of the basic types this way. But what about the types where we don’t yet have a good idea how we want to handle them?&lt;/p&gt;
+&lt;p&gt;Each of these languages gives us an out (or more than one) for how to say “I don’t know what to put here yet.”&lt;/p&gt;
+&lt;p&gt;Rust (which does not have a built-in &lt;code&gt;Never&lt;/code&gt; type… yet; see below):&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;// Make an empty enum (which you by definition cannot construct)
+enum Never {}
+
+// Use it throughout where we don&amp;#39;t know the type yet. It will
+// fail to compile anywhere we try to *use* this.
+type OrderId = Never;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Elm (which has a built-in &lt;code&gt;Never&lt;/code&gt; type):&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;--  It will fail to compile anywhere we try to *use* this.
+type alias OrderId =
+    Never&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;F&lt;sup&gt;#&lt;/sup&gt; (which &lt;em&gt;sort&lt;/em&gt; of does):&lt;/p&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;// Make a convenience type for the `exn`/`System.Exception` type
+type Undefined = exn
+
+type OrderId = Undefined&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Reason (which also &lt;em&gt;sort&lt;/em&gt; of does—identically with F&lt;sup&gt;#&lt;/sup&gt;):&lt;/p&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;/* Make a convenience type for the `exn`/`System.Exception` type */
+type undefined = exn
+
+/*
+  Use it throughout where we don&amp;#39;t know the type yet. It will
+  fail to compile anywhere we try to *use* this.
+ */
+type orderId = undefined&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For both F&lt;sup&gt;#&lt;/sup&gt; and Reason, that’s following Wlaschin’s example. The main reason to do that is to make explicit that we’re not wanting an unconstructable type in our domain model (weird though that idea is), but just something we haven’t &lt;em&gt;yet&lt;/em&gt; defined.&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;type OrderId = !;&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="workflows-and-functions" class="level2"&gt;
+&lt;h2&gt;Workflows and functions&lt;/h2&gt;
+&lt;p&gt;Once we have the basic types themselves in place, we need to write down the ways we transform between them. In a functional style, we’re not going to implement instance methods—though as we’ll see in the next post, what we do in Rust will have &lt;em&gt;some&lt;/em&gt; similarities to class methods—we’re going to implement standalone functions which take types and return other types.&lt;/p&gt;
+&lt;p&gt;Again, you’ll note that despite the common lineage, there is a fair amount of variation here. (Note that we’d also have defined the &lt;code&gt;UnvalidatedOrder&lt;/code&gt;, &lt;code&gt;ValidationError&lt;/code&gt;, and &lt;code&gt;ValidatedOrder&lt;/code&gt; types for all of this; I’m mostly interested in showing &lt;em&gt;new&lt;/em&gt; differences here.)&lt;/p&gt;
+&lt;p&gt;Rust (using the &lt;a href="https://github.com/alexcrichton/futures-rs"&gt;Futures&lt;/a&gt; library to represent eventual computation):&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;type ValidationResponse&amp;lt;T&amp;gt; = Future&amp;lt;Item = T, Error = ValidationError&amp;gt;;
+
+fn validate_order(unvalidated: UnvalidatedOrder) -&amp;gt; Box&amp;lt;ValidationResponse&amp;lt;ValidatedOrder&amp;gt;&amp;gt; {
+    unimplemented!()
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Elm (using the built-in &lt;code&gt;Task&lt;/code&gt; type for eventual computation):&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;type ValidationResponse a
+    = Task a (List ValidationError)
+
+type alias ValidateOrder =
+    UnvalidatedOrder -&amp;gt; ValidationResponse ValidatedOrder&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;F&lt;sup&gt;#&lt;/sup&gt; (using the built-in &lt;code&gt;Async&lt;/code&gt; type for eventual computation):&lt;/p&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;type ValidationResponse&amp;lt;&amp;#39;a&amp;gt; = Async&amp;lt;Result&amp;lt;&amp;#39;a,ValidationError list&amp;gt;&amp;gt;
+
+type ValidateOrder =
+    UnvalidatedOrder -&amp;gt; ValidationResponse&amp;lt;ValidatedOrder&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Reason (using the built-in JavaScript-specific &lt;code&gt;Js.Promise&lt;/code&gt; type—which is exactly what it sounds like—for eventual computation):&lt;/p&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;type validationResponse(&amp;#39;a) = Js.Promise.t(Js.Result.t(&amp;#39;a, list(validationError)));
+
+type validateOrder = unvalidatedOrder =&amp;gt; validationResponse(validatedOrder);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Once again Rust is much &lt;em&gt;more&lt;/em&gt; different here from the others than they are from each other. The biggest difference between Elm, F&lt;sup&gt;#&lt;/sup&gt;, and Reason is how they handle generics and type parameters.&lt;/p&gt;
+&lt;p&gt;You’ll note that in Elm, they just follow the name of the wrapping type. This is a kind of syntactic symmetry: the way you &lt;em&gt;name&lt;/em&gt; a generic type like this is the same basic way you &lt;em&gt;construct&lt;/em&gt; it. It’s quite elegant. And as it turns out, the same is true of Reason; it’s just that its authors have chosen to follow OCaml and use parentheses for them instead of following Haskell with spaces—a reasonable choice, given Reason is surface syntax for OCaml and not Haskell. F&lt;sup&gt;#&lt;/sup&gt; uses angle brackets, I strongly suspect, because that’s what C&lt;sup&gt;#&lt;/sup&gt; uses for generics, and keeping them syntactically aligned in things like this is very helpful.&lt;/p&gt;
+&lt;p&gt;Rust uses angle brackets for generics, just as F&lt;sup&gt;#&lt;/sup&gt; does, but we haven’t written out a &lt;em&gt;type&lt;/em&gt; declaration here; we’ve actually written out a stub of a function, with the &lt;a href="https://doc.rust-lang.org/std/macro.unimplemented.html"&gt;&lt;code&gt;unimplemented!()&lt;/code&gt;&lt;/a&gt; &lt;a href="https://doc.rust-lang.org/1.17.0/reference/macros-by-example.html"&gt;macro&lt;/a&gt;. If you invoke this function, you’ll get a clear crash with an explanation of which function isn’t implemented.&lt;/p&gt;
+&lt;p&gt;Now, Rust also &lt;em&gt;does&lt;/em&gt; let us write out the type of these functions as type aliases if we want:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;type VaidateOrder =
+    Fn(UnvalidatedOrder) -&amp;gt; Box&amp;lt;ValidationResponse&amp;lt;ValidatedOrder&amp;gt;&amp;gt;;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You just don’t use these very often in idiomatic Rust; it’s much more conventional to simply write out what I did above. However, the one time you &lt;em&gt;might&lt;/em&gt; use a type alias like this is when you’re defining the type of a closure and you don’t want to write it inline. This is a pretty sharp difference between Rust and the other languages on display here, and it goes to the difference in their approaches.&lt;/p&gt;
+&lt;p&gt;Rust is &lt;em&gt;not&lt;/em&gt; a functional-first language in the way that each of the others are, though it certainly draws heavily on ideas from functional programming throughout and makes quite a few affordances for a functional style. Instead, it’s a programming language first and foremost interested in combining the most screaming performance possible with true safety, and leaning on ideas from the ML family (among others!) as part of achieving that.&lt;/p&gt;
+&lt;p&gt;Among other things, this is why you don’t have currying or partial application in Rust: those essentially &lt;em&gt;require&lt;/em&gt; you to have invisible heap-allocation to be ergonomic. We &lt;em&gt;don’t&lt;/em&gt; have that in Rust, as we do in Elm, Reason, and F&lt;sup&gt;#&lt;/sup&gt;. If we want to pass around a function, we have to explicitly wrap it in a pointer to hand it around if we construct it in another function. (I won’t go into more of the details of this here; I’ve covered it some &lt;a href="http://www.newrustacean.com/show_notes/e004/index.html"&gt;on New Rustacean&lt;/a&gt; and some &lt;a href="http://www.chriskrycho.com/2015/rust-and-swift-viii.html"&gt;in my Rust and Swift comparison&lt;/a&gt; a couple years ago.)&lt;/p&gt;
+&lt;p&gt;That same underlying focus on performance and explicitness is the reason we have &lt;code&gt;Box&amp;lt;ValidationResponse&amp;lt;ValidatedOrder&amp;gt;&amp;gt;&lt;/code&gt; in the Rust case: we’re explicitly returning a &lt;em&gt;pointer&lt;/em&gt; to the type here. In Elm, F&lt;sup&gt;#&lt;/sup&gt;, and Reason, that’s &lt;em&gt;always&lt;/em&gt; the case. But in Rust, you can and often do return heap-allocated data and rely on “move” semantics to copy or alias it properly under the hood.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="summary" class="level2"&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;So: lots of similarities here at first blush. The biggest differences that show up at this point are purely syntactical, other than some mildly sharper differences with Rust because of its focus on performance. The fact that these languages share a common lineage means it’s not hard to read any of them if you’re familiar with the others, and it’s actually quite easy to switch between them at the levels of both syntax and semantics.&lt;/p&gt;
+&lt;p&gt;As usual, when dealing with languages in a relatively similar family, it’s &lt;em&gt;most&lt;/em&gt; difficult to learn the &lt;em&gt;library&lt;/em&gt; differences. The most obvious example of that here is Reason’s &lt;code&gt;Js.Promise&lt;/code&gt;, Elm’s &lt;code&gt;Task&lt;/code&gt;, F&lt;sup&gt;#&lt;/sup&gt;’s &lt;code&gt;Async&lt;/code&gt;, and Rust’s &lt;code&gt;Future&lt;/code&gt; types: each of those has their own quirks, their own associated helper functions or methods, and their own ways of handling the same basic patterns.&lt;/p&gt;
+&lt;p&gt;Still, if you have played with any one of these, you could pretty easily pick up one of the others. It’s sort of like switching between Python and Ruby: there are some real differences there, but the similarities are greater than the differences. Indeed, if anything, these languages are &lt;em&gt;more&lt;/em&gt; similar than those.&lt;/p&gt;
+&lt;p&gt;Next time I’ll dig into Wlaschin’s chapter on &lt;em&gt;validating&lt;/em&gt; the domain model, and here some of the not-just-syntax-level differences in the languages will start to become more apparent.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;I can’t speak to what’s idiomatic this way in any of the non-Rust languages, because I just haven’t used them enough yet.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 14 Jan 2018 09:00:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-01-14:/2018/exploring-4-languages-starting-to-model-the-domain.html</guid><category>functional programming</category><category>rust</category><category>elm</category><category>fsharp</category><category>reasonml</category><category>domain-driven design</category><category>four-languages</category></item><item><title>Using Ember.js in your Apps Today, Redux</title><link>http://www.chriskrycho.com/2018/typing-your-ember-using-today-redux.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Back in July 2017, I wrote &lt;a href="http://www.chriskrycho.com/2017/typing-your-ember-part-3.html"&gt;a post&lt;/a&gt; on how to using TypeScript in your Ember.js apps. At the time, we were still busy working on getting the typings more solid for Ember itself, and &lt;code&gt;class&lt;/code&gt; syntax for Ember was a long way away.&lt;/p&gt;
+&lt;p&gt;Things have gotten quite a bit better since then, so I thought I’d update that post with recommendations for using TypeScript in an app &lt;em&gt;now&lt;/em&gt; with the updated typings, as well as with another six months of experience using TypeScript in our app at Olo (~20k lines of code in the app and another ~15k in tests).&lt;/p&gt;
+&lt;aside&gt;
+&lt;p&gt;If you’re interested in all of this and would like to learn more in person, I’m &lt;a href="http://emberconf.com/speakers.html#chris-krycho"&gt;leading a workshop on it at EmberConf 2018&lt;/a&gt;—I’d love to see you there!&lt;/p&gt;
+&lt;/aside&gt;
+&lt;section id="normal-ember-objects" class="level2"&gt;
+&lt;h2&gt;Normal Ember objects&lt;/h2&gt;
+&lt;p&gt;For normal Ember objects, things now &lt;em&gt;mostly&lt;/em&gt; just work if you’re using class-based syntax, with a single (though very important) qualification I’ll get to in a minute. And you can use the class-based syntax &lt;em&gt;today&lt;/em&gt; in Ember.js—all the way back to 1.13, as it turns out. If you want to learn more, you can read &lt;a href="https://github.com/emberjs/rfcs/blob/master/text/0240-es-classes.md"&gt;this RFC&lt;/a&gt; or &lt;a href="https://medium.com/build-addepar/es-classes-in-ember-js-63e948e9d78e"&gt;this blog post&lt;/a&gt;, both by &lt;a href="https://github.com/pzuraq"&gt;@pzuraq (Chris Garrett)&lt;/a&gt;, who did most of the legwork to research this and flesh out the constraints, and who has also been doing a lot of work on &lt;a href="https://ember-decorators.github.io/ember-decorators/docs/index.html"&gt;Ember Decorators&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A few quick notes before I dig into some specific examples&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;!-- `class` vs. using variables and "Cannot use 'new' with an expression whose type lacks a call or construct signature." --&gt;&lt;/li&gt;
+&lt;li&gt;&lt;!-- --&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;section id="a-detailed-example" class="level3"&gt;
+&lt;h3&gt;A detailed example&lt;/h3&gt;
+&lt;p&gt;That means that every new bit of code I write today in our app looks roughly like this, with only the obvious modifications for services, routes, and controllers—I picked components because they’re far and away the most common things in our applications.&lt;/p&gt;
+&lt;p&gt;In order to explain all this clearly, I’m going to first show the whole component, then zoom in on and explain specific parts of it.&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { computed } from &amp;#39;@ember/object&amp;#39;;
+import Computed from &amp;#39;@ember/object/computed&amp;#39;;
+import { inject as service } from &amp;#39;@ember/service&amp;#39;;
+import { assert } from &amp;#39;@ember/debug&amp;#39;;
+import { isNone } from &amp;#39;@ember/utils&amp;#39;;
+
+import Session from &amp;#39;my-app/services/session&amp;#39;
+import Person from &amp;#39;my-app/models/person&amp;#39;;
+
+export default class MyComponent extends Component {
+  // Component arguments
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`
+  
+  // Injections
+  session: Computed&amp;lt;Session&amp;gt; = service();
+
+  // class properties
+  aString = &amp;#39;this is fine&amp;#39;;
+  aCollection: string[] = [];
+  
+  // TypeScript correctly infers that this has the type Computed&amp;lt;number&amp;gt;
+  aComputed = computed(&amp;#39;aString&amp;#39;, function(this: MyComponent): number {
+    return this.get(&amp;#39;lookAString&amp;#39;).length;
+  });
+  
+  isLoggedIn = bool(&amp;#39;session.user&amp;#39;);
+
+  // But some things, TypeScript does not and cannot validate -- a number
+  // of the computed property macros are in this bucket, because they assume
+  // 
+  savedUser: Computed&amp;lt;Person&amp;gt; = alias(&amp;#39;session.user&amp;#39;);
+  
+  actions = {
+    addToCollection(this: MyComponent, value: string) {
+      const current = this.get(&amp;#39;aCollection&amp;#39;);
+      this.set(&amp;#39;aCollection&amp;#39;, current.concat(value));
+    }
+  };
+  
+  constructor() {
+    super();
+    assert(&amp;#39;`model` is required&amp;#39;, !isNone(this.model));
+    
+    this.includeAhoy();
+  }
+  
+  includeAhoy(this: MyComponent) {
+    if (!this.get(&amp;#39;aCollection&amp;#39;).includes(&amp;#39;ahoy&amp;#39;)) {
+      this.set(&amp;#39;aCollection&amp;#39;, current.concat(&amp;#39;ahoy&amp;#39;));
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;section id="component-arguments" class="level4"&gt;
+&lt;h4&gt;Component arguments&lt;/h4&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;export default class MyComponent extends Component {
+  // Component arguments
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I always put these first so that the “interface” of the object is clear and obvious. You can do the same thing on a controller instance; in that case you would export a &lt;code&gt;Model&lt;/code&gt; from the corresponding &lt;code&gt;Route&lt;/code&gt; class and import it into the &lt;code&gt;Controller&lt;/code&gt;. It’s a bit of boilerplate, to be sure, but it lets you communicate your interface clearly to consumers of the &lt;code&gt;Component&lt;/code&gt; or &lt;code&gt;Controller&lt;/code&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="injections" class="level4"&gt;
+&lt;h4&gt;Injections&lt;/h4&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;  // Injections
+  session: Computed&amp;lt;Session&amp;gt; = service();&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here, the most important thing to note is the type annotation. In principle, we could work around this by requiring you to explicitly name the service and using a “type registry” – more on that below in my discussion of using Ember Data – but I’m not yet persuaded that’s better than just writing the appropriate type annotation. Notice that because TypeScript is a &lt;em&gt;structural&lt;/em&gt; type system, it doesn’t matter if what is passed in is the actual &lt;code&gt;Session&lt;/code&gt; service; it just needs to be something that &lt;em&gt;matches the shape&lt;/em&gt; of the service – so your normal behavior around dependency injection, etc. is all still as expected.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="class-properties" class="level4"&gt;
+&lt;h4&gt;Class properties&lt;/h4&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;  // class properties
+  aString = &amp;#39;this is fine&amp;#39;;
+  aCollection: string[] = [];&lt;/code&gt;&lt;/pre&gt;
+&lt;!-- TODO: note what they're compiled to --&gt;
+&lt;!-- TODO: explain consequence of that for the `[]` type --&gt;
+&lt;/section&gt;
+&lt;section id="computed-properties" class="level4"&gt;
+&lt;h4&gt;Computed properties&lt;/h4&gt;
+&lt;!-- TODO --&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="variants" class="level3"&gt;
+&lt;h3&gt;Variants&lt;/h3&gt;
+&lt;p&gt;There are two times when things will look different.&lt;/p&gt;
+&lt;p&gt;The first is when you’re using properties that need to be merged with properties in the prototype chain, e.g. &lt;code&gt;attributeBindings&lt;/code&gt; or &lt;code&gt;classNameBindings&lt;/code&gt;, or which (because of details of how components are constructed) have to be set on the prototype rather than as instance properties, e.g. &lt;code&gt;tagClass&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For those, we can just leverage &lt;code&gt;.extend&lt;/code&gt; in conjunction with classes:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+
+export default class MyListItem extends Component.extend({
+  tagName: &amp;#39;li&amp;#39;,
+  classNameBindings: [&amp;#39;itemClass&amp;#39;],
+}) {
+  itemClass = &amp;#39;this-be-a-list&amp;#39;;
+  
+  // etc.
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is also how you’ll &lt;em&gt;use&lt;/em&gt; mixins (on defining them, see below):&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import MyMixin from &amp;#39;my-app/mixins/my-mixin&amp;#39;;
+
+export default class MyComponent extends Component.extend(MyMixin) {
+  // the rest of the definition.
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note, however—and this is very important—that you cannot &lt;code&gt;.extend&lt;/code&gt; an existing &lt;code&gt;class&lt;/code&gt; implementation. As a result, deep inheritance hierarchies &lt;em&gt;may&lt;/em&gt; make transitioning to classes in Ember painful. (This isn’t a TypeScript limitation; it’s a limitation of classes in Ember today.)&lt;/p&gt;
+&lt;p&gt;In the future, we’ll (hopefully and presumably) have an escape hatch for those merged or prototypally-set properties via decorators. That’ll look something like this:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { className, tagName } from &amp;#39;ember-decorators/component&amp;#39;;
+
+@tagName(&amp;#39;li&amp;#39;)
+export default class MyListItem extends Component {
+  @className itemClass = &amp;#39;this-be-a-list&amp;#39;;
+  
+  // etc.
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The other time you’ll have to take a different tack is with types which don’t yet work properly with classes. The most common of these are &lt;code&gt;Mixin&lt;/code&gt;s and Ember Data objects. For &lt;code&gt;Mixin&lt;/code&gt;s, sadly, it’s difficult (if not impossible) to get rigorous type-checking in their definitions. However, you can add appropriate type definitions to them and those will be picked up in &lt;code&gt;class&lt;/code&gt;es which consume them.&lt;/p&gt;
+&lt;aside&gt;
+&lt;p&gt;Note that if you’re writing &lt;em&gt;new&lt;/em&gt; code in Ember.js—using TypeScript or not—I strongly encourage you to simply avoid using mixins at all. Instead, use services. This will require you to change how you write some of your code, but in my experience it also makes for a much more maintainable and easier-to-understand (and therefore easier-to-maintain) codebase.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="ember-data" class="level2"&gt;
+&lt;h2&gt;Ember Data&lt;/h2&gt;
+&lt;p&gt;There are two challenges to using Ember Data effectively with TypeScript today.&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Ember Data, for reasons I haven’t yet dug into myself, does not play nicely with ES6 classes. However, we &lt;em&gt;want&lt;/em&gt; named class exports for the sake of being able to use them&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;++TODO++&lt;/p&gt;
+&lt;p&gt;We also have some ideas and prototypes for how to make the experience of both of these much, &lt;em&gt;much&lt;/em&gt; better. Sometime soon-ish—hopefully before EmberConf, where I’d really like to &lt;em&gt;not&lt;/em&gt; have to mess with teaching the complicated ways above to make things work!—we should land a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Note for Ember CLI Mirage users: most of what I’ve said here is equally applicable and nearly identical for Mirage. I’m currently working on solid typings for Mirage that get us everything we need that way.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;If you’re curious about the mechanics, we’re basically setting up a “type registry” which maps the string keys to the correct model, so that the type of e.g. &lt;code&gt;store.createRecord('some-model', { ... })&lt;/code&gt; will do a lookup in an interface which defines a mapping from model name, i.e. &lt;code&gt;some-model&lt;/code&gt; here, to the model type, e.g. &lt;code&gt;export default class SomeModel extends DS.Model.extend({ ... }) {}&lt;/code&gt;;&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 12 Jan 2018 08:00:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-01-12:/2018/typing-your-ember-using-today-redux.html</guid><category>TypeScript</category><category>emberjs</category><category>typing-your-ember</category></item><item><title>Getting the Right Things Done</title><link>http://www.chriskrycho.com/2018/getting-the-right-things-done.html</link><description>&lt;p&gt;Americans overrate &lt;em&gt;productivity&lt;/em&gt;. We emphasize it at the expense of nearly everything else. That goes for the most individual evaluations to the structures and decisions of megacorporations. Our goal is to extract every last bit of &lt;em&gt;work&lt;/em&gt; from ourselves we can. And this is, in a word, &lt;em&gt;bad&lt;/em&gt;. It is bad not because work is bad, but because it is a good thing become the &lt;em&gt;only&lt;/em&gt; thing. (This is the usual way humans mess things up: we take good things and make them ultimate, when nothing we make or do can bear that weight.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;So given all of that, why do I &lt;a href="http://www.chriskrycho.com/productivity/" title="Posts tagged “Productivity”"&gt;think and write so much about productivity&lt;/a&gt;? Put plainly, because I think the goods of creation and production are still worth pursuing, and I want to steward my time well accordingly. I want to create the things I am passionate about—from blog posts like this to &lt;a href="http://www.newrustacean.com" title="New Rustacean"&gt;podcast&lt;/a&gt; &lt;a href="http://www.winningslowly.org" title="Winning Slowly"&gt;episodes&lt;/a&gt; to &lt;a href="https://olo.com" title="Olo – online ordering for restaurants"&gt;the web apps I build&lt;/a&gt; and &lt;a href="https://github.com/typed-ember/ember-cli-typescript" title="Ember CLI TypeScript"&gt;the supporting tools&lt;/a&gt; &lt;a href="https://github.com/chriskrycho/true-myth" title="True Myth"&gt;I work on&lt;/a&gt;—without that overwhelming the other things in my day. I think about productivity the way I do, in other words, because I want to be productive without productivity becoming an idol.&lt;/p&gt;
 &lt;p&gt;Put more directly: my efforts on the many projects I care about &lt;em&gt;cannot&lt;/em&gt; come at the expense of loving my family well, serving my church, spending meaningful amounts and kinds of time with friends, and so on. There are many goods in this life we are responsible to pursue. That’s not the usual way we think about good things in life either: we tend to think about good things as things we &lt;em&gt;get&lt;/em&gt; to pursue, if we have time after our other less-good responsibilities. But I think that’s a misshapen view of the kinds of things I’m talking about here. Worship, family life, work, creative expression, service, teaching: these are all goods we are &lt;em&gt;called to&lt;/em&gt; (to various degrees, given the qualifiers of gifting and circumstances).&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;We therefore ought to think of them in terms of faithfulness. Do we do each of them to the best of our abilities, making good use of our time and abilities?&lt;/p&gt;

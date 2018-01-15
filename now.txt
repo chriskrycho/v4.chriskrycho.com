@@ -16,7 +16,7 @@ Subtitle: Last updated Monday, November 13, 2017.
 
   > So, you’re new to the Rust community. (Or any community, really!) And you want to help, but, well, you’re new. So how exactly do you start contributing? What kinds of contributions are valuable? We’ll talk about everything from asking questions to writing documentation, from pitching in on forums and chat to writing blog posts, and from starting your own projects to contributing to other open-source projects.
 
-  You can see the slides for the talk [here](/talks/rust-belt-rust/) or read the prepared script [here](/2017/becoming-a-contributor.html).
+  The video is [up on YouTube](https://www.youtube.com/watch?v=Abu2BNixXak), and you can also see the slides for the talk [here](/talks/rust-belt-rust/) or read the prepared script [here](/2017/becoming-a-contributor.html).
 
 ## Podcasts
 
