@@ -24,7 +24,7 @@ type CustomerId = CustomerId of int&lt;/code&gt;&lt;/pre&gt;
 &lt;/section&gt;
 &lt;section id="complex-data" class="level2"&gt;
 &lt;h2&gt;Complex data&lt;/h2&gt;
-&lt;p&gt;Wlaschin then moves on to showing how to model more complex data structures: types that “and” or “or” together other data. We “and” data together using record or struct types, and “or” data together using “union” or “enum” types.&lt;/p&gt;
+&lt;p&gt;Wlaschin then moves on to showing how to model more complex data structures: types that “and” or “or” together other data. We “and” data together using record or struct types, and “or” data together using “union” or “enum” types. (Assume we’ve defined &lt;code&gt;CustomerInfo&lt;/code&gt;, &lt;code&gt;ShippingAddress&lt;/code&gt;, etc. types for all of these.)&lt;/p&gt;
 &lt;p&gt;Rust:&lt;/p&gt;
 &lt;pre class="rust"&gt;&lt;code&gt;// &amp;quot;and&amp;quot;
 struct Order {
@@ -43,11 +43,11 @@ enum ProductCode {
 &lt;p&gt;Elm:&lt;/p&gt;
 &lt;pre class="elm"&gt;&lt;code&gt;-- &amp;quot;and&amp;quot;
 type alias Order =
-    { customer_info : CustomerInfo
-    , shipping_address : ShippingAddress
-    , billing_address : BillingAddress
-    , order_lines : List OrderLine
-    , billing_amount : BillingAmount
+    { customerInfo : CustomerInfo
+    , shippingAddress : ShippingAddress
+    , billingAddress : BillingAddress
+    , orderLines : List OrderLine
+    , billingAmount : BillingAmount
     }
 
 -- &amp;quot;or&amp;quot;
@@ -68,7 +68,7 @@ type Order = {
 type ProductCode =
     | Widget of WidgetCode
     | Gizmo of GizmoCode&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;ReasonML:&lt;/p&gt;
+&lt;p&gt;ReasonML—note that since we’re assuming we’ve already defined the other types here, you can write this without duplicating the name and type declaration, just like you can with JavaScript object properties.&lt;/p&gt;
 &lt;pre class="reason"&gt;&lt;code&gt;/* &amp;quot;and&amp;quot; */
 type order = {
   customerInfo,
