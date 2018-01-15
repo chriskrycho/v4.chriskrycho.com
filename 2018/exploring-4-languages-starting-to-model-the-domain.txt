@@ -254,7 +254,7 @@ Rust uses angle brackets for generics, just as F^♯^ does, but we haven't writt
 Now, Rust also *does* let us write out the type of these functions as type aliases if we want:
 
 ```rust
-type VaidateOrder =
+type ValidateOrder =
     Fn(UnvalidatedOrder) -> Box<ValidationResponse<ValidatedOrder>>;
 ```
 
