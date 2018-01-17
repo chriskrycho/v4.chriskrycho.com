@@ -8,7 +8,7 @@ Slug: about
 
 Hello! I’m Chris Krycho (thus the URL).
 
-![My wonderful family! [(see full size)](http://cdn.chriskrycho.com/images/family-2017.jpg)](http://cdn.chriskrycho.com/images/family-2017-thumb.jpg "Family photo 2017")
+![My wonderful family! [(see full size)](http://cdn.chriskrycho.com/images/family-2017.jpg)](http://cdn.chriskrycho.com/images/family-2017-thumb.jpg 'Family photo 2017')
 
 A few things about me you might find interesting:
 
@@ -39,6 +39,7 @@ A few things about me you might find interesting:
 * I also sometimes also write at [Mere Orthodoxy](https://mereorthodoxy.com).
 
 * I run—a lot! I try to do at least one half marathon every year. I also cycle a fair bit and sometimes even swim, with the occasional triathlon tossed in.
+
 * Every once in a long while, I also compose new music.
 
 If you’re interested in the specific details of what I’m up to at any given moment, you can check out my [Now](http://www.chriskrycho.com/now.html) page, which I keep fairly up-to-date.
