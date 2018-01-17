@@ -1,5 +1,5 @@
 ---
-Title: Using Ember.js in your Apps Today, Redux
+Title: Using Ember.js in your Apps Today, Revisited
 Subtitle: How do things look in early 2018? Pretty good, actually!
 Date: 2018-01-12 08:00
 Category: Tech
@@ -57,7 +57,7 @@ In order to explain all this clearly, I'm going to first show the whole componen
 
 ```typescript
 import Component from '@ember/component';
-import { computed } from '@ember/object';
+import { computed, get } from '@ember/object';
 import Computed from '@ember/object/computed';
 import { inject as service } from '@ember/service';
 import { assert } from '@ember/debug';
@@ -66,32 +66,32 @@ import { isNone } from '@ember/utils';
 import Session from 'my-app/services/session'
 import Person from 'my-app/models/person';
 
-export default class MyComponent extends Component {
-  // Component arguments
+export default class AnExample extends Component {
+  // -- Component arguments -- //
   model: Person;      // required
   modifier?: string;  // optional, thus the `?`
   
-  // Injections
+  // -- Injections -- //
   session: Computed<Session> = service();
 
-  // class properties
+  // -- Class properties -- //
   aString = 'this is fine';
   aCollection: string[] = [];
   
-  // TypeScript correctly infers that this has the type Computed<number>
-  aComputed = computed('aString', function(this: MyComponent): number {
-    return this.get('lookAString').length;
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel = computed('model.firstName', function(this: AnExample): string {
+    return `My name is ${get(this.model, 'firstName')};`;
+  })
+  aComputed = computed('aString', function(this: AnExample): number {
+    return this.lookAString.length;
   });
-  
   isLoggedIn = bool('session.user');
-
-  // But some things, TypeScript does not and cannot validate -- a number
-  // of the computed property macros are in this bucket, because they assume
-  // 
   savedUser: Computed<Person> = alias('session.user');
   
   actions = {
-    addToCollection(this: MyComponent, value: string) {
+    addToCollection(this: AnExample, value: string) {
       const current = this.get('aCollection');
       this.set('aCollection', current.concat(value));
     }
@@ -104,7 +104,7 @@ export default class MyComponent extends Component {
     this.includeAhoy();
   }
   
-  includeAhoy(this: MyComponent) {
+  includeAhoy(this: AnExample) {
     if (!this.get('aCollection').includes('ahoy')) {
       this.set('aCollection', current.concat('ahoy'));
     }
@@ -115,7 +115,7 @@ export default class MyComponent extends Component {
 #### Component arguments
 
 ```typescript
-export default class MyComponent extends Component {
+export default class AnExample extends Component {
   // Component arguments
   model: Person;      // required
   modifier?: string;  // optional, thus the `?`
@@ -123,31 +123,105 @@ export default class MyComponent extends Component {
 
 I always put these first so that the "interface" of the object is clear and obvious. You can do the same thing on a controller instance; in that case you would export a `Model` from the corresponding `Route` class and import it into the `Controller`. It's a bit of boilerplate, to be sure, but it lets you communicate your interface clearly to consumers of the `Component` or `Controller`.
 
+An important note about these kind of arguments: you do *not* have to do `this.get(...)` (or, if you prefer, `get(this, ...)`) to access the properties themselves: they're class instance properties. You can simply access them as normal properties: `this.model`, `this.modifier`, etc. That even goes for referencing them as computed properties, as we'll see below.
+
 #### Injections
 
 ```typescript
-  // Injections
+  // -- Injections -- //
   session: Computed<Session> = service();
 ```
 
-Here, the most important thing to note is the type annotation. In principle, we could work around this by requiring you to explicitly name the service and using a "type registry" -- more on that below in my discussion of using Ember Data -- but I'm not yet persuaded that's better than just writing the appropriate type annotation. Notice that because TypeScript is a *structural* type system, it doesn't matter if what is passed in is the actual `Session` service; it just needs to be something that *matches the shape* of the service -- so your normal behavior around dependency injection, etc. is all still as expected.
+Here, the most important thing to note is the required type annotation. In principle, we could work around this by requiring you to explicitly name the service and using a "type registry" to look up what the service type is -- more on that below in my discussion of using Ember Data -- but I'm not yet persuaded that's better than just writing the appropriate type annotation. Either way, there's some duplication. 🤔 We (everyone working in the [typed-ember](https://github.com/typed-ember) project) would welcome feedback here, because the one thing we *can't* do is get the proper type *without* one or the other of these.
+
+```typescript
+  // the current approach -- requires importing `Session` so you can define it
+  // on the property here
+  session: Computed<Session> = service();
+  
+  // the alternative approach I've considered -- requires writing boilerplate
+  // elsewhere, similar to what you'll see below in the Ember Data section
+  session = service('session');
+```
+
+One other thing to notice here is that because TypeScript is a *structural* type system, it doesn't matter if what is injected is the actual `Session` service; it just needs to be something that *matches the shape* of the service -- so your normal behavior around dependency injection, etc. is all still as expected.
 
 #### Class properties
 
 ```typescript
-  // class properties
+  // -- Class properties -- //
   aString = 'this is fine';
   aCollection: string[] = [];
 ```
 
-<!-- TODO: note what they're compiled to -->
+Class properties like this are *instance properties*. These are compiled to, because they are *equivalent to*, assigning a property in the constructor. That is, these are equivalent:
+
+```typescript
+// class property assignment
+class AnyClass {
+  aClassProperty = 'yay';
+  constructor() {
+    console.log('all done constructing');
+  }
+}
+```
+
+```typescript
+// constructor assignment
+class AnyClass {
+  aClassProperty: string;
+  constructor() {
+    this.aClassProperty = 'yay';
+    console.log('all done constructing');
+  }
+}
+```
+
+This is *quite* unlike using `.extend`, which installs the property on the prototype. Two very significant differences fall out of this.
+
+1. Since this runs during the constructor, if you make an assignment like this, but want the caller to be able to override it, you *must* write it out with an explicit fallback.
+
+    ```typescript
+    export default class MyComponent extends Component {
+      aDefaultProp = this.aDefaultProp || 0;
+    }
+    ```
+    
+    (In our codebase, we have started using [`_.defaultTo`](https://lodash.com/docs/4.17.4#defaultTo), which works quite nicely.)
+
+2. Because these are instance properties, *not* assigned on the prototype, you do not have to worry about 
+    
+    ```typescript
+    export default Component.extend({
+      anArray: [],  // <- this will be shared between instances
+    })
+    ```
+    ```typescript
+    export default class extends Component {
+      anArray = [];  // <- this will *not* be shared between instances
+    }
+    ```
 <!-- TODO: explain consequence of that for the `[]` type -->
 
 #### Computed properties
 
-<!-- TODO -->
+```typescript
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel = computed('model.firstName', function(this: AnExample): string {
+    return `My name is ${get(this.model, 'firstName')};`;
+  })
+  aComputed = computed('aString', function(this: AnExample): number {
+    return this.lookAString.length;
+  });
+  isLoggedIn = bool('session.user');
+  savedUser: Computed<Person> = alias('session.user');
+```
 
-### Variants
+But some things, TypeScript does not and cannot validate -- a number of the computed property macros are in this bucket, because they tend to be used for nested keys, and as noted above, TypeScript does not and *cannot* validate nested keys like that.
+
+##### Variants
 
 There are two times when things will look different.
 
@@ -174,7 +248,7 @@ This is also how you'll *use* mixins (on defining them, see below):
 import Component from '@ember/component';
 import MyMixin from 'my-app/mixins/my-mixin';
 
-export default class MyComponent extends Component.extend(MyMixin) {
+export default class AnExample extends Component.extend(MyMixin) {
   // the rest of the definition.
 }
 ```

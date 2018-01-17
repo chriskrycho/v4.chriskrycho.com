@@ -60,7 +60,7 @@ type CustomerId = CustomerId of int
 
 ## Complex data
 
-Wlaschin then moves on to showing how to model more complex data structures: types that "and" or "or" together other data. We "and" data together using record or struct types, and "or" data together using "union" or "enum" types.
+Wlaschin then moves on to showing how to model more complex data structures: types that "and" or "or" together other data. We "and" data together using record or struct types, and "or" data together using "union" or "enum" types. (Assume we've defined `CustomerInfo`, `ShippingAddress`, etc. types for all of these.)
 
 Rust:
 
@@ -86,11 +86,11 @@ Elm:
 ```elm
 -- "and"
 type alias Order =
-    { customer_info : CustomerInfo
-    , shipping_address : ShippingAddress
-    , billing_address : BillingAddress
-    , order_lines : List OrderLine
-    , billing_amount : BillingAmount
+    { customerInfo : CustomerInfo
+    , shippingAddress : ShippingAddress
+    , billingAddress : BillingAddress
+    , orderLines : List OrderLine
+    , billingAmount : BillingAmount
     }
 
 -- "or"
@@ -117,7 +117,7 @@ type ProductCode =
     | Gizmo of GizmoCode
 ```
 
-ReasonML:
+ReasonML---note that since we're assuming we've already defined the other types here, you can write this without duplicating the name and type declaration, just like you can with JavaScript object properties.
 
 ```reason
 /* "and" */
@@ -219,11 +219,11 @@ fn validate_order(unvalidated: UnvalidatedOrder) -> Box<ValidationResponse<Valid
 }
 ```
 
-Elm (using the built-in `Task` type for eventual computation):
+Elm (using the built-in `Task` type for eventual computation; `Task`s encapsulate both eventuality and the possibility of failure):
 
 ```elm
 type ValidationResponse a
-    = Task a (List ValidationError)
+    = Task (List ValidationError) a
 
 type alias ValidateOrder =
     UnvalidatedOrder -> ValidationResponse ValidatedOrder
