@@ -1,11 +1,11 @@
 ---
 Title: Now
-Subtitle: Last updated Monday, November 13, 2017.
+Subtitle: Last updated Tuesday, January 16, 2018.
 ---
 
 ## Life
 
-* We've just moved to Colorado---we left North Carolina in mid-October. We're buying a ridiculously amazing house on a ridiculously amazing lot: literally a mountain lake house in the foothills of the Front Range in Monument, Colorado.
+* We've just moved to Colorado---we left North Carolina in mid-October, 2017. We're buying a ridiculously amazing house on a ridiculously amazing lot: literally a mountain lake house in the foothills of the Front Range in Monument, Colorado.
 * We got to see totality in the 2017 total solar eclipse! It was the most amazing thing I've ever seen.
 
 ## Speaking
@@ -28,9 +28,9 @@ Subtitle: Last updated Monday, November 13, 2017.
 
 ## Projects
 
+* I'm reading through and am [writing about](/exploring-four-languages.html) implementing the exercises from Scott Wlaschin's _Domain Driven Design_ in Rust, Elm, F^♯^, and ReasonML. It's a ton of fun!
 * I published [True Myth](https://github.com/chriskrycho/true-myth), a library for safer (functional) programming in TypeScript, Flow, or plain-old JavaScript. You can read about the project [in its docs](https://true-myth.js.org) or in my introductory [blog post](http://www.chriskrycho.com/2017/announcing-true-myth-10.html).
-* Over the course of 2017, I've been working on making the experience of writing TypeScript and Ember.js together awesome. [typed-ember](https://github.com/typed-ember) on GitHub is where all the action is at. I've also been writing a series of blog posts, ["Typing Your Ember"](http://www.chriskrycho.com/typing-your-ember/), to help people get off the ground.
-* I'm keeping track of my reading this year via my [2017 book list](http://www.chriskrycho.com/2017-book-list.html). One of my goals is, for new books I read, to write at least a _short_ review of them.
+* Over the course of 2017 and 2018, I've been working on making the experience of writing TypeScript and Ember.js together awesome. [typed-ember](https://github.com/typed-ember) on GitHub is where all the action is at. I've also been writing a series of blog posts, ["Typing Your Ember"](http://www.chriskrycho.com/typing-your-ember/), to help people get off the ground.
 
 ### On Hold
 
