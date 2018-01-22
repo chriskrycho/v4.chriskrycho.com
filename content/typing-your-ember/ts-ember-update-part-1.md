@@ -134,16 +134,17 @@ assert("`model` is required", !isNone(this.model));
 
 [^maybe]: This isn't my preferred way of handling optional types; [a `Maybe` type](https://true-myth.js.org) is. And you can, if you like, use `Maybe` here:
 
-```typescript
-import Component from "@ember/component";
-import { Maybe } from "true-myth";
+    ```typescript
+    import Component from "@ember/component";
+    import { Maybe } from "true-myth";
 
-export default class MyComponent extends Component {
-  optionalProperty: Maybe<string> = Maybe.of(this.optionalProperty);
-}
-```
+    export default class MyComponent extends Component {
+      optionalProperty: Maybe<string> = Maybe.of(this.optionalProperty);
+    }
+    ```
 
 Then if you invoke the property without the argument, it'll construct a `Nothing`; if you invoke it with the argument, it'll be `Just` with the value.
+
 [^ts-templates]: A few of us have batted around some ideas for how to solve that particular problem, but _if_ we manage those, it'll probably be way, way later in 2018.
 
 ### Injections
