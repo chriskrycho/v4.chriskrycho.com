@@ -87,7 +87,6 @@ export default class AnExample extends Component {
 &lt;p&gt;An important note about these kind of arguments: you do &lt;em&gt;not&lt;/em&gt; have to do &lt;code&gt;this.get(...)&lt;/code&gt; (or, if you prefer, &lt;code&gt;get(this, ...)&lt;/code&gt;) to access the properties themselves: they’re class instance properties. You can simply access them as normal properties: &lt;code&gt;this.model&lt;/code&gt;, &lt;code&gt;this.modifier&lt;/code&gt;, etc. That even goes for referencing them as computed properties, as we’ll see below.&lt;/p&gt;
 &lt;p&gt;For optional arguments, you use the &lt;code&gt;?&lt;/code&gt; operator to indicate they may be &lt;code&gt;undefined&lt;/code&gt;. To get the &lt;em&gt;most&lt;/em&gt; mileage out of this, you’ll want to enable &lt;code&gt;strictNullChecks&lt;/code&gt; in the compiler options.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; However, note that we don’t currently have any way to validate component argument invocation.&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; The way I’ve been doing this is using Ember’s debug &lt;code&gt;assert&lt;/code&gt; in the constructor:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;assert(&amp;quot;`model` is required&amp;quot;, !isNone(this.model));&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then if you invoke the property without the argument, it’ll construct a &lt;code&gt;Nothing&lt;/code&gt;; if you invoke it with the argument, it’ll be &lt;code&gt;Just&lt;/code&gt; with the value.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="injections" class="level3"&gt;
 &lt;h3&gt;Injections&lt;/h3&gt;
@@ -113,9 +112,10 @@ export default class AnExample extends Component {
 import { Maybe } from &amp;quot;true-myth&amp;quot;;
 
 export default class MyComponent extends Component {
-  optionalProperty: Maybe&amp;lt;string&amp;gt; = Maybe.of(this.optionalProperty);
+  optionalArg?: string;
+  optionalProperty = Maybe.of(this.optionalArg);
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;
+&lt;p&gt;Then if you invoke the property without the argument, it’ll construct a &lt;code&gt;Nothing&lt;/code&gt;; if you invoke it with the argument, it’ll be &lt;code&gt;Just&lt;/code&gt; with the value.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id="fn2"&gt;&lt;p&gt;A few of us have batted around some ideas for how to solve that particular problem, but &lt;em&gt;if&lt;/em&gt; we manage those, it’ll probably be way, way later in 2018.&lt;a href="#fnref2" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
