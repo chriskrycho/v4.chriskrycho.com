@@ -139,11 +139,12 @@ assert("`model` is required", !isNone(this.model));
     import { Maybe } from "true-myth";
 
     export default class MyComponent extends Component {
-      optionalProperty: Maybe<string> = Maybe.of(this.optionalProperty);
+      optionalArg?: string;
+      optionalProperty = Maybe.of(this.optionalArg);
     }
     ```
 
-Then if you invoke the property without the argument, it'll construct a `Nothing`; if you invoke it with the argument, it'll be `Just` with the value.
+    Then if you invoke the property without the argument, it'll construct a `Nothing`; if you invoke it with the argument, it'll be `Just` with the value.
 
 [^ts-templates]: A few of us have batted around some ideas for how to solve that particular problem, but _if_ we manage those, it'll probably be way, way later in 2018.
 
