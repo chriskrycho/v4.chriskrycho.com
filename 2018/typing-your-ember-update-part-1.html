@@ -176,7 +176,7 @@ export default class AnExample extends Component {
   modifier?: string;  // optional, thus the `?`</code></pre>
 <p>I always put these first so that the “interface” of the object is clear and obvious. You can do the same thing on a controller instance; in that case you would export a <code>Model</code> from the corresponding <code>Route</code> class and import it into the <code>Controller</code>. It’s a bit of boilerplate, to be sure, but it lets you communicate your interface clearly to consumers of the <code>Component</code> or <code>Controller</code>.</p>
 <p>An important note about these kind of arguments: you do <em>not</em> have to do <code>this.get(...)</code> (or, if you prefer, <code>get(this, ...)</code>) to access the properties themselves: they’re class instance properties. You can simply access them as normal properties: <code>this.model</code>, <code>this.modifier</code>, etc. That even goes for referencing them as computed properties, as we’ll see below.</p>
-<p>For optional arguments, you use the <code>?</code> operator to indicate they may be <code>undefined</code>. To get the <em>most</em> mileage out of this, you’ll want to enable <code>strictNullChecks</code> in the compiler options.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> However, note that we don’t currently have any way to validate component argument invocation.[^ts-templates] The way I’ve been doing this is using Ember’s debug <code>assert</code> in the constructor:</p>
+<p>For optional arguments, you use the <code>?</code> operator to indicate they may be <code>undefined</code>. To get the <em>most</em> mileage out of this, you’ll want to enable <code>strictNullChecks</code> in the compiler options.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> However, note that we don’t currently have any way to validate component argument invocation.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> The way I’ve been doing this is using Ember’s debug <code>assert</code> in the constructor:</p>
 <pre class="typescript"><code>assert(&quot;`model` is required&quot;, !isNone(this.model));</code></pre>
 <pre class="typescript"><code>import Component from &quot;@ember/component&quot;;
 import { Maybe } from &quot;true-myth&quot;;
@@ -184,7 +184,7 @@ import { Maybe } from &quot;true-myth&quot;;
 export default class MyComponent extends Component {
   optionalProperty: Maybe&lt;string&gt; = Maybe.of(this.optionalProperty);
 }</code></pre>
-<p>Then if you invoke the property without the argument, it’ll construct a <code>Nothing</code>; if you invoke it with the argument, it’ll be <code>Just</code> with the value. [^ts-templates]: A few of us have batted around some ideas for how to solve that particular problem, but <em>if</em> we manage those, it’ll probably be way, way later in 2018.</p>
+<p>Then if you invoke the property without the argument, it’ll construct a <code>Nothing</code>; if you invoke it with the argument, it’ll be <code>Just</code> with the value.</p>
 </section>
 <section id="injections" class="level3">
 <h3>Injections</h3>
@@ -206,6 +206,7 @@ export default class MyComponent extends Component {
 <hr />
 <ol>
 <li id="fn1"><p>This isn’t my preferred way of handling optional types; <a href="https://true-myth.js.org">a <code>Maybe</code> type</a> is. And you can, if you like, use <code>Maybe</code> here:<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>A few of us have batted around some ideas for how to solve that particular problem, but <em>if</em> we manage those, it’ll probably be way, way later in 2018.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>
