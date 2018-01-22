@@ -1,5 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - typing-your-ember</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Tue, 08 Aug 2017 09:00:00 -0400</lastBuildDate><item><title>Announcing ember-cli-typescript 1.0.0</title><link>http://www.chriskrycho.com/2017/announcing-ember-cli-typescript-100.html</link><description>&lt;p&gt;I’m extremely pleased to announce the release of &lt;a href="https://github.com/typed-ember/ember-cli-typescript/releases/tag/v1.0.0"&gt;ember-cli-typescript 1.0.0&lt;/a&gt;! You can get it the same way you do &lt;em&gt;any&lt;/em&gt; Ember addon:&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - typing-your-ember</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Mon, 22 Jan 2018 07:10:00 -0500</lastBuildDate><item><title>TypeScript and Ember.js Update, Part 1</title><link>http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Back in July 2017, I wrote &lt;a href="http://www.chriskrycho.com/2017/typing-your-ember-part-3.html"&gt;a post&lt;/a&gt; on how to using TypeScript in your Ember.js apps. At the time, we were still busy working on getting the typings more solid for Ember itself, and &lt;code&gt;class&lt;/code&gt; syntax for Ember was apparently a long way away.&lt;/p&gt;
+&lt;p&gt;Things have gotten quite a bit better since then, so I thought I’d update that post with recommendations for using TypeScript in an app &lt;em&gt;now&lt;/em&gt; with the updated typings, as well as with another six months of experience using TypeScript in our app at Olo (~20k lines of code in the app and another ~15k in tests).&lt;/p&gt;
+&lt;aside&gt;
+&lt;p&gt;If you’re interested in all of this and would like to learn more in person, I’m &lt;a href="http://emberconf.com/speakers.html#chris-krycho"&gt;leading a workshop on it at EmberConf 2018&lt;/a&gt;—I’d love to see you there!&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;Here’s how I expect this update series to go:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Overview, normal Ember objects, component arguments, and injections (this post).&lt;/li&gt;
+&lt;li&gt;Class properties, including computed properties, as well as mixins.&lt;/li&gt;
+&lt;li&gt;Ember Data and related concerns.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;section id="normal-ember-objects" class="level2"&gt;
+&lt;h2&gt;Normal Ember objects&lt;/h2&gt;
+&lt;p&gt;For normal Ember objects, things now &lt;em&gt;mostly&lt;/em&gt; just work if you’re using class-based syntax, with a single (though very important) qualification I’ll get to in a minute. And you can use the class-based syntax &lt;em&gt;today&lt;/em&gt; in Ember.js—all the way back to 1.13, as it turns out. If you want to learn more, you can read &lt;a href="https://github.com/emberjs/rfcs/blob/master/text/0240-es-classes.md"&gt;this RFC&lt;/a&gt; or &lt;a href="https://medium.com/build-addepar/es-classes-in-ember-js-63e948e9d78e"&gt;this blog post&lt;/a&gt;, both by &lt;a href="https://github.com/pzuraq"&gt;@pzuraq (Chris Garrett)&lt;/a&gt;, who did most of the legwork to research this and flesh out the constraints, and who has also been doing a lot of work on &lt;a href="https://ember-decorators.github.io/ember-decorators/docs/index.html"&gt;Ember Decorators&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Accordingly, I’m assuming the use of ES6 &lt;code&gt;class&lt;/code&gt; syntax throughout. The big reason for this is that things mostly just &lt;em&gt;don’t work&lt;/em&gt; without it. And we’ll see (in a later post) some hacks to deal with places where parts of Ember’s ecosystem don’t yet support classes properly. In general, however, if you see an error like &lt;code&gt;&amp;quot;Cannot use 'new' with an expression whose type lacks a call or construct signature.&amp;quot;&lt;/code&gt;, the reason is almost certainly that you’ve done &lt;code&gt;export default Component.extend({...})&lt;/code&gt; rather than creating a class.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="a-detailed-example" class="level2"&gt;
+&lt;h2&gt;A detailed example&lt;/h2&gt;
+&lt;p&gt;That means that every new bit of code I write today in our app looks roughly like this, with only the obvious modifications for services, routes, and controllers—I picked components because they’re far and away the most common things in our applications.&lt;/p&gt;
+&lt;p&gt;In order to explain all this clearly, I’m going to start by showing a whole component written in the new style. Then, over the rest of this post and the next post, I’ll zoom in on and explain specific parts of it.&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
+import { computed, get } from &amp;quot;@ember/object&amp;quot;;
+import Computed from &amp;quot;@ember/object/computed&amp;quot;;
+import { inject as service } from &amp;quot;@ember/service&amp;quot;;
+import { assert } from &amp;quot;@ember/debug&amp;quot;;
+import { isNone } from &amp;quot;@ember/utils&amp;quot;;
+
+import Session from &amp;quot;my-app/services/session&amp;quot;;
+import Person from &amp;quot;my-app/models/person&amp;quot;;
+
+export default class AnExample extends Component {
+  // -- Component arguments -- //
+  model: Person; // required
+  modifier?: string; // optional, thus the `?`
+
+  // -- Injections -- //
+  session: Computed&amp;lt;Session&amp;gt; = service();
+
+  // -- Class properties -- //
+  aString = &amp;quot;this is fine&amp;quot;;
+  aCollection: string[] = [];
+
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel = computed(&amp;quot;model.firstName&amp;quot;, function(this: AnExample): string {
+    return `My name is ${get(this.model, &amp;quot;firstName&amp;quot;)};`;
+  });
+  aComputed = computed(&amp;quot;aString&amp;quot;, function(this: AnExample): number {
+    return this.lookAString.length;
+  });
+  isLoggedIn = bool(&amp;quot;session.user&amp;quot;);
+  savedUser: Computed&amp;lt;Person&amp;gt; = alias(&amp;quot;session.user&amp;quot;);
+
+  actions = {
+    addToCollection(this: AnExample, value: string) {
+      const current = this.get(&amp;quot;aCollection&amp;quot;);
+      this.set(&amp;quot;aCollection&amp;quot;, current.concat(value));
+    }
+  };
+
+  constructor() {
+    super();
+    assert(&amp;quot;`model` is required&amp;quot;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample) {
+    if (!this.get(&amp;quot;aCollection&amp;quot;).includes(&amp;quot;ahoy&amp;quot;)) {
+      this.set(&amp;quot;aCollection&amp;quot;, current.concat(&amp;quot;ahoy&amp;quot;));
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;section id="component-arguments" class="level3"&gt;
+&lt;h3&gt;Component arguments&lt;/h3&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;export default class AnExample extends Component {
+  // Component arguments
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I always put these first so that the “interface” of the object is clear and obvious. You can do the same thing on a controller instance; in that case you would export a &lt;code&gt;Model&lt;/code&gt; from the corresponding &lt;code&gt;Route&lt;/code&gt; class and import it into the &lt;code&gt;Controller&lt;/code&gt;. It’s a bit of boilerplate, to be sure, but it lets you communicate your interface clearly to consumers of the &lt;code&gt;Component&lt;/code&gt; or &lt;code&gt;Controller&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;An important note about these kind of arguments: you do &lt;em&gt;not&lt;/em&gt; have to do &lt;code&gt;this.get(...)&lt;/code&gt; (or, if you prefer, &lt;code&gt;get(this, ...)&lt;/code&gt;) to access the properties themselves: they’re class instance properties. You can simply access them as normal properties: &lt;code&gt;this.model&lt;/code&gt;, &lt;code&gt;this.modifier&lt;/code&gt;, etc. That even goes for referencing them as computed properties, as we’ll see below.&lt;/p&gt;
+&lt;p&gt;For optional arguments, you use the &lt;code&gt;?&lt;/code&gt; operator to indicate they may be &lt;code&gt;undefined&lt;/code&gt;. To get the &lt;em&gt;most&lt;/em&gt; mileage out of this, you’ll want to enable &lt;code&gt;strictNullChecks&lt;/code&gt; in the compiler options.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; However, note that we don’t currently have any way to validate component argument invocation.[^ts-templates] The way I’ve been doing this is using Ember’s debug &lt;code&gt;assert&lt;/code&gt; in the constructor:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;assert(&amp;quot;`model` is required&amp;quot;, !isNone(this.model));&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
+import { Maybe } from &amp;quot;true-myth&amp;quot;;
+
+export default class MyComponent extends Component {
+  optionalProperty: Maybe&amp;lt;string&amp;gt; = Maybe.of(this.optionalProperty);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then if you invoke the property without the argument, it’ll construct a &lt;code&gt;Nothing&lt;/code&gt;; if you invoke it with the argument, it’ll be &lt;code&gt;Just&lt;/code&gt; with the value. [^ts-templates]: A few of us have batted around some ideas for how to solve that particular problem, but &lt;em&gt;if&lt;/em&gt; we manage those, it’ll probably be way, way later in 2018.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="injections" class="level3"&gt;
+&lt;h3&gt;Injections&lt;/h3&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;  // -- Injections -- //
+  session: Computed&amp;lt;Session&amp;gt; = service();&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here, the most important thing to note is the required type annotation. In principle, we could work around this by requiring you to explicitly name the service and using a “type registry” to look up what the service type is – more on that below in my discussion of using Ember Data – but I’m not yet persuaded that’s better than just writing the appropriate type annotation. Either way, there’s some duplication. 🤔 We (everyone working in the &lt;a href="https://github.com/typed-ember"&gt;typed-ember&lt;/a&gt; project) would welcome feedback here, because the one thing we &lt;em&gt;can’t&lt;/em&gt; do is get the proper type &lt;em&gt;without&lt;/em&gt; one or the other of these.&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;  // the current approach -- requires importing `Session` so you can define it
+  // on the property here
+  session: Computed&amp;lt;Session&amp;gt; = service();
+
+  // the alternative approach I&amp;#39;ve considered -- requires writing boilerplate
+  // elsewhere, similar to what you&amp;#39;ll see below in the Ember Data section
+  session = service(&amp;#39;session&amp;#39;);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;One other thing to notice here is that because TypeScript is a &lt;em&gt;structural&lt;/em&gt; type system, it doesn’t matter if what is injected is the actual &lt;code&gt;Session&lt;/code&gt; service; it just needs to be something that &lt;em&gt;matches the shape&lt;/em&gt; of the service – so your normal behavior around dependency injection, etc. is all still as expected.&lt;/p&gt;
+&lt;p&gt;That’s enough for one post, I think. In the next entry, we’ll pick up with how you handle class properties, including computed properties, and then talk about mixins as well. In the post after that, we’ll look at Ember Data and some related concerns.&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;This isn’t my preferred way of handling optional types; &lt;a href="https://true-myth.js.org"&gt;a &lt;code&gt;Maybe&lt;/code&gt; type&lt;/a&gt; is. And you can, if you like, use &lt;code&gt;Maybe&lt;/code&gt; here:&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 22 Jan 2018 07:10:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-01-22:/2018/typing-your-ember-update-part-1.html</guid><category>TypeScript</category><category>emberjs</category><category>typing-your-ember</category></item><item><title>Announcing ember-cli-typescript 1.0.0</title><link>http://www.chriskrycho.com/2017/announcing-ember-cli-typescript-100.html</link><description>&lt;p&gt;I’m extremely pleased to announce the release of &lt;a href="https://github.com/typed-ember/ember-cli-typescript/releases/tag/v1.0.0"&gt;ember-cli-typescript 1.0.0&lt;/a&gt;! You can get it the same way you do &lt;em&gt;any&lt;/em&gt; Ember addon:&lt;/p&gt;
 &lt;pre class="sh"&gt;&lt;code&gt;$ ember install ember-cli-typescript&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;For a detailed walkthrough of adding TypeScript to your projects, see:&lt;/p&gt;
 &lt;ul&gt;

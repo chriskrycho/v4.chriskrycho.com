@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TypeScript and Ember.js Update, Part 1 &middot; Chris Krycho</title>
+    <meta name="description" content="A bunch has changed for the better in the TypeScript/Ember.js story over the last six months. Here’s an overview of the changes, and a look at normal Ember objects,"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"/>
+    <meta property="og:title" content="TypeScript and Ember.js Update, Part 1"/>
+    <meta property="og:description" content="A bunch has changed for the better in the TypeScript/Ember.js story over the last six months. Here’s an overview of the changes, and a look at normal Ember objects,"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="TypeScript and Ember.js Update, Part 1"/>
+    <meta name="twitter:description" content="A bunch has changed for the better in the TypeScript/Ember.js story over the last six months. Here’s an overview of the changes, and a look at normal Ember objects,"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="typescript emberjs typing-your-ember tech">
+
+    <header>
+<h1>TypeScript and Ember.js Update, Part 1</h1>
+<h2>How do things look in early 2018? Pretty good, actually!</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"><i class="fa fa-fw fa-link"></i></a>January 22, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class='series-overview'>You write <a href="https://emberjs.com">Ember.js</a> apps. You think <a href="http://www.typescriptlang.org">TypeScript</a> would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i></p>
+<p><i class='series-overview'>This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.</i></p>
+<p><i class='series-overview'><a href="/typing-your-ember.html">(See the rest of the series. →)</a></i></p>
+<hr />
+<p>Back in July 2017, I wrote <a href="http://www.chriskrycho.com/2017/typing-your-ember-part-3.html">a post</a> on how to using TypeScript in your Ember.js apps. At the time, we were still busy working on getting the typings more solid for Ember itself, and <code>class</code> syntax for Ember was apparently a long way away.</p>
+<p>Things have gotten quite a bit better since then, so I thought I’d update that post with recommendations for using TypeScript in an app <em>now</em> with the updated typings, as well as with another six months of experience using TypeScript in our app at Olo (~20k lines of code in the app and another ~15k in tests).</p>
+<aside>
+<p>If you’re interested in all of this and would like to learn more in person, I’m <a href="http://emberconf.com/speakers.html#chris-krycho">leading a workshop on it at EmberConf 2018</a>—I’d love to see you there!</p>
+</aside>
+<p>Here’s how I expect this update series to go:</p>
+<ol type="1">
+<li>Overview, normal Ember objects, component arguments, and injections (this post).</li>
+<li>Class properties, including computed properties, as well as mixins.</li>
+<li>Ember Data and related concerns.</li>
+</ol>
+<section id="normal-ember-objects" class="level2">
+<h2>Normal Ember objects</h2>
+<p>For normal Ember objects, things now <em>mostly</em> just work if you’re using class-based syntax, with a single (though very important) qualification I’ll get to in a minute. And you can use the class-based syntax <em>today</em> in Ember.js—all the way back to 1.13, as it turns out. If you want to learn more, you can read <a href="https://github.com/emberjs/rfcs/blob/master/text/0240-es-classes.md">this RFC</a> or <a href="https://medium.com/build-addepar/es-classes-in-ember-js-63e948e9d78e">this blog post</a>, both by <a href="https://github.com/pzuraq">@pzuraq (Chris Garrett)</a>, who did most of the legwork to research this and flesh out the constraints, and who has also been doing a lot of work on <a href="https://ember-decorators.github.io/ember-decorators/docs/index.html">Ember Decorators</a>.</p>
+<p>Accordingly, I’m assuming the use of ES6 <code>class</code> syntax throughout. The big reason for this is that things mostly just <em>don’t work</em> without it. And we’ll see (in a later post) some hacks to deal with places where parts of Ember’s ecosystem don’t yet support classes properly. In general, however, if you see an error like <code>&quot;Cannot use 'new' with an expression whose type lacks a call or construct signature.&quot;</code>, the reason is almost certainly that you’ve done <code>export default Component.extend({...})</code> rather than creating a class.</p>
+</section>
+<section id="a-detailed-example" class="level2">
+<h2>A detailed example</h2>
+<p>That means that every new bit of code I write today in our app looks roughly like this, with only the obvious modifications for services, routes, and controllers—I picked components because they’re far and away the most common things in our applications.</p>
+<p>In order to explain all this clearly, I’m going to start by showing a whole component written in the new style. Then, over the rest of this post and the next post, I’ll zoom in on and explain specific parts of it.</p>
+<pre class="typescript"><code>import Component from &quot;@ember/component&quot;;
+import { computed, get } from &quot;@ember/object&quot;;
+import Computed from &quot;@ember/object/computed&quot;;
+import { inject as service } from &quot;@ember/service&quot;;
+import { assert } from &quot;@ember/debug&quot;;
+import { isNone } from &quot;@ember/utils&quot;;
+
+import Session from &quot;my-app/services/session&quot;;
+import Person from &quot;my-app/models/person&quot;;
+
+export default class AnExample extends Component {
+  // -- Component arguments -- //
+  model: Person; // required
+  modifier?: string; // optional, thus the `?`
+
+  // -- Injections -- //
+  session: Computed&lt;Session&gt; = service();
+
+  // -- Class properties -- //
+  aString = &quot;this is fine&quot;;
+  aCollection: string[] = [];
+
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel = computed(&quot;model.firstName&quot;, function(this: AnExample): string {
+    return `My name is ${get(this.model, &quot;firstName&quot;)};`;
+  });
+  aComputed = computed(&quot;aString&quot;, function(this: AnExample): number {
+    return this.lookAString.length;
+  });
+  isLoggedIn = bool(&quot;session.user&quot;);
+  savedUser: Computed&lt;Person&gt; = alias(&quot;session.user&quot;);
+
+  actions = {
+    addToCollection(this: AnExample, value: string) {
+      const current = this.get(&quot;aCollection&quot;);
+      this.set(&quot;aCollection&quot;, current.concat(value));
+    }
+  };
+
+  constructor() {
+    super();
+    assert(&quot;`model` is required&quot;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample) {
+    if (!this.get(&quot;aCollection&quot;).includes(&quot;ahoy&quot;)) {
+      this.set(&quot;aCollection&quot;, current.concat(&quot;ahoy&quot;));
+    }
+  }
+}</code></pre>
+<section id="component-arguments" class="level3">
+<h3>Component arguments</h3>
+<pre class="typescript"><code>export default class AnExample extends Component {
+  // Component arguments
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`</code></pre>
+<p>I always put these first so that the “interface” of the object is clear and obvious. You can do the same thing on a controller instance; in that case you would export a <code>Model</code> from the corresponding <code>Route</code> class and import it into the <code>Controller</code>. It’s a bit of boilerplate, to be sure, but it lets you communicate your interface clearly to consumers of the <code>Component</code> or <code>Controller</code>.</p>
+<p>An important note about these kind of arguments: you do <em>not</em> have to do <code>this.get(...)</code> (or, if you prefer, <code>get(this, ...)</code>) to access the properties themselves: they’re class instance properties. You can simply access them as normal properties: <code>this.model</code>, <code>this.modifier</code>, etc. That even goes for referencing them as computed properties, as we’ll see below.</p>
+<p>For optional arguments, you use the <code>?</code> operator to indicate they may be <code>undefined</code>. To get the <em>most</em> mileage out of this, you’ll want to enable <code>strictNullChecks</code> in the compiler options.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> However, note that we don’t currently have any way to validate component argument invocation.[^ts-templates] The way I’ve been doing this is using Ember’s debug <code>assert</code> in the constructor:</p>
+<pre class="typescript"><code>assert(&quot;`model` is required&quot;, !isNone(this.model));</code></pre>
+<pre class="typescript"><code>import Component from &quot;@ember/component&quot;;
+import { Maybe } from &quot;true-myth&quot;;
+
+export default class MyComponent extends Component {
+  optionalProperty: Maybe&lt;string&gt; = Maybe.of(this.optionalProperty);
+}</code></pre>
+<p>Then if you invoke the property without the argument, it’ll construct a <code>Nothing</code>; if you invoke it with the argument, it’ll be <code>Just</code> with the value. [^ts-templates]: A few of us have batted around some ideas for how to solve that particular problem, but <em>if</em> we manage those, it’ll probably be way, way later in 2018.</p>
+</section>
+<section id="injections" class="level3">
+<h3>Injections</h3>
+<pre class="typescript"><code>  // -- Injections -- //
+  session: Computed&lt;Session&gt; = service();</code></pre>
+<p>Here, the most important thing to note is the required type annotation. In principle, we could work around this by requiring you to explicitly name the service and using a “type registry” to look up what the service type is – more on that below in my discussion of using Ember Data – but I’m not yet persuaded that’s better than just writing the appropriate type annotation. Either way, there’s some duplication. 🤔 We (everyone working in the <a href="https://github.com/typed-ember">typed-ember</a> project) would welcome feedback here, because the one thing we <em>can’t</em> do is get the proper type <em>without</em> one or the other of these.</p>
+<pre class="typescript"><code>  // the current approach -- requires importing `Session` so you can define it
+  // on the property here
+  session: Computed&lt;Session&gt; = service();
+
+  // the alternative approach I&#39;ve considered -- requires writing boilerplate
+  // elsewhere, similar to what you&#39;ll see below in the Ember Data section
+  session = service(&#39;session&#39;);</code></pre>
+<p>One other thing to notice here is that because TypeScript is a <em>structural</em> type system, it doesn’t matter if what is injected is the actual <code>Session</code> service; it just needs to be something that <em>matches the shape</em> of the service – so your normal behavior around dependency injection, etc. is all still as expected.</p>
+<p>That’s enough for one post, I think. In the next entry, we’ll pick up with how you handle class properties, including computed properties, and then talk about mixins as well. In the post after that, we’ll look at Ember Data and some related concerns.</p>
+</section>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This isn’t my preferred way of handling optional types; <a href="https://true-myth.js.org">a <code>Maybe</code> type</a> is. And you can, if you like, use <code>Maybe</code> here:<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">TypeScript and Ember.js Update, Part 1</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2017/on-public-theological-histories.html">On Public (Theological) Histories</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
