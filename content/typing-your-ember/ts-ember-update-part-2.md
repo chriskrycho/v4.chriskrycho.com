@@ -32,6 +32,12 @@ If you're interested in all of this and would like to learn more in person, I'm 
 
 </aside>
 
+Here's the outline of this update sequence:
+
+1. [Overview, normal Ember objects, component arguments, and injections.](http://www.chriskrycho.com/2018/typing-your-ember-update-part-1)
+2. [Class properties, including computed properties, as well as mixins (this post).](http://www.chriskrycho.com/2018/typing-your-ember-update-part-2)
+3. Ember Data and related concerns.
+
 ## A detailed example (cont'd.)
 
 Let's recall the example Component we're working through:
