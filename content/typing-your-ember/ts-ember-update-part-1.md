@@ -1,14 +1,13 @@
 ---
-Title: TypeScript and Ember.js Update, Part 2
-Subtitle: TODO
-Date: 2018-01-24 07:00
+Title: TypeScript and Ember.js Update, Part 1
+Subtitle: How do things look in early 2018? Pretty good, actually!
+Date: 2018-01-22 07:10
 Category: Tech
 Series: Typing Your Ember
 Tags: TypeScript, emberjs, typing-your-ember
-slug: typing-your-ember-update-part-2
+slug: typing-your-ember-update-part-1
 Summary: >
-    TODO
-Status: draft
+    A bunch has changed for the better in the TypeScript/Ember.js story over the last six months. Here’s an overview of the changes, and a look at normal Ember objects,
 ---
 
 <i class='series-overview'>You write [Ember.js] apps. You think [TypeScript] would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i>
@@ -24,7 +23,9 @@ Status: draft
 
 ---
 
-<!-- TODO: previous post and what it covered -->
+Back in July 2017, I wrote [a post](http://www.chriskrycho.com/2017/typing-your-ember-part-3.html) on how to using TypeScript in your Ember.js apps. At the time, we were still busy working on getting the typings more solid for Ember itself, and `class` syntax for Ember was apparently a long way away.
+
+Things have gotten quite a bit better since then, so I thought I'd update that post with recommendations for using TypeScript in an app _now_ with the updated typings, as well as with another six months of experience using TypeScript in our app at Olo (~20k lines of code in the app and another ~15k in tests).
 
 <aside>
 
@@ -32,26 +33,39 @@ If you're interested in all of this and would like to learn more in person, I'm 
 
 </aside>
 
-Here's the outline of this update sequence:
+Here's how I expect this update series to go:
 
-1. [Overview, normal Ember objects, component arguments, and injections.](http://www.chriskrycho.com/2018/typing-your-ember-update-part-1)
-2. [Class properties, including computed properties, as well as mixins (this post).](http://www.chriskrycho.com/2018/typing-your-ember-update-part-2)
+1. Overview, normal Ember objects, component arguments, and injections (this post).
+2. Class properties, including computed properties, as well as mixins.
 3. Ember Data and related concerns.
 
-## A detailed example (cont'd.)
+## Normal Ember objects
 
-Let's recall the example Component we're working through:
+For normal Ember objects, things now _mostly_ just work if you're using class-based syntax, with a single (though very important) qualification I'll get to in a minute. And you can use the class-based syntax _today_ in Ember.js---all the way back to 1.13, as it turns out. If you want to learn more, you can read [this RFC] or [this blog post], both by [\@pzuraq (Chris Garrett)][pzuraq], who did most of the legwork to research this and flesh out the constraints, and who has also been doing a lot of work on [Ember Decorators].
+
+[this rfc]: https://github.com/emberjs/rfcs/blob/master/text/0240-es-classes.md
+[this blog post]: https://medium.com/build-addepar/es-classes-in-ember-js-63e948e9d78e
+[pzuraq]: https://github.com/pzuraq
+[ember decorators]: https://ember-decorators.github.io/ember-decorators/docs/index.html
+
+Accordingly, I'm assuming the use of ES6 `class` syntax throughout. The big reason for this is that things mostly just _don't work_ without it. And we'll see (in a later post) some hacks to deal with places where parts of Ember's ecosystem don't yet support classes properly. In general, however, if you see an error like `"Cannot use 'new' with an expression whose type lacks a call or construct signature."`, the reason is almost certainly that you've done `export default Component.extend({...})` rather than creating a class.
+
+## A detailed example
+
+That means that every new bit of code I write today in our app looks roughly like this, with only the obvious modifications for services, routes, and controllers---I picked components because they're far and away the most common things in our applications.
+
+In order to explain all this clearly, I'm going to start by showing a whole component written in the new style. Then, over the rest of this post and the next post, I'll zoom in on and explain specific parts of it.
 
 ```typescript
-import Component from '@ember/component';
-import { computed, get } from '@ember/object';
-import Computed from '@ember/object/computed';
-import { inject as service } from '@ember/service';
-import { assert } from '@ember/debug';
-import { isNone } from '@ember/utils';
+import Component from "@ember/component";
+import { computed, get } from "@ember/object";
+import Computed from "@ember/object/computed";
+import { inject as service } from "@ember/service";
+import { assert } from "@ember/debug";
+import { isNone } from "@ember/utils";
 
-import Session from 'my-app/services/session';
-import Person from 'my-app/models/person';
+import Session from "my-app/services/session";
+import Person from "my-app/models/person";
 
 export default class AnExample extends Component {
   // -- Component arguments -- //
@@ -62,264 +76,97 @@ export default class AnExample extends Component {
   session: Computed<Session> = service();
 
   // -- Class properties -- //
-  aString = 'this is fine';
+  aString = "this is fine";
   aCollection: string[] = [];
 
   // -- Computed properties -- //
   // TS correctly infers computed property types when the callback has a
   // return type annotation.
-  fromModel = computed('model.firstName', function(this: AnExample): string {
-    return `My name is ${get(this.model, 'firstName')};`;
+  fromModel = computed("model.firstName", function(this: AnExample): string {
+    return `My name is ${get(this.model, "firstName")};`;
   });
-  aComputed = computed('aString', function(this: AnExample): number {
+  aComputed = computed("aString", function(this: AnExample): number {
     return this.lookAString.length;
   });
-  isLoggedIn = bool('session.user');
-  savedUser: Computed<Person> = alias('session.user');
+  isLoggedIn = bool("session.user");
+  savedUser: Computed<Person> = alias("session.user");
 
   actions = {
     addToCollection(this: AnExample, value: string) {
-      const current = this.get('aCollection');
-      this.set('aCollection', current.concat(value));
+      const current = this.get("aCollection");
+      this.set("aCollection", current.concat(value));
     }
   };
 
   constructor() {
     super();
-    assert('`model` is required', !isNone(this.model));
+    assert("`model` is required", !isNone(this.model));
 
     this.includeAhoy();
   }
 
   includeAhoy(this: AnExample) {
-    if (!this.get('aCollection').includes('ahoy')) {
-      this.set('aCollection', current.concat('ahoy'));
+    if (!this.get("aCollection").includes("ahoy")) {
+      this.set("aCollection", current.concat("ahoy"));
     }
   }
 }
 ```
 
-### Class properties
+### Component arguments
 
 ```typescript
-// -- Class properties -- //
-aString = 'this is fine';
-aCollection: string[] = [];
-```
-
-Class properties like this are *instance properties*. These are compiled to, because they are *equivalent to*, assigning a property in the constructor. That is, these are equivalent:
-
-```typescript
-// class property assignment
-class AnyClass {
-  aClassProperty = 'yay';
-  constructor() {
-    console.log('all done constructing');
-  }
-}
-```
-
-```typescript
-// constructor assignment
-class AnyClass {
-  aClassProperty: string;
-  constructor() {
-    this.aClassProperty = 'yay';
-    console.log('all done constructing');
-  }
-}
-```
-
-This is *quite* unlike using `.extend`, which installs the property on the prototype. Three very significant differences fall out of this.
-
-1. Since this runs during the constructor, if you make an assignment like this, but want the caller to be able to override it, you *must* write it out with an explicit fallback.
-
-   ```typescript
-   export default class MyComponent extends Component {
-     aDefaultProp = this.aDefaultProp || 0;
-   }
-   ```
-
-   (In our codebase, we have started using [`_.defaultTo`](https://lodash.com/docs/4.17.4#defaultTo), which works quite nicely.)
-
-2. Because these are instance properties, *not* assigned on the prototype, you do not have to worry about the problem---[well-known among experienced Ember.js developers, but prone to bite people new to the framework][prototype-instances]---where you assign an array or object in the `.extend()` method and then find that it's shared between instances.
-
-   ```typescript
-   export default Component.extend({
-     anArray: [] // <- this will be shared between instances
-   });
-   ```
-
-   We've long had to
-
-   ```typescript
-   export default class MyComponent extends Component {
-     anArray = []; // <- this will *not* be shared between instances
-   }
-   ```
-
-3. The flip-side of this is that the only way we currently have to create computed property instances (until decorators stabilize) is *also* as instance, not prototype, properties. (I'll look at computed properties in more detail just below, so here mostly just note how the computed is set up on the class: by assignment.)
-
-   ```typescript
-   export default class MyComponent extends Component {
-     aString = 'Hello, there!';
-     itsLength: Computed<number> = computed('aString', function(
-       this: MyComponent
-     ) {
-       return this.aString.length;
-     });
-   }
-   ```
-
-   This *does* have a performance cost, which will be negligible in the ordinary case but pretty nasty if you're rendering hundreds to thousands of these items onto the page. Again, when decorators land this won't be a problem; in the meantime, you can use the same workaround as for other properties which need to be prototypal:
-
-   ```typescript
-   export default class MyComponent extends Component.extend({
-     itsLength: Computed<number> = computed(
-       'aString',
-       function(this: MyComponent) {
-         return this.aString.length;
-       }
-     );
-   }) {
-     aString = 'Hello, there!';
-   }
-   ```
-
-   This *looks* really weird, but it works exactly as you'd expect.
-
-[prototype-instances]: https://dockyard.com/blog/2014/04/17/ember-object-self-troll
-
-### Computed properties
-
-So now let's talk about computed properties in a bit more detail!
-
-```typescript
-  // -- Component arguments -- //
+export default class AnExample extends Component {
+  // Component arguments
   model: Person;      // required
   modifier?: string;  // optional, thus the `?`
-
-  // -- Computed properties -- //
-  // TS correctly infers computed property types when the callback has a
-  // return type annotation.
-  fromModel = computed('model.firstName', function(this: AnExample): string {
-    return `My name is ${get(this.model, 'firstName')};`;
-  })
-  aComputed = computed('aString', function(this: AnExample): number {
-    return this.lookAString.length;
-  });
-  isLoggedIn = bool('session.user');
-  savedUser: Computed<Person> = alias('session.user');
 ```
 
-But some things, TypeScript does not and cannot validate -- a number of the computed property macros are in this bucket, because they tend to be used for nested keys, and as noted above, TypeScript does not and *cannot* validate nested keys like that.
+I always put these first so that the "interface" of the object is clear and obvious. You can do the same thing on a controller instance; in that case you would export a `Model` from the corresponding `Route` class and import it into the `Controller`. It's a bit of boilerplate, to be sure, but it lets you communicate your interface clearly to consumers of the `Component` or `Controller`.
 
-#### Variants
+An important note about these kind of arguments: you do _not_ have to do `this.get(...)` (or, if you prefer, `get(this, ...)`) to access the properties themselves: they're class instance properties. You can simply access them as normal properties: `this.model`, `this.modifier`, etc. That even goes for referencing them as computed properties, as we'll see below.
 
-There are two times when things will look different.
-
-The first is when you're using properties that need to be merged with properties in the prototype chain, e.g. `attributeBindings` or `classNameBindings`, or which (because of details of how components are constructed) have to be set on the prototype rather than as instance properties, e.g. `tagClass`.
-
-For those, we can just leverage `.extend` in conjunction with classes:
+For optional arguments, you use the `?` operator to indicate they may be `undefined`. To get the _most_ mileage out of this, you'll want to enable `strictNullChecks` in the compiler options.[^maybe] However, note that we don't currently have any way to validate component argument invocation.[^ts-templates] The way I've been doing this is using Ember's debug `assert` in the constructor:
 
 ```typescript
-import Component from '@ember/component';
-
-export default class MyListItem extends Component.extend({
-  tagName: 'li',
-  classNameBindings: ['itemClass']
-}) {
-  itemClass = 'this-be-a-list';
-
-  // etc.
-}
+assert("`model` is required", !isNone(this.model));
 ```
 
-This is also how you'll *use* mixins (on defining them, see below):
+[^maybe]: This isn't my preferred way of handling optional types; [a `Maybe` type](https://true-myth.js.org) is. And you can, if you like, use `Maybe` here:
 
-```typescript
-import Component from '@ember/component';
-import MyMixin from 'my-app/mixins/my-mixin';
+    ```typescript
+    import Component from "@ember/component";
+    import { Maybe } from "true-myth";
 
-export default class AnExample extends Component.extend(MyMixin) {
-  // the rest of the definition.
-}
-```
-
-Note, however---and this is very important---that you cannot `.extend` an existing `class` implementation. As a result, deep inheritance hierarchies *may* make transitioning to classes in Ember painful. Most importantly: they may work some of the time in some ways, but will break when you least expect. So don't do that! (This isn't a TypeScript limitation; it's a limitation of classes in Ember today.)
-
-In the future, we'll (hopefully and presumably 🤞🏼) have an escape hatch for those merged or prototypally-set properties via decorators. That'll look something like this:
-
-```typescript
-// FUTURE, NOT TODAY
-
-import Component from '@ember/component';
-import { className, tagName } from 'ember-decorators/component';
-
-@tagName("li")
-export default class MyListItem extends Component {
-  @className itemClass = 'this-be-a-list';
-    
-  @action
-  sendAMessage(contents: string): void {
-    
-  }
-  // etc.
-}
-```
-
-#### Mixins
-
-The other time you'll have to take a different tack is with types which don't yet work properly with classes. The most common of these are `Mixin`s and Ember Data objects. For `Mixin`s, sadly, it's difficult (if not impossible) to get rigorous type-checking in their definitions. However, you can add appropriate type definitions to them and those will be picked up in `class`es which consume them.
-
-<aside>
-
-Note that if you're writing *new* code in Ember.js---using TypeScript or not---I strongly encourage you to simply avoid using mixins at all. Instead, use services. This will require you to change how you write some of your code, but in my experience that change will make your codebase much easier to understand, and therefore much easier to maintain.
-
-</aside>
-
-### Actions
-
-What about actions? As usual, these just become class instance properties in the current scheme.
-
-```typescript
-  actions = {
-    addToCollection(this: AnExample, value: string) {
-      const current = this.get('aCollection');
-      this.set('aCollection', current.concat(value));
+    export default class MyComponent extends Component {
+      optionalArg?: string;
+      optionalProperty = Maybe.of(this.optionalArg);
     }
-  };
-```
+    ```
 
-### `constructor` and class methods
+    Then if you invoke the property without the argument, it'll construct a `Nothing`; if you invoke it with the argument, it'll be `Just` with the value.
 
-ES6 class constructors and class methods both work as you'd expect, though as we'll see you'll need an extra bit of boilerplate for methods, at least for now.
+[^ts-templates]: A few of us have batted around some ideas for how to solve that particular problem, but _if_ we manage those, it'll probably be way, way later in 2018.
+
+### Injections
 
 ```typescript
-  constructor() {
-    super();
-    assert('`model` is required', !isNone(this.model));
-
-    this.includeAhoy();
-  }
-
-  includeAhoy(this: AnExample): void {
-    if (!this.get('aCollection').includes('ahoy')) {
-      this.set('aCollection', current.concat('ahoy'));
-    }
-  }
+  // -- Injections -- //
+  session: Computed<Session> = service();
 ```
 
-For the most part, you can just switch to using normal ES6 class constructors instead of the Ember `init` method. You can, if you so desire, also convert existing instances of `init` to class methods, and they'll work once you change `this._super(...arguments)` to `super.init(...arguments)`. It's worth pausing to understand the relationship between `init` and prototypal `init` and the `constructor`. An `init` in the `.extends()` hash runs first, then an `init` method on the class, then the normal `constructor`.
+Here, the most important thing to note is the required type annotation. In principle, we could work around this by requiring you to explicitly name the service and using a "type registry" to look up what the service type is -- more on that below in my discussion of using Ember Data -- but I'm not yet persuaded that's better than just writing the appropriate type annotation. Either way, there's some duplication. 🤔 We (everyone working in the [typed-ember](https://github.com/typed-ember) project) would welcome feedback here, because the one thing we _can't_ do is get the proper type _without_ one or the other of these.
 
-(You can see this for yourself in [this Ember Twiddle][init]---just open your developer tools and note the sequence.)
+```typescript
+  // the current approach -- requires importing `Session` so you can define it
+  // on the property here
+  session: Computed<Session> = service();
 
-[init]: https://ember-twiddle.com/36844717dcc50d734139368edf2e87da
+  // the alternative approach I've considered -- requires writing boilerplate
+  // elsewhere, similar to what you'll see below in the Ember Data section
+  session = service('session');
+```
 
-<!-- TODO: regular class methods and `this: TheThing` -->
+One other thing to notice here is that because TypeScript is a _structural_ type system, it doesn't matter if what is injected is the actual `Session` service; it just needs to be something that _matches the shape_ of the service -- so your normal behavior around dependency injection, etc. is all still as expected.
 
-## Summary
-
-So that's a wrap on components (and controllers, which behave much the same way).
-
-In the next post, I'll look at the elephant in the room: Ember Data. While you *can* make Ember Data stuff largely work today, it's still a ways from *Just Works™️_, sadly, and 
+That's enough for one post, I think. In the next entry, we'll pick up with how you handle class properties, including computed properties, and then talk about mixins as well. In the post after that, we'll look at Ember Data and some related concerns.
