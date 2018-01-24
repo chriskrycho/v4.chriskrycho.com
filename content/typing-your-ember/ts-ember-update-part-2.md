@@ -137,7 +137,7 @@ export default class AnExample extends Component {
 
     this.includeAhoy();
   }
-  
+
   // snip...
 }
 ```
@@ -162,7 +162,7 @@ export default class AnExample extends Component {
 
     this.includeAhoy();
   }
-  
+
   // snip...
 }
 ```
@@ -227,9 +227,7 @@ The flip-side of this is that the only way we currently have to create computed 
 export default class MyComponent extends Component {
   aString = 'Hello, there!';
 
-  itsLength: Computed<number> = computed(
-    'aString',
-    function(this: MyComponent) {
+  itsLength = computed('aString', function(this: MyComponent): number {
       return this.aString.length;
     }
   );
@@ -240,9 +238,7 @@ This *does* have a performance cost, which will be negligible in the ordinary ca
 
 ```typescript
 export default class MyComponent extends Component.extend({
-  itsLength: Computed<number> = computed(
-    'aString',
-    function(this: MyComponent) {
+  itsLength: computed('aString', function(this: MyComponent): number {
       return this.aString.length;
     }
   );
