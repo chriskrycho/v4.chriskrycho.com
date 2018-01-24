@@ -35,9 +35,10 @@ If you're interested in all of this and would like to learn more in person, I'm 
 
 Here's how I expect this update series to go:
 
-1. Overview, normal Ember objects, component arguments, and injections (this post).
-2. Class properties, including computed properties, as well as mixins.
-3. Ember Data and related concerns.
+1. [Overview, normal Ember objects, component arguments, and injections (this post).](http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html)
+2. [Class properties---some notes on how things differ from the `Ember.Object` world.](http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html)
+3. Computed properties and mixins.
+4. Ember Data and related concerns.
 
 ## Normal Ember objects
 
@@ -57,15 +58,15 @@ That means that every new bit of code I write today in our app looks roughly lik
 In order to explain all this clearly, I'm going to start by showing a whole component written in the new style. Then, over the rest of this post and the next post, I'll zoom in on and explain specific parts of it.
 
 ```typescript
-import Component from "@ember/component";
-import { computed, get } from "@ember/object";
-import Computed from "@ember/object/computed";
-import { inject as service } from "@ember/service";
-import { assert } from "@ember/debug";
-import { isNone } from "@ember/utils";
+import Component from '@ember/component';
+import { computed, get } from '@ember/object';
+import Computed from '@ember/object/computed';
+import { inject as service } from '@ember/service';
+import { assert } from '@ember/debug';
+import { isNone } from '@ember/utils';
 
-import Session from "my-app/services/session";
-import Person from "my-app/models/person";
+import Session from 'my-app/services/session';
+import Person from 'my-app/models/person';
 
 export default class AnExample extends Component {
   // -- Component arguments -- //
@@ -76,38 +77,43 @@ export default class AnExample extends Component {
   session: Computed<Session> = service();
 
   // -- Class properties -- //
-  aString = "this is fine";
+  aString = 'this is fine';
   aCollection: string[] = [];
 
   // -- Computed properties -- //
   // TS correctly infers computed property types when the callback has a
   // return type annotation.
-  fromModel = computed("model.firstName", function(this: AnExample): string {
-    return `My name is ${get(this.model, "firstName")};`;
-  });
-  aComputed = computed("aString", function(this: AnExample): number {
+  fromModel = computed(
+    'model.firstName',
+    function(this: AnExample): string {
+      return `My name is ${get(this.model, 'firstName')};`;
+    }
+  );
+  
+  aComputed = computed('aString', function(this: AnExample): number {
     return this.lookAString.length;
   });
-  isLoggedIn = bool("session.user");
-  savedUser: Computed<Person> = alias("session.user");
+  
+  isLoggedIn = bool('session.user');
+  savedUser: Computed<Person> = alias('session.user');
 
   actions = {
     addToCollection(this: AnExample, value: string) {
-      const current = this.get("aCollection");
-      this.set("aCollection", current.concat(value));
+      const current = this.get('aCollection');
+      this.set('aCollection', current.concat(value));
     }
   };
 
   constructor() {
     super();
-    assert("`model` is required", !isNone(this.model));
+    assert('`model` is required', !isNone(this.model));
 
     this.includeAhoy();
   }
 
   includeAhoy(this: AnExample) {
-    if (!this.get("aCollection").includes("ahoy")) {
-      this.set("aCollection", current.concat("ahoy"));
+    if (!this.get('aCollection').includes('ahoy')) {
+      this.set('aCollection', current.concat('ahoy'));
     }
   }
 }
@@ -135,8 +141,8 @@ assert("`model` is required", !isNone(this.model));
 [^maybe]: This isn't my preferred way of handling optional types; [a `Maybe` type](https://true-myth.js.org) is. And you can, if you like, use `Maybe` here:
 
     ```typescript
-    import Component from "@ember/component";
-    import { Maybe } from "true-myth";
+    import Component from '@ember/component';
+    import { Maybe } from 'true-myth';
 
     export default class MyComponent extends Component {
       optionalArg?: string;
