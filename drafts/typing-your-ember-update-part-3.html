@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <title>TypeScript and Ember.js Update, Part 3 &middot; Chris Krycho</title>
-    <meta name="description" content="TODO"/>
+    <meta name="description" content="Now that we know a bit more about how computed properties work, we’ll talk about computed properties, actions, and mixins on the Ember.js side, along with the normal class methods."/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
 <link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/drafts/typing-your-ember-update-part-3.html"/>
     <meta property="og:title" content="TypeScript and Ember.js Update, Part 3"/>
-    <meta property="og:description" content="TODO"/>
+    <meta property="og:description" content="Now that we know a bit more about how computed properties work, we’ll talk about computed properties, actions, and mixins on the Ember.js side, along with the normal class methods."/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/>
 <link rel="me" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
     <meta name="twitter:title" content="TypeScript and Ember.js Update, Part 3"/>
-    <meta name="twitter:description" content="TODO"/>
+    <meta name="twitter:description" content="Now that we know a bit more about how computed properties work, we’ll talk about computed properties, actions, and mixins on the Ember.js side, along with the normal class methods."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
@@ -80,34 +80,217 @@
 
     <header>
 <h1>TypeScript and Ember.js Update, Part 3</h1>
-<h2>TODO</h2>    </header>
+<h2>Computed properties, actions, mixins, and class methods.
+</h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/drafts/typing-your-ember-update-part-3.html"><i class="fa fa-fw fa-link"></i></a>January 12, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/drafts/typing-your-ember-update-part-3.html"><i class="fa fa-fw fa-link"></i></a>January 25, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
 
         <div class="content">
 
-<!-- TODO: previous posts and what they covered -->
+<p><i class='series-overview'>You write <a href="https://emberjs.com">Ember.js</a> apps. You think <a href="http://www.typescriptlang.org">TypeScript</a> would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i></p>
+<p><i class='series-overview'>This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.</i></p>
+<p><i class='series-overview'><a href="/typing-your-ember.html">(See the rest of the series. →)</a></i></p>
+<hr />
+<p>In the previous posts in this series, I introduced the big picture of how the story around TypeScript and Ember.js has improved over the last several months and walked through some important background on class properties. In this post, I’ll build on that foundation to look closely at computed properties, actions, and mixins.</p>
 <aside>
 <p>If you’re interested in all of this and would like to learn more in person, I’m <a href="http://emberconf.com/speakers.html#chris-krycho">leading a workshop on it at EmberConf 2018</a>—I’d love to see you there!</p>
 </aside>
-<section id="ember-data" class="level2">
-<h2>Ember Data</h2>
-<p>There are two challenges to using Ember Data effectively with TypeScript today.</p>
+<p>Here’s the outline of this update sequence:</p>
 <ol type="1">
-<li>Ember Data, for reasons I haven’t yet dug into myself, does not play nicely with ES6 classes. However, we <em>want</em> named class exports for the sake of being able to use them</li>
+<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">Overview, normal Ember objects, component arguments, and injections.</a></li>
+<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Class properties—some notes on how things differ from the <code>Ember.Object</code> world.</a></li>
+<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Computed properties, actions, mixins, and class methods. (this post)</a></li>
+<li>Ember Data and related concerns.</li>
 </ol>
-<p>++TODO++</p>
-<p>We also have some ideas and prototypes for how to make the experience of both of these much, <em>much</em> better. Sometime soon-ish—hopefully before EmberConf, where I’d really like to <em>not</em> have to mess with teaching the complicated ways above to make things work!—we should land a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
-<p>Note for Ember CLI Mirage users: most of what I’ve said here is equally applicable and nearly identical for Mirage. I’m currently working on solid typings for Mirage that get us everything we need that way.</p>
+<section id="a-detailed-example-contd.-class-properties" class="level2">
+<h2>A detailed example (cont’d.) – class properties</h2>
+<p>Let’s start by recalling the example Component we’re working through:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import { computed, get } from &#39;@ember/object&#39;;
+import Computed from &#39;@ember/object/computed&#39;;
+import { inject as service } from &#39;@ember/service&#39;;
+import { assert } from &#39;@ember/debug&#39;;
+import { isNone } from &#39;@ember/utils&#39;;
+
+import Session from &#39;my-app/services/session&#39;;
+import Person from &#39;my-app/models/person&#39;;
+
+export default class AnExample extends Component {
+  // -- Component arguments -- //
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`
+
+  // -- Injections -- //
+  session: Computed&lt;Session&gt; = service();
+
+  // -- Class properties -- //
+  aString = &#39;this is fine&#39;;
+  aCollection: string[] = [];
+
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel = computed(
+    &#39;model.firstName&#39;,
+    function(this: AnExample): string {
+      return `My name is ${get(this.model, &#39;firstName&#39;)};`;
+    }
+  );
+
+  aComputed = computed(&#39;aString&#39;, function(this: AnExample): number {
+    return this.lookAString.length;
+  });
+
+  isLoggedIn = bool(&#39;session.user&#39;);
+  savedUser: Computed&lt;Person&gt; = alias(&#39;session.user&#39;);
+
+  actions = {
+    addToCollection(this: AnExample, value: string) {
+      const current = this.get(&#39;aCollection&#39;);
+      this.set(&#39;aCollection&#39;, current.concat(value));
+    }
+  };
+
+  constructor() {
+    super();
+    assert(&#39;`model` is required&#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample) {
+    if (!this.get(&#39;aCollection&#39;).includes(&#39;ahoy&#39;)) {
+      this.set(&#39;aCollection&#39;, current.concat(&#39;ahoy&#39;));
+    }
+  }
+}</code></pre>
+<p>We already covered component arguments and injections as well as basic class properties. Now let’s look at the special cases of computed properties, actions, and mixins, before turning our attention</p>
+<section id="computed-properties" class="level3">
+<h3>Computed properties</h3>
+<p>So now let’s talk about computed properties in a bit more detail! I’m including the component arguments</p>
+<pre class="typescript"><code>  // -- Component arguments -- //
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`
+
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel = computed(
+    &#39;model.firstName&#39;, 
+    function(this: AnExample): string {
+    return `My name is ${get(this.model, &#39;firstName&#39;)};`;
+    }
+  );
+  
+  aComputed = computed(&#39;aString&#39;, function(this: AnExample): number {
+    return this.lookAString.length;
+  });
+  
+  isLoggedIn = bool(&#39;session.user&#39;);
+  savedUser: Computed&lt;Person&gt; = alias(&#39;session.user&#39;);</code></pre>
+<!-- TODO: describe `this` -->
+<!-- TODO: describe types -->
+<p>But some things, TypeScript does not and cannot validate – a number of the computed property macros are in this bucket, because they tend to be used for nested keys, and as noted above, TypeScript does not and <em>cannot</em> validate nested keys like that.</p>
+</section>
+<section id="actions" class="level3">
+<h3>Actions</h3>
+<p>What about actions? As usual, these just become class instance properties in the current scheme.</p>
+<pre class="typescript"><code>  actions = {
+    addToCollection(this: AnExample, value: string) {
+      const current = this.get(&#39;aCollection&#39;);
+      this.set(&#39;aCollection&#39;, current.concat(value));
+    }
+  };</code></pre>
+<p>As with computed properties, we need the <code>this</code> type declaration to tell TypeScript that this method is going to be automatically bound to the class instance. Otherwise, TypeScript thinks the this is the <code>actions</code> hash.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+</section>
+<section id="class-property-variants" class="level3">
+<h3>Class property variants</h3>
+<p>There are two times when things will look different from basic class properties. Both have to do with setting up the prototype to work the way other parts of the Ember object ecosystem expect.</p>
+<section id="prototypalmerged-properties" class="level4">
+<h4>Prototypal/merged properties</h4>
+<p>The first is when you’re using properties that need to be merged with properties in the prototype chain, e.g. <code>attributeBindings</code> or <code>classNameBindings</code>, or which (because of details of how components are constructed) have to be set on the prototype rather than as instance properties, e.g. <code>tagClass</code>.</p>
+<p>For those, we can just leverage <code>.extend</code> in conjunction with classes:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+
+export default class MyListItem extends Component.extend({
+  tagName: &#39;li&#39;,
+  classNameBindings: [&#39;itemClass&#39;]
+}) {
+  itemClass = &#39;this-be-a-list&#39;;
+
+  // etc.
+}</code></pre>
+<p>This is also how you’ll <em>use</em> mixins (on defining them, see below):</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import MyMixin from &#39;my-app/mixins/my-mixin&#39;;
+
+export default class AnExample extends Component.extend(MyMixin) {
+  // the rest of the definition.
+}</code></pre>
+<p>Note, however—and this is very important—that you cannot <code>.extend</code> an existing <code>class</code> implementation. As a result, deep inheritance hierarchies <em>may</em> make transitioning to classes in Ember painful. Most importantly: they may work <em>some</em> of the time in <em>some</em> ways, but will break when you least expect. So don’t do that! (This isn’t a TypeScript limitation; it’s a limitation of classes in Ember today.)<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+</section>
+<section id="mixins" class="level4">
+<h4>Mixins</h4>
+<p>The other time you’ll have to take a different tack is with types which don’t yet work properly with classes. The most common of these are <code>Mixin</code>s and Ember Data objects. For <code>Mixin</code>s, sadly, it’s difficult (if not impossible) to get rigorous type-checking in their definitions. However, you can add appropriate type definitions to them and those will be picked up in <code>class</code>es which consume them.</p>
+<aside>
+<p>Note that if you’re writing <em>new</em> code in Ember.js—using TypeScript or not—I strongly encourage you to simply avoid using mixins at all. Instead, use services. This will require you to change how you write some of your code, but in my experience that change will make your codebase much easier to understand, and therefore much easier to maintain.</p>
+</aside>
+</section>
+</section>
+<section id="constructor-and-class-methods" class="level3">
+<h3><code>constructor</code> and class methods</h3>
+<p>ES6 class constructors and class methods both work as you’d expect, though as we’ll see you’ll need an extra bit of boilerplate for methods, at least for now.</p>
+<pre class="typescript"><code>  constructor() {
+    super();
+    assert(&#39;`model` is required&#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample): void {
+    if (!this.get(&#39;aCollection&#39;).includes(&#39;ahoy&#39;)) {
+      this.set(&#39;aCollection&#39;, current.concat(&#39;ahoy&#39;));
+    }
+  }</code></pre>
+<p>For the most part, you can just switch to using normal ES6 class constructors instead of the Ember <code>init</code> method. You can, if you so desire, also convert existing instances of <code>init</code> to class methods, and they’ll work once you change <code>this._super(...arguments)</code> to <code>super.init(...arguments)</code>. It’s worth pausing to understand the relationship between <code>init</code> and prototypal <code>init</code> and the <code>constructor</code>. An <code>init</code> in the <code>.extends()</code> hash runs first, then an <code>init</code> method on the class, then the normal <code>constructor</code>.</p>
+<p>(You can see this for yourself in <a href="https://ember-twiddle.com/36844717dcc50d734139368edf2e87da">this Ember Twiddle</a>—just open your developer tools and note the sequence.)</p>
+<!-- TODO: regular class methods and `this: TheThing` -->
+</section>
+</section>
+<section id="summary" class="level2">
+<h2>Summary</h2>
+<p>So that’s a wrap on components (and controllers, which behave much the same way).</p>
+<p>In the next post, I’ll look at the elephant in the room: Ember Data. While you <em>can</em> make Ember Data stuff largely work today, it’s still a ways from *Just Works™️_, sadly, and</p>
 </section>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>If you’re curious about the mechanics, we’re basically setting up a “type registry” which maps the string keys to the correct model, so that the type of e.g. <code>store.createRecord('some-model', { ... })</code> will do a lookup in an interface which defines a mapping from model name, i.e. <code>some-model</code> here, to the model type, e.g. <code>export default class SomeModel extends DS.Model.extend({ ... }) {}</code>;<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>In the future, this problem will hopefully be solved neatly by decorators:</p>
+<pre class="typescript"><code>  @action
+  addToCollection(value: string) {
+    const current = this.get(&#39;aCollection&#39;);
+    this.set(&#39;aCollection&#39;, current.concat(value));
+  }</code></pre>
+<p>For today, however, specifying a <code>this</code> type is where it’s at.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>In the future, we’ll (hopefully and presumably 🤞🏼) have an escape hatch for those merged or prototypally-set properties via decorators. That’ll look something like this:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import { className, tagName } from &#39;ember-decorators/component&#39;;
+
+@tagName(&quot;li&quot;)
+export default class MyListItem extends Component {
+  @className itemClass = &#39;this-be-a-list&#39;;
+
+  @action
+  sendAMessage(contents: string): void {
+
+  }
+  // etc.
+}</code></pre>
+<a href="#fnref2" class="footnote-back">↩</a></li>
 </ol>
 </section>
         </div>
@@ -162,7 +345,7 @@
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">TypeScript and Ember.js Update, Part 1</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">TypeScript and Ember.js Update, Part 2</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2017/on-public-theological-histories.html">On Public (Theological) Histories</a></li>
     </ul>
 </section></footer>

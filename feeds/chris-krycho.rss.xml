@@ -1,5 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Mon, 22 Jan 2018 07:10:00 -0500</lastBuildDate><item><title>TypeScript and Ember.js Update, Part 1</title><link>http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Wed, 24 Jan 2018 07:00:00 -0500</lastBuildDate><item><title>TypeScript and Ember.js Update, Part 2</title><link>http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;In the previous post in this series, I introduced the big picture of how the story around TypeScript and Ember.js has improved over the last several months. In this post, I’ll be pausing from TypeScript-specific to take a look at how things work with &lt;em&gt;class properties&lt;/em&gt;, since they have some big implications for how we work, which then have ripple effects on computed properties, actions, etc.&lt;/p&gt;
+&lt;aside&gt;
+&lt;p&gt;If you’re interested in all of this and would like to learn more in person, I’m &lt;a href="http://emberconf.com/speakers.html#chris-krycho"&gt;leading a workshop on it at EmberConf 2018&lt;/a&gt;—I’d love to see you there!&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;Here’s the outline of this update sequence:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world (this post).&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Computed properties, actions, mixins, and class methods.&lt;/li&gt;
+&lt;li&gt;Ember Data and related concerns.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;section id="a-detailed-example-contd.-class-properties" class="level2"&gt;
+&lt;h2&gt;A detailed example (cont’d.) – class properties&lt;/h2&gt;
+&lt;p&gt;Let’s start by recalling the example Component we’re working through:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { computed, get } from &amp;#39;@ember/object&amp;#39;;
+import Computed from &amp;#39;@ember/object/computed&amp;#39;;
+import { inject as service } from &amp;#39;@ember/service&amp;#39;;
+import { assert } from &amp;#39;@ember/debug&amp;#39;;
+import { isNone } from &amp;#39;@ember/utils&amp;#39;;
+
+import Session from &amp;#39;my-app/services/session&amp;#39;;
+import Person from &amp;#39;my-app/models/person&amp;#39;;
+
+export default class AnExample extends Component {
+  // -- Component arguments -- //
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`
+
+  // -- Injections -- //
+  session: Computed&amp;lt;Session&amp;gt; = service();
+
+  // -- Class properties -- //
+  aString = &amp;#39;this is fine&amp;#39;;
+  aCollection: string[] = [];
+
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel = computed(
+    &amp;#39;model.firstName&amp;#39;,
+    function(this: AnExample): string {
+      return `My name is ${get(this.model, &amp;#39;firstName&amp;#39;)};`;
+    }
+  );
+
+  aComputed = computed(&amp;#39;aString&amp;#39;, function(this: AnExample): number {
+    return this.lookAString.length;
+  });
+
+  isLoggedIn = bool(&amp;#39;session.user&amp;#39;);
+  savedUser: Computed&amp;lt;Person&amp;gt; = alias(&amp;#39;session.user&amp;#39;);
+
+  actions = {
+    addToCollection(this: AnExample, value: string) {
+      const current = this.get(&amp;#39;aCollection&amp;#39;);
+      this.set(&amp;#39;aCollection&amp;#39;, current.concat(value));
+    }
+  };
+
+  constructor() {
+    super();
+    assert(&amp;#39;`model` is required&amp;#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample) {
+    if (!this.get(&amp;#39;aCollection&amp;#39;).includes(&amp;#39;ahoy&amp;#39;)) {
+      this.set(&amp;#39;aCollection&amp;#39;, current.concat(&amp;#39;ahoy&amp;#39;));
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Throughout, you’ll note that we’re using &lt;em&gt;assignment&lt;/em&gt; to create these class properties—a big change from the key/value setup in the old &lt;code&gt;.extends({ ... })&lt;/code&gt; model:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;  // -- Class properties -- //
+  aString = &amp;#39;this is fine&amp;#39;;
+  aCollection: string[] = [];&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Class properties like this are &lt;em&gt;instance properties&lt;/em&gt;. These are compiled to, because they are &lt;em&gt;equivalent to&lt;/em&gt;, assigning a property in the constructor. That is, these two ways of writing class property initialization are equivalent—&lt;/p&gt;
+&lt;p&gt;At the property definition site:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;export default class AnExample extends Component {
+  // snip...
+
+  // -- Class properties -- //
+  aString = &amp;#39;this is fine&amp;#39;;
+  aCollection: string[] = [];
+
+  // snip..
+
+  constructor() {
+    super();
+    assert(&amp;#39;`model` is required&amp;#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+  
+  // snip...
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the constructor:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;export default class AnExample extends Component {
+  // snip...
+
+  // -- Class properties -- //
+  aString: string;
+  aCollection: string[];
+
+  constructor() {
+    super();
+
+    this.aString = &amp;#39;this is fine&amp;#39;;
+    this.aCollection = [];
+
+    assert(&amp;#39;`model` is required&amp;#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+  
+  // snip...
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see why the first one is preferable: if you don’t need any input to the component to set the value, you can simply set the definition inline where the property is declared.&lt;/p&gt;
+&lt;p&gt;However, this is &lt;em&gt;quite&lt;/em&gt; unlike using &lt;code&gt;.extend&lt;/code&gt;, which installs the property on the prototype. Three very important differences from what you’re used to fall out of this, and &lt;em&gt;none of them are specific to TypeScript.&lt;/em&gt;&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;section id="default-values" class="level3"&gt;
+&lt;h3&gt;1. Default values&lt;/h3&gt;
+&lt;p&gt;Since class property setup runs during the constructor, if you want the caller to be able to override it, you &lt;em&gt;must&lt;/em&gt; give it an explicit fallback that references what’s passed into the function. Something like this:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;class AnyClass {
+  aDefaultProp = this.aDefaultProp || 0;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Again, translated back into the constructor form:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;class AnyClass {
+  constructor() {
+    this.aDefaultProp = this.aDefaultProp || 0;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here, you can see that if something has &lt;em&gt;already set&lt;/em&gt; the &lt;code&gt;aDefaultProp&lt;/code&gt; value (before the class constructor is called), we’ll use that value; otherwise, we’ll use the default. You can think of this as being something like default arguments to a function. In our codebase, we have started using &lt;a href="https://lodash.com/docs/4.17.4#defaultTo"&gt;&lt;code&gt;_.defaultTo&lt;/code&gt;&lt;/a&gt;, which works quite nicely. In the old world of declaring props with their values in the &lt;code&gt;.extends({ ... })&lt;/code&gt; hash, we got this behavior “for free”—but without a lot of other benefits of classes, so not &lt;em&gt;actually&lt;/em&gt; for free.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="no-more-shared-state" class="level3"&gt;
+&lt;h3&gt;2. No more shared state&lt;/h3&gt;
+&lt;p&gt;Because these are instance properties, &lt;em&gt;not&lt;/em&gt; assigned on the prototype, you do not have to worry about the problem—&lt;a href="https://dockyard.com/blog/2014/04/17/ember-object-self-troll"&gt;well-known among experienced Ember.js developers, but prone to bite people new to the framework&lt;/a&gt;—where you assign an array or object in the &lt;code&gt;.extend()&lt;/code&gt; method and then find that it’s shared between instances.&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;export default Component.extend({
+  anArray: [],  // &amp;lt;- this *will* be shared between instances
+});&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We’ve long had to handle this by setting up those properties in our &lt;code&gt;init()&lt;/code&gt; method instead, so that they are created during object instantiation, rather than on the prototype. This problem goes away entirely with classes, including in TypeScript.&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;export default class MyComponent extends Component {
+  anArray = [];  // &amp;lt;- this will *not* be shared between instances
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(Note that here, we don’t have a type for the array, so it’s of type &lt;code&gt;any[]&lt;/code&gt;; we &lt;em&gt;always&lt;/em&gt; need type annotations for empty arrays if we want them to be a “narrower,” or more specific, type than that.)&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="performance-changes" class="level3"&gt;
+&lt;h3&gt;3. Performance changes&lt;/h3&gt;
+&lt;p&gt;The flip-side of this is that the only way we currently have to create computed property instances (until decorators stabilize) is &lt;em&gt;also&lt;/em&gt; as instance, not prototype, properties. I’ll look at computed properties (and their types) in more detail in the next post, so here mostly just note how the computed is set up on the class: by assignment, &lt;em&gt;not&lt;/em&gt; as a prototypal property.&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;export default class MyComponent extends Component {
+  aString = &amp;#39;Hello, there!&amp;#39;;
+
+  itsLength: Computed&amp;lt;number&amp;gt; = computed(
+    &amp;#39;aString&amp;#39;,
+    function(this: MyComponent) {
+      return this.aString.length;
+    }
+  );
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This &lt;em&gt;does&lt;/em&gt; have a performance cost, which will be negligible in the ordinary case but pretty nasty if you’re rendering hundreds to thousands of these items onto the page. You can use this workaround for these as well as for any other properties which need to be prototypal (more on &lt;em&gt;that&lt;/em&gt; in the next post as well):&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;export default class MyComponent extends Component.extend({
+  itsLength: Computed&amp;lt;number&amp;gt; = computed(
+    &amp;#39;aString&amp;#39;,
+    function(this: MyComponent) {
+      return this.aString.length;
+    }
+  );
+}) {
+  aString = &amp;#39;Hello, there!&amp;#39;;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This &lt;em&gt;looks&lt;/em&gt; really weird, but it works exactly as you’d expect.&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="summary" class="level2"&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Those are the &lt;em&gt;biggest&lt;/em&gt; differences from &lt;code&gt;Ember.Object&lt;/code&gt; that you need to be aware of when working with class properties in Ember.js today, at least in my experience working with them day to day. These are not the only differences with &lt;em&gt;classes&lt;/em&gt;, though, especially when dealing with TypeScript, so in my next entry we’ll take a look at how classes work (and work well!) with most things in Ember.js and TypeScript together.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;You can use this same feature on classes using Babel, with the &lt;a href="https://babeljs.io/docs/plugins/transform-class-properties/"&gt;class properties transform&lt;/a&gt;.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;Even when &lt;a href="https://github.com/emberjs/rfcs/pull/281"&gt;Ember.js RFC #281&lt;/a&gt; lands, this problem will not go away, at least under the current implementation, since &lt;a href="https://github.com/emberjs/rfcs/pull/281#issuecomment-360023258"&gt;&lt;em&gt;these&lt;/em&gt; will &lt;em&gt;not&lt;/em&gt; be transformed into getters on the prototype&lt;/a&gt;. We are waiting for decorators to solve this problem completely.&lt;a href="#fnref2" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 24 Jan 2018 07:00:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-01-24:/2018/typing-your-ember-update-part-2.html</guid><category>TypeScript</category><category>emberjs</category><category>typing-your-ember</category></item><item><title>TypeScript and Ember.js Update, Part 1</title><link>http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -10,8 +198,9 @@
 &lt;/aside&gt;
 &lt;p&gt;Here’s how I expect this update series to go:&lt;/p&gt;
 &lt;ol type="1"&gt;
-&lt;li&gt;Overview, normal Ember objects, component arguments, and injections (this post).&lt;/li&gt;
-&lt;li&gt;Class properties, including computed properties, as well as mixins.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections (this post).&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Computed properties, actions, mixins, and class methods.&lt;/li&gt;
 &lt;li&gt;Ember Data and related concerns.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section id="normal-ember-objects" class="level2"&gt;
@@ -23,57 +212,62 @@
 &lt;h2&gt;A detailed example&lt;/h2&gt;
 &lt;p&gt;That means that every new bit of code I write today in our app looks roughly like this, with only the obvious modifications for services, routes, and controllers—I picked components because they’re far and away the most common things in our applications.&lt;/p&gt;
 &lt;p&gt;In order to explain all this clearly, I’m going to start by showing a whole component written in the new style. Then, over the rest of this post and the next post, I’ll zoom in on and explain specific parts of it.&lt;/p&gt;
-&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
-import { computed, get } from &amp;quot;@ember/object&amp;quot;;
-import Computed from &amp;quot;@ember/object/computed&amp;quot;;
-import { inject as service } from &amp;quot;@ember/service&amp;quot;;
-import { assert } from &amp;quot;@ember/debug&amp;quot;;
-import { isNone } from &amp;quot;@ember/utils&amp;quot;;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { computed, get } from &amp;#39;@ember/object&amp;#39;;
+import Computed from &amp;#39;@ember/object/computed&amp;#39;;
+import { inject as service } from &amp;#39;@ember/service&amp;#39;;
+import { assert } from &amp;#39;@ember/debug&amp;#39;;
+import { isNone } from &amp;#39;@ember/utils&amp;#39;;
 
-import Session from &amp;quot;my-app/services/session&amp;quot;;
-import Person from &amp;quot;my-app/models/person&amp;quot;;
+import Session from &amp;#39;my-app/services/session&amp;#39;;
+import Person from &amp;#39;my-app/models/person&amp;#39;;
 
 export default class AnExample extends Component {
   // -- Component arguments -- //
-  model: Person; // required
-  modifier?: string; // optional, thus the `?`
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`
 
   // -- Injections -- //
   session: Computed&amp;lt;Session&amp;gt; = service();
 
   // -- Class properties -- //
-  aString = &amp;quot;this is fine&amp;quot;;
+  aString = &amp;#39;this is fine&amp;#39;;
   aCollection: string[] = [];
 
   // -- Computed properties -- //
   // TS correctly infers computed property types when the callback has a
   // return type annotation.
-  fromModel = computed(&amp;quot;model.firstName&amp;quot;, function(this: AnExample): string {
-    return `My name is ${get(this.model, &amp;quot;firstName&amp;quot;)};`;
-  });
-  aComputed = computed(&amp;quot;aString&amp;quot;, function(this: AnExample): number {
+  fromModel = computed(
+    &amp;#39;model.firstName&amp;#39;,
+    function(this: AnExample): string {
+      return `My name is ${get(this.model, &amp;#39;firstName&amp;#39;)};`;
+    }
+  );
+
+  aComputed = computed(&amp;#39;aString&amp;#39;, function(this: AnExample): number {
     return this.lookAString.length;
   });
-  isLoggedIn = bool(&amp;quot;session.user&amp;quot;);
-  savedUser: Computed&amp;lt;Person&amp;gt; = alias(&amp;quot;session.user&amp;quot;);
+
+  isLoggedIn = bool(&amp;#39;session.user&amp;#39;);
+  savedUser: Computed&amp;lt;Person&amp;gt; = alias(&amp;#39;session.user&amp;#39;);
 
   actions = {
     addToCollection(this: AnExample, value: string) {
-      const current = this.get(&amp;quot;aCollection&amp;quot;);
-      this.set(&amp;quot;aCollection&amp;quot;, current.concat(value));
+      const current = this.get(&amp;#39;aCollection&amp;#39;);
+      this.set(&amp;#39;aCollection&amp;#39;, current.concat(value));
     }
   };
 
   constructor() {
     super();
-    assert(&amp;quot;`model` is required&amp;quot;, !isNone(this.model));
+    assert(&amp;#39;`model` is required&amp;#39;, !isNone(this.model));
 
     this.includeAhoy();
   }
 
   includeAhoy(this: AnExample) {
-    if (!this.get(&amp;quot;aCollection&amp;quot;).includes(&amp;quot;ahoy&amp;quot;)) {
-      this.set(&amp;quot;aCollection&amp;quot;, current.concat(&amp;quot;ahoy&amp;quot;));
+    if (!this.get(&amp;#39;aCollection&amp;#39;).includes(&amp;#39;ahoy&amp;#39;)) {
+      this.set(&amp;#39;aCollection&amp;#39;, current.concat(&amp;#39;ahoy&amp;#39;));
     }
   }
 }&lt;/code&gt;&lt;/pre&gt;
@@ -85,8 +279,14 @@ export default class AnExample extends Component {
   modifier?: string;  // optional, thus the `?`&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I always put these first so that the “interface” of the object is clear and obvious. You can do the same thing on a controller instance; in that case you would export a &lt;code&gt;Model&lt;/code&gt; from the corresponding &lt;code&gt;Route&lt;/code&gt; class and import it into the &lt;code&gt;Controller&lt;/code&gt;. It’s a bit of boilerplate, to be sure, but it lets you communicate your interface clearly to consumers of the &lt;code&gt;Component&lt;/code&gt; or &lt;code&gt;Controller&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;An important note about these kind of arguments: you do &lt;em&gt;not&lt;/em&gt; have to do &lt;code&gt;this.get(...)&lt;/code&gt; (or, if you prefer, &lt;code&gt;get(this, ...)&lt;/code&gt;) to access the properties themselves: they’re class instance properties. You can simply access them as normal properties: &lt;code&gt;this.model&lt;/code&gt;, &lt;code&gt;this.modifier&lt;/code&gt;, etc. That even goes for referencing them as computed properties, as we’ll see below.&lt;/p&gt;
-&lt;p&gt;For optional arguments, you use the &lt;code&gt;?&lt;/code&gt; operator to indicate they may be &lt;code&gt;undefined&lt;/code&gt;. To get the &lt;em&gt;most&lt;/em&gt; mileage out of this, you’ll want to enable &lt;code&gt;strictNullChecks&lt;/code&gt; in the compiler options.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; However, note that we don’t currently have any way to validate component argument invocation.&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; The way I’ve been doing this is using Ember’s debug &lt;code&gt;assert&lt;/code&gt; in the constructor:&lt;/p&gt;
+&lt;p&gt;For optional arguments, you use the &lt;code&gt;?&lt;/code&gt; operator to indicate they may be &lt;code&gt;undefined&lt;/code&gt;. To get the &lt;em&gt;most&lt;/em&gt; mileage out of this, you’ll want to enable &lt;code&gt;strictNullChecks&lt;/code&gt; in the compiler options.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; However, note that we don’t currently have any way to validate component argument invocation.&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; The way I’ve been doing this is using Ember’s debug &lt;a href="https://emberjs.com/api/ember/2.18/classes/@ember%2Fdebug/methods/assert?anchor=assert"&gt;&lt;code&gt;assert&lt;/code&gt;&lt;/a&gt; in the constructor:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;assert(&amp;quot;`model` is required&amp;quot;, !isNone(this.model));&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Edit, January 24, 2018:&lt;/strong&gt; Starting in TypeScript 2.7, you can enable a flag, &lt;code&gt;--strictPropertyInitialization&lt;/code&gt;, which requires that all declared, non-optional properties on a class be initialized in the constructor or with a class property assignment. (There’s more on class property assignment in &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;part 2&lt;/a&gt; of this series.) If you do that, all &lt;em&gt;arguments&lt;/em&gt; to a component should be defined with the &lt;em&gt;definite assignment assertion modifier&lt;/em&gt;, a &lt;code&gt;!&lt;/code&gt; after the name of the property, as on &lt;code&gt;model&lt;/code&gt; here:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;export default class AnExample extends Component {
+  // Component arguments
+  model!: Person;     // required
+  modifier?: string;  // optional, thus the `?`&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You should still combine that with use of &lt;a href="https://emberjs.com/api/ember/2.18/classes/@ember%2Fdebug/methods/assert?anchor=assert"&gt;&lt;code&gt;assert&lt;/code&gt;&lt;/a&gt; so that any misses in template invocation will get caught in your tests.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="injections" class="level3"&gt;
 &lt;h3&gt;Injections&lt;/h3&gt;
@@ -108,8 +308,8 @@ export default class AnExample extends Component {
 &lt;hr /&gt;
 &lt;ol&gt;
 &lt;li id="fn1"&gt;&lt;p&gt;This isn’t my preferred way of handling optional types; &lt;a href="https://true-myth.js.org"&gt;a &lt;code&gt;Maybe&lt;/code&gt; type&lt;/a&gt; is. And you can, if you like, use &lt;code&gt;Maybe&lt;/code&gt; here:&lt;/p&gt;
-&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
-import { Maybe } from &amp;quot;true-myth&amp;quot;;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { Maybe } from &amp;#39;true-myth&amp;#39;;
 
 export default class MyComponent extends Component {
   optionalArg?: string;
