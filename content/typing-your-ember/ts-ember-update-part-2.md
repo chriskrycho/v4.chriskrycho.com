@@ -2,7 +2,7 @@
 Title: TypeScript and Ember.js Update, Part 2
 Subtitle: >
     Class properties—some notes on how things differ from the <code>Ember.Object</code> world.
-Date: 2018-01-23 21:25
+Date: 2018-01-24 07:00
 Category: Tech
 Series: Typing Your Ember
 Tags: TypeScript, emberjs, typing-your-ember
@@ -35,10 +35,13 @@ If you're interested in all of this and would like to learn more in person, I'm 
 
 Here's the outline of this update sequence:
 
-1. [Overview, normal Ember objects, component arguments, and injections.](http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html)
-2. [Class properties---some notes on how things differ from the `Ember.Object` world (this post).](http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html)
-3. Computed properties and actions and mixins.
+1. [Overview, normal Ember objects, component arguments, and injections.][pt1]
+2. [Class properties---some notes on how things differ from the `Ember.Object` world (this post).][pt2]
+3. Computed properties, actions, mixins, and class methods.
 4. Ember Data and related concerns.
+
+[pt1]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html
+[pt2]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html
 
 ## A detailed example (cont'd.) -- class properties
 
@@ -57,8 +60,8 @@ import Person from 'my-app/models/person';
 
 export default class AnExample extends Component {
   // -- Component arguments -- //
-  model: Person; // required
-  modifier?: string; // optional, thus the `?`
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`
 
   // -- Injections -- //
   session: Computed<Session> = service();
@@ -70,12 +73,17 @@ export default class AnExample extends Component {
   // -- Computed properties -- //
   // TS correctly infers computed property types when the callback has a
   // return type annotation.
-  fromModel = computed('model.firstName', function(this: AnExample): string {
-    return `My name is ${get(this.model, 'firstName')};`;
-  });
+  fromModel = computed(
+    'model.firstName',
+    function(this: AnExample): string {
+      return `My name is ${get(this.model, 'firstName')};`;
+    }
+  );
+
   aComputed = computed('aString', function(this: AnExample): number {
     return this.lookAString.length;
   });
+
   isLoggedIn = bool('session.user');
   savedUser: Computed<Person> = alias('session.user');
 
@@ -104,35 +112,64 @@ export default class AnExample extends Component {
 Throughout, you'll note that we're using *assignment* to create these class properties---a big change from the key/value setup in the old `.extends({ ... })` model:
 
 ```typescript
-// -- Class properties -- //
-aString = 'this is fine';
-aCollection: string[] = [];
+  // -- Class properties -- //
+  aString = 'this is fine';
+  aCollection: string[] = [];
 ```
 
-Class properties like this are *instance properties*. These are compiled to, because they are *equivalent to*, assigning a property in the constructor. That is, these are equivalent:
+Class properties like this are *instance properties*. These are compiled to, because they are *equivalent to*, assigning a property in the constructor. That is, these two ways of writing class property initialization are equivalent---
+
+At the property definition site:
 
 ```typescript
-// class property assignment
-class AnyClass {
-  aClassProperty = 'yay';
+export default class AnExample extends Component {
+  // snip...
+
+  // -- Class properties -- //
+  aString = 'this is fine';
+  aCollection: string[] = [];
+
+  // snip..
+
   constructor() {
-    console.log('all done constructing');
+    super();
+    assert('`model` is required', !isNone(this.model));
+
+    this.includeAhoy();
   }
+  
+  // snip...
 }
 ```
 
+In the constructor:
+
 ```typescript
-// constructor assignment
-class AnyClass {
-  aClassProperty: string;
+export default class AnExample extends Component {
+  // snip...
+
+  // -- Class properties -- //
+  aString: string;
+  aCollection: string[];
+
   constructor() {
-    this.aClassProperty = 'yay';
-    console.log('all done constructing');
+    super();
+
+    this.aString = 'this is fine';
+    this.aCollection = [];
+
+    assert('`model` is required', !isNone(this.model));
+
+    this.includeAhoy();
   }
+  
+  // snip...
 }
 ```
 
-This is *quite* unlike using `.extend`, which installs the property on the prototype. Three very important differences from what you're used to fall out of this, and *none of them are specific to TypeScript.*[^babel]
+You can see why the first one is preferable: if you don't need any input to the component to set the value, you can simply set the definition inline where the property is declared.
+
+However, this is *quite* unlike using `.extend`, which installs the property on the prototype. Three very important differences from what you're used to fall out of this, and *none of them are specific to TypeScript.*[^babel]
 
 [^babel]: You can use this same feature on classes using Babel, with the [class properties transform][b-cp].
 
@@ -158,9 +195,7 @@ class AnyClass {
 }
 ```
 
-Here, you can see that if something has *already set* the `aDefaultProp` value (before the class constructor is called), we'll use that value; otherwise, we'll use the default. (You can think of this as being something like default arguments to a function.)
-
-In our codebase, we have started using [`_.defaultTo`](https://lodash.com/docs/4.17.4#defaultTo), which works quite nicely.
+Here, you can see that if something has *already set* the `aDefaultProp` value (before the class constructor is called), we'll use that value; otherwise, we'll use the default. You can think of this as being something like default arguments to a function. In our codebase, we have started using [`_.defaultTo`](https://lodash.com/docs/4.17.4#defaultTo), which works quite nicely. In the old world of declaring props with their values in the `.extends({ ... })` hash, we got this behavior "for free"---but without a lot of other benefits of classes, so not *actually* for free.
 
 ### 2. No more shared state
 
@@ -201,7 +236,7 @@ export default class MyComponent extends Component {
 }
 ```
 
-This *does* have a performance cost, which will be negligible in the ordinary case but pretty nasty if you're rendering hundreds to thousands of these items onto the page. You can use this workaround for these as well as for any other properties which need to be prototypal (more on *that* in the next post as well):
+This *does* have a performance cost, which will be negligible in the ordinary case but pretty nasty if you're rendering hundreds to thousands of these items onto the page. You can use this workaround for these as well as for any other properties which need to be prototypal (more on *that* in the next post as well):[^getters]
 
 ```typescript
 export default class MyComponent extends Component.extend({
@@ -218,9 +253,10 @@ export default class MyComponent extends Component.extend({
 
 This *looks* really weird, but it works exactly as you'd expect.
 
-[^getters]: Even when [Ember.js RFC #281][281] lands, this problem will not go away, at least under the current implementation, since *these* will *not* be transformed into getters on the prototype. We may be stuck waiting for decorators to solve this problem completely.
+[^getters]: Even when [Ember.js RFC #281][281] lands, this problem will not go away, at least under the current implementation, since [*these* will *not* be transformed into getters on the prototype][281-comment]. We are waiting for decorators to solve this problem completely.
 
 [281]: https://github.com/emberjs/rfcs/pull/281
+[281-comment]: https://github.com/emberjs/rfcs/pull/281#issuecomment-360023258
 
 ## Summary
 

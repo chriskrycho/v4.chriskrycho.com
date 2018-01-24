@@ -2,12 +2,14 @@
 Title: TypeScript and Ember.js Update, Part 1
 Subtitle: How do things look in early 2018? Pretty good, actually!
 Date: 2018-01-22 07:10
+Modified: 2018-01-24 07:00
 Category: Tech
 Series: Typing Your Ember
 Tags: TypeScript, emberjs, typing-your-ember
 slug: typing-your-ember-update-part-1
 Summary: >
-    A bunch has changed for the better in the TypeScript/Ember.js story over the last six months. Here’s an overview of the changes, and a look at normal Ember objects,
+    A bunch has changed for the better in the TypeScript/Ember.js story over the last six months. Here’s an overview of the changes and a look at normal Ember objects, "arguments" to components (and controllers), and service (or controller) injections.
+
 ---
 
 <i class='series-overview'>You write [Ember.js] apps. You think [TypeScript] would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i>
@@ -35,10 +37,13 @@ If you're interested in all of this and would like to learn more in person, I'm 
 
 Here's how I expect this update series to go:
 
-1. [Overview, normal Ember objects, component arguments, and injections (this post).](http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html)
-2. [Class properties---some notes on how things differ from the `Ember.Object` world.](http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html)
-3. Computed properties and mixins.
+1. [Overview, normal Ember objects, component arguments, and injections (this post).][pt1]
+2. [Class properties---some notes on how things differ from the `Ember.Object` world.][pt2]
+3. Computed properties, actions, mixins, and class methods.
 4. Ember Data and related concerns.
+
+[pt1]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html
+[pt2]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html
 
 ## Normal Ember objects
 
@@ -70,8 +75,8 @@ import Person from 'my-app/models/person';
 
 export default class AnExample extends Component {
   // -- Component arguments -- //
-  model: Person; // required
-  modifier?: string; // optional, thus the `?`
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`
 
   // -- Injections -- //
   session: Computed<Session> = service();
@@ -89,11 +94,11 @@ export default class AnExample extends Component {
       return `My name is ${get(this.model, 'firstName')};`;
     }
   );
-  
+
   aComputed = computed('aString', function(this: AnExample): number {
     return this.lookAString.length;
   });
-  
+
   isLoggedIn = bool('session.user');
   savedUser: Computed<Person> = alias('session.user');
 
@@ -132,11 +137,13 @@ I always put these first so that the "interface" of the object is clear and obvi
 
 An important note about these kind of arguments: you do _not_ have to do `this.get(...)` (or, if you prefer, `get(this, ...)`) to access the properties themselves: they're class instance properties. You can simply access them as normal properties: `this.model`, `this.modifier`, etc. That even goes for referencing them as computed properties, as we'll see below.
 
-For optional arguments, you use the `?` operator to indicate they may be `undefined`. To get the _most_ mileage out of this, you'll want to enable `strictNullChecks` in the compiler options.[^maybe] However, note that we don't currently have any way to validate component argument invocation.[^ts-templates] The way I've been doing this is using Ember's debug `assert` in the constructor:
+For optional arguments, you use the `?` operator to indicate they may be `undefined`. To get the _most_ mileage out of this, you'll want to enable `strictNullChecks` in the compiler options.[^maybe] However, note that we don't currently have any way to validate component argument invocation.[^ts-templates] The way I've been doing this is using Ember's debug [`assert`] in the constructor:
 
 ```typescript
 assert("`model` is required", !isNone(this.model));
 ```
+
+[`assert`]: https://emberjs.com/api/ember/2.18/classes/@ember%2Fdebug/methods/assert?anchor=assert
 
 [^maybe]: This isn't my preferred way of handling optional types; [a `Maybe` type](https://true-myth.js.org) is. And you can, if you like, use `Maybe` here:
 
@@ -153,6 +160,17 @@ assert("`model` is required", !isNone(this.model));
     Then if you invoke the property without the argument, it'll construct a `Nothing`; if you invoke it with the argument, it'll be `Just` with the value.
 
 [^ts-templates]: A few of us have batted around some ideas for how to solve that particular problem, but _if_ we manage those, it'll probably be way, way later in 2018.
+
+**Edit, January 24, 2018:** Starting in TypeScript 2.7, you can enable a flag, `--strictPropertyInitialization`, which requires that all declared, non-optional properties on a class be initialized in the constructor or with a class property assignment. (There's more on class property assignment in [part 2][pt2] of this series.) If you do that, all *arguments* to a component should be defined with the *definite assignment assertion modifier*, a `!` after the name of the property, as on `model` here:
+
+```typescript
+export default class AnExample extends Component {
+  // Component arguments
+  model!: Person;     // required
+  modifier?: string;  // optional, thus the `?`
+```
+
+You should still combine that with use of [`assert`] so that any misses in template invocation will get caught in your tests.
 
 ### Injections
 
