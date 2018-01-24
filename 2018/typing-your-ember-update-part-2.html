@@ -189,7 +189,7 @@ export default class AnExample extends Component {
 
     this.includeAhoy();
   }
-  
+
   // snip...
 }</code></pre>
 <p>In the constructor:</p>
@@ -210,7 +210,7 @@ export default class AnExample extends Component {
 
     this.includeAhoy();
   }
-  
+
   // snip...
 }</code></pre>
 <p>You can see why the first one is preferable: if you don’t need any input to the component to set the value, you can simply set the definition inline where the property is declared.</p>
@@ -247,18 +247,14 @@ export default class AnExample extends Component {
 <pre class="typescript"><code>export default class MyComponent extends Component {
   aString = &#39;Hello, there!&#39;;
 
-  itsLength: Computed&lt;number&gt; = computed(
-    &#39;aString&#39;,
-    function(this: MyComponent) {
+  itsLength = computed(&#39;aString&#39;, function(this: MyComponent): number {
       return this.aString.length;
     }
   );
 }</code></pre>
 <p>This <em>does</em> have a performance cost, which will be negligible in the ordinary case but pretty nasty if you’re rendering hundreds to thousands of these items onto the page. You can use this workaround for these as well as for any other properties which need to be prototypal (more on <em>that</em> in the next post as well):<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <pre class="typescript"><code>export default class MyComponent extends Component.extend({
-  itsLength: Computed&lt;number&gt; = computed(
-    &#39;aString&#39;,
-    function(this: MyComponent) {
+  itsLength: computed(&#39;aString&#39;, function(this: MyComponent): number {
       return this.aString.length;
     }
   );

@@ -98,7 +98,7 @@ export default class AnExample extends Component {
 
     this.includeAhoy();
   }
-  
+
   // snip...
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In the constructor:&lt;/p&gt;
@@ -119,7 +119,7 @@ export default class AnExample extends Component {
 
     this.includeAhoy();
   }
-  
+
   // snip...
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can see why the first one is preferable: if you don’t need any input to the component to set the value, you can simply set the definition inline where the property is declared.&lt;/p&gt;
@@ -156,18 +156,14 @@ export default class AnExample extends Component {
 &lt;pre class="typescript"&gt;&lt;code&gt;export default class MyComponent extends Component {
   aString = &amp;#39;Hello, there!&amp;#39;;
 
-  itsLength: Computed&amp;lt;number&amp;gt; = computed(
-    &amp;#39;aString&amp;#39;,
-    function(this: MyComponent) {
+  itsLength = computed(&amp;#39;aString&amp;#39;, function(this: MyComponent): number {
       return this.aString.length;
     }
   );
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This &lt;em&gt;does&lt;/em&gt; have a performance cost, which will be negligible in the ordinary case but pretty nasty if you’re rendering hundreds to thousands of these items onto the page. You can use this workaround for these as well as for any other properties which need to be prototypal (more on &lt;em&gt;that&lt;/em&gt; in the next post as well):&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;export default class MyComponent extends Component.extend({
-  itsLength: Computed&amp;lt;number&amp;gt; = computed(
-    &amp;#39;aString&amp;#39;,
-    function(this: MyComponent) {
+  itsLength: computed(&amp;#39;aString&amp;#39;, function(this: MyComponent): number {
       return this.aString.length;
     }
   );
