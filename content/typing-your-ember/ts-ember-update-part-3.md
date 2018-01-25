@@ -9,7 +9,7 @@ Tags: TypeScript, emberjs, typing-your-ember
 slug: typing-your-ember-update-part-3
 Summary: >
     Now that we know a bit more about how computed properties work, we’ll talk about computed properties, actions, and mixins on the Ember.js side, along with the normal class methods.
-Status: draft
+
 ---
 
 <i class='series-overview'>You write [Ember.js] apps. You think [TypeScript] would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i>
@@ -126,16 +126,16 @@ We already covered component arguments and injections as well as basic class pro
   // TS correctly infers computed property types when the callback has a
   // return type annotation.
   fromModel = computed(
-    'model.firstName', 
+    'model.firstName',
     function(this: AnExample): string {
       return `My name is ${get(this.model, 'firstName')};`;
     }
   );
-  
+
   aComputed = computed('aString', function(this: AnExample): number {
     return this.lookAString.length;
   });
-  
+
   isLoggedIn = bool('session.user');
   savedUser: Computed<Person> = alias('session.user');
 ```
@@ -147,7 +147,7 @@ When using a computed property in the brave new world of ES6 classes, we normall
 ```typescript
 export default class MyComponent extends Component.extend({
   fromModel: computed(
-    'model.firstName', 
+    'model.firstName',
     function(this: AnExample): string {
       return `My name is ${get(this.model, 'firstName')};`;
     }
@@ -215,7 +215,7 @@ TypeScript does not today and presumably *never will* be able to do that lookup.
     import { get } from '@ember/object';
     const value = get(get(get(anObject, 'some'), 'nested'), 'key');
     ```
-    
+
     Yes, it's a nightmare. But... it type-checks, and it works well *enough* in the interim until we get a decorators-based solution that lets us leverage [RFC #281].
 
 2.  Use the `// @ts-ignore` to simply ignore the type-unsafety of the lookup. This approach is preferable when you don't know if any of the keys might be missing. If, for example, either `some` or `nested` were `undefined` or `null`, the lookup example above in (1) would fail.
@@ -250,7 +250,7 @@ As with computed properties, we need the `this` type declaration to tell TypeScr
         this.set('aCollection', current.concat(value));
       }
     ```
-    
+
     For today, however, specifying a `this` type is where it's at.
 
 Happily, that's really all there is to it for actions: they're quite straightforward other than needing the `this` type specification.
@@ -300,4 +300,4 @@ One last note, which I didn't include in the example: if you have a function (us
 
 So that's a wrap on components (and controllers, which behave much the same way).
 
-In the next post, I'll look at the elephant in the room: Ember Data (and closely related concern Ember CLI Mirage). While you *can* make Ember Data stuff largely work today, it's still a ways from _Just Works™️_, sadly, and 
+In the next post, I'll look at the elephant in the room: Ember Data (and closely related concern Ember CLI Mirage). While you *can* make Ember Data stuff largely work today, it's still a ways from _Just Works™️_, sadly, and
