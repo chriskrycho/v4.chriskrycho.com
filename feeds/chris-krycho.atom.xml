@@ -1,5 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2018-01-24T22:30:00-05:00</updated><entry><title>TypeScript and Ember.js Update, Part 2</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html" rel="alternate"></link><published>2018-01-24T07:00:00-05:00</published><updated>2018-01-24T22:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-01-24:/2018/typing-your-ember-update-part-2.html</id><summary type="html">For years, you've been using Ember Object and .extend()—but the rules are different with classes.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2018-01-25T07:00:00-05:00</updated><entry><title>TypeScript and Ember.js Update, Part 3</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html" rel="alternate"></link><published>2018-01-25T07:00:00-05:00</published><updated>2018-01-25T07:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-01-25:/2018/typing-your-ember-update-part-3.html</id><summary type="html">Now that we know a bit more about how computed properties work, we’ll talk about computed properties, actions, and mixins on the Ember.js side, along with the normal class methods.
+</summary><content type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; if you’re following along with this &lt;em&gt;as I publish it&lt;/em&gt; in late January 2018, please go back and read the end of &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Part 2&lt;/a&gt;, which I updated substantially yesterday evening to include more material I missed in the first version of that post, but which belonged there and not here.&lt;/p&gt;
+&lt;p&gt;In the previous posts in this series, I introduced the big picture of how the story around TypeScript and Ember.js has improved over the last several months and walked through some important background on class properties. In this post, I’ll build on that foundation to look closely at computed properties, actions, and mixins.&lt;/p&gt;
+&lt;aside&gt;
+&lt;p&gt;If you’re interested in all of this and would like to learn more in person, I’m &lt;a href="http://emberconf.com/speakers.html#chris-krycho"&gt;leading a workshop on it at EmberConf 2018&lt;/a&gt;—I’d love to see you there!&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;Here’s the outline of this update sequence:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;&lt;strong&gt;Computed properties, actions, mixins, and class methods (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Ember Data and related concerns.&lt;/li&gt;
+&lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;section id="a-detailed-example-contd.-computed-properties-mixins-actions-and-class-methods" class="level2"&gt;
+&lt;h2&gt;A detailed example (cont’d.) – computed properties, mixins, actions, and class methods&lt;/h2&gt;
+&lt;p&gt;Let’s start by recalling the example Component we’re working through:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { computed, get } from &amp;#39;@ember/object&amp;#39;;
+import Computed from &amp;#39;@ember/object/computed&amp;#39;;
+import { inject as service } from &amp;#39;@ember/service&amp;#39;;
+import { assert } from &amp;#39;@ember/debug&amp;#39;;
+import { isNone } from &amp;#39;@ember/utils&amp;#39;;
+
+import Session from &amp;#39;my-app/services/session&amp;#39;;
+import Person from &amp;#39;my-app/models/person&amp;#39;;
+
+export default class AnExample extends Component {
+  // -- Component arguments -- //
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`
+
+  // -- Injections -- //
+  session: Computed&amp;lt;Session&amp;gt; = service();
+
+  // -- Class properties -- //
+  aString = &amp;#39;this is fine&amp;#39;;
+  aCollection: string[] = [];
+
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel = computed(
+    &amp;#39;model.firstName&amp;#39;,
+    function(this: AnExample): string {
+      return `My name is ${get(this.model, &amp;#39;firstName&amp;#39;)};`;
+    }
+  );
+
+  aComputed = computed(&amp;#39;aString&amp;#39;, function(this: AnExample): number {
+    return this.lookAString.length;
+  });
+
+  isLoggedIn = bool(&amp;#39;session.user&amp;#39;);
+  savedUser: Computed&amp;lt;Person&amp;gt; = alias(&amp;#39;session.user&amp;#39;);
+
+  actions = {
+    addToCollection(this: AnExample, value: string) {
+      const current = this.get(&amp;#39;aCollection&amp;#39;);
+      this.set(&amp;#39;aCollection&amp;#39;, current.concat(value));
+    }
+  };
+
+  constructor() {
+    super();
+    assert(&amp;#39;`model` is required&amp;#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample) {
+    if (!this.get(&amp;#39;aCollection&amp;#39;).includes(&amp;#39;ahoy&amp;#39;)) {
+      this.set(&amp;#39;aCollection&amp;#39;, current.concat(&amp;#39;ahoy&amp;#39;));
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;section id="computed-properties" class="level3"&gt;
+&lt;h3&gt;Computed properties&lt;/h3&gt;
+&lt;p&gt;We already covered component arguments and injections as well as basic class properties and the exceptions to normal class-property ways of doing things, in Parts &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;1&lt;/a&gt; and &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;2&lt;/a&gt;. With that background out of the way, we can now turn to computed properties. I’m including the component arguments in this code sample because they’re referenced in the computed property. Assume &lt;code&gt;Person&lt;/code&gt; is a pretty “person” representation, with a &lt;code&gt;firstName&lt;/code&gt; and a &lt;code&gt;lastName&lt;/code&gt;and maybe a few other properties.&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;  // -- Component arguments -- //
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`
+
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel = computed(
+    &amp;#39;model.firstName&amp;#39;,
+    function(this: AnExample): string {
+      return `My name is ${get(this.model, &amp;#39;firstName&amp;#39;)};`;
+    }
+  );
+
+  aComputed = computed(&amp;#39;aString&amp;#39;, function(this: AnExample): number {
+    return this.lookAString.length;
+  });
+
+  isLoggedIn = bool(&amp;#39;session.user&amp;#39;);
+  savedUser: Computed&amp;lt;Person&amp;gt; = alias(&amp;#39;session.user&amp;#39;);&lt;/code&gt;&lt;/pre&gt;
+&lt;section id="computed-properties-1" class="level4"&gt;
+&lt;h4&gt;&lt;code&gt;computed&lt;/code&gt; properties&lt;/h4&gt;
+&lt;p&gt;When using a computed property in the brave new world of ES6 classes, we normally just assign them as instance properties. As mentioned in &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;the previous post&lt;/a&gt;, and in line with my comments above, this has some important tradeoffs around performance. If you need the absolute &lt;em&gt;best&lt;/em&gt; performance, you can continue to install them on the prototype by doing this instead:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;export default class MyComponent extends Component.extend({
+  fromModel: computed(
+    &amp;#39;model.firstName&amp;#39;,
+    function(this: AnExample): string {
+      return `My name is ${get(this.model, &amp;#39;firstName&amp;#39;)};`;
+    }
+  ),
+}) {
+  // other properties
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Whichever way you do it, TypeScript will correctly infer the type of the computed property in question (here &lt;code&gt;fromModel&lt;/code&gt;) as long as you explicitly annotate the return type of the callback passed to &lt;code&gt;computed&lt;/code&gt;. Accordingly, in this case, the type of &lt;code&gt;fromModel&lt;/code&gt; is &lt;code&gt;ComputedProperty&amp;lt;string&amp;gt;&lt;/code&gt;. The fact that it’s a &lt;code&gt;ComputedProperty&lt;/code&gt; means if you try to treat it as a plain string, without using &lt;code&gt;Ember.get&lt;/code&gt; to unwrap it, TypeScript will complain at you.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;// type checking error:
+this.fromModel.length;
+
+// type checking valid:
+this.get(&amp;#39;fromModel&amp;#39;).length;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The other really important thing to note here is the use of &lt;code&gt;this: MyComputed&lt;/code&gt;. By doing this, we’re telling TypeScript explicitly that the type of &lt;code&gt;this&lt;/code&gt; in this particular function is the class context. We have to do this here, because we don’t have any way to tell the &lt;code&gt;computed&lt;/code&gt; helper itself that the function inside it will be bound to the &lt;code&gt;this&lt;/code&gt; context of the containing class. Put another way: we don’t have any &lt;em&gt;other&lt;/em&gt; way to tell TypeScript that one of the things &lt;code&gt;computed&lt;/code&gt; does is bind &lt;code&gt;this&lt;/code&gt; appropriately to the function passed into it; but gladly we do have &lt;em&gt;this&lt;/em&gt; way—otherwise we’d be out of luck entirely! (You’ll see the same thing below when we look at actions). The boilerplate is a bit annoying, admittedly—but it at least makes it type-check.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="computed-property-macros" class="level4"&gt;
+&lt;h4&gt;Computed property macros&lt;/h4&gt;
+&lt;p&gt;Beyond &lt;code&gt;computed&lt;/code&gt;, there are a lot of other computed property tools we use all the time. Some of them can (and therefore &lt;em&gt;do&lt;/em&gt;) infer the type of the resulting computed property correctly. But there are a bunch of idiomatic things that TypeScript does not and cannot validate – a number of the computed property macros are in this bucket, because they tend to be used for nested keys, and as noted above, TypeScript does not and &lt;em&gt;cannot&lt;/em&gt; validate nested keys like that.&lt;/p&gt;
+&lt;p&gt;We have a representative of each of these scenarios:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;  isLoggedIn = bool(&amp;#39;session.user&amp;#39;);
+  savedUser: Computed&amp;lt;Person&amp;gt; = alias(&amp;#39;session.user&amp;#39;);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the case of &lt;code&gt;isLoggedIn&lt;/code&gt;, the &lt;code&gt;bool&lt;/code&gt; helper only ever returns a boolean, so the type of &lt;code&gt;isLoggedIn&lt;/code&gt; is &lt;code&gt;ComputedProperty&amp;lt;boolean&amp;gt;&lt;/code&gt;. In the case of &lt;code&gt;savedUser&lt;/code&gt;, since TypeScript can’t figure out what the nested key means, we have to specify it explicitly, using &lt;code&gt;Computed&amp;lt;Person&amp;gt;&lt;/code&gt;.&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; In these cases, you have to do the work yourself to check that the type you specify is the &lt;em&gt;correct&lt;/em&gt; type. If you write down the wrong type here, TypeScript will believe you (it doesn’t have any other good option!) and you’ll be back to things blowing up unexpectedly at runtime.&lt;/p&gt;
+&lt;p&gt;The typings supply the concrete (non-&lt;code&gt;any&lt;/code&gt;) return type for: &lt;code&gt;and&lt;/code&gt;, &lt;code&gt;bool&lt;/code&gt;, &lt;code&gt;equal&lt;/code&gt;, &lt;code&gt;empty&lt;/code&gt;, &lt;code&gt;gt&lt;/code&gt;, &lt;code&gt;gte&lt;/code&gt;, &lt;code&gt;lt&lt;/code&gt;, &lt;code&gt;lte&lt;/code&gt;, &lt;code&gt;match&lt;/code&gt;, &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;max&lt;/code&gt;, &lt;code&gt;min&lt;/code&gt;, &lt;code&gt;notEmpty&lt;/code&gt;, &lt;code&gt;none&lt;/code&gt;, &lt;code&gt;not&lt;/code&gt;, &lt;code&gt;or&lt;/code&gt;, and &lt;code&gt;sum&lt;/code&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="on-nested-keys" class="level4"&gt;
+&lt;h4&gt;On nested keys&lt;/h4&gt;
+&lt;p&gt;As noted above, TypeScript cannot do a lookup for any place using nested keys—which means that &lt;code&gt;this.get('some.nested.key')&lt;/code&gt; won’t type-check, sadly. This is an inherent limitation of the type system as it stands today, and for any future I can foresee. The problem is this: what exactly &lt;em&gt;is&lt;/em&gt; &lt;code&gt;'some.nested.key'&lt;/code&gt;? It &lt;em&gt;could&lt;/em&gt; be what we use it for in the usual scenario in Ember, of course: a string representing a lookup on a property of a property of a property of whatever &lt;code&gt;this&lt;/code&gt; is. But it could equally well be a key named &lt;code&gt;'some.nested.key'&lt;/code&gt;. This is perfectly valid JavaScript, after all:&lt;/p&gt;
+&lt;pre class="javascript"&gt;&lt;code&gt;const foo = {
+  [&amp;#39;some.nested.key&amp;#39;]: &amp;#39;Well, this is weird, but it works&amp;#39;,
+};&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;TypeScript does not today and presumably &lt;em&gt;never will&lt;/em&gt; be able to do that lookup. The workaround is to do one of two things:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;If you &lt;em&gt;know&lt;/em&gt; you have a valid parent, you can do the (catastrophically ugly, but functional) nested &lt;code&gt;Ember.get&lt;/code&gt; that now litters our codebase:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import { get } from &amp;#39;@ember/object&amp;#39;;
+const value = get(get(get(anObject, &amp;#39;some&amp;#39;), &amp;#39;nested&amp;#39;), &amp;#39;key&amp;#39;);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Yes, it’s a nightmare. But… it type-checks, and it works well &lt;em&gt;enough&lt;/em&gt; in the interim until we get a decorators-based solution that lets us leverage &lt;a href="https://github.com/emberjs/rfcs/pull/281"&gt;RFC #281&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use the &lt;code&gt;// @ts-ignore&lt;/code&gt; to simply ignore the type-unsafety of the lookup. This approach is preferable when you don’t know if any of the keys might be missing. If, for example, either &lt;code&gt;some&lt;/code&gt; or &lt;code&gt;nested&lt;/code&gt; were &lt;code&gt;undefined&lt;/code&gt; or &lt;code&gt;null&lt;/code&gt;, the lookup example above in (1) would fail.&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import { get } from &amp;#39;@ember/object&amp;#39;;
+// @ts-ignore -- deep lookup with possibly missing parents
+const value = get(anObject, &amp;#39;some.nested.key&amp;#39;);&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="actions" class="level3"&gt;
+&lt;h3&gt;Actions&lt;/h3&gt;
+&lt;p&gt;What about actions? As usual, these just become class instance properties in the current scheme.&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;  actions = {
+    addToCollection(this: AnExample, value: string) {
+      const current = this.get(&amp;#39;aCollection&amp;#39;);
+      this.set(&amp;#39;aCollection&amp;#39;, current.concat(value));
+    }
+  };&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As with computed properties, we need the &lt;code&gt;this&lt;/code&gt; type declaration to tell TypeScript that this method is going to be automatically bound to the class instance. Otherwise, TypeScript thinks the &lt;code&gt;this&lt;/code&gt; here is the &lt;code&gt;actions&lt;/code&gt; hash, rather than the &lt;code&gt;MyComponent&lt;/code&gt; class.&lt;a href="#fn3" class="footnote-ref" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Happily, that’s really all there is to it for actions: they’re quite straightforward other than needing the &lt;code&gt;this&lt;/code&gt; type specification.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="types-in-.extend...-blocks" class="level3"&gt;
+&lt;h3&gt;Types in &lt;code&gt;.extend({...})&lt;/code&gt; blocks&lt;/h3&gt;
+&lt;p&gt;By and large, you can get away with using the same &lt;code&gt;this: MyComponent&lt;/code&gt; trick when hacking around prototypal extension problems, or performance problems, by putting computed properties in a &lt;code&gt;.extend({...}&lt;/code&gt; block. However, you &lt;em&gt;will&lt;/em&gt; sometimes see a type error indicating that the class is referenced in its own definition expression. In that case, you may need to judiciously apply &lt;code&gt;any&lt;/code&gt;, if you can’t make it work by using normal class properties.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="constructor-and-class-methods" class="level3"&gt;
+&lt;h3&gt;&lt;code&gt;constructor&lt;/code&gt; and class methods&lt;/h3&gt;
+&lt;p&gt;ES6 class constructors and class methods both work as you’d expect, though as we’ll see you’ll need an extra bit of boilerplate for methods, at least for now.&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;  constructor() {
+    super();
+    assert(&amp;#39;`model` is required&amp;#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample): void {
+    if (!this.get(&amp;#39;aCollection&amp;#39;).includes(&amp;#39;ahoy&amp;#39;)) {
+      this.set(&amp;#39;aCollection&amp;#39;, current.concat(&amp;#39;ahoy&amp;#39;));
+    }
+  }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For the most part, you can just switch to using normal ES6 class constructors instead of the Ember &lt;code&gt;init&lt;/code&gt; method. You can, if you so desire, also move existing &lt;code&gt;init&lt;/code&gt; functions passed to a &lt;code&gt;.extends({ ...})&lt;/code&gt; hash to class methods, and they’ll work once you change &lt;code&gt;this._super(...arguments)&lt;/code&gt; to &lt;code&gt;super.init(...arguments)&lt;/code&gt;. It’s worth pausing to understand the relationship between &lt;code&gt;init&lt;/code&gt; and prototypal &lt;code&gt;init&lt;/code&gt; and the &lt;code&gt;constructor&lt;/code&gt;. An &lt;code&gt;init&lt;/code&gt; in the &lt;code&gt;.extends()&lt;/code&gt; hash runs first, then an &lt;code&gt;init&lt;/code&gt; method on the class, then the normal &lt;code&gt;constructor&lt;/code&gt;.&lt;a href="#fn4" class="footnote-ref" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Note that you do not need to (and cannot) annotate the &lt;code&gt;constructor&lt;/code&gt; with &lt;code&gt;this: MyComponent&lt;/code&gt;. Depending on the class you’re building, you may &lt;em&gt;occasionally&lt;/em&gt; have type-checking problems that come up as a result of this. I’ve only ever seen that happen when using computed properties while defining a proxy,&lt;a href="#fn5" class="footnote-ref" id="fnref5"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; but it does come up. In that case, you can fall back to using &lt;code&gt;init&lt;/code&gt; as a method, and set &lt;code&gt;this: MyComponent&lt;/code&gt; on &lt;em&gt;it&lt;/em&gt;, and things will generally fall out as working correctly at that point. When it comes up, this seems to be just a limitation of what &lt;code&gt;this&lt;/code&gt; is understood to be in a &lt;code&gt;constructor&lt;/code&gt; given Ember’s rather more-complex-than-normal-classes view of what a given item being constructed is.&lt;/p&gt;
+&lt;p&gt;Other class methods do also need the &lt;code&gt;this&lt;/code&gt; type specified if they touch computed properties. (Normal property access is fine without it.) That’s because the lookups for &lt;code&gt;ComputedProperty&lt;/code&gt; instances (using &lt;code&gt;Ember.get&lt;/code&gt; or &lt;code&gt;Ember.set&lt;/code&gt;) need to know what &lt;code&gt;this&lt;/code&gt; is where they should do the lookup, and the full &lt;code&gt;this&lt;/code&gt; context isn’t inferred correctly at present. You can either write that on every invocation of &lt;code&gt;get&lt;/code&gt;and &lt;code&gt;set&lt;/code&gt;, like &lt;code&gt;(this as MyComponent).get(...)&lt;/code&gt;, or you can do it once at the start of the method. Again, a bit boiler-platey, but it gets the job done and once you’re used to it it’s minimal hassle.&lt;a href="#fn6" class="footnote-ref" id="fnref6"&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;One last note, which I didn’t include in the example: if you have a function (usually an action) passed into the component, you can define it most simply by just using &lt;code&gt;onSomeAction: Function;&lt;/code&gt; in the class definition, right with other class arguments. However, it’s usually most helpful to define what the type should actually &lt;em&gt;be&lt;/em&gt;, for your own sanity check if nothing else. As with e.g. &lt;code&gt;model&lt;/code&gt; in this example, we don’t actually have a good way to type-check that what is passed is correct. We can, however, at least verify in the constructor that the caller passed in a function using &lt;a href="https://emberjs.com/api/ember/2.18/classes/@ember%2Fdebug/methods/assert?anchor=assert"&gt;&lt;code&gt;assert&lt;/code&gt;&lt;/a&gt;, just as with other arguments.&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="summary" class="level2"&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;So that’s a wrap on components (and controllers, which behave much the same way).&lt;/p&gt;
+&lt;p&gt;In the next post, I’ll look at the elephant in the room: Ember Data (and closely related concern Ember CLI Mirage). While you &lt;em&gt;can&lt;/em&gt; make Ember Data stuff largely work today, it’s still a ways from &lt;em&gt;Just Works™️&lt;/em&gt;, sadly, and&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;As mentioned in &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Part 2&lt;/a&gt;, this problem doesn’t go away until we get decorators, unless you’re putting them on the prototype via &lt;code&gt;.extends()&lt;/code&gt;—but see below for the problems with &lt;em&gt;that&lt;/em&gt;. The short version is, we need decorators for this to actually be &lt;em&gt;nice&lt;/em&gt;. Once we get decorators, we will be able to combine them with the work done for &lt;a href="https://github.com/emberjs/rfcs/pull/281"&gt;RFC #281&lt;/a&gt; and normal lookup will just work:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;@computed(&amp;#39;model.firstName&amp;#39;)
+get fromModel() {
+  return `My name is ${this.model.firstName};`;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;I’ve used &lt;code&gt;Computed&amp;lt;Person&amp;gt;&lt;/code&gt; and similar throughout here because it’s the most clear while still being reasonably concise. The actual type name in Ember’s own code is &lt;code&gt;ComputedProperty&lt;/code&gt;, but &lt;code&gt;ComputedProperty&amp;lt;Person&amp;gt;&lt;/code&gt; is &lt;em&gt;long&lt;/em&gt;, and it wouldn’t have added any real clarity here. In my own codebase, we use &lt;code&gt;CP&lt;/code&gt; (for “&lt;strong&gt;C&lt;/strong&gt;omputed &lt;strong&gt;P&lt;/strong&gt;roperty”) for the sake of brevity—so here that would just be &lt;code&gt;CP&amp;lt;Person&amp;gt;&lt;/code&gt;.&lt;a href="#fnref2" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn3"&gt;&lt;p&gt;In the future, this problem will hopefully be solved neatly by decorators:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;  @action
+  addToCollection(value: string) {
+    const current = this.get(&amp;#39;aCollection&amp;#39;);
+    this.set(&amp;#39;aCollection&amp;#39;, current.concat(value));
+  }&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For today, however, specifying a &lt;code&gt;this&lt;/code&gt; type is where it’s at.&lt;a href="#fnref3" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn4"&gt;&lt;p&gt;You can see this for yourself in &lt;a href="https://ember-twiddle.com/36844717dcc50d734139368edf2e87da"&gt;this Ember Twiddle&lt;/a&gt;—just open your developer tools and note the sequence.&lt;a href="#fnref4" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn5"&gt;&lt;p&gt;Proxies, along with details of mixins, are a subject I’m leaving aside for Part 5, otherwise known as the “wow, this stuff is really weird to type” entry in the series.&lt;a href="#fnref5" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn6"&gt;&lt;p&gt;Not &lt;em&gt;no&lt;/em&gt; hassle, though, and I look forward to a future where we can drop it, as Ember moves more and more toward modern JavaScript ways of solving these same problems!&lt;a href="#fnref6" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content><category term="TypeScript"></category><category term="emberjs"></category><category term="typing-your-ember"></category></entry><entry><title>TypeScript and Ember.js Update, Part 2</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html" rel="alternate"></link><published>2018-01-24T07:00:00-05:00</published><updated>2018-01-24T22:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-01-24:/2018/typing-your-ember-update-part-2.html</id><summary type="html">For years, you've been using Ember Object and .extend()—but the rules are different with classes.
 </summary><content type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
