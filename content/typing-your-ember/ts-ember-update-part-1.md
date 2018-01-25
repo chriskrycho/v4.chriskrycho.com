@@ -37,13 +37,15 @@ If you're interested in all of this and would like to learn more in person, I'm 
 
 Here's how I expect this update series to go:
 
-1. [Overview, normal Ember objects, component arguments, and injections (this post).][pt1]
+1. [**Overview, normal Ember objects, component arguments, and injections (this post).**][pt1]
 2. [Class properties---some notes on how things differ from the `Ember.Object` world.][pt2]
-3. Computed properties, actions, mixins, and class methods.
+3. [Computed properties, actions, mixins, and class methods.][pt3]
 4. Ember Data and related concerns.
+5. Mixins and proxies; or: the really hard-to-type-check bits.
 
 [pt1]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html
 [pt2]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html
+[pt3]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html
 
 ## Normal Ember objects
 

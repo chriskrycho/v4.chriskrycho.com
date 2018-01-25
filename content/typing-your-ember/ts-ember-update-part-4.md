@@ -19,11 +19,24 @@ If you're interested in all of this and would like to learn more in person, I'm 
 
 </aside>
 
+Here's the outline of this update sequence:
+
+1. [Overview, normal Ember objects, component arguments, and injections.][pt1]
+2. [Class properties---some notes on how things differ from the `Ember.Object` world.][pt2]
+3. [Computed properties, actions, mixins, and class methods.][pt3]
+4. [**Ember Data and related concerns (this post).**][pt4]
+5. Mixins and proxies; or: the really hard-to-type-check bits.
+
+[pt1]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html
+[pt2]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html
+[pt3]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html
+[pt4]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html
+
 ## Ember Data
 
 There are two challenges to using Ember Data effectively with TypeScript today.
 
-1. Ember Data, for reasons I haven't yet dug into myself, does not play nicely with ES6 classes. However, we _want_ named class exports for the sake of being able to use them
+1. Ember Data, for reasons I haven't yet dug into myself, does not play nicely with ES6 classes. However, we *need* named class exports for the sake of being able to use them as types elsewhere in our programs.
 
 ++TODO++
 
