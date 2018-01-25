@@ -1,11 +1,11 @@
 ---
-Title: TypeScript and Ember.js Update, Part 4
+Title: TypeScript and Ember.js Update, Part 5
 Subtitle: TODO
 Date: 2018-01-25 07:00
 Category: Tech
 Series: Typing Your Ember
 Tags: TypeScript, emberjs, typing-your-ember
-slug: typing-your-ember-update-part-4
+slug: typing-your-ember-update-part-5
 Summary: >
     TODO
 Status: draft
