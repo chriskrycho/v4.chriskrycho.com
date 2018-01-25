@@ -191,7 +191,7 @@ const value = get(anObject, &amp;#39;some.nested.key&amp;#39;);&lt;/code&gt;&lt;
 &lt;section id="summary" class="level2"&gt;
 &lt;h2&gt;Summary&lt;/h2&gt;
 &lt;p&gt;So that’s a wrap on components (and controllers, which behave much the same way).&lt;/p&gt;
-&lt;p&gt;In the next post, I’ll look at the elephant in the room: Ember Data (and closely related concern Ember CLI Mirage). While you &lt;em&gt;can&lt;/em&gt; make Ember Data stuff largely work today, it’s still a ways from &lt;em&gt;Just Works™️&lt;/em&gt;, sadly, and&lt;/p&gt;
+&lt;p&gt;In the next post, I’ll look at the elephant in the room: Ember Data (and closely related concern Ember CLI Mirage). While you &lt;em&gt;can&lt;/em&gt; make Ember Data stuff largely work today, it’s still a ways from &lt;em&gt;Just Works™️&lt;/em&gt;, sadly, but we’ll cover how to work around the missing pieces—we’ve gotten there in our own codebase, so you can, too!&lt;/p&gt;
 &lt;/section&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
