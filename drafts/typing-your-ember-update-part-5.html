@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>TypeScript and Ember.js Update, Part 4 &middot; Chris Krycho</title>
+    <title>TypeScript and Ember.js Update, Part 5 &middot; Chris Krycho</title>
     <meta name="description" content="TODO"/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/drafts/typing-your-ember-update-part-4.html"/>
-    <meta property="og:title" content="TypeScript and Ember.js Update, Part 4"/>
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/drafts/typing-your-ember-update-part-5.html"/>
+    <meta property="og:title" content="TypeScript and Ember.js Update, Part 5"/>
     <meta property="og:description" content="TODO"/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/>
 <link rel="me" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-    <meta name="twitter:title" content="TypeScript and Ember.js Update, Part 4"/>
+    <meta name="twitter:title" content="TypeScript and Ember.js Update, Part 5"/>
     <meta name="twitter:description" content="TODO"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
@@ -79,11 +79,11 @@
 <article class="typescript emberjs typing-your-ember tech">
 
     <header>
-<h1>TypeScript and Ember.js Update, Part 4</h1>
+<h1>TypeScript and Ember.js Update, Part 5</h1>
 <h2>TODO</h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/drafts/typing-your-ember-update-part-4.html"><i class="fa fa-fw fa-link"></i></a>January 25, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/drafts/typing-your-ember-update-part-5.html"><i class="fa fa-fw fa-link"></i></a>January 25, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-5.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
@@ -99,25 +99,13 @@
 <li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">Overview, normal Ember objects, component arguments, and injections.</a></li>
 <li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Class properties—some notes on how things differ from the <code>Ember.Object</code> world.</a></li>
 <li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Computed properties, actions, mixins, and class methods.</a></li>
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"><strong>Ember Data and related concerns (this post).</strong></a></li>
-<li>Mixins and proxies; or: the really hard-to-type-check bits.</li>
+<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">Ember Data and related concerns.</a></li>
+<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">Mixins and proxies; or: the really hard-to-type-check bits (this post).</a></li>
 </ol>
-<section id="ember-data" class="level2">
-<h2>Ember Data</h2>
-<p>There are two challenges to using Ember Data effectively with TypeScript today.</p>
-<ol type="1">
-<li>Ember Data, for reasons I haven’t yet dug into myself, does not play nicely with ES6 classes. However, we <em>need</em> named class exports for the sake of being able to use them as types elsewhere in our programs.</li>
-</ol>
-<p>++TODO++</p>
-<p>We also have some ideas and prototypes for how to make the experience of both of these much, <em>much</em> better. Sometime soon-ish—hopefully before EmberConf, where I’d really like to <em>not</em> have to mess with teaching the complicated ways above to make things work!—we should land a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
-<p>Note for Ember CLI Mirage users: most of what I’ve said here is equally applicable and nearly identical for Mirage. I’m currently working on solid typings for Mirage that get us everything we need that way.</p>
-</section>
-<section class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p>If you’re curious about the mechanics, we’re basically setting up a “type registry” which maps the string keys to the correct model, so that the type of e.g. <code>store.createRecord('some-model', { ... })</code> will do a lookup in an interface which defines a mapping from model name, i.e. <code>some-model</code> here, to the model type, e.g. <code>export default class SomeModel extends DS.Model.extend({ ... }) {}</code>;<a href="#fnref1" class="footnote-back">↩</a></p></li>
-</ol>
-</section>
+<!-- TODO: how to write the type definition for a mixin, using `typeof` and export merging -->
+<p>However, as long as you annotate the type definitions appropriately—we’ll come back to that in part 5 of this series—their property types will be picked up in <code>class</code>es which consume them. Once you’ve created a mixin, you add it to a class like this:</p>
+<pre class="typescript"><code></code></pre>
+<!-- TODO: how to write the type definition of a proxy -->
         </div>
     </div>
 </article>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Wed, 24 Jan 2018 07:00:00 -0500</lastBuildDate><item><title>TypeScript and Ember.js Update, Part 2</title><link>http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Wed, 24 Jan 2018 22:30:00 -0500</lastBuildDate><item><title>TypeScript and Ember.js Update, Part 2</title><link>http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -10,9 +10,10 @@
 &lt;p&gt;Here’s the outline of this update sequence:&lt;/p&gt;
 &lt;ol type="1"&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world (this post).&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Computed properties, actions, mixins, and class methods.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;&lt;strong&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Ember Data and related concerns.&lt;/li&gt;
+&lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section id="a-detailed-example-contd.-class-properties" class="level2"&gt;
 &lt;h2&gt;A detailed example (cont’d.) – class properties&lt;/h2&gt;
@@ -156,9 +157,8 @@ export default class AnExample extends Component {
   aString = &amp;#39;Hello, there!&amp;#39;;
 
   itsLength = computed(&amp;#39;aString&amp;#39;, function(this: MyComponent): number {
-      return this.aString.length;
-    }
-  );
+    return this.aString.length;
+  });
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This &lt;em&gt;does&lt;/em&gt; have a performance cost, which will be negligible in the ordinary case but pretty nasty if you’re rendering hundreds to thousands of these items onto the page. You can use this workaround for these as well as for any other properties which need to be prototypal (more on &lt;em&gt;that&lt;/em&gt; in the next post as well):&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;export default class MyComponent extends Component.extend({
@@ -172,6 +172,47 @@ export default class AnExample extends Component {
 &lt;p&gt;This &lt;em&gt;looks&lt;/em&gt; really weird, but it works exactly as you’d expect.&lt;/p&gt;
 &lt;/section&gt;
 &lt;/section&gt;
+&lt;section id="class-property-variants" class="level2"&gt;
+&lt;h2&gt;Class property variants&lt;/h2&gt;
+&lt;p&gt;There are two times when things will look different from basic class properties. Both have to do with setting up the prototype to work the way other parts of the Ember object ecosystem expect.&lt;/p&gt;
+&lt;section id="variant-1-prototypalmerged-properties" class="level3"&gt;
+&lt;h3&gt;Variant 1: Prototypal/merged properties&lt;/h3&gt;
+&lt;p&gt;The first is when you’re using properties that need to be merged with properties in the prototype chain, e.g. &lt;code&gt;attributeBindings&lt;/code&gt; or &lt;code&gt;classNameBindings&lt;/code&gt;, or which (because of details of how components are constructed) have to be set on the prototype rather than as instance properties, e.g. &lt;code&gt;tagClass&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For those, we can just leverage &lt;code&gt;.extend&lt;/code&gt; in conjunction with classes:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+
+export default class MyListItem extends Component.extend({
+  tagName: &amp;#39;li&amp;#39;,
+  classNameBindings: [&amp;#39;itemClass&amp;#39;]
+}) {
+  itemClass = &amp;#39;this-be-a-list&amp;#39;;
+
+  // etc.
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is also how you’ll &lt;em&gt;use&lt;/em&gt; mixins (on defining them, see below):&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import MyMixin from &amp;#39;my-app/mixins/my-mixin&amp;#39;;
+
+export default class AnExample extends Component.extend(MyMixin) {
+  // the rest of the definition.
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note, however—and this is very important—that you cannot &lt;code&gt;.extend&lt;/code&gt; an existing &lt;code&gt;class&lt;/code&gt; implementation. As a result, deep inheritance hierarchies &lt;em&gt;may&lt;/em&gt; make transitioning to classes in Ember painful. Most importantly: they may work &lt;em&gt;some&lt;/em&gt; of the time in &lt;em&gt;some&lt;/em&gt; ways, but will break when you least expect. So don’t do that! (This isn’t a TypeScript limitation; it’s a limitation of classes in Ember today.)&lt;a href="#fn3" class="footnote-ref" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="variant-2-mixins" class="level3"&gt;
+&lt;h3&gt;Variant 2: Mixins&lt;/h3&gt;
+&lt;p&gt;The other time you’ll have to take a different tack—and this falls directly out of the need for prototypal merging—is with &lt;code&gt;Mixin&lt;/code&gt;s, which don’t yet work properly with classes. Worse, it’s difficult (if not impossible) to get rigorous type-checking internally in &lt;code&gt;Mixin&lt;/code&gt; definitions, because you cannot define them as classes: you &lt;em&gt;have&lt;/em&gt; to use the old style throughout, because mixins are created with &lt;code&gt;.create()&lt;/code&gt;, not &lt;code&gt;.extend()&lt;/code&gt;.&lt;/p&gt;
+&lt;aside&gt;
+&lt;p&gt;Note that if you’re writing &lt;em&gt;new&lt;/em&gt; code in Ember.js—using TypeScript or not—I strongly encourage you to simply avoid using mixins at all. Instead, use services (or, occasionally, inheritance). This will require you to change how you write some of your code, but in my experience that change will make your codebase much easier to understand, and therefore much easier to maintain.&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;I’ll have a lot more to say about these in part 5 of this series, including a detailed example of how to carefully type-annotate one and use it in another class. For now, suffice it to say that you’ll still need to incorporate &lt;code&gt;Mixin&lt;/code&gt;s via &lt;code&gt;.extend()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import MyMixin from &amp;#39;my-app/mixins/my-mixin&amp;#39;;
+
+export default class SomeNewComponent extends Component.extend(MyMixin) {
+  // normal class properties
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;/section&gt;
 &lt;section id="summary" class="level2"&gt;
 &lt;h2&gt;Summary&lt;/h2&gt;
 &lt;p&gt;Those are the &lt;em&gt;biggest&lt;/em&gt; differences from &lt;code&gt;Ember.Object&lt;/code&gt; that you need to be aware of when working with class properties in Ember.js today, at least in my experience working with them day to day. These are not the only differences with &lt;em&gt;classes&lt;/em&gt;, though, especially when dealing with TypeScript, so in my next entry we’ll take a look at how classes work (and work well!) with most things in Ember.js and TypeScript together.&lt;/p&gt;
@@ -181,6 +222,21 @@ export default class AnExample extends Component {
 &lt;ol&gt;
 &lt;li id="fn1"&gt;&lt;p&gt;You can use this same feature on classes using Babel, with the &lt;a href="https://babeljs.io/docs/plugins/transform-class-properties/"&gt;class properties transform&lt;/a&gt;.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id="fn2"&gt;&lt;p&gt;Even when &lt;a href="https://github.com/emberjs/rfcs/pull/281"&gt;Ember.js RFC #281&lt;/a&gt; lands, this problem will not go away, at least under the current implementation, since &lt;a href="https://github.com/emberjs/rfcs/pull/281#issuecomment-360023258"&gt;&lt;em&gt;these&lt;/em&gt; will &lt;em&gt;not&lt;/em&gt; be transformed into getters on the prototype&lt;/a&gt;. We are waiting for decorators to solve this problem completely.&lt;a href="#fnref2" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn3"&gt;&lt;p&gt;In the future, we’ll (hopefully and presumably 🤞🏼) have an escape hatch for those merged or prototypally-set properties via decorators. That’ll look something like this:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { className, tagName } from &amp;#39;ember-decorators/component&amp;#39;;
+
+@tagName(&amp;quot;li&amp;quot;)
+export default class MyListItem extends Component {
+  @className itemClass = &amp;#39;this-be-a-list&amp;#39;;
+
+  @action
+  sendAMessage(contents: string): void {
+
+  }
+  // etc.
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;a href="#fnref3" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 24 Jan 2018 07:00:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-01-24:/2018/typing-your-ember-update-part-2.html</guid><category>TypeScript</category><category>emberjs</category><category>typing-your-ember</category></item><item><title>TypeScript and Ember.js Update, Part 1</title><link>http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
@@ -194,10 +250,11 @@ export default class AnExample extends Component {
 &lt;/aside&gt;
 &lt;p&gt;Here’s how I expect this update series to go:&lt;/p&gt;
 &lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections (this post).&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;&lt;strong&gt;Overview, normal Ember objects, component arguments, and injections (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Computed properties, actions, mixins, and class methods.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Ember Data and related concerns.&lt;/li&gt;
+&lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section id="normal-ember-objects" class="level2"&gt;
 &lt;h2&gt;Normal Ember objects&lt;/h2&gt;

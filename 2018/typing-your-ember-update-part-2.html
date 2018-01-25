@@ -84,7 +84,7 @@
 </h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"><i class="fa fa-fw fa-link"></i></a>January 24, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"><i class="fa fa-fw fa-link"></i></a>January 24, 2018 (updated January 24, 2018)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
@@ -102,9 +102,10 @@
 <p>Here’s the outline of this update sequence:</p>
 <ol type="1">
 <li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">Overview, normal Ember objects, component arguments, and injections.</a></li>
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Class properties—some notes on how things differ from the <code>Ember.Object</code> world (this post).</a></li>
-<li>Computed properties, actions, mixins, and class methods.</li>
+<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"><strong>Class properties—some notes on how things differ from the <code>Ember.Object</code> world (this post).</strong></a></li>
+<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Computed properties, actions, mixins, and class methods.</a></li>
 <li>Ember Data and related concerns.</li>
+<li>Mixins and proxies; or: the really hard-to-type-check bits.</li>
 </ol>
 <section id="a-detailed-example-contd.-class-properties" class="level2">
 <h2>A detailed example (cont’d.) – class properties</h2>
@@ -248,9 +249,8 @@ export default class AnExample extends Component {
   aString = &#39;Hello, there!&#39;;
 
   itsLength = computed(&#39;aString&#39;, function(this: MyComponent): number {
-      return this.aString.length;
-    }
-  );
+    return this.aString.length;
+  });
 }</code></pre>
 <p>This <em>does</em> have a performance cost, which will be negligible in the ordinary case but pretty nasty if you’re rendering hundreds to thousands of these items onto the page. You can use this workaround for these as well as for any other properties which need to be prototypal (more on <em>that</em> in the next post as well):<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <pre class="typescript"><code>export default class MyComponent extends Component.extend({
@@ -264,6 +264,47 @@ export default class AnExample extends Component {
 <p>This <em>looks</em> really weird, but it works exactly as you’d expect.</p>
 </section>
 </section>
+<section id="class-property-variants" class="level2">
+<h2>Class property variants</h2>
+<p>There are two times when things will look different from basic class properties. Both have to do with setting up the prototype to work the way other parts of the Ember object ecosystem expect.</p>
+<section id="variant-1-prototypalmerged-properties" class="level3">
+<h3>Variant 1: Prototypal/merged properties</h3>
+<p>The first is when you’re using properties that need to be merged with properties in the prototype chain, e.g. <code>attributeBindings</code> or <code>classNameBindings</code>, or which (because of details of how components are constructed) have to be set on the prototype rather than as instance properties, e.g. <code>tagClass</code>.</p>
+<p>For those, we can just leverage <code>.extend</code> in conjunction with classes:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+
+export default class MyListItem extends Component.extend({
+  tagName: &#39;li&#39;,
+  classNameBindings: [&#39;itemClass&#39;]
+}) {
+  itemClass = &#39;this-be-a-list&#39;;
+
+  // etc.
+}</code></pre>
+<p>This is also how you’ll <em>use</em> mixins (on defining them, see below):</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import MyMixin from &#39;my-app/mixins/my-mixin&#39;;
+
+export default class AnExample extends Component.extend(MyMixin) {
+  // the rest of the definition.
+}</code></pre>
+<p>Note, however—and this is very important—that you cannot <code>.extend</code> an existing <code>class</code> implementation. As a result, deep inheritance hierarchies <em>may</em> make transitioning to classes in Ember painful. Most importantly: they may work <em>some</em> of the time in <em>some</em> ways, but will break when you least expect. So don’t do that! (This isn’t a TypeScript limitation; it’s a limitation of classes in Ember today.)<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+</section>
+<section id="variant-2-mixins" class="level3">
+<h3>Variant 2: Mixins</h3>
+<p>The other time you’ll have to take a different tack—and this falls directly out of the need for prototypal merging—is with <code>Mixin</code>s, which don’t yet work properly with classes. Worse, it’s difficult (if not impossible) to get rigorous type-checking internally in <code>Mixin</code> definitions, because you cannot define them as classes: you <em>have</em> to use the old style throughout, because mixins are created with <code>.create()</code>, not <code>.extend()</code>.</p>
+<aside>
+<p>Note that if you’re writing <em>new</em> code in Ember.js—using TypeScript or not—I strongly encourage you to simply avoid using mixins at all. Instead, use services (or, occasionally, inheritance). This will require you to change how you write some of your code, but in my experience that change will make your codebase much easier to understand, and therefore much easier to maintain.</p>
+</aside>
+<p>I’ll have a lot more to say about these in part 5 of this series, including a detailed example of how to carefully type-annotate one and use it in another class. For now, suffice it to say that you’ll still need to incorporate <code>Mixin</code>s via <code>.extend()</code>:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import MyMixin from &#39;my-app/mixins/my-mixin&#39;;
+
+export default class SomeNewComponent extends Component.extend(MyMixin) {
+  // normal class properties
+}</code></pre>
+</section>
+</section>
 <section id="summary" class="level2">
 <h2>Summary</h2>
 <p>Those are the <em>biggest</em> differences from <code>Ember.Object</code> that you need to be aware of when working with class properties in Ember.js today, at least in my experience working with them day to day. These are not the only differences with <em>classes</em>, though, especially when dealing with TypeScript, so in my next entry we’ll take a look at how classes work (and work well!) with most things in Ember.js and TypeScript together.</p>
@@ -273,6 +314,21 @@ export default class AnExample extends Component {
 <ol>
 <li id="fn1"><p>You can use this same feature on classes using Babel, with the <a href="https://babeljs.io/docs/plugins/transform-class-properties/">class properties transform</a>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2"><p>Even when <a href="https://github.com/emberjs/rfcs/pull/281">Ember.js RFC #281</a> lands, this problem will not go away, at least under the current implementation, since <a href="https://github.com/emberjs/rfcs/pull/281#issuecomment-360023258"><em>these</em> will <em>not</em> be transformed into getters on the prototype</a>. We are waiting for decorators to solve this problem completely.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>In the future, we’ll (hopefully and presumably 🤞🏼) have an escape hatch for those merged or prototypally-set properties via decorators. That’ll look something like this:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import { className, tagName } from &#39;ember-decorators/component&#39;;
+
+@tagName(&quot;li&quot;)
+export default class MyListItem extends Component {
+  @className itemClass = &#39;this-be-a-list&#39;;
+
+  @action
+  sendAMessage(contents: string): void {
+
+  }
+  // etc.
+}</code></pre>
+<a href="#fnref3" class="footnote-back">↩</a></li>
 </ol>
 </section>
         </div>
