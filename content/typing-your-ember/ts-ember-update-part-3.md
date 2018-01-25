@@ -300,4 +300,4 @@ One last note, which I didn't include in the example: if you have a function (us
 
 So that's a wrap on components (and controllers, which behave much the same way).
 
-In the next post, I'll look at the elephant in the room: Ember Data (and closely related concern Ember CLI Mirage). While you *can* make Ember Data stuff largely work today, it's still a ways from _Just Works™️_, sadly, and
+In the next post, I'll look at the elephant in the room: Ember Data (and closely related concern Ember CLI Mirage). While you *can* make Ember Data stuff largely work today, it's still a ways from _Just Works™️_, sadly, but we'll cover how to work around the missing pieces---we've gotten there in our own codebase, so you can, too!
