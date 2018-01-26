@@ -9,6 +9,16 @@ Date: 2017-12-21 07:10
 
 ---
 
+<i class=editorial>This got an enormous amount of play around the web, and as a result people have ended up translating it to other languages. If you have a translation, I'll be happy to link it here!</i>
+
+- [Russian], translated by Vlad Brown/<http://softdroid.net>
+
+[Russian]: http://softdroid.net/chrome-ne-yavlyaetsya-standartom
+
+---
+
+## The post
+
 Over the past few years, I’ve increasingly seen articles with headlines that run something like, “New Feature Coming To the Web”—followed by content which described how Chrome had implemented an experimental new feature. “You’ll be able to use this soon!” has been the promise.
 
 The reality is a bit more complicated. Sometimes, ideas the Chrome team pioneers make their way out to the rest of the browsers and become tools we can all use. Sometimes... they get shelved because none of the other browsers decide to implement them.
