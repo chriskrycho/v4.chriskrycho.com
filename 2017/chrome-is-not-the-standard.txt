@@ -11,7 +11,7 @@ Date: 2017-12-21 07:10
 
 <i class=editorial>This got an enormous amount of play around the web, and as a result people have ended up translating it to other languages. If you have a translation, I'll be happy to link it here!</i>
 
-- [Russian], translated by Vlad Brown/<http://softdroid.net>
+- [Russian], translated by Vlad Brown (<http://softdroid.net>)
 
 [Russian]: http://softdroid.net/chrome-ne-yavlyaetsya-standartom
 
