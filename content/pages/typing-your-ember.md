@@ -29,9 +29,9 @@ This list is updated whenever I publish a new post in the series. You can also s
 2. [Adding TypeScript to an existing Ember.js project.][2]
 3. [How to actually use types effectively in Ember today.][3]
 4. [Example: using Ember for view and lifecycle but plain-old TypeScript otherwise.][4]
-5. [TypeScript and Ember.js Update, Part 1][5]
-6. [TypeScript and Ember.js Update, Part 2][6]
-7. [TypeScript and Ember.js Update, Part 3][7]
+5. [Update, Part 1: How do things look in early 2018? Pretty good, actually!][5]
+6. [Update, Part 2: Class properties---some notes on how things differ from the `Ember.Object` world.][6]
+7. [Update, Part 3: Computed properties, actions, mixins, and class methods.][7]
 
 [1]: /2017/typing-your-ember-part-1.html
 [2]: /2017/typing-your-ember-part-2.html
