@@ -40,12 +40,13 @@ Here's how I expect this update series to go:
 1. [**Overview, normal Ember objects, component arguments, and injections (this post).**][pt1]
 2. [Class properties---some notes on how things differ from the `Ember.Object` world.][pt2]
 3. [Computed properties, actions, mixins, and class methods.][pt3]
-4. Ember Data and related concerns.
+4. [Ember Data and related concerns.][pt4]
 5. Mixins and proxies; or: the really hard-to-type-check bits.
 
 [pt1]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html
 [pt2]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html
 [pt3]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html
+[pt4]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html
 
 ## Normal Ember objects
 
@@ -182,6 +183,8 @@ You should still combine that with use of [`assert`] so that any misses in templ
 ```
 
 Here, the most important thing to note is the required type annotation. In principle, we could work around this by requiring you to explicitly name the service and using a "type registry" to look up what the service type is -- more on that below in my discussion of using Ember Data -- but I'm not yet persuaded that's better than just writing the appropriate type annotation. Either way, there's some duplication. 🤔 We (everyone working in the [typed-ember](https://github.com/typed-ember) project) would welcome feedback here, because the one thing we _can't_ do is get the proper type _without_ one or the other of these.
+
+**Edit, February 5, 2018:** see [Part 4][pt4] for some updates to this—I actually went ahead and built and implemented that approach, and everything is much nicer now.
 
 ```typescript
   // the current approach -- requires importing `Session` so you can define it
