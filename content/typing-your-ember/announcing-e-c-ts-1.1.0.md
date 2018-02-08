@@ -54,6 +54,30 @@ export default class UserProfile extends Component {
 }
 ```
 
+So, for example, if your `session` service had a `login` method on it:
+
+```ts
+import Service from '@ember/service';
+import RSVP from 'rsvp';
+
+export default class Session extends Service {
+  login(email: string, password: string): RSVP.Promise<string> {
+    // some API call to log in
+  }
+}
+
+// DO NOT DELETE: this is how TypeScript knows how to look up your services.
+declare module 'ember' {
+  interface ServiceRegistry {
+    'session': Session;
+  }
+}
+```
+
+Then anywhere you injected and used it, you'll get auto-complete suggestions and type checking:
+
+++TODO: example in VS Code++
+
 ## Addon development
 
 As [promised with the 1.0 release](http://www.chriskrycho.com/2017/announcing-ember-cli-typescript-100.html#the-roadmap), 1.1 (though arriving much later than I hoped it would) includes support for developing addons with TypeScript.
