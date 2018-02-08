@@ -1,17 +1,32 @@
 ---
 Title: TypeScript and Ember.js Update, Part 4
-Subtitle: TODO
-Date: 2018-01-25 07:00
+Subtitle: Ember Data and injections update
+Date: 2018-02-08 07:30
 Category: Tech
 Series: Typing Your Ember
 Tags: TypeScript, emberjs, typing-your-ember
 slug: typing-your-ember-update-part-4
 Summary: >
-    TODO
-Status: draft
+    Using Ember Data effectively, and migrating to new (better, easier!) approaches for service and controller lookup while we’re at it.
+
 ---
 
-<!-- TODO: previous posts and what they covered -->
+<i class='series-overview'>You write [Ember.js] apps. You think [TypeScript] would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i>
+
+[ember.js]: https://emberjs.com
+[typescript]: http://www.typescriptlang.org
+
+<i class='series-overview'>This is the series for you! I'll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today---and I'll be pretty clear about the current tradeoffs and limitations, too.</i>
+
+<i class='series-overview'>[(See the rest of the series. →)][series]</i>
+
+[series]: /typing-your-ember.html
+
+---
+
+In the previous posts in this series, I introduced the big picture of how the story around TypeScript and Ember.js has improved over the last several months, walked through some important background on class properties, and dug deep on computed properties, actions, and mixins.
+
+In today's post, we'll look at how to write Ember Data models so they work correctly throughout your codebase, and see some improvements to how we can do `Service` and `Controller` injections even from a few weeks ago.
 
 <aside>
 
@@ -24,7 +39,7 @@ Here's the outline of this update sequence:
 1. [Overview, normal Ember objects, component arguments, and injections.][pt1]
 2. [Class properties---some notes on how things differ from the `Ember.Object` world.][pt2]
 3. [Computed properties, actions, mixins, and class methods.][pt3]
-4. [**Ember Data and related concerns (this post).**][pt4]
+4. [**Using Ember Data and improved injections.** (this post)][pt4]
 5. Mixins and proxies; or: the really hard-to-type-check bits.
 
 [pt1]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html
@@ -61,6 +76,8 @@ export default class Person extends DS.Model.extend({
   lastName: DS.attr('string'),
 }) {}
 
+// DO NOT DELETE: this is how TypeScript knows how to look up your
+// Ember Data models.
 declare module 'ember-data' {
   interface ModelRegistry {
     'person': Person;
@@ -109,9 +126,9 @@ export default class PersonCard extends Component {
 }
 ```
 
-The type of `model` here is now `Person & DS.Promise<Person>` (which is actually what Ember Data returns for these kinds of things!), and the `this.store.adapterFor` actually correctly returns the `Person` adapter as well, so the call to its `update` method type-checks as well (including guaranteeing that the arguments to it are correct)!
+The type of `model` here is now `Person & DS.PromiseObject<Person>` (which is actually what Ember Data returns for these kinds of things!), and the `this.store.adapterFor` actually correctly returns the `Person` adapter as well, so the call to its `update` method type-checks as well (including guaranteeing that the arguments to it are correct). That also means you'll get autocompletion for those, including for their types, if you're using an editor configured for it. And, happily for everyone, if you mistype a string (`preson` instead of `person`, for example), you'll get a compile-time error!
 
-You'll also notice that the service injection is much cleaner than it was in earlier examples in the series. That's because we made the same "registry"-type changes---as I suggested we might back in [Part 1][pt1]!---for controller and service injections. Before, for this kind of thing:
+Notice as well that the service injection is much cleaner than it was in earlier examples in the series. That's because we made the same "registry"-type changes---as I suggested we might back in [Part 1][pt1]!---for controller and service injections. Before, for this kind of thing:
 
 ```ts
 export default class PersonCard extends Component {
@@ -129,7 +146,7 @@ export default class PersonCard extends Component {
 
 That's not *quite* as minimalist as what you get in vanilla Ember (where the name of the property is used to do the lookup at runtime), but it's pretty close, and a huge improvement! Not least since it's *exactly* as type-checked, and therefore as friendly to autocomplete/IntelliSense/etc. as it was before.
 
-### Migrating existing Ember Data items
+### Migrating existing items
 
 Your path forward for using the new approach is straightforward and fairly mechanical:
 
@@ -138,7 +155,20 @@ Your path forward for using the new approach is straightforward and fairly mecha
 
 #### 1. Add declaration
 
-`DS.Model`:
+##### `DS.Model`
+
+**Before:**
+
+```ts
+import DS from 'ember-data'
+
+export default class Person extends DS.Model.extend({
+  firstName: DS.attr('string'),
+  lastName: DS.attr('string'),
+}) {}
+```
+
+**Now:**
 
 ```ts
 import DS from 'ember-data'
@@ -155,7 +185,20 @@ declare module 'ember-data' {
 }
 ```
 
-`DS.Adapter`:
+##### `DS.Adapter`
+
+**Before:**
+
+```ts
+import DS from 'ember-data';
+
+export default class Person extends DS.Adapter {
+  // customization
+}
+```
+
+
+**Now:**
 
 ```ts
 import DS from 'ember-data';
@@ -171,7 +214,19 @@ declare module 'ember-data' {
 }
 ```
 
-`DS.Serializer`:
+##### `DS.Serializer`
+
+**Before:**
+
+```ts
+import DS from 'ember-data';
+
+export default class Person extends DS.Serializer {
+  // customization
+}
+```
+
+**Now:**
 
 ```ts
 import DS from 'ember-data';
@@ -187,23 +242,48 @@ declare module 'ember-data' {
 }
 ```
 
-`Service`:
+##### `Service`
+
+**Before:**
 
 ```ts
 import Service from '@ember/service';
 
-export default class Session extends Service {
+export default class ExternalLogging extends Service {
+  // implementation
+}
+```
+
+
+**Now:**
+
+```ts
+import Service from '@ember/service';
+
+export default class ExternalLogging extends Service {
   // implementation
 }
 
-declare module '@ember/service'{
+declare module 'ember' {
   interface ServiceRegistry {
-    'session': Session;
+    'external-logging': ExternalLogging
   }
 }
 ```
 
-`Controller`:
+##### `Controller`
+
+**Before:**
+
+```ts
+import Controller from '@ember/controller';
+
+export default class Profile extends Controller {
+  // implementation
+}
+```
+
+**Now:**
 
 ```ts
 import Controller from '@ember/controller';
@@ -219,28 +299,40 @@ declare module '@ember/controller' {
 }
 ```
 
-If you *don't* do that, you'll just get back:[^coercion]
+If you *don't* do add the type registry declarations, you'll just get back:
 
-- `DS.Model` for `this.store.findRecord`/`this.store.queryRecord`, etc. invocations
-- `DS.Adapter` for `this.store.adapterFor`
-- `DS.Serializer` for `this.store.serializerFor`.
-- `Service` for `Ember.inject.service` (or `service` if doing modern imports)
-- `Controller` for `Ember.inject.controller` (or `controller` if doing modern imports)
+- *compiler errors* for any use of a string key in your service and controller lookups
+
+- `Service` and `Controller` (the top-level classes we inherit from) instead of the specific class you created if you use the no-argument version of the `inject` helpers
+
+- *compiler errors* for `DS.Model`, `DS.Adapter`, and `DS.Serializer` lookups (since they always have a string key)
 
 
+If you're looking to allow your existing code to all just continue working while you *slowly* migrate to TypeScript, you can add this as a fallback somewhere in your own project (adapted to whichever of the registries you need):
 
-[^coercion]: If you want to write an inline-coercion as a stopgap, you'll need to write out a bit more than you might expect in a number of places, because calls like `findRecord('person', 123)` actually return the type `Person & DS.PromiseObject<Person>` – i.e., a type that acts like both the model and a promise wrapping the model. This is, to be sure, *weird*, but it's the reality, so that's what our types give you.
+```ts
+declare module 'ember-data' {
+  interface ModelRegistry {
+    [key: string]: DS.Model;
+  }
+}
+```
 
-    As a corollary: if you want to just migrate things in-place, rather than going through and writing the interface definitions for all your models, you can define something like this to use wherever you have `findRecord`, `queryRecord`, etc. results:
-    
-    ```ts
-    type Loaded<T> = T & DS.PromiseObject<T>;
-    const person: Loaded<Person> = this.store.findRecord('person', 123);
-    ```
+This will lose you the type-checking if you type a key that doesn't exist, but it means that models you haven't yet added the type definition for won't throw compile errors. (We've made this opt-in because otherwise you'd never be able to get that type-checking for using an invalid key.)
 
 #### 2. Remove any existing coercions
 
-If you've been using the type coercions we shipped as a stopgap, like this---
+Now that we have the necessary updates to be able to do these lookups automatically in the compiler, we need to remove any existing type coercions.
+
+#### `Service` and `Controller`
+
+This change is really straightforward (and actually just simplifies things a lot!) for `Service` and `Controller` injections.
+
+#### Ember Data
+
+This looks *slightly* different for the Ember Data side.
+
+If you've been using the type coercion forms we shipped as a stopgap, like this---
 
 ```ts
 const person = this.store.findRecord<Person>('person', 123);
@@ -250,23 +342,67 @@ const person = this.store.findRecord<Person>('person', 123);
 
 > [ts] Type 'Person' does not satisfy the constraint 'string'.
 
-This is because, behind the scenes, `findRecord` still takes a type parameter, but it's now a string---the name of the model you're looking up---*not* the model itself. As such, you should never supply it yourself; it's taken care of automatically. As a result, your invocation should just be:
+This is because, behind the scenes, `findRecord` still takes a type parameter, but it's now a string---the name of the model you're looking up---*not* the model itself. As such, you should *never* supply that type parameter yourself; it's taken care of automatically. As a result, your invocation should just be:
 
 ```ts
 const person = this.store.findRecord('person', 123);
 ```
 
-### Migrating services and controllers
 
-For any services or controllers you are injecting, you'll need to make the same kinds of changes:
+#### 2. Remove existing type coercions
 
-1. Add the module-and-interface declaration for each Ember Data `Model`, `Adapter`, and `Serializer` you have defined.
-2. Remove any type coercions you've written out already for these.
+**Before:**
 
-#### 1. Add declaration
+```ts
+import Component from '@ember/component';
+import { inject as service } from '@ember/service';
+import Computed from '@ember/object/computed';
 
+import ExternalLogging from 'my-app/services/external-logging';
 
+export default class UserProfile extends Component {
+  externalLogging: Computed<ExternalLogging> = service();
+  // other implementation
+}
+```
 
-## Mirage
+**Now:**
 
-Note for Ember CLI Mirage users: most of what I've said here is equally applicable and nearly identical for Mirage. I'm currently working on solid typings for Mirage that get us everything we need that way. We've been using them in our own app for quite some time, but they're incomplete because we're not using a lot of the stuff that Mirage supplies
+```ts
+import Component from '@ember/component';
+import { inject as service } from '@ember/service';
+
+export default class UserProfile extends Component {
+  externalLogging = service('external-logging');
+  // other implementation
+}
+```
+
+### The full type of lookups
+
+One last note on Ember Data: calls like `findRecord('person', 123)` actually return the type `Person & DS.PromiseObject<Person>` – i.e., a type that acts like both the model and a promise wrapping the model. This is, to be sure, *weird*, but it's the reality, so that's what our types give you.
+
+If you find yourself needing to write out that type locally for some reason---e.g. because part of your app deals explicitly with the result of a lookup---you may find it convenient to define a global type alias like this:
+    
+```ts
+type Loaded<T> = T & DS.PromiseObject<T>;
+const person: Loaded<Person> = this.store.findRecord('person', 123);
+```
+
+Given the new support for getting that type automatically, you shouldn't *normally* need that, but it's convenient if or when you *do* need it. For example, if a component is passed the result of a `Person` lookup and needs to be able to treat it as a promise *or* the model, you could write it like this:
+
+```ts
+import Component from '@ember/component';
+
+export default class PersonDisplay extends Component {
+  model: Loaded<Person>; // instead of just `model: Person`
+}
+```
+
+### Preview: Mirage
+
+As it turns out, Ember CLI Mirage's approach is a lot like Ember Data's (although it's actually a lot more dynamic!), so I have a very similar approach working in our codebase for doing lookups with Mirage's database. Sometime in February or March, we hope to get that completed and upstreamed into Mirage itself, so that you can get these exact same benefits when using Mirage to write your tests.
+
+## Conclusion
+
+And that's pretty much a wrap on Ember Data! The *next* post you can expect in this series will be a break from nitty-gritty "how to use TS in Ember" posts for a very exciting, closely related announcement---probably tomorrow or Monday! The post after that will be a deep dive into (mostly the limitations of!) writing types for mixins and proxies.
