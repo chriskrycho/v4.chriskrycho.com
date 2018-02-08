@@ -78,6 +78,8 @@ Then anywhere you injected and used it, you'll get auto-complete suggestions and
 
 ++TODO: example in VS Code++
 
+(You'll see the same kinds of things in other editors, from Vim to IntelliJ IDEA. Visual Studio Code is just my current editor of choice.)
+
 ## Addon development
 
 As [promised with the 1.0 release](http://www.chriskrycho.com/2017/announcing-ember-cli-typescript-100.html#the-roadmap), 1.1 (though arriving much later than I hoped it would) includes support for developing addons with TypeScript.
@@ -98,9 +100,17 @@ You could work around all of that by building the JavaScript (and TypeScript def
 
 ### Solution
 
-We now support TypeScript as a `devDependency` and also manage the work of 
+We now support TypeScript as a `devDependency` and also manage the work of generating JavaScript and type definitions for you. All you have to do is install ember-cli-typescript into an addon, and then when you do your build step, we'll automatically do the work (on prepublish) of generating TypeScript `.d.ts` files and JavaScript source for you.
 
-One caveat: we do *not* support TypeScript in an addon’s `app` directory
+Consumers of your addon, therefore, will (a) not know or care that the addon is written in TypeScript if they just want to consume it as normal JavaScript[^normal-JS] or (b) will get the benefits of your having written the library in TypeScript without paying the penalty of having to have multiple versions of the TypeScript compiler downloaded to their own app.
+
+[^normal-JS]: although they may actually get some benefits in a number of modern editors, since e.g. VS Code and the JetBrains IDEs will leverage types if they exist!
+
+One important caveat: we do *not* support TypeScript in an addon’s `app` directory. However, for most addons, we don't think this should be a problem. It's rare for addons to put actual implementation in the `app` directory; instead it has simply become conventional for the `app` directory simply to have re-exports for convenient access to the functionality supplied by the addon.
+
+Also note that you can supply type definitions for your addon *without* developing the addon itself in TypeScript.[^typing-plan] You do *not* need ember-cli-typescript installed for that. You only need the addon if you actually want to take advantage of the opportunities TypeScript affords for developing your own addon.
+
+[^typing-plan]: More on that in a post to be released in the next couple weeks---one I promised *long* ago, but which we're now in a place to actually do: a plan and a roadmap for typing the whole Ember ecosystem!
 
 ## Incremental compilation
 
