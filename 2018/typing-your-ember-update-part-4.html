@@ -314,6 +314,17 @@ declare module &quot;@ember/controller&quot; {
 <section id="service-and-controller" class="level4">
 <h4><code>Service</code> and <code>Controller</code></h4>
 <p>This change is really straightforward (and actually just simplifies things a lot!) for <code>Service</code> and <code>Controller</code> injections.</p>
+<pre class="diff"><code>import Component from &#39;@ember/component&#39;;
+import { inject as service } from &#39;@ember/service&#39;;
+- import Computed from &#39;@ember/object/computed&#39;;
+-
+- import ExternalLogging from &#39;my-app/services/external-logging&#39;;
+
+export default class UserProfile extends Component {
+-   externalLogging: Computed&lt;ExternalLogging&gt; = service();
++   externalLogging = service(&#39;external-logging&#39;);
+  // other implementation
+}</code></pre>
 </section>
 <section id="ember-data-1" class="level4">
 <h4>Ember Data</h4>
@@ -326,28 +337,6 @@ declare module &quot;@ember/controller&quot; {
 </blockquote>
 <p>This is because, behind the scenes, <code>findRecord</code> still takes a type parameter, but it’s now a string—the name of the model you’re looking up—<em>not</em> the model itself. As such, you should <em>never</em> supply that type parameter yourself; it’s taken care of automatically. As a result, your invocation should just be:</p>
 <pre class="ts"><code>const person = this.store.findRecord(&quot;person&quot;, 123);</code></pre>
-</section>
-<section id="remove-existing-type-coercions" class="level4">
-<h4>2. Remove existing type coercions</h4>
-<p><strong>Before:</strong></p>
-<pre class="ts"><code>import Component from &quot;@ember/component&quot;;
-import { inject as service } from &quot;@ember/service&quot;;
-import Computed from &quot;@ember/object/computed&quot;;
-
-import ExternalLogging from &quot;my-app/services/external-logging&quot;;
-
-export default class UserProfile extends Component {
-  externalLogging: Computed&lt;ExternalLogging&gt; = service();
-  // other implementation
-}</code></pre>
-<p><strong>Now:</strong></p>
-<pre class="ts"><code>import Component from &quot;@ember/component&quot;;
-import { inject as service } from &quot;@ember/service&quot;;
-
-export default class UserProfile extends Component {
-  externalLogging = service(&quot;external-logging&quot;);
-  // other implementation
-}</code></pre>
 </section>
 </section>
 <section id="the-full-type-of-lookups" class="level3">
