@@ -8,7 +8,6 @@ Tags: TypeScript, emberjs, typing-your-ember
 slug: typing-your-ember-update-part-4
 Summary: >
     Using Ember Data effectively, and migrating to new (better, easier!) approaches for service and controller lookup while we’re at it.
-
 ---
 
 <i class='series-overview'>You write [Ember.js] apps. You think [TypeScript] would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i>
@@ -49,59 +48,60 @@ Here's the outline of this update sequence:
 
 ## Ember Data
 
-There remains one significant challenges to using Ember Data effectively with TypeScript today: Ember Data, for reasons I haven't yet dug into myself, does not play nicely with ES6 classes. However, we *need* named class exports for the sake of being able to use them as types elsewhere in our programs. The hack to work around this is much the same as anywhere else we need named exports but have to get things back into the prototype:
+There remains one significant challenges to using Ember Data effectively with TypeScript today: Ember Data, for reasons I haven't yet dug into myself, does not play nicely with ES6 classes. However, we _need_ named class exports for the sake of being able to use them as types elsewhere in our programs. The hack to work around this is much the same as anywhere else we need named exports but have to get things back into the prototype:
 
 ```ts
-import DS from 'ember-data'
+import DS from "ember-data";
 
 export default class Person extends DS.Model.extend({
-  firstName: DS.attr('string'),
-  lastName: DS.attr('string'),
+  firstName: DS.attr("string"),
+  lastName: DS.attr("string")
 }) {}
 ```
 
-You can still define other items of the class normally, but attributes have to be prototypally bound or *you will have problems*. Note that this only applies (as far as I can tell) to Ember Data `Model`s specifically---`Adapter` and `Serializer` classes work just fine.
+You can still define other items of the class normally, but attributes have to be prototypally bound or _you will have problems_. Note that this only applies (as far as I can tell) to Ember Data `Model`s specifically---`Adapter` and `Serializer` classes work just fine.
 
-The other problem we've historically had was dealing with lookups—the situation was similar to that I described in [Part 3][pt3] for service injection. However, as of *this week*, we're landing a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.[^registries] Keep your eyes open for the ember-cli-typescript 1.1 release in the next couple days!
+The other problem we've historically had was dealing with lookups—the situation was similar to that I described in [Part 3][pt3] for service injection. However, as of _this week_, we're landing a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.[^registries] Keep your eyes open for the ember-cli-typescript 1.1 release in the next couple days!
 
 [^registries]: If you're curious about the mechanics, we're basically setting up a "type registry" which maps the string keys to the correct model, so that the type of e.g. `store.createRecord('some-model', { ... })` will do a lookup in an interface which defines a mapping from model name, i.e. `some-model` here, to the model type, e.g. `export default class SomeModel extends DS.Model.extend({ ... }) {}`. I'll write up a full blog post on the mechanics of that sometime soon.
 
 Once this release of both ember-cli-typescript and the updated typings land, when you generate an Ember Data model by doing `ember generate model person firstName:string lastName:string`, it will look like this:
 
 ```ts
-import DS from 'ember-data'
+import DS from "ember-data";
 
 export default class Person extends DS.Model.extend({
-  firstName: DS.attr('string'),
-  lastName: DS.attr('string'),
-}) {}
+  firstName: DS.attr("string"),
+  lastName: DS.attr("string")
+}) {
+  // normal class body definition here
+}
 
-// DO NOT DELETE: this is how TypeScript knows how to look up your
-// Ember Data models.
-declare module 'ember-data' {
+// DO NOT DELETE: this is how TypeScript knows how to look up your models.
+declare module "ember-data" {
   interface ModelRegistry {
-    'person': Person;
+    person: Person;
   }
 }
 ```
 
-That module and interface declaration at the bottom *merges* the declaration for this model with the declarations for all the other models. You'll see the same basic pattern for `DS.Adapter` and `DS.Serializer` instances. The result is that *using* a model will now look like this. In addition to the `Person` model definition just above, our adapter might be like this:
+That module and interface declaration at the bottom _merges_ the declaration for this model with the declarations for all the other models. You'll see the same basic pattern for `DS.Adapter` and `DS.Serializer` instances. The result is that _using_ a model will now look like this. In addition to the `Person` model definition just above, our adapter might be like this:
 
 ```ts
-import DS from 'ember-data'
+import DS from "ember-data";
 
 export default class Person extends DS.Adapter {
-  update(changes: { firstName?: string, lastName?: string }) {
-    fetch('the-url-to-change-it', {
-      method: 'POST',
-      body: JSON.stringify(changes),
+  update(changes: { firstName?: string; lastName?: string }) {
+    fetch("the-url-to-change-it", {
+      method: "POST",
+      body: JSON.stringify(changes)
     });
   }
 }
 
-declare module 'ember-data' {
+declare module "ember-data" {
   interface ModelRegistry {
-    'person': Person;
+    person: Person;
   }
 }
 ```
@@ -109,20 +109,20 @@ declare module 'ember-data' {
 Then putting the pieces together, our component definition will just look like this:
 
 ```ts
-import Component from '@ember/component';
-import { inject as service } from '@ember/service';
+import Component from "@ember/component";
+import { inject as service } from "@ember/service";
 
 export default class PersonCard extends Component {
   id: string | number;
-  
-  store = service('store');
-  model = this.store.findRecord('person', this.id);
-  
+
+  store = service("store");
+  model = this.store.findRecord("person", this.id);
+
   actions = {
-    savePerson(changes: { firstName?: string, lastName?: string }) {
-      this.store.adapterFor('person').update(changes);
+    savePerson(changes: { firstName?: string; lastName?: string }) {
+      this.store.adapterFor("person").update(changes);
     }
-  }
+  };
 }
 ```
 
@@ -140,11 +140,11 @@ Now:
 
 ```ts
 export default class PersonCard extends Component {
-  store = service('store');
+  store = service("store");
 }
 ```
 
-That's not *quite* as minimalist as what you get in vanilla Ember (where the name of the property is used to do the lookup at runtime), but it's pretty close, and a huge improvement! Not least since it's *exactly* as type-checked, and therefore as friendly to autocomplete/IntelliSense/etc. as it was before.
+That's not _quite_ as minimalist as what you get in vanilla Ember (where the name of the property is used to do the lookup at runtime), but it's pretty close, and a huge improvement! Not least since it's _exactly_ as type-checked, and therefore as friendly to autocomplete/IntelliSense/etc. as it was before.
 
 ### Migrating existing items
 
@@ -160,27 +160,27 @@ Your path forward for using the new approach is straightforward and fairly mecha
 **Before:**
 
 ```ts
-import DS from 'ember-data'
+import DS from "ember-data";
 
 export default class Person extends DS.Model.extend({
-  firstName: DS.attr('string'),
-  lastName: DS.attr('string'),
+  firstName: DS.attr("string"),
+  lastName: DS.attr("string")
 }) {}
 ```
 
 **Now:**
 
 ```ts
-import DS from 'ember-data'
+import DS from "ember-data";
 
 export default class Person extends DS.Model.extend({
-  firstName: DS.attr('string'),
-  lastName: DS.attr('string'),
+  firstName: DS.attr("string"),
+  lastName: DS.attr("string")
 }) {}
- 
-declare module 'ember-data' {
+
+declare module "ember-data" {
   interface ModelRegistry {
-    'person': Person;
+    person: Person;
   }
 }
 ```
@@ -190,26 +190,25 @@ declare module 'ember-data' {
 **Before:**
 
 ```ts
-import DS from 'ember-data';
+import DS from "ember-data";
 
 export default class Person extends DS.Adapter {
   // customization
 }
 ```
 
-
 **Now:**
 
 ```ts
-import DS from 'ember-data';
+import DS from "ember-data";
 
 export default class Person extends DS.Adapter {
   // customization
 }
 
-declare module 'ember-data' {
+declare module "ember-data" {
   interface AdapterRegistry {
-    'person': Person;
+    person: Person;
   }
 }
 ```
@@ -219,7 +218,7 @@ declare module 'ember-data' {
 **Before:**
 
 ```ts
-import DS from 'ember-data';
+import DS from "ember-data";
 
 export default class Person extends DS.Serializer {
   // customization
@@ -229,15 +228,15 @@ export default class Person extends DS.Serializer {
 **Now:**
 
 ```ts
-import DS from 'ember-data';
+import DS from "ember-data";
 
 export default class Person extends DS.Serializer {
   // customization
 }
 
-declare module 'ember-data' {
+declare module "ember-data" {
   interface SerializerRegistry {
-    'person': Person;
+    person: Person;
   }
 }
 ```
@@ -247,26 +246,25 @@ declare module 'ember-data' {
 **Before:**
 
 ```ts
-import Service from '@ember/service';
+import Service from "@ember/service";
 
 export default class ExternalLogging extends Service {
   // implementation
 }
 ```
 
-
 **Now:**
 
 ```ts
-import Service from '@ember/service';
+import Service from "@ember/service";
 
 export default class ExternalLogging extends Service {
   // implementation
 }
 
-declare module 'ember' {
+declare module "ember" {
   interface ServiceRegistry {
-    'external-logging': ExternalLogging
+    "external-logging": ExternalLogging;
   }
 }
 ```
@@ -276,7 +274,7 @@ declare module 'ember' {
 **Before:**
 
 ```ts
-import Controller from '@ember/controller';
+import Controller from "@ember/controller";
 
 export default class Profile extends Controller {
   // implementation
@@ -286,32 +284,31 @@ export default class Profile extends Controller {
 **Now:**
 
 ```ts
-import Controller from '@ember/controller';
+import Controller from "@ember/controller";
 
 export default class Profile extends Controller {
   // implementation
 }
 
-declare module '@ember/controller' {
+declare module "@ember/controller" {
   interface ControllerRegistry {
-    'profile': Profile;
+    profile: Profile;
   }
 }
 ```
 
-If you *don't* do add the type registry declarations, you'll just get back:
+If you _don't_ do add the type registry declarations, you'll just get back:
 
-- *compiler errors* for any use of a string key in your service and controller lookups
+* _compiler errors_ for any use of a string key in your service and controller lookups
 
-- `Service` and `Controller` (the top-level classes we inherit from) instead of the specific class you created if you use the no-argument version of the `inject` helpers
+* `Service` and `Controller` (the top-level classes we inherit from) instead of the specific class you created if you use the no-argument version of the `inject` helpers
 
-- *compiler errors* for `DS.Model`, `DS.Adapter`, and `DS.Serializer` lookups (since they always have a string key)
+* _compiler errors_ for `DS.Model`, `DS.Adapter`, and `DS.Serializer` lookups (since they always have a string key)
 
-
-If you're looking to allow your existing code to all just continue working while you *slowly* migrate to TypeScript, you can add this as a fallback somewhere in your own project (adapted to whichever of the registries you need):
+If you're looking to allow your existing code to all just continue working while you _slowly_ migrate to TypeScript, you can add this as a fallback somewhere in your own project (adapted to whichever of the registries you need):
 
 ```ts
-declare module 'ember-data' {
+declare module "ember-data" {
   interface ModelRegistry {
     [key: string]: DS.Model;
   }
@@ -330,35 +327,34 @@ This change is really straightforward (and actually just simplifies things a lot
 
 #### Ember Data
 
-This looks *slightly* different for the Ember Data side.
+This looks _slightly_ different for the Ember Data side.
 
 If you've been using the type coercion forms we shipped as a stopgap, like this---
 
 ```ts
-const person = this.store.findRecord<Person>('person', 123);
+const person = this.store.findRecord<Person>("person", 123);
 ```
 
 ---you'll need to drop the type coercion on `findRecord<Person>`, which will give you a type error:
 
 > [ts] Type 'Person' does not satisfy the constraint 'string'.
 
-This is because, behind the scenes, `findRecord` still takes a type parameter, but it's now a string---the name of the model you're looking up---*not* the model itself. As such, you should *never* supply that type parameter yourself; it's taken care of automatically. As a result, your invocation should just be:
+This is because, behind the scenes, `findRecord` still takes a type parameter, but it's now a string---the name of the model you're looking up---_not_ the model itself. As such, you should _never_ supply that type parameter yourself; it's taken care of automatically. As a result, your invocation should just be:
 
 ```ts
-const person = this.store.findRecord('person', 123);
+const person = this.store.findRecord("person", 123);
 ```
-
 
 #### 2. Remove existing type coercions
 
 **Before:**
 
 ```ts
-import Component from '@ember/component';
-import { inject as service } from '@ember/service';
-import Computed from '@ember/object/computed';
+import Component from "@ember/component";
+import { inject as service } from "@ember/service";
+import Computed from "@ember/object/computed";
 
-import ExternalLogging from 'my-app/services/external-logging';
+import ExternalLogging from "my-app/services/external-logging";
 
 export default class UserProfile extends Component {
   externalLogging: Computed<ExternalLogging> = service();
@@ -369,30 +365,30 @@ export default class UserProfile extends Component {
 **Now:**
 
 ```ts
-import Component from '@ember/component';
-import { inject as service } from '@ember/service';
+import Component from "@ember/component";
+import { inject as service } from "@ember/service";
 
 export default class UserProfile extends Component {
-  externalLogging = service('external-logging');
+  externalLogging = service("external-logging");
   // other implementation
 }
 ```
 
 ### The full type of lookups
 
-One last note on Ember Data: calls like `findRecord('person', 123)` actually return the type `Person & DS.PromiseObject<Person>` – i.e., a type that acts like both the model and a promise wrapping the model. This is, to be sure, *weird*, but it's the reality, so that's what our types give you.
+One last note on Ember Data: calls like `findRecord('person', 123)` actually return the type `Person & DS.PromiseObject<Person>` – i.e., a type that acts like both the model and a promise wrapping the model. This is, to be sure, _weird_, but it's the reality, so that's what our types give you.
 
 If you find yourself needing to write out that type locally for some reason---e.g. because part of your app deals explicitly with the result of a lookup---you may find it convenient to define a global type alias like this:
-    
+
 ```ts
 type Loaded<T> = T & DS.PromiseObject<T>;
-const person: Loaded<Person> = this.store.findRecord('person', 123);
+const person: Loaded<Person> = this.store.findRecord("person", 123);
 ```
 
-Given the new support for getting that type automatically, you shouldn't *normally* need that, but it's convenient if or when you *do* need it. For example, if a component is passed the result of a `Person` lookup and needs to be able to treat it as a promise *or* the model, you could write it like this:
+Given the new support for getting that type automatically, you shouldn't _normally_ need that, but it's convenient if or when you _do_ need it. For example, if a component is passed the result of a `Person` lookup and needs to be able to treat it as a promise _or_ the model, you could write it like this:
 
 ```ts
-import Component from '@ember/component';
+import Component from "@ember/component";
 
 export default class PersonDisplay extends Component {
   model: Loaded<Person>; // instead of just `model: Person`
@@ -405,4 +401,4 @@ As it turns out, Ember CLI Mirage's approach is a lot like Ember Data's (althoug
 
 ## Conclusion
 
-And that's pretty much a wrap on Ember Data! The *next* post you can expect in this series will be a break from nitty-gritty "how to use TS in Ember" posts for a very exciting, closely related announcement---probably tomorrow or Monday! The post after that will be a deep dive into (mostly the limitations of!) writing types for mixins and proxies.
+And that's pretty much a wrap on Ember Data! The _next_ post you can expect in this series will be a break from nitty-gritty "how to use TS in Ember" posts for a very exciting, closely related announcement---probably tomorrow or Monday! The post after that will be a deep dive into (mostly the limitations of!) writing types for mixins and proxies.

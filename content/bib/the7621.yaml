@@ -196,7 +196,7 @@ references:
     given: Millard J.
   issued:
   - year: '1996'
-    month: March
+    month: '03'
   original-date:
   - year: '1995'
   title: 'God in three persons: A contemporary interpretation of the trinity'
@@ -232,7 +232,7 @@ references:
   title: The trinity
   publisher: The Crossroad Publishing Company
   publisher-place: New York
-  edition: March 2015 printing
+  edition: 'March 2015 printing'
 
 - id: letham
   type: book

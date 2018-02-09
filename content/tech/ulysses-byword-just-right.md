@@ -1,7 +1,7 @@
 ---
 Title: Ulysses, Byword, and “Just Right”
 Subtitle: My own killer Markdown app is still unwritten.
-Date: 2016-03-26
+Date: 2016-03-26 08:00
 Tags: design, software development, writing
 ...
 

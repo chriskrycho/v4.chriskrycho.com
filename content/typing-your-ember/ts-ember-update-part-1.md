@@ -9,7 +9,6 @@ Tags: TypeScript, emberjs, typing-your-ember
 slug: typing-your-ember-update-part-1
 Summary: >
     A bunch has changed for the better in the TypeScript/Ember.js story over the last six months. Here’s an overview of the changes and a look at normal Ember objects, "arguments" to components (and controllers), and service (or controller) injections.
-
 ---
 
 <i class='series-overview'>You write [Ember.js] apps. You think [TypeScript] would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i>
@@ -66,62 +65,59 @@ That means that every new bit of code I write today in our app looks roughly lik
 In order to explain all this clearly, I'm going to start by showing a whole component written in the new style. Then, over the rest of this post and the next post, I'll zoom in on and explain specific parts of it.
 
 ```typescript
-import Component from '@ember/component';
-import { computed, get } from '@ember/object';
-import Computed from '@ember/object/computed';
-import { inject as service } from '@ember/service';
-import { assert } from '@ember/debug';
-import { isNone } from '@ember/utils';
+import Component from "@ember/component";
+import { computed, get } from "@ember/object";
+import Computed from "@ember/object/computed";
+import { inject as service } from "@ember/service";
+import { assert } from "@ember/debug";
+import { isNone } from "@ember/utils";
 
-import Session from 'my-app/services/session';
-import Person from 'my-app/models/person';
+import Session from "my-app/services/session";
+import Person from "my-app/models/person";
 
 export default class AnExample extends Component {
   // -- Component arguments -- //
-  model: Person;      // required
-  modifier?: string;  // optional, thus the `?`
+  model: Person; // required
+  modifier?: string; // optional, thus the `?`
 
   // -- Injections -- //
   session: Computed<Session> = service();
 
   // -- Class properties -- //
-  aString = 'this is fine';
+  aString = "this is fine";
   aCollection: string[] = [];
 
   // -- Computed properties -- //
   // TS correctly infers computed property types when the callback has a
   // return type annotation.
-  fromModel = computed(
-    'model.firstName',
-    function(this: AnExample): string {
-      return `My name is ${get(this.model, 'firstName')};`;
-    }
-  );
+  fromModel = computed("model.firstName", function(this: AnExample): string {
+    return `My name is ${get(this.model, "firstName")};`;
+  });
 
-  aComputed = computed('aString', function(this: AnExample): number {
+  aComputed = computed("aString", function(this: AnExample): number {
     return this.lookAString.length;
   });
 
-  isLoggedIn = bool('session.user');
-  savedUser: Computed<Person> = alias('session.user');
+  isLoggedIn = bool("session.user");
+  savedUser: Computed<Person> = alias("session.user");
 
   actions = {
     addToCollection(this: AnExample, value: string) {
-      const current = this.get('aCollection');
-      this.set('aCollection', current.concat(value));
+      const current = this.get("aCollection");
+      this.set("aCollection", current.concat(value));
     }
   };
 
   constructor() {
     super();
-    assert('`model` is required', !isNone(this.model));
+    assert("`model` is required", !isNone(this.model));
 
     this.includeAhoy();
   }
 
   includeAhoy(this: AnExample) {
-    if (!this.get('aCollection').includes('ahoy')) {
-      this.set('aCollection', current.concat('ahoy'));
+    if (!this.get("aCollection").includes("ahoy")) {
+      this.set("aCollection", current.concat("ahoy"));
     }
   }
 }
@@ -150,21 +146,20 @@ assert("`model` is required", !isNone(this.model));
 
 [^maybe]: This isn't my preferred way of handling optional types; [a `Maybe` type](https://true-myth.js.org) is. And you can, if you like, use `Maybe` here:
 
-    ```typescript
-    import Component from '@ember/component';
-    import { Maybe } from 'true-myth';
+```typescript
+import Component from "@ember/component";
+import { Maybe } from "true-myth";
 
-    export default class MyComponent extends Component {
-      optionalArg?: string;
-      optionalProperty = Maybe.of(this.optionalArg);
-    }
-    ```
+export default class MyComponent extends Component {
+  optionalArg?: string;
+  optionalProperty = Maybe.of(this.optionalArg);
+}
+```
 
-    Then if you invoke the property without the argument, it'll construct a `Nothing`; if you invoke it with the argument, it'll be `Just` with the value.
-
+Then if you invoke the property without the argument, it'll construct a `Nothing`; if you invoke it with the argument, it'll be `Just` with the value.
 [^ts-templates]: A few of us have batted around some ideas for how to solve that particular problem, but _if_ we manage those, it'll probably be way, way later in 2018.
 
-**Edit, January 24, 2018:** Starting in TypeScript 2.7, you can enable a flag, `--strictPropertyInitialization`, which requires that all declared, non-optional properties on a class be initialized in the constructor or with a class property assignment. (There's more on class property assignment in [part 2][pt2] of this series.) If you do that, all *arguments* to a component should be defined with the *definite assignment assertion modifier*, a `!` after the name of the property, as on `model` here:
+**Edit, January 24, 2018:** Starting in TypeScript 2.7, you can enable a flag, `--strictPropertyInitialization`, which requires that all declared, non-optional properties on a class be initialized in the constructor or with a class property assignment. (There's more on class property assignment in [part 2][pt2] of this series.) If you do that, all _arguments_ to a component should be defined with the _definite assignment assertion modifier_, a `!` after the name of the property, as on `model` here:
 
 ```typescript
 export default class AnExample extends Component {
