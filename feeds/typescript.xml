@@ -223,17 +223,17 @@ declare module &amp;quot;@ember/controller&amp;quot; {
 &lt;section id="service-and-controller" class="level4"&gt;
 &lt;h4&gt;&lt;code&gt;Service&lt;/code&gt; and &lt;code&gt;Controller&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;This change is really straightforward (and actually just simplifies things a lot!) for &lt;code&gt;Service&lt;/code&gt; and &lt;code&gt;Controller&lt;/code&gt; injections.&lt;/p&gt;
-&lt;pre class="diff"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
-import { inject as service } from &amp;#39;@ember/service&amp;#39;;
+&lt;pre class="diff"&gt;&lt;code&gt;  import Component from &amp;#39;@ember/component&amp;#39;;
+  import { inject as service } from &amp;#39;@ember/service&amp;#39;;
 - import Computed from &amp;#39;@ember/object/computed&amp;#39;;
 -
 - import ExternalLogging from &amp;#39;my-app/services/external-logging&amp;#39;;
 
-export default class UserProfile extends Component {
+  export default class UserProfile extends Component {
 -   externalLogging: Computed&amp;lt;ExternalLogging&amp;gt; = service();
 +   externalLogging = service(&amp;#39;external-logging&amp;#39;);
-  // other implementation
-}&lt;/code&gt;&lt;/pre&gt;
+    // other implementation
+  }&lt;/code&gt;&lt;/pre&gt;
 &lt;/section&gt;
 &lt;section id="ember-data-1" class="level4"&gt;
 &lt;h4&gt;Ember Data&lt;/h4&gt;

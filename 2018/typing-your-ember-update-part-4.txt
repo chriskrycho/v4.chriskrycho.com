@@ -327,17 +327,17 @@ Now that we have the necessary updates to be able to do these lookups automatica
 This change is really straightforward (and actually just simplifies things a lot!) for `Service` and `Controller` injections.
 
 ```diff
-import Component from '@ember/component';
-import { inject as service } from '@ember/service';
+  import Component from '@ember/component';
+  import { inject as service } from '@ember/service';
 - import Computed from '@ember/object/computed';
 -
 - import ExternalLogging from 'my-app/services/external-logging';
 
-export default class UserProfile extends Component {
+  export default class UserProfile extends Component {
 -   externalLogging: Computed<ExternalLogging> = service();
 +   externalLogging = service('external-logging');
-  // other implementation
-}
+    // other implementation
+  }
 ```
 
 #### Ember Data

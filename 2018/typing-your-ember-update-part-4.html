@@ -314,17 +314,17 @@ declare module &quot;@ember/controller&quot; {
 <section id="service-and-controller" class="level4">
 <h4><code>Service</code> and <code>Controller</code></h4>
 <p>This change is really straightforward (and actually just simplifies things a lot!) for <code>Service</code> and <code>Controller</code> injections.</p>
-<pre class="diff"><code>import Component from &#39;@ember/component&#39;;
-import { inject as service } from &#39;@ember/service&#39;;
+<pre class="diff"><code>  import Component from &#39;@ember/component&#39;;
+  import { inject as service } from &#39;@ember/service&#39;;
 - import Computed from &#39;@ember/object/computed&#39;;
 -
 - import ExternalLogging from &#39;my-app/services/external-logging&#39;;
 
-export default class UserProfile extends Component {
+  export default class UserProfile extends Component {
 -   externalLogging: Computed&lt;ExternalLogging&gt; = service();
 +   externalLogging = service(&#39;external-logging&#39;);
-  // other implementation
-}</code></pre>
+    // other implementation
+  }</code></pre>
 </section>
 <section id="ember-data-1" class="level4">
 <h4>Ember Data</h4>
