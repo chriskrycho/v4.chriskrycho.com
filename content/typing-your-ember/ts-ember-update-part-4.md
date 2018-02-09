@@ -321,9 +321,24 @@ This will lose you the type-checking if you type a key that doesn't exist, but i
 
 Now that we have the necessary updates to be able to do these lookups automatically in the compiler, we need to remove any existing type coercions.
 
+
 #### `Service` and `Controller`
 
 This change is really straightforward (and actually just simplifies things a lot!) for `Service` and `Controller` injections.
+
+```diff
+  import Component from '@ember/component';
+  import { inject as service } from '@ember/service';
+- import Computed from '@ember/object/computed';
+-
+- import ExternalLogging from 'my-app/services/external-logging';
+
+  export default class UserProfile extends Component {
+-   externalLogging: Computed<ExternalLogging> = service();
++   externalLogging = service('external-logging');
+    // other implementation
+  }
+```
 
 #### Ember Data
 
@@ -343,35 +358,6 @@ This is because, behind the scenes, `findRecord` still takes a type parameter, b
 
 ```ts
 const person = this.store.findRecord("person", 123);
-```
-
-#### 2. Remove existing type coercions
-
-**Before:**
-
-```ts
-import Component from "@ember/component";
-import { inject as service } from "@ember/service";
-import Computed from "@ember/object/computed";
-
-import ExternalLogging from "my-app/services/external-logging";
-
-export default class UserProfile extends Component {
-  externalLogging: Computed<ExternalLogging> = service();
-  // other implementation
-}
-```
-
-**Now:**
-
-```ts
-import Component from "@ember/component";
-import { inject as service } from "@ember/service";
-
-export default class UserProfile extends Component {
-  externalLogging = service("external-logging");
-  // other implementation
-}
 ```
 
 ### The full type of lookups
