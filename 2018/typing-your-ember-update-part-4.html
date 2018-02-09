@@ -310,9 +310,8 @@ declare module &quot;@ember/controller&quot; {
 <section id="remove-any-existing-coercions" class="level4">
 <h4>2. Remove any existing coercions</h4>
 <p>Now that we have the necessary updates to be able to do these lookups automatically in the compiler, we need to remove any existing type coercions.</p>
-</section>
-<section id="service-and-controller" class="level4">
-<h4><code>Service</code> and <code>Controller</code></h4>
+<section id="service-and-controller" class="level5">
+<h5><code>Service</code> and <code>Controller</code></h5>
 <p>This change is really straightforward (and actually just simplifies things a lot!) for <code>Service</code> and <code>Controller</code> injections.</p>
 <pre class="diff"><code>  import Component from &#39;@ember/component&#39;;
   import { inject as service } from &#39;@ember/service&#39;;
@@ -326,8 +325,8 @@ declare module &quot;@ember/controller&quot; {
     // other implementation
   }</code></pre>
 </section>
-<section id="ember-data-1" class="level4">
-<h4>Ember Data</h4>
+<section id="ember-data-1" class="level5">
+<h5>Ember Data</h5>
 <p>This looks <em>slightly</em> different for the Ember Data side.</p>
 <p>If you’ve been using the type coercion forms we shipped as a stopgap, like this—</p>
 <pre class="ts"><code>const person = this.store.findRecord&lt;Person&gt;(&quot;person&quot;, 123);</code></pre>
@@ -337,6 +336,7 @@ declare module &quot;@ember/controller&quot; {
 </blockquote>
 <p>This is because, behind the scenes, <code>findRecord</code> still takes a type parameter, but it’s now a string—the name of the model you’re looking up—<em>not</em> the model itself. As such, you should <em>never</em> supply that type parameter yourself; it’s taken care of automatically. As a result, your invocation should just be:</p>
 <pre class="ts"><code>const person = this.store.findRecord(&quot;person&quot;, 123);</code></pre>
+</section>
 </section>
 </section>
 <section id="the-full-type-of-lookups" class="level3">

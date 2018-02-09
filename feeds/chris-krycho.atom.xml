@@ -245,9 +245,8 @@ declare module &amp;quot;@ember/controller&amp;quot; {
 &lt;section id="remove-any-existing-coercions" class="level4"&gt;
 &lt;h4&gt;2. Remove any existing coercions&lt;/h4&gt;
 &lt;p&gt;Now that we have the necessary updates to be able to do these lookups automatically in the compiler, we need to remove any existing type coercions.&lt;/p&gt;
-&lt;/section&gt;
-&lt;section id="service-and-controller" class="level4"&gt;
-&lt;h4&gt;&lt;code&gt;Service&lt;/code&gt; and &lt;code&gt;Controller&lt;/code&gt;&lt;/h4&gt;
+&lt;section id="service-and-controller" class="level5"&gt;
+&lt;h5&gt;&lt;code&gt;Service&lt;/code&gt; and &lt;code&gt;Controller&lt;/code&gt;&lt;/h5&gt;
 &lt;p&gt;This change is really straightforward (and actually just simplifies things a lot!) for &lt;code&gt;Service&lt;/code&gt; and &lt;code&gt;Controller&lt;/code&gt; injections.&lt;/p&gt;
 &lt;pre class="diff"&gt;&lt;code&gt;  import Component from &amp;#39;@ember/component&amp;#39;;
   import { inject as service } from &amp;#39;@ember/service&amp;#39;;
@@ -261,8 +260,8 @@ declare module &amp;quot;@ember/controller&amp;quot; {
     // other implementation
   }&lt;/code&gt;&lt;/pre&gt;
 &lt;/section&gt;
-&lt;section id="ember-data-1" class="level4"&gt;
-&lt;h4&gt;Ember Data&lt;/h4&gt;
+&lt;section id="ember-data-1" class="level5"&gt;
+&lt;h5&gt;Ember Data&lt;/h5&gt;
 &lt;p&gt;This looks &lt;em&gt;slightly&lt;/em&gt; different for the Ember Data side.&lt;/p&gt;
 &lt;p&gt;If you’ve been using the type coercion forms we shipped as a stopgap, like this—&lt;/p&gt;
 &lt;pre class="ts"&gt;&lt;code&gt;const person = this.store.findRecord&amp;lt;Person&amp;gt;(&amp;quot;person&amp;quot;, 123);&lt;/code&gt;&lt;/pre&gt;
@@ -272,6 +271,7 @@ declare module &amp;quot;@ember/controller&amp;quot; {
 &lt;/blockquote&gt;
 &lt;p&gt;This is because, behind the scenes, &lt;code&gt;findRecord&lt;/code&gt; still takes a type parameter, but it’s now a string—the name of the model you’re looking up—&lt;em&gt;not&lt;/em&gt; the model itself. As such, you should &lt;em&gt;never&lt;/em&gt; supply that type parameter yourself; it’s taken care of automatically. As a result, your invocation should just be:&lt;/p&gt;
 &lt;pre class="ts"&gt;&lt;code&gt;const person = this.store.findRecord(&amp;quot;person&amp;quot;, 123);&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
 &lt;/section&gt;
 &lt;/section&gt;
 &lt;section id="the-full-type-of-lookups" class="level3"&gt;
