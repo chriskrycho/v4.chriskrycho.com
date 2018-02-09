@@ -97,7 +97,7 @@
 <p>In this first post in the series, we’re going to keep things simple and easy: we’re going to get an Ember.js app configured to use TypeScript. Later posts will cover some of the other details.</p>
 <p>Because of the lovely <a href="https://ember-cli.com">Ember CLI</a> ecosystem, this is a pretty straightforward process. I’m going to start from <em>zero</em> so that even if you’ve never written an Ember app before, you can get this up and running by following these instructions. These instructions have also been tested and confirmed to work across platforms—you can do this equally on Windows, macOS, or Linux.</p>
 <ol type="1">
-<li><p>Make sure you have Ember’s prerequisites installed. Get <a href="https://nodejs.org/en/">Node</a> for your platform. Optionally (but highly recommended) install <a href="https://yarnpkg.com">Yarn</a> to manage your Node packages.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p></li>
+<li><p>Make sure you have Ember’s prerequisites installed. Get <a href="https://nodejs.org/en/">Node</a> for your platform. Optionally (but highly recommended) install <a href="https://yarnpkg.com">Yarn</a> to manage your Node packages.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p></li>
 <li><p>Install the Ember command lines tools globally:</p>
 <pre class="sh"><code>yarn global add ember-cli</code></pre>
 <p>or</p>
@@ -130,7 +130,7 @@ export default Ember.Component.extend({
 <li><p>Update your <code>application.hbs</code> file to remove the default <code>{{welcome}}</code> template and replace it with <code>{{some-input}}</code></p></li>
 <li><p>Spin up the Ember application with Ember CLI’s development server:</p>
 <pre class="sh"><code>ember serve</code></pre>
-<p>You’ll likely note some warnings: the TypeScript compiler won’t be able to find some of the modules imported in your files. I’ll have more to say about this in a future post. For now, suffice it to say: don’t worry, Ember CLI is still resolving and compiling your modules just fine.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p></li>
+<p>You’ll likely note some warnings: the TypeScript compiler won’t be able to find some of the modules imported in your files. I’ll have more to say about this in a future post. For now, suffice it to say: don’t worry, Ember CLI is still resolving and compiling your modules just fine.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p></li>
 <li><p>Load the application by going to <code>localhost:4200</code> in your browser. You should see a blank white screen with an input in it. Type in it, and see the input rendered to the page. Simple enough, but it’s using a TypeScript file compiled along the way!</p></li>
 </ol>
 <p>And that’s it: we’re done setting up an Ember.js app to use TypeScript! In the next post, I’ll talk a bit about strategies for migrating an existing app to TypeScript—not just the mechanics of it, but also where and how to start actually integrating types into your code.</p>
@@ -140,8 +140,8 @@ export default Ember.Component.extend({
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>I strongly prefer to use <code>yarn</code> over <code>npm</code> because <code>yarn</code> installs are predictable and repeatable, and if there’s one thing I don’t need to spend time on when developing our Ember.js app at Olo, it’s chasing problems with transitive dependencies that are different in the build server than in my local development environment. Yarn’s lockfiles mean what ends up built on the server is <em>exactly</em> what ended up built on my machine.<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>But if you’re curious, here’s a preview: we really need more <a href="http://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html">type definitions</a> for the Ember ecosystem. I’ll be covering <em>how</em> we build those in much more detail in a future installment.<a href="#fnref2">↩</a></p></li>
+<li id="fn1"><p>I strongly prefer to use <code>yarn</code> over <code>npm</code> because <code>yarn</code> installs are predictable and repeatable, and if there’s one thing I don’t need to spend time on when developing our Ember.js app at Olo, it’s chasing problems with transitive dependencies that are different in the build server than in my local development environment. Yarn’s lockfiles mean what ends up built on the server is <em>exactly</em> what ended up built on my machine.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>But if you’re curious, here’s a preview: we really need more <a href="http://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html">type definitions</a> for the Ember ecosystem. I’ll be covering <em>how</em> we build those in much more detail in a future installment.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -196,7 +196,7 @@ export default Ember.Component.extend({
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>

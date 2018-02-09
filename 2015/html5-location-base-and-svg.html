@@ -80,7 +80,8 @@
 
     <header>
 <h1>HTML5 Location, <code>&lt;base&gt;</code>, and SVG</h1>
-<h2>Making Angular and SVG <code>xlink:href</code> work correctly in Firefox.</h2>    </header>
+<h2>Making Angular and SVG <code>xlink:href</code> work correctly in Firefox.
+</h2>    </header>
 
     <div class="meta">
 <span class="date"><a href="http://www.chriskrycho.com/2015/html5-location-base-and-svg.html"><i class="fa fa-fw fa-link"></i></a>June 20, 2015 (updated July 02, 2015)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/angularjs/">#angularjs</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2015/html5-location-base-and-svg.txt">Markdown source</a></span>    </div>
@@ -114,12 +115,9 @@
 <pre class="html"><code>&lt;script&gt;document.write(&#39;&lt;base href=&quot;&#39; + document.location.origin + &#39;&quot; /&gt;&#39;);&lt;/script&gt;</code></pre>
 <p>This way, when the page renders, it writes the document location based on the <em>current</em> location. The URL history still behaves as expected with Angular, but the relative URLs for IDs behave as expected in Firefox again, while not breaking the behavior in any other browsers.</p>
 <p>But… then you’ll navigate to another page, and Firefox will be back to not working.</p>
-<p>The <a href="https://github.com/angular/angular.js/issues/8934#issuecomment-56568466">solution</a>, it turns out, only came into being after I’d done the initial implementation, and I have no idea how much later it found its way into the Angular docs. However, even though it now <em>exists</em> in the docs, it’s by no means obvious why you should do it this way, and certainly no mention of SVG! This might not seem odd to you… but it should, given that the only reason that Angular introduced this API change was to account for <em>exactly this issue</em>.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>The <a href="https://github.com/angular/angular.js/issues/8934#issuecomment-56568466">solution</a>, it turns out, only came into being after I’d done the initial implementation, and I have no idea how much later it found its way into the Angular docs. However, even though it now <em>exists</em> in the docs, it’s by no means obvious why you should do it this way, and certainly no mention of SVG! This might not seem odd to you… but it should, given that the only reason that Angular introduced this API change was to account for <em>exactly this issue</em>.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 <p>As the Angular docs note, leaving out the <code>&lt;base&gt;</code> tag means all your URLs have to be absolute if you want to use HTML5 location and the <code>$locationProvider</code>. If you want to use SVGs with <code>&lt;use&gt;</code> and Firefox, though, that’s what you have to do (and therefore that’s what I’m doing).</p>
 <p>Fun times, right?</p>
-<div id="refs" class="references">
-
-</div>
 <section class="footnotes">
 <hr />
 <ol>
@@ -127,7 +125,7 @@
 <blockquote>
 <p>Links that only contain a hash fragment (e.g. <code>&lt;a href=&quot;#target&quot;&gt;</code>) will only change <code>$location.hash()</code> and not modify the url otherwise. This is useful for scrolling to anchors on the same page without needing to know on which page the user currently is.</p>
 </blockquote>
-<p>Even this, however, only <em>hints</em> at the root of the SVG issue.<a href="#fnref1">↩</a></p></li>
+<p>Even this, however, only <em>hints</em> at the root of the SVG issue.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -182,7 +180,7 @@
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>

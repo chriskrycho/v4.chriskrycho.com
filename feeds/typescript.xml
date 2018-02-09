@@ -1,5 +1,293 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - TypeScript</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Thu, 25 Jan 2018 07:00:00 -0500</lastBuildDate><item><title>TypeScript and Ember.js Update, Part 3</title><link>http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - TypeScript</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Thu, 08 Feb 2018 07:30:00 -0500</lastBuildDate><item><title>TypeScript and Ember.js Update, Part 4</title><link>http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;In the previous posts in this series, I introduced the big picture of how the story around TypeScript and Ember.js has improved over the last several months, walked through some important background on class properties, and dug deep on computed properties, actions, and mixins.&lt;/p&gt;
+&lt;p&gt;In today’s post, we’ll look at how to write Ember Data models so they work correctly throughout your codebase, and see some improvements to how we can do &lt;code&gt;Service&lt;/code&gt; and &lt;code&gt;Controller&lt;/code&gt; injections even from a few weeks ago.&lt;/p&gt;
+&lt;aside&gt;
+&lt;p&gt;If you’re interested in all of this and would like to learn more in person, I’m &lt;a href="http://emberconf.com/speakers.html#chris-krycho"&gt;leading a workshop on it at EmberConf 2018&lt;/a&gt;—I’d love to see you there!&lt;/p&gt;
+&lt;/aside&gt;
+&lt;p&gt;Here’s the outline of this update sequence:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;&lt;strong&gt;Using Ember Data and improved injections.&lt;/strong&gt; (this post)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;section id="ember-data" class="level2"&gt;
+&lt;h2&gt;Ember Data&lt;/h2&gt;
+&lt;p&gt;There remains one significant challenges to using Ember Data effectively with TypeScript today: Ember Data, for reasons I haven’t yet dug into myself, does not play nicely with ES6 classes. However, we &lt;em&gt;need&lt;/em&gt; named class exports for the sake of being able to use them as types elsewhere in our programs. The hack to work around this is much the same as anywhere else we need named exports but have to get things back into the prototype:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import DS from &amp;quot;ember-data&amp;quot;;
+
+export default class Person extends DS.Model.extend({
+  firstName: DS.attr(&amp;quot;string&amp;quot;),
+  lastName: DS.attr(&amp;quot;string&amp;quot;)
+}) {}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can still define other items of the class normally, but attributes have to be prototypally bound or &lt;em&gt;you will have problems&lt;/em&gt;. Note that this only applies (as far as I can tell) to Ember Data &lt;code&gt;Model&lt;/code&gt;s specifically—&lt;code&gt;Adapter&lt;/code&gt; and &lt;code&gt;Serializer&lt;/code&gt; classes work just fine.&lt;/p&gt;
+&lt;p&gt;The other problem we’ve historically had was dealing with lookups—the situation was similar to that I described in &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Part 3&lt;/a&gt; for service injection. However, as of &lt;em&gt;this week&lt;/em&gt;, we’re landing a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Keep your eyes open for the ember-cli-typescript 1.1 release in the next couple days!&lt;/p&gt;
+&lt;p&gt;Once this release of both ember-cli-typescript and the updated typings land, when you generate an Ember Data model by doing &lt;code&gt;ember generate model person firstName:string lastName:string&lt;/code&gt;, it will look like this:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import DS from &amp;quot;ember-data&amp;quot;;
+
+export default class Person extends DS.Model.extend({
+  firstName: DS.attr(&amp;quot;string&amp;quot;),
+  lastName: DS.attr(&amp;quot;string&amp;quot;)
+}) {
+  // normal class body definition here
+}
+
+// DO NOT DELETE: this is how TypeScript knows how to look up your models.
+declare module &amp;quot;ember-data&amp;quot; {
+  interface ModelRegistry {
+    person: Person;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That module and interface declaration at the bottom &lt;em&gt;merges&lt;/em&gt; the declaration for this model with the declarations for all the other models. You’ll see the same basic pattern for &lt;code&gt;DS.Adapter&lt;/code&gt; and &lt;code&gt;DS.Serializer&lt;/code&gt; instances. The result is that &lt;em&gt;using&lt;/em&gt; a model will now look like this. In addition to the &lt;code&gt;Person&lt;/code&gt; model definition just above, our adapter might be like this:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import DS from &amp;quot;ember-data&amp;quot;;
+
+export default class Person extends DS.Adapter {
+  update(changes: { firstName?: string; lastName?: string }) {
+    fetch(&amp;quot;the-url-to-change-it&amp;quot;, {
+      method: &amp;quot;POST&amp;quot;,
+      body: JSON.stringify(changes)
+    });
+  }
+}
+
+declare module &amp;quot;ember-data&amp;quot; {
+  interface ModelRegistry {
+    person: Person;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then putting the pieces together, our component definition will just look like this:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
+import { inject as service } from &amp;quot;@ember/service&amp;quot;;
+
+export default class PersonCard extends Component {
+  id: string | number;
+
+  store = service(&amp;quot;store&amp;quot;);
+  model = this.store.findRecord(&amp;quot;person&amp;quot;, this.id);
+
+  actions = {
+    savePerson(changes: { firstName?: string; lastName?: string }) {
+      this.store.adapterFor(&amp;quot;person&amp;quot;).update(changes);
+    }
+  };
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The type of &lt;code&gt;model&lt;/code&gt; here is now &lt;code&gt;Person &amp;amp; DS.PromiseObject&amp;lt;Person&amp;gt;&lt;/code&gt; (which is actually what Ember Data returns for these kinds of things!), and the &lt;code&gt;this.store.adapterFor&lt;/code&gt; actually correctly returns the &lt;code&gt;Person&lt;/code&gt; adapter as well, so the call to its &lt;code&gt;update&lt;/code&gt; method type-checks as well (including guaranteeing that the arguments to it are correct). That also means you’ll get autocompletion for those, including for their types, if you’re using an editor configured for it. And, happily for everyone, if you mistype a string (&lt;code&gt;preson&lt;/code&gt; instead of &lt;code&gt;person&lt;/code&gt;, for example), you’ll get a compile-time error!&lt;/p&gt;
+&lt;p&gt;Notice as well that the service injection is much cleaner than it was in earlier examples in the series. That’s because we made the same “registry”-type changes—as I suggested we might back in &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Part 1&lt;/a&gt;!—for controller and service injections. Before, for this kind of thing:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;export default class PersonCard extends Component {
+  store: Computed&amp;lt;DS.Store&amp;gt; = service();
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;export default class PersonCard extends Component {
+  store = service(&amp;quot;store&amp;quot;);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That’s not &lt;em&gt;quite&lt;/em&gt; as minimalist as what you get in vanilla Ember (where the name of the property is used to do the lookup at runtime), but it’s pretty close, and a huge improvement! Not least since it’s &lt;em&gt;exactly&lt;/em&gt; as type-checked, and therefore as friendly to autocomplete/IntelliSense/etc. as it was before.&lt;/p&gt;
+&lt;section id="migrating-existing-items" class="level3"&gt;
+&lt;h3&gt;Migrating existing items&lt;/h3&gt;
+&lt;p&gt;Your path forward for using the new approach is straightforward and fairly mechanical:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Add the module-and-interface declaration for each Ember Data &lt;code&gt;Model&lt;/code&gt;, &lt;code&gt;Adapter&lt;/code&gt;, and &lt;code&gt;Serializer&lt;/code&gt;; and also each Ember &lt;code&gt;Service&lt;/code&gt; and &lt;code&gt;Controller&lt;/code&gt; you have defined.&lt;/li&gt;
+&lt;li&gt;Remove any type coercions you’ve written out already for these.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;section id="add-declaration" class="level4"&gt;
+&lt;h4&gt;1. Add declaration&lt;/h4&gt;
+&lt;section id="ds.model" class="level5"&gt;
+&lt;h5&gt;&lt;code&gt;DS.Model&lt;/code&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Before:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import DS from &amp;quot;ember-data&amp;quot;;
+
+export default class Person extends DS.Model.extend({
+  firstName: DS.attr(&amp;quot;string&amp;quot;),
+  lastName: DS.attr(&amp;quot;string&amp;quot;)
+}) {}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Now:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import DS from &amp;quot;ember-data&amp;quot;;
+
+export default class Person extends DS.Model.extend({
+  firstName: DS.attr(&amp;quot;string&amp;quot;),
+  lastName: DS.attr(&amp;quot;string&amp;quot;)
+}) {}
+
+declare module &amp;quot;ember-data&amp;quot; {
+  interface ModelRegistry {
+    person: Person;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="ds.adapter" class="level5"&gt;
+&lt;h5&gt;&lt;code&gt;DS.Adapter&lt;/code&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Before:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import DS from &amp;quot;ember-data&amp;quot;;
+
+export default class Person extends DS.Adapter {
+  // customization
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Now:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import DS from &amp;quot;ember-data&amp;quot;;
+
+export default class Person extends DS.Adapter {
+  // customization
+}
+
+declare module &amp;quot;ember-data&amp;quot; {
+  interface AdapterRegistry {
+    person: Person;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="ds.serializer" class="level5"&gt;
+&lt;h5&gt;&lt;code&gt;DS.Serializer&lt;/code&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Before:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import DS from &amp;quot;ember-data&amp;quot;;
+
+export default class Person extends DS.Serializer {
+  // customization
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Now:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import DS from &amp;quot;ember-data&amp;quot;;
+
+export default class Person extends DS.Serializer {
+  // customization
+}
+
+declare module &amp;quot;ember-data&amp;quot; {
+  interface SerializerRegistry {
+    person: Person;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="service" class="level5"&gt;
+&lt;h5&gt;&lt;code&gt;Service&lt;/code&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Before:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Service from &amp;quot;@ember/service&amp;quot;;
+
+export default class ExternalLogging extends Service {
+  // implementation
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Now:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Service from &amp;quot;@ember/service&amp;quot;;
+
+export default class ExternalLogging extends Service {
+  // implementation
+}
+
+declare module &amp;quot;ember&amp;quot; {
+  interface ServiceRegistry {
+    &amp;quot;external-logging&amp;quot;: ExternalLogging;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="controller" class="level5"&gt;
+&lt;h5&gt;&lt;code&gt;Controller&lt;/code&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Before:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Controller from &amp;quot;@ember/controller&amp;quot;;
+
+export default class Profile extends Controller {
+  // implementation
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Now:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Controller from &amp;quot;@ember/controller&amp;quot;;
+
+export default class Profile extends Controller {
+  // implementation
+}
+
+declare module &amp;quot;@ember/controller&amp;quot; {
+  interface ControllerRegistry {
+    profile: Profile;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you &lt;em&gt;don’t&lt;/em&gt; do add the type registry declarations, you’ll just get back:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;compiler errors&lt;/em&gt; for any use of a string key in your service and controller lookups&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Service&lt;/code&gt; and &lt;code&gt;Controller&lt;/code&gt; (the top-level classes we inherit from) instead of the specific class you created if you use the no-argument version of the &lt;code&gt;inject&lt;/code&gt; helpers&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;compiler errors&lt;/em&gt; for &lt;code&gt;DS.Model&lt;/code&gt;, &lt;code&gt;DS.Adapter&lt;/code&gt;, and &lt;code&gt;DS.Serializer&lt;/code&gt; lookups (since they always have a string key)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you’re looking to allow your existing code to all just continue working while you &lt;em&gt;slowly&lt;/em&gt; migrate to TypeScript, you can add this as a fallback somewhere in your own project (adapted to whichever of the registries you need):&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;declare module &amp;quot;ember-data&amp;quot; {
+  interface ModelRegistry {
+    [key: string]: DS.Model;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will lose you the type-checking if you type a key that doesn’t exist, but it means that models you haven’t yet added the type definition for won’t throw compile errors. (We’ve made this opt-in because otherwise you’d never be able to get that type-checking for using an invalid key.)&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="remove-any-existing-coercions" class="level4"&gt;
+&lt;h4&gt;2. Remove any existing coercions&lt;/h4&gt;
+&lt;p&gt;Now that we have the necessary updates to be able to do these lookups automatically in the compiler, we need to remove any existing type coercions.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="service-and-controller" class="level4"&gt;
+&lt;h4&gt;&lt;code&gt;Service&lt;/code&gt; and &lt;code&gt;Controller&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;This change is really straightforward (and actually just simplifies things a lot!) for &lt;code&gt;Service&lt;/code&gt; and &lt;code&gt;Controller&lt;/code&gt; injections.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="ember-data-1" class="level4"&gt;
+&lt;h4&gt;Ember Data&lt;/h4&gt;
+&lt;p&gt;This looks &lt;em&gt;slightly&lt;/em&gt; different for the Ember Data side.&lt;/p&gt;
+&lt;p&gt;If you’ve been using the type coercion forms we shipped as a stopgap, like this—&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;const person = this.store.findRecord&amp;lt;Person&amp;gt;(&amp;quot;person&amp;quot;, 123);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;—you’ll need to drop the type coercion on &lt;code&gt;findRecord&amp;lt;Person&amp;gt;&lt;/code&gt;, which will give you a type error:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[ts] Type ‘Person’ does not satisfy the constraint ‘string’.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is because, behind the scenes, &lt;code&gt;findRecord&lt;/code&gt; still takes a type parameter, but it’s now a string—the name of the model you’re looking up—&lt;em&gt;not&lt;/em&gt; the model itself. As such, you should &lt;em&gt;never&lt;/em&gt; supply that type parameter yourself; it’s taken care of automatically. As a result, your invocation should just be:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;const person = this.store.findRecord(&amp;quot;person&amp;quot;, 123);&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="remove-existing-type-coercions" class="level4"&gt;
+&lt;h4&gt;2. Remove existing type coercions&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Before:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
+import { inject as service } from &amp;quot;@ember/service&amp;quot;;
+import Computed from &amp;quot;@ember/object/computed&amp;quot;;
+
+import ExternalLogging from &amp;quot;my-app/services/external-logging&amp;quot;;
+
+export default class UserProfile extends Component {
+  externalLogging: Computed&amp;lt;ExternalLogging&amp;gt; = service();
+  // other implementation
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Now:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
+import { inject as service } from &amp;quot;@ember/service&amp;quot;;
+
+export default class UserProfile extends Component {
+  externalLogging = service(&amp;quot;external-logging&amp;quot;);
+  // other implementation
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="the-full-type-of-lookups" class="level3"&gt;
+&lt;h3&gt;The full type of lookups&lt;/h3&gt;
+&lt;p&gt;One last note on Ember Data: calls like &lt;code&gt;findRecord('person', 123)&lt;/code&gt; actually return the type &lt;code&gt;Person &amp;amp; DS.PromiseObject&amp;lt;Person&amp;gt;&lt;/code&gt; – i.e., a type that acts like both the model and a promise wrapping the model. This is, to be sure, &lt;em&gt;weird&lt;/em&gt;, but it’s the reality, so that’s what our types give you.&lt;/p&gt;
+&lt;p&gt;If you find yourself needing to write out that type locally for some reason—e.g. because part of your app deals explicitly with the result of a lookup—you may find it convenient to define a global type alias like this:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;type Loaded&amp;lt;T&amp;gt; = T &amp;amp; DS.PromiseObject&amp;lt;T&amp;gt;;
+const person: Loaded&amp;lt;Person&amp;gt; = this.store.findRecord(&amp;quot;person&amp;quot;, 123);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Given the new support for getting that type automatically, you shouldn’t &lt;em&gt;normally&lt;/em&gt; need that, but it’s convenient if or when you &lt;em&gt;do&lt;/em&gt; need it. For example, if a component is passed the result of a &lt;code&gt;Person&lt;/code&gt; lookup and needs to be able to treat it as a promise &lt;em&gt;or&lt;/em&gt; the model, you could write it like this:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
+
+export default class PersonDisplay extends Component {
+  model: Loaded&amp;lt;Person&amp;gt;; // instead of just `model: Person`
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="preview-mirage" class="level3"&gt;
+&lt;h3&gt;Preview: Mirage&lt;/h3&gt;
+&lt;p&gt;As it turns out, Ember CLI Mirage’s approach is a lot like Ember Data’s (although it’s actually a lot more dynamic!), so I have a very similar approach working in our codebase for doing lookups with Mirage’s database. Sometime in February or March, we hope to get that completed and upstreamed into Mirage itself, so that you can get these exact same benefits when using Mirage to write your tests.&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="conclusion" class="level2"&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;And that’s pretty much a wrap on Ember Data! The &lt;em&gt;next&lt;/em&gt; post you can expect in this series will be a break from nitty-gritty “how to use TS in Ember” posts for a very exciting, closely related announcement—probably tomorrow or Monday! The post after that will be a deep dive into (mostly the limitations of!) writing types for mixins and proxies.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;If you’re curious about the mechanics, we’re basically setting up a “type registry” which maps the string keys to the correct model, so that the type of e.g. &lt;code&gt;store.createRecord('some-model', { ... })&lt;/code&gt; will do a lookup in an interface which defines a mapping from model name, i.e. &lt;code&gt;some-model&lt;/code&gt; here, to the model type, e.g. &lt;code&gt;export default class SomeModel extends DS.Model.extend({ ... }) {}&lt;/code&gt;. I’ll write up a full blog post on the mechanics of that sometime soon.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Thu, 08 Feb 2018 07:30:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-02-08:/2018/typing-your-ember-update-part-4.html</guid><category>TypeScript</category><category>emberjs</category><category>typing-your-ember</category></item><item><title>TypeScript and Ember.js Update, Part 3</title><link>http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -468,7 +756,7 @@ export default class MyListItem extends Component {
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;&lt;strong&gt;Overview, normal Ember objects, component arguments, and injections (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Ember Data and related concerns.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Ember Data and related concerns.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section id="normal-ember-objects" class="level2"&gt;
@@ -480,62 +768,59 @@ export default class MyListItem extends Component {
 &lt;h2&gt;A detailed example&lt;/h2&gt;
 &lt;p&gt;That means that every new bit of code I write today in our app looks roughly like this, with only the obvious modifications for services, routes, and controllers—I picked components because they’re far and away the most common things in our applications.&lt;/p&gt;
 &lt;p&gt;In order to explain all this clearly, I’m going to start by showing a whole component written in the new style. Then, over the rest of this post and the next post, I’ll zoom in on and explain specific parts of it.&lt;/p&gt;
-&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
-import { computed, get } from &amp;#39;@ember/object&amp;#39;;
-import Computed from &amp;#39;@ember/object/computed&amp;#39;;
-import { inject as service } from &amp;#39;@ember/service&amp;#39;;
-import { assert } from &amp;#39;@ember/debug&amp;#39;;
-import { isNone } from &amp;#39;@ember/utils&amp;#39;;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
+import { computed, get } from &amp;quot;@ember/object&amp;quot;;
+import Computed from &amp;quot;@ember/object/computed&amp;quot;;
+import { inject as service } from &amp;quot;@ember/service&amp;quot;;
+import { assert } from &amp;quot;@ember/debug&amp;quot;;
+import { isNone } from &amp;quot;@ember/utils&amp;quot;;
 
-import Session from &amp;#39;my-app/services/session&amp;#39;;
-import Person from &amp;#39;my-app/models/person&amp;#39;;
+import Session from &amp;quot;my-app/services/session&amp;quot;;
+import Person from &amp;quot;my-app/models/person&amp;quot;;
 
 export default class AnExample extends Component {
   // -- Component arguments -- //
-  model: Person;      // required
-  modifier?: string;  // optional, thus the `?`
+  model: Person; // required
+  modifier?: string; // optional, thus the `?`
 
   // -- Injections -- //
   session: Computed&amp;lt;Session&amp;gt; = service();
 
   // -- Class properties -- //
-  aString = &amp;#39;this is fine&amp;#39;;
+  aString = &amp;quot;this is fine&amp;quot;;
   aCollection: string[] = [];
 
   // -- Computed properties -- //
   // TS correctly infers computed property types when the callback has a
   // return type annotation.
-  fromModel = computed(
-    &amp;#39;model.firstName&amp;#39;,
-    function(this: AnExample): string {
-      return `My name is ${get(this.model, &amp;#39;firstName&amp;#39;)};`;
-    }
-  );
+  fromModel = computed(&amp;quot;model.firstName&amp;quot;, function(this: AnExample): string {
+    return `My name is ${get(this.model, &amp;quot;firstName&amp;quot;)};`;
+  });
 
-  aComputed = computed(&amp;#39;aString&amp;#39;, function(this: AnExample): number {
+  aComputed = computed(&amp;quot;aString&amp;quot;, function(this: AnExample): number {
     return this.lookAString.length;
   });
 
-  isLoggedIn = bool(&amp;#39;session.user&amp;#39;);
-  savedUser: Computed&amp;lt;Person&amp;gt; = alias(&amp;#39;session.user&amp;#39;);
+  isLoggedIn = bool(&amp;quot;session.user&amp;quot;);
+  savedUser: Computed&amp;lt;Person&amp;gt; = alias(&amp;quot;session.user&amp;quot;);
 
   actions = {
     addToCollection(this: AnExample, value: string) {
-      const current = this.get(&amp;#39;aCollection&amp;#39;);
-      this.set(&amp;#39;aCollection&amp;#39;, current.concat(value));
+      const current = this.get(&amp;quot;aCollection&amp;quot;);
+      this.set(&amp;quot;aCollection&amp;quot;, current.concat(value));
     }
   };
 
   constructor() {
     super();
-    assert(&amp;#39;`model` is required&amp;#39;, !isNone(this.model));
+    assert(&amp;quot;`model` is required&amp;quot;, !isNone(this.model));
 
     this.includeAhoy();
   }
 
   includeAhoy(this: AnExample) {
-    if (!this.get(&amp;#39;aCollection&amp;#39;).includes(&amp;#39;ahoy&amp;#39;)) {
-      this.set(&amp;#39;aCollection&amp;#39;, current.concat(&amp;#39;ahoy&amp;#39;));
+    if (!this.get(&amp;quot;aCollection&amp;quot;).includes(&amp;quot;ahoy&amp;quot;)) {
+      this.set(&amp;quot;aCollection&amp;quot;, current.concat(&amp;quot;ahoy&amp;quot;));
     }
   }
 }&lt;/code&gt;&lt;/pre&gt;
@@ -547,8 +832,16 @@ export default class AnExample extends Component {
   modifier?: string;  // optional, thus the `?`&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I always put these first so that the “interface” of the object is clear and obvious. You can do the same thing on a controller instance; in that case you would export a &lt;code&gt;Model&lt;/code&gt; from the corresponding &lt;code&gt;Route&lt;/code&gt; class and import it into the &lt;code&gt;Controller&lt;/code&gt;. It’s a bit of boilerplate, to be sure, but it lets you communicate your interface clearly to consumers of the &lt;code&gt;Component&lt;/code&gt; or &lt;code&gt;Controller&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;An important note about these kind of arguments: you do &lt;em&gt;not&lt;/em&gt; have to do &lt;code&gt;this.get(...)&lt;/code&gt; (or, if you prefer, &lt;code&gt;get(this, ...)&lt;/code&gt;) to access the properties themselves: they’re class instance properties. You can simply access them as normal properties: &lt;code&gt;this.model&lt;/code&gt;, &lt;code&gt;this.modifier&lt;/code&gt;, etc. That even goes for referencing them as computed properties, as we’ll see below.&lt;/p&gt;
-&lt;p&gt;For optional arguments, you use the &lt;code&gt;?&lt;/code&gt; operator to indicate they may be &lt;code&gt;undefined&lt;/code&gt;. To get the &lt;em&gt;most&lt;/em&gt; mileage out of this, you’ll want to enable &lt;code&gt;strictNullChecks&lt;/code&gt; in the compiler options.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; However, note that we don’t currently have any way to validate component argument invocation.&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; The way I’ve been doing this is using Ember’s debug &lt;a href="https://emberjs.com/api/ember/2.18/classes/@ember%2Fdebug/methods/assert?anchor=assert"&gt;&lt;code&gt;assert&lt;/code&gt;&lt;/a&gt; in the constructor:&lt;/p&gt;
+&lt;p&gt;For optional arguments, you use the &lt;code&gt;?&lt;/code&gt; operator to indicate they may be &lt;code&gt;undefined&lt;/code&gt;. To get the &lt;em&gt;most&lt;/em&gt; mileage out of this, you’ll want to enable &lt;code&gt;strictNullChecks&lt;/code&gt; in the compiler options.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; However, note that we don’t currently have any way to validate component argument invocation.[^ts-templates] The way I’ve been doing this is using Ember’s debug &lt;a href="https://emberjs.com/api/ember/2.18/classes/@ember%2Fdebug/methods/assert?anchor=assert"&gt;&lt;code&gt;assert&lt;/code&gt;&lt;/a&gt; in the constructor:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;assert(&amp;quot;`model` is required&amp;quot;, !isNone(this.model));&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
+import { Maybe } from &amp;quot;true-myth&amp;quot;;
+
+export default class MyComponent extends Component {
+  optionalArg?: string;
+  optionalProperty = Maybe.of(this.optionalArg);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then if you invoke the property without the argument, it’ll construct a &lt;code&gt;Nothing&lt;/code&gt;; if you invoke it with the argument, it’ll be &lt;code&gt;Just&lt;/code&gt; with the value. [^ts-templates]: A few of us have batted around some ideas for how to solve that particular problem, but &lt;em&gt;if&lt;/em&gt; we manage those, it’ll probably be way, way later in 2018.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Edit, January 24, 2018:&lt;/strong&gt; Starting in TypeScript 2.7, you can enable a flag, &lt;code&gt;--strictPropertyInitialization&lt;/code&gt;, which requires that all declared, non-optional properties on a class be initialized in the constructor or with a class property assignment. (There’s more on class property assignment in &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;part 2&lt;/a&gt; of this series.) If you do that, all &lt;em&gt;arguments&lt;/em&gt; to a component should be defined with the &lt;em&gt;definite assignment assertion modifier&lt;/em&gt;, a &lt;code&gt;!&lt;/code&gt; after the name of the property, as on &lt;code&gt;model&lt;/code&gt; here:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;export default class AnExample extends Component {
   // Component arguments
@@ -561,6 +854,7 @@ export default class AnExample extends Component {
 &lt;pre class="typescript"&gt;&lt;code&gt;  // -- Injections -- //
   session: Computed&amp;lt;Session&amp;gt; = service();&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Here, the most important thing to note is the required type annotation. In principle, we could work around this by requiring you to explicitly name the service and using a “type registry” to look up what the service type is – more on that below in my discussion of using Ember Data – but I’m not yet persuaded that’s better than just writing the appropriate type annotation. Either way, there’s some duplication. 🤔 We (everyone working in the &lt;a href="https://github.com/typed-ember"&gt;typed-ember&lt;/a&gt; project) would welcome feedback here, because the one thing we &lt;em&gt;can’t&lt;/em&gt; do is get the proper type &lt;em&gt;without&lt;/em&gt; one or the other of these.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit, February 5, 2018:&lt;/strong&gt; see &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Part 4&lt;/a&gt; for some updates to this—I actually went ahead and built and implemented that approach, and everything is much nicer now.&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;  // the current approach -- requires importing `Session` so you can define it
   // on the property here
   session: Computed&amp;lt;Session&amp;gt; = service();
@@ -575,16 +869,7 @@ export default class AnExample extends Component {
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1"&gt;&lt;p&gt;This isn’t my preferred way of handling optional types; &lt;a href="https://true-myth.js.org"&gt;a &lt;code&gt;Maybe&lt;/code&gt; type&lt;/a&gt; is. And you can, if you like, use &lt;code&gt;Maybe&lt;/code&gt; here:&lt;/p&gt;
-&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
-import { Maybe } from &amp;#39;true-myth&amp;#39;;
-
-export default class MyComponent extends Component {
-  optionalArg?: string;
-  optionalProperty = Maybe.of(this.optionalArg);
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then if you invoke the property without the argument, it’ll construct a &lt;code&gt;Nothing&lt;/code&gt;; if you invoke it with the argument, it’ll be &lt;code&gt;Just&lt;/code&gt; with the value.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn2"&gt;&lt;p&gt;A few of us have batted around some ideas for how to solve that particular problem, but &lt;em&gt;if&lt;/em&gt; we manage those, it’ll probably be way, way later in 2018.&lt;a href="#fnref2" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;This isn’t my preferred way of handling optional types; &lt;a href="https://true-myth.js.org"&gt;a &lt;code&gt;Maybe&lt;/code&gt; type&lt;/a&gt; is. And you can, if you like, use &lt;code&gt;Maybe&lt;/code&gt; here:&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 22 Jan 2018 07:10:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-01-22:/2018/typing-your-ember-update-part-1.html</guid><category>TypeScript</category><category>emberjs</category><category>typing-your-ember</category></item><item><title>I Want JSON Decoders</title><link>http://www.chriskrycho.com/2017/i-want-json-decoders.html</link><description>&lt;p&gt;&lt;i class=editorial&gt;This post was originally published at &lt;a href="https://www.dailydrip.com/blog/i-want-json-decoders.html"&gt;DailyDrip.com&lt;/a&gt;. They’re doing really great work over there, so I encourage you to check out their content and consider subscribing!&lt;/i&gt;&lt;/p&gt;
@@ -912,12 +1197,12 @@ export default Component.extend({
 &lt;p&gt;…but that doesn’t actually &lt;em&gt;gain&lt;/em&gt; me anything—the service here is just a way of exposing a function, after all—and it actually makes everything a bit more verbose. It also decreases the overall analyzability of this for things like tree-shaking: that module dependency is now something that Ember itself has to manage, instead of being statically analyzable at build time. Taking this approach also diminishes the reusability of any numeric helpers I put in there. If we couple them to an &lt;code&gt;Ember.Service&lt;/code&gt;, instead of using an ES6 module, they would stop being things we can easily reuse in non-Ember projects. Instead, by using modules, we leave ourselves the ability to easily extract those numeric helpers, and publish them for either internal or external consumption.&lt;/p&gt;
 &lt;p&gt;Along those lines, we actually have a module to support &lt;abbr title="Block-Element-Modifier"&gt;&lt;a href="https://en.bem.info/methodology/quick-start/"&gt;BEM&lt;/a&gt;&lt;/abbr&gt; with Ember Components—and we plan to extract both the basic TypeScript library as well as a &lt;code&gt;BemComponent&lt;/code&gt; Ember-specific wrapper as open-source libraries in the near future. Besides the Ember addon, &lt;em&gt;anyone&lt;/em&gt; will be able to consume and use the underlying TypeScript library, whatever their framework or library of choice. Importantly, that includes us in our other codebases, which include lots of old jQuery and some new React, and might include some Glimmer.js in the future. Any or all of our utilities for these kinds of things become reusable if they’re just TypeScript.&lt;/p&gt;
 &lt;p&gt;Pragmatically, it’s also just easier to do and get good help from TypeScript by going this way. It also means that unit-testing requires &lt;em&gt;no&lt;/em&gt; context from Ember whatsoever, which keeps those tests lighter and faster. Even though Ember’s unit tests are already super quick, when you have hundreds or thousands of unit tests, every little bit matters. It also, and probably even more importantly, means there are fewer places where you could mess things up when configuring tests—not that I have any experience messing up test configurations in Ember!&lt;/p&gt;
-&lt;p&gt;One important thing to note is that this all works best with Ember—by far—when your &lt;code&gt;lib&lt;/code&gt; modules aren’t managing stateful objects, but rather defining data structures and functions which just transform those structures in some way. This approach is a great fit for us, because we’re increasingly writing a lot of our business and even &lt;abbr title="user interface"&gt;UI&lt;/abbr&gt; logic in terms of &lt;a href="http://www.chriskrycho.com/2016/what-is-functional-programming.html#pure-functions"&gt;pure functions&lt;/a&gt; which transform simple “record” types. That keeps each controller, route, component, or service doing relatively little work: they are responsible for getting and passing around data in the application, and for triggering actions—but they’re not responsible for &lt;em&gt;understanding&lt;/em&gt; or &lt;em&gt;manipulating&lt;/em&gt; that data. Meanwhile the module code doesn’t do &lt;em&gt;any&lt;/em&gt; stateful work; there’s no mutation—just boring, input-to-output functions.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; By contrast, if you’re dealing with stateful objects, you’re apt to end up running into places where you have lifecycle concerns, and that’s where Ember excels.&lt;/p&gt;
+&lt;p&gt;One important thing to note is that this all works best with Ember—by far—when your &lt;code&gt;lib&lt;/code&gt; modules aren’t managing stateful objects, but rather defining data structures and functions which just transform those structures in some way. This approach is a great fit for us, because we’re increasingly writing a lot of our business and even &lt;abbr title="user interface"&gt;UI&lt;/abbr&gt; logic in terms of &lt;a href="http://www.chriskrycho.com/2016/what-is-functional-programming.html#pure-functions"&gt;pure functions&lt;/a&gt; which transform simple “record” types. That keeps each controller, route, component, or service doing relatively little work: they are responsible for getting and passing around data in the application, and for triggering actions—but they’re not responsible for &lt;em&gt;understanding&lt;/em&gt; or &lt;em&gt;manipulating&lt;/em&gt; that data. Meanwhile the module code doesn’t do &lt;em&gt;any&lt;/em&gt; stateful work; there’s no mutation—just boring, input-to-output functions.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; By contrast, if you’re dealing with stateful objects, you’re apt to end up running into places where you have lifecycle concerns, and that’s where Ember excels.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;In summary:&lt;/strong&gt; in this model, Ember handles all the lifecycle and view management, and is responsible for sending data in and out of the application. Plain old modules handle defining what the core internal data types are, and for manipulating, transforming, and creating data.&lt;/p&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1"&gt;&lt;p&gt;If you’re wondering: we’re not using anything like Redux or Immutable.js yet, but both &lt;a href="https://github.com/ember-redux/ember-redux"&gt;ember-redux&lt;/a&gt; and &lt;a href="https://github.com/rtfeldman/seamless-immutable"&gt;seamless-immutable&lt;/a&gt; would be great fits for the way we’re building the app at this point, and it’s likely at least &lt;a href="https://github.com/ember-redux/ember-redux"&gt;ember-redux&lt;/a&gt; will become part of our stack in the relatively near future.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;If you’re wondering: we’re not using anything like Redux or Immutable.js yet, but both &lt;a href="https://github.com/ember-redux/ember-redux"&gt;ember-redux&lt;/a&gt; and &lt;a href="https://github.com/rtfeldman/seamless-immutable"&gt;seamless-immutable&lt;/a&gt; would be great fits for the way we’re building the app at this point, and it’s likely at least &lt;a href="https://github.com/ember-redux/ember-redux"&gt;ember-redux&lt;/a&gt; will become part of our stack in the relatively near future.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 31 Jul 2017 19:30:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-07-31:/2017/typing-your-ember-part-4.html</guid><category>emberjs</category><category>typescript</category><category>typing-your-ember</category></item><item><title>Typing Your Ember, Part 3</title><link>http://www.chriskrycho.com/2017/typing-your-ember-part-3.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
@@ -927,7 +1212,7 @@ export default Component.extend({
 &lt;p&gt;In the &lt;a href="/2017/typing-your-ember-part-1"&gt;first&lt;/a&gt; of this series, I described how to set up a brand new Ember.js app to use TypeScript. In the &lt;a href="/2017/typing-your-ember-part-2"&gt;second&lt;/a&gt; part, walked through adding TypeScript to an existing Ember.js app. In this part, I’m going to talk about using TypeScript effectively in a modern Ember.js app.&lt;/p&gt;
 &lt;section id="heavy-lifting-so-so-results" class="level2"&gt;
 &lt;h2&gt;Heavy lifting, so-so results&lt;/h2&gt;
-&lt;p&gt;Let’s get this out of the way up front: right now, using types in anything which extends &lt;code&gt;Ember.Object&lt;/code&gt; is going to be a lot of work for a relatively low reward. &lt;code&gt;Ember.Object&lt;/code&gt; laid the foundation for the modern JavaScript class system (and thus the TypeScript class system), but it has a huge downside: it’s string keys and referennces all the way down. This kind of thing is just normal Ember code—and note all the string keys:&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Let’s get this out of the way up front: right now, using types in anything which extends &lt;code&gt;Ember.Object&lt;/code&gt; is going to be a lot of work for a relatively low reward. &lt;code&gt;Ember.Object&lt;/code&gt; laid the foundation for the modern JavaScript class system (and thus the TypeScript class system), but it has a huge downside: it’s string keys and referennces all the way down. This kind of thing is just normal Ember code—and note all the string keys:&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;pre class="javascript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
 import { computed, get } from &amp;#39;@ember/object&amp;#39;;
 
@@ -1046,7 +1331,7 @@ export default class MyComponent extends Component {
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1"&gt;&lt;p&gt;Note that here and throughout, I’m using the &lt;a href="https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md#addendum-1---table-of-module-names-and-exports-by-global"&gt;RFC #176 Module API&lt;/a&gt;, which you can use today via &lt;a href="https://github.com/ember-cli/babel-plugin-ember-modules-api-polyfill"&gt;this polyfill&lt;/a&gt;.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;Note that here and throughout, I’m using the &lt;a href="https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md#addendum-1---table-of-module-names-and-exports-by-global"&gt;RFC #176 Module API&lt;/a&gt;, which you can use today via &lt;a href="https://github.com/ember-cli/babel-plugin-ember-modules-api-polyfill"&gt;this polyfill&lt;/a&gt;.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 28 Jul 2017 12:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-07-28:/2017/typing-your-ember-part-3.html</guid><category>emberjs</category><category>typescript</category><category>typing-your-ember</category></item><item><title>Typing Your Ember, Part 2</title><link>http://www.chriskrycho.com/2017/typing-your-ember-part-2.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
@@ -1069,7 +1354,7 @@ export default class MyComponent extends Component {
 &lt;li&gt;&lt;p&gt;Don’t turn on &lt;code&gt;--strict&lt;/code&gt; or the corresponding individual flags on day 1. Unless you have an extremely unusual and disciplined Ember.js codebase, you’ll have an incredible set of errors to deal with.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Don’t set the the &lt;code&gt;noEmitOnError&lt;/code&gt; flag to &lt;code&gt;true&lt;/code&gt; in your &lt;code&gt;tsconfig.json&lt;/code&gt;, for much the same reason. Since the state of type declaration files for Ember is best described as &lt;em&gt;nascent&lt;/em&gt; at present, many of your files will have errors in them just from failed imports!&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Don’t try to convert everything at once. Just pick the next feature or bug you’re working on, and start with the files you’re touching for that bug. Rename it to &lt;code&gt;.ts&lt;/code&gt;, fix any major issues it flags up that you can—but stick as locally as possible. You’re apt to find a &lt;em&gt;lot&lt;/em&gt; of small bugs as you start migrating, and some of them are things which are apt to affect your whole system because they touch central data types. It’s okay. You can come back to those later. For today, you can just be explicit about the weirdnesses.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;As part of that: get comfortable—really, really comfortable—with &lt;a href="http://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types"&gt;union types&lt;/a&gt;. They’ll make it much easier to express the kind of code you’ve &lt;em&gt;actually&lt;/em&gt; written.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;As part of that: get comfortable—really, really comfortable—with &lt;a href="http://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types"&gt;union types&lt;/a&gt;. They’ll make it much easier to express the kind of code you’ve &lt;em&gt;actually&lt;/em&gt; written.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Don’t worry about adding explicit types to &lt;em&gt;everything.&lt;/em&gt; In fact, depending on how comfortable you are already with typed languages, you should probably take a pretty different tack with this:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;If you’re just stepping into the world of typed programming languages, you might start adding types where they’re the &lt;em&gt;lowest risk&lt;/em&gt;: some place like your automated tests. That’ll help you start to see how to take advantage of them, while not impacting the way you write your app code until you have a better idea how best to employ the types.&lt;/p&gt;&lt;/li&gt;
@@ -1084,7 +1369,7 @@ export default class MyComponent extends Component {
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1"&gt;&lt;p&gt;Also, I &lt;em&gt;strongly&lt;/em&gt; encourage you to write types in terms of unions of types rather than in terms of &lt;a href="http://www.typescriptlang.org/docs/handbook/interfaces.html#optional-properties"&gt;optional properties on types&lt;/a&gt;. That might be surprising; I’ll explain it in more detail in a future post.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;Also, I &lt;em&gt;strongly&lt;/em&gt; encourage you to write types in terms of unions of types rather than in terms of &lt;a href="http://www.typescriptlang.org/docs/handbook/interfaces.html#optional-properties"&gt;optional properties on types&lt;/a&gt;. That might be surprising; I’ll explain it in more detail in a future post.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 07 May 2017 22:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-05-07:/2017/typing-your-ember-part-2.html</guid><category>typescript</category><category>emberjs</category><category>typing-your-ember</category></item><item><title>Typing Your Ember, Part 1</title><link>http://www.chriskrycho.com/2017/typing-your-ember-part-1.html</link><description>&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
@@ -1094,7 +1379,7 @@ export default class MyComponent extends Component {
 &lt;p&gt;In this first post in the series, we’re going to keep things simple and easy: we’re going to get an Ember.js app configured to use TypeScript. Later posts will cover some of the other details.&lt;/p&gt;
 &lt;p&gt;Because of the lovely &lt;a href="https://ember-cli.com"&gt;Ember CLI&lt;/a&gt; ecosystem, this is a pretty straightforward process. I’m going to start from &lt;em&gt;zero&lt;/em&gt; so that even if you’ve never written an Ember app before, you can get this up and running by following these instructions. These instructions have also been tested and confirmed to work across platforms—you can do this equally on Windows, macOS, or Linux.&lt;/p&gt;
 &lt;ol type="1"&gt;
-&lt;li&gt;&lt;p&gt;Make sure you have Ember’s prerequisites installed. Get &lt;a href="https://nodejs.org/en/"&gt;Node&lt;/a&gt; for your platform. Optionally (but highly recommended) install &lt;a href="https://yarnpkg.com"&gt;Yarn&lt;/a&gt; to manage your Node packages.&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Make sure you have Ember’s prerequisites installed. Get &lt;a href="https://nodejs.org/en/"&gt;Node&lt;/a&gt; for your platform. Optionally (but highly recommended) install &lt;a href="https://yarnpkg.com"&gt;Yarn&lt;/a&gt; to manage your Node packages.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Install the Ember command lines tools globally:&lt;/p&gt;
 &lt;pre class="sh"&gt;&lt;code&gt;yarn global add ember-cli&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;or&lt;/p&gt;
@@ -1127,7 +1412,7 @@ export default Ember.Component.extend({
 &lt;li&gt;&lt;p&gt;Update your &lt;code&gt;application.hbs&lt;/code&gt; file to remove the default &lt;code&gt;{{welcome}}&lt;/code&gt; template and replace it with &lt;code&gt;{{some-input}}&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Spin up the Ember application with Ember CLI’s development server:&lt;/p&gt;
 &lt;pre class="sh"&gt;&lt;code&gt;ember serve&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You’ll likely note some warnings: the TypeScript compiler won’t be able to find some of the modules imported in your files. I’ll have more to say about this in a future post. For now, suffice it to say: don’t worry, Ember CLI is still resolving and compiling your modules just fine.&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;You’ll likely note some warnings: the TypeScript compiler won’t be able to find some of the modules imported in your files. I’ll have more to say about this in a future post. For now, suffice it to say: don’t worry, Ember CLI is still resolving and compiling your modules just fine.&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Load the application by going to &lt;code&gt;localhost:4200&lt;/code&gt; in your browser. You should see a blank white screen with an input in it. Type in it, and see the input rendered to the page. Simple enough, but it’s using a TypeScript file compiled along the way!&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;And that’s it: we’re done setting up an Ember.js app to use TypeScript! In the next post, I’ll talk a bit about strategies for migrating an existing app to TypeScript—not just the mechanics of it, but also where and how to start actually integrating types into your code.&lt;/p&gt;
@@ -1137,8 +1422,8 @@ export default Ember.Component.extend({
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1"&gt;&lt;p&gt;I strongly prefer to use &lt;code&gt;yarn&lt;/code&gt; over &lt;code&gt;npm&lt;/code&gt; because &lt;code&gt;yarn&lt;/code&gt; installs are predictable and repeatable, and if there’s one thing I don’t need to spend time on when developing our Ember.js app at Olo, it’s chasing problems with transitive dependencies that are different in the build server than in my local development environment. Yarn’s lockfiles mean what ends up built on the server is &lt;em&gt;exactly&lt;/em&gt; what ended up built on my machine.&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn2"&gt;&lt;p&gt;But if you’re curious, here’s a preview: we really need more &lt;a href="http://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html"&gt;type definitions&lt;/a&gt; for the Ember ecosystem. I’ll be covering &lt;em&gt;how&lt;/em&gt; we build those in much more detail in a future installment.&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;I strongly prefer to use &lt;code&gt;yarn&lt;/code&gt; over &lt;code&gt;npm&lt;/code&gt; because &lt;code&gt;yarn&lt;/code&gt; installs are predictable and repeatable, and if there’s one thing I don’t need to spend time on when developing our Ember.js app at Olo, it’s chasing problems with transitive dependencies that are different in the build server than in my local development environment. Yarn’s lockfiles mean what ends up built on the server is &lt;em&gt;exactly&lt;/em&gt; what ended up built on my machine.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;But if you’re curious, here’s a preview: we really need more &lt;a href="http://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html"&gt;type definitions&lt;/a&gt; for the Ember ecosystem. I’ll be covering &lt;em&gt;how&lt;/em&gt; we build those in much more detail in a future installment.&lt;a href="#fnref2" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 05 May 2017 00:10:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-05-05:/2017/typing-your-ember-part-1.html</guid><category>typescript</category><category>emberjs</category><category>typing-your-ember</category></item><item><title>Why Elm Instead of TypeScript?</title><link>http://www.chriskrycho.com/2017/why-elm-instead-of-typescript.html</link><description>&lt;p&gt;A few weeks ago, an acquaintance asked in a Slack channel we’re both in:&lt;/p&gt;
@@ -1200,7 +1485,7 @@ const STATE: UnionKeyToValue&amp;lt;State&amp;gt; = {
 &lt;/blockquote&gt;
 &lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 03 Jan 2017 20:35:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2017-01-03:/2017/typescript-keyof-follow-up.html</guid><category>programming languages</category><category>software development</category><category>typescript</category><category>javascript</category></item><item><title>keyof and Mapped Types In TypeScript 2.1</title><link>http://www.chriskrycho.com/2016/keyof-and-mapped-types-in-typescript-21.html</link><description>&lt;p&gt;In the last few months, I’ve been playing with both &lt;a href="https://flowtype.org"&gt;Flow&lt;/a&gt; and &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; as tools for increasing the quality and reliability of the JavaScript I write at Olo. Both of these are syntax that sits on top of normal JavaScript to add type analysis—basically, a form of &lt;a href="https://en.wikipedia.org/wiki/Gradual_typing"&gt;gradual typing&lt;/a&gt; for JS.&lt;/p&gt;
-&lt;p&gt;Although TypeScript’s tooling has been better all along&lt;a href="#fn1" class="footnoteRef" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; I initially preferred Flow’s type system quite a bit: it has historically been much more focused on &lt;a href="http://stackoverflow.com/questions/21437015/soundness-and-completeness-of-systems"&gt;soundness&lt;/a&gt;, especially around the &lt;em&gt;many&lt;/em&gt; problems caused by &lt;code&gt;null&lt;/code&gt; and &lt;code&gt;undefined&lt;/code&gt;, than TypeScript. And it had earlier support for &lt;a href="https://flowtype.org/docs/disjoint-unions.html"&gt;tagged unions&lt;/a&gt;, a tool I’ve come to find invaluable since picking them up from my time with Rust.&lt;a href="#fn2" class="footnoteRef" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; But the 2.0 and 2.1 releases of TypeScript have changed the game substantially, and it’s now a &lt;em&gt;very&lt;/em&gt; compelling language in its own right—not to mention a great tool for writing better JavaScript. So I thought I’d highlight how you can get a lot of the benefits you would get from the type systems of languages like Elm with some of those new TypeScript features: the &lt;em&gt;&lt;code&gt;keyof&lt;/code&gt; operator&lt;/em&gt; and &lt;em&gt;mapped types&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Although TypeScript’s tooling has been better all along&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; I initially preferred Flow’s type system quite a bit: it has historically been much more focused on &lt;a href="http://stackoverflow.com/questions/21437015/soundness-and-completeness-of-systems"&gt;soundness&lt;/a&gt;, especially around the &lt;em&gt;many&lt;/em&gt; problems caused by &lt;code&gt;null&lt;/code&gt; and &lt;code&gt;undefined&lt;/code&gt;, than TypeScript. And it had earlier support for &lt;a href="https://flowtype.org/docs/disjoint-unions.html"&gt;tagged unions&lt;/a&gt;, a tool I’ve come to find invaluable since picking them up from my time with Rust.&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; But the 2.0 and 2.1 releases of TypeScript have changed the game substantially, and it’s now a &lt;em&gt;very&lt;/em&gt; compelling language in its own right—not to mention a great tool for writing better JavaScript. So I thought I’d highlight how you can get a lot of the benefits you would get from the type systems of languages like Elm with some of those new TypeScript features: the &lt;em&gt;&lt;code&gt;keyof&lt;/code&gt; operator&lt;/em&gt; and &lt;em&gt;mapped types&lt;/em&gt;.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;i&gt;Some readers may note that what I’m doing here is a &lt;em&gt;lot&lt;/em&gt; of wrangling to cajole TypeScript into giving me the kinds of things you get for free in an ML-descended language. Yep. The point is that you &lt;em&gt;can&lt;/em&gt; wrangle it into doing this.&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -1216,7 +1501,7 @@ const STATE: UnionKeyToValue&amp;lt;State&amp;gt; = {
   }
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This will work, and it’ll even throw an error if you hand it the wrong thing. But you’ll find out at runtime if you accidentally typed &lt;code&gt;nextState('Pednign')&lt;/code&gt; instead of &lt;code&gt;nextState('Pending')&lt;/code&gt;—something I’ve done more than once in the past. You’d have a similar problem if you’d accidentally written &lt;code&gt;case 'Strated'&lt;/code&gt; instead of &lt;code&gt;case 'Started'&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;There are many contexts like this one in JavaScript—perhaps the most obvious being &lt;a href="http://redux.js.org/docs/basics/Actions.html"&gt;Redux actions&lt;/a&gt;, but I get a lot of mileage out of the pattern in Ember, as well. In these contexts, I find it’s convenient to define types that are kind of like pseudo-enums or pseudo-simple-unions, like so:&lt;a href="#fn3" class="footnoteRef" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There are many contexts like this one in JavaScript—perhaps the most obvious being &lt;a href="http://redux.js.org/docs/basics/Actions.html"&gt;Redux actions&lt;/a&gt;, but I get a lot of mileage out of the pattern in Ember, as well. In these contexts, I find it’s convenient to define types that are kind of like pseudo-enums or pseudo-simple-unions, like so:&lt;a href="#fn3" class="footnote-ref" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;pre class="javascript"&gt;&lt;code&gt;const STATE = {
   Pending: &amp;#39;Pending&amp;#39;,
   Started: &amp;#39;Started&amp;#39;,
@@ -1246,7 +1531,7 @@ function nextState(state: State): State {
 &lt;pre class="typescript"&gt;&lt;code&gt;type State = &amp;#39;Pending&amp;#39; | &amp;#39;Started&amp;#39; | &amp;#39;Completed&amp;#39;;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Unfortunately, you can’t write something like &lt;code&gt;State.Pending&lt;/code&gt; somewhere; you have to write the plain string &lt;code&gt;'Pending'&lt;/code&gt; instead. You still get some of the linting benefits you got with the approach outlined above via TypeScript’s actual type-checking, but you don’t get &lt;em&gt;any&lt;/em&gt; help with autocompletion. Can we get the benefits of both?&lt;/p&gt;
 &lt;p&gt;Yes! (This would be a weird blog post if I just got this far and said, “Nope, sucks to be us; go use Elm instead.”)&lt;/p&gt;
-&lt;p&gt;As of the 2.1 release, TypeScript lets you define types in terms of keys, so you can write a type like this:&lt;a href="#fn4" class="footnoteRef" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As of the 2.1 release, TypeScript lets you define types in terms of keys, so you can write a type like this:&lt;a href="#fn4" class="footnote-ref" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;const STATE = {
   Pending: &amp;#39;Pending&amp;#39;,
   Started: &amp;#39;Started&amp;#39;,
@@ -1267,7 +1552,7 @@ interface StateMachine {
 const nextState: StateMachine = (state) =&amp;gt; {
   // ...
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The upside to this is that now you can guarantee that anywhere you’re supposed to be passing one of those strings, you &lt;em&gt;are&lt;/em&gt; passing one of those strings. If you pass in &lt;code&gt;'Compelte'&lt;/code&gt;, you’ll get an actual error—just like if we had used the union definition above. At a minimum, that will be helpful feedback in your editor. Maximally, depending on how you have your project configured, it may not even generate any JavaScript output.&lt;a href="#fn5" class="footnoteRef" id="fnref5"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; So that’s a significant step forward beyond what we had even with the best linting rules in pure JavaScript.&lt;/p&gt;
+&lt;p&gt;The upside to this is that now you can guarantee that anywhere you’re supposed to be passing one of those strings, you &lt;em&gt;are&lt;/em&gt; passing one of those strings. If you pass in &lt;code&gt;'Compelte'&lt;/code&gt;, you’ll get an actual error—just like if we had used the union definition above. At a minimum, that will be helpful feedback in your editor. Maximally, depending on how you have your project configured, it may not even generate any JavaScript output.&lt;a href="#fn5" class="footnote-ref" id="fnref5"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt; So that’s a significant step forward beyond what we had even with the best linting rules in pure JavaScript.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="going-in-circles" class="level3"&gt;
 &lt;h3&gt;Going in circles&lt;/h3&gt;
@@ -1358,23 +1643,27 @@ const STATE: UnionKeyToValue&amp;lt;State&amp;gt; = {
 };&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You’ll see a compiler error that looks something like this:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;div style="white-space: pre-line;"&gt;[ts]
-Type ‘{ Pending: “pending”; Started: “Strated”; Completed: “Complete” }’ is not assignable to type ‘UnionKeyToValue&lt;State&gt;’.
-  Types of property ‘Pending’ are incompatible.
+&lt;div class="line-block"&gt;[ts]&lt;br /&gt;
+Type ‘{ Pending: “pending”; Started: “Strated”; Completed: “Complete” }’ is not assignable to type ‘UnionKeyToValue&lt;State&gt;’.&lt;br /&gt;
+  Types of property ‘Pending’ are incompatible.&lt;br /&gt;
     Type ‘“pending”’ is not assignable to type ‘“Pending”’.&lt;/div&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Since the key and the name don’t match, the compiler tells us we didn’t keep the constraint we defined on what these types should look like. Similarly, if you forget an item from the union, you’ll get an error. If you add an item that isn’t in the original union, you’ll get an error. Among other things, this means that you can be confident that if you add a value to the union, the rest of your code won’t compile until you include cases for it. You get all the power and utility of using union types, &lt;em&gt;and&lt;/em&gt; you get the utility of being able to use the object as a namespace of sorts.&lt;a href="#fn6" class="footnoteRef" id="fnref6"&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Since the key and the name don’t match, the compiler tells us we didn’t keep the constraint we defined on what these types should look like. Similarly, if you forget an item from the union, you’ll get an error. If you add an item that isn’t in the original union, you’ll get an error. Among other things, this means that you can be confident that if you add a value to the union, the rest of your code won’t compile until you include cases for it. You get all the power and utility of using union types, &lt;em&gt;and&lt;/em&gt; you get the utility of being able to use the object as a namespace of sorts.&lt;a href="#fn6" class="footnote-ref" id="fnref6"&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;And the TypeScript language service—which you can use from a &lt;em&gt;lot&lt;/em&gt; of editors, including VS Code, Atom, Sublime Text, and the JetBrains IDEs—will actually give you the correct completion when you start definition a type. So imagine we were defining some other union type elsewhere in our program to handle events. Now we can use the same &lt;code&gt;UnionKeyToValue&lt;/code&gt; type to construct this type, with immediate, &lt;em&gt;correct&lt;/em&gt; feedback from the TypeScript language service:&lt;/p&gt;
 &lt;figure&gt;
-&lt;video autoplay=autoplay muted=muted playsinline=playsinline loop=loop&gt; &lt;source type='video/mp4' src='http://cdn.chriskrycho.com/images/completion.mp4'&gt; &lt;/video&gt;
+&lt;video autoplay=autoplay muted=muted playsinline=playsinline loop=loop&gt;
+&lt;source type='video/mp4' src='http://cdn.chriskrycho.com/images/completion.mp4'&gt;
+&lt;/video&gt;
 &lt;figcaption&gt;
 TypeScript live code completion of the mapped type
 &lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;By inverting our original approach of using &lt;code&gt;keyof&lt;/code&gt; (itself powerful and worth using in quite a few circumstances) and instead using the new mapped types, we get a &lt;em&gt;ton&lt;/em&gt; of mileage in terms of productivity when using these types—errors prevented, and speed of writing the code in the first place increased as well.&lt;/p&gt;
-&lt;p&gt;Yes, it’s a little verbose and it does require duplicating the strings whenever you define one of these types.&lt;a href="#fn7" class="footnoteRef" id="fnref7"&gt;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt; But, and this is what I find most important: there is only one &lt;em&gt;source&lt;/em&gt; for those string keys, the union type, and it is definitive. If you change that central union type, everything else that references it, including the namespace-like object, will fail to compile until you make the same change there.&lt;/p&gt;
+&lt;p&gt;Yes, it’s a little verbose and it does require duplicating the strings whenever you define one of these types.&lt;a href="#fn7" class="footnote-ref" id="fnref7"&gt;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt; But, and this is what I find most important: there is only one &lt;em&gt;source&lt;/em&gt; for those string keys, the union type, and it is definitive. If you change that central union type, everything else that references it, including the namespace-like object, will fail to compile until you make the same change there.&lt;/p&gt;
 &lt;figure&gt;
-&lt;video autoplay=autoplay muted=muted playsinline=playsinline loop=loop&gt; &lt;source type='video/mp4' src='http://cdn.chriskrycho.com/images/change-union.mp4'&gt; &lt;/video&gt;
+&lt;video autoplay=autoplay muted=muted playsinline=playsinline loop=loop&gt;
+&lt;source type='video/mp4' src='http://cdn.chriskrycho.com/images/change-union.mp4'&gt;
+&lt;/video&gt;
 &lt;figcaption&gt;
 Updating a union
 &lt;/figcaption&gt;
@@ -1385,19 +1674,19 @@ Updating a union
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1"&gt;&lt;p&gt;it’s no surprise that Microsoft’s developer tooling is stronger than Facebook’s&lt;a href="#fnref1"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn2"&gt;&lt;p&gt;along with all the other ML-descended languages I’ve played with, including Haskell, F&lt;sup&gt;♯&lt;/sup&gt;, PureScript, and Elm.&lt;a href="#fnref2"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;it’s no surprise that Microsoft’s developer tooling is stronger than Facebook’s&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;along with all the other ML-descended languages I’ve played with, including Haskell, F&lt;sup&gt;♯&lt;/sup&gt;, PureScript, and Elm.&lt;a href="#fnref2" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;li id="fn3"&gt;&lt;p&gt;Aside: to be extra safe and prevent any confusion or mucking around, you should probably call &lt;code&gt;Object.freeze()&lt;/code&gt; on the object literal, too:&lt;/p&gt;
 &lt;pre class="javascript"&gt;&lt;code&gt;const STATE = Object.freeze({
   Pending: &amp;#39;Pending&amp;#39;,
   Started: &amp;#39;Started&amp;#39;,
   Completed: &amp;#39;Completed&amp;#39;,
 })&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Both convention and linters make it unlikely you’ll modify something like this directly—but impossible is better than unlikely.&lt;a href="#fnref3"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn4"&gt;&lt;p&gt;Flow has supported this feature for some time; you can write &lt;code&gt;$Keys&amp;lt;typeof STATE&amp;gt;&lt;/code&gt;—but the feature is entirely undocumented.&lt;a href="#fnref4"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn5"&gt;&lt;p&gt;Set your &lt;code&gt;&amp;quot;compilerOptions&amp;quot;&lt;/code&gt; key in your &lt;code&gt;tsconfig.json&lt;/code&gt; to include &lt;code&gt;&amp;quot;noEmitOnError&amp;quot;: true,&lt;/code&gt;.&lt;a href="#fnref5"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn6"&gt;&lt;p&gt;For namespacing in a more general sense, you should use… &lt;a href="http://www.typescriptlang.org/docs/handbook/namespaces.html"&gt;namespaces&lt;/a&gt;.&lt;a href="#fnref6"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn7"&gt;&lt;p&gt;It would be great if we could get these benefits without the duplication—maybe someday we’ll have better support in JS or TS natively.&lt;a href="#fnref7"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;Both convention and linters make it unlikely you’ll modify something like this directly—but impossible is better than unlikely.&lt;a href="#fnref3" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn4"&gt;&lt;p&gt;Flow has supported this feature for some time; you can write &lt;code&gt;$Keys&amp;lt;typeof STATE&amp;gt;&lt;/code&gt;—but the feature is entirely undocumented.&lt;a href="#fnref4" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn5"&gt;&lt;p&gt;Set your &lt;code&gt;&amp;quot;compilerOptions&amp;quot;&lt;/code&gt; key in your &lt;code&gt;tsconfig.json&lt;/code&gt; to include &lt;code&gt;&amp;quot;noEmitOnError&amp;quot;: true,&lt;/code&gt;.&lt;a href="#fnref5" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn6"&gt;&lt;p&gt;For namespacing in a more general sense, you should use… &lt;a href="http://www.typescriptlang.org/docs/handbook/namespaces.html"&gt;namespaces&lt;/a&gt;.&lt;a href="#fnref6" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn7"&gt;&lt;p&gt;It would be great if we could get these benefits without the duplication—maybe someday we’ll have better support in JS or TS natively.&lt;a href="#fnref7" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 17 Dec 2016 23:25:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-12-17:/2016/keyof-and-mapped-types-in-typescript-21.html</guid><category>javascript</category><category>typescript</category><category>software development</category><category>programming languages</category></item></channel></rss>

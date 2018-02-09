@@ -80,7 +80,8 @@
 
     <header>
 <h1>How to Build a Single-Page App API <em>Right</em></h1>
-<h2>Or: How to get performance, progressive enhancement, and SEO in your Ember/Angular/Backbone/etc. app for free!</h2>    </header>
+<h2>Or: How to get performance, progressive enhancement, and SEO in your Ember/Angular/Backbone/etc. app for free!
+</h2>    </header>
 
     <div class="meta">
 <span class="date"><a href="http://www.chriskrycho.com/2015/how-to-build-a-single-page-app-api-right.html"><i class="fa fa-fw fa-link"></i></a>June 09, 2015</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://www.chriskrycho.com/2015/how-to-build-a-single-page-app-api-right.txt">Markdown source</a></span>    </div>
@@ -104,8 +105,8 @@
 </section>
 <section id="the-solution" class="level3">
 <h3>The solution</h3>
-<p>Don’t write <em>one</em> API. Write <em>two</em>. They should be structured nearly identically, but one of them will be a <em>page</em> API endpoint, and one will be a <em>data</em> API endpoint. In the context of HolyBible.com, here’s how that would play out.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> One endpoint would be based purely on the standard URL, something like <code>holybible.com/jhn.3.16</code>. The other would be to retrieve a set of <em>data</em> associated with a given address, like <code>holybible.com/data/jhn.3.16</code>. This is only a little different from the approach suggested above, but that small difference matters—in fact, it matters a <em>lot</em>.</p>
-<p>Instead of having the <code>/jhn.3.16</code> route get handled by a catchall <code>*</code> route on the back end, it gets its own API endpoint, which looks for URLS of this shape and hands back a full page. That API endpoint is responsible to actually render the content of the page appropriately—in this case, with something like the whole chapter of John 3.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <em>That</em> gets handed back to the browser, so the very first thing the user sees is not a blank page while the JavaScript framework spins up and requests data, but rather <em>the Bible text they asked for in the first place</em>.</p>
+<p>Don’t write <em>one</em> API. Write <em>two</em>. They should be structured nearly identically, but one of them will be a <em>page</em> API endpoint, and one will be a <em>data</em> API endpoint. In the context of HolyBible.com, here’s how that would play out.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> One endpoint would be based purely on the standard URL, something like <code>holybible.com/jhn.3.16</code>. The other would be to retrieve a set of <em>data</em> associated with a given address, like <code>holybible.com/data/jhn.3.16</code>. This is only a little different from the approach suggested above, but that small difference matters—in fact, it matters a <em>lot</em>.</p>
+<p>Instead of having the <code>/jhn.3.16</code> route get handled by a catchall <code>*</code> route on the back end, it gets its own API endpoint, which looks for URLS of this shape and hands back a full page. That API endpoint is responsible to actually render the content of the page appropriately—in this case, with something like the whole chapter of John 3.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> <em>That</em> gets handed back to the browser, so the very first thing the user sees is not a blank page while the JavaScript framework spins up and requests data, but rather <em>the Bible text they asked for in the first place</em>.</p>
 <p>Meanwhile, the JavaScript framework <em>can</em> spin up, and load any required session data, etc. and start managing the UI like normal. Once we get to this point, the framework can go ahead and request a data payload from the <code>/data/&lt;reference&gt;</code> endpoint. So, for example, if there is a navigation control on the page (as on HolyBible.com and indeed most sites), clicking to navigate to Job 14 could, instead of requesting <code>/job.14.4</code>, fetch the data from the other endpoint by running an AJAX request to <code>/data/job.14.4</code>.</p>
 <p>The backend thus supplies <em>both</em> a <code>/&lt;resource&gt;</code> and a <code>/data/&lt;resource&gt;</code> route. This might seem redundant, but we’ve just seen why it isn’t, Moreover, if you have any logic that needs to be in place—in our example here, a Bible reference parser, for example, to decide what content should be supplied—you can easily reuse it between the two routes. The differences is simply in the form of the data returned: is it a fully-rendered template, or just the data?</p>
 </section>
@@ -118,15 +119,12 @@
 <li><p>It’s <em>performant</em>. Loading the content this way will be <em>much</em> faster than the standard approach recommended for single-page apps. As noted above, it gets the content to the user immediately, then lets the JavaScript UI bits come into play. Since future page loads can take advantage of both caching and smaller data payloads, the whole thing can actually be faster than either a pure client-side <em>or</em> a pure server-side approach. That is, once the client-side application is running, it can just update its views with data delivered via AJAX, rather than reloading the whole page. But <em>before</em> that, the user doesn’t have to wait to see something useful until the JavaScript framework spins up.</p></li>
 </ol>
 <p>It’s not often an approach gives you progressive enhancement and actually increases the performance of an application, but this one does. Better yet, you can apply this in just about any framework: it’s equally applicable to AngularJS with ExpressJS, Backbone with Rails, Ember with Django, Aurelia with Phoenix, or any other combination you come up with.</p>
-<div id="refs" class="references">
-
-</div>
 </section>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Note: this is <em>not</em> the actual API structure of HolyBible.com, or even particularly close to it. Remember, I learned everything I’m writing here by doing it <em>wrong</em>.<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>Or possibly a section which constitutes a semantic block of data. I have some thoughts on chunking Bible data semantically rather than by chapter and verse for this kind of thing. That’s another post for another day, though.<a href="#fnref2">↩</a></p></li>
+<li id="fn1"><p>Note: this is <em>not</em> the actual API structure of HolyBible.com, or even particularly close to it. Remember, I learned everything I’m writing here by doing it <em>wrong</em>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Or possibly a section which constitutes a semantic block of data. I have some thoughts on chunking Bible data semantically rather than by chapter and verse for this kind of thing. That’s another post for another day, though.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -181,7 +179,7 @@
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>

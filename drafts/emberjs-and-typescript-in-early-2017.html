@@ -133,7 +133,7 @@
 <li>Start converting existing modules or writing new modules as TypeScript.</li>
 <li>Go wild!</li>
 </ol>
-<p>In practice, because of the aforementioned limitations, (3) is more like “Go use it eagerly but only in certain parts of the app.” The places where we currently get the <em>most</em> mileage out of tests are <em>tests</em> and <em>business logic</em>. I have several fairly complex places where I do transformations from one state to another, and those are all encoded in functions written in TypeScript—and, importantly, those are <em>not</em> members of a component. They’re just standalone functions.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> That has the delightful effect of making them amenable to use with TypeScript. It also makes them much easier to test.</p>
+<p>In practice, because of the aforementioned limitations, (3) is more like “Go use it eagerly but only in certain parts of the app.” The places where we currently get the <em>most</em> mileage out of tests are <em>tests</em> and <em>business logic</em>. I have several fairly complex places where I do transformations from one state to another, and those are all encoded in functions written in TypeScript—and, importantly, those are <em>not</em> members of a component. They’re just standalone functions.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> That has the delightful effect of making them amenable to use with TypeScript. It also makes them much easier to test.</p>
 <p>I also do make fairly extensive use of TypeScript when defining the return type of a computed property:</p>
 <pre class="ts"><code>export default Ember.Component.extend({
   someOtherThing: false,
@@ -147,7 +147,7 @@
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p><a href="http://www.chriskrycho.com/2016/what-is-functional-programming.html#pure-functions">Pure functions</a>, to be specific, because my goal is to write as <em>many</em> of my functions as pure functions as possible.<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p><a href="http://www.chriskrycho.com/2016/what-is-functional-programming.html#pure-functions">Pure functions</a>, to be specific, because my goal is to write as <em>many</em> of my functions as pure functions as possible.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -202,7 +202,7 @@
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>

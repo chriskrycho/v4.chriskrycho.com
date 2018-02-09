@@ -147,13 +147,13 @@ fn main() {
 <pre class="swift"><code>{ (n: Int) -&gt; Int in return n * 2 }</code></pre>
 <p>For brevity, this can collapse down to the shorter form with types inferred from context, parentheses dropped and the <code>return</code> keyword inferred from the fact that the closure has only a single expression (note that this wouldn’t be valid unless in a context where the type of <code>n</code> could be inferred):</p>
 <pre class="swift"><code>{ n in n * 2 }</code></pre>
-<p>The simplicity here is nice, reminiscent in a good way of closures/lambdas in other languages.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> The fact that it’s a special case is less to my taste.</p></li>
+<p>The simplicity here is nice, reminiscent in a good way of closures/lambdas in other languages.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> The fact that it’s a special case is less to my taste.</p></li>
 <li><p>Rust’s closure syntax is fairly similar to Swift’s brief syntax. More importantly, there’s no special handling for closures’ final expressions. Remember: the final expression of <em>any</em> block is always returned in Rust.</p>
 <pre class="rust"><code>|n| n * 2</code></pre>
 <p>If we wanted to fully annotate the types, as in the first Swift example, it would be like so:</p>
 <pre class="rust"><code>|n: i32| -&gt; i32 { n * 2 }</code></pre></li>
 <li><p>There are even <em>more</em> differences between the two, because of Rust’s ownership notion and the associated need to think about whether a given closure is being borrowed or moved (if the latter, explicitly using the <code>move</code> keyword).</p></li>
-<li><p>Swift has the notion of shorthand argument names for use with closures.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> The arguments to a closure get the default names <code>$0</code>, <code>$1</code>, etc. This gets you even <em>more</em> brevity, and is quite convenient in cases where closures get used a lot (<code>map</code>, <code>sort</code>, <code>fold</code>, <code>reduce</code>, etc.).</p>
+<li><p>Swift has the notion of shorthand argument names for use with closures.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> The arguments to a closure get the default names <code>$0</code>, <code>$1</code>, etc. This gets you even <em>more</em> brevity, and is quite convenient in cases where closures get used a lot (<code>map</code>, <code>sort</code>, <code>fold</code>, <code>reduce</code>, etc.).</p>
 <pre class="swift"><code>{ $0 * 2 }</code></pre></li>
 <li><p>If that weren’t enough, Swift will go so far as to simply reuse operators (which are special syntax for functions) as closures. So a closure call could simply be <code>+</code> for a function expecting a closure operating on two numbers; Swift will infer that it needs to map back to the relevant method definition on the appropriate type.</p></li>
 <li><p>The upside to this is that the code can be incredibly brief, and—once you’re used to it, at least—still fairly clear. The downside to this is yet <em>more</em> syntax for Swift, and the ever-growing list of things to remember and ways to write the same thing I expect will lead to quite a bit of instability as the community sorts out some expectations for what is idiomatic in any given instance.</p></li>
@@ -178,14 +178,11 @@ fn main() {
 <li><a href="http://www.chriskrycho.com/2015/rust-and-swift-vii.html"><strong>Previous:</strong> Pattern matching and the value of expression blocks.</a></li>
 <li><a href="http://www.chriskrycho.com/2015/rust-and-swift-ix.html"><strong>Next:</strong> Sum types (<code>enum</code>s) and more on pattern matching.</a></li>
 </ul>
-<div id="refs" class="references">
-
-</div>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Compare the closure syntaxes especially in Ruby and ES6+.<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>For a similar example in another up-and-coming language, see <a href="http://elixir-lang.org/getting-started/modules.html#function-capturing">Elixir</a>, which does almost exactly the same but with <code>&amp;</code> in place of <code>$</code>.<a href="#fnref2">↩</a></p></li>
+<li id="fn1"><p>Compare the closure syntaxes especially in Ruby and ES6+.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>For a similar example in another up-and-coming language, see <a href="http://elixir-lang.org/getting-started/modules.html#function-capturing">Elixir</a>, which does almost exactly the same but with <code>&amp;</code> in place of <code>$</code>.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -240,7 +237,7 @@ fn main() {
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>

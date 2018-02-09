@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TypeScript and Ember.js Update, Part 4 &middot; Chris Krycho</title>
+    <meta name="description" content="Using Ember Data effectively, and migrating to new (better, easier!) approaches for service and controller lookup while we’re at it."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"/>
+    <meta property="og:title" content="TypeScript and Ember.js Update, Part 4"/>
+    <meta property="og:description" content="Using Ember Data effectively, and migrating to new (better, easier!) approaches for service and controller lookup while we’re at it."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="TypeScript and Ember.js Update, Part 4"/>
+    <meta name="twitter:description" content="Using Ember Data effectively, and migrating to new (better, easier!) approaches for service and controller lookup while we’re at it."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="typescript emberjs typing-your-ember tech">
+
+    <header>
+<h1>TypeScript and Ember.js Update, Part 4</h1>
+<h2>Ember Data and injections update</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"><i class="fa fa-fw fa-link"></i></a>February 08, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class='series-overview'>You write <a href="https://emberjs.com">Ember.js</a> apps. You think <a href="http://www.typescriptlang.org">TypeScript</a> would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.</i></p>
+<p><i class='series-overview'>This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.</i></p>
+<p><i class='series-overview'><a href="/typing-your-ember.html">(See the rest of the series. →)</a></i></p>
+<hr />
+<p>In the previous posts in this series, I introduced the big picture of how the story around TypeScript and Ember.js has improved over the last several months, walked through some important background on class properties, and dug deep on computed properties, actions, and mixins.</p>
+<p>In today’s post, we’ll look at how to write Ember Data models so they work correctly throughout your codebase, and see some improvements to how we can do <code>Service</code> and <code>Controller</code> injections even from a few weeks ago.</p>
+<aside>
+<p>If you’re interested in all of this and would like to learn more in person, I’m <a href="http://emberconf.com/speakers.html#chris-krycho">leading a workshop on it at EmberConf 2018</a>—I’d love to see you there!</p>
+</aside>
+<p>Here’s the outline of this update sequence:</p>
+<ol type="1">
+<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">Overview, normal Ember objects, component arguments, and injections.</a></li>
+<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Class properties—some notes on how things differ from the <code>Ember.Object</code> world.</a></li>
+<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Computed properties, actions, mixins, and class methods.</a></li>
+<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"><strong>Using Ember Data and improved injections.</strong> (this post)</a></li>
+<li>Mixins and proxies; or: the really hard-to-type-check bits.</li>
+</ol>
+<section id="ember-data" class="level2">
+<h2>Ember Data</h2>
+<p>There remains one significant challenges to using Ember Data effectively with TypeScript today: Ember Data, for reasons I haven’t yet dug into myself, does not play nicely with ES6 classes. However, we <em>need</em> named class exports for the sake of being able to use them as types elsewhere in our programs. The hack to work around this is much the same as anywhere else we need named exports but have to get things back into the prototype:</p>
+<pre class="ts"><code>import DS from &quot;ember-data&quot;;
+
+export default class Person extends DS.Model.extend({
+  firstName: DS.attr(&quot;string&quot;),
+  lastName: DS.attr(&quot;string&quot;)
+}) {}</code></pre>
+<p>You can still define other items of the class normally, but attributes have to be prototypally bound or <em>you will have problems</em>. Note that this only applies (as far as I can tell) to Ember Data <code>Model</code>s specifically—<code>Adapter</code> and <code>Serializer</code> classes work just fine.</p>
+<p>The other problem we’ve historically had was dealing with lookups—the situation was similar to that I described in <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Part 3</a> for service injection. However, as of <em>this week</em>, we’re landing a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Keep your eyes open for the ember-cli-typescript 1.1 release in the next couple days!</p>
+<p>Once this release of both ember-cli-typescript and the updated typings land, when you generate an Ember Data model by doing <code>ember generate model person firstName:string lastName:string</code>, it will look like this:</p>
+<pre class="ts"><code>import DS from &quot;ember-data&quot;;
+
+export default class Person extends DS.Model.extend({
+  firstName: DS.attr(&quot;string&quot;),
+  lastName: DS.attr(&quot;string&quot;)
+}) {
+  // normal class body definition here
+}
+
+// DO NOT DELETE: this is how TypeScript knows how to look up your models.
+declare module &quot;ember-data&quot; {
+  interface ModelRegistry {
+    person: Person;
+  }
+}</code></pre>
+<p>That module and interface declaration at the bottom <em>merges</em> the declaration for this model with the declarations for all the other models. You’ll see the same basic pattern for <code>DS.Adapter</code> and <code>DS.Serializer</code> instances. The result is that <em>using</em> a model will now look like this. In addition to the <code>Person</code> model definition just above, our adapter might be like this:</p>
+<pre class="ts"><code>import DS from &quot;ember-data&quot;;
+
+export default class Person extends DS.Adapter {
+  update(changes: { firstName?: string; lastName?: string }) {
+    fetch(&quot;the-url-to-change-it&quot;, {
+      method: &quot;POST&quot;,
+      body: JSON.stringify(changes)
+    });
+  }
+}
+
+declare module &quot;ember-data&quot; {
+  interface ModelRegistry {
+    person: Person;
+  }
+}</code></pre>
+<p>Then putting the pieces together, our component definition will just look like this:</p>
+<pre class="ts"><code>import Component from &quot;@ember/component&quot;;
+import { inject as service } from &quot;@ember/service&quot;;
+
+export default class PersonCard extends Component {
+  id: string | number;
+
+  store = service(&quot;store&quot;);
+  model = this.store.findRecord(&quot;person&quot;, this.id);
+
+  actions = {
+    savePerson(changes: { firstName?: string; lastName?: string }) {
+      this.store.adapterFor(&quot;person&quot;).update(changes);
+    }
+  };
+}</code></pre>
+<p>The type of <code>model</code> here is now <code>Person &amp; DS.PromiseObject&lt;Person&gt;</code> (which is actually what Ember Data returns for these kinds of things!), and the <code>this.store.adapterFor</code> actually correctly returns the <code>Person</code> adapter as well, so the call to its <code>update</code> method type-checks as well (including guaranteeing that the arguments to it are correct). That also means you’ll get autocompletion for those, including for their types, if you’re using an editor configured for it. And, happily for everyone, if you mistype a string (<code>preson</code> instead of <code>person</code>, for example), you’ll get a compile-time error!</p>
+<p>Notice as well that the service injection is much cleaner than it was in earlier examples in the series. That’s because we made the same “registry”-type changes—as I suggested we might back in <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">Part 1</a>!—for controller and service injections. Before, for this kind of thing:</p>
+<pre class="ts"><code>export default class PersonCard extends Component {
+  store: Computed&lt;DS.Store&gt; = service();
+}</code></pre>
+<p>Now:</p>
+<pre class="ts"><code>export default class PersonCard extends Component {
+  store = service(&quot;store&quot;);
+}</code></pre>
+<p>That’s not <em>quite</em> as minimalist as what you get in vanilla Ember (where the name of the property is used to do the lookup at runtime), but it’s pretty close, and a huge improvement! Not least since it’s <em>exactly</em> as type-checked, and therefore as friendly to autocomplete/IntelliSense/etc. as it was before.</p>
+<section id="migrating-existing-items" class="level3">
+<h3>Migrating existing items</h3>
+<p>Your path forward for using the new approach is straightforward and fairly mechanical:</p>
+<ol type="1">
+<li>Add the module-and-interface declaration for each Ember Data <code>Model</code>, <code>Adapter</code>, and <code>Serializer</code>; and also each Ember <code>Service</code> and <code>Controller</code> you have defined.</li>
+<li>Remove any type coercions you’ve written out already for these.</li>
+</ol>
+<section id="add-declaration" class="level4">
+<h4>1. Add declaration</h4>
+<section id="ds.model" class="level5">
+<h5><code>DS.Model</code></h5>
+<p><strong>Before:</strong></p>
+<pre class="ts"><code>import DS from &quot;ember-data&quot;;
+
+export default class Person extends DS.Model.extend({
+  firstName: DS.attr(&quot;string&quot;),
+  lastName: DS.attr(&quot;string&quot;)
+}) {}</code></pre>
+<p><strong>Now:</strong></p>
+<pre class="ts"><code>import DS from &quot;ember-data&quot;;
+
+export default class Person extends DS.Model.extend({
+  firstName: DS.attr(&quot;string&quot;),
+  lastName: DS.attr(&quot;string&quot;)
+}) {}
+
+declare module &quot;ember-data&quot; {
+  interface ModelRegistry {
+    person: Person;
+  }
+}</code></pre>
+</section>
+<section id="ds.adapter" class="level5">
+<h5><code>DS.Adapter</code></h5>
+<p><strong>Before:</strong></p>
+<pre class="ts"><code>import DS from &quot;ember-data&quot;;
+
+export default class Person extends DS.Adapter {
+  // customization
+}</code></pre>
+<p><strong>Now:</strong></p>
+<pre class="ts"><code>import DS from &quot;ember-data&quot;;
+
+export default class Person extends DS.Adapter {
+  // customization
+}
+
+declare module &quot;ember-data&quot; {
+  interface AdapterRegistry {
+    person: Person;
+  }
+}</code></pre>
+</section>
+<section id="ds.serializer" class="level5">
+<h5><code>DS.Serializer</code></h5>
+<p><strong>Before:</strong></p>
+<pre class="ts"><code>import DS from &quot;ember-data&quot;;
+
+export default class Person extends DS.Serializer {
+  // customization
+}</code></pre>
+<p><strong>Now:</strong></p>
+<pre class="ts"><code>import DS from &quot;ember-data&quot;;
+
+export default class Person extends DS.Serializer {
+  // customization
+}
+
+declare module &quot;ember-data&quot; {
+  interface SerializerRegistry {
+    person: Person;
+  }
+}</code></pre>
+</section>
+<section id="service" class="level5">
+<h5><code>Service</code></h5>
+<p><strong>Before:</strong></p>
+<pre class="ts"><code>import Service from &quot;@ember/service&quot;;
+
+export default class ExternalLogging extends Service {
+  // implementation
+}</code></pre>
+<p><strong>Now:</strong></p>
+<pre class="ts"><code>import Service from &quot;@ember/service&quot;;
+
+export default class ExternalLogging extends Service {
+  // implementation
+}
+
+declare module &quot;ember&quot; {
+  interface ServiceRegistry {
+    &quot;external-logging&quot;: ExternalLogging;
+  }
+}</code></pre>
+</section>
+<section id="controller" class="level5">
+<h5><code>Controller</code></h5>
+<p><strong>Before:</strong></p>
+<pre class="ts"><code>import Controller from &quot;@ember/controller&quot;;
+
+export default class Profile extends Controller {
+  // implementation
+}</code></pre>
+<p><strong>Now:</strong></p>
+<pre class="ts"><code>import Controller from &quot;@ember/controller&quot;;
+
+export default class Profile extends Controller {
+  // implementation
+}
+
+declare module &quot;@ember/controller&quot; {
+  interface ControllerRegistry {
+    profile: Profile;
+  }
+}</code></pre>
+<p>If you <em>don’t</em> do add the type registry declarations, you’ll just get back:</p>
+<ul>
+<li><p><em>compiler errors</em> for any use of a string key in your service and controller lookups</p></li>
+<li><p><code>Service</code> and <code>Controller</code> (the top-level classes we inherit from) instead of the specific class you created if you use the no-argument version of the <code>inject</code> helpers</p></li>
+<li><p><em>compiler errors</em> for <code>DS.Model</code>, <code>DS.Adapter</code>, and <code>DS.Serializer</code> lookups (since they always have a string key)</p></li>
+</ul>
+<p>If you’re looking to allow your existing code to all just continue working while you <em>slowly</em> migrate to TypeScript, you can add this as a fallback somewhere in your own project (adapted to whichever of the registries you need):</p>
+<pre class="ts"><code>declare module &quot;ember-data&quot; {
+  interface ModelRegistry {
+    [key: string]: DS.Model;
+  }
+}</code></pre>
+<p>This will lose you the type-checking if you type a key that doesn’t exist, but it means that models you haven’t yet added the type definition for won’t throw compile errors. (We’ve made this opt-in because otherwise you’d never be able to get that type-checking for using an invalid key.)</p>
+</section>
+</section>
+<section id="remove-any-existing-coercions" class="level4">
+<h4>2. Remove any existing coercions</h4>
+<p>Now that we have the necessary updates to be able to do these lookups automatically in the compiler, we need to remove any existing type coercions.</p>
+</section>
+<section id="service-and-controller" class="level4">
+<h4><code>Service</code> and <code>Controller</code></h4>
+<p>This change is really straightforward (and actually just simplifies things a lot!) for <code>Service</code> and <code>Controller</code> injections.</p>
+</section>
+<section id="ember-data-1" class="level4">
+<h4>Ember Data</h4>
+<p>This looks <em>slightly</em> different for the Ember Data side.</p>
+<p>If you’ve been using the type coercion forms we shipped as a stopgap, like this—</p>
+<pre class="ts"><code>const person = this.store.findRecord&lt;Person&gt;(&quot;person&quot;, 123);</code></pre>
+<p>—you’ll need to drop the type coercion on <code>findRecord&lt;Person&gt;</code>, which will give you a type error:</p>
+<blockquote>
+<p>[ts] Type ‘Person’ does not satisfy the constraint ‘string’.</p>
+</blockquote>
+<p>This is because, behind the scenes, <code>findRecord</code> still takes a type parameter, but it’s now a string—the name of the model you’re looking up—<em>not</em> the model itself. As such, you should <em>never</em> supply that type parameter yourself; it’s taken care of automatically. As a result, your invocation should just be:</p>
+<pre class="ts"><code>const person = this.store.findRecord(&quot;person&quot;, 123);</code></pre>
+</section>
+<section id="remove-existing-type-coercions" class="level4">
+<h4>2. Remove existing type coercions</h4>
+<p><strong>Before:</strong></p>
+<pre class="ts"><code>import Component from &quot;@ember/component&quot;;
+import { inject as service } from &quot;@ember/service&quot;;
+import Computed from &quot;@ember/object/computed&quot;;
+
+import ExternalLogging from &quot;my-app/services/external-logging&quot;;
+
+export default class UserProfile extends Component {
+  externalLogging: Computed&lt;ExternalLogging&gt; = service();
+  // other implementation
+}</code></pre>
+<p><strong>Now:</strong></p>
+<pre class="ts"><code>import Component from &quot;@ember/component&quot;;
+import { inject as service } from &quot;@ember/service&quot;;
+
+export default class UserProfile extends Component {
+  externalLogging = service(&quot;external-logging&quot;);
+  // other implementation
+}</code></pre>
+</section>
+</section>
+<section id="the-full-type-of-lookups" class="level3">
+<h3>The full type of lookups</h3>
+<p>One last note on Ember Data: calls like <code>findRecord('person', 123)</code> actually return the type <code>Person &amp; DS.PromiseObject&lt;Person&gt;</code> – i.e., a type that acts like both the model and a promise wrapping the model. This is, to be sure, <em>weird</em>, but it’s the reality, so that’s what our types give you.</p>
+<p>If you find yourself needing to write out that type locally for some reason—e.g. because part of your app deals explicitly with the result of a lookup—you may find it convenient to define a global type alias like this:</p>
+<pre class="ts"><code>type Loaded&lt;T&gt; = T &amp; DS.PromiseObject&lt;T&gt;;
+const person: Loaded&lt;Person&gt; = this.store.findRecord(&quot;person&quot;, 123);</code></pre>
+<p>Given the new support for getting that type automatically, you shouldn’t <em>normally</em> need that, but it’s convenient if or when you <em>do</em> need it. For example, if a component is passed the result of a <code>Person</code> lookup and needs to be able to treat it as a promise <em>or</em> the model, you could write it like this:</p>
+<pre class="ts"><code>import Component from &quot;@ember/component&quot;;
+
+export default class PersonDisplay extends Component {
+  model: Loaded&lt;Person&gt;; // instead of just `model: Person`
+}</code></pre>
+</section>
+<section id="preview-mirage" class="level3">
+<h3>Preview: Mirage</h3>
+<p>As it turns out, Ember CLI Mirage’s approach is a lot like Ember Data’s (although it’s actually a lot more dynamic!), so I have a very similar approach working in our codebase for doing lookups with Mirage’s database. Sometime in February or March, we hope to get that completed and upstreamed into Mirage itself, so that you can get these exact same benefits when using Mirage to write your tests.</p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2>Conclusion</h2>
+<p>And that’s pretty much a wrap on Ember Data! The <em>next</em> post you can expect in this series will be a break from nitty-gritty “how to use TS in Ember” posts for a very exciting, closely related announcement—probably tomorrow or Monday! The post after that will be a deep dive into (mostly the limitations of!) writing types for mixins and proxies.</p>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>If you’re curious about the mechanics, we’re basically setting up a “type registry” which maps the string keys to the correct model, so that the type of e.g. <code>store.createRecord('some-model', { ... })</code> will do a lookup in an interface which defines a mapping from model name, i.e. <code>some-model</code> here, to the model type, e.g. <code>export default class SomeModel extends DS.Model.extend({ ... }) {}</code>. I’ll write up a full blog post on the mechanics of that sometime soon.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

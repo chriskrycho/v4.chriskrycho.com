@@ -110,7 +110,7 @@
 <li><p>Don’t turn on <code>--strict</code> or the corresponding individual flags on day 1. Unless you have an extremely unusual and disciplined Ember.js codebase, you’ll have an incredible set of errors to deal with.</p></li>
 <li><p>Don’t set the the <code>noEmitOnError</code> flag to <code>true</code> in your <code>tsconfig.json</code>, for much the same reason. Since the state of type declaration files for Ember is best described as <em>nascent</em> at present, many of your files will have errors in them just from failed imports!</p></li>
 <li><p>Don’t try to convert everything at once. Just pick the next feature or bug you’re working on, and start with the files you’re touching for that bug. Rename it to <code>.ts</code>, fix any major issues it flags up that you can—but stick as locally as possible. You’re apt to find a <em>lot</em> of small bugs as you start migrating, and some of them are things which are apt to affect your whole system because they touch central data types. It’s okay. You can come back to those later. For today, you can just be explicit about the weirdnesses.</p></li>
-<li><p>As part of that: get comfortable—really, really comfortable—with <a href="http://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types">union types</a>. They’ll make it much easier to express the kind of code you’ve <em>actually</em> written.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p></li>
+<li><p>As part of that: get comfortable—really, really comfortable—with <a href="http://www.typescriptlang.org/docs/handbook/advanced-types.html#union-types">union types</a>. They’ll make it much easier to express the kind of code you’ve <em>actually</em> written.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p></li>
 <li><p>Don’t worry about adding explicit types to <em>everything.</em> In fact, depending on how comfortable you are already with typed languages, you should probably take a pretty different tack with this:</p>
 <ul>
 <li><p>If you’re just stepping into the world of typed programming languages, you might start adding types where they’re the <em>lowest risk</em>: some place like your automated tests. That’ll help you start to see how to take advantage of them, while not impacting the way you write your app code until you have a better idea how best to employ the types.</p></li>
@@ -125,7 +125,7 @@
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Also, I <em>strongly</em> encourage you to write types in terms of unions of types rather than in terms of <a href="http://www.typescriptlang.org/docs/handbook/interfaces.html#optional-properties">optional properties on types</a>. That might be surprising; I’ll explain it in more detail in a future post.<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>Also, I <em>strongly</em> encourage you to write types in terms of unions of types rather than in terms of <a href="http://www.typescriptlang.org/docs/handbook/interfaces.html#optional-properties">optional properties on types</a>. That might be surprising; I’ll explain it in more detail in a future post.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -180,7 +180,7 @@
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>

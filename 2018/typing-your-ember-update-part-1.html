@@ -104,7 +104,7 @@
 <li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"><strong>Overview, normal Ember objects, component arguments, and injections (this post).</strong></a></li>
 <li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Class properties—some notes on how things differ from the <code>Ember.Object</code> world.</a></li>
 <li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Computed properties, actions, mixins, and class methods.</a></li>
-<li>Ember Data and related concerns.</li>
+<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">Ember Data and related concerns.</a></li>
 <li>Mixins and proxies; or: the really hard-to-type-check bits.</li>
 </ol>
 <section id="normal-ember-objects" class="level2">
@@ -116,62 +116,59 @@
 <h2>A detailed example</h2>
 <p>That means that every new bit of code I write today in our app looks roughly like this, with only the obvious modifications for services, routes, and controllers—I picked components because they’re far and away the most common things in our applications.</p>
 <p>In order to explain all this clearly, I’m going to start by showing a whole component written in the new style. Then, over the rest of this post and the next post, I’ll zoom in on and explain specific parts of it.</p>
-<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
-import { computed, get } from &#39;@ember/object&#39;;
-import Computed from &#39;@ember/object/computed&#39;;
-import { inject as service } from &#39;@ember/service&#39;;
-import { assert } from &#39;@ember/debug&#39;;
-import { isNone } from &#39;@ember/utils&#39;;
+<pre class="typescript"><code>import Component from &quot;@ember/component&quot;;
+import { computed, get } from &quot;@ember/object&quot;;
+import Computed from &quot;@ember/object/computed&quot;;
+import { inject as service } from &quot;@ember/service&quot;;
+import { assert } from &quot;@ember/debug&quot;;
+import { isNone } from &quot;@ember/utils&quot;;
 
-import Session from &#39;my-app/services/session&#39;;
-import Person from &#39;my-app/models/person&#39;;
+import Session from &quot;my-app/services/session&quot;;
+import Person from &quot;my-app/models/person&quot;;
 
 export default class AnExample extends Component {
   // -- Component arguments -- //
-  model: Person;      // required
-  modifier?: string;  // optional, thus the `?`
+  model: Person; // required
+  modifier?: string; // optional, thus the `?`
 
   // -- Injections -- //
   session: Computed&lt;Session&gt; = service();
 
   // -- Class properties -- //
-  aString = &#39;this is fine&#39;;
+  aString = &quot;this is fine&quot;;
   aCollection: string[] = [];
 
   // -- Computed properties -- //
   // TS correctly infers computed property types when the callback has a
   // return type annotation.
-  fromModel = computed(
-    &#39;model.firstName&#39;,
-    function(this: AnExample): string {
-      return `My name is ${get(this.model, &#39;firstName&#39;)};`;
-    }
-  );
+  fromModel = computed(&quot;model.firstName&quot;, function(this: AnExample): string {
+    return `My name is ${get(this.model, &quot;firstName&quot;)};`;
+  });
 
-  aComputed = computed(&#39;aString&#39;, function(this: AnExample): number {
+  aComputed = computed(&quot;aString&quot;, function(this: AnExample): number {
     return this.lookAString.length;
   });
 
-  isLoggedIn = bool(&#39;session.user&#39;);
-  savedUser: Computed&lt;Person&gt; = alias(&#39;session.user&#39;);
+  isLoggedIn = bool(&quot;session.user&quot;);
+  savedUser: Computed&lt;Person&gt; = alias(&quot;session.user&quot;);
 
   actions = {
     addToCollection(this: AnExample, value: string) {
-      const current = this.get(&#39;aCollection&#39;);
-      this.set(&#39;aCollection&#39;, current.concat(value));
+      const current = this.get(&quot;aCollection&quot;);
+      this.set(&quot;aCollection&quot;, current.concat(value));
     }
   };
 
   constructor() {
     super();
-    assert(&#39;`model` is required&#39;, !isNone(this.model));
+    assert(&quot;`model` is required&quot;, !isNone(this.model));
 
     this.includeAhoy();
   }
 
   includeAhoy(this: AnExample) {
-    if (!this.get(&#39;aCollection&#39;).includes(&#39;ahoy&#39;)) {
-      this.set(&#39;aCollection&#39;, current.concat(&#39;ahoy&#39;));
+    if (!this.get(&quot;aCollection&quot;).includes(&quot;ahoy&quot;)) {
+      this.set(&quot;aCollection&quot;, current.concat(&quot;ahoy&quot;));
     }
   }
 }</code></pre>
@@ -183,8 +180,16 @@ export default class AnExample extends Component {
   modifier?: string;  // optional, thus the `?`</code></pre>
 <p>I always put these first so that the “interface” of the object is clear and obvious. You can do the same thing on a controller instance; in that case you would export a <code>Model</code> from the corresponding <code>Route</code> class and import it into the <code>Controller</code>. It’s a bit of boilerplate, to be sure, but it lets you communicate your interface clearly to consumers of the <code>Component</code> or <code>Controller</code>.</p>
 <p>An important note about these kind of arguments: you do <em>not</em> have to do <code>this.get(...)</code> (or, if you prefer, <code>get(this, ...)</code>) to access the properties themselves: they’re class instance properties. You can simply access them as normal properties: <code>this.model</code>, <code>this.modifier</code>, etc. That even goes for referencing them as computed properties, as we’ll see below.</p>
-<p>For optional arguments, you use the <code>?</code> operator to indicate they may be <code>undefined</code>. To get the <em>most</em> mileage out of this, you’ll want to enable <code>strictNullChecks</code> in the compiler options.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> However, note that we don’t currently have any way to validate component argument invocation.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> The way I’ve been doing this is using Ember’s debug <a href="https://emberjs.com/api/ember/2.18/classes/@ember%2Fdebug/methods/assert?anchor=assert"><code>assert</code></a> in the constructor:</p>
+<p>For optional arguments, you use the <code>?</code> operator to indicate they may be <code>undefined</code>. To get the <em>most</em> mileage out of this, you’ll want to enable <code>strictNullChecks</code> in the compiler options.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> However, note that we don’t currently have any way to validate component argument invocation.[^ts-templates] The way I’ve been doing this is using Ember’s debug <a href="https://emberjs.com/api/ember/2.18/classes/@ember%2Fdebug/methods/assert?anchor=assert"><code>assert</code></a> in the constructor:</p>
 <pre class="typescript"><code>assert(&quot;`model` is required&quot;, !isNone(this.model));</code></pre>
+<pre class="typescript"><code>import Component from &quot;@ember/component&quot;;
+import { Maybe } from &quot;true-myth&quot;;
+
+export default class MyComponent extends Component {
+  optionalArg?: string;
+  optionalProperty = Maybe.of(this.optionalArg);
+}</code></pre>
+<p>Then if you invoke the property without the argument, it’ll construct a <code>Nothing</code>; if you invoke it with the argument, it’ll be <code>Just</code> with the value. [^ts-templates]: A few of us have batted around some ideas for how to solve that particular problem, but <em>if</em> we manage those, it’ll probably be way, way later in 2018.</p>
 <p><strong>Edit, January 24, 2018:</strong> Starting in TypeScript 2.7, you can enable a flag, <code>--strictPropertyInitialization</code>, which requires that all declared, non-optional properties on a class be initialized in the constructor or with a class property assignment. (There’s more on class property assignment in <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">part 2</a> of this series.) If you do that, all <em>arguments</em> to a component should be defined with the <em>definite assignment assertion modifier</em>, a <code>!</code> after the name of the property, as on <code>model</code> here:</p>
 <pre class="typescript"><code>export default class AnExample extends Component {
   // Component arguments
@@ -197,6 +202,7 @@ export default class AnExample extends Component {
 <pre class="typescript"><code>  // -- Injections -- //
   session: Computed&lt;Session&gt; = service();</code></pre>
 <p>Here, the most important thing to note is the required type annotation. In principle, we could work around this by requiring you to explicitly name the service and using a “type registry” to look up what the service type is – more on that below in my discussion of using Ember Data – but I’m not yet persuaded that’s better than just writing the appropriate type annotation. Either way, there’s some duplication. 🤔 We (everyone working in the <a href="https://github.com/typed-ember">typed-ember</a> project) would welcome feedback here, because the one thing we <em>can’t</em> do is get the proper type <em>without</em> one or the other of these.</p>
+<p><strong>Edit, February 5, 2018:</strong> see <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">Part 4</a> for some updates to this—I actually went ahead and built and implemented that approach, and everything is much nicer now.</p>
 <pre class="typescript"><code>  // the current approach -- requires importing `Session` so you can define it
   // on the property here
   session: Computed&lt;Session&gt; = service();
@@ -211,16 +217,7 @@ export default class AnExample extends Component {
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>This isn’t my preferred way of handling optional types; <a href="https://true-myth.js.org">a <code>Maybe</code> type</a> is. And you can, if you like, use <code>Maybe</code> here:</p>
-<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
-import { Maybe } from &#39;true-myth&#39;;
-
-export default class MyComponent extends Component {
-  optionalArg?: string;
-  optionalProperty = Maybe.of(this.optionalArg);
-}</code></pre>
-<p>Then if you invoke the property without the argument, it’ll construct a <code>Nothing</code>; if you invoke it with the argument, it’ll be <code>Just</code> with the value.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>A few of us have batted around some ideas for how to solve that particular problem, but <em>if</em> we manage those, it’ll probably be way, way later in 2018.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>This isn’t my preferred way of handling optional types; <a href="https://true-myth.js.org">a <code>Maybe</code> type</a> is. And you can, if you like, use <code>Maybe</code> here:<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -275,7 +272,7 @@ export default class MyComponent extends Component {
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>

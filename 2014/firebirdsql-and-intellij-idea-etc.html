@@ -99,7 +99,7 @@
 <li><p>In IDEA, in the database view, add a new data source: in the Database view (accessible via a menu button on the right side of the screen), right click and choose <strong>New -&gt; Data Source</strong>.</p></li>
 <li><p>Under <strong>JDBC driver files</strong>, browse to the location where you extracted the Jaybird driver files and select <code>jaybird-full-&lt;version&gt;.jar</code>.</p></li>
 <li><p>Under <strong>JDBC driver class</strong>, choose <code>org.firebirdsql.jdbc.FBDriver</code>.</p></li>
-<li><p>Under <strong>Database URL</strong>, specify <code>jdbc:firebirdsql://localhost:3050/</code> followed by <em>either</em> the full path to the database in question or a corresponding alias.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> A full path might look like this on Windows:</p>
+<li><p>Under <strong>Database URL</strong>, specify <code>jdbc:firebirdsql://localhost:3050/</code> followed by <em>either</em> the full path to the database in question or a corresponding alias.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> A full path might look like this on Windows:</p>
 <pre><code>jdbc:firebirdsql://localhost:3050/C:/my_project/the_database.db</code></pre>
 <p>With an alias, you would instead have:</p>
 <pre><code>jdbc:firebirdsql://localhost:3050/the_alias</code></pre>
@@ -108,13 +108,10 @@
 </ol>
 <p>That should do it. Note that the driver choice and path configuration both matter. On OS X, I found that only the <code>FBDriver</code> with this (and one other, older-style and therefore not recommended) path setup worked successfully.</p>
 <p>Observations, corrections, additional information, and miscellaneous comments welcomed on <a href="https://alpha.app.net/chriskrycho">App.net</a> or <a href="https://www.twitter.com/chriskrycho">Twitter</a>.</p>
-<div id="refs" class="references">
-
-</div>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>I strongly recommend configuring an alias in the aliases.conf file in the Firebird home directory (usually set as <code>$FIREBIRD_HOME</code> during installation on *nix systems). This lets you move the database around at will, update just the configuration file, and not have to update any references to the database file whatsoever.<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>I strongly recommend configuring an alias in the aliases.conf file in the Firebird home directory (usually set as <code>$FIREBIRD_HOME</code> during installation on *nix systems). This lets you move the database around at will, update just the configuration file, and not have to update any references to the database file whatsoever.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -169,7 +166,7 @@
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>

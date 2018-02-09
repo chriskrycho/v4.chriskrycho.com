@@ -92,9 +92,6 @@
 
 <p><i class="editorial">In the midst of doing my reading and research for New Rustacean episode 15 (which will be out fairly soon after I post this), I bumped into this little tidbit. It doesn’t fit in the episode, so I thought I’d share it here.</i></p>
 <p>When you’re dealing with vectors in Rust, a common misstep when working with them via iterators is to <em>move</em> them when you only to <em>borrow</em> them. If you write <code>for i in x</code> where <code>x</code> is an iterator, you’ll <em>move</em> the iterator into the looping construct. Instead, you should nearly always write <code>for i in &amp;x</code> to borrow a reference to the iterator, or <code>for i in &amp;mut x</code> if you need to get a mutable reference to it.</p>
-<div id="refs" class="references">
-
-</div>
         </div>
     </div>
 </article>
@@ -147,7 +144,7 @@
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>

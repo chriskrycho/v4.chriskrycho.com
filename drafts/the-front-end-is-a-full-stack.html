@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Steward Your Body &middot; Chris Krycho</title>
-    <meta name="description" content="We have about 80 years on this planet. Those of us who live longer might see 90 or even 100. For someone like me, in my mid-20s, it is easy to overlook the reality that the next 60–70 years will pass quickly, but they will. (Truth be told, it …"/>
+    <title>The Front End is a Full Stack &middot; Chris Krycho</title>
+    <meta name="description" content="So I’ve chosen something of a provocative title for this talk, and that’s on purpose. At Olo right now, like a lot of other companies, we have “full stack developers” and “mobile engineers” and “front end engineers” and so on. And I understand what those terms mean, of …"/>
 
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/drafts/steward-your-body.html"/>
-    <meta property="og:title" content="Steward Your Body"/>
-    <meta property="og:description" content="We have about 80 years on this planet. Those of us who live longer might see 90 or even 100. For someone like me, in my mid-20s, it is easy to overlook the reality that the next 60–70 years will pass quickly, but they will. (Truth be told, it …"/>
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/drafts/the-front-end-is-a-full-stack.html"/>
+    <meta property="og:title" content="The Front End is a Full Stack"/>
+    <meta property="og:description" content="So I’ve chosen something of a provocative title for this talk, and that’s on purpose. At Olo right now, like a lot of other companies, we have “full stack developers” and “mobile engineers” and “front end engineers” and so on. And I understand what those terms mean, of …"/>
         <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/>
 <link rel="me" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
-    <meta name="twitter:title" content="Steward Your Body"/>
-    <meta name="twitter:description" content="We have about 80 years on this planet. Those of us who live longer might see 90 or even 100. For someone like me, in my mid-20s, it is easy to overlook the reality that the next 60–70 years will pass quickly, but they will. (Truth be told, it …"/>
+    <meta name="twitter:title" content="The Front End is a Full Stack"/>
+    <meta name="twitter:description" content="So I’ve chosen something of a provocative title for this talk, and that’s on purpose. At Olo right now, like a lot of other companies, we have “full stack developers” and “mobile engineers” and “front end engineers” and so on. And I understand what those terms mean, of …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
     <link rel="me" href="https://bitbucket.org/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
@@ -76,25 +76,29 @@
     </header>
 
 
-<article class="fitness theology">
+<article class="talks tech">
 
     <header>
-<h1>Steward Your Body</h1>
-    </header>
+<h1>The Front End is a Full Stack</h1>
+<h2>Or, a sketch of modern front-end web development.</h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/drafts/steward-your-body.html"><i class="fa fa-fw fa-link"></i></a>July 01, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/theology/">theology</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/fitness/">#fitness</a></span><span><a href="http://www.chriskrycho.com/2016/steward-your-body.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/drafts/the-front-end-is-a-full-stack.html"><i class="fa fa-fw fa-link"></i></a>February 14, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/talks/">#talks</a></span><span><a href="http://www.chriskrycho.com/2018/the-front-end-is-a-full-stack.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
 
         <div class="content">
 
-<p>We have about 80 years on this planet. Those of us who live longer might see 90 or even 100. For someone like me, in my mid-20s, it is easy to overlook the reality that the next 60–70 years will pass quickly, but they will. (Truth be told, it is getting harder to ignore that reality with every passing day, but that is a post for another day.) One major question that confronts us as we consider the brevity of our lives is how we will spend the <em>last</em> twenty to thirty years of our lives. Assuming that we want to spend them well, we have another question to ask: <em>Will we be <em>able</em> to?</em></p>
-<p>For too many people who hit their sixties and seventies, the answer is sadly <em>no</em>.</p>
-<div id="refs" class="references">
-
-</div>
+<p>So I’ve chosen something of a provocative title for this talk, and that’s on purpose. At Olo right now, like a lot of other companies, we have “full stack developers” and “mobile engineers” and “front end engineers” and so on. And I understand what those terms mean, of course. But I think they’re increasingly misleading, and as the landscape continues to change around us, so should our understanding of these roles. In the course of the rest of this talk, I’d like to give you all something of an introduction to modern front-end web development, and by the end I hope you both understand it better and also understand why in the world I would title the talk this way!</p>
+<section id="history" class="level2">
+<h2>History</h2>
+<p>Let’s start with a little background, though—a brief history of how we got to where we are today. I think that’s not only useful, but important. Even in a discipline as relatively young as software engineering, we have history, and that history informs why we use the terms we do today, and how think about different parts of our field, and how we go forward from here. So: some history.</p>
+<p>Once upon a time, there was just HTML. No JavaScript, no CSS, just plain old HTML. Being a “web developer” in that era mostly meant figuring out how to set servers up to spit out those HTML pages, and, eventually, to respond to form inputs.</p>
+<p>The introduction of JavaScript in late 1995 and CSS in 1996 fairly radically changed the game—although JavaScript caught on much faster than CSS did. Both let you create visuals and behavior in the browser in much more sophisticated ways than plain-old-HTML-with-tables-and-images alone could do. By the early 2000s, that turned into the basics of what became the ever-more-popular AJAX and initiatives to popularize CSS like the CSS Zen Garden.</p>
+<p>From the early 2000s until the early 2010s, a <em>lot</em> of web development meant doing some of everything: SQL, some server-side language (early on a <em>lot</em> of Perl) HTML, CSS, and JavaScript—the “full stack.” If you were building a web app, you were building it basically like this:</p>
+<p>++TODO: sketch of rendering HTML++</p>
+</section>
         </div>
     </div>
 </article>
@@ -147,7 +151,7 @@
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>

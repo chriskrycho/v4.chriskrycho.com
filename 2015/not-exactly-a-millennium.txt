@@ -13,8 +13,8 @@ Template: formats/class
 Class: New Testament II
 Professor: Jon Morales
 School: Southeastern Baptist Theological Seminary
-bibliography: /Users/chris/Dropbox/writing/library.bib
-csl: /Users/chris/Dropbox/writing/chicago.csl
+bibliography: /Users/chris/icloud-drive/Documents/writing/library.bib
+csl: /Users/chris/icloud-drive/Documents/writing/chicago.csl
 ...
 
 ## Introduction
@@ -281,153 +281,105 @@ in Jesus" (Rev. 14:12). The indicative---Christ reigns, Satan is bound---prompts
 an imperative: life as if this is so![^49] Come temptations to materialism, or
 the worship of ancestors, or nationalism, or any other idolatry, Christians
 proclaim Christ alone is Lord.
+---
 
------
+--
 
 # Works Cited
 
 <!-- Inserted automatically by pandoc-citeproc -->
 
-
 [^1]: [@r.mounce:revelation:1998], 360; commentators across the spectrum make
-    the same point---see similar comments in [@boring:revelation:1989], 202;
-    [@patterson:revelation:2012], 361, [@osborne:revelation:2002], 697, 716.
-
+the same point---see similar comments in [@boring:revelation:1989], 202;
+[@patterson:revelation:2012], 361, [@osborne:revelation:2002], 697, 716.
 [^2]: [@boring:revelation:1989], 207, 209; [@r.mounce:revelation:1998], 357;
-    [@beale:revelation:1999].
-
+[@beale:revelation:1999].
 [^3]: Although some evangelical scholars contest the date, and many critical
-    scholars have suggested other authors, the textual evidence points most
-    strongly to traditional authorship, with a late date. So
-    @kistemaker:revelation:2001], 26--38; and see also the exhaustive (though
-    inconclusive) summary in [@aune:revelation.1.5:1997], lvi--lxx.
-
+scholars have suggested other authors, the textual evidence points most
+strongly to traditional authorship, with a late date. So
+@kistemaker:revelation:2001], 26--38; and see also the exhaustive (though
+inconclusive) summary in [@aune:revelation.1.5:1997], lvi--lxx.
 [^4]: [@gorman:revelation:2011], ch. 2, §_Prophecy_, ¶6. <abbr>EPUB</abbr>.
-
 [^5]: [@aune:revelation.1.5:1997], lxxi--xc.
-
 [^6]: [@aune:revelation.1.5:1997], lxxxvii; [@gorman:revelation:2011], ch. 2,
-    §_Prophecy_, ¶6--9. <abbr>EPUB</abbr>.
-
+§_Prophecy_, ¶6--9. <abbr>EPUB</abbr>.
 [^7]: [@beale:millennium:2013], 31; [@merkle:millennium:2014], 224.
-
 [^8]: [@beale:millennium:2013], 30.
-
 [^9]: καὶ εἶδον; author's translation. On και as sequential vs. conjunctive,
-    see [@beale:millennium:2013], 32.
-
+see [@beale:millennium:2013], 32.
 [^10]: Unless otherwise noted, quotations are from the English Standard Version.
-
 [^11]: On the fourfold pattern of both Ezekiel and John, see
-    [@beale:revelation:1999], 976--977.
-
+[@beale:revelation:1999], 976--977.
 [^12]: [@beale:millennium:2013], 35--36.
-
 [^13]: [@osborne:revelation:2002], 687--688; [@koester:revelation:2014], 767.
-
 [^14]: [@kistemaker:revelation:2001], 536.
-
 [^15]: The identity of the martyrs/saints is primarily significant for
-    premillennial readings. In any case it seems most likely that John has
-    martyrs in view, but as representatives of *all* the saints. So
-    [@osborne:revelation:2002], 704; [@koester:revelation:2014], 771; and contra
-    variously [@aune:revelation.17.22:1998], 1104; [@r.mounce:revelation:1998],
-    365--366; [@patterson:revelation:2012].
-
+premillennial readings. In any case it seems most likely that John has
+martyrs in view, but as representatives of _all_ the saints. So
+[@osborne:revelation:2002], 704; [@koester:revelation:2014], 771; and contra
+variously [@aune:revelation.17.22:1998], 1104; [@r.mounce:revelation:1998],
+365--366; [@patterson:revelation:2012].
 [^16]: So [@osborne:revelation:2002], 701--702.
-
 [^17]: [@beale:revelation:1999], 985; cf. [@r.mounce:revelation:1998], 361 and
-    [@osborne:revelation:2002], 702.
-
+[@osborne:revelation:2002], 702.
 [^18]: [@jmford:revelation:1975], 330.
-
 [^19]: [@koester:revelation:2014], 785.
-
 [^20]: [@koester:revelation:2014], 783.
-
 [^21]: [@osborne:revelation:2002], 706.
-
 [^22]: [@kistemaker:revelation:2001], 537; [@merkle:millennium:2014], 224.
-
 [^23]: [@r.mounce:revelation:1998], 366. See also the comments an ἀναστάσις in
-    [@beale:revelation:1999], 1004.
-
+[@beale:revelation:1999], 1004.
 [^24]: [@koester:revelation:2014], 775. This assumes that the martyrs here
-    represent in synechdochal fashion *all* the saints; see
-    [@osborne:revelation:2002], 704--705; and [@koester:revelation:2014], 771.
-
+represent in synechdochal fashion _all_ the saints; see
+[@osborne:revelation:2002], 704--705; and [@koester:revelation:2014], 771.
 [^25]: [@boring:revelation:1989], 208; [@kistemaker:revelation:2001], 539--540.
-
 [^26]: [@aune:revelation.17.22:1998], 1089--1090; [@r.mounce:revelation:1998],
-    370 notes the inversion of the universality and selectivity of the
-    resurrection and death, but not the spiritual/physical duality.
-
+370 notes the inversion of the universality and selectivity of the
+resurrection and death, but not the spiritual/physical duality.
 [^27]: [@beale:revelation:1999], 995; [@beale:millennium:2013], 30--31;
-    [@merkle:millennium:2014], 223.
-
+[@merkle:millennium:2014], 223.
 [^28]: [@beale:revelation:1999]
-
 [^29]: [@boring:revelation:1989], 206; [@r.mounce:revelation:1998], 367--368.
-    For helpful interactions with other millennial literature of the era, see
-    [@beale:revelation:1999], 1018--1019; [@osborne:revelation:2002], 701;
-    [@jmford:revelation:1975], 352--354.
-
+For helpful interactions with other millennial literature of the era, see
+[@beale:revelation:1999], 1018--1019; [@osborne:revelation:2002], 701;
+[@jmford:revelation:1975], 352--354.
 [^30]: [@merkle:millennium:2014], 223--224.
-
-[^31]: Contra [@patterson:revelation:2012], 353, who thinks *all* the numbers in
-    the book are literal.
-
+[^31]: Contra [@patterson:revelation:2012], 353, who thinks _all_ the numbers in
+the book are literal.
 [^32]: [@r.mounce:revelation:1998], p. 362 n. 11. So likewise,
-    [@beale:revelation:1999], 995; [@kistemaker:revelation:2001], 533, 535;
-    [@koester:revelation:2014], 774. A more reasonable but still flawed approach
-    appears in [@mangina:revelation:2010], 231.
-
+[@beale:revelation:1999], 995; [@kistemaker:revelation:2001], 533, 535;
+[@koester:revelation:2014], 774. A more reasonable but still flawed approach
+appears in [@mangina:revelation:2010], 231.
 [^33]: Rightly, [@osborne:revelation:2002], 697--698;
-    [@koester:revelation:2014], 776, 788; [@r.mounce:revelation:1998], 363.
-
+[@koester:revelation:2014], 776, 788; [@r.mounce:revelation:1998], 363.
 [^34]: There is no demarcating καὶ εἶδον.
-
 [^35]: Contra e.g. [@boring:revelation:1989], 194; Boring also includes the New
-    Jerusalem in this sequence as well to get to a seven-part series---a rather
-    doubtful structure. Rightly, [@kistemaker:revelation:2001], 531--532;
-    [@beale:revelation:1999], 980.
-
-[^36]: Thus, [@osborne:revelation:2002], 688 grants that 20:8b is *the* problem
-    for premillennial interpretations of the passage.
-
+Jerusalem in this sequence as well to get to a seven-part series---a rather
+doubtful structure. Rightly, [@kistemaker:revelation:2001], 531--532;
+[@beale:revelation:1999], 980.
+[^36]: Thus, [@osborne:revelation:2002], 688 grants that 20:8b is _the_ problem
+for premillennial interpretations of the passage.
 [^37]: See [@beale:millennium:2013], 33--35; and
-    [@kistemaker:revelation:2001], 532.
-
+[@kistemaker:revelation:2001], 532.
 [^38]: [@koester:revelation:2014], 788 and [@aune:revelation.17.22:1998], 1095;
-    cf. [@osborne:revelation:2002], 688, who suggests that only the *armies* are
-    destroyed in ch. 19 because "...there must be some present to follow the
-    dragon when he is released in 20:7." But nothing in the test suggests this.
-
+cf. [@osborne:revelation:2002], 688, who suggests that only the _armies_ are
+destroyed in ch. 19 because "...there must be some present to follow the
+dragon when he is released in 20:7." But nothing in the test suggests this.
 [^39]: [@kistemaker:revelation:2001], 544.
-
 [^40]: [@boring:revelation:1989], 210.
-
 [^41]: [@osborne:revelation:2002]. See also the parallels noted by
-    [@beale:millennium:2013], 33--37.
-
+[@beale:millennium:2013], 33--37.
 [^42]: [@beale:revelation:1999], 976--977.
-
 [^43]: [@kistemaker:revelation:2001], 544; cf. [@r.mounce:revelation:1998],
-    373--374.
-
+373--374.
 [^44]: [@r.mounce:revelation:1998], 360--361 notes the parallels to Jude and
-    2 Peter but rejects the implication; [@beale:revelation:1999], 1030--1031,
-    rightly notes that the nations in 19:20 go to final, not "preconsummation
-    judgment" (1031).
-
+2 Peter but rejects the implication; [@beale:revelation:1999], 1030--1031,
+rightly notes that the nations in 19:20 go to final, not "preconsummation
+judgment" (1031).
 [^45]: [@r.mounce:revelation:1998], 378; [@osborne:revelation:2002], 709.
-
 [^46]: [@koester:revelation:2014], 777; contra [@patterson:revelation:2012],
-    355, who asserts (without supporting argument) that Isaiah's imagery *must*
-    precede the consummation.
-
+355, who asserts (without supporting argument) that Isaiah's imagery _must_
+precede the consummation.
 [^47]: [@merkle:millennium:2014], 213.
-
 [^48]: [@beale:revelation:1999], 985.
-
 [^49]: [@boring:revelation:1989], 202.

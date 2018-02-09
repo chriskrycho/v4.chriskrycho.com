@@ -104,16 +104,16 @@
 <blockquote>
 <p>The Y combinator takes a functional as input, and it returns the (unique) fixed point of that functional as its output. A functional is a function that takes a function for its input. Therefore, the fixed point of a functional is going to be a function.</p>
 </blockquote>
-<p>And a “fixed point” is an input to a function equal to the <em>output</em> of the function. (Not all functions have such.) A fixed point is where <span class="math inline"><em>f</em>(<em>x</em>)=<em>x</em></span>. He uses the example <span class="math inline"><em>x</em> = <em>x</em><sup>2</sup> − 1</span>, which has two solutions, two <em>fixed points</em>.</p>
+<p>And a “fixed point” is an input to a function equal to the <em>output</em> of the function. (Not all functions have such.) A fixed point is where <span class="math inline"><em>f</em>(<em>x</em>) = <em>x</em></span>. He uses the example <span class="math inline"><em>x</em> = <em>x</em><sup>2</sup> − 1</span>, which has two solutions, two <em>fixed points</em>.</p>
 <p>He starts out with the total recursion form—also known as the “crash all the things!” form—of the Y-combinator. (I’m using letters to denote the version of the combinator; this is Y-naive.)</p>
 <pre class="js"><code>const Yn = (F) =&gt; F(Yn(F))  // all the recursing!</code></pre>
 <p>“Crash all the things”… because of one pesky little detail: it calls itself immediately, and so recurses infinitely. Which is actually kind of a problem.</p>
 <p>Might then asks: What if we transformed this a bit? He notes that we can <em>transform</em> with lambda calculus to expand what we’re doing, so:</p>
 <figure>
-<span class="math inline"><em>Y</em>(<em>F</em>)=<em>F</em>(<em>λ</em><em>x</em>.(<em>Y</em>(<em>F</em>))(<em>x</em>))</span>
+<span class="math inline"><em>Y</em>(<em>F</em>) = <em>F</em>(<em>λ</em><em>x</em>.(<em>Y</em>(<em>F</em>))(<em>x</em>))</span>
 </figure>
 <p>(I haven’t done this kind of thing since undergraduate math work I did for physics, but as I was thinking about it, it made sense. I’m used to trying to <em>remove</em> extraneous variables when dealing with software, but in this case we’re using it as a tool for transforming the equation into a form that is <em>equivalent</em> but <em>expressed differently</em>.)</p>
-<p>And <span class="math inline"><em>λ</em><em>x</em>.(<em>Y</em>(<em>F</em>))(<em>x</em>)</span> is equivalent to the fixed point. It’s the function which takes <span class="math inline"><em>x</em></span> as an argument and results in <span class="math inline"><em>Y</em>(<em>F</em>)(<em>x</em>)</span>; but <span class="math inline"><em>Y</em>(<em>F</em>)</span> is just another argument, so this looks just like our original <span class="math inline"><em>f</em>(<em>x</em>)=<em>x</em></span>, but with <span class="math inline"><em>Y</em>(<em>F</em>)</span> substituted for <span class="math inline"><em>f</em></span>. Can we write this in JS?</p>
+<p>And <span class="math inline"><em>λ</em><em>x</em>.(<em>Y</em>(<em>F</em>))(<em>x</em>)</span> is equivalent to the fixed point. It’s the function which takes <span class="math inline"><em>x</em></span> as an argument and results in <span class="math inline"><em>Y</em>(<em>F</em>)(<em>x</em>)</span>; but <span class="math inline"><em>Y</em>(<em>F</em>)</span> is just another argument, so this looks just like our original <span class="math inline"><em>f</em>(<em>x</em>) = <em>x</em></span>, but with <span class="math inline"><em>Y</em>(<em>F</em>)</span> substituted for <span class="math inline"><em>f</em></span>. Can we write this in JS?</p>
 <p>Here’s my implementation, using modern JS; note that it still recurses. (I’m calling this updated Y-transformed, so <code>Yt</code>.)</p>
 <pre class="js"><code>const Yt = (F) =&gt; F((x) =&gt; Yt(F)(x))</code></pre>
 <p>His version:</p>
@@ -131,10 +131,10 @@
 <p>Writing this out in JS is going to be a real bear. More to the point, I don’t know how he got to it; now I need to go look up the U Combinator it seems.</p>
 <p>…which I’ve <a href="http://www.ucombinator.org">now done</a>. So:</p>
 <blockquote>
-<p>In the theory of programming languages, the U combinator, <span class="math inline"><em>U</em></span>, is the mathematical function that applies its argument to its argument; that is <span class="math inline"><em>U</em>(<em>f</em>)=<em>f</em>(<em>f</em>)</span>, or equivalently, <span class="math inline"><em>U</em> = <em>λ</em><em>f</em>.<em>f</em>(<em>f</em>)</span>.</p>
+<p>In the theory of programming languages, the U combinator, <span class="math inline"><em>U</em></span>, is the mathematical function that applies its argument to its argument; that is <span class="math inline"><em>U</em>(<em>f</em>) = <em>f</em>(<em>f</em>)</span>, or equivalently, <span class="math inline"><em>U</em> = <em>λ</em><em>f</em>.<em>f</em>(<em>f</em>)</span>.</p>
 </blockquote>
 <ul>
-<li>That is, the U Combinator is the case where you apply a function to itself: <span class="math inline"><em>U</em>(<em>f</em>)=<em>f</em>(<em>f</em>)</span>—you can see that in the result there, where the first expression is the same as the argument handed to it (and both are functions). It’s also there in the <span class="math inline"><em>h</em>(<em>h</em>)</span> calls.</li>
+<li>That is, the U Combinator is the case where you apply a function to itself: <span class="math inline"><em>U</em>(<em>f</em>) = <em>f</em>(<em>f</em>)</span>—you can see that in the result there, where the first expression is the same as the argument handed to it (and both are functions). It’s also there in the <span class="math inline"><em>h</em>(<em>h</em>)</span> calls.</li>
 <li>The transformations are just transforming from a function-argument for to a lambda form, I think. The kind of thing where you go from <code>function a(b) { return c }</code> to <code>var a = function(b) { return c }</code> in JS. (Better, in <em>modern</em> JS, to <code>const a = (b) =&gt; c</code>.)</li>
 </ul>
 <p>I’ll return to that in a moment. First, writing up the JS. The innermost term is (repeated) <span class="math inline"><em>λ</em><em>x</em>.((<em>h</em>(<em>h</em>))(<em>F</em>))(<em>x</em>)</span>, so we’ll start by writing this out.</p>
@@ -234,9 +234,6 @@ factorial(5)  // 120</code></pre>
 <p>And that’s enough playing with combinatorials for now. (Except that I’m kind of tempted to see if I can go implement the U or Y combinators—or both—in Rust.)</p>
 <hr />
 <p><i class=editorial>If you’re curious how I worked this out… I expanded the JS representations of the final forms (<a href="//www.chriskrycho.com/extra/ycombinator.js">here’s the code</a>) and then stepped through the result in my JavaScript dev tools, watching how the function calls worked and what the values of each intermediate value were. It’s fascinating, and well worth your time.</i></p>
-<div id="refs" class="references">
-
-</div>
         </div>
     </div>
 </article>
@@ -289,7 +286,7 @@ factorial(5)  // 120</code></pre>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>

@@ -97,7 +97,7 @@
 <p>In the <a href="/2017/typing-your-ember-part-1">first</a> of this series, I described how to set up a brand new Ember.js app to use TypeScript. In the <a href="/2017/typing-your-ember-part-2">second</a> part, walked through adding TypeScript to an existing Ember.js app. In this part, I’m going to talk about using TypeScript effectively in a modern Ember.js app.</p>
 <section id="heavy-lifting-so-so-results" class="level2">
 <h2>Heavy lifting, so-so results</h2>
-<p>Let’s get this out of the way up front: right now, using types in anything which extends <code>Ember.Object</code> is going to be a lot of work for a relatively low reward. <code>Ember.Object</code> laid the foundation for the modern JavaScript class system (and thus the TypeScript class system), but it has a huge downside: it’s string keys and referennces all the way down. This kind of thing is just normal Ember code—and note all the string keys:<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>Let’s get this out of the way up front: right now, using types in anything which extends <code>Ember.Object</code> is going to be a lot of work for a relatively low reward. <code>Ember.Object</code> laid the foundation for the modern JavaScript class system (and thus the TypeScript class system), but it has a huge downside: it’s string keys and referennces all the way down. This kind of thing is just normal Ember code—and note all the string keys:<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 <pre class="javascript"><code>import Component from &#39;@ember/component&#39;;
 import { computed, get } from &#39;@ember/object&#39;;
 
@@ -216,7 +216,7 @@ export default class MyComponent extends Component {
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Note that here and throughout, I’m using the <a href="https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md#addendum-1---table-of-module-names-and-exports-by-global">RFC #176 Module API</a>, which you can use today via <a href="https://github.com/ember-cli/babel-plugin-ember-modules-api-polyfill">this polyfill</a>.<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>Note that here and throughout, I’m using the <a href="https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md#addendum-1---table-of-module-names-and-exports-by-global">RFC #176 Module API</a>, which you can use today via <a href="https://github.com/ember-cli/babel-plugin-ember-modules-api-polyfill">this polyfill</a>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -271,7 +271,7 @@ export default class MyComponent extends Component {
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>

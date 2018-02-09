@@ -91,7 +91,7 @@
         <div class="content">
 
 <p>In the last few months, I’ve been playing with both <a href="https://flowtype.org">Flow</a> and <a href="http://www.typescriptlang.org">TypeScript</a> as tools for increasing the quality and reliability of the JavaScript I write at Olo. Both of these are syntax that sits on top of normal JavaScript to add type analysis—basically, a form of <a href="https://en.wikipedia.org/wiki/Gradual_typing">gradual typing</a> for JS.</p>
-<p>Although TypeScript’s tooling has been better all along<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> I initially preferred Flow’s type system quite a bit: it has historically been much more focused on <a href="http://stackoverflow.com/questions/21437015/soundness-and-completeness-of-systems">soundness</a>, especially around the <em>many</em> problems caused by <code>null</code> and <code>undefined</code>, than TypeScript. And it had earlier support for <a href="https://flowtype.org/docs/disjoint-unions.html">tagged unions</a>, a tool I’ve come to find invaluable since picking them up from my time with Rust.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> But the 2.0 and 2.1 releases of TypeScript have changed the game substantially, and it’s now a <em>very</em> compelling language in its own right—not to mention a great tool for writing better JavaScript. So I thought I’d highlight how you can get a lot of the benefits you would get from the type systems of languages like Elm with some of those new TypeScript features: the <em><code>keyof</code> operator</em> and <em>mapped types</em>.</p>
+<p>Although TypeScript’s tooling has been better all along<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> I initially preferred Flow’s type system quite a bit: it has historically been much more focused on <a href="http://stackoverflow.com/questions/21437015/soundness-and-completeness-of-systems">soundness</a>, especially around the <em>many</em> problems caused by <code>null</code> and <code>undefined</code>, than TypeScript. And it had earlier support for <a href="https://flowtype.org/docs/disjoint-unions.html">tagged unions</a>, a tool I’ve come to find invaluable since picking them up from my time with Rust.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> But the 2.0 and 2.1 releases of TypeScript have changed the game substantially, and it’s now a <em>very</em> compelling language in its own right—not to mention a great tool for writing better JavaScript. So I thought I’d highlight how you can get a lot of the benefits you would get from the type systems of languages like Elm with some of those new TypeScript features: the <em><code>keyof</code> operator</em> and <em>mapped types</em>.</p>
 <hr />
 <p><i>Some readers may note that what I’m doing here is a <em>lot</em> of wrangling to cajole TypeScript into giving me the kinds of things you get for free in an ML-descended language. Yep. The point is that you <em>can</em> wrangle it into doing this.</i></p>
 <hr />
@@ -107,7 +107,7 @@
   }
 }</code></pre>
 <p>This will work, and it’ll even throw an error if you hand it the wrong thing. But you’ll find out at runtime if you accidentally typed <code>nextState('Pednign')</code> instead of <code>nextState('Pending')</code>—something I’ve done more than once in the past. You’d have a similar problem if you’d accidentally written <code>case 'Strated'</code> instead of <code>case 'Started'</code>.</p>
-<p>There are many contexts like this one in JavaScript—perhaps the most obvious being <a href="http://redux.js.org/docs/basics/Actions.html">Redux actions</a>, but I get a lot of mileage out of the pattern in Ember, as well. In these contexts, I find it’s convenient to define types that are kind of like pseudo-enums or pseudo-simple-unions, like so:<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+<p>There are many contexts like this one in JavaScript—perhaps the most obvious being <a href="http://redux.js.org/docs/basics/Actions.html">Redux actions</a>, but I get a lot of mileage out of the pattern in Ember, as well. In these contexts, I find it’s convenient to define types that are kind of like pseudo-enums or pseudo-simple-unions, like so:<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 <pre class="javascript"><code>const STATE = {
   Pending: &#39;Pending&#39;,
   Started: &#39;Started&#39;,
@@ -137,7 +137,7 @@ function nextState(state: State): State {
 <pre class="typescript"><code>type State = &#39;Pending&#39; | &#39;Started&#39; | &#39;Completed&#39;;</code></pre>
 <p>Unfortunately, you can’t write something like <code>State.Pending</code> somewhere; you have to write the plain string <code>'Pending'</code> instead. You still get some of the linting benefits you got with the approach outlined above via TypeScript’s actual type-checking, but you don’t get <em>any</em> help with autocompletion. Can we get the benefits of both?</p>
 <p>Yes! (This would be a weird blog post if I just got this far and said, “Nope, sucks to be us; go use Elm instead.”)</p>
-<p>As of the 2.1 release, TypeScript lets you define types in terms of keys, so you can write a type like this:<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p>
+<p>As of the 2.1 release, TypeScript lets you define types in terms of keys, so you can write a type like this:<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
 <pre class="typescript"><code>const STATE = {
   Pending: &#39;Pending&#39;,
   Started: &#39;Started&#39;,
@@ -158,7 +158,7 @@ interface StateMachine {
 const nextState: StateMachine = (state) =&gt; {
   // ...
 }</code></pre>
-<p>The upside to this is that now you can guarantee that anywhere you’re supposed to be passing one of those strings, you <em>are</em> passing one of those strings. If you pass in <code>'Compelte'</code>, you’ll get an actual error—just like if we had used the union definition above. At a minimum, that will be helpful feedback in your editor. Maximally, depending on how you have your project configured, it may not even generate any JavaScript output.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> So that’s a significant step forward beyond what we had even with the best linting rules in pure JavaScript.</p>
+<p>The upside to this is that now you can guarantee that anywhere you’re supposed to be passing one of those strings, you <em>are</em> passing one of those strings. If you pass in <code>'Compelte'</code>, you’ll get an actual error—just like if we had used the union definition above. At a minimum, that will be helpful feedback in your editor. Maximally, depending on how you have your project configured, it may not even generate any JavaScript output.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> So that’s a significant step forward beyond what we had even with the best linting rules in pure JavaScript.</p>
 </section>
 <section id="going-in-circles" class="level3">
 <h3>Going in circles</h3>
@@ -249,23 +249,27 @@ const STATE: UnionKeyToValue&lt;State&gt; = {
 };</code></pre>
 <p>You’ll see a compiler error that looks something like this:</p>
 <blockquote>
-<div style="white-space: pre-line;">[ts]
-Type ‘{ Pending: “pending”; Started: “Strated”; Completed: “Complete” }’ is not assignable to type ‘UnionKeyToValue<State>’.
-  Types of property ‘Pending’ are incompatible.
+<div class="line-block">[ts]<br />
+Type ‘{ Pending: “pending”; Started: “Strated”; Completed: “Complete” }’ is not assignable to type ‘UnionKeyToValue<State>’.<br />
+  Types of property ‘Pending’ are incompatible.<br />
     Type ‘“pending”’ is not assignable to type ‘“Pending”’.</div>
 </blockquote>
-<p>Since the key and the name don’t match, the compiler tells us we didn’t keep the constraint we defined on what these types should look like. Similarly, if you forget an item from the union, you’ll get an error. If you add an item that isn’t in the original union, you’ll get an error. Among other things, this means that you can be confident that if you add a value to the union, the rest of your code won’t compile until you include cases for it. You get all the power and utility of using union types, <em>and</em> you get the utility of being able to use the object as a namespace of sorts.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a></p>
+<p>Since the key and the name don’t match, the compiler tells us we didn’t keep the constraint we defined on what these types should look like. Similarly, if you forget an item from the union, you’ll get an error. If you add an item that isn’t in the original union, you’ll get an error. Among other things, this means that you can be confident that if you add a value to the union, the rest of your code won’t compile until you include cases for it. You get all the power and utility of using union types, <em>and</em> you get the utility of being able to use the object as a namespace of sorts.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
 <p>And the TypeScript language service—which you can use from a <em>lot</em> of editors, including VS Code, Atom, Sublime Text, and the JetBrains IDEs—will actually give you the correct completion when you start definition a type. So imagine we were defining some other union type elsewhere in our program to handle events. Now we can use the same <code>UnionKeyToValue</code> type to construct this type, with immediate, <em>correct</em> feedback from the TypeScript language service:</p>
 <figure>
-<video autoplay=autoplay muted=muted playsinline=playsinline loop=loop> <source type='video/mp4' src='http://cdn.chriskrycho.com/images/completion.mp4'> </video>
+<video autoplay=autoplay muted=muted playsinline=playsinline loop=loop>
+<source type='video/mp4' src='http://cdn.chriskrycho.com/images/completion.mp4'>
+</video>
 <figcaption>
 TypeScript live code completion of the mapped type
 </figcaption>
 </figure>
 <p>By inverting our original approach of using <code>keyof</code> (itself powerful and worth using in quite a few circumstances) and instead using the new mapped types, we get a <em>ton</em> of mileage in terms of productivity when using these types—errors prevented, and speed of writing the code in the first place increased as well.</p>
-<p>Yes, it’s a little verbose and it does require duplicating the strings whenever you define one of these types.<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> But, and this is what I find most important: there is only one <em>source</em> for those string keys, the union type, and it is definitive. If you change that central union type, everything else that references it, including the namespace-like object, will fail to compile until you make the same change there.</p>
+<p>Yes, it’s a little verbose and it does require duplicating the strings whenever you define one of these types.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> But, and this is what I find most important: there is only one <em>source</em> for those string keys, the union type, and it is definitive. If you change that central union type, everything else that references it, including the namespace-like object, will fail to compile until you make the same change there.</p>
 <figure>
-<video autoplay=autoplay muted=muted playsinline=playsinline loop=loop> <source type='video/mp4' src='http://cdn.chriskrycho.com/images/change-union.mp4'> </video>
+<video autoplay=autoplay muted=muted playsinline=playsinline loop=loop>
+<source type='video/mp4' src='http://cdn.chriskrycho.com/images/change-union.mp4'>
+</video>
 <figcaption>
 Updating a union
 </figcaption>
@@ -276,19 +280,19 @@ Updating a union
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>it’s no surprise that Microsoft’s developer tooling is stronger than Facebook’s<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>along with all the other ML-descended languages I’ve played with, including Haskell, F<sup>♯</sup>, PureScript, and Elm.<a href="#fnref2">↩</a></p></li>
+<li id="fn1"><p>it’s no surprise that Microsoft’s developer tooling is stronger than Facebook’s<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>along with all the other ML-descended languages I’ve played with, including Haskell, F<sup>♯</sup>, PureScript, and Elm.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 <li id="fn3"><p>Aside: to be extra safe and prevent any confusion or mucking around, you should probably call <code>Object.freeze()</code> on the object literal, too:</p>
 <pre class="javascript"><code>const STATE = Object.freeze({
   Pending: &#39;Pending&#39;,
   Started: &#39;Started&#39;,
   Completed: &#39;Completed&#39;,
 })</code></pre>
-<p>Both convention and linters make it unlikely you’ll modify something like this directly—but impossible is better than unlikely.<a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>Flow has supported this feature for some time; you can write <code>$Keys&lt;typeof STATE&gt;</code>—but the feature is entirely undocumented.<a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>Set your <code>&quot;compilerOptions&quot;</code> key in your <code>tsconfig.json</code> to include <code>&quot;noEmitOnError&quot;: true,</code>.<a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p>For namespacing in a more general sense, you should use… <a href="http://www.typescriptlang.org/docs/handbook/namespaces.html">namespaces</a>.<a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p>It would be great if we could get these benefits without the duplication—maybe someday we’ll have better support in JS or TS natively.<a href="#fnref7">↩</a></p></li>
+<p>Both convention and linters make it unlikely you’ll modify something like this directly—but impossible is better than unlikely.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Flow has supported this feature for some time; you can write <code>$Keys&lt;typeof STATE&gt;</code>—but the feature is entirely undocumented.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p>Set your <code>&quot;compilerOptions&quot;</code> key in your <code>tsconfig.json</code> to include <code>&quot;noEmitOnError&quot;: true,</code>.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>For namespacing in a more general sense, you should use… <a href="http://www.typescriptlang.org/docs/handbook/namespaces.html">namespaces</a>.<a href="#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>It would be great if we could get these benefits without the duplication—maybe someday we’ll have better support in JS or TS natively.<a href="#fnref7" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -343,7 +347,7 @@ Updating a union
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2017/icehenge.html">Icehenge</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/getting-the-right-things-done.html">Getting the Right Things Done</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">TypeScript and Ember.js Update, Part 3</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update, Part 4</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/prayer-apps-and-evaluating-technology.html">Prayer Apps and Evaluating Technology</a></li>
     </ul>
 </section></footer>
