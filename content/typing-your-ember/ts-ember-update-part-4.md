@@ -321,8 +321,7 @@ This will lose you the type-checking if you type a key that doesn't exist, but i
 
 Now that we have the necessary updates to be able to do these lookups automatically in the compiler, we need to remove any existing type coercions.
 
-
-#### `Service` and `Controller`
+##### `Service` and `Controller`
 
 This change is really straightforward (and actually just simplifies things a lot!) for `Service` and `Controller` injections.
 
@@ -340,7 +339,7 @@ This change is really straightforward (and actually just simplifies things a lot
   }
 ```
 
-#### Ember Data
+##### Ember Data
 
 This looks _slightly_ different for the Ember Data side.
 
