@@ -794,16 +794,26 @@ article {
     -moz-osx-font-smoothing: grayscale;
   }
 
-  p code {
-    border: {
-      style: solid;
-      width: 1px;
-      color: #e0e3e8;
-      radius: 2px;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ol,
+  ul {
+    code {
+      border: {
+        style: solid;
+        width: 1px;
+        color: #e0e3e8;
+        radius: 2px;
+      }
+      margin: $fsp 0.1345em;
+      padding: 0.1345em 0.269em;
+      font-size: $fs_small;
     }
-    margin: $fsp 0.1345em;
-    padding: 0.269em 0.269em 0.1345em;
-    font-size: $fs_small_abs;
   }
 
   pre {
@@ -823,6 +833,7 @@ article {
       background: none;
       border: none;
       white-space: pre;
+      font-size: 1em;
 
       &.hljs {
         padding: 0;
