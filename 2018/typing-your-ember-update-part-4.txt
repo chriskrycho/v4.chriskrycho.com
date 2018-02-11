@@ -1,6 +1,6 @@
 ---
 Title: TypeScript and Ember.js Update, Part 4
-Subtitle: Ember Data and injections update
+Subtitle: Using Ember Data, and service and controller injections improvements.
 Date: 2018-02-08 07:30
 Category: Tech
 Series: Typing Your Ember
@@ -38,7 +38,7 @@ Here's the outline of this update sequence:
 1. [Overview, normal Ember objects, component arguments, and injections.][pt1]
 2. [Class properties---some notes on how things differ from the `Ember.Object` world.][pt2]
 3. [Computed properties, actions, mixins, and class methods.][pt3]
-4. [**Using Ember Data and improved injections.** (this post)][pt4]
+4. [**Using Ember Data, and service and controller injections improvements.** (this post)][pt4]
 5. Mixins and proxies; or: the really hard-to-type-check bits.
 
 [pt1]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html

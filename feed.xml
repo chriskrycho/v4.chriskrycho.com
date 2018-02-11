@@ -38,7 +38,7 @@
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;&lt;strong&gt;Using Ember Data and improved injections.&lt;/strong&gt; (this post)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;&lt;strong&gt;Using Ember Data, and service and controller injections improvements.&lt;/strong&gt; (this post)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section id="ember-data" class="level2"&gt;
@@ -342,7 +342,7 @@ export default class PersonDisplay extends Component {
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;&lt;strong&gt;Computed properties, actions, mixins, and class methods (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Ember Data and related concerns.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Using Ember Data, and service and controller injections improvements.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section id="a-detailed-example-contd.-computed-properties-mixins-actions-and-class-methods" class="level2"&gt;
@@ -556,7 +556,7 @@ get fromModel() {
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;&lt;strong&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Ember Data and related concerns.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Using Ember Data, and service and controller injections improvements.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section id="a-detailed-example-contd.-class-properties" class="level2"&gt;
@@ -797,7 +797,7 @@ export default class MyListItem extends Component {
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;&lt;strong&gt;Overview, normal Ember objects, component arguments, and injections (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Ember Data and related concerns.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Using Ember Data, and service and controller injections improvements.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section id="normal-ember-objects" class="level2"&gt;
