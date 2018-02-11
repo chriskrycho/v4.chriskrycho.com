@@ -80,6 +80,10 @@ Then anywhere you injected and used it, you'll get auto-complete suggestions and
 
 (You'll see the same kinds of things in other editors, from Vim to IntelliJ IDEA. Visual Studio Code is just my current editor of choice.)
 
+Thanks to Frank Tan ([\@tansongyang]) for doing a lot of the work on porting the generators from the Ember and Ember Data repositories to ember-cli-typescript, as well as converting them to TypeScript and to use the new formats.
+
+[\@tansongyang]: https://github.com/dfreeman
+
 ## Addon development
 
 As [promised with the 1.0 release](http://www.chriskrycho.com/2017/announcing-ember-cli-typescript-100.html#the-roadmap), 1.1 (though arriving much later than I hoped it would) includes support for developing addons with TypeScript.
@@ -116,11 +120,11 @@ Also note that you can supply type definitions for your addon *without* developi
 
 Last but not least, we’ve managed---mostly through the hard work of both Dan Freeman ([@dfreeman]) and Derek Wickern ([@dwickern]---to get support for TypeScript’s --watch` mode integrated.[^watch] What this means in practice is: *way* faster iteration as you work.
 
+[@dfreeman]: https://github.com/dfreeman
+[@dwickern]: https://github.com/dwickern
+
 Previously, every time you triggered *any* change in your app (even if it didn’t involve any TypeScript files at all), the TypeScript compiler would recompile *all* the TypeScript files in your application. We didn’t initially have a good way to make TypeScript and Broccoli (and therefore Ember CLI) communicate clearly about what had changed. Now, courtesy of Dan and Derek’s hard work (and my cheerleading, testing, and fixing a few corner pieces along the way), we do! So when you change a `.hbs` file or a `.js` file... the TypeScript compiler won’t do anything. And when you change a TypeScript file, the TypeScript compiler will *only* recompile that file.
 
 On my own app (~35,000 lines of TypeScript across ~700 files), that’s the difference between rebuilds involving TypeScript taking 15--20 seconds and their taking 1--2 seconds. Literally an order of magnitude faster! Over the course of a day of development, that saves a *huge* amount of time.
 
 [^watch]: And of course, right as we finally landed our support for it, by hacking around the `--watch` invocation in a lot of really weird ways, Microsoft shipped API-level support for it. We hope to switch to using that under the hood, but that shouldn’t make any difference at all to you as a consumer of the addon, except that if/when we land it at some point, you’ll just have a nicer experience.
-
-[@dfreeman]: https://github.com/dfreeman
-[@dwickern]: https://github.com/dwickern
