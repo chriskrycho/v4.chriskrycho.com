@@ -6,12 +6,11 @@ Category: Tech
 Date: 2018-02-12 07:00
 Summary: >
     Now with generators, support for addons, and incremental compilation! A lot has changed in the last six months, and we’re ready to kick the ecosystem into high gear!
-
 ---
 
 I’m delighted to announce the release of [ember-cli-typescript 1.1.0][1.1.0]. This first minor release since 1.0 includes the following shiny and awesome new features:
 
-[1.1.0]: https://github.com/typed-ember/ember-cli-typescript/releases/tag/v1.0.0
+[1.1.0]: https://github.com/typed-ember/ember-cli-typescript/releases/tag/v1.1.0
 
 * [Generators](#generators)
 * [Support for developing addons in TypeScript](#developing-addons)
@@ -188,6 +187,7 @@ And last but not least, thanks to everyone who's popped into #topic-typescript o
 [\@leonard-thieu]: https://github.com/leonard-thieu
 [\@ltegman]: https://github.com/ltegman
 [\@maerten]: https://github.com/maerten
+[\@marcoumpierrez]: https://github.com/MarcoUmpierrez
 [\@mfeckie]: https://github.com/mfeckie
 [\@mike-north]: https://github.com/maerten
 [\@natecj]: https://github.com/natecj
