@@ -5,7 +5,7 @@ Tags: emberjs, typescript, javascript, typing-your-ember
 Category: Tech
 Date: 2018-02-09 07:00
 Summary: >
-    TODO
+    Now with generators, support for addons, and incremental compilation! A lot has changed in the last six months, and we’re ready to kick the ecosystem into high gear!
 Status: draft
 ---
 
