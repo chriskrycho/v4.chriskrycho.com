@@ -1,5 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2018-02-08T07:30:00-05:00</updated><entry><title>TypeScript and Ember.js Update, Part 4</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html" rel="alternate"></link><published>2018-02-08T07:30:00-05:00</published><updated>2018-02-08T07:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-02-08:/2018/typing-your-ember-update-part-4.html</id><summary type="html">Using Ember Data effectively, and migrating to new (better, easier!) approaches for service and controller lookup while we’re at it.</summary><content type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2018-02-12T07:00:00-05:00</updated><entry><title>Announcing ember-cli-typescript 1.1.0</title><link href="http://www.chriskrycho.com/2018/announcing-ember-cli-typescript-110.html" rel="alternate"></link><published>2018-02-12T07:00:00-05:00</published><updated>2018-02-12T07:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-02-12:/2018/announcing-ember-cli-typescript-110.html</id><summary type="html">Now with generators, support for addons, and incremental compilation! A lot has changed in the last six months, and we’re ready to kick the ecosystem into high gear!
+</summary><content type="html">&lt;p&gt;I’m delighted to announce the release of &lt;a href="https://github.com/typed-ember/ember-cli-typescript/releases/tag/v1.0.0"&gt;ember-cli-typescript 1.1.0&lt;/a&gt;. This first minor release since 1.0 includes the following shiny and awesome new features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#generators"&gt;Generators&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#developing-addons"&gt;Support for developing addons in TypeScript&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#incremental-compilation"&gt;Incremental compilation (a.k.a. fast rebuilds in &lt;code&gt;ember serve&lt;/code&gt; mode)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;section id="generators" class="level2"&gt;
+&lt;h2&gt;Generators&lt;/h2&gt;
+&lt;p&gt;We’ve now added support for generating &lt;em&gt;all&lt;/em&gt; standard Ember items as TypeScript files instead of JavaScript files. So now when you run &lt;code&gt;ember generate component user-profile&lt;/code&gt; for example, you’ll get &lt;code&gt;user-profile.ts&lt;/code&gt;, &lt;code&gt;user-profile-test.ts&lt;/code&gt;, and &lt;code&gt;user-profile.hbs&lt;/code&gt;. For most files, this is just a nicety—just two files you don’t have to rename!—but in the case of services, controllers, and Ember Data models, adapters, and serializers it will actually make a really big difference in your experience of using TypeScript in your app or addon.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Those generators are &lt;em&gt;mostly&lt;/em&gt; identical with ones in Ember and Ember Data, just with &lt;code&gt;.ts&lt;/code&gt; instead of &lt;code&gt;.js&lt;/code&gt; for the extension. The only changes we have made are: (a) we’ve tweaked them to use classes where possible, and (b) we have customized the controller, service, and Ember Data model, adapter, and serializer generators so you get the most mileage out of TypeScript for the least effort we can manage today. So when you do &lt;code&gt;ember generate service session&lt;/code&gt;, this is what you’ll see:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Service from &amp;quot;@ember/service&amp;quot;;
+
+export default class Session extends Service.extend({
+  // anything which *must* be merged on the prototype
+}) {
+  // normal class definition
+}
+
+// DO NOT DELETE: this is how TypeScript knows how to look up your services.
+declare module &amp;quot;ember&amp;quot; {
+  interface ServiceRegistry {
+    session: Session;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Courtesy of these generators, you can now write &lt;em&gt;almost&lt;/em&gt; exactly what you’d write in vanilla Ember and get full support for autocompletion of properties and methods on the &lt;code&gt;Session&lt;/code&gt; service, as well as type-checking for how you use those. Service and controller injections just require you to explicitly name the service or controller being injected:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
+import { inject as service } from &amp;quot;@ember/service&amp;quot;;
+
+export default class UserProfile extends Component {
+  session = service(&amp;quot;session&amp;quot;);
+  // note the string ^ naming the service explicitly
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So, for example, if your &lt;code&gt;session&lt;/code&gt; service had a &lt;code&gt;login&lt;/code&gt; method on it:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Service from &amp;quot;@ember/service&amp;quot;;
+import RSVP from &amp;quot;rsvp&amp;quot;;
+
+export default class Session extends Service {
+  login(email: string, password: string): RSVP.Promise&amp;lt;string&amp;gt; {
+    // some API call to log in
+  }
+}
+
+// DO NOT DELETE: this is how TypeScript knows how to look up your services.
+declare module &amp;quot;ember&amp;quot; {
+  interface ServiceRegistry {
+    session: Session;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then anywhere you injected and used it, you’ll get auto-complete suggestions and type checking:&lt;/p&gt;
+&lt;p&gt;++TODO: example in VS Code++&lt;/p&gt;
+&lt;p&gt;(You’ll see the same kinds of things in other editors, from Vim to IntelliJ IDEA. Visual Studio Code is just my current editor of choice.)&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="addon-development" class="level2"&gt;
+&lt;h2&gt;Addon development&lt;/h2&gt;
+&lt;p&gt;As &lt;a href="http://www.chriskrycho.com/2017/announcing-ember-cli-typescript-100.html#the-roadmap"&gt;promised with the 1.0 release&lt;/a&gt;, 1.1 (though arriving much later than I hoped it would) includes support for developing addons with TypeScript.&lt;/p&gt;
+&lt;p&gt;Strictly speaking, of course, you could &lt;em&gt;always&lt;/em&gt; develop addons using TypeScript, but there were two problems with it: (1) dependency management and (2) manual work required to deal with the dependency management problems.&lt;/p&gt;
+&lt;section id="dependency-management" class="level3"&gt;
+&lt;h3&gt;1. Dependency management&lt;/h3&gt;
+&lt;p&gt;In the normal Ember CLI workflow, TypeScript had to be a &lt;code&gt;dependency&lt;/code&gt;—not a &lt;code&gt;devDependency&lt;/code&gt;—of the addon, because the normal pattern with Ember CLI is to ship the uncompiled files and have the consumer compile them all together at build time.&lt;/p&gt;
+&lt;p&gt;This makes a certain amount of sense for Babel given the Ember community’s shared reliance on Babel: it’s just assumed to be part of every app build. In that case, it gives consumers control over their compilation target. If an app only needs to target evergreen browsers, it can do that and ship a smaller payload, because an addon won’t have pre-compiled in things like generator support, etc.&lt;/p&gt;
+&lt;p&gt;In the case of TypeScript, however, this makes a lot less sense: many (probably &lt;em&gt;most&lt;/em&gt;) consumers of addons written in TypeScript will still be normal JavaScript consumers. We did not want to burden normal consumers with a TypeScript compile step. We &lt;em&gt;also&lt;/em&gt; didn’t want to burden any consumers with the reality that TypeScript is a &lt;em&gt;large&lt;/em&gt; install. TypeScript 2.6.2 is 32MB on disk for me. Even with some degree of deduplication by npm or yarn, if addons used a variety of versions of TypeScript along the wa—as they surely would!—the install cost for consumers would quickly spiral into a nasty spot. And again: that’s bad enough for someone who &lt;em&gt;wants&lt;/em&gt; to use TypeScript in their app; it’s far worse for someone who just wants to consume the compiled JavaScript.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="manual-workarounds" class="level3"&gt;
+&lt;h3&gt;2. Manual workarounds&lt;/h3&gt;
+&lt;p&gt;You could work around all of that by building the JavaScript (and TypeScript definitions) yourself. But as part of that, you had to do all the work of making sure both the JavaScript files and the type definitions you generated ended up in the right place for distribution and consumption. That was always possible, but it was also always going to be a lot of work. In practice, as far as I know, &lt;em&gt;no one has done this&lt;/em&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="solution" class="level3"&gt;
+&lt;h3&gt;Solution&lt;/h3&gt;
+&lt;p&gt;We now support TypeScript as a &lt;code&gt;devDependency&lt;/code&gt; and also manage the work of generating JavaScript and type definitions for you. All you have to do is install ember-cli-typescript into an addon, and then when you do your build step, we’ll automatically do the work (on prepublish) of generating TypeScript &lt;code&gt;.d.ts&lt;/code&gt; files and JavaScript source for you.&lt;/p&gt;
+&lt;p&gt;Consumers of your addon, therefore, will (a) not know or care that the addon is written in TypeScript if they just want to consume it as normal JavaScript&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; or (b) will get the benefits of your having written the library in TypeScript without paying the penalty of having to have multiple versions of the TypeScript compiler downloaded to their own app.&lt;/p&gt;
+&lt;p&gt;One important caveat: we do &lt;em&gt;not&lt;/em&gt; support TypeScript in an addon’s &lt;code&gt;app&lt;/code&gt; directory. However, for most addons, we don’t think this should be a problem. It’s rare for addons to put actual implementation in the &lt;code&gt;app&lt;/code&gt; directory; instead it has simply become conventional for the &lt;code&gt;app&lt;/code&gt; directory simply to have re-exports for convenient access to the functionality supplied by the addon.&lt;/p&gt;
+&lt;p&gt;Also note that you can supply type definitions for your addon &lt;em&gt;without&lt;/em&gt; developing the addon itself in TypeScript.&lt;a href="#fn3" class="footnote-ref" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; You do &lt;em&gt;not&lt;/em&gt; need ember-cli-typescript installed for that. You only need the addon if you actually want to take advantage of the opportunities TypeScript affords for developing your own addon.&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="incremental-compilation" class="level2"&gt;
+&lt;h2&gt;Incremental compilation&lt;/h2&gt;
+&lt;p&gt;Last but not least, we’ve managed—mostly through the hard work of both Dan Freeman (&lt;a href="https://github.com/dfreeman"&gt;@dfreeman&lt;/a&gt;) and Derek Wickern (&lt;a href="https://github.com/dwickern"&gt;@dwickern&lt;/a&gt;—to get support for TypeScript’s –watch` mode integrated.&lt;a href="#fn4" class="footnote-ref" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; What this means in practice is: &lt;em&gt;way&lt;/em&gt; faster iteration as you work.&lt;/p&gt;
+&lt;p&gt;Previously, every time you triggered &lt;em&gt;any&lt;/em&gt; change in your app (even if it didn’t involve any TypeScript files at all), the TypeScript compiler would recompile &lt;em&gt;all&lt;/em&gt; the TypeScript files in your application. We didn’t initially have a good way to make TypeScript and Broccoli (and therefore Ember CLI) communicate clearly about what had changed. Now, courtesy of Dan and Derek’s hard work (and my cheerleading, testing, and fixing a few corner pieces along the way), we do! So when you change a &lt;code&gt;.hbs&lt;/code&gt; file or a &lt;code&gt;.js&lt;/code&gt; file… the TypeScript compiler won’t do anything. And when you change a TypeScript file, the TypeScript compiler will &lt;em&gt;only&lt;/em&gt; recompile that file.&lt;/p&gt;
+&lt;p&gt;On my own app (~35,000 lines of TypeScript across ~700 files), that’s the difference between rebuilds involving TypeScript taking 15–20 seconds and their taking 1–2 seconds. Literally an order of magnitude faster! Over the course of a day of development, that saves a &lt;em&gt;huge&lt;/em&gt; amount of time.&lt;/p&gt;
+&lt;p&gt;The way we did it also solved an incredibly annoying problem we had in the previous pass: &lt;em&gt;any&lt;/em&gt; change to your app was triggering &lt;code&gt;tsc&lt;/code&gt; to rebuild the entire TypeScript tree of your app, even if you didn’t so much as look at &lt;code&gt;.ts&lt;/code&gt; file. This was particularly annoying when combined with the long rebuild times: change a CSS file and wait for your TypeScript files to rebuild? Ugh. But not anymore!&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="credit-and-thanks" class="level2"&gt;
+&lt;h2&gt;Credit and Thanks&lt;/h2&gt;
+&lt;p&gt;Massive credit goes to Dan Freeman (&lt;a href="https://github.com/dfreeman"&gt;@dfreeman&lt;/a&gt;) and Derek Wickern (&lt;a href="https://github.com/dwickern"&gt;@dwickern&lt;/a&gt;), who did most of the heavy lifting on the internals for this release, and together unlocked both incremental compilation and addon support. Derek also did the lion’s share of the work on writing the types for Ember and Ember Data.&lt;/p&gt;
+&lt;p&gt;Thanks to Maarten Veenstra (&lt;a href="https://github.com/maerten"&gt;@maerten&lt;/a&gt;) for the original inspiration (and a spike last summer) for using a type registry, and to Mike North (&lt;a href="https://github.com/maerten"&gt;@mike-north&lt;/a&gt;) for some discussion and planning around the idea late in 2017. I may have implemented them, but the ideas came from the community!&lt;/p&gt;
+&lt;p&gt;Thanks to Frank Tan (&lt;a href="https://github.com/tansongyang"&gt;@tansongyang&lt;/a&gt;) for doing a lot of the work on porting the generators from the Ember and Ember Data repositories to ember-cli-typescript, as well as converting them to TypeScript and to use the new formats. He also contributed the type definitions for the new (&lt;a href="https://github.com/emberjs/rfcs/pull/232/"&gt;RFC #232&lt;/a&gt;) QUnit testing API.&lt;/p&gt;
+&lt;p&gt;Thanks to everyone who contributed to ember-cli-typescript or the Ember typings in any way since we released 1.0.0:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ember-cli-typescript contributors (note that I intentionally include here everyone who opened issues on the repository: that is &lt;em&gt;not&lt;/em&gt; a small thing and has helped us immensely):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bryan Crotaz (&lt;a href="https://github.com/BryanCrotaz"&gt;@BryanCrotaz&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Daniel Gratzl (&lt;a href="https://github.com/danielgratzl"&gt;@danielgratzl&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Guangda Zhang (&lt;a href="https://github.com/inkless"&gt;@inkless&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/guangda-prosperworks"&gt;@guangda-prosperworks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Krati Ahuja (&lt;a href="https://github.com/kratiahuja"&gt;@kratiahuja&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Martin Feckie (&lt;a href="https://github.com/mfeckie"&gt;@mfeckie&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Nikos Katsikanis (&lt;a href="https://github.com/QuantumInformation"&gt;@QuantumInformation&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Per Lundberg (&lt;a href="https://github.com/perlun"&gt;@perlun&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Prabhakar Poudel (&lt;a href="https://github.com/prabhakar-poudel"&gt;@Prabhakar-Poudel&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Ryan LaBouve (&lt;a href="https://github.com/ryanlabouve"&gt;@ryanlabouve&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Simon Ihmig (&lt;a href="https://github.com/simonihmig"&gt;@simonihmig&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Theron Cross (&lt;a href="https://github.com/theroncross"&gt;@theroncross&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Thomas Gossman (&lt;a href="https://github.com/gossi"&gt;@gossi&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Vince Cipriani (&lt;a href="https://github.com/vcipriani"&gt;@vcipriani&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Ember typings contributors:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adnan Chowdhury (&lt;a href="https://github.com/bttf"&gt;@bttf&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Derek Wickern (&lt;a href="https://github.com/dwickern"&gt;@dwickern&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Frank Tan (&lt;a href="https://github.com/tansongyang"&gt;@tansongyang&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Guangda Zhang (&lt;a href="https://github.com/inkless"&gt;@inkless&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Ignacio Bona Piedrabuena (&lt;a href="https://github.com/igbopie"&gt;@igbopie&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Leonard Thieu &lt;a href="https://github.com/leonard-thieu"&gt;@leonard-thieu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Logan Tegman &lt;a href="https://github.com/ltegman"&gt;@ltegman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Martin Feckie (&lt;a href="https://github.com/mfeckie"&gt;@mfeckie&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Mike North (&lt;a href="https://github.com/maerten"&gt;@mike-north&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Nathan Jacobson (&lt;a href="https://github.com/natecj"&gt;@natecj&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Per Lundberg (&lt;a href="https://github.com/perlun"&gt;@perlun&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Robin Ward (&lt;a href="https://github.com/eviltrout"&gt;@eviltrout&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thanks to Rob Jackson (&lt;a href="https://github.com/rwjblue"&gt;@rwjblue&lt;/a&gt;) and Tobias Bieniek (&lt;a href="https://github.com/Turbo87"&gt;@Turbo87&lt;/a&gt; on GitHub, @tbieniek in the Ember Slack) for answer tons of questions and putting up with regular pestering about Ember CLI.&lt;/p&gt;
+&lt;p&gt;And last but not least, thanks to everyone who’s popped into #topic-typescript on the Ember Community Slack with questions, comments, problem reports, and the occasional word of encouragement. It really does help.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;For details on how this all works, see [TypeScript and Ember.js Update: Part 4][pt4], where I discuss these changes in detail.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;although they may actually get some benefits in a number of modern editors, since e.g. VS Code and the JetBrains IDEs will leverage types if they exist!&lt;a href="#fnref2" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn3"&gt;&lt;p&gt;More on that in a post to be released in the next couple weeks—one I promised &lt;em&gt;long&lt;/em&gt; ago, but which we’re now in a place to actually do: a plan and a roadmap for typing the whole Ember ecosystem!&lt;a href="#fnref3" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn4"&gt;&lt;p&gt;And of course, right as we finally landed our support for it, by hacking around the &lt;code&gt;--watch&lt;/code&gt; invocation in a lot of really weird ways, Microsoft shipped API-level support for it. We hope to switch to using that under the hood, but that shouldn’t make any difference at all to you as a consumer of the addon, except that if/when we land it at some point, you’ll just have a nicer experience.&lt;a href="#fnref4" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content><category term="emberjs"></category><category term="typescript"></category><category term="javascript"></category><category term="typing-your-ember"></category></entry><entry><title>TypeScript and Ember.js Update, Part 4</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html" rel="alternate"></link><published>2018-02-08T07:30:00-05:00</published><updated>2018-02-08T07:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-02-08:/2018/typing-your-ember-update-part-4.html</id><summary type="html">Using Ember Data effectively, and migrating to new (better, easier!) approaches for service and controller lookup while we’re at it.</summary><content type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
