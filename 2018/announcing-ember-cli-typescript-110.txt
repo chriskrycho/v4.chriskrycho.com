@@ -76,7 +76,9 @@ declare module "ember" {
 
 Then anywhere you injected and used it, you'll get auto-complete suggestions and type checking:
 
-++TODO: example in VS Code++
+![autocompletion](http://cdn.chriskrycho.com/images/ts-autocomplete.png)
+
+![type-checking](http://cdn.chriskrycho.com/images/ts-type-checking.png)
 
 (You'll see the same kinds of things in other editors, from Vim to IntelliJ IDEA. Visual Studio Code is just my current editor of choice.)
 
