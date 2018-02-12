@@ -22,6 +22,8 @@ We’ve now added support for generating _all_ standard Ember items as TypeScrip
 
 [^pt4]: For details on how this all works, see [TypeScript and Ember.js Update: Part 4][pt4], where I discuss these changes in detail.
 
+[pt4]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html
+
 Those generators are _mostly_ identical with ones in Ember and Ember Data, just with `.ts` instead of `.js` for the extension. The only changes we have made are: (a) we've tweaked them to use classes where possible, and (b) we have customized the controller, service, and Ember Data model, adapter, and serializer generators so you get the most mileage out of TypeScript for the least effort we can manage today. So when you do `ember generate service session`, this is what you’ll see:
 
 ```ts
@@ -93,7 +95,7 @@ In the normal Ember CLI workflow, TypeScript had to be a `dependency`---not a `d
 
 This makes a certain amount of sense for Babel given the Ember community’s shared reliance on Babel: it’s just assumed to be part of every app build. In that case, it gives consumers control over their compilation target. If an app only needs to target evergreen browsers, it can do that and ship a smaller payload, because an addon won’t have pre-compiled in things like generator support, etc.
 
-In the case of TypeScript, however, this makes a lot less sense: many (probably _most_) consumers of addons written in TypeScript will still be normal JavaScript consumers. We did not want to burden normal consumers with a TypeScript compile step. We _also_ didn’t want to burden any consumers with the reality that TypeScript is a _large_ install. TypeScript 2.6.2 is 32MB on disk for me. Even with some degree of deduplication by npm or yarn, if addons used a variety of versions of TypeScript along the wa---as they surely would!---the install cost for consumers would quickly spiral into a nasty spot. And again: that’s bad enough for someone who _wants_ to use TypeScript in their app; it’s far worse for someone who just wants to consume the compiled JavaScript.
+In the case of TypeScript, however, this makes a lot less sense: many (probably _most_) consumers of addons written in TypeScript will still be normal JavaScript consumers. We did not want to burden normal consumers with a TypeScript compile step. We _also_ didn’t want to burden any consumers with the reality that TypeScript is a _large_ install. TypeScript 2.6.2 is 32MB on disk for me. Even with some degree of deduplication by npm or yarn, if addons used a variety of versions of TypeScript for development---as they surely would!---the install cost for consumers would quickly spiral into a nasty spot. And again: that’s bad enough for someone who _wants_ to use TypeScript in their app; it’s far worse for someone who just wants to consume the compiled JavaScript.
 
 ### 2. Manual workarounds
 
@@ -169,7 +171,7 @@ Thanks to everyone who contributed to ember-cli-typescript or the Ember typings 
   * Per Lundberg ([\@perlun])
   * Robin Ward ([\@eviltrout])
 
-Thanks to Rob Jackson ([\@rwjblue]) and Tobias Bieniek ([\@Turbo87] on GitHub, \@tbieniek in the Ember Slack) for answer tons of questions and putting up with regular pestering about Ember CLI.
+Thanks to Rob Jackson ([\@rwjblue]) and Tobias Bieniek ([\@Turbo87] on GitHub, \@tbieniek in the Ember Slack) for answering tons of questions and putting up with regular pestering about Ember CLI.
 
 And last but not least, thanks to everyone who's popped into #topic-typescript on the Ember Community Slack with questions, comments, problem reports, and the occasional word of encouragement. It really does help.
 
