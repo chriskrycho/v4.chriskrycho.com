@@ -6,13 +6,12 @@ Summary: >
   A series of posts on using TypeScript to power your Ember.js applications—everything from getting started to useful patterns for structuring your apps.
 ---
 
-
 ## Overview
 
 You write [Ember.js] apps. You think [TypeScript] would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.
 
-[Ember.js]: https://emberjs.com
-[TypeScript]: http://www.typescriptlang.org
+[ember.js]: https://emberjs.com
+[typescript]: http://www.typescriptlang.org
 
 This is the series for you! I'll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today---and I'll be pretty clear about the current tradeoffs and limitations, too.
 
@@ -51,6 +50,7 @@ This list is updated whenever I publish a new post in the series. You can also s
 
 ### Related Announcements
 
-- [Announcing ember-cli-typescript 1.0.0][1.0.0] (August 8, 2017)
+* [Announcing ember-cli-typescript 1.0.0][1.0.0] (August 8, 2017)
 
 [1.0.0]: /2017/announcing-ember-cli-typescript-100.html
+[1.0.0]: /2018/announcing-ember-cli-typescript-110.html
