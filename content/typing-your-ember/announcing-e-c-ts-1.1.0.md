@@ -120,6 +120,8 @@ Previously, every time you triggered _any_ change in your app (even if it didn�
 
 On my own app (~35,000 lines of TypeScript across ~700 files), that’s the difference between rebuilds involving TypeScript taking 15--20 seconds and their taking 1--2 seconds. Literally an order of magnitude faster! Over the course of a day of development, that saves a _huge_ amount of time.
 
+The way we did it also solved an incredibly annoying problem we had in the previous pass: *any* change to your app was triggering `tsc` to rebuild the entire TypeScript tree of your app, even if you didn't so much as look at `.ts` file. This was particularly annoying when combined with the long rebuild times: change a CSS file and wait for your TypeScript files to rebuild? Ugh. But not anymore!
+
 [^watch]: And of course, right as we finally landed our support for it, by hacking around the `--watch` invocation in a lot of really weird ways, Microsoft shipped API-level support for it. We hope to switch to using that under the hood, but that shouldn’t make any difference at all to you as a consumer of the addon, except that if/when we land it at some point, you’ll just have a nicer experience.
 
 ## Credit and Thanks
