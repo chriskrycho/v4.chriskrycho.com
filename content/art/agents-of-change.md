@@ -8,7 +8,7 @@ Summary: Sometimes you just need “popcorn”—and Sharon Lee and Steve Miller
 
 ---
 
-\<i class=editorial\>I keep my book review ratings simple---they're either *required*, *recommended*, *recommended with qualifications*, or *not recommended*. If you want the TL;DR, this is it:\</i\>
+<i class=editorial\>I keep my book review ratings simple---they're either *required*, *recommended*, *recommended with qualifications*, or *not recommended*. If you want the TL;DR, this is it:</i\>
 
 **Recommended:** Sometimes you just need “popcorn”—and Sharon Lee and Steve Miller’s first novel is exactly that. (Just… pardon the frequent POV switches.)
 
