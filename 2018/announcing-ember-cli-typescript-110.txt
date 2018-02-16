@@ -117,7 +117,7 @@ Also note that you can supply type definitions for your addon _without_ developi
 
 ## Incremental compilation
 
-Last but not least, we’ve managed---mostly through the hard work of both Dan Freeman ([\@dfreeman]) and Derek Wickern ([\@dwickern]---to get support for TypeScript’s --watch` mode integrated.[^watch] What this means in practice is: _way_ faster iteration as you work.
+Last but not least, we’ve managed---mostly through the hard work of both Dan Freeman ([\@dfreeman]) and Derek Wickern ([\@dwickern]---to get support for TypeScript’s `--watch` mode integrated.[^watch] What this means in practice is: _way_ faster iteration as you work.
 
 Previously, every time you triggered _any_ change in your app (even if it didn’t involve any TypeScript files at all), the TypeScript compiler would recompile _all_ the TypeScript files in your application. We didn’t initially have a good way to make TypeScript and Broccoli (and therefore Ember CLI) communicate clearly about what had changed. Now, courtesy of Dan and Derek’s hard work (and my cheerleading, testing, and fixing a few corner pieces along the way), we do! So when you change a `.hbs` file or a `.js` file... the TypeScript compiler won’t do anything. And when you change a TypeScript file, the TypeScript compiler will _only_ recompile that file.
 
