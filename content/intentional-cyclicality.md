@@ -1,13 +1,13 @@
-----
+---
 Title: Intentional Cyclicality
 Subtitle: (Being a bit seasonal on purpose.)
-Date: 2018-03-06
+Date: 2018-03-06 07:00
 Category: blog
 Tags: writing
 Summary: >
     The kinds of cycles I often into naturally are not bad things—but I might be better served by letting my other goals and aims directly inform how much I blog (rather than its being mere incidental fallout).
 
-----
+---
 
 If you look closely at my written output on this site (and indeed on all the previous incarnations of it), you’ll notice a sort of trend: repeating [cycles](http://www.chriskrycho.com/2014/three-month-cycles.html "Three Month Cycles. Or something thereabouts.") of substantial output, usually focused in a particular direction, followed by a period of silence and then, when I start back up, usually a different topic at the fore.
 
