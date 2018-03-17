@@ -1,16 +1,19 @@
 ---
 Title: Now
-Subtitle: Last updated Tuesday, January 16, 2018.
+Subtitle: Last updated Thursday, March 16, 2018.
 ---
 
 ## Life
 
-* We've just moved to Colorado---we left North Carolina in mid-October, 2017. We're buying a ridiculously amazing house on a ridiculously amazing lot: literally a mountain lake house in the foothills of the Front Range in Monument, Colorado.
+* We've just moved to Colorado; we moved into a literal mountain lake house. (Some thoughts on that [here](https://krycho.com/were-in/). Also, this:
+
+    ![view from deck](http://cdn.chriskrycho.com/images/view-from-deck.jpg)
+
 * We got to see totality in the 2017 total solar eclipse! It was the most amazing thing I've ever seen.
 
 ## Speaking
 
-* I'm giving a 3-hour workshop on using TypeScript in Ember.js applications at [EmberConf 2018](http://emberconf.com), in Portland, Oregon, on March 12, 2018. Hope to see you there—it's going to be a fabulous conference with a ton of really excellent speakers.
+* I gave a 3-hour workshop on using TypeScript in Ember.js applications at [EmberConf 2018](http://emberconf.com), in Portland, Oregon, on March 12, 2018. It got great feedback, so I'm quite happy with how it went! You can find the slides [here](https://github.com/chriskrycho/emberconf-slides) and the example materials [here](https://github.com/chriskrycho/emberconf).
 
 * I gave a talk titled "Becoming a Contributor" at Rust Belt Rust 2017, October 26–27. The abstract:
 
@@ -21,7 +24,7 @@ Subtitle: Last updated Tuesday, January 16, 2018.
 ## Podcasts
 
 * [New Rustacean](http://www.newrustacean.com) -- a podcast about learning the Rust programming languare. Updates 2--3&times; each month.
-* [Winning Slowly](http://www.winningslowly.org) -- taking the long view on technology, religion, ethics, and art; cohosted with [Stephen Carradini](http://stephencarradini.com). Usually updates biweekly; we've been in flux with Stephen finishing a Ph.D., his wife delivering their first baby, and their all moving from North Carolina to Arizona in the course of 2017. We finished Season 5 this fall and are prepping for Season 6, with a couple inter-season episodes coming out in between.
+* [Winning Slowly](http://www.winningslowly.org) -- taking the long view on technology, religion, ethics, and art; cohosted with [Stephen Carradini](http://stephencarradini.com). Usually updates biweekly! Currently ongoing is [Season 6: Rejecting the Inevitable Future](https://winningslowly.org/season-6.html), in which we talk about *rejecting technology*---or rather, rejecting some technologies, not just as individuals but as communities.
 * [Mass Affection](https://www.massaffection.com) -- playing through the _Mass Effect_ with my wife. I've got two episodes we need to publish. We got distracted with things besides video games this summer, but we'll be back at it. Sadly, we packed up the game and our Xbox 360, so we won't be back at it _until_ we move in.
 
 (For a list of _all_ podcasts I've hosted and their status, see [the dedicated page](/podcasts.html).)

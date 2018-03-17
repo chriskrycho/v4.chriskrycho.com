@@ -49,13 +49,13 @@ Note: So: why these two ideas? For one thing, because I think they are among the
 
 ### Introduction: Outline
 
-1.  Introduction
-2.  Why bother contributing? <!-- .element: class="fragment" data-fragment-index="1" -->
-3.  Who is a contributor? <!-- .element: class="fragment" data-fragment-index="2" -->
-4.  What is a contribution? How can you contribute? <!-- .element: class="fragment" data-fragment-index="3" -->
-    * ...so many things they won't fit on this slide. <!-- .element: class="fragment" data-fragment-index="4" -->
-5.  When and where to contribute? <!-- .element: class="fragment" data-fragment-index="5" -->
-6.  Conclusion <!-- .element: class="fragment" data-fragment-index="6" -->
+1. Introduction
+2. Why bother contributing? <!-- .element: class="fragment" data-fragment-index="1" -->
+3. Who is a contributor? <!-- .element: class="fragment" data-fragment-index="2" -->
+4. What is a contribution? How can you contribute? <!-- .element: class="fragment" data-fragment-index="3" -->
+   * ...so many things they won't fit on this slide. <!-- .element: class="fragment" data-fragment-index="4" -->
+5. When and where to contribute? <!-- .element: class="fragment" data-fragment-index="5" -->
+6. Conclusion <!-- .element: class="fragment" data-fragment-index="6" -->
 
 Note: We're going to take this on in the good old grammar-school fashion: _who_, _what_, _when_, _where_, _why_, and _how_. We're not going to take them in that order though, and we might smash a few of them together.
 
@@ -226,9 +226,9 @@ Another kind of documentation, though, developers and maintainers are often real
 
 You, too, can document things in just 3 easy steps!
 
-1.  Write down the things you don't understand from the docs as you go.<!-- .element: class="fragment" data-fragment-index="1" -->
-2.  When you figure them out, write that down, too.<!-- .element: class="fragment" data-fragment-index="2" -->
-3.  Then: file an issue or write a PR to improve it!<!-- .element: class="fragment" data-fragment-index="3" -->
+1. Write down the things you don't understand from the docs as you go.<!-- .element: class="fragment" data-fragment-index="1" -->
+2. When you figure them out, write that down, too.<!-- .element: class="fragment" data-fragment-index="2" -->
+3. Then: file an issue or write a PR to improve it!<!-- .element: class="fragment" data-fragment-index="3" -->
 
 Note: What that means is that one of the most valuable things you can do as you learn a new library is _write down the things you don't understand from the docs as you go_. And when you figure them out, _write that down, too_. If nothing else, writing up that experience – filing it as an issue on the bug tracker, or otherwise getting it in the hands of the maintainers – can help them make important changes to things like the order various concepts are introduced, or adding little notes to help people feel comfortable with not knowing something until it _can_ be introduced later, and other things like that. It can help them recognize and fill in gaps in their docs – things they simply assumed but which they didn't realize they were assuming – and fill those in. At the most extreme, you might even help them realize that some parts of the docs need full rewrites… and the work you've done in writing things down might just be the foundation or the actual content of those new docs.
 
@@ -457,15 +457,15 @@ Note: If you've never done any open-source work at all before, that's different 
 
 #### When & where: if you're just getting started
 
-1.  Look for these!<!-- .element: class="fragment" data-fragment-index="1" -->
+1. Look for these!<!-- .element: class="fragment" data-fragment-index="1" -->
 
-          <p class="fragment" data-fragment-index="1">
+         <p class="fragment" data-fragment-index="1">
 
-    ![help wanted](http://cdn.chriskrycho.com/images/talks/rbr_2017/help-wanted.png) ![help wanted](http://cdn.chriskrycho.com/images/talks/rbr_2017/easy.png)
+   ![help wanted](http://cdn.chriskrycho.com/images/talks/rbr_2017/help-wanted.png) ![help wanted](http://cdn.chriskrycho.com/images/talks/rbr_2017/easy.png)
 
-    </p>
+   </p>
 
-2.  Pick big projects!<!-- .element: class="fragment" data-fragment-index="2" -->
+2. Pick big projects!<!-- .element: class="fragment" data-fragment-index="2" -->
 
 Note: If you're just getting started, I'd pick a big project with lots of those "Help Wanted" and "Mentoring" and "Easy" tags on issues, and let the size of the project help you out. Those are projects that are _used to_ helping people make their first contributions. Crazy as it seems, something like Servo can actually be an _easier_ place to start out that a much smaller project. Sure, the technical lift is higher, but there are also a lot more people actively invested in your success there.
 
@@ -473,8 +473,8 @@ Note: If you're just getting started, I'd pick a big project with lots of those 
 
 #### When & where: if you're experienced
 
-1.  Find smaller projects.<!-- .element: class="fragment" data-fragment-index="1" -->
-2.  Pick something interesting which could use the help.<!-- .element: class="fragment" data-fragment-index="2" -->
+1. Find smaller projects.<!-- .element: class="fragment" data-fragment-index="1" -->
+2. Pick something interesting which could use the help.<!-- .element: class="fragment" data-fragment-index="2" -->
 
 (Remember: more work than hands!)<!-- .element: class="fragment" data-fragment-index="3" -->
 
