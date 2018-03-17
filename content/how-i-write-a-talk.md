@@ -1,11 +1,11 @@
---- 
+---
 Title: How I Write a Talk
 Subtitle: This might not work for you. But it works for me!
 Date: 2018-03-16 20:00
 Tags: writing, talks
 Category: Blog
-Summary:
-    > Giving a good talk is mostly a matter of writing a good talk and crafting a coherent presentation of that material (with or without slides or other helpers). In this post, I’m going to briefly walk through how *I* prepare talks. This process may not work for you at all; sometimes I read other people’s talk preparation strategies and laugh because they’re so wildly different from mine. But this way there’s one more strategy documented out there.
+Summary: >
+    Giving a good talk is mostly a matter of writing a good talk and crafting a coherent presentation of that material (with or without slides or other helpers). In this post, I’m going to briefly walk through how *I* prepare talks. This process may not work for you at all; sometimes I read other people’s talk preparation strategies and laugh because they’re so wildly different from mine. But this way there’s one more strategy documented out there.
 
 ---
 
@@ -17,7 +17,7 @@ While my own approach here has a couple details that are technical, the vast maj
 
 ## 1. Brainstorm on paper.
 
-I start by writing out a bunch of different approaches I might want to use for the talk with pen and paper. Usually I grab the [Moleskin](TODO) I dedicate to writing ideas[^1] and [my favorite pen](TODO) and put away everything electronic. Here I’m not worried about structure or organization at all. I just jot down the things I want to cover, what the motivating idea and main takeaway is, and any secondary points I want the audience of the talk to come away with.
+I start by writing out a bunch of different approaches I might want to use for the talk with pen and paper. Usually I grab the [Moleskine](https://us.moleskine.com/en/) I dedicate to writing ideas[^1] and [my favorite pen](https://www.jetpens.com/Pilot-Juice-Up-Gel-Pen-0.4-mm-Blue-Black/pd/18166) and put away everything electronic. Here I’m not worried about structure or organization at all. I just jot down the things I want to cover, what the motivating idea and main takeaway is, and any secondary points I want the audience of the talk to come away with.
 
 Sometimes this is broadly obvious because I already know how to come at the talk. Sometimes it takes multiple passes to get right. And when I skip this step, things go wrong regardless. I almost gave a *really* terrible version of an important internal tech talk at Olo a month ago because I hadn’t take the time to do this, and ultimately had to push back when I delivered it by a bunch as a result!
 
@@ -31,7 +31,7 @@ Once I have a good idea the way I want to tackle the subject, I write an outline
 
 This is the longest part of the process, but it works wonders for me.
 
-I start by copying the outline from my paper notebook into a [Markdown](TODO)-friendly writing environment.[^2] I turn each bullet point in the original outline into a heading. Then I expand the outline dramatically, from those high-level sections to slide-level sections: one sub-heading per slide. At this point I also add “breaks” between all the headings, which is how [the web-based slides tool I use](TODO:%20reveal.js).
+I start by copying the outline from my paper notebook into a [Markdown](https://daringfireball.net/projects/markdown/)-friendly writing environment.[^2] I turn each bullet point in the original outline into a heading. Then I expand the outline dramatically, from those high-level sections to slide-level sections: one sub-heading per slide. At this point I also add “breaks” between all the headings, which is how [the web-based slides tool I use](https://revealjs.com/).
 
 Next up I script the talk in detail. I know some people just throw down bullet points here; that’s not how I work. I write out a word-by-word script for what to say. Each of those headings/slides gets anything from a sentence to a few paragraphs. As I’m doing this, I keep an eye on the word count: courtesy of having done a fair number of talks this way, and having done a *lot* of [podcasting](http://www.newrustacean.com) this way, I have a pretty good feel for what a given number of words will come out to in terms of talk time.
 
