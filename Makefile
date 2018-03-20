@@ -2,7 +2,7 @@
 PY=python3
 PELICAN=pelican
 
-THEME=2014_theme
+THEME=theme
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
