@@ -326,7 +326,7 @@ value (UnitQuantity qty) =
 
     
 minimum : UnitQuantity
-minimum = UnitQuantity 0
+minimum = UnitQuantity 1
 ```
 
 ### F^♯^
@@ -347,7 +347,7 @@ module UnitQuantity =
 
     let value (UnitQuantity qty) = qty
     
-    let minimum = UnitQuantity 0
+    let minimum = UnitQuantity 1
 ```
 
 ### Reason
@@ -378,7 +378,7 @@ let create = qty =>
 
 let value = (UnitQuantity(qty)) => qty;
 
-let minimum = UnitQuantity(0);
+let minimum = UnitQuantity(1);
 ```
 
 ## Aside: On Documentation

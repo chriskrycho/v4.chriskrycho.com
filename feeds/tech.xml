@@ -254,7 +254,7 @@ value (UnitQuantity qty) =
 
     
 minimum : UnitQuantity
-minimum = UnitQuantity 0&lt;/code&gt;&lt;/pre&gt;
+minimum = UnitQuantity 1&lt;/code&gt;&lt;/pre&gt;
 &lt;/section&gt;
 &lt;section id="f-1" class="level3"&gt;
 &lt;h3&gt;F&lt;sup&gt;♯&lt;/sup&gt;&lt;/h3&gt;
@@ -273,7 +273,7 @@ module UnitQuantity =
 
     let value (UnitQuantity qty) = qty
     
-    let minimum = UnitQuantity 0&lt;/code&gt;&lt;/pre&gt;
+    let minimum = UnitQuantity 1&lt;/code&gt;&lt;/pre&gt;
 &lt;/section&gt;
 &lt;section id="reason-1" class="level3"&gt;
 &lt;h3&gt;Reason&lt;/h3&gt;
@@ -299,7 +299,7 @@ let create = qty =&amp;gt;
 
 let value = (UnitQuantity(qty)) =&amp;gt; qty;
 
-let minimum = UnitQuantity(0);&lt;/code&gt;&lt;/pre&gt;
+let minimum = UnitQuantity(1);&lt;/code&gt;&lt;/pre&gt;
 &lt;/section&gt;
 &lt;/section&gt;
 &lt;section id="aside-on-documentation" class="level2"&gt;
