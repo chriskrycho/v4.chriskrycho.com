@@ -45,8 +45,8 @@ impl WidgetCode {
             ))
         }
     }
-    
-    pub fn value(&self) -> String {
+
+    pub fn value(&self) -> &str {
         &self.0
     }
 }
