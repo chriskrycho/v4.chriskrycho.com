@@ -26,8 +26,8 @@ impl WidgetCode {
             ))
         }
     }
-    
-    pub fn value(&amp;amp;self) -&amp;gt; String {
+
+    pub fn value(&amp;amp;self) -&amp;gt; &amp;amp;str {
         &amp;amp;self.0
     }
 }&lt;/code&gt;&lt;/pre&gt;
