@@ -285,7 +285,9 @@ type unitQuantity = pri | UnitQuantity(int);
 
 let create: int =&amp;gt; Js.Result.t(unitQuantity, string);
 
-let value: unitQuantity =&amp;gt; int;&lt;/code&gt;&lt;/pre&gt;
+let value: unitQuantity =&amp;gt; int;
+
+let minimum: unitQuantity;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class="reason"&gt;&lt;code&gt;/* ordering/Ordering_UnitQuantity.re */
 
 type unitQuantity =
