@@ -1,7 +1,7 @@
 ---
 Title: Handling “The Liberal Order” Correctly
 Author: Chris Krycho
-Date: 2018-05-19 20:50
+Date: 2018-03-19 20:50
 Template: formats/quotation
 Category: Theology
 Tags: quotes

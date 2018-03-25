@@ -97,7 +97,7 @@ Elm introduces us to a pattern we'll see in each of the more traditional "functi
 
 ```elm
 -- src/ordering/WidgetCode.elm
-module Ordering.WidgetCode exposing (create, value)
+module Ordering.WidgetCode exposing (WidgetCode, create, value)
 
 import Regex exposing (contains, regex)
 
@@ -119,7 +119,7 @@ value (WidgetCode code) =
     code
 ```
 
-Elm's module system lets you choose exactly what to expose. In this case, we're only exporting the `create` and `value` functions.
+Elm's module system lets you choose exactly what to expose. In this case, we're only exporting the type itself along the `create` and `value` functions---but, importantly, *not* the normal type constructors for the type.
 
 You can import the things exposed both as a module and as individual items. Assume we implemented `GizmoCode` the same way. We'd import and use them in `Ordering.elm` like this:
 
@@ -326,7 +326,7 @@ value (UnitQuantity qty) =
 
     
 minimum : UnitQuantity
-minimum = UnitQuantity 0
+minimum = UnitQuantity 1
 ```
 
 ### F^♯^
@@ -347,7 +347,7 @@ module UnitQuantity =
 
     let value (UnitQuantity qty) = qty
     
-    let minimum = UnitQuantity 0
+    let minimum = UnitQuantity 1
 ```
 
 ### Reason
@@ -359,6 +359,8 @@ type unitQuantity = pri | UnitQuantity(int);
 let create: int => Js.Result.t(unitQuantity, string);
 
 let value: unitQuantity => int;
+
+let minimum: unitQuantity;
 ```
 
 ```reason
@@ -378,7 +380,7 @@ let create = qty =>
 
 let value = (UnitQuantity(qty)) => qty;
 
-let minimum = UnitQuantity(0);
+let minimum = UnitQuantity(1);
 ```
 
 ## Aside: On Documentation
