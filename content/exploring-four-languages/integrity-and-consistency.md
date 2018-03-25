@@ -1,12 +1,11 @@
 ---
 Title: "Exploring 4 Languages: Integrity and Consistency"
 Subtitle: Making, and keeping, promises – with Rust, Elm, F<sup>♯</sup>, and ReasonML.
-Date: 2018-03-23 09:00
+Date: 2018-03-24 22:00 
 Tags: functional programming, rust, elm, fsharp, reasonml, domain-driven design, four-languages
 Category: Tech
 Summary: >
     Using the type systems of Rust, Elm, F♯, and ReasonML to not only model a domain but to make sure we keep our promises.
-Status: draft
 
 ---
 
