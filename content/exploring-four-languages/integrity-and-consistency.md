@@ -11,6 +11,8 @@ Summary: >
 
 In chapter 6, Wlaschin turns to one of the most important aspects of "domain modeling": keeping it consistent. It's all well and good to set up a domain model, but if you don't have a way to make sure that model is reliable everywhere you use it, well... you've done a lot of extra work and you're not going to see a lot of results for all that effort! But as Wlaschin points out, we can actually use the type systems, and the types we wrote up in the previous chapter, to help us enforce the business *rules* for our domain (as well as the business *shapes* in the domain).
 
+An important note: you can see the latest version of this code (along with history indicating some of my travails in getting there!) in [this public repository on GitHub](https://github.com/chriskrycho/dmmf).
+
 ## A simple example: `WidgetCode`
 
 We'll start with one of the simpler examples: validating that a `WidgetCode` is legitimate. A `WidgetCode`, in this domain, is valid if, and *only* if, it has a `W` followed by four digits.
