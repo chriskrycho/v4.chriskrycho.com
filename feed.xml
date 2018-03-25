@@ -3,7 +3,330 @@
 &lt;blockquote&gt;
 &lt;p&gt;The modern liberal order abets technology’s formative power to the degree that it disavows any strong claims about ethics and human flourishing. It is in the space of that disavowal that technology as an implicit anthropology and an implicit politics takes root and expands, framing and conditioning any subsequent efforts to subject it to ethical critique. Our understanding of the human is already conditioned by our technological milieu. Fundamental to this tacit anthropology, or account of the human, is the infinite malleability of human nature. Malleable humanity is a precondition to the unfettered expansion of technology. (This is why transhumanism is the proper eschatology of our technological order. Ultimately, humanity must adapt and conform, even if it means the loss of humanity as we have known it. As explicit ideology, this may still seem like a fringe position; as implicit practice, however, it is widely adopted.)&lt;/p&gt;
 &lt;/blockquote&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 19 May 2018 20:50:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-05-19:/2018/handling-the-liberal-order-correctly.html</guid><category>quotes</category></item><item><title>How I Write a Talk</title><link>http://www.chriskrycho.com/2018/how-i-write-a-talk.html</link><description>&lt;p&gt;Giving a good talk is mostly a matter of &lt;em&gt;writing&lt;/em&gt; a good talk and crafting a coherent presentation of that material (with or without slides or other helpers). In this post, I’m going to briefly walk through how &lt;em&gt;I&lt;/em&gt; prepare talks. This process may not work for you at &lt;em&gt;all&lt;/em&gt;; sometimes I read &lt;a href="TODO:%20Chris%20Coyier/CSS%20Tricks"&gt;other people’s talk preparation strategies&lt;/a&gt; and laugh because they’re so wildly different from mine. But this way there’s one more strategy documented out there.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 19 May 2018 20:50:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-05-19:/2018/handling-the-liberal-order-correctly.html</guid><category>quotes</category></item><item><title>Exploring 4 Languages: Integrity and Consistency</title><link>http://www.chriskrycho.com/2018/exploring-4-languages-integrity-and-consistency.html</link><description>&lt;p&gt;In chapter 6, Wlaschin turns to one of the most important aspects of “domain modeling”: keeping it consistent. It’s all well and good to set up a domain model, but if you don’t have a way to make sure that model is reliable everywhere you use it, well… you’ve done a lot of extra work and you’re not going to see a lot of results for all that effort! But as Wlaschin points out, we can actually use the type systems, and the types we wrote up in the previous chapter, to help us enforce the business &lt;em&gt;rules&lt;/em&gt; for our domain (as well as the business &lt;em&gt;shapes&lt;/em&gt; in the domain).&lt;/p&gt;
+&lt;section id="a-simple-example-widgetcode" class="level2"&gt;
+&lt;h2&gt;A simple example: &lt;code&gt;WidgetCode&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;We’ll start with one of the simpler examples: validating that a &lt;code&gt;WidgetCode&lt;/code&gt; is legitimate. A &lt;code&gt;WidgetCode&lt;/code&gt;, in this domain, is valid if, and &lt;em&gt;only&lt;/em&gt; if, it has a &lt;code&gt;W&lt;/code&gt; followed by four digits.&lt;/p&gt;
+&lt;p&gt;The basic tack we’ll take, in all four languages, is to leverage the way the types work to make it so we have to use a function to create a valid instance of a &lt;code&gt;WidgetCode&lt;/code&gt;. That’s a bit of extra work (though especially in the functional-first languages, it ends up not being a &lt;em&gt;lot&lt;/em&gt; of extra work) but it lets us use &lt;code&gt;Result&lt;/code&gt; types to handle invalid data up front.&lt;/p&gt;
+&lt;p&gt;The downside is that we can’t just get directly at the value inside our wrapper types using basic pattern matching. Instead, we need to be provide a function for “unwrapping” it. Tradeoffs!&lt;/p&gt;
+&lt;p&gt;We’ll go at this using the most appropriate tool from each language, but in every case we’ll end up with a &lt;code&gt;create&lt;/code&gt; function that takes a string and returns a &lt;code&gt;Result&lt;/code&gt; with the successful option being a &lt;code&gt;WidgetCode&lt;/code&gt; and the error option being a string describing the error; and a &lt;code&gt;value&lt;/code&gt; function to unwrap a valid code. Throughout, I also assume an essentially-identical implementation of a related &lt;code&gt;GizmoCode&lt;/code&gt; type; I pull both in to show how they end up being used side by side.&lt;/p&gt;
+&lt;section id="rust" class="level3"&gt;
+&lt;h3&gt;Rust&lt;/h3&gt;
+&lt;p&gt;We are using a tuple struct to wrap the string value here. Since there is no &lt;code&gt;pub&lt;/code&gt; modifier in the wrapped &lt;code&gt;String&lt;/code&gt;, it’s opaque from the perspective of the caller—and this is exactly what we want. We’ll pull in &lt;a href="https://docs.rs/regex/0.2.10/regex/"&gt;the &lt;code&gt;Regex&lt;/code&gt; crate&lt;/a&gt; and validate the code passed to us on creation.&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;use regex::Regex;
+
+pub struct WidgetCode(String);
+
+impl WidgetCode {
+    pub fn create(code: &amp;amp;str) -&amp;gt; Result&amp;lt;WidgetCode, String&amp;gt; {
+        let re = Regex::new(r&amp;quot;W\d{4}&amp;quot;).expect(r&amp;quot;W\d{4} is a valid regex&amp;quot;);
+        if re.is_match(code) {
+            Ok(WidgetCode(String::from(code)))
+        } else {
+            Err(String::from(
+                &amp;quot;`WidgetCode` must begin with a &amp;#39;W&amp;#39; and be followed by 4 digits&amp;quot;,
+            ))
+        }
+    }
+    
+    pub fn value(&amp;amp;self) -&amp;gt; String {
+        &amp;amp;self.0
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is fairly idiomatic Rust: we’re &lt;em&gt;borrowing&lt;/em&gt; a &lt;em&gt;reference&lt;/em&gt; to the code as a “string slice”, and creating a new, wrapped &lt;code&gt;String&lt;/code&gt; instance to wrap up the code &lt;em&gt;or&lt;/em&gt; return a new &lt;code&gt;String&lt;/code&gt; as an error. When we get the value out, we return a reference to the string,&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; with &lt;code&gt;&amp;amp;self.0&lt;/code&gt;: &lt;code&gt;&amp;amp;&lt;/code&gt; to indicate a reference, &lt;code&gt;.0&lt;/code&gt; to indicate the first item of a tuple. Note as well that the final &lt;code&gt;if&lt;/code&gt; block here is an expression. There’s no semicolon terminating it, and this whole &lt;code&gt;if&lt;/code&gt; block ends up being the resulting value of the function.&lt;/p&gt;
+&lt;p&gt;One other point of interest here is that the creation of the regex &lt;em&gt;itself&lt;/em&gt; is checked by the compiler for us! If we pass an invalid regular expression, this simply won’t compile.&lt;/p&gt;
+&lt;p&gt;This could also live in its own module, &lt;code&gt;ordering/widget_code.rs&lt;/code&gt;, and in fact that’s how I would normally do this (and have in the repository where I’m working): every one of these small types would get its own module file within the containing &lt;code&gt;Ordering&lt;/code&gt; module. It’s not &lt;em&gt;necessary&lt;/em&gt;, but as the domain model grows, it becomes increasingly &lt;em&gt;convenient&lt;/em&gt; in that you always know where to find things.&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Then we can import it and use it like this in &lt;code&gt;ordering/mod.rs&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;mod widget_code;
+mod gizmo_code;
+
+use widget_code::WidgetCode;
+use gizmo_code::GizmoCode;
+
+pub enum ProductCode {
+    Widget(WidgetCode),
+    Gizmo(GizmoCode),
+}
+
+fn demo_it() {
+    let valid = WidgetCode::create(&amp;quot;W1234&amp;quot;);
+    let invalid = WidgetCode::create(&amp;quot;wat&amp;quot;);
+
+    let unwrapped = match valid {
+        Ok(ref code) =&amp;gt; code.value(),
+        Err(_) =&amp;gt; &amp;quot;&amp;quot;,
+    };
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Notice that in Rust, the &lt;code&gt;mod.rs&lt;/code&gt; file declares all child modules. If you had a &lt;code&gt;widget_code.rs&lt;/code&gt; on the file system but no &lt;code&gt;mod widget_code;&lt;/code&gt;, Rust would just ignore the declaration entirely. Then Rust also requires us to &lt;code&gt;use widget_code;&lt;/code&gt; to access its contents. The distinction between declaring and using a given module makes some sense: by the time all is said and done with this exercise, we won’t be doing much of anything in this &lt;code&gt;Ordering&lt;/code&gt; module; it’ll exist primarily as a grouping construct for all the &lt;em&gt;other&lt;/em&gt; modules.&lt;/p&gt;
+&lt;p&gt;In this case, we go ahead and import the &lt;code&gt;WidgetCode&lt;/code&gt; type from the module. We only have the one type there, with no standalone functions: everything is attached to the type via the &lt;code&gt;impl&lt;/code&gt; block; so we can just call everything directly off of the type. This ends up feeling &lt;em&gt;kind of&lt;/em&gt; like the way we’d do things in a traditional OOP language, but also &lt;em&gt;really not&lt;/em&gt;, because we still have a separation between the data type and the implementation of functionality attached to it. It’s not obvious &lt;em&gt;here&lt;/em&gt;, but we could write &lt;code&gt;impl WidgetCode&lt;/code&gt; in some &lt;em&gt;other&lt;/em&gt; module in the crate, and as long as there’s no conflict between the implementations, it’s fine! And then we could call whatever function we defined in &lt;em&gt;that&lt;/em&gt; block “on” &lt;code&gt;WidgetCode&lt;/code&gt;. This is on the one hand &lt;em&gt;totally&lt;/em&gt; unlike what we’ll see in the other languages, and on the other hand &lt;em&gt;weirdly analogous&lt;/em&gt; to them.&lt;/p&gt;
+&lt;p&gt;I’m going to pass over why we need &lt;code&gt;ref code&lt;/code&gt; here, as it gets into details of Rust’s model of ownership and reference borrowing &lt;em&gt;and&lt;/em&gt; it’s going to be unneeded because of improvements to Rust’s compiler fairly soon. The one thing to note here is that we get nice memory/allocation behavior, i.e. we’re not doing a bunch of separate heap string allocations here. This is one of the big upsides to Rust in general! It’s not quite as pretty as what we’ll see below, but the performance wins are awesome.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="elm" class="level3"&gt;
+&lt;h3&gt;Elm&lt;/h3&gt;
+&lt;p&gt;Elm introduces us to a pattern we’ll see in each of the more traditional “functional” languages: the use of &lt;em&gt;modules&lt;/em&gt; for this kind of structure. First the code, then some comments on it:&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;-- src/ordering/WidgetCode.elm
+module Ordering.WidgetCode exposing (create, value)
+
+import Regex exposing (contains, regex)
+
+
+type WidgetCode
+    = WidgetCode String
+
+
+create : String -&amp;gt; Result String WidgetCode
+create code =
+    if contains (regex &amp;quot;W\\d{4}&amp;quot;) code then
+        Ok (WidgetCode code)
+    else
+        Err &amp;quot;`WidgetCode` must begin with a &amp;#39;W&amp;#39; and be followed by 4 digits&amp;quot;
+
+
+value : WidgetCode -&amp;gt; String
+value (WidgetCode code) =
+    code&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Elm’s module system lets you choose exactly what to expose. In this case, we’re only exporting the &lt;code&gt;create&lt;/code&gt; and &lt;code&gt;value&lt;/code&gt; functions.&lt;/p&gt;
+&lt;p&gt;You can import the things exposed both as a module and as individual items. Assume we implemented &lt;code&gt;GizmoCode&lt;/code&gt; the same way. We’d import and use them in &lt;code&gt;Ordering.elm&lt;/code&gt; like this:&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;-- Ordering.elm
+import Ordering.WidgetCode as WidgetCode exposing (WidgetCode)
+import Ordering.GizmoCode as GizmoCode exposing (GizmoCode)
+
+type ProductCode
+    = Widget WidgetCode
+    | Gizmo GizmoCode
+    
+valid =
+    WidgetCode.create &amp;quot;W1234&amp;quot;
+
+
+invalid =
+    WidgetCode.create &amp;quot;wat&amp;quot;
+
+
+unwrapped =
+    case valid of
+        Result.Ok code -&amp;gt;
+            WidgetCode.value (code)
+
+        Result.Err _ -&amp;gt;
+            &amp;quot;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As with Rust, we can’t construct the type without using the provided function. As I’ve written the imports, you’d create a &lt;code&gt;WidgetCode&lt;/code&gt; by writing &lt;code&gt;WidgetCode.create &amp;quot;W1234&amp;quot;&lt;/code&gt;. You could also import it directly, but that would have its own problems once you had the &lt;code&gt;create&lt;/code&gt; function imported for &lt;code&gt;GizmoCode&lt;/code&gt; as well.&lt;/p&gt;
+&lt;p&gt;Finally, notice the way we aliased the module name here with &lt;code&gt;as&lt;/code&gt; on the import: we don’t have to write out the fully qualified path this way. And there’s no conflict between the aliased module name and the type name – they live in their own namespaces (as it should be!). Importing the type name distinctly is handy because it means we don’t have to write the body of the union type out as &lt;code&gt;Widget WidgetCode.WidgetCode&lt;/code&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="f" class="level3"&gt;
+&lt;h3&gt;F&lt;sup&gt;♯&lt;/sup&gt;&lt;/h3&gt;
+&lt;p&gt;The F&lt;sup&gt;♯&lt;/sup&gt; code looks a &lt;em&gt;lot&lt;/em&gt; like the Elm code. The main differences here have to do with their module systems.&lt;/p&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;namespace Ordering
+
+type WidgetCode = private WidgetCode of string
+module WidgetCode =
+    let create code =
+        if Regex.IsMatch(code, @&amp;quot;W\d{4}&amp;quot;) then
+            Ok (WidgetCode code)
+        else
+            Error &amp;quot;`WidgetCode` must begin with a &amp;#39;W&amp;#39; and be followed by 4 digits&amp;quot;
+
+    let value (WidgetCode code) = code&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here we declare that we’re in the &lt;code&gt;namespace Ordering&lt;/code&gt;. Everything here will be publicly visible to everything &lt;em&gt;else&lt;/em&gt; in the &lt;code&gt;namespace Ordering&lt;/code&gt;. We could also make this a &lt;code&gt;module&lt;/code&gt;, and in that case we’d need to explicitly open it in other modules. Because it’s part of the base namespace we’re using for &lt;code&gt;Ordering&lt;/code&gt;, though, we get it for “free”. There’s a downside to this, though. More on that below.&lt;/p&gt;
+&lt;p&gt;Also notice that this means that we have yet one more “namespace” for names to live in: &lt;code&gt;namespace&lt;/code&gt; names are different from &lt;code&gt;module&lt;/code&gt; are different from type names! So here we declare a top-level &lt;code&gt;module Ordering&lt;/code&gt; here so that we can actually write code that &lt;em&gt;does something&lt;/em&gt; in the file – &lt;code&gt;namespace&lt;/code&gt;s can only contain type definitions (including &lt;code&gt;module&lt;/code&gt; definitions).&lt;/p&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;namespace Ordering
+
+type ProductCode =
+    | Widget of WidgetCode
+    | Gizmo of GizmoCode
+
+module DemoIt =
+    let valid = WidgetCode.create &amp;quot;W1234&amp;quot;
+    let invalid = WidgetCode.create &amp;quot;wat&amp;quot;
+    
+    let unwrapped =
+        match valid with
+        | Ok(code) -&amp;gt; WidgetCode.value code
+        | Error(_) -&amp;gt; &amp;quot;&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The things to notice here as particularly different from the others:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;We don’t have to explicitly import the module names, because we used the same namespace (&lt;code&gt;Ordering&lt;/code&gt;) to group them. We could also have done &lt;code&gt;namespace Ordering.WidgetCode&lt;/code&gt; and &lt;code&gt;open Ordering.WidgetCode&lt;/code&gt;; that might actually make more or less sense in the context. I &lt;em&gt;think&lt;/em&gt; this is probably more idiomatic, however, which is why I picked it.&lt;/li&gt;
+&lt;li&gt;Since we’re keeping the rest of the containing module in the same namespace, we &lt;em&gt;do&lt;/em&gt; have to declare &lt;code&gt;module DemoIt&lt;/code&gt; for functionality – not just types – to live in. This is true for both &lt;code&gt;Ordering.fs&lt;/code&gt; and &lt;code&gt;WidgetCode.fs&lt;/code&gt; and so on.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This way of structuring things works really well, but it has one major downside compared to Elm and Rust: where any given name comes from is &lt;em&gt;not&lt;/em&gt; obvious from any given text file. Using modules instead of namespaces and using more fully qualified names &lt;em&gt;could&lt;/em&gt; help here, but the reality is simply that F&lt;sup&gt;♯&lt;/sup&gt; (like C&lt;sup&gt;♯&lt;/sup&gt;) basically leaves you out to dry here. My take is that this is basically what happens when you design a language &lt;em&gt;assuming&lt;/em&gt; IDE-like tooling. But especially when looking at e.g. GitHub diff views, or just browsing source code in general, I strongly prefer the way Elm and Rust generally lead you to do explicit imports or fully qualified paths. (Both have an escape hatch: Rust’s &lt;code&gt;use path::to::module::*;&lt;/code&gt; and Elm’s &lt;code&gt;import Path.To.Module exposing (..)&lt;/code&gt;, but both are actively discouraged as bad practice in &lt;em&gt;most&lt;/em&gt; situations.)&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="reason" class="level3"&gt;
+&lt;h3&gt;Reason&lt;/h3&gt;
+&lt;p&gt;Interestingly, Reason &lt;em&gt;looks&lt;/em&gt; most like Rust but &lt;em&gt;behaves&lt;/em&gt; most like F&lt;sup&gt;♯&lt;/sup&gt;. The biggest difference is that I need a separate &lt;em&gt;interface file&lt;/em&gt; for Reason to get the privacy benefits that I’m getting in all the other languages.&lt;/p&gt;
+&lt;p&gt;We put the definition file at &lt;code&gt;ordering/Ordering_WidgetCode.rei&lt;/code&gt;. (I’ll comment on the long name in a moment.)&lt;/p&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;type gizmoCode = pri | GizmoCode(string);
+
+let create: string =&amp;gt; Js.Result.t(widgetCode, string);
+
+let value: widgetCode =&amp;gt; string;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With that module definition in place, we can separately supply the implementation, in &lt;code&gt;ordering/Ordering_WidgetCode.re&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;type widgetCode =
+  | WidgetCode(string);
+
+let create = code =&amp;gt; {
+  let isMatch =
+    Js.Re.fromString(&amp;quot;W\\d{4}&amp;quot;) |&amp;gt; Js.Re.exec(code) |&amp;gt; Js.Option.isSome;
+  if (isMatch) {
+    Js.Result.Ok(WidgetCode(code));
+  } else {
+    Js.Result.Error(
+      &amp;quot;`WidgetCode` must begin with a &amp;#39;W&amp;#39; and be followed by 4 digits&amp;quot;
+    );
+  };
+};
+
+let value = (WidgetCode(code)) =&amp;gt; code;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that you could do the same thing with an interface file for F&lt;sup&gt;♯&lt;/sup&gt;. We’re also doing something that’s similar in principle to the use of private types in in F&lt;sup&gt;♯&lt;/sup&gt;, but unlike in F&lt;sup&gt;♯&lt;/sup&gt; we &lt;em&gt;have&lt;/em&gt; to use the module interface to make it work as far as I can tell. The &lt;em&gt;interface&lt;/em&gt; can declare the type private, but in the actual implementation, the type has to be non-private to be constructable. (If I’m wrong, please send me a note to let me know! But that’s what I gathered from reading OCaml docs, as well as from command line error messages as I played around.) Also, the fact that Reason has landed on the keyword &lt;code&gt;pri&lt;/code&gt; instead of OCaml and F&lt;sup&gt;♯&lt;/sup&gt;’s much saner &lt;code&gt;private&lt;/code&gt; is super weird.&lt;/p&gt;
+&lt;p&gt;The interface file just defines the types, and has the &lt;code&gt;.rei&lt;/code&gt; extension. &lt;code&gt;type widgetCode&lt;/code&gt; here is an &lt;em&gt;abstract&lt;/em&gt; type, which provides no information about what it contains. Note the function types are provided as well. Here I’m using specifically the &lt;code&gt;Js.Result&lt;/code&gt; type; there is also a &lt;code&gt;Result&lt;/code&gt; type in at least one of the OCaml standard libraries. This is one of the more complicated things about Reason compared to the others: there are… &lt;em&gt;several&lt;/em&gt; standard libraries to choose from, which will or won’t work differently depending on what compile target you’re picking.&lt;/p&gt;
+&lt;p&gt;In any case, once we have both the module and the implementation defined, we can use it like this in &lt;code&gt;ordering.re&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;module WidgetCode = Ordering_WidgetCode;
+
+module GizmoCode = Ordering_GizmoCode;
+
+open WidgetCode;
+
+open GizmoCode;
+
+type productCode =
+  | Widget(widgetCode)
+  | Gizmo(gizmoCode);
+
+let valid = WidgetCode.create(&amp;quot;W1234&amp;quot;);
+
+let invalid = WidgetCode.create(&amp;quot;wat&amp;quot;);
+
+let unwrapped =
+  switch valid {
+  | Js.Result.Ok(code) =&amp;gt; WidgetCode.value(code)
+  | Js.Result.Error(_) =&amp;gt; &amp;quot;&amp;quot;
+  };&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We do this mapping from &lt;code&gt;Ordering_WidgetCode&lt;/code&gt; to &lt;code&gt;WidgetCode&lt;/code&gt; here because OCaml and therefore Reason has only a single global namespace for its module names as defined by the file system. You can nest modules, but only &lt;em&gt;within&lt;/em&gt; files. The workaround is, well… &lt;code&gt;Ordering_&lt;/code&gt; and remapping the name as we have here. This lets you access the nested modules as &lt;code&gt;Ordering.WidgetCode&lt;/code&gt; and so on elsewhere.&lt;/p&gt;
+&lt;p&gt;Then we &lt;code&gt;open WidgetCode&lt;/code&gt; etc. so that we can write &lt;code&gt;widgetCode&lt;/code&gt; instead of &lt;code&gt;WidgetCode.widgetCode&lt;/code&gt; in the &lt;code&gt;productCode&lt;/code&gt; definition. This is basically the same effect we get from just being in the same &lt;code&gt;namespace&lt;/code&gt; in F&lt;sup&gt;♯&lt;/sup&gt; (which, again, we could rewrite exactly this way), or from the kinds of imports we discussed above for Rust and Elm.&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="numeric-validation-unitquantity" class="level2"&gt;
+&lt;h2&gt;Numeric validation: &lt;code&gt;UnitQuantity&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;So far, the showing tilts &lt;em&gt;heavily&lt;/em&gt; in F&lt;sup&gt;♯&lt;/sup&gt;’s and Elm’s favor in terms of expressiveness and elegance. However, there’s a lot of variation depending on exactly what you’re doing. If, for example, you want to validate a &lt;em&gt;range&lt;/em&gt;, well… then Rust actually has a pretty good approach! Once again, you’ll note that these all have a lot in common; the difference mostly comes down to the degree of syntactical noise required to express the same basic thing.&lt;/p&gt;
+&lt;p&gt;In this section, I’m not really going to spend a lot of time discussing the details and differences; I’m just leaving it here to show an interesting example where the languages’ design decisions end up have slightly different ergonomic tradeoffs.&lt;/p&gt;
+&lt;section id="rust-1" class="level3"&gt;
+&lt;h3&gt;Rust&lt;/h3&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;// ordering/unit_quantity.rs
+pub struct UnitQuantity(u32);
+
+impl UnitQuantity {
+    pub fn create(qty: u32) -&amp;gt; Result&amp;lt;UnitQuantity, String&amp;gt; {
+        match qty {
+            0 =&amp;gt; Err(String::from(&amp;quot;`UnitQuantity` cannot be less than 1&amp;quot;)),
+            1...1000 =&amp;gt; Ok(UnitQuantity(qty)),
+            _ =&amp;gt; Err(String::from(&amp;quot;`UnitQuantity` cannot be greater than 1000&amp;quot;)),
+        }
+    }
+
+    pub fn value(&amp;amp;self) -&amp;gt; u32 {
+        self.0
+    }
+
+    pub fn minimum() -&amp;gt; UnitQuantity {
+        UnitQuantity(1)
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="elm-1" class="level3"&gt;
+&lt;h3&gt;Elm&lt;/h3&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;-- ordering/UnitQuantity.elm
+module Ordering.UnitQuantity exposing (UnitQuantity, create, value)
+
+
+type UnitQuantity
+    = UnitQuantity Int
+
+
+create : Int -&amp;gt; Result String UnitQuantity
+create qty =
+    if qty &amp;lt; 1 then
+        Err &amp;quot;`UnitQuantity` cannot be less than 1&amp;quot;
+    else if qty &amp;gt; 1000 then
+        Err &amp;quot;`UnitQuantity` cannot be greater than 1000&amp;quot;
+    else
+        Ok (UnitQuantity qty)
+
+
+value : UnitQuantity -&amp;gt; Int
+value (UnitQuantity qty) =
+    qty
+
+    
+minimum : UnitQuantity
+minimum = UnitQuantity 0&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="f-1" class="level3"&gt;
+&lt;h3&gt;F&lt;sup&gt;♯&lt;/sup&gt;&lt;/h3&gt;
+&lt;pre class="fsharp"&gt;&lt;code&gt;// ordering/UnitQuantity.fs
+namespace Ordering
+
+type UnitQuantity = private UnitQuantity of uint32
+module UnitQuantity =
+    let create qty =
+        if qty &amp;lt; 1u then
+            Error &amp;quot;`UnitQuantity` cannot be less than 1&amp;quot;
+        else if qty &amp;gt; 1000u then
+            Error &amp;quot;`UnitQuantity` cannot be greater than 1000&amp;quot;
+        else
+            Ok (UnitQuantity qty)
+
+    let value (UnitQuantity qty) = qty
+    
+    let minimum = UnitQuantity 0&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="reason-1" class="level3"&gt;
+&lt;h3&gt;Reason&lt;/h3&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;/* ordering/Ordering_UnitQuantity.rei */
+type unitQuantity = pri | UnitQuantity(int);
+
+let create: int =&amp;gt; Js.Result.t(unitQuantity, string);
+
+let value: unitQuantity =&amp;gt; int;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="reason"&gt;&lt;code&gt;/* ordering/Ordering_UnitQuantity.re */
+
+type unitQuantity =
+  | UnitQuantity(int);
+
+let create = qty =&amp;gt;
+  if (qty &amp;lt; 1) {
+    Js.Result.Error(&amp;quot;`UnitQuantity` cannot be less than 1&amp;quot;);
+  } else if (qty &amp;gt; 1000) {
+    Js.Result.Error(&amp;quot;`UnitQuantity` cannot be greater than 1000&amp;quot;);
+  } else {
+    Js.Result.Ok(UnitQuantity(qty));
+  };
+
+let value = (UnitQuantity(qty)) =&amp;gt; qty;
+
+let minimum = UnitQuantity(0);&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="aside-on-documentation" class="level2"&gt;
+&lt;h2&gt;Aside: On Documentation&lt;/h2&gt;
+&lt;p&gt;One thing that became &lt;em&gt;extremely&lt;/em&gt; clear in the course of working all of this out is that the documentation stories for these languages are in vastly, &lt;em&gt;vastly&lt;/em&gt; different places.&lt;/p&gt;
+&lt;p&gt;Figuring out how to write this private &lt;code&gt;create&lt;/code&gt;/&lt;code&gt;value&lt;/code&gt; approach was &lt;em&gt;very&lt;/em&gt; straightforward in Rust, because it’s literally just right there in how &lt;code&gt;impl&lt;/code&gt; blocks and the &lt;code&gt;pub&lt;/code&gt; keyword work: things default to private, including the contents of a struct, and you &lt;em&gt;always&lt;/em&gt; define the related functionality with &lt;code&gt;pub fn&lt;/code&gt; declarations in the related &lt;code&gt;impl&lt;/code&gt; block.&lt;/p&gt;
+&lt;p&gt;Elm and F&lt;sup&gt;♯&lt;/sup&gt; were both slightly harder, in that I had to poke around a bit to figure out the right way to do it. But not &lt;em&gt;that&lt;/em&gt; much harder. Both use module-level isolation to accomplish this; the main difference there was that F&lt;sup&gt;♯&lt;/sup&gt; just lets you do it inline and Elm explicitly ties modules to files.&lt;/p&gt;
+&lt;p&gt;Reason… was very, &lt;em&gt;very&lt;/em&gt; difficult to get sorted out. This is just a function of the state of the ecosystem. Reason is &lt;em&gt;distinct syntax&lt;/em&gt; for OCaml, but it also leans on BuckleScript. That means that if you want to figure out how to do anything, you probably need to search in the docs for all of those, and if your answer turns out to come from OCaml then you have to figure out how to translate it back into Reason and BuckleScript! Ultimately, I was able to figure it out and get the project layout to how you see it in the repository, but… it took a lot more digging than with any of the other projects!&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="summary" class="level2"&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;As with our &lt;a href="http://www.chriskrycho.com/2018/exploring-4-languages-starting-to-model-the-domain.html"&gt;previous foray&lt;/a&gt;, we can see a ton of similarities across these languages. All lean heavily on pattern-matching for dealing with different scenarios; all let us make use of a &lt;code&gt;Result&lt;/code&gt; type for handling success or failure; all make heavy use of expression-bodied-ness; and all supply &lt;em&gt;some&lt;/em&gt; way to make types constructable only in safe/controlled ways.&lt;/p&gt;
+&lt;p&gt;For Rust, that’s a matter of leaving the internals of a &lt;code&gt;struct&lt;/code&gt; private and making &lt;code&gt;pub fn&lt;/code&gt; helpers to do the construction and value retrieval. For Elm, F&lt;sup&gt;♯&lt;/sup&gt;, and Reason, that’s a matter of having the normal type &lt;em&gt;constructors&lt;/em&gt; be private while exposing the types themselves normally. They do that in different ways (F&lt;sup&gt;♯&lt;/sup&gt;’s &lt;code&gt;private type&lt;/code&gt;, Elm’s &lt;code&gt;exposing&lt;/code&gt;, and Reason’s &lt;code&gt;pri&lt;/code&gt; annotation on the type variant in a module interface file), but the effect is essentially identical, and functionally equivalent to what we see in Rust.&lt;/p&gt;
+&lt;p&gt;The main differences we see across Elm, F&lt;sup&gt;♯&lt;/sup&gt;, and Reason have to do with the nature of the various module systems. In a lot of ways, Reason’s is the least capable &lt;em&gt;for this specific purpose&lt;/em&gt;, because it’s directly tied to OCaml’s module system, which substantially predates any of the others. (I say “in a lot of ways” because OCaml’s modules are surprisingly capable; they end up being their own kind of types and you can do some crazy things with them, all of which I’d like to actually come to understand… eventually.) Rust’s module system, meanwhile, has a lot of similarities to Elm’s in particular, but because we actually carry functions along with the types they &lt;code&gt;impl&lt;/code&gt; (though they get defined separately, with all the power that entails), we have a bit less boilerplate we need to write just to get at the specific functions in play.&lt;/p&gt;
+&lt;p&gt;Next time (probably only a couple of weeks away because we’re working through the book at work in a book club!), I’ll be looking at Chapter 7: Modeling Workflows as Pipelines. I suspect this will be a place where the true functional orientation of Elm, F&lt;sup&gt;♯&lt;/sup&gt;, and Reason will much more sharply differentiate them from the sometimes-functionalish-but-not-actually-functional way we write things in Rust.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;This reference will live and be valid as long as the underlying &lt;code&gt;WidgetCode&lt;/code&gt; is. We could also return a &lt;code&gt;String&lt;/code&gt; if we wanted that value to live independently of the &lt;code&gt;WidgetCode&lt;/code&gt; instance backing it.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;Putting it in its own module, whether in a separate &lt;em&gt;does&lt;/em&gt; have implications for privacy, though we don’t much care about them in this case. Rust lets us set the privacy on &lt;a href="https://doc.rust-lang.org/1.24.1/reference/visibility-and-privacy.html"&gt;a whole spectrum&lt;/a&gt;, from “visible everywhere” to “only visible in this specific module.”&lt;a href="#fnref2" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 24 Mar 2018 22:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-03-24:/2018/exploring-4-languages-integrity-and-consistency.html</guid><category>functional programming</category><category>rust</category><category>elm</category><category>fsharp</category><category>reasonml</category><category>domain-driven design</category><category>four-languages</category></item><item><title>How I Write a Talk</title><link>http://www.chriskrycho.com/2018/how-i-write-a-talk.html</link><description>&lt;p&gt;Giving a good talk is mostly a matter of &lt;em&gt;writing&lt;/em&gt; a good talk and crafting a coherent presentation of that material (with or without slides or other helpers). In this post, I’m going to briefly walk through how &lt;em&gt;I&lt;/em&gt; prepare talks. This process may not work for you at &lt;em&gt;all&lt;/em&gt;; sometimes I read &lt;a href="TODO:%20Chris%20Coyier/CSS%20Tricks"&gt;other people’s talk preparation strategies&lt;/a&gt; and laugh because they’re so wildly different from mine. But this way there’s one more strategy documented out there.&lt;/p&gt;
 &lt;p&gt;The strategy is the one I’ve developed over the past few years as I’ve given a couple conference talks and a bunch more weekly tech talks at Olo.&lt;/p&gt;
 &lt;p&gt;While my own approach here has a couple details that are technical, the vast majority of it is applicable to any kind of talk. In fact, a &lt;em&gt;lot&lt;/em&gt; of this is essentially identical to certain phases of my preparation for preaching a sermon or teaching a theology class at church.&lt;/p&gt;
 &lt;section id="brainstorm-on-paper." class="level2"&gt;

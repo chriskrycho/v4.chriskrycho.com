@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exploring 4 Languages: Integrity and Consistency &middot; Chris Krycho</title>
+    <meta name="description" content="Using the type systems of Rust, Elm, F♯, and ReasonML to not only model a domain but to make sure we keep our promises."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/exploring-4-languages-integrity-and-consistency.html"/>
+    <meta property="og:title" content="Exploring 4 Languages: Integrity and Consistency"/>
+    <meta property="og:description" content="Using the type systems of Rust, Elm, F♯, and ReasonML to not only model a domain but to make sure we keep our promises."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Exploring 4 Languages: Integrity and Consistency"/>
+    <meta name="twitter:description" content="Using the type systems of Rust, Elm, F♯, and ReasonML to not only model a domain but to make sure we keep our promises."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="functional-programming rust elm fsharp reasonml domain-driven-design four-languages tech">
+
+    <header>
+<h1>Exploring 4 Languages: Integrity and Consistency</h1>
+<h2>Making, and keeping, promises – with Rust, Elm, F<sup>♯</sup>, and ReasonML.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/exploring-4-languages-integrity-and-consistency.html"><i class="fa fa-fw fa-link"></i></a>March 24, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/domain-driven-design/">#domain-driven design</a><a class="hashtags" href="http://www.chriskrycho.com/elm/">#elm</a><a class="hashtags" href="http://www.chriskrycho.com/four-languages/">#four-languages</a><a class="hashtags" href="http://www.chriskrycho.com/fsharp/">#fsharp</a><a class="hashtags" href="http://www.chriskrycho.com/functional-programming/">#functional programming</a><a class="hashtags" href="http://www.chriskrycho.com/reasonml/">#reasonml</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a></span><span><a href="http://www.chriskrycho.com/2018/exploring-4-languages-integrity-and-consistency.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>In chapter 6, Wlaschin turns to one of the most important aspects of “domain modeling”: keeping it consistent. It’s all well and good to set up a domain model, but if you don’t have a way to make sure that model is reliable everywhere you use it, well… you’ve done a lot of extra work and you’re not going to see a lot of results for all that effort! But as Wlaschin points out, we can actually use the type systems, and the types we wrote up in the previous chapter, to help us enforce the business <em>rules</em> for our domain (as well as the business <em>shapes</em> in the domain).</p>
+<section id="a-simple-example-widgetcode" class="level2">
+<h2>A simple example: <code>WidgetCode</code></h2>
+<p>We’ll start with one of the simpler examples: validating that a <code>WidgetCode</code> is legitimate. A <code>WidgetCode</code>, in this domain, is valid if, and <em>only</em> if, it has a <code>W</code> followed by four digits.</p>
+<p>The basic tack we’ll take, in all four languages, is to leverage the way the types work to make it so we have to use a function to create a valid instance of a <code>WidgetCode</code>. That’s a bit of extra work (though especially in the functional-first languages, it ends up not being a <em>lot</em> of extra work) but it lets us use <code>Result</code> types to handle invalid data up front.</p>
+<p>The downside is that we can’t just get directly at the value inside our wrapper types using basic pattern matching. Instead, we need to be provide a function for “unwrapping” it. Tradeoffs!</p>
+<p>We’ll go at this using the most appropriate tool from each language, but in every case we’ll end up with a <code>create</code> function that takes a string and returns a <code>Result</code> with the successful option being a <code>WidgetCode</code> and the error option being a string describing the error; and a <code>value</code> function to unwrap a valid code. Throughout, I also assume an essentially-identical implementation of a related <code>GizmoCode</code> type; I pull both in to show how they end up being used side by side.</p>
+<section id="rust" class="level3">
+<h3>Rust</h3>
+<p>We are using a tuple struct to wrap the string value here. Since there is no <code>pub</code> modifier in the wrapped <code>String</code>, it’s opaque from the perspective of the caller—and this is exactly what we want. We’ll pull in <a href="https://docs.rs/regex/0.2.10/regex/">the <code>Regex</code> crate</a> and validate the code passed to us on creation.</p>
+<pre class="rust"><code>use regex::Regex;
+
+pub struct WidgetCode(String);
+
+impl WidgetCode {
+    pub fn create(code: &amp;str) -&gt; Result&lt;WidgetCode, String&gt; {
+        let re = Regex::new(r&quot;W\d{4}&quot;).expect(r&quot;W\d{4} is a valid regex&quot;);
+        if re.is_match(code) {
+            Ok(WidgetCode(String::from(code)))
+        } else {
+            Err(String::from(
+                &quot;`WidgetCode` must begin with a &#39;W&#39; and be followed by 4 digits&quot;,
+            ))
+        }
+    }
+    
+    pub fn value(&amp;self) -&gt; String {
+        &amp;self.0
+    }
+}</code></pre>
+<p>This is fairly idiomatic Rust: we’re <em>borrowing</em> a <em>reference</em> to the code as a “string slice”, and creating a new, wrapped <code>String</code> instance to wrap up the code <em>or</em> return a new <code>String</code> as an error. When we get the value out, we return a reference to the string,<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> with <code>&amp;self.0</code>: <code>&amp;</code> to indicate a reference, <code>.0</code> to indicate the first item of a tuple. Note as well that the final <code>if</code> block here is an expression. There’s no semicolon terminating it, and this whole <code>if</code> block ends up being the resulting value of the function.</p>
+<p>One other point of interest here is that the creation of the regex <em>itself</em> is checked by the compiler for us! If we pass an invalid regular expression, this simply won’t compile.</p>
+<p>This could also live in its own module, <code>ordering/widget_code.rs</code>, and in fact that’s how I would normally do this (and have in the repository where I’m working): every one of these small types would get its own module file within the containing <code>Ordering</code> module. It’s not <em>necessary</em>, but as the domain model grows, it becomes increasingly <em>convenient</em> in that you always know where to find things.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>Then we can import it and use it like this in <code>ordering/mod.rs</code>:</p>
+<pre class="rust"><code>mod widget_code;
+mod gizmo_code;
+
+use widget_code::WidgetCode;
+use gizmo_code::GizmoCode;
+
+pub enum ProductCode {
+    Widget(WidgetCode),
+    Gizmo(GizmoCode),
+}
+
+fn demo_it() {
+    let valid = WidgetCode::create(&quot;W1234&quot;);
+    let invalid = WidgetCode::create(&quot;wat&quot;);
+
+    let unwrapped = match valid {
+        Ok(ref code) =&gt; code.value(),
+        Err(_) =&gt; &quot;&quot;,
+    };
+}</code></pre>
+<p>Notice that in Rust, the <code>mod.rs</code> file declares all child modules. If you had a <code>widget_code.rs</code> on the file system but no <code>mod widget_code;</code>, Rust would just ignore the declaration entirely. Then Rust also requires us to <code>use widget_code;</code> to access its contents. The distinction between declaring and using a given module makes some sense: by the time all is said and done with this exercise, we won’t be doing much of anything in this <code>Ordering</code> module; it’ll exist primarily as a grouping construct for all the <em>other</em> modules.</p>
+<p>In this case, we go ahead and import the <code>WidgetCode</code> type from the module. We only have the one type there, with no standalone functions: everything is attached to the type via the <code>impl</code> block; so we can just call everything directly off of the type. This ends up feeling <em>kind of</em> like the way we’d do things in a traditional OOP language, but also <em>really not</em>, because we still have a separation between the data type and the implementation of functionality attached to it. It’s not obvious <em>here</em>, but we could write <code>impl WidgetCode</code> in some <em>other</em> module in the crate, and as long as there’s no conflict between the implementations, it’s fine! And then we could call whatever function we defined in <em>that</em> block “on” <code>WidgetCode</code>. This is on the one hand <em>totally</em> unlike what we’ll see in the other languages, and on the other hand <em>weirdly analogous</em> to them.</p>
+<p>I’m going to pass over why we need <code>ref code</code> here, as it gets into details of Rust’s model of ownership and reference borrowing <em>and</em> it’s going to be unneeded because of improvements to Rust’s compiler fairly soon. The one thing to note here is that we get nice memory/allocation behavior, i.e. we’re not doing a bunch of separate heap string allocations here. This is one of the big upsides to Rust in general! It’s not quite as pretty as what we’ll see below, but the performance wins are awesome.</p>
+</section>
+<section id="elm" class="level3">
+<h3>Elm</h3>
+<p>Elm introduces us to a pattern we’ll see in each of the more traditional “functional” languages: the use of <em>modules</em> for this kind of structure. First the code, then some comments on it:</p>
+<pre class="elm"><code>-- src/ordering/WidgetCode.elm
+module Ordering.WidgetCode exposing (create, value)
+
+import Regex exposing (contains, regex)
+
+
+type WidgetCode
+    = WidgetCode String
+
+
+create : String -&gt; Result String WidgetCode
+create code =
+    if contains (regex &quot;W\\d{4}&quot;) code then
+        Ok (WidgetCode code)
+    else
+        Err &quot;`WidgetCode` must begin with a &#39;W&#39; and be followed by 4 digits&quot;
+
+
+value : WidgetCode -&gt; String
+value (WidgetCode code) =
+    code</code></pre>
+<p>Elm’s module system lets you choose exactly what to expose. In this case, we’re only exporting the <code>create</code> and <code>value</code> functions.</p>
+<p>You can import the things exposed both as a module and as individual items. Assume we implemented <code>GizmoCode</code> the same way. We’d import and use them in <code>Ordering.elm</code> like this:</p>
+<pre class="elm"><code>-- Ordering.elm
+import Ordering.WidgetCode as WidgetCode exposing (WidgetCode)
+import Ordering.GizmoCode as GizmoCode exposing (GizmoCode)
+
+type ProductCode
+    = Widget WidgetCode
+    | Gizmo GizmoCode
+    
+valid =
+    WidgetCode.create &quot;W1234&quot;
+
+
+invalid =
+    WidgetCode.create &quot;wat&quot;
+
+
+unwrapped =
+    case valid of
+        Result.Ok code -&gt;
+            WidgetCode.value (code)
+
+        Result.Err _ -&gt;
+            &quot;&quot;</code></pre>
+<p>As with Rust, we can’t construct the type without using the provided function. As I’ve written the imports, you’d create a <code>WidgetCode</code> by writing <code>WidgetCode.create &quot;W1234&quot;</code>. You could also import it directly, but that would have its own problems once you had the <code>create</code> function imported for <code>GizmoCode</code> as well.</p>
+<p>Finally, notice the way we aliased the module name here with <code>as</code> on the import: we don’t have to write out the fully qualified path this way. And there’s no conflict between the aliased module name and the type name – they live in their own namespaces (as it should be!). Importing the type name distinctly is handy because it means we don’t have to write the body of the union type out as <code>Widget WidgetCode.WidgetCode</code>.</p>
+</section>
+<section id="f" class="level3">
+<h3>F<sup>♯</sup></h3>
+<p>The F<sup>♯</sup> code looks a <em>lot</em> like the Elm code. The main differences here have to do with their module systems.</p>
+<pre class="fsharp"><code>namespace Ordering
+
+type WidgetCode = private WidgetCode of string
+module WidgetCode =
+    let create code =
+        if Regex.IsMatch(code, @&quot;W\d{4}&quot;) then
+            Ok (WidgetCode code)
+        else
+            Error &quot;`WidgetCode` must begin with a &#39;W&#39; and be followed by 4 digits&quot;
+
+    let value (WidgetCode code) = code</code></pre>
+<p>Here we declare that we’re in the <code>namespace Ordering</code>. Everything here will be publicly visible to everything <em>else</em> in the <code>namespace Ordering</code>. We could also make this a <code>module</code>, and in that case we’d need to explicitly open it in other modules. Because it’s part of the base namespace we’re using for <code>Ordering</code>, though, we get it for “free”. There’s a downside to this, though. More on that below.</p>
+<p>Also notice that this means that we have yet one more “namespace” for names to live in: <code>namespace</code> names are different from <code>module</code> are different from type names! So here we declare a top-level <code>module Ordering</code> here so that we can actually write code that <em>does something</em> in the file – <code>namespace</code>s can only contain type definitions (including <code>module</code> definitions).</p>
+<pre class="fsharp"><code>namespace Ordering
+
+type ProductCode =
+    | Widget of WidgetCode
+    | Gizmo of GizmoCode
+
+module DemoIt =
+    let valid = WidgetCode.create &quot;W1234&quot;
+    let invalid = WidgetCode.create &quot;wat&quot;
+    
+    let unwrapped =
+        match valid with
+        | Ok(code) -&gt; WidgetCode.value code
+        | Error(_) -&gt; &quot;&quot;</code></pre>
+<p>The things to notice here as particularly different from the others:</p>
+<ol type="1">
+<li>We don’t have to explicitly import the module names, because we used the same namespace (<code>Ordering</code>) to group them. We could also have done <code>namespace Ordering.WidgetCode</code> and <code>open Ordering.WidgetCode</code>; that might actually make more or less sense in the context. I <em>think</em> this is probably more idiomatic, however, which is why I picked it.</li>
+<li>Since we’re keeping the rest of the containing module in the same namespace, we <em>do</em> have to declare <code>module DemoIt</code> for functionality – not just types – to live in. This is true for both <code>Ordering.fs</code> and <code>WidgetCode.fs</code> and so on.</li>
+</ol>
+<p>This way of structuring things works really well, but it has one major downside compared to Elm and Rust: where any given name comes from is <em>not</em> obvious from any given text file. Using modules instead of namespaces and using more fully qualified names <em>could</em> help here, but the reality is simply that F<sup>♯</sup> (like C<sup>♯</sup>) basically leaves you out to dry here. My take is that this is basically what happens when you design a language <em>assuming</em> IDE-like tooling. But especially when looking at e.g. GitHub diff views, or just browsing source code in general, I strongly prefer the way Elm and Rust generally lead you to do explicit imports or fully qualified paths. (Both have an escape hatch: Rust’s <code>use path::to::module::*;</code> and Elm’s <code>import Path.To.Module exposing (..)</code>, but both are actively discouraged as bad practice in <em>most</em> situations.)</p>
+</section>
+<section id="reason" class="level3">
+<h3>Reason</h3>
+<p>Interestingly, Reason <em>looks</em> most like Rust but <em>behaves</em> most like F<sup>♯</sup>. The biggest difference is that I need a separate <em>interface file</em> for Reason to get the privacy benefits that I’m getting in all the other languages.</p>
+<p>We put the definition file at <code>ordering/Ordering_WidgetCode.rei</code>. (I’ll comment on the long name in a moment.)</p>
+<pre class="reason"><code>type gizmoCode = pri | GizmoCode(string);
+
+let create: string =&gt; Js.Result.t(widgetCode, string);
+
+let value: widgetCode =&gt; string;</code></pre>
+<p>With that module definition in place, we can separately supply the implementation, in <code>ordering/Ordering_WidgetCode.re</code>.</p>
+<pre class="reason"><code>type widgetCode =
+  | WidgetCode(string);
+
+let create = code =&gt; {
+  let isMatch =
+    Js.Re.fromString(&quot;W\\d{4}&quot;) |&gt; Js.Re.exec(code) |&gt; Js.Option.isSome;
+  if (isMatch) {
+    Js.Result.Ok(WidgetCode(code));
+  } else {
+    Js.Result.Error(
+      &quot;`WidgetCode` must begin with a &#39;W&#39; and be followed by 4 digits&quot;
+    );
+  };
+};
+
+let value = (WidgetCode(code)) =&gt; code;</code></pre>
+<p>Note that you could do the same thing with an interface file for F<sup>♯</sup>. We’re also doing something that’s similar in principle to the use of private types in in F<sup>♯</sup>, but unlike in F<sup>♯</sup> we <em>have</em> to use the module interface to make it work as far as I can tell. The <em>interface</em> can declare the type private, but in the actual implementation, the type has to be non-private to be constructable. (If I’m wrong, please send me a note to let me know! But that’s what I gathered from reading OCaml docs, as well as from command line error messages as I played around.) Also, the fact that Reason has landed on the keyword <code>pri</code> instead of OCaml and F<sup>♯</sup>’s much saner <code>private</code> is super weird.</p>
+<p>The interface file just defines the types, and has the <code>.rei</code> extension. <code>type widgetCode</code> here is an <em>abstract</em> type, which provides no information about what it contains. Note the function types are provided as well. Here I’m using specifically the <code>Js.Result</code> type; there is also a <code>Result</code> type in at least one of the OCaml standard libraries. This is one of the more complicated things about Reason compared to the others: there are… <em>several</em> standard libraries to choose from, which will or won’t work differently depending on what compile target you’re picking.</p>
+<p>In any case, once we have both the module and the implementation defined, we can use it like this in <code>ordering.re</code>:</p>
+<pre class="reason"><code>module WidgetCode = Ordering_WidgetCode;
+
+module GizmoCode = Ordering_GizmoCode;
+
+open WidgetCode;
+
+open GizmoCode;
+
+type productCode =
+  | Widget(widgetCode)
+  | Gizmo(gizmoCode);
+
+let valid = WidgetCode.create(&quot;W1234&quot;);
+
+let invalid = WidgetCode.create(&quot;wat&quot;);
+
+let unwrapped =
+  switch valid {
+  | Js.Result.Ok(code) =&gt; WidgetCode.value(code)
+  | Js.Result.Error(_) =&gt; &quot;&quot;
+  };</code></pre>
+<p>We do this mapping from <code>Ordering_WidgetCode</code> to <code>WidgetCode</code> here because OCaml and therefore Reason has only a single global namespace for its module names as defined by the file system. You can nest modules, but only <em>within</em> files. The workaround is, well… <code>Ordering_</code> and remapping the name as we have here. This lets you access the nested modules as <code>Ordering.WidgetCode</code> and so on elsewhere.</p>
+<p>Then we <code>open WidgetCode</code> etc. so that we can write <code>widgetCode</code> instead of <code>WidgetCode.widgetCode</code> in the <code>productCode</code> definition. This is basically the same effect we get from just being in the same <code>namespace</code> in F<sup>♯</sup> (which, again, we could rewrite exactly this way), or from the kinds of imports we discussed above for Rust and Elm.</p>
+</section>
+</section>
+<section id="numeric-validation-unitquantity" class="level2">
+<h2>Numeric validation: <code>UnitQuantity</code></h2>
+<p>So far, the showing tilts <em>heavily</em> in F<sup>♯</sup>’s and Elm’s favor in terms of expressiveness and elegance. However, there’s a lot of variation depending on exactly what you’re doing. If, for example, you want to validate a <em>range</em>, well… then Rust actually has a pretty good approach! Once again, you’ll note that these all have a lot in common; the difference mostly comes down to the degree of syntactical noise required to express the same basic thing.</p>
+<p>In this section, I’m not really going to spend a lot of time discussing the details and differences; I’m just leaving it here to show an interesting example where the languages’ design decisions end up have slightly different ergonomic tradeoffs.</p>
+<section id="rust-1" class="level3">
+<h3>Rust</h3>
+<pre class="rust"><code>// ordering/unit_quantity.rs
+pub struct UnitQuantity(u32);
+
+impl UnitQuantity {
+    pub fn create(qty: u32) -&gt; Result&lt;UnitQuantity, String&gt; {
+        match qty {
+            0 =&gt; Err(String::from(&quot;`UnitQuantity` cannot be less than 1&quot;)),
+            1...1000 =&gt; Ok(UnitQuantity(qty)),
+            _ =&gt; Err(String::from(&quot;`UnitQuantity` cannot be greater than 1000&quot;)),
+        }
+    }
+
+    pub fn value(&amp;self) -&gt; u32 {
+        self.0
+    }
+
+    pub fn minimum() -&gt; UnitQuantity {
+        UnitQuantity(1)
+    }
+}</code></pre>
+</section>
+<section id="elm-1" class="level3">
+<h3>Elm</h3>
+<pre class="elm"><code>-- ordering/UnitQuantity.elm
+module Ordering.UnitQuantity exposing (UnitQuantity, create, value)
+
+
+type UnitQuantity
+    = UnitQuantity Int
+
+
+create : Int -&gt; Result String UnitQuantity
+create qty =
+    if qty &lt; 1 then
+        Err &quot;`UnitQuantity` cannot be less than 1&quot;
+    else if qty &gt; 1000 then
+        Err &quot;`UnitQuantity` cannot be greater than 1000&quot;
+    else
+        Ok (UnitQuantity qty)
+
+
+value : UnitQuantity -&gt; Int
+value (UnitQuantity qty) =
+    qty
+
+    
+minimum : UnitQuantity
+minimum = UnitQuantity 0</code></pre>
+</section>
+<section id="f-1" class="level3">
+<h3>F<sup>♯</sup></h3>
+<pre class="fsharp"><code>// ordering/UnitQuantity.fs
+namespace Ordering
+
+type UnitQuantity = private UnitQuantity of uint32
+module UnitQuantity =
+    let create qty =
+        if qty &lt; 1u then
+            Error &quot;`UnitQuantity` cannot be less than 1&quot;
+        else if qty &gt; 1000u then
+            Error &quot;`UnitQuantity` cannot be greater than 1000&quot;
+        else
+            Ok (UnitQuantity qty)
+
+    let value (UnitQuantity qty) = qty
+    
+    let minimum = UnitQuantity 0</code></pre>
+</section>
+<section id="reason-1" class="level3">
+<h3>Reason</h3>
+<pre class="reason"><code>/* ordering/Ordering_UnitQuantity.rei */
+type unitQuantity = pri | UnitQuantity(int);
+
+let create: int =&gt; Js.Result.t(unitQuantity, string);
+
+let value: unitQuantity =&gt; int;</code></pre>
+<pre class="reason"><code>/* ordering/Ordering_UnitQuantity.re */
+
+type unitQuantity =
+  | UnitQuantity(int);
+
+let create = qty =&gt;
+  if (qty &lt; 1) {
+    Js.Result.Error(&quot;`UnitQuantity` cannot be less than 1&quot;);
+  } else if (qty &gt; 1000) {
+    Js.Result.Error(&quot;`UnitQuantity` cannot be greater than 1000&quot;);
+  } else {
+    Js.Result.Ok(UnitQuantity(qty));
+  };
+
+let value = (UnitQuantity(qty)) =&gt; qty;
+
+let minimum = UnitQuantity(0);</code></pre>
+</section>
+</section>
+<section id="aside-on-documentation" class="level2">
+<h2>Aside: On Documentation</h2>
+<p>One thing that became <em>extremely</em> clear in the course of working all of this out is that the documentation stories for these languages are in vastly, <em>vastly</em> different places.</p>
+<p>Figuring out how to write this private <code>create</code>/<code>value</code> approach was <em>very</em> straightforward in Rust, because it’s literally just right there in how <code>impl</code> blocks and the <code>pub</code> keyword work: things default to private, including the contents of a struct, and you <em>always</em> define the related functionality with <code>pub fn</code> declarations in the related <code>impl</code> block.</p>
+<p>Elm and F<sup>♯</sup> were both slightly harder, in that I had to poke around a bit to figure out the right way to do it. But not <em>that</em> much harder. Both use module-level isolation to accomplish this; the main difference there was that F<sup>♯</sup> just lets you do it inline and Elm explicitly ties modules to files.</p>
+<p>Reason… was very, <em>very</em> difficult to get sorted out. This is just a function of the state of the ecosystem. Reason is <em>distinct syntax</em> for OCaml, but it also leans on BuckleScript. That means that if you want to figure out how to do anything, you probably need to search in the docs for all of those, and if your answer turns out to come from OCaml then you have to figure out how to translate it back into Reason and BuckleScript! Ultimately, I was able to figure it out and get the project layout to how you see it in the repository, but… it took a lot more digging than with any of the other projects!</p>
+</section>
+<section id="summary" class="level2">
+<h2>Summary</h2>
+<p>As with our <a href="http://www.chriskrycho.com/2018/exploring-4-languages-starting-to-model-the-domain.html">previous foray</a>, we can see a ton of similarities across these languages. All lean heavily on pattern-matching for dealing with different scenarios; all let us make use of a <code>Result</code> type for handling success or failure; all make heavy use of expression-bodied-ness; and all supply <em>some</em> way to make types constructable only in safe/controlled ways.</p>
+<p>For Rust, that’s a matter of leaving the internals of a <code>struct</code> private and making <code>pub fn</code> helpers to do the construction and value retrieval. For Elm, F<sup>♯</sup>, and Reason, that’s a matter of having the normal type <em>constructors</em> be private while exposing the types themselves normally. They do that in different ways (F<sup>♯</sup>’s <code>private type</code>, Elm’s <code>exposing</code>, and Reason’s <code>pri</code> annotation on the type variant in a module interface file), but the effect is essentially identical, and functionally equivalent to what we see in Rust.</p>
+<p>The main differences we see across Elm, F<sup>♯</sup>, and Reason have to do with the nature of the various module systems. In a lot of ways, Reason’s is the least capable <em>for this specific purpose</em>, because it’s directly tied to OCaml’s module system, which substantially predates any of the others. (I say “in a lot of ways” because OCaml’s modules are surprisingly capable; they end up being their own kind of types and you can do some crazy things with them, all of which I’d like to actually come to understand… eventually.) Rust’s module system, meanwhile, has a lot of similarities to Elm’s in particular, but because we actually carry functions along with the types they <code>impl</code> (though they get defined separately, with all the power that entails), we have a bit less boilerplate we need to write just to get at the specific functions in play.</p>
+<p>Next time (probably only a couple of weeks away because we’re working through the book at work in a book club!), I’ll be looking at Chapter 7: Modeling Workflows as Pipelines. I suspect this will be a place where the true functional orientation of Elm, F<sup>♯</sup>, and Reason will much more sharply differentiate them from the sometimes-functionalish-but-not-actually-functional way we write things in Rust.</p>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This reference will live and be valid as long as the underlying <code>WidgetCode</code> is. We could also return a <code>String</code> if we wanted that value to live independently of the <code>WidgetCode</code> instance backing it.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Putting it in its own module, whether in a separate <em>does</em> have implications for privacy, though we don’t much care about them in this case. Rust lets us set the privacy on <a href="https://doc.rust-lang.org/1.24.1/reference/visibility-and-privacy.html">a whole spectrum</a>, from “visible everywhere” to “only visible in this specific module.”<a href="#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/how-i-write-a-talk.html">How I Write a Talk</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/exploring-4-languages-integrity-and-consistency.html">Exploring 4 Languages: Integrity and Consistency</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/handling-the-liberal-order-correctly.html">Handling “The Liberal Order” Correctly</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
