@@ -152,7 +152,7 @@ fn demo_it() {
 <h3>Elm</h3>
 <p>Elm introduces us to a pattern we’ll see in each of the more traditional “functional” languages: the use of <em>modules</em> for this kind of structure. First the code, then some comments on it:</p>
 <pre class="elm"><code>-- src/ordering/WidgetCode.elm
-module Ordering.WidgetCode exposing (create, value)
+module Ordering.WidgetCode exposing (WidgetCode, create, value)
 
 import Regex exposing (contains, regex)
 
@@ -172,7 +172,7 @@ create code =
 value : WidgetCode -&gt; String
 value (WidgetCode code) =
     code</code></pre>
-<p>Elm’s module system lets you choose exactly what to expose. In this case, we’re only exporting the <code>create</code> and <code>value</code> functions.</p>
+<p>Elm’s module system lets you choose exactly what to expose. In this case, we’re only exporting the type itself along the <code>create</code> and <code>value</code> functions—but, importantly, <em>not</em> the normal type constructors for the type.</p>
 <p>You can import the things exposed both as a module and as individual items. Assume we implemented <code>GizmoCode</code> the same way. We’d import and use them in <code>Ordering.elm</code> like this:</p>
 <pre class="elm"><code>-- Ordering.elm
 import Ordering.WidgetCode as WidgetCode exposing (WidgetCode)

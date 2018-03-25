@@ -65,7 +65,7 @@ fn demo_it() {
 &lt;h3&gt;Elm&lt;/h3&gt;
 &lt;p&gt;Elm introduces us to a pattern we’ll see in each of the more traditional “functional” languages: the use of &lt;em&gt;modules&lt;/em&gt; for this kind of structure. First the code, then some comments on it:&lt;/p&gt;
 &lt;pre class="elm"&gt;&lt;code&gt;-- src/ordering/WidgetCode.elm
-module Ordering.WidgetCode exposing (create, value)
+module Ordering.WidgetCode exposing (WidgetCode, create, value)
 
 import Regex exposing (contains, regex)
 
@@ -85,7 +85,7 @@ create code =
 value : WidgetCode -&amp;gt; String
 value (WidgetCode code) =
     code&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Elm’s module system lets you choose exactly what to expose. In this case, we’re only exporting the &lt;code&gt;create&lt;/code&gt; and &lt;code&gt;value&lt;/code&gt; functions.&lt;/p&gt;
+&lt;p&gt;Elm’s module system lets you choose exactly what to expose. In this case, we’re only exporting the type itself along the &lt;code&gt;create&lt;/code&gt; and &lt;code&gt;value&lt;/code&gt; functions—but, importantly, &lt;em&gt;not&lt;/em&gt; the normal type constructors for the type.&lt;/p&gt;
 &lt;p&gt;You can import the things exposed both as a module and as individual items. Assume we implemented &lt;code&gt;GizmoCode&lt;/code&gt; the same way. We’d import and use them in &lt;code&gt;Ordering.elm&lt;/code&gt; like this:&lt;/p&gt;
 &lt;pre class="elm"&gt;&lt;code&gt;-- Ordering.elm
 import Ordering.WidgetCode as WidgetCode exposing (WidgetCode)
