@@ -1,4 +1,3 @@
-
 ---
 Title: A Humanist Frame
 Subtitle: Avoiding the usual conservative mistake of stopping with the mere rejection of something bad
