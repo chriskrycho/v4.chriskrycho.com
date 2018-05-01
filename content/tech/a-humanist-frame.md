@@ -2,6 +2,7 @@
 ---
 Title: A Humanist Frame
 Subtitle: Avoiding the usual conservative mistake of stopping with the mere rejection of something bad
+Date: 2018-05-01 07:00
 Tags: ethics, community
 Category: tech
 Summary: >
