@@ -11,7 +11,7 @@ Summary: >
 
 A few thoughts this morning on technologies, community, and the need for a positive (as well as a negative) vision of technology, cities, and indeed liberty—taking [the latest issue](https://tinyletter.com/lmsacasas/letters/the-convivial-society-no-4-community "No. 4: Community") of Michael Sacasas' newsletter [The Convivial Society](https://tinyletter.com/lmsacasas/archive) as a jumping off point.
 
-<aside\>I don't expect to link quite so often to the same writer, so don't worry: this isn't about to become a secondary feed for Sacasas' writing. I do commend the newsletter, and especially this issue of it, to you. This essay, which I quote in brief, does something I hope to be able to do in a piece of writing someday: it *hangs together* marvelously. There are standout paragraphs, but each one connects to those before and after it, and the essay is—in the best way—not excerpt-able. You should read the whole thing. If you have to choose, read that instead of this (seriously).</aside\>
+<aside>I don't expect to link quite so often to the same writer, so don't worry: this isn't about to become a secondary feed for Sacasas' writing. I do commend the newsletter, and especially this issue of it, to you. This essay, which I quote in brief, does something I hope to be able to do in a piece of writing someday: it *hangs together* marvelously. There are standout paragraphs, but each one connects to those before and after it, and the essay is—in the best way—not excerpt-able. You should read the whole thing. If you have to choose, read that instead of this (seriously).</aside>
 
 Early in the newsletter, Sacasas offers this note on technological visionaries stretching back to the telegraph (at least):
 
