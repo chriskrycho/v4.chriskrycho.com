@@ -83,7 +83,7 @@
 <h2>Finishing What We've Started</h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/2018/emberjs2018-part-1.html"><i class="fa fa-fw fa-link"></i></a>May 11, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/emberjs2018/">#emberjs2018</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2018/emberjs2018-part-1.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/2018/emberjs2018-part-1.html"><i class="fa fa-fw fa-link"></i></a>May 11, 2018 (updated May 11, 2018)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/emberjs2018/">#emberjs2018</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2018/emberjs2018-part-1.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
@@ -150,6 +150,13 @@
 <li>Help document those internals (see the next post in this series)</li>
 </ul>
 </section>
+</section>
+<section id="install-your-way-to-ember" class="level3">
+<h3>Install-your-way-to-Ember</h3>
+<p>We need to finish splitting apart the Ember source from its current state of still being fairly monolith and get it turned into a true set of packages. The new Modules API which landed last year was a huge step toward this and made the experience on the developer side <em>look</em> like this should be possible—but that’s still a shim around the actual non-modularized Ember core code. The process of splitting it apart <em>is happening</em>, but we need to finish it.</p>
+<p>The promise here is huge: Ember will be able to be the kind of thing you can progressively add to your existing applications and slowly convert them, rather than something that comes along all as a large bundle. It’s technically possible to do this today, but you cannot drop in <em>just the view layer</em>, for example, and that’s a huge value for people who want to try out the programming model or add it for just one feature in an existing application.</p>
+<p>Making it possible for people to install Glimmer components, then the service layer, then the router, and so on as they need it will make adoption easier for people who are curious about the framework. But it will also be a huge boon to those of us already using Ember and wanting to migrate existing applications (often a tangled mix of server-side rendering and massive jQuery spaghetti files!) to Ember progressively. I’ve had multiple scenarios come up at my wn job in just the last month where this would have been hugely useful.</p>
+<p><strong>How you can help:</strong> make it known that you’re willing to help work on breaking apart Ember into its constituent pieces, and as that effort lands (hopefully over the rest of this year!) test it in your own apps and addons, and find the pain points in the install-your-way-to-the-framework process.</p>
 </section>
 <section id="make-typescript-great-everywhere" class="level3">
 <h3>Make TypeScript <em>great</em> everywhere</h3>

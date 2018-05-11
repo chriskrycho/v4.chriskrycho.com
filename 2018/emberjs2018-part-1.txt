@@ -5,6 +5,7 @@ Tags: emberjs, javascript, typescript, emberjs2018
 Category: Tech
 Slug: emberjs2018-part-1
 Date: 2018-05-11 09:30
+Modified: 2018-05-11 10:00
 Summary: >
     We don’t need more new features this year. We need to ship the things we already have in progress.
 ---
@@ -80,6 +81,16 @@ A few of the things we can expect to be possible once that effort lands:
 - If you know Ember CLI internals: pop into #-dev-ember-cli and ask how you can help land the features
 - If you don’t know Ember CLI internals: also pop into #-dev-ember-cli, but ask instead how you can *test* the changes
 - Help document those internals (see the next post in this series)
+
+### Install-your-way-to-Ember
+
+We need to finish splitting apart the Ember source from its current state of still being fairly monolith and get it turned into a true set of packages. The new Modules API which landed last year was a huge step toward this and made the experience on the developer side *look* like this should be possible---but that's still a shim around the actual non-modularized Ember core code. The process of splitting it apart *is happening*, but we need to finish it.
+
+The promise here is huge: Ember will be able to be the kind of thing you can progressively add to your existing applications and slowly convert them, rather than something that comes along all as a large bundle. It's technically possible to do this today, but you cannot drop in *just the view layer*, for example, and that's a huge value for people who want to try out the programming model or add it for just one feature in an existing application.
+
+Making it possible for people to install Glimmer components, then the service layer, then the router, and so on as they need it will make adoption easier for people who are curious about the framework. But it will also be a huge boon to those of us already using Ember and wanting to migrate existing applications (often a tangled mix of server-side rendering and massive jQuery spaghetti files!) to Ember progressively. I've had multiple scenarios come up at my wn job in just the last month where this would have been hugely useful.
+
+**How you can help:** make it known that you're willing to help work on breaking apart Ember into its constituent pieces, and as that effort lands (hopefully over the rest of this year!) test it in your own apps and addons, and find the pain points in the install-your-way-to-the-framework process.
 
 ### Make TypeScript *great* everywhere
 
