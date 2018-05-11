@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>#EmberJS2018, Part 1 &middot; Chris Krycho</title>
+    <meta name="description" content="We don’t need more new features this year. We need to ship the things we already have in progress."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/emberjs2018-part-1.html"/>
+    <meta property="og:title" content="#EmberJS2018, Part 1"/>
+    <meta property="og:description" content="We don’t need more new features this year. We need to ship the things we already have in progress."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="#EmberJS2018, Part 1"/>
+    <meta name="twitter:description" content="We don’t need more new features this year. We need to ship the things we already have in progress."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="emberjs javascript typescript emberjs2018 tech">
+
+    <header>
+<h1>#EmberJS2018, Part 1</h1>
+<h2>Finishing What We've Started</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/emberjs2018-part-1.html"><i class="fa fa-fw fa-link"></i></a>May 11, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/emberjs2018/">#emberjs2018</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2018/emberjs2018-part-1.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>Following <a href="https://blog.rust-lang.org/2018/01/03/new-years-rust-a-call-for-community-blogposts.html">the example</a> of the Rust community, the <a href="https://emberjs.com">Ember.js</a> team has <a href="https://emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html" title="Ember&#39;s 2018 Roadmap: A Call for Blog Posts">called for blog posts</a> as the first step in setting the 2018 roadmap (which will formally happen through the normal <a href="https://github.com/emberjs/rfcs"><abbr title="Request for Comments">RFC</abbr> process</a>). This is my contribution.</p>
+<p>There are three major themes I think should characterize the Ember.js community and project for the rest of 2018:</p>
+<ol type="1">
+<li><strong>Finishing What We’ve Started</strong> (this post)</li>
+<li><strong>Doubling Down on Docs</strong></li>
+<li><strong>Embracing the Ecosystem</strong></li>
+</ol>
+<hr />
+<section id="finishing-what-weve-started" class="level2">
+<h2>Finishing What We’ve Started</h2>
+<p>What I want, more than any new feature anyone could come up with, is for this to be the year Ember.js commits to <em>finishing what we have started</em>. The last few years have seen the Ember do a lot of really important exploratory work, including projects like <a href="https://glimmerjs.com">Glimmer.js</a>; and we have landed some of the initiatives we have started. But I think it’s fair to say that focus has not been our strong suit. It’s time for a year of <em>shipping</em>.</p>
+<p>We need to land all the things we have in flight, and as much as possible avoid the temptation (much though I feel it myself!) to go haring off after interesting new ideas. As such, literally everything I list below is an effort <em>already in progress</em>. It’s just a matter of making concerted efforts as a community to land them.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>And that way of putting it is important: we have to make concerted efforts <em>as a community</em> to land these things. Very, very few people are paid to work on Ember.js full time—far too few to accomplish all of this! If these things matter to you and your company, find a way to carve out time for it. Even if it’s just a few hours a week, even if it’s “just” (and there’s no “just” about these!) helping out with triage of open issues or answering questions in Slack or Discourse or Stack Overflow, even if it doesn’t <em>feel</em> like a lot… it adds up.</p>
+<p>To be very clear, before I go any further: none of this is a knock on everything that the Ember core team and community have done in the last couple years. A lot of things that have landed along the way—dropping in the Glimmer rendering engine midway through the 2.x series, landing ES5 getters just weeks ago in Ember 3.1, and so on—are genuinely great! <em>All</em> that I mean is, a year where we land and polish everything would make everything that much more awesome (and make Ember that much more competitive a choice in the client-side framework world).</p>
+<p>So: what do we need to ship this year?</p>
+<section id="land-glimmer-components-in-ember.js-proper" class="level3">
+<h3>Land Glimmer <code>&lt;Component&gt;</code>s in Ember.js proper</h3>
+<p>We’ve taken the first steps toward this already via a number of <abbr title="Request for Comments">RFC</abbr>s that were written late last year and merged since. We need to finish the implementation for these. That means getting the <a href="https://github.com/emberjs/ember.js/issues/16301">Glimmer Components in Ember</a> quest across the finish line.</p>
+<p>The whole story here will make Ember <em>feel</em> much more modern in a variety of ways, as well as enabling some great performance and programming model wins: Immutable component arguments! Auto-tracked class properties! <code>&lt;AngleBracketComponent&gt;</code> invocation! Clear semantic distinctions between arguments and local context! So many good things. We just need to land it! <a href="https://github.com/emberjs/ember.js/issues/16301">The quest</a> needs to be moving forward, not stagnant.</p>
+<p><strong>How you can help:</strong></p>
+<ul>
+<li>Show up and volunteer to go after pieces of the quest. There are people willing to mentor you through the work that needs to be done!</li>
+<li>Test it as it lands! You don’t have to commit to <em>shipping</em> things in your app to <em>test</em> them in your app.</li>
+</ul>
+</section>
+<section id="land-a-lot-of-ember-cli-efforts" class="level3">
+<h3>Land a <em>lot</em> of Ember CLI efforts</h3>
+<p>There are a great many Ember CLI efforts in flight. Every last one of them should be on stable and in use before the end of the year.</p>
+<section id="module-unification" class="level4">
+<h4>Module Unification</h4>
+<p>The <a href="https://github.com/dgeb/rfcs/blob/module-unification/text/0000-module-unification.md">Module Unification <abbr title="Request for Comments">RFC</abbr></a> was opened in May 2016 and merged October 2016. There has been a lot of progress made, but we need to <em>ship it</em>—from where I stand, it’d be nice if it landed less than 2 years after we approved it! And we’re <a href="https://github.com/emberjs/ember.js/issues/16373">getting pretty close</a>; you can actually use the Module Unification blueprint in an Ember application today. Some stuff doesn’t work <em>quite</em> right yet, but it’s getting close.</p>
+<p><strong>How you can help:</strong> try it out! Spin up new apps with the module unification blueprint flag, and try running the migrator codemod, and report back on what breaks.</p>
+</section>
+<section id="broccoli-1.0" class="level4">
+<h4>Broccoli 1.0</h4>
+<p>We’re <em>super</em> close on this one—Oli Griffiths has done some heroic work on this since EmberConf—but we need to finish it. Ember CLI, for historical reasons, has been using a fork of Broccoli.js for quite some time. This divergence has caused all manner of trouble, including compatibility issues between Broccoli plugins and an inability to take advantage of the best things that have landed in Broccoli since the fork happened.</p>
+<p>Perhaps the single most important example of that is that Broccoli 1.0 supports the use of the system <code>tmp</code> directory. That single change will improve the performance of Ember CLI on especially Windows <em>dramatically</em>, and it will flat-out eliminate a number of bugs and odd behaviors that appear when trying to integrate Ember CLI with other file watching tools (e.g. TypeScript’s <code>--watch</code> invocation).</p>
+<p><strong>How you can help:</strong> once the Ember CLI team says it’s ready for testing, test your app and addons with it! Make sure that everything works as it should—specifically, that you’re not making any assumptions that depend on either the forked <abbr>API</abbr> or the location of the <code>tmp</code> directory used for intermediate build steps.</p>
+</section>
+<section id="the-new-packager-setup-with-tree-shaking-and-app-splitting" class="level4">
+<h4>The new <code>Packager</code> setup, with tree-shaking and app-splitting</h4>
+<p>One of the current major pain points with Ember’s build pipeline is that it’s hard to extend, and not really documented at all. (I’ll have a <em>lot</em> more to say on the question of documentation in the next post!) However, work is in progress to change that, too!</p>
+<p>The accepted-and-actively-being-worked-on <a href="https://github.com/ember-cli/rfcs/blob/master/active/0051-packaging.md">Packaging Ember CLI <abbr title="Request for Comments">RFC</abbr></a> aims to fix both of these. Quoting from it:</p>
+<blockquote>
+<p>The current application build process merges and concatenates input broccoli trees. This behaviour is not well documented and is a tribal knowledge. While the simplicity of this approach is nice, it doesn’t allow for extension. We can refactor our build process and provide more flexibility when desired.</p>
+</blockquote>
+<p>A few of the things we can expect to be possible once that effort lands:</p>
+<ul>
+<li>tree-shaking – we can lean on Rollup.js to get <em>only</em> the code we actually need, cutting shipped file size dramatically</li>
+<li>app-splitting – lots of different strategies to explore, including route-based or “section”-based, etc.</li>
+<li>static-build-asset-splitting – no reason to cache-bust your <em>dependencies</em> every time the app releases!</li>
+<li>distinct app builds – you could ship one build of your app for browsers which support ES Modules and one for browsers which don’t (heeeeey, IE11) – letting you minimize the payload size for the ones that do</li>
+</ul>
+<p><strong>How you can help:</strong></p>
+<ul>
+<li>If you know Ember CLI internals: pop into #-dev-ember-cli and ask how you can help land the features</li>
+<li>If you don’t know Ember CLI internals: also pop into #-dev-ember-cli, but ask instead how you can <em>test</em> the changes</li>
+<li>Help document those internals (see the next post in this series)</li>
+</ul>
+</section>
+</section>
+<section id="make-typescript-great-everywhere" class="level3">
+<h3>Make TypeScript <em>great</em> everywhere</h3>
+<p>This one is near and dear to my heart… and it also really falls in no small part to me and the rest of the group working on ember-cli-typescript and type definitions for the Ember ecosystem!</p>
+<p>There are two big wins we can land this year:</p>
+<ol type="1">
+<li>Built-in support in Ember.js itself.</li>
+<li>Solid type definitions for the rest of the Ember.js ecosystem</li>
+</ol>
+<p>If you don’t like TypeScript, don’t panic! The upshot here will actually be a better experience for <em>all</em> users of Ember.js.</p>
+<section id="built-in-support-in-ember.js-itself" class="level4">
+<h4>1. Built-in support in Ember.js itself</h4>
+<p>One of my goals for this summer<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> is to finish an <abbr title="Request for Comments">RFC</abbr> making TypeScript a first-class citizen of the Ember.js ecosystem. To clarify what this will and won’t entail (assuming it’s accepted, assuming I ever manage to finish writing it!):</p>
+<ul>
+<li><p>Ember will <em>always</em> be JS-first, and it will <em>never</em> require type metadata reflected to runtime, unlike e.g. Angular. No one will ever have a <em>worse</em> experience because they prefer JS to TS. The idea will be to make TypeScript an <em>equally</em> good experience, and to include it for consideration when thinking about design choices for new features.</p></li>
+<li><p>Ember users, both JS and TS, will get the <em>benefits</em> of having good types available right out of the box: many editors and IDEs can use TypeScript type definitions to enable better docs, autocompletion, etc.—and we may even be able to leverage it for <a href="https://twitter.com/__dfreeman/status/994410180661170177">better validation of Handlebars templates</a>!</p></li>
+<li><p>We’ll have (because we’ll have to have!) a story on what we support in terms of backwards compatibility and SemVer for TypeScript and Ember and the type definitions. Necessarily, it has been the Wild West for the first year of concentrated effort here, trying to get our type definitions from “barely exist and not useful” to “full coverage and 99% right.” But as TypeScript becomes more widely used, we have to have a stability story, and we very soon will.</p></li>
+</ul>
+<p>There’s also ongoing work to convert Ember’s own internals to TypeScript, and landing that will help guarantee that the type definitions for Ember are actually <em>correct</em>, which in turn will make the experience for everyone better. (Bad type definitions are worse than <em>no</em> type definitions!)</p>
+<p><strong>How you can help:</strong> engage in the <abbr title="Request for Comments">RFC</abbr> process once we get it started, and if you are up for it show up to help convert the Ember internals to TypeScript as well.</p>
+</section>
+<section id="solid-type-definitions-for-the-rest-of-the-ember.js-ecosystem" class="level4">
+<h4>2. Solid type definitions for the rest of the Ember.js ecosystem</h4>
+<p>Closely related to making TypeScript a first-class citizen for Ember.js itself is getting the pieces in place for the rest of the ecosystem as well. That means we need type definitions for addons—a <em>lot</em> of them! The ember-cli-typescript team will (hopefully late this month or in early June) be launching a quest issue to get type definitions for the whole Ember ecosystem in place—by helping convert addons to TS if their authors desire it, or by adding type definitions to the addons if they’re up for it, or by getting them up on DefinitelyTyped if they’re totally disinterested. (And, as I’ll note again in that quest issue, it’s totally fine for people <em>not</em> to be interested: there <em>is</em> a maintenance burden there!) The goal, again, is that when you’re using <em>any</em> part of the Ember ecosystem it’ll be easy to get all the benefits of TypeScript—and indeed that in many cases you’ll get a fair number of those benefits as a JS user.</p>
+<p><strong>How you can help:</strong> participate in the quest issue once it’s live! We’ll help mentor you through the process of converting addons to TypeScript, writing type definitions and getting them well-validated, and so on!</p>
+<hr />
+<p>That’s a lot to do. More than enough all by itself, and a lot of moving parts. As such, I’ll reiterate what I said at the start: we don’t need new features this year. <strong>It’s time for a year of <em>shipping</em>.</strong></p>
+</section>
+</section>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>To put it in the terms the Rust community used for their similar push at the end of 2017, and which we have often used to describe the ongoing efforts in Rust to land the “Rust 2018 edition”: this is an “impl period”—a play on the Rust <code>impl</code> keyword, used to describe the <em>implementation</em> of the behavior associated with a given data type. You can think of this as the same: it’s the implementation of the good ideas we have.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Confession: it was a goal for the spring but I found myself utterly exhausted after EmberConf… and had a full month with <em>another</em> major talk given for internal purposes afterwards. I’m worn out.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/cultural-marxism-and-evangelicalism.html">“Cultural Marxism” and “Evangelicalism”</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/emberjs2018-part-1.html">#EmberJS2018, Part 1</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/handling-the-liberal-order-correctly.html">Handling “The Liberal Order” Correctly</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
