@@ -5,7 +5,7 @@ Tags: emberjs, javascript, typescript, emberjs2018
 Category: Tech
 Slug: emberjs2018-part-1
 Date: 2018-05-11 09:30
-Modified: 2018-05-11 10:00
+Modified: 2018-05-11 20:45
 Summary: >
     We don’t need more new features this year. We need to ship the things we already have in progress.
 ---
@@ -22,7 +22,7 @@ There are three major themes I think should characterize the Ember.js community 
 
 ## Finishing What We’ve Started
 
-What I want, more than any new feature anyone could come up with, is for this to be the year Ember.js commits to *finishing what we have started*. The last few years have seen the Ember do a lot of really important exploratory work, including projects like [Glimmer.js](https://glimmerjs.com); and we have landed some of the initiatives we have started. But I think it’s fair to say that focus has not been our strong suit. It’s time for a year of *shipping*.
+What I want, more than any new feature anyone could come up with, is for this to be the year Ember.js commits to *finishing what we have started*. The last few years have seen the Ember team do a lot of really important exploratory work, including projects like [Glimmer.js](https://glimmerjs.com); and we have landed some of the initiatives we have started. But I think it’s fair to say that focus has not been our strong suit. It’s time for a year of *shipping*.
 
 We need to land all the things we have in flight, and as much as possible avoid the temptation (much though I feel it myself!) to go haring off after interesting new ideas. As such, literally everything I list below is an effort *already in progress*. It’s just a matter of making concerted efforts as a community to land them.[^1]
 
@@ -57,7 +57,7 @@ The [Module Unification <abbr title="Request for Comments">RFC</abbr>](https://g
 
 We’re *super* close on this one—Oli Griffiths has done some heroic work on this since EmberConf—but we need to finish it. Ember CLI, for historical reasons, has been using a fork of Broccoli.js for quite some time. This divergence has caused all manner of trouble, including compatibility issues between Broccoli plugins and an inability to take advantage of the best things that have landed in Broccoli since the fork happened.
 
-Perhaps the single most important example of that is that Broccoli 1.0 supports the use of the system `tmp` directory. That single change will improve the performance of Ember CLI on especially Windows *dramatically*, and it will flat-out eliminate a number of bugs and odd behaviors that appear when trying to integrate Ember CLI with other file watching tools (e.g. TypeScript’s `--watch` invocation).
+Perhaps the single most important example of that is that Broccoli 1.0 supports the use of the system `tmp` directory. That single change will improve the performance of Ember CLI *dramatically*, especially on Windows. It will also flat-out eliminate a number of bugs and odd behaviors that appear when trying to integrate Ember CLI with other file watching tools (e.g. TypeScript’s `--watch` invocation).
 
 **How you can help:** once the Ember CLI team says it’s ready for testing, test your app and addons with it! Make sure that everything works as it should—specifically, that you’re not making any assumptions that depend on either the forked <abbr>API</abbr> or the location of the `tmp` directory used for intermediate build steps.
 
@@ -88,7 +88,7 @@ We need to finish splitting apart the Ember source from its current state of sti
 
 The promise here is huge: Ember will be able to be the kind of thing you can progressively add to your existing applications and slowly convert them, rather than something that comes along all as a large bundle. It's technically possible to do this today, but you cannot drop in *just the view layer*, for example, and that's a huge value for people who want to try out the programming model or add it for just one feature in an existing application.
 
-Making it possible for people to install Glimmer components, then the service layer, then the router, and so on as they need it will make adoption easier for people who are curious about the framework. But it will also be a huge boon to those of us already using Ember and wanting to migrate existing applications (often a tangled mix of server-side rendering and massive jQuery spaghetti files!) to Ember progressively. I've had multiple scenarios come up at my wn job in just the last month where this would have been hugely useful.
+Making it possible for people to install Glimmer components, then the service layer, then the router, and so on as they need it will make adoption easier for people who are curious about the framework. But it will also be a huge boon to those of us already using Ember and wanting to migrate existing applications (often a tangled mix of server-side rendering and massive jQuery spaghetti files!) to Ember progressively. I've had multiple scenarios come up at my own job in just the last month where this would have been hugely useful.
 
 **How you can help:** make it known that you're willing to help work on breaking apart Ember into its constituent pieces, and as that effort lands (hopefully over the rest of this year!) test it in your own apps and addons, and find the pain points in the install-your-way-to-the-framework process.
 
