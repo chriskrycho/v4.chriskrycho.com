@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Chris Krycho - csharp</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 13 May 2018 11:00:00 -0400</lastBuildDate><item><title>Aesthetics and Programming Languages</title><link>http://www.chriskrycho.com/2018/aesthetics-and-programming-languages.html</link><description>&lt;p&gt;My distaste for the aesthetics of C&lt;sup&gt;♯&lt;/sup&gt; are fairly well known to people I talk to about programming languages—perhaps equally as well known as my love of Rust. So much so that both are running jokes among some of my colleagues and friends. My hypersensitivity to aesthetics both in general and also specifically in programming languages and work environment is &lt;em&gt;also&lt;/em&gt; so well-known as to be a gag.&lt;/p&gt;
+&lt;p&gt;But I was writing a bunch of Rust this weekend, and looking at it and thinking about it and wondering why it is that C&lt;sup&gt;♯&lt;/sup&gt; drives me so up the wall aesthetically and experientially, while Rust doesn’t. On the surface, they don’t actually look all that different.&lt;/p&gt;
+&lt;p&gt;Here’s &lt;em&gt;roughly&lt;/em&gt; equivalent code in each:&lt;/p&gt;
+&lt;pre class="cs"&gt;&lt;code&gt;public class Person {
+    public string Name { get; set; } = &amp;quot;Chris&amp;quot;;
+
+    public void greet() {
+        Console.WriteLine($&amp;quot;Hello, {Name}&amp;quot;);
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;struct Person {
+    name: String,
+}
+
+impl Person {
+    pub fn greet(&amp;amp;self) {
+        println!(&amp;quot;Hello, {}&amp;quot;, self.name);
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When you start tossing in generics and lifetimes, Rust can actually end up looking a &lt;em&gt;lot&lt;/em&gt; messier than C&lt;sup&gt;♯&lt;/sup&gt;.&lt;/p&gt;
+&lt;pre class="rust"&gt;&lt;code&gt;impl&amp;lt;&amp;#39;a, &amp;#39;b, T, U&amp;gt; SomeTrait&amp;lt;&amp;#39;a, U&amp;gt; for SomeType&amp;lt;&amp;#39;b, U&amp;gt;
+where
+    T: SomeOtherTrait + YetAnotherTrait,
+    U: OhWowSoManyTraits
+{
+    fn some_trait_method(&amp;amp;self) {
+        // ...
+    }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nothing about that is what I would call aesthetically beautiful in a general sense! There’s a &lt;em&gt;lot&lt;/em&gt; of syntax.&lt;/p&gt;
+&lt;p&gt;What I’ve concluded so far, though, is that my difference in feelings comes down to the way that syntax maps back to the underlying semantics, and my feelings about those underlying semantics. The basic language design approach C&lt;sup&gt;♯&lt;/sup&gt; takes—i.e. everything is a class; mutation is both encouraged and implicit; don’t bother with value types—drives me batty. I don’t love the syntax, not least because it ends up being &lt;em&gt;so&lt;/em&gt; verbose and noisy (you can express the same things in F&lt;sup&gt;♯&lt;/sup&gt; much more briefly)—but also because I actively dislike the programming models it encourages (I don’t like the C&lt;sup&gt;♯&lt;/sup&gt; programming model when I see in in F&lt;sup&gt;♯&lt;/sup&gt; either!).&lt;/p&gt;
+&lt;p&gt;Rust, by contrast, matches the way I &lt;em&gt;do&lt;/em&gt; and &lt;em&gt;want to&lt;/em&gt; think about the world. Mutability is allowed but neither actively encouraged nor actively discouraged; more to the point it’s &lt;em&gt;explicit&lt;/em&gt;. Insofar as “shared mutable state is the root of all evil,” Rust has two legs up on C&lt;sup&gt;♯&lt;/sup&gt;: it (a) doesn’t &lt;em&gt;allow&lt;/em&gt; shared mutable state and (b) makes explicit where mutation &lt;em&gt;is&lt;/em&gt; happening. It also separates data from behavior. It also has real value types. It also has sum types and pattern matching. In both cases, a lot of the syntactical noise is inessential, a holdover from the legacy of C; but in Rust’s case the way it maps onto a &lt;em&gt;programming model&lt;/em&gt; that is more like OCaml than like C decreases the pain I feel from that noise.&lt;/p&gt;
+&lt;p&gt;This &lt;em&gt;could&lt;/em&gt; be taken to validate the idea that syntax doesn’t matter, that the underlying semantics are everything, but that’s not the case. It’s not that I &lt;em&gt;love&lt;/em&gt; Rust’s syntax. It’s that, although I dislike it at times, it doesn’t rise to the level of frustration I feel in C&lt;sup&gt;♯&lt;/sup&gt; because it’s not coupled to a programming model that I loathe. The syntax matters; it’s just not the &lt;em&gt;only&lt;/em&gt; thing that matters.&lt;/p&gt;
+&lt;p&gt;An interesting thing to consider: what Rust would look like in a world where it embraced its OCaml roots. (I don’t think Rust should have done this; spending its complexity budget on ideas instead of syntax was the right choice. But it’s still interesting.) The simplest level of translation might look something (very) roughly like this:&lt;/p&gt;
+&lt;pre class="haskell"&gt;&lt;code&gt;impl &amp;#39;a &amp;#39;b T U SomeTrait &amp;#39;a T for SomeType &amp;#39;b U
+  where T : SomeOtherTrait + YetAnotherTrait
+
+  some_trait_method :: &amp;amp;self -&amp;gt; void
+  some_trait_method self =
+    -- ...&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is obviously still a lot of syntax, but it’s all basically necessary given the things Rust is trying to express with lifetimes, ownership, etc.—and I did this off the top of my head with literally &lt;em&gt;no&lt;/em&gt; consideration other than “what’s the most direct translation into roughly Haskell-ish syntax I can write?” It makes me genuinely curious where a language that aimed for Rust’s same kinds of guarantees but actively embracing the ML/Haskell family’s syntax might end up. I have a guess that I’d like it even better than I do Rust.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 13 May 2018 11:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-05-13:/2018/aesthetics-and-programming-languages.html</guid><category>csharp</category><category>rust</category><category>programming languages</category></item></channel></rss>
