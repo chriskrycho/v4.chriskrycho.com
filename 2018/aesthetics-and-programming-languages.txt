@@ -31,6 +31,10 @@ struct Person {
 }
 
 impl Person {
+    pub fn new() -> Person {
+        Person { name: String::from("Chris") }
+    }
+
     pub fn greet(&self) {
         println!("Hello, {}", self.name);
     }

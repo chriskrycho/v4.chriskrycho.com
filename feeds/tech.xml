@@ -15,6 +15,10 @@
 }
 
 impl Person {
+    pub fn new() -&amp;gt; Person {
+        Person { name: String::from(&amp;quot;Chris&amp;quot;) }
+    }
+
     pub fn greet(&amp;amp;self) {
         println!(&amp;quot;Hello, {}&amp;quot;, self.name);
     }
