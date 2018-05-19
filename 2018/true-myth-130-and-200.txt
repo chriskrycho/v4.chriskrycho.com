@@ -15,7 +15,7 @@ Since its initial release last November, True Myth has gone through a number of 
 
 In fact, the act of writing that sentence made me realize that there really *should* be a 1.3 which people can trivially upgrade to and then take on the changes in 2.0 later.
 
-## 1.3
+## – 1.3.0 –
 
 There are a few very small changes in 1.3 that are just nice ergonomic wins. (You may also be interested in looking back at the [list of other releases](https://github.com/chriskrycho/true-myth/releases) to see what else has landed since 1.0.)
 
@@ -87,7 +87,7 @@ The `variant` property on both `Maybe` and `Result` has changed in two ways:
 
 And that’s it for 1.3.0!
 
-## 2.0
+## – 2.0.0 –
 
 The 2.0 release is identical in *features* with the 1.3 release. However, it makes a breaking change to how consumers interact with the application, requiring updates to your `tsconfig.json` file and your bundler configuration, and removing support for Flow types.
 
