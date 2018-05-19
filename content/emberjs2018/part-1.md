@@ -15,7 +15,7 @@ Following [the example](https://blog.rust-lang.org/2018/01/03/new-years-rust-a-c
 There are three major themes I think should characterize the Ember.js community and project for the rest of 2018:
 
 1. **Finishing What We’ve Started** (this post)
-2. **Doubling Down on Docs**
+2. [**Doubling Down on Docs**](https://www.chriskrycho.com/2018/emberjs2018-part-2.html)
 3. **Embracing the Ecosystem**
 
 ---- 
