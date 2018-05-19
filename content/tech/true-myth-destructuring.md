@@ -4,7 +4,7 @@ Subtitle: A thing I didn't even realize I could do until after I published it.
 Date: 2018-05-19 12:20
 Tags: functional programming, typescript, open source software, libraries
 Summary: >
-	Making the value and error properties available means you can now use destructuring.
+    Making the value and error properties available means you can now use destructuring.
 
 ---
 
