@@ -18,21 +18,21 @@ There are three major themes I think should characterize the Ember.js community 
 2. **Doubling Down on Documentation** (this post)
 3. **Embracing the Ecosystem**
 
----- 
+----
 
 ## Part 2: Double down on docs
 
 The best project in the world is useless without documentation. As such, my *second* major goal for Ember.js this year is to see our documentation story improve dramatically across a number of fronts. This is not just the kind of thing that’s important in principle or because we care about doing the right thing, though those alone *are* sufficient motivation. It’s *also* absolutely necessary for Ember to grow and thrive in the ways it deserves to in the years ahead.
 
-To be clear: Ember’s story around documentation is *pretty good* and it continues to improve all the time. A few years ago, the base documentation was a mess and even figuring out where to start was hard. Today, Ember.js itself has great guides along with versioned-and-searchable API documentation. The gaps now are in the *surrounding ecosystem* and in the *framework internals*. That’s huge progress! But if we want Ember to excel, we need to go after both of thus with gusto.
+To be clear: Ember’s story around documentation is *pretty good* and it continues to improve all the time. A few years ago, the base documentation was a mess and even figuring out where to start was hard. Today, Ember.js itself has great guides along with versioned-and-searchable <abbr title="application programming interface">API</abbr> documentation. The gaps now are in the *surrounding ecosystem* and in the *framework internals*. That’s huge progress! But if we want Ember to excel, we need to go after both of these with gusto.
 
 ### The surrounding ecosystem
 
-Ember Data, Ember Engines, and perhaps most important Ember CLI and its core dependency Broccoli all *desperately* need documentation work just at the “how do you even use these things level.”
+Ember Data, Ember Engines, and perhaps most important Ember <abbr title="command line interface">CLI</abbr> and its core dependency Broccoli all *desperately* need documentation work just at the “how do you even use these things level.”
 
 - **Broccoli.js** in particular is core to pretty much everything in Ember’s ecosystem, and its docs today are in roughly the state Webpack’s were back in its sad 1.0 days. We should take a page out of our own history (and Webpack’s for that matter!) and make it  easy for people to use Broccoli in whatever ways their apps need, and that mostly means documenting it![^1] Oli Griffith’s recent [blog post series](http://www.oligriffiths.com/broccolijs/) is an incredibly valuable first step in that direction. But we need really solid documentation for [Broccoli itself](http://broccolijs.com), and also for the equally important [plugin ecosystem](https://www.npmjs.com/search?q=keywords:broccoli-plugin) which is the primary way people interact with it.
 
-- The docs for **Ember <abbr>CLI<abbr>** itself are *decent*, but they’re quite out of date and are about to be a lot more so because of the previously-mentioned packager bits. We need accurate and up-to-date guides and API docs for the <abbr>CLI<abbr>, and we also need clarity about the seams between Ember <abbr>CLI<abbr> and Broccoli—something I’ve only begun to become clear on after a year of hacking on [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript)! This includes a number of kinds of documentation:
+- The docs for **Ember <abbr>CLI</abbr>** itself are *decent*, but they’re quite out of date and are about to be a lot more so because of the previously-mentioned packager bits. We need accurate and up-to-date guides and <abbr>API</abbr> docs for the <abbr>CLI</abbr>, and we also need clarity about the seams between Ember <abbr>CLI</abbr> and Broccoli—something I’ve only begun to become clear on after a year of hacking on [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript)! This includes a number of kinds of documentation:
     - up-to-date guides
     - complete <abbr>API</abbr> documentation
     - a “cookbook” of common patterns to use
@@ -55,7 +55,7 @@ So **how you can help:**
 
 ### Framework internals
 
-Every time I have started poking into Ember’s own codebase—to ship a fix for some small bug, or simply to understand the behavior of my own application—I have found myself stymied by a really serious issue. *Almost nothing is documented.* This is true ofEmber proper, of Ember Data, of Ember <abbr>CLI</abbr>, of Broccoli’s internals… Everything I named above as being in need of *user*-facing documentation also desperately needs *developer*-facing documentation.
+Every time I have started poking into Ember’s own codebase—to ship a fix for some small bug, or simply to understand the behavior of my own application—I have found myself stymied by a really serious issue. *Almost nothing is documented.* This is true of Ember proper, of Ember Data, of Ember <abbr>CLI</abbr>, of Broccoli’s internals… Everything I named above as being in need of *user*-facing documentation also desperately needs *developer*-facing documentation.
 
 A lot of this happens naturally in projects developed organically by small teams. I’ve seen it in my own current job: the *vast* majority of our codebase is without any formal documentation, because it didn’t *require* it when we were a much smaller organization working on a much smaller codebase. But no project—whether private or open-source—can grow or thrive unless it becomes possible for new contributors to come in, understand the system as it exists, and start making changes effectively. “Tribal knowledge” is *not* a bad thing in some contexts, but it does not scale.
 
@@ -65,7 +65,7 @@ The Ember.js ecosystem needs developer documentation of several sorts, then:
 
 - **“Why” comments:** The internals of the core libraries very often have good reasons for doing things even in apparently odd ways. However, the reasons for those are *very* rarely written down anywhere. This is *precisely* what comments are for! If some implementation actually *can’t* be simplified in the way it looks like it can, write it down right there in a comment! This will save both you and other developers lots of wasted time with false starts and useless pull requests and so on.
 
-- **Documentation of private API:** Much of the public-facing API for Ember is fairly clear (modulo caveats around completeness and accuracy). However, most internal API is essentially entirely undocumented. This makes it *extremely* difficult for someone to know how to use the internal APIs when working on internal code!
+- **Documentation of private <abbr>API</abbr>:** Much of the public-facing <abbr>API</abbr> for Ember is fairly clear (modulo caveats around completeness and accuracy). However, most internal <abbr>API</abbr> is essentially entirely undocumented. This makes it *extremely* difficult for someone to know how to use the internal <abbr>API</abbr>s when working on internal code!
 
 All of these things came home to me pretty sharply as I started poking at the Glimmer VM project to see where and how I can pull together my knowledge of both TypeScript and Rust to drive some of those efforts forward. The core team folks I’ve interacted with have all been *extremely* helpful—and that’s always been true all along the way!—but they’re also busy, and taking the time to write down something *once* ends up being a major “force multiplier”. You can explain the same thing to multiple different people via multiple different conversations, or you can write it down *once* and make it a resource that anyone can use to start working effectively in the system!
 
@@ -75,7 +75,7 @@ All of these things came home to me pretty sharply as I started poking at the Gl
 
 - If you’re just getting started on developing core Ember functionality: *write down what you learn.* If you’re working through some section of the codebase, don’t understand it, and then come to understand it by way of asking questions, add documentation for that! You’ll help the next person coming along behind you!
 
----- 
+----
 
 In short: please write more things down! We need user-facing and developer-facing documentation; they need to be different and distinct from each other; and we need the whole range in both. That’s an *enormous* amount of work, and it’s very different from programming (and therefore harder for many of us).[^2]  But it’s also work that will pay equally enormous dividends in enabling the Ember community to grow in both the *number* and the *effectiveness* of its contributors—and that’s something we very much need!
 
