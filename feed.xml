@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 19 May 2018 11:20:00 -0400</lastBuildDate><item><title>The Chinese Room Argument</title><link>http://www.chriskrycho.com/2018/the-chinese-room-argument.html</link><description>&lt;p&gt;I took a bunch of half days last week, because &lt;em&gt;goodness&lt;/em&gt; but I was tired. Too long running at full-throttle, and &lt;a href="http://www.chriskrycho.com/2018/on-steam-specifically-running-out-of-it.html" title="On Steam (Specifically, Running Out Of It)"&gt;I’d been running out of steam&lt;/a&gt; as a result. And what did I do instead, that ended up being so effective in &lt;a href="https://www.chriskrycho.com/2018/vacation-as-recharging.html" title="Vacation as Recharging"&gt;recharging&lt;/a&gt;? Well, mostly… read literature reviews on interesting topics in philosophy, at least for the first few days. Dear reader, I am a nerd. But I thought I’d share a few of the thoughts I jotted down in my notebook from that reading.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 19 May 2018 12:20:00 -0400</lastBuildDate><item><title>Destructuring with True Myth 1.3+</title><link>http://www.chriskrycho.com/2018/destructuring-with-true-myth-13.html</link><description>&lt;p&gt;I just realized a neat capability that &lt;a href="#"&gt;True Myth 1.3+&lt;/a&gt; unlocks: you can now use destructuring of the &lt;code&gt;value&lt;/code&gt; property on &lt;code&gt;Just&lt;/code&gt; and &lt;code&gt;Result&lt;/code&gt; and the &lt;code&gt;error&lt;/code&gt; property on &lt;code&gt;Error&lt;/code&gt; instances.&lt;/p&gt;
+&lt;p&gt;With &lt;code&gt;Maybe&lt;/code&gt; instances:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Maybe, { just, nothing, isJust } from &amp;#39;true-myth/maybe&amp;#39;;
+
+const maybeStrings: Maybe&amp;lt;string&amp;gt;[] =
+  [just(&amp;#39;hello&amp;#39;), nothing(), just(&amp;#39;bye&amp;#39;), nothing()];
+
+const lengths = maybeStrings
+  .filter(Maybe.isJust)
+  .map(({ value }) =&amp;gt; value.length);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With &lt;code&gt;Result&lt;/code&gt; instances:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Result, { ok, err } from &amp;#39;true-myth/result&amp;#39;;
+
+const results: Result&amp;lt;number, string&amp;gt;[] =
+  [ok(12), err(&amp;#39;wat&amp;#39;), err(&amp;#39;oh teh noes&amp;#39;), ok(42)];
+
+const okDoubles = results
+  .filter(Result.isOk)
+  .map(({ value }) =&amp;gt; value * 2);
+
+const errLengths = results
+  .filter(Result.isErr)
+  .map(({ error }) =&amp;gt; error.length);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;None of this is especially novel or anything. It was just a neat thing to realize after the fact, because it wasn’t something I had in mind when I was making these changes!&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;This was a very strange experience. There’s nothing quite like learning something about a library &lt;em&gt;you wrote&lt;/em&gt;.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 19 May 2018 12:20:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-05-19:/2018/destructuring-with-true-myth-13.html</guid><category>functional programming</category><category>typescript</category><category>open source software</category><category>libraries</category></item><item><title>The Chinese Room Argument</title><link>http://www.chriskrycho.com/2018/the-chinese-room-argument.html</link><description>&lt;p&gt;I took a bunch of half days last week, because &lt;em&gt;goodness&lt;/em&gt; but I was tired. Too long running at full-throttle, and &lt;a href="http://www.chriskrycho.com/2018/on-steam-specifically-running-out-of-it.html" title="On Steam (Specifically, Running Out Of It)"&gt;I’d been running out of steam&lt;/a&gt; as a result. And what did I do instead, that ended up being so effective in &lt;a href="https://www.chriskrycho.com/2018/vacation-as-recharging.html" title="Vacation as Recharging"&gt;recharging&lt;/a&gt;? Well, mostly… read literature reviews on interesting topics in philosophy, at least for the first few days. Dear reader, I am a nerd. But I thought I’d share a few of the thoughts I jotted down in my notebook from that reading.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;section id="the-chinese-room-argument" class="level2"&gt;
 &lt;h2&gt;“The Chinese Room Argument”&lt;/h2&gt;
