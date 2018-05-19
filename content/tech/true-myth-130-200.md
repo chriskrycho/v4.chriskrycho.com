@@ -1,5 +1,5 @@
 ---
-Title: True Myth 1.3 and 2.0
+Title: True Myth 1.3.0 and 2.0.0
 Subtitle: A couple nice ergonomic updates and some breaking changes for consuming the library.
 Date: 2018-05-18 19:15
 Tags: TypeScript, functional programming, libraries, software development, open source software, versioning
