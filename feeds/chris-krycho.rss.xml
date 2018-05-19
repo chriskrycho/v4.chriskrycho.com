@@ -1,5 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 13 May 2018 11:00:00 -0400</lastBuildDate><item><title>Aesthetics and Programming Languages</title><link>http://www.chriskrycho.com/2018/aesthetics-and-programming-languages.html</link><description>&lt;p&gt;My distaste for the aesthetics of C&lt;sup&gt;♯&lt;/sup&gt; are fairly well known to people I talk to about programming languages—perhaps equally as well known as my love of Rust. So much so that both are running jokes among some of my colleagues and friends. My hypersensitivity to aesthetics both in general and also specifically in programming languages and work environment is &lt;em&gt;also&lt;/em&gt; so well-known as to be a gag.&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - Chris Krycho</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Fri, 18 May 2018 19:15:00 -0400</lastBuildDate><item><title>True Myth 1.3 and 2.0</title><link>http://www.chriskrycho.com/2018/true-myth-13-and-20.html</link><description>&lt;p&gt;Today I released two versions of &lt;a href="https://github.com/chriskrycho/true-myth"&gt;True Myth&lt;/a&gt;: &lt;a href="https://github.com/chriskrycho/true-myth/releases/tag/v1.3.0"&gt;1.3.0&lt;/a&gt; and &lt;a href="https://github.com/chriskrycho/true-myth/releases/tag/v2.0.0"&gt;2.0.0&lt;/a&gt;. You can read the &lt;a href="https://www.chriskrycho.com/2017/announcing-true-myth-10.html"&gt;1.0 announcement&lt;/a&gt; from last November for an overview of the library and a discussion of why you might want to use the library in the first place!&lt;/p&gt;
+&lt;p&gt;Since its initial release last November, True Myth has gone through a number of small &lt;a href="https://github.com/chriskrycho/true-myth/releases" title="True Myth releases on GitHub"&gt;feature and bug fix releases&lt;/a&gt;, each of which is more interesting in its own right than 2.0 is—because there are almost no new “features” here, and the changes to the &lt;em&gt;functionality&lt;/em&gt; which are in 2.0 are purely additive and could readily have gone in 1.3 instead.&lt;/p&gt;
+&lt;p&gt;In fact, the act of writing that sentence made me realize that there really &lt;em&gt;should&lt;/em&gt; be a 1.3 which people can trivially upgrade to and then take on the changes in 2.0 later.&lt;/p&gt;
+&lt;section id="section" class="level2"&gt;
+&lt;h2&gt;1.3&lt;/h2&gt;
+&lt;p&gt;There are a few very small changes in 1.3 that are just nice ergonomic wins. (You may also be interested in looking back at the &lt;a href="https://github.com/chriskrycho/true-myth/releases"&gt;list of other releases&lt;/a&gt; to see what else has landed since 1.0.)&lt;/p&gt;
+&lt;section id="expose-value-and-error" class="level3"&gt;
+&lt;h3&gt;Expose &lt;code&gt;value&lt;/code&gt; and &lt;code&gt;error&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;value&lt;/code&gt; property in &lt;code&gt;Maybe.Just&lt;/code&gt; and &lt;code&gt;Result.Ok&lt;/code&gt; instances, and the &lt;code&gt;error&lt;/code&gt; property in &lt;code&gt;Result.Err&lt;/code&gt; instances, are now &lt;em&gt;public, readonly properties&lt;/em&gt; instead of &lt;em&gt;private properties&lt;/em&gt;. I made those private in the initial implementation because I thought it made more sense to expose them via methods, but experience showed that this is a relatively common pattern in practice:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;function dealsWithAMaybe(couldBeAString: Maybe&amp;lt;string&amp;gt;) {
+  if (couldBeAString.isJust()) {
+    console.log(`It was! ${couldBeAString.unsafelyUnwrap()}`);
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is a contrived example of course, but I and my colleagues found in practice that this is a scenario that comes up relatively often, &lt;em&gt;especially&lt;/em&gt; when integrating with existing code rather than writing new code – control flow patterns there tend to assume early-return-on-&lt;code&gt;null&lt;/code&gt; or similar instead.&lt;/p&gt;
+&lt;p&gt;So I made a change (leaning on TypeScript’s notion of &lt;a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards" title="“User-Defined Type Guards” in the TypeScript handbook"&gt;“type narrowing”&lt;/a&gt;) so that you don’t have to use &lt;code&gt;unsafelyUnwrap&lt;/code&gt; in this scenario anymore! You can use the method types, the standalone functions, or direct matching against the variants on the property&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Maybe from &amp;#39;true-myth/maybe&amp;#39;;
+
+function dealsWithAMaybe(maybe: Maybe&amp;lt;string&amp;gt;) {
+  if (maybe.isJust()) {
+    console.log(`It was! ${maybe.value}`);
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the &lt;code&gt;Result&lt;/code&gt; case this is even nicer (notice that I’m using the variant, rather than a function, to discriminate between the two and narrow the types here):&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Result, { Variant } from &amp;#39;true-myth/result&amp;#39;;
+
+function dealsWithAResult(result: Result&amp;lt;string, Error&amp;gt;) {
+  if (result.variant === Variant.Ok) {
+    console.log(`Huzzah: ${result.value}`);
+  } else {
+    console.log(`Alas: ${result.error.message}`);
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Basically: you now have more options for handling these scenarios, a nicer &lt;abbr title="application programming interface"&gt;API&lt;/abbr&gt;, and—not that it should &lt;em&gt;usually&lt;/em&gt; matter that much, but for whatever it’s worth—better performance by way of doing things with property lookups instead of function invocations in quite a few places.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="static-helper-methods" class="level3"&gt;
+&lt;h3&gt;Static helper methods&lt;/h3&gt;
+&lt;p&gt;At my friend and collaborator &lt;a href="https://mobile.twitter.com/bmakuh"&gt;Ben Makuh&lt;/a&gt;’s suggestion, I built a couple static helper methods to go with those. These helpers just give you nice abstractions to drop into functional pipelines. For example, you can lean on the type-narrowing capabilities described above while working through a &lt;em&gt;list&lt;/em&gt; of &lt;code&gt;Maybe&lt;/code&gt;s to &lt;em&gt;know&lt;/em&gt; that an item is a &lt;code&gt;Just&lt;/code&gt; and use the new &lt;code&gt;Just.unwrap&lt;/code&gt; static method in the pipeline:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Maybe, { Just } from &amp;#39;true-myth/maybe&amp;#39;;
+
+function justLengths(maybeStrings: Array&amp;lt;Maybe&amp;lt;string&amp;gt;&amp;gt;) {
+  return maybeStrings
+    .filter(Maybe.isJust)
+.map(Just.unwrap)
+    .map(s =&amp;gt; s.length);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Analogous helpers exist for &lt;code&gt;Result&lt;/code&gt; in the form of the &lt;code&gt;Ok.unwrap&lt;/code&gt; and &lt;code&gt;Err.unwrapErr&lt;/code&gt; methods. (&lt;code&gt;Nothing&lt;/code&gt; has no analog for what I hope are obvious reasons!)&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="tweaks-to-the-variant-properties" class="level3"&gt;
+&lt;h3&gt;Tweaks to the &lt;code&gt;variant&lt;/code&gt; properties&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;variant&lt;/code&gt; property on both &lt;code&gt;Maybe&lt;/code&gt; and &lt;code&gt;Result&lt;/code&gt; has changed in two ways:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;It is now &lt;code&gt;readonly&lt;/code&gt;. This was an implicit invariant previously—you would break &lt;em&gt;everything&lt;/em&gt; in the library if you changed the &lt;code&gt;variant&lt;/code&gt; value—and I’ve just made it explicit in the type system.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;It is now properly constrained with a &lt;em&gt;literal type&lt;/em&gt; on the concrete instances. That is, the type of &lt;code&gt;Just.variant&lt;/code&gt; is no longer &lt;code&gt;Variant&lt;/code&gt; but specifically &lt;code&gt;Variant.Just&lt;/code&gt;. (This is what enables you to use the variant for narrowing as demonstrated above. I should have done this in 1.0, and just forgot to!)&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And that’s it for 1.3.0!&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section id="section-1" class="level2"&gt;
+&lt;h2&gt;2.0&lt;/h2&gt;
+&lt;p&gt;The 2.0 release is identical in &lt;em&gt;features&lt;/em&gt; with the 1.3 release. However, it makes a breaking change to how consumers interact with the application, requiring updates to your &lt;code&gt;tsconfig.json&lt;/code&gt; file and your bundler configuration, and removing support for Flow types.&lt;/p&gt;
+&lt;section id="configuration-file-updates" class="level3"&gt;
+&lt;h3&gt;Configuration file updates&lt;/h3&gt;
+&lt;p&gt;Getting True Myth working nicely with consuming TypeScript packages has been a source of frustration for me &lt;em&gt;and&lt;/em&gt; others. In short, requiring you to use the &lt;code&gt;&amp;quot;paths&amp;quot;&lt;/code&gt; key in the &lt;code&gt;&amp;quot;compilerOptions&amp;quot;&lt;/code&gt; section of the &lt;code&gt;tsconfig.json&lt;/code&gt; made for an annoying amount of setup work, &lt;em&gt;and&lt;/em&gt; it meant that using True Myth in a library &lt;em&gt;required&lt;/em&gt; you to set it up in any consuming app. No good.&lt;/p&gt;
+&lt;p&gt;For type resolution to Just Work™, the types &lt;em&gt;must&lt;/em&gt; be at the root of the distributed package.&lt;/p&gt;
+&lt;p&gt;As a result, I’ve stopped using &lt;a href="https://github.com/tildeio/libkit"&gt;libkit&lt;/a&gt;, which put the generated types in a reasonable-seeming but (in my experience) painful-to-use place, and have simplified the build layout substantially.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The types themselves are generated only when publishing an update to npm. They go in the root at that point, and they get cleaned up after publishing. (This is pretty much identical to the solution we came up in &lt;a href="https://github.com/typed-ember/ember-cli-typescript"&gt;ember-cli-typescript&lt;/a&gt;.)&lt;/li&gt;
+&lt;li&gt;The other build files no longer get dropped in a nested &lt;code&gt;src&lt;/code&gt; directory.&lt;/li&gt;
+&lt;li&gt;Since I was already at it, I renamed the two build directories from &lt;code&gt;commonjs&lt;/code&gt; to &lt;code&gt;cjs&lt;/code&gt; and from &lt;code&gt;modules&lt;/code&gt; to &lt;code&gt;es&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So the distributed build now looks something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/ 
+  index.d.ts
+  maybe.d.ts
+  result.d.ts
+  unit.d.ts
+  utils.d.ts
+  dist/
+    cjs/
+      index.js
+      maybe.js
+      result.js
+      unit.js
+      utils.js
+    es/
+      index.js
+      maybe.js
+      result.js
+      unit.js
+      utils.js&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You’ll just need to completely remove the &lt;code&gt;&amp;quot;paths&amp;quot;&lt;/code&gt; mapping for True Myth from your &lt;code&gt;tsconfig.json&lt;/code&gt; and, if you’ve done anything unusual with it, update your bundler configuration to point to the new build location, i.e. &lt;code&gt;dist/commonjs/src&lt;/code&gt; should now just be &lt;code&gt;dist/cjs&lt;/code&gt;. Bundlers which respect the &lt;code&gt;modules&lt;/code&gt; key in &lt;code&gt;package.json&lt;/code&gt; will pick it up automatically, as will Ember &lt;abbr&gt;CLI&lt;/abbr&gt;.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="removing-flow-types" class="level3"&gt;
+&lt;h3&gt;Removing Flow types&lt;/h3&gt;
+&lt;p&gt;To my knowledge, no one is actually using the Flow types for the library. When I first started on it, my collaborator &lt;a href="https://github.com/bmakuh"&gt;Ben Makuh&lt;/a&gt; &lt;em&gt;was&lt;/em&gt; using Flow, but he ended up migrating to TypeScript in the intervening time, and there are no consumers I know of. I was always relatively unsure of their correctness, &lt;em&gt;and&lt;/em&gt; I don’t have a good way to validate their correctness, &lt;em&gt;and&lt;/em&gt; maintaining them involved doing manual work on every release to update the types by hand.&lt;/p&gt;
+&lt;p&gt;If you &lt;em&gt;do&lt;/em&gt; use True Myth with Flow, and you’re missing the types, please let me know. I just can’t maintain them myself at this point!&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;And that’s it! We’ve been using True Myth in production at Olo for quite some time, and it’s proved to be a really valuable tool. Give it a spin and let me know how these latest versions work for you!&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;I’ve made some changes under the hood to take advantage of this as well, so the library should be faster. Probably &lt;em&gt;trivially&lt;/em&gt; faster, but my philosophy around library code is very much &lt;em&gt;be as fast as you can&lt;/em&gt;; it’s a way of considering the people using your code—not just the developers, but the end users.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 18 May 2018 19:15:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-05-18:/2018/true-myth-13-and-20.html</guid><category>TypeScript</category><category>functional programming</category><category>libraries</category><category>software development</category><category>open source software</category><category>versioning</category></item><item><title>Aesthetics and Programming Languages</title><link>http://www.chriskrycho.com/2018/aesthetics-and-programming-languages.html</link><description>&lt;p&gt;My distaste for the aesthetics of C&lt;sup&gt;♯&lt;/sup&gt; are fairly well known to people I talk to about programming languages—perhaps equally as well known as my love of Rust. So much so that both are running jokes among some of my colleagues and friends. My hypersensitivity to aesthetics both in general and also specifically in programming languages and work environment is &lt;em&gt;also&lt;/em&gt; so well-known as to be a gag.&lt;/p&gt;
 &lt;p&gt;But I was writing a bunch of Rust this weekend, and looking at it and thinking about it and wondering why it is that C&lt;sup&gt;♯&lt;/sup&gt; drives me so up the wall aesthetically and experientially, while Rust doesn’t. On the surface, they don’t actually look all that different.&lt;/p&gt;
 &lt;p&gt;Here’s &lt;em&gt;roughly&lt;/em&gt; equivalent code in each:&lt;/p&gt;
 &lt;pre class="cs"&gt;&lt;code&gt;public class Person {
