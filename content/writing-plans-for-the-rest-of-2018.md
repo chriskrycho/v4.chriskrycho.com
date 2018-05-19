@@ -1,10 +1,11 @@
----- 
+---
 Title: Writing Plans for the Rest of 2018
-Date: 2018-05-18
+Date: 2018-05-18 21:30
 Category: blog
 Summary: >
     Don’t worry if it gets quiet around here: I’m just busy knocking out a lot of other things.
----- 
+
+---
 
 A quick note on what you can expect here over the next few months: mostly, not much that isn’t technical, and not *very* much of that. I suggested [a couple months ago](http://www.chriskrycho.com/2018/intentional-cyclicality.html "Intentional Cyclicality (March 6, 2018)") that it’s worth intentionally carving out different phases for different things, and I’m intentionally carving out a phase that’s lighter on blogging.
 
