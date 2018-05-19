@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>True Myth 1.3.0 and 2.0.0 &middot; Chris Krycho</title>
+    <meta name="description" content="Get `value` and `error` directly after type narrowing, make type definitions Just Work™, drop Flow types, and simplify the contents of the distributed build."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/true-myth-130-and-200.html"/>
+    <meta property="og:title" content="True Myth 1.3.0 and 2.0.0"/>
+    <meta property="og:description" content="Get `value` and `error` directly after type narrowing, make type definitions Just Work™, drop Flow types, and simplify the contents of the distributed build."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="True Myth 1.3.0 and 2.0.0"/>
+    <meta name="twitter:description" content="Get `value` and `error` directly after type narrowing, make type definitions Just Work™, drop Flow types, and simplify the contents of the distributed build."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="typescript functional-programming libraries software-development open-source-software versioning tech">
+
+    <header>
+<h1>True Myth 1.3.0 and 2.0.0</h1>
+<h2>A couple nice ergonomic updates and some breaking changes for consuming the library.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/true-myth-130-and-200.html"><i class="fa fa-fw fa-link"></i></a>May 18, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/functional-programming/">#functional programming</a><a class="hashtags" href="http://www.chriskrycho.com/libraries/">#libraries</a><a class="hashtags" href="http://www.chriskrycho.com/open-source-software/">#open source software</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/versioning/">#versioning</a></span><span><a href="http://www.chriskrycho.com/2018/true-myth-130-and-200.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>Today I released two versions of <a href="https://github.com/chriskrycho/true-myth">True Myth</a>: <a href="https://github.com/chriskrycho/true-myth/releases/tag/v1.3.0">1.3.0</a> and <a href="https://github.com/chriskrycho/true-myth/releases/tag/v2.0.0">2.0.0</a>. You can read the <a href="https://www.chriskrycho.com/2017/announcing-true-myth-10.html">1.0 announcement</a> from last November for an overview of the library and a discussion of why you might want to use the library in the first place!</p>
+<p>Since its initial release last November, True Myth has gone through a number of small <a href="https://github.com/chriskrycho/true-myth/releases" title="True Myth releases on GitHub">feature and bug fix releases</a>, each of which is more interesting in its own right than 2.0 is—because there are almost no new “features” here, and the changes to the <em>functionality</em> which are in 2.0 are purely additive and could readily have gone in 1.3 instead.</p>
+<p>In fact, the act of writing that sentence made me realize that there really <em>should</em> be a 1.3 which people can trivially upgrade to and then take on the changes in 2.0 later.</p>
+<section id="section" class="level2">
+<h2>1.3</h2>
+<p>There are a few very small changes in 1.3 that are just nice ergonomic wins. (You may also be interested in looking back at the <a href="https://github.com/chriskrycho/true-myth/releases">list of other releases</a> to see what else has landed since 1.0.)</p>
+<section id="expose-value-and-error" class="level3">
+<h3>Expose <code>value</code> and <code>error</code></h3>
+<p>The <code>value</code> property in <code>Maybe.Just</code> and <code>Result.Ok</code> instances, and the <code>error</code> property in <code>Result.Err</code> instances, are now <em>public, readonly properties</em> instead of <em>private properties</em>. I made those private in the initial implementation because I thought it made more sense to expose them via methods, but experience showed that this is a relatively common pattern in practice:</p>
+<pre class="ts"><code>function dealsWithAMaybe(couldBeAString: Maybe&lt;string&gt;) {
+  if (couldBeAString.isJust()) {
+    console.log(`It was! ${couldBeAString.unsafelyUnwrap()}`);
+  }
+}</code></pre>
+<p>This is a contrived example of course, but I and my colleagues found in practice that this is a scenario that comes up relatively often, <em>especially</em> when integrating with existing code rather than writing new code – control flow patterns there tend to assume early-return-on-<code>null</code> or similar instead.</p>
+<p>So I made a change (leaning on TypeScript’s notion of <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards" title="“User-Defined Type Guards” in the TypeScript handbook">“type narrowing”</a>) so that you don’t have to use <code>unsafelyUnwrap</code> in this scenario anymore! You can use the method types, the standalone functions, or direct matching against the variants on the property</p>
+<pre class="ts"><code>import Maybe from &#39;true-myth/maybe&#39;;
+
+function dealsWithAMaybe(maybe: Maybe&lt;string&gt;) {
+  if (maybe.isJust()) {
+    console.log(`It was! ${maybe.value}`);
+  }
+}</code></pre>
+<p>In the <code>Result</code> case this is even nicer (notice that I’m using the variant, rather than a function, to discriminate between the two and narrow the types here):</p>
+<pre class="ts"><code>import Result, { Variant } from &#39;true-myth/result&#39;;
+
+function dealsWithAResult(result: Result&lt;string, Error&gt;) {
+  if (result.variant === Variant.Ok) {
+    console.log(`Huzzah: ${result.value}`);
+  } else {
+    console.log(`Alas: ${result.error.message}`);
+  }
+}</code></pre>
+<p>Basically: you now have more options for handling these scenarios, a nicer <abbr title="application programming interface">API</abbr>, and—not that it should <em>usually</em> matter that much, but for whatever it’s worth—better performance by way of doing things with property lookups instead of function invocations in quite a few places.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+</section>
+<section id="static-helper-methods" class="level3">
+<h3>Static helper methods</h3>
+<p>At my friend and collaborator <a href="https://mobile.twitter.com/bmakuh">Ben Makuh</a>’s suggestion, I built a couple static helper methods to go with those. These helpers just give you nice abstractions to drop into functional pipelines. For example, you can lean on the type-narrowing capabilities described above while working through a <em>list</em> of <code>Maybe</code>s to <em>know</em> that an item is a <code>Just</code> and use the new <code>Just.unwrap</code> static method in the pipeline:</p>
+<pre class="ts"><code>import Maybe, { Just } from &#39;true-myth/maybe&#39;;
+
+function justLengths(maybeStrings: Array&lt;Maybe&lt;string&gt;&gt;) {
+  return maybeStrings
+    .filter(Maybe.isJust)
+.map(Just.unwrap)
+    .map(s =&gt; s.length);
+}</code></pre>
+<p>Analogous helpers exist for <code>Result</code> in the form of the <code>Ok.unwrap</code> and <code>Err.unwrapErr</code> methods. (<code>Nothing</code> has no analog for what I hope are obvious reasons!)</p>
+</section>
+<section id="tweaks-to-the-variant-properties" class="level3">
+<h3>Tweaks to the <code>variant</code> properties</h3>
+<p>The <code>variant</code> property on both <code>Maybe</code> and <code>Result</code> has changed in two ways:</p>
+<ol type="1">
+<li><p>It is now <code>readonly</code>. This was an implicit invariant previously—you would break <em>everything</em> in the library if you changed the <code>variant</code> value—and I’ve just made it explicit in the type system.</p></li>
+<li><p>It is now properly constrained with a <em>literal type</em> on the concrete instances. That is, the type of <code>Just.variant</code> is no longer <code>Variant</code> but specifically <code>Variant.Just</code>. (This is what enables you to use the variant for narrowing as demonstrated above. I should have done this in 1.0, and just forgot to!)</p></li>
+</ol>
+<p>And that’s it for 1.3.0!</p>
+</section>
+</section>
+<section id="section-1" class="level2">
+<h2>2.0</h2>
+<p>The 2.0 release is identical in <em>features</em> with the 1.3 release. However, it makes a breaking change to how consumers interact with the application, requiring updates to your <code>tsconfig.json</code> file and your bundler configuration, and removing support for Flow types.</p>
+<section id="configuration-file-updates" class="level3">
+<h3>Configuration file updates</h3>
+<p>Getting True Myth working nicely with consuming TypeScript packages has been a source of frustration for me <em>and</em> others. In short, requiring you to use the <code>&quot;paths&quot;</code> key in the <code>&quot;compilerOptions&quot;</code> section of the <code>tsconfig.json</code> made for an annoying amount of setup work, <em>and</em> it meant that using True Myth in a library <em>required</em> you to set it up in any consuming app. No good.</p>
+<p>For type resolution to Just Work™, the types <em>must</em> be at the root of the distributed package.</p>
+<p>As a result, I’ve stopped using <a href="https://github.com/tildeio/libkit">libkit</a>, which put the generated types in a reasonable-seeming but (in my experience) painful-to-use place, and have simplified the build layout substantially.</p>
+<ul>
+<li>The types themselves are generated only when publishing an update to npm. They go in the root at that point, and they get cleaned up after publishing. (This is pretty much identical to the solution we came up in <a href="https://github.com/typed-ember/ember-cli-typescript">ember-cli-typescript</a>.)</li>
+<li>The other build files no longer get dropped in a nested <code>src</code> directory.</li>
+<li>Since I was already at it, I renamed the two build directories from <code>commonjs</code> to <code>cjs</code> and from <code>modules</code> to <code>es</code></li>
+</ul>
+<p>So the distributed build now looks something like this:</p>
+<pre><code>/ 
+  index.d.ts
+  maybe.d.ts
+  result.d.ts
+  unit.d.ts
+  utils.d.ts
+  dist/
+    cjs/
+      index.js
+      maybe.js
+      result.js
+      unit.js
+      utils.js
+    es/
+      index.js
+      maybe.js
+      result.js
+      unit.js
+      utils.js</code></pre>
+<p>You’ll just need to completely remove the <code>&quot;paths&quot;</code> mapping for True Myth from your <code>tsconfig.json</code> and, if you’ve done anything unusual with it, update your bundler configuration to point to the new build location, i.e. <code>dist/commonjs/src</code> should now just be <code>dist/cjs</code>. Bundlers which respect the <code>modules</code> key in <code>package.json</code> will pick it up automatically, as will Ember <abbr>CLI</abbr>.</p>
+</section>
+<section id="removing-flow-types" class="level3">
+<h3>Removing Flow types</h3>
+<p>To my knowledge, no one is actually using the Flow types for the library. When I first started on it, my collaborator <a href="https://github.com/bmakuh">Ben Makuh</a> <em>was</em> using Flow, but he ended up migrating to TypeScript in the intervening time, and there are no consumers I know of. I was always relatively unsure of their correctness, <em>and</em> I don’t have a good way to validate their correctness, <em>and</em> maintaining them involved doing manual work on every release to update the types by hand.</p>
+<p>If you <em>do</em> use True Myth with Flow, and you’re missing the types, please let me know. I just can’t maintain them myself at this point!</p>
+<hr />
+<p>And that’s it! We’ve been using True Myth in production at Olo for quite some time, and it’s proved to be a really valuable tool. Give it a spin and let me know how these latest versions work for you!</p>
+</section>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>I’ve made some changes under the hood to take advantage of this as well, so the library should be faster. Probably <em>trivially</em> faster, but my philosophy around library code is very much <em>be as fast as you can</em>; it’s a way of considering the people using your code—not just the developers, but the end users.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/cultural-marxism-and-evangelicalism.html">“Cultural Marxism” and “Evangelicalism”</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/true-myth-130-and-200.html">True Myth 1.3.0 and 2.0.0</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/handling-the-liberal-order-correctly.html">Handling “The Liberal Order” Correctly</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
