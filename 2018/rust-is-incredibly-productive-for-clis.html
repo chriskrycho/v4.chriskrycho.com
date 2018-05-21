@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rust is Incredibly Productive for CLIs &middot; Chris Krycho</title>
+    <meta name="description" content="I built a little tool in Rust to convert an Evernote export file to Markdown. It was impressively easy."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/rust-is-incredibly-productive-for-clis.html"/>
+    <meta property="og:title" content="Rust is Incredibly Productive for CLIs"/>
+    <meta property="og:description" content="I built a little tool in Rust to convert an Evernote export file to Markdown. It was impressively easy."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Rust is Incredibly Productive for CLIs"/>
+    <meta name="twitter:description" content="I built a little tool in Rust to convert an Evernote export file to Markdown. It was impressively easy."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="rust programming-languages tech">
+
+    <header>
+<h1>Rust is Incredibly Productive for CLIs</h1>
+<h2>Don’t let the tagline fool you: Rust is for more than just “systems programming.”</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/rust-is-incredibly-productive-for-clis.html"><i class="fa fa-fw fa-link"></i></a>May 20, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a></span><span><a href="http://www.chriskrycho.com/2018/rust-is-incredibly-productive-for-clis.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>There are <em>reasons</em> I’m a Rust fanboy. One of them is the kind of thing I proved out to myself today—again, because I’ve had this experience before, albeit not with anything quite this “complicated.”</p>
+<p>I built <a href="https://github.com/chriskrycho/evernote2md">a little tool</a> in Rust to convert Evernote exports (in their custom <code>.enex</code> <abbr>XML</abbr> format) to Markdown files with <abbr>YAML</abbr> metadata headers—mostly just to see how quickly and effectively I could do it, because I’ve never actually had an excuse to use <a href="https://serde.rs">Serde</a> and I thought this might be a nice spot to try it.</p>
+<p>There’s a lot this little library <em>doesn’t</em> do. (Like include the creation and modification timestamps in the header, for example.) But all of those things would be <em>very</em> straightforward to do. I built this functioning little “script” in about two hours. For context: I’ve taken multiple passes at this in Python—which in the way people normally think about these things should be way <em>easier</em>—and I’ve failed both times.</p>
+<p>Rust’s compiler just helps you out <em>so much</em> along the way, not only with the type-checking but with the really amazing metaprogramming capabilities you get with it. Being able to slap <code>#[derive(Deserialize)]</code> on a struct and a couple attributes on struct fields and having it Just Work™ to deserialize XML into local types is mind-blowing. (The only thing I know of that’s playing the same game is F<sup>♯</sup> type-providers. I’d love to hear about similar capabilities in other languages!)</p>
+<p>I’m basically at the point where if I need a small command-line tool, I write it in Rust, <em>not</em> in a conventional scripting language like Python, because the benefits I get more than outweigh whatever small extra amount of mental overhead there is. And there’s not much of that mental overhead anyway for this kind of thing! As you can see <a href="https://github.com/chriskrycho/evernote2md/blob/master/src/main.rs#L71">in the actual code</a>, I make free and liberal use of <a href="https://doc.rust-lang.org/1.26.0/std/option/enum.Option.html"><code>expect</code></a> for this kind of tool.</p>
+<p>It’s also hard to oversell the ecosystem—even as relatively nascent as it is compared to some much older languages, the tools which exist are just really good. This project uses <a href="https://serde.rs">Serde</a> for deserializing from <abbr>XML</abbr> and serializing to <abbr>YAML</abbr>; <a href="https://github.com/rust-lang/regex">Regex</a>; <a href="https://clap.rs">Clap</a> for command line parsing; a nice little wrapper around <a href="https://pandoc.org">pandoc</a>; and, superpower even among superpowers, <a href="https://docs.rs/rayon/1.0.1/rayon/">Rayon</a>: free parallelization.</p>
+<p>Rust is, in short, <em>very productive</em> for things in this space. Far more than you might expect from the billing. Yes, it’s a “systems programming language” and you can write operating systems with it. But it’s also just a really great tool for <em>all sorts</em> of domains, including little <abbr>CLI</abbr> tools like this one.</p>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/vacation-as-recharging.html">Vacation as Recharging</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/rust-is-incredibly-productive-for-clis.html">Rust is Incredibly Productive for CLIs</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/handling-the-liberal-order-correctly.html">Handling “The Liberal Order” Correctly</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
