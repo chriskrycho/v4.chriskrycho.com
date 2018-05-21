@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>How To Bundle TypeScript Type Definitions &middot; Chris Krycho</title>
+    <meta name="description" content="Create a custom build that puts the type definitions in the root of your package, instead of putting them alongside the compiled JavaScript files. Because if your consumers have to use compiler options, they will be very sad."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/how-to-bundle-typescript-type-definitions.html"/>
+    <meta property="og:title" content="How To Bundle TypeScript Type Definitions"/>
+    <meta property="og:description" content="Create a custom build that puts the type definitions in the root of your package, instead of putting them alongside the compiled JavaScript files. Because if your consumers have to use compiler options, they will be very sad."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="How To Bundle TypeScript Type Definitions"/>
+    <meta name="twitter:description" content="Create a custom build that puts the type definitions in the root of your package, instead of putting them alongside the compiled JavaScript files. Because if your consumers have to use compiler options, they will be very sad."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="typescript programming-languages tech">
+
+    <header>
+<h1>How To Bundle TypeScript Type Definitions</h1>
+<h2>If your consumers have to use compiler options, they will be very sad.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/how-to-bundle-typescript-type-definitions.html"><i class="fa fa-fw fa-link"></i></a>May 21, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2018/how-to-bundle-typescript-type-definitions.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>One of the lessons that led to the True Myth 2.0.0 release was the difficulty of consuming the library under its original packaging strategy. There are a few things that are <em>not</em> obvious about how TypeScript type definitions get consumed when you’re first starting out, and a few things that seem like they should work <em>don’t</em>. This is my attempt to help <em>you</em> (and the people consuming your TypeScript libraries!) avoid the same pain I (and the people consuming mine) have felt.</p>
+<section id="the-problem" class="level2">
+<h2>The Problem</h2>
+<p>The problem is the result of the ways TypeScript resolves type definitions, and the kinds of type definition files it can (and cannot) generate for you.</p>
+<p>TypeScript only properly resolves two kinds of type definition distributions automatically:</p>
+<ul>
+<li>A single-file type definition, located anywhere in the package as long as <code>package.json</code> has a <code>types</code> key pointing to it.</li>
+<li>Type definition module files in the <em>root</em> of the distributed package, mapping to the distributed modules of the package (wherever they live).</li>
+</ul>
+<p>TypeScript will only generate a single-file type definition for the <abbr>AMD</abbr> and SystemJS standards—which <em>cannot</em> be imported with ES6 module imports. If you want to use an output mode which generates a JS file per originating TS file—Node, ES6, etc.—you will get individual TS module file type definitions as well. It is not that the type definition files themselves can’t be written to support Node or ES6-style module layouts in a single-file definition. To the contrary: hand-written definitions for libraries <em>often</em> do just that. It is just a matter of what the compiler supports generating.</p>
+<p>The net of this is: if you want module type definitions to go with ES6 modules to import, they <em>must</em> live in the root of your distributed bundle.</p>
+<p>However, most libraries I’m familiar with—because I work in the <em>browser</em> ecosystem, not the <em>Node</em> ecosystem—do not work with the root of their repository as the place where their source lives, or for the place where the output of their build process lives. It’s far more common to have a <code>src</code> directory and <code>dist</code> or <code>build</code> directory, the latter of which is where the build artifacts go.</p>
+</section>
+<section id="the-solution" class="level2">
+<h2>The Solution</h2>
+<p>The solution—which we shipped for ember-cli-typescript some time ago, and which I switched to this past week for True Myth—is to have separate build artifacts for the type definitions and the JavaScript output. Put the JavaScript output in the <code>dist</code> or <code>build</code> directory as usual, without type declarations. Then, put the type definitions in the root of the repository.</p>
+<p>In the case of both ember-cli-typescript and True Myth, we’re doing the type generation step in the <code>prepublishOnly</code> hook and cleaning it up in the <code>postpublish</code> hook. Your <code>package.json</code> might look like something like this, assuming your <code>tsconfig.json</code> is set to generate JavaScript artifacts in <code>dist</code> as your build directory.</p>
+<pre class="json"><code>{
+  &quot;scripts&quot;: {
+    &quot;ts:js&quot;: &quot;tsc&quot;,
+    &quot;ts:defs&quot;: &quot;tsc --declaration --outDir . --emitDeclarationOnly&quot;,
+    &quot;prepublishOnly&quot;: &quot;yarn ts:js &amp;&amp; yarn ts:defs&quot;,
+    &quot;postpublish&quot;: &quot;rm -r *.d.ts dist&quot;
+  }
+}</code></pre>
+<p>(If you have nested modules, your <code>postpublish</code> hook there should clean up the generated folders as well as the generated files.)</p>
+<p>You can see the full setup I built for True Myth—which generates type defs along these lines, as well as both CommonJS and ES6 modules—in the repository:</p>
+<ul>
+<li><a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/package.json"><code>package.json</code></a>—note especially the <a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/package.json#L32:L42"><code>&quot;scripts&quot;</code></a> configuration</li>
+<li><a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/tsconfig.json">root <code>tsconfig.json</code></a>, with derived<a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/ts/cjs.tsconfig.json">CommonJS <code>tsconfig.json</code></a> and <a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/ts/es.tsconfig.json">ES6 <code>tsconfig.json</code></a> files.</li>
+</ul>
+<hr />
+<p>This isn’t an especially complicated thing, but the scenario leading to the need for this is common enough, and the dance frustrating enough and easy enough to get wrong, that I really wish the TypeScript team would make it possible to generate single-file type definitions for <em>all</em> kinds of JavaScript module systems.</p>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/vacation-as-recharging.html">Vacation as Recharging</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/how-to-bundle-typescript-type-definitions.html">How To Bundle TypeScript Type Definitions</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/handling-the-liberal-order-correctly.html">Handling “The Liberal Order” Correctly</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

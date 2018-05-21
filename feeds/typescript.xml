@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - typescript</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 19 May 2018 12:20:00 -0400</lastBuildDate><item><title>Destructuring with True Myth 1.3+</title><link>http://www.chriskrycho.com/2018/destructuring-with-true-myth-13.html</link><description>&lt;p&gt;I just realized a neat capability that &lt;a href="#"&gt;True Myth 1.3+&lt;/a&gt; unlocks: you can now use destructuring of the &lt;code&gt;value&lt;/code&gt; property on &lt;code&gt;Just&lt;/code&gt; and &lt;code&gt;Result&lt;/code&gt; and the &lt;code&gt;error&lt;/code&gt; property on &lt;code&gt;Error&lt;/code&gt; instances.&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - typescript</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Mon, 21 May 2018 07:00:00 -0400</lastBuildDate><item><title>How To Bundle TypeScript Type Definitions</title><link>http://www.chriskrycho.com/2018/how-to-bundle-typescript-type-definitions.html</link><description>&lt;p&gt;One of the lessons that led to the True Myth 2.0.0 release was the difficulty of consuming the library under its original packaging strategy. There are a few things that are &lt;em&gt;not&lt;/em&gt; obvious about how TypeScript type definitions get consumed when you’re first starting out, and a few things that seem like they should work &lt;em&gt;don’t&lt;/em&gt;. This is my attempt to help &lt;em&gt;you&lt;/em&gt; (and the people consuming your TypeScript libraries!) avoid the same pain I (and the people consuming mine) have felt.&lt;/p&gt;
+&lt;section id="the-problem" class="level2"&gt;
+&lt;h2&gt;The Problem&lt;/h2&gt;
+&lt;p&gt;The problem is the result of the ways TypeScript resolves type definitions, and the kinds of type definition files it can (and cannot) generate for you.&lt;/p&gt;
+&lt;p&gt;TypeScript only properly resolves two kinds of type definition distributions automatically:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A single-file type definition, located anywhere in the package as long as &lt;code&gt;package.json&lt;/code&gt; has a &lt;code&gt;types&lt;/code&gt; key pointing to it.&lt;/li&gt;
+&lt;li&gt;Type definition module files in the &lt;em&gt;root&lt;/em&gt; of the distributed package, mapping to the distributed modules of the package (wherever they live).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;TypeScript will only generate a single-file type definition for the &lt;abbr&gt;AMD&lt;/abbr&gt; and SystemJS standards—which &lt;em&gt;cannot&lt;/em&gt; be imported with ES6 module imports. If you want to use an output mode which generates a JS file per originating TS file—Node, ES6, etc.—you will get individual TS module file type definitions as well. It is not that the type definition files themselves can’t be written to support Node or ES6-style module layouts in a single-file definition. To the contrary: hand-written definitions for libraries &lt;em&gt;often&lt;/em&gt; do just that. It is just a matter of what the compiler supports generating.&lt;/p&gt;
+&lt;p&gt;The net of this is: if you want module type definitions to go with ES6 modules to import, they &lt;em&gt;must&lt;/em&gt; live in the root of your distributed bundle.&lt;/p&gt;
+&lt;p&gt;However, most libraries I’m familiar with—because I work in the &lt;em&gt;browser&lt;/em&gt; ecosystem, not the &lt;em&gt;Node&lt;/em&gt; ecosystem—do not work with the root of their repository as the place where their source lives, or for the place where the output of their build process lives. It’s far more common to have a &lt;code&gt;src&lt;/code&gt; directory and &lt;code&gt;dist&lt;/code&gt; or &lt;code&gt;build&lt;/code&gt; directory, the latter of which is where the build artifacts go.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="the-solution" class="level2"&gt;
+&lt;h2&gt;The Solution&lt;/h2&gt;
+&lt;p&gt;The solution—which we shipped for ember-cli-typescript some time ago, and which I switched to this past week for True Myth—is to have separate build artifacts for the type definitions and the JavaScript output. Put the JavaScript output in the &lt;code&gt;dist&lt;/code&gt; or &lt;code&gt;build&lt;/code&gt; directory as usual, without type declarations. Then, put the type definitions in the root of the repository.&lt;/p&gt;
+&lt;p&gt;In the case of both ember-cli-typescript and True Myth, we’re doing the type generation step in the &lt;code&gt;prepublishOnly&lt;/code&gt; hook and cleaning it up in the &lt;code&gt;postpublish&lt;/code&gt; hook. Your &lt;code&gt;package.json&lt;/code&gt; might look like something like this, assuming your &lt;code&gt;tsconfig.json&lt;/code&gt; is set to generate JavaScript artifacts in &lt;code&gt;dist&lt;/code&gt; as your build directory.&lt;/p&gt;
+&lt;pre class="json"&gt;&lt;code&gt;{
+  &amp;quot;scripts&amp;quot;: {
+    &amp;quot;ts:js&amp;quot;: &amp;quot;tsc&amp;quot;,
+    &amp;quot;ts:defs&amp;quot;: &amp;quot;tsc --declaration --outDir . --emitDeclarationOnly&amp;quot;,
+    &amp;quot;prepublishOnly&amp;quot;: &amp;quot;yarn ts:js &amp;amp;&amp;amp; yarn ts:defs&amp;quot;,
+    &amp;quot;postpublish&amp;quot;: &amp;quot;rm -r *.d.ts dist&amp;quot;
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(If you have nested modules, your &lt;code&gt;postpublish&lt;/code&gt; hook there should clean up the generated folders as well as the generated files.)&lt;/p&gt;
+&lt;p&gt;You can see the full setup I built for True Myth—which generates type defs along these lines, as well as both CommonJS and ES6 modules—in the repository:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/package.json"&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/a&gt;—note especially the &lt;a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/package.json#L32:L42"&gt;&lt;code&gt;&amp;quot;scripts&amp;quot;&lt;/code&gt;&lt;/a&gt; configuration&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/tsconfig.json"&gt;root &lt;code&gt;tsconfig.json&lt;/code&gt;&lt;/a&gt;, with derived&lt;a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/ts/cjs.tsconfig.json"&gt;CommonJS &lt;code&gt;tsconfig.json&lt;/code&gt;&lt;/a&gt; and &lt;a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/ts/es.tsconfig.json"&gt;ES6 &lt;code&gt;tsconfig.json&lt;/code&gt;&lt;/a&gt; files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;p&gt;This isn’t an especially complicated thing, but the scenario leading to the need for this is common enough, and the dance frustrating enough and easy enough to get wrong, that I really wish the TypeScript team would make it possible to generate single-file type definitions for &lt;em&gt;all&lt;/em&gt; kinds of JavaScript module systems.&lt;/p&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 21 May 2018 07:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-05-21:/2018/how-to-bundle-typescript-type-definitions.html</guid><category>typescript</category><category>programming languages</category></item><item><title>Destructuring with True Myth 1.3+</title><link>http://www.chriskrycho.com/2018/destructuring-with-true-myth-13.html</link><description>&lt;p&gt;I just realized a neat capability that &lt;a href="#"&gt;True Myth 1.3+&lt;/a&gt; unlocks: you can now use destructuring of the &lt;code&gt;value&lt;/code&gt; property on &lt;code&gt;Just&lt;/code&gt; and &lt;code&gt;Result&lt;/code&gt; and the &lt;code&gt;error&lt;/code&gt; property on &lt;code&gt;Error&lt;/code&gt; instances.&lt;/p&gt;
 &lt;p&gt;With &lt;code&gt;Maybe&lt;/code&gt; instances:&lt;/p&gt;
 &lt;pre class="ts"&gt;&lt;code&gt;import Maybe, { just, nothing, isJust } from &amp;#39;true-myth/maybe&amp;#39;;
 
