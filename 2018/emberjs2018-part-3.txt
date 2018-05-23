@@ -29,7 +29,7 @@ Over the last year, the maintainer-ship (and therefore decision-making) of ember
 
 But: it’s not the default. It’s what we turn to when we’re in one of those particular kinds of situations which require it. The default is public discussion and interaction.
 
-And this isn’t just an unspoken norm or something. As a team, we all explicitly agreed that we default to public. Pretty much the only times we chat in our private channel is if we’re figuring out how to diffuse an awkward situation kindly, or if we’re adding someone else to the team. Otherwise, we try to have all our discussions in the GitHub issues for the projeccts or the `#topic-typescript` room in the Ember Community Slack.
+And this isn’t just an unspoken norm or something. As a team, we all explicitly agreed that we default to public. Pretty much the only times we chat in our private channel is if we’re figuring out how to diffuse an awkward situation kindly, or if we’re adding someone else to the team. Otherwise, we try to have all our discussions in the GitHub issues for the projects or the `#topic-typescript` room in the Ember Community Slack.
 
 This has a few major effects, as I see it:
 
