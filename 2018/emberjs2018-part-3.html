@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>#EmberJS2018, Part 3 &middot; Chris Krycho</title>
+    <meta name="description" content="There are often good reasons to have private discussions in any kind of core team—but they should not be the default. The default should be public."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/emberjs2018-part-3.html"/>
+    <meta property="og:title" content="#EmberJS2018, Part 3"/>
+    <meta property="og:description" content="There are often good reasons to have private discussions in any kind of core team—but they should not be the default. The default should be public."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="#EmberJS2018, Part 3"/>
+    <meta name="twitter:description" content="There are often good reasons to have private discussions in any kind of core team—but they should not be the default. The default should be public."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="emberjs emberjs2018 javascript leadership tech">
+
+    <header>
+<h1>#EmberJS2018, Part 3</h1>
+<h2>Default to open for discussions and decision-making.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/emberjs2018-part-3.html"><i class="fa fa-fw fa-link"></i></a>May 22, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/emberjs2018/">#emberjs2018</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/leadership/">#leadership</a></span><span><a href="http://www.chriskrycho.com/2018/emberjs2018-part-3.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>Following <a href="https://blog.rust-lang.org/2018/01/03/new-years-rust-a-call-for-community-blogposts.html">the example</a> of the Rust community, the <a href="https://emberjs.com">Ember.js</a> team has <a href="https://emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html" title="Ember&#39;s 2018 Roadmap: A Call for Blog Posts">called for blog posts</a> as the first step in setting the 2018 roadmap (which will formally happen through the normal <a href="https://github.com/emberjs/rfcs"><abbr title="Request for Comments">RFC</abbr> process</a>). This is my contribution.</p>
+<p>There are three major themes I think should characterize the Ember.js community and project for the rest of 2018:</p>
+<ol type="1">
+<li><a href="http://www.chriskrycho.com/2018/emberjs2018-part-1.html"><strong>Finishing What We’ve Started</strong></a></li>
+<li><a href="https://www.chriskrycho.com/2018/emberjs2018-part-2.html"><strong>Doubling Down on Documentation</strong></a></li>
+<li><strong>Defaulting to Public for Discussions</strong> (this post)</li>
+<li><strong>Embracing the Ecosystem</strong></li>
+</ol>
+<hr />
+<p>One of the small changes I think would substantially improve the Ember.js ecosystem is: <strong>defaulting to public for discussions</strong> among the core team. Indeed: for any open-source project with community involvement like Ember.js has, that should be the default. Not the <em>only</em> option, just the default option.</p>
+<p>There is plenty of value in having private channels for discussion in contexts like this. Sometimes you have to deal with something awkward or socially difficult. Sometimes you have already taken the community’s input and just have to come to a decision about what to do on something. Private channels are useful.</p>
+<p>But: they shouldn’t be the default. They should be what you turn to when you’re in one of those particular kinds of situations which require it. The default should be public discussion and interaction.</p>
+<p>Over the last year, the maintainer-ship (and therefore decision-making) of ember-cli-typescript and the surrounding TypeScript ecosystem has grown from being pretty much just me to being a small group of four of us: Derek Wickern, Dan Freeman, James Davis, and me. We have the “final say,” so to speak, on the things we’re doing with the addon and the typings and so on. (What that actually means in practice is mostly just we all try to shoulder the burden of staying on top of pull requests.) And we have a private channel for discussions as a “core team” for projects in the <a href="https://github.com/typed-ember">typed-ember</a> organization.</p>
+<p>But: it’s not the default. It’s what we turn to when we’re in one of those particular kinds of situations which require it. The default is public discussion and interaction.</p>
+<p>And this isn’t just an unspoken norm or something. As a team, we all explicitly agreed that we default to public. Pretty much the only times we chat in our private channel is if we’re figuring out how to diffuse an awkward situation kindly, or if we’re adding someone else to the team. Otherwise, we try to have all our discussions in the GitHub issues for the projeccts or the <code>#topic-typescript</code> room in the Ember Community Slack.</p>
+<p>This has a few major effects, as I see it:</p>
+<ul>
+<li><p>No one should feel left out or in the dark about what we’re up to. Even if we’re hashing out crazy-seeming ideas for how to move stuff forward, it’s all there for everyone to see. This includes neat things like Dan Freeman’s proof-of-concept on <a href="https://twitter.com/__dfreeman/status/994410180661170177">type-checked templates</a>, or our mad sprint (as a team!) to get some core improvements landed before I gave a workshop at EmberConf, or anything else we’re going after.</p></li>
+<li><p>We’re obviously available for input on things as people have questions, because we’re interacting with <em>each other</em> in those public forums. And if we’d like to start moving some of the oft-repeated questions over to the <a href="https://discuss.emberjs.com">Ember Discourse</a> or to <a href="https://stackoverflow.com/questions/tagged/ember.js">Stack Overflow</a>, it’s still really helpful for people who <em>are</em> on the Slack to see that we’re there and available for help.</p></li>
+<li><p>We get to see the regular pain points others run into. That often turns into issues, priorities, etc. for us as a group. The slowly growing issue <a href="https://github.com/typed-ember/ember-cli-typescript/issues/170">tracking things we need to document</a> is essentially a direct product of that constant cycle of interaction.</p></li>
+<li><p>We get the benefit of input from others! If we’ve missed something, or simply failed to think of something, others in the community often haven’t. One prime example of this: the “registry” strategy we use for making things like Ember Data store, adapter, etc. lookups work came out of conversations with a community member (<a href="https://github.com/maerten">Maarten Veenstra</a>) which happened many months before we were in a spot where we could land that kind of thing—and initially I was pretty skeptical of it, but they were totally right, and it’s now core to how Ember’s typings work!</p></li>
+</ul>
+<p>I recommend—very strongly—that the Ember.js core team adopt the same strategy. Teams <em>do</em> need private channels sometimes. But they shouldn’t be the default. They should be for those particular circumstances which <em>require</em> it.</p>
+<p>The biggest things I think could come out of this are:</p>
+<ul>
+<li><p>A greater confidence from within the Ember.js community about what the core team is up to and where we’re going. Technical leadership seems to me to be about 10% technical brilliance and 90% clear communication. We have loads of technical brilliance; we need more communication!</p></li>
+<li><p>More confidence in the trajectory of Ember.js from <em>outside</em> its existing community. Seeing that there is active leadership is essential for people to have confidence that choosing Ember.js is a good choice both today and for the medium-to-long-term.</p></li>
+</ul>
+<p>And we need both of those—a lot—for Ember.js to continue to grow and thrive in the years ahead!</p>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/delivering-talks-a-bit-more-accessibly.html">Delivering Talks a Bit More Accessibly</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/emberjs2018-part-3.html">#EmberJS2018, Part 3</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/handling-the-liberal-order-correctly.html">Handling “The Liberal Order” Correctly</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

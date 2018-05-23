@@ -68,6 +68,7 @@ const errLengths = results
 &lt;ol type="1"&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/emberjs2018-part-1.html"&gt;&lt;strong&gt;Finishing What We’ve Started&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Doubling Down on Documentation&lt;/strong&gt; (this post)&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/emberjs2018-part-3.html"&gt;&lt;strong&gt;Defaulting to Public for Discussions&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Embracing the Ecosystem&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
@@ -237,6 +238,7 @@ function justLengths(maybeStrings: Array&amp;lt;Maybe&amp;lt;string&amp;gt;&amp;
 &lt;ol type="1"&gt;
 &lt;li&gt;&lt;strong&gt;Finishing What We’ve Started&lt;/strong&gt; (this post)&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/emberjs2018-part-2.html"&gt;&lt;strong&gt;Doubling Down on Docs&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/emberjs2018-part-3.html"&gt;&lt;strong&gt;Defaulting to Public for Discussions&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Embracing the Ecosystem&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
