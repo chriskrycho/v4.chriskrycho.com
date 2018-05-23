@@ -1,7 +1,7 @@
 ---
 Title: "#EmberJS2018, Part 3"
 Subtitle: Default to open for discussions and decision-making.
-Date: 2018-05-22 07:30
+Date: 2018-05-23 07:30
 Tags: emberjs, emberjs2018, javascript, leadership
 Category: Tech
 Summary: >
