@@ -16,9 +16,10 @@ There are three major themes I think should characterize the Ember.js community 
 
 1. **Finishing What We’ve Started** (this post)
 2. [**Doubling Down on Docs**](https://www.chriskrycho.com/2018/emberjs2018-part-2.html)
-3. **Embracing the Ecosystem**
+3. [**Defaulting to Public for Discussions**](http://www.chriskrycho.com/2018/emberjs2018-part-3.html)
+4. **Embracing the Ecosystem**
 
----- 
+----
 
 ## Finishing What We’ve Started
 
@@ -123,7 +124,7 @@ Closely related to making TypeScript a first-class citizen for Ember.js itself i
 
 **How you can help:** participate in the quest issue once it’s live! We’ll help mentor you through the process of converting addons to TypeScript, writing type definitions and getting them well-validated, and so on!
 
----- 
+----
 
 That’s a lot to do. More than enough all by itself, and a lot of moving parts. As such, I’ll reiterate what I said at the start: we don’t need new features this year. **It’s time for a year of *shipping*.**
 
