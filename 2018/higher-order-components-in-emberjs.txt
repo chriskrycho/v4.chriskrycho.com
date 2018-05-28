@@ -9,16 +9,16 @@ Summary: >
 
 ---
 
-One of the most powerful patterns in programming is the idea of *higher-order functions*: functions which can take other functions as arguments or return them as their return values. If you’ve spent much time at all working in JavaScript, you’ve certainly encountered these—whether you’re using `Array.map` to transform the values in an array, or passing a function as an argument to an event handler. 
+One of the most powerful patterns in programming is the idea of *higher-order functions*: functions which can take other functions as arguments or return them as their return values. If you’ve spent much time at all working in JavaScript, you’ve certainly encountered these—whether you’re using `Array.map` to transform the values in an array, or passing a function as an argument to an event handler.
 
 The same pattern is incredibly useful in building components, and most modern front-end frameworks support it—including Ember.js! So in this little post, I’ll show you how to build a small “higher-order component” in Ember.js, hopefully demystifying that term a little bit a long the way. (If you just want to see how the pieces fit together, you can see the finished app [in this repo](https://github.com/chriskrycho/ember-hoc-example).)
 
 <aside>
-  
+
 I’m going to be using classes and decorators throughout. Both are very much ready-to-go in Ember, and I commend them to you! I’m also going to be using some of the new [optional features](https://emberjs.com/blog/2018/04/13/ember-3-1-released.html#toc_introducing-optional-features-3-of-4) available in Ember 3.1+ to use template-only components!
 
 Note that one of the most important consequences of this is that arguments have to be referenced as `@theArgumentName` rather than just `theArgumentName` in templates. The reason is precisely that there is no backing JavaScript component. In old-school Ember.js components, `{{theArgumentName}}` is implicitly turned into `{{this.argumentName}}`, which does a lookup on the backing component. In Glimmer-style components—of which these are the first part—arguments live on a designated `args` property and are accessible in templates via `@theArgumentName` instead.
-  
+
 </aside>
 
 ## Higher-Order Components, What Are They
@@ -27,10 +27,10 @@ Just like with a “higher-order function,” all we mean when we talk about a �
 
 The thing we’re actually going to build here is a “modal” which accepts an optional button as an arguments, and which yields out a component for dividing the modal into sections visually so you can pass your own content in and have it look just right. This is closely based on a component my colleagues and I at Olo built recently, just with some of our specific details stripped away to get at the actually important bits. Here's what it looks like in practice:
 
-![a modal with sectioned text and a close button](./hoc-rendered.png)
+![a modal with sectioned text and a close button](http://cdn.chriskrycho.com/images/hoc-rendered.png)
 
 The goal for the button arguments is to let the modal be able to render the button the caller passes in, while not being concerned with the *functionality* of the button. Otherwise, we’d have to tie the “API” of the modal to the details of button behavior, bind more actions into it, etc.
-  
+
 The goal for the yielded sectioning component is for whatever is rendering the modal itself to be able to pass content in and get it chunked up however the modal decides is appropriate—the modal can display its own styles, etc.—without having to worry about the details of applying classes or sectioning up the content itself.
 
 In short, we want to *separate our concerns*: the modal knows how to lay out its contents and where to put buttons, but it doesn’t want to have to know *anything* about what the buttons do. The most complicated interaction in the world could be going on, and the modal won’t have to care. Likewise, things *using* the modal can pass content and buttons into it, and let the modal manage its own layout and so on without having to be concerned with the details of that. So what does that look like in practice?
@@ -184,7 +184,7 @@ To sum it all up, I'll just reiterate my earlier description: components are jus
       <Section>
         Some more content!
       </Section>
-        
+
       <Section>
         <p>The content can have its own sections, as you'd expect!</p>
         <p>Nothing crazy going on here. Just a normal template!</p>
