@@ -101,7 +101,7 @@ The `x-modal-section` component is the simplest of all of these: it has no behav
 
 ### Application controller and template
 
-Now, let’s use in the context of the application template, where we can see how the pieces all fit together. First, let's see the the application controller backing it—nothing unusual here, just a simple toggle to show or hide the modal.[^2]
+Now, let’s use in the context of the application template, where we can see how the pieces all fit together. First, let's see the application controller backing it—nothing unusual here, just a simple toggle to show or hide the modal.[^2]
 
 ```ts
 import Controller from "@ember/controller";

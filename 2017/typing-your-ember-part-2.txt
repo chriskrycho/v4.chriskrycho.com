@@ -31,7 +31,7 @@ In the [first part][part-1] of this series, I described how to set up a brand ne
 This is, in many ways, even simpler than setting up an app for the first time, because you already have almost everything you need. The steps here are exactly what you're used to if you're used to using the Ember CLI ecosystem:
 
 1. Install `ember-cli-typescript`:
-    
+
     ```sh
     ember install ember-cli-typescript
     ```
@@ -56,7 +56,7 @@ Now, for the **tips**. Note that these are just a couple quick pointers; I'll co
 
 - Don't turn on `--strict` or the corresponding individual flags on day 1. Unless you have an extremely unusual and disciplined Ember.js codebase, you'll have an incredible set of errors to deal with.
 
-- Don't set the the `noEmitOnError` flag to `true` in your `tsconfig.json`, for much the same reason. Since the state of type declaration files for Ember is best described as _nascent_ at present, many of your files will have errors in them just from failed imports!
+- Don't set the `noEmitOnError` flag to `true` in your `tsconfig.json`, for much the same reason. Since the state of type declaration files for Ember is best described as _nascent_ at present, many of your files will have errors in them just from failed imports!
 
 - Don't try to convert everything at once. Just pick the next feature or bug you're working on, and start with the files you're touching for that bug. Rename it to `.ts`, fix any major issues it flags up that you can---but stick as locally as possible. You're apt to find a *lot* of small bugs as you start migrating, and some of them are things which are apt to affect your whole system because they touch central data types. It's okay. You can come back to those later. For today, you can just be explicit about the weirdnesses.
 
