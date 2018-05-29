@@ -91,7 +91,7 @@
         <div class="content">
 
 <p>One of the most powerful patterns in programming is the idea of <em>higher-order functions</em>: functions which can take other functions as arguments or return them as their return values. If you’ve spent much time at all working in JavaScript, you’ve certainly encountered these—whether you’re using <code>Array.map</code> to transform the values in an array, or passing a function as an argument to an event handler.</p>
-<p>The same pattern is incredibly useful in building components, and most modern front-end frameworks support it—including Ember.js! (You may have heard this called “contextual components” in Ember.js, and in React, the pattern is also known as the <code>renderProps</code> pattern, for the way you most often accomplish it. It’s all the same idea, though!)</p>
+<p>The same pattern is incredibly useful in building components, and most modern front-end frameworks support it—including Ember.js! (In React, the pattern as a whole is known as the <code>renderProps</code> pattern, for the way you most often accomplish it. It’s all the same idea, though!)</p>
 <p>In this little post, I’ll show you how to build a small “higher-order component” in Ember.js, hopefully demystifying that term a little bit a long the way. (If you just want to see how the pieces fit together, you can see the finished app <a href="https://github.com/chriskrycho/ember-hoc-example">in this repo</a>.)</p>
 <aside>
 <p>I’m going to be using classes and decorators throughout. Both are very much ready-to-go in Ember, and I commend them to you! I’m also going to be using some of the new <a href="https://emberjs.com/blog/2018/04/13/ember-3-1-released.html#toc_introducing-optional-features-3-of-4">optional features</a> available in Ember 3.1+ to use template-only components!</p>
@@ -107,6 +107,7 @@
 <p>The goal for the button arguments is to let the modal be able to render the button the caller passes in, while not being concerned with the <em>functionality</em> of the button. Otherwise, we’d have to tie the “API” of the modal to the details of button behavior, bind more actions into it, etc.</p>
 <p>The goal for the yielded sectioning component is for whatever is rendering the modal itself to be able to pass content in and get it chunked up however the modal decides is appropriate—the modal can display its own styles, etc.—without having to worry about the details of applying classes or sectioning up the content itself.</p>
 <p>In short, we want to <em>separate our concerns</em>: the modal knows how to lay out its contents and where to put buttons, but it doesn’t want to have to know <em>anything</em> about what the buttons do. The most complicated interaction in the world could be going on, and the modal won’t have to care. Likewise, things <em>using</em> the modal can pass content and buttons into it, and let the modal manage its own layout and so on without having to be concerned with the details of that. So what does that look like in practice?</p>
+<p>The approach I use here builds on the “contextual components” pattern in Ember.js. The main new idea is that the <em>context</em> includes components!</p>
 </section>
 <section id="implementing-it" class="level2">
 <h2>Implementing It</h2>
