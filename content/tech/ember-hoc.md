@@ -4,7 +4,7 @@ Subtitle: Components as arguments! Components getting yielded! Components everyw
 Category: Tech
 Tags: emberjs, javascript, typescript
 Date: 2018-05-26 14:00
-Modified: 2018-05-28 06:05
+Modified: 2018-05-28 06:50
 Summary: >
     Components as arguments! Components getting yielded! Components everywhere! A powerful way to make your Ember.js components more flexible and composeable.
 
@@ -12,7 +12,7 @@ Summary: >
 
 One of the most powerful patterns in programming is the idea of *higher-order functions*: functions which can take other functions as arguments or return them as their return values. If you’ve spent much time at all working in JavaScript, you’ve certainly encountered these—whether you’re using `Array.map` to transform the values in an array, or passing a function as an argument to an event handler.
 
-The same pattern is incredibly useful in building components, and most modern front-end frameworks support it—including Ember.js! (You may have heard this called "contextual components" in Ember.js, and in React, the pattern is also known as the `renderProps` pattern, for the way you most often accomplish it. It's all the same idea, though!)
+The same pattern is incredibly useful in building components, and most modern front-end frameworks support it—including Ember.js! (In React, the pattern as a whole is known as the `renderProps` pattern, for the way you most often accomplish it. It's all the same idea, though!)
 
 In this little post, I’ll show you how to build a small “higher-order component” in Ember.js, hopefully demystifying that term a little bit a long the way. (If you just want to see how the pieces fit together, you can see the finished app [in this repo](https://github.com/chriskrycho/ember-hoc-example).)
 
@@ -38,6 +38,7 @@ The goal for the yielded sectioning component is for whatever is rendering the m
 
 In short, we want to *separate our concerns*: the modal knows how to lay out its contents and where to put buttons, but it doesn’t want to have to know *anything* about what the buttons do. The most complicated interaction in the world could be going on, and the modal won’t have to care. Likewise, things *using* the modal can pass content and buttons into it, and let the modal manage its own layout and so on without having to be concerned with the details of that. So what does that look like in practice?
 
+The approach I use here builds on the "contextual components" pattern in Ember.js. The main new idea is that the *context* includes components!
 
 ## Implementing It
 
