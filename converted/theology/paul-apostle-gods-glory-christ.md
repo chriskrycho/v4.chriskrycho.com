@@ -140,7 +140,7 @@ in Jesus Christ, proclaimed to the nations.
 * * * * *
 
 <a name="fn1">^1^</a> Credobaptism is the view that only professing
-believers should be baptized, while paedobaptism is the view the the
+believers should be baptized, while paedobaptism is the view that the
 children of believing parents also ought to be baptized.
 <a href="#fn1-ret">↑<?a ?>
 

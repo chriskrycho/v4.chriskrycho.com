@@ -31,7 +31,7 @@ realizing exactly what it was - and, I believe, who never finished it.
 Reading successive drafts of a novel most people *already* consider a
 bit wordy or slow isn't for the faint of heart. For a fan like me,
 however, it's fascinating - and equally so for someone continually
-[intrigued by the the artistic process][].
+[intrigued by the artistic process][].
 
 What quickly becomes apparent - and what should encourage every writer
 who toils at his story and indeed every artist who struggles with her
@@ -95,5 +95,5 @@ until it was good. Would that we were all so disciplined.
     "Get it at Amazon"
   [book cover image]: http://www.chriskrycho.com/art/files/2012/05/return_shadow.jpg
     "The Return of the Shadow"
-  [intrigued by the the artistic process]: http://www.chriskrycho.com/art/reflections/and-the-stew-tastes-good/
+  [intrigued by the artistic process]: http://www.chriskrycho.com/art/reflections/and-the-stew-tastes-good/
     "And the stew tastes good"

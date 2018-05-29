@@ -35,7 +35,7 @@ through these issues, this right here - a real problem, out in the wild
 administered.
 
 So, a plea for sanity: if you're going to do server-side user-agent
-detection, fine. I was persuaded by the the [discussion][] that followed
+detection, fine. I was persuaded by the [discussion][] that followed
 that post that there really is a time and place for that sort of thing.
 But we need to be extremely careful in *where* and *how* we rely on user
 agent-detection to make decisions about the content we supply to users.
