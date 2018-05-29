@@ -17,7 +17,7 @@ There are three major themes I think should characterize the Ember.js community 
 1. [**Finishing What We’ve Started**](http://www.chriskrycho.com/2018/emberjs2018-part-1.html)
 2. **Doubling Down on Documentation** (this post)
 3. [**Defaulting to Public for Discussions**](http://www.chriskrycho.com/2018/emberjs2018-part-3.html)
-4. **Embracing the Ecosystem**
+4. [**Embracing the Ecosystem**](https://www.chriskrycho.com/2018/emberjs2018-part-4.html)
 
 ----
 

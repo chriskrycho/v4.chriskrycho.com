@@ -5,7 +5,7 @@
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/emberjs2018-part-1.html"&gt;&lt;strong&gt;Finishing What We’ve Started&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/emberjs2018-part-2.html"&gt;&lt;strong&gt;Doubling Down on Documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Defaulting to Public for Discussions&lt;/strong&gt; (this post)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Embracing the Ecosystem&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/emberjs2018-part-4.html"&gt;&lt;strong&gt;Embracing the Ecosystem&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr /&gt;
 &lt;p&gt;One of the small changes I think would substantially improve the Ember.js ecosystem is: &lt;strong&gt;defaulting to public for discussions&lt;/strong&gt; among the core team. Indeed: for any open-source project with community involvement like Ember.js has, that should be the default. Not the &lt;em&gt;only&lt;/em&gt; option, just the default option.&lt;/p&gt;

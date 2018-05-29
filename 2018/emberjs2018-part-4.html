@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>#EmberJS2018, Part 4 &middot; Chris Krycho</title>
+    <meta name="description" content="We need to shift from a posture of defensiveness about Ember.js to one of embracing the ecosystem, and embracing our role in the ecosystem."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/emberjs2018-part-4.html"/>
+    <meta property="og:title" content="#EmberJS2018, Part 4"/>
+    <meta property="og:description" content="We need to shift from a posture of defensiveness about Ember.js to one of embracing the ecosystem, and embracing our role in the ecosystem."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="#EmberJS2018, Part 4"/>
+    <meta name="twitter:description" content="We need to shift from a posture of defensiveness about Ember.js to one of embracing the ecosystem, and embracing our role in the ecosystem."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="emberjs javascript typescript emberjs2018 tech">
+
+    <header>
+<h1>#EmberJS2018, Part 4</h1>
+<h2>Embracing the Ecosystem</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/emberjs2018-part-4.html"><i class="fa fa-fw fa-link"></i></a>May 29, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/emberjs2018/">#emberjs2018</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2018/emberjs2018-part-4.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>Following <a href="https://blog.rust-lang.org/2018/01/03/new-years-rust-a-call-for-community-blogposts.html">the example</a> of the Rust community, the <a href="https://emberjs.com">Ember.js</a> team has <a href="https://emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html" title="Ember&#39;s 2018 Roadmap: A Call for Blog Posts">called for blog posts</a> as the first step in setting the 2018 roadmap (which will formally happen through the normal <a href="https://github.com/emberjs/rfcs"><abbr title="Request for Comments">RFC</abbr> process</a>). This is my contribution.</p>
+<p>There are three major themes I think should characterize the Ember.js community and project for the rest of 2018:</p>
+<ol type="1">
+<li><a href="http://www.chriskrycho.com/2018/emberjs2018-part-1.html"><strong>Finishing What We’ve Started</strong></a></li>
+<li><a href="https://www.chriskrycho.com/2018/emberjs2018-part-2.html"><strong>Doubling Down on Documentation</strong></a></li>
+<li><a href="https://www.chriskrycho.com/2018/emberjs2018-part-3.html"><strong>Defaulting to Public for Discussions</strong></a></li>
+<li><strong>Embracing the Ecosystem</strong> (this post)</li>
+</ol>
+<hr />
+<p>Over the last few weeks, I’ve talked about a few big ideas that I think the Ember.js community should go after in 2018 which will help the framework excel over the next few years. This last one (like Part 3 before it) is more a <em>culture shift</em> than a matter of <em>things to build</em>.</p>
+<p>We need to shift from a posture of defensiveness about Ember.js to one of embracing the ecosystem, and embracing our role in the ecosystem.</p>
+<p>It’s easy to end up in an us-vs.-them mentality when looking at different libraries and frameworks. It’s doubly easy to go there when you often hear “Isn’t Ember dead?” or variations on that theme. We should avoid that way of thinking anyway. And there are three big pieces to this: <em>contributing outwards</em>, <em>smoothing the paths into Ember</em> from other ecosystems, and <em>embracing the rest of the ecosystem</em>.</p>
+<section id="contributing-outwards" class="level3">
+<h3>Contributing outwards</h3>
+<p>There is genuinely great stuff happening all over the place in the front-end, and many of the things we love about working with Ember today have come directly out of e.g. React—hello, “data-down-actions-up”! The same is true in reverse: Ember has contributed many important ideas to the broader front-end ecosystem, from its early emphasis on rigorously linking URLs and application state to helping pioneer and popularize the use of good command line tooling, to more recent emphasis on <em>compilation</em> as a way of solving certain classes of problems.</p>
+<p>So as we build all of these things, one of the best things to do—and, I believe, one of the ways we help Ember grow!—is think about how our work can benefit the larger ecosystem. When you build a library, you should consider whether there are parts of it that <em>don’t</em> have to be Ember specific. For example, a colleague and I recently built out the foundation of a solution for well-rationalized form-handling.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> We build it in two pieces, though: a core library in TypeScript that will work as well in Vue or React as in Ember, and an Ember component library that consumes that core functionality.</p>
+<p>The more we can take that tack in <em>general</em>, the better. It’s the first piece of making the gap between people’s experience in other parts of the front-end ecosystem and the Ember part smaller. Ember will seem much more interesting if people find themselves <em>often</em> getting value out of things we’ve built.</p>
+</section>
+<section id="smoothing-the-paths-in" class="level3">
+<h3>Smoothing the paths in</h3>
+<p>The flip side of this is figuring out ways to make it easier for people coming <em>into</em> Ember.js to map patterns from their existing experience onto the framework’s tools and patterns. The simple reality is that there are far, far more developers familiar with React, Angular, and Vue than with modern Ember.js. Ember genuinely has a lot to offer there, but when</p>
+<p>This is primarily a communications effort; it means changes to the docs and to the homepage, but also to what we do in blog posts and tutorials and talks as a community!</p>
+<p>At the highest level, I cannot recommend strongly enough the model suggested by Chris Garrett in his #EmberJS2018 post: treat Ember.js (both in the docs and also in our presentations and communications about it) as a <em>component-service</em> framework. This not only maps more easily to patterns people know from other communities, it has the really important effect of demystifying a lot of the “magic” that seems perplexing in the framework, especially around Ember Data—which is, after all, just a service you can inject!</p>
+<p>When we write blog posts, we can accomplish a lot of this simply by being aware of the rest of the ecosystem and making analogies there. You can see an example of how I’ve started trying to do this in my recent blog post on <a href="http://www.chriskrycho.com/2018/higher-order-components-in-emberjs.html">higher-order components in Ember.js</a>. It was just one little line:</p>
+<blockquote>
+<p>In React, the [higher-order components] pattern as a whole is often known as the <code>renderProps</code> pattern, for the way you most often accomplish it. It’s all the same idea, though!</p>
+</blockquote>
+<p>That’s not a lot of extra work, but it means that if someone searches for “renderProps Ember.js” there now exists a blog post which will help someone map there existing knowledge over! I wasn’t writing a “how to do React renderProps in Ember” post—but I still smoothed the path in just a little bit. We should be doing that everywhere we can. It’s usually not a lot of effort to make those kinds of moves in talks or blog posts, but the yield is high: Ember stops being some super weird foreign entity and starts looking like a variation on a theme.</p>
+<p>There is also a much larger effort we <em>do</em> need to undertake to make that story clearer on the home page and in the documentation—an effort that I know is already very much in consideration from chatting with the really amazing crew in <code>#-team-learning</code> on Slack. In the <strong>how you can help</strong> bucket: seriously please go into that channel and start chipping away at small tasks! There’s (<a href="https://m.youtube.com/watch?v=Abu2BNixXak" title="“Becoming a Contributor”, my Rust Belt Rust 2017 talk">always!</a>) way more work to be done than hands to do it.</p>
+<p>I think this also means prioritizing technical work that eases this. The sooner we can land the Glimmer component model, the better. The sooner we can hash out a more cogent story on routes and controllers and components, the better. The sooner we can make “npm-install-your-way-to-Ember” an actually viable strategy, the better. Because each of those things makes Ember dramatically more accessible to people working in other ecosystems today; each lowers the barrier to entry in some substantial way; and the combination of them all makes it far more viable for someone to <em>try</em> Ember in an existing application.</p>
+</section>
+<section id="embracing-the-rest-of-the-ecosystem" class="level3">
+<h3>Embracing the rest of the ecosystem</h3>
+<p>The final piece of this is actively embracing the best parts of the rest of the ecosystem.</p>
+<p>We as a community need to avoid defensiveness and recognize that there’s a <em>lot</em> of good in the rest of the front-end space. I understand how it can be easy to feel defensive. Being dismissed, having people be surprised that the project even still exists, etc. gets really old after a while. But however reasonable that defensiveness is, it’s ultimately counterproductive. It makes us hold onto things we don’t need to hold onto, and it makes us ignore things that might benefit us, and as a result it can make us <em>needlessly weird</em> technically.</p>
+<p><em>Needless weirdness</em> is an important idea I’d love for us to keep in mind. Any time you’re willing to move more slowly, to let the “new shiny” bake for a while to see whether it’s genuinely worth investing in, you’re going to seem weird. Likewise when you strongly embrace stability, in a broader ecosystem which hasn’t. Likewise when you value convention over configuration, in a broader ecosystem which hasn’t. But it’s important to be able to distinguish between <em>needful</em> and <em>needless</em> weirdness.</p>
+<p>We should have regular conversations as a community—through <abbr title="request for comments">RFC</abbr>s, through forum threads, through blog post arguments, etc.—about what’s <em>needful</em> weirdness, and what has become <em>needless</em> weirdness. (Because which weird things are needful change over time!) We should gleefully embrace the needful weirdness. But we should equally gleefully drop the needless weirdness.</p>
+<p>What makes Ember special is, by and large, <em>not</em> the specific technical implementations we’ve landed on.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> What makes Ember valuable is having a coherent top-to-bottom story and a rich community with a commitment to aggressively seeking out shared solutions, and an even deeper commitment to providing good migration paths forward when we change things.</p>
+<p>But here’s the thing: those values are increasingly (if slowly) being embraced <em>outside</em> the Ember ecosystem as well. Ember can contribute and even lead in many ways here—but only if we start actively embracing the good of other parts of the front-end ecosystem.</p>
+<p>For example: I’ve heard more times than I can count over the last few years that our use of Broccoli.js is really important for Ember, and the reality is… that isn’t true. We could have built on top of just about <em>any</em> solution, and it would have been <em>fine</em>. Broccoli <em>does</em> have some advantages; it also has some real disadvantages (one of which is that we’re the only ones using it!), and we should forthrightly acknowledge those. By the same token, if Webpack is working well for many people, let’s neither trash it in discussion nor ignore it in implementation. Instead, let’s make it easy for people to integrate Webpack into the Ember world.</p>
+<p>That doesn’t oblige us to chuck out our existing build tooling! It just means making our own build pipelines robust enough to interoperate well with other packaging systems. And that’s precisely what the Ember <abbr>CLI</abbr> team has been doing! This needs to be our pattern across the board going forward.</p>
+<p>It’s truly well and good to have made a call a few years ago, and to be going out of our way to mitigate the costs of churn. At the same time, we need to communicate—to a degree that probably feels like <em>over</em>communicating to the people who already understand all these decisions!—so that both the original rationales and the current status are accessible to all the people who <em>weren’t</em> there when the decisions were made.</p>
+<p>Insofar as it’s true that Broccoli and Webpack solve different problems, <em>explaining</em> how Broccoli and Webpack actually solve meaningfully different problems —or at least, <em>excel</em> at solving different problems—is one of the most important things we can do as well Props to Chris Thoburn (<a href="https://twitter.com/runspired">@runspired</a>) for doing this in a few different contexts recently, but we need a lot more of it—because it’s one example I think most people both inside and outside the Ember community have just kind of scratched their heads at for a long time (me included).</p>
+<p>Again: I take the Broccoli/Webpack example simply because it’s an obvious one. The broader point is that we need to find ways to embrace the shared solutions which emerge not only in the Ember community but in the front-end ecosystem as a whole, even was we also do the hard work to make our own shared solutions useful to the rest of the front-end ecosystem. That two-way exchange will benefit us, and smooth the paths in for newcomers, and benefit the rest of the ecosystem, too—and that’s a huge win. Because in a very real sense, we front-end developers are all in this together.</p>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Keep your eyes open; you’ll see a blog post announcing that along with a full set of documentation for it sometime in the next month or so!<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>To be clear: many, though certainly not all, of those specific implementations I like, but that’s beside the point.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/delivering-talks-a-bit-more-accessibly.html">Delivering Talks a Bit More Accessibly</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/emberjs2018-part-4.html">#EmberJS2018, Part 4</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/handling-the-liberal-order-correctly.html">Handling “The Liberal Order” Correctly</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
