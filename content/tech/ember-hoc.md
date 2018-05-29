@@ -12,7 +12,7 @@ Summary: >
 
 One of the most powerful patterns in programming is the idea of *higher-order functions*: functions which can take other functions as arguments or return them as their return values. If you’ve spent much time at all working in JavaScript, you’ve certainly encountered these—whether you’re using `Array.map` to transform the values in an array, or passing a function as an argument to an event handler.
 
-The same pattern is incredibly useful in building components, and most modern front-end frameworks support it—including Ember.js! (In React, the pattern as a whole is known as the `renderProps` pattern, for the way you most often accomplish it. It's all the same idea, though!)
+The same pattern is incredibly useful in building components, and most modern front-end frameworks support it—including Ember.js! (In React, the pattern as a whole is often known as the `renderProps` pattern, for the way you most often accomplish it. It's all the same idea, though!)
 
 In this little post, I’ll show you how to build a small “higher-order component” in Ember.js, hopefully demystifying that term a little bit a long the way. (If you just want to see how the pieces fit together, you can see the finished app [in this repo](https://github.com/chriskrycho/ember-hoc-example).)
 
