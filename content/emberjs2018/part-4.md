@@ -35,7 +35,7 @@ The more we can take that tack in *general*, the better. It’s the first piece 
 
 ### Smoothing the paths in
 
-The flip side of this is figuring out ways to make it easier for people coming *into* Ember.js to map patterns from their existing experience onto the framework’s tools and patterns. The simple reality is that there are far, far more developers familiar with React, Angular, and Vue than with modern Ember.js. Ember genuinely has a lot to offer there, but when
+The flip side of this is figuring out ways to make it easier for people coming *into* Ember.js to map patterns from their existing experience onto the framework’s tools and patterns. The simple reality is that there are far, far more developers familiar with React, Angular, and Vue than with modern Ember.js. Ember genuinely has a lot to offer there, but we need to make it easier for people to see that value and to recognize how it's a lot like the good parts of what they already know!
 
 This is primarily a communications effort; it means changes to the docs and to the homepage, but also to what we do in blog posts and tutorials and talks as a community!
 
