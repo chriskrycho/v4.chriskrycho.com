@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sum Type Constructors in TypeScript &middot; Chris Krycho</title>
+    <meta name="description" content="You can build the same kind of sophisticated discriminated union types in TypeScript as you'd get in Elm or F♯. Kind of. With a lot of work. (Here’s how.)"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/sum-type-constructors-in-typescript.html"/>
+    <meta property="og:title" content="Sum Type Constructors in TypeScript"/>
+    <meta property="og:description" content="You can build the same kind of sophisticated discriminated union types in TypeScript as you'd get in Elm or F♯. Kind of. With a lot of work. (Here’s how.)"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Sum Type Constructors in TypeScript"/>
+    <meta name="twitter:description" content="You can build the same kind of sophisticated discriminated union types in TypeScript as you'd get in Elm or F♯. Kind of. With a lot of work. (Here’s how.)"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="elm typescript programming-languages tech">
+
+    <header>
+<h1>Sum Type Constructors in TypeScript</h1>
+<h2>Or, making TypeScript into a terrible ML because I can’t use Elm in my day job.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/sum-type-constructors-in-typescript.html"><i class="fa fa-fw fa-link"></i></a>May 31, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/elm/">#elm</a><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2018/sum-type-constructors-in-typescript.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>A pretty common pattern I’ve seen is to have three basic states for some kind of <abbr>HTTP</abbr> request: <em>loading</em>, <em>failure</em>, and <em>success</em>. Since each of these has its own associated date, it’s a really good fit for a discriminated union or sum type. In a language like Elm (or F<sup>♯</sup> or Haskell or PureScript or…) you’d write that basically like this:</p>
+<pre class="elm"><code>module Fetch exposing (State)
+
+type alias HTTPStatusCode = Int
+type alias ErrorData = { code: HTTPStatusCode, reason: String }
+
+type State a
+    = Loading
+    | Failure ErrorData
+    | Success a</code></pre>
+<p>Because I find that pattern extremely helpful, I’ve at times gone out of my way to replicate it in TypeScript. And what you get is… verbose. It’s a necessary evil, given what TypeScript is doing (layering on top of JavaScript), and so much so that I wouldn’t actually recommend this unless you’re already doing this kind of programming a lot and find it pretty natural. If you are, though, here’s how you get the equivalent of those four lines of Elm in TypeScript:</p>
+<pre class="typescript"><code>type HttpStatusCode = number;
+
+export enum Type { Loading, Failure, Success }
+
+export class Loading {
+  readonly type: Type.Loading = Type.Loading;
+
+  static new() {
+    return new Loading();
+  }
+}
+
+type ErrorData = { code: HttpStatusCode, reason: string };
+
+export class Failure {
+  readonly type: Type.Failure = Type.Failure;
+  constructor(readonly value: ErrorData) {}
+
+  static new(value: ErrorData) {
+    return new Failure(value);
+  }
+}
+
+export class Success&lt;T&gt; {
+  readonly type: Type.Success = Type.Success;
+  constructor(readonly value: T) {}
+
+  static new&lt;A&gt;(value: A) {
+    return new Success(value);
+  }
+}
+
+export type FetchState&lt;T&gt; = Loading | Failure | Success&lt;T&gt;;
+export const FetchState = {
+  Type,
+  Loading,
+  Failure,
+  Success,
+};
+
+export default FetchState;</code></pre>
+<p>That’s a <em>lot</em> more code to do the same thing. Even if you dropped the static constructors—which you really don’t want to do, because then you can’t use them in a functional style but <em>have</em> to use <code>new Loading()</code> or whatever to construct them.</p>
+<p>You can make this work. And I do. And honestly, it’s amazing that TypeScript can do this at all—a real testament to the sophistication of the TypeScript type system and the ingenuity that has gone into it.</p>
+<p>But have I mentioned recently that I’d <em>really</em> prefer to be writing something like F<sup>♯</sup> or Elm than TypeScript?</p>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/delivering-talks-a-bit-more-accessibly.html">Delivering Talks a Bit More Accessibly</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/sum-type-constructors-in-typescript.html">Sum Type Constructors in TypeScript</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/cultural-marxism-and-evangelicalism.html">“Cultural Marxism” and “Evangelicalism”</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

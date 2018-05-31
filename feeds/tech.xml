@@ -1,5 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2018-05-29T07:45:00-04:00</updated><entry><title>#EmberJS2018, Part 4</title><link href="http://www.chriskrycho.com/2018/emberjs2018-part-4.html" rel="alternate"></link><published>2018-05-29T07:45:00-04:00</published><updated>2018-05-29T07:45:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-05-29:/2018/emberjs2018-part-4.html</id><summary type="html">We need to shift from a posture of defensiveness about Ember.js to one of embracing the ecosystem, and embracing our role in the ecosystem.</summary><content type="html">&lt;p&gt;Following &lt;a href="https://blog.rust-lang.org/2018/01/03/new-years-rust-a-call-for-community-blogposts.html"&gt;the example&lt;/a&gt; of the Rust community, the &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; team has &lt;a href="https://emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html" title="Ember&amp;#39;s 2018 Roadmap: A Call for Blog Posts"&gt;called for blog posts&lt;/a&gt; as the first step in setting the 2018 roadmap (which will formally happen through the normal &lt;a href="https://github.com/emberjs/rfcs"&gt;&lt;abbr title="Request for Comments"&gt;RFC&lt;/abbr&gt; process&lt;/a&gt;). This is my contribution.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Tech</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/tech.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2018-05-31T07:00:00-04:00</updated><entry><title>Sum Type Constructors in TypeScript</title><link href="http://www.chriskrycho.com/2018/sum-type-constructors-in-typescript.html" rel="alternate"></link><published>2018-05-31T07:00:00-04:00</published><updated>2018-05-31T07:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-05-31:/2018/sum-type-constructors-in-typescript.html</id><summary type="html">You can build the same kind of sophisticated discriminated union types in TypeScript as you'd get in Elm or F♯. Kind of. With a lot of work. (Here’s how.)</summary><content type="html">&lt;p&gt;A pretty common pattern I’ve seen is to have three basic states for some kind of &lt;abbr&gt;HTTP&lt;/abbr&gt; request: &lt;em&gt;loading&lt;/em&gt;, &lt;em&gt;failure&lt;/em&gt;, and &lt;em&gt;success&lt;/em&gt;. Since each of these has its own associated date, it’s a really good fit for a discriminated union or sum type. In a language like Elm (or F&lt;sup&gt;♯&lt;/sup&gt; or Haskell or PureScript or…) you’d write that basically like this:&lt;/p&gt;
+&lt;pre class="elm"&gt;&lt;code&gt;module Fetch exposing (State)
+
+type alias HTTPStatusCode = Int
+type alias ErrorData = { code: HTTPStatusCode, reason: String }
+
+type State a
+    = Loading
+    | Failure ErrorData
+    | Success a&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Because I find that pattern extremely helpful, I’ve at times gone out of my way to replicate it in TypeScript. And what you get is… verbose. It’s a necessary evil, given what TypeScript is doing (layering on top of JavaScript), and so much so that I wouldn’t actually recommend this unless you’re already doing this kind of programming a lot and find it pretty natural. If you are, though, here’s how you get the equivalent of those four lines of Elm in TypeScript:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;type HttpStatusCode = number;
+
+export enum Type { Loading, Failure, Success }
+
+export class Loading {
+  readonly type: Type.Loading = Type.Loading;
+
+  static new() {
+    return new Loading();
+  }
+}
+
+type ErrorData = { code: HttpStatusCode, reason: string };
+
+export class Failure {
+  readonly type: Type.Failure = Type.Failure;
+  constructor(readonly value: ErrorData) {}
+
+  static new(value: ErrorData) {
+    return new Failure(value);
+  }
+}
+
+export class Success&amp;lt;T&amp;gt; {
+  readonly type: Type.Success = Type.Success;
+  constructor(readonly value: T) {}
+
+  static new&amp;lt;A&amp;gt;(value: A) {
+    return new Success(value);
+  }
+}
+
+export type FetchState&amp;lt;T&amp;gt; = Loading | Failure | Success&amp;lt;T&amp;gt;;
+export const FetchState = {
+  Type,
+  Loading,
+  Failure,
+  Success,
+};
+
+export default FetchState;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That’s a &lt;em&gt;lot&lt;/em&gt; more code to do the same thing. Even if you dropped the static constructors—which you really don’t want to do, because then you can’t use them in a functional style but &lt;em&gt;have&lt;/em&gt; to use &lt;code&gt;new Loading()&lt;/code&gt; or whatever to construct them.&lt;/p&gt;
+&lt;p&gt;You can make this work. And I do. And honestly, it’s amazing that TypeScript can do this at all—a real testament to the sophistication of the TypeScript type system and the ingenuity that has gone into it.&lt;/p&gt;
+&lt;p&gt;But have I mentioned recently that I’d &lt;em&gt;really&lt;/em&gt; prefer to be writing something like F&lt;sup&gt;♯&lt;/sup&gt; or Elm than TypeScript?&lt;/p&gt;
+</content><category term="elm"></category><category term="typescript"></category><category term="programming languages"></category></entry><entry><title>#EmberJS2018, Part 4</title><link href="http://www.chriskrycho.com/2018/emberjs2018-part-4.html" rel="alternate"></link><published>2018-05-29T07:45:00-04:00</published><updated>2018-05-29T07:45:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-05-29:/2018/emberjs2018-part-4.html</id><summary type="html">We need to shift from a posture of defensiveness about Ember.js to one of embracing the ecosystem, and embracing our role in the ecosystem.</summary><content type="html">&lt;p&gt;Following &lt;a href="https://blog.rust-lang.org/2018/01/03/new-years-rust-a-call-for-community-blogposts.html"&gt;the example&lt;/a&gt; of the Rust community, the &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; team has &lt;a href="https://emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html" title="Ember&amp;#39;s 2018 Roadmap: A Call for Blog Posts"&gt;called for blog posts&lt;/a&gt; as the first step in setting the 2018 roadmap (which will formally happen through the normal &lt;a href="https://github.com/emberjs/rfcs"&gt;&lt;abbr title="Request for Comments"&gt;RFC&lt;/abbr&gt; process&lt;/a&gt;). This is my contribution.&lt;/p&gt;
 &lt;p&gt;There are three major themes I think should characterize the Ember.js community and project for the rest of 2018:&lt;/p&gt;
 &lt;ol type="1"&gt;
 &lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/emberjs2018-part-1.html"&gt;&lt;strong&gt;Finishing What We’ve Started&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
