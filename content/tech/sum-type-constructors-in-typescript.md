@@ -3,7 +3,7 @@ Title: Sum Type Constructors in TypeScript
 Subtitle: Or, making TypeScript into a terrible ML because I can’t use Elm in my day job.
 Category: Tech
 Tags: elm, typescript, programming languages
-Date: 2018-05-30 07:00
+Date: 2018-05-31 07:00
 Summary: >
     You can build the same kind of sophisticated discriminated union types in TypeScript as you'd get in Elm or F♯. Kind of. With a lot of work. (Here’s how.)
 ---
