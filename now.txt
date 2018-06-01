@@ -1,6 +1,7 @@
 ---
 Title: Now
 Subtitle: Last updated Thursday, May 31, 2018.
+
 ---
 
 ## Life
