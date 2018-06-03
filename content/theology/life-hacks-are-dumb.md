@@ -1,7 +1,6 @@
 ---
 Title: “Life Hacks” Are Dumb
 Subtitle: What if we sought wisdom instead?
-Status: draft
 Date: 2018-05-30 07:00
 Category: Theology
 Tags: wisdom, culture, life hacks
