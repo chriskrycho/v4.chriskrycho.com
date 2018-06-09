@@ -34,17 +34,14 @@ CATEGORY_FEED_RSS = None
 TRANSLATION_FEED_RSS = None
 
 # Social networking/sharing settings
-IDENTITY = {'Bitbucket': 'https://bitbucket.org/chriskrycho',
-            'Email': 'mailto:chris at chriskrycho dot com',
-            'Facebook': 'https://www.facebook.com/chriskrycho',
+IDENTITY = {'Email': 'mailto:chris at chriskrycho dot com',
             'GitHub': 'https://github.com/chriskrycho',
-            'Instagram': 'http://instagram.com/chriskrycho',
             'LinkedIn': 'http://www.linkedin.com/in/chriskrycho',
-            'Medium': 'https://medium.com/@chriskrycho',
             'SoundCloud': 'https://soundcloud.com/chriskrycho',
             'Stack Overflow': 'http://stackoverflow.com/users/564181/chris-krycho',
             'Twitter': 'https://twitter.com/chriskrycho',
-            'Vimeo': 'https://vimeo.com/chriskrycho'}
+            'Vimeo': 'https://vimeo.com/chriskrycho'
+            }
 
 DEFAULT_SHARE_IMAGE = ''
 

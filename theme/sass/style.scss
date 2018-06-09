@@ -20,7 +20,6 @@ body {
 
 a {
   text-indent: 0;
-  text-decoration: none;
   display: inline-block;
   line-height: 1;
 
@@ -30,14 +29,11 @@ a {
   &:link,
   &:visited {
     color: $light_blue;
-    border-bottom: 1px solid transparent;
   }
 
   &:hover,
   &:active {
     color: $dark_blue;
-    border-bottom: 1px solid $dark_gray;
-
     @include transition(border 0.465s $easeInOutCubic,
                             color 0.465s $easeInOutCubic);
   }
@@ -451,6 +447,18 @@ body::before {
   @include justify-content(space-around);
   padding-bottom: $fs1_abs;
 
+  a,
+  a:link,
+  a:visited {
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+
   nav {
     @include flex(1 0 300px);
     text-align: right;
@@ -497,6 +505,7 @@ body::before {
     a:hover,
     a:active,
     a:visited {
+      text-decoration: none;
       border-bottom: none;
     }
   }
@@ -548,7 +557,10 @@ body::before {
   padding-right: 0.323rem;
 }
 
-.section-title {
+.section-title,
+.section-title:hover,
+.section-title:active {
+  text-decoration: none;
   text-transform: capitalize;
 
   &.micro {
@@ -578,9 +590,15 @@ article {
     h1 {
       font-weight: 600;
 
-      a.outbound {
-        .fa:before {
-          font-size: 0.804em;
+      a,
+      a:hover,
+      a:active {
+        text-decoration: none;
+
+        &.outbound {
+          .fa:before {
+            font-size: 0.804em;
+          }
         }
       }
     }
@@ -711,7 +729,15 @@ article {
     span {
       display: inline-block;
 
-      a {
+      a,
+      a:link,
+      a:visited {
+        text-decoration: none;
+
+        &:hover,
+        &:active {
+          text-decoration: none;
+        }
         display: inline;
       }
 
@@ -730,7 +756,10 @@ article {
       }
     }
 
-    .hashtag a {
+    .hashtag a,
+    .hashtag a:hover,
+    .hashtag a:active, {
+      text-decoration: none;
       display: inline-block;
 
       margin: {
@@ -770,6 +799,14 @@ article {
   .footnote,
   .footnotes {
     font-size: $fs_small;
+  }
+
+  .footnote-ref {
+    text-decoration: none;
+  }
+
+  .footnote-back {
+    text-decoration: none;
   }
 
   &.archive {
@@ -912,7 +949,6 @@ sup[id^="fnref:"] a {
   a:hover,
   a:active {
     color: $white;
-    border-bottom: 1px solid $light_gray;
   }
 
   a .fa,
