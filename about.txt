@@ -2,11 +2,13 @@
 Title: Welcome!
 Subtitle: Enjoy your stay; watch out for typographical nerdery.
 Author: Chris Krycho
-Summary: Creativity, reflection, & passionate endeavors by a peculiar fellow
 Slug: about
+Summary: >
+    I am a Christian, husband, father, software engineer, podcaster, blogger, runner, and occasional composer.
+
 ---
 
-Hello! I’m Chris Krycho (thus the URL).
+Hello! I’m Chris Krycho (thus the <abbr>URL</abbr>).
 
 ![My wonderful family! [(see full size)](http://cdn.chriskrycho.com/images/family-2017.jpg)](http://cdn.chriskrycho.com/images/family-2017-thumb.jpg 'Family photo 2017')
 
@@ -20,11 +22,13 @@ A few things about me you might find interesting:
 
 * We live in Colorado.
 
-* I write software for a living—these days mostly [TypeScript](http://www.typescriptlang.org) (with a nice smattering of HTML and SCSS) in a large [Ember.js](https://emberjs.com) app. Past work has included Fortran, C, PHP, C++, Python, and JavaScript. As part of that, I maintain several open source projects, most importantly:
+* I write software for a living—these days mostly [TypeScript](http://www.typescriptlang.org) (with a nice smattering of <abbr>HTML</abbr> and <abbr>SCSS</abbr>, and now even some <abbr>CSS</abbr> Modules!) in a large [Ember.js](https://emberjs.com) app. I also sometimes dip my toes into the C^♯^ and F^♯^ codebases at work, and I do an awful lot of [Rust](https://www.rust-lang.org) related things on the side, including some WebAssembly! Past work has included Fortran, C, <abbr>PHP</abbr>, C++, Python, and JavaScript. 
 
-  * [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript) – use TypeScript in your Ember.js 2.x apps!
+    I also maintain several open source projects, most importantly:
 
-  * [True Myth](https://github.com/chriskrycho/true-myth/tree/master/src) – a library for safer programming in JavaScript, with first-class support for TypeScript. (`Maybe` and `Result` types and helpers!)
+    * [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript) – use TypeScript in your Ember.js 2.x apps!
+
+    * [True Myth](https://github.com/chriskrycho/true-myth/tree/master/src) – a library for safer programming in JavaScript, with first-class support for TypeScript. (`Maybe` and `Result` types and helpers!)
 
 * I host podcasts!
 
