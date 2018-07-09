@@ -3,7 +3,7 @@ Title: TypeScript and Ember.js Update, Part 2
 Subtitle: >
     Class properties—some notes on how things differ from the <code>Ember.Object</code> world.
 Date: 2018-01-24 07:00
-Modified: 2018-01-24 22:30
+Modified: 2018-07-10 20:00
 Category: Tech
 Series: Typing Your Ember
 Tags: TypeScript, emberjs, typing-your-ember

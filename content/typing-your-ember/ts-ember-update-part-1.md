@@ -2,7 +2,7 @@
 Title: TypeScript and Ember.js Update, Part 1
 Subtitle: How do things look in early 2018? Pretty good, actually!
 Date: 2018-01-22 07:10
-Modified: 2018-01-24 07:00
+Modified: 2018-07-10 20:00
 Category: Tech
 Series: Typing Your Ember
 Tags: TypeScript, emberjs, typing-your-ember

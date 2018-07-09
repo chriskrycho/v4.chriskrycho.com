@@ -3,6 +3,7 @@ Title: TypeScript and Ember.js Update, Part 3
 Subtitle: >
     Computed properties, actions, mixins, and class methods.
 Date: 2018-01-25 07:00
+Modified: 2018-07-10 20:00
 Category: Tech
 Series: Typing Your Ember
 Tags: TypeScript, emberjs, typing-your-ember
