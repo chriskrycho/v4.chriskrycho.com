@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ember.js, TypeScript, and Class Properties &middot; Chris Krycho</title>
+    <meta name="description" content="I made an important mistake in my discussion of JavaScript and TypeScript class properties in relation to computed properties and injections in Ember earlier this year. Here's the fix you need."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/ember-ts-class-properties.html"/>
+    <meta property="og:title" content="Ember.js, TypeScript, and Class Properties"/>
+    <meta property="og:description" content="I made an important mistake in my discussion of JavaScript and TypeScript class properties in relation to computed properties and injections in Ember earlier this year. Here's the fix you need."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Ember.js, TypeScript, and Class Properties"/>
+    <meta name="twitter:description" content="I made an important mistake in my discussion of JavaScript and TypeScript class properties in relation to computed properties and injections in Ember earlier this year. Here's the fix you need."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="typescript emberjs typing-your-ember tech">
+
+    <header>
+<h1>Ember.js, TypeScript, and Class Properties</h1>
+<h2>An important set of corrections about the behavior of class properties in Ember.js.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/ember-ts-class-properties.html"><i class="fa fa-fw fa-link"></i></a>July 10, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/ember-ts-class-properties.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>A few months ago, I wrote a mostly-complete series describing the state of using <a href="https://typescriptlang.org">TypeScript</a> with <a href="https://emberjs.com">Ember</a> in 2018. I got one <em>very</em> important thing wrong in that series, and I’m back with the correction!<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>In that series, I showed an example of a component definition; it looked like this:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import { computed, get } from &#39;@ember/object&#39;;
+import Computed from &#39;@ember/object/computed&#39;;
+import { inject as service } from &#39;@ember/service&#39;;
+import { assert } from &#39;@ember/debug&#39;;
+import { isNone } from &#39;@ember/utils&#39;;
+
+import Session from &#39;my-app/services/session&#39;;
+import Person from &#39;my-app/models/person&#39;;
+
+export default class AnExample extends Component {
+  // -- Component arguments -- //
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`
+
+  // -- Injections -- //
+  session: Computed&lt;Session&gt; = service();
+
+  // -- Class properties -- //
+  aString = &#39;this is fine&#39;;
+  aCollection: string[] = [];
+
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel = computed(
+    &#39;model.firstName&#39;,
+    function(this: AnExample): string {
+      return `My name is ${get(this.model, &#39;firstName&#39;)};`;
+    }
+  );
+
+  aComputed = computed(&#39;aString&#39;, function(this: AnExample): number {
+    return this.lookAString.length;
+  });
+
+  isLoggedIn = bool(&#39;session.user&#39;);
+  savedUser: Computed&lt;Person&gt; = alias(&#39;session.user&#39;);
+
+  actions = {
+    addToCollection(this: AnExample, value: string) {
+      const current = this.get(&#39;aCollection&#39;);
+      this.set(&#39;aCollection&#39;, current.concat(value));
+    }
+  };
+
+  constructor() {
+    super();
+    assert(&#39;`model` is required&#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample) {
+    if (!this.get(&#39;aCollection&#39;).includes(&#39;ahoy&#39;)) {
+      this.set(&#39;aCollection&#39;, current.concat(&#39;ahoy&#39;));
+    }
+  }
+}</code></pre>
+<p>The problem here is all the computed property assignments and the actions hash assignments. The fact that this sample code ever worked at all was… an accident. It wasn’t <em>supposed</em> to work. I <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html#computed-properties">noted at the time</a> that this way of doing things had a performance tradeoff because computed properties ended up installed on every <em>instance</em> rather than on the <em>prototype</em>… and as it turns out, that was never intended to work. Only the prototype installation was supposed to work. And as it turns out, the <a href="https://github.com/emberjs/rfcs/blob/master/text/0281-es5-getters.md" title="RFC #0281"><abbr>ES5</abbr> getters implementation of computed properties</a> which landed in Ember 3.1 broke every computed property set up this way.</p>
+<p>So if you can’t use class properties for this… how <em>do</em> you do it? There are two ways: the <code>.extend()</code> hack I mentioned <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html#computed-properties-1">previously</a>, and <a href="http://ember-decorators.github.io/ember-decorators/latest/">decorators</a>. (The Ember Decorators docs include a discussion of this topic as well—see <a href="http://ember-decorators.github.io/ember-decorators/latest/docs/class-fields">their discussion of class fields</a>.)</p>
+<p>Note that throughout I’m assuming Ember 3.1+ and therefore <abbr>ES5</abbr> getter syntax (<code>this.property</code> instead of <code>this.get('property')</code>).</p>
+<section id="extend" class="level2">
+<h2><code>.extend()</code></h2>
+<p>The first workaround uses <code>.extend()</code> in conjunction with a class definition. I originally wrote about this approach:</p>
+<blockquote>
+<p>If you need the absolute best performance, you can continue to install them on the prototype by doing this instead…</p>
+</blockquote>
+<p>As it turns out, it’s more like “If you want your app to work at all…”</p>
+<p>Here’s how that would look with our full example from above. Note that there are three things which <em>must</em> go in the <code>.extend()</code> block with this approach: injections, computed properties, and the <code>actions</code> hash.</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import { computed, get } from &#39;@ember/object&#39;;
+import { inject as service } from &#39;@ember/service&#39;;
+import { assert } from &#39;@ember/debug&#39;;
+import { isNone } from &#39;@ember/utils&#39;;
+
+import Person from &#39;my-app/models/person&#39;;
+
+export default class AnExample extends Component.extend({
+  // -- Injections -- //
+  session: service(&#39;session&#39;),
+
+    // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel: computed(
+    &#39;model.firstName&#39;,
+    function(this: AnExample): string {
+      return `My name is ${this.model.firstName};`;
+    }
+  ),
+
+  aComputed: computed(&#39;aString&#39;, function(this: AnExample): number {
+    return this.lookAString.length;
+  }),
+
+  isLoggedIn: bool(&#39;session.user&#39;),
+  savedUser: alias(&#39;session.user&#39;) as Person,
+
+  actions: {
+    addToCollection(this: AnExample, value: string) {
+      this.set(&#39;aCollection&#39;, this.aCollection.concat(value));
+    }
+  },
+}) {
+  // -- Component arguments -- //
+  model!: Person;     // required
+  modifier?: string;  // optional, thus the `?`
+
+  // -- Class properties -- //
+  aString = &#39;this is fine&#39;;
+  aCollection: string[] = [];
+
+  constructor() {
+    super();
+    assert(&#39;`model` is required&#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample) {
+    if (!this.aCollection.includes(&#39;ahoy&#39;)) {
+      this.set(&#39;aCollection&#39;, this.aCollection.concat(&#39;ahoy&#39;));
+    }
+  }
+}</code></pre>
+<p>There are three main things to note here.</p>
+<p>First, check out the <code>session('service')</code> injection. We need the name of the service being injected for TypeScript to be able to resolve the type correctly (which it does by using “type registries,” as discussed briefly <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html#fn1">in this footnote</a> in my series earlier this year). The alternative is writing <code>session: service() as Session</code>—a type cast—which is <em>fine</em> but isn’t particularly idiomatic TypeScript.</p>
+<p>Second, notice that we do have to use a type cast, <code>as Person</code>, for the <code>savedUser</code> definition. While many computed property macros and the <code>computed</code> helper itself can properly infer the type of the resulting computed property, macros which accept nested keys do not and cannot. Thus, <code>bool</code> can resolve its type to a <code>boolean</code>, but <code>readOnly</code> or <code>alias</code> have to resolve their type as <code>any</code>. The value passed to them could be a strangely shaped string key on the local object (<code>['like.a.path']: true</code>) or an actual path through multiple objects. (This is the same limitation that means we cannot do nested <code>get</code> lookups.)</p>
+<p>Third, as I noted even when we were doing this the <em>wrong</em> way, with class field assignment, we need to explicitly specify the type of <code>this</code> for callback passed in to define the computed properties. In the context of a <code>.extend()</code> invocation, though, this sometimes falls down. You’ll see an error like this:</p>
+<blockquote>
+<p>‘AnExample’ is referenced directly or indirectly in its own base expression.</p>
+</blockquote>
+<p>This doesn’t happen for <em>all</em> computed properties, but it happens often enough to be very annoying—and it <em>always</em> happens with Ember Concurrency tasks. (More on this <a href="#ember-concurrency">below</a>.) This problem was actually the original motivation for my experimentation with assigning computed properties to class fields.</p>
+<p>This set of problems with defining computed properties and injections in an <code>.extend()</code> invocation is a major motivator for my team in eagerly adopting decorators.</p>
+</section>
+<section id="decorators" class="level2">
+<h2>Decorators</h2>
+<p>The cleaner, but currently still experimental, way to do this is to use Ember Decorators.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> To use these, you should run <code>ember install ember-decorators</code> and then set the <code>experimentalDecorators</code> compiler option to <code>true</code> in your <code>tsconfig.json</code>.</p>
+<p>Once you’ve installed the decorators package, you can update your component. In general, the imports match exactly to the Ember module imports, just with <code>@ember-decorators</code> as the top-level package rather than <code>@ember</code>. Here’s how our component looks using decorators:</p>
+<pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
+import { assert } from &#39;@ember/debug&#39;;
+import { isNone } from &#39;@ember/utils&#39;;
+
+import { action, computed } from &#39;@ember-decorators/object&#39;;
+import { alias, bool } from &#39;@ember-decorators/object/computed&#39;;
+import { service } from &#39;@ember-decorators/service&#39;;
+
+import Session from &#39;my-app/services/session&#39;;
+import Person from &#39;my-app/models/person&#39;;
+
+export default class AnExample extends Component {
+  // -- Component arguments -- //
+  model!: Person;     // required
+  modifier?: string;  // optional, thus the `?`
+
+  // -- Injections -- //
+  @service session: Session;
+
+  // -- Class properties -- //
+  aString = &#39;this is fine&#39;;
+  aCollection: string[] = [];
+
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  @computed(&#39;model.firstName&#39;)
+  get fromModel(): string {
+    return `My name is ${this.model.firstName}`;
+  }
+
+  @computed(&#39;aString&#39;)
+  get aComputed(): number {
+    return this.aString.length;
+  }
+
+  @bool(&#39;session.user&#39;) isLoggedIn: boolean;
+  @alias(&#39;session.user&#39;) savedUser: Person;
+
+  @action
+  addToCollection(this: AnExample, value: string) {
+    this.set(&#39;aCollection&#39;, this.aCollection.concat(value));
+  }
+
+  constructor() {
+    super();
+    assert(&#39;`model` is required&#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample) {
+    if (!this.aCollection.includes(&#39;ahoy&#39;)) {
+      this.set(&#39;aCollection&#39;, this.aCollection.concat(&#39;ahoy&#39;));
+    }
+  }
+}</code></pre>
+<p>First, notice that using decorators switches us to using actual <abbr>ES5</abbr> getters. This is <em>exactly</em> the same thing that <a href="https://github.com/emberjs/rfcs/blob/master/text/0281-es5-getters.md" title="RFC #0281"><abbr>RFC</abbr> #0281</a> specified, and which was implemented for Ember’s traditional computed property and injection functions in Ember 3.1 to unlock . What’s extra nice, though, is that decorators are backwards compatible <a href="http://ember-decorators.github.io/ember-decorators/latest/docs/stability-and-support#ember-support">all the way to Ember 1.11</a>. (You won’t get the <abbr>ES5</abbr> getters on versions prior to to Ember 3.1—there the decorators <em>just</em> install things on the prototype—but you will at least get the correct behavior.)</p>
+<p>Second, note that we don’t get type inference for the computed property macros like <code>@bool</code> here. That’s because decorators are not currently allowed to modify the <em>type</em> of the thing they’re decorating from TypeScript’s perspective. Now, decorators can—and <em>do</em>!—modify the type of the thing they decorate at runtime; it’s just that <abbr>TS</abbr> doesn’t yet capture that. This means that <em>all</em> decorated fields will still require type annotations, not just a subset as in the <code>.extend()</code> world. It’s annoying—especially in the case of things like <code>@bool</code>, where it <em>really</em> seems like we ought to be able to just tell TypeScript that this means the thing is a boolean rather than writing <code>@bool('dependentKey') someProp: boolean</code>.</p>
+<p>This leads us to our final point to notice: we also need the type annotations for service (or controller) injections—but we do <em>not</em> need the string keys for them service injections.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> The net of this is that the injections themselves roughly equally ergonomic.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
+<pre class="ts"><code>// the old way
+session: service(&#39;session&#39;),
+// the new way
+@service session: Session;</code></pre>
+</section>
+<section id="ember-concurrency" class="level2">
+<h2>Ember Concurrency</h2>
+<p>One other thing I need to draw your attention to here: I and a few others have taken a stab at writing type definitions for <a href="http://ember-concurrency.com/docs/introduction/">Ember Concurrency</a>. Unfortunately, typings that <em>type-check</em> run smack dab into the fact that as of 3.1 that style doesn’t <em>work</em>; and typings that <em>work</em> cannot be type-checked at present. You can’t even use decorators to push your way to a solution. Nor is there a lot of hope on the horizon for this reality to change.</p>
+<p>You can see some of the discussion as to <em>why</em> <a href="https://github.com/machty/ember-concurrency/pull/209#issuecomment-403246551">starting here</a> in one pull request for them; it all gets back to the limitation I mentioned above: TypeScript doesn’t let you change the types of things with decorators. Unfortunately, there’s no reason to believe that will change anytime soon. This is a <em>fundamental</em> conflict between the Ember Object model and modern JavaScript—and specifically TypeScript’s understanding of it.</p>
+<p>I am still mulling over solutions to that problem (as are others), and we’ll be continuing to work on this idea in <a href="https://embercommunity.slack.com/messages/C2F8Q3SK1">#-topic-typescript</a> in the Ember Community Slack (and publicizing any good ideas we come up with there in a searchable location, of course). For today, the best thing you can do is explicitly set the <code>this</code> type to <code>any</code> for the task property generator function callback, and use type casts internally if you look up services or other properties from the containing object.</p>
+</section>
+<section id="summary-mea-culpa" class="level2">
+<h2>Summary: <em>mea culpa</em></h2>
+<p>Sorry again to everyone I misled along the way with my earlier, very wrong advice! Hopefully this helps clear up the state of things and will help you keep from falling into this tar pit going forward!</p>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>I don’t feel too bad about having gotten in wrong: no one who read the posts noticed the problem at the time, and it was subtle and easy to miss… because, at the time, everything actually <em>worked</em>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>It’s experimental because decorators are still only at Stage 2 in the <abbr>TC39</abbr> process. They <em>may</em> advance at this month’s meeting.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>If you’re using a non-default name, like <code>specialSession</code>, for the name of the property, the usual rules apply for injections. In that case, you’d write the injection like this:</p>
+<pre class="ts"><code>import Component from &#39;@ember/component&#39;;
+import { service } from &#39;@ember-decorators/service&#39;;
+import Session from &#39;my-app/services/session&#39;;
+
+export default class AnExample extends Component {
+  @service(&#39;session&#39;) specialSession: Session;
+}</code></pre>
+<a href="#fnref3" class="footnote-back">↩</a></li>
+<li id="fn4"><p>Files do get an extra import in the decorator version… but as it happens, I’m more than okay with that; I’d actually <em>prefer</em> explicit imports of dependencies personally.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/good-arguments.html">Good Arguments</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/ember-ts-class-properties.html">Ember.js, TypeScript, and Class Properties</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/life-hacks-are-dumb.html">“Life Hacks” Are Dumb</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

@@ -80,7 +80,7 @@
 </h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"><i class="fa fa-fw fa-link"></i></a>January 25, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"><i class="fa fa-fw fa-link"></i></a>January 25, 2018 (updated July 10, 2018)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
@@ -91,21 +91,24 @@
 <p><i class='series-overview'>This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.</i></p>
 <p><i class='series-overview'><a href="/typing-your-ember.html">(See the rest of the series. →)</a></i></p>
 <hr />
-<p><strong>Note:</strong> if you’re following along with this <em>as I publish it</em> in late January 2018, please go back and read the end of <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Part 2</a>, which I updated substantially yesterday evening to include more material I missed in the first version of that post, but which belonged there and not here.</p>
+<p><strong>Note:</strong> if you’re following along with this <em>as I publish it</em> in late January 2018, please go back and read the end of <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Part 2</a>, which I updated substantially yesterday evening to include more material I missed in the first version of that post, but which belonged there and not here.</p>
 <p>In the previous posts in this series, I introduced the big picture of how the story around TypeScript and Ember.js has improved over the last several months and walked through some important background on class properties. In this post, I’ll build on that foundation to look closely at computed properties, actions, and mixins.</p>
 <aside>
 <p>If you’re interested in all of this and would like to learn more in person, I’m <a href="http://emberconf.com/speakers.html#chris-krycho">leading a workshop on it at EmberConf 2018</a>—I’d love to see you there!</p>
 </aside>
 <p>Here’s the outline of this update sequence:</p>
 <ol type="1">
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">Overview, normal Ember objects, component arguments, and injections.</a></li>
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Class properties—some notes on how things differ from the <code>Ember.Object</code> world.</a></li>
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"><strong>Computed properties, actions, mixins, and class methods (this post).</strong></a></li>
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">Using Ember Data, and service and controller injections improvements.</a></li>
+<li><a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">Overview, normal Ember objects, component arguments, and injections.</a></li>
+<li><a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Class properties—some notes on how things differ from the <code>Ember.Object</code> world.</a></li>
+<li><a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"><strong>Computed properties, actions, mixins, and class methods (this post).</strong></a></li>
+<li><a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">Using Ember Data, and service and controller injections improvements.</a></li>
 <li>Mixins and proxies; or: the really hard-to-type-check bits.</li>
 </ol>
 <section id="a-detailed-example-contd.-computed-properties-mixins-actions-and-class-methods" class="level2">
 <h2>A detailed example (cont’d.) – computed properties, mixins, actions, and class methods</h2>
+<aside>
+<p>*<strong>Note:</strong> please see the <a href="https://www.chriskrycho.com/2018/ember-ts-class-properties.html">update about class properties published mid-2018</a>. The example below and in the following posts is incorrect in several important ways.</p>
+</aside>
 <p>Let’s start by recalling the example Component we’re working through:</p>
 <pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
 import { computed, get } from &#39;@ember/object&#39;;
@@ -168,7 +171,7 @@ export default class AnExample extends Component {
 }</code></pre>
 <section id="computed-properties" class="level3">
 <h3>Computed properties</h3>
-<p>We already covered component arguments and injections as well as basic class properties and the exceptions to normal class-property ways of doing things, in Parts <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">1</a> and <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">2</a>. With that background out of the way, we can now turn to computed properties. I’m including the component arguments in this code sample because they’re referenced in the computed property. Assume <code>Person</code> is a pretty “person” representation, with a <code>firstName</code> and a <code>lastName</code>and maybe a few other properties.</p>
+<p>We already covered component arguments and injections as well as basic class properties and the exceptions to normal class-property ways of doing things, in Parts <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">1</a> and <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">2</a>. With that background out of the way, we can now turn to computed properties. I’m including the component arguments in this code sample because they’re referenced in the computed property. Assume <code>Person</code> is a pretty “person” representation, with a <code>firstName</code> and a <code>lastName</code>and maybe a few other properties.</p>
 <pre class="typescript"><code>  // -- Component arguments -- //
   model: Person;      // required
   modifier?: string;  // optional, thus the `?`
@@ -191,7 +194,7 @@ export default class AnExample extends Component {
   savedUser: Computed&lt;Person&gt; = alias(&#39;session.user&#39;);</code></pre>
 <section id="computed-properties-1" class="level4">
 <h4><code>computed</code> properties</h4>
-<p>When using a computed property in the brave new world of ES6 classes, we normally just assign them as instance properties. As mentioned in <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">the previous post</a>, and in line with my comments above, this has some important tradeoffs around performance. If you need the absolute <em>best</em> performance, you can continue to install them on the prototype by doing this instead:</p>
+<p>When using a computed property in the brave new world of ES6 classes, we normally just assign them as instance properties. As mentioned in <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">the previous post</a>, and in line with my comments above, this has some important tradeoffs around performance. If you need the absolute <em>best</em> performance, you can continue to install them on the prototype by doing this instead:</p>
 <pre class="typescript"><code>export default class MyComponent extends Component.extend({
   fromModel: computed(
     &#39;model.firstName&#39;,
@@ -283,7 +286,7 @@ const value = get(anObject, &#39;some.nested.key&#39;);</code></pre></li>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>As mentioned in <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Part 2</a>, this problem doesn’t go away until we get decorators, unless you’re putting them on the prototype via <code>.extends()</code>—but see below for the problems with <em>that</em>. The short version is, we need decorators for this to actually be <em>nice</em>. Once we get decorators, we will be able to combine them with the work done for <a href="https://github.com/emberjs/rfcs/pull/281">RFC #281</a> and normal lookup will just work:</p>
+<li id="fn1"><p>As mentioned in <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Part 2</a>, this problem doesn’t go away until we get decorators, unless you’re putting them on the prototype via <code>.extends()</code>—but see below for the problems with <em>that</em>. The short version is, we need decorators for this to actually be <em>nice</em>. Once we get decorators, we will be able to combine them with the work done for <a href="https://github.com/emberjs/rfcs/pull/281">RFC #281</a> and normal lookup will just work:</p>
 <pre class="typescript"><code>@computed(&#39;model.firstName&#39;)
 get fromModel() {
   return `My name is ${this.model.firstName};`;
@@ -352,7 +355,7 @@ get fromModel() {
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/good-arguments.html">Good Arguments</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/sum-type-constructors-in-typescript.html">Sum Type Constructors in TypeScript</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/ember-ts-class-properties.html">Ember.js, TypeScript, and Class Properties</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/life-hacks-are-dumb.html">“Life Hacks” Are Dumb</a></li>
     </ul>
 </section></footer>

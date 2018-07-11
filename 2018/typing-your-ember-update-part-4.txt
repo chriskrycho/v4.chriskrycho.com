@@ -2,6 +2,7 @@
 Title: TypeScript and Ember.js Update, Part 4
 Subtitle: Using Ember Data, and service and controller injections improvements.
 Date: 2018-02-08 07:30
+Modified: 2018-07-10 20:00
 Category: Tech
 Series: Typing Your Ember
 Tags: TypeScript, emberjs, typing-your-ember
@@ -41,10 +42,10 @@ Here's the outline of this update sequence:
 4. [**Using Ember Data, and service and controller injections improvements.** (this post)][pt4]
 5. Mixins and proxies; or: the really hard-to-type-check bits.
 
-[pt1]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html
-[pt2]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html
-[pt3]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html
-[pt4]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html
+[pt1]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html
+[pt2]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html
+[pt3]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html
+[pt4]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html
 
 ## Ember Data
 
@@ -107,6 +108,14 @@ declare module "ember-data" {
 ```
 
 Then putting the pieces together, our component definition will just look like this:
+
+<aside>
+
+***Note:** please see the [update about class properties published mid-2018][cp-update]. The examples below are incorrect in several important ways.
+
+[cp-update]: https://www.chriskrycho.com/2018/ember-ts-class-properties.html
+
+</aside>
 
 ```ts
 import Component from "@ember/component";

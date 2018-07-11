@@ -79,7 +79,7 @@
 <h2>How do things look in early 2018? Pretty good, actually!</h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"><i class="fa fa-fw fa-link"></i></a>January 22, 2018 (updated January 24, 2018)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"><i class="fa fa-fw fa-link"></i></a>January 22, 2018 (updated July 10, 2018)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
@@ -90,17 +90,17 @@
 <p><i class='series-overview'>This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.</i></p>
 <p><i class='series-overview'><a href="/typing-your-ember.html">(See the rest of the series. →)</a></i></p>
 <hr />
-<p>Back in July 2017, I wrote <a href="http://www.chriskrycho.com/2017/typing-your-ember-part-3.html">a post</a> on how to using TypeScript in your Ember.js apps. At the time, we were still busy working on getting the typings more solid for Ember itself, and <code>class</code> syntax for Ember was apparently a long way away.</p>
+<p>Back in July 2017, I wrote <a href="https://www.chriskrycho.com/2017/typing-your-ember-part-3.html">a post</a> on how to using TypeScript in your Ember.js apps. At the time, we were still busy working on getting the typings more solid for Ember itself, and <code>class</code> syntax for Ember was apparently a long way away.</p>
 <p>Things have gotten quite a bit better since then, so I thought I’d update that post with recommendations for using TypeScript in an app <em>now</em> with the updated typings, as well as with another six months of experience using TypeScript in our app at Olo (~20k lines of code in the app and another ~15k in tests).</p>
 <aside>
 <p>If you’re interested in all of this and would like to learn more in person, I’m <a href="http://emberconf.com/speakers.html#chris-krycho">leading a workshop on it at EmberConf 2018</a>—I’d love to see you there!</p>
 </aside>
 <p>Here’s how I expect this update series to go:</p>
 <ol type="1">
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"><strong>Overview, normal Ember objects, component arguments, and injections (this post).</strong></a></li>
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Class properties—some notes on how things differ from the <code>Ember.Object</code> world.</a></li>
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Computed properties, actions, mixins, and class methods.</a></li>
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">Using Ember Data, and service and controller injections improvements.</a></li>
+<li><a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"><strong>Overview, normal Ember objects, component arguments, and injections (this post).</strong></a></li>
+<li><a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Class properties—some notes on how things differ from the <code>Ember.Object</code> world.</a></li>
+<li><a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Computed properties, actions, mixins, and class methods.</a></li>
+<li><a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">Using Ember Data, and service and controller injections improvements.</a></li>
 <li>Mixins and proxies; or: the really hard-to-type-check bits.</li>
 </ol>
 <section id="normal-ember-objects" class="level2">
@@ -112,6 +112,9 @@
 <h2>A detailed example</h2>
 <p>That means that every new bit of code I write today in our app looks roughly like this, with only the obvious modifications for services, routes, and controllers—I picked components because they’re far and away the most common things in our applications.</p>
 <p>In order to explain all this clearly, I’m going to start by showing a whole component written in the new style. Then, over the rest of this post and the next post, I’ll zoom in on and explain specific parts of it.</p>
+<aside>
+<p>*<strong>Note:</strong> please see the <a href="https://www.chriskrycho.com/2018/ember-ts-class-properties.html">update about class properties published mid-2018</a>. The example below and in the following posts is incorrect in several important ways.</p>
+</aside>
 <pre class="typescript"><code>import Component from &quot;@ember/component&quot;;
 import { computed, get } from &quot;@ember/object&quot;;
 import Computed from &quot;@ember/object/computed&quot;;
@@ -186,7 +189,7 @@ export default class MyComponent extends Component {
   optionalProperty = Maybe.of(this.optionalArg);
 }</code></pre>
 <p>Then if you invoke the property without the argument, it’ll construct a <code>Nothing</code>; if you invoke it with the argument, it’ll be <code>Just</code> with the value. [^ts-templates]: A few of us have batted around some ideas for how to solve that particular problem, but <em>if</em> we manage those, it’ll probably be way, way later in 2018.</p>
-<p><strong>Edit, January 24, 2018:</strong> Starting in TypeScript 2.7, you can enable a flag, <code>--strictPropertyInitialization</code>, which requires that all declared, non-optional properties on a class be initialized in the constructor or with a class property assignment. (There’s more on class property assignment in <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">part 2</a> of this series.) If you do that, all <em>arguments</em> to a component should be defined with the <em>definite assignment assertion modifier</em>, a <code>!</code> after the name of the property, as on <code>model</code> here:</p>
+<p><strong>Edit, January 24, 2018:</strong> Starting in TypeScript 2.7, you can enable a flag, <code>--strictPropertyInitialization</code>, which requires that all declared, non-optional properties on a class be initialized in the constructor or with a class property assignment. (There’s more on class property assignment in <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">part 2</a> of this series.) If you do that, all <em>arguments</em> to a component should be defined with the <em>definite assignment assertion modifier</em>, a <code>!</code> after the name of the property, as on <code>model</code> here:</p>
 <pre class="typescript"><code>export default class AnExample extends Component {
   // Component arguments
   model!: Person;     // required
@@ -198,7 +201,7 @@ export default class MyComponent extends Component {
 <pre class="typescript"><code>  // -- Injections -- //
   session: Computed&lt;Session&gt; = service();</code></pre>
 <p>Here, the most important thing to note is the required type annotation. In principle, we could work around this by requiring you to explicitly name the service and using a “type registry” to look up what the service type is – more on that below in my discussion of using Ember Data – but I’m not yet persuaded that’s better than just writing the appropriate type annotation. Either way, there’s some duplication. 🤔 We (everyone working in the <a href="https://github.com/typed-ember">typed-ember</a> project) would welcome feedback here, because the one thing we <em>can’t</em> do is get the proper type <em>without</em> one or the other of these.</p>
-<p><strong>Edit, February 5, 2018:</strong> see <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">Part 4</a> for some updates to this—I actually went ahead and built and implemented that approach, and everything is much nicer now.</p>
+<p><strong>Edit, February 5, 2018:</strong> see <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">Part 4</a> for some updates to this—I actually went ahead and built and implemented that approach, and everything is much nicer now.</p>
 <pre class="typescript"><code>  // the current approach -- requires importing `Session` so you can define it
   // on the property here
   session: Computed&lt;Session&gt; = service();
@@ -266,7 +269,7 @@ export default class MyComponent extends Component {
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/good-arguments.html">Good Arguments</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/sum-type-constructors-in-typescript.html">Sum Type Constructors in TypeScript</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/ember-ts-class-properties.html">Ember.js, TypeScript, and Class Properties</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/life-hacks-are-dumb.html">“Life Hacks” Are Dumb</a></li>
     </ul>
 </section></footer>

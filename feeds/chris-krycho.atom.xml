@@ -1,5 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2018-06-04T10:30:00-04:00</updated><entry><title>Good Arguments</title><link href="http://www.chriskrycho.com/2018/good-arguments.html" rel="alternate"></link><published>2018-06-04T10:30:00-04:00</published><updated>2018-06-04T10:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-06-04:/2018/good-arguments.html</id><summary type="html">I’m reading Shannon Vallor’s Technology and the Virtues—agreeing with a lot, disagreeing with a lot, and learning as much from the disagreements as the agreement. Good arguments are invaluable for clear thinking and the pursuit of truth.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2018-07-10T20:00:00-04:00</updated><entry><title>Ember.js, TypeScript, and Class Properties</title><link href="http://www.chriskrycho.com/2018/ember-ts-class-properties.html" rel="alternate"></link><published>2018-07-10T20:00:00-04:00</published><updated>2018-07-10T20:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-07-10:/2018/ember-ts-class-properties.html</id><summary type="html">I made an important mistake in my discussion of JavaScript and TypeScript class properties in relation to computed properties and injections in Ember earlier this year. Here's the fix you need.</summary><content type="html">&lt;p&gt;A few months ago, I wrote a mostly-complete series describing the state of using &lt;a href="https://typescriptlang.org"&gt;TypeScript&lt;/a&gt; with &lt;a href="https://emberjs.com"&gt;Ember&lt;/a&gt; in 2018. I got one &lt;em&gt;very&lt;/em&gt; important thing wrong in that series, and I’m back with the correction!&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In that series, I showed an example of a component definition; it looked like this:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { computed, get } from &amp;#39;@ember/object&amp;#39;;
+import Computed from &amp;#39;@ember/object/computed&amp;#39;;
+import { inject as service } from &amp;#39;@ember/service&amp;#39;;
+import { assert } from &amp;#39;@ember/debug&amp;#39;;
+import { isNone } from &amp;#39;@ember/utils&amp;#39;;
+
+import Session from &amp;#39;my-app/services/session&amp;#39;;
+import Person from &amp;#39;my-app/models/person&amp;#39;;
+
+export default class AnExample extends Component {
+  // -- Component arguments -- //
+  model: Person;      // required
+  modifier?: string;  // optional, thus the `?`
+
+  // -- Injections -- //
+  session: Computed&amp;lt;Session&amp;gt; = service();
+
+  // -- Class properties -- //
+  aString = &amp;#39;this is fine&amp;#39;;
+  aCollection: string[] = [];
+
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel = computed(
+    &amp;#39;model.firstName&amp;#39;,
+    function(this: AnExample): string {
+      return `My name is ${get(this.model, &amp;#39;firstName&amp;#39;)};`;
+    }
+  );
+
+  aComputed = computed(&amp;#39;aString&amp;#39;, function(this: AnExample): number {
+    return this.lookAString.length;
+  });
+
+  isLoggedIn = bool(&amp;#39;session.user&amp;#39;);
+  savedUser: Computed&amp;lt;Person&amp;gt; = alias(&amp;#39;session.user&amp;#39;);
+
+  actions = {
+    addToCollection(this: AnExample, value: string) {
+      const current = this.get(&amp;#39;aCollection&amp;#39;);
+      this.set(&amp;#39;aCollection&amp;#39;, current.concat(value));
+    }
+  };
+
+  constructor() {
+    super();
+    assert(&amp;#39;`model` is required&amp;#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample) {
+    if (!this.get(&amp;#39;aCollection&amp;#39;).includes(&amp;#39;ahoy&amp;#39;)) {
+      this.set(&amp;#39;aCollection&amp;#39;, current.concat(&amp;#39;ahoy&amp;#39;));
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The problem here is all the computed property assignments and the actions hash assignments. The fact that this sample code ever worked at all was… an accident. It wasn’t &lt;em&gt;supposed&lt;/em&gt; to work. I &lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html#computed-properties"&gt;noted at the time&lt;/a&gt; that this way of doing things had a performance tradeoff because computed properties ended up installed on every &lt;em&gt;instance&lt;/em&gt; rather than on the &lt;em&gt;prototype&lt;/em&gt;… and as it turns out, that was never intended to work. Only the prototype installation was supposed to work. And as it turns out, the &lt;a href="https://github.com/emberjs/rfcs/blob/master/text/0281-es5-getters.md" title="RFC #0281"&gt;&lt;abbr&gt;ES5&lt;/abbr&gt; getters implementation of computed properties&lt;/a&gt; which landed in Ember 3.1 broke every computed property set up this way.&lt;/p&gt;
+&lt;p&gt;So if you can’t use class properties for this… how &lt;em&gt;do&lt;/em&gt; you do it? There are two ways: the &lt;code&gt;.extend()&lt;/code&gt; hack I mentioned &lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html#computed-properties-1"&gt;previously&lt;/a&gt;, and &lt;a href="http://ember-decorators.github.io/ember-decorators/latest/"&gt;decorators&lt;/a&gt;. (The Ember Decorators docs include a discussion of this topic as well—see &lt;a href="http://ember-decorators.github.io/ember-decorators/latest/docs/class-fields"&gt;their discussion of class fields&lt;/a&gt;.)&lt;/p&gt;
+&lt;p&gt;Note that throughout I’m assuming Ember 3.1+ and therefore &lt;abbr&gt;ES5&lt;/abbr&gt; getter syntax (&lt;code&gt;this.property&lt;/code&gt; instead of &lt;code&gt;this.get('property')&lt;/code&gt;).&lt;/p&gt;
+&lt;section id="extend" class="level2"&gt;
+&lt;h2&gt;&lt;code&gt;.extend()&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;The first workaround uses &lt;code&gt;.extend()&lt;/code&gt; in conjunction with a class definition. I originally wrote about this approach:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you need the absolute best performance, you can continue to install them on the prototype by doing this instead…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As it turns out, it’s more like “If you want your app to work at all…”&lt;/p&gt;
+&lt;p&gt;Here’s how that would look with our full example from above. Note that there are three things which &lt;em&gt;must&lt;/em&gt; go in the &lt;code&gt;.extend()&lt;/code&gt; block with this approach: injections, computed properties, and the &lt;code&gt;actions&lt;/code&gt; hash.&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { computed, get } from &amp;#39;@ember/object&amp;#39;;
+import { inject as service } from &amp;#39;@ember/service&amp;#39;;
+import { assert } from &amp;#39;@ember/debug&amp;#39;;
+import { isNone } from &amp;#39;@ember/utils&amp;#39;;
+
+import Person from &amp;#39;my-app/models/person&amp;#39;;
+
+export default class AnExample extends Component.extend({
+  // -- Injections -- //
+  session: service(&amp;#39;session&amp;#39;),
+
+    // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  fromModel: computed(
+    &amp;#39;model.firstName&amp;#39;,
+    function(this: AnExample): string {
+      return `My name is ${this.model.firstName};`;
+    }
+  ),
+
+  aComputed: computed(&amp;#39;aString&amp;#39;, function(this: AnExample): number {
+    return this.lookAString.length;
+  }),
+
+  isLoggedIn: bool(&amp;#39;session.user&amp;#39;),
+  savedUser: alias(&amp;#39;session.user&amp;#39;) as Person,
+
+  actions: {
+    addToCollection(this: AnExample, value: string) {
+      this.set(&amp;#39;aCollection&amp;#39;, this.aCollection.concat(value));
+    }
+  },
+}) {
+  // -- Component arguments -- //
+  model!: Person;     // required
+  modifier?: string;  // optional, thus the `?`
+
+  // -- Class properties -- //
+  aString = &amp;#39;this is fine&amp;#39;;
+  aCollection: string[] = [];
+
+  constructor() {
+    super();
+    assert(&amp;#39;`model` is required&amp;#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample) {
+    if (!this.aCollection.includes(&amp;#39;ahoy&amp;#39;)) {
+      this.set(&amp;#39;aCollection&amp;#39;, this.aCollection.concat(&amp;#39;ahoy&amp;#39;));
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are three main things to note here.&lt;/p&gt;
+&lt;p&gt;First, check out the &lt;code&gt;session('service')&lt;/code&gt; injection. We need the name of the service being injected for TypeScript to be able to resolve the type correctly (which it does by using “type registries,” as discussed briefly &lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html#fn1"&gt;in this footnote&lt;/a&gt; in my series earlier this year). The alternative is writing &lt;code&gt;session: service() as Session&lt;/code&gt;—a type cast—which is &lt;em&gt;fine&lt;/em&gt; but isn’t particularly idiomatic TypeScript.&lt;/p&gt;
+&lt;p&gt;Second, notice that we do have to use a type cast, &lt;code&gt;as Person&lt;/code&gt;, for the &lt;code&gt;savedUser&lt;/code&gt; definition. While many computed property macros and the &lt;code&gt;computed&lt;/code&gt; helper itself can properly infer the type of the resulting computed property, macros which accept nested keys do not and cannot. Thus, &lt;code&gt;bool&lt;/code&gt; can resolve its type to a &lt;code&gt;boolean&lt;/code&gt;, but &lt;code&gt;readOnly&lt;/code&gt; or &lt;code&gt;alias&lt;/code&gt; have to resolve their type as &lt;code&gt;any&lt;/code&gt;. The value passed to them could be a strangely shaped string key on the local object (&lt;code&gt;['like.a.path']: true&lt;/code&gt;) or an actual path through multiple objects. (This is the same limitation that means we cannot do nested &lt;code&gt;get&lt;/code&gt; lookups.)&lt;/p&gt;
+&lt;p&gt;Third, as I noted even when we were doing this the &lt;em&gt;wrong&lt;/em&gt; way, with class field assignment, we need to explicitly specify the type of &lt;code&gt;this&lt;/code&gt; for callback passed in to define the computed properties. In the context of a &lt;code&gt;.extend()&lt;/code&gt; invocation, though, this sometimes falls down. You’ll see an error like this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;‘AnExample’ is referenced directly or indirectly in its own base expression.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This doesn’t happen for &lt;em&gt;all&lt;/em&gt; computed properties, but it happens often enough to be very annoying—and it &lt;em&gt;always&lt;/em&gt; happens with Ember Concurrency tasks. (More on this &lt;a href="#ember-concurrency"&gt;below&lt;/a&gt;.) This problem was actually the original motivation for my experimentation with assigning computed properties to class fields.&lt;/p&gt;
+&lt;p&gt;This set of problems with defining computed properties and injections in an &lt;code&gt;.extend()&lt;/code&gt; invocation is a major motivator for my team in eagerly adopting decorators.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="decorators" class="level2"&gt;
+&lt;h2&gt;Decorators&lt;/h2&gt;
+&lt;p&gt;The cleaner, but currently still experimental, way to do this is to use Ember Decorators.&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; To use these, you should run &lt;code&gt;ember install ember-decorators&lt;/code&gt; and then set the &lt;code&gt;experimentalDecorators&lt;/code&gt; compiler option to &lt;code&gt;true&lt;/code&gt; in your &lt;code&gt;tsconfig.json&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Once you’ve installed the decorators package, you can update your component. In general, the imports match exactly to the Ember module imports, just with &lt;code&gt;@ember-decorators&lt;/code&gt; as the top-level package rather than &lt;code&gt;@ember&lt;/code&gt;. Here’s how our component looks using decorators:&lt;/p&gt;
+&lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { assert } from &amp;#39;@ember/debug&amp;#39;;
+import { isNone } from &amp;#39;@ember/utils&amp;#39;;
+
+import { action, computed } from &amp;#39;@ember-decorators/object&amp;#39;;
+import { alias, bool } from &amp;#39;@ember-decorators/object/computed&amp;#39;;
+import { service } from &amp;#39;@ember-decorators/service&amp;#39;;
+
+import Session from &amp;#39;my-app/services/session&amp;#39;;
+import Person from &amp;#39;my-app/models/person&amp;#39;;
+
+export default class AnExample extends Component {
+  // -- Component arguments -- //
+  model!: Person;     // required
+  modifier?: string;  // optional, thus the `?`
+
+  // -- Injections -- //
+  @service session: Session;
+
+  // -- Class properties -- //
+  aString = &amp;#39;this is fine&amp;#39;;
+  aCollection: string[] = [];
+
+  // -- Computed properties -- //
+  // TS correctly infers computed property types when the callback has a
+  // return type annotation.
+  @computed(&amp;#39;model.firstName&amp;#39;)
+  get fromModel(): string {
+    return `My name is ${this.model.firstName}`;
+  }
+
+  @computed(&amp;#39;aString&amp;#39;)
+  get aComputed(): number {
+    return this.aString.length;
+  }
+
+  @bool(&amp;#39;session.user&amp;#39;) isLoggedIn: boolean;
+  @alias(&amp;#39;session.user&amp;#39;) savedUser: Person;
+
+  @action
+  addToCollection(this: AnExample, value: string) {
+    this.set(&amp;#39;aCollection&amp;#39;, this.aCollection.concat(value));
+  }
+
+  constructor() {
+    super();
+    assert(&amp;#39;`model` is required&amp;#39;, !isNone(this.model));
+
+    this.includeAhoy();
+  }
+
+  includeAhoy(this: AnExample) {
+    if (!this.aCollection.includes(&amp;#39;ahoy&amp;#39;)) {
+      this.set(&amp;#39;aCollection&amp;#39;, this.aCollection.concat(&amp;#39;ahoy&amp;#39;));
+    }
+  }
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;First, notice that using decorators switches us to using actual &lt;abbr&gt;ES5&lt;/abbr&gt; getters. This is &lt;em&gt;exactly&lt;/em&gt; the same thing that &lt;a href="https://github.com/emberjs/rfcs/blob/master/text/0281-es5-getters.md" title="RFC #0281"&gt;&lt;abbr&gt;RFC&lt;/abbr&gt; #0281&lt;/a&gt; specified, and which was implemented for Ember’s traditional computed property and injection functions in Ember 3.1 to unlock . What’s extra nice, though, is that decorators are backwards compatible &lt;a href="http://ember-decorators.github.io/ember-decorators/latest/docs/stability-and-support#ember-support"&gt;all the way to Ember 1.11&lt;/a&gt;. (You won’t get the &lt;abbr&gt;ES5&lt;/abbr&gt; getters on versions prior to to Ember 3.1—there the decorators &lt;em&gt;just&lt;/em&gt; install things on the prototype—but you will at least get the correct behavior.)&lt;/p&gt;
+&lt;p&gt;Second, note that we don’t get type inference for the computed property macros like &lt;code&gt;@bool&lt;/code&gt; here. That’s because decorators are not currently allowed to modify the &lt;em&gt;type&lt;/em&gt; of the thing they’re decorating from TypeScript’s perspective. Now, decorators can—and &lt;em&gt;do&lt;/em&gt;!—modify the type of the thing they decorate at runtime; it’s just that &lt;abbr&gt;TS&lt;/abbr&gt; doesn’t yet capture that. This means that &lt;em&gt;all&lt;/em&gt; decorated fields will still require type annotations, not just a subset as in the &lt;code&gt;.extend()&lt;/code&gt; world. It’s annoying—especially in the case of things like &lt;code&gt;@bool&lt;/code&gt;, where it &lt;em&gt;really&lt;/em&gt; seems like we ought to be able to just tell TypeScript that this means the thing is a boolean rather than writing &lt;code&gt;@bool('dependentKey') someProp: boolean&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This leads us to our final point to notice: we also need the type annotations for service (or controller) injections—but we do &lt;em&gt;not&lt;/em&gt; need the string keys for them service injections.&lt;a href="#fn3" class="footnote-ref" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; The net of this is that the injections themselves roughly equally ergonomic.&lt;a href="#fn4" class="footnote-ref" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;// the old way
+session: service(&amp;#39;session&amp;#39;),
+// the new way
+@service session: Session;&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="ember-concurrency" class="level2"&gt;
+&lt;h2&gt;Ember Concurrency&lt;/h2&gt;
+&lt;p&gt;One other thing I need to draw your attention to here: I and a few others have taken a stab at writing type definitions for &lt;a href="http://ember-concurrency.com/docs/introduction/"&gt;Ember Concurrency&lt;/a&gt;. Unfortunately, typings that &lt;em&gt;type-check&lt;/em&gt; run smack dab into the fact that as of 3.1 that style doesn’t &lt;em&gt;work&lt;/em&gt;; and typings that &lt;em&gt;work&lt;/em&gt; cannot be type-checked at present. You can’t even use decorators to push your way to a solution. Nor is there a lot of hope on the horizon for this reality to change.&lt;/p&gt;
+&lt;p&gt;You can see some of the discussion as to &lt;em&gt;why&lt;/em&gt; &lt;a href="https://github.com/machty/ember-concurrency/pull/209#issuecomment-403246551"&gt;starting here&lt;/a&gt; in one pull request for them; it all gets back to the limitation I mentioned above: TypeScript doesn’t let you change the types of things with decorators. Unfortunately, there’s no reason to believe that will change anytime soon. This is a &lt;em&gt;fundamental&lt;/em&gt; conflict between the Ember Object model and modern JavaScript—and specifically TypeScript’s understanding of it.&lt;/p&gt;
+&lt;p&gt;I am still mulling over solutions to that problem (as are others), and we’ll be continuing to work on this idea in &lt;a href="https://embercommunity.slack.com/messages/C2F8Q3SK1"&gt;#-topic-typescript&lt;/a&gt; in the Ember Community Slack (and publicizing any good ideas we come up with there in a searchable location, of course). For today, the best thing you can do is explicitly set the &lt;code&gt;this&lt;/code&gt; type to &lt;code&gt;any&lt;/code&gt; for the task property generator function callback, and use type casts internally if you look up services or other properties from the containing object.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="summary-mea-culpa" class="level2"&gt;
+&lt;h2&gt;Summary: &lt;em&gt;mea culpa&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Sorry again to everyone I misled along the way with my earlier, very wrong advice! Hopefully this helps clear up the state of things and will help you keep from falling into this tar pit going forward!&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;I don’t feel too bad about having gotten in wrong: no one who read the posts noticed the problem at the time, and it was subtle and easy to miss… because, at the time, everything actually &lt;em&gt;worked&lt;/em&gt;.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;It’s experimental because decorators are still only at Stage 2 in the &lt;abbr&gt;TC39&lt;/abbr&gt; process. They &lt;em&gt;may&lt;/em&gt; advance at this month’s meeting.&lt;a href="#fnref2" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn3"&gt;&lt;p&gt;If you’re using a non-default name, like &lt;code&gt;specialSession&lt;/code&gt;, for the name of the property, the usual rules apply for injections. In that case, you’d write the injection like this:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
+import { service } from &amp;#39;@ember-decorators/service&amp;#39;;
+import Session from &amp;#39;my-app/services/session&amp;#39;;
+
+export default class AnExample extends Component {
+  @service(&amp;#39;session&amp;#39;) specialSession: Session;
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;a href="#fnref3" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;
+&lt;li id="fn4"&gt;&lt;p&gt;Files do get an extra import in the decorator version… but as it happens, I’m more than okay with that; I’d actually &lt;em&gt;prefer&lt;/em&gt; explicit imports of dependencies personally.&lt;a href="#fnref4" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</content><category term="TypeScript"></category><category term="emberjs"></category><category term="typing-your-ember"></category></entry><entry><title>Good Arguments</title><link href="http://www.chriskrycho.com/2018/good-arguments.html" rel="alternate"></link><published>2018-06-04T10:30:00-04:00</published><updated>2018-06-04T10:30:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-06-04:/2018/good-arguments.html</id><summary type="html">I’m reading Shannon Vallor’s Technology and the Virtues—agreeing with a lot, disagreeing with a lot, and learning as much from the disagreements as the agreement. Good arguments are invaluable for clear thinking and the pursuit of truth.
 </summary><content type="html">&lt;p&gt;I’m working my way slowly and carefully through Shannon Vallor’s &lt;cite&gt;Technology and the Virtues&lt;/cite&gt; and as I put it to my friend and partner-in-&lt;a href="https://winningslowly.org"&gt;Winning Slowly&lt;/a&gt; Stephen Carradini: I find that I &lt;em&gt;very often&lt;/em&gt; agree with Vallor on her conclusions while &lt;em&gt;equally often&lt;/em&gt; disagreeing with her on how she gets there. It makes for very interesting reading, certainly; and so far, at least, I can pretty heartily commend the book despite my disagreements.&lt;/p&gt;
 &lt;p&gt;And the reason why I can so heartily recommend it is what I’m more interested in at the moment. Vallor is a really excellent &lt;em&gt;conversation partner&lt;/em&gt;. Not all writers are. But &lt;cite&gt;Technology and the Virtues&lt;/cite&gt; is the kind of book that is sufficiently well-written and well-argued&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; that the very act of disagreeing with it—if you take the time, anyway—produces light rather than merely heat.&lt;/p&gt;
 &lt;p&gt;A good conversation partner prompts you to think hard about the differences between her position and your own. She pushes you to articulate &lt;em&gt;why&lt;/em&gt; you disagree, and whether your disagreements are well-founded, and if not to see if you &lt;em&gt;can&lt;/em&gt; provide a good foundation for them. Vallor has this and in spades. I have pages of notes both agreeing with many of her points and also articulating why—as a &lt;em&gt;Christian&lt;/em&gt; interested in virtue ethics—I differ sharply with her in certain areas.&lt;/p&gt;
@@ -1538,7 +1772,7 @@ declare module &amp;quot;ember&amp;quot; {
 &lt;hr /&gt;
 &lt;p&gt;And that is all!&lt;/p&gt;
 &lt;/section&gt;
-</content><category term="writing"></category><category term="open-source software"></category><category term="ethics"></category><category term="reading"></category><category term="literature"></category></entry><entry><title>TypeScript and Ember.js Update, Part 4</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html" rel="alternate"></link><published>2018-02-08T07:30:00-05:00</published><updated>2018-02-08T07:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-02-08:/2018/typing-your-ember-update-part-4.html</id><summary type="html">Using Ember Data effectively, and migrating to new (better, easier!) approaches for service and controller lookup while we’re at it.</summary><content type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+</content><category term="writing"></category><category term="open-source software"></category><category term="ethics"></category><category term="reading"></category><category term="literature"></category></entry><entry><title>TypeScript and Ember.js Update, Part 4</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html" rel="alternate"></link><published>2018-02-08T07:30:00-05:00</published><updated>2018-07-10T20:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-02-08:/2018/typing-your-ember-update-part-4.html</id><summary type="html">Using Ember Data effectively, and migrating to new (better, easier!) approaches for service and controller lookup while we’re at it.</summary><content type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
@@ -1549,10 +1783,10 @@ declare module &amp;quot;ember&amp;quot; {
 &lt;/aside&gt;
 &lt;p&gt;Here’s the outline of this update sequence:&lt;/p&gt;
 &lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;&lt;strong&gt;Using Ember Data, and service and controller injections improvements.&lt;/strong&gt; (this post)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;&lt;strong&gt;Using Ember Data, and service and controller injections improvements.&lt;/strong&gt; (this post)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section id="ember-data" class="level2"&gt;
@@ -1565,7 +1799,7 @@ export default class Person extends DS.Model.extend({
   lastName: DS.attr(&amp;quot;string&amp;quot;)
 }) {}&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can still define other items of the class normally, but attributes have to be prototypally bound or &lt;em&gt;you will have problems&lt;/em&gt;. Note that this only applies (as far as I can tell) to Ember Data &lt;code&gt;Model&lt;/code&gt;s specifically—&lt;code&gt;Adapter&lt;/code&gt; and &lt;code&gt;Serializer&lt;/code&gt; classes work just fine.&lt;/p&gt;
-&lt;p&gt;The other problem we’ve historically had was dealing with lookups—the situation was similar to that I described in &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Part 3&lt;/a&gt; for service injection. However, as of &lt;em&gt;this week&lt;/em&gt;, we’re landing a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Keep your eyes open for the ember-cli-typescript 1.1 release in the next couple days!&lt;/p&gt;
+&lt;p&gt;The other problem we’ve historically had was dealing with lookups—the situation was similar to that I described in &lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Part 3&lt;/a&gt; for service injection. However, as of &lt;em&gt;this week&lt;/em&gt;, we’re landing a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Keep your eyes open for the ember-cli-typescript 1.1 release in the next couple days!&lt;/p&gt;
 &lt;p&gt;Once this release of both ember-cli-typescript and the updated typings land, when you generate an Ember Data model by doing &lt;code&gt;ember generate model person firstName:string lastName:string&lt;/code&gt;, it will look like this:&lt;/p&gt;
 &lt;pre class="ts"&gt;&lt;code&gt;import DS from &amp;quot;ember-data&amp;quot;;
 
@@ -1600,6 +1834,9 @@ declare module &amp;quot;ember-data&amp;quot; {
   }
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then putting the pieces together, our component definition will just look like this:&lt;/p&gt;
+&lt;aside&gt;
+&lt;p&gt;*&lt;strong&gt;Note:&lt;/strong&gt; please see the &lt;a href="https://www.chriskrycho.com/2018/ember-ts-class-properties.html"&gt;update about class properties published mid-2018&lt;/a&gt;. The examples below are incorrect in several important ways.&lt;/p&gt;
+&lt;/aside&gt;
 &lt;pre class="ts"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
 import { inject as service } from &amp;quot;@ember/service&amp;quot;;
 
@@ -1616,7 +1853,7 @@ export default class PersonCard extends Component {
   };
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The type of &lt;code&gt;model&lt;/code&gt; here is now &lt;code&gt;Person &amp;amp; DS.PromiseObject&amp;lt;Person&amp;gt;&lt;/code&gt; (which is actually what Ember Data returns for these kinds of things!), and the &lt;code&gt;this.store.adapterFor&lt;/code&gt; actually correctly returns the &lt;code&gt;Person&lt;/code&gt; adapter as well, so the call to its &lt;code&gt;update&lt;/code&gt; method type-checks as well (including guaranteeing that the arguments to it are correct). That also means you’ll get autocompletion for those, including for their types, if you’re using an editor configured for it. And, happily for everyone, if you mistype a string (&lt;code&gt;preson&lt;/code&gt; instead of &lt;code&gt;person&lt;/code&gt;, for example), you’ll get a compile-time error!&lt;/p&gt;
-&lt;p&gt;Notice as well that the service injection is much cleaner than it was in earlier examples in the series. That’s because we made the same “registry”-type changes—as I suggested we might back in &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Part 1&lt;/a&gt;!—for controller and service injections. Before, for this kind of thing:&lt;/p&gt;
+&lt;p&gt;Notice as well that the service injection is much cleaner than it was in earlier examples in the series. That’s because we made the same “registry”-type changes—as I suggested we might back in &lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Part 1&lt;/a&gt;!—for controller and service injections. Before, for this kind of thing:&lt;/p&gt;
 &lt;pre class="ts"&gt;&lt;code&gt;export default class PersonCard extends Component {
   store: Computed&amp;lt;DS.Store&amp;gt; = service();
 }&lt;/code&gt;&lt;/pre&gt;
@@ -1843,26 +2080,29 @@ export default class PersonDisplay extends Component {
 &lt;li id="fn2"&gt;&lt;p&gt;For my own purposes; Olo doesn’t ask anything of the sort from me; but it helps me see what I actually get done over the course of a year, and that’s pretty neat.&lt;a href="#fnref2" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</content><category term="writing"></category><category term="ethics"></category></entry><entry><title>TypeScript and Ember.js Update, Part 3</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html" rel="alternate"></link><published>2018-01-25T07:00:00-05:00</published><updated>2018-01-25T07:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-01-25:/2018/typing-your-ember-update-part-3.html</id><summary type="html">Now that we know a bit more about how computed properties work, we’ll talk about computed properties, actions, and mixins on the Ember.js side, along with the normal class methods.
+</content><category term="writing"></category><category term="ethics"></category></entry><entry><title>TypeScript and Ember.js Update, Part 3</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html" rel="alternate"></link><published>2018-01-25T07:00:00-05:00</published><updated>2018-07-10T20:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-01-25:/2018/typing-your-ember-update-part-3.html</id><summary type="html">Now that we know a bit more about how computed properties work, we’ll talk about computed properties, actions, and mixins on the Ember.js side, along with the normal class methods.
 </summary><content type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; if you’re following along with this &lt;em&gt;as I publish it&lt;/em&gt; in late January 2018, please go back and read the end of &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Part 2&lt;/a&gt;, which I updated substantially yesterday evening to include more material I missed in the first version of that post, but which belonged there and not here.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; if you’re following along with this &lt;em&gt;as I publish it&lt;/em&gt; in late January 2018, please go back and read the end of &lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Part 2&lt;/a&gt;, which I updated substantially yesterday evening to include more material I missed in the first version of that post, but which belonged there and not here.&lt;/p&gt;
 &lt;p&gt;In the previous posts in this series, I introduced the big picture of how the story around TypeScript and Ember.js has improved over the last several months and walked through some important background on class properties. In this post, I’ll build on that foundation to look closely at computed properties, actions, and mixins.&lt;/p&gt;
 &lt;aside&gt;
 &lt;p&gt;If you’re interested in all of this and would like to learn more in person, I’m &lt;a href="http://emberconf.com/speakers.html#chris-krycho"&gt;leading a workshop on it at EmberConf 2018&lt;/a&gt;—I’d love to see you there!&lt;/p&gt;
 &lt;/aside&gt;
 &lt;p&gt;Here’s the outline of this update sequence:&lt;/p&gt;
 &lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;&lt;strong&gt;Computed properties, actions, mixins, and class methods (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Using Ember Data, and service and controller injections improvements.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;&lt;strong&gt;Computed properties, actions, mixins, and class methods (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Using Ember Data, and service and controller injections improvements.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section id="a-detailed-example-contd.-computed-properties-mixins-actions-and-class-methods" class="level2"&gt;
 &lt;h2&gt;A detailed example (cont’d.) – computed properties, mixins, actions, and class methods&lt;/h2&gt;
+&lt;aside&gt;
+&lt;p&gt;*&lt;strong&gt;Note:&lt;/strong&gt; please see the &lt;a href="https://www.chriskrycho.com/2018/ember-ts-class-properties.html"&gt;update about class properties published mid-2018&lt;/a&gt;. The example below and in the following posts is incorrect in several important ways.&lt;/p&gt;
+&lt;/aside&gt;
 &lt;p&gt;Let’s start by recalling the example Component we’re working through:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
 import { computed, get } from &amp;#39;@ember/object&amp;#39;;
@@ -1925,7 +2165,7 @@ export default class AnExample extends Component {
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;section id="computed-properties" class="level3"&gt;
 &lt;h3&gt;Computed properties&lt;/h3&gt;
-&lt;p&gt;We already covered component arguments and injections as well as basic class properties and the exceptions to normal class-property ways of doing things, in Parts &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;1&lt;/a&gt; and &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;2&lt;/a&gt;. With that background out of the way, we can now turn to computed properties. I’m including the component arguments in this code sample because they’re referenced in the computed property. Assume &lt;code&gt;Person&lt;/code&gt; is a pretty “person” representation, with a &lt;code&gt;firstName&lt;/code&gt; and a &lt;code&gt;lastName&lt;/code&gt;and maybe a few other properties.&lt;/p&gt;
+&lt;p&gt;We already covered component arguments and injections as well as basic class properties and the exceptions to normal class-property ways of doing things, in Parts &lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;1&lt;/a&gt; and &lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;2&lt;/a&gt;. With that background out of the way, we can now turn to computed properties. I’m including the component arguments in this code sample because they’re referenced in the computed property. Assume &lt;code&gt;Person&lt;/code&gt; is a pretty “person” representation, with a &lt;code&gt;firstName&lt;/code&gt; and a &lt;code&gt;lastName&lt;/code&gt;and maybe a few other properties.&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;  // -- Component arguments -- //
   model: Person;      // required
   modifier?: string;  // optional, thus the `?`
@@ -1948,7 +2188,7 @@ export default class AnExample extends Component {
   savedUser: Computed&amp;lt;Person&amp;gt; = alias(&amp;#39;session.user&amp;#39;);&lt;/code&gt;&lt;/pre&gt;
 &lt;section id="computed-properties-1" class="level4"&gt;
 &lt;h4&gt;&lt;code&gt;computed&lt;/code&gt; properties&lt;/h4&gt;
-&lt;p&gt;When using a computed property in the brave new world of ES6 classes, we normally just assign them as instance properties. As mentioned in &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;the previous post&lt;/a&gt;, and in line with my comments above, this has some important tradeoffs around performance. If you need the absolute &lt;em&gt;best&lt;/em&gt; performance, you can continue to install them on the prototype by doing this instead:&lt;/p&gt;
+&lt;p&gt;When using a computed property in the brave new world of ES6 classes, we normally just assign them as instance properties. As mentioned in &lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;the previous post&lt;/a&gt;, and in line with my comments above, this has some important tradeoffs around performance. If you need the absolute &lt;em&gt;best&lt;/em&gt; performance, you can continue to install them on the prototype by doing this instead:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;export default class MyComponent extends Component.extend({
   fromModel: computed(
     &amp;#39;model.firstName&amp;#39;,
@@ -2040,7 +2280,7 @@ const value = get(anObject, &amp;#39;some.nested.key&amp;#39;);&lt;/code&gt;&lt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1"&gt;&lt;p&gt;As mentioned in &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Part 2&lt;/a&gt;, this problem doesn’t go away until we get decorators, unless you’re putting them on the prototype via &lt;code&gt;.extends()&lt;/code&gt;—but see below for the problems with &lt;em&gt;that&lt;/em&gt;. The short version is, we need decorators for this to actually be &lt;em&gt;nice&lt;/em&gt;. Once we get decorators, we will be able to combine them with the work done for &lt;a href="https://github.com/emberjs/rfcs/pull/281"&gt;RFC #281&lt;/a&gt; and normal lookup will just work:&lt;/p&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;As mentioned in &lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Part 2&lt;/a&gt;, this problem doesn’t go away until we get decorators, unless you’re putting them on the prototype via &lt;code&gt;.extends()&lt;/code&gt;—but see below for the problems with &lt;em&gt;that&lt;/em&gt;. The short version is, we need decorators for this to actually be &lt;em&gt;nice&lt;/em&gt;. Once we get decorators, we will be able to combine them with the work done for &lt;a href="https://github.com/emberjs/rfcs/pull/281"&gt;RFC #281&lt;/a&gt; and normal lookup will just work:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;@computed(&amp;#39;model.firstName&amp;#39;)
 get fromModel() {
   return `My name is ${this.model.firstName};`;
@@ -2059,7 +2299,7 @@ get fromModel() {
 &lt;li id="fn6"&gt;&lt;p&gt;Not &lt;em&gt;no&lt;/em&gt; hassle, though, and I look forward to a future where we can drop it, as Ember moves more and more toward modern JavaScript ways of solving these same problems!&lt;a href="#fnref6" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</content><category term="TypeScript"></category><category term="emberjs"></category><category term="typing-your-ember"></category></entry><entry><title>TypeScript and Ember.js Update, Part 2</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html" rel="alternate"></link><published>2018-01-24T07:00:00-05:00</published><updated>2018-01-24T22:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-01-24:/2018/typing-your-ember-update-part-2.html</id><summary type="html">For years, you've been using Ember Object and .extend()—but the rules are different with classes.
+</content><category term="TypeScript"></category><category term="emberjs"></category><category term="typing-your-ember"></category></entry><entry><title>TypeScript and Ember.js Update, Part 2</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html" rel="alternate"></link><published>2018-01-24T07:00:00-05:00</published><updated>2018-07-10T20:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-01-24:/2018/typing-your-ember-update-part-2.html</id><summary type="html">For years, you've been using Ember Object and .extend()—but the rules are different with classes.
 </summary><content type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
@@ -2070,14 +2310,17 @@ get fromModel() {
 &lt;/aside&gt;
 &lt;p&gt;Here’s the outline of this update sequence:&lt;/p&gt;
 &lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;&lt;strong&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Using Ember Data, and service and controller injections improvements.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;Overview, normal Ember objects, component arguments, and injections.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;&lt;strong&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Using Ember Data, and service and controller injections improvements.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section id="a-detailed-example-contd.-class-properties" class="level2"&gt;
 &lt;h2&gt;A detailed example (cont’d.) – class properties&lt;/h2&gt;
+&lt;aside&gt;
+&lt;p&gt;*&lt;strong&gt;Note:&lt;/strong&gt; please see the &lt;a href="https://www.chriskrycho.com/2018/ember-ts-class-properties.html"&gt;update about class properties published mid-2018&lt;/a&gt;. The example below and in the following posts is incorrect in several important ways.&lt;/p&gt;
+&lt;/aside&gt;
 &lt;p&gt;Let’s start by recalling the example Component we’re working through:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;#39;@ember/component&amp;#39;;
 import { computed, get } from &amp;#39;@ember/object&amp;#39;;
@@ -2300,21 +2543,21 @@ export default class MyListItem extends Component {
 &lt;a href="#fnref3" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
-</content><category term="TypeScript"></category><category term="emberjs"></category><category term="typing-your-ember"></category></entry><entry><title>TypeScript and Ember.js Update, Part 1</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html" rel="alternate"></link><published>2018-01-22T07:10:00-05:00</published><updated>2018-01-24T07:00:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-01-22:/2018/typing-your-ember-update-part-1.html</id><summary type="html">A bunch has changed for the better in the TypeScript/Ember.js story over the last six months. Here’s an overview of the changes and a look at normal Ember objects, "arguments" to components (and controllers), and service (or controller) injections.</summary><content type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
+</content><category term="TypeScript"></category><category term="emberjs"></category><category term="typing-your-ember"></category></entry><entry><title>TypeScript and Ember.js Update, Part 1</title><link href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html" rel="alternate"></link><published>2018-01-22T07:10:00-05:00</published><updated>2018-07-10T20:00:00-04:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-01-22:/2018/typing-your-ember-update-part-1.html</id><summary type="html">A bunch has changed for the better in the TypeScript/Ember.js story over the last six months. Here’s an overview of the changes and a look at normal Ember objects, "arguments" to components (and controllers), and service (or controller) injections.</summary><content type="html">&lt;p&gt;&lt;i class='series-overview'&gt;You write &lt;a href="https://emberjs.com"&gt;Ember.js&lt;/a&gt; apps. You think &lt;a href="http://www.typescriptlang.org"&gt;TypeScript&lt;/a&gt; would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;This is the series for you! I’ll talk through everything: from the very basics of how to set up your Ember.js app to use TypeScript to how you can get the most out of TypeScript today—and I’ll be pretty clear about the current tradeoffs and limitations, too.&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i class='series-overview'&gt;&lt;a href="/typing-your-ember.html"&gt;(See the rest of the series. →)&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;Back in July 2017, I wrote &lt;a href="http://www.chriskrycho.com/2017/typing-your-ember-part-3.html"&gt;a post&lt;/a&gt; on how to using TypeScript in your Ember.js apps. At the time, we were still busy working on getting the typings more solid for Ember itself, and &lt;code&gt;class&lt;/code&gt; syntax for Ember was apparently a long way away.&lt;/p&gt;
+&lt;p&gt;Back in July 2017, I wrote &lt;a href="https://www.chriskrycho.com/2017/typing-your-ember-part-3.html"&gt;a post&lt;/a&gt; on how to using TypeScript in your Ember.js apps. At the time, we were still busy working on getting the typings more solid for Ember itself, and &lt;code&gt;class&lt;/code&gt; syntax for Ember was apparently a long way away.&lt;/p&gt;
 &lt;p&gt;Things have gotten quite a bit better since then, so I thought I’d update that post with recommendations for using TypeScript in an app &lt;em&gt;now&lt;/em&gt; with the updated typings, as well as with another six months of experience using TypeScript in our app at Olo (~20k lines of code in the app and another ~15k in tests).&lt;/p&gt;
 &lt;aside&gt;
 &lt;p&gt;If you’re interested in all of this and would like to learn more in person, I’m &lt;a href="http://emberconf.com/speakers.html#chris-krycho"&gt;leading a workshop on it at EmberConf 2018&lt;/a&gt;—I’d love to see you there!&lt;/p&gt;
 &lt;/aside&gt;
 &lt;p&gt;Here’s how I expect this update series to go:&lt;/p&gt;
 &lt;ol type="1"&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;&lt;strong&gt;Overview, normal Ember objects, component arguments, and injections (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Using Ember Data, and service and controller injections improvements.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html"&gt;&lt;strong&gt;Overview, normal Ember objects, component arguments, and injections (this post).&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;Class properties—some notes on how things differ from the &lt;code&gt;Ember.Object&lt;/code&gt; world.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html"&gt;Computed properties, actions, mixins, and class methods.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Using Ember Data, and service and controller injections improvements.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Mixins and proxies; or: the really hard-to-type-check bits.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;section id="normal-ember-objects" class="level2"&gt;
@@ -2326,6 +2569,9 @@ export default class MyListItem extends Component {
 &lt;h2&gt;A detailed example&lt;/h2&gt;
 &lt;p&gt;That means that every new bit of code I write today in our app looks roughly like this, with only the obvious modifications for services, routes, and controllers—I picked components because they’re far and away the most common things in our applications.&lt;/p&gt;
 &lt;p&gt;In order to explain all this clearly, I’m going to start by showing a whole component written in the new style. Then, over the rest of this post and the next post, I’ll zoom in on and explain specific parts of it.&lt;/p&gt;
+&lt;aside&gt;
+&lt;p&gt;*&lt;strong&gt;Note:&lt;/strong&gt; please see the &lt;a href="https://www.chriskrycho.com/2018/ember-ts-class-properties.html"&gt;update about class properties published mid-2018&lt;/a&gt;. The example below and in the following posts is incorrect in several important ways.&lt;/p&gt;
+&lt;/aside&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;import Component from &amp;quot;@ember/component&amp;quot;;
 import { computed, get } from &amp;quot;@ember/object&amp;quot;;
 import Computed from &amp;quot;@ember/object/computed&amp;quot;;
@@ -2400,7 +2646,7 @@ export default class MyComponent extends Component {
   optionalProperty = Maybe.of(this.optionalArg);
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then if you invoke the property without the argument, it’ll construct a &lt;code&gt;Nothing&lt;/code&gt;; if you invoke it with the argument, it’ll be &lt;code&gt;Just&lt;/code&gt; with the value. [^ts-templates]: A few of us have batted around some ideas for how to solve that particular problem, but &lt;em&gt;if&lt;/em&gt; we manage those, it’ll probably be way, way later in 2018.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edit, January 24, 2018:&lt;/strong&gt; Starting in TypeScript 2.7, you can enable a flag, &lt;code&gt;--strictPropertyInitialization&lt;/code&gt;, which requires that all declared, non-optional properties on a class be initialized in the constructor or with a class property assignment. (There’s more on class property assignment in &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;part 2&lt;/a&gt; of this series.) If you do that, all &lt;em&gt;arguments&lt;/em&gt; to a component should be defined with the &lt;em&gt;definite assignment assertion modifier&lt;/em&gt;, a &lt;code&gt;!&lt;/code&gt; after the name of the property, as on &lt;code&gt;model&lt;/code&gt; here:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit, January 24, 2018:&lt;/strong&gt; Starting in TypeScript 2.7, you can enable a flag, &lt;code&gt;--strictPropertyInitialization&lt;/code&gt;, which requires that all declared, non-optional properties on a class be initialized in the constructor or with a class property assignment. (There’s more on class property assignment in &lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html"&gt;part 2&lt;/a&gt; of this series.) If you do that, all &lt;em&gt;arguments&lt;/em&gt; to a component should be defined with the &lt;em&gt;definite assignment assertion modifier&lt;/em&gt;, a &lt;code&gt;!&lt;/code&gt; after the name of the property, as on &lt;code&gt;model&lt;/code&gt; here:&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;export default class AnExample extends Component {
   // Component arguments
   model!: Person;     // required
@@ -2412,7 +2658,7 @@ export default class MyComponent extends Component {
 &lt;pre class="typescript"&gt;&lt;code&gt;  // -- Injections -- //
   session: Computed&amp;lt;Session&amp;gt; = service();&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Here, the most important thing to note is the required type annotation. In principle, we could work around this by requiring you to explicitly name the service and using a “type registry” to look up what the service type is – more on that below in my discussion of using Ember Data – but I’m not yet persuaded that’s better than just writing the appropriate type annotation. Either way, there’s some duplication. 🤔 We (everyone working in the &lt;a href="https://github.com/typed-ember"&gt;typed-ember&lt;/a&gt; project) would welcome feedback here, because the one thing we &lt;em&gt;can’t&lt;/em&gt; do is get the proper type &lt;em&gt;without&lt;/em&gt; one or the other of these.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Edit, February 5, 2018:&lt;/strong&gt; see &lt;a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Part 4&lt;/a&gt; for some updates to this—I actually went ahead and built and implemented that approach, and everything is much nicer now.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit, February 5, 2018:&lt;/strong&gt; see &lt;a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"&gt;Part 4&lt;/a&gt; for some updates to this—I actually went ahead and built and implemented that approach, and everything is much nicer now.&lt;/p&gt;
 &lt;pre class="typescript"&gt;&lt;code&gt;  // the current approach -- requires importing `Session` so you can define it
   // on the property here
   session: Computed&amp;lt;Session&amp;gt; = service();

@@ -79,7 +79,7 @@
 <h2>Using Ember Data, and service and controller injections improvements.</h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"><i class="fa fa-fw fa-link"></i></a>February 08, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"><i class="fa fa-fw fa-link"></i></a>February 08, 2018 (updated July 10, 2018)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a><a class="hashtags" href="http://www.chriskrycho.com/typing-your-ember/">#typing-your-ember</a></span><span><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
@@ -97,10 +97,10 @@
 </aside>
 <p>Here’s the outline of this update sequence:</p>
 <ol type="1">
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">Overview, normal Ember objects, component arguments, and injections.</a></li>
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Class properties—some notes on how things differ from the <code>Ember.Object</code> world.</a></li>
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Computed properties, actions, mixins, and class methods.</a></li>
-<li><a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"><strong>Using Ember Data, and service and controller injections improvements.</strong> (this post)</a></li>
+<li><a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">Overview, normal Ember objects, component arguments, and injections.</a></li>
+<li><a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Class properties—some notes on how things differ from the <code>Ember.Object</code> world.</a></li>
+<li><a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Computed properties, actions, mixins, and class methods.</a></li>
+<li><a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html"><strong>Using Ember Data, and service and controller injections improvements.</strong> (this post)</a></li>
 <li>Mixins and proxies; or: the really hard-to-type-check bits.</li>
 </ol>
 <section id="ember-data" class="level2">
@@ -113,7 +113,7 @@ export default class Person extends DS.Model.extend({
   lastName: DS.attr(&quot;string&quot;)
 }) {}</code></pre>
 <p>You can still define other items of the class normally, but attributes have to be prototypally bound or <em>you will have problems</em>. Note that this only applies (as far as I can tell) to Ember Data <code>Model</code>s specifically—<code>Adapter</code> and <code>Serializer</code> classes work just fine.</p>
-<p>The other problem we’ve historically had was dealing with lookups—the situation was similar to that I described in <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Part 3</a> for service injection. However, as of <em>this week</em>, we’re landing a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Keep your eyes open for the ember-cli-typescript 1.1 release in the next couple days!</p>
+<p>The other problem we’ve historically had was dealing with lookups—the situation was similar to that I described in <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Part 3</a> for service injection. However, as of <em>this week</em>, we’re landing a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Keep your eyes open for the ember-cli-typescript 1.1 release in the next couple days!</p>
 <p>Once this release of both ember-cli-typescript and the updated typings land, when you generate an Ember Data model by doing <code>ember generate model person firstName:string lastName:string</code>, it will look like this:</p>
 <pre class="ts"><code>import DS from &quot;ember-data&quot;;
 
@@ -148,6 +148,9 @@ declare module &quot;ember-data&quot; {
   }
 }</code></pre>
 <p>Then putting the pieces together, our component definition will just look like this:</p>
+<aside>
+<p>*<strong>Note:</strong> please see the <a href="https://www.chriskrycho.com/2018/ember-ts-class-properties.html">update about class properties published mid-2018</a>. The examples below are incorrect in several important ways.</p>
+</aside>
 <pre class="ts"><code>import Component from &quot;@ember/component&quot;;
 import { inject as service } from &quot;@ember/service&quot;;
 
@@ -164,7 +167,7 @@ export default class PersonCard extends Component {
   };
 }</code></pre>
 <p>The type of <code>model</code> here is now <code>Person &amp; DS.PromiseObject&lt;Person&gt;</code> (which is actually what Ember Data returns for these kinds of things!), and the <code>this.store.adapterFor</code> actually correctly returns the <code>Person</code> adapter as well, so the call to its <code>update</code> method type-checks as well (including guaranteeing that the arguments to it are correct). That also means you’ll get autocompletion for those, including for their types, if you’re using an editor configured for it. And, happily for everyone, if you mistype a string (<code>preson</code> instead of <code>person</code>, for example), you’ll get a compile-time error!</p>
-<p>Notice as well that the service injection is much cleaner than it was in earlier examples in the series. That’s because we made the same “registry”-type changes—as I suggested we might back in <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">Part 1</a>!—for controller and service injections. Before, for this kind of thing:</p>
+<p>Notice as well that the service injection is much cleaner than it was in earlier examples in the series. That’s because we made the same “registry”-type changes—as I suggested we might back in <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html">Part 1</a>!—for controller and service injections. Before, for this kind of thing:</p>
 <pre class="ts"><code>export default class PersonCard extends Component {
   store: Computed&lt;DS.Store&gt; = service();
 }</code></pre>
@@ -413,7 +416,7 @@ export default class PersonDisplay extends Component {
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
         <li>Blog: <a href="http://www.chriskrycho.com/2018/good-arguments.html">Good Arguments</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2018/sum-type-constructors-in-typescript.html">Sum Type Constructors in TypeScript</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/ember-ts-class-properties.html">Ember.js, TypeScript, and Class Properties</a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2018/life-hacks-are-dumb.html">“Life Hacks” Are Dumb</a></li>
     </ul>
 </section></footer>
