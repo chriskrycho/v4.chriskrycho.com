@@ -267,7 +267,7 @@ export default class AnExample extends Component {
 &lt;p&gt;On the one hand, I’ve found that Pinboard is &lt;em&gt;great&lt;/em&gt; for two things:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;having an easy place to look up articles I’ve read but can’t necessarily remember the name of off the top of my head&lt;/li&gt;
-&lt;li&gt;being &lt;em&gt;a&lt;/em&gt; place with its own RSS feed of that content, which is social-network-like in some ways but using open web tech like &lt;abbr&gt;RSS&lt;/abbr&gt;&lt;/li&gt;
+&lt;li&gt;being &lt;em&gt;a&lt;/em&gt; place with its own &lt;abbr&gt;RSS&lt;/abbr&gt; feed of that content, which is social-network-like in some ways but using open web tech like &lt;abbr&gt;RSS&lt;/abbr&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;But what it isn’t is &lt;em&gt;integrated with my own site&lt;/em&gt;, or particularly easily discoverable &lt;em&gt;from&lt;/em&gt; my site. Adding a link to my public Pinboard feed would help, perhaps, but you wouldn’t know what I use it &lt;em&gt;for&lt;/em&gt; from seeing that link.&lt;/p&gt;
 &lt;p&gt;The thing is, I want this material here on this site. There remain two blockers to me there:&lt;/p&gt;

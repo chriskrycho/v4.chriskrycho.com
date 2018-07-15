@@ -15,7 +15,7 @@ I find that I’m always reflecting on the shape I want my internet presence to 
 On the one hand, I’ve found that Pinboard is *great* for two things:
 
 - having an easy place to look up articles I’ve read but can’t necessarily remember the name of off the top of my head
-- being *a* place with its own RSS feed of that content, which is social-network-like in some ways but using open web tech like <abbr>RSS</abbr>
+- being *a* place with its own <abbr>RSS</abbr> feed of that content, which is social-network-like in some ways but using open web tech like <abbr>RSS</abbr>
 
 But what it isn’t is *integrated with my own site*, or particularly easily discoverable *from* my site. Adding a link to my public Pinboard feed would help, perhaps, but you wouldn’t know what I use it *for* from seeing that link.
 
