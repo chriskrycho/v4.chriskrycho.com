@@ -30,7 +30,7 @@ For the most part, I am happy enough with a static site generator setup. However
 
 You might find that an odd commitment; here’s an aside on why.
 
-Our [family blog](https://krycho.com) is a Ghost install, and the previous iteration of this site ran on WordPress. Ghost is *fine*, and for many setups it’s actually really good. For my fairly complex set of publishing requirements, it unfortunately doesn’t really do the trick. Some of those requirements—like integration with citation-management tooling, are *currently* less pressing, but I don’t count on that being the case in the long term.
+Our [family blog](https://krycho.com) is a Ghost install, and the previous iteration of this site ran on WordPress. Ghost is *fine*, and for many setups it’s actually really good. For my fairly complex set of publishing requirements, it unfortunately doesn’t really do the trick. Some of those requirements (like integration with citation-management tooling) are *currently* less pressing, but I don’t count on that being the case in the long term.
 
 That said, one possible alternative here is simply to cross that bridge if or when I come to it and lean on the somewhat simpler tools that *do* meet my needs for today. If I did that, it would certainly be with Ghost, because WordPress feels to me the same way Windows feels to me: technically very competent, but impossibly frustrating to use. (That’s not insulting either of the two; it’s a statement of my very—overly, perhaps!—specific aesthetic tastes and my corresponding—admittedly irrational!—response to the experience of using Windows or WordPress. Maybe it’s just the ‘W’s that start the names?)
 
