@@ -1,7 +1,10 @@
 ---
 Title: Continuing to Reflect on My Internet Presence
-Subtitle: Something new and unusual, am I right? This time: on Pinboard as my link-sharing source.
+Subtitle: "Something new and unusual, am I right? This time: on Pinboard as my link-sharing source."
 Date: 2018-06-25 06:15
+Tags: pinboard, writing, blogging
+Summary: >
+    Still using Pinboard for what it is good at, but also thinking about this blog itself. Yes, again. You aren’t surprised by this, are you? So yes: more thoughts on link-blogging, commentary, and the blog software I want to exist. (No, neither WordPress nor Ghost fit the bill for me.)
 
 ---
 
