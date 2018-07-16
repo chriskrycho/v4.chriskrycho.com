@@ -1,7 +1,7 @@
 ---
 Title: Blog as Note-Taking Tool
 Subtitle: Notes apps, Zettelkasten, external memory, notecards… I just have this website.
-Date: 2018-07-15 07:00
+Date: 2018-07-16 07:00
 Category: Blog
 Tags: Zettelkasten, notes, memory, writing, blogging
 Summary: >
