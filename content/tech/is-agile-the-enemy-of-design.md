@@ -1,6 +1,7 @@
 ---
 Title: Is Agile the Enemy of Good Design?
 Subtitle: John Cutler on “Agile,” good design, and the reasons the two often seem at odds.
+Date: 2018-07-29 16:15
 Tags: design, agile, software development, business
 Category: tech
 Summary: >
