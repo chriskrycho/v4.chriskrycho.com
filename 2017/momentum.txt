@@ -2,7 +2,7 @@
 Title: Momentum
 Subtitle: Two weeks of daily writing, and how “productivity” happens.
 Summary: >
-“Productivity” often looks like this: just a bit at a time, day after day; and doing a little even when you don’t really feel like it, just so you keep some forward motion going.
+    “Productivity” often looks like this: just a bit at a time, day after day; and doing a little even when you don’t really feel like it, just so you keep some forward motion going.
 Tags: productivity, writing
 Date: 2017-12-22 19:35
 
