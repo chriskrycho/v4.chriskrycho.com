@@ -31,7 +31,7 @@ And yet.
 
 Over the last several months, the amount of code I have written myself has dropped substantially. Not to nothing, of course; I’m still doing the actual work of designing and implementing pieces of the application I work on a majority of the time. But I’m not sure how much more than 50% of my time it is on any given week at this point. As much as I’ve enjoyed helping drive this particular project forward,[^3] I haven’t actually gotten to *build* as much during this phase of it.
 
-### III.
+## III.
 
 These two things have a great deal in common, for all their superficial differences. Both are places where my most valuable contributions are not what I can build myself, but what I can enable *others* to build.
 
