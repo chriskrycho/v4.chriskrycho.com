@@ -10,7 +10,7 @@ Summary: >
 
 ---
 
-Every time there is a major controversy about large platforms blocking or delisting some controversial figure, something like the following exchange follows:
+Every time there is a major controversy about large platforms blocking or delisting some controversial figure, something like the following exchange follows:[^1]
 
 > **Person 1:** But what about free speech? You’re censoring this party!
 > 
@@ -20,7 +20,7 @@ So far as it goes, this is true. XKCD’s explanation is completely right on the
 
 [![](http://www.explainxkcd.com/wiki/images/a/ae/free_speech.png "XKCD 1357: Free Speech")](https://xkcd.com/1357/)
 
-But while this is all true in some sense, it also seems to me to be missing the larger and *much* more important point. Namely: the whole reason we have these arguments—and the reason people tend to think as they do about the “free speech” question in these situations, legally nonsensical or not—is that we have outsourced the vast majority of our public discourse to these private platforms.[^1]
+But while this is all true in some sense, it also seems to me to be missing the larger and *much* more important point. Namely: the whole reason we have these arguments—and the reason people tend to think as they do about the “free speech” question in these situations, legally nonsensical or not—is that we have outsourced the vast majority of our public discourse to these private platforms.
 
 Twitter and Facebook have become the _de facto_ public fora of the 2010s, with Google’s search results and Wikipedia’s summaries taking similarly authoritative roles on what *exists* and what *is true*. Not that most people would put it that way, but it remains true: if something isn’t in Google search, it might as well not exist on the internet, and therefore for many people *at all*. Likewise with Wikipedia’s summaries: the admonitions of every college professor in the world notwithstanding, what Wikipedia says has an undeniable authority. And when someone is blacklisted from Twitter or Facebook, their ability to be heard at all by internet users as a block is *dramatically* curtailed.
 

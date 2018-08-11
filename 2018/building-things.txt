@@ -9,8 +9,6 @@ Summary: >
 
 ---
 
-I’m not quite sure how to begin this post, or where it will go. Another [meander](https://www.chriskrycho.com/2018/a-meander.html "A Meander") I suppose it will be. This one is on the tensions I feel about certain kinds of “leadership” roles I have found myself in.
-
 ## I.
 
 For almost three years, now, I have been more or less steadily—sometimes more, sometimes less!—putting out episodes of New Rustacean. It’s fairly popular. I’ve had really smart people tell me how helpful it was in getting them up to speed with the language. I have had the surprising and slightly weird (if also somewhat gratifying) experience of walking into a room and seeing people respond in recognition of my voice.
