@@ -1,15 +1,13 @@
 ---
 Title: Building Things
-Subitle: A meander on leadership roles and the kinds of contributions we make.
+Subtitle: A meander on leadership roles and the kinds of contributions we make.
 Date: 2018-08-06 21:15
 Tags: software development, leadership, podcasting, New Rustacean
 Category: tech
-Description: >
+Summary: >
     On “force multipliers” and being an individual contributor at heart—even if one who is good at teaching and who enjoys leading.
 
 ---
-
-I’m not quite sure how to begin this post, or where it will go. Another [meander](https://www.chriskrycho.com/2018/a-meander.html "A Meander") I suppose it will be. This one is on the tensions I feel about certain kinds of “leadership” roles I have found myself in.
 
 ## I.
 
@@ -25,13 +23,13 @@ If I went and applied for a job today, where actual Rust *experience* was desire
 
 The last few months at work, I’ve spent a lot of my time—and an increasingly large proportion of it—on mentoring, code reviews, and leading the team and effort I’m on. This is genuinely wonderful in a lot of ways. I *love* teaching, and it’s a pleasure to help shape the overall direction of a project and a codebase.[^1] In many ways, I’m right in line with the goals I set explicitly with my manager at the beginning of the year.
 
-That’s really good, and really important. I recently saw someone tweet the pithy remark that the *definition* of a senior engineer is that they are mentoring a more junior engineer. I don’t think that’s quite right—there is a lot of room for really outstanding technical contributors who don’t have the gift of teaching, but whose technical chops mean they genuinely *are* senior people on the team.[^2] One of the reasonable insights under the hyperbole is that enabling others can often be far more effective than merely doing work yourself.
+That’s really good, and really important. I recently saw someone tweet the pithy remark that the *definition* of a senior engineer is that they are mentoring a more junior engineer. I don’t think that’s quite right—there is a lot of room for really outstanding technical contributors who don’t have the gift of teaching, but whose technical chops mean they genuinely *are* senior people on the team.[^2] But the reasonable insight under the hyperbole is that enabling others can often be far more effective than merely doing work yourself.
 
 And yet.
 
 Over the last several months, the amount of code I have written myself has dropped substantially. Not to nothing, of course; I’m still doing the actual work of designing and implementing pieces of the application I work on a majority of the time. But I’m not sure how much more than 50% of my time it is on any given week at this point. As much as I’ve enjoyed helping drive this particular project forward,[^3] I haven’t actually gotten to *build* as much during this phase of it.
 
-### III.
+## III.
 
 These two things have a great deal in common, for all their superficial differences. Both are places where my most valuable contributions are not what I can build myself, but what I can enable *others* to build.
 
