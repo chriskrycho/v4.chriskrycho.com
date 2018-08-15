@@ -2,7 +2,7 @@
 Title: Destructuring with True Myth 1.3+
 Subtitle: A thing I didn't even realize I could do until after I published it.
 Date: 2018-05-19 12:20
-Tags: functional programming, typescript, open source software, libraries
+Tags: functional programming, typescript, open source software, libraries, true myth
 Summary: >
     Making the value and error properties available means you can now use destructuring.
 
