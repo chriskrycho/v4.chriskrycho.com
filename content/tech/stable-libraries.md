@@ -1,6 +1,6 @@
 ---
 Title: Stable Libraries
-Subtitle: "A crazy idea: that sometimes a library might just be… done.
+Subtitle: "A crazy idea: that sometimes a library might just be… done."
 Date: 2018-08-14 19:45
 Categories: Tech
 Tags: software development, open source software, libraries, true myth, javascript
