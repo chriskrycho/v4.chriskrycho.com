@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stable Libraries &middot; Chris Krycho</title>
+    <meta name="description" content="True Myth has changed very little since I first released it, and I do not expect it to change much in the future: because it is basically done. I wish more libraries took this approach; churn is not a virtue."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/stable-libraries.html"/>
+    <meta property="og:title" content="Stable Libraries"/>
+    <meta property="og:description" content="True Myth has changed very little since I first released it, and I do not expect it to change much in the future: because it is basically done. I wish more libraries took this approach; churn is not a virtue."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Stable Libraries"/>
+    <meta name="twitter:description" content="True Myth has changed very little since I first released it, and I do not expect it to change much in the future: because it is basically done. I wish more libraries took this approach; churn is not a virtue."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="software-development open-source-software libraries true-myth javascript tech">
+
+    <header>
+<h1>Stable Libraries</h1>
+<h2>A crazy idea: that sometimes a library might just be… done.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/stable-libraries.html"><i class="fa fa-fw fa-link"></i></a>August 14, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/libraries/">#libraries</a><a class="hashtags" href="http://www.chriskrycho.com/open-source-software/">#open source software</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/true-myth/">#true myth</a></span><span><a href="http://www.chriskrycho.com/2018/stable-libraries.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>True Myth has changed very little since I first released it, and although I have a few ideas for small additions I might make, I don’t really expect it to change much in the future. <em>That’s okay.</em></p>
+<p>There’s a strange idea in some parts of the software development ecosystem—a way of think I also find myself falling into from time—which takes a lack of changes to a library as a sign that the library is <em>dead</em> and shouldn’t be used. I call this idea “strange” because if you take a step back, it’s actually not necessarily very healthy for certain kinds of libraries to be changing all the time.</p>
+<p>But if you’re in an ecosystem where rapid change in libraries is normal, you end up assuming that something which <em>isn’t changing</em> is <em>unmaintained</em> or <em>not usable</em> when in fact the opposite may be true. If someone opens a pull request or an issue for True Myth, I generally get to it in under a day, often under an hour if it’s in my normal working time. (That’s easy enough for me to do because it’s a small, simple library; I don’t have the scale problems that larger projects do.) The project isn’t <em>dead</em>. It’s just mostly <em>done</em>.</p>
+<p>One of the things I’d like to see in the front-end/JavaScript community in particular is a growing embrace of the idea that some libraries can genuinely be finished. They might need a tweak here or there to work with a new packaging solution, or to fix some corner case bug that has been found. But the “churn” we all feel to varying degrees would be much diminished if maintainers didn’t feel a constant push to be changing for the sake of, well… change. The burden on maintainers would be lower, too. Maybe we’d all get to spend less time on small changes that just keep us “up to date” and more on solving bigger problems.</p>
+<p>Don’t get me wrong: sometimes changing perspective warrants a rewrite. But in libraries as in apps, just as often you’ll end up with a bad case of <a href="https://en.m.wikipedia.org/wiki/Second-system_effect">second system syndrome</a>; and rewrites are <em>rarely</em>—not never, but rarely—clean wins.</p>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/a-strange-little-thought.html">A Strange Little Thought</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/blog-as-note-taking-tool.html">Blog as Note-Taking Tool</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/stable-libraries.html">Stable Libraries</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/imprecatory-psalms-and-comfort-for-weary-souls.html">Imprecatory Psalms and Comfort for Weary Souls</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
