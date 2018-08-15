@@ -9,7 +9,7 @@ Summary: >
 
 ---
 
-True Myth has changed very little since I first released it, and although I have a few ideas for small additions I might make, I don’t really expect it to change much in the future. *That’s okay.*
+[True Myth](https://github.com/chriskrycho/true-myth) has changed very little since I first released it, and although I have a few ideas for small additions I might make, I don’t really expect it to change much in the future. *That’s okay.*
 
 There’s a strange idea in some parts of the software development ecosystem—a way of think I also find myself falling into from time—which takes a lack of changes to a library as a sign that the library is *dead* and shouldn’t be used. I call this idea “strange” because if you take a step back, it’s actually not necessarily very healthy for certain kinds of libraries to be changing all the time.
 
