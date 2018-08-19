@@ -3,7 +3,7 @@ Title: Blog as Note-Taking Tool
 Subtitle: Notes apps, Zettelkasten, external memory, notecards… I just have this website.
 Date: 2018-07-16 07:00
 Category: Blog
-Tags: Zettelkasten, notes, memory, writing, blogging
+Tags: [Zettelkasten, notes, memory, writing, blogging]
 Summary: >
     Pretty regularly, I go back and reread my own blog posts—and not for vanity. It’s an illuminating experience, a lot like reading through old notes.
 

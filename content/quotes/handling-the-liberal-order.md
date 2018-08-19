@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2018-03-19 20:50
 Template: formats/quotation
 Category: Theology
-Tags: quotes
+Tags: [quotes]
 Source: L. M. Sacasas, <a href="https://thefrailestthing.com/2018/03/11/why-we-cant-have-humane-technology/">“Why We Can't Have Humane Technology”</a> 
 
 ---

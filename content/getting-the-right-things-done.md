@@ -3,7 +3,7 @@ Title: Getting the Right Things Done
 Subtitle: >
     When I write about “productivity,” what am I actually talking about? And why?
 Date: 2018-01-10 19:30
-Tags: productivity
+Tags: [productivity]
 Summary: >
     “Productivity” as such is not the point. The point is faithfully doing the right things, and doing them for love of God and love of neighbors.
 ---

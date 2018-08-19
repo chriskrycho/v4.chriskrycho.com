@@ -8,7 +8,7 @@ Summary: |
     but I shall not mind their steady growth /
     so long as they are mostly wonder /
     …
-Tags: poetry
+Tags: [poetry]
 ...
 
 | The mirror begins to show me lines

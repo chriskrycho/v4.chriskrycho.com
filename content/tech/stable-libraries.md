@@ -3,7 +3,7 @@ Title: Stable Libraries
 Subtitle: "A crazy idea: that sometimes a library might just be… done."
 Date: 2018-08-14 19:45
 Categories: Tech
-Tags: software development, open source software, libraries, true myth, javascript
+Tags: [software development, open source software, libraries, true myth, javascript]
 Summary: >
     True Myth has changed very little since I first released it, and I do not expect it to change much in the future: because it is basically done. I wish more libraries took this approach; churn is not a virtue.
 

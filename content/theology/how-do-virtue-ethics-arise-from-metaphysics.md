@@ -3,7 +3,7 @@ Title: How Do Virtue Ethics Arise From Metaphysics?
 Subtitle: Continuing to think about Shannon Vallor's Technology and the Virtues.
 Date: 2018-07-14 10:15
 Category: Theology
-Tags: virtue ethics, Shannon Vallor, Confucianism, Buddhism, Christianity
+Tags: [virtue ethics, Shannon Vallor, Confucianism, Buddhism, Christianity]
 
 ---
 

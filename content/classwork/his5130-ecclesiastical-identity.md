@@ -4,7 +4,7 @@ Professor: Dr. Nathan Finn
 School: Southeastern Baptist Theological Seminary
 Date: 2015-04-25 10:00
 Category: theology
-Tags: M. Div., SEBTS, papers
+Tags: [M. Div., SEBTS, papers]
 Title: An Uncomfortable Fit
 Subtitle: A Complex, Post-Denominational Ecclesiastical Identity
 Summary: A Complex, Post-Denominational Ecclesiastical Identity: or, how I'm still just a Presmatic Bapterian.

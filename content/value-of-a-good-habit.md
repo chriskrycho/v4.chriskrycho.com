@@ -3,7 +3,7 @@ Title: The Value of a Good Habit
 Subtitle: Reflections on my writing mornings, over half a year in.
 Date: 2018-07-10 22:10
 Category: blog
-Tags: writing, productivity
+Tags: [writing, productivity]
 Summary: >
     I now have seven months of regular writing every morning under my belt. The habit has been productive. Time to start building another new habit (even while I maintain this one)!
 

@@ -5,7 +5,7 @@ Date: 2015-06-02 22:43
 Summary: >
     A response to Senator Sheldon Whitehouse's address to the NSA on Americans’
     greater mistrust of government collection of data than corporations’.
-Tags: listicles
+Tags: [listicles]
 ...
 
 <i class="editorial">[Brian Auten] shared [this speech] by Sen. Sheldon

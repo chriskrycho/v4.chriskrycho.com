@@ -2,7 +2,7 @@
 Title: Good Arguments
 Subtitle: Learning a great deal by disagreeing with an excellent interlocutor—and thinking hard "out loud."
 Date: 2018-06-04 10:30
-Tags: writing, philosophy, ethics
+Tags: [writing, philosophy, ethics]
 Category: Blog
 Summary: >
     I’m reading Shannon Vallor’s Technology and the Virtues—agreeing with a lot, disagreeing with a lot, and learning as much from the disagreements as the agreement. Good arguments are invaluable for clear thinking and the pursuit of truth.

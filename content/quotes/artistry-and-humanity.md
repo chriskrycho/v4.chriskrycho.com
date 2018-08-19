@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2015-04-18 09:05
 Template: formats/quotation
 Category: Theology
-Tags: quotes
+Tags: [quotes]
 Source: Heath A. Thomas, <cite>Poetry and Theology in the Book of Lamentations</cite>, p. xi.
 ...
 

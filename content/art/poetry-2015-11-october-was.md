@@ -1,7 +1,7 @@
 ---
 Title: October was
 Date: 2015-11-05 10:00
-Tags: poetry
+Tags: [poetry]
 Summary: |
     October was a long month, and strange, /
         for how quickly it seemed to end…

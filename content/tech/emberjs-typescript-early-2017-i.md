@@ -4,7 +4,7 @@ Slug: emberjs-typescript-early-2017-i
 Subtitle: It’s not awesome yet… but it is getting there.
 Date: 2017-04-12 22:00
 Category: Tech
-Tags: emberjs, typescript, software development
+Tags: [emberjs, typescript, software development]
 Status: draft
 ---
 

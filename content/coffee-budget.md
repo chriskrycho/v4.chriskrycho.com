@@ -2,7 +2,7 @@
 Title: Corraling My Coffee Habit
 Subtitle: Overthinking it? Maybe. But that should surprise no one!
 Date: 2017-02-23 20:10
-Tags: coffee, finances
+Tags: [coffee, finances]
 ---
 
 Because we buy good coffee and good coffee is expensive, and because we're trying very hard to save for a house, I've been thinking about how to corral that particular budget line.

@@ -2,7 +2,7 @@
 Title: The Chinese Room Argument
 Subtitle: Thinking about what “Strong AI” actually is and means.
 Date: 2018-05-19 11:20
-Tags: AI, ethics, philosophy
+Tags: [AI, ethics, philosophy]
 Category: Tech
 Summary: >
     If “formal operations on symbols cannot produce thought,” what (if anything) does that say about today’s “strong AI” projects and the Turing test itself?

@@ -2,7 +2,7 @@
 Title: CSS Fallback for OpenType Small Caps
 Subtitle: A not-so-great solution which still gets the job done.
 Date: 2015-10-19 20:00
-Tags: design, software development, typography
+Tags: [design, software development, typography]
 ...
 
 <i class=editorial>I wrote this up as [a question on Stack Overflow][?] a bit

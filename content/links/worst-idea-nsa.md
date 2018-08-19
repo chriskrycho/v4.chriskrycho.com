@@ -3,7 +3,7 @@ Date: 2015-04-12 13:16
 Link: http://www.theverge.com/2015/4/12/8392769/nsa-front-door-access-encryption-key
 Template: formats/link
 Category: tech
-Tags: links
+Tags: [links]
 
 The Verge:
 

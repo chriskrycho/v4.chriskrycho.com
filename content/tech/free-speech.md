@@ -3,7 +3,7 @@ Title: “Free Speech”
 Subtitle: The cost of outsourcing our public discourse to private platforms.
 Date: 2018-08-11 10:35
 Category: Tech
-Tags: writing, ethics, politics, social media, Twitter, indie web
+Tags: [writing, ethics, politics, social media, Twitter, indie web]
 Image: http://www.explainxkcd.com/wiki/images/a/ae/free_speech.png
 Summary: >
     Arguments about free speech on these private platforms are exercises in missing the point. The bigger problem is that we have abandoned our public discourse (and nearly everything else) to these companies.

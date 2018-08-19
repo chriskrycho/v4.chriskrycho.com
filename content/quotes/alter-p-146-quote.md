@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2015-05-02 3:20
 Template: formats/quotation
 Category: Theology
-Tags: quotes
+Tags: [quotes]
 Source: Robert Alter, <cite>The Art of Biblical Poetry</cite>, p. 146.
 ...
 

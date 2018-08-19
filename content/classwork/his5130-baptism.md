@@ -7,7 +7,7 @@ Class: Baptist History and Identity
 Date: March 28, 2015 22:00
 Professor: Dr. Nathan Finn
 School: Southeastern Baptist Theological Seminary
-Tags: M. Div., SEBTS, papers
+Tags: [M. Div., SEBTS, papers]
 Summary: Who should be baptized, and how, and by whom? Is rebaptism ever allowed? How does baptism affect church membership or the Lord's Supper?
 
 ## Baptismal Theology and Practice

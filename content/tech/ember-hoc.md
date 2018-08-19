@@ -2,7 +2,7 @@
 Title: Higher-Order Components in Ember.js
 Subtitle: Components as arguments! Components getting yielded! Components everywhere!
 Category: Tech
-Tags: emberjs, javascript, typescript
+Tags: [emberjs, javascript, typescript]
 Date: 2018-05-26 14:00
 Modified: 2018-05-28 06:50
 Summary: >

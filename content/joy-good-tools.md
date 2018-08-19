@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2015-01-09 18:00
 Summary: I started out with a post on being willing to pay for GitHub. I ended up with a meditation on vocation and delight. It's quite the journey!
 Slug: joy-good-tools
-Tags: software development, design, joy
+Tags: [software development, design, joy]
 
 <i class="editorial">Note: This started out as a [series of posts on App.net],
 but as I realized that it was growing a bit, I decided to [take my own advice]

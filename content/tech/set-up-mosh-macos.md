@@ -2,7 +2,7 @@
 Title: Set Up Mosh on macOS
 Subtitle: "TL;DR: brew install, firewall, pfctl, have a nice day!"
 Date: 2017-06-29 08:10
-Tags: macos, sysadmin
+Tags: [macos, sysadmin]
 ---
 
 Last night I bumped back into [Mosh] (by way of [this post]), and decided to give it a whirl -- I had seen it before, and in fact had even installed it, but had never gotten around to giving it a try.

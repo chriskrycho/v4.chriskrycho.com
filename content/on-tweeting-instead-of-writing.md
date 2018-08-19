@@ -3,7 +3,7 @@ Title: On Tweeting (Instead of Writing)
 Subtitle: Or, a lesson (re)learned.
 Date: 2018-05-03 07:30
 Category: blog
-Tags: twitter, social media, writing, rss
+Tags: [twitter, social media, writing, rss]
 Summary: >
     I spent half an hour on Twitter this morning, and tried to engage in some “conversations” there. I wish I hadn’t.
 

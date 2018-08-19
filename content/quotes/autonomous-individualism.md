@@ -3,7 +3,7 @@
 Title: Autonomous Individualism
 Date: 2015-09-26 13:00
 Template: formats/quotation
-Tags: quotes
+Tags: [quotes]
 Category: theology
 Source: Mark A. Seifrid, <cite>The Second Letter to the Corinthians</cite>
 bibliography: /Users/chris/writing/icloud-drive/Documents/writing/library.bib

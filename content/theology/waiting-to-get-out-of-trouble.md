@@ -4,7 +4,7 @@ Template: formats/quotation
 Slug: 11-20-0930
 Date: 2016-11-20 09:30
 Category: theology
-Tags: quotes
+Tags: [quotes]
 Source: Tony Merida, sermon on November 20, 2016
 ...
 

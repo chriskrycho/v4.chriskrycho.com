@@ -2,7 +2,7 @@
 Title: Run With Me!
 Subtitle: A new (micro-)podcast (yes, I know I'm crazy)
 Date: 2016-04-11 21:35
-Tags: fitness, podcasting, design
+Tags: [fitness, podcasting, design]
 ---
 
 I may have gone mad with power or something, but I launched another podcast today! Crazy, I know.

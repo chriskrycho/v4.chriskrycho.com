@@ -3,7 +3,7 @@ Title: Why Everything is Broken
 Subtitle: Because we all forget how broken it is.
 Date: 2016-11-01 20:45
 Category: Tech
-Tags: software development
+Tags: [software development]
 ---
 
 It's something of a joke among many of the software developers I know to wonder aloud how *anything* works. We're all very painfully aware of how hard it is to write correct code, of how hard it is to account for all the corner cases that will arise, and of how hard it is to write user interfaces (of any sort) that make good sense to the user.

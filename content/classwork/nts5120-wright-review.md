@@ -8,7 +8,7 @@ Class: "New Testament I: Jesus and the Gospels"
 Professor: Dr. David Lanier
 School: Southeastern Baptist Theological Seminary
 Category: Theology
-Tags: M. Div., SEBTS, papers, book reviews
+Tags: [M. Div., SEBTS, papers, book reviews]
 ---
 
 

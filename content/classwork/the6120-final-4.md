@@ -4,7 +4,7 @@ Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Date: 2014-05-03 14:00
 Category: theology
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 Title: Communicatio Idiomatum
 Summary: The "communication of attributes" between the divine and human natures in Jesus is one of the most important affirmations of the faith. In Jesus were united all that it is to be God and all that it is to be man.
 Template: formats/class

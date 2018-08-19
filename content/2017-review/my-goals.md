@@ -3,7 +3,7 @@ Title: "2017 in Review: My Goals"
 Subtitle: Not the year we expected. But a good year nonetheless.
 Date: 2017-12-24 17:50
 Category: blog
-Tags: productivity, writing, family, fitness, podcasting, software development, 2017-review
+Tags: [productivity, writing, family, fitness, podcasting, software development, 2017-review]
 Summary: >
     Thinking about how this year went and what I accomplished, and how I would like the next year to go and what I would like to accomplish then, has become an important part of my life. There is much value in taking stock and making plans—as long as you hold those plans loosely.
 

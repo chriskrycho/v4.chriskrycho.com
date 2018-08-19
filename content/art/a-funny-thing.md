@@ -2,7 +2,7 @@
 Title: through a paper veil
 Date: 2016-02-23 15:16
 Category: art
-Tags: poetry
+Tags: [poetry]
 Summary: >
    An author does a strange thing / when he writes the words “at present.” / …
 ...

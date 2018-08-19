@@ -3,7 +3,7 @@ Author: Chris Krycho
 Date: 2014-02-01 08:30
 Topic: Are people born guilty of sin?
 Category: theology
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 Class: Christian Theology II
 School: Southeastern Baptist Theological Seminary
 Professor: Dr. Steve McKinion

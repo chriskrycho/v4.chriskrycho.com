@@ -2,7 +2,7 @@
 Title: Where Do I File This?
 Subtitle: Information architecture is <em>hard</em>.
 Date: 2017-02-19 11:00
-Tags: writing
+Tags: [writing]
 ---
 
 I want to write more. Blogging does me good. [I say this][repeating] often, but I'm finally coming to a point where it might be a bit more doable. Finishing my M. Div. is giving me more time, and that's *really* wonderful. The trick now is deciding which of the many things I want to do will get my attention. I can split my focus a thousand ways, or I can pick a few tasks and zero in on them and aim to be good at them.

@@ -3,7 +3,7 @@ Author: Chris Krycho
 Date: 2014-03-18 08:00
 Topic: Why was the resurrection of Jesus necessary for salvation?
 Category: theology
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary

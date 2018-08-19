@@ -3,7 +3,7 @@ Title: Becoming a Contributor
 Subtitle: The prepared script for my talk at Rust Belt Rust 2017, given October 27, 2017 in Columbus, Ohio.
 Summary: The prepared script for my talk at Rust Belt Rust 2017, given October 27, 2017 in Columbus, Ohio.
 Category: Tech
-tags: talks, software development, rust, open source software
+Tags: [talks, software development, rust, open source software]
 Date: 2017-11-02 07:00
 
 ---

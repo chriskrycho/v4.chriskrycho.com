@@ -3,7 +3,7 @@ Title: "Thinking, Fast and Slow: A Review"
 Subtitle: Learning how we think can be a powerful tool for thinking better.
 Date: 2017-07-11 20:30
 Category: Blog
-Tags: books, book-reviews
+Tags: [books, book-reviews]
 Summary: >
     Recommended: Kahneman is a talented writer, has a fascinating research history, and makes a good case; there's a lot to learn here, and the quibbles I have are just that: quibbles.
 

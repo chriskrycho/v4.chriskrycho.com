@@ -3,7 +3,7 @@ Title: “Life Hacks” Are Dumb
 Subtitle: What if we sought wisdom instead?
 Date: 2018-05-30 07:00
 Category: Theology
-Tags: wisdom, culture, life hacks
+Tags: [wisdom, culture, life hacks]
 Summary: >
     The anthropology implicit in the phrase “life hacking” is dumb. What we need is wisdom.
 ---

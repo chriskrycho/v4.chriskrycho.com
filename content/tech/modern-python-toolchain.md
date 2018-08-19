@@ -1,7 +1,7 @@
 ---
 Title: A Modern Python Development Toolchain
 Date: 2015-05-16 22:40
-Tags: Software Development
+Tags: [Software Development]
 Summary: >
     Using homebrew, pyenv, and pip to manage Python development environments
     and workspaces.

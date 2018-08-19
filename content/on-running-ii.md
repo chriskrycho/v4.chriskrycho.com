@@ -5,7 +5,7 @@ Series:
   Title: On Running
   Part: 2
 Date: 2015-11-22 11:00
-Tags: fitness
+Tags: [fitness]
 ...
 
 A few weeks ago, I ran the [City of Oaks][coo] half marathon event for the third

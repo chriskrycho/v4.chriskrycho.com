@@ -2,7 +2,7 @@ Title: Public-ish Plans
 Subtitle: A few goals for 2015
 Author: Chris Krycho
 Date: 2015-01-02 20:15
-Tags: listicles
+Tags: [listicles]
 Summary: A totally informal list of things I kind of hope to get done in public in 2015.
 
 I have not (yet) made a formal list of goals for 2015, though I think I may do

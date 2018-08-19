@@ -1,7 +1,7 @@
 ---
 Title: Static Site Generators and Podcasting
 Subtitle: Publishing podcasts the hard way.
-Tags: software development, podcasting, python, rust
+Tags: [software development, podcasting, python, rust]
 Date: 2016-02-28 12:50
 ...
 

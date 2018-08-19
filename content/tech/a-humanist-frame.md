@@ -2,7 +2,7 @@
 Title: A Humanist Frame
 Subtitle: Avoiding the usual conservative mistake of stopping with the mere rejection of something bad
 Date: 2018-05-01 07:00
-Tags: ethics, community
+Tags: [ethics, community]
 Category: tech
 Summary: >
     A few thoughts this morning on technologies, community, and the need for a positive (as well as a negative) vision of technology, cities, and indeed liberty—taking the latest issue of Michael Sacasas' newsletter The Convivial Society as a jumping off point.

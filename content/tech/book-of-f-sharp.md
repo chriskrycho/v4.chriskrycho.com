@@ -3,7 +3,7 @@ Title: The Book of F♯
 Subtitle: A so-so book about a slightly strange language.
 Date: 2017-07-21 19:30
 Category: Tech
-Tags: book-reviews, programming languages, fsharp, writing, pedagogy
+Tags: [book-reviews, programming languages, fsharp, writing, pedagogy]
 Summary: >
     Recommended With Qualifications: This book is just okay, and at this point it’s a bit outdated—but if you're in its fairly narrow target audience, it’s a decent way to get up to speed on F♯.
 

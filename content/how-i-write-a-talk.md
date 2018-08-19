@@ -2,7 +2,7 @@
 Title: How I Write a Talk
 Subtitle: This might not work for you. But it works for me!
 Date: 2018-03-16 20:00
-Tags: writing, talks
+Tags: [writing, talks]
 Category: Blog
 Summary: >
     Giving a good talk is mostly a matter of writing a good talk and crafting a coherent presentation of that material (with or without slides or other helpers). In this post, I’m going to briefly walk through how *I* prepare talks. This process may not work for you at all; sometimes I read other people’s talk preparation strategies and laugh because they’re so wildly different from mine. But this way there’s one more strategy documented out there.

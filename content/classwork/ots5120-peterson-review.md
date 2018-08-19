@@ -7,7 +7,7 @@ Class: Old Testament Introduction II
 Professor: Dr. Heath Thomas
 School: Southeastern Baptist Theological Seminary
 Category: Theology
-Tags: M. Div., SEBTS, book reviews
+Tags: [M. Div., SEBTS, book reviews]
 
 _Five Smooth Stones for Pastoral Work_, by Eugene H. Peterson. Grand Rapids:
 Eerdmans, 1980. 241 pp. $20.

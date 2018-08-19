@@ -1,7 +1,7 @@
 ---
 Title: I am not a Grinch
 Date: 2016-12-10 08:43
-Tags: poetry
+Tags: [poetry]
 Category: art
 ---
 

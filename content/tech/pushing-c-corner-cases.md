@@ -2,7 +2,7 @@
 Title: Pushing Into C's Corner Cases
 Author: Chris Krycho
 Date: 2014-08-12 09:00
-Tags: software development
+Tags: [software development]
 ...
 
 I'm working on a project that is all in C because of its long history and

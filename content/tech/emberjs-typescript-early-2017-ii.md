@@ -4,7 +4,7 @@ Slug: emberjs-typescript-early-2017-ii
 Subtitle: Configuring and using TypeScript in your Ember.js app today.
 Date: 2017-04-13 21:00
 Category: Tech
-Tags: emberjs, typescript, software development
+Tags: [emberjs, typescript, software development]
 Status: draft
 ---
 

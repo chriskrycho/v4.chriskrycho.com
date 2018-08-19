@@ -1,7 +1,7 @@
 ---
 Title: Easier
 Date: 2015-05-17 11:15
-Tags: poetry
+Tags: [poetry]
 Summary: |
     ’Tis easier, I confess
         to speak of savor than

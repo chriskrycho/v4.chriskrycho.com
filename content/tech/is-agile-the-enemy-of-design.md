@@ -2,7 +2,7 @@
 Title: Is Agile the Enemy of Good Design?
 Subtitle: John Cutler on “Agile,” good design, and the reasons the two often seem at odds.
 Date: 2018-07-29 16:15
-Tags: design, agile, software development, business
+Tags: [design, agile, software development, business]
 Category: tech
 Summary: >
     This is painfully accurate: “It is all about “ship, ship, ship”. We don’t pivot. We don’t refine. The product owner just wants to mark it done in Jira. The MVPs are an excuse to get crappy stuff out the door.”

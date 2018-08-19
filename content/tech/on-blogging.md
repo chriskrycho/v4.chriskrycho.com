@@ -3,7 +3,7 @@ Title: On Blogging
 Subtitle: A few thoughts on Medium, micro.blog, and the open web.
 Date: 2017-01-04 23:25
 Category: Tech
-Tags: writing, open web
+Tags: [writing, open web]
 Summary: >
     A few thoughts on Medium, micro.blog, and the open web.
 ---

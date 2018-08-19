@@ -1,7 +1,7 @@
 ---
 Title: Learning to Stay
 Date: 2017-03-12 07:55
-Tags: ecclesiology
+Tags: [ecclesiology]
 Category: Theology
 Status: draft
 ---

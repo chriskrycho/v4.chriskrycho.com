@@ -2,7 +2,7 @@
 Title: Typing Your Ember, Part 3
 Subtitle: How to actually use types effectively in Ember today.
 Date: 2017-07-28 12:00
-Tags: emberjs, typescript, typing-your-ember
+Tags: [emberjs, typescript, typing-your-ember]
 Category: tech
 
 ---

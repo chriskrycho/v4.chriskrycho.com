@@ -3,7 +3,7 @@ Title: Intentional Cyclicality
 Subtitle: (Being a bit seasonal on purpose.)
 Date: 2018-03-06 07:00
 Category: blog
-Tags: writing
+Tags: [writing]
 Summary: >
     The kinds of cycles I often into naturally are not bad things—but I might be better served by letting my other goals and aims directly inform how much I blog (rather than its being mere incidental fallout).
 

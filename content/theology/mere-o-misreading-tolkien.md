@@ -2,7 +2,7 @@
 Title: "Misreading Tolkien and Misreading Scripture: Responding to O’Keefe and Reno"
 Date: 2016-07-25 10:00
 Template: formats/link
-Tags: links, my writing elsewhere
+Tags: [links, my writing elsewhere]
 Category: Theology
 Link: https://mereorthodoxy.com/misreading-tolkien-hermeneutics-allegory-lord-rings/
 ---

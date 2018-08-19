@@ -2,7 +2,7 @@
 Title: Better Off Using Exceptions?
 Subtitle: Maybe, but only if your language demands it.
 Date: 2017-02-20 12:00
-Tags: fsharp, software development, rust, functional programming
+Tags: [fsharp, software development, rust, functional programming]
 Category: Tech
 ---
 

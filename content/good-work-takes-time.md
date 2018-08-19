@@ -3,7 +3,7 @@ Title: Good Work Takes Time
 Subtitle: (And most of that time is invisible from the outside.)
 Date: 2018-02-17 18:00
 Category: blog
-Tags: software development, writing, ethics
+Tags: [software development, writing, ethics]
 Summary: >
     It’s obvious enough when you say it aloud, of course, but it bears reiterating, and often: Good work takes time, and most of the time and effort behind good projects remains forever invisible.
 

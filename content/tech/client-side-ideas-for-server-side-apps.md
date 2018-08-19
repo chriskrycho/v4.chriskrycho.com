@@ -2,7 +2,7 @@
 Title: Client-Side Ideas for Server-Side Apps
 Subtitle: I suddenly just discovered that I do actually want Ember.js (or React) for a static site. Why? Components.
 Date: 2018-06-07 16:00
-Tags: emberjs, javascript, web design
+Tags: [emberjs, javascript, web design]
 Summary: >
     It turns out that a bunch of the tools we've built for front-end web development are really, really nice ways to build UI. Who could have guessed, from all the kvetching you hear about them?
 

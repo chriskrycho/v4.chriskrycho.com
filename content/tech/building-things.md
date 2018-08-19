@@ -2,7 +2,7 @@
 Title: Building Things
 Subtitle: A meander on leadership roles and the kinds of contributions we make.
 Date: 2018-08-06 21:15
-Tags: software development, leadership, podcasting, New Rustacean
+Tags: [software development, leadership, podcasting, New Rustacean]
 Category: tech
 Summary: >
     On “force multipliers” and being an individual contributor at heart—even if one who is good at teaching and who enjoys leading.

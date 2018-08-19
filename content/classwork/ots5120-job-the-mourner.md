@@ -6,7 +6,7 @@ Professor: Dr. Heath Thomas
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
 Category: theology
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 
 The book of Job has most commonly been read as theodicy, i.e. as a defense of
 God's goodness in the face of human suffering and the existence of evil in the

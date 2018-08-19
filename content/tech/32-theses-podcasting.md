@@ -1,7 +1,7 @@
 ---
 Title: "32 Theses (and several more words) on Podcasting"
 Date: 2016-08-09 10:30
-Tags: podcasting, my writing elsewhere, links
+Tags: [podcasting, my writing elsewhere, links]
 Template: formats/link
 Link: https://mereorthodoxy.com/theses-on-podcasting/
 ---

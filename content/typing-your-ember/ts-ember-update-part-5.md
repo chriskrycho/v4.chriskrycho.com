@@ -4,7 +4,7 @@ Subtitle: TODO
 Date: 2018-01-25 07:00
 Category: Tech
 Series: Typing Your Ember
-Tags: TypeScript, emberjs, typing-your-ember
+Tags: [TypeScript, emberjs, typing-your-ember]
 slug: typing-your-ember-update-part-5
 Summary: >
     TODO

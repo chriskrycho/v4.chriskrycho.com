@@ -1,7 +1,7 @@
 ---
 Title: “Abi’s Processional”
 Date: 2016-10-04 07:31
-Tags: music, composed music, links
+Tags: [music, composed music, links]
 Template: formats/link
 Link: https://soundcloud.com/chriskrycho/abis-processional
 Category: art

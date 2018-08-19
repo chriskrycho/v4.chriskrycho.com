@@ -7,7 +7,7 @@ Summary: >
     Angular requires <code><base></code> if you want to use HTML5's
     <code>location</code>… but if you get it wrong, SVG things can and will
     break under you.
-Tags: software development, angularjs, javascript
+Tags: [software development, angularjs, javascript]
 Modified: 2015-07-02 22:00
 ...
 

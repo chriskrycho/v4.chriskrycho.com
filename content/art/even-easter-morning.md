@@ -1,6 +1,6 @@
 ---
 Title: even Easter morning
-Tags: poetry
+Tags: [poetry]
 Date: 2016-03-27 11:50
 Subtitle: A Resurrection Sunday meditation
 Summary: |

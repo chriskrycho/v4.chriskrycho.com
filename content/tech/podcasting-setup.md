@@ -4,7 +4,7 @@ Subtitle: >
   Recommendations and anti-recommendations for would-be podcasters.
 Image: TODO
 Date: 2017-01-27 12:00
-Tags: podcasting
+Tags: [podcasting]
 Category: Tech
 Status: draft
 ---

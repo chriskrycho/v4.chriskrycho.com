@@ -8,7 +8,7 @@ Template: formats/class
 Professor: Dr. Marty Jacobin
 Class: Sermon Delivery
 School: Southeastern Baptist Theological Seminary
-Tags: sermons, SEBTS, M. Div.
+Tags: [sermons, SEBTS, M. Div.]
 Category: theology
 ---
 

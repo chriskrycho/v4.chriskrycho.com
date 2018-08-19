@@ -1,7 +1,7 @@
 ---
 Title: the clouds I miss
 Date: 2016-05-20 15:00
-Tags: poetry, travel
+Tags: [poetry, travel]
 Category: art
 ---
 

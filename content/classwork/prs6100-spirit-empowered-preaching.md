@@ -7,7 +7,7 @@ Class: Biblical Exposition I
 Professor: Dr. Jim Shaddix
 School: Southeastern Baptist Theological Seminary
 Category: Theology
-Tags: M. Div., SEBTS, papers, book reviews
+Tags: [M. Div., SEBTS, papers, book reviews]
 ...
 
 Arturo G. Azurdia III spent several decades preaching and pastoring. He was thus

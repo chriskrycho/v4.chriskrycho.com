@@ -3,7 +3,7 @@ Title: Using Rust for ‘Scripting’
 Subtitle: "With a bonus: cross-compiling from macOS to Windows!"
 Date: 2016-11-14 22:00
 Category: Tech
-Tags: rust, software development, programming languages
+Tags: [rust, software development, programming languages]
 Summary: >
     Why I might use Rust instead of Python, with walkthroughs for building a simple "script"-like program and a guide for cross-compiling Rust code to Windows from macOS.
 Modified: 2016-11-15 09:00

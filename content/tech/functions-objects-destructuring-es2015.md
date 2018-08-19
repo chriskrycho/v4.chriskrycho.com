@@ -3,7 +3,7 @@ Title: Functions, Objects, and Destructuring in JavaScript
 Subtitle: On functions in JS and some fun bits in ES2015 in particular
 Date: 2017-03-27 18:00
 Category: tech
-Tags: javascript
+Tags: [javascript]
 ---
 
 <i class=editorial>A colleague just getting his feet wet with JavaScript, and coming from a background with much more C# than JavaScript, sent me a question on Slack the other day, and I realized the answer I'd written up was more generally helpful, so here you go!</i>

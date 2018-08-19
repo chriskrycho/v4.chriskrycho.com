@@ -2,7 +2,7 @@
 Title: Knowing Your Rhythms
 Subtitle: "Or: why I'm marking out all the time before 7am as <em>mine</em>."
 Date: 2017-12-11 06:50
-Tags: productivity
+Tags: [productivity]
 
 ---
 

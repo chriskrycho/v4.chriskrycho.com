@@ -1,7 +1,7 @@
 ---
 Title: A Little Status Update
 Subtitle: How my experiment in early-morning writing is going, three days in.
-Tags: writing, productivity
+Tags: [writing, productivity]
 Date: 2017-12-13 18:45
 
 ---

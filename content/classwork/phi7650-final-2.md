@@ -9,7 +9,7 @@ Professor: Dr. Greg Welty
 School: Southeastern Baptist Theological Seminary
 Date: 2016-05-17 22:21
 Category: theology
-Tags: M. Div., SEBTS, philosophy, science
+Tags: [M. Div., SEBTS, philosophy, science]
 ---
 
 <i class="editorial">What is the fine-tuning argument for God’s existence, what are two of the strongest objections to it, and how would you respond to those objections?</i>

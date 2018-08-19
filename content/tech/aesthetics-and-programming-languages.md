@@ -3,7 +3,7 @@ Title: Aesthetics and Programming Languages
 Subtitle: Why does C♯ drive me insane but I love Rust?
 Date: 2018-05-13 11:00
 Category: Tech
-Tags: csharp, rust, programming languages
+Tags: [csharp, rust, programming languages]
 Summary: >
     Rust isn’t exactly prettier than C♯, but its aesthetics don’t drive me up the wall the same way. Why not?
 

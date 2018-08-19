@@ -1,7 +1,7 @@
 ---
 Title: Vacation as Helpful Reminder
 Date: 2018-05-09 21:00
-Tags: work
+Tags: [work]
 Category: blog
 
 ---

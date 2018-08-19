@@ -3,7 +3,7 @@ Title: Testing Ember.js Mixins (and Helpers) With a Container
 Subtitle: Fixing "Attempting to lookup an injected property on an object without a container" errors in mixin and helper tests.
 Date: 2016-06-09 20:35
 Modified: 2017-04-20 07:15
-Tags: emberjs, javascript, software development
+Tags: [emberjs, javascript, software development]
 Category: tech
 Slug: testing-emberjs-mixins-with-a-container
 

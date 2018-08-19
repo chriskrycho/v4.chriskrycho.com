@@ -3,7 +3,7 @@ Title: He who knew no sin...
 Date: 2015-09-01 16:16
 Template: formats/quotation
 Category: Theology
-Tags: quotes
+Tags: [quotes]
 Source: 2 Corinthians 5:21 (SBLGNT and my translation)
 ...
 

@@ -3,7 +3,7 @@ Author: Chris Krycho
 Date: 2014-01-25 08:00
 Topic: Why was it a sin to eat of the fruit of the tree of the knowledge of good and evil?
 Category: theology
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary

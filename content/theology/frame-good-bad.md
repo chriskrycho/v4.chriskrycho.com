@@ -3,7 +3,7 @@ Title: Constant Evaluation
 Subtitle: Or, John Frame as an example of how we ought to read carefully.
 Date: 2016-09-13 07:10
 Category: Theology
-Tags: classwork, SEBTS, M.Div., reading
+Tags: [classwork, SEBTS, M.Div., reading]
 ---
 
 I'm reading John Frame's _The Doctrine of the Christian Life_, and find a great deal to commend in it, but also some real head-scratchers. The same page, for example (287), includes both of these quotes---

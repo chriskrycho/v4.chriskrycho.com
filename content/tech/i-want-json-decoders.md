@@ -5,7 +5,7 @@ canonical: https://www.dailydrip.com/blog/i-want-json-decoders.html
 Summary: >
     Parsing JavaScript well is a solved problem in lots of contexts. But it's time for JavaScript to take a page from Elm.
 Category: Tech
-Tags: JavaScript, Elm, TypeScript, web development, software development
+Tags: [JavaScript, Elm, TypeScript, web development, software development]
 Date: 2017-12-25 19:20
 
 ---

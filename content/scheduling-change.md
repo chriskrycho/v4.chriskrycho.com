@@ -3,7 +3,7 @@ Title: A New Schedule
 Subtitle: Trying to make better use of my time toward my goals.
 Date: 2016-07-16 22:10
 Modified: 2016-07-18 11:45
-Tags: productivity
+Tags: [productivity]
 ---
 
 I tried something this week; we will see if it sticks. In the aim of being *much* more productive with my time, and with the idea that I hit a minimum of 40 hours a week between school and work,[^40-hours] I made the following changes:

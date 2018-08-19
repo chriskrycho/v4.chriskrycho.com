@@ -3,7 +3,7 @@ Title: An Excursus on Ipsums
 Summary: Using pseudo-random ipsum text to test and demonstrate the styles in an article of the highest possible complexity.
 Author: Chris Krycho
 Date: 2015-06-28 08:00
-Tags: devotions, papers, hot tamales
+Tags: [devotions, papers, hot tamales]
 Category: Fried Things
 Status: draft
 ---

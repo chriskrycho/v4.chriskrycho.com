@@ -1,7 +1,7 @@
 ---
 Title: "#EmberJS2018, Part 1"
 Subtitle: Finishing What We've Started
-Tags: emberjs, javascript, typescript, emberjs2018
+Tags: [emberjs, javascript, typescript, emberjs2018]
 Category: Tech
 Slug: emberjs2018-part-1
 Date: 2018-05-11 09:30

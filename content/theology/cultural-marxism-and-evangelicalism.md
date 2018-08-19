@@ -2,7 +2,7 @@
 Title: "“Cultural Marxism” and “Evangelicalism”"
 Date: 2018-05-10 07:30
 Category: Theology
-Tags: evangelicalism, culture
+Tags: [evangelicalism, culture]
 Summary: >
     Would Gramsci or Bebbington recognize your use of the terms?
 

@@ -2,7 +2,7 @@
 Title: Future Hope, Resurrection Bodies, and a Coming Kingdom
 Subtitle: Evaluating the nature of hope in <cite>Life Everlasting</cite>
 Date: 2015-06-13 22:00
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 Summary: >
     Dan C. Barber and Robert A. Peterson's <cite>Life Everlasting</cite> is a
     helpful corrective to pop evangelicalism's views on heaven in some ways… but

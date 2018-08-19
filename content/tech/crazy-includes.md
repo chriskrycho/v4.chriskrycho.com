@@ -2,7 +2,7 @@ title: A Ridiculous Situation
 subtitle: The craziest include structure I've ever seen.
 author: Chris Krycho
 date: 2014-11-07 21:00
-Tags: software development
+Tags: [software development]
 Summary: An example of just how deep the rabbit-hole can go.
 
 One of the pieces of code I'm maintaining has an *absurd* situation in its build

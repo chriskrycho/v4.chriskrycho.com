@@ -1,7 +1,7 @@
 Title: Learning QML, Part 1
 Author: Chris Krycho
 Date: 2014-04-11 15:30
-Tags: software development
+Tags: [software development]
 
 For part of my work with Quest Consultants, I've been picking up Qt's QML
 toolkit to use in building out the UI. The declarative syntax and ability to

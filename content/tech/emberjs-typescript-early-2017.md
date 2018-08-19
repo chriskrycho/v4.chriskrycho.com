@@ -3,7 +3,7 @@ Title: Ember.js and TypeScript in Early 2017
 Subtitle: It’s not awesome yet… but it is getting there.
 Date: 2017-04-11 22:00
 Category: Tech
-Tags: emberjs, typescript, software development
+Tags: [emberjs, typescript, software development]
 Status: draft
 ---
 

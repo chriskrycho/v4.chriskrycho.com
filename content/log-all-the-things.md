@@ -3,7 +3,7 @@ Title: Log All the Things!
 Subtitle: "Or: sometimes it’s nice to know what I did this week."
 Date: 2017-07-07 20:00
 Category: blog
-Tags: productivity, pomodoro
+Tags: [productivity, pomodoro]
 ---
 
 For the past few weeks, I've tried adding something new to my existing [pomodoro routine](http://www.chriskrycho.com/2016/2016-review-5.html "Getting things done in 2016 and beyond"): a daily and weekly summary of what I've done.

@@ -3,7 +3,7 @@ Title: The Front End is a Full Stack
 Subtitle: Or, a sketch of modern front-end web development.
 Date: 2018-02-14 10:30
 Category: Tech
-Tags: talks
+Tags: [talks]
 Status: draft
 
 ---

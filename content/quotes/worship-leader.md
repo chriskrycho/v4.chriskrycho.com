@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2014-12-02 21:25
 Template: formats/quotation
 Category: Theology
-Tags: quotes
+Tags: [quotes]
 Source: Bob Kauflin, <cite>Worship Matters</cite>, p. 55.
 ...
 

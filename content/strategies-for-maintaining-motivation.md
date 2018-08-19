@@ -3,7 +3,7 @@ Title: Strategies for Maintaining Motivation
 Subtitle: Because we all know projects themselves cannot be interesting forever.
 Date: 2018-06-03 11:00
 Category: Blog
-Tags: productivity, work
+Tags: [productivity, work]
 Summary: >
     A thing I’ve been thinking about a bit over the last few weeks is how to sustain motivation as you come into the "this no longer holds any intrinsic interest for me" phase of a project. Here I’m jotting down a couple of the strategies I’ve been taking so far; I’ll probably have another post like this in roughly six months when these particular projects are wrapped up.
 

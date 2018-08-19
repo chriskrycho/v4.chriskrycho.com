@@ -1,7 +1,7 @@
 ---
 Title: Announcing ember-cli-typescript 1.1.0
 Subtitle: Now with generators, support for addons, and incremental compilation!
-Tags: emberjs, typescript, javascript, typing-your-ember
+Tags: [emberjs, typescript, javascript, typing-your-ember]
 Category: Tech
 Date: 2018-02-12 07:00
 Summary: >

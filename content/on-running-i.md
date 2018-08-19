@@ -5,7 +5,7 @@ Date: 2015-10-12 20:00
 Series:
   Title: On Running
   Part: 1
-Tags: fitness
+Tags: [fitness]
 ...
 
 Sometime in the last few years, I became "that runner guy." It is no longer strange for me to introduce myself to someone new in the area we live, and hear them say, "Have I seen you running?" I smile and nod: "Yep, that's me." And to be fair, I do run a lot: six days a week, most weeks, always at least half an hour. In three weeks, I'll run my seventh half marathon,[^7th] and I finished my first triathlon last summer. So, yes, I do run a lot.

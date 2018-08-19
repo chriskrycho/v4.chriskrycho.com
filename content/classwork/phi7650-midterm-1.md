@@ -9,7 +9,7 @@ Professor: Dr. Greg Welty
 School: Southeastern Baptist Theological Seminary
 Date: 2016-03-15 12:30
 Category: theology
-Tags: M. Div., SEBTS, philosophy, science
+Tags: [M. Div., SEBTS, philosophy, science]
 ...
 
 <i>What is the problem of induction? Discuss two proposed solutions to this problem, and explain why (in your view) they are adequate solutions or defective ones.</i>

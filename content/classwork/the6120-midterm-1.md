@@ -5,7 +5,7 @@ Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Date: 2014-03-05 14:00
 Category: theology
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 Summary: God told Adam that if he ate of the tree of the knowledge of good and evil he would die on that day. Since Adam did not physically die that day, God must have made a mistake, lied, changed his mind—or been speaking of something other than physical death.
 Template: formats/class
 

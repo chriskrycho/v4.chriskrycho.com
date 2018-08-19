@@ -9,7 +9,7 @@ nocite: |
     @erickson, @lacugna
 Category: Theology
 Template: formats/class
-Tags: SEBTS, M. Div., papers,
+Tags: [SEBTS, M. Div., papers,]
 Class: The Doctrine of the Trinity
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary

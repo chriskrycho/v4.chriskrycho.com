@@ -4,7 +4,7 @@ Subtitle: Wishing and proclaiming it isn't doesn't make it so.
 Author: Chris Krycho
 Date: 2017-02-21 17:00
 Category: Tech
-Tags: ethics
+Tags: [ethics]
 ---
 
 It is common, when stories break about horrible company cultures in ---as [one did this week about Uber][uber], and as [one did last year about Amazon][amazon]---for the <abbr>CEO</abbr>s to say things like:

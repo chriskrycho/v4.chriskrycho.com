@@ -7,7 +7,7 @@ Slug: next-gen-vcs
 Author: Chris Krycho
 Date: 2014-10-16 21:45
 Modified: 2014-10-20 07:25
-Tags: software development
+Tags: [software development]
 ...
 
 The current state of affairs in version control systems is a mess. To be sure,

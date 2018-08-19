@@ -1,7 +1,7 @@
 ---
 Title: "#EmberJS2018, Part 2"
 Subtitle: Doubling Down on Documentation
-Tags: emberjs, javascript, typescript, emberjs2018
+Tags: [emberjs, javascript, typescript, emberjs2018]
 Category: Tech
 Slug: emberjs2018-part-2
 Date: 2018-05-18 22:00

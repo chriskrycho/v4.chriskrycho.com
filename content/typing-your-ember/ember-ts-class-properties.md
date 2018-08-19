@@ -4,7 +4,7 @@ Subtitle: An important set of corrections about the behavior of class properties
 Date: 2018-07-10 20:00
 Category: Tech
 Series: Typing Your Ember
-Tags: TypeScript, emberjs, typing-your-ember
+Tags: [TypeScript, emberjs, typing-your-ember]
 slug: ember-ts-class-properties
 Summary: >
     I made an important mistake in my discussion of JavaScript and TypeScript class properties in relation to computed properties and injections in Ember earlier this year. Here's the fix you need.

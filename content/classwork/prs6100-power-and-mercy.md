@@ -3,7 +3,7 @@ Title: Power and Mercy
 Date: 2015-12-09 12:30
 Author: Chris Krycho
 Category: theology
-Tags: SEBTS, M. Div., sermons
+Tags: [SEBTS, M. Div., sermons]
 Template: formats/class
 Class: Bible Exposition I
 Professor: Dr. Jim Shaddix

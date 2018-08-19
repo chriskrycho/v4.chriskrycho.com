@@ -1,7 +1,7 @@
 ---
 Title: A Book List!
 Subtitle: Because I want to tell you everything I'm reading!
-Tags: reading, writing
+Tags: [reading, writing]
 Date: 2017-07-08 21:45
 
 ---

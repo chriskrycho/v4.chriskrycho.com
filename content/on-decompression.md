@@ -2,7 +2,7 @@
 Title: On Decompression
 Subtitle: A (brief) meditation on rest—and reading lists.
 Date: 2017-06-10 10:00
-Tags: reading, writing, rest
+Tags: [reading, writing, rest]
 Summary: I’ve been thinking about reading plans and books lists. And rest. And I'm taking a break from formal plans for the rest of this year, because I and our family need it.
 
 ---

@@ -2,7 +2,7 @@
 Title: Consistency in User Interfaces
 Subtitle: Or, one part of why Git has such a learning curve.
 Date: 2016-07-15 10:37
-Tags: git, software development
+Tags: [git, software development]
 Category: tech
 ---
 

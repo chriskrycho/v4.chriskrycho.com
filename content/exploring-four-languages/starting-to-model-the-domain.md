@@ -2,7 +2,7 @@
 Title: "Exploring 4 Languages: Starting to Model the Domain"
 Subtitle: How we use types to capture business concepts in Rust, Elm, F<sup>♯</sup>, and ReasonML.
 Date: 2018-01-14 09:00
-Tags: functional programming, rust, elm, fsharp, reasonml, domain-driven design, four-languages
+Tags: [functional programming, rust, elm, fsharp, reasonml, domain-driven design, four-languages]
 Category: Tech
 Summary: >
     Using the type systems of Rust, Elm, F♯, and ReasonML to encode the elements of a domain model—and starting to get some idea how the languages are like and unlike each other.

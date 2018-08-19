@@ -3,7 +3,7 @@ Title: Vectors and Iterator Access in Rust
 Subtitle: Be careful not to move things instead of borrowing them.
 Category: Tech
 Date: 2016-06-16 20:59
-Tags: rust
+Tags: [rust]
 ---
 
 <i class="editorial">In the midst of doing my reading and research for New Rustacean episode 15 (which will be out fairly soon after I post this), I bumped into this little tidbit. It doesn't fit in the episode, so I thought I'd share it here.</i>

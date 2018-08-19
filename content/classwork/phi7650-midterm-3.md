@@ -9,7 +9,7 @@ Professor: Dr. Greg Welty
 School: Southeastern Baptist Theological Seminary
 Date: 2016-03-15 12:32
 Category: theology
-Tags: M. Div., SEBTS, philosophy, science
+Tags: [M. Div., SEBTS, philosophy, science]
 ...
 
 <i>Adjudicating the realism/anti-realism debate in science often involves discussion of 'miracles,' the 'observable/unobservable distinction,' and 'underdetermination'. Pick one of these three areas and develop an argument for realism or anti-realism in terms of it. Don't forget to assess the argument.</i>

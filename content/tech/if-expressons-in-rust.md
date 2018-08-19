@@ -1,7 +1,7 @@
 ---
 Title: If-expressions in Rust
 Date: 2015-09-12 11:05
-Tags: software development, programming languages, rust, python
+Tags: [software development, programming languages, rust, python]
 Modified: 2015-09-12 11:10
 ...
 

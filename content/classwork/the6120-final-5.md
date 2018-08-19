@@ -4,7 +4,7 @@ Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Date: 2014-05-03 14:00
 Category: theology
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 Title: The Divinity of Jesus
 Summary: Failing to affirm the divinity of Christ means failing to affirm one of the essentials of the faith. Without Christ's divinity, there is no salvation for any of us.
 Template: formats/class
