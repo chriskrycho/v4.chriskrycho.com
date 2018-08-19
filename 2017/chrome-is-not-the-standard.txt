@@ -2,7 +2,7 @@
 Title: Chrome is Not the Standard
 Subtitle: Developer infatuation with Chrome is not good—because competition between browsers is good.
 Category: Tech
-Tags: web development
+Tags: [web development]
 Summary: >
     No single browser vendor represents ”the future of the web.” Each ships in line with its own business priorities. And that's a good thing.
 Date: 2017-12-21 07:10

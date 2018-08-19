@@ -3,7 +3,7 @@ Title: Imprecatory Psalms and Comfort for Weary Souls
 Subtitle: They do more (though not less) than teach us about God's judgment.
 Date: 2018-08-08 07:00
 Category: Theology
-Tags: psalms, prayer, burnout
+Tags: [psalms, prayer, burnout]
 Summary: >
     Psalm 94 shows us what to pray and how to pray, even when our circumstances are not so dire as enemies trying to murder us.
 ---

@@ -2,7 +2,7 @@
 Title: Y Combinators, how do they even work?
 Subtitle: "A commentary on a blog post by Matt Might, or: learning out loud."
 Date: 2016-06-19 09:20
-Tags: javascript, software development, programming languages
+Tags: [javascript, software development, programming languages]
 ---
 
 <i class=editorial>I was reading [a post] by [Matt Might], a computer science professor at the University of Utah, about Y Combinators, and I was having a hard time tracking with some of it just by reading. The way I normally solve this problem is to write it out---and, optimally, to write it out in something roughly like [Literate Haskell] or [Literate CoffeeScript]. That's exactly what you'll find below; this is basically *commentary* on Might's original post.</i>

@@ -3,7 +3,7 @@ Title: On Steam (Specifically, Running Out of It)
 Subtitle: Or, what happens when you stay in “go mode” for a really long time.
 Date: 2018-04-05 07:00
 Category: blog
-Tags: productivity, writing, open-source software
+Tags: [productivity, writing, open-source software]
 Summary: >
     I find myself this morning almost unable to write at all, and quite unable to write what I was planning to be writing today. I’m all out of steam.
 

@@ -2,7 +2,7 @@
 Title: Beren and Lúthien
 Subtitle: A beautiful and fitting close to two men's ouevre.
 Date: 2017-08-09 18:00
-Tags: book-reviews
+Tags: [book-reviews]
 Category: Art
 Summary: >
     Recommended: Beren and Lúthien is a beautiful collection detailing the progression of what was perhaps J. R. R. Tolkien's personally most-treasured tale he wrote. 

@@ -3,7 +3,7 @@ Title: Theological Anthropology
 Subtitle: Alan Jacobs’ current project, “faithful extension”, and an important project for our day.
 Date: 2017-05-06 10:50
 Category: Theology
-Tags: technology, algorithism, alan jacobs, Christology, ressourcement
+Tags: [technology, algorithism, alan jacobs, Christology, ressourcement]
 Summary: We need to faithfully extend our doctrine of humanity—to think harder about Creation and Incarnation as our lenses into human nature as we confront “technologism” and “algorithmism” and the ways they distort our understanding of ourselves.
 ---
 

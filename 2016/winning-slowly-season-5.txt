@@ -1,7 +1,7 @@
 ---
 Title: "Winning Slowly Season 5"
 Date: 2016-08-09 07:30
-Tags: podcasting, links
+Tags: [podcasting, links]
 Template: formats/link
 Category: blog
 Link: http://www.winningslowly.org/5.01/

@@ -6,7 +6,7 @@ Date: 2018-01-25 07:00
 Modified: 2018-07-10 20:00
 Category: Tech
 Series: Typing Your Ember
-Tags: TypeScript, emberjs, typing-your-ember
+Tags: [TypeScript, emberjs, typing-your-ember]
 slug: typing-your-ember-update-part-3
 Summary: >
     Now that we know a bit more about how computed properties work, we’ll talk about computed properties, actions, and mixins on the Ember.js side, along with the normal class methods.

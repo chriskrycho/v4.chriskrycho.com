@@ -2,7 +2,7 @@
 Title: Tweet less. Blog more.
 Subtitle: An uncomplicated game plan for writing this year.
 Date: 2018-01-02 06:45
-Tags: writing, productivity
+Tags: [writing, productivity]
 Category: Blog
 Summary: >
     A game plan for how I plan to (and maybe how you can!) write a lot more blog posts this year.

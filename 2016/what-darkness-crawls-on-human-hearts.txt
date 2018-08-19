@@ -1,7 +1,7 @@
 ---
 Title: what darkness crawls on human hearts
 Subtitle: A Holy Saturday meditation
-Tags: poetry
+Tags: [poetry]
 Date: 2016-03-26 21:21
 ...
 

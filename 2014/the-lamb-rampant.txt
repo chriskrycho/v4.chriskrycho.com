@@ -1,6 +1,6 @@
 ---
 Title: The Lamb Rampant
-Tags: poetry
+Tags: [poetry]
 Date: 2014-02-10 12:30
 Author: Chris Krycho
 Summary: |

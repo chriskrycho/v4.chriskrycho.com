@@ -5,7 +5,7 @@ Summary: >
     When I went to Seattle for BibleTech 2015, I expected to put a nice mark on
     my résumé and learn some interesting things. I came out with something much,
     much more valuable.
-Tags: software development, joy
+Tags: [software development, joy]
 ...
 
 At the end of April, I flew out to Seattle to [give a talk][talk] at

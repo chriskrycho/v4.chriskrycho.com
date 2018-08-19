@@ -3,7 +3,7 @@ Title: Open Source is Neat
 Subtitle: (But Also Can Surprise You)
 Date: 2015-05-17 22:52
 Link: http://andrewcamenga.com/
-Tags: links, software development, design
+Tags: [links, software development, design]
 Category: Tech
 Template: formats/link
 Summary: >

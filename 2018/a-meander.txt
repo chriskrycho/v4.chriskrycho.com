@@ -4,7 +4,7 @@ Subtitle: >
     Because some days you want to write, but don’t have anything particularly focused or coherent to say.
 Date: 2018-02-09 07:00
 Category: blog
-Tags: writing, open-source software, ethics, reading, literature
+Tags: [writing, open-source software, ethics, reading, literature]
 Summary: >
     Because some days you want to write, but don’t have anything particularly focused or coherent to say. So: open-source software, Twitter and blogging, word vomit, and reading widely and deeply.
 

@@ -2,7 +2,7 @@
 Title: Icehenge
 Subtitle: My introduction to Kim Stanley Robinson (it was a good one).
 Date: 2017-08-14 21:00
-Tags: book reviews, science fiction, mars
+Tags: [book reviews, science fiction, mars]
 Category: Art
 Summary: >
     Kim Stanley Robinson comes highly recommended, so in a moment of overwhelming need to read science fiction the other evening, I snagged a novel of his in ebook form, and read it over the weekend. I loved it.

@@ -1,7 +1,7 @@
 ---
 Title: Mornings like this
 Date: 2016-06-05 09:17
-Tags: poetry
+Tags: [poetry]
 Category: art
 ---
 

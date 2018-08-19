@@ -3,7 +3,7 @@ Title: The Spirit and Conversion
 Author: Chris Krycho
 Date: 2014-04-03 08:15
 Intro: What role does the Holy Spirit play in conversion?
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary

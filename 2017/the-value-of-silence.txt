@@ -2,7 +2,7 @@
 Title: The Value of Silence
 Subtitle: Less noise, more thinking carefully and clearly (I hope).
 Date: 2017-11-26 19:30
-Tags: writing, social media
+Tags: [writing, social media]
 Category: Blog 
 
 ---

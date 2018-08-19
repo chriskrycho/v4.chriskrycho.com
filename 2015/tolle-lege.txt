@@ -7,7 +7,7 @@ Date: 2015-05-01 10:30
 Summary: >
     Designing Readable Bibles with Digital Typography (BibleTech 2015
     conference talk)
-Tags: design, typography, talks
+Tags: [design, typography, talks]
 ...
 
 I was delighted to be able to give a talk at [BibleTech] this year. I spoke for

@@ -2,7 +2,7 @@
 Title: Why Do I Need A Research Tool?
 Subtitle: Follow-up on this morning's request.
 Date: 2017-12-10 19:35
-Tags: writing
+Tags: [writing]
 Summary: >
     You can often get by on just your memory when all you're doing is chatting or blogging. But when you want to say something substantive… research tools are really helpful.
 

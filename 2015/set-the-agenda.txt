@@ -2,7 +2,7 @@
 Title: Set the agenda
 Date: 2015-09-16 18:53
 Category: Theology
-Tags: quotes
+Tags: [quotes]
 Template: formats/quotation
 Source: N. T. Wright, <cite>Jesus and the Victory of God</cite>, 1996, p. 8.
 ...

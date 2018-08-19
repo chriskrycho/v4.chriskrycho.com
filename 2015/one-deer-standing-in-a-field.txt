@@ -8,7 +8,7 @@ Summary: |
     startled turns to look at us /
     (we are but a car) /
     turns back to its grassy feast
-Tags: poetry
+Tags: [poetry]
 ...
 
 | one deer standing in a field

@@ -9,7 +9,7 @@ Professor: Dr. Greg Welty
 School: Southeastern Baptist Theological Seminary
 Date: 2016-03-15 12:31
 Category: theology
-Tags: M. Div., SEBTS, philosophy, science
+Tags: [M. Div., SEBTS, philosophy, science]
 ...
 
 <i>What is the 'covering law' model of scientific explanation and what are two reasons it seems to be defective? How do these defects point to a better model of scientific explanation?</i>

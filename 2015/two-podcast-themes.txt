@@ -3,7 +3,7 @@ Title: Two Podcast Themes
 Subtitle: Music for Sap.py and New Rustacean
 Date: 2015-09-30 07:10
 Author: Chris Krycho
-Tags: music
+Tags: [music]
 Summary: This summer, I wrote themes for two podcasts I launched. Take a listen!
 ...
 

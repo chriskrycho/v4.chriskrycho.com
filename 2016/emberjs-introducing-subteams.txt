@@ -2,7 +2,7 @@
 Title: 'Ember.js: "Introducing Subteams"'
 Date: 2016-05-24 19:10
 Link: http://emberjs.com/blog/2016/05/19/introducing-subteams.html
-Tags: links, programming languages, emberjs, rust
+Tags: [links, programming languages, emberjs, rust]
 Category: tech
 Template: formats/link
 ---

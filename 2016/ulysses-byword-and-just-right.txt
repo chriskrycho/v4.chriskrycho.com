@@ -2,7 +2,7 @@
 Title: Ulysses, Byword, and “Just Right”
 Subtitle: My own killer Markdown app is still unwritten.
 Date: 2016-03-26 08:00
-Tags: design, software development, writing
+Tags: [design, software development, writing]
 ...
 
 I'm trying out Ulysses again, as it's been updated substantially since I last used it. I think the main thing to say about it is that it’s gorgeous and a really great editor, and that there is nonetheless something about it which makes it feel not quite as *fluid* as Byword always has.

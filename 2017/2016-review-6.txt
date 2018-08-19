@@ -2,7 +2,7 @@
 Title: 2016 in Review, Part 6 of 6
 Subtitle: "Plans for 2017!"
 Date: 2017-01-01 08:00
-Tags: writing, podcasting, software development, family, productivity, fitness, 2016-in-review
+Tags: [writing, podcasting, software development, family, productivity, fitness, 2016-in-review]
 Slug: 2016-review-6
 Category: Blog
 Summary: >

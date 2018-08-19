@@ -3,7 +3,7 @@ Title: The Brutality of Police Culture in Baltimore
 Author: Chris Krycho
 Date: 2015-04-28 18:20
 Link: http://www.theatlantic.com/politics/archive/2015/04/the-brutality-of-police-culture-in-baltimore/391158/
-Tags: links
+Tags: [links]
 Category: blog
 Template: formats/link
 Summary: >

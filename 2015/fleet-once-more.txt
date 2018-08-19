@@ -1,7 +1,7 @@
 ---
 Title: fleet once more
 Date: 2015-09-10 13:00
-Tags: poetry, fitness
+Tags: [poetry, fitness]
 ...
 
 | Every time I step out to take a run,

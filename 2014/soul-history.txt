@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2014-03-28 13:05
 Template: formats/quotation
 Category: Theology
-Tags: quotes
+Tags: [quotes]
 Source: Eugene Peterson, <cite>Five Smooth Stones for Pastoral Work</cite>, pp. 84&ndash;85.
 ...
 

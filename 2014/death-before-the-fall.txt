@@ -2,7 +2,7 @@ Title: Death Before the Fall
 Author: Chris Krycho
 Date: 2014-04-08 19:25
 Link: http://alastairadversaria.wordpress.com/2014/04/08/death-before-the-fall/
-Tags: links
+Tags: [links]
 Category: theology
 Template: formats/link
 Summary: Link: In which Alastair Roberts suggests that physical death was not a result of the Fall, but something from which humans were always meant to be saved to something better.

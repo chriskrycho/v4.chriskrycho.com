@@ -2,7 +2,7 @@
 Title: Stop Saying “What Capitalism Does”
 Subtitle: Or, Winning Slowly Season 5 redux.
 Date: 2018-03-09 07:00
-Tags: ethics, technology
+Tags: [ethics, technology]
 Category: blog
 Summary: >
     “What capitalism does,” or “what liberalism does,” or “what postmodernism does,” or “what fundamentalism does”: the phrase should die an unmourned death. It does us all a great disservice, not for what it says but for what it leaves unsaid and the ways it misleads us.

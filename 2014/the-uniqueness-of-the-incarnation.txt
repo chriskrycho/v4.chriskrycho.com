@@ -6,7 +6,7 @@ Summary: >
 Author: Chris Krycho
 Date: 2014-05-06 08:15
 Category: theology
-Tags: M. Div., SEBTS, papers
+Tags: [M. Div., SEBTS, papers]
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary

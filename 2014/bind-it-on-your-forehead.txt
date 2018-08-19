@@ -5,7 +5,7 @@ Date: 2014-04-07 06:30
 Template: formats/devotions
 Passages: Psalm 72, Proverbs 7, and Colossians
 Category: theology
-Tags: devotions
+Tags: [devotions]
 
 One of the real joys of memorizing Scripture is the way that---by the grace of
 God---it slowly shapes you and (trans)forms the way you think. Jaimie and I have

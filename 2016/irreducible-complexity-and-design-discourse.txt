@@ -9,7 +9,7 @@ Professor: Dr. Greg Welty
 School: Southeastern Baptist Theological Seminary
 Date: 2016-05-17 22:22
 Category: theology
-Tags: M. Div., SEBTS, philosophy, science
+Tags: [M. Div., SEBTS, philosophy, science]
 ---
 
 <i class='editorial'>Is the biological evidence for ‘irreducible complexity’ best understood in terms of a design argument or design discourse?</i>

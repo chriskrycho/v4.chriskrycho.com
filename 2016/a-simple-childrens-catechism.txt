@@ -5,7 +5,7 @@ Date: 2016-06-21 20:45
 Summary: >
     The simple catechism we use with our girls—there’s nothing original here except perhaps the specific form and order. But I hope someone finds it useful! The aim is deep answers that are easy for little kids to remember and to say.
 Category: Theology
-Tags: family
+Tags: [family]
 ---
 
 I was talking with some family today about how we all approach catechizing our children, and it made me think: I should write up the simple catechism we use with our girls. The goal is to package the great truths of our faith in terms that little kids can *remember* and that they can *say*. There's nothing original here except perhaps the specific form and order. But I hope someone finds it a little bit useful! If you're curious about sources or reasons, see the footnotes, which in this post serve as commentary.

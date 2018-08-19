@@ -2,7 +2,7 @@ Title: On the Incarnation
 Author: Chris Krycho
 Date: 2014-12-25 11:45
 Template: formats/quotation
-Tags: quotes
+Tags: [quotes]
 Source: St. Athanasius, <cite>On The Incarnation</cite>, 14, 43, 45.
 
 

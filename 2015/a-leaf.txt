@@ -2,7 +2,7 @@
 Title: A Leaf
 Date: 2015-06-17 16:23
 Category: art
-Tags: poetry
+Tags: [poetry]
 ...
 
 | I at first mistook it

@@ -3,7 +3,7 @@ Title: Pick the Right Tool for the Job
 Subtitle: Twitter, Pinboard, RSS, and the role of ephemera on the web.
 Date: 2017-03-17 22:00
 Category: Tech
-Tags: writing
+Tags: [writing]
 
 ---
 

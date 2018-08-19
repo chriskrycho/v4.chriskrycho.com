@@ -3,7 +3,7 @@ Subtitle: (God is at work in you.)
 Author: Chris Krycho
 Date: 2014-03-07 22:55
 Summary: Paul's list of exhortations in Romans 12 could lead us to despair—or it could lead us to worshipful obedience.
-Tags: devotions
+Tags: [devotions]
 Category: theology
 Passages: Psalm 55, Proverbs 7, and Romans 13–16
 Template: formats/devotions

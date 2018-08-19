@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2015-04-20 09:57
 Template: formats/quotation
 Category: Theology
-Tags: quotes
+Tags: [quotes]
 Source: "Adele Berlin, <cite>Lamentations: A Commentary</cite>, 18–19."
 ...
 

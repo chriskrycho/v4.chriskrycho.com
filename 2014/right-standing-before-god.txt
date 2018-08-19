@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2014-04-22 08:15
 Topic: What does it mean to be "justified"?
 Category: Theology
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary

@@ -5,7 +5,7 @@ Summary: >
     Unfortunately, the official docs for <code>ctypes</code> leaves a few things 
     out—namely, the most basic use case with <code>from_param</code>! Here's a simple, 
     working example from my own development work.
-Tags: software development
+Tags: [software development]
 Date: 2015-05-28 18:00
 Slug: ctypes-structures-and-dll-exports
 ...

@@ -5,7 +5,7 @@ Date: 2018-02-08 07:30
 Modified: 2018-07-10 20:00
 Category: Tech
 Series: Typing Your Ember
-Tags: TypeScript, emberjs, typing-your-ember
+Tags: [TypeScript, emberjs, typing-your-ember]
 slug: typing-your-ember-update-part-4
 Summary: >
     Using Ember Data effectively, and migrating to new (better, easier!) approaches for service and controller lookup while we’re at it.

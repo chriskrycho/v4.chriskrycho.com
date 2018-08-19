@@ -7,7 +7,7 @@ Series:
   Title: Rust and Swift
   Part: 17
 Category: Tech
-Tags: rust, swift, rust-and-swift, programming languages
+Tags: [rust, swift, rust-and-swift, programming languages]
 Tools:
   - name: Rust
     version: "1.9"

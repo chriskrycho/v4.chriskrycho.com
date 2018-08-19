@@ -9,7 +9,7 @@ Professor: Dr. Greg Welty
 School: Southeastern Baptist Theological Seminary
 Date: 2016-05-17 22:20
 Category: theology
-Tags: M. Div., SEBTS, philosophy, science
+Tags: [M. Div., SEBTS, philosophy, science]
 ---
 
 <i class=editorial>Does classic (Newtonian) physics constitute a defeater for belief in special divine action?</i>

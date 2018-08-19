@@ -7,7 +7,7 @@ Summary: >
     How to write a single-page app API so that you get usable data on the first
     load *and* have a nice interface for your single-page application built in
     Ember/Angular/Knockout/Backbone/etc.
-Tags: software development, javascript
+Tags: [software development, javascript]
 Date: 2015-06-09 22:16
 ---
 

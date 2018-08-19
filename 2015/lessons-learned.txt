@@ -2,7 +2,7 @@
 Title: Lessons Learned
 Subtitle: 9 Months With HolyBible.com
 Date: 2015-04-12 13:49
-Tags: software development, javascript, angularjs
+Tags: [software development, javascript, angularjs]
 ...
 
 Since mid July 2014, I have been working on a complete redesign and re-build of [HolyBible.com]. The good folks at [Puritan Reformed Theological Seminary] who own the site wanted to replace its previous content with a Bible reading tool. While there's still a lot to wrap up, the project is *nearing* its conclusion,

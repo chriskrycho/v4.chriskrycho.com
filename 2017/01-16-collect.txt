@@ -1,7 +1,7 @@
 ---
 Title: The Collect of the Day
 Date: 2017-01-16 07:17
-Tags: quotes, prayer
+Tags: [quotes, prayer]
 Template: formats/quotation
 Category: Theology
 Source: Morning Prayer from the Common Worship of the Church of England

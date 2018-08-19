@@ -2,7 +2,7 @@ Title: God Become Man: Toward a Richer Theology of the Incarnation
 Author: Chris Krycho
 Date: 2014-03-25 08:00
 Link: http://mereorthodoxy.com/god-become-man-richer-theology-incarnation/
-Tags: links, my writing elsewhere
+Tags: [links, my writing elsewhere]
 Category: theology
 Template: formats/link
 Summary: Link: My latest piece over at Mere Orthodoxy, on the Incarnation.

@@ -1,7 +1,7 @@
 ---
 Title: Rust vs. React Native—What?
 Subtitle: "Tradeoffs, or: Speed and stability are for everyone"
-Tags: JavaScript, Rust, Swift, F Sharp, software development
+Tags: [JavaScript, Rust, Swift, F Sharp, software development]
 Date: 2016-10-07 08:20
 Category: Tech
 ---

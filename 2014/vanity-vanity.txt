@@ -2,7 +2,7 @@ Title: Vanity! Vanity!
 Date: 2014-02-02 22:15
 Author: Chris Krycho
 Category: theology
-Tags: devotions
+Tags: [devotions]
 Passages: Matthew 22–25, Psalm 33, Ecclesiastes 2
 Template: formats/devotions
 Summary: Ecclesiastes is one of the most interpretively challenging books in the whole Bible—but there is real wisdom to be found in reading it with the rest of the canon.

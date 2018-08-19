@@ -3,7 +3,7 @@ Title: Rust and C++ function definitions
 Subtitle: A small study in syntax and legibility.
 Date: 2016-06-03 18:01
 Modified: 2016-06-07 23:16
-Tags: programming languages, rust, cplusplus
+Tags: [programming languages, rust, cplusplus]
 Slug: 03-1801
 ---
 

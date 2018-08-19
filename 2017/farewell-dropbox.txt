@@ -2,7 +2,7 @@
 Title: Farewell, Dropbox
 Subtitle: Because I don’t trust you anymore.
 Category: Tech
-Tags: writing, workflow
+Tags: [writing, workflow]
 Date: 2017-07-06 21:00
 
 ---

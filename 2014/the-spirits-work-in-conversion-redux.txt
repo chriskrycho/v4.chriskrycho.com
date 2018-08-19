@@ -4,7 +4,7 @@ Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Date: 2014-05-03 14:00
 Category: theology
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 Title: The Spirit's Work in Conversion (redux)
 Summary: The Spirit brought about the Incarnation, and raised Jesus from the dead; now the Spirit makes the Son's work efficacious in the hearts of believers. The Father originated the work of salvation; the Son was and is the means of salvation; the Spirit is the one who guarantees and accomplishes salvation.
 Template: formats/class

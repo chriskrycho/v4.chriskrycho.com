@@ -3,7 +3,7 @@ Title: The Mystery of the Table
 Subtitle: Thoughts on the Theology and Practice of the Lord's Supper
 Author: Chris Krycho
 Date: 2015-07-11 17:00
-Tags: M. Div., SEBTS, papers
+Tags: [M. Div., SEBTS, papers]
 Class: Christian Theology III
 Professor: Dr. Keith Whitfield
 School: Southeastern Baptist Theological Seminary

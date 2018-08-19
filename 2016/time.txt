@@ -1,7 +1,7 @@
 ---
 Title: Time
 Date: 2016-01-23 19:45
-Tags: fiction
+Tags: [fiction]
 Summary: >
     Jaimie and I are presently trapped in a hotel in New York City, courtesy of
     winter weather. We decided to do a little writing challenge! This is mine.

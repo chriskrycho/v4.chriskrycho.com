@@ -3,7 +3,7 @@ Title: Invest!—Memorizing Scripture
 Date: 2014-01-19 23:05
 Author: Chris Krycho
 Category: theology
-Tags: devotions
+Tags: [devotions]
 Passages: Colossians 1:1–12
 Template: formats/devotions
 ...

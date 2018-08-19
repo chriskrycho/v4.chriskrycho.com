@@ -3,7 +3,7 @@ Title: Types are Small
 Subtitle: (Scott Wlaschin is really smart.)
 Date: 2017-12-29 14:00
 Category: Tech
-Tags: functional programming, software development
+Tags: [functional programming, software development]
 Summary: >
     A really fabulous quote from Scott Wlaschin's book Domain Modeling Made Functional crystallized an important point for me: types (in typed functional programming) are small.
 

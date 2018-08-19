@@ -3,7 +3,7 @@ Date: 2014-05-11 20:00
 Title: The "New" Covenant
 Summary: Although it is tempting to view the New Covenant promised by Jeremiah as marking a sharp break with what came before, a careful reading of the text points us in another direction.
 Category: theology
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 Template: formats/class
 Professor: Dr. Heath Thomas
 School: Southeastern Baptist Theological Seminary

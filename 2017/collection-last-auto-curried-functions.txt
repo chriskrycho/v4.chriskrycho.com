@@ -2,7 +2,7 @@
 Title: “Collection-Last Auto-Curried Functions”
 Subtitle: You want your data last, and you want your functions “partially applied.” Here’s why.
 Date: 2017-06-24 17:35
-Tags: javascript, functional programming
+Tags: [javascript, functional programming]
 Category: Tech
 ---
 

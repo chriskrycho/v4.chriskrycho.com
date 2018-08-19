@@ -1,7 +1,7 @@
 ---
 Title: Announcing ember-cli-typescript 1.0.0
 Subtitle: Type your apps!
-Tags: typing-your-ember, typescript, emberjs
+Tags: [typing-your-ember, typescript, emberjs]
 Category: Tech
 Date: 2017-08-08 09:00
 Summary: >

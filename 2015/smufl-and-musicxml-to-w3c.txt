@@ -1,7 +1,7 @@
 ---
 Title: SMuFL and MusicXML to W3C
 Date: 2015-07-28 12:29
-Tags: links
+Tags: [links]
 Category: tech
 Template: formats/link
 Link: http://www.sibeliusblog.com/news/makemusic-and-steinberg-transfer-development-of-musicxml-and-smufl-to-web-community-group/

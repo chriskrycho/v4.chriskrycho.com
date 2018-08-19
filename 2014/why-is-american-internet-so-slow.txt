@@ -2,7 +2,7 @@ Title: Why Is American Internet So Slow?
 Author: Chris Krycho
 Date: 2014-03-07 19:55
 Link: http://theweek.com/article/index/257404/why-is-american-internet-so-slow
-Tags: links
+Tags: [links]
 Template: formats/link
 
 Pretty damning of the current (lack of a) regulatory regime, if you ask me:

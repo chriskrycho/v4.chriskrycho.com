@@ -3,7 +3,7 @@ Title: A Humble, Selfless, Unity
 Subtitle: A sermon on Philippians 2:1–11
 Date: 2016-02-09 18:40
 Category: Theology
-Tags: SEBTS, M. Div., sermons
+Tags: [SEBTS, M. Div., sermons]
 Template: formats/class
 Class: Sermon Delivery
 Professor: Dr. Marty Jacumin

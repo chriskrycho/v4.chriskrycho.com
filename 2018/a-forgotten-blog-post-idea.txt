@@ -2,7 +2,7 @@
 Title: A Forgotten Blog Post Idea
 Subtitle: And in trade, a couple paragraphs on one specifically-conservative folly.
 Date: 2018-02-25 16:00
-Tags: writing, ethics, politics
+Tags: [writing, ethics, politics]
 Summary: >
     One of the most frustrating things as a writer is when you have a good idea and then *forget it*. This has happened to me before. So in trade, here are the couple paragraphs of notes (on one particular failing I see among my fellow conservatives) from the last time this happened to me.
 

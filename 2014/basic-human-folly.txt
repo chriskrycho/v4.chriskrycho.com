@@ -3,7 +3,7 @@ Summary: Psalm 30 stands as one of the most evocative pictures of our human prop
 Date: 2014-01-30 08:15
 Author: Chris Krycho
 Category: theology
-Tags: devotions
+Tags: [devotions]
 Passages: Matthew 10–13, Psalm 30, Proverbs 30
 Template: formats/devotions
 

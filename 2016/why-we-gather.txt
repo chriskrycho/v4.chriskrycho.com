@@ -1,7 +1,7 @@
 ---
 Title: Why We Gather
 Date: 2016-04-03 10:11
-Tags: family, church
+Tags: [family, church]
 ...
 
 One of the reasons we meet together as a church every Sunday, no matter what; and one of the beauties of taking the Lord's supper together every Sunday, no matter what, is this:

@@ -3,7 +3,7 @@ Title: keyof and Mapped Types In TypeScript 2.1
 Subtitle: Making JavaScript dance to an ML-ic tune.
 Date: 2016-12-17 23:25
 Modified: 2016-12-18 09:55
-Tags: javascript, typescript, software development, programming languages
+Tags: [javascript, typescript, software development, programming languages]
 ---
 
 In the last few months, I've been playing with both [Flow] and [TypeScript] as tools for increasing the quality and reliability of the JavaScript I write at Olo. Both of these are syntax that sits on top of normal JavaScript to add type analysis—basically, a form of [gradual typing] for JS.

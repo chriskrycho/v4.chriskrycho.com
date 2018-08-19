@@ -4,7 +4,7 @@ Date: 2014-06-30
 Template: formats/devotions
 Passages: 1 Chronicles 10&ndash;23
 Category: theology
-Tags: devotions
+Tags: [devotions]
 Summary: God is holy and we ought not ignore his word. He is merciful&mdash;and we ought not ignore his word!
 
 My devotional life has been a bit up and down the last few months. It is easy to

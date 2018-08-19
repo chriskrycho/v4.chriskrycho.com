@@ -4,7 +4,7 @@ Subtitle: A higher price and less value than ever
 Date: 2015-07-28 12:25
 Template: formats/link
 Category: tech
-Tags: links
+Tags: [links]
 Link: http://www.sibeliusblog.com/news/sibelius-8-is-here/
 ...
 

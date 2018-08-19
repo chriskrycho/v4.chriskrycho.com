@@ -3,7 +3,7 @@ Title: A Strange and Messy Deliverance
 Subtitle: A sermon on Judges 3:7–31
 Date: 2016-03-08 20:00
 Category: Theology
-Tags: SEBTS, M. Div., sermons
+Tags: [SEBTS, M. Div., sermons]
 Template: formats/class
 Class: Sermon Delivery
 Professor: Dr. Marty Jacumin

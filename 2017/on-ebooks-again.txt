@@ -3,7 +3,7 @@ Title: On ebooks (again)
 Subtitle: A message sent to the team at Lifeway.
 Date: 2017-01-02 07:55
 Category: Tech
-Tags: from-my-outbox
+Tags: [from-my-outbox]
 ---
 
 

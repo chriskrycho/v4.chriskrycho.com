@@ -3,7 +3,7 @@ Title: "2017 in Review: Looking Forward"
 Subtitle: Some hopes and (tentative, as ever) plans for 2018.
 Date: 2017-12-26 09:35
 Category: blog
-Tags: productivity, writing, family, fitness, podcasting, software development, 2017-review
+Tags: [productivity, writing, family, fitness, podcasting, software development, 2017-review]
 Summary: >
     Making goals for myself for the year ahead—with a good mix of standing aims, primary goals, and flexible goals; and appropriate priority given to each of those.
 

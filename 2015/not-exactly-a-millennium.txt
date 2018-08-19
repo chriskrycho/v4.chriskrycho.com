@@ -6,7 +6,7 @@ Summary: >
     Satan is not intended to outline a millennial doctrine (a-, pre-, or post-),
     but rather signals in literary and symbolic fashion the assurance of God's
     power over Satan and the reward for his saints.
-Tags: SEBTS, M. Div., papers
+Tags: [SEBTS, M. Div., papers]
 Category: theology
 Date: 2015-07-22 21:45
 Template: formats/class

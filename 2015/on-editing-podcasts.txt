@@ -8,7 +8,7 @@ Category: tech
 Summary: >
     Most podcasts are more like blog posts than magazine articles. (That doesn't
     mean you shouldn't edit, them, though!)
-Tags: podcasting
+Tags: [podcasting]
 ...
 
 Last week, Alan Jacobs posted [a few thoughts] on the overall quality of

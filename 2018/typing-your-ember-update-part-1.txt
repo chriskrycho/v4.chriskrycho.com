@@ -5,7 +5,7 @@ Date: 2018-01-22 07:10
 Modified: 2018-07-10 20:00
 Category: Tech
 Series: Typing Your Ember
-Tags: TypeScript, emberjs, typing-your-ember
+Tags: [TypeScript, emberjs, typing-your-ember]
 slug: typing-your-ember-update-part-1
 Summary: >
     A bunch has changed for the better in the TypeScript/Ember.js story over the last six months. Here’s an overview of the changes and a look at normal Ember objects, "arguments" to components (and controllers), and service (or controller) injections.

@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2015-09-27 09:40
 Template: formats/quotation
 Category: Theology
-Tags: quotes
+Tags: [quotes]
 Source: N. T. Wright, <cite>Jesus and the Victory of God</cite>
 ...
 

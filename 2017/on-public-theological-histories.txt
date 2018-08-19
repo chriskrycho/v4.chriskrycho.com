@@ -3,7 +3,7 @@ Title: On Public (Theological) Histories
 Subtitle: Personal blogging, “permanency” online, and the importance of curation (editing).
 Date: 2017-05-07 21:15
 Category: Theology
-Tags: writing
+Tags: [writing]
 Summary: It might behoove use to take down some of our old posts after a while, and also to print the things worth keeping from our digital publishing.
 
 ---

@@ -3,7 +3,7 @@ Title: "Exploring 4 Languages: Project Setup"
 Subtitle: >
     Getting Rust, Elm, F<sup>♯</sup>, and ReasonML installed; their editor plugins configured; and their project files ready.
 Date: 2018-01-01 13:00
-Tags: functional programming, rust, elm, fsharp, reasonml, domain-driven design, four-languages
+Tags: [functional programming, rust, elm, fsharp, reasonml, domain-driven design, four-languages]
 Category: Tech
 Summary: >
     Getting Rust, Elm, F♯, and ReasonML installed; their editor plugins configured; and the project ready for implementing the exercises in Scott Wlaschin’s Domain Modeling Made Functional.

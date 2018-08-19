@@ -2,7 +2,7 @@
 Title: Ask
 Date: 2016-05-31 21:18
 Category: art
-Tags: fiction, poetry
+Tags: [fiction, poetry]
 ---
 
 <i class='editorial'>My wife and a few others regularly do a 30-minute writing challenge every Tuesday evening. This week, since I'm taking some time off, I got to participate! The prompt was: _Write a story about trees which whisper poems to those who know how to hear them. (It's not allowed to be scary.)_</i>

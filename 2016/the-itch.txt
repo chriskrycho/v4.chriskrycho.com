@@ -4,7 +4,7 @@ Subtitle: How typed functional programming is what I was looking for all along.
 Date: 2016-12-19 21:45
 Summary: >
   Learning functional programming has been simultaneously wildly new and deeply familiar. It's the answer to questions I've been asking for most of a decade.
-Tags: software development, functional programming, Rust, JavaScript
+Tags: [software development, functional programming, Rust, JavaScript]
 ---
 
 It took me until just a few weeks ago to put my finger on why typed functional programming, as a style and approach, has appealed to me so much as I started picking it up over the last year. For all its novelty, typed FP feels---over and over again---*familiar*. Strange to say, but it's true.

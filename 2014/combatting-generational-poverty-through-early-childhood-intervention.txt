@@ -3,7 +3,7 @@ Title: Combatting Generational Poverty Through Early Childhood Intervention
 Author: Chris Krycho
 Date: 2014-03-16 17:00
 Link: http://www.canonandculture.com/combatting-generational-poverty-through-early-childhood-intervention/
-Tags: links
+Tags: [links]
 Category: theology
 Template: formats/link
 Summary: "Link: It seems inevitable that our country will try to combat generational poverty and all its great harms by investing heavily in early childhood intervention. The question for the church is, will we allow the state to take the initiative, or will we take up this task and engender the kind of deep, redemptive healing that the state can only dream of?"

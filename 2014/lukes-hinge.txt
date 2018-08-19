@@ -2,7 +2,7 @@ Title: Luke's Hinge
 Author: Chris Krycho
 Date: 2014-03-17 08:00
 Summary: Luke's narrative&mdash;and his depiction of Jesus&mdash;changes direction in surprising ways in the middle of Luke 9: there he starts the long walk to Calvary.
-Tags: devotions
+Tags: [devotions]
 Category: theology
 Passages: Psalm 58, Proverbs 17, and Luke 8–11:54
 Template: formats/devotions

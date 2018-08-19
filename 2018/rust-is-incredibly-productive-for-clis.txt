@@ -2,7 +2,7 @@
 Title: Rust is Incredibly Productive for CLIs
 Subtitle: "Don’t let the tagline fool you: Rust is for more than just “systems programming.”"
 Date: 2018-05-20 08:35
-Tags: Rust, programming languages
+Tags: [Rust, programming languages]
 Category: tech
 Summary: >
     I built a little tool in Rust to convert an Evernote export file to Markdown. It was impressively easy.

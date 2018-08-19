@@ -3,7 +3,7 @@ Title: Disciplining
 Subtitle: A quick thought on parenting.
 Date: 2018-04-18 06:35
 Category: blog
-Tags: family
+Tags: [family]
 Summary: >
     I’ve been thinking a lot recently about how we discipline our children. Nothing new, just working hard at practicing what we already think. We’ve been “in the trenches” with our three-year-old a bit, because, well… she’s three! Being three is hard! You have an absurd amount you’re learning, and sometimes it breaks your brain! And so being the parent of a three-year-old is also hard.
 

@@ -2,7 +2,7 @@
 Title: Straining Gnats and Siding with Pharaoh over the Midwives
 Date: 2015-08-01 10:00
 Category: theology
-Tags: links
+Tags: [links]
 Template: formats/link
 Link: http://derekzrishmawy.com/2015/07/31/straining-gnats-and-siding-with-pharaoh-over-the-midwives/
 ...

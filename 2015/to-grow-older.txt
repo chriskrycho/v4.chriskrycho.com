@@ -5,7 +5,7 @@ Category: art
 Summary: |
     To grow older is not to fade / unless you make it so— /
     rather, to ripen slowly into wisdom / as like an aging tree.…
-Tags: poetry
+Tags: [poetry]
 ...
 
 | To grow older is not to fade

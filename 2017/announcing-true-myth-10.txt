@@ -4,7 +4,7 @@ Subtitle: >
     A library for saner programming in JavaScript, with first-class support for TypeScript (and Flow), with <code>Maybe</code> and <code>Result</code> types, and supporting both a functional style and a more traditional method-call style.
 Author: Chris Krycho
 Date: 2017-11-01 08:40
-Tags: software development, libraries, programming languages, typescript, functional programming, true myth
+Tags: [software development, libraries, programming languages, typescript, functional programming, true myth]
 Category: Tech
 
 ---

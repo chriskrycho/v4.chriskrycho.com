@@ -3,7 +3,7 @@ Title: Typing Your Ember, Part 4
 Subtitle: >
     Example: using Ember for view and lifecycle but plain-old TypeScript otherwise.
 Date: 2017-07-31 19:30
-Tags: emberjs, typescript, typing-your-ember
+Tags: [emberjs, typescript, typing-your-ember]
 Category: Tech
 Summary: >
    In the last post, I mentioned putting your business logic outside Ember's tools and treating it as plain-old TypeScript. Here's what that might look like.

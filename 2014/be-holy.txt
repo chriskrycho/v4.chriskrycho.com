@@ -8,7 +8,7 @@ Class: Pastoral Ministry Internship
 Professor: Dr. Andrew M. Davis and Andy Winn
 School: FBC Durham for Southeastern Baptist Theological Seminary
 Category: Theology
-Tags: M. Div., SEBTS, FBC Durham, papers, book reviews
+Tags: [M. Div., SEBTS, FBC Durham, papers, book reviews]
 ...
 
 <i class="editorial">I would like to preface the following review by noting that

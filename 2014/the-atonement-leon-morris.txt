@@ -2,7 +2,7 @@
 Title: <cite>The Atonement</cite>, Leon Morris
 Category: theology
 Date: 2014-03-16 19:50
-Tags: book reviews
+Tags: [book reviews]
 Summary: >
     Morris' book could have been a helpful volume; a robust doctrine of the
     atonement is a wonderful thing. I am sad to say that _The Atonement_ simply

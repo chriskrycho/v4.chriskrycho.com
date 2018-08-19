@@ -2,7 +2,7 @@ Title: North Korea Execution Fact Check
 Author: Chris Krycho
 Link: http://christandpopculture.com/33-christians-north-korea-really-execution/
 Date: 2014-03-19 21:25
-Tags: links
+Tags: [links]
 Category: theology
 Template: formats/link
 Summary: The story on the execution of 33 Christians in North Korea may not have been true&hellip; it is hard to tell, because we have a hard time getting information about anything in the country.

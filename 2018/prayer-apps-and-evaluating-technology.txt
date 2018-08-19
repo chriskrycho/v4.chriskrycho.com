@@ -4,7 +4,7 @@ Subtitle: >
     Thinking about the ways technology shapes us—smartphones, fire, and everything in between.
 Category: Theology
 Date: 2018-01-26 07:30
-Tags: writing, ethics
+Tags: [writing, ethics]
 Summary: >
     I use apps for lots of things. But something about the thought of using one for my prayer life in particular made me pause and think about what it means to offload everything to an app.
 

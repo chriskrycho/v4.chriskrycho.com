@@ -2,7 +2,7 @@
 Title: 'Ben Thompson: "Peter Thiel, Comic Book Hero"'
 Date: 2016-05-28 20:50
 Link: https://stratechery.com/2016/peter-thiel-comic-book-hero/
-Tags: links
+Tags: [links]
 Category: tech
 Template: formats/link
 ---

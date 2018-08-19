@@ -3,7 +3,7 @@ Title: Some Mild Burnout
 Subtitle: But ‘mild’ does not mean ‘not dangerous.’
 Date: 2018-07-15 17:15
 Category: blog
-Tags: burnout, work, productivity
+Tags: [burnout, work, productivity]
 Summary: >
     I find that I am experiencing a mild case of burnout. It is far from as bad as it could be, and I am doing the things I should to mitigate it. But it is real, and dangerous, and I hope this post might help others keep their eyes open for it.
 

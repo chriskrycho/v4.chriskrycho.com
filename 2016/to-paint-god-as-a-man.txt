@@ -1,7 +1,7 @@
 ---
 Title: To paint God as a man
 Category: art
-Tags: poetry
+Tags: [poetry]
 Date: 2016-12-23 18:00
 ---
 

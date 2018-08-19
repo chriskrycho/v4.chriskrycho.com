@@ -4,7 +4,7 @@ Subtitle: Syntax, Poetry, and Meaning in Lamentations 3:40–66
 Author: Chris Krycho
 Date: 2015-04-27 13:00
 Category: theology
-Tags: SEBTS, M. Div., papers
+Tags: [SEBTS, M. Div., papers]
 Template: formats/class
 Class: Hebrew Syntax and Exegesis
 Professor: Dr. Heath A. Thomas

@@ -2,7 +2,7 @@
 Title: Academic Markdown and Citations
 Subtitle: A workflow with Pandoc, BibTEX, and the editor of your choice.
 Date: 2015-07-26 13:50
-Tags: workflow, writing
+Tags: [workflow, writing]
 Summary: >
     Managing citations is painful—especially in plain text. But with a little
     setup, Pandoc and BibTEX can take a lot of the pain out of it, whether for

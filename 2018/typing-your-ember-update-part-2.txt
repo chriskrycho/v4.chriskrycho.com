@@ -6,7 +6,7 @@ Date: 2018-01-24 07:00
 Modified: 2018-07-10 20:00
 Category: Tech
 Series: Typing Your Ember
-Tags: TypeScript, emberjs, typing-your-ember
+Tags: [TypeScript, emberjs, typing-your-ember]
 slug: typing-your-ember-update-part-2
 Summary: >
     For years, you've been using Ember Object and .extend()—but the rules are different with classes.

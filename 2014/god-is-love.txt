@@ -2,7 +2,7 @@ Title: &ldquo;God is Love&rdquo;
 Date: 2014-02-11 22:00
 Author: Chris Krycho
 Category: theology
-Tags: devotions
+Tags: [devotions]
 Passages: 1 John, Psalm 41, Ecclesiastes 10
 Template: formats/devotions
 Epigraph: &ldquo;God is love.&rdquo; &mdash;1 John 4:8

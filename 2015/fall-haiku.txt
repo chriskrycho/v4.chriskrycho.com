@@ -1,7 +1,7 @@
 ---
 Title: Fall Haiku
 Date: 2015-11-22 10:10
-Tags: poetry
+Tags: [poetry]
 Summary: |
     The sky is – not bleak, but – gray…
 ...

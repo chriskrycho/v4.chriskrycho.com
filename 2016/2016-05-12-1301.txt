@@ -3,7 +3,7 @@ Title: 2016-05-12 13:01
 Date: 2016-05-12 13:01
 Category: Tech
 Template: formats/quotation
-Tags: quotes
+Tags: [quotes]
 Source: fish documentation
 ---
 

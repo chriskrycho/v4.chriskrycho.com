@@ -2,7 +2,7 @@
 Title: 2016 in Review, Part 1 of 6
 Subtitle: "Running headfirst into a wall of pneumonia."
 Date: 2016-12-27 17:00
-Tags: writing, podcasting, software development, family, productivity, fitness, 2016-in-review
+Tags: [writing, podcasting, software development, family, productivity, fitness, 2016-in-review]
 Slug: 2016-review-1
 Category: Blog
 Summary: >

@@ -4,7 +4,7 @@ Author: Chris Krycho
 Date: 2014-11-04 23:02
 Template: formats/quotation
 Category: Theology
-Tags: quotes
+Tags: [quotes]
 Source: John Calvin, <cite>Institutes of the Christian Religion</cite>, III:6.4.
 ...
 

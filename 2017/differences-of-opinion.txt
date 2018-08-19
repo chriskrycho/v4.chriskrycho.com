@@ -1,7 +1,7 @@
 ---
 Title: Differences of Opinion
 Date: 2017-03-12 08:05
-Tags: programming languages, software development, pedagogy, links
+Tags: [programming languages, software development, pedagogy, links]
 Template: formats/link
 Category: Tech
 Link: http://www.pyret.org/pyret-code/

@@ -3,7 +3,7 @@ Summary: God's silence does not imply his absence; nor does the ordinary nature 
 Date: 2014-01-27 08:05
 Author: Chris Krycho
 Category: theology
-Tags: devotions
+Tags: [devotions]
 Passages: Esther, Psalm 27, Proverbs 27
 Template: formats/devotions
 

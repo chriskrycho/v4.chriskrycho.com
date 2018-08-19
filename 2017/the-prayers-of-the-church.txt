@@ -3,7 +3,7 @@ Title: The Prayers of the Church
 Date: 2017-01-03 06:08
 Template: formats/quotation
 Category: Theology
-Tags: quotes, prayer
+Tags: [quotes, prayer]
 Source: Morning Prayer from the Common Worship of the Church of England
 ---
 

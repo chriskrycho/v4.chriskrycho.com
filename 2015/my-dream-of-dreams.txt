@@ -3,7 +3,7 @@ Title: My dream of dreams
 Date: 2015-08-13 09:00
 Template: formats/quotation
 Source: A friend
-Tags: quotes
+Tags: [quotes]
 Category: blog
 ...
 

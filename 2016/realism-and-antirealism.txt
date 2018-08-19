@@ -6,7 +6,7 @@ Template: formats/class
 Date: 2016-05-16 23:55
 Modified: 2016-06-06 07:35
 Category: Theology
-Tags: SEBTS, M. Div., papers, philosophy, science
+Tags: [SEBTS, M. Div., papers, philosophy, science]
 Class: Religion and Science
 Professor: Dr. Greg Welty
 Summary: >

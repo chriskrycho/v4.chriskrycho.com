@@ -7,7 +7,7 @@ Professor: Dr. Greg Welty
 School: Southeastern Baptist Theological Seminary
 Date: 2016-05-12 21:08
 Category: theology
-Tags: M. Div., SEBTS, philosophy, science
+Tags: [M. Div., SEBTS, philosophy, science]
 ---
 
 <i class="editorial">The following was prepared as a one-page, single-spaced short response to a question from the readings for this class.</i>

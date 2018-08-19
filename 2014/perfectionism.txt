@@ -4,7 +4,7 @@ Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Date: 2014-05-03 14:00
 Category: theology
-Tags: M. Div., SEBTS
+Tags: [M. Div., SEBTS]
 Title: Perfectionism
 Subtitle: An Imperfect Doctrine Of Sanctification
 Summary: The classic Wesleyan doctrine of moral perfectionism in this life is tempting on some fronts&mdash;but profoundly unhelpful.

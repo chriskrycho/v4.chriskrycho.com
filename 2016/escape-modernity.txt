@@ -1,7 +1,7 @@
 ---
 Title: escape modernity
 Date: 2016-07-27 08:56
-Tags: poetry
+Tags: [poetry]
 Slug: escape-modernity
 Category: Art
 ---

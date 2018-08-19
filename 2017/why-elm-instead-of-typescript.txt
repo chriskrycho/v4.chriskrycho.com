@@ -2,7 +2,7 @@
 Title: Why Elm Instead of TypeScript?
 Subtitle: Or, yet another long comment in Slack turned into a blog post.
 Date: 2017-04-23 17:20
-Tags: Elm, JavaScript, TypeScript, programming languages, functional programming
+Tags: [Elm, JavaScript, TypeScript, programming languages, functional programming]
 Category: tech
 
 ---

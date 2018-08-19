@@ -3,7 +3,7 @@ Title: Tweets on Psych Medication
 Subtitle: >
     Or: That time I went to town on Peter Leithart about psych medications.
 Date: 2015-07-22 08:34
-Tags: tweetstorm
+Tags: [tweetstorm]
 ...
 
 Yesterday evening, I saw Peter Leithart ([\@PLeithart][leithart]) retweet this

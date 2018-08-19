@@ -2,7 +2,7 @@
 Title: Odd Bits and the Occasional Long-Form Essay
 Subtitle: Some thoughts on my theology blogging in 2017.
 Date: 2017-04-02 15:30
-Tags: writing
+Tags: [writing]
 Summary: >
     One of the things I'm considering carefully is what *theological blogging* will look like for me now, and in the years ahead. The problem is that I'm not particularly sure I want to be doing any of them quite like I was three to five years ago---and I'm *quite* sure I don't want to be doing it like I was ten years ago!
 ---

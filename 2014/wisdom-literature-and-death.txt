@@ -3,7 +3,7 @@ Summary: Psalm 49 is wisdom literature, and it spends quite a bit of its time on
 Date: 2014-02-25 21:30
 Author: Chris Krycho
 Category: theology
-Tags: devotions
+Tags: [devotions]
 Passages: Acts 9–11 and Psalm 49
 Template: formats/devotions
 

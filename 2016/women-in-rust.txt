@@ -1,6 +1,6 @@
 ---
 Title: Women in Rust
-Tags: podcasting, tweetstorm, rust
+Tags: [podcasting, tweetstorm, rust]
 Date: 2016-01-10 15:25
 ...
 

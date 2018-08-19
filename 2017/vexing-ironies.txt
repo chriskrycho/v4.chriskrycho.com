@@ -3,7 +3,7 @@ Title: Vexing Ironies
 Subtitle: What does it say about us when we use a technology to critique the same technology?
 Date: 2017-12-17 20:50
 Category: Tech
-Tags: ethics
+Tags: [ethics]
 Summary: >
     One of the most vexing problems in thinking and responding well to problems of ethics in information technology specifically is the way that so much of thinking and responding about information technology takes place within the context of, well, information technology. Two examples of that challenge caught my attention this evening, ironies I noticed in reading the very same article.
 

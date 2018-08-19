@@ -2,7 +2,7 @@ Title: Growing Up Together
 Subtitle: Or: How I Learned to Stop Worrying and Love JavaScript
 Author: Chris Krycho
 Date: 2014-11-15 00:30
-Tags: software development
+Tags: [software development]
 
 A few years ago, you might have caught me in a grumpy moment grousing about
 JavaScript. I distinctly did *not* like writing it. Every time I sat down to

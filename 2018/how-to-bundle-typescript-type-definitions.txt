@@ -2,7 +2,7 @@
 Title: How To Bundle TypeScript Type Definitions
 Subtitle: If your consumers have to use compiler options, they will be very sad.
 Date: 2018-05-21 07:00
-Tags: typescript, programming languages, true myth
+Tags: [typescript, programming languages, true myth]
 Summary: >
     Create a custom build that puts the type definitions in the root of your package, instead of putting them alongside the compiled JavaScript files. Because if your consumers have to use compiler options, they will be very sad.
 

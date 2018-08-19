@@ -2,7 +2,7 @@ Title: The End of Surfing
 Author: Chris Krycho
 Date: 2014-03-26 20:00
 Summary: Tabbed browsers killed "surfing." You only thought it was Facebook to blame.
-Tags: design, software development
+Tags: [design, software development]
 
 Sometime in the last few months it occurred to me that I no longer "surf" the
 internet. I read, to be sure, and every once in a long while I even go on a

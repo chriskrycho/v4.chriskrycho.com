@@ -1,7 +1,7 @@
 ---
 Title: TypeScript <code>keyof</code> Follow-Up
 Subtitle: Autocomplete all the things in all the ways!
-Tags: programming languages, software development, typescript, javascript
+Tags: [programming languages, software development, typescript, javascript]
 Category: Tech
 Date: 2017-01-03 20:35
 Modified: 2017-01-08 17:47

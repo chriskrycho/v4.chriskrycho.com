@@ -5,7 +5,7 @@ Date: 2014-04-29 19:30
 Summary: >
     I am going to write a static site generator in Io. Oh, and also the Markdown
     parser and HTML templating engine required to go with it.
-Tags: software development
+Tags: [software development]
 ...
 
 I'm going to do something a little crazy, I've decided. I'm going to go ahead

@@ -3,7 +3,7 @@ Summary: The work done in our hearts by the Holy Spirit is nothing short of brea
 Date: 2014-02-19 23:12
 Author: Chris Krycho
 Category: theology
-Tags: devotions
+Tags: [devotions]
 Passages: Acts 1–4 and Psalm 47
 Template: formats/devotions
 

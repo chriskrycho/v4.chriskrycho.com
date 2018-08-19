@@ -3,7 +3,7 @@ Title: A Strange Little Thought
 Subtitle: <cite>Groundhog Day</cite>, temporal loops, agency, the past, etc.
 Date: 2018-02-23 07:15
 Category: Art
-Tags: ethics, film
+Tags: [ethics, film]
 Summary: >
     I was, for some reason, thinking about the movie _Groundhog Day_ this morning… and it led me to wonder: What would I think of yesterday’s choices if I had to live today over and over again?
 

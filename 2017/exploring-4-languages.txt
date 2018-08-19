@@ -2,7 +2,7 @@
 Title: Exploring 4 Languages
 Subtitle: Rust, Elm, Reason, and F<sup>♯</sup> – a bunch of cousins!
 Date: 2017-12-31 20:20
-Tags: functional programming, rust, elm, fsharp, reasonml, domain-driven design, four-languages
+Tags: [functional programming, rust, elm, fsharp, reasonml, domain-driven design, four-languages]
 Category: tech
 Summary: >
     I’m going to implement the exercises from Domain Modeling Made Functional in Rust, Elm, ReasonML, and F♯… because I think it'll be an interesting learning experience and a lot of fun!

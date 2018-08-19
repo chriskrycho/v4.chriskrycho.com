@@ -1,5 +1,5 @@
 Title: Airship
-Tags: poetry
+Tags: [poetry]
 Date: 2015-04-30 06:05
 Author: Chris Krycho
 Summary: Our airship sails, / ere sunrise…
