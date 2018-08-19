@@ -5,7 +5,7 @@ Subtitle: >
     A really *smart* introduction to functional programming.
 Link: https://css-tricks.com/level-up-your-filter-game/
 Category: tech
-Tags: [pedagogy, javascript, functional programming]
+Tags: [links, pedagogy, javascript, functional programming]
 Date: 2018-08-18 10:00
 
 ---
