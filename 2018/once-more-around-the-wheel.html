@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Once More Around The Wheel &middot; Chris Krycho</title>
+    <meta name="description" content="I keep hoping a solution to my publishing needs will present itself instead of my having to build it myself. Such a solution does *not* appear forthcoming, though."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/once-more-around-the-wheel.html"/>
+    <meta property="og:title" content="Once More Around The Wheel"/>
+    <meta property="og:description" content="I keep hoping a solution to my publishing needs will present itself instead of my having to build it myself. Such a solution does *not* appear forthcoming, though."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Once More Around The Wheel"/>
+    <meta name="twitter:description" content="I keep hoping a solution to my publishing needs will present itself instead of my having to build it myself. Such a solution does *not* appear forthcoming, though."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="writing blogging static-site-generators tech">
+
+    <header>
+<h1>Once More Around The Wheel</h1>
+<h2>Wishing something—anything—supported my particular and peculiar needs for static site generation.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/once-more-around-the-wheel.html"><i class="fa fa-fw fa-link"></i></a>August 31, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/blogging/">#blogging</a><a class="hashtags" href="http://www.chriskrycho.com/static-site-generators/">#static site generators</a><a class="hashtags" href="http://www.chriskrycho.com/writing/">#writing</a></span><span><a href="http://www.chriskrycho.com/2018/once-more-around-the-wheel.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>I very much wish my publishing needs were not so… complicated. Academic writing—though that’s done for a while—poetry, code, and a strong preference for semantic HTML to be generated by it along with an equally strong preference for plain text authoring…</p>
+<p>Nothing works for me.</p>
+<p>The only Markdown parser out there which does the right thing with all of those is <a href="http://pandoc.org">Pandoc</a>. The options for using Pandoc directly are not great. Shelling out to it via <a href="https://getpelican.com">Pelican</a> (my current strategy) works but is <em>slow</em>. The implemented-in-Rust <a href="https://www.getgutenberg.io">Gutenberg</a> generator looks like <em>exactly</em> what I want performance-wise, but its <a href="https://github.com/google/pulldown-cmark" title="pulldown-cmark">underlying Markdown engine</a> doesn’t support citations <em>or</em> poetry.</p>
+<p>I keep coming back to the conclusion that I’m basically going to have to build whatever I want myself, if I want my desired publishing flow to exist. I don’t really <em>want</em> to do that, though. It’s a boatload of work, even “just”—just!—to do something like (a) learn Haskell well enough to build on top of Pandoc directly or (b) build a good C-based API wrapper in Rust so that I can do it <em>that</em> way or (c) extend <a href="https://github.com/google/pulldown-cmark">pulldown-cmark</a> to support poetry and citation management.</p>
+<p>For lots of reasons (c) is probably what I’ll ultimately end up doing; I want that for more than just blogging. More on that eventually, I hope.</p>
+<p>But in the meantime I really just… want someone else to have the same weird needs I do and build this for me. I just know full well at this point that that’s not going to happen, and accordingly am basically resigned to muddling along with Pelican and Pandoc until such a time as I can actually buckle down and build what I want and need.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> _C’est la vie._</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>As an aside: the prospect of buckling down and building things like that in my spare time is <em>much</em> less appealing given my current <a href="https://www.chriskrycho.com/burnout/">struggles with burnout</a>, and as I’ll write about at some point in the future I feel a (perhaps-surprising to you, my reader) lack of confidence about my <em>ability</em> to accomplish those things.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/review-the-fate-stars.html">Review: <cite>The Fate Stars</cite>
+</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/give-me-chronological-archives-or-go-away.html">Give Me Chronological Archives or Go Away</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/once-more-around-the-wheel.html">Once More Around The Wheel</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/dealing-with-burnout-in-public.html">Dealing With Burnout In Public</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
