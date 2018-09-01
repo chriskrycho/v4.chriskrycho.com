@@ -1,6 +1,6 @@
 ---
 Title: >
-    Review: <cite>The Fate Stars</cite>
+    Review: <cite>The Fated Sky</cite>
 Subtitle: The sequel is almost as good as the first book.
 Date: 2018-08-31 07:00
 Tags: [book reviews, science fiction, sexism, mental illness, racism]
