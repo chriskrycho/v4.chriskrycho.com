@@ -1,0 +1,12 @@
+---
+Title: ""
+Slug: 2015-06-06-2153
+Date: 2015-06-06 21:53
+Template: formats/micro
+Category: micro
+...
+
+Thinking about how to structure the content on my blog. Layout, categories, etc.
+I think the problem is insufficient clarity about data hierarchy—a lack of
+understanding about how the pieces *relate* to each other. I’ll keep working on
+it.

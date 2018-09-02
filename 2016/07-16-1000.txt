@@ -1,0 +1,13 @@
+---
+Title: ""
+Date: 2016-07-16 10:00
+Tags: programming languages, csharp
+Template: formats/micro
+Slug: 07-16-1000
+Category: micro
+---
+
+I was looking at a bunch of the inbound changes to [C♯], and while they're all quite nice... I realized that playing with a bunch of [ML]-descended languages has basically ruined me for C-descended languages.
+
+[C♯]: https://github.com/dotnet/roslyn/issues/2136
+[ML]: https://en.wikipedia.org/wiki/ML_(programming_language)

@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-06-30 11:14
+Tags: software development, javascript
+Template: formats/micro
+Slug: 06-30-1114
+Category: micro
+---
+
+I'd love---*love*---to see an open standard for embedding browser engines (a la Chromium/Electron) emerge, so you can embed whichever you like.

@@ -1,0 +1,13 @@
+---
+Title: ""
+Slug: 2016-05-22-1318
+Date: 2016-05-22 13:18
+Tags: podcasting, rust
+Template: formats/micro
+Category: micro
+---
+
+Wrote ~1,000 words of the next [New Rustacean] episode---including a new (occasional) episode format on recent news in the [Rust] community!
+
+[New Rustacean]: http://www.newrustacean.com
+[Rust]: http://rust-lang.org

@@ -1,0 +1,11 @@
+---
+Title: ""
+Slug: 2015-07-15-0801
+Date: 2015-07-15 08:01
+Template: formats/micro
+Category: micro
+...
+
+One of the things that impresses me most about the new [DayOne] sync is how blazingly *fast* it is. Changes are nearly instantaneous.
+
+[DayOne]: 

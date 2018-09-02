@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-07-08 15:36
+Tags: software development, javascript
+Template: formats/micro
+Slug: 07-08-1536
+Category: micro
+---
+
+I haven't gotten almost anything done today. I think I'm calling today my day off for this week and I'll hammer at productive things later.

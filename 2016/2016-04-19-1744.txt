@@ -1,0 +1,10 @@
+---
+Title: ""
+Slug: 2016-04-19-1744
+Date: 2016-04-19 17:44
+Tags: javascript, emberjs, software development
+Template: formats/micro
+Category: micro
+...
+
+I still love EmberJS---but if I have one complaint, it's that it's *slightly* too heavy on convention-based magic. I want it to be a little more explicit, so that I can have a little more insight into what it's going. Yes, even if that means a little more boilerplate. Explicit is better than implicit.

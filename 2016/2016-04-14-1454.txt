@@ -1,0 +1,18 @@
+---
+Title: ""
+Slug: 2016-04-14-1454
+Date: 2016-04-14 14:54
+Tags: javascript, programming languages, software development
+Template: formats/micro
+Category: micro
+...
+
+Things I want basically *all the time* when writing JavaScript:
+
+- strong types
+- enums with values (tagged unions)
+- pattern-matching
+- immutability (more easily than with `Object.freeze`)
+- actual constants (not just fixed bindings like `const`)
+
+Basically: an ML, I guess.

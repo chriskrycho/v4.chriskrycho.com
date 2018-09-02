@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - libraries</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Tue, 14 Aug 2018 19:45:00 -0400</lastBuildDate><item><title>Stable Libraries</title><link>http://www.chriskrycho.com/2018/stable-libraries.html</link><description>&lt;p&gt;&lt;a href="https://github.com/chriskrycho/true-myth"&gt;True Myth&lt;/a&gt; has changed very little since I first released it, and although I have a few ideas for small additions I might make, I don’t really expect it to change much in the future. &lt;em&gt;That’s okay.&lt;/em&gt;&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - libraries</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sun, 02 Sep 2018 16:25:00 -0400</lastBuildDate><item><title>True Myth 2.1.0 Released</title><link>http://www.chriskrycho.com/2018/true-myth-210-released.html</link><description>&lt;p&gt;I’ve just released True Myth 2.1.0 (&lt;a href="https://github.com/chriskrycho/true-myth/tree/v2.1.0"&gt;source&lt;/a&gt;, &lt;a href="https://true-myth.js.org"&gt;docs&lt;/a&gt;), which includes a handful of new utility functions for use with the &lt;code&gt;Maybe&lt;/code&gt; types and arrays or tuples. Note that to make use of these you’ll need to be on at least TypeScript 3.0: they take advantage of the some of the shiny new features in the type system!&lt;/p&gt;
+&lt;p&gt;Here’s what’s new:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;Maybe.find&lt;/code&gt;:&lt;/strong&gt; for those times when you want to do &lt;code&gt;Array.prototype.find&lt;/code&gt; and would love to not have to wrap up the result with a &lt;code&gt;Maybe&lt;/code&gt; explicitly every time. As with most functions in True Myth, it’s curried so you can easily use it in a functional programming style.&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Maybe from &amp;#39;true-myth/maybe&amp;#39;;
+
+let foundRegular = Maybe.find(n =&amp;gt; n &amp;gt; 1, [1, 2, 3]);
+console.log(foundRegular.toString());  // Just(2)
+
+let notFound = Maybe.find(n = n &amp;lt; 1, [1, 2, 3]);
+console.log(notFound.toString());  // Nothing
+
+let findAtLeast5 = Maybe.find((n: number) =&amp;gt; n &amp;gt; 5);
+let foundCurried = findAtLeastFive([2, 4, 6, 8, 10]);
+console.log(foundCurried.toString());  // Just(6)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;Maybe.head&lt;/code&gt; (aliased as &lt;code&gt;Maybe.first&lt;/code&gt;):&lt;/strong&gt; for getting the first item of an array safely. Like lodash’s &lt;code&gt;_.head&lt;/code&gt; (or &lt;code&gt;someArray[0]&lt;/code&gt;) but it returns a &lt;code&gt;Maybe&lt;/code&gt; instead of possibly giving you back &lt;code&gt;undefined&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Maybe from &amp;#39;true-myth/maybe&amp;#39;;
+
+let empty = Maybe.head([]);
+console.log(empty.toString());  // Nothing
+
+let hasItems = Maybe.head([1, 2, 3]);
+console.log(hasItems.toString());  // Just(1)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;Maybe.last&lt;/code&gt;:&lt;/strong&gt; the same as &lt;code&gt;Maybe.head&lt;/code&gt;, but for getting the &lt;em&gt;last&lt;/em&gt; element in an array.&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Maybe from &amp;#39;true-myth/maybe&amp;#39;;
+
+let empty = Maybe.last([]);
+console.log(empty.toString());  // Nothing
+
+let hasItems = Maybe.last([1, 2, 3]);
+console.log(hasItems.toString());  // Just(3)&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;Maybe.all&lt;/code&gt;:&lt;/strong&gt; for converting an array of &lt;code&gt;Maybe&lt;/code&gt;s to a &lt;code&gt;Maybe&lt;/code&gt; of an array. If you have an array whose contents are all &lt;code&gt;Maybe&lt;/code&gt;s, it’s sometimes useful to be able to flip that around so that if all of the items are &lt;code&gt;Just&lt;/code&gt;s, you get back a single &lt;code&gt;Just&lt;/code&gt; wrapping the array of the values which were wrapped in all the &lt;code&gt;Just&lt;/code&gt;s in the array, but if any were &lt;code&gt;Nothing&lt;/code&gt;, the whole thing is a single &lt;code&gt;Nothing&lt;/code&gt;. This works for both heterogeneous and homogenous arrays, which is pretty cool. A code sample will make this a lot clearer:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Maybe, { just, nothing } from &amp;#39;true-myth/maybe&amp;#39;;
+
+let includesNothing = Maybe.all(just(2), nothing&amp;lt;string&amp;gt;());
+console.log(includesNothing.toString());  // Nothing
+
+let allJusts = Maybe.all(just(2), just(&amp;#39;hi&amp;#39;), just([42]));
+console.log(allJusts.toString());  // Just([2, &amp;#39;hi&amp;#39;, [42]]);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The resulting type of both &lt;code&gt;includesNothing&lt;/code&gt; and &lt;code&gt;allJusts&lt;/code&gt; here is &lt;code&gt;Maybe&amp;lt;Array&amp;lt;string | number | Array&amp;lt;number&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;&lt;code&gt;Maybe.tuple&lt;/code&gt;:&lt;/strong&gt; just like &lt;code&gt;Maybe.all&lt;/code&gt; except it works in tuples (preserving their types’ order) for up to five-item tuples. (As the docs I wrote say: if you’re doing a larger tuple than that I don’t want to know what you’re doing but I won’t help with it!)&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;import Maybe, { just, nothing } from &amp;#39;true-myth/maybe&amp;#39;;
+
+type Tuple = [Maybe&amp;lt;number&amp;gt;, Maybe&amp;lt;string&amp;gt;, Maybe&amp;lt;number[]&amp;gt;];
+
+let tupleWithNothing: Tuple = [just(2), nothing(), just([42])];
+let tupleResult = Maybe.tuple(tupleWithNothing);
+console.log(tupleResult.toString());  // Nothing
+
+let allJusts: Tuple = [just(2), just(), just([42])];&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;These have the same &lt;em&gt;output&lt;/em&gt; (i.e. the same underlying representation) as the array output, but a different type. The resulting type of both &lt;code&gt;includesNothing&lt;/code&gt; and &lt;code&gt;allJusts&lt;/code&gt; here is &lt;code&gt;Maybe&amp;lt;[number, string, Array&amp;lt;number&amp;gt;]&amp;gt;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Once TypeScript 3.1 is out, I should be able to collapse these into a single &lt;code&gt;all&lt;/code&gt;, and &lt;code&gt;tuple&lt;/code&gt; will just become an alias for it.&lt;/p&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sun, 02 Sep 2018 16:25:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-09-02:/2018/true-myth-210-released.html</guid><category>TypeScript</category><category>functional programming</category><category>monads</category><category>libraries</category><category>software development</category><category>open source software</category><category>True Myth</category></item><item><title>Stable Libraries</title><link>http://www.chriskrycho.com/2018/stable-libraries.html</link><description>&lt;p&gt;&lt;a href="https://github.com/chriskrycho/true-myth"&gt;True Myth&lt;/a&gt; has changed very little since I first released it, and although I have a few ideas for small additions I might make, I don’t really expect it to change much in the future. &lt;em&gt;That’s okay.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;There’s a strange idea in some parts of the software development ecosystem—a way of think I also find myself falling into from time—which takes a lack of changes to a library as a sign that the library is &lt;em&gt;dead&lt;/em&gt; and shouldn’t be used. I call this idea “strange” because if you take a step back, it’s actually not necessarily very healthy for certain kinds of libraries to be changing all the time.&lt;/p&gt;
 &lt;p&gt;But if you’re in an ecosystem where rapid change in libraries is normal, you end up assuming that something which &lt;em&gt;isn’t changing&lt;/em&gt; is &lt;em&gt;unmaintained&lt;/em&gt; or &lt;em&gt;not usable&lt;/em&gt; when in fact the opposite may be true. If someone opens a pull request or an issue for True Myth, I generally get to it in under a day, often under an hour if it’s in my normal working time. (That’s easy enough for me to do because it’s a small, simple library; I don’t have the scale problems that larger projects do.) The project isn’t &lt;em&gt;dead&lt;/em&gt;. It’s just mostly &lt;em&gt;done&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;One of the things I’d like to see in the front-end/JavaScript community in particular is a growing embrace of the idea that some libraries can genuinely be finished. They might need a tweak here or there to work with a new packaging solution, or to fix some corner case bug that has been found. But the “churn” we all feel to varying degrees would be much diminished if maintainers didn’t feel a constant push to be changing for the sake of, well… change. The burden on maintainers would be lower, too. Maybe we’d all get to spend less time on small changes that just keep us “up to date” and more on solving bigger problems.&lt;/p&gt;

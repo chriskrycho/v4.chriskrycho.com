@@ -1,0 +1,11 @@
+---
+Title: ""
+Slug: 2015-10-21-0757
+Date: 2015-10-21 07:57
+Tags: software development
+Template: formats/micro
+Category: micro
+...
+
+I *really* wish someone had explained "separation of concerns" to the person who
+wrote this UI/controller/blob.

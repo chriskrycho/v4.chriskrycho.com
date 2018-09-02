@@ -1,0 +1,11 @@
+---
+Title: ""
+Slug: 2015-08-03-1516
+Date: 2015-08-03 15:16
+Template: formats/micro
+Category: micro
+...
+
+Hey, Google, I know I keep telling you this, but you don't seem to be listening.
+If I put a search term in the box, I *actually want it in my results*. I know
+you think your algorithm is smarter than me. But it isn't.

@@ -1,0 +1,17 @@
+---
+Title: ""
+Slug: 2016-04-14-1100
+Date: 2016-04-14 11:00
+Tags: programming languages, javascript, purescript, elm
+Template: formats/micro
+Category: micro
+...
+
+After looking at [Elm] a little, and discovering it doesn't have [Haskell]-style [typeclasses] (_a la_ [Rust]'s [traits]), I was a bit disappointed. Then I discovered [PureScript], which *does*. Intrigued all over again.
+
+[Elm]: http://elm-lang.org
+[Haskell]: https://www.haskell.org
+[typeclasses]: http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101
+[Rust]: https://www.rust-lang.org
+[traits]: https://doc.rust-lang.org/book/traits.html
+[PureScript]: http://www.purescript.org

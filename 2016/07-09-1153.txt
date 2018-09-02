@@ -1,0 +1,10 @@
+---
+Title: ""
+Date: 2016-07-09 11:53
+Tags: software development, open source
+Template: formats/micro
+Slug: 07-09-1153
+Category: micro
+---
+
+Open-source developers who are still using mailing lists for tracking bugs are not on my good list. _sigh_

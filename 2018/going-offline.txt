@@ -11,7 +11,7 @@ Summary: >
 
 Several times this week, I signed out of both my company Slack and the [Ember Community Slack](https://embercommunity.slack.com/) and just worked in “solitude” for about six and a half of the eight hours I was working. It was, in a word, *bliss*.
 
-Over the past few years, I’ve come to enjoy a lot of chatting during the day while at work, and the social interaction is very much a *must* in a lot of ways for someone who works remotely. The flip side, however, is that chat is a huge time-suck, and more than that it’s a constant drain on attention. I’m far from the first person to see this or to say it, of course, and I’ve experienced it before. But it struck me much more forcefully this week than it usually has in the past.
+Over the past few years, I’ve come to enjoy a lot of chatting during the day while at work, and the social interaction is very much a *ust* in a lot of ways for someone who works remotely. The flip side, however, is that chat is a huge time-suck, and more than that it’s a constant drain on attention. I’m far from the first person to see this or to say it, of course, and I’ve experienced it before. But it struck me much more forcefully this week than it usually has in the past.
 
 Some of that, I suspect, is the effect of the burnout I’ve been experiencing: I’m much more taxed by social interaction and by shifts in attention right now than I have been in the past. More and more, though, I’ve also become aware of the effect the constant distraction of chat has on me. I am much less effective as a software developer when I am constantly switching modes.
 

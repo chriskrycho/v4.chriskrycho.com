@@ -1,0 +1,12 @@
+---
+Title: ""
+Slug: 2016-04-07-0845
+Date: 2016-04-07 08:45
+Template: formats/micro
+Category: micro
+Tags: programming languages, rust
+---
+
+I 💙 the Rust team. So much.
+
+[This is just fantastic.](https://github.com/rust-lang/rust/pull/32756 "Overhaul borrowck error messages and compiler error formatting generally")

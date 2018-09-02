@@ -1,0 +1,12 @@
+---
+Title: ""
+Slug: 2016-05-18-2241
+Date: 2016-05-18 22:41
+Tags: writing, programming languages, rust, swift
+Template: formats/micro
+Category: micro
+---
+
+Finally at a spot where I have both the time and the mental energy to pick back up my [Rust and Swift] series. Initializers, I'm coming for you.
+
+[Rust and Swift]: http://www.chriskrycho.com/rust-and-swift.html

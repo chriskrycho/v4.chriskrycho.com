@@ -1,0 +1,12 @@
+---
+Title: ""
+Slug: 2015-07-30-2028
+Date: 2015-07-30 20:28
+Template: formats/micro
+Category: micro
+Tags: software development
+...
+
+Another little feature of Rust I quite like: the use of [`trait`s] instead of inheritance to share behavior. All the benefits of inheritance, and a few more besides, but none of the drawbacks.
+
+[`trait`s]: https://en.wikipedia.org/wiki/Trait_(computer_programming)

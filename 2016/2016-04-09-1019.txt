@@ -1,0 +1,10 @@
+---
+Title: ""
+Slug: 2016-04-09-1019
+Date: 2016-04-09 10:19
+Tags: javascript, software development
+Template: formats/micro
+Category: micro
+...
+
+It is utterly infuriating how many parts of the DOM API are "array-like" but don't have the basic `Array` API actually attached. Want to iterate over a `HTMLCollection`? You get to use a `for` loop with an index! Lucky you! 😐

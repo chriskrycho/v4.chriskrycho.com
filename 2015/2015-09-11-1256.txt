@@ -1,0 +1,14 @@
+---
+Title: ""
+Slug: 2015-09-11-1256
+Date: 2015-09-11 12:56
+Template: formats/micro
+Category: micro
+Tags: typography
+...
+
+I've been thinking about publishing my blog content in physical form, and of
+course I want to match the typeface. Time to start saving up to purchase a
+[desktop license for Sabon][license], it seems.
+
+[license]: http://www.linotype.com/191926/SabonCompleteFamilyPack-product.html

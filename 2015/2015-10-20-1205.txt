@@ -1,0 +1,11 @@
+---
+Title: ""
+Slug: 2015-10-20-1205
+Date: 2015-10-20 12:05
+Tags: music, software development
+Template: formats/micro
+Category: micro
+...
+
+The *only* thing keeping me sane as I work through the atrocious Win32 Shell
+APIs today is listening to Pärt's _Lamentate_.

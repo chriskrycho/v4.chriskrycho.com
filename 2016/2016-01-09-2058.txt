@@ -1,0 +1,15 @@
+---
+Title: ""
+Slug: 2016-01-09-2058
+Date: 2016-01-09 20:58
+Tags: podcasting
+Category: micro
+---
+
+Published my tenth full episode (and twelfth total) of [New Rustacean] today.
+Researching for, writing, recording, and editing the 17-minute, 23-second
+episode took a total of seven and a half hours.
+
+Podcasting is a *lot* of work, but I still really enjoy it.
+
+[New Rustacean]: http://www.newrustacean.com/

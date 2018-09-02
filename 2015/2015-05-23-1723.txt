@@ -1,0 +1,13 @@
+---
+Title: ""
+Slug: 2015-05-23-1723
+Date: 2015-05-23 17:23
+Template: formats/micro
+Category: micro
+...
+
+Every once in a while, I get frustrated with doing all my website stuff a bit
+more manually using [Pelican]. But then I remember the dark days, of WordPress,
+and I don't regret the switch a bit.
+
+[Pelican]: http://docs.getpelican.com/en/3.5.0/
