@@ -87,6 +87,7 @@
         <div class="content">
 
 <p>I’ve just released True Myth 2.1.0 (<a href="https://github.com/chriskrycho/true-myth/tree/v2.1.0">source</a>, <a href="https://true-myth.js.org">docs</a>), which includes a handful of new utility functions for use with the <code>Maybe</code> types and arrays or tuples. Note that to make use of these you’ll need to be on at least TypeScript 3.0: they take advantage of the some of the shiny new features in the type system!</p>
+<p><strong>Edit:</strong> and, five minutes later, versions 2.1.1 and 2.1.2 are out with bugfixes consisting of “I forgot to export two functions. Now they’re exported.” Because that’s how this <em>always</em> works, right?</p>
 <p>Here’s what’s new:</p>
 <ul>
 <li><p><strong><code>Maybe.find</code>:</strong> for those times when you want to do <code>Array.prototype.find</code> and would love to not have to wrap up the result with a <code>Maybe</code> explicitly every time. As with most functions in True Myth, it’s curried so you can easily use it in a functional programming style.</p>

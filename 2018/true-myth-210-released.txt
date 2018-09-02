@@ -2,6 +2,7 @@
 Title: True Myth 2.1.0 Released
 Subtitle: A bunch of neat new utility functions on Maybe for arrays and tuples.
 Date: 2018-09-02 16:25
+Updated: 2018-09-02 16:30
 Category: Tech
 Tags: [TypeScript, functional programming, monads, libraries, software development, open source software, True Myth]
 Summary: >
@@ -11,6 +12,8 @@ Summary: >
 
 
 I’ve just released True Myth 2.1.0 ([source](https://github.com/chriskrycho/true-myth/tree/v2.1.0), [docs](https://true-myth.js.org)), which includes a handful of new utility functions for use with the `Maybe` types and arrays or tuples. Note that to make use of these you’ll need to be on at least TypeScript 3.0: they take advantage of the some of the shiny new features in the type system!
+
+**Edit:** and, five minutes later, versions 2.1.1 and 2.1.2 are out with bugfixes consisting of "I forgot to export two functions. Now they're exported." Because that's how this *always* works, right?
 
 Here’s what’s new:
 
