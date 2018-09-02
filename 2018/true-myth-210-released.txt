@@ -2,7 +2,7 @@
 Title: True Myth 2.1.0 Released
 Subtitle: A bunch of neat new utility functions on Maybe for arrays and tuples.
 Date: 2018-09-02 16:25
-Updated: 2018-09-02 16:30
+Updated: 2018-09-02 16:52
 Category: Tech
 Tags: [TypeScript, functional programming, monads, libraries, software development, open source software, True Myth]
 Summary: >
@@ -78,11 +78,13 @@ Here’s what’s new:
 
 	type Tuple = [Maybe<number>, Maybe<string>, Maybe<number[]>];
 
-	let tupleWithNothing: Tuple = [just(2), nothing(), just([42])];
-	let tupleResult = Maybe.tuple(tupleWithNothing);
-	console.log(tupleResult.toString());  // Nothing
+	let withNothing: Tuple = [just(2), nothing(), just([42])];
+	let withNothingResult = Maybe.tuple(withNothing);
+	console.log(withNothingResult.toString());  // Nothing
 
-	let allJusts: Tuple = [just(2), just(), just([42])];
+	let allJusts: Tuple = [just(2), just('hi'), just([42])];
+	let allJustsResult = Maybe.tuple(allJusts);
+	console.log(allJustsResult.toString());  // Just([2, "hi", [42]])
 	```
 
 	These have the same *output* (i.e. the same underlying representation) as the array output, but a different type. The resulting type of both `includesNothing` and `allJusts` here is `Maybe<[number, string, Array<number>]>`.

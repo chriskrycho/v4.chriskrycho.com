@@ -46,11 +46,13 @@ console.log(allJusts.toString());  // Just([2, &amp;#39;hi&amp;#39;, [42]]);&lt;
 
 type Tuple = [Maybe&amp;lt;number&amp;gt;, Maybe&amp;lt;string&amp;gt;, Maybe&amp;lt;number[]&amp;gt;];
 
-let tupleWithNothing: Tuple = [just(2), nothing(), just([42])];
-let tupleResult = Maybe.tuple(tupleWithNothing);
-console.log(tupleResult.toString());  // Nothing
+let withNothing: Tuple = [just(2), nothing(), just([42])];
+let withNothingResult = Maybe.tuple(withNothing);
+console.log(withNothingResult.toString());  // Nothing
 
-let allJusts: Tuple = [just(2), just(), just([42])];&lt;/code&gt;&lt;/pre&gt;
+let allJusts: Tuple = [just(2), just(&amp;#39;hi&amp;#39;), just([42])];
+let allJustsResult = Maybe.tuple(allJusts);
+console.log(allJustsResult.toString());  // Just([2, &amp;quot;hi&amp;quot;, [42]])&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;These have the same &lt;em&gt;output&lt;/em&gt; (i.e. the same underlying representation) as the array output, but a different type. The resulting type of both &lt;code&gt;includesNothing&lt;/code&gt; and &lt;code&gt;allJusts&lt;/code&gt; here is &lt;code&gt;Maybe&amp;lt;[number, string, Array&amp;lt;number&amp;gt;]&amp;gt;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Once TypeScript 3.1 is out, I should be able to collapse these into a single &lt;code&gt;all&lt;/code&gt;, and &lt;code&gt;tuple&lt;/code&gt; will just become an alias for it.&lt;/p&gt;

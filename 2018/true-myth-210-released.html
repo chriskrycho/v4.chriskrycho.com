@@ -132,11 +132,13 @@ console.log(allJusts.toString());  // Just([2, &#39;hi&#39;, [42]]);</code></pre
 
 type Tuple = [Maybe&lt;number&gt;, Maybe&lt;string&gt;, Maybe&lt;number[]&gt;];
 
-let tupleWithNothing: Tuple = [just(2), nothing(), just([42])];
-let tupleResult = Maybe.tuple(tupleWithNothing);
-console.log(tupleResult.toString());  // Nothing
+let withNothing: Tuple = [just(2), nothing(), just([42])];
+let withNothingResult = Maybe.tuple(withNothing);
+console.log(withNothingResult.toString());  // Nothing
 
-let allJusts: Tuple = [just(2), just(), just([42])];</code></pre>
+let allJusts: Tuple = [just(2), just(&#39;hi&#39;), just([42])];
+let allJustsResult = Maybe.tuple(allJusts);
+console.log(allJustsResult.toString());  // Just([2, &quot;hi&quot;, [42]])</code></pre>
 <p>These have the same <em>output</em> (i.e. the same underlying representation) as the array output, but a different type. The resulting type of both <code>includesNothing</code> and <code>allJusts</code> here is <code>Maybe&lt;[number, string, Array&lt;number&gt;]&gt;</code>.</p></li>
 </ul>
 <p>Once TypeScript 3.1 is out, I should be able to collapse these into a single <code>all</code>, and <code>tuple</code> will just become an alias for it.</p>
