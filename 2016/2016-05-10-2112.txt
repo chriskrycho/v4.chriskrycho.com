@@ -1,9 +1,0 @@
----
-Title: ""
-Slug: 2016-05-10-2112
-Date: 2016-05-10 21:12
-Template: formats/micro
-Category: micro
----
-
-One class finished. Just another 6000 words or so to write and edit before I’m done with the semester.

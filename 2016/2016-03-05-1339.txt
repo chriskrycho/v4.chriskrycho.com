@@ -1,9 +1,0 @@
----
-Title: ""
-Slug: 2016-03-05-1339
-Date: 2016-03-05 13:39
-Template: formats/micro
-Category: micro
-...
-
-One upside of having a new 5k iMac with 64 GB of RAM: I keep forgetting that I have my Parallels VM (with 16 GB of RAM allocated to it!) running. Ridiculous. (And great.)

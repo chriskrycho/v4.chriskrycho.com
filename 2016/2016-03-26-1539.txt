@@ -1,9 +1,0 @@
----
-Title: ""
-Slug: 2016-03-26-1539
-Date: 2016-03-26 15:39
-Template: formats/micro
-Category: micro
-...
-
-Among the many things Microsoft software does which annoy me, one of the chief is this: the Office auto updater checks for updates immediately after finishing applying updates. *Why?*
