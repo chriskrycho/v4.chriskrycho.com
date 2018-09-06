@@ -2,7 +2,7 @@
 Title: True Myth 1.3.0 and 2.0.0
 Subtitle: A couple nice ergonomic updates and some breaking changes for consuming the library.
 Date: 2018-05-18 19:15
-Tags: [TypeScript, functional programming, libraries, software development, open source software, versioning]
+Tags: [TypeScript, functional programming, libraries, software development, open source software, versioning, True Myth]
 Category: Tech
 Summary: >
     Get `value` and `error` directly after type narrowing, make type definitions Just Work™, drop Flow types, and simplify the contents of the distributed build.
@@ -33,7 +33,7 @@ function dealsWithAMaybe(couldBeAString: Maybe<string>) {
 
 This is a contrived example of course, but I and my colleagues found in practice that this is a scenario that comes up relatively often, *especially* when integrating with existing code rather than writing new code – control flow patterns there tend to assume early-return-on-`null` or similar instead.
 
-So I made a change (leaning on TypeScript’s notion of [“type narrowing”](https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards "“User-Defined Type Guards” in the TypeScript handbook")) so that you don’t have to use `unsafelyUnwrap` in this scenario anymore! You can use the method types, the standalone functions, or direct matching against the variants on the property 
+So I made a change (leaning on TypeScript’s notion of [“type narrowing”](https://www.typescriptlang.org/docs/handbook/advanced-types.html#user-defined-type-guards "“User-Defined Type Guards” in the TypeScript handbook")) so that you don’t have to use `unsafelyUnwrap` in this scenario anymore! You can use the method types, the standalone functions, or direct matching against the variants on the property
 
 ```ts
 import Maybe from 'true-myth/maybe';
@@ -106,7 +106,7 @@ As a result, I’ve stopped using [libkit](https://github.com/tildeio/libkit), w
 So the distributed build now looks something like this:
 
 ```
-/ 
+/
   index.d.ts
   maybe.d.ts
   result.d.ts
@@ -132,10 +132,10 @@ You’ll just need to completely remove the `"paths"` mapping for True Myth from
 ### Removing Flow types
 
 To my knowledge, no one is actually using the Flow types for the library. When I first started on it, my collaborator [Ben Makuh](https://github.com/bmakuh) *was* using Flow, but he ended up migrating to TypeScript in the intervening time, and there are no consumers I know of. I was always relatively unsure of their correctness, *and* I don’t have a good way to validate their correctness, *and* maintaining them involved doing manual work on every release to update the types by hand.
-  
+
 If you *do* use True Myth with Flow, and you’re missing the types, please let me know. I just can’t maintain them myself at this point!
 
----- 
+----
 
 And that’s it! We’ve been using True Myth in production at Olo for quite some time, and it’s proved to be a really valuable tool. Give it a spin and let me know how these latest versions work for you!
 
