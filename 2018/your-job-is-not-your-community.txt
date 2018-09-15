@@ -23,7 +23,7 @@ Skimming through Twitter this morning, two threads caught my attention.
 > They’re *blocked* from this professional advancement because so many guys jump straight into trying to date  
 > —[\@sehurlburt](https://mobile.twitter.com/sehurlburt/status/1040778111057444866)
 
-I agree	with Stephanie’s point here, but it was the juxtaposition with Kyle’s point that particular caught my attention.
+I agree	with Stephanie’s point here, but it was the juxtaposition with Kyle’s point that particularly caught my attention.
 
 Without excusing the young men who turn from professional networking to flirting immediately on encountering an attractive woman at a tech meetup—again, don't do that!—it’s also worth addressing the structural reasons why move is so tempting. (As usual, these kinds of things are worth addressing [both individually and structurally](https://winningslowly.org/season-5), and in fact *have* to be addressed both ways to see real change.) One of the structural issues which leads to “see an attractive woman at a JavaScript meetup, decide to flirt with her” is the thing Kyle is pointing at. Namely: we’ve offloaded the vast majority of our social existence to work.[^1] Given that many of these young men have no other social contexts… where exactly *are* they going to flirt?
 
