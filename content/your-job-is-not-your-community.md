@@ -1,9 +1,9 @@
 ---
 Title: Your Job Is Not Your Community
 Subtitle: Thoughts on third spaces, remote jobs, misplaced flirtation, and the thread that ties them together.
-Date: TODO
+Date: 2018-09-15 09:10
 Category: Blog
-Tags: [sexism, community]
+Tags: [sexism, community, remote work, corporatism]
 Summary: >
     Thoughts on third spaces, remote jobs, misplaced flirtation, and the thread that ties them together: the way we have offloaded so much of our social existence to our employeers.
 
@@ -14,14 +14,14 @@ Skimming through Twitter this morning, two threads caught my attention.
 [The first](https://mobile.twitter.com/kyleshevlin/status/1040674991392452608), by Kyle Shevlin, pushes back on the idea that people should be expected to just pick up and move across the country for a job—never mind the personal and communal costs to them. This stands at the crux of the point he’s making (but the whole thread is good; I encouraged him to turn it into a blog post):
 
 > We don't even pay attention to this [i.e. the lack of communal ties and third spaces in our lives]. The pastor/philosopher in me gets frustrated with the lack of concern over the loss of community. Instead, we have tried to replace our relationship to other people with the relationship to our work and work place.  
-> —[@kyleshevlin ](https://mobile.twitter.com/kyleshevlin/status/1040674981468758016)
+> —[\@kyleshevlin ](https://mobile.twitter.com/kyleshevlin/status/1040674981468758016)
 
 [The second](https://mobile.twitter.com/sehurlburt/status/1040778111057444866), by Stephanie Hurlburt, gently but firmly tells guys to stop trying to *flirt* with the women they meet at professional meetups.
 
 > I am noticing a trend in women age 18-22 I’m mentoring— they try to network and get mentoring and go to meetups and literally every guy they try to talk with gets flirty
 > 
 > They’re *blocked* from this professional advancement because so many guys jump straight into trying to date  
-> —[@sehurlburt](https://mobile.twitter.com/sehurlburt/status/1040778111057444866)
+> —[\@sehurlburt](https://mobile.twitter.com/sehurlburt/status/1040778111057444866)
 
 I agree	with Stephanie’s point here, but it was the juxtaposition with Kyle’s point that particular caught my attention.
 
