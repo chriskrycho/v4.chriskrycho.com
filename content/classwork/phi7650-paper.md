@@ -14,7 +14,7 @@ Summary: >
 School: Southeastern Baptist Theological Seminary
 bibliography: content/bib/phi7650.yaml  # path from content root
 bib: bib/phi7650.yaml
-csl: /Users/chris/icloud-drive/Documents/writing/chicago.csl
+
 ---
 
 <i class=editorial>N.B. This copy of the paper has been lightly revised for grammar, spelling, etc. You can see the full revision history [here][gh].</i>
@@ -62,12 +62,6 @@ Many critics think the evidence of change in adoption of given theories, and var
 First, the fact that science is an iterative and approximative process does not tell against the realism asserted. Any given theory may be substantially false. This does not mean all theories are _likely_ not to refer, only that realists must be critical, aware of the possibility of failure, and willing to hold their claims tentatively, especially at first. No scientist with a knowledge of the history of the discipline should think otherwise. Electrons might not exist; but at least for the present, there is good reason to treat them not only as useful but as real. The longer the predictions of the model are (not dis)confirmed by the evidence, the more reason scientists have for holding the conclusion confidently. Likewise, as other theories developed without direct reference provide further corroboration, it is increasingly rational to affirm a theory as true, as well as empirically useful.
 
 Second, even if Laudan's point is granted, it does not disprove realism. It simply proves naïve realism false---naïve, even. True: empirical success does not guarantee the truthlikeness of a theory, and vice versa. It does not follow that there is _no_ correspondence between the two. Laudan insists that the truthlikeness of a given theory has zero bearing on its empirical fruitfulness, but it is at least possible that it is instead a contributory factor.[^1-4]
-
----
-
-# "The atomic theory lets..." could use some clarification in later drafts. If the reader doesn't know the relevant science, this isn't sufficiently clear.
-
----
 
 Finally, what about later theories which do _not_ make special cases of the earlier theory? When Laudan, Kuhn, van Fraassen, and others examine e.g. the fluid and aether theories and compare them to the atomic theories now held by most physicists, they note that science has been empirically useful without being true in the past; the same may be true today. However, later views, currently held by realists to be accurate, can often explain the success of the earlier theory even without claiming it as a subset.[Cf. @putnam:three-kinds-of-realism 197--199] The atomic theory lets scientists explain the appearance of the aether. Newton's mechanics can be applied to show why Ptolemy's epicycles worked, even though they were false. The later theory not only has greater empirical success; its explanatory power also includes the now disconfirmed theory---whether as a special case or not. To be sure, the idea that all science proceeds linearly and that every theory is this kind of empirical superset of the former is incorrect.[^1-5] Still, the fact that later theories _often_ can do so is further evidence that truthlikeness is a contributory factor in the success of scientific theories.
 
