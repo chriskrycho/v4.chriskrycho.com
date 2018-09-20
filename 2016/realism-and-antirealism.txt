@@ -14,7 +14,7 @@ Summary: >
 School: Southeastern Baptist Theological Seminary
 bibliography: content/bib/phi7650.yaml  # path from content root
 bib: bib/phi7650.yaml
-csl: /Users/chris/icloud-drive/Documents/writing/chicago.csl
+
 ---
 
 <i class=editorial>N.B. This copy of the paper has been lightly revised for grammar, spelling, etc. You can see the full revision history [here][gh].</i>
