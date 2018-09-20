@@ -385,57 +385,27 @@ able to access in the future regardless of what operating system I am using or
 what publishing systems come and go. Simple plain text files---Markdown---get me
 there. Now I've put good tools around that process, and I love it even more.
 
-[^footnotes]: Coming up with names for footnotes in Markdown can be painful in
-
-general for long documents. If you try to name them manually, like I do for
-posts on my website, you will very quickly end up wasting time on the names.
-If you try to number them, they will end up out of order in a hurry. My own
-[previous solution] to this problem quickly became unwieldy for larger
-papers, and required a _lot_ of hand-editing. Gladly, I no longer deal with
-that manually. Instead, I do all my drafting in [Ulysses], where you just
-type `(fn)` and it creates a footnote automatically, and will move that
-footnote _object_ around transparently as you edit, handling all the
-number-setting, etc. on its own.
+[^footnotes]: Coming up with names for footnotes in Markdown can be painful in general for long documents. If you try to name them manually, like I do for posts on my website, you will very quickly end up wasting time on the names. If you try to number them, they will end up out of order in a hurry. My own [previous solution] to this problem quickly became unwieldy for larger papers, and required a _lot_ of hand-editing. Gladly, I no longer deal with that manually. Instead, I do all my drafting in [Ulysses], where you just type `(fn)` and it creates a footnote automatically, and will move that footnote _object_ around transparently as you edit, handling all the number-setting, etc. on its own.
 
 [previous solution]: http://2012-2013.chriskrycho.com/web/markdown-and-academic-writing/
 [ulysses]: http://www.ulyssesapp.com
 
-[^latex]: The irony of site for software which boasts that it is "a high-quality
+[^latex]: The irony of site for software which boasts that it is "a high-quality typesetting system" and looks like [_this_][latex] is not lost on me...
 
-typesetting system" and looks like [_this_][latex] is not lost on me...
-[^citeproc]: If you used the installers on Pandoc's website, `pandoc-citeproc`
-comes with it. If you installed it via a package manager (e.g. by running
-`brew install pandoc`), it may not have, so you'll need to install it
-manually yourself (e.g. `brew install pandoc-citeproc`).
-[^styleset]: All of the content, including the rendered footnotes and the
-bibliography, has sensible content types set on it: headers are headers,
-body text is body text, etc. You can then customize to match the
-specifications of your style guide. I have a Chicago/Turabian style set set
-up with the formatting rules to match.
-[^template]: Actually, it was even hairier than this, because I also had a
-`--reference-docx path/to/template.docx` specified. If you think it's
-perhaps a bit too complex, well, I agree. I plan to turn that into a command
-line alias in pretty short order, because remembering it every time is just
-not going to happen.
-[^reference]: Using the `--reference-docx` argument to Pandoc, you can hand it a
-document that already uses your desired style set, so you don't have to go
-in and apply it manually.
-[^pdf]: I could have done that with Pandoc's
-<span class='tex'>L<span class="texA">A</span>T<span class="texE">E</span>X</span>
-<abbr>PDF</abbr> tools, as well, but didn't really feel like taking the time
-to tweak the <span class='tex'>L<span class="texA">A</span>T<span class="texE">E</span>X</span>
-template for it.
+[^citeproc]: If you used the installers on Pandoc's website, `pandoc-citeproc` comes with it. If you installed it via a package manager (e.g. by running `brew install pandoc`), it may not have, so you'll need to install it manually yourself (e.g. `brew install pandoc-citeproc`).
+
+[^styleset]: All of the content, including the rendered footnotes and the bibliography, has sensible content types set on it: headers are headers, body text is body text, etc. You can then customize to match the specifications of your style guide. I have a Chicago/Turabian style set set up with the formatting rules to match.
+
+[^template]: Actually, it was even hairier than this, because I also had a `--reference-docx path/to/template.docx` specified. If you think it's perhaps a bit too complex, well, I agree. I plan to turn that into a command line alias in pretty short order, because remembering it every time is just not going to happen.
+
+[^reference]: Using the `--reference-docx` argument to Pandoc, you can hand it a document that already uses your desired style set, so you don't have to go in and apply it manually.
+
+[^pdf]: I could have done that with Pandoc's <span class='tex'>L<span class="texA">A</span>T<span class="texE">E</span>X</span> <abbr>PDF</abbr> tools, as well, but didn't really feel like taking the time to tweak the <span class='tex'>L<span class="texA">A</span>T<span class="texE">E</span>X</span> template for it.
+
 [^noone]: Probably someone does, but not me, and not most people!
-[^pelicanconf]: If you're using Pelican, you can take a look at my Pelican
-configuration file [here][conf] to see the full configuration for using
-Pandoc this way.
-[^smarter]: Optimally, I'd really just prefer to be able to set _all_ of these
-arguments at a per-file level---i.e., not use `--filter pandoc cite-proc`
-unless the file actually specifies a bibliography. And I could hack Pelican
-to do that; I've actually already [messed around] with other, semi-related
-bits regarding Pelican and Pandoc's shared handling of <abbr>YAML</abbr>
-metadata. But I'd prefer to keep my installation as "vanilla" as possible to
-minimize the cost of setting things up again on a new machine or after a
-crash, etc.
+
+[^pelicanconf]: If you're using Pelican, you can take a look at my Pelican configuration file [here][conf] to see the full configuration for using Pandoc this way.
+
+[^smarter]: Optimally, I'd really just prefer to be able to set _all_ of these arguments at a per-file level---i.e., not use `--filter pandoc cite-proc` unless the file actually specifies a bibliography. And I could hack Pelican to do that; I've actually already [messed around] with other, semi-related bits regarding Pelican and Pandoc's shared handling of <abbr>YAML</abbr> metadata. But I'd prefer to keep my installation as "vanilla" as possible to minimize the cost of setting things up again on a new machine or after a crash, etc.
 
 [messed around]: https://github.com/liob/pandoc_reader/pull/5
