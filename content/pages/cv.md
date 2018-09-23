@@ -1,10 +1,10 @@
 ---
 Title: Curriculum Vitae
 Subtitle: >
-	I'm currently a front-end web developer, focused on <abbr>UI</abbr>, typography, functional programming—and ethics.
+    I'm currently a front-end web developer, focused on <abbr>UI</abbr>, typography, functional programming—and ethics.
 # Template: formats/resume
 Summary: >
-	I'm currently a front-end web developer, focused on UI, typography, functional programming—and ethics. You can have my traditional résumé, but this page will tell you a lot more about whether we might work well together.
+    I'm currently a front-end web developer, focused on UI, typography, functional programming—and ethics. You can have my traditional résumé, but this page will tell you a lot more about whether we might work well together.
 Status: hidden
 ---
 
