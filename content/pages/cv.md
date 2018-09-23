@@ -1,28 +1,24 @@
 ---
 Title: Curriculum Vitae
 Subtitle: >
-    I'm currently a senior software engineer, focused on ~<abbr>~UI~</abbr>~, typography, functional programming—and ethics.
+    I am currently a senior software engineer, focused on web <abbr>UI</abbr>, typography, functional programming—and ethics.
 # Template: formats/resume
 Summary: >
-    I'm currently a senior software engineer, focused on UI, typography, functional programming—and ethics. You can have my traditional résumé, but this page will tell you a lot more about whether we might work well together.
+    I am currently a senior software engineer, focused on web UI, typography, functional programming—and ethics. You can have my traditional résumé, but this page will tell you a lot more about whether we might work well together.
 Status: hidden
-
 ---
 
-In helping hire people over the last few years, I’ve seen a lot of résumés. Even the best of them leave a lot to be desired: they lack context and narrative. So if you’d like a traditional résumé for me, you can snag it [here](http://cdn.chriskrycho.com/resume.pdf)—but if you’d like a better idea of whether we might work well together, I think you’ll find the rest of this page a lot more helpful.
+In helping hire people over the last few years, I’ve seen a lot of résumés. Even the best of them leave a lot to be desired: they lack context and narrative. So if you’d like a traditional résumé for me, you can snag it [here](http://cdn.chriskrycho.com/resume.pdf)—but if you’d like a better idea of whether we might work well together, I think you’ll find the rest of this page a lot more helpful. If you're interested, [say hello](mailto:hello@chriskrycho.com?subject=Read%20your%20CV)!
 
-- [*About Me*](#about-me)—my philosophy of software development and my background
-- [*My Work*](#my-work)—not just where I’ve worked and the tech I used, but what I brought to the table and the difference I made
-- [*My Projects*](#my-projects)—podcasts, writing projects, and open-source software I’ve produced
-	- [Podcasts](#podcasts)
-	- [Open Source Software](#open-source-software)
-	- [Talks](#talks)
+- [<i>About Me</i>](#about-me)—my philosophy of software development and my unusual educational background
+- [<i>My Work</i>](#my-work)—not just where I’ve worked and the tech I used, but what I brought to the table and the difference I made
+- [<i>My Projects</i>](#my-projects)—include podcasts I produce, talks I've given, and open-source software I’ve developed or contributed to
 
 ----
 
 ## About Me
 
-I am currently a senior software engineer, focused on web <abbr>UI</abbr> development, typography, functional programming—and ethics. Besides my varied full-stack web development experience, I bring to the table half a decade of experience in systems-level programming (including avionics software and computational physics models), an [undergraduate degree in physics](#undergrad), a [master’s degree in theology](#masters), and a passion for building the *right things* in the *right way*.
+I am currently a senior software engineer, focused on web <abbr>UI</abbr>, typography, functional programming—and ethics. Besides my varied full-stack web development experience, I bring to the table half a decade of experience in systems-level programming (including avionics software and computational physics models), an [undergraduate degree in physics](#undergrad), a [master’s degree in theology](#masters), and a passion for building the *right things* in the *right way*.
 
 Building the *right things* means I’m not particularly interested in startups whose vision consists of either “tear down an existing industry” or “applying software will solve all our problems.” I’d much rather work for a company with both a vision for how its product improves human lives and also a recognition of the limits of technology—which is never a panacea for human ills and too often simply reinforces the worst of our existing failings. **Ethics is foundational for good software engineering.**
 
@@ -36,21 +32,25 @@ Building those things the *right way* means I’m not interested in slapdash pro
 
 ## My Work
 
-### Current
+### Olo (Current)
+
+*From individual contributor to a project lead with organization-wide influence.*
 
 **Since January 2016**, I have been a front-end-focused software engineer at [**Olo**](https://www.olo.com), a scale-up-phase startup which is the leading provider of online ordering for large restaurant brands.
 
-As a **Software Engineer** from January 2016–May 2017, I was an extremely productive individual contributor even while working 30-hour weeks as I worked toward the completion of my M. Div. In that time, I led the adoption of a **test-driven development** approach in a greenfield **Ember.js** rewrite of our mobile web ordering platform; introduced JavaScript type systems to the application, landing on **TypeScript** after an initial experiment with Flow; and helped us achieve **full <abbr>AA</abbr> <abbr>WCAG</abbr> accessibility**.
+As a **Software Engineer** (January 2016–May 2017), I was an extremely productive individual contributor even while working 30-hour weeks as I worked toward the completion of my M. Div. In that time, I led the adoption of a **test-driven development** approach in a greenfield **Ember.js** rewrite of our mobile web ordering platform; introduced JavaScript type systems to the application (landing on **TypeScript** after an initial experiment with Flow); and helped us achieve **full <abbr>AA</abbr> <abbr>WCAG</abbr> accessibility**.
 
-As a **Senior Software Engineer** from May 2017 through the present, I designed a new, dramatically more **business-scalable** and **toolable** approach for our white-labeling needs (including the adoption of **<abbr>CSS</abbr> Modules**); led the team effort to redesign and reimplement the mobile web <abbr>UI</abbr> as a **responsive web <abbr>UI</abbr>**; led the community effort to **integrate TypeScript with Ember.js**, and helped launch a shared component library for all forward projects.
+As a **Senior Software Engineer** (May 2017–present), I *led a team effort* to expand our mobile web <abbr>UI</abbr> as a **responsive web <abbr>UI</abbr>** in order to reduce our maintenance burden, improve our overall <abbr>UX</abbr>, and decrease the cost of launching new features. To support those business goals, I designed a new technical strategy for white-labeling (including the adoption of **<abbr>CSS</abbr> Modules**), enabling the business to scale to support more brands by way of better tooling.
 
-In that span, I have also given over a dozen tech talks on subjects ranging from Ember.js basics to functional programming techniques along with introductions to Rust and Elm; I also delivered a  talk articulating the front-end team’s aims for the future of all of Olo’s front-end development at our 2018 engineering all-hands.
+As part of that design work, I introduced **<abbr title="request for comments">RFC</abbr>s** (modeled on the <abbr title="request for comments">RFC</abbr> processed from the Rust and Ember communities) as a tool for architecture design and documentation. After using <abbr title="request for comments">RFC</abbr>s successfully within our team, I pitched them to the broader engineering organization—which ultimately adopted them as a useful tool for documenting internal architectural changes and as prerequisites for all new services.
 
-Over the span of my time at Olo, I have grown from an effective individual contributor into a project lead and influenced front-end development across the entire engineering organization.
+In this same span, I also led the community effort to **integrate TypeScript with Ember.js**; helped launch a shared component library for future rich client projects; gave over a dozen internal tech talks on subjects including Ember.js basics, functional programming techniques, and introductions to Rust and Elm; and substantially shaped our front-end engineering practices and tooling choices as an informal leader among our front-end engineering group.
 
 ### Earlier Work
 
 #### [HolyBible.com](https://holybible.com)
+
+*A formative experience: a technical success but a product design failure.*
 
 [HolyBible.com](https://holybible.com) is a beautiful interface for reading the King James Version of the Bible and the [Reformation Heritage Study Bible](https://kjvstudybible.org) materials online, built for [Puritan Reformed Theological Seminary](https://prts.edu). The </abbr>MVP</abbr> launched in **December 2014**, with approximately 16 months of small bug fixes and feature enhancements following.
 
@@ -62,11 +62,15 @@ On the other hand, the project was a *mixed success as a product*. The site is b
 
 #### Quest Consultants, Inc.
 
-From **May 2012–January 2016**, I worked (first as a full-time employee, then as a half-time consultant) for [**Quest Consultants, Inc.**](http://www.questconsult.com). During that time, I improved the performance of one existing computational hazard model by a factor of 7, rewrote another computational model **in C** (from Fortran 77), supported another rewrite effort (again from Fortran 77) **to Python**, and also helped the team **adopt version control** and **bug tracking software**.
+*Collaborating across disciplines effectively and adjusting to remote work.*
+
+From **May 2012–January 2016**, I worked (first as a full-time employee, then remotely as a half-time consultant) for [**Quest Consultants, Inc.**](http://www.questconsult.com). During that time, I improved the performance of one existing computational hazard model by a factor of 7, rewrote another computational model **in C** (from Fortran 77), supported another rewrite effort (again from Fortran 77) **to Python**, and also helped the team **adopt version control** and **bug tracking software**.
 
 Those efforts taught me a great deal about communicating effectively with domain experts, working remotely (as I did beginning in January 2013), testing effectively, refactoring legacy codebases safely, and wrangling large software development efforts over time.
 
 #### Northrop Grumman
+
+*Learning the basics of software engineering.*
 
 From **July 2009–May 2012**, I worked as a **Software Engineer I** on the B-2 program at [**Northrop Grumman**](http://www.northropgrumman.com/Pages/default.aspx). My work included writing **C** targeting a real-time operating system and developing requirements for a modernized message bus architecture. My basic implementation of the *Sparse A\* Search Algorithm* was used as a performance baseline for route-finding software on the platform.
 
@@ -74,9 +78,11 @@ During those three years I acquired a good dose of humility along with a great d
 
 #### Miscellaneous web development and consulting
 
+*Teaching myself web development.*
+
 **Beginning in January 2010**, I taught myself web programming, beginning with <abbr>PHP</abbr> and jQuery and the <abbr>LAMP</abbr> stack, having picked up a good working knowledge of <abbr>HTML</abbr> and <abbr>CSS</abbr> for my own blog in college. I started by building church websites and blogs for friends in WordPress, and eventually (while working as a subcontracting consultant for [Innova Computing](https://innovacomputing.com)) developing a custom <abbr>CMS</abbr> for the Oklahoma Board of Medical Licensure.
 
-My goal throughout was not merely to make some extra money—nice though that was—but to actually be able to transition from the world of C and Fortran where I began my career to working full time in web development, especially <abbr>UI</abbr>-focused web development: a goal I eventually achieved through [my work on HolyBible.com](#holybible.com) and my transition [to Olo](#current).
+My goal throughout was not merely to make some extra money—nice though that was—but to actually be able to transition from the world of C and Fortran where I began my career to working full time in web development, especially <abbr>UI</abbr>-focused web development: a goal I eventually achieved through [my work on HolyBible.com](#holybible.com) and my transition [to Olo](#olo-current).
 
 ## My Projects
 
@@ -92,7 +98,9 @@ Besides my family life, church participation, and day-to-day work, I am also a p
 
 #### TypeScript in the Ember.js community
 
+As we began actively adopting TypeScript in our Ember.js app [at Olo](#current), we very soon ran into the limitations of the existing support. Integration with Ember’s <abbr>CLI</abbr> tooling was limited; the type definitions were a mix of incomplete, unhelpful, and outright wrong; there was little information about how to use TypeScript *effectively* with Ember; and, worst of all, no one was actively contributing to fill these gaps—much less leading.
 
+In March 2017, I began working on the <abbr>CLI</abbr> tooling and the type definitions for the Ember ecosystem. Once I began leading the effort, several others began contributing actively; in early 2018 we formed a small team working on shepherding Ember and TypeScript integration forward. Over the rest of 2017 and 2018, I have [taught](https://emberconf.com/schedule.html#d-typescript-up-your-ember-js-app "EmberConf Workshop: “TypeScript Up Your Ember.js App”") and [written extensively](https://www.chriskrycho.com/typing-your-ember/ "Typing Your Ember series") on using TypeScript effectively with Ember, and our small team’s efforts have made TypeScript both viable—and increasingly, mainstream!—as a choice for Ember apps and addons.
 
 #### True Myth
 
@@ -102,19 +110,25 @@ I wrote [extensive documentation](https://true-myth.js.org/) for the project, an
 
 ### Talks
 
-- **[TypeScript and Ember.js: Why And How](https://m.youtube.com/watch?v=fFzxbBrvytU) (Ember ATX, April 2018):**
+- **Rust and WebAssembly** (Denver/Boulder Rust Meetup, May 2018)
+
+- **[TypeScript and Ember.js: Why And How](https://m.youtube.com/watch?v=fFzxbBrvytU)** (Ember <abbr title="Austin, Texas">ATX</abbr> Meetup, April 2018):
 
 	> **Abstract:** A three-part look at Ember.js and TypeScript today: What are the benefits to me as an Ember developer for using TypeScript? What are the tradeoffs if I adopt TypeScript? Where are things going from here?
 
-- **TypeScript Up Your Ember.js App (EmberConf 2018 Workshop, March 2018):** an introduction to TypeScript and how to use it with Ember.js, with a worked example of converting part of the Ember.js <abbr>TODO</abbr> <abbr>MVC</abbr> app from JavaScript to TypeScript. The workshop was not recorded, but the teaching materials are all available online:
+- **TypeScript Up Your Ember.js App** (EmberConf 2018 Workshop, March 2018):
+
+	> **Abstract:**an introduction to TypeScript and how to use it with Ember.js, with a worked example of converting part of the Ember.js <abbr>TODO</abbr> <abbr>MVC</abbr> app from JavaScript to TypeScript.
+
+	The workshop was not recorded, but the teaching materials are all available online:
 
 	- [slides](https://github.com/chriskrycho/emberconf-2018-slides/) and [script](https://github.com/chriskrycho/emberconf-2018-slides/blob/master/talk.md) for the introduction to TypeScript and overview of using it in Ember
 	- [sample code repository](https://github.com/chriskrycho/emberconf-2018), where each commit is a discrete step in the process of the conversion
 
-- **[Becoming a Contributor](https://m.youtube.com/watch?v=Abu2BNixXak) (Rust Belt Rust 2017, October 2017):**
+- **[Becoming a Contributor](https://m.youtube.com/watch?v=Abu2BNixXak)** (Rust Belt Rust 2017, October 2017):
 
 	> **Abstract:** So, you’re new to the Rust community. (Or any community, really!) And you want to help, but, well, you’re new. So how exactly do you start contributing? What kinds of contributions are valuable? We’ll talk about everything from asking questions to writing documentation, from pitching in on forums and chat to writing blog posts, and from starting your own projects to contributing to other open-source projects.
 
-- **[*Tolle Lege!* Designing Readable Bibles With Digital Typography](https://m.youtube.com/watch?v=cDAh35IwJsE) (BibleTech 2015, May 2015):**
+- **[*Tolle Lege!* Designing Readable Bibles With Digital Typography](https://m.youtube.com/watch?v=cDAh35IwJsE)** (BibleTech 2015, May 2015):
 
 	> **Abstract:** The Bible has always been a challenging text to display, whether copied by hand or printed on a Gutenberg press, and the task has only grown more complicated in the era of digital text. The challenges are not insurmountable, though. We have the tools to solve them: the principles of good typography, especially careful page design and the deliberate choice and skillful use of appropriate typefaces (fonts). When we apply those principles to the Scriptures—whether in an app or on the web—we can provide people with digital Bibles that are both readable and beautiful.
