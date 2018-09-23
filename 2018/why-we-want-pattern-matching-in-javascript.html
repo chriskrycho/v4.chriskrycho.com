@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Why We Want Pattern-Matching in JavaScript &middot; Chris Krycho</title>
+    <meta name="description" content="A worked example of transforming if/else statements to the proposed pattern-matching syntax, showing how much pattern-matching can clarify (as well as shorten) complicated code."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/why-we-want-pattern-matching-in-javascript.html"/>
+    <meta property="og:title" content="Why We Want Pattern-Matching in JavaScript"/>
+    <meta property="og:description" content="A worked example of transforming if/else statements to the proposed pattern-matching syntax, showing how much pattern-matching can clarify (as well as shorten) complicated code."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Why We Want Pattern-Matching in JavaScript"/>
+    <meta name="twitter:description" content="A worked example of transforming if/else statements to the proposed pattern-matching syntax, showing how much pattern-matching can clarify (as well as shorten) complicated code."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about.html">About</a></li>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now.html">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="javascript programming-languages tech">
+
+    <header>
+<h1>Why We Want Pattern-Matching in JavaScript</h1>
+<h2>A worked example, showing how much it can <em>clarify</em> code.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/why-we-want-pattern-matching-in-javascript.html"><i class="fa fa-fw fa-link"></i></a>September 23, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a></span><span><a href="http://www.chriskrycho.com/2018/why-we-want-pattern-matching-in-javascript.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>Here’s a piece of example code from the Ember app I work on today, very slightly modified to get at the pure essentials of this particular example.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>The context is a <abbr>UI</abbr> component which shows the user their current discount, if any, and provides some nice interactivity if they try to switch to a different discount.</p>
+<p>First, some types that we’ll use in the example, which I use in the actual component to avoid the problems that inevitably come with using string values for these kinds of things. Linters like ESLint or type systems like TypeScript or Flow will catch typos this way, and you’ll also get better errors at runtime even if you’re not using a linter or a type system!<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<pre class="js"><code>const DiscountTypes = {
+  Offer: &#39;Offer&#39;,
+  Coupon: &#39;Coupon&#39;,
+  None: &#39;None&#39;,
+};
+
+const Change = {
+  OfferToOffer: &#39;OfferToOffer&#39;,
+  OfferToCoupon: &#39;OfferToCoupon&#39;,
+  CouponToCoupon: &#39;CouponToCoupon&#39;,
+  CouponToOffer: &#39;CouponToOffer&#39;,
+};</code></pre>
+<p>Now, we set up a component which has a little bit of internal state to track the desired change before we submit it, which we display differently based on what the value of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get"><abbr>ES5</abbr> getter</a> for <code>change</code> is here:</p>
+<pre class="js"><code>class DiscountComponent {
+  constructor(currentDiscountType) {
+    this.currentDiscountType = currentDiscountType;
+    this.newDiscountType = null;
+  }
+
+  changeDiscount(newDiscountType) {
+    this.newDiscountType = newDiscountType;
+  }
+
+  submitChange() {
+    // logic for talking to the server
+  }
+
+  get change() {
+    const { currentDiscountType, newDiscountType } = this;
+
+    if (currentDiscountType === DiscountTypes.Offer) {
+      if (newDiscountType === DiscountTypes.Offer) {
+        return Change.OfferToOffer;
+      } else if (newDiscountType === DiscountTypes.Coupon) {
+        return Change.OfferToCoupon;
+      } else if (newDiscountType === DiscountTypes.None) {
+        return null;
+      } else {
+        assertInDev(
+          `Missed a condition: ${currentDiscountType}, ${newDiscountType}`
+        );
+      }
+    } else if (currentDiscountType === DiscountTypes.Coupon) {
+      if (newDiscountType === DiscountTypes.Offer) {
+        return Change.CouponToOffer;
+      } else if (newDiscountType === DiscountTypes.Coupon) {
+        return Change.CouponToCoupon;
+      } else if (newDiscountType === DiscountTypes.None) {
+        return null;
+      } else {
+        assertInDev(
+          `Missed a condition: ${currentDiscountType}, ${newDiscountType}`
+        );
+      }
+    } else if (currentDiscountType === DiscountTypes.None) {
+      return null;
+    } else {
+      assertInDev(
+        `Missed a condition: ${currentDiscountType}, ${newDiscountType}`
+      );
+    }
+  }
+}</code></pre>
+<p>Here’s the <em>exact</em> same semantics for computing the <code>change</code> value we’re interested, but with pattern matching:</p>
+<pre class="js"><code>class DiscountComponent {
+  // ...snip
+
+  get change() {
+    case ([this.currentDiscountType, this.newDiscountType]) {
+      when [DiscountTypes.Offer, DiscountTypes.Offer] -&gt;
+        return Change.OfferToOffer;
+      when [DiscountTypes.Offer, DiscountTypes.Coupon] -&gt;
+        return Change.OfferToCoupon;
+      when [DiscountTypes.Coupon, DiscountTypes.Offer] -&gt;
+        return Change.CouponToOffer;
+      when [DiscountTypes.Coupon, DiscountTypes.Coupon] -&gt;
+        return Change.CouponToCoupon;
+      when [DiscountTypes.None, ...] || [..., DiscountTypes.None] -&gt;
+        return null;
+      when [...] -&gt;
+        assertInDev(
+          `Missed a condition: ${currentDiscountType}, ${newDiscountType}`
+        );
+    }
+  }
+}</code></pre>
+<p>The difference is stark. It’s not just that there are fewer lines of code, it’s that the actual intent of the code is dramatically clearer. (And while I’ve formatted it for nice display here, those are all one-liners in my normal 100-characters-per-line formatting.)</p>
+<p>My preference would be for pattern-matching to have expression semantics, so you wouldn’t need all the <code>return</code> statements in the mix—and it’s <em>possible</em>, depending on how a number of proposals in flight right now shake out, that it still will. Even if pattern matching doesn’t ultimately end up with an expression-based syntax, though, we can still get a lot of those niceties if the <code>do</code>-expression proposal lands:</p>
+<pre class="js"><code>class DiscountComponent {
+  // ...snip
+
+  get change() {
+    return do {
+      case ([this.currentDiscountType, this.newDiscountType]) {
+        when [DiscountTypes.Offer, DiscountTypes.Offer] -&gt;
+          Change.OfferToOffer;
+        when [DiscountTypes.Offer, DiscountTypes.Coupon] -&gt;
+          Change.OfferToCoupon;
+        when [DiscountTypes.Coupon, DiscountTypes.Offer] -&gt;
+          Change.CouponToOffer;
+        when [DiscountTypes.Coupon, DiscountTypes.Coupon] -&gt;
+          Change.CouponToCoupon;
+        when [DiscountTypes.None, ...] || [..., DiscountTypes.None] -&gt;
+          null;
+        when [...] -&gt;
+          assertInDev(
+            `Missed a condition: ${currentDiscountType}, ${newDiscountType}`
+          );
+      }
+    }
+  }
+}</code></pre>
+<p>Again, this is profoundly clearer about the intent of the code, and it’s far easier to be sure you haven’t missed a case.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><code>assertInDev</code> looks a little different; we’re actually using the <code>Maybe</code> type from my <a href="https://github.com/chriskrycho/true-myth">True Myth</a> library instead of returning <code>null</code>; it’s an Ember app; as such it uses a <code>@computed</code> decorator; and of course it’s all in TypeScript. I chose to write it with standard JavaScript to minimize the number of things you have to parse as a reader.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>In the actual TypeScript, these are defined with an <a href="http://www.typescriptlang.org/docs/handbook/enums.html"><code>enum</code></a>.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Fun fact: the original code actually <em>had</em> missed a number of cases, which I learned only because TypeScript’s <code>strictNullChecks</code> setting informed me.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/review-the-fated-sky.html">Review: <cite>The Fated Sky</cite>
+</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/burnout-new-rustacean.html">Burnout (New Rustacean)</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/why-we-want-pattern-matching-in-javascript.html">Why We Want Pattern-Matching in JavaScript</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/dealing-with-burnout-in-public.html">Dealing With Burnout In Public</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
