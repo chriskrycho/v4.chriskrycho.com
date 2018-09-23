@@ -89,7 +89,7 @@ STATIC_PATHS = ['bib',
                 'talks/bibletech2015',
                 'talks/es-future-olo',
                 'talks/rust-belt-rust']
-STATIC_EXCLUDES = ['talks/rust-belt-rust/img']
+STATIC_EXCLUDES = ['talks/rust-belt-rust/img', 'bib/chicago.csl']
 STATIC_EXCLUDE_SOURCES = False
 PAGE_EXCLUDES = ['talks/bibletech2015', 'talks/es-future-olo', 'talks/rust-belt-rust']
 ARTICLE_EXCLUDES = ['talks/bibletech2015', 'talks/es-future-olo', 'talks/rust-belt-rust']
@@ -106,8 +106,8 @@ READERS = {'html': None,
 
 PLUGIN_PATHS = ['../../pelican-plugins']
 PLUGINS = ['pandoc_reader']
-PANDOC_ARGS = [#'-f markdown+smart',  # use smart typography
-               '--no-highlight',  # use highlight.js instead
-               '-t', 'html5',  # use HTML and its corresponding attributes
+PANDOC_ARGS = ['--no-highlight',  # use highlight.js instead
                '--section-divs',  # wrap heading-blocks with <section>
-               '--filter', 'pandoc-citeproc']  # pre-filter for @citations
+               '--filter', 'pandoc-citeproc', # pre-filter for @citations
+               '--csl', 'content/bib/chicago.csl'
+               ]
