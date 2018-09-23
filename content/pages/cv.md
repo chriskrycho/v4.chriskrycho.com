@@ -12,7 +12,7 @@ In helping hire people over the last few years, I’ve seen a lot of résumés. 
 
 - [<i>About Me</i>](#about-me)—my philosophy of software development and my unusual educational background
 - [<i>My Work</i>](#my-work)—not just where I’ve worked and the tech I used, but what I brought to the table and the difference I made
-- [<i>My Projects</i>](#my-projects)—include podcasts I produce, talks I've given, and open-source software I’ve developed or contributed to
+- [<i>My Projects</i>](#my-projects)—including podcasts I produce, talks I've given, and open-source software I’ve developed or contributed to
 
 ----
 
@@ -38,11 +38,11 @@ Building those things the *right way* means I’m not interested in slapdash pro
 
 **Since January 2016**, I have been a front-end-focused software engineer at [**Olo**](https://www.olo.com), a scale-up-phase startup which is the leading provider of online ordering for large restaurant brands.
 
-As a **Software Engineer** (January 2016–May 2017), I was an extremely productive individual contributor even while working 30-hour weeks as I worked toward the completion of my M. Div. In that time, I led the adoption of a **test-driven development** approach in a greenfield **Ember.js** rewrite of our mobile web ordering platform; introduced JavaScript type systems to the application (landing on **TypeScript** after an initial experiment with Flow); and helped us achieve **full <abbr>AA</abbr> <abbr>WCAG</abbr> accessibility**.
+As a **Software Engineer** (January 2016–May 2017), I was a productive individual contributor even while working 30-hour weeks as I completed my M. Div.: I led the adoption of a **test-driven development** approach in a greenfield **Ember.js** rewrite of our mobile web <abbr>UI</abbr>; introduced JavaScript type systems to the application (landing on **TypeScript** after an initial experiment with Flow); and helped us achieve **full <abbr>AA</abbr> <abbr>WCAG</abbr> accessibility**.
 
-As a **Senior Software Engineer** (May 2017–present), I *led a team effort* to expand our mobile web <abbr>UI</abbr> as a **responsive web <abbr>UI</abbr>** in order to reduce our maintenance burden, improve our overall <abbr>UX</abbr>, and decrease the cost of launching new features. To support those business goals, I designed a new technical strategy for white-labeling (including the adoption of **<abbr>CSS</abbr> Modules**), enabling the business to scale to support more brands by way of better tooling.
+As a **Senior Software Engineer** (May 2017–present), I *led a team effort* to expand our mobile web <abbr>UI</abbr> as a **responsive web <abbr>UI</abbr>** to reduce our maintenance burden, improve our overall <abbr>UX</abbr>, and decrease the cost of launching new features. To support those business goals, I designed a new technical strategy for white-labeling (including the adoption of **<abbr>CSS</abbr> Modules**), enabling the business to scale to support more brands by way of better tooling.
 
-As part of that design work, I introduced **<abbr title="request for comments">RFC</abbr>s** (modeled on the <abbr title="request for comments">RFC</abbr> processed from the Rust and Ember communities) as a tool for architecture design and documentation. After using <abbr title="request for comments">RFC</abbr>s successfully within our team, I pitched them to the broader engineering organization—which ultimately adopted them as a useful tool for documenting internal architectural changes and as prerequisites for all new services.
+To support that design work, I introduced **<abbr title="request for comments">RFC</abbr>s** (modeled on the <abbr title="request for comments">RFC</abbr> processed from the Rust and Ember communities) as a tool for architecture design and documentation. After using <abbr title="request for comments">RFC</abbr>s successfully within our team, I pitched them to the broader engineering organization—which ultimately adopted them as a useful tool for documenting internal architectural changes and as prerequisites for all new services.
 
 In this same span, I also led the community effort to **integrate TypeScript with Ember.js**; helped launch a shared component library for future rich client projects; gave over a dozen internal tech talks on subjects including Ember.js basics, functional programming techniques, and introductions to Rust and Elm; and substantially shaped our front-end engineering practices and tooling choices as an informal leader among our front-end engineering group.
 
@@ -52,7 +52,7 @@ In this same span, I also led the community effort to **integrate TypeScript wit
 
 *A formative experience: a technical success but a product design failure.*
 
-[HolyBible.com](https://holybible.com) is a beautiful interface for reading the King James Version of the Bible and the [Reformation Heritage Study Bible](https://kjvstudybible.org) materials online, built for [Puritan Reformed Theological Seminary](https://prts.edu). The </abbr>MVP</abbr> launched in **December 2014**, with approximately 16 months of small bug fixes and feature enhancements following.
+[HolyBible.com](https://holybible.com) is a beautiful interface for reading the King James Version of the Bible and the [Reformation Heritage Study Bible](https://kjvstudybible.org) materials online, built for [Puritan Reformed Theological Seminary](https://prts.edu). The <abbr>MVP</abbr> launched in **December 2014**, with approximately 16 months of small bug fixes and feature enhancements following.
 
 I worked closely with a designer to create the visual language for the app before diving into the implementation solo. The app uses **AngularJS**, **Express/Node.js**, and **PostgreSQL**; I also did a great deal of <abbr>XML</abbr>-mashing in **Python** for the Bible source text and study bible integration.
 
@@ -64,7 +64,7 @@ On the other hand, the project was a *mixed success as a product*. The site is b
 
 *Collaborating across disciplines effectively and adjusting to remote work.*
 
-From **May 2012–January 2016**, I worked (first as a full-time employee, then remotely as a half-time consultant) for [**Quest Consultants, Inc.**](http://www.questconsult.com). During that time, I improved the performance of one existing computational hazard model by a factor of 7, rewrote another computational model **in C** (from Fortran 77), supported another rewrite effort (again from Fortran 77) **to Python**, and also helped the team **adopt version control** and **bug tracking software**.
+From **May 2012–January 2016**, I worked (first as a full-time employee, then remotely as a half-time consultant) for [**Quest Consultants, Inc.**](http://www.questconsult.com). During that time, I improved the performance of one existing computational hazard model by a factor of 7, rewrote another computational model in **C** (from Fortran 77), supported another rewrite effort (again from Fortran 77) to **Python 3**, and also helped the team adopt **version control** (Mercurial) and **bug tracking software** (JIRA).
 
 Those efforts taught me a great deal about communicating effectively with domain experts, working remotely (as I did beginning in January 2013), testing effectively, refactoring legacy codebases safely, and wrangling large software development efforts over time.
 
