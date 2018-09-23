@@ -1,6 +1,7 @@
 ---
 Title: "Burnout (New Rustacean)"
 Subtitle: In which I talk for about 25 minutes about my experience of burnout.
+Date: 2018-09-22 21:30
 Tags: [burnout, links, podcasting]
 Link: https://newrustacean.com/show_notes/bonus/burnout/
 Category: blog
