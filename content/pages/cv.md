@@ -118,7 +118,7 @@ I wrote [extensive documentation](https://true-myth.js.org/) for the project, an
 
 - **TypeScript Up Your Ember.js App** (EmberConf 2018 Workshop, March 2018):
 
-	> **Abstract:**an introduction to TypeScript and how to use it with Ember.js, with a worked example of converting part of the Ember.js <abbr>TODO</abbr> <abbr>MVC</abbr> app from JavaScript to TypeScript.
+	> **Abstract:** an introduction to TypeScript and how to use it with Ember.js, with a worked example of converting part of the Ember.js <abbr>TODO</abbr> <abbr>MVC</abbr> app from JavaScript to TypeScript.
 
 	The workshop was not recorded, but the teaching materials are all available online:
 
