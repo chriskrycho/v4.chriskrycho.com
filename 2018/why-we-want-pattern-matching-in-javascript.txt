@@ -2,6 +2,7 @@
 Title: Why We Want Pattern-Matching in JavaScript
 Subtitle: A worked example, showing how much it can <em>clarify</em> code.
 Date: 2018-09-23 13:00
+Modified: 2018-09-24 18:10
 Category: tech
 Tags: [javascript, programming languages]
 Summary: >
@@ -9,7 +10,11 @@ Summary: >
 
 ---
 
-Here’s a piece of example code from the Ember app I work on today, very slightly modified to get at the pure essentials of this particular example.[^1]
+I've often noted how much I want the [JavaScript pattern-matching proposal][proposal] to land. I noted in conversation with some people recently, though, that it's not always obvious *why* it will be so helpful. Similarly, [Dave Herman] recently noted to me that [DHH]'s mantra of "Show me the code" is a really helpful tool for thinking about language design. (I tend to agree!) So with that in mind, here’s a piece of example code from the Ember app I work on today, very slightly modified to get at the pure essentials of this particular example.[^1]
+
+[proposal]: https://github.com/tc39/proposal-pattern-matching
+[Dave Herman]: https://twitter.com/littlecalculist
+[DHH]: https://twitter.com/dhh
 
 The context is a <abbr>UI</abbr> component which shows the user their current discount, if any, and provides some nice interactivity if they try to switch to a different discount.
 
