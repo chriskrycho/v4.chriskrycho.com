@@ -202,6 +202,23 @@ const Change = {
   }
 }</code></pre>
 <p>Again, this is profoundly clearer about the intent of the code, and it’s far easier to be sure you haven’t missed a case.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p><strong>Edit:</strong> after some comments on Twitter, I thought I’d note how this is <em>even nicer</em> in pure functions. If we assume that it gets expression semantics (which, again, I’m hoping for), a pure functional version of the sample above would look like this:</p>
+<pre class="js"><code>const change = (currentType, newType) =&gt;
+  case ([currentType, newType]) {
+    when [DiscountTypes.Offer, DiscountTypes.Offer] -&gt;
+      Change.OfferToOffer;
+    when [DiscountTypes.Offer, DiscountTypes.Coupon] -&gt;
+      Change.OfferToCoupon;
+    when [DiscountTypes.Coupon, DiscountTypes.Offer] -&gt;
+      Change.CouponToOffer;
+    when [DiscountTypes.Coupon, DiscountTypes.Coupon] -&gt;
+      Change.CouponToCoupon;
+    when [DiscountTypes.None, ...] || [..., DiscountTypes.None] -&gt;
+      null;
+    when [...] -&gt;
+      assertInDev(`Missed a condition: ${currentDiscountType}, ${newDiscountType}`);
+  };</code></pre>
+<p>This may not be <em>quite</em> as clear as the same thing in F<sup>♯</sup> or Elm or another language in that family… but it’s amazingly better than anything we’ve seen in JavaScript to date.</p>
 <section class="footnotes">
 <hr />
 <ol>

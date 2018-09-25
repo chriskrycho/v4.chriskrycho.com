@@ -116,6 +116,23 @@ const Change = {
   }
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Again, this is profoundly clearer about the intent of the code, and it’s far easier to be sure you haven’t missed a case.&lt;a href="#fn3" class="footnote-ref" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; after some comments on Twitter, I thought I’d note how this is &lt;em&gt;even nicer&lt;/em&gt; in pure functions. If we assume that it gets expression semantics (which, again, I’m hoping for), a pure functional version of the sample above would look like this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;const change = (currentType, newType) =&amp;gt;
+  case ([currentType, newType]) {
+    when [DiscountTypes.Offer, DiscountTypes.Offer] -&amp;gt;
+      Change.OfferToOffer;
+    when [DiscountTypes.Offer, DiscountTypes.Coupon] -&amp;gt;
+      Change.OfferToCoupon;
+    when [DiscountTypes.Coupon, DiscountTypes.Offer] -&amp;gt;
+      Change.CouponToOffer;
+    when [DiscountTypes.Coupon, DiscountTypes.Coupon] -&amp;gt;
+      Change.CouponToCoupon;
+    when [DiscountTypes.None, ...] || [..., DiscountTypes.None] -&amp;gt;
+      null;
+    when [...] -&amp;gt;
+      assertInDev(`Missed a condition: ${currentDiscountType}, ${newDiscountType}`);
+  };&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This may not be &lt;em&gt;quite&lt;/em&gt; as clear as the same thing in F&lt;sup&gt;♯&lt;/sup&gt; or Elm or another language in that family… but it’s amazingly better than anything we’ve seen in JavaScript to date.&lt;/p&gt;
 &lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
