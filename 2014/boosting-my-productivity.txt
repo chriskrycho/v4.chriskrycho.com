@@ -1,7 +1,12 @@
+---
 Title: Boosting My Productivity
 Author: Chris Krycho
 Date: 2014-12-18 08:05
-Summary: This semester, I needed to get productive, and I did. Here's how. (To-do lists, Inbox Zero, and pomodoros!)
+Summary: >
+    This semester, I needed to get productive, and I did. Here's how. (To-do lists, Inbox Zero, and pomodoros!)
+Tags: [email, inbox zero, productivity, pomodoro]
+
+---
 
 This fall, I have had a lot on my plate: building HolyBible.com, continuing to
 work for Quest Consultants, and doing a pastoral ministry internship. I needed
