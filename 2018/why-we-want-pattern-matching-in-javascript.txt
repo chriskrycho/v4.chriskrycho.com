@@ -166,7 +166,9 @@ const change = (currentType, newType) =>
     when [DiscountTypes.None, ...] || [..., DiscountTypes.None] ->
       null;
     when [...] ->
-      assertInDev(`Missed a condition: ${currentDiscountType}, ${newDiscountType}`);
+      assertInDev(
+        `Missed a condition: ${currentDiscountType}, ${newDiscountType}`
+      );
   };
 ```
 

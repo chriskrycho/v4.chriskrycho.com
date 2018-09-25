@@ -130,7 +130,9 @@ const Change = {
     when [DiscountTypes.None, ...] || [..., DiscountTypes.None] -&amp;gt;
       null;
     when [...] -&amp;gt;
-      assertInDev(`Missed a condition: ${currentDiscountType}, ${newDiscountType}`);
+      assertInDev(
+        `Missed a condition: ${currentDiscountType}, ${newDiscountType}`
+      );
   };&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This may not be &lt;em&gt;quite&lt;/em&gt; as clear as the same thing in F&lt;sup&gt;♯&lt;/sup&gt; or Elm or another language in that family… but it’s amazingly better than anything we’ve seen in JavaScript to date.&lt;/p&gt;
 &lt;section class="footnotes"&gt;
