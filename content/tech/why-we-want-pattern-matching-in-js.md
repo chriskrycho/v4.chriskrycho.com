@@ -150,6 +150,28 @@ class DiscountComponent {
 
 Again, this is profoundly clearer about the intent of the code, and it’s far easier to be sure you haven’t missed a case.[^3]
 
+**Edit:** after some comments on Twitter, I thought I'd note how this is *even nicer* in pure functions. If we assume that it gets expression semantics (which, again, I'm hoping for), a pure functional version of the sample above would look like this:
+
+```js
+const change = (currentType, newType) =>
+  case ([currentType, newType]) {
+    when [DiscountTypes.Offer, DiscountTypes.Offer] ->
+      Change.OfferToOffer;
+    when [DiscountTypes.Offer, DiscountTypes.Coupon] ->
+      Change.OfferToCoupon;
+    when [DiscountTypes.Coupon, DiscountTypes.Offer] ->
+      Change.CouponToOffer;
+    when [DiscountTypes.Coupon, DiscountTypes.Coupon] ->
+      Change.CouponToCoupon;
+    when [DiscountTypes.None, ...] || [..., DiscountTypes.None] ->
+      null;
+    when [...] ->
+      assertInDev(`Missed a condition: ${currentDiscountType}, ${newDiscountType}`);
+  };
+```
+
+This may not be *quite* as clear as the same thing in F^♯^ or Elm or another language in that family... but it's amazingly better than anything we've seen in JavaScript to date.
+
 [^1]:	`assertInDev` looks a little different; we're actually using the `Maybe` type from my [True Myth](https://github.com/chriskrycho/true-myth) library instead of returning `null`; it’s an Ember app; as such it uses a `@computed` decorator; and of course it’s all in TypeScript. I chose to write it with standard JavaScript to minimize the number of things you have to parse as a reader.
 
 [^2]:	In the actual TypeScript, these are defined with an [`enum`](http://www.typescriptlang.org/docs/handbook/enums.html).
