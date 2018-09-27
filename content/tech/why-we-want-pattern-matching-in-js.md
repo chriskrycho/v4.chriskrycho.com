@@ -2,6 +2,7 @@
 Title: Why We Want Pattern-Matching in JavaScript
 Subtitle: A worked example, showing how much it can <em>clarify</em> code.
 Date: 2018-09-23 13:00
+Modified: 2018-09-24 18:10
 Category: tech
 Tags: [javascript, programming languages]
 Summary: >
@@ -9,7 +10,11 @@ Summary: >
 
 ---
 
-Here’s a piece of example code from the Ember app I work on today, very slightly modified to get at the pure essentials of this particular example.[^1]
+I've often noted how much I want the [JavaScript pattern-matching proposal][proposal] to land. I noted in conversation with some people recently, though, that it's not always obvious *why* it will be so helpful. Similarly, [Dave Herman] recently noted to me that [DHH]'s mantra of "Show me the code" is a really helpful tool for thinking about language design. (I tend to agree!) So with that in mind, here’s a piece of example code from the Ember app I work on today, very slightly modified to get at the pure essentials of this particular example.[^1]
+
+[proposal]: https://github.com/tc39/proposal-pattern-matching
+[Dave Herman]: https://twitter.com/littlecalculist
+[DHH]: https://twitter.com/dhh
 
 The context is a <abbr>UI</abbr> component which shows the user their current discount, if any, and provides some nice interactivity if they try to switch to a different discount.
 
@@ -144,6 +149,30 @@ class DiscountComponent {
 ```
 
 Again, this is profoundly clearer about the intent of the code, and it’s far easier to be sure you haven’t missed a case.[^3]
+
+**Edit:** after some comments on Twitter, I thought I'd note how this is *even nicer* in pure functions. If we assume that it gets expression semantics (which, again, I'm hoping for), a pure functional version of the sample above would look like this:
+
+```js
+const change = (currentType, newType) =>
+  case ([currentType, newType]) {
+    when [DiscountTypes.Offer, DiscountTypes.Offer] ->
+      Change.OfferToOffer;
+    when [DiscountTypes.Offer, DiscountTypes.Coupon] ->
+      Change.OfferToCoupon;
+    when [DiscountTypes.Coupon, DiscountTypes.Offer] ->
+      Change.CouponToOffer;
+    when [DiscountTypes.Coupon, DiscountTypes.Coupon] ->
+      Change.CouponToCoupon;
+    when [DiscountTypes.None, ...] || [..., DiscountTypes.None] ->
+      null;
+    when [...] ->
+      assertInDev(
+        `Missed a condition: ${currentDiscountType}, ${newDiscountType}`
+      );
+  };
+```
+
+This may not be *quite* as clear as the same thing in F^♯^ or Elm or another language in that family... but it's amazingly better than anything we've seen in JavaScript to date.
 
 [^1]:	`assertInDev` looks a little different; we're actually using the `Maybe` type from my [True Myth](https://github.com/chriskrycho/true-myth) library instead of returning `null`; it’s an Ember app; as such it uses a `@computed` decorator; and of course it’s all in TypeScript. I chose to write it with standard JavaScript to minimize the number of things you have to parse as a reader.
 
