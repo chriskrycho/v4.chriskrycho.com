@@ -27,6 +27,7 @@ For me, *genuine rest* often includes writing and learning and thinking and crea
 
 [^2]:	I’m thinking about `Future` and/or `Task` extensions to [True Myth](https://github.com/chriskrycho/true-myth), for those of you interested in the details. I’ll have a GitHub issue up sometime soon-ish, and might blog about it here as well.
 
-[^3]:	[CRDTs](https://en.m.wikipedia.org/wiki/Conflict-free_replicated_data_type), for my fellow software nerds out there. [This introduction](http://archagon.net/blog/2018/03/24/data-laced-with-history/ "Data Laced With History") is absolutely outstanding, as are a number of the pieces it links to. Among other things, I actually *understand* a few concepts in set theory I’ve had a hard time wrapping my head around in the past, because the explanations here are so good.
+[^3]:	[<abbr title="Conflict-free Replicated Data Type">CRDT</abbr>s](https://en.m.wikipedia.org/wiki/Conflict-free_replicated_data_type), for my fellow software nerds out there. [This introduction](http://archagon.net/blog/2018/03/24/data-laced-with-history/ "Data Laced With History") is absolutely outstanding, as are a number of the pieces it links to. Among other things, I actually *understand* a few concepts in set theory I’ve had a hard time wrapping my head around in the past, because the explanations here are so good.
 
 [^4]:	As I talked about in my [New Rustacean episode about burnout](https://newrustacean.com/show_notes/bonus/burnout/), lots of things which *aren’t* “work” in the “what I do to pay the bills” sense can also be triggers.
+
