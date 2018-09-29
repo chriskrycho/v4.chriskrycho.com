@@ -302,11 +302,6 @@ pre {
   white-space: pre-wrap;
 }
 
-pre,
-code {
-  @include hyphens(none !important);
-}
-
 sup {
   line-height: 0; // Fixes vertical alignment issues
   vertical-align: 0.558em;
@@ -693,10 +688,6 @@ article {
 
     hr + h1 {
       padding-top: $fs_very_small;
-    }
-
-    p {
-      @include hyphens(auto);
     }
 
     a {
