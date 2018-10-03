@@ -2,7 +2,6 @@
 Title: Curriculum Vitae
 Subtitle: >
     I am a senior software engineer focused on web <abbr>UI</abbr>, typography, functional programming—and ethics.
-# Template: formats/resume
 Summary: >
     I am a senior software engineer focused on web UI, typography, functional programming—and ethics. You can have my traditional résumé, but this page will tell you a lot more about whether we might work well together.
 
@@ -14,10 +13,12 @@ In helping hire people over the last few years, I’ve seen a lot of résumés. 
 [email]: mailto:hello@chriskrycho.com?subject=Read%20your%20CV
 
 - [<i>About Me</i>](#about-me)—my philosophy of software development and my (slightly unusual) educational background, featuring a [Master of Divinity](#masters) and a [Bachelor of Science in Physics](#undergrad)
-- [<i>My Work</i>](#my-work)—not just where I’ve worked and the tech I used, but what I brought to the table and the difference I made
+
+- [<i>My Work</i>](#my-work)—not just where I’ve worked and the tech I used, but what I brought to the table and the difference I made:
     - [Current (Olo)](#current)
     - [Earlier Work](#earlier-work)
-- [<i>My Projects</i>](#my-projects)—including podcasts I produce, talks I've given, and open-source software I’ve developed or contributed to
+
+- [<i>My Projects</i>](#my-projects)—including podcasts I produce, talks I've given, and open-source software I’ve developed or contributed to:
     - [Podcasts](#podcasts)
     - [Open Source Software](#open-source-software)
     - [Talks](#talks)
