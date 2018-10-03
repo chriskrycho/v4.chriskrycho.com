@@ -29,9 +29,9 @@ In helping hire people over the last few years, I’ve seen a lot of résumés. 
 
 I am a senior software engineer focused on web <abbr>UI</abbr>, typography, functional programming—and ethics. Besides my varied full-stack web development experience, I bring to the table half a decade of experience in systems-level programming (including avionics software and computational physics models), an [undergraduate degree in physics](#undergrad), a [master’s degree in theology](#masters), and a passion for building the *right things* in the *right way*.
 
-Building the *right things* means I’m not particularly interested in startups whose vision consists of either "tear down an existing industry" or "applying software will solve all our problems." I’d much rather work for a company with both a vision for how its product improves human lives and a recognition of the limits of technology. Tech is not a panacea for human ills and too often simply reinforces the worst of our existing failings. **Ethics is foundational for good software engineering.**
+Building the *right things* means I am not interested in startups whose vision consists of either "tear down an existing industry" or "applying software will solve all our problems." I would much rather work for a company with both a vision for how its product improves human lives and a recognition of the limits of technology. Tech is not a panacea for human ills and too often simply reinforces the worst of our existing failings. **Ethics is foundational for good software engineering.**
 
-Building things the *right way* means I’m not interested in slapdash product development and rushed delivery on the one hand, or infinite delays in pursuit of a perfect implementation on the other. Instead, I want both to get a piece of software live and also to improve it continuously after launch. **Shipping is a feature—and so is excellence.**
+Building things the *right way* means I am not interested in slapdash product development and rushed delivery on the one hand, or infinite delays in pursuit of a perfect implementation on the other. Instead, I want both to get a piece of software live and also to improve it continuously after launch. **Shipping is a feature—and so is excellence.**
 
 ### Education
 
