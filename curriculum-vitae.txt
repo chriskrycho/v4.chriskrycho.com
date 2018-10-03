@@ -1,25 +1,25 @@
 ---
 Title: Curriculum Vitae
 Subtitle: >
-    I am a senior software engineer focused on web <abbr>UI</abbr>, typography, functional programming--and ethics.
+    I am a senior software engineer focused on web <abbr>UI</abbr>, typography, functional programming—and ethics.
 # Template: formats/resume
 Summary: >
-    I am a senior software engineer focused on web UI, typography, functional programming--and ethics. You can have my traditional résumé, but this page will tell you a lot more about whether we might work well together.
+    I am a senior software engineer focused on web UI, typography, functional programming—and ethics. You can have my traditional résumé, but this page will tell you a lot more about whether we might work well together.
 
 ---
 
-In helping hire people over the last few years, I’ve seen a lot of résumés. Even the best of them leave a lot to be desired: they lack context and narrative. So if you’d like a traditional résumé for me, you can snag it [here][resume]--but if you’d like a better idea of whether we might work well together, I think you’ll find the rest of this page a lot more helpful. If you're interested, [say hello][email]!
+In helping hire people over the last few years, I’ve seen a lot of résumés. Even the best of them leave a lot to be desired: they lack context and narrative. So if you’d like a traditional résumé for me, you can snag it [here][resume]—but if you’d like a better idea of whether we might work well together, I think you’ll find the rest of this page a lot more helpful. If you're interested, [say hello][email]!
 
 [resume]: https://f001.backblazeb2.com/file/chriskrycho-com/images/resume.pdf
 [email]: mailto:hello@chriskrycho.com?subject=Read%20your%20CV
 
-- [<i>About Me</i>](#about-me)--my philosophy of software development and my unusual educational background
+- [<i>About Me</i>](#about-me)—my philosophy of software development and my unusual educational background
     - [Master of Divinity](#masters)
     - [Bachelor of Science in Physics](#undergrad)
-- [<i>My Work</i>](#my-work)--not just where I’ve worked and the tech I used, but what I brought to the table and the difference I made
+- [<i>My Work</i>](#my-work)—not just where I’ve worked and the tech I used, but what I brought to the table and the difference I made
     - [Current (Olo)](#current)
     - [Earlier Work](#earlier-work)
-- [<i>My Projects</i>](#my-projects)--including podcasts I produce, talks I've given, and open-source software I’ve developed or contributed to
+- [<i>My Projects</i>](#my-projects)—including podcasts I produce, talks I've given, and open-source software I’ve developed or contributed to
     - [Podcasts](#podcasts)
     - [Open Source Software](#open-source-software)
         - [TypeScript and Ember.js](#typescript-and-emberjs)
@@ -30,17 +30,17 @@ In helping hire people over the last few years, I’ve seen a lot of résumés. 
 
 ## About Me
 
-I am currently a senior software engineer, focused on web <abbr>UI</abbr>, typography, functional programming--and ethics. Besides my varied full-stack web development experience, I bring to the table half a decade of experience in systems-level programming (including avionics software and computational physics models), an [undergraduate degree in physics](#undergrad), a [master’s degree in theology](#masters), and a passion for building the *right things* in the *right way*.
+I am currently a senior software engineer, focused on web <abbr>UI</abbr>, typography, functional programming—and ethics. Besides my varied full-stack web development experience, I bring to the table half a decade of experience in systems-level programming (including avionics software and computational physics models), an [undergraduate degree in physics](#undergrad), a [master’s degree in theology](#masters), and a passion for building the *right things* in the *right way*.
 
 Building the *right things* means I’m not particularly interested in startups whose vision consists of either "tear down an existing industry" or "applying software will solve all our problems." I’d much rather work for a company with both a vision for how its product improves human lives and a recognition of the limits of technology. Tech is not a panacea for human ills and too often simply reinforces the worst of our existing failings. **Ethics is foundational for good software engineering.**
 
-Building things the *right way* means I’m not interested in slapdash product development and rushed delivery on the one hand, or infinite delays in pursuit of a perfect implementation on the other. Instead, I want both to get a piece of software live and also to improve it continuously after launch. **Shipping is a feature--and so is excellence.**
+Building things the *right way* means I’m not interested in slapdash product development and rushed delivery on the one hand, or infinite delays in pursuit of a perfect implementation on the other. Instead, I want both to get a piece of software live and also to improve it continuously after launch. **Shipping is a feature—and so is excellence.**
 
 ### Education
 
 <a name=masters></a>I earned a **Master of Divinity** with honors from **Southeastern Baptist Theological Seminary** in **May 2017**, after 4.5  years simultaneously pursuing the degree and working as a software developer. I am not a pastor by vocation, but I care deeply about the ethical, social and, yes, spiritual implications of the software I build.
 
-<a name=undergrad></a>I graduated *magna cum laude* with a **Bachelor of Science in Physics** from **The University of Oklahoma** in **May 2009**, having been a regular departmental award winner. My senior thesis, a project in computational neurophysics (in Fortran 90!), led me into programming--but I admit I still miss doing physics and math on a regular basis.
+<a name=undergrad></a>I graduated *magna cum laude* with a **Bachelor of Science in Physics** from **The University of Oklahoma** in **May 2009**, having been a regular departmental award winner. My senior thesis, a project in computational neurophysics (in Fortran 90!), led me into programming—but I admit I still miss doing physics and math on a regular basis.
 
 ## My Work
 
@@ -117,7 +117,7 @@ Besides my family life, church participation, and day-to-day work, I am also a p
 
 - [**Winning Slowly**][ws]: cohosted with [Stephen Carradini][stephen], a show about taking the long view on technology, religion, ethics and art. Stephen describes it (accurately) as a show focused on tech, but from the angles of religion, ethics, and art. I describe it (also accurately) as our excuse to talk about whatever we want, since "technology, religion, ethics and art" pretty much touches on all of human existence. For a good sample of the way I approach **software and ethics**, check out [6.06: A Kind of Blindness,][ws-6.06] on smart cities, "big data", and the meaninglessness of mere information.
 
-- [**New Rustacean**][nr]: a show about the **Rust** programming language and the people who use it--dedicated primarily to *teaching* people Rust. Initially a way of helping myself stay motivated to keep up with learning the language, New Rustacean is now one of the most popular resources for people learning Rust and has inspired a few other teaching-programming-languages podcasts.
+- [**New Rustacean**][nr]: a show about the **Rust** programming language and the people who use it—dedicated primarily to *teaching* people Rust. Initially a way of helping myself stay motivated to keep up with learning the language, New Rustacean is now one of the most popular resources for people learning Rust and has inspired a few other teaching-programming-languages podcasts.
 
 [ws]: https://winningslowly.org
 [stephen]: https://stephencarradini.com
@@ -128,9 +128,9 @@ Besides my family life, church participation, and day-to-day work, I am also a p
 
 #### TypeScript and Ember.js
 
-As we began actively adopting TypeScript in our Ember.js app [at Olo](#current), we very soon ran into the limitations of the existing support. Integration with Ember’s <abbr>CLI</abbr> tooling was limited; the type definitions were a mix of incomplete, unhelpful, and outright wrong; there was little information about how to use TypeScript *effectively* with Ember; and, worst of all, no one was actively contributing to fill these gaps--much less leading.
+As we began actively adopting TypeScript in our Ember.js app [at Olo](#current), we very soon ran into the limitations of the existing support. Integration with Ember’s <abbr>CLI</abbr> tooling was limited; the type definitions were a mix of incomplete, unhelpful, and outright wrong; there was little information about how to use TypeScript *effectively* with Ember; and, worst of all, no one was actively contributing to fill these gaps—much less leading.
 
-In March 2017, I began working on the <abbr>CLI</abbr> tooling and the type definitions for the Ember ecosystem. Once I began leading the effort, several others began contributing actively; in early 2018 we formed a small team working on shepherding Ember and TypeScript integration forward. Over the rest of 2017 and 2018, I have [taught][ts-workshop] and [written extensively][ts-blog] on using TypeScript effectively with Ember. Our small team’s efforts have made TypeScript both viable--and increasingly mainstream--as a choice for Ember apps and addons.
+In March 2017, I began working on the <abbr>CLI</abbr> tooling and the type definitions for the Ember ecosystem. Once I began leading the effort, several others began contributing actively; in early 2018 we formed a small team working on shepherding Ember and TypeScript integration forward. Over the rest of 2017 and 2018, I have [taught][ts-workshop] and [written extensively][ts-blog] on using TypeScript effectively with Ember. Our small team’s efforts have made TypeScript both viable—and increasingly mainstream—as a choice for Ember apps and addons.
 
 [ts-workshop]: https://emberconf.com/schedule.html#d-typescript-up-your-ember-js-app "EmberConf Workshop: 'TypeScript Up Your Ember.js App'"
 [ts-blog]: https://www.chriskrycho.com/typing-your-ember/ "Typing Your Ember series"
@@ -170,7 +170,7 @@ True Myth is largely [complete][stable-libraries], with a full set of features a
 
 - **[*Tolle Lege!* Designing Readable Bibles With Digital Typography][bibletech2015]** (BibleTech 2015, May 2015):
 
-    > **Abstract:** The Bible has always been a challenging text to display, whether copied by hand or printed on a Gutenberg press, and the task has only grown more complicated in the era of digital text. The challenges are not insurmountable, though. We have the tools to solve them: the principles of good typography, especially careful page design and the deliberate choice and skillful use of appropriate typefaces (fonts). When we apply those principles to the Scriptures--whether in an app or on the web--we can provide people with digital Bibles that are both readable and beautiful.
+    > **Abstract:** The Bible has always been a challenging text to display, whether copied by hand or printed on a Gutenberg press, and the task has only grown more complicated in the era of digital text. The challenges are not insurmountable, though. We have the tools to solve them: the principles of good typography, especially careful page design and the deliberate choice and skillful use of appropriate typefaces (fonts). When we apply those principles to the Scriptures—whether in an app or on the web—we can provide people with digital Bibles that are both readable and beautiful.
 
 
 [ember-atx]:	https://youtube.com/watch?v=fFzxbBrvytU
