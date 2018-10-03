@@ -143,7 +143,7 @@ In the **fall of 2017**, I developed [True Myth][tm]: a **TypeScript**-targeted 
 
 [tm]: https://github.com/chriskrycho/true-myth
 
-True Myth is largely [complete][stable-libraries], with a full set of features and [extensive documentation][docs]. I continue to maintain and expand the library with additional helpers and tooling as TypeScript has supported more capabilities. I have also supported [early efforts to translate the library to C^♯^.][C#]
+True Myth is largely [complete][stable-libraries], with a full set of features and [extensive documentation][tm-docs]. I continue to maintain and expand the library with additional helpers and tooling as TypeScript has supported more capabilities. I have also supported [early efforts to translate the library to C^♯^.][tm-C#]
 
 [stable-libraries]: https://www.chriskrycho.com/2018/stable-libraries.html
 [tm-docs]: https://true-myth.js.org/
