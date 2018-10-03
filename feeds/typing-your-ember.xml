@@ -283,10 +283,10 @@ declare module &amp;quot;ember&amp;quot; {
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then anywhere you injected and used it, you’ll get auto-complete suggestions and type checking:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="http://cdn.chriskrycho.com/images/ts-autocomplete.png" alt="autocompletion" /&gt;&lt;figcaption&gt;autocompletion&lt;/figcaption&gt;
+&lt;img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/ts-autocomplete.png" alt="autocompletion" /&gt;&lt;figcaption&gt;autocompletion&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-&lt;img src="http://cdn.chriskrycho.com/images/ts-type-checking.png" alt="type-checking" /&gt;&lt;figcaption&gt;type-checking&lt;/figcaption&gt;
+&lt;img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/ts-type-checking.png" alt="type-checking" /&gt;&lt;figcaption&gt;type-checking&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;(You’ll see the same kinds of things in other editors, from Vim to IntelliJ IDEA. Visual Studio Code is just my current editor of choice.)&lt;/p&gt;
 &lt;/section&gt;

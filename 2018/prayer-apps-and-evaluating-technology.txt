@@ -26,7 +26,7 @@ It’s not really about this (or any particular) prayer app. And I certainly don
 
 Of course, none of these concerns are specific to prayer apps. I have been using a digital Bible for most of a decade now. I use a pomodoro timer to help my maintain my discipline and concentration throughout my work. I use [Bear](http://www.bear-writer.com) for keeping a log of what I’ve done for work every day,[^2] and for jotting down writing ideas. This very post started out that way.
 
-![The note in Bear that was the germination of this blog post](http://cdn.chriskrycho.com/images/bear-blog-idea.png "Bear app")
+![The note in Bear that was the germination of this blog post](https://f001.backblazeb2.com/file/chriskrycho-com/images/bear-blog-idea.png "Bear app")
 
 Using a digital notes app is not the same as disciplining myself to remember things. But the same concerns apply, of course, to *all* aids we employ. Using a digital notes app is not identical to using a physical notebook as a place for jotting down ideas---but they’re more similar to each other than they are to *not using a tool at all*. Both have a cost in effective, *active* memory of those ideas. On the other hand, they also have the benefit of helping us remember more ideas, and more clearly, than we would otherwise, and also of freeing us to think on and remember *other* things.
 

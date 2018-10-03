@@ -428,7 +428,7 @@ export default FetchState;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Just like with a “higher-order function,” all we mean when we talk about a “higher-order component” is a component which takes other components as arguments, returns other components itself (in Ember’s case via &lt;code&gt;yield&lt;/code&gt; in a template), or both.&lt;/p&gt;
 &lt;p&gt;The thing we’re actually going to build here is a “modal” which accepts an optional button as an arguments, and which yields out a component for dividing the modal into sections visually so you can pass your own content in and have it look just right. This is closely based on a component my colleagues and I at Olo built recently, just with some of our specific details stripped away to get at the actually important bits. Here’s what it looks like in practice:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="http://cdn.chriskrycho.com/images/hoc-rendered.png" alt="a modal with sectioned text and a close button" /&gt;&lt;figcaption&gt;a modal with sectioned text and a close button&lt;/figcaption&gt;
+&lt;img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/hoc-rendered.png" alt="a modal with sectioned text and a close button" /&gt;&lt;figcaption&gt;a modal with sectioned text and a close button&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;The goal for the button arguments is to let the modal be able to render the button the caller passes in, while not being concerned with the &lt;em&gt;functionality&lt;/em&gt; of the button. Otherwise, we’d have to tie the “API” of the modal to the details of button behavior, bind more actions into it, etc.&lt;/p&gt;
 &lt;p&gt;The goal for the yielded sectioning component is for whatever is rendering the modal itself to be able to pass content in and get it chunked up however the modal decides is appropriate—the modal can display its own styles, etc.—without having to worry about the details of applying classes or sectioning up the content itself.&lt;/p&gt;
@@ -951,10 +951,10 @@ declare module &amp;quot;ember&amp;quot; {
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then anywhere you injected and used it, you’ll get auto-complete suggestions and type checking:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="http://cdn.chriskrycho.com/images/ts-autocomplete.png" alt="autocompletion" /&gt;&lt;figcaption&gt;autocompletion&lt;/figcaption&gt;
+&lt;img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/ts-autocomplete.png" alt="autocompletion" /&gt;&lt;figcaption&gt;autocompletion&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;figure&gt;
-&lt;img src="http://cdn.chriskrycho.com/images/ts-type-checking.png" alt="type-checking" /&gt;&lt;figcaption&gt;type-checking&lt;/figcaption&gt;
+&lt;img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/ts-type-checking.png" alt="type-checking" /&gt;&lt;figcaption&gt;type-checking&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;(You’ll see the same kinds of things in other editors, from Vim to IntelliJ IDEA. Visual Studio Code is just my current editor of choice.)&lt;/p&gt;
 &lt;/section&gt;
@@ -2513,7 +2513,7 @@ const STATE: UnionKeyToValue&amp;lt;State&amp;gt; = {
 &lt;p&gt;That &lt;code&gt;UnionKeyToValue&amp;lt;State&amp;gt;&lt;/code&gt; type constraint requires us to fill out the &lt;code&gt;STATE&lt;/code&gt; object as expected. The whole point of this exercise was to give us the benefit of code completion with that STATE type so we could use it and not be worried about the kinds of typos that too-often bite us with stringly-typed arguments in JavaScript.&lt;/p&gt;
 &lt;p&gt;It turns out we don’t &lt;em&gt;need&lt;/em&gt; that to get completion, though. All editors which use the TypeScript language service will give us the same degree of completion if we start typing a string and then trigger completion:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="http://cdn.chriskrycho.com/images/more-ts.gif" title="screen capture of string completion in VS Code" alt="string completion with TypeScript 2.1" /&gt;&lt;figcaption&gt;string completion with TypeScript 2.1&lt;/figcaption&gt;
+&lt;img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/more-ts.gif" title="screen capture of string completion in VS Code" alt="string completion with TypeScript 2.1" /&gt;&lt;figcaption&gt;string completion with TypeScript 2.1&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Granted that you have to know this is a string (though the JetBrains &lt;abbr title="integrated development environment"&gt;IDE&lt;/abbr&gt;s will actually go a step further and suggest the right thing &lt;em&gt;without&lt;/em&gt; needing the string key). But that’s roughly equivalent to knowing you need to import the object literal constant to get the completion that way. Six one, half dozen the other, I think.&lt;/p&gt;
 &lt;p&gt;This makes it something of a wash with the original approach, as long as you’re dealing in a pure-TypeScript environment. The big advantage that the original approach still has, of course, is that it also plays nicely with a mixed TypeScript and JavaScript environment. If you’re just progressively adding TypeScript to an existing JavaScript codebase, that’s possibly reason enough to stick with it.&lt;/p&gt;
@@ -2693,7 +2693,7 @@ Type ‘{ Pending: “pending”; Started: “Strated”; Completed: “Complete
 &lt;p&gt;And the TypeScript language service—which you can use from a &lt;em&gt;lot&lt;/em&gt; of editors, including VS Code, Atom, Sublime Text, and the JetBrains IDEs—will actually give you the correct completion when you start definition a type. So imagine we were defining some other union type elsewhere in our program to handle events. Now we can use the same &lt;code&gt;UnionKeyToValue&lt;/code&gt; type to construct this type, with immediate, &lt;em&gt;correct&lt;/em&gt; feedback from the TypeScript language service:&lt;/p&gt;
 &lt;figure&gt;
 &lt;video autoplay=autoplay muted=muted playsinline=playsinline loop=loop&gt;
-&lt;source type='video/mp4' src='http://cdn.chriskrycho.com/images/completion.mp4'&gt;
+&lt;source type='video/mp4' src='https://f001.backblazeb2.com/file/chriskrycho-com/images/completion.mp4'&gt;
 &lt;/video&gt;
 &lt;figcaption&gt;
 TypeScript live code completion of the mapped type
@@ -2703,7 +2703,7 @@ TypeScript live code completion of the mapped type
 &lt;p&gt;Yes, it’s a little verbose and it does require duplicating the strings whenever you define one of these types.&lt;a href="#fn7" class="footnote-ref" id="fnref7"&gt;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt; But, and this is what I find most important: there is only one &lt;em&gt;source&lt;/em&gt; for those string keys, the union type, and it is definitive. If you change that central union type, everything else that references it, including the namespace-like object, will fail to compile until you make the same change there.&lt;/p&gt;
 &lt;figure&gt;
 &lt;video autoplay=autoplay muted=muted playsinline=playsinline loop=loop&gt;
-&lt;source type='video/mp4' src='http://cdn.chriskrycho.com/images/change-union.mp4'&gt;
+&lt;source type='video/mp4' src='https://f001.backblazeb2.com/file/chriskrycho-com/images/change-union.mp4'&gt;
 &lt;/video&gt;
 &lt;figcaption&gt;
 Updating a union

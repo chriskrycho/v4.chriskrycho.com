@@ -254,7 +254,7 @@ Type ‘{ Pending: “pending”; Started: “Strated”; Completed: “Complete
 <p>And the TypeScript language service—which you can use from a <em>lot</em> of editors, including VS Code, Atom, Sublime Text, and the JetBrains IDEs—will actually give you the correct completion when you start definition a type. So imagine we were defining some other union type elsewhere in our program to handle events. Now we can use the same <code>UnionKeyToValue</code> type to construct this type, with immediate, <em>correct</em> feedback from the TypeScript language service:</p>
 <figure>
 <video autoplay=autoplay muted=muted playsinline=playsinline loop=loop>
-<source type='video/mp4' src='http://cdn.chriskrycho.com/images/completion.mp4'>
+<source type='video/mp4' src='https://f001.backblazeb2.com/file/chriskrycho-com/images/completion.mp4'>
 </video>
 <figcaption>
 TypeScript live code completion of the mapped type
@@ -264,7 +264,7 @@ TypeScript live code completion of the mapped type
 <p>Yes, it’s a little verbose and it does require duplicating the strings whenever you define one of these types.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> But, and this is what I find most important: there is only one <em>source</em> for those string keys, the union type, and it is definitive. If you change that central union type, everything else that references it, including the namespace-like object, will fail to compile until you make the same change there.</p>
 <figure>
 <video autoplay=autoplay muted=muted playsinline=playsinline loop=loop>
-<source type='video/mp4' src='http://cdn.chriskrycho.com/images/change-union.mp4'>
+<source type='video/mp4' src='https://f001.backblazeb2.com/file/chriskrycho-com/images/change-union.mp4'>
 </video>
 <figcaption>
 Updating a union

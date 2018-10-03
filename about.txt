@@ -10,7 +10,7 @@ Summary: >
 
 Hello! I’m Chris Krycho (thus the <abbr>URL</abbr>).
 
-![My wonderful family! [(see full size)](http://cdn.chriskrycho.com/images/family-2017.jpg)](http://cdn.chriskrycho.com/images/family-2017-thumb.jpg 'Family photo 2017')
+![My wonderful family! [(see full size)](https://f001.backblazeb2.com/file/chriskrycho-com/images/family-2017.jpg)](https://f001.backblazeb2.com/file/chriskrycho-com/images/family-2017-thumb.jpg 'Family photo 2017')
 
 A few things about me you might find interesting:
 
