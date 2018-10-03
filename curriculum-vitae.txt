@@ -101,7 +101,7 @@ Over those three years I acquired a good dose of humility and basic knowledge of
 
 #### Miscellaneous Consulting 
 
-Teaching myself web development. 
+*Teaching myself web development.*
 
 **Beginning in January 2010**, I taught myself web programming, beginning with <abbr>PHP</abbr> and jQuery and the <abbr>LAMP</abbr> stack. Having a good working knowledge of <abbr>HTML</abbr> and <abbr>CSS</abbr> from designing my own blog in college, I decided to learn web development, I began by building church websites and blogs for friends in WordPress. Later, while working as a subcontracting consultant for [Innova Computing][innova], I developed a custom <abbr>CMS</abbr> for the Oklahoma Board of Medical Licensure.
 
