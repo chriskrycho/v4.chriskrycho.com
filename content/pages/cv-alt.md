@@ -15,7 +15,7 @@ In helping hire people over the last few years, I’ve seen a lot of résumés. 
 - [<i>About Me</i>](#about-me)—my philosophy of software development and my (slightly unusual) educational background, featuring a [Master of Divinity](#masters) and a [Bachelor of Science in Physics](#undergrad)
 
 - [<i>My Work</i>](#my-work)—not just where I’ve worked and the tech I used, but what I brought to the table and the difference I made:
-    - [Current (Olo)](#current)
+    - [Current: Olo](#current-olo)
     - [Earlier Work](#earlier-work)
 
 - [<i>My Projects</i>](#my-projects)—including podcasts I produce, talks I've given, and open-source software I’ve developed or contributed to:
@@ -41,7 +41,7 @@ Building things the *right way* means I am not interested in slapdash product de
 
 ## My Work
 
-### Olo (Current)
+### Current: Olo 
 
 *From individual contributor to a project lead with organization-wide influence.*
 
