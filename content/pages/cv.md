@@ -81,7 +81,7 @@ On the other hand, the project was a *mixed success as a product*. The site is b
 
 #### Quest Consultants, Inc.
 
-*Collaborating across disciplines effectively and adjusting to remote work.*
+*Collaborating across disciplines effectively and transitioning to remote work.*
 
 From **May 2012–January 2016**, I worked (first as a full-time employee, then remotely as a half-time consultant) for [**Quest Consultants, Inc.**][quest]. During that time, I improved the performance of one existing computational hazard model by a factor of 7, rewrote another computational model in **C** (from Fortran 77), supported another rewrite effort (again from Fortran 77) to **Python 3**, and helped the team adopt Mercurial for version control and JIRA for bug tracking software.
 
