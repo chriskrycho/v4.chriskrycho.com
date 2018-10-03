@@ -56,7 +56,7 @@ As a **Software Engineer** (January 2016–May 2017), I was a productive individ
 
 As a **Senior Software Engineer** (May 2017–present), I led a team effort to expand our mobile web <abbr>UI</abbr> as a **responsive web <abbr>UI</abbr>** to reduce our maintenance burden, improve our overall <abbr>UX</abbr>, and decrease the cost of launching new features. To support those business goals, I designed a new technical strategy for white-labeling (including the adoption of **<abbr>CSS</abbr> Modules**), enabling the business to support more brands by way of better tooling.
 
-I also pioneered Olo's use of **Requests for Comments (<abbr>RFC</abbr>s**), modeled on the <abbr>RFC</abbr> processes from the Rust and Ember communities, as a tool for architecture design and documentation. I began by using <abbr>RFC</abbr>s for several important initiatives in my own team. The success of those initiatives validated <abbr>RFC<abbr>s' utility when I later introduced them to the broader engineering organization. They are now Olo’s standard tool for documenting architectural changes and a prerequisite for all new internal services.
+I also pioneered Olo's use of **Requests for Comments (<abbr>RFC</abbr>s**), modeled on the <abbr>RFC</abbr> processes from the Rust and Ember communities, as a tool for architecture design and documentation. I began by using <abbr>RFC</abbr>s for several important initiatives in my own team. The success of those initiatives validated <abbr>RFC</abbr>s' utility when I later introduced them to the broader engineering organization. They are now Olo’s standard tool for documenting architectural changes and a prerequisite for all new internal services.
 
 While at Olo, I have also led the community effort to **integrate TypeScript with Ember.js**; helped launch a shared component library for future rich client projects; given over a dozen internal tech talks on subjects including Ember.js basics, functional programming techniques, and introductions to Rust and Elm; and substantially reshaped our front-end engineering practices and tooling choices as an informal leader among our front-end engineering group.
 
@@ -143,7 +143,7 @@ In the **fall of 2017**, I developed [True Myth][tm]: a **TypeScript**-targeted 
 
 [tm]: https://github.com/chriskrycho/true-myth
 
-True Myth is largely [complete][stable-libraries], with a full set of features and [extensive documentation][tm-docs]. I continue to maintain and expand the library with additional helpers and tooling as TypeScript has supported more capabilities. I have also supported [early efforts to translate the library to C^♯^.][tm-C#]
+True Myth is largely [complete][stable-libraries], with a full set of features and [extensive documentation][tm-docs]. I continue to maintain and expand the library with additional helpers and tooling as TypeScript has supported more capabilities. I have also supported [early efforts to translate the library to C^♯^][tm-C#].
 
 [stable-libraries]: https://www.chriskrycho.com/2018/stable-libraries.html
 [tm-docs]: https://true-myth.js.org/
