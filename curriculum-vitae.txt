@@ -30,7 +30,7 @@ In helping hire people over the last few years, I’ve seen a lot of résumés. 
 
 ## About Me
 
-I am currently a senior software engineer, focused on web <abbr>UI</abbr>, typography, functional programming—and ethics. Besides my varied full-stack web development experience, I bring to the table half a decade of experience in systems-level programming (including avionics software and computational physics models), an [undergraduate degree in physics](#undergrad), a [master’s degree in theology](#masters), and a passion for building the *right things* in the *right way*.
+I am a senior software engineer focused on web <abbr>UI</abbr>, typography, functional programming—and ethics. Besides my varied full-stack web development experience, I bring to the table half a decade of experience in systems-level programming (including avionics software and computational physics models), an [undergraduate degree in physics](#undergrad), a [master’s degree in theology](#masters), and a passion for building the *right things* in the *right way*.
 
 Building the *right things* means I’m not particularly interested in startups whose vision consists of either "tear down an existing industry" or "applying software will solve all our problems." I’d much rather work for a company with both a vision for how its product improves human lives and a recognition of the limits of technology. Tech is not a panacea for human ills and too often simply reinforces the worst of our existing failings. **Ethics is foundational for good software engineering.**
 
@@ -56,9 +56,9 @@ As a **Software Engineer** (January 2016–May 2017), I was a productive individ
 
 As a **Senior Software Engineer** (May 2017–present), I led a team effort to expand our mobile web <abbr>UI</abbr> as a **responsive web <abbr>UI</abbr>** to reduce our maintenance burden, improve our overall <abbr>UX</abbr>, and decrease the cost of launching new features. To support those business goals, I designed a new technical strategy for white-labeling (including the adoption of **<abbr>CSS</abbr> Modules**), enabling the business to support more brands by way of better tooling.
 
-I also introduced **Requests for Comments (<abbr>RFC</abbr>s**), modeled on the <abbr>RFC</abbr> processes from the Rust and Ember communities, as a tool for architecture design and documentation. After our team’s successful use of <abbr>RFC</abbr>s, I led the broader engineering organization to adopted them as well. They are now Olo’s standard tool for documenting architectural changes and a prerequisite for all new internal services.
+I also pioneered Olo's use of **Requests for Comments (<abbr>RFC</abbr>s**), modeled on the <abbr>RFC</abbr> processes from the Rust and Ember communities, as a tool for architecture design and documentation. I began by using <abbr>RFC</abbr>s for several important initiatives in my own team. The success of those initiatives validated <abbr>RFC<abbr>s' utility when I later introduced them to the broader engineering organization. They are now Olo’s standard tool for documenting architectural changes and a prerequisite for all new internal services.
 
-I also led the community effort to **integrate TypeScript with Ember.js**; helped launch a shared component library for future rich client projects; gave over a dozen internal tech talks on subjects including Ember.js basics, functional programming techniques, and introductions to Rust and Elm; and substantially shaped our front-end engineering practices and tooling choices as an informal leader among our front-end engineering group.
+While at Olo, I have also led the community effort to **integrate TypeScript with Ember.js**; helped launch a shared component library for future rich client projects; given over a dozen internal tech talks on subjects including Ember.js basics, functional programming techniques, and introductions to Rust and Elm; and substantially reshaped our front-end engineering practices and tooling choices as an informal leader among our front-end engineering group.
 
 ### Earlier Work
 
@@ -73,7 +73,7 @@ I also led the community effort to **integrate TypeScript with Ember.js**; helpe
 [sb]: https://kjvstudybible.org
 [prts]: https://prts.edu
 
-I worked closely with a designer to create the visual language for the app before diving into the implementation solo. The app uses **AngularJS**, **Express/Node.js**, and **PostgreSQL**; I also did a great deal of <abbr>XML</abbr>-mashing in **Python** for the Bible source text and study bible integration.
+I worked closely with a designer to create the visual language for the app before diving into the implementation. The app uses **AngularJS**, **Express/Node.js**, and **PostgreSQL**; I also did a great deal of <abbr>XML</abbr>-mashing in **Python** for the Bible source text and study Bible integration.
 
 The project was a *substantial technical success*: it has neither crashed nor had a bug reported since spring 2017. I’m doubly proud of the project because it was only the second time in my career I’d built an entire non-trivial web application from scratch, and the first time I did so solo.
 
@@ -83,7 +83,7 @@ On the other hand, the project was a *mixed success as a product*. The site is b
 
 *Collaborating across disciplines effectively and adjusting to remote work.*
 
-From **May 2012–January 2016**, I worked (first as a full-time employee, then remotely as a half-time consultant) for [**Quest Consultants, Inc.**][quest]. During that time, I improved the performance of one existing computational hazard model by a factor of 7, rewrote another computational model in **C** (from Fortran 77), supported another rewrite effort (again from Fortran 77) to **Python 3**, and helped the team adopt version control (Mercurial) and bug tracking software (JIRA).
+From **May 2012–January 2016**, I worked (first as a full-time employee, then remotely as a half-time consultant) for [**Quest Consultants, Inc.**][quest]. During that time, I improved the performance of one existing computational hazard model by a factor of 7, rewrote another computational model in **C** (from Fortran 77), supported another rewrite effort (again from Fortran 77) to **Python 3**, and helped the team adopt Mercurial for version control and JIRA for bug tracking software.
 
 [quest]: http://www.questconsult.com
 
@@ -93,13 +93,15 @@ Those efforts taught me a great deal about communicating effectively with domain
 
 *Learning the basics of software engineering.*
 
-From **July 2009–May 2012**, I worked as a **Software Engineer I** on the B-2 program at [**Northrop Grumman**][ng]. My work included writing **C** targeting a real-time operating system and developing requirements for a modernized message bus architecture. My basic implementation of the *Sparse A\* Search Algorithm* was used as a performance baseline for route-finding software on the platform.
+From **July 2009–May 2012**, I worked as a **Software Engineer I** on the B-2 program at [**Northrop Grumman**][ng]. My work included writing **C** (targeting a real-time operating system) and developing requirements for a modernized message bus architecture. My basic implementation of the *Sparse A\* Search Algorithm* was used as a performance baseline for route-finding software on the platform.
 
 [ng]: http://www.northropgrumman.com/Pages/default.aspx
 
-During those three years I acquired a good dose of humility and basic knowledge of software engineering, from the use of bug trackers and source control, to strategies for testing, to patterns for writing maintainable code.
+Over those three years I acquired a good dose of humility and basic knowledge of software engineering, including the use of bug trackers and source control, strategies for testing, and patterns for writing maintainable code.
 
-#### Miscellaneous web development and consulting
+#### Miscellaneous Consulting 
+
+Teaching myself web development. 
 
 **Beginning in January 2010**, I taught myself web programming, beginning with <abbr>PHP</abbr> and jQuery and the <abbr>LAMP</abbr> stack. Having a good working knowledge of <abbr>HTML</abbr> and <abbr>CSS</abbr> from designing my own blog in college, I decided to learn web development, I began by building church websites and blogs for friends in WordPress. Later, while working as a subcontracting consultant for [Innova Computing][innova], I developed a custom <abbr>CMS</abbr> for the Oklahoma Board of Medical Licensure.
 
