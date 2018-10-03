@@ -13,17 +13,13 @@ In helping hire people over the last few years, I’ve seen a lot of résumés. 
 [resume]: https://f001.backblazeb2.com/file/chriskrycho-com/images/resume.pdf
 [email]: mailto:hello@chriskrycho.com?subject=Read%20your%20CV
 
-- [<i>About Me</i>](#about-me)—my philosophy of software development and my unusual educational background
-    - [Master of Divinity](#masters)
-    - [Bachelor of Science in Physics](#undergrad)
+- [<i>About Me</i>](#about-me)—my philosophy of software development and my (slightly unusual) educational background, featuring a [Master of Divinity](#masters) and a [Bachelor of Science in Physics](#undergrad)
 - [<i>My Work</i>](#my-work)—not just where I’ve worked and the tech I used, but what I brought to the table and the difference I made
     - [Current (Olo)](#current)
     - [Earlier Work](#earlier-work)
 - [<i>My Projects</i>](#my-projects)—including podcasts I produce, talks I've given, and open-source software I’ve developed or contributed to
     - [Podcasts](#podcasts)
     - [Open Source Software](#open-source-software)
-        - [TypeScript and Ember.js](#typescript-and-emberjs)
-        - [True Myth](#true-myth)
     - [Talks](#talks)
 
 ---
@@ -99,7 +95,7 @@ From **July 2009–May 2012**, I worked as a **Software Engineer I** on the B-2 
 
 Over those three years I acquired a good dose of humility and basic knowledge of software engineering, including the use of bug trackers and source control, strategies for testing, and patterns for writing maintainable code.
 
-#### Miscellaneous Consulting 
+#### Miscellaneous Consulting
 
 *Teaching myself web development.*
 
