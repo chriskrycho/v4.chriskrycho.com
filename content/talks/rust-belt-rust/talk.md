@@ -6,7 +6,7 @@
 
 ---
 
-![family](http://cdn.chriskrycho.com/images/talks/rbr_2017/family.jpg)
+![family](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/family.jpg)
 
 Note: Hello, everyone! It's good to see all of you. We only have half an hour, and even if that's ten to fifteen minutes longer than a normal New Rustacean episode, that's still not much time, so let's jump right in! Our theme is "Becoming a Contributor." There are two prongs to this talk, two big ideas I hope you all walk away with.
 
@@ -99,7 +99,7 @@ For example:
 
 How I got here: <!-- .element: class="fragment" data-fragment-index="1" -->
 
-![my first Rust commit](http://cdn.chriskrycho.com/images/talks/rbr_2017/first-commit.png)<!-- .element: class="fragment" data-fragment-index="1" -->
+![my first Rust commit](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/first-commit.png)<!-- .element: class="fragment" data-fragment-index="1" -->
 
 Note: That might sound overblown, but it's really not. I am literally standing on this stage in front of you today because I submitted some small typo and code sample improvements to "Rust by Example" a few years ago, and realized: I can make a difference in this community. And that gave me the motivation I needed to _keep_ contributing.
 
@@ -148,7 +148,7 @@ Fix bugs! Implement features! etc.<!-- .element: class="fragment" data-fragment-
 
 <p class="fragment" data-fragment-index="2">
 
-![good first issue](http://cdn.chriskrycho.com/images/talks/rbr_2017/good-first-issue.png) ![mentored](http://cdn.chriskrycho.com/images/talks/rbr_2017/mentored.png) ![easy](http://cdn.chriskrycho.com/images/talks/rbr_2017/easy.png)
+![good first issue](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/good-first-issue.png) ![mentored](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/mentored.png) ![easy](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/easy.png)
 
 </p>
 
@@ -169,9 +169,9 @@ No one will ever swear at you or insult for making a mistake in Rust-land. _Ever
 Remember: we want people to contribute!<!-- .element: class="fragment" data-fragment-index="1" -->
 
 <p class="fragment" data-fragment-index="1">
-![good first issue](http://cdn.chriskrycho.com/images/talks/rbr_2017/good-first-issue.png)
-![mentored](http://cdn.chriskrycho.com/images/talks/rbr_2017/mentored.png)
-![easy](http://cdn.chriskrycho.com/images/talks/rbr_2017/easy.png)
+![good first issue](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/good-first-issue.png)
+![mentored](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/mentored.png)
+![easy](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/easy.png)
 </p>
 
 Note: And no one is going to swear at you or insult for making a mistake here. Not even if you're working on something important, and not even if you've been doing it for a while. That is not. how. we. roll. here.
@@ -194,7 +194,7 @@ Note: But code is not the only thing that makes you a contributor. I put it up f
 
 ### Filing bugs
 
-![filing bugs](http://cdn.chriskrycho.com/images/talks/rbr_2017/new-issue.png)
+![filing bugs](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/new-issue.png)
 
 Note: So let's take one step away from code, and talk about what is probably the single _easiest_ way anyone can contribute. _File issues._ If you're using a binary and it doesn't work, open a ticket. If you're integrating a library and it seems like the API doesn't do what it should, or if it seems like it's missing some functionality… well, you can suffer in silence, or you can open a bug ticket! Many times, the author of the software _doesn't know there's a problem_. The only way they can fix it is if they know about it!
 
@@ -254,7 +254,7 @@ Note:
 
 #### Docs: Translation
 
-![translation](http://cdn.chriskrycho.com/images/talks/rbr_2017/translation.png)
+![translation](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/translation.png)
 
 Note: Another huge place you can contribute to documentation is _translation_. For good or ill, English has become the sort of _primary_ language of programming, but that doesn't mean we should treat it as the _only_ language, or as _more important_ than other languages. Translating documentation is amazing and very needed work, and it's work that not everyone is really capable of! I'm fluent in English and… ancient Hebrew and ancient Greek. For some reason, there's not much demand for technical writing in Greek from the era when Plato was alive. So I'm not much use at translation.
 
@@ -377,7 +377,7 @@ Not just words! Noises and pictures, too!
 
 #### Audio: but there are already podcasts
 
-![New Rustacean](http://cdn.chriskrycho.com/images/talks/rbr_2017/newrustacean.png)<!-- .element: class="fragment" data-fragment-index="1" --> ![Request for Explanation](http://cdn.chriskrycho.com/images/talks/rbr_2017/rfe.png)<!-- .element: class="fragment" data-fragment-index="2" --> ![Rusty Spike](http://cdn.chriskrycho.com/images/talks/rbr_2017/rusty-spike.png)<!-- .element: class="fragment" data-fragment-index="3" -->
+![New Rustacean](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/newrustacean.png)<!-- .element: class="fragment" data-fragment-index="1" --> ![Request for Explanation](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/rfe.png)<!-- .element: class="fragment" data-fragment-index="2" --> ![Rusty Spike](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/rusty-spike.png)<!-- .element: class="fragment" data-fragment-index="3" -->
 
 Note: Everything I've talked about so far has been in written form. But audio and video media can also be really helpful. Not everyone learns best by reading. And not everyone has tons of time to sit down and read a book every day. One of the reasons I started the New Rustacean podcast is that it gives people a way to get up to speed on the language while on a daily commute. But there's still a _huge_ need for more audio and video content in this space! One podcast is not enough! _Two_ podcasts is not enough! Seriously, not even three podcasts is enough! So I'm laying down another challenge: there's plenty of room for more, and more kinds, of audio content in this ecosystem.
 
@@ -461,7 +461,7 @@ Note: If you've never done any open-source work at all before, that's different 
 
          <p class="fragment" data-fragment-index="1">
 
-   ![help wanted](http://cdn.chriskrycho.com/images/talks/rbr_2017/help-wanted.png) ![help wanted](http://cdn.chriskrycho.com/images/talks/rbr_2017/easy.png)
+   ![help wanted](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/help-wanted.png) ![help wanted](https://f001.backblazeb2.com/file/chriskrycho-com/images/talks/rbr_2017/easy.png)
 
    </p>
 

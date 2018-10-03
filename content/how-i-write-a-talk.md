@@ -25,7 +25,7 @@ Sometimes this is broadly obvious because I already know how to come at the talk
 
 Once I have a good idea the way I want to tackle the subject, I write an outline—again, in my Moleskin with a pen. Once I map out the overall sections of the talk, one or two or *very* rarely three layers deep, I go through and write out how long I think each section should be. This is often the first point I have to start cutting material, because I can look at a list of eight sub-bullet points allocated to a 10-minute block and realize: *no, I’m probably not actually going to get through that.*
 
-![Planning and transferring notes for EmberConf](http://cdn.chriskrycho.com/images/emberconf-notes.jpg "EmberConf notes")
+![Planning and transferring notes for EmberConf](https://f001.backblazeb2.com/file/chriskrycho-com/images/emberconf-notes.jpg "EmberConf notes")
 
 ## 3. Draft the talk, writing it out long-form.
 

@@ -35,7 +35,7 @@ That `UnionKeyToValue<State>` type constraint requires us to fill out the `STATE
 
 It turns out we don't *need* that to get completion, though. All editors which use the TypeScript language service will give us the same degree of completion if we start typing a string and then trigger completion:
 
-![string completion with TypeScript 2.1](http://cdn.chriskrycho.com/images/more-ts.gif "screen capture of string completion in VS Code")
+![string completion with TypeScript 2.1](https://f001.backblazeb2.com/file/chriskrycho-com/images/more-ts.gif "screen capture of string completion in VS Code")
 
 Granted that you have to know this is a string (though the JetBrains <abbr title="integrated development environment">IDE</abbr>s will actually go a step further and suggest the right thing *without* needing the string key). But that's roughly equivalent to knowing you need to import the object literal constant to get the completion that way. Six one, half dozen the other, I think.
 

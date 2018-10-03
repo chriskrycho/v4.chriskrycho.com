@@ -8,7 +8,7 @@ Subtitle: Last updated Thursday, May 31, 2018.
 
 * We've recently moved to Colorado; we moved into a literal mountain lake house. (Some thoughts on that [here](https://krycho.com/were-in/)). Also, this:
 
-    ![view from deck](http://cdn.chriskrycho.com/images/view-from-deck.jpg)
+    ![view from deck](https://f001.backblazeb2.com/file/chriskrycho-com/images/view-from-deck.jpg)
 
 * We got to see totality in the 2017 total solar eclipse! It was the most amazing thing I've ever seen.
 

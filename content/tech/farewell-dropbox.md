@@ -9,7 +9,7 @@ Date: 2017-07-06 21:00
 
 Over the last few years, I've grown increasingly annoyed with Dropbox. There have been a number of fairly high-profile misbehaviors on their part---most notably, [this one][1]---and then this past week, they started sending me notifications advertising Dropbox for Business.
 
-![Notification ads are the worst.](http://cdn.chriskrycho.com/images/bad-dropbox.png)
+![Notification ads are the worst.](https://f001.backblazeb2.com/file/chriskrycho-com/images/bad-dropbox.png)
 
 So, as I was with Google a few years ago [when they pushed me over the edge][2]---*also* with notifications!---I'm out.
 
