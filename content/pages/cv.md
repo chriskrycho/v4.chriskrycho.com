@@ -9,7 +9,7 @@ Summary: >
 
 In helping hire people over the last few years, I’ve seen a lot of résumés. Even the best of them leave a lot to be desired: they lack context and narrative. So if you’d like a traditional résumé for me, you can snag it [here][resume]—but if you’d like a better idea of whether we might work well together, I think you’ll find the rest of this page a lot more helpful. If you're interested, [say hello][email]!
 
-[resume]: https://f001.backblazeb2.com/file/chriskrycho-com/images/resume.pdf
+[resume]: https://f001.backblazeb2.com/file/chriskrycho-com/resume.pdf
 [email]: mailto:hello@chriskrycho.com?subject=Read%20your%20CV
 
 - [<i>About Me</i>](#about-me)—my philosophy of software development and my (slightly unusual) educational background, featuring a [Master of Divinity](#masters) and a [Bachelor of Science in Physics](#undergrad)
