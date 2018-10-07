@@ -99,7 +99,8 @@ EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
                        'extra/robots.txt': {'path': 'robots.txt'},
                        'extra/favicon.png': {'path': 'favicon.png'},
                        'extra/favicon.ico': {'path': 'favicon.ico'},
-                       'extra/sermons.xml': {'path': 'sermons.xml'}}
+                       'extra/redirects/curriculum-vitae.html': {'path': 'curriculum-vitae.html'}
+                       }
 
 READERS = {'html': None,
            'yaml': None}
