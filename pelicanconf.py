@@ -99,6 +99,7 @@ EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
                        'extra/robots.txt': {'path': 'robots.txt'},
                        'extra/favicon.png': {'path': 'favicon.png'},
                        'extra/favicon.ico': {'path': 'favicon.ico'},
+                       'extra/redirects/curriculum-vitae': {'path': 'curriculum-vitae'},
                        'extra/redirects/curriculum-vitae.html': {'path': 'curriculum-vitae.html'}
                        }
 
