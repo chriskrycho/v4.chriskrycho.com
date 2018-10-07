@@ -1,9 +1,0 @@
----
-Title: ""
-Slug: 2016-04-14-0802
-Date: 2016-04-14 08:02
-Template: formats/micro
-Category: micro
-...
-
-The Kindle desktop app is so badly broken. Current state: two modals, which are blocking access to each other. 😐
