@@ -1,0 +1,10 @@
+---
+Title: ""
+Slug: 2015-05-31-2046
+Date: 2015-05-31 20:46
+Template: formats/micro
+Category: micro
+...
+
+Ugh. I’ve spent an hour searching for an Evernote replacement, and my conclusion
+is: I’m going to end up using flat text files and grep.

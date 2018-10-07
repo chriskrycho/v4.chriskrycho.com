@@ -1,0 +1,10 @@
+---
+Title: ""
+Slug: 2016-03-02-0906
+Date: 2016-03-02 09:06
+Tags: podcasting
+Template: formats/micro
+Category: micro
+...
+
+Okay, I’m basically done with PodTrac at this point. It’s slow to use, slow to update, and now it isn’t showing me *anything* about recent episodes on the dashboard. Anyone have a good podcasting analytics tool to recommend?

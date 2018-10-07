@@ -1,0 +1,10 @@
+---
+Title: ""
+Slug: 2016-05-16-1431
+Date: 2016-05-16 14:31
+Tags: software development, programming languages, javascript
+Template: formats/micro
+Category: micro
+---
+
+Just bumped into another person who (quite reasonably) didn't know that ES6 `class`es are just syntactic sugar for prototypes. I like classes... but they're more confusing than not, I think.

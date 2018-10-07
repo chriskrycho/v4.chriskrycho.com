@@ -1,0 +1,11 @@
+---
+Title: ""
+Slug: 2015-09-01-0651
+Date: 2015-09-01 06:51
+Tags: software development
+Template: formats/micro
+Category: micro
+...
+
+What are you using to track software development issues these days? JIRA,
+YouTrack, FogBugz, RedMine, or something else?

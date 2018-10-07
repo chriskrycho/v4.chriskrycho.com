@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Language Design &middot; Chris Krycho</title>
+    <meta name="description" content="Over the past few months, I’ve watched a number of long-time Mac and iOS developers discussing the ongoing transition in Apple’s platforms from the old, Objective C, to the new, Swift. And… frankly, it’s a weird conversation to watch. I come at this as a relative outsider ..."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="../drafts/language-design.html"/>
+    <meta property="og:title" content="Language Design"/>
+    <meta property="og:description" content="Over the past few months, I’ve watched a number of long-time Mac and iOS developers discussing the ongoing transition in Apple’s platforms from the old, Objective C, to the new, Swift. And… frankly, it’s a weird conversation to watch. I come at this as a relative outsider ..."/>
+        <meta property="og:image" content="..//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Language Design"/>
+    <meta name="twitter:description" content="Over the past few months, I’ve watched a number of long-time Mac and iOS developers discussing the ongoing transition in Apple’s platforms from the old, Objective C, to the new, Swift. And… frankly, it’s a weird conversation to watch. I come at this as a relative outsider ..."/>
+        <meta name="twitter:image" content="../assets/images/ck.png"/>
+    <link rel="me" href="https://medium.com/@chriskrycho"/>
+    <link rel="me" href="https://www.facebook.com/chriskrycho"/>
+    <link rel="me" href="http://instagram.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://bitbucket.org/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/micro.xml" type="application/rss+xml" title="Posts filed in in 'Micro''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href=".."><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="../about.html">About</a></li>
+                <li class="section-title art"><a href="../art/">Art</a></li>
+                <li class="section-title tech"><a href="../tech/">tech</a></li>
+                <li class="section-title theology"><a href="../theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="../series.html">Series</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="programming-languages objective-c swift tech">
+
+    <header>
+<h1>Language Design</h1>
+    </header>
+
+    <div class="meta">
+<span class="date"><a href="../drafts/language-design.html"><i class="fa fa-fw fa-link"></i></a>June 20, 2016</span><span class="section">Filed under <a class="section-title" href="../tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="../objective-c/">#objective-c</a><a class="hashtags" href="../programming-languages/">#programming languages</a><a class="hashtags" href="../swift/">#swift</a></span><span><a href="../2016/language-design.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>Over the past few months, I’ve watched a number of long-time Mac and iOS developers discussing the ongoing transition in Apple’s platforms from the old, Objective C, to the new, Swift. And… frankly, it’s a weird conversation to watch.</p>
+<p>I come at this as a relative outsider, but one with a substantial personal interest in the platform: I use it day in and day out, and I have a fairly large project I’m in the planning phases on which I hope to ship on both Mac and iOS in the next three or four years. And everything which follows should be taken with that as a huge grain of salt. These developers have many times my experience writings apps—every one of them, much less as a group.</p>
+<p>But I still think a lot of the things they’re throwing out as “concerns” and “problems” for Swift over Objective C just… aren’t.</p>
+<p>In the last seven years, I’ve non-trivial written software professionally in C, C++, assembly, Fortran, PHP, Python, and JavaScript. I’ve dabbled to greater or lesser degrees with Java, Lisp, OCaml, Ruby, Io, Haskell, F♯, CoffeeScript, Swift, and an awful lot of Rust. Software I’ve written has powered web applications and flown on aircraft. It’s been written against the waterfalliest of processes on the one hand, and come through my own agile-as-can-be, TDD approach as a one-man consulting shop. So while those guys have a lot of experience… it’s actually possible I’ve seen a wider set of <em>kinds</em> of programming languages than some of them. That has upsides and downsides. The big downside is that I don’t have the sheer depth of knowledge in any one of those languages that others do. The big upside is that I am fairly familiar with the tradeoffs that come with strong and weak typing, and with dynamic and static typing, and with imperative, object-oriented, and functional programming. I can (and hopefully will) be far, <em>far</em> more familiar with those tradeoffs than I am now.</p>
+<p>But when I see smart developers poo-pooing type safety, functional programming idioms, and so on; when I see developers thinking you can’t have things calculated dynamically at runtime because the type system is strong; when in short I see developers conflate <em>what they’re used to</em> with <em>how things need to be done</em>… it makes me sad.</p>
+<p>The software we ship is eating the world. If we can find ways to improve our tools and processes so that the software is less buggy, while coming out even or even ahead in terms of productivity, <em>we should</em>. And Swift is that kind of advancement over Objective C, full stop.</p>
+<p>Yes, there are things you can do in Objective C that you can’t do in Swift. But I have yet to hear an example of such a thing which isn’t a serious source of bugs. Sure, you can monkey-patch/swizzle methods on an existing class. And yeah, you can use that to patch your way around a given bug in a framework or a library. But at what cost? Ask the Ruby on Rails community what happens when anyone anywhere can monkey-patch core functionality. (Or ask yourself, if you work with OS X or iOS.) Type safety has a cost, of course, but it also comes with benefits. And those benefits are much higher in a language like Swift than in a language like Java (especially the Java of a decade ago, but that of today as well). Good type inference gets you a lot of the productivity you’re used to with dynamic types, and generics get you a lot of the rest. But you also get some guarantees at <em>compile</em> time that things won’t break. You get to get deterministic errors at build time instead of trying to chase down some hard-to-identify bug arising from a type <em>almost</em> but <em>not quite</em> doing what you need it to.</p>
+<p>Look: there are things to quibble with in Swift’s design. <a href="http://www.chriskrycho.com/rust-and-swift.html">I have done just that, at length.</a></p>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://medium.com/@chriskrycho"><i class="fa fa-fw fa-medium"></i>Medium</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://instagram.com/chriskrycho"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="../None"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="../feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="../feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="../feeds/micro.xml"><i class="fa fa-fw fa-rss"></i>micro</a>
+        </li>
+        <li class="section-title">
+            <a href="../feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="../feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="../2016/escape-modernity.html">escape modernity</a></li>
+        <li>Blog: <a href="../2016/winning-slowly-season-5.html">Winning Slowly Season 5</a></li>
+        <li>Tech: <a href="../2016/32-theses-and-several-more-words-on-podcasting.html">32 Theses (and several more words) on Podcasting</a></li>
+        <li>Theology: <a href="../2016/misreading-tolkien-and-misreading-scripture-responding-to-okeefe-and-reno.html">Misreading Tolkien and Misreading Scripture: Responding to O’Keefe and Reno</a></li>
+    </ul>
+</section></footer>
+
+    <script async src="http://code.bib.ly/bibly.min.js"></script>
+    <link href="http://code.bib.ly/bibly.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

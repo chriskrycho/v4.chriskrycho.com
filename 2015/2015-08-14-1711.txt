@@ -1,0 +1,11 @@
+---
+Title: ""
+Slug: 2015-08-14-1711
+Date: 2015-08-14 17:11
+Tags: podcasting
+Template: formats/micro
+Category: micro
+...
+
+The domain configuration for Sap.py and New Rustacean is done, and the websites
+are coming along. Almost ready!

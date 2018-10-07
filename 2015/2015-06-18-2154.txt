@@ -1,0 +1,17 @@
+---
+Title: ""
+Slug: 2015-06-18-2154
+Date: 2015-06-18 21:54
+Tags: software development
+Template: formats/micro
+Category: micro
+...
+
+To my great delight, and thanks to a [suggestion] from App.net friend [\@jnm], I
+was able to [get a static copy] of my 2012--2013-era site archived this evening.
+That in turn means I'll be able to replace my WordPress install with static HTML
+pages over the next few weeks. *Victory.*
+
+[suggestion]: https://alpha.app.net/jnm/post/61270949
+[\@jnm]: https://alpha.app.net/jnm/
+[get a static copy]: http://www.linuxjournal.com/content/downloading-entire-web-site-wget

@@ -1,0 +1,14 @@
+---
+Title: ""
+Slug: 2015-06-03-1249
+Date: 2015-06-03 12:49
+Template: formats/micro
+Category: micro
+...
+
+I just discovered that [Jason Snell] and [John Siracusa] are actually doing
+[Robot or Not]. I’m *ridiculously* excited.
+
+[Jason Snell]: https://www.twitter.com/jsnell
+[John Siracusa]: https://www.twitter.com/siracusa
+[Robot or Not]: https://www.theincomparable.com/robot/

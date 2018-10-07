@@ -1,0 +1,15 @@
+---
+Title: ""
+Date: 2016-07-24 11:49
+Tags: writing
+Template: formats/micro
+Slug: 07-24-1149
+Category: micro
+---
+
+Either [Medium] actually thinks this, or they're willing to sell their product with it but *don't* think it. Either way, it's nonsense. "Moving thinking forward"? Really?
+
+![The hero image from medium.com on July 24, 2016][hero]
+
+[Medium]: https://medium.com
+[hero]: http://cdn.chriskrycho.com/images/medium.jpg

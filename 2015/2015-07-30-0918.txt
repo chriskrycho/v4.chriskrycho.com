@@ -1,0 +1,13 @@
+---
+Title: ""
+Slug: 2015-07-30-0918
+Date: 2015-07-30 09:18
+Template: formats/micro
+Category: micro
+...
+
+If you're running Windows 10, you should be aware of its [defaults] with sharing
+WiFi passwords, and know how to [change them].
+
+[defaults]: http://krebsonsecurity.com/2015/07/windows-10-shares-your-wi-fi-with-contacts/
+[change them]: http://www.wired.com/2015/07/share-not-share-wi-fi-windows-10/

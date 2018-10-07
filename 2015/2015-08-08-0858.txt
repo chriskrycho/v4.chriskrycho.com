@@ -1,0 +1,11 @@
+---
+Title: ""
+Slug: 2015-08-08-0858
+Date: 2015-08-08 08:58
+Tags: music
+Template: formats/micro
+Category: micro
+...
+
+This is a Chicago Symphony Orchestra playing Mahler Symphony no. 2 kind of
+work morning.

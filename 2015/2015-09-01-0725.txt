@@ -1,0 +1,10 @@
+---
+Title: ""
+Slug: 2015-09-01-0725
+Date: 2015-09-01 07:25
+Template: formats/micro
+Category: micro
+...
+
+Of all my nerdy statements, this has to be near the top, but it's still true: I
+*love* RSS. It's a wonderful tool.

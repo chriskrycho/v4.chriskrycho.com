@@ -1,0 +1,12 @@
+---
+Title: ""
+Slug: 2016-03-09-1236
+Date: 2016-03-09 12:36
+Tags: software development, javascript, emberjs
+Template: formats/micro
+Category: micro
+...
+
+Pro tip for tracking down oddities with [Ember.js] during testing: `ember test --serve --filter '<some pattern>'` is *great*. E.g. `ember t -s --filter 'Unit'` for just unit tests.
+
+[Ember.js]:  http://emberjs.com

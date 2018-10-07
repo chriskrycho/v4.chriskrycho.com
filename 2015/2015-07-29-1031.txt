@@ -1,0 +1,14 @@
+---
+Title: ""
+Slug: 2015-07-29-1031
+Date: 2015-07-29 10:31
+Template: formats/micro
+Category: micro
+...
+
+Per [\@manton]’s [suggestion], I've set up IFTTT recipes for ADN and Twitter to
+repost microblog posts from my own blog to those services. If you see this post
+either place, it worked.
+
+[\@manton]: https://alpha.app.net/manton
+[suggestion]:http://www.manton.org/2015/06/microblogging-with-wordpress.html

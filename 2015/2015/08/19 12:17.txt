@@ -1,0 +1,13 @@
+---
+Title: ""
+Slug: 2015/08/19 12:17
+Date: 2015-08-19 12:17
+Template: formats/micro
+Category: micro
+...
+
+I've been wearing my [Garmin] outside my runs a little the past few days, and it
+receives, but cannot act on notifications. For the first time, I get the
+attraction of an Apple Watch. Maybe the third generation or so, I'll get one.
+
+[Garmin]: http://forerunner920.garmin.com/en-US

@@ -1,0 +1,16 @@
+---
+Title: ""
+Slug: 2016-04-09-0855
+Date: 2016-04-09 08:55
+Tags: css, software development
+Template: formats/micro
+Category: micro
+...
+
+Oh. my. goodness.
+
+How have I not used [Emmet] before? The experience is *amazing*. Mind. blown.
+
+[Emmet]: http://docs.emmet.io
+
+Good tools are *good*.

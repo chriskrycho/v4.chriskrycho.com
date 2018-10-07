@@ -1,0 +1,14 @@
+---
+Title: ""
+Slug: 2015-05-24-1329
+Date: 2015-05-24 13:29
+Template: formats/micro
+Category: micro
+...
+
+I've come to the conclusion that I really need to find a good way to organize
+links, notes, etc. for later reference. I've tried [Evernote] before, and didn't
+love it, but I don't know of anything better. Time to try it again, maybe with a
+different approach this time, I suppose?
+
+[Evernote]: https://evernote.com

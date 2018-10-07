@@ -1,0 +1,12 @@
+---
+Title: ""
+Slug: 2016-04-05-0800
+Date: 2016-04-05 08:00
+Tags: writing, sermons, M. Div., SEBTS
+Template: formats/micro
+Category: micro
+...
+
+One of the things that's weird about writing sermons for a class is the requirement to turn in a summary of my preparation. Why, you ask? Because it tends to look like this...
+
+![](//cdn.chriskrycho.com/images/sermon-notes.jpg "sermon notes with markup")

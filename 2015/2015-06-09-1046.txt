@@ -1,0 +1,13 @@
+---
+Title: ""
+Slug: 2015-06-09-1046
+Date: 2015-06-09 10:46
+Tags: software development
+Template: formats/micro
+Category: micro
+...
+
+Tip: if you're using Mercurial's bookmarks to track lightweight branches,
+somewhat analogous to Git's branches, use Mercurial's special `@` tag to track
+whatever you want to treat as the tip of a `master` branch. That way, any clone
+will check that out by default.

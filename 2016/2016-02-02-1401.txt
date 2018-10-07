@@ -1,0 +1,10 @@
+---
+Title: ""
+Slug: 2016-02-02-1401
+Date: 2016-02-02 14:01
+Template: formats/micro
+Category: micro
+...
+
+Websites which aren't capable of dealing with dashes in phone numbers, social
+security numbers, etc.... ugh. This is not a hard problem to solve.

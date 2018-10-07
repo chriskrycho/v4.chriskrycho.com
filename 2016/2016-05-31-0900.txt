@@ -1,0 +1,19 @@
+---
+Title: ""
+Slug: 2016-05-31-0900
+Date: 2016-05-31 09:00
+Tags: python, ruby, programming languages, listicles
+Template: formats/micro
+Category: micro
+---
+
+<i class=editorial>I originally posted this as a [tweetstorm], but I'm treating *this* as the canonical and adding a tweet to the end of that "topic" linking back here. [Indie web] forever.</i>
+
+[tweetstorm]: https://twitter.com/chriskrycho/status/737629809241645056
+[Indie web]: http://indiewebcamp.com
+
+---
+
+- Seeing gradual typing come to both Ruby and Python at around the same time is fascinating.
+- Seeing some responses ("If I wanted static types I'd use a *real* statically typed language") which just completely miss the point.
+- The idea is that you can add these kinds of type annotations where---and only where---they're useful.

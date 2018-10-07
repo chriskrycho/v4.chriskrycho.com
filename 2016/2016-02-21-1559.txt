@@ -1,0 +1,15 @@
+---
+Title: ""
+Slug: 2016-02-21-1559
+Date: 2016-02-21 15:59
+Template: formats/micro
+Category: micro
+Tags: software development
+...
+
+Looked at using [Otto] for dev environment management. I think it'll be great
+when it's more mature; for right now, it's too narrowly focused on Amazon, and
+plain-old [Vagrant] will do what I need better.
+
+[Otto]: https://www.ottoproject.io/
+[Vagrant]: https://www.vagrantup.com

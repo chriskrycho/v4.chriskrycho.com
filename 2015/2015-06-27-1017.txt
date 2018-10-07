@@ -1,0 +1,10 @@
+---
+Title: ""
+Slug: 2015-06-27-1017
+Date: 2015-06-27 10:17
+Template: formats/micro
+Category: micro
+...
+
+Found a new use for Rogue Amoeba’s Audio Hijack: boosting audio from too-quiet
+vidoes. *Sweet.*
