@@ -6,12 +6,17 @@ function quotes(content) {
 
    const dquo_patt = /(“|&ldquo;|&#8220;)/g;
    const dquo_repl = "<dquo-push></dquo-push><dquo-pull> $1</dquo-pull>";
+
    const squo_patt = /(‘|&lsquo;|&#8216;)/g;
    const squo_repl = "<squo-push></squo-push><squo-pull> $1</squo-pull>";
 
-   const dquo_pulled = content.replace(dquo_patt, dquo_repl);
-   const squo_pulled = dquo_pulled.replace(squo_patt, squo_repl);
-   return squo_pulled;
+   const punct_quo_patt = /(\.|,)(”|&rdquo;|&#x0201D;|&#8221;|’|&rsquo;|&#x02019;|&#8217;)/g;
+   const punct_quo_repl = "$1<punct-quo>$2</punct-quo>";
+
+   return content
+      .replace(dquo_patt, dquo_repl)
+      .replace(squo_patt, squo_repl)
+      .replace(punct_quo_patt, punct_quo_repl);
 }
 
 const THIN_SP = "&thinsp;";

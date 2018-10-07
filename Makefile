@@ -31,7 +31,7 @@ $(STYLE_OUT): $(STYLE_OBJ)
 sass: $(STYLE_OUT)
 
 .PHONY: scss
-scss: styles
+scss: sass
 
 
 # --- Bundle JavaScript --- #
