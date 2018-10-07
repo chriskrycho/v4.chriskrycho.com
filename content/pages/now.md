@@ -1,6 +1,6 @@
 ---
 Title: Now
-Subtitle: Last updated Thursday, May 31, 2018.
+Subtitle: Last updated Sunday, October 7, 2018.
 
 ---
 
