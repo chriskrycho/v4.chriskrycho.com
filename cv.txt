@@ -1,5 +1,6 @@
 ---
-Title: C.V.
+Title: Curriculum Vitae
+Slug: cv
 Subtitle: >
     I am a senior software engineer focused on web <abbr>UI</abbr>, typography, functional programming—and ethics.
 Summary: >
@@ -41,7 +42,7 @@ Building things the *right way* means I am not interested in slapdash product de
 
 ## My Work
 
-### Current: Olo 
+### Current: Olo
 
 *From individual contributor to a project lead with organization-wide influence.*
 
@@ -82,7 +83,7 @@ I have matured significantly as both an individual contributor and a leader in m
 
 *A formative experience: a technical success but a product design failure.*
 
-[HolyBible.com][hb] is a beautiful interface for reading the King James Version of the Bible and the [Reformation Heritage Study Bible][sb] materials online, built for [Puritan Reformed Theological Seminary][prts]. The <abbr>MVP</abbr> launched in **December 2014**, with approximately 16 months of small bug fixes and feature enhancements following.
+[HolyBible.com][hb] is a beautiful interface for reading the King James Version of the Bible and the [Reformation Heritage Study Bible][sb] materials online, built for [Puritan Reformed Theological Seminary][prts]. The <abbr>MVP</abbr> launched in **December 2014**, with approximately 30 months of small bug fixes and feature enhancements following.
 
 [sb]: https://kjvstudybible.org
 [prts]: https://prts.edu
