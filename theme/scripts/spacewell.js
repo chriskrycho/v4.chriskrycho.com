@@ -42,20 +42,16 @@ function enDashes(content) {
       return;
    }
 
-   const open = "<dash-wrap>";
-   const close = "</dash-wrap>";
+   const OPEN = "<dash-wrap>";
+   const CLOSE = "</dash-wrap>";
 
-   // Do numbers *first*. Include a variety of ways digits might be constructed
+   // Do numbers first. Include a variety of ways digits might be constructed,
    // including e.g. Bible verses, other punctuation, etc.
    const numPatt = /([\d:\.]+) ?(–|&ndash;|&8211;|&x2013;) ?(\d+)/g;
-   const numRepl = `${open}$1&hairsp;$2&hairsp;$3${close}`;
-   const numReplaced = content.replace(numPatt, numRepl);
-
    const wordPatt = /(\w+) ?(–|&ndash;|&8211;|&x2013;) ?(\w+)/g;
-   const wordRepl = `${open}$1&thinsp;$2&thinsp;$3${close}`;
-   const wordsReplaced = numReplaced.replace(wordPatt, wordRepl);
+   const replacement = `${OPEN}$1${THIN_SP}${EN_DASH}${THIN_SP}$3${CLOSE}`;
 
-   return wordsReplaced;
+   return content.replace(numPatt, replacement).replace(wordPatt, replacement);
 }
 
 // Take e.g. "J. R. R. Tolkien" or "J.R.R. Tolkien" and use thin spaces
