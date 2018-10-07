@@ -1,6 +1,6 @@
 function quotes(content) {
    if (!content) {
-      console.error("spacewell::quotes(): no content supplied.");
+      console.error("`spacewell#quotes()`: no content supplied.");
       return;
    }
 
@@ -14,21 +14,21 @@ function quotes(content) {
    return squo_pulled;
 }
 
-const NO_BREAK_NARROW_SP = "&#8239;";
-const HAIR_SP = "&hairsp";
+const THIN_SP = "&thinsp;";
+const HAIR_SP = "&hairsp;";
 const EM_DASH = "&mdash;";
-const EN_DASH = "&ndash";
+const EN_DASH = "&ndash;";
 
 // Wrap em dashes and their immediate neighbors in non-breaking span and
 // hair spaces. Normalize which em dash variant is used.
 function emDashes(content) {
    if (!content) {
-      console.error("spacewell::emDashes(): no content supplied.");
+      console.error("`spacewell#emDashes()`: no content supplied.");
       return;
    }
 
    return content.replace(
-      /(—|&mdash;|&#8212;|&x2014;)/,
+      /(—|&mdash;|&#8212;|&x2014;)/g,
       `${HAIR_SP}${EM_DASH}${HAIR_SP}`
    );
 }
@@ -38,21 +38,31 @@ function emDashes(content) {
 // numbers). Normalize which en dash variant is used.
 function enDashes(content) {
    if (!content) {
-      console.error("spacewell::enDashes(): no content supplied.");
+      console.error("`spacewell#enDashes()`: no content supplied.");
       return;
    }
 
-   return content.replace(
-      /(–|&ndash;|&8211;|&x2013;)/,
-      `${NO_BREAK_NARROW_SP}${EN_DASH}${NO_BREAK_NARROW_SP}`
-   );
+   const open = "<dash-wrap>";
+   const close = "</dash-wrap>";
+
+   // Do numbers *first*. Include a variety of ways digits might be constructed
+   // including e.g. Bible verses, other punctuation, etc.
+   const numPatt = /([\d:\.]+) ?(–|&ndash;|&8211;|&x2013;) ?(\d+)/g;
+   const numRepl = `${open}$1&hairsp;$2&hairsp;$3${close}`;
+   const numReplaced = content.replace(numPatt, numRepl);
+
+   const wordPatt = /(\w+) ?(–|&ndash;|&8211;|&x2013;) ?(\w+)/g;
+   const wordRepl = `${open}$1&thinsp;$2&thinsp;$3${close}`;
+   const wordsReplaced = numReplaced.replace(wordPatt, wordRepl);
+
+   return wordsReplaced;
 }
 
 // Take e.g. "J. R. R. Tolkien" or "J.R.R. Tolkien" and use thin spaces
 // between the initials.
 function initials(content) {
    if (!content) {
-      console.error("spacewell::initials(): no content supplied.");
+      console.error("`spacewell#initials()`: no content supplied.");
       return;
    }
 
@@ -60,7 +70,7 @@ function initials(content) {
    //     sentences. Basically, I *think* it should just be anytime
    //     that the period follows a capital letter, but there may be
    //     the occasional exception.
-   console.error("spacewell::initials() not yet implemented.");
+   console.error("`spacewell#initials()` not yet implemented.");
 }
 
 /**
