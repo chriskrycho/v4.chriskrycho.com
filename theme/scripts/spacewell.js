@@ -74,7 +74,7 @@ function initials(content) {
 function spacewell(options, container) {
    // Curry the invocation for partial application.
    const run = _container => {
-      if (!container.innerHTML) {
+      if (!_container.innerHTML) {
          console.error("spacewell: container is not a `Node`.");
          return;
       }
