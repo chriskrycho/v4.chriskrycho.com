@@ -43,7 +43,7 @@ JS_SRC=\
 
 JS_OUT=$(STATIC_DIR)/js/lib.js
 $(JS_OUT): $(JS_SRC)
-	npm run bundle
+	yarn bundle
 
 .PHONY: js
 js: $(JS_OUT)
