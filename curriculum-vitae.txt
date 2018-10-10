@@ -1,6 +1,5 @@
 ---
 Title: Curriculum Vitae
-Slug: cv
 Subtitle: >
     I am a senior software engineer focused on web <abbr>UI</abbr>, typography, functional programming—and ethics.
 Summary: >
@@ -50,28 +49,13 @@ Building things the *right way* means I am not interested in slapdash product de
 
 [olo]: https://www.olo.com
 
-As a **Software Engineer** (January 2016–May 2017), I was a productive individual contributor even while working 30-hour weeks as I completed my M. Div.:
+As a **Software Engineer** (January 2016–May 2017), I was a productive individual contributor even while working 30-hour weeks as I completed my M. Div.: I led the adoption of a **test-driven development** approach in a greenfield **Ember.js** rewrite of our mobile web <abbr>UI</abbr>, introduced JavaScript type systems to the application (landing on **TypeScript** after an initial experiment with Flow), and helped us achieve **full <abbr>AA</abbr> <abbr>WCAG</abbr> accessibility**.
 
-- I led the adoption of a **test-driven development** approach in a greenfield **Ember.js** rewrite of our mobile web <abbr>UI</abbr>.
-- I introduced JavaScript type systems to the application (landing on **TypeScript** after an initial experiment with Flow)
-- I helped us achieve **full <abbr>AA</abbr> <abbr>WCAG</abbr> accessibility**.
+As a **Senior Software Engineer** (May 2017–present), I led a team effort to expand our mobile web <abbr>UI</abbr> as a **responsive web <abbr>UI</abbr>** to reduce our maintenance burden, improve our overall <abbr>UX</abbr>, and decrease the cost of launching new features. I designed a new technical strategy for white-labeling (including the adoption of **<abbr>CSS</abbr> Modules**), enabling the business to support more brands by way of better tooling. I also finished our app's conversion to a fully strictly-type-checked TypeScript application.
 
-As a **Senior Software Engineer** (May 2017–present):
+I also pioneered Olo's use of **Requests for Comments (<abbr>RFC</abbr>s**), modeled on the <abbr>RFC</abbr> processes from the Rust and Ember communities, as a tool for architecture design and documentation. I began by using <abbr>RFC</abbr>s for several important initiatives in my own team. The success of those initiatives validated <abbr>RFC</abbr>s' utility when I later introduced them to the broader engineering organization. They are now Olo’s standard tool for documenting architectural changes and a prerequisite for all new internal services.
 
-- I led a team effort to expand our mobile web <abbr>UI</abbr> as a **responsive web <abbr>UI</abbr>** to reduce our maintenance burden, improve our overall <abbr>UX</abbr>, and decrease the cost of launching new features.
-
-- I designed a new technical strategy for white-labeling (including the adoption of **<abbr>CSS</abbr> Modules**), enabling the business to support more brands by way of better tooling.
-
-- I pioneered Olo's use of **Requests for Comments (<abbr>RFC</abbr>s**), modeled on the <abbr>RFC</abbr> processes from the Rust and Ember communities, as a tool for architecture design and documentation. I began by using <abbr>RFC</abbr>s for several important initiatives in my own team. The success of those initiatives validated <abbr>RFC</abbr>s' utility when I later introduced them to the broader engineering organization. They are now Olo’s standard tool for documenting architectural changes and a prerequisite for all new internal services.
-
-- I finished our app's conversion to a fully strictly-type-checked TypeScript application.
-
-Throughout my time at Olo, I have:
-
-- led the community effort to **integrate TypeScript with Ember.js**
-- helped launch a shared component library for future rich client projects
-- given over a dozen internal tech talks on subjects including Ember.js basics, functional programming techniques, and introductions to Rust and Elm
-- substantially reshaped our front-end engineering practices and tooling choices as an informal leader among our front-end engineering group
+While at Olo, I have also led the community effort to **integrate TypeScript with Ember.js**; helped launch a shared component library for future rich client projects; given over a dozen internal tech talks on subjects including Ember.js basics, functional programming techniques, and introductions to Rust and Elm; and substantially reshaped our front-end engineering practices and tooling choices as an informal leader among our front-end engineering group.
 
 I have matured significantly as both an individual contributor and a leader in my time at Olo. For the first time, I have been able to make a substantial difference at the team level, at the organizational level, and at the level of the broader technical community.
 
@@ -83,7 +67,7 @@ I have matured significantly as both an individual contributor and a leader in m
 
 *A formative experience: a technical success but a product design failure.*
 
-[HolyBible.com][hb] is a beautiful interface for reading the King James Version of the Bible and the [Reformation Heritage Study Bible][sb] materials online, built for [Puritan Reformed Theological Seminary][prts]. The <abbr>MVP</abbr> launched in **December 2014**, with approximately 30 months of small bug fixes and feature enhancements following.
+[HolyBible.com][hb] is a beautiful interface for reading the King James Version of the Bible and the [Reformation Heritage Study Bible][sb] materials online, built for [Puritan Reformed Theological Seminary][prts]. The <abbr>MVP</abbr> launched in **December 2014**, with approximately 16 months of small bug fixes and feature enhancements following.
 
 [sb]: https://kjvstudybible.org
 [prts]: https://prts.edu
@@ -98,12 +82,7 @@ On the other hand, the project was a *mixed success as a product*. The site is b
 
 *Collaborating across disciplines effectively and transitioning to remote work.*
 
-From **May 2012–January 2016**, I worked (first as a full-time employee, then remotely as a half-time consultant) for [**Quest Consultants, Inc.**][quest]. During that time:
-
-- I improved the performance of one existing computational hazard model by a factor of 7.
-- I rewrote another computational model in **C** (from Fortran 77).
-- I supported another rewrite effort (again from Fortran 77) to **Python 3**.
-- I helped the team adopt Mercurial for version control and JIRA for bug tracking software.
+From **May 2012–January 2016**, I worked (first as a full-time employee, then remotely as a half-time consultant) for [**Quest Consultants, Inc.**][quest]. During that time, I improved the performance of one existing computational hazard model by a factor of 7, rewrote another computational model in **C** (from Fortran 77), supported another rewrite effort (again from Fortran 77) to **Python 3**, and helped the team adopt Mercurial for version control and JIRA for bug tracking software.
 
 [quest]: http://www.questconsult.com
 
@@ -113,11 +92,9 @@ Those efforts taught me a great deal about communicating effectively with domain
 
 *Learning the basics of software engineering.*
 
-From **July 2009–May 2012**, I worked as a **Software Engineer I** on the B-2 program at [**Northrop Grumman**][ng]. My work included writing **C** (targeting a real-time operating system) and developing requirements for a modernized message bus architecture. My basic implementation of the Sparse A\* Search Algorithm[^sasa] was used as a performance baseline for route-finding software on the platform.
+From **July 2009–May 2012**, I worked as a **Software Engineer I** on the B-2 program at [**Northrop Grumman**][ng]. My work included writing **C** (targeting a real-time operating system) and developing requirements for a modernized message bus architecture. My basic implementation of the *Sparse A\* Search Algorithm* was used as a performance baseline for route-finding software on the platform.
 
 [ng]: http://www.northropgrumman.com/Pages/default.aspx
-
-[^sasa]: IEEE Transactions on Aerospace and Electronic Systems Vol. 36, No. 3 July 2000
 
 Over those three years I acquired a good dose of humility and basic knowledge of software engineering, including the use of bug trackers and source control, strategies for testing, and patterns for writing maintainable code.
 
