@@ -113,9 +113,11 @@ Those efforts taught me a great deal about communicating effectively with domain
 
 *Learning the basics of software engineering.*
 
-From **July 2009–May 2012**, I worked as a **Software Engineer I** on the B-2 program at [**Northrop Grumman**][ng]. My work included writing **C** (targeting a real-time operating system) and developing requirements for a modernized message bus architecture. My basic implementation of the *Sparse A\* Search Algorithm* was used as a performance baseline for route-finding software on the platform.
+From **July 2009–May 2012**, I worked as a **Software Engineer I** on the B-2 program at [**Northrop Grumman**][ng]. My work included writing **C** (targeting a real-time operating system) and developing requirements for a modernized message bus architecture. My basic implementation of the Sparse A\* Search Algorithm[^sasa] was used as a performance baseline for route-finding software on the platform.
 
 [ng]: http://www.northropgrumman.com/Pages/default.aspx
+
+[^sasa]: IEEE Transactions on Aerospace and Electronic Systems Vol. 36, No. 3 July 2000
 
 Over those three years I acquired a good dose of humility and basic knowledge of software engineering, including the use of bug trackers and source control, strategies for testing, and patterns for writing maintainable code.
 
