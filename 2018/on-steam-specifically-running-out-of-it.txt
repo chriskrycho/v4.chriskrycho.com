@@ -2,7 +2,7 @@
 Title: On Steam (Specifically, Running Out of It)
 Subtitle: Or, what happens when you stay in “go mode” for a really long time.
 Date: 2018-04-05 07:00
-Updated: 2018-10-11 08:30
+Modified: 2018-10-11 08:30
 Category: blog
 Tags: [productivity, writing, open-source software, burnout]
 Summary: >
