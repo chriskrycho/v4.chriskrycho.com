@@ -92,7 +92,7 @@ I worked closely with a designer to create the visual language for the app befor
 
 The project was a *substantial technical success*: it has neither crashed nor had a bug reported since spring 2017. I’m doubly proud of the project because it was only the second time in my career I’d built an entire non-trivial web application from scratch, and the first time I did so solo.
 
-On the other hand, the project was a *mixed success as a product*. The site is beautiful and functional, but it failed to meet the seminary’s goals for driving more traffic to the seminary landing page. My failure to establish what "success" meant to the seminary led me to deliver a technically-solid piece of software… that solved the wrong problem.
+On the other hand, the project was a *product design failure*. The site is beautiful and functional, but it failed to meet the seminary’s goals for driving more traffic to the seminary landing page. My failure to establish what "success" meant to the seminary led me to deliver a technically-solid piece of software… that solved the wrong problem.
 
 #### Quest Consultants, Inc.
 
