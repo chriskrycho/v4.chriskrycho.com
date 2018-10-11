@@ -2,8 +2,9 @@
 Title: On Steam (Specifically, Running Out of It)
 Subtitle: Or, what happens when you stay in “go mode” for a really long time.
 Date: 2018-04-05 07:00
+Updated: 2018-10-11 08:30
 Category: blog
-Tags: [productivity, writing, open-source software]
+Tags: [productivity, writing, open-source software, burnout]
 Summary: >
     I find myself this morning almost unable to write at all, and quite unable to write what I was planning to be writing today. I’m all out of steam.
 
@@ -26,3 +27,8 @@ And in the meantime, I do things like write little blog posts thinking about “
 Because—weird though it may seem in some ways—even when I’m tired like it, I know through long experience that the way I actually get across those finish lines is by keeping up my forward motion. It’s very much like the feeling in the last 5k of a half marathon. (A half marathon is two five-milers and a 5k, and thinking about it that way is the way to run it effectively.)
 
 Everything hurts. You don’t feel like you have anything left. But in fact, if you’ve done the right things up to that point, you *do* have enough left. The way to finish well is not only to keep putting one foot in front of the other, but also to push a little harder, and a little harder, and a little harder, until you hit the finish line. You have to watch out, of course, and not hurt yourself. That’s the trick with mental fatigue, too. Burnout is a real thing. But, as with running, if you’ve built up your mental muscles well and built up the reserves of *experience* that you need, you know the difference. You know when you need to stop early for a day and go read a novel. You know when to push through. You know when to take a day off of the quest issue and write a quirky, and not-all-that-coherent, blog post about the experience of fatigue and thinking about pushing on. And you know that you still need to finish.
+
+**Edit (October 11, 2018):** I've added my [#burnout] tag to this post retroactively because I now recognize much of what I wrote here as some of the earlier symptoms of what I didn't concretely identify until [a bit later][post].
+
+[#burnout]: https://www.chriskrycho.com/burnout/
+[post]: https://www.chriskrycho.com/2018/some-mild-burnout.html
