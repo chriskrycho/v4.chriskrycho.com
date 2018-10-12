@@ -1,13 +1,13 @@
-	---
-	Title: Burnout Symptoms
-	Subtitle: Just a list of weird things that have happened to me while dealing with this.
-	Date: 2018-10-11 20:20
-	Category: Blog
-	Tags: [burnout, exercise, health]
-	Summary: >
-	    Just a list of weird things that have happened to me while dealing with this.
-	
-	---
+---
+Title: Burnout Symptoms
+Subtitle: Just a list of weird things that have happened to me while dealing with this.
+Date: 2018-10-11 20:20
+Category: Blog
+Tags: [burnout, exercise, health]
+Summary: >
+    Just a list of weird things that have happened to me while dealing with this.
+
+---
 
 Some of the symptoms I’ve had while experiencing burnout, all of which are exceedingly unusual in life for me normally:
 
