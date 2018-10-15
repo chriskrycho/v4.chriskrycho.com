@@ -32,7 +32,7 @@ School: Southeastern Baptist Theological Seminary
 ### Video
 
 <div class="iframe-wrapper four-to-three">
-<iframe src="https://player.vimeo.com/video/158279181" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe title="A Strange and Messy Deliverance" src="https://player.vimeo.com/video/158279181" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/158279181">A Strange and Messy Deliverance (Judges 3:7&ndash;31)</a> from <a href="https://vimeo.com/chriskrycho">Chris Krycho</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 </div>
 

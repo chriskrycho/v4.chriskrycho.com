@@ -34,7 +34,7 @@ MacBook Pro pointed at the podium.</i>
 ### Video
 
 <div class="iframe-wrapper four-to-three">
-<iframe src="https://player.vimeo.com/video/154810219" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe title="A Humble, Selfless, Unity" src="https://player.vimeo.com/video/154810219" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/154810219">A Humble, Selfless Unity (Philippians 2:1&ndash;11)</a> from <a href="https://vimeo.com/chriskrycho">Chris Krycho</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 </div>
 

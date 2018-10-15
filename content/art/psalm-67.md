@@ -13,7 +13,8 @@ semester I composed it, and I simply never got around to it afterward.
 Nonetheless, I think you may enjoy this digital version. You can, however,
 [download the score][download] so you can follow the text setting if you like.
 
-<iframe style="width: 100%; max-height: 6.556em; padding-top: 1em; padding-bottom: 1em;"
+<iframe title="Let the Peoples Praise You (Psalm 67)"
+        style="width: 100%; max-height: 6.556em; padding-top: 1em; padding-bottom: 1em;"
         scrolling="no" frameborder="no"
         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/142432628&amp;color=5592c9&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=false"></iframe>
 

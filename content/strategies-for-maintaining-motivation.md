@@ -31,14 +31,14 @@ This is kind of like the previous task except that it may or may not even be rel
 
 These kinds of things help me by serving as a *reward* for getting through the stuff I need to get through. They thus provide a kind of extrinsic motivation where my intrinsic motivation has flagged. They also have enough intrinsic interest of their own that I can feel some of that very helpful sense of accomplishing something I care about when I make progress on them.
 
-It’s important that these things fit the profile I described, though: easy to move forward in small chunks of time, and okay to take a long while to finish. The danger with these--even more than with the first kind of small tasks I suggested--is that they *are* so interesting, and you have to make sure you *do* still get your regular work done. 
+It’s important that these things fit the profile I described, though: easy to move forward in small chunks of time, and okay to take a long while to finish. The danger with these--even more than with the first kind of small tasks I suggested--is that they *are* so interesting, and you have to make sure you *do* still get your regular work done.
 
 ## – 3. –
 
 **Find ways to gain a sense of *momentum.***
 
 This one is in some ways the hardest of these, because it’s just digging in deeper on the slog of the project in question--but it’s also the one that most directly gets you closer to the end of the project. The trick is to find a rhythm where you actually move meaningfully closer to the goal of *finishing the project* all the time, while not ending up bogged down in nothing but slogs along the way.
-  
+
 A big part of this is figuring out how to break up the project into smaller and more tractable pieces, and then alternating the various elements of it in such a way that you can continually feel the satisfaction of finishing things. Over the last two weeks at work, despite some pretty significant frustrations which made it really hard to do this, I came out with more of a sense of momentum than I had even before those frustrations came up--precisely because I actually knocked out the things we aimed to get done in that specific span of time. And we’re in a spot where we’re actually about to go live with the first meaningful chunk of what we’ve been building.
 
 Keeping that sense of momentum is really important. Even when you’re looking at a 6-month stretch of not-that-interesting a set of work ahead of you, it helps to see yourself chipping away at it and making real progress.
@@ -47,6 +47,6 @@ Keeping that sense of momentum is really important. Even when you’re looking a
 
 **Just watch [this sequence from Doctor Who Series 9](https://m.youtube.com/watch?v=sl9pTDK8PAk) over and over again.** Or better yet, the whole episode.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sl9pTDK8PAk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe title="Breaking the Wall (Doctor Who Series 9 Episode 11)" width="560" height="315" src="https://www.youtube.com/embed/sl9pTDK8PAk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 > Personally, I think that’s a hell of a bird.
