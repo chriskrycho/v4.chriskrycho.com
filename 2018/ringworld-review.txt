@@ -2,7 +2,7 @@
 Title: <cite>Ringworld</cite> Review
 Subtitle: "A classic, Hugo- and Nebula-winning novel: I <em>enjoyed</em> it… but it felt a bit overrated."
 Date: 2018-10-14 17:30
-Category: Blog
+Category: Art
 Tags: [science fiction, book reviews, reading]
 Summary: >
     Recommended: A classic, Hugo- and Nebula-winning novel: I <em>enjoyed</em> it… but it felt a bit overrated.
