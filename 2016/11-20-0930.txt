@@ -1,5 +1,5 @@
 ---
-Title: ""
+Title: "Tony Merida, sermon on November 20, 2016"
 Template: formats/quotation
 Slug: 11-20-0930
 Date: 2016-11-20 09:30
