@@ -35,6 +35,10 @@
 
             .divider { color: $white; }
 
+            a:link, a:visited {
+                color: $pale_blue;
+            }
+
             a:hover {
                 color: $white;
                 border: none;
