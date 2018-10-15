@@ -1,1 +1,1 @@
-{% if article.date is defined %}<span class="date"><a href="{{ SITEURL }}/{{ article.url }}" title={{ article.title }}><i class="fa fa-fw fa-link"></i></a>{{ article.locale_date }}{% if article.modified is defined %} (updated {{ article.locale_modified }}){% endif %}</span>{% endif %}
+{% if article.date is defined %}<span class="date"><a href="{{ SITEURL }}/{{ article.url }}" title="{{ article.title }}"><i class="fa fa-fw fa-link"></i></a>{{ article.locale_date }}{% if article.modified is defined %} (updated {{ article.locale_modified }}){% endif %}</span>{% endif %}
