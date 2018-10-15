@@ -28,7 +28,7 @@ a {
 
   &:link,
   &:visited {
-    color: $light_blue;
+    color: $medium_blue;
   }
 
   &:hover,
@@ -919,6 +919,10 @@ sup[id^="fnref:"] a {
   font-family: $sans;
   @include flexbox();
   @include flex-flow(row wrap);
+
+  a:link, a:visited {
+    color: $pale_blue;
+  }
 
   $footer-header-height: $fs3-abs + $fsp-abs;
 
