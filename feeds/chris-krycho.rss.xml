@@ -826,7 +826,7 @@ export default class AnExample extends Component {
 &lt;section id="section-3" class="level2"&gt;
 &lt;h2&gt;– 4. –&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Just watch &lt;a href="https://m.youtube.com/watch?v=sl9pTDK8PAk"&gt;this sequence from Doctor Who Series 9&lt;/a&gt; over and over again.&lt;/strong&gt; Or better yet, the whole episode.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/sl9pTDK8PAk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;
+&lt;iframe title="Breaking the Wall (Doctor Who Series 9 Episode 11)" width="560" height="315" src="https://www.youtube.com/embed/sl9pTDK8PAk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;
 &lt;/iframe&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Personally, I think that’s a hell of a bird.&lt;/p&gt;
@@ -6436,7 +6436,7 @@ getBurgers()
 &lt;p&gt;&lt;a href="http://www.winningslowly.org/5.05/"&gt;Winning Slowly 5.05: “Faint Not”&lt;/a&gt;—Negative / Invisible / Legal (Organized): civil forfeiture and entrenched legal evil&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 04 Oct 2016 08:17:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-10-04:/2016/winning-slowly-5-05-faint-not.html</guid><category>podcasting</category><category>my writing elsewhere</category><category>links</category></item><item><title>“Abi’s Processional”</title><link>http://www.chriskrycho.com/2016/abis-processional.html</link><description>&lt;p&gt;I don’t often get to compose anymore, but every once in a while I still have opportunities. Here’s &lt;a href="https://soundcloud.com/chriskrycho/abis-processional"&gt;the processional I wrote for my little sister’s wedding&lt;/a&gt;—a trio for cello, oboe, and piano.&lt;/p&gt;
 &lt;p&gt;(Unfortunately, almost no one heard this, because it started raining—outdoor wedding—and the sound guys didn’t know to turn up the volume.)&lt;/p&gt;
-&lt;iframe style="width: 100%; max-height: 6.556em; padding-top: 1em; padding-bottom: 1em;" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/285984308&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true"&gt;
+&lt;iframe title="Abi&amp;#39;s Processional" style="width: 100%; max-height: 6.556em; padding-top: 1em; padding-bottom: 1em;" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/285984308&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true"&gt;
 &lt;/iframe&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 04 Oct 2016 07:31:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2016-10-04:/2016/abis-processional.html</guid><category>music</category><category>composed music</category><category>links</category></item><item><title>Constant Evaluation</title><link>http://www.chriskrycho.com/2016/constant-evaluation.html</link><description>&lt;p&gt;I’m reading John Frame’s &lt;em&gt;The Doctrine of the Christian Life&lt;/em&gt;, and find a great deal to commend in it, but also some real head-scratchers. The same page, for example (287), includes both of these quotes—&lt;/p&gt;
 &lt;p&gt;On rejecting mere traditionalism:&lt;/p&gt;
@@ -8106,14 +8106,14 @@ double bar() { /* implementation */ }&lt;/code&gt;&lt;/pre&gt;
 &lt;section id="audio" class="level3"&gt;
 &lt;h3&gt;Audio&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-03-08.m4a"&gt;Download&lt;/a&gt;&lt;/p&gt;
-&lt;audio title="God Is With US" controls="controls" preload="metadata" src="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-04-12.m4a" type="audio/m4a"&gt;
+&lt;audio title="God Is With Us" controls="controls" preload="metadata" src="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-04-12.m4a" type="audio/m4a"&gt;
 Sorry; your browser doesn’t support m4a files. Try downloading the file directly and playing it in iTunes or another media app.
 &lt;/audio&gt;
 &lt;/section&gt;
 &lt;section id="video" class="level3"&gt;
 &lt;h3&gt;Video&lt;/h3&gt;
 &lt;div class="iframe-wrapper four-to-three"&gt;
-&lt;iframe src="https://player.vimeo.com/video/162628625" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;
+&lt;iframe title="God Is With Us" src="https://player.vimeo.com/video/162628625" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;
 &lt;/iframe&gt;
 &lt;p&gt;
 &lt;a href="https://vimeo.com/162628625"&gt;God Is With Us (John 14:15–31)&lt;/a&gt; from &lt;a href="https://vimeo.com/chriskrycho"&gt;Chris Krycho&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.
@@ -8557,7 +8557,7 @@ Sorry; your browser doesn’t support m4a files. Try downloading the file direct
 &lt;section id="video" class="level3"&gt;
 &lt;h3&gt;Video&lt;/h3&gt;
 &lt;div class="iframe-wrapper four-to-three"&gt;
-&lt;iframe src="https://player.vimeo.com/video/158279181" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;
+&lt;iframe title="A Strange and Messy Deliverance" src="https://player.vimeo.com/video/158279181" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;
 &lt;/iframe&gt;
 &lt;p&gt;
 &lt;a href="https://vimeo.com/158279181"&gt;A Strange and Messy Deliverance (Judges 3:7–31)&lt;/a&gt; from &lt;a href="https://vimeo.com/chriskrycho"&gt;Chris Krycho&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.
@@ -8822,7 +8822,7 @@ Sorry; your browser doesn’t support m4a files. Try downloading the file direct
 &lt;section id="video" class="level3"&gt;
 &lt;h3&gt;Video&lt;/h3&gt;
 &lt;div class="iframe-wrapper four-to-three"&gt;
-&lt;iframe src="https://player.vimeo.com/video/154810219" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;
+&lt;iframe title="A Humble, Selfless, Unity" src="https://player.vimeo.com/video/154810219" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;
 &lt;/iframe&gt;
 &lt;p&gt;
 &lt;a href="https://vimeo.com/154810219"&gt;A Humble, Selfless Unity (Philippians 2:1–11)&lt;/a&gt; from &lt;a href="https://vimeo.com/chriskrycho"&gt;Chris Krycho&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.
@@ -9595,9 +9595,9 @@ fn main() {
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 12 Oct 2015 20:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-10-12:/2015/how-i-became-a-runner.html</guid><category>fitness</category></item><item><title>Two Podcast Themes</title><link>http://www.chriskrycho.com/2015/two-podcast-themes.html</link><description>&lt;p&gt;This summer, I launched two podcasts. (This reminds me: I need to put up the second episode of one of those tomorrow, and record and publish the second episode of the other by Friday. Lots to do!) Here are the themes for the two shows:&lt;/p&gt;
-&lt;iframe height="300" width="300" style="padding-top: 1em; padding-bottom: 1em; margin: auto; display: block;" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/217984865&amp;amp;auto_play=false&amp;amp;color=5592c9&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true"&gt;
+&lt;iframe title="Theme for Sap.py" height="300" width="300" style="padding-top: 1em; padding-bottom: 1em; margin: auto; display: block;" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/217984865&amp;amp;auto_play=false&amp;amp;color=5592c9&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true"&gt;
 &lt;/iframe&gt;
-&lt;iframe height="300" width="300" style="padding-top: 1em; padding-bottom: 1em; margin: auto; display: block;" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/225441161&amp;amp;auto_play=false&amp;amp;color=5592c9&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true"&gt;
+&lt;iframe title="New Rustacean Theme" height="300" width="300" style="padding-top: 1em; padding-bottom: 1em; margin: auto; display: block;" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/225441161&amp;amp;auto_play=false&amp;amp;color=5592c9&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;visual=true"&gt;
 &lt;/iframe&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 30 Sep 2015 07:10:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2015-09-30:/2015/two-podcast-themes.html</guid><category>music</category></item><item><title>A Range of Prophets</title><link>http://www.chriskrycho.com/2015/a-range-of-prophets.html</link><description>&lt;p&gt;N. T. Wright makes it painfully clear that it’s difficult (if not impossible) to understand Jesus fully and rightly without having a deep knowledge of the Old Testament:&lt;/p&gt;
 &lt;blockquote&gt;
@@ -12529,7 +12529,7 @@ to understand a proverb and a saying,&lt;br /&gt;
 &lt;p&gt;Situated against the backdrop of the canon, this opening is all the more compelling. It is not fear of God generically that is the beginning of wisdom, nor even knowledge that there is a creator. It is personal knowledge of the &lt;span class="smcp"&gt;Lord&lt;/span&gt;, of &lt;em&gt;Yahweh&lt;/em&gt;, the covenant God of Israel. This cannot be separated from knowing who Yahweh is as he is revealed in the rest of Scripture. Yet if I am truly to grow in knowledge and understanding of righteousness—one of the chief topics of the Bible!—then I must come time and again to these words, and seek wisdom. I must time and again humble myself before our Creator-Savior-God and recognize that my own wisdom and the wisdom of the world around me is ultimately bankrupt. I have nothing to teach God; from him I have everything to learn.&lt;/p&gt;
 &lt;p&gt;And it can only be learned in that posture of humility before transcendent wisdom that surpasses human understanding. That is the lesson of &lt;em&gt;Qoheleth&lt;/em&gt; (Ecclesiastes): as we turn and begin to seek wisdom on our own, we will increasingly fall into folly. No wonder, then, that immediately following the invitation to be wise here in Proverbs 1, in Lady Wisdom’s first monologue, comes a rebuke and a warning to fools and simpletons who do not seek true wisdom. It is an easy enough course to take—the easiest, the most natural for us as fallen people—but it is deadly. There is a cost when I fail to fear Yahweh and keep his ways.&lt;/p&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 01 Apr 2014 06:40:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2014-04-01:/2014/a-repeated-call-to-humility.html</guid><category>[devotions]</category></item><item><title>Let The Peoples Praise You</title><link>http://www.chriskrycho.com/2014/let-the-peoples-praise-you.html</link><description>&lt;p&gt;I read Psalm 67 for my &lt;a href="http://www.chriskrycho.com/2014/no-resurrection-no-dice.html"&gt;devotions&lt;/a&gt; today, and was reminded that I had set the text to music several years ago during my studies in music composition at OU. Unfortunately, I have never been able to have the piece performed (even with a piano reduction)—the position of choral director was in transition the semester I composed it, and I simply never got around to it afterward. Nonetheless, I think you may enjoy this digital version. You can, however, &lt;a href="/downloads/psalm-67.pdf"&gt;download the score&lt;/a&gt; so you can follow the text setting if you like.&lt;/p&gt;
-&lt;iframe style="width: 100%; max-height: 6.556em; padding-top: 1em; padding-bottom: 1em;" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/142432628&amp;amp;color=5592c9&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_artwork=false"&gt;
+&lt;iframe title="Let the Peoples Praise You (Psalm 67)" style="width: 100%; max-height: 6.556em; padding-top: 1em; padding-bottom: 1em;" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/142432628&amp;amp;color=5592c9&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_artwork=false"&gt;
 &lt;/iframe&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Mon, 31 Mar 2014 20:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2014-03-31:/2014/let-the-peoples-praise-you.html</guid><category>[music]</category></item><item><title>No Resurrection, No Dice</title><link>http://www.chriskrycho.com/2014/no-resurrection-no-dice.html</link><description>&lt;p&gt;After quietly but insistently weaving the theme through the whole book, Paul comes at the end of 1 Corinthians to one of the most resounding statements of gospel hope anywhere in the Bible in chapter 15. And this proclamation of the gospel centers on the &lt;em&gt;risen&lt;/em&gt; Lord.&lt;/p&gt;
 &lt;p&gt;Every since reading N. T. Wright’s magnificent &lt;a href="http://www.christianbook.com/Christian/Books/product?event=AFF&amp;amp;p=1179430&amp;amp;item_no=26794"&gt;&lt;em&gt;The Resurrection of the Son of God&lt;/em&gt;&lt;/a&gt; a few years ago, I have become increasingly aware of the way that the resurrection pervades the New Testament. As evangelicals, we are mostly a crucicentric people, focused quite &lt;a href="http://www.chriskrycho.com/2014/the-atonement-leon-morris.html"&gt;narrowly and specifically&lt;/a&gt; on the atoning work of Jesus on the cross. This is good, to an extent: if we &lt;em&gt;lose&lt;/em&gt; the atonement, we have lost the gospel. On the other hand, I am ever more aware, as I listen to sermon after sermon, that we simply do not preach the resurrection of Christ enough. Certainly, we do not follow closely the example of the church in Acts and the apostles in their writings, where the resurrection is always front and center, and where as Paul puts it:&lt;/p&gt;

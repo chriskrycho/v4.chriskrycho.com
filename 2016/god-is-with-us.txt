@@ -22,7 +22,7 @@ Category: theology
 [Download](http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-03-08.m4a)
 
 <audio
-    title="God Is With US"
+    title="God Is With Us"
     controls="controls"
     preload="metadata"
     src="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-04-12.m4a"
@@ -35,7 +35,7 @@ Category: theology
 ### Video
 
 <div class="iframe-wrapper four-to-three">
-<iframe src="https://player.vimeo.com/video/162628625" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe title="God Is With Us" src="https://player.vimeo.com/video/162628625" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/162628625">God Is With Us (John 14:15&ndash;31)</a> from <a href="https://vimeo.com/chriskrycho">Chris Krycho</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 </div>
 
