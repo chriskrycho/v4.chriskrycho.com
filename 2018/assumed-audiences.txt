@@ -20,6 +20,8 @@ I was thinking about how to clarify that, and it took me back to a Winning Slowl
 
 The basic problem here is that a blog post is open to everyone on the internet to read… but *everyone on the internet* is far too broad an audience for, well, basically *any* post I write. (Or indeed any post anyone writes.)
 
+What's more, for any given post I write, there *is* an implicit audience. You as reader just have no way of knowing what I am assuming. It could be I am thinking of "the whole internet," but that probably isn't the case for *most* audiences. So what if I just made it explicit?
+
 My current best solution for handling this phenomenon is an “assumed audience” heading on the top of a post. It won’t head off *all* the nonsense, of course. But it at least gives people a frame of reference. A few examples that leap to mind:
 
 - **Assumed audience:** other theologically conservative Christians in the <abbr title="Presbyterian Church in America">PCA</abbr>
