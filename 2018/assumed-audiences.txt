@@ -4,6 +4,7 @@ Subtitle: >
     “The Internet” is far too broad an audience for, well, basically <em>any</em> post I write.
 Date: 2018-10-18 19:00
 Category: blog
+Tags: [writing, reading]
 Summary: >
     “The Internet” is far too broad an audience for, well, basically <em>any</em> post I write. My current best solution: “Assumed Audience” headings on posts.
 
