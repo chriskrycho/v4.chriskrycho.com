@@ -3,6 +3,7 @@ Title: Assumed Audiences
 Subtitle: >
     “The Internet” is far too broad an audience for, well, basically <em>any</em> post I write.
 Date: 2018-10-18 19:00
+Modified: 2018-10-19 10:00
 Category: blog
 Tags: [writing, reading]
 Summary: >
@@ -41,3 +42,7 @@ It’s worthwhile to blog and write publicly—some of the best feedback I get o
 
 Maybe I’ll just be this weird guy over here marking my posts this way, or maybe it’ll catch on with other weird people and a few corners of the internet will be a little less open to misunderstanding. Maybe people will completely ignore them and engage in full on flame wars on Twitter and Hacker News. (That seems more likely than not.) I think it’s worth a shot anyway. Let’s try it and find out!
 
+**Edit, October 19, 2018:** Thanks to [Stephen Carradini][stephen] for reminding me to include a shout-out to Sarah Constantin's blog [Otium], which introduces posts with a similar heading, "Epistemic status," to indicate how confident the author is or isn't about the contents of the given post. I meant to include a shout-out to Otium in the original writeup and just spaced it!
+
+[stephen]: https://stephencarradini.com
+[Otium]: https://srconstantin.wordpress.com
