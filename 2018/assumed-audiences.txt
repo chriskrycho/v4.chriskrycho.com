@@ -33,7 +33,7 @@ Each of those are people I might actually address on this blog—and there are p
 
 For example, if you’re a die-hard devotee of dynamic programming languages, a note that the assumed audience is people interested in advanced static types tells you that my point isn’t persuading *you*, but persuading someone else entirely. You can adjust your read accordingly.
 
-Likewise, if I’m writing on Christian ethics with an assumed audience of secular progressives, and you’re a fundamentalist Christian, you can read with the understanding that I will frame things differently talking to someone who disagrees with me about everything down to and including the nature of reality itself than if we were having an “in-house” conversation! You can adjust your read accordingly.
+Likewise, if I’m writing on Christian ethics with an assumed audience of secular progressives, and you’re a fundamentalist Christian, you can read with the understanding that I will frame things differently for someone who disagrees with me about everything (down to and including the nature of reality itself!) than if we were having an “in-house” conversation! You can adjust your read accordingly.
 
 I’m increasingly convinced something like this is important. *Very* important, even.
 
