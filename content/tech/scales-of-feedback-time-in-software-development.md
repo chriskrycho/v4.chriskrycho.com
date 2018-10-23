@@ -3,13 +3,14 @@ Title: Scales of Feedback Time in Software Development
 Subtitle: >
     Orders of magnitude: build-time errors, automated tests, manual test, <abbr>CI</abbr>, staging, production.
 Date: 2018-10-22 21:15
+Modified: 2018-10-22 21:45
 Category: Tech
 Tags: [software development, testing, programming languages, Rust]
 Summary: >
     There are rough order-of-magnitude differences between the feedback times for build-time errors, automated tests, manual testing, CI, staging, and production. This is useful when thinking about tradeoffs of where you want to catch certain failure classes.
 ---
 
-<i class=editorial>**[Assumed Audience]:** fans of compiled languages with expressive type systems. (I’m not trying to persuade fans of dynamic languages they should use a compiler here; I’m trying to surface something that often goes unstated in discussions among fans of compiled languages with expressive type systems.)</i>
+<i class=editorial>**[Assumed Audience]:** fans of compiled languages with expressive type systems. I’m not trying to persuade fans of dynamic languages they should use a compiler here; I’m trying to surface something that often goes unstated in discussions among fans of compiled languages with expressive type systems, but hopefully it's interesting beyond that. If you don't like compiled languages, just skip the build step bits; the rest all still applies.</i>
 
 [Assumed Audience]: http://www.chriskrycho.com/2018/assumed-audiences.html
 
@@ -17,21 +18,16 @@ There are basically six stages of the development of any given software componen
 
 [^1]: There's some ongoing work in the Rust web working group to build an exemplar web framework, [Tide](https://rust-lang-nursery.github.io/wg-net/2018/09/11/tide.html). The [most recent post](https://rust-lang-nursery.github.io/wg-net/2018/10/16/tide-routing.html) tackled routing, and prompted [an interesting discussion](https://internals.rust-lang.org/t/routing-and-extraction-in-tide-a-first-sketch/8587) on the [Rust internals forum](https://internals.rust-lang.org/). This post is a cleaned-up, better-articulated, more general version of [a post](https://internals.rust-lang.org/t/routing-and-extraction-in-tide-a-first-sketch/8587/36?u=chriskrycho) I offered in that thread.
 
-1. compilers and static analysis tools
-
+1. compilers, static analysis tools, and/or pair programming
 2. automated test suites
-
 3. manual local testing
-
 4. continuous integration (<abbr>CI</abbr>) test results
-
 5. deploying to staging (or a similar test environment) for manual testing
-
 6. deploying to live, i.e. when production traffic is meaningfully different from what you can test on staging
 
-What's interesting to note is that there are also, in my experience, roughly order-of-magnitude differences between each of those layers in terms of the *cycle time* between when you make a change and whether you know it is broken. That is, there seem to be rough factor-of-ten differences between the feedback you get from--
+What's interesting to note is that there are also, in my experience, roughly order-of-magnitude differences between each of those layers in terms of the *cycle time* between when you make a change and whether you know it is broken. That is, there seem to be rough factor-of-ten differences between the feedback you get from---
 
-1. compilers and static analysis tools , which can show you feedback in near-real-time as you're typing and saving your code, especially with a good language server or a fast compiler or a speedy linter
+1. compilers, static analysis tools, and/or pair programming---all of which can show you feedback in near-real-time as you're typing and saving your code, especially with a good language server or a fast compiler or a speedy linter
 
 2. automated test suites, assuming they're running on every build change and are reasonably speedy themselves, or scoped to the things impacted by the changes made
 
@@ -59,4 +55,5 @@ I do think, though, that being aware of the cost in cycle time is useful, as is 
 
 ---- 
 
-<i class=editorial>Thanks to my friend Ben Makuh for looking over an earlier draft of this piece and providing really helpful feedback on it!</i>
+<i class=editorial>Thanks to my friend Ben Makuh for looking over an earlier draft of this piece and providing really helpful feedback on it! Thanks as well to Greg Vaughn for noting shortly after I published it that pair programming also sits at the "immediate feedback" layer.</i>
+
