@@ -9,7 +9,7 @@ Summary: >
     There are rough order-of-magnitude differences between the feedback times for build-time errors, automated tests, manual testing, CI, staging, and production. This is useful when thinking about tradeoffs of where you want to catch certain failure classes.
 ---
 
-<i class=editorial>**[Assumed Audience]:** fans of compiled languages with expressive type systems. (I’m not trying to persuade fans of dynamic languages they should use a compiler here; I’m trying to surface something that often goes unstated in discussions among fans of compiled languages with expressive type systems.)</i>
+<i class=editorial>**[Assumed Audience]:** fans of compiled languages with expressive type systems. I’m not trying to persuade fans of dynamic languages they should use a compiler here; I’m trying to surface something that often goes unstated in discussions among fans of compiled languages with expressive type systems, but hopefully it's interesting beyond that. If you don't like compiled languages, just skip the build step bits; the rest all still applies.</i>
 
 [Assumed Audience]: http://www.chriskrycho.com/2018/assumed-audiences.html
 
