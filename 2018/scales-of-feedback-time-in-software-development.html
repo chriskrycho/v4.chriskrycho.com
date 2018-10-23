@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scales of Feedback Time in Software Development &middot; Chris Krycho</title>
+    <meta name="description" content="There are rough order-of-magnitude differences between the feedback times for build-time errors, automated tests, manual testing, CI, staging, and production. This is useful when thinking about tradeoffs of where you want to catch certain failure classes."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/scales-of-feedback-time-in-software-development.html"/>
+    <meta property="og:title" content="Scales of Feedback Time in Software Development"/>
+    <meta property="og:description" content="There are rough order-of-magnitude differences between the feedback times for build-time errors, automated tests, manual testing, CI, staging, and production. This is useful when thinking about tradeoffs of where you want to catch certain failure classes."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Scales of Feedback Time in Software Development"/>
+    <meta name="twitter:description" content="There are rough order-of-magnitude differences between the feedback times for build-time errors, automated tests, manual testing, CI, staging, and production. This is useful when thinking about tradeoffs of where you want to catch certain failure classes."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="software-development testing programming-languages rust tech">
+
+    <header>
+<h1>Scales of Feedback Time in Software Development</h1>
+<h2>Orders of magnitude: build-time errors, automated tests, manual test, <abbr>CI</abbr>, staging, production.
+</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/scales-of-feedback-time-in-software-development.html" title="Scales of Feedback Time in Software Development"><i class="fa fa-fw fa-link"></i></a>October 22, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/testing/">#testing</a></span><span><a href="http://www.chriskrycho.com/2018/scales-of-feedback-time-in-software-development.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class=editorial><strong>Assumed Audience:</strong> fans of compiled languages with expressive type systems. (I’m not trying to persuade fans of dynamic languages they should use a compiler here; I’m trying to surface something that often goes unstated in discussions within fans of compiled languages with expressive type systems.)</i></p>
+<p>There are basically six stages of the development of any given software component where you can receive feedback on what you build:<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<ol type="1">
+<li>compilers and static analysis tools</li>
+<li>automated test suites</li>
+<li>manual local testing</li>
+<li>continuous integration (<abbr>CI</abbr>) test results</li>
+<li>deploying to staging (or a similar test environment) for manual testing</li>
+<li>deploying to live, i.e. when production traffic is meaningfully different from what you can test on staging</li>
+</ol>
+<p>What’s interesting to note is that there are also, in my experience, roughly order-of-magnitude differences between each of those layers in terms of the <em>cycle time</em> between when you make a change and whether you know it is broken. That is, there seem to be rough factor-of-ten differences between the feedback you get from–</p>
+<ol type="1">
+<li><p>compilers and static analysis tools , which can show you feedback in near-real-time as you’re typing and saving your code, especially with a good language server or a fast compiler or a speedy linter</p></li>
+<li><p>automated test suites, assuming they’re running on every build change and are reasonably speedy themselves, or scoped to the things impacted by the changes made</p></li>
+<li><p>manual local testing, which you can repeat after every build, but which usually requires you to switch contexts to execute the program in some way</p></li>
+<li><p><abbr>CI</abbr>, presumably doing the automated equivalent of what you do in both layers 2 and 3. but requiring a push to some central location and a remote build and execution of the test suite, and often a much larger integration test suite than you’d run locally</p></li>
+<li><p>deploying to staging, and repeating the same kinds of manual testing you might do locally in layer 2 in a more production-like environment</p></li>
+<li><p>deploying to live, and repeating the same kinds of manual testing you might do locally in layers 2 or 5, as well as getting feedback from observability or monitoring systems using your real traffic</p></li>
+</ol>
+<p>(Those last two <em>might</em> be comparable in the cycle time sense. However, the way most teams I’ve heard of work, any deploy to live is usually preceded by a deploy to staging. What’s more, with most changes that you can’t test until it’s live, it’s often the case that you’re not going to know if something is wrong until it has been live for at least a little while. Finally, some kinds of things you can really only test with production load and monitoring or observability systems, and those kinds of things are at least sometimes not to be visible immediately after deployment, but only in the system’s aggregate behavior or weird outliers that show up given enough scale.)</p>
+<p>What all of this gets at is that stepping to a higher layer nearly always entails a <em>dramatic</em> increase in the <em>cycle time</em> for software development: that is, the amount of time between when I make a change and when I know whether it’s broken or not. If I can know that I have a problem because my compiler surfaces errors in my editor, that probably saves me a minute or two each day over only being able to see the same error in a test suite. By the same token, being able to surface an error in a test suite running on every build will likely save me anything from minutes to hours of cycle time compared to something I can only test in production.</p>
+<p>At first blush, this looks like an argument for pushing everything to the lowest-numbered layer possible, and I think that’s <em>kind of</em> right. I (and probably many other people who end up in, say, Rust or Haskell or Elm or other languages with similarly rich type systems) tend to prefer putting as much as possible into layer 1 here precisely because we have so often been bitten by things that are at layer 2 in other languages or frameworks and take a lot of time to figure out why they broke at layer 2. This happened to me in a C<sup>♯</sup> server application just a couple weeks ago, and chasing it down was <em>not fun</em>.</p>
+<p>However, my enthusiasm for rich type systems notwithstanding, I <em>don’t</em> think this observation about these layers of cycle time means we should put everything in the compiler all the time. Indeed, there are some things it is too expensive or difficult to test anywhere <em>but</em> production (all the way up at layer 6). What’s more–although this is often overlooked in these discussions–putting too much of this rich information in layer 1 can absolutely kill your compile times in many languages. In my experience, this is particularly true of many of the languages with rich enough type systems to make layer 1 handling genuinely viable in the first place!<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>I do think, though, that being aware of the cost in cycle time is useful, as is being explicit about <em>why</em> we think it’s worth slotting a particular set of feedback into layer 2 vs. layer 1 (or layers 3, 4, 5, or 6). That goes for library development, of course.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> It goes equally for application development, though! It can be really helpful to make explicit both which of these layers you’re landing in and (just as important) why you’ve landed there for any given bit of feedback you want or need to get–making the tradeoffs explicit along the way.</p>
+<hr />
+<p><i class=editorial>Thanks to my friend Ben Makuh for looking over an earlier draft of this piece and providing really helpful feedback on it!</i></p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>There’s some ongoing work in the Rust web working group to build an exemplar web framework, <a href="https://rust-lang-nursery.github.io/wg-net/2018/09/11/tide.html">Tide</a>. The <a href="https://rust-lang-nursery.github.io/wg-net/2018/10/16/tide-routing.html">most recent post</a> tackled routing, and prompted <a href="https://internals.rust-lang.org/t/routing-and-extraction-in-tide-a-first-sketch/8587">an interesting discussion</a> on the <a href="https://internals.rust-lang.org/">Rust internals forum</a>. This post is a cleaned-up, better-articulated, more general version of <a href="https://internals.rust-lang.org/t/routing-and-extraction-in-tide-a-first-sketch/8587/36?u=chriskrycho">a post</a> I offered in that thread.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Right now I and a few others are trying to figure out why one particular type definition in the TypeScript definitions for Ember.js causes a build to take about 20⨉ as long as the build without that type definition. It’s the difference between a 6.5-second build and a 2.5-<em>minute</em> build.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>as in the example of a web server’s <abbr>API</abbr> for route handling which originally prompted this post<a href="#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/ringworld-review.html"><cite>Ringworld</cite> Review</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/assumed-audiences.html">Assumed Audiences</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/scales-of-feedback-time-in-software-development.html">Scales of Feedback Time in Software Development</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/dealing-with-burnout-in-public.html">Dealing With Burnout In Public</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
