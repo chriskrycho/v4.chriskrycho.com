@@ -81,7 +81,7 @@
 </h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/2018/scales-of-feedback-time-in-software-development.html" title="Scales of Feedback Time in Software Development"><i class="fa fa-fw fa-link"></i></a>October 22, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/testing/">#testing</a></span><span><a href="http://www.chriskrycho.com/2018/scales-of-feedback-time-in-software-development.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/2018/scales-of-feedback-time-in-software-development.html" title="Scales of Feedback Time in Software Development"><i class="fa fa-fw fa-link"></i></a>October 22, 2018 (updated October 22, 2018)</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/testing/">#testing</a></span><span><a href="http://www.chriskrycho.com/2018/scales-of-feedback-time-in-software-development.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
@@ -91,16 +91,16 @@
 <p><i class=editorial><strong><a href="http://www.chriskrycho.com/2018/assumed-audiences.html">Assumed Audience</a>:</strong> fans of compiled languages with expressive type systems. I’m not trying to persuade fans of dynamic languages they should use a compiler here; I’m trying to surface something that often goes unstated in discussions among fans of compiled languages with expressive type systems, but hopefully it’s interesting beyond that. If you don’t like compiled languages, just skip the build step bits; the rest all still applies.</i></p>
 <p>There are basically six stages of the development of any given software component where you can receive feedback on what you build:<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 <ol type="1">
-<li><p>compilers and static analysis tools</p></li>
-<li><p>automated test suites</p></li>
-<li><p>manual local testing</p></li>
-<li><p>continuous integration (<abbr>CI</abbr>) test results</p></li>
-<li><p>deploying to staging (or a similar test environment) for manual testing</p></li>
-<li><p>deploying to live, i.e. when production traffic is meaningfully different from what you can test on staging</p></li>
+<li>compilers, static analysis tools, and/or pair programming</li>
+<li>automated test suites</li>
+<li>manual local testing</li>
+<li>continuous integration (<abbr>CI</abbr>) test results</li>
+<li>deploying to staging (or a similar test environment) for manual testing</li>
+<li>deploying to live, i.e. when production traffic is meaningfully different from what you can test on staging</li>
 </ol>
-<p>What’s interesting to note is that there are also, in my experience, roughly order-of-magnitude differences between each of those layers in terms of the <em>cycle time</em> between when you make a change and whether you know it is broken. That is, there seem to be rough factor-of-ten differences between the feedback you get from–</p>
+<p>What’s interesting to note is that there are also, in my experience, roughly order-of-magnitude differences between each of those layers in terms of the <em>cycle time</em> between when you make a change and whether you know it is broken. That is, there seem to be rough factor-of-ten differences between the feedback you get from—</p>
 <ol type="1">
-<li><p>compilers and static analysis tools , which can show you feedback in near-real-time as you’re typing and saving your code, especially with a good language server or a fast compiler or a speedy linter</p></li>
+<li><p>compilers, static analysis tools, and/or pair programming—all of which can show you feedback in near-real-time as you’re typing and saving your code, especially with a good language server or a fast compiler or a speedy linter</p></li>
 <li><p>automated test suites, assuming they’re running on every build change and are reasonably speedy themselves, or scoped to the things impacted by the changes made</p></li>
 <li><p>manual local testing, which you can repeat after every build, but which usually requires you to switch contexts to execute the program in some way</p></li>
 <li><p><abbr>CI</abbr>, presumably doing the automated equivalent of what you do in both layers 2 and 3, but requiring a push to some central location and a remote build and execution of the test suite, and often a much larger integration test suite than you’d run locally</p></li>
@@ -113,7 +113,7 @@
 <p>However, my enthusiasm for rich type systems notwithstanding, I <em>don’t</em> think this observation about these layers of cycle time means we should put everything in the compiler all the time. Indeed, there are some things it is too expensive or difficult to test anywhere <em>but</em> production (all the way up at layer 6). What’s more–although this is often overlooked in these discussions–putting too much of this rich information in layer 1 can absolutely kill your compile times in many languages. In my experience, this is particularly true of many of the languages with rich enough type systems to make layer 1 handling genuinely viable in the first place!<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <p>I do think, though, that being aware of the cost in cycle time is useful, as is being explicit about <em>why</em> we think it’s worth slotting a particular set of feedback into layer 2 vs. layer 1 (or layers 3, 4, 5, or 6). That goes for library development, of course.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> It goes equally for application development, though! It can be really helpful to make explicit both which of these layers you’re landing in and (just as important) why you’ve landed there for any given bit of feedback you want or need to get–making the tradeoffs explicit along the way.</p>
 <hr />
-<p><i class=editorial>Thanks to my friend Ben Makuh for looking over an earlier draft of this piece and providing really helpful feedback on it!</i></p>
+<p><i class=editorial>Thanks to my friend Ben Makuh for looking over an earlier draft of this piece and providing really helpful feedback on it! Thanks as well to Greg Vaughn for noting shortly after I published it that pair programming also sits at the “immediate feedback” layer.</i></p>
 <section class="footnotes">
 <hr />
 <ol>
