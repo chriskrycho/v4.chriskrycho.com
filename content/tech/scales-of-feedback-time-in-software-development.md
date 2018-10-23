@@ -18,10 +18,15 @@ There are basically six stages of the development of any given software componen
 [^1]: There's some ongoing work in the Rust web working group to build an exemplar web framework, [Tide](https://rust-lang-nursery.github.io/wg-net/2018/09/11/tide.html). The [most recent post](https://rust-lang-nursery.github.io/wg-net/2018/10/16/tide-routing.html) tackled routing, and prompted [an interesting discussion](https://internals.rust-lang.org/t/routing-and-extraction-in-tide-a-first-sketch/8587) on the [Rust internals forum](https://internals.rust-lang.org/). This post is a cleaned-up, better-articulated, more general version of [a post](https://internals.rust-lang.org/t/routing-and-extraction-in-tide-a-first-sketch/8587/36?u=chriskrycho) I offered in that thread.
 
 1. compilers and static analysis tools
+
 2. automated test suites
+
 3. manual local testing
+
 4. continuous integration (<abbr>CI</abbr>) test results
+
 5. deploying to staging (or a similar test environment) for manual testing
+
 6. deploying to live, i.e. when production traffic is meaningfully different from what you can test on staging
 
 What's interesting to note is that there are also, in my experience, roughly order-of-magnitude differences between each of those layers in terms of the *cycle time* between when you make a change and whether you know it is broken. That is, there seem to be rough factor-of-ten differences between the feedback you get from--
@@ -32,7 +37,7 @@ What's interesting to note is that there are also, in my experience, roughly ord
 
 3. manual local testing, which you can repeat after every build, but which usually requires you to switch contexts to execute the program in some way
 
-4. <abbr>CI</abbr>, presumably doing the automated equivalent of what you do in both layers 2 and 3. but requiring a push to some central location and a remote build and execution of the test suite, and often a much larger integration test suite than you'd run locally
+4. <abbr>CI</abbr>, presumably doing the automated equivalent of what you do in both layers 2 and 3, but requiring a push to some central location and a remote build and execution of the test suite, and often a much larger integration test suite than you'd run locally
 
 5. deploying to staging, and repeating the same kinds of manual testing you might do locally in layer 2 in a more production-like environment
 
