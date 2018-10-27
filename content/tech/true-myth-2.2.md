@@ -184,3 +184,8 @@ Here, `result` is once again a `Result<number, string>`, but the error side has 
 And that's it for True Myth 2.2! Enjoy, and of course please [open an issue][GH] if you run into any bugs!
 
 [GH]: https://github.com/true-myth/true-myth/issues
+
+Thanks to [Ben Makuh][ben] for implementing `Result.tryOr` and `Result.tryOrElse`. Thanks to Ben and also [Frank Tan][frank] for helpful input on the `Maybe.get` and `Maybe.property` <abbr>API</abbr> design!
+
+[ben]: https://github.com/bmakuh
+[frank]: https://github.com/tansongyang
