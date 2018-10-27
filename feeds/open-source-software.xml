@@ -1,5 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - open-source software</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Thu, 11 Oct 2018 08:30:00 -0400</lastBuildDate><item><title>Making Things Helps</title><link>http://www.chriskrycho.com/2018/making-things-helps.html</link><description>&lt;p&gt;As a small bit of follow-up to my recent post on &lt;a href="https://www.chriskrycho.com/2018/cant-stop-wont-stop.html" title="Can’t Stop, Won’t Stop"&gt;blogging as part of what helps with my burnout&lt;/a&gt;, I thought it worth noting that this principle is a bit broader than just &lt;em&gt;blogging&lt;/em&gt; for me. Writing (currently mostly expressed in the form of blogging) is deep in me, and so blogging remains a helpful outlet.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; But so a fair number of other things which might look like &lt;em&gt;work&lt;/em&gt; to other people.&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - open source software</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 27 Oct 2018 17:00:00 -0400</lastBuildDate><item><title>True Myth 2.2</title><link>http://www.chriskrycho.com/2018/true-myth-22.html</link><description>&lt;p&gt;I just released v2.2&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; of True Myth, with two new pairs of helpers to deal with &lt;a href="#safe-java-script-object-property-lookup"&gt;safe JavaScript object property lookup with &lt;code&gt;Maybe&lt;/code&gt;s&lt;/a&gt; and &lt;a href="#handling-exception-throwing-functions"&gt;handling exception-throwing code with &lt;code&gt;Result&lt;/code&gt;s&lt;/a&gt;.&lt;/p&gt;
+&lt;section id="safe-javascript-object-property-lookup" class="level2"&gt;
+&lt;h2&gt;Safe JavaScript object property lookup&lt;/h2&gt;
+&lt;p&gt;We often deal with &lt;em&gt;optional properties&lt;/em&gt; on JavaScript objects, and by default JavaScript just gives us &lt;code&gt;undefined&lt;/code&gt; if a property doesn’t exist on an object and we look it up:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;type Person = {
+  name?: string;
+};
+
+let me: Person = { name: &amp;#39;Chris&amp;#39; };
+console.log(me.name); // Chris
+
+let anonymous: Person = {};
+console.log(anonymous.name); // undefined&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We can already work around that with &lt;code&gt;Maybe.of&lt;/code&gt;, of course:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;function printName(p: Person) {
+  let name = Maybe.of(p.name);
+  console.log(name.unwrapOr(&amp;#39;&amp;lt;anonymous&amp;gt;&amp;#39;));
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;But this is a &lt;em&gt;really&lt;/em&gt; common pattern! &lt;code&gt;Maybe.property&lt;/code&gt; is a convenience method for dealing with this:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;function printName(p: Person) {
+  let name = Maybe.property(&amp;#39;name&amp;#39;, p);
+  console.log(name.unwrapOr(&amp;#39;&amp;lt;anonymous&amp;gt;&amp;#39;));
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;At first blush, this might be a head-scratcher: after all, it’s actually slightly &lt;em&gt;longer&lt;/em&gt; than doing it with &lt;code&gt;Maybe.of&lt;/code&gt;. However, it ends up showing its convenience when you’re using the curried form in a functional pipeline. For example, if we had a &lt;em&gt;list&lt;/em&gt; of people, and wanted to get a list of just the people’s names (ignoring anonymous people), we might do this:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;function justNames(people: Person[]): string[] {
+  return people
+    .map(Maybe.property(&amp;#39;name&amp;#39;))
+    .filter(Maybe.isJust)
+    .map(Just.unwrap);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Another common scenario is dealing with the same kind of lookup, but in the context of a &lt;code&gt;Maybe&lt;/code&gt; of an object. Prior to 2.2.0, we could do this with a combination of &lt;code&gt;Maybe.of&lt;/code&gt; and &lt;code&gt;andThen&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;function getName(maybePerson: Maybe&amp;lt;Person&amp;gt;): string {
+  return maybePerson.andThen(p =&amp;gt; Maybe.of(p.name));
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is harder to compose than we might like, and we &lt;em&gt;can’t&lt;/em&gt; really write it in a “point free” style, even if that’s more convenient. We also end up repeating the &lt;code&gt;andThen&lt;/code&gt; invocation every time we go down a layer if we have a more deeply nested object than this. Accordingly, 2.2.0 also adds another convenience method for dealing with deeply nested lookups on objects in a type-safe way: &lt;code&gt;Maybe.get&lt;/code&gt; (and the corresponding instance methods).&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;// Function version:
+function getNameFn(maybePerson: Maybe&amp;lt;Person&amp;gt;): string {
+  return Maybe.get(&amp;#39;name&amp;#39;, maybePerson);
+}
+
+// Method version
+function getNameM(maybePerson: Maybe&amp;lt;Person&amp;gt;): string {
+  return maybePerson.get(&amp;#39;name&amp;#39;);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Again, since the function version is curried, we can use this to create other little helper functions along the way:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;const getName = Maybe.get(&amp;#39;name&amp;#39;);
+
+function getAllNames(people: Maybe&amp;lt;Person&amp;gt;[]): string[] {
+  return people
+    .map(getName)
+    .filter(Maybe.isJust)
+    .map(Just.unwrap);
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And if our object is a deeper type:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;type ComplicatedPerson = {
+  name?: {
+    first?: string;
+    last?: string;
+  };
+};
+
+let none: Maybe&amp;lt;ComplicatedPerson&amp;gt; = Maybe.nothing();
+console.log(none.get(&amp;#39;name&amp;#39;).toString());
+// Nothing
+console.log(none.get(&amp;#39;name&amp;#39;).get(&amp;#39;first&amp;#39;).toString());
+// Nothing
+
+let nameless: Maybe&amp;lt;ComplicatedPerson&amp;gt; = Maybe.just({});
+console.log(nameless.get(&amp;#39;name&amp;#39;).toString());
+// Just([object Object]);
+console.log(nameless.get(&amp;#39;name&amp;#39;).get(&amp;#39;first&amp;#39;).toString());
+// Nothing
+
+let firstOnly: Maybe&amp;lt;ComplicatedPerson&amp;gt; = Maybe.just({
+  name: {
+    first: &amp;#39;Chris&amp;#39;,
+  },
+});
+console.log(firstOnly.get(&amp;#39;name&amp;#39;).toString());
+// Just([object Object]);
+console.log(firstOnly.get(&amp;#39;name&amp;#39;).get(&amp;#39;first&amp;#39;).toString());
+// Just(Chris);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note that in these cases, since the type we’re dealing with is some kind of object with specific keys, if you try to pass in a key which doesn’t existing on the relevant object type, you’ll get a type error. (Or, if you’re using the curried version, if you try to pass an object which doesn’t have that key, you’ll get a type error.) However, we also often use JavaScript objects as &lt;em&gt;dictionaries&lt;/em&gt;, mapping from a key to a value (most often, but not always, a &lt;em&gt;string&lt;/em&gt; key to a specific value type). &lt;code&gt;Maybe.property&lt;/code&gt; and &lt;code&gt;Maybe.get&lt;/code&gt; both work with dictionary types as well.&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;type Dict&amp;lt;T&amp;gt; = { [key: string]: T };
+
+let ages: Dict&amp;lt;number&amp;gt; = {
+  &amp;#39;chris&amp;#39;: 31,
+};
+
+console.log(Maybe.property(&amp;#39;chris&amp;#39;, ages)); // Just(31)
+console.log(Maybe.property(&amp;#39;joe&amp;#39;, ages)); // Nothing
+
+let maybeAges: Maybe&amp;lt;Dict&amp;lt;number&amp;gt;&amp;gt; = Maybe.of(ages);
+console.log(ages.get(&amp;#39;chris&amp;#39;)); // Just(31)
+console.log(ages.get(&amp;#39;joe&amp;#39;)); // Nothing&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Hopefully you’ll find these helpful! I ran into the motivating concerns for them pretty regularly in the codebase I work with each day, so I’m looking forward to integrating them into that app!&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="handling-exception-throwing-functions" class="level2"&gt;
+&lt;h2&gt;Handling exception-throwing functions&lt;/h2&gt;
+&lt;p&gt;The other big additions are the &lt;code&gt;Result.tryOr&lt;/code&gt; and &lt;code&gt;Result.tryOrElse&lt;/code&gt; functions. Both of these help us deal with functions which throw exceptions. Since JavaScript doesn’t have any &lt;em&gt;native&lt;/em&gt; construct like &lt;code&gt;Result&lt;/code&gt;, idiomatic JavaScript &lt;em&gt;does&lt;/em&gt; often throw exceptions. And that can be frustrating you want to have a value type like a &lt;code&gt;Result&lt;/code&gt; to deal with instead.&lt;/p&gt;
+&lt;p&gt;Sometimes, you don’t care &lt;em&gt;what&lt;/em&gt; the exception was; you just want a default value (or a value constructed from the local state of your program, but either way just one value) you can use as the error to keep moving along through your program. In that case, you wrap a function which throws an error in &lt;code&gt;Result.tryOr&lt;/code&gt;. Let’s assume we have a function either returns a number of throws an error, which we’ll just call &lt;code&gt;badFunction&lt;/code&gt; because the details here don’t really matter.&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;const err = &amp;#39;whoops! something went wrong!&amp;#39;;
+const result = Result.tryOr(err, badFunction());&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;result&lt;/code&gt; value has the type &lt;code&gt;Result&amp;lt;number, string&amp;gt;&lt;/code&gt;. If &lt;code&gt;badFunction&lt;/code&gt; through an error, we have an &lt;code&gt;Err&lt;/code&gt; with the value &lt;code&gt;'whoops! something went wrong!'&lt;/code&gt; in it. If it &lt;em&gt;didn’t&lt;/em&gt; throw an error, we have an &lt;code&gt;Ok&lt;/code&gt; with the number returned from &lt;code&gt;badFunction&lt;/code&gt; in it. Handy!&lt;/p&gt;
+&lt;p&gt;Of course, we often want to &lt;em&gt;do something&lt;/em&gt; with the exception that gets thrown. For example, we might want to log an error to a bug-tracking service, or display a nice message to the user, or any number of other things. In that case, we can use the &lt;code&gt;Result.tryOrElse&lt;/code&gt; function. Let’s imagine we have a function &lt;code&gt;throwsHelpfulErrors&lt;/code&gt; which returns a &lt;code&gt;number&lt;/code&gt; or does just what it says on the tin: it throws a bunch of different kinds of errors, which are helpfully distinct and carry around useful information with them. Note that the type of the error-handling callback we pass in is &lt;code&gt;(error: unknown) =&amp;gt; E&lt;/code&gt;, because JS functions can throw &lt;em&gt;anything&lt;/em&gt; as their error.&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;const handleErr = (e: unknown): string =&amp;gt; {
+  if (e instanceof Error) {
+    return e.message;
+  } else if (typeof e === &amp;#39;string&amp;#39;) {
+    return e;
+  } else if (typeof e === &amp;#39;number&amp;#39;) {
+    return `Status code: ${e}`;
+  } else {
+    return &amp;#39;Unknown error&amp;#39;;
+  }
+}
+
+const result = Result.tryOrElse(handleErr, throwsHelpfulErrors);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here, &lt;code&gt;result&lt;/code&gt; is once again a &lt;code&gt;Result&amp;lt;number, string&amp;gt;&lt;/code&gt;, but the error side has whatever explanatory information the exception provided to us, plus some massaging we did ourselves. This is particularly handy for converting exceptions to &lt;code&gt;Result&lt;/code&gt;s when you have a library which uses exceptions extensively, but in a carefully structured way. (You could, in fact, just use an identity function to return whatever error the library throws—as long as you write your types carefully and accurately as a union of those error types for the &lt;code&gt;E&lt;/code&gt; type parameter! However, doing that would require you to explicitly opt into the use of &lt;code&gt;any&lt;/code&gt; to write it as a simple identity function, so I’m not sure I’d &lt;em&gt;recommend&lt;/em&gt; it. If you go down that path, do it with care.)&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;And that’s it for True Myth 2.2! Enjoy, and of course please &lt;a href="https://github.com/true-myth/true-myth/issues"&gt;open an issue&lt;/a&gt; if you run into any bugs!&lt;/p&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;I published both &lt;code&gt;2.2.0&lt;/code&gt; and &lt;code&gt;2.2.1&lt;/code&gt;, because once again I missed something along the way. This time it was making sure all the new functions were optionally curried to support partial application.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 27 Oct 2018 17:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-10-27:/2018/true-myth-22.html</guid><category>typescript</category><category>true myth</category><category>open source software</category><category>functional programming</category></item><item><title>Making Things Helps</title><link>http://www.chriskrycho.com/2018/making-things-helps.html</link><description>&lt;p&gt;As a small bit of follow-up to my recent post on &lt;a href="https://www.chriskrycho.com/2018/cant-stop-wont-stop.html" title="Can’t Stop, Won’t Stop"&gt;blogging as part of what helps with my burnout&lt;/a&gt;, I thought it worth noting that this principle is a bit broader than just &lt;em&gt;blogging&lt;/em&gt; for me. Writing (currently mostly expressed in the form of blogging) is deep in me, and so blogging remains a helpful outlet.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; But so a fair number of other things which might look like &lt;em&gt;work&lt;/em&gt; to other people.&lt;/p&gt;
 &lt;p&gt;Tonight I started putting together some thoughts on what some extensions to an open source software library I maintain might look like.&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; This after what has to be a record-setting week: the kind in which I reviewed and merged 60 pull requests for a ridiculous crunch of a project I’m on at work. I’m exhausted. I had another one of those moments this evening where I started crying a bit as I was sitting down to eat dinner and praying beforehand. Why? Just because I’m &lt;em&gt;that&lt;/em&gt; emotionally wrung out: nothing was wrong in the particular moment at all, and probably the “trigger” was actually the small bit of relief of being &lt;em&gt;away&lt;/em&gt; from the particular (very weird) stressors of this project at work for a while.&lt;/p&gt;
 &lt;p&gt;So why in the world did I start writing up thoughts about an open-source library after that? And why have I been spending my evenings reading all about a particularly nerdy bit of computer science this week?&lt;a href="#fn3" class="footnote-ref" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; Because, as I suggested at the beginning, these things are what end up feeling restful or re-energizing to me. (That might make me weird. I’m okay with that. I’ve been weird for a long time.)&lt;/p&gt;
 &lt;p&gt;Much of the advice around burnout emphasizes “not working.” There’s good reason for that, but it’s important to understand the underlying reasons for that advice. Burnout &lt;em&gt;usually&lt;/em&gt; stems from work-related stress, for an appropriately broad definition of “work.”&lt;a href="#fn4" class="footnote-ref" id="fnref4"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt; Besides the stressors themselves, many of us—whether we admit it or not!—put far too much of our self-worth into our work. Putting it aside leaves us feeling worthless or useless. If your burnout is coming from the combo of stress and having invested your self-worth in your work, then you’re not likely to get better until you disengage from that work &lt;em&gt;entirely&lt;/em&gt; for large stretches of time: that is, until you are &lt;em&gt;forced&lt;/em&gt; to divest your self-worth from your work.&lt;/p&gt;

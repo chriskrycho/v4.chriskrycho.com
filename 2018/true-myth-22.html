@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>True Myth 2.2 &middot; Chris Krycho</title>
+    <meta name="description" content="True Myth 2.2 adds two `Maybe` helpers for safe object lookup and two `Result` helpers for handling exception-throwing code."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/true-myth-22.html"/>
+    <meta property="og:title" content="True Myth 2.2"/>
+    <meta property="og:description" content="True Myth 2.2 adds two `Maybe` helpers for safe object lookup and two `Result` helpers for handling exception-throwing code."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="True Myth 2.2"/>
+    <meta name="twitter:description" content="True Myth 2.2 adds two `Maybe` helpers for safe object lookup and two `Result` helpers for handling exception-throwing code."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="typescript true-myth open-source-software functional-programming tech">
+
+    <header>
+<h1>True Myth 2.2</h1>
+<h2>`Maybe` helpers for safe object lookup and `Result` helpers for exception-throwing code.
+</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/true-myth-22.html" title="True Myth 2.2"><i class="fa fa-fw fa-link"></i></a>October 27, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/functional-programming/">#functional programming</a><a class="hashtags" href="http://www.chriskrycho.com/open-source-software/">#open source software</a><a class="hashtags" href="http://www.chriskrycho.com/true-myth/">#true myth</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2018/true-myth-22.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>I just released v2.2<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> of True Myth, with two new pairs of helpers to deal with <a href="#safe-java-script-object-property-lookup">safe JavaScript object property lookup with <code>Maybe</code>s</a> and <a href="#handling-exception-throwing-functions">handling exception-throwing code with <code>Result</code>s</a>.</p>
+<section id="safe-javascript-object-property-lookup" class="level2">
+<h2>Safe JavaScript object property lookup</h2>
+<p>We often deal with <em>optional properties</em> on JavaScript objects, and by default JavaScript just gives us <code>undefined</code> if a property doesn’t exist on an object and we look it up:</p>
+<pre class="ts"><code>type Person = {
+  name?: string;
+};
+
+let me: Person = { name: &#39;Chris&#39; };
+console.log(me.name); // Chris
+
+let anonymous: Person = {};
+console.log(anonymous.name); // undefined</code></pre>
+<p>We can already work around that with <code>Maybe.of</code>, of course:</p>
+<pre class="ts"><code>function printName(p: Person) {
+  let name = Maybe.of(p.name);
+  console.log(name.unwrapOr(&#39;&lt;anonymous&gt;&#39;));
+}</code></pre>
+<p>But this is a <em>really</em> common pattern! <code>Maybe.property</code> is a convenience method for dealing with this:</p>
+<pre class="ts"><code>function printName(p: Person) {
+  let name = Maybe.property(&#39;name&#39;, p);
+  console.log(name.unwrapOr(&#39;&lt;anonymous&gt;&#39;));
+}</code></pre>
+<p>At first blush, this might be a head-scratcher: after all, it’s actually slightly <em>longer</em> than doing it with <code>Maybe.of</code>. However, it ends up showing its convenience when you’re using the curried form in a functional pipeline. For example, if we had a <em>list</em> of people, and wanted to get a list of just the people’s names (ignoring anonymous people), we might do this:</p>
+<pre class="ts"><code>function justNames(people: Person[]): string[] {
+  return people
+    .map(Maybe.property(&#39;name&#39;))
+    .filter(Maybe.isJust)
+    .map(Just.unwrap);
+}</code></pre>
+<p>Another common scenario is dealing with the same kind of lookup, but in the context of a <code>Maybe</code> of an object. Prior to 2.2.0, we could do this with a combination of <code>Maybe.of</code> and <code>andThen</code>:</p>
+<pre class="ts"><code>function getName(maybePerson: Maybe&lt;Person&gt;): string {
+  return maybePerson.andThen(p =&gt; Maybe.of(p.name));
+}</code></pre>
+<p>This is harder to compose than we might like, and we <em>can’t</em> really write it in a “point free” style, even if that’s more convenient. We also end up repeating the <code>andThen</code> invocation every time we go down a layer if we have a more deeply nested object than this. Accordingly, 2.2.0 also adds another convenience method for dealing with deeply nested lookups on objects in a type-safe way: <code>Maybe.get</code> (and the corresponding instance methods).</p>
+<pre class="ts"><code>// Function version:
+function getNameFn(maybePerson: Maybe&lt;Person&gt;): string {
+  return Maybe.get(&#39;name&#39;, maybePerson);
+}
+
+// Method version
+function getNameM(maybePerson: Maybe&lt;Person&gt;): string {
+  return maybePerson.get(&#39;name&#39;);
+}</code></pre>
+<p>Again, since the function version is curried, we can use this to create other little helper functions along the way:</p>
+<pre class="ts"><code>const getName = Maybe.get(&#39;name&#39;);
+
+function getAllNames(people: Maybe&lt;Person&gt;[]): string[] {
+  return people
+    .map(getName)
+    .filter(Maybe.isJust)
+    .map(Just.unwrap);
+}</code></pre>
+<p>And if our object is a deeper type:</p>
+<pre class="ts"><code>type ComplicatedPerson = {
+  name?: {
+    first?: string;
+    last?: string;
+  };
+};
+
+let none: Maybe&lt;ComplicatedPerson&gt; = Maybe.nothing();
+console.log(none.get(&#39;name&#39;).toString());
+// Nothing
+console.log(none.get(&#39;name&#39;).get(&#39;first&#39;).toString());
+// Nothing
+
+let nameless: Maybe&lt;ComplicatedPerson&gt; = Maybe.just({});
+console.log(nameless.get(&#39;name&#39;).toString());
+// Just([object Object]);
+console.log(nameless.get(&#39;name&#39;).get(&#39;first&#39;).toString());
+// Nothing
+
+let firstOnly: Maybe&lt;ComplicatedPerson&gt; = Maybe.just({
+  name: {
+    first: &#39;Chris&#39;,
+  },
+});
+console.log(firstOnly.get(&#39;name&#39;).toString());
+// Just([object Object]);
+console.log(firstOnly.get(&#39;name&#39;).get(&#39;first&#39;).toString());
+// Just(Chris);</code></pre>
+<p>Note that in these cases, since the type we’re dealing with is some kind of object with specific keys, if you try to pass in a key which doesn’t existing on the relevant object type, you’ll get a type error. (Or, if you’re using the curried version, if you try to pass an object which doesn’t have that key, you’ll get a type error.) However, we also often use JavaScript objects as <em>dictionaries</em>, mapping from a key to a value (most often, but not always, a <em>string</em> key to a specific value type). <code>Maybe.property</code> and <code>Maybe.get</code> both work with dictionary types as well.</p>
+<pre class="ts"><code>type Dict&lt;T&gt; = { [key: string]: T };
+
+let ages: Dict&lt;number&gt; = {
+  &#39;chris&#39;: 31,
+};
+
+console.log(Maybe.property(&#39;chris&#39;, ages)); // Just(31)
+console.log(Maybe.property(&#39;joe&#39;, ages)); // Nothing
+
+let maybeAges: Maybe&lt;Dict&lt;number&gt;&gt; = Maybe.of(ages);
+console.log(ages.get(&#39;chris&#39;)); // Just(31)
+console.log(ages.get(&#39;joe&#39;)); // Nothing</code></pre>
+<p>Hopefully you’ll find these helpful! I ran into the motivating concerns for them pretty regularly in the codebase I work with each day, so I’m looking forward to integrating them into that app!</p>
+</section>
+<section id="handling-exception-throwing-functions" class="level2">
+<h2>Handling exception-throwing functions</h2>
+<p>The other big additions are the <code>Result.tryOr</code> and <code>Result.tryOrElse</code> functions. Both of these help us deal with functions which throw exceptions. Since JavaScript doesn’t have any <em>native</em> construct like <code>Result</code>, idiomatic JavaScript <em>does</em> often throw exceptions. And that can be frustrating you want to have a value type like a <code>Result</code> to deal with instead.</p>
+<p>Sometimes, you don’t care <em>what</em> the exception was; you just want a default value (or a value constructed from the local state of your program, but either way just one value) you can use as the error to keep moving along through your program. In that case, you wrap a function which throws an error in <code>Result.tryOr</code>. Let’s assume we have a function either returns a number of throws an error, which we’ll just call <code>badFunction</code> because the details here don’t really matter.</p>
+<pre class="ts"><code>const err = &#39;whoops! something went wrong!&#39;;
+const result = Result.tryOr(err, badFunction());</code></pre>
+<p>The <code>result</code> value has the type <code>Result&lt;number, string&gt;</code>. If <code>badFunction</code> through an error, we have an <code>Err</code> with the value <code>'whoops! something went wrong!'</code> in it. If it <em>didn’t</em> throw an error, we have an <code>Ok</code> with the number returned from <code>badFunction</code> in it. Handy!</p>
+<p>Of course, we often want to <em>do something</em> with the exception that gets thrown. For example, we might want to log an error to a bug-tracking service, or display a nice message to the user, or any number of other things. In that case, we can use the <code>Result.tryOrElse</code> function. Let’s imagine we have a function <code>throwsHelpfulErrors</code> which returns a <code>number</code> or does just what it says on the tin: it throws a bunch of different kinds of errors, which are helpfully distinct and carry around useful information with them. Note that the type of the error-handling callback we pass in is <code>(error: unknown) =&gt; E</code>, because JS functions can throw <em>anything</em> as their error.</p>
+<pre class="ts"><code>const handleErr = (e: unknown): string =&gt; {
+  if (e instanceof Error) {
+    return e.message;
+  } else if (typeof e === &#39;string&#39;) {
+    return e;
+  } else if (typeof e === &#39;number&#39;) {
+    return `Status code: ${e}`;
+  } else {
+    return &#39;Unknown error&#39;;
+  }
+}
+
+const result = Result.tryOrElse(handleErr, throwsHelpfulErrors);</code></pre>
+<p>Here, <code>result</code> is once again a <code>Result&lt;number, string&gt;</code>, but the error side has whatever explanatory information the exception provided to us, plus some massaging we did ourselves. This is particularly handy for converting exceptions to <code>Result</code>s when you have a library which uses exceptions extensively, but in a carefully structured way. (You could, in fact, just use an identity function to return whatever error the library throws—as long as you write your types carefully and accurately as a union of those error types for the <code>E</code> type parameter! However, doing that would require you to explicitly opt into the use of <code>any</code> to write it as a simple identity function, so I’m not sure I’d <em>recommend</em> it. If you go down that path, do it with care.)</p>
+<hr />
+<p>And that’s it for True Myth 2.2! Enjoy, and of course please <a href="https://github.com/true-myth/true-myth/issues">open an issue</a> if you run into any bugs!</p>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>I published both <code>2.2.0</code> and <code>2.2.1</code>, because once again I missed something along the way. This time it was making sure all the new functions were optionally curried to support partial application.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/ringworld-review.html"><cite>Ringworld</cite> Review</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/assumed-audiences.html">Assumed Audiences</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/true-myth-22.html">True Myth 2.2</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/dealing-with-burnout-in-public.html">Dealing With Burnout In Public</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
