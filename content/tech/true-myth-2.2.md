@@ -1,7 +1,7 @@
 ---
 Title: True Myth 2.2
 Subtitle: >
-    `Maybe` helpers for safe object lookup and `Result` helpers for exception-throwing code.
+    <code>Maybe</code> helpers for safe object lookup and <code>Result</code> helpers for exception-throwing code.
 Date: 2018-10-27 17:00
 Category: Tech
 Tags: [typescript, true myth, open source software, functional programming]
