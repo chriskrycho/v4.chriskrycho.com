@@ -209,6 +209,7 @@ const result = Result.tryOrElse(handleErr, throwsHelpfulErrors);</code></pre>
 <p>Here, <code>result</code> is once again a <code>Result&lt;number, string&gt;</code>, but the error side has whatever explanatory information the exception provided to us, plus some massaging we did ourselves. This is particularly handy for converting exceptions to <code>Result</code>s when you have a library which uses exceptions extensively, but in a carefully structured way. (You could, in fact, just use an identity function to return whatever error the library throws—as long as you write your types carefully and accurately as a union of those error types for the <code>E</code> type parameter! However, doing that would require you to explicitly opt into the use of <code>any</code> to write it as a simple identity function, so I’m not sure I’d <em>recommend</em> it. If you go down that path, do it with care.)</p>
 <hr />
 <p>And that’s it for True Myth 2.2! Enjoy, and of course please <a href="https://github.com/true-myth/true-myth/issues">open an issue</a> if you run into any bugs!</p>
+<p>Thanks to <a href="https://github.com/bmakuh">Ben Makuh</a> for implementing <code>Result.tryOr</code> and <code>Result.tryOrElse</code>. Thanks to Ben and also <a href="https://github.com/tansongyang">Frank Tan</a> for helpful input on the <code>Maybe.get</code> and <code>Maybe.property</code> <abbr>API</abbr> design!</p>
 </section>
 <section class="footnotes">
 <hr />
