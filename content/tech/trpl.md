@@ -12,13 +12,13 @@ Summary: >
 
 <i class=editorial>I intended to publish this review months ago, but the single hardest month of my career punched me in the face repeatedly and I just found myself entirely unable to write for all of September and most of October. Here it is at last, with apologies to No Starch for the delay!</i>
 
----- 
+----
 
 No Starch Press kindly provided me with a review copy of [<cite>The Rust Programming Language</cite>](https://nostarch.com/Rust), by Steve Klabnik and Carol Nichols, with contributions from the Rust community. A *real-world, physical* review copy. And it’s magnificent.
 
-TODO: add image!
+![<cite>The Rust Programming Language</cite>](https://f001.backblazeb2.com/file/chriskrycho-com/images/trpl.jpg)
 
-I’ve read the vast majority of this book (as well as the previous edition) online over the last couple years as Steve and Carol have worked on it; it has been an invaluable resource for many a [New Rustacean](https://newrustacean.com) episode. (Bonus: you can hear me talk with Carol about working on <cite>The Rust Programming Language</abbr> in [my interview with her back in 2016](https://newrustacean.com/show_notes/interview/_3/index.html)! And yes: writing the book took that long.) This is in some sense *the* authoritative book on Rust.
+I’ve read the vast majority of this book (as well as the previous edition) online over the last couple years as Steve and Carol have worked on it; it has been an invaluable resource for many a [New Rustacean](https://newrustacean.com) episode. (Bonus: you can hear me talk with Carol about working on <cite>The Rust Programming Language</cite> in [my interview with her back in 2016](https://newrustacean.com/show_notes/interview/_3/index.html)! And yes: writing the book took that long.) This is in some sense *the* authoritative book on Rust.
 
 You might wonder why you’d pick up a physical copy of this book given that it is available online for free. There are a few reasons that come to mind:
 
