@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Review: The Rust Programming Language &middot; Chris Krycho</title>
+    <meta name="description" content="No Starch's The Rust Programming Language is a genuinely *great* introduction to Rust, and a genuinely great programming book."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/review-the-rust-programming-language.html"/>
+    <meta property="og:title" content="Review: The Rust Programming Language"/>
+    <meta property="og:description" content="No Starch's The Rust Programming Language is a genuinely *great* introduction to Rust, and a genuinely great programming book."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Review: The Rust Programming Language"/>
+    <meta name="twitter:description" content="No Starch's The Rust Programming Language is a genuinely *great* introduction to Rust, and a genuinely great programming book."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="book-reviews rust programming-languages tech">
+
+    <header>
+<h1>Review: <cite>The Rust Programming Language</cite>
+</h1>
+<h2>A genuinely great programming book.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/review-the-rust-programming-language.html" title="Review: The Rust Programming Language"><i class="fa fa-fw fa-link"></i></a>November 07, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/book-reviews/">#book reviews</a><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a></span><span><a href="http://www.chriskrycho.com/2018/review-the-rust-programming-language.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i class=editorial>I intended to publish this review months ago, but the single hardest month of my career punched me in the face repeatedly and I just found myself entirely unable to write for all of September and most of October. Here it is at last, with apologies to No Starch for the delay!</i></p>
+<hr />
+<p>No Starch Press kindly provided me with a review copy of <a href="https://nostarch.com/Rust"><cite>The Rust Programming Language</cite></a>, by Steve Klabnik and Carol Nichols, with contributions from the Rust community. A <em>real-world, physical</em> review copy. And it’s magnificent.</p>
+<p>TODO: add image!</p>
+<p>I’ve read the vast majority of this book (as well as the previous edition) online over the last couple years as Steve and Carol have worked on it; it has been an invaluable resource for many a <a href="https://newrustacean.com">New Rustacean</a> episode. (Bonus: you can hear me talk with Carol about working on <cite>The Rust Programming Language</abbr> in <a href="https://newrustacean.com/show_notes/interview/_3/index.html">my interview with her back in 2016</a>! And yes: writing the book took that long.) This is in some sense <em>the</em> authoritative book on Rust.</p>
+<p>You might wonder why you’d pick up a physical copy of this book given that it is available online for free. There are a few reasons that come to mind:</p>
+<ol type="1">
+<li><p>The quality of the online book is in many ways a direct result of No Starch Press’ deep investment in the text. They’re not making any money from the online copy. They <em>do</em> recoup some of their costs when we buy ebook or physical copies. So that’s one good reason: a way of saying “thank you!” and investing in the continued existence of No Starch and projects like this.</p></li>
+<li><p>I used the word <em>magnificent</em> above to describe this, and I mean it. This printing is a fabulous example of really excellent book design. I take typography and presentation seriously, and not a whit less for programming books than for copies of <code>&lt;cite&gt;</code>The Lord of the Rings</cite>. Everything in this printing is top-notch. Little details like the way that code listings are displayed—right down to the way some text is faded away to emphasize what’s <em>new</em> in a listing—make this one of the most readable programming texts I’ve ever seen.</p></li>
+<li><p>As delightful and powerful as hypertext is, the physicality of a book is equally delightful and powerful, just in different ways. There is nothing quite like the tactile experience of flipping through a book. Nothing in digital text lets you forge connections to learning the way that scribbling notes in a margin does. And the sheer physicality of a volume this large gives you mental hooks to hang what you’re learning on: you can remember that it felt like <em>this</em> to have the book open to where you learned it.</p></li>
+</ol>
+<p>(That last point is an argument in favor of printed books in general. You can expect me to come back to that theme time and again in this space (even while I continue to value digital spaces like this one for what <em>they</em> uniquely do.)</p>
+<p>No Starch sent me this copy to review with no expectation of a positive review—but even if they’d been paying me, they couldn’t make me say that this book is <em>great</em>. But great it is. If you have any interest in <a href="https://www.rust-lang.org/en-US/">Rust</a>, you should grab a copy!</p>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/ringworld-review.html"><cite>Ringworld</cite> Review</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/assumed-audiences.html">Assumed Audiences</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/review-the-rust-programming-language.html">Review: <cite>The Rust Programming Language</cite>
+</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/dealing-with-burnout-in-public.html">Dealing With Burnout In Public</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
