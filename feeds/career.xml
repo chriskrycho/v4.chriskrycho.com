@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Chris Krycho - career</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Tue, 13 Nov 2018 19:50:00 -0500</lastBuildDate><item><title>Just Write Down What You Do</title><link>http://www.chriskrycho.com/2018/just-write-down-what-you-do.html</link><description>&lt;p&gt;For the last few years, I’ve had a habit—not kept perfectly, but done more often than not, courtesy of my daily &lt;a href="https://www.chriskrycho.com/pomodoro/"&gt;pomodoro&lt;/a&gt; discipline—of writing down what I do each day. Then, every week, I take a look at what I did each day, and turn that into a summary for the week. And every month, I look over my notes for weeks that made up that month, and write down what I did that month.&lt;/p&gt;
+&lt;p&gt;This has been &lt;em&gt;fantastic&lt;/em&gt; for me professionally. For one thing, it gives me a quick and easy way to see what I’ve done over the past however-long-between-performance-evaluations. The inevitable “What did you accomplish this year?” question has an an easy answer: I can look over my month-level summaries and summarize &lt;em&gt;those&lt;/em&gt;. (I’m inevitably frustrated by the months where I slacked off and don’t actually know what I did when do this exercise!)&lt;/p&gt;
+&lt;p&gt;Writing things down like this is also a helpful tool personally. I can look back at long stretches where I feel like I didn’t get a lot done and realize just many things I &lt;em&gt;did&lt;/em&gt; actually do. I have found this a helpful way of staving off the malaise that inevitably comes from months where there are just too many meetings, for example. What did I do? I &lt;i&gt;effected these changes&lt;/i&gt; (even if they weren’t in the form of code!).&lt;/p&gt;
+&lt;p&gt;I use &lt;a href="https://bear.app"&gt;Bear&lt;/a&gt; for this, but you could do it anywhere: a Word document or Google Doc, a notepad on your desk, in Emacs’ &lt;a href="https://orgmode.org"&gt;Org Mode&lt;/a&gt;, with &lt;a href="https://www.taskpaper.com"&gt;TaskPaper&lt;/a&gt;, or in &lt;a href="#"&gt;Trello&lt;/a&gt;&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;, or, well… whatever gets the job done.&lt;/p&gt;
+&lt;p&gt;The main thing is: write down what you did! Write it down at each of these scales, because it’s far easier to write down the larger scales if you wrote down the smaller scales. Once you start doing this regularly, you’ll probably find yourself frustrated at the times you failed to do it. (If you’re like me, those times will exist. It’s okay. Just start back up.) And again: make it fit you. But it’s one of the best tools I know of for personal and professional development, so I commend it to you!&lt;/p&gt;
+&lt;hr /&gt;
+&lt;section id="bonus-my-bear-templates" class="level2"&gt;
+&lt;h2&gt;Bonus: My Bear Templates&lt;/h2&gt;
+&lt;p&gt;In case you’re curious or want to copy my approach, here are the templates I use in Bear for each of my logs.&lt;/p&gt;
+&lt;section id="daily-log" class="level3"&gt;
+&lt;h3&gt;Daily Log&lt;/h3&gt;
+&lt;p&gt;The daily log is the core of my entire productivity approach system, as well as the foundation of this specific logging strategy. These entries each includes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The date, which I format &lt;code&gt;YYYY.MM.DD&lt;/code&gt;—today would be &lt;code&gt;2018.11.13&lt;/code&gt;. A numeric year/month/day makes correctly sorting the notes easy. I use a period for the separator mostly because it looks nice in the font I use in Bear.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A link to the parent week for the day, to make it easy to jump back and forth between individual day logs and a weekly log (as you’ll see below).&lt;a href="#fn2" class="footnote-ref" id="fnref2"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A set of goals. I set the goals either at the beginning of the day, at the end of the preceding work day, or a combination of the two. I usually limit myself to 3 goals, unless I &lt;em&gt;know&lt;/em&gt; I have a bunch of very small tasks.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A list of pomodoro sessions. The pomodoro technique is &lt;em&gt;most&lt;/em&gt; effective for getting things done—both in my experience and as others describe it—when each block has both a discrete goal and what you actually got done. This helps me keep my focus during that session rather than getting sidetracked. I further break these down with &lt;strong&gt;Session 1&lt;/strong&gt;, &lt;strong&gt;Break&lt;/strong&gt;, &lt;strong&gt;Session 2&lt;/strong&gt;, etc. subheads—not because this makes me productive, but just because I like it.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A summary of the day as a whole. At the end of the day, I look back over the sessions and my goals, and write a sentence or two about what I did. This is also often a good time for me to write up the next day’s overarching goals and first session goal: I have a much better idea what I should be doing next when I’m wrapping things up for the day than I will the next morning!&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A set of checkboxes for me to track whether I succeed in breaking my day into 15 discrete pomodoro sessions,&lt;a href="#fn3" class="footnote-ref" id="fnref3"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt; and in standing at least 5 hours out of the day every day.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="md"&gt;&lt;code&gt;# &amp;lt;YYYY.MM.DD&amp;gt;
+
+**Week:** [[]]
+
+## Goals
+
+- [ ] ::TODO::
+
+---
+
+## Details
+### Session 1
+
+1. **Goal:** ::TODO:: **Actual:** ::TODO::
+
+---
+
+## Summary
+
+::TODO::
+
+---
+
+## Rhythm
+### Pomodoro
+
+- [ ] 1
+- [ ] 2
+- [ ] 3
+- [ ] 4
+- [ ] 5
+- [ ] 6
+- [ ] 7
+- [ ] 8
+- [ ] 9
+- [ ] 10
+- [ ] 11
+- [ ] 12
+- [ ] 13
+- [ ] 14
+- [ ] 15
+
+### Stand
+
+- [ ] 1
+- [ ] 2
+- [ ] 3
+- [ ] 4
+- [ ] 5
+- [ ] 6
+- [ ] 7
+- [ ] 8
+- [ ] 9
+- [ ] 10&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="weekly-log" class="level3"&gt;
+&lt;h3&gt;Weekly log&lt;/h3&gt;
+&lt;p&gt;The weekly log is just a place for me to be able to easily capture the results of my daily efforts. It links to the monthly log at the top just like the daily logs link to the month: for easy jumping back and forth. Each of the bullet points under &lt;strong&gt;Details&lt;/strong&gt; gets linked to a daily log entry, and the &lt;code&gt;::TODO::&lt;/code&gt; items get replaced with the &lt;strong&gt;Summary&lt;/strong&gt; from the daily log. At the end of the week, I write a summary of the whole week.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;Goals&lt;/strong&gt; heading here is new, something I only just started doing in the last couple of weeks, but so far it has proven helpful for me as I orient myself to what I want to get done on any given day.&lt;/p&gt;
+&lt;pre class="md"&gt;&lt;code&gt;# &amp;lt;YYYY.MM.DD&amp;gt; – &amp;lt;YYYY.MM.DD&amp;gt;
+
+**Month:** [[]]
+
+## Goals
+
+- [ ] ::TODO::
+
+## Details
+
+- [[]]: ::TODO::
+- [[]]: ::TODO::
+- [[]]: ::TODO::
+- [[]]: ::TODO::
+- [[]]: ::TODO::
+
+## Summary
+
+::TODO::&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;section id="monthly-log" class="level3"&gt;
+&lt;h3&gt;Monthly log&lt;/h3&gt;
+&lt;p&gt;The monthly log is exactly like the weekly log, but one level higher. It links back to individual weeks for easy jumping back and forth between the two views, and it newly has month-level goals. (As with weeks, I’m still experimenting with those!) The &lt;strong&gt;Details&lt;/strong&gt; bullets get filled in with links to weeks and the summary of each week copied over. At the end of the month, I take a few minutes to summarize those weeks. Unlike the lower-level summaries, I let that month-level summary expand out to a paragraph if need be. A lot tends to happen in a month!&lt;/p&gt;
+&lt;pre class="md"&gt;&lt;code&gt;# &amp;lt;YYYY.MM&amp;gt;
+
+## Goals
+
+- [ ] ::TODO::
+
+## Details
+
+- [[]]: ::TODO::
+- [[]]: ::TODO::
+- [[]]: ::TODO::
+- [[]]: ::TODO::
+
+## Summary
+
+::TODO::&lt;/code&gt;&lt;/pre&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;section class="footnotes"&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;like my friend and colleague Ben Collins &lt;a href="https://benjamincollins.com/blog/using-trello-to-organize-my-daily-work/"&gt;does&lt;/a&gt;&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2"&gt;&lt;p&gt;&lt;code&gt;[[&amp;lt;some text&amp;gt;]]&lt;/code&gt; is Bear’s way of doing internal links to a note named &lt;code&gt;&amp;lt;some text&amp;gt;&lt;/code&gt;.&lt;a href="#fnref2" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn3"&gt;&lt;p&gt;15, not 16, because of the slop that ends up in most days. Most days, more than one session ends up being 35 minutes instead of 25. Over the course of the day, those come out to being the remaining half hour in the full 8 hours I make sure I give my employer. I know that from measuring consistently when I was working as a consultant: my &lt;a href="https://toggl.com"&gt;Toggl&lt;/a&gt; logs told the story clearly.&lt;a href="#fnref3" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 13 Nov 2018 19:50:00 -0500</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-11-13:/2018/just-write-down-what-you-do.html</guid><category>career</category><category>productivity</category><category>getting things done</category></item></channel></rss>
