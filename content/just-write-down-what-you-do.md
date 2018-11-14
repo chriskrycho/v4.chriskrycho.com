@@ -16,8 +16,10 @@ This has been *fantastic* for me professionally. For one thing, it gives me a qu
 
 Writing things down like this is also a helpful tool personally. I can look back at long stretches where I feel like I didn’t get a lot done and realize just many things I *did* actually do. I have found this a helpful way of staving off the malaise that inevitably comes from months where there are just too many meetings, for example. What did I do? I <i>effected these changes</i> (even if they weren’t in the form of code!).
 
-I use [Bear](https://bear.app) for this, but you could do it anywhere: a Word document or Google Doc, a notepad on your desk, in Emacs’ [Org Mode](https://orgmode.org), with [TaskPaper](https://www.taskpaper.com), or in [Trello](#)[^1], or, well… whatever gets the job done.
+I use [Bear](https://bear.app) for this, but you could do it anywhere: a Word document or Google Doc, a notepad on your desk, in Emacs’ [Org Mode](https://orgmode.org), with [TaskPaper](https://www.taskpaper.com), or in [Trello](#) (like my friend and colleague Ben Collins [does]), or, well… whatever gets the job done.
 
+[does]: https://benjamincollins.com/blog/using-trello-to-organize-my-daily-work/
+	
 The main thing is: write down what you did! Write it down at each of these scales, because it’s far easier to write down the larger scales if you wrote down the smaller scales. Once you start doing this regularly, you’ll probably find yourself frustrated at the times you failed to do it. (If you’re like me, those times will exist. It’s okay. Just start back up.) And again: make it fit you. But it’s one of the best tools I know of for personal and professional development, so I commend it to you!
 
 ---- 
@@ -150,7 +152,6 @@ The monthly log is exactly like the weekly log, but one level higher. It links b
 ::TODO::
 ```
 
-[^1]:	like my friend and colleague Ben Collins [does](https://benjamincollins.com/blog/using-trello-to-organize-my-daily-work/)
 
 [^2]:	`[[<some text>]]` is Bear’s way of doing internal links to a note named `<some text>`.
 
