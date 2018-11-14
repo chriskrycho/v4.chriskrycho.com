@@ -28,6 +28,6 @@ You might wonder why you’d pick up a physical copy of this book given that it 
 
 3. As delightful and powerful as hypertext is, the physicality of a book is equally delightful and powerful, just in different ways. There is nothing quite like the tactile experience of flipping through a book. Nothing in digital text lets you forge connections to learning the way that scribbling notes in a margin does. And the sheer physicality of a volume this large gives you mental hooks to hang what you’re learning on: you can remember that it felt like *this* to have the book open to where you learned it.
 
-(That last point is an argument in favor of printed books in general. You can expect me to come back to that theme time and again in this space (even while I continue to value digital spaces like this one for what *they* uniquely do.)
+(That last point is an argument in favor of printed books in general. You can expect me to come back to that theme time and again in this space, even while I continue to value digital spaces like this one for what *they* uniquely do.)
 
 No Starch sent me this copy to review with no expectation of a positive review—but even if they’d been paying me, they couldn’t make me say that this book is *great*. But great it is. If you have any interest in [Rust](https://www.rust-lang.org/en-US/), you should grab a copy!
