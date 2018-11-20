@@ -111,7 +111,7 @@
 <ul>
 <li><p>We now build the application using Babel 7’s TypeScript plugin. This has a few important limitations—some of them bugs (linked below); others are conscious decisions on the part of Babel. The changes:</p>
 <ul>
-<li><p><code>const enum</code> types are unsupported. You should switch to constants or regular enums.</p></li>
+<li><p><code>const enum</code> types are unsupported. You should switch to constants or regular <code>enum</code> types.</p></li>
 <li><p>trailing commas after rest function parameters (<code>function foo(...bar[],) {}</code>) are disallowed by the ECMAScript spec, so Babel also disallows them.</p></li>
 <li><p>re-exports of types have to be disambiguated to be <em>types</em>, rather than values. Neither of these will work:</p>
 <pre class="ts"><code>export { FooType } from &#39;foo&#39;;

@@ -22,7 +22,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;We now build the application using Babel 7’s TypeScript plugin. This has a few important limitations—some of them bugs (linked below); others are conscious decisions on the part of Babel. The changes:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;const enum&lt;/code&gt; types are unsupported. You should switch to constants or regular enums.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;const enum&lt;/code&gt; types are unsupported. You should switch to constants or regular &lt;code&gt;enum&lt;/code&gt; types.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;trailing commas after rest function parameters (&lt;code&gt;function foo(...bar[],) {}&lt;/code&gt;) are disallowed by the ECMAScript spec, so Babel also disallows them.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;re-exports of types have to be disambiguated to be &lt;em&gt;types&lt;/em&gt;, rather than values. Neither of these will work:&lt;/p&gt;
 &lt;pre class="ts"&gt;&lt;code&gt;export { FooType } from &amp;#39;foo&amp;#39;;
