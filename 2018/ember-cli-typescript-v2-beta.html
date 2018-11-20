@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ember-cli-typescript v2 beta &middot; Chris Krycho</title>
+    <meta name="description" content="We've released a beta of ember-cli-typescript v2, which will make your builds faster and more reliable, and which will give you better error output with type errors. Please come test it in your apps and addons!"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/ember-cli-typescript-v2-beta.html"/>
+    <meta property="og:title" content="ember-cli-typescript v2 beta"/>
+    <meta property="og:description" content="We've released a beta of ember-cli-typescript v2, which will make your builds faster and more reliable, and which will give you better error output with type errors. Please come test it in your apps and addons!"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="ember-cli-typescript v2 beta"/>
+    <meta name="twitter:description" content="We've released a beta of ember-cli-typescript v2, which will make your builds faster and more reliable, and which will give you better error output with type errors. Please come test it in your apps and addons!"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="emberjs typescript ember-cli-typescript open-source-software tech">
+
+    <header>
+<h1>ember-cli-typescript v2 beta</h1>
+<h2>Faster, more reliable builds, with better error reporting – <em>please</em> come test it in your apps and addons!
+</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/ember-cli-typescript-v2-beta.html" title="ember-cli-typescript v2 beta"><i class="fa fa-fw fa-link"></i></a>November 19, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/ember-cli-typescript/">#ember-cli-typescript</a><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#ember.js</a><a class="hashtags" href="http://www.chriskrycho.com/open-source-software/">#open-source software</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2018/ember-cli-typescript-v2-beta.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>A few weeks ago, the Typed Ember team published the first beta releases of <code>ember-cli-typescript</code> v2 (currently at beta 3). The new version brings much faster and more reliable builds, with nicer error reporting to boot.</p>
+<p>In this post:</p>
+<ul>
+<li><a href="#testing-the-upgrade">Testing the Upgrade</a></li>
+<li><a href="#under-the-hood">Under the Hood</a></li>
+</ul>
+<section id="testing-the-upgrade" class="level2">
+<h2>Testing the Upgrade</h2>
+<p>I emphasize: <strong><em>this is a beta release.</em></strong> We have tested it in two large apps (including the one I work on every day) and a number of addons, and it seems to work correctly, but that does <em>not</em> mean it is ready for production. We need your help to <em>get</em> it ready for production. Accordingly, please <em>do</em> test it in your apps, and please <em>do not</em> run it in production! (If you do, and something breaks, we will not feel bad for you! You have been warned!)</p>
+<p>This upgrade <em>requires</em> that you be using Babel 7. As such, we suggest you start by doing that upgrade:</p>
+<pre class="bash"><code>ember install ember-cli-babel@7</code></pre>
+<p>There may be a couple things you find different with your app with Babel 7, so resolve those first. Then, and only then, upgrade <code>ember-cli-typescript</code>.</p>
+<p>To test the <code>ember-cli-typescript</code> v2 beta in an app:</p>
+<pre class="bash"><code>ember install ember-cli-typescript@beta</code></pre>
+<p>To test it in an addon:</p>
+<pre class="bash"><code>ember install ember-cli-typescript@beta --save</code></pre>
+<p>(This will add the addon to your addon’s runtime dependencies, not just its development-time dependencies, which is necessary because of the changes we made to how the build pipeline works. See <a href="#under-the-hood">below</a> for details.)</p>
+<p>Then run your test suite and poke around! Note that on your first run, there are <em>almost certainly</em> going to be some things that break. In both of the large apps this has been tested in, there were a number of small changes we had to make to get everything working again. (We’re marking this as a breaking <a href="http://www.semver.org/spec/v2.0.0.html">semver</a> change for a reason!)</p>
+<p>In general, most apps will only have a few places they need to make changes, but because a certain kind of imports are included in the things affected, you may see your test suite explode. Don’t panic! You will probably make a couple a couple changes and see everything go back to working again.</p>
+<p>Here are the changes you need to know about:</p>
+<ul>
+<li><p>We now build the application using Babel 7’s TypeScript plugin. This has a few important limitations—some of them bugs (linked below); others are conscious decisions on the part of Babel. The changes:</p>
+<ul>
+<li><p><code>const enum</code> types are unsupported. You should switch to constants or regular enums.</p></li>
+<li><p>trailing commas after rest function parameters (<code>function foo(...bar[],) {}</code>) are disallowed by the ECMAScript spec, so Babel also disallows them.</p></li>
+<li><p>re-exports of types have to be disambiguated to be <em>types</em>, rather than values. Neither of these will work:</p>
+<pre class="ts"><code>export { FooType } from &#39;foo&#39;;
+import { FooType } from &#39;foo&#39;;
+export { FooType };</code></pre>
+<p>In both cases, Babel attempts to emit a <em>value</em> export, not just a <em>type</em> export, and fails because there is no actual value to emit. You can do this instead as a workaround:</p>
+<pre class="ts"><code>import * as Foo from &#39;foo&#39;;
+export type FooType = Foo.FooType;</code></pre></li>
+</ul>
+<p>Other bugs you should be aware of:</p>
+<ul>
+<li><p>If an enum has a member with the same name as an imported type (<a href="https://github.com/babel/babel/issues/8881">babel/babel#8881</a>), it will fail to compile.</p></li>
+<li><p><code>this</code> types in ES5 getters and setters do not work (<a href="https://github.com/babel/babel/issues/8069">babel/babel#8069</a>).</p></li>
+<li><p>Destructuring of parameters in function signatures currently do not work (<a href="https://github.com/babel/babel/issues/8099">babel/babel#8099</a>).</p></li>
+</ul></li>
+<li><p><code>ember-cli-typescript</code> must be in <code>dependencies</code> instead of <code>devDependencies</code> for addons, since we now hook into the normal Broccoli + Babel build pipeline instead of doing an end-run around it.</p></li>
+<li><p>Addons can no longer use <code>.ts</code> in app, because an addon’s <code>app</code> directory gets merged with and uses the <em>host’s</em> (i.e. the other addon or app’s) preprocessors, and we cannot guarantee the host has TS support. Note that everything will continue to work for in-repo addons because of the app build works with the host’s (i.e. the app’s, not the addon’s) preprocessors.</p></li>
+<li><p>Apps need to use <code>.js</code> for addon overrides in the <code>app</code> directory, since the different file extension means apps no longer consistently “win” over addon versions (a limitation of how Babel + app merging interact)—note that this won’t be a problem with Module Unification apps.</p></li>
+</ul>
+<p>That’s it. Again, please test it out in your app and <a href="https://github.com/typed-ember/ember-cli-typescript/issues/new/choose">report any issues</a> you find!</p>
+</section>
+<section id="under-the-hood" class="level2">
+<h2>Under the Hood</h2>
+<p>In the 1.x series of releases, we used TypeScript’s own build tooling, including its <code>--watch</code> setting, and then fed the results of that into Ember’s build pipeline. We made this work, but it was pretty fragile. Worse, it was <em>slow</em>, because we had to compile your code twice: once with TypeScript, and once with Babel in the normal Ember <abbr>CLI</abbr pipeline.
+
+In v2, we’re [now able](https://blogs.msdn.microsoft.com/typescript/2018/08/27/typescript-and-babel-7/) to use Babel to do the actual *build* of your TypeScript code, while using the TypeScript compiler in parallel to type-check it. This meant we were able to throw away most of that fragile custom code wiring TypeScript and Ember <abbr>CLI</abbr>’s file-watching and build pipelines together, so it’s much less fragile. And of course it’s much <em>faster</em>. What’s more, because Babel 7 is itself substantially faster than Babel 6 was, build times see an even <em>larger</em> speedup.</p>
+<p>While we were at it, we added some extra nice error reporting for your type errors:</p>
+<figure>
+<img src="https://user-images.githubusercontent.com/108688/47465007-19687d80-d7b9-11e8-8541-395ad82ceb67.gif" title="build errors" alt="An example of TypeScript build errors in an Ember app" /><figcaption>An example of TypeScript build errors in an Ember app</figcaption>
+</figure>
+<p>These changes are why the addon is now back to being part of the runtime dependencies for addons. In the 1.x series, we did a complicated dance to make sure you could use TypeScript in an addon without burdening consumers with the full size of each distinct version of the TypeScript compiler in use by addons they consumed. (For more on that, see <a href="https://www.chriskrycho.com/2018/announcing-ember-cli-typescript-110.html#addon-development">my blog post on the 1.1 release</a>.) We still want to keep that commitment, and we do: TypeScript is only a dev dependency. <code>ember-cli-typescript</code>, however, is a full dependency for addons, because we’re just part of the regular Babel/Ember <abbr>CLI</abbr> pipeline now! We play exactly the same role that other Babel transforms in the Ember ecosystem do, including e.g. the <a href="https://github.com/ember-cli/babel-plugin-ember-modules-api-polyfill">modules <abbr>API</abbr> polyfill</a>.</p>
+<p>In short, this update simplifies our internals <em>and</em> makes your experience as a developer better. That’s about as good an outcome as we could hope for. We as a team have been thinking through this for quite some time—ever since we learned that Babel 7 was <a href="https://github.com/facebook/create-react-app/pull/4837">adding TypeScript support</a>—but the actual implementation was almost all <a href="https://twitter.com/__dfreeman">Dan Freeman</a>’s excellent work, so say thank you to him if you get a chance!</p>
+<p>We’re eager to get it to a production-ready state, so please test it!</p>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/ringworld-review.html"><cite>Ringworld</cite> Review</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/just-write-down-what-you-do.html">Just Write Down What You Do</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/ember-cli-typescript-v2-beta.html">ember-cli-typescript v2 beta</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/dealing-with-burnout-in-public.html">Dealing With Burnout In Public</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
