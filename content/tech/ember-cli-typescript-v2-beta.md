@@ -51,7 +51,7 @@ Here are the changes you need to know about:
 
 - We now build the application using Babel 7's TypeScript plugin. This has a few important limitations—some of them bugs (linked below); others are conscious decisions on the part of Babel. The changes:
 
-	- `const enum` types are unsupported. You should switch to constants or regular enums.
+	- `const enum` types are unsupported. You should switch to constants or regular `enum` types.
 
 	- trailing commas after rest function parameters (`function foo(...bar[],) {}`) are disallowed by the ECMAScript spec, so Babel also disallows them.
 
