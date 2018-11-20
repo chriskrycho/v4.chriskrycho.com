@@ -88,7 +88,7 @@ That’s it. Again, please test it out in your app and [report any issues](https
 
 ## Under the Hood
 
-In the 1.x series of releases, we used TypeScript’s own build tooling, including its `--watch` setting, and then fed the results of that into Ember’s build pipeline. We made this work, but it was pretty fragile. Worse, it was *slow*, because we had to compile your code twice: once with TypeScript, and once with Babel in the normal Ember <abbr>CLI</abbr pipeline.
+In the 1.x series of releases, we used TypeScript’s own build tooling, including its `--watch` setting, and then fed the results of that into Ember’s build pipeline. We made this work, but it was pretty fragile. Worse, it was *slow*, because we had to compile your code twice: once with TypeScript, and once with Babel in the normal Ember <abbr>CLI</abbr> pipeline.
 
 In v2, we’re [now able](https://blogs.msdn.microsoft.com/typescript/2018/08/27/typescript-and-babel-7/) to use Babel to do the actual *build* of your TypeScript code, while using the TypeScript compiler in parallel to type-check it. This meant we were able to throw away most of that fragile custom code wiring TypeScript and Ember <abbr>CLI</abbr>’s file-watching and build pipelines together, so it’s much less fragile. And of course it’s much *faster*. What’s more, because Babel 7 is itself substantially faster than Babel 6 was, build times see an even *larger* speedup.
 
