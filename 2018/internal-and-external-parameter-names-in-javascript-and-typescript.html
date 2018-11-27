@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Internal and External Parameter Names in JavaScript and TypeScript &middot; Chris Krycho</title>
+    <meta name="description" content="You can use destructuring to make nice JavaScript/TypeScript APIs both for users and implementers of a given function: a handy design pattern stolen from Objective-C and Swift."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2018/internal-and-external-parameter-names-in-javascript-and-typescript.html"/>
+    <meta property="og:title" content="Internal and External Parameter Names in JavaScript and TypeScript"/>
+    <meta property="og:description" content="You can use destructuring to make nice JavaScript/TypeScript APIs both for users and implementers of a given function: a handy design pattern stolen from Objective-C and Swift."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Internal and External Parameter Names in JavaScript and TypeScript"/>
+    <meta name="twitter:description" content="You can use destructuring to make nice JavaScript/TypeScript APIs both for users and implementers of a given function: a handy design pattern stolen from Objective-C and Swift."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="javascript typescript swift software-development tech">
+
+    <header>
+<h1>Internal and External Parameter Names in JavaScript and TypeScript</h1>
+<h2>A handy design pattern stolen from Objective-C and Swift for designing nicely usable <abbr>API</abbr>s.
+</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2018/internal-and-external-parameter-names-in-javascript-and-typescript.html" title="Internal and External Parameter Names in JavaScript and TypeScript"><i class="fa fa-fw fa-link"></i></a>November 26, 2018</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2018/internal-and-external-parameter-names-in-javascript-and-typescript.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>Earlier this month I was working on a fairly thorny problem for work—taking a total value and splitting it into numbers which summed up to it, possibly including with a rule about what the split-up values had to be a multiple of. E.g. you want to order 50 Buffalo wings, and you have to choose the flavors for the wings in increments of 5.</p>
+<p>I spent a lot of time thinking about the implementation of the algorithm for that, but I also spent a lot of time thinking about what its <abbr>API</abbr> should look like. Here, it’s the latter I want to dive into (the former is a little tricky but not all that interesting).</p>
+<p>I started out with just simple parameters to the function:</p>
+<pre class="ts"><code>function splitNicely(
+  total: number, components: number, factor?: number
+): number {
+  // the implementation
+}</code></pre>
+<p>This is nice enough to use internally. But calling it is pretty confusing:</p>
+<pre class="ts"><code>const result = splitNicely(50, 5, 2);</code></pre>
+<p>Which number is what value here? Who knows!</p>
+<p>So then I just exposed <em>all</em> of the items as an options hash:</p>
+<pre class="ts"><code>interface SplitArgs {
+  total: number;
+  components: number;
+  factor?: number;
+}
+
+function splitNicely(
+  { total, components, factor }: SplitArgs
+): number {
+  // the implementation
+}</code></pre>
+<p>This was a lot nicer to call:</p>
+<pre class="ts"><code>const result =
+    splitNicely({ total: 50, components: 5, factor: 2 });</code></pre>
+<p>However, it was a bit verbose, and I realized that it’s fairly obvious that the first argument should be the value we’re splitting up, so I simplified a bit:</p>
+<pre class="ts"><code>interface SplitArgs {
+  components: number;
+  factor?: number;
+}
+
+function splitNicely(
+  total: number,
+  { components, factor }: SplitArgs
+): number {
+  // the implementation
+}
+</code></pre>
+<p>Now calling it read <em>relatively</em> well:</p>
+<pre class="ts"><code>splitNicely(10, { components: 5, factor: 2 });</code></pre>
+<p>However, the names were not my favorite for invoking the function. Really, what I wanted was for the function invocation to describe what I was doing, when reading it from the outside—while having these useful names for operating on the implementation internally.</p>
+<p>At this point, I remembered two things:</p>
+<ol type="1">
+<li>Swift and Objective-C have the nice notion of internal and external parameter names.</li>
+<li>JavaScript (and thus TypeScript) let you rename values in “destructuring assignment.”</li>
+</ol>
+<p>The second one lets us get the same basic effect in JavaScript or TypeScript as we get in Swift, if we’re using an options argument! Here’s how destructuring works in the function definition. Let’s see it first with just JavaScript. The object passed as a parameter has a key named <code>of</code>, which has a string value—but <code>of</code> is a bad name inside the function; there, we can just call it <code>s</code> and it’s perfectly clear.</p>
+<pre class="js"><code>function length({ of: str }) {
+  return str.length;
+}
+
+console.log(length({ of: &quot;waffles&quot; }));  // 7</code></pre>
+<p>That’s the equivalent of a function that looks like this:</p>
+<pre class="js"><code>function length({ of }) {
+  const str = of;
+  return str.length
+}</code></pre>
+<p>Here’s the same code but in TypeScript:</p>
+<pre class="ts"><code>function length({ of: str }: { of: string }): number {
+  return str.length;
+}
+
+console.log(length({ of: &quot;waffles&quot; }));  // 7</code></pre>
+<p>This is a big more annoying to write out in TypeScript, because we need to supply the type of the whole object after the object we’ve destructured, but the effect is the same once we get past the declaration. It’s also pretty silly to do this kind of thing at all in this example—but it becomes much more useful in more complicated functions, like the one that motivated me to explore this in the first place.</p>
+<p>Recall that I <em>liked</em> having <code>components</code> and <code>factor</code> as the internal names. They weren’t great for <em>calling</em> the function, though. After some consideration, I decided invoking the function should look like this:</p>
+<pre class="ts"><code>splitNicely(10, { into: 5, byMultiplesOf: 2 });</code></pre>
+<p>By using the destructuring technique, we can get exactly this, while keeping <code>components</code> and <code>factor</code> internally:</p>
+<pre class="ts"><code>interface SplitArgs = {
+  into: number;
+  byMultiplesOf?: number;
+}
+
+function splitNicely(
+  total: number,
+  { into: components, byMultiplesOf: factor }: SplitArgs
+): number {
+  // the implementation
+}</code></pre>
+<p>This is a great pattern to put in your toolbox. You can of course overdo it with this, as with any technique, but it’s a nice tool for these kinds of cases where you really want to make an expressive <abbr>API</abbr> for both callers and the internal implementation of a function.</p>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/tech.xml"><i class="fa fa-fw fa-rss"></i>tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2018/ringworld-review.html"><cite>Ringworld</cite> Review</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2018/just-write-down-what-you-do.html">Just Write Down What You Do</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2018/internal-and-external-parameter-names-in-javascript-and-typescript.html">Internal and External Parameter Names in JavaScript and TypeScript</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/dealing-with-burnout-in-public.html">Dealing With Burnout In Public</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

@@ -1,5 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2018-11-19T21:30:00-05:00</updated><entry><title>ember-cli-typescript v2 beta</title><link href="http://www.chriskrycho.com/2018/ember-cli-typescript-v2-beta.html" rel="alternate"></link><published>2018-11-19T21:30:00-05:00</published><updated>2018-11-19T21:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-11-19:/2018/ember-cli-typescript-v2-beta.html</id><summary type="html">We've released a beta of ember-cli-typescript v2, which will make your builds faster and more reliable, and which will give you better error output with type errors. Please come test it in your apps and addons!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Chris Krycho - Chris Krycho</title><link href="http://www.chriskrycho.com/" rel="alternate"></link><link href="http://www.chriskrycho.com/feeds/chris-krycho.atom.xml" rel="self"></link><id>http://www.chriskrycho.com/</id><updated>2018-11-26T20:25:00-05:00</updated><entry><title>Internal and External Parameter Names in JavaScript and TypeScript</title><link href="http://www.chriskrycho.com/2018/internal-and-external-parameter-names-in-javascript-and-typescript.html" rel="alternate"></link><published>2018-11-26T20:25:00-05:00</published><updated>2018-11-26T20:25:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-11-26:/2018/internal-and-external-parameter-names-in-javascript-and-typescript.html</id><summary type="html">You can use destructuring to make nice JavaScript/TypeScript APIs both for users and implementers of a given function: a handy design pattern stolen from Objective-C and Swift.</summary><content type="html">&lt;p&gt;Earlier this month I was working on a fairly thorny problem for work—taking a total value and splitting it into numbers which summed up to it, possibly including with a rule about what the split-up values had to be a multiple of. E.g. you want to order 50 Buffalo wings, and you have to choose the flavors for the wings in increments of 5.&lt;/p&gt;
+&lt;p&gt;I spent a lot of time thinking about the implementation of the algorithm for that, but I also spent a lot of time thinking about what its &lt;abbr&gt;API&lt;/abbr&gt; should look like. Here, it’s the latter I want to dive into (the former is a little tricky but not all that interesting).&lt;/p&gt;
+&lt;p&gt;I started out with just simple parameters to the function:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;function splitNicely(
+  total: number, components: number, factor?: number
+): number {
+  // the implementation
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is nice enough to use internally. But calling it is pretty confusing:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;const result = splitNicely(50, 5, 2);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Which number is what value here? Who knows!&lt;/p&gt;
+&lt;p&gt;So then I just exposed &lt;em&gt;all&lt;/em&gt; of the items as an options hash:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;interface SplitArgs {
+  total: number;
+  components: number;
+  factor?: number;
+}
+
+function splitNicely(
+  { total, components, factor }: SplitArgs
+): number {
+  // the implementation
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This was a lot nicer to call:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;const result =
+    splitNicely({ total: 50, components: 5, factor: 2 });&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However, it was a bit verbose, and I realized that it’s fairly obvious that the first argument should be the value we’re splitting up, so I simplified a bit:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;interface SplitArgs {
+  components: number;
+  factor?: number;
+}
+
+function splitNicely(
+  total: number,
+  { components, factor }: SplitArgs
+): number {
+  // the implementation
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now calling it read &lt;em&gt;relatively&lt;/em&gt; well:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;splitNicely(10, { components: 5, factor: 2 });&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However, the names were not my favorite for invoking the function. Really, what I wanted was for the function invocation to describe what I was doing, when reading it from the outside—while having these useful names for operating on the implementation internally.&lt;/p&gt;
+&lt;p&gt;At this point, I remembered two things:&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;Swift and Objective-C have the nice notion of internal and external parameter names.&lt;/li&gt;
+&lt;li&gt;JavaScript (and thus TypeScript) let you rename values in “destructuring assignment.”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The second one lets us get the same basic effect in JavaScript or TypeScript as we get in Swift, if we’re using an options argument! Here’s how destructuring works in the function definition. Let’s see it first with just JavaScript. The object passed as a parameter has a key named &lt;code&gt;of&lt;/code&gt;, which has a string value—but &lt;code&gt;of&lt;/code&gt; is a bad name inside the function; there, we can just call it &lt;code&gt;s&lt;/code&gt; and it’s perfectly clear.&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;function length({ of: str }) {
+  return str.length;
+}
+
+console.log(length({ of: &amp;quot;waffles&amp;quot; }));  // 7&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That’s the equivalent of a function that looks like this:&lt;/p&gt;
+&lt;pre class="js"&gt;&lt;code&gt;function length({ of }) {
+  const str = of;
+  return str.length
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here’s the same code but in TypeScript:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;function length({ of: str }: { of: string }): number {
+  return str.length;
+}
+
+console.log(length({ of: &amp;quot;waffles&amp;quot; }));  // 7&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is a big more annoying to write out in TypeScript, because we need to supply the type of the whole object after the object we’ve destructured, but the effect is the same once we get past the declaration. It’s also pretty silly to do this kind of thing at all in this example—but it becomes much more useful in more complicated functions, like the one that motivated me to explore this in the first place.&lt;/p&gt;
+&lt;p&gt;Recall that I &lt;em&gt;liked&lt;/em&gt; having &lt;code&gt;components&lt;/code&gt; and &lt;code&gt;factor&lt;/code&gt; as the internal names. They weren’t great for &lt;em&gt;calling&lt;/em&gt; the function, though. After some consideration, I decided invoking the function should look like this:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;splitNicely(10, { into: 5, byMultiplesOf: 2 });&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;By using the destructuring technique, we can get exactly this, while keeping &lt;code&gt;components&lt;/code&gt; and &lt;code&gt;factor&lt;/code&gt; internally:&lt;/p&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;interface SplitArgs = {
+  into: number;
+  byMultiplesOf?: number;
+}
+
+function splitNicely(
+  total: number,
+  { into: components, byMultiplesOf: factor }: SplitArgs
+): number {
+  // the implementation
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This is a great pattern to put in your toolbox. You can of course overdo it with this, as with any technique, but it’s a nice tool for these kinds of cases where you really want to make an expressive &lt;abbr&gt;API&lt;/abbr&gt; for both callers and the internal implementation of a function.&lt;/p&gt;
+</content><category term="javascript"></category><category term="typescript"></category><category term="swift"></category><category term="software development"></category></entry><entry><title>ember-cli-typescript v2 beta</title><link href="http://www.chriskrycho.com/2018/ember-cli-typescript-v2-beta.html" rel="alternate"></link><published>2018-11-19T21:30:00-05:00</published><updated>2018-11-19T21:30:00-05:00</updated><author><name>Chris Krycho</name></author><id>tag:www.chriskrycho.com,2018-11-19:/2018/ember-cli-typescript-v2-beta.html</id><summary type="html">We've released a beta of ember-cli-typescript v2, which will make your builds faster and more reliable, and which will give you better error output with type errors. Please come test it in your apps and addons!
 </summary><content type="html">&lt;p&gt;A few weeks ago, the Typed Ember team published the first beta releases of &lt;code&gt;ember-cli-typescript&lt;/code&gt; v2 (currently at beta 3). The new version brings much faster and more reliable builds, with nicer error reporting to boot.&lt;/p&gt;
 &lt;p&gt;In this post:&lt;/p&gt;
 &lt;ul&gt;
