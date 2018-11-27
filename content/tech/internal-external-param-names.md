@@ -83,7 +83,7 @@ At this point, I remembered two things:
 1. Swift and Objective-C have the nice notion of internal and external parameter names.
 2. JavaScript (and thus TypeScript) let you rename values in “destructuring assignment.”
 
-The second one lets us get the same basic effect in JavaScript or TypeScript as we get in Swift, if we’re using an options argument! Here’s how destructuring works in the function definition. Let's see it first with just JavaScript. The object passed as a parameter has a key named `of`, which has a string value—but `of` is a bad name inside the function; there, we can just call it `s` and it's perfectly clear.
+The second one lets us get the same basic effect in JavaScript or TypeScript as we get in Swift, if we’re using an options argument! Here’s how destructuring works in the function definition. Let's see it first with just JavaScript. The object passed as a parameter has a key named `of`, which has a string value—but `of` is a bad name inside the function; there, we can just call it `str` and it's perfectly clear.
 
 ```js
 function length({ of: str }) {
