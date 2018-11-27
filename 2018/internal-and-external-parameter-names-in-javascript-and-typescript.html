@@ -112,8 +112,7 @@ function splitNicely(
   // the implementation
 }</code></pre>
 <p>This was a lot nicer to call:</p>
-<pre class="ts"><code>const result =
-    splitNicely({ total: 50, components: 5, factor: 2 });</code></pre>
+<pre class="ts"><code>splitNicely({ total: 50, components: 5, factor: 2 });</code></pre>
 <p>However, it was a bit verbose, and I realized that it’s fairly obvious that the first argument should be the value we’re splitting up, so I simplified a bit:</p>
 <pre class="ts"><code>interface SplitArgs {
   components: number;

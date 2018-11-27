@@ -49,8 +49,7 @@ function splitNicely(
 This was a lot nicer to call:
 
 ```ts
-const result =
-	splitNicely({ total: 50, components: 5, factor: 2 });
+splitNicely({ total: 50, components: 5, factor: 2 });
 ```
 
 However, it was a bit verbose, and I realized that it’s fairly obvious that the first argument should be the value we’re splitting up, so I simplified a bit:

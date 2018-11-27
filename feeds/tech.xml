@@ -23,8 +23,7 @@ function splitNicely(
   // the implementation
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This was a lot nicer to call:&lt;/p&gt;
-&lt;pre class="ts"&gt;&lt;code&gt;const result =
-    splitNicely({ total: 50, components: 5, factor: 2 });&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class="ts"&gt;&lt;code&gt;splitNicely({ total: 50, components: 5, factor: 2 });&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;However, it was a bit verbose, and I realized that it’s fairly obvious that the first argument should be the value we’re splitting up, so I simplified a bit:&lt;/p&gt;
 &lt;pre class="ts"&gt;&lt;code&gt;interface SplitArgs {
   components: number;
