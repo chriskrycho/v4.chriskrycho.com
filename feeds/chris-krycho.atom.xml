@@ -46,7 +46,7 @@ function splitNicely(
 &lt;li&gt;Swift and Objective-C have the nice notion of internal and external parameter names.&lt;/li&gt;
 &lt;li&gt;JavaScript (and thus TypeScript) let you rename values in “destructuring assignment.”&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;The second one lets us get the same basic effect in JavaScript or TypeScript as we get in Swift, if we’re using an options argument! Here’s how destructuring works in the function definition. Let’s see it first with just JavaScript. The object passed as a parameter has a key named &lt;code&gt;of&lt;/code&gt;, which has a string value—but &lt;code&gt;of&lt;/code&gt; is a bad name inside the function; there, we can just call it &lt;code&gt;s&lt;/code&gt; and it’s perfectly clear.&lt;/p&gt;
+&lt;p&gt;The second one lets us get the same basic effect in JavaScript or TypeScript as we get in Swift, if we’re using an options argument! Here’s how destructuring works in the function definition. Let’s see it first with just JavaScript. The object passed as a parameter has a key named &lt;code&gt;of&lt;/code&gt;, which has a string value—but &lt;code&gt;of&lt;/code&gt; is a bad name inside the function; there, we can just call it &lt;code&gt;str&lt;/code&gt; and it’s perfectly clear.&lt;/p&gt;
 &lt;pre class="js"&gt;&lt;code&gt;function length({ of: str }) {
   return str.length;
 }
