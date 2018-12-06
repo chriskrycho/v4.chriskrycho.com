@@ -10,6 +10,8 @@ Summary: >
 
 ---
 
+<i class=editorial><b>Assumed audience:</b> people already persuaded of the value—at least to some extent—of "getting things done" strategies and having an idea of what you accomplished over the course of the year.</i>
+
 For the last few years, I’ve had a habit—not kept perfectly, but done more often than not, courtesy of my daily [pomodoro](https://www.chriskrycho.com/pomodoro/) discipline—of writing down what I do each day. Then, every week, I take a look at what I did each day, and turn that into a summary for the week. And every month, I look over my notes for weeks that made up that month, and write down what I did that month.
 
 This has been *fantastic* for me professionally. For one thing, it gives me a quick and easy way to see what I’ve done over the past however-long-between-performance-evaluations. The inevitable “What did you accomplish this year?” question has an an easy answer: I can look over my month-level summaries and summarize *those*. (I’m inevitably frustrated by the months where I slacked off and don’t actually know what I did when do this exercise!)
@@ -19,10 +21,10 @@ Writing things down like this is also a helpful tool personally. I can look back
 I use [Bear](https://bear.app) for this, but you could do it anywhere: a Word document or Google Doc, a notepad on your desk, in Emacs’ [Org Mode](https://orgmode.org), with [TaskPaper](https://www.taskpaper.com), or in [Trello](#) (like my friend and colleague Ben Collins [does]), or, well… whatever gets the job done.
 
 [does]: https://benjamincollins.com/blog/using-trello-to-organize-my-daily-work/
-	
+
 The main thing is: write down what you did! Write it down at each of these scales, because it’s far easier to write down the larger scales if you wrote down the smaller scales. Once you start doing this regularly, you’ll probably find yourself frustrated at the times you failed to do it. (If you’re like me, those times will exist. It’s okay. Just start back up.) And again: make it fit you. But it’s one of the best tools I know of for personal and professional development, so I commend it to you!
 
----- 
+----
 
 ## Bonus: My Bear Templates
 
@@ -34,7 +36,7 @@ The daily log is the core of my entire productivity approach system, as well as 
 
 - The date, which I format `YYYY.MM.DD`—today would be `2018.11.13`. A numeric year/month/day makes correctly sorting the notes easy. I use a period for the separator mostly because it looks nice in the font I use in Bear.
 
-- A link to the parent week for the day, to make it easy to jump back and forth between individual day logs and a weekly log (as you’ll see below).[^2]
+- A link to the parent week for the day, to make it easy to jump back and forth between individual day logs and a weekly log (as you’ll see below).[^bear-links]
 
 - A set of goals. I set the goals either at the beginning of the day, at the end of the preceding work day, or a combination of the two. I usually limit myself to 3 goals, unless I *know* I have a bunch of very small tasks.
 
@@ -42,7 +44,12 @@ The daily log is the core of my entire productivity approach system, as well as 
 
 - A summary of the day as a whole. At the end of the day, I look back over the sessions and my goals, and write a sentence or two about what I did. This is also often a good time for me to write up the next day’s overarching goals and first session goal: I have a much better idea what I should be doing next when I’m wrapping things up for the day than I will the next morning!
 
-- A set of checkboxes for me to track whether I succeed in breaking my day into 15 discrete pomodoro sessions,[^3] and in standing at least 5 hours out of the day every day.
+- A set of checkboxes for me to track whether I succeed in breaking my day into 15 discrete pomodoro sessions,[^15-sessions] and in standing at least 5 hours out of the day every day.
+
+[^bear-links]: `[[<some text>]]` is Bear’s way of doing internal links to a note named `<some text>`.
+
+[^15-sessions]: 15, not 16, because of the slop that ends up in most days. Most days, more than one session ends up being 35 minutes instead of 25. Over the course of the day, those come out to being the remaining half hour in the full 8 hours I make sure I give my employer. I know that from measuring consistently when I was working as a consultant: my [Toggl](https://toggl.com) logs told the story clearly.
+
 
 ```md
 # <YYYY.MM.DD>
@@ -153,6 +160,3 @@ The monthly log is exactly like the weekly log, but one level higher. It links b
 ```
 
 
-[^2]:	`[[<some text>]]` is Bear’s way of doing internal links to a note named `<some text>`.
-
-[^3]:	15, not 16, because of the slop that ends up in most days. Most days, more than one session ends up being 35 minutes instead of 25. Over the course of the day, those come out to being the remaining half hour in the full 8 hours I make sure I give my employer. I know that from measuring consistently when I was working as a consultant: my [Toggl](https://toggl.com) logs told the story clearly.
