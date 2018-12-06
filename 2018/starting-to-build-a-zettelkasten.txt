@@ -9,7 +9,9 @@ Summary: >
     An update on my work-in-progress research system, using Bear.app as a tool for the Zettelkasten system—with some comments on how I’m doing this, and why.
 ---
 
-<i><b>Assumed Audience:</b> people broadly interested in reading, writing, learning, and research systems.</i>
+<i><b>[Assumed Audience:][aa]</b> people broadly interested in reading, writing, learning, and research systems.</i>
+
+[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
 
 As I’ve been slowly mulling on a number of things over the last few weeks, it became increasingly clear to me that I needed to invest a bit more in my research system. I’ve [asked before](https://www.chriskrycho.com/2017/how-do-you-manage-your-research-notes.html) how people manage their own research, and I’ve noted how [I use my blog as a note-taking tool of sorts](https://www.chriskrycho.com/2018/blog-as-note-taking-tool.html). As I’ve started digging into a couple larger problems—one of which is likely going to take me a decade of work—I’ve come back to this question, and I find that I still don’t have great answers.
 
