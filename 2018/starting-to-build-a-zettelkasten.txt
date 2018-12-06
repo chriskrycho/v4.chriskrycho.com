@@ -2,7 +2,7 @@
 Title: Starting to Build a Zettelkasten
 Subtitle: >
     An update on my work-in-progress research system, using Bear.app.
-Date: 2018-08-05 08:30
+Date: 2018-12-05 08:30
 Categories: Blog
 Tags: [writing, research, Zettelkasten, notes]
 Summary: >
