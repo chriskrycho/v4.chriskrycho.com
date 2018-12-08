@@ -14,9 +14,11 @@ Summary: >
 
 [Assumed Audience:]: https://www.chriskrycho.com/2018/assumed-audiences.html
 
-I wrote [earlier this week] about adopting a Zettelkasten approach for research, and moving writing prompts and ideas from Bear into Ulysses as part of that. I’m already reversing course, though, and pushing *ideas* from Ulysses back over into Bear. (Don’t worry, this isn’t the typical “obsessing over tools *instead* of doing work” problem. It’s a change that flows out of doing the work.)
+I wrote [earlier this week] about adopting a Zettelkasten approach for research, and moving writing prompts and ideas from [Bear] into [Ulysses] as part of that. I’m already reversing course, though, and pushing *ideas* from Ulysses back over into Bear. (Don’t worry, this isn’t the typical “obsessing over tools *instead* of doing work” problem. It’s a change that flows out of doing the work.)
 
 [earlier this week]: https://www.chriskrycho.com/2018/starting-to-build-a-zettelkasten.html
+[Bear]: https://bear.app
+[Ulysses]: https://ulysses.app
 
 The reason is simple: Ulysses is fantastic for organizing writing projects. However, it has a pair of very important (for me) limitations for the ideation and research phase.
 
