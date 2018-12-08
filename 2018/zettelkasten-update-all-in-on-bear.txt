@@ -10,7 +10,7 @@ Summary: >
 
 ---
 
-I wrote earlier this week about adopting a Zettelkasten approach for research, and moving writing prompts and ideas from Bear into Ulysses as part of that. I’m already reversing course, though, and pushing *ideas* from Ulysses back over into Bear. (Don’t worry, this isn’t the typical “obsessing over tools *instead* of doing work” problem.)
+I wrote earlier this week about adopting a Zettelkasten approach for research, and moving writing prompts and ideas from Bear into Ulysses as part of that. I’m already reversing course, though, and pushing *ideas* from Ulysses back over into Bear. (Don’t worry, this isn’t the typical “obsessing over tools *instead* of doing work” problem. It’s a change that flows out of doing the work.)
 
 The reason is simple: Ulysses is fantastic for organizing writing projects. However, it has a pair of very important (for me) limitations for the ideation and research phase.
 
