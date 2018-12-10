@@ -1,7 +1,7 @@
 ---
 Title: Stewarding My Reserves
 Date: 2018-12-09 18:15
-Modified: 2018-12-09 21:15
+Modified: 2018-12-09 21:20
 Subtitle: >
     I seem to be through the worst of this burnout. But stewarding my recovery is its own challenge.
 Summary: >
@@ -13,7 +13,7 @@ Category: blog
 <i><b>[Assumed Audience:]</b> anyone and everyone, but *especially* people who have followed along as [I have written about my experience of burnout][burnout].</i>
 
 [Assumed Audience:]: https://www.chriskrycho.com/2018/assumed-audiences.html
-[burnout]: https://www.chriskrycho.com/burnout.html
+[burnout]: https://www.chriskrycho.com/burnout/
 
 I’ve slowly but surely been coming out of this burnout over the last seven weeks or so. I pulled *hard* on some levers at work and got some changes there, which gave me the space to start recovering. I have also been working aggressively at identifying what steps I need to take to deal with my mental health more generally—including dealing with a bunch of griefs that have mounted up over many, many years, and which I have (for various reasons, many of them good) simply set aside to deal with later. Do that too long, and later becomes *now*, whether you want it to or not.
 
