@@ -173,32 +173,32 @@ True Myth is largely [complete][stable-libraries], with a full set of features a
 
 ### Talks
 
-- <b>CSS Modules lightning talk</b> (Denver Ember.js Meetup, December 2018)
+- <b><abbr>CSS</abbr> Modules lightning talk</b> (Denver Ember.js Meetup, December 2018)
 
-- **Rust and WebAssembly** (Denver/Boulder Rust Meetup, May 2018)
+- <b>Rust and WebAssembly</b> (Denver/Boulder Rust Meetup, May 2018)
 
-- **[TypeScript and Ember.js: Why And How][ember-atx]** (Ember <abbr title="Austin, Texas">ATX</abbr> Meetup, April 2018):
+- <b>[TypeScript and Ember.js: Why And How][ember-atx]</b> (Ember <abbr title="Austin, Texas">ATX</abbr> Meetup, April 2018):
 
     > <b>Abstract:</b> A three-part look at Ember.js and TypeScript today: What are the benefits to me as an Ember developer for using TypeScript? What are the tradeoffs if I adopt TypeScript? Where are things going from here?
 
     (I also delivered a slightly shorter version of this same material at the Denver Ember.js Meetup in June 2018.)
 
-- **[TypeScript Up Your Ember.js App][ts-workshop]** (EmberConf 2018 Workshop, March 2018):
+- <b>[TypeScript Up Your Ember.js App][ts-workshop]</b> (EmberConf 2018 Workshop, March 2018):
 
-    > **Abstract:** an introduction to TypeScript and how to use it with Ember.js, with a worked example of converting part of the Ember.js <abbr>TODO</abbr> <abbr>MVC</abbr> app from JavaScript to TypeScript.
+    > <b>Abstract:</b> an introduction to TypeScript and how to use it with Ember.js, with a worked example of converting part of the Ember.js <abbr>TODO</abbr> <abbr>MVC</abbr> app from JavaScript to TypeScript.
 
     The workshop was not recorded, but the teaching materials are all available online:
 
     - [slides][ts-workshop-slides] and [script][ts-workshop-script] for the introduction to TypeScript and overview of using it in Ember
     - [sample code repository][ts-workshop-repo], where each commit is a discrete step in the process of the conversion
 
-- **[Becoming a Contributor][rbr2017]** (Rust Belt Rust 2017, October 2017):
+- <b>[Becoming a Contributor][rbr2017]</b> (Rust Belt Rust 2017, October 2017):
 
-    > **Abstract:** So, you’re new to the Rust community. (Or any community, really!) And you want to help, but, well, you’re new. So how exactly do you start contributing? What kinds of contributions are valuable? We’ll talk about everything from asking questions to writing documentation, from pitching in on forums and chat to writing blog posts, and from starting your own projects to contributing to other open-source projects.
+    > <b>Abstract:</b> So, you’re new to the Rust community. (Or any community, really!) And you want to help, but, well, you’re new. So how exactly do you start contributing? What kinds of contributions are valuable? We’ll talk about everything from asking questions to writing documentation, from pitching in on forums and chat to writing blog posts, and from starting your own projects to contributing to other open-source projects.
 
-- **[*Tolle Lege!* Designing Readable Bibles With Digital Typography][bibletech2015]** (BibleTech 2015, May 2015):
+- <b>[*Tolle Lege!* Designing Readable Bibles With Digital Typography][bibletech2015]</b> (BibleTech 2015, May 2015):
 
-    > **Abstract:** The Bible has always been a challenging text to display, whether copied by hand or printed on a Gutenberg press, and the task has only grown more complicated in the era of digital text. The challenges are not insurmountable, though. We have the tools to solve them: the principles of good typography, especially careful page design and the deliberate choice and skillful use of appropriate typefaces (fonts). When we apply those principles to the Scriptures—whether in an app or on the web—we can provide people with digital Bibles that are both readable and beautiful.
+    > <b>Abstract:</b> The Bible has always been a challenging text to display, whether copied by hand or printed on a Gutenberg press, and the task has only grown more complicated in the era of digital text. The challenges are not insurmountable, though. We have the tools to solve them: the principles of good typography, especially careful page design and the deliberate choice and skillful use of appropriate typefaces (fonts). When we apply those principles to the Scriptures—whether in an app or on the web—we can provide people with digital Bibles that are both readable and beautiful.
 
 
 [ember-atx]:	https://youtube.com/watch?v=fFzxbBrvytU
