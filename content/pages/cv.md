@@ -70,7 +70,7 @@ Throughout my time at Olo, I have:
 
 - led the community effort to **integrate TypeScript with Ember.js**
 - helped launch a shared component library for future rich client projects
-- given over a dozen internal tech talks on subjects including Ember.js basics, functional programming techniques, and introductions to Rust and Elm
+- given over a dozen internal tech talks on subjects including managing technical costs, Ember.js basics, functional programming techniques, and introductions to Rust and Elm
 - substantially reshaped our front-end engineering practices and tooling choices as an informal leader among our front-end engineering group
 
 I have matured significantly as both an individual contributor and a leader in my time at Olo. For the first time, I have been able to make a substantial difference at the team level, at the organizational level, and at the level of the broader technical community.
@@ -125,7 +125,7 @@ Over those three years I acquired a good dose of humility and basic knowledge of
 
 *Teaching myself web development.*
 
-**Beginning in January 2010**, I taught myself web programming, beginning with <abbr>PHP</abbr> and jQuery and the <abbr>LAMP</abbr> stack. Having a good working knowledge of <abbr>HTML</abbr> and <abbr>CSS</abbr> from designing my own blog in college, I decided to learn web development, I began by building church websites and blogs for friends in WordPress. Later, while working as a subcontracting consultant for [Innova Computing][innova], I developed a custom <abbr>CMS</abbr> for the Oklahoma Board of Medical Licensure.
+**Beginning in January 2010**, I taught myself web programming, beginning with <abbr>PHP</abbr> and jQuery and the <abbr>LAMP</abbr> stack. Having a good working knowledge of <abbr>HTML</abbr> and <abbr>CSS</abbr> from designing my own blog in college, I decided to learn web development. I began by building church websites and blogs for friends in WordPress. Later, while working as a subcontracting consultant for [Innova Computing][innova], I developed a custom <abbr>CMS</abbr> for the Oklahoma Board of Medical Licensure.
 
 [innova]: https://innovacomputing.com
 
@@ -173,11 +173,15 @@ True Myth is largely [complete][stable-libraries], with a full set of features a
 
 ### Talks
 
+- <b>CSS Modules lightning talk</b> (Denver Ember.js Meetup, December 2018)
+
 - **Rust and WebAssembly** (Denver/Boulder Rust Meetup, May 2018)
 
 - **[TypeScript and Ember.js: Why And How][ember-atx]** (Ember <abbr title="Austin, Texas">ATX</abbr> Meetup, April 2018):
 
-    > **Abstract:** A three-part look at Ember.js and TypeScript today: What are the benefits to me as an Ember developer for using TypeScript? What are the tradeoffs if I adopt TypeScript? Where are things going from here?
+    > <b>Abstract:</b> A three-part look at Ember.js and TypeScript today: What are the benefits to me as an Ember developer for using TypeScript? What are the tradeoffs if I adopt TypeScript? Where are things going from here?
+
+    (I also delivered a slightly shorter version of this same material at the Denver Ember.js Meetup in June 2018.)
 
 - **[TypeScript Up Your Ember.js App][ts-workshop]** (EmberConf 2018 Workshop, March 2018):
 
