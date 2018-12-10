@@ -66,11 +66,11 @@ As a **Senior Software Engineer** (May 2017–present):
 
 - I finished our app's conversion to a fully strictly-type-checked TypeScript application.
 
-Throughout my time at Olo, I have:
+Throughout my time at Olo, I:
 
 - led the community effort to **integrate TypeScript with Ember.js**
 - helped launch a shared component library for future rich client projects
-- given over a dozen internal tech talks on subjects including managing technical costs, Ember.js basics, functional programming techniques, and introductions to Rust and Elm
+- have delivered over a dozen internal tech talks on subjects including managing technical costs, Ember.js basics, functional programming techniques, and introductions to Rust and Elm
 - substantially reshaped our front-end engineering practices and tooling choices as an informal leader among our front-end engineering group
 
 I have matured significantly as both an individual contributor and a leader in my time at Olo. For the first time, I have been able to make a substantial difference at the team level, at the organizational level, and at the level of the broader technical community.
