@@ -5,7 +5,7 @@ Date: 2018-12-20 18:45
 Category: Tech
 Tags: [JavaScript, TypeScript, Elm, Rust, C, software development]
 Summary: >
-    TODO
+    JavaScript and C both make you maintain your invariants the most painful way possible. Happily, there are better alternatives these days.
 ---
 
 <i><b>[Assumed Audience:](https://www.chriskrycho.com/2018/assumed-audiences.html)</b> software developers, especially those interested in modern, typed programming languages.</i>
