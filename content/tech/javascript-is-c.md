@@ -26,11 +26,9 @@ Enter [Rust](https://www.rust-lang.org): the kinds of management of memory that 
 
 And it turns out, this same dynamic exists in the world of front-end web development. People sometimes wonder why (and colleagues are often bemused that) I get so excited by [Elm](https://elm-lang.org). But the step from JavaScript (or even TypeScript) to Elm is just like the step from C to Rust. It’s a real and profound shift in what kinds of things you can *know for certain* about your program.
 
-In a C application, try as hard as I may, at the end of the day I am always on my own, making sure the invariants I need for memory safety hold. In a JavaScript or TypeScript application, try as hard as I may, at the end of the day I am always on my own, making sure the invariants I need for state management hold.
+In a C application, try as hard as I may, at the end of the day I am always on my own, making sure the invariants I need for memory safety hold. In Rust, I can be 100% confident that I will not have memory-unsafe code. Not 98%-and-I’d-better-check-those-last-2%-really-closely. One hundred percent. That’s a game-changer.
 
-In Rust, I can be 100% confident that I will not have memory-unsafe code. Not 98%-and-I’d-better-check-those-last-2%-really-closely. One hundred percent. That’s a game-changer.
-
-In Elm, I can be 100% confident that I will not have code which needs a given invariant about a piece of state to hold break the way it could in this TypeScript application. Because I can’t even apply the relevant transformations in question if it isn’t! That’s a game-changer.
+In a JavaScript or TypeScript application, try as hard as I may, at the end of the day I am always on my own, making sure the invariants I need for state management hold. In Elm, I can be 100% confident that I will not have code which needs a given invariant about a piece of state to hold break the way it could in this TypeScript application. Because I can’t even apply the relevant transformations in question if it isn’t! That’s a game-changer.
 
 Neither of those is a guarantee I won’t have bugs. (A compiler that could guarantee that would have to be sentient and far smarter than any human!) Neither of them means I can’t intentionally do stupid things that violate invariants in ways that get the program into broken states from the user’s point of view. But both of them give me the tools and the confidence that I can absolutely guarantee that certain, very important kinds of invariants hold. We’re not looking for an absence of all bugs or a system which can prevent us from making any kind of mistake. We’re looking to be able to spend our times on the things that matter, *not* on minutiae the computer can check for us.
 
