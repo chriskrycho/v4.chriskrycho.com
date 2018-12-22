@@ -2,7 +2,7 @@
 Title: Career Trajectory
 Subtitle: Almost a decade in, and starting to get a handle on what I'm good at and what I care about.
 Date: 2018-05-02 07:00
-Tags: [work, software development]
+Tags: [work, software development, career]
 Category: blog
 Summary: >
     I've been thinking a bit, for the last year or so, about my career trajectory. Where do I want to go, and what do I want to do, over the next 5–10 years?
