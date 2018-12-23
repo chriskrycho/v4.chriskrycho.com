@@ -55,7 +55,7 @@ I ran a fair bit, and am slowly adjusting to living at roughly 7,000 feet above 
 
 ### Work
 
-Work has been a mixed bag. On the one hand, I accomplished a lot this year. Despite a number of large roadblocks that were entirely outside my control (and several of which I argued strenuously against), I lead a very important effort to hit several meaningful milestones. I also kept pushing the state of our tooling forward, including some important open-source work, and at the end of November gave a “tech talk” on technical costs which seems to have made a real (if, so far, still small!) impact on the entire organization.
+Work has been a mixed bag. On the one hand, I accomplished a lot this year. Despite a number of large roadblocks that were entirely outside my control, I lead a very important effort to hit several meaningful milestones. I also kept pushing the state of our tooling forward, including some important open-source work, and at the end of November gave a “tech talk” on technical costs which seems to have made a real (if, so far, still small!) impact on the entire organization.
 
 On the other hand, work directly triggered the burnout I experienced. To be sure, I had plenty of existing stressors from moving across and walking through my dad’s fight with cancer with the rest of my family. But the things that pushed me over the edge from <i>tired and worn down</i> to <i>burnout</i> were challenges at work. There were the aforementioned roadblocks. There were some high-stress projects. But most of all, there is a lack of alignment between my engineering and business philosophies and those in play at Olo. Those aren’t *moral*, but prudential and strategic, kinds of differences—but that does not make them unimportant! More on this below.
 
