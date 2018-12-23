@@ -43,9 +43,11 @@ I also set out this year to read a lot of books—I had a list of a 14 pieces of
 
 While those novels were basically the only thing I read, I very much like the habit of writing very short reviews I started with those novels. I expect to keep that habit, and it should be useful as I dig back into nonfiction in the future!
 
-Speaking of writing: for all that this year felt like it was unproductive in some ways, I still ended up blogging to the tune of somewhere north of 70,000 words across about 95 posts.[^2] That’s a solid showing for a year full of burnout (even if burnout itself [ended up being the subject of no few of those](https://www.chriskrycho.com/burnout): about 6,000 words). But one of my goals for the year was to publish a few longer-form essays, possibly even getting paid for them. That certainly did not happen; I did not manage to publish even a single essay at Mere Orthodoxy.
+Speaking of writing: for all that this year felt like it was unproductive in some ways, I still ended up blogging to the tune of somewhere around 75,000 words across about 95 posts.[^wc-1] That’s a solid showing for a year full of burnout (even if burnout itself [ended up being the subject of no few of those](https://www.chriskrycho.com/burnout): about 6,000 words).[^wc-2] But one of my goals for the year was to publish a few longer-form essays, possibly even getting paid for them. That certainly did not happen; I did not manage to publish even a single essay at Mere Orthodoxy.
 
-[^2]: Running `wc -w` on the posts I wrote in 2018 reports 76,768 words, but that number includes all the post metadata. Assuming an average of 65 words of metadata per post, across the 94 posts I wrote, that comes out to around 6,100 words. So: about 70,000, for an average of about 750 words per post. Not too shabby!
+[^wc-1]: Running `wc -w` on the posts I wrote in 2018 reports 80,911 words, but that number includes all the post metadata. Assuming an average of 65 words of metadata per post, across the 96 posts I wrote, that comes out to around 6,250 words. So: very roughly 75,000, for an average of about 780 words per post. Not too shabby!
+
+[^wc-2]: Meta note: that includes this post. So the final count depends on how long I make the previous footnote. And this one. Such recursion!
 
 ### Health
 
