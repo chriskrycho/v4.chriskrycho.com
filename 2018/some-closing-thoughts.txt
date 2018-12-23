@@ -15,9 +15,9 @@ Summary: >
 
 [aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
 
-As has long been my tradition[^1] I’m wrapping up the year by looking back at what happened in it and thinking about what I’d like to do in the year ahead. I say little here about family or church, but that should not be taken as an indicator of importance: in fact, my commitments in those two spheres deeply inform everything else!
+As has long been my tradition[^how-long] I’m wrapping up the year by looking back at what happened in it and thinking about what I’d like to do in the year ahead. I say little here about family or church, but that should not be taken as an indicator of importance: in fact, my commitments in those two spheres deeply inform everything else!
 
-[^1]: I’ve been doing this since 2007, but I’m not linking you to the blog post I wrote that year. There’s nothing quite like reading things I wrote halfway through college to make me cringe. There is some good stuff there, but also: 20-year-old Chris Krycho was, uhh… *very* emotional. And the way I approach my faith has shifted a lot since then.
+[^how-long]: I’ve been doing this since 2007, but I’m not linking you to the blog post I wrote that year. There’s nothing quite like reading things I wrote halfway through college to make me cringe. There is some good stuff there, but also: 20-year-old Chris Krycho was, uhh… *very* emotional. And the way I approach my faith has shifted a lot since then.
 
 ## 2018
 
@@ -95,7 +95,7 @@ First, I’m going to try to evaluate, with each idea I have, whether it should 
 [Zettelkasten]: https://www.chriskrycho.com/zettelkasten/
 [Bear]: https://bear.app
 
-Second, I plan (and we’ll see how this goes), I’m going to try *very* hard to write fewer blog posts in favor of more well-developed essays. About a month ago, I started drafting an essay which seems like it might be legitimately important. Unfortunately, even though it is certainly more worth my time than the things I *have* written since then ([1], [2], [3], [4], [5], [6]), I have not made progress since the day I started it. It’s not that my notes on research and note-taking are worthless. Rather, it’s that there is a cost to spending my limited time on writing those instead of more important writing efforts.[^3] At a minimum, I intend to do even *less* polish on those posts than I have to date, when I let myself write them.
+Second, I plan (and we’ll see how this goes), I’m going to try *very* hard to write fewer blog posts in favor of more well-developed essays. About a month ago, I started drafting an essay which seems like it might be legitimately important. Unfortunately, even though it is certainly more worth my time than the things I *have* written since then ([1], [2], [3], [4], [5], [6]), I have not made progress since the day I started it. It’s not that my notes on research and note-taking are worthless. Rather, it’s that there is a cost to spending my limited time on writing those instead of more important writing efforts.[^this-post] At a minimum, I intend to do even *less* polish on those posts than I have to date, when I let myself write them.
 
 [1]: http://www.chriskrycho.com/2018/internal-and-external-parameter-names-in-javascript-and-typescript.html
 [2]: http://www.chriskrycho.com/2018/starting-to-build-a-zettelkasten.html
@@ -104,7 +104,7 @@ Second, I plan (and we’ll see how this goes), I’m going to try *very* hard t
 [5]: http://www.chriskrycho.com/2018/hey-siri-record-a-zettel.html
 [6]: http://www.chriskrycho.com/2018/javascript-is-c.html
 
-[^3]: So: what of this kind of year-end review, which is itself not exactly one of those more important writing projects? Good point. I find his exercise helpful, though, and I’d almost certainly be doing it privately in nearly identical terms. I have found this practice helpful over the years, despite never coming near accomplishing the specific goals I’ve set myself, so I expect to keep up this habit.
+[^this-post]: So: what of this kind of year-end review, which is itself not exactly one of those more important writing projects? Good point. I find his exercise helpful, though, and I’d almost certainly be doing it privately in nearly identical terms. I have found this practice helpful over the years, despite never coming near accomplishing the specific goals I’ve set myself, so I expect to keep up this habit.
 
 ### Health
 
@@ -126,9 +126,9 @@ As I close in on the end of the first decade of my career, I’m [thinking a lot
 
 [career]: https://www.chriskrycho.com/2018/career-trajectory.html
 
-One part of that is that I intend to push forward on a few things I’ve been plotting for a few years now. I started learning Rust back in the summer of 2015 for a *reason*, and I’m coming back to that reason this year. I don’t in the least regret the detour that I’ve gone on in the meantime: New Rustacean remains one of my favorite things I’ve done, and is certainly a more important contribution than any code I could have written in that time. But the project that got this all started has my attention again, and I will be spending some of my personal time on it this year.[^4] It’s the kind of thing that I rather hope *is* my career a few years down the line—but there’s a boatload of work to do to get there.
+One part of that is that I intend to push forward on a few things I’ve been plotting for a few years now. I started learning Rust back in the summer of 2015 for a *reason*, and I’m coming back to that reason this year. I don’t in the least regret the detour that I’ve gone on in the meantime: New Rustacean remains one of my favorite things I’ve done, and is certainly a more important contribution than any code I could have written in that time. But the project that got this all started has my attention again, and I will be spending some of my personal time on it this year.[^focus-again] It’s the kind of thing that I rather hope *is* my career a few years down the line—but there’s a boatload of work to do to get there.
 
-[^4]: This is another reason for the emphasis on focusing my writing time on high-value projects. Time I spend writing random blog posts is time I am *not* spending on these programming efforts.
+[^focus-again]: This is another reason for the emphasis on focusing my writing time on high-value projects. Time I spend writing random blog posts is time I am *not* spending on these programming efforts.
 
 Another part is looking at a much longer horizon even. Over the past three years, I’ve become increasingly interested in programming language theory and practice. I have some ideas and insights I think are genuinely valuable and *relatively* unique (at a minimum they’re not currently in use in industry anywhere, and I’ve yet to find any papers touching on them) and I would like to see them land at some point. Getting there is a long game; I am not exaggerating when I say that if I ever really make this happen, I expect it to be in my 40s. Probably my *late* 40s. But that gives me time to learn in the meantime: to build small languages and see what that process is like, to find ways to collaborate on existing language projects, to learn a wide array of existing languages in more detail, and so on. If the ideas I have are ever to come to fruition, all of those things are necessary precursors for my efforts.
 
