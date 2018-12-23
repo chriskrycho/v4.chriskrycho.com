@@ -1,6 +1,6 @@
 ---
 Title: >
-    "2018: Some Closing Thoughts"
+    2018: Some Closing Thoughts
 Slug: some-closing-thoughts
 Subtitle: This was not the year I expected.
 Date: 2018-12-23 14:35
