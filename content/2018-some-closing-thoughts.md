@@ -43,9 +43,11 @@ I also set out this year to read a lot of books—I had a list of a 14 pieces of
 
 While those novels were basically the only thing I read, I very much like the habit of writing very short reviews I started with those novels. I expect to keep that habit, and it should be useful as I dig back into nonfiction in the future!
 
-Speaking of writing: for all that this year felt like it was unproductive in some ways, I still ended up blogging to the tune of somewhere north of 70,000 words across about 95 posts.[^2] That’s a solid showing for a year full of burnout (even if burnout itself [ended up being the subject of no few of those](https://www.chriskrycho.com/burnout): about 6,000 words). But one of my goals for the year was to publish a few longer-form essays, possibly even getting paid for them. That certainly did not happen; I did not manage to publish even a single essay at Mere Orthodoxy.
+Speaking of writing: for all that this year felt like it was unproductive in some ways, I still ended up blogging to the tune of somewhere around 75,000 words across about 95 posts.[^wc-1] That’s a solid showing for a year full of burnout (even if burnout itself [ended up being the subject of no few of those](https://www.chriskrycho.com/burnout): about 6,000 words).[^wc-2] But one of my goals for the year was to publish a few longer-form essays, possibly even getting paid for them. That certainly did not happen; I did not manage to publish even a single essay at Mere Orthodoxy.
 
-[^2]: Running `wc -w` on the posts I wrote in 2018 reports 76,768 words, but that number includes all the post metadata. Assuming an average of 65 words of metadata per post, across the 94 posts I wrote, that comes out to around 6,100 words. So: about 70,000, for an average of about 750 words per post. Not too shabby!
+[^wc-1]: Running `wc -w` on the posts I wrote in 2018 reports 80,911 words, but that number includes all the post metadata. Assuming an average of 65 words of metadata per post, across the 96 posts I wrote, that comes out to around 6,250 words. So: very roughly 75,000, for an average of about 780 words per post. Not too shabby!
+
+[^wc-2]: Meta note: that includes this post. So the final count depends on how long I make the previous footnote. And this one. Such recursion!
 
 ### Health
 
@@ -55,7 +57,7 @@ I ran a fair bit, and am slowly adjusting to living at roughly 7,000 feet above 
 
 ### Work
 
-Work has been a mixed bag. On the one hand, I accomplished a lot this year. Despite a number of large roadblocks that were entirely outside my control (and several of which I argued strenuously against), I lead a very important effort to hit several meaningful milestones. I also kept pushing the state of our tooling forward, including some important open-source work, and at the end of November gave a “tech talk” on technical costs which seems to have made a real (if, so far, still small!) impact on the entire organization.
+Work has been a mixed bag. On the one hand, I accomplished a lot this year. Despite a number of large roadblocks that were entirely outside my control, I lead a very important effort to hit several meaningful milestones. I also kept pushing the state of our tooling forward, including some important open-source work, and at the end of November gave a “tech talk” on technical costs which seems to have made a real (if, so far, still small!) impact on the entire organization.
 
 On the other hand, work directly triggered the burnout I experienced. To be sure, I had plenty of existing stressors from moving across and walking through my dad’s fight with cancer with the rest of my family. But the things that pushed me over the edge from <i>tired and worn down</i> to <i>burnout</i> were challenges at work. There were the aforementioned roadblocks. There were some high-stress projects. But most of all, there is a lack of alignment between my engineering and business philosophies and those in play at Olo. Those aren’t *moral*, but prudential and strategic, kinds of differences—but that does not make them unimportant! More on this below.
 
@@ -120,7 +122,7 @@ Given that I’m currently planning two events in late spring and summer, I also
 
 ### Work
 
-As I close in on the end of the first decade of my career, I’m [thinking a lot][career] about what I want the next decade of my career to look like. I don’t expect to be able to figure it all out ahead of time, of course. At the same time, I’m resolved to find opportunities that align more with my values and the general aims for my career I’ve started developing.
+As I close in on the end of the first decade of my career, I’m [thinking a lot][career] about what I want the next decade of my career to look like. I don’t expect to be able to figure it all out ahead of time, of course. At the same time, I’m resolved to find opportunities that align more with my values and the general aims for my career I’ve started developing. As I suggested above, I've found that I'm not on the same page as, well, *most* businesses about how to approach a great many questions. There is no short-term fix for this; but in the longer-term I want to have enough independence to do things more in line with my ["winning slowly"][ws] view of the world.
 
 [career]: https://www.chriskrycho.com/2018/career-trajectory.html
 
