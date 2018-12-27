@@ -35,8 +35,8 @@ Instead, here are the top five *best* or *most important* posts I wrote this yea
 
 And, as a bonus, a number of other things I think are interesting:
 
-• all my [Zettelkasten posts](https://www.chriskrycho.com/zettelkasten/)
-• all my [burnout posts](https://www.chriskrycho.com/burnout/)
-• [Scales of Feedback Time in Software Development](https://www.chriskrycho.com/2018/scales-of-feedback-time-in-software-development.html)—my most important technical post this year
-• [Free Speech](https://www.chriskrycho.com/2018/free-speech.html)—on outsourcing all of our public discourse to social media
-• [How I Write a Talk](https://www.chriskrycho.com/2018/how-i-write-a-talk.html)
+- all my [Zettelkasten posts](https://www.chriskrycho.com/zettelkasten/)
+- all my [burnout posts](https://www.chriskrycho.com/burnout/)
+- [Scales of Feedback Time in Software Development](https://www.chriskrycho.com/2018/scales-of-feedback-time-in-software-development.html)—my most important technical post this year
+- [Free Speech](https://www.chriskrycho.com/2018/free-speech.html)—on outsourcing all of our public discourse to social media
+- [How I Write a Talk](https://www.chriskrycho.com/2018/how-i-write-a-talk.html)
