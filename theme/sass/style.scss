@@ -358,10 +358,11 @@ hr {
 
 table {
   width: 100%;
-  table-layout: fixed;
+  font-size: $fs_small;
+  table-layout: auto;
   margin: {
-    top: 1em;
-    bottom: 1em;
+    top: .25em;
+    bottom: .25em;
     left: auto;
     right: auto;
   }
