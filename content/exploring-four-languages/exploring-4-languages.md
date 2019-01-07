@@ -10,7 +10,7 @@ Summary: >
 
 Today, as I hit the first of the implementation chapters in [_Domain Modeling Made Functional_](https://pragprog.com/book/swdddf/domain-modeling-made-functional), I started thinking about how I wanted to implement it. As I’ve noted [elsewhere](https://twitter.com/chriskrycho/status/934170826718429184) in the past, very little of the book is _truly_ specific to F^♯^, though that’s the language Wlaschin uses in the book—and Wlaschin himself [agrees](https://twitter.com/ScottWlaschin/status/934177554331848705):
 
-> Thanks! Yes, it's true that you could easily use #ElmLang, #RustLang, #Scala, or especially #OCaml to work through the book. I use hardly any F# specific features.
+> Thanks! Yes, it's true that you could easily use \#ElmLang, \#RustLang, \#Scala, or especially \#OCaml to work through the book. I use hardly any F# specific features.
 
 So… I decided to try something a little bit bonkers. I’m going to implement these exercises in _four different languages_:
 
