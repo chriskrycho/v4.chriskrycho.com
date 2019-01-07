@@ -35,6 +35,8 @@ TRANSLATION_FEED_RSS = None
 
 # Social networking/sharing settings
 IDENTITY = {'Email': 'mailto:chris at chriskrycho dot com',
+            'Patreon': 'https://patreon.com/chriskrycho',
+            'Cash.me': 'https://cash.me/$chriskrycho',
             'GitHub': 'https://github.com/chriskrycho',
             'LinkedIn': 'http://www.linkedin.com/in/chriskrycho',
             'SoundCloud': 'https://soundcloud.com/chriskrycho',
