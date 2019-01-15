@@ -25,7 +25,10 @@ As has long been my tradition[^how-long] I’m wrapping up the year by looking b
 
 ### Podcasting
 
-I had intended to publish about twice as many episodes of New Rustacean this year as I was ultimately able to release. My goal was actually to be releasing 3–4 episodes each month, and to cover most of the rest of the language! As it turned out, I was able to release only 1–2 episodes per month. I’m nonetheless very happy with the episodes I *did* release this year. And my episode on burnout may end up being one of the most important things to come out of the show, from the email responses I’ve received about it.
+I had intended to publish about twice as many episodes of [New Rustacean][nr] this year as I was ultimately able to release. My goal was actually to be releasing 3–4 episodes each month, and to cover most of the rest of the language! As it turned out, I was able to release only 1–2 episodes per month. I’m nonetheless very happy with the episodes I *did* release this year. And [my episode on burnout][burnout] may end up being one of the most important things to come out of the show, from the email responses I’ve received about it.
+
+[nr]: https://newrustacean.com
+[burnout]: https://newrustacean.com/show_notes/bonus/burnout/
 
 We launched a new design of the [Winning Slowly website][ws] and we were able to record and publish about three quarters of the episodes we had planned for Season 6 before the burnout tanked me. There’s a wrap-up episode we recorded and which should be out in a few days (after I edit it!). We also released our 100th episode, which was fun! It was frustrating not to be able to finish everything we had planned, but I remain proud of the work we’ve done there over the last five years, and this season had a couple really important episodes in it. If you didn’t listen to anything else, I’d commend [6.04: Move Slowly and Fix Things][6.04] and [6.06: A Kind of Blindness][6.06]. The latter, on “big data” and the difference between information and wisdom, is one of my single favorite episodes of the show.
 
@@ -37,9 +40,14 @@ We launched a new design of the [Winning Slowly website][ws] and we were able to
 
 I also set out this year to read a lot of books—I had a list of a 14 pieces of nonfiction on the list—and in the end I finished *none* of them. I participated in a reading group which covered much of <cite>Domain Modeling Made Functional</cite>, and I made it through the first fifth or so of St. Augustine’s <cite>City of God</cite>, but I didn’t even manage to finish a few books I had started *last* year! The only things I managed to finish were novels:
 
-- I finished rereading <cite>The Wheel of Time</cite> and enjoyed some new-to-me “popcorn” in the form of [<cite>Agent of Change</cite>](http://www.chriskrycho.com/2018/agent-of-change.html).
-- I devoured Mary Robinette Kowal’s [<cite>The Calculating Stars</cite>](http://www.chriskrycho.com/2018/the-calculating-stars.html) and [<cite>The Fated Sky</cite>](http://www.chriskrycho.com/2018/review-the-fated-sky.html).
-- I read a couple Hugo and Nebula award winners: Larry Niven’s [<cite>Ringworld</cite>](http://www.chriskrycho.com/2018/ringworld-review.html) and N.K. Jemisin’s <cite>The Fifth Season</cite>.
+- I finished rereading <cite>The Wheel of Time</cite> and enjoyed some new-to-me “popcorn” in the form of [<cite>Agent of Change</cite>][aoc].
+- I devoured Mary Robinette Kowal’s [<cite>The Calculating Stars</cite>][tcs] and [<cite>The Fated Sky</cite>][tfs].
+- I read a couple Hugo and Nebula award winners: Larry Niven’s [<cite>Ringworld</cite>][ringworld] and N.K. Jemisin’s <cite>The Fifth Season</cite>.
+
+[aoc]: http://www.chriskrycho.com/2018/agent-of-change.html
+[tcs]: http://www.chriskrycho.com/2018/the-calculating-stars.html
+[tfs]: http://www.chriskrycho.com/2018/review-the-fated-sky.html
+[ringworld]: http://www.chriskrycho.com/2018/ringworld-review.html
 
 While those novels were basically the only thing I read, I very much like the habit of writing very short reviews I started with those novels. I expect to keep that habit, and it should be useful as I dig back into nonfiction in the future!
 
@@ -71,9 +79,9 @@ So looking forward into 2019, my hopes (I dare not call them plans anymore):
 
 ### Podcasting
 
-I want to publish the dozen more episodes of [New Rustacean](https://newrustacean.com) that I had planned for 2018! At my current rate of about two a month, that’ll take me the first six months or so of the year. Once I’m through that list, I’ll have covered the entirety of the language and quite a few of the most important crates in the ecosystem. But there are always new things happening, so I’ll have some interesting decisions to make about where to take the show.
+I want to publish the dozen more episodes of [New Rustacean][nr] that I had planned for 2018! At my current rate of about two a month, that’ll take me the first six months or so of the year. Once I’m through that list, I’ll have covered the entirety of the language and quite a few of the most important crates in the ecosystem. But there are always new things happening, so I’ll have some interesting decisions to make about where to take the show.
 
-I’m also going to keep producing [Winning Slowly](https://winningslowly.org) with Stephen Carradini. We have not yet nailed down what Season 7 will focus on or look like yet, but we’re far from done. The issue is not finding something to talk about, but narrowing it down to which specific things we want to zoom in on! We also have an interview lined up in January (which will come out as an inter-season standalone episode) which we’re *very* excited about. It’ll be quite different from the other interviews we’ve done, and represents an important step forward for the show.
+I’m also going to keep producing [Winning Slowly][ws] with Stephen Carradini. We have not yet nailed down what Season 7 will focus on or look like yet, but we’re far from done. The issue is not finding something to talk about, but narrowing it down to which specific things we want to zoom in on! We also have an interview lined up in January (which will come out as an inter-season standalone episode) which we’re *very* excited about. It’ll be quite different from the other interviews we’ve done, and represents an important step forward for the show.
 
 ### Reading and Writing
 
