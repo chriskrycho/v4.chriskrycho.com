@@ -10,7 +10,7 @@ Summary: >
 
 | Time does not heal all wounds, only
 | papers over, lets fade, until
-| the sharpness of a pain is less—
+| the sharpness of a blow is less—
 | but not diminished in its depth—
 | and naught but eschaton will right
 | the hurts which change us deepest, most;
