@@ -4,6 +4,8 @@ Date: 2019-01-14 18:50
 Category: Art
 Tags: [poetry]
 Summary: >
+   Time does not heal all wounds, only / papers over, lets fade, until... 
+
 ---
 
 | Time does not heal all wounds, only
