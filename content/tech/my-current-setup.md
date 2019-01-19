@@ -33,6 +33,7 @@ For software development, I currently use:
 [config]: https://gist.github.com/chriskrycho/f39442dd78ad6d150bcaaadd9fedf9f4
 [Settings Sync]: https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
 [iTerm 2]: https://iterm2.com
+[tmux]: https://github.com/tmux/tmux/wiki
 [kitty]: https://sw.kovidgoyal.net/kitty/
 [Fork]: http://git-fork.com
 [git]: https://git-scm.com
