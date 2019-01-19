@@ -74,14 +74,16 @@ For "productivity" concerns, I use:
 
 - [Things] for a to-do app. Things hits the sweet spot for me in terms of its ability to manage everything from simple tasks and recurring to-do items around the house up to complex multi-month-long projects. I particularly like its distinction between when I want to be *reminded* about something and when that task is *due*. I've used [OmniFocus] in the past, but it never quite *fit* me; Things does. They're very comparable in terms of features; it's just that the way Things approaches those features works better for me.
 
-- [Spark] as my email client, mostly for its snooze feature, which I use when I know I need to see an email *as an email* sometime later, and its ability to integrate nicely with other apps. I have it connect to Things, and emails that require an *action* get put there instead of snoozed. The combination lets me keep my inbox at Zero by the end of every day. And its [lovely "Inbox Zero" images][img] are a really nice touch.
+- [Spark] as my email client, mostly for its snooze feature, which I use when I know I need to see an email *as an email* sometime later, and its ability to integrate nicely with other apps. I have it connect to Things, and emails that require an *action* get put there instead of snoozed. The combination lets me keep my inbox at Zero by the end of every day. And its lovely "Inbox Zero" images are a really nice touch:
+
+    ![Inbox Zero in Spark][img]
 
 [Tadam]: https://tadamapp.com
 [tracking]: https://www.chriskrycho.com/2018/just-write-down-what-you-do.html
 [Things]: https://culturedcode.com
 [OmniFocus]: https://www.omnigroup.com/omnifocus/
 [Spark]: https://sparkmailapp.com
-[img]: TODO
+[img]: https://f001.backblazeb2.com/file/chriskrycho-com/images/inbox-zero-spark.png
 
 ## Podcasting
 
