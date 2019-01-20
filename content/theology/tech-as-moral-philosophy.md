@@ -11,6 +11,8 @@ Status: draft
 
 ---
 
+<i><b>[Assumed Audience](https://www.chriskrycho.com/2018/ssumed-audiences.html):</b> TODO.</i>
+
 L. M. Sacasas, [reflecting on][sacasas] Paul Goodman’s [claim] that “technology is a branch of moral philosophy, not of science,” and that “technology must have its proper place on the faculty as a learned profession important in modern society, along with medicine, law, the humanities, and natural philosophy, learning from them and having something to teach them”—emphasis mine:
 
 [sacasas]: https://thefrailestthing.com/2019/01/19/technology-is-a-branch-of-moral-philosophy/
@@ -54,7 +56,7 @@ In the last decade or so, though, there has been something of a frost in that lo
 
 [^rust]: e.g. Rust—and you should probably also include Swift and Kotlin in this category as well
 
-My point with this example—nerdy and embedded in the very largest symptom of all that the tech critics rightly condemn though it be!—is that sea changes are rarely predictable, and often come about in surprising ways. Few programming language enthusiasts would have guessed in 2009 that JavaScript web programming ideas from Facebook would quietly but thoroughly shift the [Overton window] for programming techniques and languages. This certainly means that we cannot simply *expect* things to go as we hope they will. But it also means that we may continue to *hope* that things will not go as we fear, even when we see no particular reason for that hope at present.
+My point with this example—nerdy and embedded in the very largest symptom of all that the tech critics rightly condemn though it be!—is that sea changes are rarely predictable, and often come about in surprising ways. Few programming language enthusiasts would have guessed in 2009 that JavaScript web programming ideas from Facebook would quietly but thoroughly shift the [Overton window] for programming techniques and languages. This certainly does not mean we can simply *expect* things to go as we wish. But it also means that we may continue to *hope* that things will not go as we fear—even when we see no particular reason for that hope at present.
 
 [Overton window]: https://en.wikipedia.org/wiki/Overton_window
 
