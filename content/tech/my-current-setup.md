@@ -9,6 +9,8 @@ Summary: >
 
 ---
 
+<i><b>[Assumed Audience](https://www.chriskrycho.com/2018/assumed-audiences.html):</b> people interested in productivity and work flow and app choice.</i>
+
 A friend was asking me the other day what my workflow looks like, and while I don't generally spend a *lot* of time writing about my working setup, I figured I'd throw up a quick post representing my *current* list so that if people ask I can point them here.
 
 Two important notes on this, though: First, this is *just what I use*. I make no particular claim that it's *the best*. There are lots of things here that are very specific to me and the way I work, and even to my specific mental quirks. Second, it's far more important to care about the work you do than about the tools you use to get it done. The tools matter: some people say they don't and I don't think that's right at all. But they don't matter as much as they might *feel* like they do, and tool fetishism is real. I think the happy point is finding tools which are good enough and fit comfortably enough into your workflow that they don't *distract* you, and then get back to the work you do!
