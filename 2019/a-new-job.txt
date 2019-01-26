@@ -19,9 +19,9 @@ This is a huge change for me: I've been at Olo for almost exactly three years no
 
 With such a significant change comes a big blog post, in two parts:
 
-- [I. On Moving From Olo to LinkedIn](#i-on-moving-from-olo-to-linkedin): the part to read if you're just curious about what prompted me to move on from a company I have spoken so well of.
+- [I. On Moving From Olo to LinkedIn](#i.-on-moving-from-olo-to-linkedin): the part to read if you're just curious about what prompted me to move on from a company I have spoken so well of.
 
-- [II. On The Experience of Change as An Adult](#ii-on-the-experience-of-change-as-an-adult): the part to read if you don't care about the details of my career as a programmer, but are curious about my thoughts on these kinds of changes as we *all* experience them.
+- [II. On The Experience of Change as An Adult](#ii.-on-the-experience-of-change-as-an-adult): the part to read if you don't care about the details of my career as a programmer, but are curious about my thoughts on these kinds of changes as we *all* experience them.
 
 ## I. On Moving From Olo to LinkedIn
 
