@@ -1,11 +1,10 @@
 ---
 Title: A New Job!
-Subtitle: TODO
+Subtitle: Why I’m changing jobs—and how change feels as an adult.
 Summary: >
-    TODO
-Date: 2019-01-24 20:30
-Tags: [career, TODO]
-Status: draft
+    A post in two parts: on why I’m changing jobs and on the strange experience of change as an adult.
+Date: 2019-01-24 21:15
+Tags: [career, adulthood, Tolkien]
 
 ---
 
