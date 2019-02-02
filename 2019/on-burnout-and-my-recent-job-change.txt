@@ -1,7 +1,7 @@
 ---
 Title: On Burnout and My Recent Job Change
 Subtitle: >
-    How the experience of burnout did—*and did not!*—contribute to my leaving Olo for LinkedIn.
+    How the experience of burnout did—<em>and did not!</em>—contribute to my leaving Olo for LinkedIn.
 Date: 2019-02-02 13:00
 Category: blog
 Tags: [burnout, career]
@@ -15,6 +15,7 @@ I [posted][new job post] a week ago about my (then-impending, now-quite-actual!)
 [new job post]: https://www.chriskrycho.com/2019/a-new-job.html
 [Olo]: https://www.olo.com
 [LinkedIn]: https://linkedin.com
+[Stephen]: https://stephencarradini.com
 [symptoms]: https://www.chriskrycho.com/2018/burnout-symptoms.html
 [job-triggered burnout]: https://www.chriskrycho.com/2018/dealing-with-burnout-in-public.html
 
