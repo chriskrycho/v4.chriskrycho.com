@@ -20,7 +20,9 @@
     "@babel/core": "7.1.2"
   },
   "babel": {
-    "presets": ["@babel/preset-env"]
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "browserslist": [
     "last 2 versions",
@@ -31,5 +33,9 @@
     "proseWrap": "preserve",
     "printWidth": 90,
     "tabWidth": 3
+  },
+  "toolchain": {
+    "node": "10.15.1",
+    "yarn": "1.14.0"
   }
 }
