@@ -13,9 +13,11 @@ Date: 2017-12-21 07:10
 
 - [Russian], translated by Vlad Brown (<http://softdroid.net>)
 - [Uzbek], translated by Alisher
+- [French], translated by Jeremy Lee Shields (<http://jeremylee.sh>)
 
 [Russian]: http://softdroid.net/chrome-ne-yavlyaetsya-standartom
 [Uzbek]: http://getdrawings.com/uz-chrome-standart-emas
+[French]: http://jeremylee.sh/various/chromp.html
 
 ---
 
