@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Announcing ember-cli-typescript v2.0 &middot; Chris Krycho</title>
+    <meta name="description" content="The unofficial Ember TypeScript team just published v2 of ember-cli-typescript, with nicer build errors, a docs site, and much faster builds which play more nicely with the ecosystem by way of Babel 7."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2019/announcing-ember-cli-typescript-v20.html"/>
+    <meta property="og:title" content="Announcing ember-cli-typescript v2.0"/>
+    <meta property="og:description" content="The unofficial Ember TypeScript team just published v2 of ember-cli-typescript, with nicer build errors, a docs site, and much faster builds which play more nicely with the ecosystem by way of Babel 7."/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Announcing ember-cli-typescript v2.0"/>
+    <meta name="twitter:description" content="The unofficial Ember TypeScript team just published v2 of ember-cli-typescript, with nicer build errors, a docs site, and much faster builds which play more nicely with the ecosystem by way of Babel 7."/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="emberjs typescript open-source-software tech">
+
+    <header>
+<h1>Announcing ember-cli-typescript v2.0</h1>
+<h2>Now built with Babel, better build errors, and a docs site!</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2019/announcing-ember-cli-typescript-v20.html" title="Announcing ember-cli-typescript v2.0"><i class="fa fa-fw fa-link"></i></a>March 13, 2019</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/open-source-software/">#open-source software</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2019/announcing-ember-cli-typescript-v20.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>I’m pleased to announce that the unofficial Ember TypeScript team (Dan Freeman, Derek Wickern, James Davis, and Mike North, and I) have just published ember-cli-typescript v2.0.0!</p>
+<p>To get it in your app or addon, just run:</p>
+<pre class="sh"><code>ember install ember-cli-typescript@latest</code></pre>
+<section id="whats-new" class="level2">
+<h2>What’s new?</h2>
+<p>There are just two changes, but they’re a big deal!</p>
+<ol type="1">
+<li><p><strong>The addon now uses Babel 7’s TypeScript support</strong> to actually build your TypeScript, while continuing to use TypeScript itself to type-check your app. We added some fancy new build errors to go with that, too! This means your builds will be <em>much faster</em> and that tools like <a href="https://github.com/ef4/ember-auto-import">ember-auto-import</a> will Just Work™ with TypeScript apps and addons nnow. (There are a few caveats that come with this, so <em>please</em> see <a href="https://github.com/typed-ember/ember-cli-typescript/releases/tag/v2.0.0">the release notes</a>!)</p></li>
+<li><p><strong>We added a documentation site!</strong> You can check out the documentation at <a href="typed-ember.github.io/ember-cli-typescript">typed-ember.github.io/ember-cli-typescript</a>. Previously, the README was over 6,000 words long… and growing. Now, the README just has the basic stuff you need to get started, and documentation lives in… the docs! Thanks to the <a href="https://www.github.com/ember-learn/ember-cli-addon-docs">ember-cli-addon-docs</a> crew for making it so easy to build such a nice documentation site!</p></li>
+</ol>
+<p>We covered the Babel 7 changes in detail two earlier blog posts:</p>
+<ul>
+<li><a href="https://www.chriskrycho.com/2018/ember-cli-typescript-v2-beta.html">ember-cli-typescript v2 beta</a> (me)</li>
+<li><a href="https://medium.com/@mikenorth/ember-cli-typescript-v2-release-candidate-3d1f72876ea4">ember-cli-typescript v2 release candidate</a> (Mike North)</li>
+</ul>
+<p>Happily, nothing has changed in the implementation since the beta or <abbr>RC</abbr> releases except fixing some bugs!</p>
+<p>For my part, thanks to Dan Freeman, who did the lion’s share of the work to get us working with Babel 7!</p>
+<p>On behalf of the whole unofficial Ember TypeScript team, thanks to everyone who tested this before we released, identified gaps in the docs (not to mention catching errors and typos there!), and provided feedback along the way. There’s more good stuff coming in the months ahead!</p>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+    <h3>Support Me</h3>
+    <ul class='icons'>
+        <li><a href="https://patreon.com/chriskrycho"><i class='fa fa-fw fa-money'></i>Patreon</a></li>
+        <li><a href="https://cash.me/$chriskrycho"><i class='fa fa-fw fa-usd'></i>Cash.me</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/seeing-things-through.html">Seeing Things Through</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2019/announcing-ember-cli-typescript-v20.html">Announcing ember-cli-typescript v2.0</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2018/a-christmas-homily.html">A Christmas Homily</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

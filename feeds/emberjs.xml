@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - ember.js</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Mon, 19 Nov 2018 21:30:00 -0500</lastBuildDate><item><title>ember-cli-typescript v2 beta</title><link>http://www.chriskrycho.com/2018/ember-cli-typescript-v2-beta.html</link><description>&lt;p&gt;A few weeks ago, the Typed Ember team published the first beta releases of &lt;code&gt;ember-cli-typescript&lt;/code&gt; v2 (currently at beta 3). The new version brings much faster and more reliable builds, with nicer error reporting to boot.&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - emberjs</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Wed, 13 Mar 2019 16:00:00 -0400</lastBuildDate><item><title>Announcing ember-cli-typescript v2.0</title><link>http://www.chriskrycho.com/2019/announcing-ember-cli-typescript-v20.html</link><description>&lt;p&gt;I’m pleased to announce that the unofficial Ember TypeScript team (Dan Freeman, Derek Wickern, James Davis, and Mike North, and I) have just published ember-cli-typescript v2.0.0!&lt;/p&gt;
+&lt;p&gt;To get it in your app or addon, just run:&lt;/p&gt;
+&lt;pre class="sh"&gt;&lt;code&gt;ember install ember-cli-typescript@latest&lt;/code&gt;&lt;/pre&gt;
+&lt;section id="whats-new" class="level2"&gt;
+&lt;h2&gt;What’s new?&lt;/h2&gt;
+&lt;p&gt;There are just two changes, but they’re a big deal!&lt;/p&gt;
+&lt;ol type="1"&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;The addon now uses Babel 7’s TypeScript support&lt;/strong&gt; to actually build your TypeScript, while continuing to use TypeScript itself to type-check your app. We added some fancy new build errors to go with that, too! This means your builds will be &lt;em&gt;much faster&lt;/em&gt; and that tools like &lt;a href="https://github.com/ef4/ember-auto-import"&gt;ember-auto-import&lt;/a&gt; will Just Work™ with TypeScript apps and addons nnow. (There are a few caveats that come with this, so &lt;em&gt;please&lt;/em&gt; see &lt;a href="https://github.com/typed-ember/ember-cli-typescript/releases/tag/v2.0.0"&gt;the release notes&lt;/a&gt;!)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;We added a documentation site!&lt;/strong&gt; You can check out the documentation at &lt;a href="typed-ember.github.io/ember-cli-typescript"&gt;typed-ember.github.io/ember-cli-typescript&lt;/a&gt;. Previously, the README was over 6,000 words long… and growing. Now, the README just has the basic stuff you need to get started, and documentation lives in… the docs! Thanks to the &lt;a href="https://www.github.com/ember-learn/ember-cli-addon-docs"&gt;ember-cli-addon-docs&lt;/a&gt; crew for making it so easy to build such a nice documentation site!&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We covered the Babel 7 changes in detail two earlier blog posts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2018/ember-cli-typescript-v2-beta.html"&gt;ember-cli-typescript v2 beta&lt;/a&gt; (me)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://medium.com/@mikenorth/ember-cli-typescript-v2-release-candidate-3d1f72876ea4"&gt;ember-cli-typescript v2 release candidate&lt;/a&gt; (Mike North)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Happily, nothing has changed in the implementation since the beta or &lt;abbr&gt;RC&lt;/abbr&gt; releases except fixing some bugs!&lt;/p&gt;
+&lt;p&gt;For my part, thanks to Dan Freeman, who did the lion’s share of the work to get us working with Babel 7!&lt;/p&gt;
+&lt;p&gt;On behalf of the whole unofficial Ember TypeScript team, thanks to everyone who tested this before we released, identified gaps in the docs (not to mention catching errors and typos there!), and provided feedback along the way. There’s more good stuff coming in the months ahead!&lt;/p&gt;
+&lt;/section&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 13 Mar 2019 16:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2019-03-13:/2019/announcing-ember-cli-typescript-v20.html</guid><category>emberjs</category><category>typescript</category><category>open-source software</category></item><item><title>ember-cli-typescript v2 beta</title><link>http://www.chriskrycho.com/2018/ember-cli-typescript-v2-beta.html</link><description>&lt;p&gt;A few weeks ago, the Typed Ember team published the first beta releases of &lt;code&gt;ember-cli-typescript&lt;/code&gt; v2 (currently at beta 3). The new version brings much faster and more reliable builds, with nicer error reporting to boot.&lt;/p&gt;
 &lt;p&gt;In this post:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#testing-the-upgrade"&gt;Testing the Upgrade&lt;/a&gt;&lt;/li&gt;
