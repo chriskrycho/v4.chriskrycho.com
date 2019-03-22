@@ -11,11 +11,9 @@ Summary: >
 
 I'm pleased to announce that the unofficial Ember TypeScript team (Dan Freeman, Derek Wickern, James Davis, and Mike North, and I) have just published ember-cli-typescript v2.0.0!
 
-To get it in your app or addon, just run:
+Check out the [upgrade instructions] to get started with the new version!
 
-```sh
-ember install ember-cli-typescript@latest
-```
+[upgrade instructions]: https://typed-ember.github.io/ember-cli-typescript/versions/master/docs/upgrade-notes
 
 ## What's new?
 
@@ -27,7 +25,7 @@ There are just two changes, but they're a big deal!
 
 [ember-auto-import]: https://github.com/ef4/ember-auto-import
 [the release notes]: https://github.com/typed-ember/ember-cli-typescript/releases/tag/v2.0.0
-[docs]: typed-ember.github.io/ember-cli-typescript
+[docs]: https://typed-ember.github.io/ember-cli-typescript/versions/master/
 [ember-cli-addon-docs]: https://www.github.com/ember-learn/ember-cli-addon-docs
 
 We covered the Babel 7 changes in detail two earlier blog posts:
