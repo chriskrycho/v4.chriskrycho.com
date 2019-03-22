@@ -19,7 +19,7 @@ Check out the [upgrade instructions] to get started with the new version!
 
 There are just two changes, but they're a big deal!
 
-1. **The addon now uses Babel 7's TypeScript support** to actually build your TypeScript, while continuing to use TypeScript itself to type-check your app. We added some fancy new build errors to go with that, too! This means your builds will be *much faster* and that tools like [ember-auto-import] will Just Work™ with TypeScript apps and addons nnow. (There are a few caveats that come with this, so *please* see [the release notes]!)
+1. **The addon now uses Babel 7's TypeScript support** to actually build your TypeScript, while continuing to use TypeScript itself to type-check your app. We added some fancy new build errors to go with that, too! This means your builds will be *much faster* and that tools like [ember-auto-import] will Just Work™ with TypeScript apps and addons now. (There are a few caveats that come with this, so *please* see [the release notes]!)
 
 2. **We added a documentation site!** You can check out the documentation at [typed-ember.github.io/ember-cli-typescript][docs]. Previously, the README was over 6,000 words long… and growing. Now, the README just has the basic stuff you need to get started, and documentation lives in… the docs! Thanks to the [ember-cli-addon-docs] crew for making it so easy to build such a nice documentation site!
 
