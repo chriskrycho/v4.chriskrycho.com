@@ -91,13 +91,13 @@ There are a number of other concerns on our radar which we didn’t explicitly t
 
 - <b>Education:</b> as members of the Ember community get excited about adopting TypeScript and start adopting it, we want to help them be successful—avoiding common pitfalls, making libraries/addons easy for others to use safely, and so on. *In particular, if you are converting an addon to TypeScript or adding type definitions for it, **please involve us** so we can help you stay on the happy path and author your types in a way that is stable and usable for the rest of the community!*
 
-- <b>Providing a type-safe story for Ember Concurrency:</b> currently, the various workarounds available for using Ember Concurrency with TypeScript require you to throw away type safety in several places, because TypeScript does not understand the type-level transformation applied by decorators and cannot resolve the types correctly in the traditional `.extend` block. We’ve been working on a strategy to solve this with with [Jan Buschtöns (@buschtoens)][@buschtoens], involving a bit of a clever hack with a Babel transform that none of us love, but which *will* get the job done.
+- <b>Providing a type-safe story for Ember Concurrency:</b> currently, the various workarounds available for using Ember Concurrency with TypeScript require you to throw away type safety in several places, because TypeScript does not understand the type-level transformation applied by decorators and cannot resolve the types correctly in the traditional `.extend` block. We’ve been working on a strategy to solve this with with [Jan Buschtöns (\@buschtoens)][buschtoens], involving a bit of a clever hack with a Babel transform that none of us love, but which *will* get the job done.
 
 - <b>Supporting Ember core’s adoption of TypeScript:</b> much as with the community in general, we want to help make sure that as core Ember libraries adopt TypeScript, they’re able to do so successfully—both in terms of gaining utility to their own projects, and also so that someday we can see…
 
 - <b>Ember shipping its own types:</b> we would love to get to a point where Ember itself ships its own types natively. However, we all see many of the other points in this document as effectively being prerequisites for that to happen successfully—especially the issues around stability and semantic versioning.
 
-[@buschtoens]: https://github.com/buschtoens
+[buschtoens]: https://github.com/buschtoens
 
 ## Onward!
 
