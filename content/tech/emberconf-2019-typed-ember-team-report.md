@@ -5,7 +5,7 @@ Date: 2019-03-26 15:30
 Summary: >
     At EmberConf 2019, the Typed Ember team (Mike North, James Davis, Dan Freeman, and I) enjoyed dinner together and talked about the big problems on deck for TypeScript in Ember. Here’s what we covered!
 Category: Tech
-Tags: [Ember.js, TypeScript]
+Tags: [emberjs, TypeScript, open-source software]
 
 ---
 
@@ -48,11 +48,15 @@ We batted around a number of ideas as a group for how to address those issues, a
 
 [^my-pov]: I may write more on this from my own perspective in the future; I leave that aside here as this post aims to accurately present of the team’s conversation and perspective, not just mine!
 
-[^deps]: I am going to (TODO: already did?) add documentation with details on the current state of affairs around this specific issue to the docs site!
+[^deps]: I added [documentation][deps-docs] with details on the current state of affairs around this specific issue to the docs site!
+
+[deps-docs]: https://typed-ember.github.io/ember-cli-typescript/docs/troubleshooting/conflicting-types
 
 ### Typed Templates
 
-The other major pain point for TypeScript adopters in Ember has been that no type-checking occurs in templates.[^other-frameworks] This means that a substantial part of all apps and many addons is completely outside the TypeScript world and the benefits it brings—type checks around invocation, autocomplete, refactoring, etc. The same is true of everything except JSX/TSX, it turns out. People have written *workarounds* for Vue and Angular, but they are just that: workarounds, rather than first-class citizens of TypeScript the way TSX is. We know how to implement that kind of workaround ourselves—Dan implemented a basic prototype last year, in fact!—and we plan to work out the remaining details and do so.
+The other major pain point for TypeScript adopters in Ember has been that no type-checking occurs in templates. This means that a substantial part of all apps and many addons is completely outside the TypeScript world and the benefits it brings—type checks around invocation, autocomplete, refactoring, etc. The same is true of everything except JSX/TSX, it turns out. People have written *workarounds* for Vue and Angular, but they are just that: workarounds, rather than first-class citizens of TypeScript the way TSX is.[^other-frameworks] We know how to implement that kind of workaround ourselves—Dan implemented a basic prototype last year, in fact!—and we plan to work out the remaining details and do so… and more!
+
+[^other-frameworks]: The same is true for Vue and Angular; we *hope* that the things we do here will help those communities as well.
 
 “Remaining details” is an important part of that, though.
 
