@@ -75,14 +75,14 @@
     </header>
 
 
-<article class="emberjs typescript tech">
+<article class="emberjs typescript open-source-software tech">
 
     <header>
 <h1>EmberConf 2019 Typed Ember Team Report</h1>
 <h2>What are the next big problems on deck for TypeScript in Ember?</h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/2019/emberconf-2019-typed-ember-team-report.html" title="EmberConf 2019 Typed Ember Team Report"><i class="fa fa-fw fa-link"></i></a>March 26, 2019</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#ember.js</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2019/emberconf-2019-typed-ember-team-report.txt">Markdown source</a></span>    </div>
+<span class="date"><a href="http://www.chriskrycho.com/2019/emberconf-2019-typed-ember-team-report.html" title="EmberConf 2019 Typed Ember Team Report"><i class="fa fa-fw fa-link"></i></a>March 26, 2019</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/open-source-software/">#open-source software</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2019/emberconf-2019-typed-ember-team-report.txt">Markdown source</a></span>    </div>
 
     <div class="content-wrapper">
 
@@ -110,7 +110,7 @@
 </section>
 <section id="typed-templates" class="level3">
 <h3>Typed Templates</h3>
-<p>The other major pain point for TypeScript adopters in Ember has been that no type-checking occurs in templates.[^other-frameworks] This means that a substantial part of all apps and many addons is completely outside the TypeScript world and the benefits it brings—type checks around invocation, autocomplete, refactoring, etc. The same is true of everything except JSX/TSX, it turns out. People have written <em>workarounds</em> for Vue and Angular, but they are just that: workarounds, rather than first-class citizens of TypeScript the way TSX is. We know how to implement that kind of workaround ourselves—Dan implemented a basic prototype last year, in fact!—and we plan to work out the remaining details and do so.</p>
+<p>The other major pain point for TypeScript adopters in Ember has been that no type-checking occurs in templates. This means that a substantial part of all apps and many addons is completely outside the TypeScript world and the benefits it brings—type checks around invocation, autocomplete, refactoring, etc. The same is true of everything except JSX/TSX, it turns out. People have written <em>workarounds</em> for Vue and Angular, but they are just that: workarounds, rather than first-class citizens of TypeScript the way TSX is.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> We know how to implement that kind of workaround ourselves—Dan implemented a basic prototype last year, in fact!—and we plan to work out the remaining details and do so… and more!</p>
 <p>“Remaining details” is an important part of that, though.</p>
 <ul>
 <li>We want to make sure that we build that in such a way that it can be generalized to other kinds of files (e.g. <abbr title='cascading style sheets'>CSS</abbr> for use with <abbr title='cascading style sheets'>CSS</abbr> Modules).</li>
@@ -123,7 +123,7 @@
 </section>
 <section id="improving-documentation" class="level3">
 <h3>Improving Documentation</h3>
-<p>We also need to substantially expand our documentation in general. We made a decision not to ship ember-cli-typescript 2.0 without having a proper documentation site in place,<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> and we finally got that foundation in place last week, with an <a href="https://ember-learn.github.io/ember-cli-addon-docs/">ember-cli-addon-docs</a> setup. We converted the existing (far-too-long) README, updated the pieces which were out of date, and added notes for upgrading from ember-cli-typescript 1.x. However, the documentation as its stands is a <em>starting</em> point. We need to expand it to cover (at least):</p>
+<p>We also need to substantially expand our documentation in general. We made a decision not to ship ember-cli-typescript 2.0 without having a proper documentation site in place,<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> and we finally got that foundation in place last week, with an <a href="https://ember-learn.github.io/ember-cli-addon-docs/">ember-cli-addon-docs</a> setup. We converted the existing (far-too-long) README, updated the pieces which were out of date, and added notes for upgrading from ember-cli-typescript 1.x. However, the documentation as its stands is a <em>starting</em> point. We need to expand it to cover (at least):</p>
 <ul>
 <li>successful strategies both for starting new projects and for migrating existing projects</li>
 <li>working with types effectively</li>
@@ -157,8 +157,9 @@
 <li id="fn1" role="doc-endnote"><p>We also want to mention—and thank!—Derek Wickern, who did a heroic amount of work to write types for Ember in 2017, and even though he is no longer working in Ember projects, he kindly still contributes especially by way of answering questions in Discord now and again.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 <li id="fn2" role="doc-endnote"><p>The only comparable ecosystems I’m aware of are the Rust and Elm programming languages. Rust has an official <abbr title='Request for Comments'>RFC</abbr> defining its commitment to and definition of SemVer for the language and packages within the ecosystem. Elm has a similar commitment for packages—enforcing its definition with integration between the package manager and the compiler—while still being in a 0.x mode for the language.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
 <li id="fn3" role="doc-endnote"><p>I may write more on this from my own perspective in the future; I leave that aside here as this post aims to accurately present of the team’s conversation and perspective, not just mine!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn4" role="doc-endnote"><p>I am going to (TODO: already did?) add documentation with details on the current state of affairs around this specific issue to the docs site!<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn5" role="doc-endnote"><p>I have long been of the mind that an open source project is simply not done until it has at least a reasonable baseline of documentation, and was delighted to learn that the rest of the team shares that mentality.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn4" role="doc-endnote"><p>I added <a href="https://typed-ember.github.io/ember-cli-typescript/docs/troubleshooting/conflicting-types">documentation</a> with details on the current state of affairs around this specific issue to the docs site!<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn5" role="doc-endnote"><p>The same is true for Vue and Angular; we <em>hope</em> that the things we do here will help those communities as well.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn6" role="doc-endnote"><p>I have long been of the mind that an open source project is simply not done until it has at least a reasonable baseline of documentation, and was delighted to learn that the rest of the team shares that mentality.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
