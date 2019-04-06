@@ -1,7 +1,7 @@
 ---
 Title: Being an Amateur Again
 Subtitle: Starting up on iOS and macOS development is a strange feeling!
-Date: 2019.05.05 20:00
+Date: 2019-04-05 20:00
 Tags: [software development, learning]
 Summary: >
     I am (very slowly) starting the process of building some native iOS and macOS apps. It is a strange feeling to be so out of my depth again!
