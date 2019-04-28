@@ -6,8 +6,8 @@ Template: formats/quotation
 Tags: [quotes]
 Category: theology
 Source: Mark A. Seifrid, <cite>The Second Letter to the Corinthians</cite>
-bibliography: /Users/chris/writing/icloud-drive/Documents/writing/library.bib
-csl: /Users/chris/writing/icloud-drive/Documents/writing/chicago.csl
+bibliography: /Users/chris/writing/Documents/writing/library.bib
+csl: /Users/chris/writing/Documents/writing/chicago.csl
 ...
 
 > The _pro me_ of the gospel does not further an autonomous individualism. It

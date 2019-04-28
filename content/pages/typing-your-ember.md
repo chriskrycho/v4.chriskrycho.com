@@ -51,6 +51,7 @@ This list is updated whenever I publish a new post in the series. You can also s
 ### Related Announcements
 
 * [Announcing ember-cli-typescript 1.0.0][1.0.0] (August 8, 2017)
+* [Announcing ember-cli-typescript 1.1.0][1.1.0] (February 12, 2018)
 
 [1.0.0]: /2017/announcing-ember-cli-typescript-100.html
-[1.0.0]: /2018/announcing-ember-cli-typescript-110.html
+[1.1.0]: /2018/announcing-ember-cli-typescript-110.html
