@@ -3,7 +3,7 @@ Title: Give Me Chronological Archives or Go Away
 Subtitle: Algorithmically-sorted archives for blogs are hyper-user-hostile and I hate them. Looking at you, Medium.
 Date: 2018-08-25 12:15
 Category: blog
-Tags: writing, blogging, publishing, medium
+Tags: [writing, blogging, publishing, medium]
 Summary: >
     Algorithmically-sorted archives for blogs are hyper-user-hostile and I hate them. Looking at you, Medium.
 
