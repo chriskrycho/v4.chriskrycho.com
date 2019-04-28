@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Exploring 4 Languages: Starting to Model the Domain"/>
     <meta name="twitter:description" content="Using the type systems of Rust, Elm, F♯, and ReasonML to encode the elements of a domain model—and starting to get some idea how the languages are like and unlike each other."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -172,7 +173,7 @@ type order = {
 type productCode =
   | Widget(widgetCode)
   | Gizmo(gizmoCode);</code></pre>
-<p>An interesting aside: unless you planned to reuse these types, you wouldn’t usually write these as standalone types with this many wrapper types in it in Rust in particular (even if the compiler would often recognize that it could squash them down for you).<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Instead, you’d normally write <em>only</em> the base enum type to start, and refactor out the <code>struct</code> wrapper later only if you found you needed it elsewhere:</p>
+<p>An interesting aside: unless you planned to reuse these types, you wouldn’t usually write these as standalone types with this many wrapper types in it in Rust in particular (even if the compiler would often recognize that it could squash them down for you).<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Instead, you’d normally write <em>only</em> the base enum type to start, and refactor out the <code>struct</code> wrapper later only if you found you needed it elsewhere:</p>
 <pre class="diff"><code>enum ProductCode {
 -    Widget(WidgetCode),
 +    Widget(String),
@@ -240,7 +241,7 @@ type validateOrder = unvalidatedOrder =&gt; validationResponse(validatedOrder);<
 <p>You’ll note that in Elm, they just follow the name of the wrapping type. This is a kind of syntactic symmetry: the way you <em>name</em> a generic type like this is the same basic way you <em>construct</em> it. It’s quite elegant. And as it turns out, the same is true of Reason; it’s just that its authors have chosen to follow OCaml and use parentheses for them instead of following Haskell with spaces—a reasonable choice, given Reason is surface syntax for OCaml and not Haskell.</p>
 <p>F<sup>♯</sup> uses angle brackets, I strongly suspect, because that’s what C<sup>#</sup> uses for generics, and keeping them syntactically aligned in things like this is very helpful. Rust similarly uses angle brackets for similarity with other languages which have similar surface syntax—especially C++ (with its templates).</p>
 <p>The way you <em>name</em> generic parameters differs between the languages as well. Elm, following Haskell, uses lowercase letters to name its generics (usually called <em>type parameters</em> in Elm). F<sup>#</sup> and Reason both (unsurprisingly) follow OCaml in using lowercase letters preceded by an apostrophe to name generics—in F<sup>#</sup>, <code>TypeGenericOver&lt;'a&gt;</code>; in Reason, <code>typeGenericOver('a)</code>. Rust follows the convention from languages like C++, Java, and C<sup>#</sup> and uses capital letters, <code>TypeGenericOver&lt;T&gt;</code>. The use of specific letters is conventional, not mandated by the language (unlike the casing). The ML family usually starts with <code>a</code> and moves through the alphabet; Rust and the languages it follows usually start with <code>T</code> (for <em>type</em>) and moves forward through the alphabet. (Sometimes you’ll also see different letters where it’s obviously a better fit for what’s contained.)</p>
-<p>These languages also vary in the syntax for constructing a <em>list</em> of things. In F<sup>#</sup> has convenience syntax for a few built-ins (the most common being the <code>List</code> and <code>Option</code> types), allowing you to write them <em>either</em> as e.g. <code>List&lt;ConcreteType&gt;</code> or <code>ConcreteType list</code> (as here in the example). Elm, Reason, and Rust all just use the standard syntax for generic types—<code>List a</code>, <code>list('a)</code>, and <code>Vec&lt;T&gt;</code> respectively.</p>
+<p>These languages also vary in the syntax for constructing a <em>list</em> of things. In F<sup>#</sup> has convenience syntax for a few built-ins (the most common being the <code>List</code> and <code>Option</code> types), allowing you to write them <em>either</em> as e.g. <code>List&lt;ConcreteType&gt;</code> or <code>ConcreteType list</code> (as here in the example). Elm, Reason, and Rust all just use the standard syntax for generic types—<code>List a</code>, <code>list('a)</code>, and <code>Vec&lt;T&gt;</code> respectively.</p>
 <p>Finally, you’ll also note that we haven’t written out a <em>type</em> declaration here for Rust; we’ve actually written out a stub of a function, with the <a href="https://doc.rust-lang.org/std/macro.unimplemented.html"><code>unimplemented!()</code></a> <a href="https://doc.rust-lang.org/1.17.0/reference/macros-by-example.html">macro</a>. If you invoke this function, you’ll get a clear crash with an explanation of which function isn’t implemented.</p>
 <p>Now, Rust also <em>does</em> let us write out the type of these functions as type aliases if we want:</p>
 <pre class="rust"><code>type ValidateOrder =
@@ -257,10 +258,10 @@ type validateOrder = unvalidatedOrder =&gt; validationResponse(validatedOrder);<
 <p>Still, if you have played with any one of these, you could pretty easily pick up one of the others. It’s sort of like switching between Python and Ruby: there are some real differences there, but the similarities are greater than the differences. Indeed, if anything, these languages are <em>more</em> similar than those.</p>
 <p>Next time I’ll dig into Wlaschin’s chapter on <em>validating</em> the domain model, and here some of the not-just-syntax-level differences in the languages will start to become more apparent.</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>I can’t speak to what’s idiomatic this way in any of the non-Rust languages, because I just haven’t used them enough yet.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>I can’t speak to what’s idiomatic this way in any of the non-Rust languages, because I just haven’t used them enough yet.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>

@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="TypeScript and Ember.js Update, Part 4"/>
     <meta name="twitter:description" content="Using Ember Data effectively, and migrating to new (better, easier!) approaches for service and controller lookup while we’re at it."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -116,7 +117,7 @@ export default class Person extends DS.Model.extend({
   lastName: DS.attr(&quot;string&quot;)
 }) {}</code></pre>
 <p>You can still define other items of the class normally, but attributes have to be prototypally bound or <em>you will have problems</em>. Note that this only applies (as far as I can tell) to Ember Data <code>Model</code>s specifically—<code>Adapter</code> and <code>Serializer</code> classes work just fine.</p>
-<p>The other problem we’ve historically had was dealing with lookups—the situation was similar to that I described in <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Part 3</a> for service injection. However, as of <em>this week</em>, we’re landing a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Keep your eyes open for the ember-cli-typescript 1.1 release in the next couple days!</p>
+<p>The other problem we’ve historically had was dealing with lookups—the situation was similar to that I described in <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html">Part 3</a> for service injection. However, as of <em>this week</em>, we’re landing a solution that means you can drop the type coercions and just do a lookup like you would normally, and it will Just Work™️.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Keep your eyes open for the ember-cli-typescript 1.1 release in the next couple days!</p>
 <p>Once this release of both ember-cli-typescript and the updated typings land, when you generate an Ember Data model by doing <code>ember generate model person firstName:string lastName:string</code>, it will look like this:</p>
 <pre class="ts"><code>import DS from &quot;ember-data&quot;;
 
@@ -363,10 +364,10 @@ export default class PersonDisplay extends Component {
 <h2>Conclusion</h2>
 <p>And that’s pretty much a wrap on Ember Data! The <em>next</em> post you can expect in this series will be a break from nitty-gritty “how to use TS in Ember” posts for a very exciting, closely related announcement—probably tomorrow or Monday! The post after that will be a deep dive into (mostly the limitations of!) writing types for mixins and proxies.</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>If you’re curious about the mechanics, we’re basically setting up a “type registry” which maps the string keys to the correct model, so that the type of e.g. <code>store.createRecord('some-model', { ... })</code> will do a lookup in an interface which defines a mapping from model name, i.e. <code>some-model</code> here, to the model type, e.g. <code>export default class SomeModel extends DS.Model.extend({ ... }) {}</code>. I’ll write up a full blog post on the mechanics of that sometime soon.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>If you’re curious about the mechanics, we’re basically setting up a “type registry” which maps the string keys to the correct model, so that the type of e.g. <code>store.createRecord('some-model', { ... })</code> will do a lookup in an interface which defines a mapping from model name, i.e. <code>some-model</code> here, to the model type, e.g. <code>export default class SomeModel extends DS.Model.extend({ ... }) {}</code>. I’ll write up a full blog post on the mechanics of that sometime soon.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>

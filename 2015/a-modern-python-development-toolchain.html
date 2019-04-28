@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="A Modern Python Development Toolchain"/>
     <meta name="twitter:description" content="Using homebrew, pyenv, and pip to manage Python development environments and workspaces."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -89,7 +90,7 @@
 
         <div class="content">
 
-<p>Most of my development time these days—and especially the majority of my happiest time!—is spent working in Python. As such, I’ve experimented off and on over the last few years with the best workflow, and have settled down with a set of tools that is <em>very</em> effective and efficient for me. I’m sure I’m not the only one who’s had to wrestle with some of the issues particular to this toolchain, and I know that information like this can be valuable especially for people just starting off, so I thought I would document it all in one place.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Most of my development time these days—and especially the majority of my happiest time!—is spent working in Python. As such, I’ve experimented off and on over the last few years with the best workflow, and have settled down with a set of tools that is <em>very</em> effective and efficient for me. I’m sure I’m not the only one who’s had to wrestle with some of the issues particular to this toolchain, and I know that information like this can be valuable especially for people just starting off, so I thought I would document it all in one place.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>Note: when talking about a given program, I will italicize it, like <em>brew</em> or <em>git</em> or <em>python</em>. When talking about things to type, I will make them a code block like <code>git clone &lt;a repository&gt;</code>. For any extended samples, I will make them full-on code blocks:</p>
 <pre class="python"><code>import re
 
@@ -102,11 +103,11 @@ def a_neat_function():
 <p>Everyone is going to have their own preferences for version control tools and an editor; but the recommendations I make regarding Python installations, package management, and workspaces/virtual environments should be fairly standard for anyone doing Python development on a Unix-like system in 2015.</p>
 <section id="python-proper" class="level2">
 <h2>Python Proper</h2>
-<p>First up: Python itself. OS X ships with a built-in copy of Python 2; in the latest version of Yosemite, it’s running Python 2.7.6. The latest version of Python 2 is 2.7.9, so that isn’t <em>terribly</em> far behind—but it is still behind. Moreover, OS X does <em>not</em> ship with Python 3, and since I do all of my development in Python 3<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> I need to install it.</p>
+<p>First up: Python itself. OS X ships with a built-in copy of Python 2; in the latest version of Yosemite, it’s running Python 2.7.6. The latest version of Python 2 is 2.7.9, so that isn’t <em>terribly</em> far behind—but it is still behind. Moreover, OS X does <em>not</em> ship with Python 3, and since I do all of my development in Python 3<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> I need to install it.</p>
 <section id="homebrew" class="level3">
 <h3>Homebrew</h3>
-<p>For a long time, I managed all my Python installations with <a href="http://brew.sh"><em>homebrew</em></a>. If you’re not familiar with it, <em>homebrew</em> is a package manager that lets you installed tools on the command line, similar to what you get from <em>aptitude</em> or <em>yum</em> on Ubuntu or Fedora respectively.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> If you’re not using <em>homebrew</em> yet, I highly recommend it for installing command-line tools. (If you’re not using command-line tools yet, then the rest of this post will either bore you to death, or prove extremely enlightening!) If you haven’t started yet, now’s a good time: <a href="http://brew.sh">go install it!</a>.</p>
-<p>While <em>homebrew</em> is great for installing and managing packages in general, I can’t say this loud enough: <em>don’t manage Python with homebrew</em>. It’s finicky, and really isn’t meant for all the things you have to do to manage more than one version of Python at a time.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> (There’s a reason there’s a whole <a href="https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Homebrew-and-Python.md">troubleshooting section</a> devoted to it.) If you think it’s crazy that I might want more than one copy of Python installed a time, well… let’s just say I suspect you’ll change your mind after doing a bit more development. (At the most basic, most people will end up wanting both Python 2 and 3 installed, and will want to upgrade them as bug fixes and the like come out.)</p>
+<p>For a long time, I managed all my Python installations with <a href="http://brew.sh"><em>homebrew</em></a>. If you’re not familiar with it, <em>homebrew</em> is a package manager that lets you installed tools on the command line, similar to what you get from <em>aptitude</em> or <em>yum</em> on Ubuntu or Fedora respectively.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> If you’re not using <em>homebrew</em> yet, I highly recommend it for installing command-line tools. (If you’re not using command-line tools yet, then the rest of this post will either bore you to death, or prove extremely enlightening!) If you haven’t started yet, now’s a good time: <a href="http://brew.sh">go install it!</a>.</p>
+<p>While <em>homebrew</em> is great for installing and managing packages in general, I can’t say this loud enough: <em>don’t manage Python with homebrew</em>. It’s finicky, and really isn’t meant for all the things you have to do to manage more than one version of Python at a time.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> (There’s a reason there’s a whole <a href="https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/Homebrew-and-Python.md">troubleshooting section</a> devoted to it.) If you think it’s crazy that I might want more than one copy of Python installed a time, well… let’s just say I suspect you’ll change your mind after doing a bit more development. (At the most basic, most people will end up wanting both Python 2 and 3 installed, and will want to upgrade them as bug fixes and the like come out.)</p>
 </section>
 <section id="pyenv" class="level3">
 <h3>pyenv</h3>
@@ -115,7 +116,7 @@ def a_neat_function():
 $ echo &#39;eval &quot;$(pyenv init -)&quot;&#39; &gt;&gt; ~.profile
 $ source ~/.profile
 $ pyenv install 3.4.3</code></pre>
-<p>Line by line, that (a) installs <em>pyenv</em>, (b) adds a hook to your shell profile,<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> (c) updates your current session using the updated profile, and (d) installs the latest version of Python (as of the time I’m writing this). Now you have a full version of Python 3.4.3 alongside the system install of Python 2.7.6. If you wanted to install 2.7.9, or 2.2.3, or the development version of PyPy3, you could easily do that as well.</p>
+<p>Line by line, that (a) installs <em>pyenv</em>, (b) adds a hook to your shell profile,<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> (c) updates your current session using the updated profile, and (d) installs the latest version of Python (as of the time I’m writing this). Now you have a full version of Python 3.4.3 alongside the system install of Python 2.7.6. If you wanted to install 2.7.9, or 2.2.3, or the development version of PyPy3, you could easily do that as well.</p>
 <p>In addition, <em>pyenv</em> lets you specify which version to use globally (<code>pyenv global &lt;name&gt;</code>) and which version to use in a given directory structure (<code>pyenv local &lt;name&gt;</code>). So if you prefer to use Python 3 in general, but need to use Python 2 on one project, you can just navigate to the root of that project and set it:</p>
 <pre class="shell"><code>$ pyenv global 3.4.3
 $ cd path/to/my/project
@@ -175,14 +176,14 @@ $ pyenv local pelican</code></pre>
 </ul>
 <p>If you stick to those basic rules, Python itself shouldn’t give you any trouble at all.</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>All the usual caveats apply, of course: this may or may not work well for you; it’s just what works for me, and I make no claim or warranty on the tools below—they’re working well for <em>me</em>, but I don’t maintain them, so if they break, please tell the people who maintain them! Also, because I do nearly all my development on a Mac (I test on Windows, but that’s it), the following is necessarily <em>fairly</em> specific to OS X. You can readily adapt most of it to Linux, though, or even to a <a href="https://www.cygwin.com">Cygwin</a> install on Windows—I do just that when I have cause. But my main tool is a Mac, so that’s what I’ve specialized for.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Lucky me, I know!<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>Yes, I know that those are wrappers around Debian and Arch, and I know about <em>apt-get</em> and <em>rpm</em>. No, that information isn’t especially relevant for the rest of this post.<a href="#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>For example, if you upgrade your Python installation using homebrew and then cleanup the old version (e.g., by running the typical <code>brew update &amp;&amp; brew upgrade &amp;&amp; brew cleanup</code> sequence)—say, from 3.4.2 to 3.4.3—and you have virtual environments which depended on 3.4.2… well, you’re in a bad spot now. A <em>very</em> bad spot. Have fun getting back to a working state!<a href="#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>You can of course drop it directly in <code>.zshrc</code> or <code>.bash_profile</code> or wherever else. <a href="//github.com/chriskrycho/profile">My setup</a> puts all common handling in <code>.profile</code> and runs <code>source .profile</code> as the first action in any other shell configurations.<a href="#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>All the usual caveats apply, of course: this may or may not work well for you; it’s just what works for me, and I make no claim or warranty on the tools below—they’re working well for <em>me</em>, but I don’t maintain them, so if they break, please tell the people who maintain them! Also, because I do nearly all my development on a Mac (I test on Windows, but that’s it), the following is necessarily <em>fairly</em> specific to OS X. You can readily adapt most of it to Linux, though, or even to a <a href="https://www.cygwin.com">Cygwin</a> install on Windows—I do just that when I have cause. But my main tool is a Mac, so that’s what I’ve specialized for.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Lucky me, I know!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Yes, I know that those are wrappers around Debian and Arch, and I know about <em>apt-get</em> and <em>rpm</em>. No, that information isn’t especially relevant for the rest of this post.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn4" role="doc-endnote"><p>For example, if you upgrade your Python installation using homebrew and then cleanup the old version (e.g., by running the typical <code>brew update &amp;&amp; brew upgrade &amp;&amp; brew cleanup</code> sequence)—say, from 3.4.2 to 3.4.3—and you have virtual environments which depended on 3.4.2… well, you’re in a bad spot now. A <em>very</em> bad spot. Have fun getting back to a working state!<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn5" role="doc-endnote"><p>You can of course drop it directly in <code>.zshrc</code> or <code>.bash_profile</code> or wherever else. <a href="//github.com/chriskrycho/profile">My setup</a> puts all common handling in <code>.profile</code> and runs <code>source .profile</code> as the first action in any other shell configurations.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>

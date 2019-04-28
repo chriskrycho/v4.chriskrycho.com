@@ -13,8 +13,8 @@ Template: formats/class
 Class: New Testament II
 Professor: Jon Morales
 School: Southeastern Baptist Theological Seminary
-bibliography: /Users/chris/icloud-drive/Documents/writing/library.bib
-csl: /Users/chris/icloud-drive/Documents/writing/chicago.csl
+bibliography: /Users/chris/Documents/writing/library.bib
+csl: /Users/chris/Documents/writing/chicago.csl
 ...
 
 ## Introduction

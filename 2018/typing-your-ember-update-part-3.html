@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="TypeScript and Ember.js Update, Part 3"/>
     <meta name="twitter:description" content="Now that we know a bit more about how computed properties work, we’ll talk about computed properties, actions, and mixins on the Ember.js side, along with the normal class methods."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -208,7 +209,7 @@ export default class AnExample extends Component {
 }) {
   // other properties
 }</code></pre>
-<p>Whichever way you do it, TypeScript will correctly infer the type of the computed property in question (here <code>fromModel</code>) as long as you explicitly annotate the return type of the callback passed to <code>computed</code>. Accordingly, in this case, the type of <code>fromModel</code> is <code>ComputedProperty&lt;string&gt;</code>. The fact that it’s a <code>ComputedProperty</code> means if you try to treat it as a plain string, without using <code>Ember.get</code> to unwrap it, TypeScript will complain at you.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Whichever way you do it, TypeScript will correctly infer the type of the computed property in question (here <code>fromModel</code>) as long as you explicitly annotate the return type of the callback passed to <code>computed</code>. Accordingly, in this case, the type of <code>fromModel</code> is <code>ComputedProperty&lt;string&gt;</code>. The fact that it’s a <code>ComputedProperty</code> means if you try to treat it as a plain string, without using <code>Ember.get</code> to unwrap it, TypeScript will complain at you.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <pre class="typescript"><code>// type checking error:
 this.fromModel.length;
 
@@ -222,7 +223,7 @@ this.get(&#39;fromModel&#39;).length;</code></pre>
 <p>We have a representative of each of these scenarios:</p>
 <pre class="typescript"><code>  isLoggedIn = bool(&#39;session.user&#39;);
   savedUser: Computed&lt;Person&gt; = alias(&#39;session.user&#39;);</code></pre>
-<p>In the case of <code>isLoggedIn</code>, the <code>bool</code> helper only ever returns a boolean, so the type of <code>isLoggedIn</code> is <code>ComputedProperty&lt;boolean&gt;</code>. In the case of <code>savedUser</code>, since TypeScript can’t figure out what the nested key means, we have to specify it explicitly, using <code>Computed&lt;Person&gt;</code>.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> In these cases, you have to do the work yourself to check that the type you specify is the <em>correct</em> type. If you write down the wrong type here, TypeScript will believe you (it doesn’t have any other good option!) and you’ll be back to things blowing up unexpectedly at runtime.</p>
+<p>In the case of <code>isLoggedIn</code>, the <code>bool</code> helper only ever returns a boolean, so the type of <code>isLoggedIn</code> is <code>ComputedProperty&lt;boolean&gt;</code>. In the case of <code>savedUser</code>, since TypeScript can’t figure out what the nested key means, we have to specify it explicitly, using <code>Computed&lt;Person&gt;</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> In these cases, you have to do the work yourself to check that the type you specify is the <em>correct</em> type. If you write down the wrong type here, TypeScript will believe you (it doesn’t have any other good option!) and you’ll be back to things blowing up unexpectedly at runtime.</p>
 <p>The typings supply the concrete (non-<code>any</code>) return type for: <code>and</code>, <code>bool</code>, <code>equal</code>, <code>empty</code>, <code>gt</code>, <code>gte</code>, <code>lt</code>, <code>lte</code>, <code>match</code>, <code>map</code>, <code>max</code>, <code>min</code>, <code>notEmpty</code>, <code>none</code>, <code>not</code>, <code>or</code>, and <code>sum</code>.</p>
 </section>
 <section id="on-nested-keys" class="level4">
@@ -253,7 +254,7 @@ const value = get(anObject, &#39;some.nested.key&#39;);</code></pre></li>
       this.set(&#39;aCollection&#39;, current.concat(value));
     }
   };</code></pre>
-<p>As with computed properties, we need the <code>this</code> type declaration to tell TypeScript that this method is going to be automatically bound to the class instance. Otherwise, TypeScript thinks the <code>this</code> here is the <code>actions</code> hash, rather than the <code>MyComponent</code> class.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p>As with computed properties, we need the <code>this</code> type declaration to tell TypeScript that this method is going to be automatically bound to the class instance. Otherwise, TypeScript thinks the <code>this</code> here is the <code>actions</code> hash, rather than the <code>MyComponent</code> class.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p>Happily, that’s really all there is to it for actions: they’re quite straightforward other than needing the <code>this</code> type specification.</p>
 </section>
 <section id="types-in-.extend...-blocks" class="level3">
@@ -275,10 +276,10 @@ const value = get(anObject, &#39;some.nested.key&#39;);</code></pre></li>
       this.set(&#39;aCollection&#39;, current.concat(&#39;ahoy&#39;));
     }
   }</code></pre>
-<p>For the most part, you can just switch to using normal ES6 class constructors instead of the Ember <code>init</code> method. You can, if you so desire, also move existing <code>init</code> functions passed to a <code>.extends({ ...})</code> hash to class methods, and they’ll work once you change <code>this._super(...arguments)</code> to <code>super.init(...arguments)</code>. It’s worth pausing to understand the relationship between <code>init</code> and prototypal <code>init</code> and the <code>constructor</code>. An <code>init</code> in the <code>.extends()</code> hash runs first, then an <code>init</code> method on the class, then the normal <code>constructor</code>.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
-<p>Note that you do not need to (and cannot) annotate the <code>constructor</code> with <code>this: MyComponent</code>. Depending on the class you’re building, you may <em>occasionally</em> have type-checking problems that come up as a result of this. I’ve only ever seen that happen when using computed properties while defining a proxy,<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> but it does come up. In that case, you can fall back to using <code>init</code> as a method, and set <code>this: MyComponent</code> on <em>it</em>, and things will generally fall out as working correctly at that point. When it comes up, this seems to be just a limitation of what <code>this</code> is understood to be in a <code>constructor</code> given Ember’s rather more-complex-than-normal-classes view of what a given item being constructed is.</p>
-<p>Other class methods do also need the <code>this</code> type specified if they touch computed properties. (Normal property access is fine without it.) That’s because the lookups for <code>ComputedProperty</code> instances (using <code>Ember.get</code> or <code>Ember.set</code>) need to know what <code>this</code> is where they should do the lookup, and the full <code>this</code> context isn’t inferred correctly at present. You can either write that on every invocation of <code>get</code>and <code>set</code>, like <code>(this as MyComponent).get(...)</code>, or you can do it once at the start of the method. Again, a bit boiler-platey, but it gets the job done and once you’re used to it it’s minimal hassle.<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
-<p>One last note, which I didn’t include in the example: if you have a function (usually an action) passed into the component, you can define it most simply by just using <code>onSomeAction: Function;</code> in the class definition, right with other class arguments. However, it’s usually most helpful to define what the type should actually <em>be</em>, for your own sanity check if nothing else. As with e.g. <code>model</code> in this example, we don’t actually have a good way to type-check that what is passed is correct. We can, however, at least verify in the constructor that the caller passed in a function using <a href="https://emberjs.com/api/ember/2.18/classes/@ember%2Fdebug/methods/assert?anchor=assert"><code>assert</code></a>, just as with other arguments.</p>
+<p>For the most part, you can just switch to using normal ES6 class constructors instead of the Ember <code>init</code> method. You can, if you so desire, also move existing <code>init</code> functions passed to a <code>.extends({ ...})</code> hash to class methods, and they’ll work once you change <code>this._super(...arguments)</code> to <code>super.init(...arguments)</code>. It’s worth pausing to understand the relationship between <code>init</code> and prototypal <code>init</code> and the <code>constructor</code>. An <code>init</code> in the <code>.extends()</code> hash runs first, then an <code>init</code> method on the class, then the normal <code>constructor</code>.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>Note that you do not need to (and cannot) annotate the <code>constructor</code> with <code>this: MyComponent</code>. Depending on the class you’re building, you may <em>occasionally</em> have type-checking problems that come up as a result of this. I’ve only ever seen that happen when using computed properties while defining a proxy,<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> but it does come up. In that case, you can fall back to using <code>init</code> as a method, and set <code>this: MyComponent</code> on <em>it</em>, and things will generally fall out as working correctly at that point. When it comes up, this seems to be just a limitation of what <code>this</code> is understood to be in a <code>constructor</code> given Ember’s rather more-complex-than-normal-classes view of what a given item being constructed is.</p>
+<p>Other class methods do also need the <code>this</code> type specified if they touch computed properties. (Normal property access is fine without it.) That’s because the lookups for <code>ComputedProperty</code> instances (using <code>Ember.get</code> or <code>Ember.set</code>) need to know what <code>this</code> is where they should do the lookup, and the full <code>this</code> context isn’t inferred correctly at present. You can either write that on every invocation of <code>get</code>and <code>set</code>, like <code>(this as MyComponent).get(...)</code>, or you can do it once at the start of the method. Again, a bit boiler-platey, but it gets the job done and once you’re used to it it’s minimal hassle.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>One last note, which I didn’t include in the example: if you have a function (usually an action) passed into the component, you can define it most simply by just using <code>onSomeAction: Function;</code> in the class definition, right with other class arguments. However, it’s usually most helpful to define what the type should actually <em>be</em>, for your own sanity check if nothing else. As with e.g. <code>model</code> in this example, we don’t actually have a good way to type-check that what is passed is correct. We can, however, at least verify in the constructor that the caller passed in a function using <a href="https://emberjs.com/api/ember/2.18/classes/@ember%2Fdebug/methods/assert?anchor=assert"><code>assert</code></a>, just as with other arguments.</p>
 </section>
 </section>
 <section id="summary" class="level2">
@@ -286,26 +287,26 @@ const value = get(anObject, &#39;some.nested.key&#39;);</code></pre></li>
 <p>So that’s a wrap on components (and controllers, which behave much the same way).</p>
 <p>In the next post, I’ll look at the elephant in the room: Ember Data (and closely related concern Ember CLI Mirage). While you <em>can</em> make Ember Data stuff largely work today, it’s still a ways from <em>Just Works™️</em>, sadly, but we’ll cover how to work around the missing pieces—we’ve gotten there in our own codebase, so you can, too!</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>As mentioned in <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Part 2</a>, this problem doesn’t go away until we get decorators, unless you’re putting them on the prototype via <code>.extends()</code>—but see below for the problems with <em>that</em>. The short version is, we need decorators for this to actually be <em>nice</em>. Once we get decorators, we will be able to combine them with the work done for <a href="https://github.com/emberjs/rfcs/pull/281">RFC #281</a> and normal lookup will just work:</p>
+<li id="fn1" role="doc-endnote"><p>As mentioned in <a href="https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html">Part 2</a>, this problem doesn’t go away until we get decorators, unless you’re putting them on the prototype via <code>.extends()</code>—but see below for the problems with <em>that</em>. The short version is, we need decorators for this to actually be <em>nice</em>. Once we get decorators, we will be able to combine them with the work done for <a href="https://github.com/emberjs/rfcs/pull/281">RFC #281</a> and normal lookup will just work:</p>
 <pre class="typescript"><code>@computed(&#39;model.firstName&#39;)
 get fromModel() {
   return `My name is ${this.model.firstName};`;
 }</code></pre>
-<a href="#fnref1" class="footnote-back">↩</a></li>
-<li id="fn2"><p>I’ve used <code>Computed&lt;Person&gt;</code> and similar throughout here because it’s the most clear while still being reasonably concise. The actual type name in Ember’s own code is <code>ComputedProperty</code>, but <code>ComputedProperty&lt;Person&gt;</code> is <em>long</em>, and it wouldn’t have added any real clarity here. In my own codebase, we use <code>CP</code> (for “<strong>C</strong>omputed <strong>P</strong>roperty”) for the sake of brevity—so here that would just be <code>CP&lt;Person&gt;</code>.<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>In the future, this problem will hopefully be solved neatly by decorators:</p>
+<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></li>
+<li id="fn2" role="doc-endnote"><p>I’ve used <code>Computed&lt;Person&gt;</code> and similar throughout here because it’s the most clear while still being reasonably concise. The actual type name in Ember’s own code is <code>ComputedProperty</code>, but <code>ComputedProperty&lt;Person&gt;</code> is <em>long</em>, and it wouldn’t have added any real clarity here. In my own codebase, we use <code>CP</code> (for “<strong>C</strong>omputed <strong>P</strong>roperty”) for the sake of brevity—so here that would just be <code>CP&lt;Person&gt;</code>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p>In the future, this problem will hopefully be solved neatly by decorators:</p>
 <pre class="typescript"><code>  @action
   addToCollection(value: string) {
     const current = this.get(&#39;aCollection&#39;);
     this.set(&#39;aCollection&#39;, current.concat(value));
   }</code></pre>
-<p>For today, however, specifying a <code>this</code> type is where it’s at.<a href="#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>You can see this for yourself in <a href="https://ember-twiddle.com/36844717dcc50d734139368edf2e87da">this Ember Twiddle</a>—just open your developer tools and note the sequence.<a href="#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>Proxies, along with details of mixins, are a subject I’m leaving aside for Part 5, otherwise known as the “wow, this stuff is really weird to type” entry in the series.<a href="#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p>Not <em>no</em> hassle, though, and I look forward to a future where we can drop it, as Ember moves more and more toward modern JavaScript ways of solving these same problems!<a href="#fnref6" class="footnote-back">↩</a></p></li>
+<p>For today, however, specifying a <code>this</code> type is where it’s at.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn4" role="doc-endnote"><p>You can see this for yourself in <a href="https://ember-twiddle.com/36844717dcc50d734139368edf2e87da">this Ember Twiddle</a>—just open your developer tools and note the sequence.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn5" role="doc-endnote"><p>Proxies, along with details of mixins, are a subject I’m leaving aside for Part 5, otherwise known as the “wow, this stuff is really weird to type” entry in the series.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn6" role="doc-endnote"><p>Not <em>no</em> hassle, though, and I look forward to a future where we can drop it, as Ember moves more and more toward modern JavaScript ways of solving these same problems!<a href="#fnref6" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>

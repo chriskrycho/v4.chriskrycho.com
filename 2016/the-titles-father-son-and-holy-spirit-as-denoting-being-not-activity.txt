@@ -15,7 +15,7 @@ Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 bibliography: content/bib/the7621.yaml  # path from content root
 bib: bib/the7621.yaml  # path on site
-csl: /Users/chris/icloud-drive/Documents/writing/chicago.csl
+csl: /Users/chris/Documents/writing/chicago.csl
 ...
 
 

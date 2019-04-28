@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Typing Your Ember, Part 3"/>
     <meta name="twitter:description" content="You write Ember.js apps. You think TypeScript would be helpful in building a more robust app as it increases in size or has more people working on it. But you have questions about how to make it work. This is the series for you! I’ll talk through everything …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -96,7 +97,7 @@
 <p>In the <a href="/2017/typing-your-ember-part-1">first</a> of this series, I described how to set up a brand new Ember.js app to use TypeScript. In the <a href="/2017/typing-your-ember-part-2">second</a> part, walked through adding TypeScript to an existing Ember.js app. In this part, I’m going to talk about using TypeScript effectively in a modern Ember.js app.</p>
 <section id="heavy-lifting-so-so-results" class="level2">
 <h2>Heavy lifting, so-so results</h2>
-<p>Let’s get this out of the way up front: right now, using types in anything which extends <code>Ember.Object</code> is going to be a lot of work for a relatively low reward. <code>Ember.Object</code> laid the foundation for the modern JavaScript class system (and thus the TypeScript class system), but it has a huge downside: it’s string keys and referennces all the way down. This kind of thing is just normal Ember code—and note all the string keys:<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Let’s get this out of the way up front: right now, using types in anything which extends <code>Ember.Object</code> is going to be a lot of work for a relatively low reward. <code>Ember.Object</code> laid the foundation for the modern JavaScript class system (and thus the TypeScript class system), but it has a huge downside: it’s string keys and referennces all the way down. This kind of thing is just normal Ember code—and note all the string keys:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <pre class="javascript"><code>import Component from &#39;@ember/component&#39;;
 import { computed, get } from &#39;@ember/object&#39;;
 
@@ -212,10 +213,10 @@ export default class MyComponent extends Component {
 <p>So that’s the state of things in Ember with TypeScript today. Your best bet for getting real mileage out of TypeScript today is to use the new class syntax support and decorators wherever you can within Ember-specific code, and then to write as much of your business logic outside the Ember system as possible. Gladly, all of that points you right at the future (in the case of syntax) and just good practice (in the case of separating out your business logic). So: not too shabby overall. It’s working well for us, and I hope it does for you as well!</p>
 <p>Next time: how we got here with the <code>ember-cli-typescript</code> compiler, and where we hope to go from here!</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Note that here and throughout, I’m using the <a href="https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md#addendum-1---table-of-module-names-and-exports-by-global">RFC #176 Module API</a>, which you can use today via <a href="https://github.com/ember-cli/babel-plugin-ember-modules-api-polyfill">this polyfill</a>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>Note that here and throughout, I’m using the <a href="https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md#addendum-1---table-of-module-names-and-exports-by-global">RFC #176 Module API</a>, which you can use today via <a href="https://github.com/ember-cli/babel-plugin-ember-modules-api-polyfill">this polyfill</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>

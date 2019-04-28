@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Exploring 4 Languages: Project Setup"/>
     <meta name="twitter:description" content="Getting Rust, Elm, F♯, and ReasonML installed; their editor plugins configured; and the project ready for implementing the exercises in Scott Wlaschin’s Domain Modeling Made Functional."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -96,7 +97,7 @@
 <section id="rust" class="level2">
 <h2>Rust</h2>
 <ul>
-<li><strong>Language installation:</strong> Install <a href="https://rustup.rs"><em>rustup</em></a>: <code>curl https://sh.rustup.rs -sSf | sh</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</li>
+<li><strong>Language installation:</strong> Install <a href="https://rustup.rs"><em>rustup</em></a>: <code>curl https://sh.rustup.rs -sSf | sh</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</li>
 <li><strong>Editor setup:</strong> Installed the VS Code extension: <code>Rust (rls)</code>/<code>rust</code>.</li>
 <li><strong>Project setup:</strong> In the root of <a href="https://github.com/chriskrycho/dmmf">my repo</a>, I ran <code>cargo new rust</code>.</li>
 </ul>
@@ -105,7 +106,7 @@
 <h2>Elm</h2>
 <ul>
 <li><strong>Language installation</strong>: There are installers, but I just did <code>npm i -g elm</code>.</li>
-<li><strong>Editor setup:</strong> Installed the VS Code Elm extension: <code>Elm</code>/<code>elm</code>.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
+<li><strong>Editor setup:</strong> Installed the VS Code Elm extension: <code>Elm</code>/<code>elm</code>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
 <li><strong>Project setup:</strong>
 <ul>
 <li>Install the <code>create-elm-app</code> tool: <code>npm i -g create-elm-app</code></li>
@@ -146,18 +147,18 @@
 <section id="comments-on-the-setup-processes" class="level2">
 <h2>Comments on the setup processes</h2>
 <p>Most of the languages have <em>fairly</em> straightforward processes to get up and running with a good-to-excellent tooling experience.</p>
-<p>The best of them is Rust, which is <em>extremely</em> easy to get up and running with.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> Elm is roughly in the middle—it’s less straightforward than Rust in that <code>create-elm-app</code> is <em>not</em> an officially supported approach, unlike <code>rustup</code> and <code>cargo</code>, so you’re going to have a much less awesome experience if you don’t know about it.</p>
+<p>The best of them is Rust, which is <em>extremely</em> easy to get up and running with.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Elm is roughly in the middle—it’s less straightforward than Rust in that <code>create-elm-app</code> is <em>not</em> an officially supported approach, unlike <code>rustup</code> and <code>cargo</code>, so you’re going to have a much less awesome experience if you don’t know about it.</p>
 <p>Reason and F<sup>♯</sup> both have slightly larger negatives.</p>
 <p>Reason requires you to <code>npm install</code> a large, gzipped file with multiple dependencies all bundled, instead of having a dedicated installer <em>a la</em> <code>rustup</code>. It also has the possibility for a not-so-great first-run experience in the editor, which <a href="https://github.com/facebook/reason/issues/1729">I discovered</a> all too quickly.</p>
 <p>F<sup>♯</sup> essentially requires you to use an editor extension to get the language setup with <a href="https://fsprojects.github.io/Paket/">Paket</a>, which is a <em>much</em> better choice of package manager than the default .NET package manager NuGet. Command line tools exist and are improving rapidly, and you <em>can</em> <a href="https://fsprojects.github.io/Paket/paket-and-dotnet-cli.html">get them working</a>… but it’s harder than it needs to be. And that project setup wizard is <em>fine</em>, but it’s a lot noisier than just doing <code>create-elm-app</code> or especially <code>cargo new</code>.</p>
 <p>In any case, though, I have them all up and running now! More soon!</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>If you’re uncomfortable with running that script, there are <a href="https://www.rust-lang.org/en-US/other-installers.html">other options</a> as well.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Note that the VS Code extension is <em>not</em> the best experience out there for Elm: the Atom extensions (<a href="https://atom.io/packages/language-elm">language-elm</a> and <a href="https://atom.io/packages/elmjutsu">elmjutsu</a>) are. I stuck with VS Code because it’s <em>good enough</em> and, more importantly, the Code extensions are arguably best in class for the <em>other</em> languages… and it’s what I use every day.<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>I’m not just saying that because I’m a Rust fanboy, either! If Rust were hard to use, I’d be complaining <em>louder</em> because of my enthusiasm for the language.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>If you’re uncomfortable with running that script, there are <a href="https://www.rust-lang.org/en-US/other-installers.html">other options</a> as well.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Note that the VS Code extension is <em>not</em> the best experience out there for Elm: the Atom extensions (<a href="https://atom.io/packages/language-elm">language-elm</a> and <a href="https://atom.io/packages/elmjutsu">elmjutsu</a>) are. I stuck with VS Code because it’s <em>good enough</em> and, more importantly, the Code extensions are arguably best in class for the <em>other</em> languages… and it’s what I use every day.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p>I’m not just saying that because I’m a Rust fanboy, either! If Rust were hard to use, I’d be complaining <em>louder</em> because of my enthusiasm for the language.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>

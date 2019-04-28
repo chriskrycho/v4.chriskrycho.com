@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="CSS Fallback for OpenType Small Caps"/>
     <meta name="twitter:description" content="I wrote this up as a question on Stack Overflow a bit over a year ago. It has continued to get a fair bit of traffic, so I’ve republished it here and cleaned it up a bit. The Problem Over the last year, I’ve worked on a site …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -103,7 +104,7 @@
 <p>I spent a considerable amount of time researching this and wrestling with it. After digging around as best I could, the top solutions for now are:</p>
 <section id="supports" class="level3">
 <h3><code>@supports</code></h3>
-<p>Take advantage of the <code>@supports</code> rule in browsers. This is what I initially opted to do on this project.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> You use the rule this way:</p>
+<p>Take advantage of the <code>@supports</code> rule in browsers. This is what I initially opted to do on this project.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> You use the rule this way:</p>
 <pre class="css"><code>.some-class {
     font-variant: small-caps;
 }
@@ -119,12 +120,12 @@
 <li><code>@supports</code>: <a href="http://caniuse.com/#feat=css-featurequeries">Can I Use Feature Queries?</a>: Chrome 31+, Firefox 29+, Opera 23+, Android 4.4+, Safari 9+, Edge 12+, Chrome for Android</li>
 <li><code>font-feature-settings</code>: <a href="http://usabilitypost.com/2014/05/10/using-small-caps-and-text-figures-on-the-web/">Using Small Caps &amp; Text Figures on the Web</a>: Chrome, Firefox, IE10+</li>
 </ul>
-<p>This isn’t perfect: since IE10/11 don’t implement <code>@supports</code>, you miss one browser—sort of. At this point, IE is a legacy browser, and Edge has had <code>@supports</code> available from the start. Thus, this gets you most of the way there, and it should be future-facing: this should progressively enhance the site nicely. The normal (bad, but functional) small caps are displayed in the meantime, and when browsers eventually get around to using OpenType small caps by default for <code>font-variant: small-caps</code>, this will continue to work just fine. It’s “progressive enhancement” and it’ll work nicely for most purposes.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>This isn’t perfect: since IE10/11 don’t implement <code>@supports</code>, you miss one browser—sort of. At this point, IE is a legacy browser, and Edge has had <code>@supports</code> available from the start. Thus, this gets you most of the way there, and it should be future-facing: this should progressively enhance the site nicely. The normal (bad, but functional) small caps are displayed in the meantime, and when browsers eventually get around to using OpenType small caps by default for <code>font-variant: small-caps</code>, this will continue to work just fine. It’s “progressive enhancement” and it’ll work nicely for most purposes.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </section>
 <section id="typeface-subsetting" class="level3">
 <h3>Typeface subsetting</h3>
 <p>As mentioned above, one can create a subset of the typeface that includes only small capitals. This is what I have done for the small caps on this site; see the example in the first paragraph.</p>
-<p>To pull this off, you’ll need to start by subsetting the typeface. You can do this manually with a font tool, or (the simpler way) you can use FontSquirrel’s custom subsetting tool in their <a href="http://www.fontsquirrel.com/tools/webfont-generator">webfont generator</a>. (<strong><em>Note:</em></strong> You <em>must</em> check the license and confirm that the typeface in question allows this kind of modification. See below.) In the web font generator, first upload the file you wish to modify. Then choose the <strong>Expert</strong> radio button. Most of the settings you can leave as they are; they’re good sane defaults. Midway down the page you’ll see <strong>OpenType Flattening</strong> options. Here, select only “Small Caps”. Run the generator. The result will be a complete replacement of the normal lowercase letters with the small caps set.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p>To pull this off, you’ll need to start by subsetting the typeface. You can do this manually with a font tool, or (the simpler way) you can use FontSquirrel’s custom subsetting tool in their <a href="http://www.fontsquirrel.com/tools/webfont-generator">webfont generator</a>. (<strong><em>Note:</em></strong> You <em>must</em> check the license and confirm that the typeface in question allows this kind of modification. See below.) In the web font generator, first upload the file you wish to modify. Then choose the <strong>Expert</strong> radio button. Most of the settings you can leave as they are; they’re good sane defaults. Midway down the page you’ll see <strong>OpenType Flattening</strong> options. Here, select only “Small Caps”. Run the generator. The result will be a complete replacement of the normal lowercase letters with the small caps set.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p>In that case, you can simply apply a style to the elements you want to have small capitals, e.g.:</p>
 <pre class="css"><code>.divine-name {
     font-family: &#39;my_typeface_smcp&#39;, &#39;my_typeface&#39;, serif;
@@ -142,16 +143,16 @@
 <h2>Conclusion</h2>
 <p>I opted for the second solution on HolyBible.com—typography was one of the driving differentiators for the site, so I prioritized it and did the necessary legwork for it. In general, though, the first option should work well for most sites. In any case, both ways work, though the first one is a <em>better</em> example of progressive enhancement. And we can all look forward to the day when true small-caps support is available on every browser, right?</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>For various reasons (especially see note 2 below), I actually opted for the second approach outlined here, which is the same approach I was trying to avoid. Alas.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Issues remain: even in the latest Chrome (46 as of the time of this post), using the <code>font-feature-settings: 'smcp'</code> approach has some issues. For example, if you turn on <code>letter-spacing</code> (a fairly common <a href="http://practicaltypography.com/letterspacing.html">recommendation</a> for small caps), the small caps will revert to normal lowercase letters.<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>From the FontSquirrel blog post that introduced the feature:</p>
+<li id="fn1" role="doc-endnote"><p>For various reasons (especially see note 2 below), I actually opted for the second approach outlined here, which is the same approach I was trying to avoid. Alas.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Issues remain: even in the latest Chrome (46 as of the time of this post), using the <code>font-feature-settings: 'smcp'</code> approach has some issues. For example, if you turn on <code>letter-spacing</code> (a fairly common <a href="http://practicaltypography.com/letterspacing.html">recommendation</a> for small caps), the small caps will revert to normal lowercase letters.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p>From the FontSquirrel blog post that introduced the feature:</p>
 <blockquote>
 <p>If you have a font with OpenType features, you can now flatten some of them into your webfont. For instance, some fonts have small caps built in, but they are completely inaccessible in a web browser. By selecting the “Small Cap” option, the Generator will replace all the lowercase glyphs with the small cap variants, giving you a small cap font. Please note that not all OpenType features are supported and if the font lacks OpenType features, using these options won’t create them.</p>
 </blockquote>
-<a href="#fnref3" class="footnote-back">↩</a></li>
+<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></li>
 </ol>
 </section>
         </div>

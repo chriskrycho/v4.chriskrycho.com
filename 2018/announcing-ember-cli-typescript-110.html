@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Announcing ember-cli-typescript 1.1.0"/>
     <meta name="twitter:description" content="Now with generators, support for addons, and incremental compilation! A lot has changed in the last six months, and we’re ready to kick the ecosystem into high gear!"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -97,7 +98,7 @@
 </ul>
 <section id="generators" class="level2">
 <h2>Generators</h2>
-<p>We’ve now added support for generating <em>all</em> standard Ember items as TypeScript files instead of JavaScript files. So now when you run <code>ember generate component user-profile</code> for example, you’ll get <code>user-profile.ts</code>, <code>user-profile-test.ts</code>, and <code>user-profile.hbs</code>. For most files, this is just a nicety—just two files you don’t have to rename!—but in the case of services, controllers, and Ember Data models, adapters, and serializers it will actually make a really big difference in your experience of using TypeScript in your app or addon.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>We’ve now added support for generating <em>all</em> standard Ember items as TypeScript files instead of JavaScript files. So now when you run <code>ember generate component user-profile</code> for example, you’ll get <code>user-profile.ts</code>, <code>user-profile-test.ts</code>, and <code>user-profile.hbs</code>. For most files, this is just a nicety—just two files you don’t have to rename!—but in the case of services, controllers, and Ember Data models, adapters, and serializers it will actually make a really big difference in your experience of using TypeScript in your app or addon.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>Those generators are <em>mostly</em> identical with ones in Ember and Ember Data, just with <code>.ts</code> instead of <code>.js</code> for the extension. The only changes we have made are: (a) we’ve tweaked them to use classes where possible, and (b) we have customized the controller, service, and Ember Data model, adapter, and serializer generators so you get the most mileage out of TypeScript for the least effort we can manage today. So when you do <code>ember generate service session</code>, this is what you’ll see:</p>
 <pre class="ts"><code>import Service from &quot;@ember/service&quot;;
 
@@ -163,14 +164,14 @@ declare module &quot;ember&quot; {
 <section id="solution" class="level3">
 <h3>Solution</h3>
 <p>We now support TypeScript as a <code>devDependency</code> and also manage the work of generating JavaScript and type definitions for you. All you have to do is install ember-cli-typescript into an addon, and then when you do your build step, we’ll automatically do the work (on prepublish) of generating TypeScript <code>.d.ts</code> files and JavaScript source for you.</p>
-<p>Consumers of your addon, therefore, will (a) not know or care that the addon is written in TypeScript if they just want to consume it as normal JavaScript<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> or (b) will get the benefits of your having written the library in TypeScript without paying the penalty of having to have multiple versions of the TypeScript compiler downloaded to their own app.</p>
+<p>Consumers of your addon, therefore, will (a) not know or care that the addon is written in TypeScript if they just want to consume it as normal JavaScript<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> or (b) will get the benefits of your having written the library in TypeScript without paying the penalty of having to have multiple versions of the TypeScript compiler downloaded to their own app.</p>
 <p>One important caveat: we do <em>not</em> support TypeScript in an addon’s <code>app</code> directory. However, for most addons, we don’t think this should be a problem. It’s rare for addons to put actual implementation in the <code>app</code> directory; instead it has simply become conventional for the <code>app</code> directory simply to have re-exports for convenient access to the functionality supplied by the addon.</p>
-<p>Also note that you can supply type definitions for your addon <em>without</em> developing the addon itself in TypeScript.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> You do <em>not</em> need ember-cli-typescript installed for that. You only need the addon if you actually want to take advantage of the opportunities TypeScript affords for developing your own addon.</p>
+<p>Also note that you can supply type definitions for your addon <em>without</em> developing the addon itself in TypeScript.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> You do <em>not</em> need ember-cli-typescript installed for that. You only need the addon if you actually want to take advantage of the opportunities TypeScript affords for developing your own addon.</p>
 </section>
 </section>
 <section id="incremental-compilation" class="level2">
 <h2>Incremental compilation</h2>
-<p>Last but not least, we’ve managed—mostly through the hard work of both Dan Freeman (<a href="https://github.com/dfreeman">@dfreeman</a>) and Derek Wickern (<a href="https://github.com/dwickern">@dwickern</a>—to get support for TypeScript’s <code>--watch</code> mode integrated.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> What this means in practice is: <em>way</em> faster iteration as you work.</p>
+<p>Last but not least, we’ve managed—mostly through the hard work of both Dan Freeman (<a href="https://github.com/dfreeman">@dfreeman</a>) and Derek Wickern (<a href="https://github.com/dwickern">@dwickern</a>—to get support for TypeScript’s <code>--watch</code> mode integrated.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> What this means in practice is: <em>way</em> faster iteration as you work.</p>
 <p>Previously, every time you triggered <em>any</em> change in your app (even if it didn’t involve any TypeScript files at all), the TypeScript compiler would recompile <em>all</em> the TypeScript files in your application. We didn’t initially have a good way to make TypeScript and Broccoli (and therefore Ember CLI) communicate clearly about what had changed. Now, courtesy of Dan and Derek’s hard work (and my cheerleading, testing, and fixing a few corner pieces along the way), we do! So when you change a <code>.hbs</code> file or a <code>.js</code> file… the TypeScript compiler won’t do anything. And when you change a TypeScript file, the TypeScript compiler will <em>only</em> recompile that file.</p>
 <p>On my own app (~35,000 lines of TypeScript across ~700 files), that’s the difference between rebuilds involving TypeScript taking 15–20 seconds and their taking 1–2 seconds. Literally an order of magnitude faster! Over the course of a day of development, that saves a <em>huge</em> amount of time.</p>
 <p>The way we did it also solved an incredibly annoying problem we had in the previous pass: <em>any</em> change to your app was triggering <code>tsc</code> to rebuild the entire TypeScript tree of your app, even if you didn’t so much as look at <code>.ts</code> file. This was particularly annoying when combined with the long rebuild times: change a CSS file and wait for your TypeScript files to rebuild? Ugh. But not anymore!</p>
@@ -218,13 +219,13 @@ declare module &quot;ember&quot; {
 <p>Thanks to Rob Jackson (<a href="https://github.com/rwjblue">@rwjblue</a>) and Tobias Bieniek (<a href="https://github.com/Turbo87">@Turbo87</a> on GitHub, @tbieniek in the Ember Slack) for answering tons of questions and putting up with regular pestering about Ember CLI.</p>
 <p>And last but not least, thanks to everyone who’s popped into #topic-typescript on the Ember Community Slack with questions, comments, problem reports, and the occasional word of encouragement. It really does help.</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>For details on how this all works, see <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update: Part 4</a>, where I discuss these changes in detail.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>although they may actually get some benefits in a number of modern editors, since e.g. VS Code and the JetBrains IDEs will leverage types if they exist!<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>More on that in a post to be released in the next couple weeks—one I promised <em>long</em> ago, but which we’re now in a place to actually do: a plan and a roadmap for typing the whole Ember ecosystem!<a href="#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>And of course, right as we finally landed our support for it, by hacking around the <code>--watch</code> invocation in a lot of really weird ways, Microsoft shipped API-level support for it. We hope to switch to using that under the hood, but that shouldn’t make any difference at all to you as a consumer of the addon, except that if/when we land it at some point, you’ll just have a nicer experience.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>For details on how this all works, see <a href="http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update: Part 4</a>, where I discuss these changes in detail.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>although they may actually get some benefits in a number of modern editors, since e.g. VS Code and the JetBrains IDEs will leverage types if they exist!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p>More on that in a post to be released in the next couple weeks—one I promised <em>long</em> ago, but which we’re now in a place to actually do: a plan and a roadmap for typing the whole Ember ecosystem!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn4" role="doc-endnote"><p>And of course, right as we finally landed our support for it, by hacking around the <code>--watch</code> invocation in a lot of really weird ways, Microsoft shipped API-level support for it. We hope to switch to using that under the hood, but that shouldn’t make any difference at all to you as a consumer of the addon, except that if/when we land it at some point, you’ll just have a nicer experience.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>

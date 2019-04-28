@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ember.js and TypeScript in Early 2017, Part II &middot; Chris Krycho</title>
+    <meta name="description" content="Using it At the most basic level, integrating TypeScript into your Ember app is as simple as doing two things: Run ember install ember-cli-typescript. Change tsconfig.js to look like this: { "compilerOptions": { "target": "ES6", "allowJs": true, "moduleResolution": "node", "noEmitOnError": false, "noEmit": true, "baseUrl": ".", "lib": ["dom", "es2016", "es2016.array.include"], "paths …"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/drafts/emberjs-typescript-early-2017-ii.html"/>
+    <meta property="og:title" content="Ember.js and TypeScript in Early 2017, Part II"/>
+    <meta property="og:description" content="Using it At the most basic level, integrating TypeScript into your Ember app is as simple as doing two things: Run ember install ember-cli-typescript. Change tsconfig.js to look like this: { "compilerOptions": { "target": "ES6", "allowJs": true, "moduleResolution": "node", "noEmitOnError": false, "noEmit": true, "baseUrl": ".", "lib": ["dom", "es2016", "es2016.array.include"], "paths …"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Ember.js and TypeScript in Early 2017, Part II"/>
+    <meta name="twitter:description" content="Using it At the most basic level, integrating TypeScript into your Ember app is as simple as doing two things: Run ember install ember-cli-typescript. Change tsconfig.js to look like this: { "compilerOptions": { "target": "ES6", "allowJs": true, "moduleResolution": "node", "noEmitOnError": false, "noEmit": true, "baseUrl": ".", "lib": ["dom", "es2016", "es2016.array.include"], "paths …"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="emberjs typescript software-development tech">
+
+    <header>
+<h1>Ember.js and TypeScript in Early 2017, Part II</h1>
+<h2>Configuring and using TypeScript in your Ember.js app today.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/drafts/emberjs-typescript-early-2017-ii.html" title="Ember.js and TypeScript in Early 2017, Part II"><i class="fa fa-fw fa-link"></i></a>April 13, 2017</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2017/emberjs-typescript-early-2017-ii.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<section id="using-it" class="level2">
+<h2>Using it</h2>
+<p>At the most basic level, integrating TypeScript into your Ember app is as simple as doing two things:</p>
+<ol type="1">
+<li><p>Run <code>ember install ember-cli-typescript</code>.</p></li>
+<li><p>Change <code>tsconfig.js</code> to look like this:</p>
+<pre class="js"><code>{
+  &quot;compilerOptions&quot;: {
+    &quot;target&quot;: &quot;ES6&quot;,
+    &quot;allowJs&quot;: true,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;noEmitOnError&quot;: false,
+    &quot;noEmit&quot;: true,
+    &quot;baseUrl&quot;: &quot;.&quot;,
+    &quot;lib&quot;: [&quot;dom&quot;, &quot;es2016&quot;, &quot;es2016.array.include&quot;],
+    &quot;paths&quot;: {
+      &quot;&lt;your app name&gt;/config/*&quot;: [&quot;config/*&quot;],
+      &quot;&lt;your app name&gt;/tests/*&quot;: [&quot;tests/*&quot;],
+      &quot;&lt;your app name&gt;/*&quot;: [&quot;app/*&quot;],
+      &quot;npm:*&quot;: [&quot;local-types/*&quot;],
+      &quot;*&quot;: [&quot;local-types/*&quot;, &quot;node_modules/@types/*&quot;]
+    }
+  },
+  &quot;include&quot;: [
+    &quot;app/**/*&quot;,
+    &quot;tests/**/*&quot;
+  ]
+}</code></pre></li>
+<li><p>Go wild!</p></li>
+</ol>
+<p>In practice, because of the limitations I talked about in <a href="" title="/2017/emberjs-typescript-early-2017-i.html">the first of these posts</a>, (3) is more like “Go use it eagerly but only in certain parts of the app.” The places where we currently get the <em>most</em> mileage out of tests are <em>tests</em> and <em>business logic</em>. I have several fairly complex places where I do transformations from one state to another, and those are all encoded in functions written in TypeScript—and, importantly, those are <em>not</em> members of a component. They’re just standalone functions.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> That has the delightful effect of making them amenable to use with TypeScript. It also makes them much easier to test.</p>
+<p>I also do make fairly extensive use of TypeScript when defining the return type of a computed property:</p>
+<pre class="ts"><code>export default Ember.Component.extend({
+  someOtherThing: false,
+  someThing: Ember.computed(&#39;someOtherThing&#39;, function(): string {
+    const someOtherThing = Ember.get(this, &#39;someOtherThing&#39;);
+    return `someOtherThing was ${someOtherThing}`;
+  }),
+});</code></pre>
+<p>That gets me a small but already valuable check that I’m returning what I think I’m returning. (Unfortunately, we can’t yet use decorated functions via the oh-so-awesome <a href="https://github.com/rwjblue/ember-computed-decorators">ember-computed-decorators</a> with these because the decorator syntax used there isn’t in line with the version of the decorator spec TypeScript currently enforces. Someday!)</p>
+</section>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p><a href="http://www.chriskrycho.com/2016/what-is-functional-programming.html#pure-functions">Pure functions</a>, to be specific, because my goal is to write as <em>many</em> of my functions as pure functions as possible.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+    <h3>Support Me</h3>
+    <ul class='icons'>
+        <li><a href="https://patreon.com/chriskrycho"><i class='fa fa-fw fa-money'></i>Patreon</a></li>
+        <li><a href="https://cash.me/$chriskrycho"><i class='fa fa-fw fa-usd'></i>Cash.me</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/being-an-amateur-again.html">Being an Amateur Again</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2019/emberconf-2019-typed-ember-team-report.html">EmberConf 2019 Typed Ember Team Report</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>

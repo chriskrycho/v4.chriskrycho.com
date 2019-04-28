@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Growing Up Together"/>
     <meta name="twitter:description" content="A few years ago, you might have caught me in a grumpy moment grousing about JavaScript. I distinctly did not like writing it. Every time I sat down to deal with it, I found myself in a tangled mess of plain JavaScript, jQuery, and DOM manipulations that inevitably left me …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -89,23 +90,23 @@
 
         <div class="content">
 
-<p>A few years ago, you might have caught me in a grumpy moment grousing about JavaScript. I distinctly did <em>not</em> like writing it. Every time I sat down to deal with it, I found myself in a tangled mess of plain JavaScript, jQuery, and DOM manipulations that inevitably left me tearing my hair out.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> I found it difficult to write in the first place, and even harder to maintain in the long run. I could not come up with good ways to organize it, especially because so much of what I was doing was so thoroughly <em>ad hoc</em> in nature. Cobble this together over here; scrounge together those things over there; hope nothing collides in the middle.</p>
+<p>A few years ago, you might have caught me in a grumpy moment grousing about JavaScript. I distinctly did <em>not</em> like writing it. Every time I sat down to deal with it, I found myself in a tangled mess of plain JavaScript, jQuery, and DOM manipulations that inevitably left me tearing my hair out.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> I found it difficult to write in the first place, and even harder to maintain in the long run. I could not come up with good ways to organize it, especially because so much of what I was doing was so thoroughly <em>ad hoc</em> in nature. Cobble this together over here; scrounge together those things over there; hope nothing collides in the middle.</p>
 <p>In the last four months, I have written several thousand lines of JavaScript, and I have <em>loved</em> it.</p>
 <p>For my latest major project, relaunching <a href="https://holybible.com">HolyBible.com</a>, I wrote the front end in <a href="https://angularjs.org">AngularJS</a> and the back end as an <a href="http://expressjs.com">Express</a> app (the most popular <a href="http://nodejs.org">NodeJS</a> web framework). I’ve written gobs of tests in <a href="http://jasmine.github.io">Jasmine</a> (using <a href="https://github.com/mhevery/jasmine-node">jasmine-node</a> for server-side tests) and drawn on tons of other open-source packages.</p>
 <p>And I have <em>loved</em> it.</p>
-<p>A small example: a moment ago, looking up the link for Jasmine, I noted that the latest version released today. My response was, “Ooh—cool!”<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>A small example: a moment ago, looking up the link for Jasmine, I noted that the latest version released today. My response was, “Ooh—cool!”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>What changed? Well, mostly I changed, but also JavaScript changed a bit. We both grew up over the last four years. On the JavaScript side of things, a lot of good design patterns and tools have come into play in that span. I’m sure there were plenty of good, disciplined web developers writing clear, careful, well-organized client-side JavaScript four years go. But in the interval, that kind of JavaScript got a lot more prominent, in part because it has had help from the rapid rise of server-side JavaScript in the form of Node.js and its flourishing ecosystem of components and tools. Build tools like <a href="http://browserify.org">Browserify</a> and development tools like <a href="http://livereload.com">LiveReload</a> and <a href="https://incident57.com/codekit/">Codekit</a> have combined with best practices learned from those long years of jQuery/DOM-manipulation hell so that these days, good JavaScript is a lot like good programming in any other language: highly modular, carefully designed, and well-organized.</p>
-<p>In the same period of time, I have matured enormously as a developer (just enough to see how far I still have to go, of course). At the point where I most hated JavaScript, I also really struggled to see the utility of callbacks. Frankly, it took me the better part of a month just to get my head around it—most of the tutorials out there just assumed you understood them already, and, well: I didn’t. Functions as first-class members of a language was new to me at that point. Fast-forward through several years of full-time Python development, lots of time spent reading about software development and some harder computer science concepts, and my perspective on JavaScript has shifted more than a little. Closures are beautiful, wonderful things now. Functions as arguments to other functions are delightful and extremely expressive. Prototypal inheritance—trip me up though it sometimes still does—is a fascinating variation on the idea of inheritance and one that I think I like rather better than classical inheritance.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p>In the same period of time, I have matured enormously as a developer (just enough to see how far I still have to go, of course). At the point where I most hated JavaScript, I also really struggled to see the utility of callbacks. Frankly, it took me the better part of a month just to get my head around it—most of the tutorials out there just assumed you understood them already, and, well: I didn’t. Functions as first-class members of a language was new to me at that point. Fast-forward through several years of full-time Python development, lots of time spent reading about software development and some harder computer science concepts, and my perspective on JavaScript has shifted more than a little. Closures are beautiful, wonderful things now. Functions as arguments to other functions are delightful and extremely expressive. Prototypal inheritance—trip me up though it sometimes still does—is a fascinating variation on the idea of inheritance and one that I think I like rather better than classical inheritance.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <p>There are still things I don’t love about JavaScript. Its syntax owes far too much to the C family of languages to make me happy; I quite like the way that CoffeeScript borrows from Python (white-space-delimited blocks, use of equality words like <code>is</code> and boolean rules like <code>and</code> rather than <code>===</code> and <code>&amp;&amp;</code> respectively, etc.). And I am looking forward to a number of features coming in the next version of JavaScript—especially generators and the <code>const</code> and <code>let</code> keywords, which will allow for <em>much</em> saner patterns.</p>
-<p>But all of that is simply to say that I am now starting to know JavaScript enough to know that its <em>real</em> issues aren’t the surface-level differences from the other languages with which I’m familiar. They’re not even the warts I noted here. They’re things like the mix of classical and prototypal inheritance in the way the language keywords and object instantiation work. But I don’t mind those. Every language has tradeoffs. Python’s support for lambdas is pretty minimal, despite the utility of anonymous functions, for example. But I <em>like</em> the tradeoffs JavaScript makes.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
+<p>But all of that is simply to say that I am now starting to know JavaScript enough to know that its <em>real</em> issues aren’t the surface-level differences from the other languages with which I’m familiar. They’re not even the warts I noted here. They’re things like the mix of classical and prototypal inheritance in the way the language keywords and object instantiation work. But I don’t mind those. Every language has tradeoffs. Python’s support for lambdas is pretty minimal, despite the utility of anonymous functions, for example. But I <em>like</em> the tradeoffs JavaScript makes.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <p>In other words, I discovered the same thing so many other people have over the last few years: JavaScript isn’t just a good choice for utilitarian reasons. Beneath that messy exterior is a gem of a language. I’m having a lot of fun with it.</p>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Thus the early balding starting by my temples.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>My wife’s bemused response: “Is that <em>another</em> language?” Take that as you will.<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>The couple weeks I got to spend <a href="http://www.chriskrycho.com/2014/a-little-crazy.html">playing</a> with <a href="http://iolanguage.org">Io</a> certainly helped! Io’s prototypal inheritance is semantically “purer” than JavaScript’s, which is quite an improvement in my view. JavaScript’s <code>new</code> keyword and the pseudo-classical object pattern it brings along can go rot in a bog.<a href="#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p>Truth be told, I like them even better from the perspective of CoffeeScript, which hides a lot of the rough edges of JavaScript and, as noted above, brings in quite a few things I like from Python. For my part, I intend to write as much CoffeeScript as possible going forward.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>Thus the early balding starting by my temples.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>My wife’s bemused response: “Is that <em>another</em> language?” Take that as you will.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p>The couple weeks I got to spend <a href="http://www.chriskrycho.com/2014/a-little-crazy.html">playing</a> with <a href="http://iolanguage.org">Io</a> certainly helped! Io’s prototypal inheritance is semantically “purer” than JavaScript’s, which is quite an improvement in my view. JavaScript’s <code>new</code> keyword and the pseudo-classical object pattern it brings along can go rot in a bog.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn4" role="doc-endnote"><p>Truth be told, I like them even better from the perspective of CoffeeScript, which hides a lot of the rough edges of JavaScript and, as noted above, brings in quite a few things I like from Python. For my part, I intend to write as much CoffeeScript as possible going forward.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>

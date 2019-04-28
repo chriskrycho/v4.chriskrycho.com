@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Rust and Swift (iv)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -95,7 +96,7 @@
 <p>To put it another way: all programming languages have to make trade offs. Although I like Rust’s better than Swift’s so far, I’ve no doubt I will find any number of things to appreciate about Swift over Rust. You can’t have everything.</p>
 <p>This caught my attention in part because dealing with things like strings (or other pass-by-value types) in Swift is rather more straightforward than in Rust. The outcomes are much the same, but since <em>all</em> <code>String</code>s in Swift are passed by value (never by reference), you simply don’t have to think about modification—even safe modification!</p>
 <p>Rust of course had the <code>Copy</code> trait which lets you do this, but the point is that the “ergonomics” are slightly nicer in Swift.</p>
-<p>Also, the string interpolation Swift does is <em>nice</em>. That’s one thing I really wish Rust had. It’s Python-style string formatting macro is great, but being able to interpolate values (<code>&quot;strings with \(variables)&quot;</code> or even <code>&quot;embedded expressions like \(2 + 4)&quot;</code>) is very nice.</p>
+<p>Also, the string interpolation Swift does is <em>nice</em>. That’s one thing I really wish Rust had. It’s Python-style string formatting macro is great, but being able to interpolate values (<code>"strings with \(variables)"</code> or even <code>"embedded expressions like \(2 + 4)"</code>) is very nice.</p>
 <p>Swift’s approach to strings in general seems well-thought-through and gives appropriate levels of attention to the details which make handling complex or non-Western languages much more manageable. As a typography geek, I appreciate this a great deal.</p>
 <p>That said, since Swift’s strings <em>do</em> handle all those edge cases for Unicode, you lose some standard string access patterns and lose much (maybe all?) insight into the internal structure of the string. That may be good, and may be bad, depending on the circumstance. Like I said: trade-offs.</p>
 <p>Actually, on reading further, the way Swift handles Unicode strings is pretty nice. It <em>does</em> give you insight into those, via specific methods for different representations. I particularly appreciate that it’s you deal with them as the standalone <code>String</code> type as well as giving you direct access to the code points—and not just one Unicode code point set, but any of <abbr>UTF8</abbr>, <abbr>UTF16</abbr>, or <abbr>UTF32</abbr> (Unicode scalars). Trust Apple to pay close attention to text.</p>

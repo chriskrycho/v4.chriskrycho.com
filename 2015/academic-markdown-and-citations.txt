@@ -137,8 +137,8 @@ class="texE">E</span>X</span> library and the Chicago Manual of Style
 
 ```bash
 $ pandoc revelation.md --smart --standalone \
---bibliography /Users/chris/icloud-drive/Documents/writing/library.bib \
---csl=/Users/chris/icloud-drive/Documents/writing/chicago.csl -o revelation.docx
+--bibliography /Users/chris/Documents/writing/library.bib \
+--csl=/Users/chris/Documents/writing/chicago.csl -o revelation.docx
 ```
 
 To see an extended sample of this kind of usage in practice, take a look at the
