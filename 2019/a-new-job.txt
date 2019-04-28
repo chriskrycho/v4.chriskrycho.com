@@ -8,6 +8,10 @@ Tags: [career, adulthood, Tolkien]
 
 ---
 
+<i><b>[Assumed Audience][aa]:</b> People interested in my career shifts—whether out of personal interest or technical interest.</i>
+
+[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+
 Big news: Yesterday was my last day working for [Olo], and on Monday I start working on front-end infrastructure for [LinkedIn]!
 
 [Olo]: https://www.olo.com

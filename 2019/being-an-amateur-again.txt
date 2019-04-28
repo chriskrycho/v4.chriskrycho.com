@@ -8,6 +8,10 @@ Summary: >
 
 ---
 
+<i><b>[Assumed Audience][aa]:</b> Just about anyone… but I do assume a bit of familiarity with programming.</i>
+
+[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+
 Just a little note here, nothing long or fancy tonight.[^not-writing] I’ve just started working in earnest on my long-dreamt-of applications for research writing. This means I’m trying to figure out how to build some applications with native toolkits: UIKit and AppKit, specifically. And, for the first time in most of a decade, I have *no idea* what I’m doing.
 
 I started doing web development in college, over a decade ago. I used a free Dreamweaver clone to build a simple portfolio website for my music when I was a sophomore. I was hacking on <abbr>XML</abbr> templates for my old Blogger site as a junior. In the year after I finished college, I was building websites for friends, family, and my old church. I built multiple responsive web designs within months of Ethan Marcotte’s [original article on the idea][responsive]. I was writing loads of jQuery by mid-2011. I built my first single-page app in 2014 (and it’s still running!).

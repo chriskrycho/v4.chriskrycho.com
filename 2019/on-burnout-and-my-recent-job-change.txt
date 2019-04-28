@@ -10,6 +10,11 @@ Summary: >
 
 ---
 
+<i><b>[Assumed Audience][aa]:</b> People who have followed or are interested in my experiences with [burnout], or are curious about my new job change.</i>
+
+[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[burnout]: https://www.chriskrycho.com/burnout/
+
 I [posted][new job post] a week ago about my (then-impending, now-quite-actual!) transition from [Olo] to [LinkedIn]. My friend [Stephen] pointed out that, especially for long-time readers of this blog, it seemed a bit odd to write about a job change without so much as mentioning my [rather painful experience][symptoms] of [job-triggered burnout] in 2018. He was right!
 
 [new job post]: https://www.chriskrycho.com/2019/a-new-job.html

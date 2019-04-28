@@ -9,6 +9,12 @@ Summary: >
 
 ---
 
+<i><b>[Assumed Audience][aa]:</b> People interested in [Ember] and [TypeScript].</i>
+
+[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[Ember]: https://emberjs.com
+[TypeScript]: http://www.typescriptlang.org
+
 I'm pleased to announce that the unofficial Ember TypeScript team (Dan Freeman, Derek Wickern, James Davis, and Mike North, and I) have just published ember-cli-typescript v2.0.0!
 
 Check out the [upgrade instructions] to get started with the new version!
