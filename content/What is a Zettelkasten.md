@@ -1,11 +1,12 @@
 ---
 Title: What is a Zettelkasten?
 Subtitle: Because a definition is surprisingly hard to come by!
-Date: TODO
+Date: 2019-04-27 21:15
 Category: blog
 Tags: [writing, note-taking, zettelkasten]
 Summary: >
     Defining a Zettelkasten—a way of organizing notes for long-term usability and profit.
+Status: draft
 
 ---
 
