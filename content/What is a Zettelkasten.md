@@ -33,12 +33,12 @@ As it turns out, I’ve tried a lot of different apps for this kind of thing, an
   onsubmit="window.open('https://buttondown.email/rewrite', 'popupwindow')"
   class="embeddable-buttondown-form"
 >
-  <label for="bd-email">Enter your email</label>
+  <label for="bd-email">Enter your email:</label>
   <input type="email" name="email" id="bd-email">
   <input type="hidden" value="1" name="embed"/>
   <input type="submit" value="Subscribe" />
   <p>
-    <a href="https://buttondown.email" target="_blank">Powered by Buttondown.</a>
+    <a href="https://buttondown.email" target="_blank">Powered by Buttondown</a>
   </p>
 </form>
 

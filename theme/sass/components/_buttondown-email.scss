@@ -1,0 +1,67 @@
+.embeddable-buttondown-form {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas:
+    "label input button"
+    "source source source";
+  grid-template-columns: auto 3fr auto;
+  grid-template-rows: 2em 2em;
+  grid-gap: .5em;
+  align-items: stretch;
+  margin-top: 1em;
+
+  > * {
+    font-family: $sans;
+  }
+
+  label {
+    grid-area: label;
+    text-align: right;
+    line-height: 2em;
+    padding: 0;
+  }
+
+  #bd-email {
+    grid-area: input;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e0e3e8;
+    border-radius: 2px;
+    padding: 0 0.5em;
+    margin: 0;
+    font-size: 16px; // for non-zoom iOS handling
+  }
+
+  input[type='submit'] {
+    grid-area: button;
+    background: #3777AE;
+    border: 1px solid;
+    color: white;
+    padding: 0 1em;
+    margin: 0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #3777AE;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+
+  input[type='submit']:hover,
+  input[type='submit']:active {
+    background: #01295C;
+    border-color: #01295C;
+    cursor: pointer;
+  }
+
+  p {
+    grid-area: source;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+// Reset for when inside an `aside`.
+aside .embeddable-buttondown-form {
+  font-size: 1.1rem;
+}
