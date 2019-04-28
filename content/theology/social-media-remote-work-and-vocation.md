@@ -9,6 +9,10 @@ Summary: >
 
 ---
 
+<i><b>[Assumed Audience][aa]:</b> Anyone interested in changing dynamics around work, especially “remote” work as enabled by the internet.</i>
+
+[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+
 I spent the week with a bunch of internet friends at [EmberConf](https://emberconf.com)—and I have been mulling (yet more) on the dynamics of social media, embodiment, attention, and presence. This is the content of my [email newsletter] for the week—not my normal habit, but this piece lives in both worlds, I think.
 
 [email newsletter]: https://buttondown.email/chriskrycho

@@ -3,11 +3,15 @@ Title: Seeing Things Through
 Subtitle: Getting a handle on actually finishing things I care about.
 Date: 2019-03-02 20:10
 Category: blog
-Tags: writing, software development, productivity, running
+Tags: [writing, software development, productivity, running]
 Summary: >
     Some thoughts on actually finishing things I care about, inspired by starting up “serious” running again.
 
 ---
+
+<i><b>[Assumed Audience][aa]:</b> Just about anyone. But especially people interested in ideas of “productivity” or accomplishing the things we set out to do.</i>
+
+[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
 
 I have on my mind this week starting things, and finishing things.
 

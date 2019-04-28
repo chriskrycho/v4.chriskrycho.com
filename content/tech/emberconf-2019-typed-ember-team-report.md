@@ -9,6 +9,12 @@ Tags: [emberjs, TypeScript, open-source software]
 
 ---
 
+<i><b>[Assumed Audience][aa]:</b> People interested in [Ember] and [TypeScript].</i>
+
+[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[Ember]: https://emberjs.com
+[TypeScript]: http://www.typescriptlang.org
+
 One of the real joys of working on [ember-cli-typescript](https://ember-cli-typescript.com) over the last few years has been the *team* that has grown up around it. When I started, it was just me—trying desperately to just make things work at all and blogging about it as a way of documenting what I had learned and maybe, just *maybe*, drumming up interest along the way. No longer! Over the last two years, those efforts have grown into a group of us—Mike North, Dan Freeman, James Davis, and me—steadily pushing forward the state of the art for TypeScript in Ember.[^derek] This week, the four of us were all at EmberConf 2019, and we ate dinner together the last evening of the conference—turning it into an impromptu discussion of the current state of affairs and what’s next on our plates.
 
 [^derek]: We also want to mention—and thank!—Derek Wickern, who did a heroic amount of work to write types for Ember in 2017, and even though he is no longer working in Ember projects, he kindly still contributes especially by way of answering questions in Discord now and again.
