@@ -24,7 +24,7 @@ And that’s it! A Zettelkasten is just a low-overhead, high-value way of creati
 
 <aside>
 
-As it turns out, I’ve tried a lot of different apps for this kind of thing, and none of them quite hit the spot for me. So, being a good software developer… I’m building one. If you’re interested, you can get updates on that project by subscribing to [the app newsletter][rewrite-list]—or you can do it right here:
+As it turns out, I’ve tried a lot of different apps for this kind of thing, and none of them quite hit the spot for me. So, being a good software developer… I’m building one. If you’re interested, you can get updates on that project by subscribing to [the app newsletter][rewrite-list]:
 
 <form
   action="https://buttondown.email/api/emails/embed-subscribe/rewrite"
