@@ -1,12 +1,11 @@
 ---
 Title: What is a Zettelkasten?
 Subtitle: Because a definition is surprisingly hard to come by!
-Date: 2019-04-27 21:15
+Date: 2019-04-29 20:00
 Category: blog
 Tags: [writing, note-taking, zettelkasten]
 Summary: >
-    Defining a Zettelkasten—a way of organizing notes for long-term usability and profit.
-Status: draft
+    Defining a Zettelkasten—a way of organizing notes for long-term usability and effective learning.
 
 ---
 
