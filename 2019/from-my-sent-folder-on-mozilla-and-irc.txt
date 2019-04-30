@@ -26,6 +26,6 @@ Yeah, it’s complicated for sure. The last time I looked, Matrix’s mobile cli
 
 It seems to me that a lot of folks committed to free and open-source have ended up wanting free-as-in-beer as well as free-as-in-speech, and the combo of that with the existing market dynamics means that good is rarely open/free-as-in-speech, and vice versa. It’s a Gordian knot I don’t see an easy way through.
 
-The specific dynamic you highlight with docs is a prime example of the other cultural challenges I see, too: devs don’t like writing docs, they like writing code… but it turns out that docs and other “soft” things—including, yes, UI polish!—are actually as or more important for adoption as things like protocols.
+The specific dynamic you highlight with docs is a prime example of the other cultural challenges I see, too: devs don’t like writing docs, they like writing code… but it turns out that docs and other “soft” things—including, yes, <abbr>UI</abbr> polish!—are actually as or more important for adoption as things like protocols.
 
 We’ll see this same cycle repeat until free and open source software advocates learn to prioritize the things users actually value as well as the things they (we!) believe they should value.
