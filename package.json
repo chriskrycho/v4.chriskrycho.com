@@ -35,7 +35,7 @@
     "tabWidth": 3
   },
   "toolchain": {
-    "node": "10.15.1",
+    "node": "10.15.3",
     "yarn": "1.15.2"
   }
 }
