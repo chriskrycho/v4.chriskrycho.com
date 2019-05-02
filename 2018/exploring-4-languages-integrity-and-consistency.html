@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Exploring 4 Languages: Integrity and Consistency"/>
     <meta name="twitter:description" content="Using the type systems of Rust, Elm, F♯, and ReasonML to not only model a domain but to make sure we keep our promises."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,7 +61,6 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
-                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -121,9 +120,9 @@ impl WidgetCode {
         &amp;self.0
     }
 }</code></pre>
-<p>This is fairly idiomatic Rust: we’re <em>borrowing</em> a <em>reference</em> to the code as a “string slice”, and creating a new, wrapped <code>String</code> instance to wrap up the code <em>or</em> return a new <code>String</code> as an error. When we get the value out, we return a reference to the string,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> with <code>&amp;self.0</code>: <code>&amp;</code> to indicate a reference, <code>.0</code> to indicate the first item of a tuple. Note as well that the final <code>if</code> block here is an expression. There’s no semicolon terminating it, and this whole <code>if</code> block ends up being the resulting value of the function.</p>
+<p>This is fairly idiomatic Rust: we’re <em>borrowing</em> a <em>reference</em> to the code as a “string slice”, and creating a new, wrapped <code>String</code> instance to wrap up the code <em>or</em> return a new <code>String</code> as an error. When we get the value out, we return a reference to the string,<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> with <code>&amp;self.0</code>: <code>&amp;</code> to indicate a reference, <code>.0</code> to indicate the first item of a tuple. Note as well that the final <code>if</code> block here is an expression. There’s no semicolon terminating it, and this whole <code>if</code> block ends up being the resulting value of the function.</p>
 <p>One other point of interest here is that the creation of the regex <em>itself</em> is checked by the compiler for us! If we pass an invalid regular expression, this simply won’t compile.</p>
-<p>This could also live in its own module, <code>ordering/widget_code.rs</code>, and in fact that’s how I would normally do this (and have in the repository where I’m working): every one of these small types would get its own module file within the containing <code>Ordering</code> module. It’s not <em>necessary</em>, but as the domain model grows, it becomes increasingly <em>convenient</em> in that you always know where to find things.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>This could also live in its own module, <code>ordering/widget_code.rs</code>, and in fact that’s how I would normally do this (and have in the repository where I’m working): every one of these small types would get its own module file within the containing <code>Ordering</code> module. It’s not <em>necessary</em>, but as the domain model grows, it becomes increasingly <em>convenient</em> in that you always know where to find things.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <p>Then we can import it and use it like this in <code>ordering/mod.rs</code>:</p>
 <pre class="rust"><code>mod widget_code;
 mod gizmo_code;
@@ -198,7 +197,7 @@ unwrapped =
 
         Result.Err _ -&gt;
             &quot;&quot;</code></pre>
-<p>As with Rust, we can’t construct the type without using the provided function. As I’ve written the imports, you’d create a <code>WidgetCode</code> by writing <code>WidgetCode.create "W1234"</code>. You could also import it directly, but that would have its own problems once you had the <code>create</code> function imported for <code>GizmoCode</code> as well.</p>
+<p>As with Rust, we can’t construct the type without using the provided function. As I’ve written the imports, you’d create a <code>WidgetCode</code> by writing <code>WidgetCode.create &quot;W1234&quot;</code>. You could also import it directly, but that would have its own problems once you had the <code>create</code> function imported for <code>GizmoCode</code> as well.</p>
 <p>Finally, notice the way we aliased the module name here with <code>as</code> on the import: we don’t have to write out the fully qualified path this way. And there’s no conflict between the aliased module name and the type name – they live in their own namespaces (as it should be!). Importing the type name distinctly is handy because it means we don’t have to write the body of the union type out as <code>Widget WidgetCode.WidgetCode</code>.</p>
 </section>
 <section id="f" class="level3">
@@ -409,11 +408,11 @@ let minimum = UnitQuantity(1);</code></pre>
 <p>The main differences we see across Elm, F<sup>♯</sup>, and Reason have to do with the nature of the various module systems. In a lot of ways, Reason’s is the least capable <em>for this specific purpose</em>, because it’s directly tied to OCaml’s module system, which substantially predates any of the others. (I say “in a lot of ways” because OCaml’s modules are surprisingly capable; they end up being their own kind of types and you can do some crazy things with them, all of which I’d like to actually come to understand… eventually.) Rust’s module system, meanwhile, has a lot of similarities to Elm’s in particular, but because we actually carry functions along with the types they <code>impl</code> (though they get defined separately, with all the power that entails), we have a bit less boilerplate we need to write just to get at the specific functions in play.</p>
 <p>Next time (probably only a couple of weeks away because we’re working through the book at work in a book club!), I’ll be looking at Chapter 7: Modeling Workflows as Pipelines. I suspect this will be a place where the true functional orientation of Elm, F<sup>♯</sup>, and Reason will much more sharply differentiate them from the sometimes-functionalish-but-not-actually-functional way we write things in Rust.</p>
 </section>
-<section class="footnotes" role="doc-endnotes">
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>This reference will live and be valid as long as the underlying <code>WidgetCode</code> is. We could also return a <code>String</code> if we wanted that value to live independently of the <code>WidgetCode</code> instance backing it.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn2" role="doc-endnote"><p>Putting it in its own module, whether in a separate <em>does</em> have implications for privacy, though we don’t much care about them in this case. Rust lets us set the privacy on <a href="https://doc.rust-lang.org/1.24.1/reference/visibility-and-privacy.html">a whole spectrum</a>, from “visible everywhere” to “only visible in this specific module.”<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn1"><p>This reference will live and be valid as long as the underlying <code>WidgetCode</code> is. We could also return a <code>String</code> if we wanted that value to live independently of the <code>WidgetCode</code> instance backing it.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Putting it in its own module, whether in a separate <em>does</em> have implications for privacy, though we don’t much care about them in this case. Rust lets us set the privacy on <a href="https://doc.rust-lang.org/1.24.1/reference/visibility-and-privacy.html">a whole spectrum</a>, from “visible everywhere” to “only visible in this specific module.”<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>

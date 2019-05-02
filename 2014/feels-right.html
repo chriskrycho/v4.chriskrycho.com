@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Feels Right"/>
     <meta name="twitter:description" content="Little details in how things work can make all the difference when it comes to the experience of using software. So be diligent, and do it right."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,7 +61,6 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
-                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -90,10 +89,10 @@
 
         <div class="content">
 
-<p>I had spent most of the last week and a half working on getting <a href="http://www.firebirdsql.org">FirebirdSQL</a> configured and ready to use for a project I’m working on with <a href="http://www.questconsult.com">Quest Consultants</a>. It was slow going. The tool is decent, but the documentation is spotty and it felt like everything was just a bit of a slog—to get it working correctly, to get it playing nicely with other pieces of the development puzzle, to get it working across platforms.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Then, because I had done something a <em>little</em> bit silly in my eagerness to get up and going last week and written code without a testable configuration, I hit a wall today. The queries weren’t working. I had made a <a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception">bug</a>.</p>
+<p>I had spent most of the last week and a half working on getting <a href="http://www.firebirdsql.org">FirebirdSQL</a> configured and ready to use for a project I’m working on with <a href="http://www.questconsult.com">Quest Consultants</a>. It was slow going. The tool is decent, but the documentation is spotty and it felt like everything was just a bit of a slog—to get it working correctly, to get it playing nicely with other pieces of the development puzzle, to get it working across platforms.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Then, because I had done something a <em>little</em> bit silly in my eagerness to get up and going last week and written code without a testable configuration, I hit a wall today. The queries weren’t working. I had made a <a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception">bug</a>.</p>
 <p>I spent a substantial part of the day chasing down that bug, and then a conversation with user <em>agronholm</em> on the <a href="http://docs.sqlalchemy.org/en/rel_0_9/">SQLAlchemy</a> IRC channel (<a href="irc://irc.freenode.net/sqlalchemy">freenode/#sqlalchemy</a>) got me thinking. The Firebird team describes one of their options as an “embedded” server, but <em>agronholm</em> pointed out that what they really mean is <em>portable</em>. It’s running a standalone server and client, but it’s not part of the same thread/process (like SQLite is). Then <em>agronholm</em> very helpfully asked—my having mentioned my preference for <a href="http://www.postgresql.org">PostgreSQL</a> earlier—“Does Postgres not have a portable version?” Two minutes later, we had both found <a href="http://sourceforge.net/projects/postgresqlportable/">PostgreSQL Portable</a>, and I rejoiced.</p>
 <p>It took me less than half an hour to get it downloaded and set up and to confirm that it would work the way we need for this particular piece of software. (Firebird had taken me a good three hours, what with digging through badly organized and not terribly clear documentation.) It took me less than half an hour more to get PostgreSQL to the same point that I’d finally gotten Firebird to after multiple hours working with it. And I was so <em>very</em> happy. What had been an especially frustrating work day now had me quietly smiling to myself constantly for the last two and a half hours as I <a href="http://stackoverflow.com/questions/22865573/sqlalchemy-successful-insertion-but-then-raises-an-exception/22872598#22872598">finished</a> tracking down the bug that had set me on this path in the first place.</p>
-<p>Several years ago, when I first started doing web development, I got my feet wet in database work with MySQL—probably the single most common starting point for anyone going that route, courtesy of the ubiquity of the standard Linux-Apache- MySQL-PHP stack.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> A year after that, I picked up some work that was already using PostgreSQL and fell in love almost immediately.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Something just felt <em>better</em> about running <code>psql</code> than running <code>mysql</code> on the command line. Postgres’ implementation of the SQL standard felt more natural. Even the tiniest little details like the way tables display when you query them in <code>psql</code> was nicer. In less than a week, I was sold and haven’t looked back. While I’ve used MySQL out of convenience on shared hosting from time to time, PostgreSQL is unquestionably my preferred database target.</p>
+<p>Several years ago, when I first started doing web development, I got my feet wet in database work with MySQL—probably the single most common starting point for anyone going that route, courtesy of the ubiquity of the standard Linux-Apache- MySQL-PHP stack.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> A year after that, I picked up some work that was already using PostgreSQL and fell in love almost immediately.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> Something just felt <em>better</em> about running <code>psql</code> than running <code>mysql</code> on the command line. Postgres’ implementation of the SQL standard felt more natural. Even the tiniest little details like the way tables display when you query them in <code>psql</code> was nicer. In less than a week, I was sold and haven’t looked back. While I’ve used MySQL out of convenience on shared hosting from time to time, PostgreSQL is unquestionably my preferred database target.</p>
 <p>Today’s experience brought that all home again. That grin on my face all afternoon felt a bit silly, but it highlights the difference that really good software design makes. I am not just talking about how it looks here—though, to be sure, PostgreSQL is prettier than FirebirdSQL—but how it works. PostgreSQL feels responsive, its command set makes a lot of sense and is easy to use, and it is <em>extremely</em> well documented. In fact, I would go so far as to say that it is the best documented open source software I have ever used, as well as among the very most robust. (The only other open source software I find to be as incredibly rock-solid and reliable as PostgreSQL is the Linux kernel. I am by no means an expert on either, or on open source software in general, but the Linux kernel is an unarguably amazing piece of work. So is PostgreSQL.) All those tiny little details add up.</p>
 <p>It’s a good reminder for me as I write software that yes, the things I care about—the small matters that would be so easy to overlook when customers express no interest in them—really do matter. People may not know that things like typography make a difference in their experience, but those subtle, often imperceptible things matter. They may not consciously notice the differences in your interface design (even a command line interface), but it will change their experience of the software. Do it poorly, or even in a just-good-enough-to-get- by fashion, and you’ll annoy or simply bore them. Do it well, and you might just delight them—even if they can’t tell you why.</p>
 <hr />
@@ -101,7 +100,7 @@
 <h2>Examples</h2>
 <p>To make my point a little more visible, I thought it might be useful to post samples of SQL to accomplish the same task in the two different database dialects.</p>
 <section id="firebirdsql4" class="level3">
-<h3>FirebirdSQL:<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></h3>
+<h3>FirebirdSQL:<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></h3>
 <pre><code>CREATE TABLE projects (
   id INT NOT NULL PRIMARY KEY,
   title VARCHAR(32) NOT NULL,
@@ -133,13 +132,13 @@ SET TERM ; +</code></pre>
 <p>It is not just that the PostgreSQL example is shorter and clearer—it is that it is shorter and clearer because its designers and developers have taken the time to make sure that the shorter, cleaner way works well, and have documented it so you can know how to use that shorter cleaner way without too much difficulty.</p>
 </section>
 </section>
-<section class="footnotes" role="doc-endnotes">
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>I do most of my development on a Mac, but do all the testing on the target platform (Windows) in a VM.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn2" role="doc-endnote"><p>At this point, I would only use one of those by default if I were building a web app: Linux. I’d use <a href="http://wiki.nginx.org/Main">nginx</a> instead of Apache, <a href="http://www.postgresql.org">PostgreSQL</a> instead of MySQL, and <a href="https://www.python.org">Python</a> (though <a href="https://www.ruby-lang.org/">Ruby</a>, Javascript via <a href="http://nodejs.org">node.js</a>, <a href="http://msdn.microsoft.com/en-us/vstudio/hh341490">C# and the .NET stack</a>, or just about anything <em>but</em> PHP would do fine).<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn3" role="doc-endnote"><p><em>Almost</em> immediately because at that point configuration on OS X was a bit of a pain. That is <a href="http://postgresapp.com" title="Postgres.app">no longer the case</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn4" role="doc-endnote"><p>To be perfectly fair to Firebird, it is improving. The upcoming 3.0 series release will make these two a lot more similar than they are at present, and clean up a number of other issues. What it won’t do is get the <em>feel</em> of using Firebird more like that of using Postgres, or make the installation procedure smoother or easier, or make the documentation more complete.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn1"><p>I do most of my development on a Mac, but do all the testing on the target platform (Windows) in a VM.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>At this point, I would only use one of those by default if I were building a web app: Linux. I’d use <a href="http://wiki.nginx.org/Main">nginx</a> instead of Apache, <a href="http://www.postgresql.org">PostgreSQL</a> instead of MySQL, and <a href="https://www.python.org">Python</a> (though <a href="https://www.ruby-lang.org/">Ruby</a>, Javascript via <a href="http://nodejs.org">node.js</a>, <a href="http://msdn.microsoft.com/en-us/vstudio/hh341490">C# and the .NET stack</a>, or just about anything <em>but</em> PHP would do fine).<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p><em>Almost</em> immediately because at that point configuration on OS X was a bit of a pain. That is <a href="http://postgresapp.com" title="Postgres.app">no longer the case</a>.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>To be perfectly fair to Firebird, it is improving. The upcoming 3.0 series release will make these two a lot more similar than they are at present, and clean up a number of other issues. What it won’t do is get the <em>feel</em> of using Firebird more like that of using Postgres, or make the installation procedure smoother or easier, or make the documentation more complete.<a href="#fnref4" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>

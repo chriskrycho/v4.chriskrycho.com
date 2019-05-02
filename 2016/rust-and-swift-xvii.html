@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Rust and Swift (xvii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,7 +61,6 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
-                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -128,7 +127,7 @@ some_size = Size { height: 1.0, width: 2.0 }</code></pre>
         self.width = width
 
 someSize = Size(height=1.0, width=2.0)  # unnecessarily explicit</code></pre>
-<p>The second, and more significant, is that the default, memberwise initializer in in Swift is only available <em>if you have not defined any other initializers</em>. This is very, <em>very</em> different from Rust, where there’s not really any such thing as a dedicated initializer—just methods. If we defined <code>Size::new</code> or <code>Size::default</code> or <code>Size::any_other_funky_initializer</code>, it wouldn’t make a whit of difference in our ability to define the type this way.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> However, and this is important: because Rust has field-level public vs. private considerations, we cannot always do memberwise initialization of any given <code>struct</code> type there, either; it is just that the reasons are different. So:<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>The second, and more significant, is that the default, memberwise initializer in in Swift is only available <em>if you have not defined any other initializers</em>. This is very, <em>very</em> different from Rust, where there’s not really any such thing as a dedicated initializer—just methods. If we defined <code>Size::new</code> or <code>Size::default</code> or <code>Size::any_other_funky_initializer</code>, it wouldn’t make a whit of difference in our ability to define the type this way.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> However, and this is important: because Rust has field-level public vs. private considerations, we cannot always do memberwise initialization of any given <code>struct</code> type there, either; it is just that the reasons are different. So:<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <pre class="rust"><code>mod Shapes {
     struct Rectangle {
         pub height: f64,
@@ -164,7 +163,7 @@ impl Foo {
     }
 }</code></pre>
 <p>You can (of course!) build up a type through multiple layers of methods which are useful to compose an instance <em>together</em>. This is what the <a href="http://doc.rust-lang.org/stable/style/ownership/builders.html"><em>builder pattern</em></a> is all about. There are definitely times when you want to be able to tweak how your initialization plays out, and being able to do that without just passing in some hairy set of options in a special data type is nice.</p>
-<p>One other important qualification on the Swift initializers: those default, memberwise constructors you get for free? You <em>only</em> get them for free if you don’t define your own initializers. (The closest analogy to this in Rust is that you’ll have issues if you try to both <code>#[derive(Default)]</code> <em>and</em> <code>impl Default for Foo</code>, since both will give you an implementation of <code>Foo::default()</code>.) You can get around this in Swift by using an <em>extension</em>. We’ll come back to that in a future post.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> You can also get around it by supplying a parameter-less, body-less initializer in addition to any other initializers you supply, so: <code>init() {}</code>. (This, frankly, seems like a hack to me. It’s a <em>useful</em> hack, given the other constraints, but these kinds of things pile up.) Similarly, you can just reimplement member-wise initializers yourself if you have a reason to (say, if you’ve implemented any <em>others</em> and therefore the defaults no longer exist).</p>
+<p>One other important qualification on the Swift initializers: those default, memberwise constructors you get for free? You <em>only</em> get them for free if you don’t define your own initializers. (The closest analogy to this in Rust is that you’ll have issues if you try to both <code>#[derive(Default)]</code> <em>and</em> <code>impl Default for Foo</code>, since both will give you an implementation of <code>Foo::default()</code>.) You can get around this in Swift by using an <em>extension</em>. We’ll come back to that in a future post.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> You can also get around it by supplying a parameter-less, body-less initializer in addition to any other initializers you supply, so: <code>init() {}</code>. (This, frankly, seems like a hack to me. It’s a <em>useful</em> hack, given the other constraints, but these kinds of things pile up.) Similarly, you can just reimplement member-wise initializers yourself if you have a reason to (say, if you’ve implemented any <em>others</em> and therefore the defaults no longer exist).</p>
 <p>Now things take a turn into Swift-only territory <a href="http://www.chriskrycho.com/2016/rust-and-swift-xv.html">again</a> as we look at initialization in the context of inheritance. (As mentioned last time: Rust will eventually get inheritance-like behavior, but it’s coming much later, and is not going to be <em>exactly</em> like classical inheritance. Rust <em>strongly</em> favors composition over inheritance, where Swift <em>lightly</em> does but still supports the latter.)</p>
 <p>Swift has two kinds of initializers for class initializers. One, a <em>designated initializer</em>, is required; a designated initializer must fully initialize every property on a class, and call the superclass initializer (assuming there is one). These can be inherited, but again: they are required.</p>
 <p>There are also <em>convenience initializers</em>, which provide variant APIs for setting up any given class. These (by definition, given what we said a moment ago) <em>must</em> call a designated initializer along the way. These could be useful in a lot of different scenarios: setting up variants on the class (as in our temperature examples from before), doing alternate setup depending on initial conditions, etc.</p>
@@ -228,7 +227,7 @@ print(&quot;\(foo?.bar)&quot;)  // 42
 let quux = Foo(false)
 Print(&quot;\(foo?.bar)&quot;)  // nil</code></pre>
 <p>This is another of the places where Swift’s choice to treat initialization as a special case, not just another kind of method, ends up having some weird side effects. If <code>init</code> calls were <em>methods</em>, they would always just be <em>returning the type</em>. This is exactly what we see in Rust, of course. To be clear, there are reasons why the Swift team made that choice, and many of them we’ve already touched on incidentally; the long and short of it is that inheritance adds some wrinkles. These aren’t <em>constructors</em>, they’re <em>initializers</em>. The point, per the Swift book, is “to ensure that <code>self</code> is fully and correctly initializer by the time that initialization ends.” If you’re familiar with Python, you can think of Swift initializers as being quite analogous to <code>__init__(self)</code> methods, which similarly are responsible for <em>initialization</em> but not <em>construction</em>. When we build a type in Rust, by contrast, we’re doing something much more like calling Python <code>__new__(cls)</code> methods, which <em>do</em> construct the type.</p>
-<p><em><strong>Edit:</strong> interestingly, I’m <a href="https://twitter.com/austinzheng/status/749831726122217473">informed via Twitter</a> that Swift initializers can also throw errors. (Thanks, Austin!) The Swift book doesn’t mention this because it hasn’t gotten to error-handling yet (and so, neither have we).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></em></p>
+<p><em><strong>Edit:</strong> interestingly, I’m <a href="https://twitter.com/austinzheng/status/749831726122217473">informed via Twitter</a> that Swift initializers can also throw errors. (Thanks, Austin!) The Swift book doesn’t mention this because it hasn’t gotten to error-handling yet (and so, neither have we).<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></em></p>
 <p>You can of course write failable constructors in Rust, too:</p>
 <pre class="rust"><code>struct Foo {
     bar: i64,
@@ -269,20 +268,20 @@ match waffles {
     Ok(_) =&gt; println!(&quot;Got some waffles, yeah!&quot;),
     Err(s) =&gt; println!(&quot;{:}&quot;, s),
 };</code></pre>
-<p><del>This is simply not the kind of thing you can do in Swift, as far as I can tell. The upside to Swift’s approach is that there is one, standard path. The downside is that if you have a scenario where it makes sense to return an error—i.e., to indicate <em>why</em> a class failed to initialize and not merely <em>that</em> it failed—you’re going to have to jump through many more hoops.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></del> <em><strong>Edit:</strong> See above; Swift <em>can</em> do this. Moreover, the underlying semantics aren’t especially different from Rust’s. However, it does introduce <em>yet more</em> syntax, rather than just being a normal return. But we’ll talk about that in more detail when we get to error-handling.</em><a href="#fn4"><sup>4</sup></a> The downside for Rust is that there’s no shorthand; everything is explicit. The upside is the flexibility to do as makes the most sense in a given context, including defining whatever types you need and returning them as you see fit. If you need a type like <code>PartialSuccessPossible&lt;C, P, E&gt;</code> where <code>C</code> is a complete type, <code>P</code> a partial type, and <code>E</code> an error, you can do that. (I’m not saying that’s a good idea, for the record.) That in turn flows out of building even higher level language features on lower-level features and not introducing new syntax for the most part. Trade-offs!</p>
+<p><del>This is simply not the kind of thing you can do in Swift, as far as I can tell. The upside to Swift’s approach is that there is one, standard path. The downside is that if you have a scenario where it makes sense to return an error—i.e., to indicate <em>why</em> a class failed to initialize and not merely <em>that</em> it failed—you’re going to have to jump through many more hoops.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></del> <em><strong>Edit:</strong> See above; Swift <em>can</em> do this. Moreover, the underlying semantics aren’t especially different from Rust’s. However, it does introduce <em>yet more</em> syntax, rather than just being a normal return. But we’ll talk about that in more detail when we get to error-handling.</em><a href="#fn4"><sup>4</sup></a> The downside for Rust is that there’s no shorthand; everything is explicit. The upside is the flexibility to do as makes the most sense in a given context, including defining whatever types you need and returning them as you see fit. If you need a type like <code>PartialSuccessPossible&lt;C, P, E&gt;</code> where <code>C</code> is a complete type, <code>P</code> a partial type, and <code>E</code> an error, you can do that. (I’m not saying that’s a good idea, for the record.) That in turn flows out of building even higher level language features on lower-level features and not introducing new syntax for the most part. Trade-offs!</p>
 <p>And with that, we’re done talking about initializers. This was a <em>huge</em> topic—but it makes sense. If you don’t nail this down carefully, you’ll be in for a world of hurt later, and that goes whether you’re designing a language or just using it to build things.</p>
 <hr />
 <ul>
 <li><a href="http://www.chriskrycho.com/2016/rust-and-swift-xvi.html"><strong>Previous:</strong> Initialization: another area where Swift has a lot more going on than Rust.</a></li>
 <li>[**Next: Deinitialization: ownership semantics and automatic reference counting][18]</li>
 </ul>
-<section class="footnotes" role="doc-endnotes">
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>Also recall that in Rust, we would set the default values either by using the <code>#[derive(Default)]</code> annotation or by implementing the <code>Default</code> trait ourselves.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn2" role="doc-endnote"><p>I’m including a module because of a quirk around the public/private rules: within the same module, <code>area</code> isn’t hidden and you can actually go ahead and initialize the object.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn3" role="doc-endnote"><p>Depending on how you think about extensions, <em>either</em> Rust doesn’t have anything quite like them… <em>or</em> every type implementation is just an extension, because <code>impl</code> allows you to extend <em>any</em> data type in basically arbitrary ways (a few caveats of course). More on all of this when we get there.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn4" role="doc-endnote"><p>Here’s a preview of what that would look like, though (fair warning, there’s a lot going on here we haven’t talked about!):</p>
+<li id="fn1"><p>Also recall that in Rust, we would set the default values either by using the <code>#[derive(Default)]</code> annotation or by implementing the <code>Default</code> trait ourselves.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>I’m including a module because of a quirk around the public/private rules: within the same module, <code>area</code> isn’t hidden and you can actually go ahead and initialize the object.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Depending on how you think about extensions, <em>either</em> Rust doesn’t have anything quite like them… <em>or</em> every type implementation is just an extension, because <code>impl</code> allows you to extend <em>any</em> data type in basically arbitrary ways (a few caveats of course). More on all of this when we get there.<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Here’s a preview of what that would look like, though (fair warning, there’s a lot going on here we haven’t talked about!):</p>
 <pre class="swift"><code>enum Setup {
     case succeed
     case error
@@ -319,8 +318,8 @@ do {
 } catch BarSetupError.argh {
     print(&quot;Oh teh noes!&quot;)
 }</code></pre>
-<p>The output from this would be <code>42</code>, <code>nil</code>, and <code>Oh teh noes!</code>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn5" role="doc-endnote"><p><del>It’s conceivable this is actually possible, but nothing in <em>The Swift Programming Language</em> even hints at it, if so.</del> See above!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<p>The output from this would be <code>42</code>, <code>nil</code>, and <code>Oh teh noes!</code>.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p><del>It’s conceivable this is actually possible, but nothing in <em>The Swift Programming Language</em> even hints at it, if so.</del> See above!<a href="#fnref5" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>
