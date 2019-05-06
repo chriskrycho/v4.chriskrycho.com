@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Chrome is Not the Standard"/>
     <meta name="twitter:description" content="No single browser vendor represents ”the future of the web.” Each ships in line with its own business priorities. And that's a good thing."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -104,16 +105,16 @@
 <p>As web developers, it can be easy to become focused on interesting new features for the platform we work on. That’s no different than the excitement Android and iOS developers have when Google and Apple release new SDKs for developing on their platforms. It’s healthy to be excited about possible new features, things that might make our jobs easier or enable us to do things we couldn’t do before.</p>
 <p>But there <em>is</em> an important difference between those platforms and the web. Those platforms are the domain of a single vendor. The web is a shared platform. This is its unique benefit, and its unique cost. It uniquely allows us to write software that can actually run, and run reasonably well, <em>everywhere</em>. But it also means that a minimum of four companies—the major browser vendors—get a say in whether a feature is a <em>feature</em> or whether it’s just an interesting idea one of the teams had.</p>
 <p>Let’s get concrete about an example that’s been extremely high-profile for the last couple years—and, to be clear, one I think is a <em>good</em> idea from Google: <a href="https://developers.google.com/web/progressive-web-apps/" title="Google’s PWA page">progressive web apps</a> (hereafter <abbr title='Progressive Web App'>PWA</abbr>). They have been pitched by Google and other supporters as an unambiguous win for the user experience of complex web applications. And, as a web developer myself, I’m actually inclined to agree with that assessment! However, I have fairly regularly seen people getting angry at especially Apple for not prioritizing support for <abbr title='Progressive Web App'>PWA</abbr>s in (especially iOS) Safari—Apple is, in this view, “holding back the future of the web.”</p>
-<p>Well… no. For any given idea Google pitches, Apple may or may not be sold on Google’s vision of the web, or they may even think it’s a good idea but not <em>more</em> important than other things they’re working on.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Well… no. For any given idea Google pitches, Apple may or may not be sold on Google’s vision of the web, or they may even think it’s a good idea but not <em>more</em> important than other things they’re working on.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>And this is what it <em>means</em> to be part of the web platform. No single company gets to dominate the others in terms of setting the agenda for the web. Not Firefox, with its development and advocacy of <a href="http://webassembly.org/">WebAssembly</a>, dear to my heart though that is. Not Microsoft and the IE/Edge team, with its proposal of the CSS grid spec in <em>2011</em>, sad though I am that it languished for as long as it did. Not Apple, with its pitch for <a href="https://webkit.org/blog/7846/concurrent-javascript-it-can-work/" title="“Concurrent JavaScript: it can work!”">concurrent JavaScript</a>. And not—however good its developer relations team is—Chrome, with any of the many ideas it’s constantly trying out, including <abbr title='Progressive Web App'>PWA</abbr>s.</p>
 <p>It’s also worth recognizing how these decisions aren’t, in almost any case, unalloyed pushes for “the future of the web.” They reflect <em>business</em> priorities, just like any other technical prioritization. Google cares about <abbr title='Progressive Web App'>PWA</abbr>s because Google makes its money from the web and wants people to spend more of their time on the web. Apple cares about things like the battery life implications and the sheer speed of its iOS JavaScript engine because it makes money from hardware and it wants people to be happy with their iPhones and iPads.</p>
 <p>Does any one of those browser’s commitments map cleanly to <em>all</em> users’ (or even all <em>developers’</em>) priorities? Of course not! This is and always has been the beauty of a competitive browser landscape. I’m a web developer who wants <abbr title='Progressive Web App'>PWA</abbr> support everywhere—so I want Apple supporting it. But I’m also a smartphone user who wants those applications to <em>scream</em> on my device—not to crawl, like they do on Chrome on Android, which is still years behind iOS in performance. As an end user, not just a developer, it matters to me that running Safari on my laptop instead of Chrome can dramatically increase my battery life.</p>
 <p>These are tradeoffs, plain and simple. Chrome ships new features fast, but they’re not always stable and they often have performance costs. Safari ships new features on a much slower cadence, but they’re usually solid and always perform incredibly well. These are both engineering and business tradeoffs, and the companies behind the browsers are making because of their own business and engineering priorities. Don’t valorize any of the browser vendors, and don’t act as if <em>any</em> of them is the standard, or a reliable predictor of the future. Instead, value what each brings to the table, but also value the interplay <em>at</em> the table, and the ways each of these vendors pushes the others and challenges the others’ assumptions of what is most important. That’s what makes the web so great, even when it makes things move more slowly. Sometimes—often, even!—moving more slowly not in the <em>experimental</em> phase but in the <em>finalizing</em> phase makes for a much better outcome overall.</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>In this case, it seems to have been the latter, since yesterday’s release of Safari Tech Preview enabled Service Workers, one of the major pieces of the <abbr title='Progressive Web App'>PWA</abbr> push.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>In this case, it seems to have been the latter, since yesterday’s release of Safari Tech Preview enabled Service Workers, one of the major pieces of the <abbr title='Progressive Web App'>PWA</abbr> push.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -170,7 +171,7 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/what-is-a-zettelkasten.html">What is a Zettelkasten?</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/burnout-six-months-later.html">Burnout, Six Months Later</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

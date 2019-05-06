@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="JavaScript is C"/>
     <meta name="twitter:description" content="JavaScript and C both make you maintain your invariants the most painful way possible. Happily, there are better alternatives these days."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -93,18 +94,18 @@
 <p>Earlier this week, I was working on a problem in the Ember app where I spend most of my day job, and realized: <i>JavaScript is the same as C.</i></p>
 <p>That probably doesn’t make any sense, so let’s back up. The scenario I was dealing with was one where there was a bit of invariant around a piece of data that I <em>had</em> to maintain for the application not to blow up in horrible ways, but had no good way to enforce with the language’s tools. <em>This</em> action on <em>that</em> piece of data was only valid if <em>this</em> condition held true… but even with the fully-type-checked TypeScript application we now have, the action (because of the entire application’s architecture and indeed the entire way that Ember apps are wired together!) could not be statically verified to be safe.</p>
 <p>As I considered the best way to handle this—I ended up having the function involved in the action just throw an error if the invariant wasn’t properly maintained—I was reminded of the years I spent writing C. In C, it’s quite <em>possible</em> to write safe code around memory management. I managed it fine in the applications I worked on, by carefully documenting the invariants a given function required to be safe. <em>This</em> piece of data is allocated by <em>that</em> function and then released to <em>the caller</em> to manage. Even with every bit of static analysis I threw at those kinds of things, it was possible to get it wrong.</p>
-<p>The exact same kinds of problems I had in C, I have in JavaScript or even TypeScript today. Experientially, JavaScript<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> <em>is</em> C, as far as having to deal with these kinds of invariants goes.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>The exact same kinds of problems I had in C, I have in JavaScript or even TypeScript today. Experientially, JavaScript<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <em>is</em> C, as far as having to deal with these kinds of invariants goes.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>Enter <a href="https://www.rust-lang.org">Rust</a>: the kinds of management of memory that I was always having to keep track of in my head (or, better, with detailed documentation comments along the way—but with the same problem that it was easy to get wrong), I could now have statically guaranteed by a compiler. Given that I spent the first six years of my career managing and carefully tracking all of that by hand, it’s no wonder I <a href="https://newrustacean.com">fell in love</a> with Rust. I could have the <em>compiler</em> guarantee the invariants I needed around memory management.</p>
 <p>And it turns out, this same dynamic exists in the world of front-end web development. People sometimes wonder why (and colleagues are often bemused that) I get so excited by <a href="https://elm-lang.org">Elm</a>. But the step from JavaScript (or even TypeScript) to Elm is just like the step from C to Rust. It’s a real and profound shift in what kinds of things you can <em>know for certain</em> about your program.</p>
 <p>In a C application, try as hard as I may, at the end of the day I am always on my own, making sure the invariants I need for memory safety hold. In Rust, I can be 100% confident that I will not have memory-unsafe code. Not 98%-and-I’d-better-check-those-last-2%-really-closely. One hundred percent. That’s a game-changer.</p>
 <p>In a JavaScript or TypeScript application, try as hard as I may, at the end of the day I am always on my own, making sure the invariants I need for state management hold. In Elm, I can be 100% confident that I will not have code which needs a given invariant about a piece of state to hold break the way it could in this TypeScript application. Because I can’t even apply the relevant transformations in question if it isn’t! That’s a game-changer.</p>
 <p>Neither of those is a guarantee I won’t have bugs. (A compiler that could guarantee that would have to be sentient and far smarter than any human!) Neither of them means I can’t intentionally do stupid things that violate invariants in ways that get the program into broken states from the user’s point of view. But both of them give me the tools and the confidence that I can absolutely guarantee that certain, very important kinds of invariants hold. We’re not looking for an absence of all bugs or a system which can prevent us from making any kind of mistake. We’re looking to be able to spend our times on the things that matter, <em>not</em> on minutiae the computer can check for us.</p>
 <p>So: I’m not going back to C, and I’m ready to move past JavaScript and TypeScript.</p>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>This goes for plenty of languages that aren’t JavaScript, too. It’s equally true of c<sup>♯</sup> or Python.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Obviously there are some kinds of things you don’t have to worry about in JS that you do in C: memory management, for one. The point is that the manual-verification-of-every-invariant-you-care-about is the same.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>This goes for plenty of languages that aren’t JavaScript, too. It’s equally true of c<sup>♯</sup> or Python.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Obviously there are some kinds of things you don’t have to worry about in JS that you do in C: memory management, for one. The point is that the manual-verification-of-every-invariant-you-care-about is the same.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -161,7 +162,7 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/what-is-a-zettelkasten.html">What is a Zettelkasten?</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/burnout-six-months-later.html">Burnout, Six Months Later</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

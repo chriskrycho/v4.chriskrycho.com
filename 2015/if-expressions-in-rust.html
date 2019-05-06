@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="If-expressions in Rust"/>
     <meta name="twitter:description" content="I love the fact that all if statements in Rust are expressions. It gives you a great deal of expressitivity in the language. Let’s contrast with Python (which I love, for the record). In Python, you can do something like this: some_condition = True if some_condition: a_value = "Yeah!" else: a_value …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -112,7 +113,7 @@ else {
 <p>And of course, you can shorten that rather nicely where the expressions are brief enough:</p>
 <pre class="rust"><code>let some_condition = true;
 let a_value = if some_condition { &quot;Yeah!&quot; } else { &quot;Oh, sads.&quot; }</code></pre>
-<p>But this gets really nice when you have more complicated work to do in a Rust conditional. It doesn’t matter how many things going on inside an <code>if</code> expression; it’s still an expression. As such, you can also write this:<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>But this gets really nice when you have more complicated work to do in a Rust conditional. It doesn’t matter how many things going on inside an <code>if</code> expression; it’s still an expression. As such, you can also write this:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <pre class="rust"><code>let some_condition = true;
 let a_value = if some_condition {
     let the_answer = 42;
@@ -127,10 +128,10 @@ else {
 <p>Obviously this is totally contrived and silly; the point is that no matter what the internals are, <code>if</code> blocks are expressions, and their final expressions can be assigned like any other.</p>
 <hr />
 <p>As a note: I got here because I was originally thinking you couldn’t do a one-liner like you can in Python. As shown above, that’s totally false, and in fact the Rust version is much more capable than Python’s, because you don’t need a dedicated ternary when all <code>if</code> blocks are expressions. Rust used to have a C-style ternary (<code>&lt;condition&gt; ? &lt;value if true&gt; : &lt;value if false&gt;</code>) but it was <a href="https://github.com/rust-lang/rust/issues/1698">removed</a> during the lead-up to the 1.0 release—a decision I wholeheartedly affirm.</p>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Note that under normal conditions the compiler won’t actually accept this because of the unused names.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>Note that under normal conditions the compiler won’t actually accept this because of the unused names.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -187,7 +188,7 @@ else {
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/what-is-a-zettelkasten.html">What is a Zettelkasten?</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/burnout-six-months-later.html">Burnout, Six Months Later</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

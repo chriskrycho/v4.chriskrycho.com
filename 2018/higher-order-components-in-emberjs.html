@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Higher-Order Components in Ember.js"/>
     <meta name="twitter:description" content="Components as arguments! Components getting yielded! Components everywhere! A powerful way to make your Ember.js components more flexible and composeable."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -141,7 +142,7 @@
 <p>The <code>yield</code> statement yields a <a href="https://www.emberjs.com/api/ember/3.1/classes/Ember.Templates.helpers"><code>hash</code></a> with one property: <code>section</code>. Yielding a hash is a convenient pattern in general. Here, we’re doing it to make the <abbr>API</abbr> nicer for users of this component. It means that if we name the yielded value <code>|modal|</code> when we invoke this, we’ll be able to write <code>modal.section</code> to name this particular yielded item. (You’ll see exactly this below.)</p>
 <p>We use the <code>component</code> helper twice: once as the value of the <code>section</code> key in the yielded hash, and once for the <code>button</code> below. In both cases, the helper does the same thing: invokes a component! While the most common way to render a component is with its name, inline—like <code>{{x-modal}}</code>—you can always render it with the <code>component</code> helper and the name as a string: <code>{{component 'x-modal'}}</code>. This lets you render different components dynamically!</p>
 <p>Let’s remember our initial analogy: the same way you can pass different functions to a higher-order function like <code>Array.prototype.map</code>, you can pass different components to a higher-order component like our <code>x-modal</code> here. And just like you can <em>return</em> a function from a higher-order function, we can <em>yield</em> a component from a higher-order component. Just like higher-order functions, the function passed in or returned just has to have the right shape.</p>
-<p>For example, the argument to <code>Array.prototype.map</code> needs to be a function which performs an operation on a single item in the array (and maybe also the index) and hands back the result of that operation. Similarly, the <code>button</code> argument to our <code>x-modal</code> needs to accept a <code>buttonClass</code> component so that the modal can apply some styling to it. The same thing holds for the component being yielded back out: it has an <abbr>API</abbr> you should use to invoke it, just like any other.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>For example, the argument to <code>Array.prototype.map</code> needs to be a function which performs an operation on a single item in the array (and maybe also the index) and hands back the result of that operation. Similarly, the <code>button</code> argument to our <code>x-modal</code> needs to accept a <code>buttonClass</code> component so that the modal can apply some styling to it. The same thing holds for the component being yielded back out: it has an <abbr>API</abbr> you should use to invoke it, just like any other.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>All of this gets at something really important: you can think of components as just being <em>pure functions</em>: they take some input in the form of arguments, and give you the output of what they <em>render</em> and what they <em>yield</em>—and they always give you the same rendered <abbr>HTML</abbr> and the same yielded values for the same inputs. They’re just functions!</p>
 </section>
 <section id="x-modal-section" class="level3">
@@ -153,7 +154,7 @@
 </section>
 <section id="application-controller-and-template" class="level3">
 <h3>Application controller and template</h3>
-<p>Now, let’s use in the context of the application template, where we can see how the pieces all fit together. First, let’s see the application controller backing it—nothing unusual here, just a simple toggle to show or hide the modal.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>Now, let’s use in the context of the application template, where we can see how the pieces all fit together. First, let’s see the application controller backing it—nothing unusual here, just a simple toggle to show or hide the modal.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <pre class="ts"><code>import Controller from &quot;@ember/controller&quot;;
 import { action } from &quot;@ember-decorators/object&quot;;
 
@@ -202,22 +203,22 @@ export default class Application extends Controller {
 &lt;!-- some other content on the page --&gt;</code></pre>
 <p>We invoke the block form of <code>x-modal</code> just like we would any block component, and we get back the thing it yields with <code>as |modal|</code>. However, one of the arguments we pass to it is a component. But <code>modal</code> is a <code>hash</code> (an object!) with a property named <code>section</code>, which is the <code>x-modal-section</code> component.</p>
 <p>Again, you can think of this like calling a function with one function as an argument and getting another function back as its return value—that returned function being something we could call over and over again once we had it.</p>
-<p>Here, we “call the function”—invoke the <code>x-modal</code> component—with <code>component 'x-button'</code> as its argument, and the returned <code>modal.section</code> is a component we can invoke like a normal component.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> We could even pass it into some <em>other</em> component itself if we so desired.</p>
+<p>Here, we “call the function”—invoke the <code>x-modal</code> component—with <code>component 'x-button'</code> as its argument, and the returned <code>modal.section</code> is a component we can invoke like a normal component.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> We could even pass it into some <em>other</em> component itself if we so desired.</p>
 <p>And that’s really all there is to it!</p>
 </section>
 </section>
 <section id="summary" class="level2">
 <h2>Summary</h2>
-<p>“Higher-order components” aren’t necessarily something you need all the time, but they’re really convenient and very powerful when you <em>do</em> need them. They’re also a lot less complicated than the name might seem! Components are just things you can pass around in the context of a component template—they’re the <em>functions</em> of Handlebars.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
+<p>“Higher-order components” aren’t necessarily something you need all the time, but they’re really convenient and very powerful when you <em>do</em> need them. They’re also a lot less complicated than the name might seem! Components are just things you can pass around in the context of a component template—they’re the <em>functions</em> of Handlebars.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <p>Splitting things into components like this does increase complexity, and in particular it can increase the mental overhead of keeping track of how the pieces fit together. However, they also let us cleanly separate different pieces of functionality from each other. Doing it this way means that our modal can be concerned about <em>positioning</em> a button without needing to expose an <abbr>API</abbr> for all of the button’s own mechanics for handling clicks and performing whatever actions necessary. That makes our modal <em>and</em> our button way more reusable across our application. The button can be used <em>wherever</em> a button is useful, and the modal doesn’t need to know or care anything about it. Likewise, the button has no need to know anything about the context where it’s being used; from the button component’s perspective, it just gets wired up to some actions as usual. The same thing goes for the modal sections: they let us abstract over how the DOM is laid out, what classes are applied to it, and so on—they chunk up the modal, but the modal itself maintains responsibility for how that chunking up happens. And the caller doesn’t even <em>have</em> to use that; it’s just a tool that’s available for that purpose.</p>
 <p>To sum it all up, I’ll just reiterate my earlier description: components are just like pure functions: the same inputs give you the same outputs—and, just like functions, those inputs and outputs can be other functions, that is, other components.</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>If you want a good way to document the things a component <code>yield</code>s, check out <a href="https://ember-learn.github.io/ember-cli-addon-docs/latest/docs/api/components/docs-demo">ember-cli-addon-docs</a>, which can read an <code>@yield</code> JSDoc annotation.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>And it could just as well be a component; the top-level controller template is just where we put our main app functionality.<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>We could also simplify this since we’re only returning one component, and if we had the full Glimmer component story, this could look <em>very</em> nice:</p>
+<li id="fn1" role="doc-endnote"><p>If you want a good way to document the things a component <code>yield</code>s, check out <a href="https://ember-learn.github.io/ember-cli-addon-docs/latest/docs/api/components/docs-demo">ember-cli-addon-docs</a>, which can read an <code>@yield</code> JSDoc annotation.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>And it could just as well be a component; the top-level controller template is just where we put our main app functionality.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p>We could also simplify this since we’re only returning one component, and if we had the full Glimmer component story, this could look <em>very</em> nice:</p>
 <pre class="ts"><code>&lt;Modal @button={{component &#39;Button&#39;}} as |Section|&gt;
   &lt;Section&gt;
     Some content!
@@ -231,8 +232,8 @@ export default class Application extends Controller {
     &lt;p&gt;Nothing crazy going on here. Just a normal template!&lt;/p&gt;
   &lt;/Section&gt;
 &lt;/Modal&gt;</code></pre>
-<a href="#fnref3" class="footnote-back">↩</a></li>
-<li id="fn4"><p>If you’re inclined to “well actually” me about <em>helpers</em> being the real functions of Handlebars templates: in the Glimmer <abbr>VM</abbr> world, helpers are just a kind of component.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></li>
+<li id="fn4" role="doc-endnote"><p>If you’re inclined to “well actually” me about <em>helpers</em> being the real functions of Handlebars templates: in the Glimmer <abbr>VM</abbr> world, helpers are just a kind of component.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -289,7 +290,7 @@ export default class Application extends Controller {
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/what-is-a-zettelkasten.html">What is a Zettelkasten?</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/burnout-six-months-later.html">Burnout, Six Months Later</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

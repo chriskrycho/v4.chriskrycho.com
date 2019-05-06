@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Python Enums, ctypes.Structures, and DLL exports"/>
     <meta name="twitter:description" content="Unfortunately, the official docs for ctypes leaves a few things out—namely, the most basic use case with from_param! Here's a simple, working example from my own development work."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -106,7 +107,7 @@ MY_API int getAnEnumValue(MyEnum anEnum);</code></pre>
     return (int)anEnum;
 }</code></pre>
 <p>As I said, a <em>very</em> silly example. Note that you don’t technically need the <code>(int)</code> cast there; I’ve just put it in to be explicit about what we’re doing.</p>
-<p>How would we use this from Python? Assuming we have a DLL named <code>my_dll</code> which exports the <code>getAnEnumValue</code> function, we’d load it up roughly like this:<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>How would we use this from Python? Assuming we have a DLL named <code>my_dll</code> which exports the <code>getAnEnumValue</code> function, we’d load it up roughly like this:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <pre class="python"><code>import ctypes as c
 
 my_dll = c.cdll.LoadLibrary(&#39;my_dll&#39;)</code></pre>
@@ -127,7 +128,7 @@ get_an_enum_value.argtypes = [MyEnum]
 get_an_enum_value.restype = c.c_int</code></pre>
 <p>That seems sensible enough, but as it is, it won’t work: you’ll get an error:</p>
 <pre><code>TypeError: item 1 in _argtypes_ has no from_param method</code></pre>
-<p>This is because <code>argtypes</code> values <em>have</em> to be either existing <code>ctypes</code> types<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> or supply either:</p>
+<p>This is because <code>argtypes</code> values <em>have</em> to be either existing <code>ctypes</code> types<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> or supply either:</p>
 <ul>
 <li>a <code>from_param</code> classmethod, or</li>
 <li>an <code>_as_parameter_</code> attribute</li>
@@ -196,11 +197,11 @@ print(get_an_enum_value(MyEnum.TWO))</code></pre>
 <p>An important note: The type definition we’ve provided here will work for <code>argtypes</code> or <code>restype</code> assignments, but <em>not</em> as one of the members of a custom <code>ctypes.Structure</code> type’s <code>_fields_</code> value. (Discussing how you’d go about doing that is beyond the scope of this post; the most direct approach is just to use a <code>ctypes.c_int</code> and note that it is intended to be used with a given <code>IntEnum</code>/<code>CtypesEnum</code> type.)</p>
 <hr />
 <p>Thanks to <a href="https://alpha.app.net/oluseyi">@oluseyi</a> for being my <a href="http://en.wikipedia.org/wiki/Rubber_duck_debugging">rubber ducky</a> while I was working this out earlier this week!</p>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>I’m leaving out the part where we build the DLL, and also the part where we locate the DLL, and only using the Windows convention. If you’re on a *nix system, you should use <code>'my_dll.so'</code> instead, and in any case you need to make sure the DLL is available in the search path.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>I <em>love</em> the redundancy of “<code>ctypes</code> types,” don’t you?<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>I’m leaving out the part where we build the DLL, and also the part where we locate the DLL, and only using the Windows convention. If you’re on a *nix system, you should use <code>'my_dll.so'</code> instead, and in any case you need to make sure the DLL is available in the search path.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>I <em>love</em> the redundancy of “<code>ctypes</code> types,” don’t you?<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -257,7 +258,7 @@ print(get_an_enum_value(MyEnum.TWO))</code></pre>
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/what-is-a-zettelkasten.html">What is a Zettelkasten?</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/burnout-six-months-later.html">Burnout, Six Months Later</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

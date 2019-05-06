@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="TypeScript and Ember.js Update, Part 2"/>
     <meta name="twitter:description" content="For years, you've been using Ember Object and .extend()—but the rules are different with classes."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -217,7 +218,7 @@ export default class AnExample extends Component {
   // snip...
 }</code></pre>
 <p>You can see why the first one is preferable: if you don’t need any input to the component to set the value, you can simply set the definition inline where the property is declared.</p>
-<p>However, this is <em>quite</em> unlike using <code>.extend</code>, which installs the property on the prototype. Three very important differences from what you’re used to fall out of this, and <em>none of them are specific to TypeScript.</em><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>However, this is <em>quite</em> unlike using <code>.extend</code>, which installs the property on the prototype. Three very important differences from what you’re used to fall out of this, and <em>none of them are specific to TypeScript.</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <section id="default-values" class="level3">
 <h3>1. Default values</h3>
 <p>Since class property setup runs during the constructor, if you want the caller to be able to override it, you <em>must</em> give it an explicit fallback that references what’s passed into the function. Something like this:</p>
@@ -254,7 +255,7 @@ export default class AnExample extends Component {
     return this.aString.length;
   });
 }</code></pre>
-<p>This <em>does</em> have a performance cost, which will be negligible in the ordinary case but pretty nasty if you’re rendering hundreds to thousands of these items onto the page. You can use this workaround for these as well as for any other properties which need to be prototypal (more on <em>that</em> in the next post as well):<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>This <em>does</em> have a performance cost, which will be negligible in the ordinary case but pretty nasty if you’re rendering hundreds to thousands of these items onto the page. You can use this workaround for these as well as for any other properties which need to be prototypal (more on <em>that</em> in the next post as well):<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <pre class="typescript"><code>export default class MyComponent extends Component.extend({
   itsLength: computed(&#39;aString&#39;, function(this: MyComponent): number {
       return this.aString.length;
@@ -271,7 +272,7 @@ export default class AnExample extends Component {
 <p>There are two times when things will look different from basic class properties. Both have to do with setting up the prototype to work the way other parts of the Ember object ecosystem expect.</p>
 <section id="variant-1-prototypalmerged-properties" class="level3">
 <h3>Variant 1: Prototypal/merged properties</h3>
-<p>The first is when you’re using properties that need to be merged with properties in the prototype chain, e.g. <code>attributeBindings</code> or <code>classNameBindings</code>, or which (because of details of how components are constructed) have to be set on the prototype rather than as instance properties, e.g. <code>tagClass</code>.</p>
+<p>The first is when you’re using properties that need to be merged with properties in the prototype chain, e.g. <code>attributeBindings</code> or <code>classNameBindings</code>, or which (because of details of how components are constructed) have to be set on the prototype rather than as instance properties, e.g. <code>tagClass</code>.</p>
 <p>For those, we can just leverage <code>.extend</code> in conjunction with classes:</p>
 <pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
 
@@ -290,7 +291,7 @@ import MyMixin from &#39;my-app/mixins/my-mixin&#39;;
 export default class AnExample extends Component.extend(MyMixin) {
   // the rest of the definition.
 }</code></pre>
-<p>Note, however—and this is very important—that you cannot <code>.extend</code> an existing <code>class</code> implementation. As a result, deep inheritance hierarchies <em>may</em> make transitioning to classes in Ember painful. Most importantly: they may work <em>some</em> of the time in <em>some</em> ways, but will break when you least expect. So don’t do that! (This isn’t a TypeScript limitation; it’s a limitation of classes in Ember today.)<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p>Note, however—and this is very important—that you cannot <code>.extend</code> an existing <code>class</code> implementation. As a result, deep inheritance hierarchies <em>may</em> make transitioning to classes in Ember painful. Most importantly: they may work <em>some</em> of the time in <em>some</em> ways, but will break when you least expect. So don’t do that! (This isn’t a TypeScript limitation; it’s a limitation of classes in Ember today.)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 </section>
 <section id="variant-2-mixins" class="level3">
 <h3>Variant 2: Mixins</h3>
@@ -311,12 +312,12 @@ export default class SomeNewComponent extends Component.extend(MyMixin) {
 <h2>Summary</h2>
 <p>Those are the <em>biggest</em> differences from <code>Ember.Object</code> that you need to be aware of when working with class properties in Ember.js today, at least in my experience working with them day to day. These are not the only differences with <em>classes</em>, though, especially when dealing with TypeScript, so in my next entry we’ll take a look at how classes work (and work well!) with most things in Ember.js and TypeScript together.</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>You can use this same feature on classes using Babel, with the <a href="https://babeljs.io/docs/plugins/transform-class-properties/">class properties transform</a>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Even when <a href="https://github.com/emberjs/rfcs/pull/281">Ember.js RFC #281</a> lands, this problem will not go away, at least under the current implementation, since <a href="https://github.com/emberjs/rfcs/pull/281#issuecomment-360023258"><em>these</em> will <em>not</em> be transformed into getters on the prototype</a>. We are waiting for decorators to solve this problem completely.<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>In the future, we’ll (hopefully and presumably 🤞🏼) have an escape hatch for those merged or prototypally-set properties via decorators. That’ll look something like this:</p>
+<li id="fn1" role="doc-endnote"><p>You can use this same feature on classes using Babel, with the <a href="https://babeljs.io/docs/plugins/transform-class-properties/">class properties transform</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Even when <a href="https://github.com/emberjs/rfcs/pull/281">Ember.js RFC #281</a> lands, this problem will not go away, at least under the current implementation, since <a href="https://github.com/emberjs/rfcs/pull/281#issuecomment-360023258"><em>these</em> will <em>not</em> be transformed into getters on the prototype</a>. We are waiting for decorators to solve this problem completely.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p>In the future, we’ll (hopefully and presumably 🤞🏼) have an escape hatch for those merged or prototypally-set properties via decorators. That’ll look something like this:</p>
 <pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
 import { className, tagName } from &#39;ember-decorators/component&#39;;
 
@@ -330,7 +331,7 @@ export default class MyListItem extends Component {
   }
   // etc.
 }</code></pre>
-<a href="#fnref3" class="footnote-back">↩</a></li>
+<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></li>
 </ol>
 </section>
         </div>
@@ -387,7 +388,7 @@ export default class MyListItem extends Component {
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/what-is-a-zettelkasten.html">What is a Zettelkasten?</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/burnout-six-months-later.html">Burnout, Six Months Later</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

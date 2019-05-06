@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="How to Build a Single-Page App API Right"/>
     <meta name="twitter:description" content="How to write a single-page app API so that you get usable data on the first load *and* have a nice interface for your single-page application built in Ember/Angular/Knockout/Backbone/etc."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -97,15 +98,15 @@
 <p>(More experienced developers already know where this is going: that last sentence there has the key to this whole thing. I know. But the internet <em>doesn’t.</em> I learned this the hard way.)</p>
 <section id="the-mistake" class="level3">
 <h3>The mistake</h3>
-<p>Here’s the mistake I made: I built the Bible data API as (essentially) a <em>single</em> endpoint. When I went looking for advice on how to build this in Angular and Node/Express, every single tutorial or blog post I found outlined the same basic solution: routes for your data endpoints, and catch-all route that returns the basic frame page for everything else. So, for HolyBible.com, that would come out with route matchers for e.g. <code>/data/gen.1.1</code>, and for any other specific routes needed (for other views, static resources, etc.), with a default behavior of just dropping a static, basically empty template at the catchall <code>*</code> route. Then, once the application has loaded, it can inspect the URL and load the relevant data.</p>
+<p>Here’s the mistake I made: I built the Bible data API as (essentially) a <em>single</em> endpoint. When I went looking for advice on how to build this in Angular and Node/Express, every single tutorial or blog post I found outlined the same basic solution: routes for your data endpoints, and catch-all route that returns the basic frame page for everything else. So, for HolyBible.com, that would come out with route matchers for e.g. <code>/data/gen.1.1</code>, and for any other specific routes needed (for other views, static resources, etc.), with a default behavior of just dropping a static, basically empty template at the catchall <code>*</code> route. Then, once the application has loaded, it can inspect the URL and load the relevant data.</p>
 <p>This works. It’s exactly what I did on HolyBible.com, in fact. But it’s <em>slow</em>.</p>
 <p>Don’t get me wrong: the time until the initial page load is actually relatively quick (though I plan to improve it substantially over the next couple months). The real problem is that the initial page load <em>doesn’t include any content</em>.</p>
 <p>I <em>hate</em> this. That’s why people are on the site: not to see my neat skills with JavaScript, just to read the Bible. And they have to wait, because once the page <em>does</em> load, Angular has to spin up the full application, see what content <em>should</em> have been loaded, and request it.</p>
 </section>
 <section id="the-solution" class="level3">
 <h3>The solution</h3>
-<p>Don’t write <em>one</em> API. Write <em>two</em>. They should be structured nearly identically, but one of them will be a <em>page</em> API endpoint, and one will be a <em>data</em> API endpoint. In the context of HolyBible.com, here’s how that would play out.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> One endpoint would be based purely on the standard URL, something like <code>holybible.com/jhn.3.16</code>. The other would be to retrieve a set of <em>data</em> associated with a given address, like <code>holybible.com/data/jhn.3.16</code>. This is only a little different from the approach suggested above, but that small difference matters—in fact, it matters a <em>lot</em>.</p>
-<p>Instead of having the <code>/jhn.3.16</code> route get handled by a catchall <code>*</code> route on the back end, it gets its own API endpoint, which looks for URLS of this shape and hands back a full page. That API endpoint is responsible to actually render the content of the page appropriately—in this case, with something like the whole chapter of John 3.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> <em>That</em> gets handed back to the browser, so the very first thing the user sees is not a blank page while the JavaScript framework spins up and requests data, but rather <em>the Bible text they asked for in the first place</em>.</p>
+<p>Don’t write <em>one</em> API. Write <em>two</em>. They should be structured nearly identically, but one of them will be a <em>page</em> API endpoint, and one will be a <em>data</em> API endpoint. In the context of HolyBible.com, here’s how that would play out.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> One endpoint would be based purely on the standard URL, something like <code>holybible.com/jhn.3.16</code>. The other would be to retrieve a set of <em>data</em> associated with a given address, like <code>holybible.com/data/jhn.3.16</code>. This is only a little different from the approach suggested above, but that small difference matters—in fact, it matters a <em>lot</em>.</p>
+<p>Instead of having the <code>/jhn.3.16</code> route get handled by a catchall <code>*</code> route on the back end, it gets its own API endpoint, which looks for URLS of this shape and hands back a full page. That API endpoint is responsible to actually render the content of the page appropriately—in this case, with something like the whole chapter of John 3.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <em>That</em> gets handed back to the browser, so the very first thing the user sees is not a blank page while the JavaScript framework spins up and requests data, but rather <em>the Bible text they asked for in the first place</em>.</p>
 <p>Meanwhile, the JavaScript framework <em>can</em> spin up, and load any required session data, etc. and start managing the UI like normal. Once we get to this point, the framework can go ahead and request a data payload from the <code>/data/&lt;reference&gt;</code> endpoint. So, for example, if there is a navigation control on the page (as on HolyBible.com and indeed most sites), clicking to navigate to Job 14 could, instead of requesting <code>/job.14.4</code>, fetch the data from the other endpoint by running an AJAX request to <code>/data/job.14.4</code>.</p>
 <p>The backend thus supplies <em>both</em> a <code>/&lt;resource&gt;</code> and a <code>/data/&lt;resource&gt;</code> route. This might seem redundant, but we’ve just seen why it isn’t, Moreover, if you have any logic that needs to be in place—in our example here, a Bible reference parser, for example, to decide what content should be supplied—you can easily reuse it between the two routes. The differences is simply in the form of the data returned: is it a fully-rendered template, or just the data?</p>
 </section>
@@ -119,11 +120,11 @@
 </ol>
 <p>It’s not often an approach gives you progressive enhancement and actually increases the performance of an application, but this one does. Better yet, you can apply this in just about any framework: it’s equally applicable to AngularJS with ExpressJS, Backbone with Rails, Ember with Django, Aurelia with Phoenix, or any other combination you come up with.</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Note: this is <em>not</em> the actual API structure of HolyBible.com, or even particularly close to it. Remember, I learned everything I’m writing here by doing it <em>wrong</em>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Or possibly a section which constitutes a semantic block of data. I have some thoughts on chunking Bible data semantically rather than by chapter and verse for this kind of thing. That’s another post for another day, though.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>Note: this is <em>not</em> the actual API structure of HolyBible.com, or even particularly close to it. Remember, I learned everything I’m writing here by doing it <em>wrong</em>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Or possibly a section which constitutes a semantic block of data. I have some thoughts on chunking Bible data semantically rather than by chapter and verse for this kind of thing. That’s another post for another day, though.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -180,7 +181,7 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/what-is-a-zettelkasten.html">What is a Zettelkasten?</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/burnout-six-months-later.html">Burnout, Six Months Later</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

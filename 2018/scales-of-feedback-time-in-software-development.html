@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Scales of Feedback Time in Software Development"/>
     <meta name="twitter:description" content="There are rough order-of-magnitude differences between the feedback times for build-time errors, automated tests, manual testing, CI, staging, and production. This is useful when thinking about tradeoffs of where you want to catch certain failure classes."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -91,7 +92,7 @@
         <div class="content">
 
 <p><i class=editorial><strong><a href="http://www.chriskrycho.com/2018/assumed-audiences.html">Assumed Audience</a>:</strong> fans of compiled languages with expressive type systems. I’m not trying to persuade fans of dynamic languages they should use a compiler here; I’m trying to surface something that often goes unstated in discussions among fans of compiled languages with expressive type systems, but hopefully it’s interesting beyond that. If you don’t like compiled languages, just skip the build step bits; the rest all still applies.</i></p>
-<p>There are basically six stages of the development of any given software component where you can receive feedback on what you build:<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>There are basically six stages of the development of any given software component where you can receive feedback on what you build:<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <ol type="1">
 <li>compilers, static analysis tools, and/or pair programming</li>
 <li>automated test suites</li>
@@ -112,16 +113,16 @@
 <p>(Those last two <em>might</em> be comparable in the cycle time sense. However, the way most teams I’ve heard of work, any deploy to live is usually preceded by a deploy to staging. What’s more, with most changes that you can’t test until it’s live, it’s often the case that you’re not going to know if something is wrong until it has been live for at least a little while. Finally, some kinds of things you can really only test with production load and monitoring or observability systems, and those kinds of things are at least sometimes not to be visible immediately after deployment, but only in the system’s aggregate behavior or weird outliers that show up given enough scale.)</p>
 <p>What all of this gets at is that stepping to a higher layer nearly always entails a <em>dramatic</em> increase in the <em>cycle time</em> for software development: that is, the amount of time between when I make a change and when I know whether it’s broken or not. If I can know that I have a problem because my compiler surfaces errors in my editor, that probably saves me a minute or two each day over only being able to see the same error in a test suite. By the same token, being able to surface an error in a test suite running on every build will likely save me anything from minutes to hours of cycle time compared to something I can only test in production.</p>
 <p>At first blush, this looks like an argument for pushing everything to the lowest-numbered layer possible, and I think that’s <em>kind of</em> right. I (and probably many other people who end up in, say, Rust or Haskell or Elm or other languages with similarly rich type systems) tend to prefer putting as much as possible into layer 1 here precisely because we have so often been bitten by things that are at layer 2 in other languages or frameworks and take a lot of time to figure out why they broke at layer 2. This happened to me in a C<sup>♯</sup> server application just a couple weeks ago, and chasing it down was <em>not fun</em>.</p>
-<p>However, my enthusiasm for rich type systems notwithstanding, I <em>don’t</em> think this observation about these layers of cycle time means we should put everything in the compiler all the time. Indeed, there are some things it is too expensive or difficult to test anywhere <em>but</em> production (all the way up at layer 6). What’s more–although this is often overlooked in these discussions–putting too much of this rich information in layer 1 can absolutely kill your compile times in many languages. In my experience, this is particularly true of many of the languages with rich enough type systems to make layer 1 handling genuinely viable in the first place!<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
-<p>I do think, though, that being aware of the cost in cycle time is useful, as is being explicit about <em>why</em> we think it’s worth slotting a particular set of feedback into layer 2 vs. layer 1 (or layers 3, 4, 5, or 6). That goes for library development, of course.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> It goes equally for application development, though! It can be really helpful to make explicit both which of these layers you’re landing in and (just as important) why you’ve landed there for any given bit of feedback you want or need to get–making the tradeoffs explicit along the way.</p>
+<p>However, my enthusiasm for rich type systems notwithstanding, I <em>don’t</em> think this observation about these layers of cycle time means we should put everything in the compiler all the time. Indeed, there are some things it is too expensive or difficult to test anywhere <em>but</em> production (all the way up at layer 6). What’s more–although this is often overlooked in these discussions–putting too much of this rich information in layer 1 can absolutely kill your compile times in many languages. In my experience, this is particularly true of many of the languages with rich enough type systems to make layer 1 handling genuinely viable in the first place!<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>I do think, though, that being aware of the cost in cycle time is useful, as is being explicit about <em>why</em> we think it’s worth slotting a particular set of feedback into layer 2 vs. layer 1 (or layers 3, 4, 5, or 6). That goes for library development, of course.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> It goes equally for application development, though! It can be really helpful to make explicit both which of these layers you’re landing in and (just as important) why you’ve landed there for any given bit of feedback you want or need to get–making the tradeoffs explicit along the way.</p>
 <hr />
 <p><i class=editorial>Thanks to my friend Ben Makuh for looking over an earlier draft of this piece and providing really helpful feedback on it! Thanks as well to Greg Vaughn for noting shortly after I published it that pair programming also sits at the “immediate feedback” layer.</i></p>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>There’s some ongoing work in the Rust web working group to build an exemplar web framework, <a href="https://rust-lang-nursery.github.io/wg-net/2018/09/11/tide.html">Tide</a>. The <a href="https://rust-lang-nursery.github.io/wg-net/2018/10/16/tide-routing.html">most recent post</a> tackled routing, and prompted <a href="https://internals.rust-lang.org/t/routing-and-extraction-in-tide-a-first-sketch/8587">an interesting discussion</a> on the <a href="https://internals.rust-lang.org/">Rust internals forum</a>. This post is a cleaned-up, better-articulated, more general version of <a href="https://internals.rust-lang.org/t/routing-and-extraction-in-tide-a-first-sketch/8587/36?u=chriskrycho">a post</a> I offered in that thread.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Right now I and a few others are trying to figure out why one particular type definition in the TypeScript definitions for Ember.js causes a build to take about 20× as long as the build without that type definition. It’s the difference between a 6.5-second build and a 2.5-<em>minute</em> build.<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>as in the example of a web server’s <abbr>API</abbr> for route handling which originally prompted this post<a href="#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>There’s some ongoing work in the Rust web working group to build an exemplar web framework, <a href="https://rust-lang-nursery.github.io/wg-net/2018/09/11/tide.html">Tide</a>. The <a href="https://rust-lang-nursery.github.io/wg-net/2018/10/16/tide-routing.html">most recent post</a> tackled routing, and prompted <a href="https://internals.rust-lang.org/t/routing-and-extraction-in-tide-a-first-sketch/8587">an interesting discussion</a> on the <a href="https://internals.rust-lang.org/">Rust internals forum</a>. This post is a cleaned-up, better-articulated, more general version of <a href="https://internals.rust-lang.org/t/routing-and-extraction-in-tide-a-first-sketch/8587/36?u=chriskrycho">a post</a> I offered in that thread.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Right now I and a few others are trying to figure out why one particular type definition in the TypeScript definitions for Ember.js causes a build to take about 20× as long as the build without that type definition. It’s the difference between a 6.5-second build and a 2.5-<em>minute</em> build.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p>as in the example of a web server’s <abbr>API</abbr> for route handling which originally prompted this post<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -178,7 +179,7 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/what-is-a-zettelkasten.html">What is a Zettelkasten?</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/burnout-six-months-later.html">Burnout, Six Months Later</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

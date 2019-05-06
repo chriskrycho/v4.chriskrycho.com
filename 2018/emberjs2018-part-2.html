@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="#EmberJS2018, Part 2"/>
     <meta name="twitter:description" content="A project is only as good as its documentation. Ember’s documentation has come a long way… but it still has a long way to go, and it's essential for helping Ember thrive."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -106,8 +107,8 @@
 <h3>The surrounding ecosystem</h3>
 <p>Ember Data, Ember Engines, and perhaps most important Ember <abbr title="command line interface">CLI</abbr> and its core dependency Broccoli all <em>desperately</em> need documentation work just at the “how do you even use these things level.”</p>
 <ul>
-<li><p><strong>Broccoli.js</strong> in particular is core to pretty much everything in Ember’s ecosystem, and its docs today are in roughly the state Webpack’s were back in its sad 1.0 days. We should take a page out of our own history (and Webpack’s for that matter!) and make it easy for people to use Broccoli in whatever ways their apps need, and that mostly means documenting it!<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Oli Griffith’s recent <a href="http://www.oligriffiths.com/broccolijs/">blog post series</a> is an incredibly valuable first step in that direction. But we need really solid documentation for <a href="http://broccolijs.com">Broccoli itself</a>, and also for the equally important <a href="https://www.npmjs.com/search?q=keywords:broccoli-plugin">plugin ecosystem</a> which is the primary way people interact with it.</p></li>
-<li>The docs for <strong>Ember <abbr>CLI</abbr></strong> itself are <em>decent</em>, but they’re quite out of date and are about to be a lot more so because of the previously-mentioned packager bits. We need accurate and up-to-date guides and <abbr>API</abbr> docs for the <abbr>CLI</abbr>, and we also need clarity about the seams between Ember <abbr>CLI</abbr> and Broccoli—something I’ve only begun to become clear on after a year of hacking on <a href="https://github.com/typed-ember/ember-cli-typescript">ember-cli-typescript</a>! This includes a number of kinds of documentation:
+<li><p><strong>Broccoli.js</strong> in particular is core to pretty much everything in Ember’s ecosystem, and its docs today are in roughly the state Webpack’s were back in its sad 1.0 days. We should take a page out of our own history (and Webpack’s for that matter!) and make it easy for people to use Broccoli in whatever ways their apps need, and that mostly means documenting it!<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Oli Griffith’s recent <a href="http://www.oligriffiths.com/broccolijs/">blog post series</a> is an incredibly valuable first step in that direction. But we need really solid documentation for <a href="http://broccolijs.com">Broccoli itself</a>, and also for the equally important <a href="https://www.npmjs.com/search?q=keywords:broccoli-plugin">plugin ecosystem</a> which is the primary way people interact with it.</p></li>
+<li><p>The docs for <strong>Ember <abbr>CLI</abbr></strong> itself are <em>decent</em>, but they’re quite out of date and are about to be a lot more so because of the previously-mentioned packager bits. We need accurate and up-to-date guides and <abbr>API</abbr> docs for the <abbr>CLI</abbr>, and we also need clarity about the seams between Ember <abbr>CLI</abbr> and Broccoli—something I’ve only begun to become clear on after a year of hacking on <a href="https://github.com/typed-ember/ember-cli-typescript">ember-cli-typescript</a>! This includes a number of kinds of documentation:</p>
 <ul>
 <li>up-to-date guides</li>
 <li>complete <abbr>API</abbr> documentation</li>
@@ -142,14 +143,14 @@
 <li><p>If you’re just getting started on developing core Ember functionality: <em>write down what you learn.</em> If you’re working through some section of the codebase, don’t understand it, and then come to understand it by way of asking questions, add documentation for that! You’ll help the next person coming along behind you!</p></li>
 </ul>
 <hr />
-<p>In short: please write more things down! We need user-facing and developer-facing documentation; they need to be different and distinct from each other; and we need the whole range in both. That’s an <em>enormous</em> amount of work, and it’s very different from programming (and therefore harder for many of us).<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> But it’s also work that will pay equally enormous dividends in enabling the Ember community to grow in both the <em>number</em> and the <em>effectiveness</em> of its contributors—and that’s something we very much need!</p>
+<p>In short: please write more things down! We need user-facing and developer-facing documentation; they need to be different and distinct from each other; and we need the whole range in both. That’s an <em>enormous</em> amount of work, and it’s very different from programming (and therefore harder for many of us).<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> But it’s also work that will pay equally enormous dividends in enabling the Ember community to grow in both the <em>number</em> and the <em>effectiveness</em> of its contributors—and that’s something we very much need!</p>
 </section>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Most of Webpack’s bad reputation is long-since undeserved: it <em>was</em> poorly documented… a few years ago. So was Ember!<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>I’ll let you draw your own conclusions about my own relationship to writing given the absurd number of words I put out on this site.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>Most of Webpack’s bad reputation is long-since undeserved: it <em>was</em> poorly documented… a few years ago. So was Ember!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>I’ll let you draw your own conclusions about my own relationship to writing given the absurd number of words I put out on this site.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -206,7 +207,7 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/what-is-a-zettelkasten.html">What is a Zettelkasten?</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/burnout-six-months-later.html">Burnout, Six Months Later</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>
