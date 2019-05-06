@@ -45,6 +45,22 @@ If you’re interested, you can get updates on that project by subscribing to [t
 
 </aside>
 
+## Further Reading
+
+If you’d like to dig deeper into this, I recommend the posts I have found most helpful:
+
+- [“Communicating with Slip Boxes”][luhmann] – Luhmann’s own account of working with his Zettelkasten, and the thing I wish I had read *first*! I particularly found this thought helpful as I have begun building my own set of notes:
+
+    > Usually it is more fruitful to look for formulations of problems that relate heterogeneous things with each other.
+
+- [“my Zettelkasten”][aj] – Alan Jacobs, with the piece that introduced me to the concept at all, and with an interesting twist on the idea that works particularly well for him (it would not, I think, for me… but there is some overlap with his needs and what I'm doing with the aforementioned project!).
+
+- [“Create a Zettelkasten for your Notes to Improve Thinking and Writing”][.de] – from Zettelkasten.de, tracing out similar themes to what I do here. I have found the site to be a pretty good resource in general.
+
+[aj]: https://blog.ayjay.org/my-zettelkasten/
+[create]: https://zettelkasten.de/posts/zettelkasten-improves-thinking-writing/
+[luhmann]: http://luhmann.surge.sh/communicating-with-slip-boxes
+
 [^background]: I first learned about the idea [from Alan Jacobs][aj], and then more from [a dedicated site][.de]—but while Jacobs’ post gives a reasonably good summary, as does [this post][create] on that dedicated site, neither has much search prominence.
 
 [^order]: I’ve chosen to organize my own Zettelkasten by date, because [I find][blog] that seeing what I was thinking at a particular time can be very helpful and very interesting, and it’s also often a [helpful way of remembering things][date].
@@ -54,8 +70,6 @@ If you’re interested, you can get updates on that project by subscribing to [t
 [hypertext]: https://en.wikipedia.org/wiki/Hypertext
 [bear]: https://bear.app
 [rewrite-list]: https://buttondown.email/rewrite
-[aj]: https://blog.ayjay.org/my-zettelkasten/
 [.de]: https://zettelkasten.de
-[create]: https://zettelkasten.de/posts/zettelkasten-improves-thinking-writing/
 [blog]: https://www.chriskrycho.com/2018/blog-as-note-taking-tool.html
 [date]: https://zettelkasten.de/posts/add-identity/
