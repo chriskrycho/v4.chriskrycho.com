@@ -3,6 +3,7 @@ Title: 2019 Colfax Half Marathon
 Slug: colfax-half-marathon
 Subtitle: A mile-high sub-1:30 (despite making some mistakes)!
 Date: 2019-05-19 14:30
+Modified: 2019-05-19 20:40
 Category: blog
 Tags: [running, fitness]
 Summary: >
@@ -25,6 +26,8 @@ I am exceedingly pleased with this outcome. It would have gone better had I foll
 - 58th overall, out of 4617 = top 1.25%
 - 48th among men, out of 1830 = top 2.7%
 - 19th among 30–39-year-olds, out of 671 = top 2.9%
+
+This is particularly happy because it’s coming on only about 3 months of active training. That bodes well for future efforts with more miles under my feet!
 
 ---
 
