@@ -8,7 +8,7 @@ Summary: >
     Reflections on the event of finishing New Rustacean—with some thoughts on the goodness of finishing things both for individuals and for the public which observes them.
 ---
 
-<i><b>[Assumed audience:][aa]</b> most anyone, but especially </i>
+<i><b>[Assumed audience:][aa]</b> most anyone, but especially people who have followed along with New Rustacean, my experience with burnout, or both!</i>
 
 [aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
 
