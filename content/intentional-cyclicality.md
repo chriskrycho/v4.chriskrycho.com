@@ -2,6 +2,7 @@
 Title: Intentional Cyclicality
 Subtitle: (Being a bit seasonal on purpose.)
 Date: 2018-03-06 07:00
+Modified: 2019-05-29 16:35
 Category: blog
 Tags: [writing]
 Summary: >

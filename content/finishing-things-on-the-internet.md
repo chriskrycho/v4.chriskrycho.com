@@ -2,6 +2,7 @@
 Title: Finishing Things on the Internet
 Subtitle: Reflections on the event of <em>finishing</em> New Rustacean.
 Date: 2019-05-27 21:40
+Modified: 2019-05-29 16:30
 Category: blog
 Tags: [podcasting, writing, burnout]
 Summary: >
