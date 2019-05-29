@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="#EmberJS2018, Part 4"/>
     <meta name="twitter:description" content="We need to shift from a posture of defensiveness about Ember.js to one of embracing the ecosystem, and embracing our role in the ecosystem."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,7 +61,6 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
-                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -105,7 +104,7 @@
 <section id="contributing-outwards" class="level3">
 <h3>Contributing outwards</h3>
 <p>There is genuinely great stuff happening all over the place in the front-end, and many of the things we love about working with Ember today have come directly out of e.g. React—hello, “data-down-actions-up”! The same is true in reverse: Ember has contributed many important ideas to the broader front-end ecosystem, from its early emphasis on rigorously linking URLs and application state to helping pioneer and popularize the use of good command line tooling, to more recent emphasis on <em>compilation</em> as a way of solving certain classes of problems.</p>
-<p>So as we build all of these things, one of the best things to do—and, I believe, one of the ways we help Ember grow!—is think about how our work can benefit the larger ecosystem. When you build a library, you should consider whether there are parts of it that <em>don’t</em> have to be Ember specific. For example, a colleague and I recently built out the foundation of a solution for well-rationalized form-handling.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> We build it in two pieces, though: a core library in TypeScript that will work as well in Vue or React as in Ember, and an Ember component library that consumes that core functionality.</p>
+<p>So as we build all of these things, one of the best things to do—and, I believe, one of the ways we help Ember grow!—is think about how our work can benefit the larger ecosystem. When you build a library, you should consider whether there are parts of it that <em>don’t</em> have to be Ember specific. For example, a colleague and I recently built out the foundation of a solution for well-rationalized form-handling.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> We build it in two pieces, though: a core library in TypeScript that will work as well in Vue or React as in Ember, and an Ember component library that consumes that core functionality.</p>
 <p>The more we can take that tack in <em>general</em>, the better. It’s the first piece of making the gap between people’s experience in other parts of the front-end ecosystem and the Ember part smaller. Ember will seem much more interesting if people find themselves <em>often</em> getting value out of things we’ve built.</p>
 </section>
 <section id="smoothing-the-paths-in" class="level3">
@@ -127,7 +126,7 @@
 <p>We as a community need to avoid defensiveness and recognize that there’s a <em>lot</em> of good in the rest of the front-end space. I understand how it can be easy to feel defensive. Being dismissed, having people be surprised that the project even still exists, etc. gets really old after a while. But however reasonable that defensiveness is, it’s ultimately counterproductive. It makes us hold onto things we don’t need to hold onto, and it makes us ignore things that might benefit us, and as a result it can make us <em>needlessly weird</em> technically.</p>
 <p><em>Needless weirdness</em> is an important idea I’d love for us to keep in mind. Any time you’re willing to move more slowly, to let the “new shiny” bake for a while to see whether it’s genuinely worth investing in, you’re going to seem weird. Likewise when you strongly embrace stability, in a broader ecosystem which hasn’t. Likewise when you value convention over configuration, in a broader ecosystem which hasn’t. But it’s important to be able to distinguish between <em>needful</em> and <em>needless</em> weirdness.</p>
 <p>We should have regular conversations as a community—through <abbr title="request for comments">RFC</abbr>s, through forum threads, through blog post arguments, etc.—about what’s <em>needful</em> weirdness, and what has become <em>needless</em> weirdness. (Because which weird things are needful change over time!) We should gleefully embrace the needful weirdness. But we should equally gleefully drop the needless weirdness.</p>
-<p>What makes Ember special is, by and large, <em>not</em> the specific technical implementations we’ve landed on.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> What makes Ember valuable is having a coherent top-to-bottom story and a rich community with a commitment to aggressively seeking out shared solutions, and an even deeper commitment to providing good migration paths forward when we change things.</p>
+<p>What makes Ember special is, by and large, <em>not</em> the specific technical implementations we’ve landed on.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> What makes Ember valuable is having a coherent top-to-bottom story and a rich community with a commitment to aggressively seeking out shared solutions, and an even deeper commitment to providing good migration paths forward when we change things.</p>
 <p>But here’s the thing: those values are increasingly (if slowly) being embraced <em>outside</em> the Ember ecosystem as well. Ember can contribute and even lead in many ways here—but only if we start actively embracing the good of other parts of the front-end ecosystem.</p>
 <p>For example: I’ve heard more times than I can count over the last few years that our use of Broccoli.js is really important for Ember, and the reality is… that isn’t true. We could have built on top of just about <em>any</em> solution, and it would have been <em>fine</em>. Broccoli <em>does</em> have some advantages; it also has some real disadvantages (one of which is that we’re the only ones using it!), and we should forthrightly acknowledge those. By the same token, if Webpack is working well for many people, let’s neither trash it in discussion nor ignore it in implementation. Instead, let’s make it easy for people to integrate Webpack into the Ember world.</p>
 <p>That doesn’t oblige us to chuck out our existing build tooling! It just means making our own build pipelines robust enough to interoperate well with other packaging systems. And that’s precisely what the Ember <abbr>CLI</abbr> team has been doing! This needs to be our pattern across the board going forward.</p>
@@ -135,11 +134,11 @@
 <p>Insofar as it’s true that Broccoli and Webpack solve different problems, <em>explaining</em> how Broccoli and Webpack actually solve meaningfully different problems —or at least, <em>excel</em> at solving different problems—is one of the most important things we can do as well. Props to Chris Thoburn (<a href="https://twitter.com/runspired">@runspired</a>) for doing this in a few different contexts recently, but we need a lot more of it—because it’s one example I think most people both inside and outside the Ember community have just kind of scratched their heads at for a long time (me included).</p>
 <p>Again: I take the Broccoli/Webpack example simply because it’s an obvious one. The broader point is that we need to find ways to embrace the shared solutions which emerge not only in the Ember community but in the front-end ecosystem as a whole, even as we also do the hard work to make our own shared solutions useful to the rest of the front-end ecosystem. That two-way exchange will benefit us, and smooth the paths in for newcomers, and benefit the rest of the ecosystem, too—and that’s a huge win. Because in a very real sense, we front-end developers are all in this together.</p>
 </section>
-<section class="footnotes" role="doc-endnotes">
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>Keep your eyes open; you’ll see a blog post announcing that along with a full set of documentation for it sometime in the next month or so!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn2" role="doc-endnote"><p>To be clear: many, though certainly not all, of those specific implementations I like, but that’s beside the point.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn1"><p>Keep your eyes open; you’ll see a blog post announcing that along with a full set of documentation for it sometime in the next month or so!<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>To be clear: many, though certainly not all, of those specific implementations I like, but that’s beside the point.<a href="#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>

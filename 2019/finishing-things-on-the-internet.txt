@@ -45,7 +45,7 @@ New Rustacean is *not* like that. I started it back in September 2015, and I fin
 
 Conclusions like this are good for the soul. They are good for the individual soul, to be sure: my own feels lighter and freer and I am very ready for this next phase (the research writing app I have mentioned here before). But I also think that conclusions are good for the public soul, as it were. We burn people out—and I use that phrase advisedly!—by expecting their efforts to go on so long as we, their consumers, enjoy them. By contrast, it seems to me, seeing someone carefully and actively *finish* a thing helps us remember that people’s lives [have seasons], and that no one can (much less *should*) do a given thing indefinitely, and above all that people exist with lives and interests of their own beyond the ways we may encounter them.
 
-[have season]: https://www.chriskrycho.com/2018/intentional-cyclicality.html
+[have seasons]: https://www.chriskrycho.com/2018/intentional-cyclicality.html
 
 This is perhaps doubly true on the internet, where we have but these small windows into people’s souls. Not that we have perfect windows in person—but people far more often let down their guard and let us see them as they really are (even on accident) when face-to-face than when avatar-to-avatar. Too easily does avarice for attention corrupt—even when we aim at authenticity. And too easily does our communication devolve to perfectly curated self-presentation: even our online authenticity is often performative. It makes it easy to forget how human people are, how we need to find these moments of closure, how much we are *not* mere factories-of-content but people, possibly with other dreams.
 

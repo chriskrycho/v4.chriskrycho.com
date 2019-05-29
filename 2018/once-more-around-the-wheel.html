@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Once More Around The Wheel"/>
     <meta name="twitter:description" content="I keep hoping a solution to my publishing needs will present itself instead of my having to build it myself. Such a solution does *not* appear forthcoming, though."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,7 +61,6 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
-                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -95,11 +94,11 @@
 <p>The only Markdown parser out there which does the right thing with all of those is <a href="http://pandoc.org">Pandoc</a>. The options for using Pandoc directly are not great. Shelling out to it via <a href="https://getpelican.com">Pelican</a> (my current strategy) works but is <em>slow</em>. The implemented-in-Rust <a href="https://www.getgutenberg.io">Gutenberg</a> generator looks like <em>exactly</em> what I want performance-wise, but its <a href="https://github.com/google/pulldown-cmark" title="pulldown-cmark">underlying Markdown engine</a> doesn’t support citations <em>or</em> poetry.</p>
 <p>I keep coming back to the conclusion that I’m basically going to have to build whatever I want myself, if I want my desired publishing flow to exist. I don’t really <em>want</em> to do that, though. It’s a boatload of work, even “just”—just!—to do something like (a) learn Haskell well enough to build on top of Pandoc directly or (b) build a good C-based API wrapper in Rust so that I can do it <em>that</em> way or (c) extend <a href="https://github.com/google/pulldown-cmark">pulldown-cmark</a> to support poetry and citation management.</p>
 <p>For lots of reasons (c) is probably what I’ll ultimately end up doing; I want that for more than just blogging. More on that eventually, I hope.</p>
-<p>But in the meantime I really just… want someone else to have the same weird needs I do and build this for me. I just know full well at this point that that’s not going to happen, and accordingly am basically resigned to muddling along with Pelican and Pandoc until such a time as I can actually buckle down and build what I want and need.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <em>C’est la vie.</em></p>
-<section class="footnotes" role="doc-endnotes">
+<p>But in the meantime I really just… want someone else to have the same weird needs I do and build this for me. I just know full well at this point that that’s not going to happen, and accordingly am basically resigned to muddling along with Pelican and Pandoc until such a time as I can actually buckle down and build what I want and need.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> <em>C’est la vie.</em></p>
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>As an aside: the prospect of buckling down and building things like that in my spare time is <em>much</em> less appealing given my current <a href="https://www.chriskrycho.com/burnout/">struggles with burnout</a>, and as I’ll write about at some point in the future I feel a (perhaps-surprising to you, my reader) lack of confidence about my <em>ability</em> to accomplish those things.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn1"><p>As an aside: the prospect of buckling down and building things like that in my spare time is <em>much</em> less appealing given my current <a href="https://www.chriskrycho.com/burnout/">struggles with burnout</a>, and as I’ll write about at some point in the future I feel a (perhaps-surprising to you, my reader) lack of confidence about my <em>ability</em> to accomplish those things.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>

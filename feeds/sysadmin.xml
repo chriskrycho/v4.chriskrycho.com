@@ -24,7 +24,7 @@
 &lt;/ol&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Persuade macOS to reload its firewall rules. (This &lt;em&gt;may&lt;/em&gt; not be necessary, but it was for me.) You can do one of the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;restart your machine&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;restart your machine&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;reload the normal rules manually:&lt;/p&gt;
 &lt;pre class="sh"&gt;&lt;code&gt;$ sudo pfctl -f /etc/pf.conf&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;

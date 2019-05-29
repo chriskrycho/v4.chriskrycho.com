@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Why We Want Pattern-Matching in JavaScript"/>
     <meta name="twitter:description" content="A worked example of transforming if/else statements to the proposed pattern-matching syntax, showing how much pattern-matching can clarify (as well as shorten) complicated code."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,7 +61,6 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
-                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -90,9 +89,9 @@
 
         <div class="content">
 
-<p>I’ve often noted how much I want the <a href="https://github.com/tc39/proposal-pattern-matching">JavaScript pattern-matching proposal</a> to land. I noted in conversation with some people recently, though, that it’s not always obvious <em>why</em> it will be so helpful. Similarly, <a href="https://twitter.com/littlecalculist">Dave Herman</a> recently noted to me that <a href="https://twitter.com/dhh">DHH</a>’s mantra of “Show me the code” is a really helpful tool for thinking about language design. (I tend to agree!) So with that in mind, here’s a piece of example code from the Ember app I work on today, very slightly modified to get at the pure essentials of this particular example.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>I’ve often noted how much I want the <a href="https://github.com/tc39/proposal-pattern-matching">JavaScript pattern-matching proposal</a> to land. I noted in conversation with some people recently, though, that it’s not always obvious <em>why</em> it will be so helpful. Similarly, <a href="https://twitter.com/littlecalculist">Dave Herman</a> recently noted to me that <a href="https://twitter.com/dhh">DHH</a>’s mantra of “Show me the code” is a really helpful tool for thinking about language design. (I tend to agree!) So with that in mind, here’s a piece of example code from the Ember app I work on today, very slightly modified to get at the pure essentials of this particular example.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 <p>The context is a <abbr>UI</abbr> component which shows the user their current discount, if any, and provides some nice interactivity if they try to switch to a different discount.</p>
-<p>First, some types that we’ll use in the example, which I use in the actual component to avoid the problems that inevitably come with using string values for these kinds of things. Linters like ESLint or type systems like TypeScript or Flow will catch typos this way, and you’ll also get better errors at runtime even if you’re not using a linter or a type system!<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>First, some types that we’ll use in the example, which I use in the actual component to avoid the problems that inevitably come with using string values for these kinds of things. Linters like ESLint or type systems like TypeScript or Flow will catch typos this way, and you’ll also get better errors at runtime even if you’re not using a linter or a type system!<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <pre class="js"><code>const DiscountTypes = {
   Offer: &#39;Offer&#39;,
   Coupon: &#39;Coupon&#39;,
@@ -205,7 +204,7 @@ const Change = {
     }
   }
 }</code></pre>
-<p>Again, this is profoundly clearer about the intent of the code, and it’s far easier to be sure you haven’t missed a case.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Again, this is profoundly clearer about the intent of the code, and it’s far easier to be sure you haven’t missed a case.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 <p><strong>Edit:</strong> after some comments on Twitter, I thought I’d note how this is <em>even nicer</em> in pure functions. If we assume that it gets expression semantics (which, again, I’m hoping for), a pure functional version of the sample above would look like this:</p>
 <pre class="js"><code>const change = (currentType, newType) =&gt;
   case ([currentType, newType]) {
@@ -225,12 +224,12 @@ const Change = {
       );
   };</code></pre>
 <p>This may not be <em>quite</em> as clear as the same thing in F<sup>♯</sup> or Elm or another language in that family… but it’s amazingly better than anything we’ve seen in JavaScript to date.</p>
-<section class="footnotes" role="doc-endnotes">
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p><code>assertInDev</code> looks a little different; we’re actually using the <code>Maybe</code> type from my <a href="https://github.com/chriskrycho/true-myth">True Myth</a> library instead of returning <code>null</code>; it’s an Ember app; as such it uses a <code>@computed</code> decorator; and of course it’s all in TypeScript. I chose to write it with standard JavaScript to minimize the number of things you have to parse as a reader.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn2" role="doc-endnote"><p>In the actual TypeScript, these are defined with an <a href="http://www.typescriptlang.org/docs/handbook/enums.html"><code>enum</code></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn3" role="doc-endnote"><p>Fun fact: the original code actually <em>had</em> missed a number of cases, which I learned only because TypeScript’s <code>strictNullChecks</code> setting informed me.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn1"><p><code>assertInDev</code> looks a little different; we’re actually using the <code>Maybe</code> type from my <a href="https://github.com/chriskrycho/true-myth">True Myth</a> library instead of returning <code>null</code>; it’s an Ember app; as such it uses a <code>@computed</code> decorator; and of course it’s all in TypeScript. I chose to write it with standard JavaScript to minimize the number of things you have to parse as a reader.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>In the actual TypeScript, these are defined with an <a href="http://www.typescriptlang.org/docs/handbook/enums.html"><code>enum</code></a>.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Fun fact: the original code actually <em>had</em> missed a number of cases, which I learned only because TypeScript’s <code>strictNullChecks</code> setting informed me.<a href="#fnref3" class="footnote-back">↩</a></p></li>
 </ol>
 </section>
         </div>

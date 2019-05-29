@@ -32,7 +32,7 @@ function dealsWithAResult(result: Result&amp;lt;string, Error&amp;gt;) {
     console.log(`Alas: ${result.error.message}`);
   }
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Basically: you now have more options for handling these scenarios, a nicer &lt;abbr title="application programming interface"&gt;API&lt;/abbr&gt;, and—not that it should &lt;em&gt;usually&lt;/em&gt; matter that much, but for whatever it’s worth—better performance by way of doing things with property lookups instead of function invocations in quite a few places.&lt;a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Basically: you now have more options for handling these scenarios, a nicer &lt;abbr title="application programming interface"&gt;API&lt;/abbr&gt;, and—not that it should &lt;em&gt;usually&lt;/em&gt; matter that much, but for whatever it’s worth—better performance by way of doing things with property lookups instead of function invocations in quite a few places.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="static-helper-methods" class="level3"&gt;
 &lt;h3&gt;Static helper methods&lt;/h3&gt;
@@ -62,7 +62,7 @@ function justLengths(maybeStrings: Array&amp;lt;Maybe&amp;lt;string&amp;gt;&amp;
 &lt;p&gt;The 2.0 release is identical in &lt;em&gt;features&lt;/em&gt; with the 1.3 release. However, it makes a breaking change to how consumers interact with the application, requiring updates to your &lt;code&gt;tsconfig.json&lt;/code&gt; file and your bundler configuration, and removing support for Flow types.&lt;/p&gt;
 &lt;section id="configuration-file-updates" class="level3"&gt;
 &lt;h3&gt;Configuration file updates&lt;/h3&gt;
-&lt;p&gt;Getting True Myth working nicely with consuming TypeScript packages has been a source of frustration for me &lt;em&gt;and&lt;/em&gt; others. In short, requiring you to use the &lt;code&gt;"paths"&lt;/code&gt; key in the &lt;code&gt;"compilerOptions"&lt;/code&gt; section of the &lt;code&gt;tsconfig.json&lt;/code&gt; made for an annoying amount of setup work, &lt;em&gt;and&lt;/em&gt; it meant that using True Myth in a library &lt;em&gt;required&lt;/em&gt; you to set it up in any consuming app. No good.&lt;/p&gt;
+&lt;p&gt;Getting True Myth working nicely with consuming TypeScript packages has been a source of frustration for me &lt;em&gt;and&lt;/em&gt; others. In short, requiring you to use the &lt;code&gt;&amp;quot;paths&amp;quot;&lt;/code&gt; key in the &lt;code&gt;&amp;quot;compilerOptions&amp;quot;&lt;/code&gt; section of the &lt;code&gt;tsconfig.json&lt;/code&gt; made for an annoying amount of setup work, &lt;em&gt;and&lt;/em&gt; it meant that using True Myth in a library &lt;em&gt;required&lt;/em&gt; you to set it up in any consuming app. No good.&lt;/p&gt;
 &lt;p&gt;For type resolution to Just Work™, the types &lt;em&gt;must&lt;/em&gt; be at the root of the distributed package.&lt;/p&gt;
 &lt;p&gt;As a result, I’ve stopped using &lt;a href="https://github.com/tildeio/libkit"&gt;libkit&lt;/a&gt;, which put the generated types in a reasonable-seeming but (in my experience) painful-to-use place, and have simplified the build layout substantially.&lt;/p&gt;
 &lt;ul&gt;
@@ -90,7 +90,7 @@ function justLengths(maybeStrings: Array&amp;lt;Maybe&amp;lt;string&amp;gt;&amp;
       result.js
       unit.js
       utils.js&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You’ll just need to completely remove the &lt;code&gt;"paths"&lt;/code&gt; mapping for True Myth from your &lt;code&gt;tsconfig.json&lt;/code&gt; and, if you’ve done anything unusual with it, update your bundler configuration to point to the new build location, i.e. &lt;code&gt;dist/commonjs/src&lt;/code&gt; should now just be &lt;code&gt;dist/cjs&lt;/code&gt;. Bundlers which respect the &lt;code&gt;modules&lt;/code&gt; key in &lt;code&gt;package.json&lt;/code&gt; will pick it up automatically, as will Ember &lt;abbr&gt;CLI&lt;/abbr&gt;.&lt;/p&gt;
+&lt;p&gt;You’ll just need to completely remove the &lt;code&gt;&amp;quot;paths&amp;quot;&lt;/code&gt; mapping for True Myth from your &lt;code&gt;tsconfig.json&lt;/code&gt; and, if you’ve done anything unusual with it, update your bundler configuration to point to the new build location, i.e. &lt;code&gt;dist/commonjs/src&lt;/code&gt; should now just be &lt;code&gt;dist/cjs&lt;/code&gt;. Bundlers which respect the &lt;code&gt;modules&lt;/code&gt; key in &lt;code&gt;package.json&lt;/code&gt; will pick it up automatically, as will Ember &lt;abbr&gt;CLI&lt;/abbr&gt;.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="removing-flow-types" class="level3"&gt;
 &lt;h3&gt;Removing Flow types&lt;/h3&gt;
@@ -100,10 +100,10 @@ function justLengths(maybeStrings: Array&amp;lt;Maybe&amp;lt;string&amp;gt;&amp;
 &lt;p&gt;And that’s it! We’ve been using True Myth in production at Olo for quite some time, and it’s proved to be a really valuable tool. Give it a spin and let me know how these latest versions work for you!&lt;/p&gt;
 &lt;/section&gt;
 &lt;/section&gt;
-&lt;section class="footnotes" role="doc-endnotes"&gt;
+&lt;section class="footnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;I’ve made some changes under the hood to take advantage of this as well, so the library should be faster. Probably &lt;em&gt;trivially&lt;/em&gt; faster, but my philosophy around library code is very much &lt;em&gt;be as fast as you can&lt;/em&gt;; it’s a way of considering the people using your code—not just the developers, but the end users.&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1"&gt;&lt;p&gt;I’ve made some changes under the hood to take advantage of this as well, so the library should be faster. Probably &lt;em&gt;trivially&lt;/em&gt; faster, but my philosophy around library code is very much &lt;em&gt;be as fast as you can&lt;/em&gt;; it’s a way of considering the people using your code—not just the developers, but the end users.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 18 May 2018 19:15:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-05-18:/2018/true-myth-130-and-200.html</guid><category>TypeScript</category><category>functional programming</category><category>libraries</category><category>software development</category><category>open source software</category><category>versioning</category><category>True Myth</category></item></channel></rss>
