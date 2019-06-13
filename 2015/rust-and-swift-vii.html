@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Rust and Swift (vii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -114,7 +115,7 @@ switch test {
         description = &quot;greater than ten&quot;
 }
 println(&quot;\(description)&quot;)</code></pre></li>
-<li><p>Both languages have <code>break</code> statements, but in Rust they’re only used in loop constructs, while Swift (like C) uses them to escape <code>case</code>s as well. The Swift book gives an example of one place they’re necessary in a <code>switch</code>: to match a case and do nothing there (e.g. <code>default: break</code>). In Rust, you would simply supply an empty block for that scenario (e.g. <code>_ =&gt; {}</code>).</p></li>
+<li><p>Both languages have <code>break</code> statements, but in Rust they’re only used in loop constructs, while Swift (like C) uses them to escape <code>case</code>s as well. The Swift book gives an example of one place they’re necessary in a <code>switch</code>: to match a case and do nothing there (e.g. <code>default: break</code>). In Rust, you would simply supply an empty block for that scenario (e.g. <code>_ =&gt; {}</code>).</p></li>
 <li><p>Correctly, both languages force you to match exhaustively on relevant patterns. If you’re matching an enumerated type, for example, you must handle every enumerated value. You can of course do this with wildcard patterns or with Swift’s <code>default</code>, but the good thing is that both languages will refuse even to compile if a given pattern isn’t matched.</p></li>
 <li><p>Swift’s default behavior around its <code>switch</code> statements is sane: it does <em>not</em> automatically fall through into the next statement. It does let you do this, without checking the condition on the next statement (as in C), using the <code>fallthrough</code> keyword. Rust, by contrast, simply doesn’t allow this at all.</p></li>
 <li><p>Both languages supply named control statements (loops, etc.), with slightly different syntax for naming them. Rust’s, curiously, shares its syntax with lifetime definitions—more on those in a future post.</p></li>
@@ -180,7 +181,7 @@ println(&quot;\(description)&quot;)</code></pre></li>
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/finishing-things-on-the-internet.html">Finishing Things on the Internet</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/breaking-up-with-social-media.html">Breaking Up With Social Media</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

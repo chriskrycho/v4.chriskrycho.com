@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Testing Ember.js Mixins (and Helpers) With a Container"/>
     <meta name="twitter:description" content="Updated to note that the same concerns apply to helpers. You can always see the full revision history of this item here. Today I was working on an Ember.js mixin for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -92,7 +93,7 @@
 <p><i>Updated to note that the same concerns apply to helpers. You can always see the full revision history of this item <a href="https://github.com/chriskrycho/chriskrycho.com/commits/master/content/tech/ember-js-mixins-container.md">here</a>.</i></p>
 <hr />
 <p>Today I was working on an Ember.js <a href="http://emberjs.com/api/classes/Ember.Mixin.html#content">mixin</a> for the new mobile web application we’re shipping at Olo, and I ran into an interesting problem when trying to test it.</p>
-<p>When you’re testing mixins (or helpers), you’re generally not working with the normal Ember container.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> In fact, the default test setup for mixins doesn’t have <em>any</em> container in play. It just looks like this (assuming you ran <code>ember generate mixin bar</code> in an app named <code>foo</code>):</p>
+<p>When you’re testing mixins (or helpers), you’re generally not working with the normal Ember container.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> In fact, the default test setup for mixins doesn’t have <em>any</em> container in play. It just looks like this (assuming you ran <code>ember generate mixin bar</code> in an app named <code>foo</code>):</p>
 <pre class="js"><code>import Ember from &#39;ember&#39;;
 import BarMixin from &#39;foo/mixins/bar&#39;;
 import { module, test } from &#39;qunit&#39;;
@@ -205,13 +206,13 @@ test(&#39;the mixin+service does what it should&#39;, function(assert) {
 <p>In general, mixins are best used for self-contained units of functionality. If you <em>need</em> dependency injection for them, it may mean that you should think about structuring things in a different way. Can all the functionality live on the service itself? Can all of it live in the mixin instead of requiring a service? Can the service calls be delegated to whatever type is using the mixin?</p>
 <p>But if not, and you <em>do</em> need a mixin which injects a service, now you know how to do it!</p>
 <hr />
-<p><strong>Side note:</strong> The documentation around testing mixins is relatively weak, and in general the testing docs are the weak bits in the Ember guides right now.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> After a conversation with <a href="https://github.com/rwjblue">@rwjblue</a> on the <a href="https://ember-community-slackin.herokuapp.com">Ember Community Slack</a>, though, I was able to get a handle on the issue, and here we are. Since it stumped me, I’m guessing I’m not the only one.</p>
+<p><strong>Side note:</strong> The documentation around testing mixins is relatively weak, and in general the testing docs are the weak bits in the Ember guides right now.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> After a conversation with <a href="https://github.com/rwjblue">@rwjblue</a> on the <a href="https://ember-community-slackin.herokuapp.com">Ember Community Slack</a>, though, I was able to get a handle on the issue, and here we are. Since it stumped me, I’m guessing I’m not the only one.</p>
 <p>When this happens, <em>write it up</em>. I’ve been guilty of this too often in the past few months: learning something new that I couldn’t find anywhere online, and then leaving it stored in my own head. It doesn’t take a particularly long time to write a blog post like this, and if you’re stuck, chances are <em>very</em> good someone else is too.</p>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>If you’re not familiar with the “container”, this is where all the various dependencies are registered, and where Ember looks them up to inject them when you use methods like <code>Ember.inject.service()</code>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Something I intend to help address in the next week or two via a pull request, so if you’re my Ember.js documentation team friend and you’re reading this… it’s coming. 😉<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>If you’re not familiar with the “container”, this is where all the various dependencies are registered, and where Ember looks them up to inject them when you use methods like <code>Ember.inject.service()</code>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Something I intend to help address in the next week or two via a pull request, so if you’re my Ember.js documentation team friend and you’re reading this… it’s coming. 😉<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -268,7 +269,7 @@ test(&#39;the mixin+service does what it should&#39;, function(assert) {
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/finishing-things-on-the-internet.html">Finishing Things on the Internet</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/breaking-up-with-social-media.html">Breaking Up With Social Media</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

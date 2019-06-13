@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Ember.js, TypeScript, and Class Properties"/>
     <meta name="twitter:description" content="I made an important mistake in my discussion of JavaScript and TypeScript class properties in relation to computed properties and injections in Ember earlier this year. Here's the fix you need."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -89,7 +90,7 @@
 
         <div class="content">
 
-<p>A few months ago, I wrote a mostly-complete series describing the state of using <a href="https://typescriptlang.org">TypeScript</a> with <a href="https://emberjs.com">Ember</a> in 2018. I got one <em>very</em> important thing wrong in that series, and I’m back with the correction!<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>A few months ago, I wrote a mostly-complete series describing the state of using <a href="https://typescriptlang.org">TypeScript</a> with <a href="https://emberjs.com">Ember</a> in 2018. I got one <em>very</em> important thing wrong in that series, and I’m back with the correction!<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>In that series, I showed an example of a component definition; it looked like this:</p>
 <pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
 import { computed, get } from &#39;@ember/object&#39;;
@@ -229,7 +230,7 @@ export default class AnExample extends Component.extend({
 </section>
 <section id="decorators" class="level2">
 <h2>Decorators</h2>
-<p>The cleaner, but currently still experimental, way to do this is to use Ember Decorators.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> To use these, you should run <code>ember install ember-decorators</code> and then set the <code>experimentalDecorators</code> compiler option to <code>true</code> in your <code>tsconfig.json</code>.</p>
+<p>The cleaner, but currently still experimental, way to do this is to use Ember Decorators.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> To use these, you should run <code>ember install ember-decorators</code> and then set the <code>experimentalDecorators</code> compiler option to <code>true</code> in your <code>tsconfig.json</code>.</p>
 <p>Once you’ve installed the decorators package, you can update your component. In general, the imports match exactly to the Ember module imports, just with <code>@ember-decorators</code> as the top-level package rather than <code>@ember</code>. Here’s how our component looks using decorators:</p>
 <pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
 import { assert } from &#39;@ember/debug&#39;;
@@ -290,7 +291,7 @@ export default class AnExample extends Component {
 }</code></pre>
 <p>First, notice that using decorators switches us to using actual <abbr>ES5</abbr> getters. This is <em>exactly</em> the same thing that <a href="https://github.com/emberjs/rfcs/blob/master/text/0281-es5-getters.md" title="RFC #0281"><abbr>RFC</abbr> #0281</a> specified, and which was implemented for Ember’s traditional computed property and injection functions in Ember 3.1 to unlock . What’s extra nice, though, is that decorators are backwards compatible <a href="http://ember-decorators.github.io/ember-decorators/latest/docs/stability-and-support#ember-support">all the way to Ember 1.11</a>. (You won’t get the <abbr>ES5</abbr> getters on versions prior to to Ember 3.1—there the decorators <em>just</em> install things on the prototype—but you will at least get the correct behavior.)</p>
 <p>Second, note that we don’t get type inference for the computed property macros like <code>@bool</code> here. That’s because decorators are not currently allowed to modify the <em>type</em> of the thing they’re decorating from TypeScript’s perspective. Now, decorators can—and <em>do</em>!—modify the type of the thing they decorate at runtime; it’s just that <abbr>TS</abbr> doesn’t yet capture that. This means that <em>all</em> decorated fields will still require type annotations, not just a subset as in the <code>.extend()</code> world. It’s annoying—especially in the case of things like <code>@bool</code>, where it <em>really</em> seems like we ought to be able to just tell TypeScript that this means the thing is a boolean rather than writing <code>@bool('dependentKey') someProp: boolean</code>.</p>
-<p>This leads us to our final point to notice: we also need the type annotations for service (or controller) injections—but we do <em>not</em> need the string keys for them service injections.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> The net of this is that the injections themselves roughly equally ergonomic.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
+<p>This leads us to our final point to notice: we also need the type annotations for service (or controller) injections—but we do <em>not</em> need the string keys for them service injections.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> The net of this is that the injections themselves roughly equally ergonomic.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <pre class="ts"><code>// the old way
 session: service(&#39;session&#39;),
 // the new way
@@ -306,12 +307,12 @@ session: service(&#39;session&#39;),
 <h2>Summary: <em>mea culpa</em></h2>
 <p>Sorry again to everyone I misled along the way with my earlier, very wrong advice! Hopefully this helps clear up the state of things and will help you keep from falling into this tar pit going forward!</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>I don’t feel too bad about having gotten in wrong: no one who read the posts noticed the problem at the time, and it was subtle and easy to miss… because, at the time, everything actually <em>worked</em>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>It’s experimental because decorators are still only at Stage 2 in the <abbr>TC39</abbr> process. They <em>may</em> advance at this month’s meeting.<a href="#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>If you’re using a non-default name, like <code>specialSession</code>, for the name of the property, the usual rules apply for injections. In that case, you’d write the injection like this:</p>
+<li id="fn1" role="doc-endnote"><p>I don’t feel too bad about having gotten in wrong: no one who read the posts noticed the problem at the time, and it was subtle and easy to miss… because, at the time, everything actually <em>worked</em>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>It’s experimental because decorators are still only at Stage 2 in the <abbr>TC39</abbr> process. They <em>may</em> advance at this month’s meeting.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p>If you’re using a non-default name, like <code>specialSession</code>, for the name of the property, the usual rules apply for injections. In that case, you’d write the injection like this:</p>
 <pre class="ts"><code>import Component from &#39;@ember/component&#39;;
 import { service } from &#39;@ember-decorators/service&#39;;
 import Session from &#39;my-app/services/session&#39;;
@@ -319,8 +320,8 @@ import Session from &#39;my-app/services/session&#39;;
 export default class AnExample extends Component {
   @service(&#39;session&#39;) specialSession: Session;
 }</code></pre>
-<a href="#fnref3" class="footnote-back">↩</a></li>
-<li id="fn4"><p>Files do get an extra import in the decorator version… but as it happens, I’m more than okay with that; I’d actually <em>prefer</em> explicit imports of dependencies personally.<a href="#fnref4" class="footnote-back">↩</a></p></li>
+<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></li>
+<li id="fn4" role="doc-endnote"><p>Files do get an extra import in the decorator version… but as it happens, I’m more than okay with that; I’d actually <em>prefer</em> explicit imports of dependencies personally.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -377,7 +378,7 @@ export default class AnExample extends Component {
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/finishing-things-on-the-internet.html">Finishing Things on the Internet</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/breaking-up-with-social-media.html">Breaking Up With Social Media</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

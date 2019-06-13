@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="True Myth 2.2"/>
     <meta name="twitter:description" content="True Myth 2.2 adds two `Maybe` helpers for safe object lookup and two `Result` helpers for handling exception-throwing code."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -90,7 +91,7 @@
 
         <div class="content">
 
-<p>I just released v2.2<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> of True Myth, with two new pairs of helpers to deal with <a href="#safe-java-script-object-property-lookup">safe JavaScript object property lookup with <code>Maybe</code>s</a> and <a href="#handling-exception-throwing-functions">handling exception-throwing code with <code>Result</code>s</a>.</p>
+<p>I just released v2.2<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> of True Myth, with two new pairs of helpers to deal with <a href="#safe-java-script-object-property-lookup">safe JavaScript object property lookup with <code>Maybe</code>s</a> and <a href="#handling-exception-throwing-functions">handling exception-throwing code with <code>Result</code>s</a>.</p>
 <section id="safe-javascript-object-property-lookup" class="level2">
 <h2>Safe JavaScript object property lookup</h2>
 <p>We often deal with <em>optional properties</em> on JavaScript objects, and by default JavaScript just gives us <code>undefined</code> if a property doesn’t exist on an object and we look it up:</p>
@@ -213,10 +214,10 @@ const result = Result.tryOrElse(handleErr, throwsHelpfulErrors);</code></pre>
 <p>And that’s it for True Myth 2.2! Enjoy, and of course please <a href="https://github.com/true-myth/true-myth/issues">open an issue</a> if you run into any bugs!</p>
 <p>Thanks to <a href="https://github.com/bmakuh">Ben Makuh</a> for implementing <code>Result.tryOr</code> and <code>Result.tryOrElse</code>. Thanks to Ben and also <a href="https://github.com/tansongyang">Frank Tan</a> for helpful input on the <code>Maybe.get</code> and <code>Maybe.property</code> <abbr>API</abbr> design!</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>I published both <code>2.2.0</code> and <code>2.2.1</code>, because once again I missed something along the way. This time it was making sure all the new functions were optionally curried to support partial application.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>I published both <code>2.2.0</code> and <code>2.2.1</code>, because once again I missed something along the way. This time it was making sure all the new functions were optionally curried to support partial application.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -273,7 +274,7 @@ const result = Result.tryOrElse(handleErr, throwsHelpfulErrors);</code></pre>
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/finishing-things-on-the-internet.html">Finishing Things on the Internet</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/breaking-up-with-social-media.html">Breaking Up With Social Media</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

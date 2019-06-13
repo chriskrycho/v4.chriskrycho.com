@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="How I Write a Talk"/>
     <meta name="twitter:description" content="Giving a good talk is mostly a matter of writing a good talk and crafting a coherent presentation of that material (with or without slides or other helpers). In this post, I’m going to briefly walk through how *I* prepare talks. This process may not work for you at all; sometimes I read other people’s talk preparation strategies and laugh because they’re so wildly different from mine. But this way there’s one more strategy documented out there."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -94,7 +95,7 @@
 <p>While my own approach here has a couple details that are technical, the vast majority of it is applicable to any kind of talk. In fact, a <em>lot</em> of this is essentially identical to certain phases of my preparation for preaching a sermon or teaching a theology class at church.</p>
 <section id="brainstorm-on-paper." class="level2">
 <h2>1. Brainstorm on paper.</h2>
-<p>I start by writing out a bunch of different approaches I might want to use for the talk with pen and paper. Usually I grab the <a href="https://us.moleskine.com/en/">Moleskine</a> I dedicate to writing ideas<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> and <a href="https://www.jetpens.com/Pilot-Juice-Up-Gel-Pen-0.4-mm-Blue-Black/pd/18166">my favorite pen</a> and put away everything electronic. Here I’m not worried about structure or organization at all. I just jot down the things I want to cover, what the motivating idea and main takeaway is, and any secondary points I want the audience of the talk to come away with.</p>
+<p>I start by writing out a bunch of different approaches I might want to use for the talk with pen and paper. Usually I grab the <a href="https://us.moleskine.com/en/">Moleskine</a> I dedicate to writing ideas<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and <a href="https://www.jetpens.com/Pilot-Juice-Up-Gel-Pen-0.4-mm-Blue-Black/pd/18166">my favorite pen</a> and put away everything electronic. Here I’m not worried about structure or organization at all. I just jot down the things I want to cover, what the motivating idea and main takeaway is, and any secondary points I want the audience of the talk to come away with.</p>
 <p>Sometimes this is broadly obvious because I already know how to come at the talk. Sometimes it takes multiple passes to get right. And when I skip this step, things go wrong regardless. I almost gave a <em>really</em> terrible version of an important internal tech talk at Olo a month ago because I hadn’t take the time to do this, and ultimately had to push back when I delivered it by a bunch as a result!</p>
 </section>
 <section id="write-a-high-level-outline-and-map-out-the-overall-timing." class="level2">
@@ -107,9 +108,9 @@
 <section id="draft-the-talk-writing-it-out-long-form." class="level2">
 <h2>3. Draft the talk, writing it out long-form.</h2>
 <p>This is the longest part of the process, but it works wonders for me.</p>
-<p>I start by copying the outline from my paper notebook into a <a href="https://daringfireball.net/projects/markdown/">Markdown</a>-friendly writing environment.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> I turn each bullet point in the original outline into a heading. Then I expand the outline dramatically, from those high-level sections to slide-level sections: one sub-heading per slide. At this point I also add “breaks” between all the headings, which is how <a href="https://revealjs.com/">the web-based slides tool I use</a>.</p>
+<p>I start by copying the outline from my paper notebook into a <a href="https://daringfireball.net/projects/markdown/">Markdown</a>-friendly writing environment.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> I turn each bullet point in the original outline into a heading. Then I expand the outline dramatically, from those high-level sections to slide-level sections: one sub-heading per slide. At this point I also add “breaks” between all the headings, which is how <a href="https://revealjs.com/">the web-based slides tool I use</a>.</p>
 <p>Next up I script the talk in detail. I know some people just throw down bullet points here; that’s not how I work. I write out a word-by-word script for what to say. Each of those headings/slides gets anything from a sentence to a few paragraphs. As I’m doing this, I keep an eye on the word count: courtesy of having done a fair number of talks this way, and having done a <em>lot</em> of <a href="http://www.newrustacean.com">podcasting</a> this way, I have a pretty good feel for what a given number of words will come out to in terms of talk time.</p>
-<p>This is also the phase where I extract bullet points, notes about images to insert, code samples, etc. Sometimes I’ll pause to write out an example in detail while working on the script; other times I’ll just leave myself a note that looks like <code>TODO: add Doctor Who &quot;Oh yes!&quot; GIF here</code>. <a href="http://i0.kym-cdn.com/photos/images/original/000/507/438/eeb.gif">For reference: <em>this</em> GIF.</a> The script goes behind a simple textual marker (customizable in the tool I use; usually just <code>Note:</code>) so that it doesn’t show up on the slide and instead is displayed as speaker notes.</p>
+<p>This is also the phase where I extract bullet points, notes about images to insert, code samples, etc. Sometimes I’ll pause to write out an example in detail while working on the script; other times I’ll just leave myself a note that looks like <code>TODO: add Doctor Who "Oh yes!" GIF here</code>. <a href="http://i0.kym-cdn.com/photos/images/original/000/507/438/eeb.gif">For reference: <em>this</em> GIF.</a> The script goes behind a simple textual marker (customizable in the tool I use; usually just <code>Note:</code>) so that it doesn’t show up on the slide and instead is displayed as speaker notes.</p>
 <p>The important thing for me is that writing out the talk this way lets me know what materials actually go on what slides, and it also cements the content into my mind. Once it’s written, I don’t actually try to memorize it, and I don’t read from it while delivering the talk. The act of creating it this way makes the flow of the slides flow coherently. I end up with a map to what I actually intend to say in the form of the slides themselves—so they guide me and the audience together through the content in a coherent way.</p>
 <p>Once I have this full script written out, I’ll go back over it as a revision pass.</p>
 </section>
@@ -128,11 +129,11 @@
 <h2>5. Repeat Step 4 until I’m happy with it or I’m out of time.</h2>
 <p>Let’s be honest: it’s usually the latter, and in many ways that’s actually a good thing. A talk can be polished <em>ad infinitum</em> and it’s not actually helpful to polish forever. At some point the return on investment is so small relative to the time cost (which is high!) that you should just stop and give the talk.</p>
 </section>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>or occasionally a white, narrow-ruled legal pad<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>Right now that’s usually <a href="TODO">Ulysses</a>, but there are things that bother me about every such writing app I’ve ever tried—and yes, before you suggest it, that does include Emacs and Vim, along with VS Code and other programming text editors, as well as the usual plain-text writing environment apps like Ulysses.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>or occasionally a white, narrow-ruled legal pad<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Right now that’s usually <a href="TODO">Ulysses</a>, but there are things that bother me about every such writing app I’ve ever tried—and yes, before you suggest it, that does include Emacs and Vim, along with VS Code and other programming text editors, as well as the usual plain-text writing environment apps like Ulysses.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -189,7 +190,7 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/finishing-things-on-the-internet.html">Finishing Things on the Internet</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/breaking-up-with-social-media.html">Breaking Up With Social Media</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

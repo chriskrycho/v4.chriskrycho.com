@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="HTML5 Location, <base>, and SVG"/>
     <meta name="twitter:description" content="Angular requires if you want to use HTML5's location… but if you get it wrong, SVG things can and will break under you."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -90,7 +91,7 @@
 
         <div class="content">
 
-<p>For quite some time, I have been frustrated by a bug in HolyBible.com: Firefox would not render SVGs using the <code>&lt;use xlink:xhref=&quot;#some-SVG-ID&quot;&gt;&lt;/use&gt;</code> pattern. Today, I set aside my ongoing work on new user-facing functionality and dedicated what working time I had to hunting down the cause of this and fixing it at last.</p>
+<p>For quite some time, I have been frustrated by a bug in HolyBible.com: Firefox would not render SVGs using the <code>&lt;use xlink:xhref="#some-SVG-ID"&gt;&lt;/use&gt;</code> pattern. Today, I set aside my ongoing work on new user-facing functionality and dedicated what working time I had to hunting down the cause of this and fixing it at last.</p>
 <p>I was surprised to find the culprit: the <code>&lt;base&gt;</code> tag. If you don’t know what the <code>&lt;base&gt;</code> tag is, you’re not alone. It is <em>not</em> used all that much in general, and I had never actually seen it on a site before starting on this project last year.</p>
 <p>So what went wrong? How do these two things play together?</p>
 <p>I am using (and reusing) SVG items throughout the HolyBible.com interface, taking advantage of the ability to define symbols and reference them with the <code>&lt;use&gt;</code> tag, like so:</p>
@@ -114,17 +115,17 @@
 <pre class="html"><code>&lt;script&gt;document.write(&#39;&lt;base href=&quot;&#39; + document.location.origin + &#39;&quot; /&gt;&#39;);&lt;/script&gt;</code></pre>
 <p>This way, when the page renders, it writes the document location based on the <em>current</em> location. The URL history still behaves as expected with Angular, but the relative URLs for IDs behave as expected in Firefox again, while not breaking the behavior in any other browsers.</p>
 <p>But… then you’ll navigate to another page, and Firefox will be back to not working.</p>
-<p>The <a href="https://github.com/angular/angular.js/issues/8934#issuecomment-56568466">solution</a>, it turns out, only came into being after I’d done the initial implementation, and I have no idea how much later it found its way into the Angular docs. However, even though it now <em>exists</em> in the docs, it’s by no means obvious why you should do it this way, and certainly no mention of SVG! This might not seem odd to you… but it should, given that the only reason that Angular introduced this API change was to account for <em>exactly this issue</em>.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>The <a href="https://github.com/angular/angular.js/issues/8934#issuecomment-56568466">solution</a>, it turns out, only came into being after I’d done the initial implementation, and I have no idea how much later it found its way into the Angular docs. However, even though it now <em>exists</em> in the docs, it’s by no means obvious why you should do it this way, and certainly no mention of SVG! This might not seem odd to you… but it should, given that the only reason that Angular introduced this API change was to account for <em>exactly this issue</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>As the Angular docs note, leaving out the <code>&lt;base&gt;</code> tag means all your URLs have to be absolute if you want to use HTML5 location and the <code>$locationProvider</code>. If you want to use SVGs with <code>&lt;use&gt;</code> and Firefox, though, that’s what you have to do (and therefore that’s what I’m doing).</p>
 <p>Fun times, right?</p>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>The closest it gets is this reference:</p>
+<li id="fn1" role="doc-endnote"><p>The closest it gets is this reference:</p>
 <blockquote>
-<p>Links that only contain a hash fragment (e.g. <code>&lt;a href=&quot;#target&quot;&gt;</code>) will only change <code>$location.hash()</code> and not modify the url otherwise. This is useful for scrolling to anchors on the same page without needing to know on which page the user currently is.</p>
+<p>Links that only contain a hash fragment (e.g. <code>&lt;a href="#target"&gt;</code>) will only change <code>$location.hash()</code> and not modify the url otherwise. This is useful for scrolling to anchors on the same page without needing to know on which page the user currently is.</p>
 </blockquote>
-<p>Even this, however, only <em>hints</em> at the root of the SVG issue.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<p>Even this, however, only <em>hints</em> at the root of the SVG issue.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -181,7 +182,7 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/finishing-things-on-the-internet.html">Finishing Things on the Internet</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/breaking-up-with-social-media.html">Breaking Up With Social Media</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

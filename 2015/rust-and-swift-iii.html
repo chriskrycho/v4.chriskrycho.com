@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Rust and Swift (iii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too …"/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -92,7 +93,7 @@
 <p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past month. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. <a href="/rust-and-swift.html">(See all parts in the series.)</a></i></p>
 <hr />
 <p>I just hit operators in the Swift book. First question: are operators special syntax, or are they sugar for <code>protocol</code>s? (Every modern language I use or even have played with handles them as sugar for another language construct—Python, Ruby, Io, Elixir, and Rust, to name just a few ranging over a substantial variety of ages and styles.)</p>
-<p>Oh. I did the requisite digging, and operators are functions (which is okay) defined in the <del>global namespace (<em>:sigh:</em>)</del> Swift module.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> I say “okay” rather than good because the justification offered is that this is the only way to make the operators work as binary operators between existing instances of types. But that elides the fact that, if that’s the case, it is so because of other language design decisions. This seems like a perfect place to use a <code>protocol</code>, but perhaps (unlike Rust’s <code>trait</code>) they’re not sufficiently capable to handle this? That’s an open question; I have no idea about the answer.</p>
+<p>Oh. I did the requisite digging, and operators are functions (which is okay) defined in the <del>global namespace (<em>:sigh:</em>)</del> Swift module.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> I say “okay” rather than good because the justification offered is that this is the only way to make the operators work as binary operators between existing instances of types. But that elides the fact that, if that’s the case, it is so because of other language design decisions. This seems like a perfect place to use a <code>protocol</code>, but perhaps (unlike Rust’s <code>trait</code>) they’re not sufficiently capable to handle this? That’s an open question; I have no idea about the answer.</p>
 <p>Interestingly, Rust has several fewer operators than Swift, even apart from those mentioned in my <a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html">previous post</a>. It drops the pre- and post-increment operators entirely (as does Python), since their results can always be accomplished in other ways with less potential for confusion. Swift keeps them, no doubt in part because most (Objective) C programs are deeply familiar with them and with idioms associated with them.</p>
 <p>I learned a few new things about Rust’s operators as well: the Boolean <code>||</code> and <code>&amp;&amp;</code> operators and its bitwise <code>|</code> and <code>&amp;</code> operators differ not only in that the former are <em>short-circuit</em> operators and the latter are not. Obviously you can also do things like bit-wise flag operations with the latter, but the reference emphasizes the short-circuiting behavior. This makes perfect sense, but it wasn’t something I’d ever considered explicitly before.</p>
 <p>There is no ternary operator in Rust, because of how it handles the relationship between expressions and statements. Swift keeps it. That’s an interesting reflection of differences in design: Rust dropped it because <code>if</code> blocks are expressions, so it’s redundant, and they have had a goal of removing unnecessary features. (See the discussion on dropping the ternary operator—with an interesting aside from Brendan Eich on JavaScript—<a href="https://github.com/rust-lang/rust/issues/1698">here</a>). Note that this is not a criticism of Swift, just an observation, though I do really like Rust’s expression-driven approach.</p>
@@ -104,10 +105,10 @@
 <li><a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html"><strong>Previous:</strong> Basic types and the syntax around them.</a></li>
 <li><a href="http://www.chriskrycho.com/2015/rust-and-swift-iv.html"><strong>Next:</strong> Language design tradeoffs, highlighted by string manipulation.</a></li>
 </ul>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>See edit in discussion of functions and global namespace in <a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html">part ii</a>.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>See edit in discussion of functions and global namespace in <a href="http://www.chriskrycho.com/2015/rust-and-swift-ii.html">part ii</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -164,7 +165,7 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/finishing-things-on-the-internet.html">Finishing Things on the Internet</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/breaking-up-with-social-media.html">Breaking Up With Social Media</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Good Work Takes Time"/>
     <meta name="twitter:description" content="It’s obvious enough when you say it aloud, of course, but it bears reiterating, and often: Good work takes time, and most of the time and effort behind good projects remains forever invisible."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -96,14 +97,14 @@
 </aside>
 <p>There’s nothing <em>particularly</em> special about that library compared to any of the others in the space which already do the same thing. It makes its own <a href="https://github.com/chriskrycho/true-myth/blob/master/README.md#why-not" title="Comparisons with Folktale and Sanctuary">design tradeoffs</a>, which are slightly <em>different</em> from others, and it has what I think are <a href="https://true-myth.js.org">best-in-class docs</a>, but mostly it’s comparable to the others. Still, it’s <em>good</em>, and it fits that particular niche in terms of design tradeoffs pretty well in my view.</p>
 <p>If you just saw the public work on that, you’d have first heard of it <em>at the earliest</em> when I pushed the first commit to GitHub on September 21, 2017. But the roots go much, much further back.</p>
-<p>For one thing, I just found a related bit of work dating all the way back to January 10, 2017: an early attempt to see if I could directly reimplement Rust’s Result and Option types in TypeScript, in the early days of my adoption of TypeScript.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> That initial spike didn’t work—and I mean that literally; I didn’t yet have enough of a handle on TypeScript’s type system to get it to actually compile! But it was the first of <em>multiple</em> (mostly very brief) swings I took at it over the course of the year. The culmination of those repeated stabs at the problem was True Myth, with its polish, test coverage, and very considered design tradeoffs.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> But none of that would have happened without the better part of a year of experimenting along the way.</p>
+<p>For one thing, I just found a related bit of work dating all the way back to January 10, 2017: an early attempt to see if I could directly reimplement Rust’s Result and Option types in TypeScript, in the early days of my adoption of TypeScript.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> That initial spike didn’t work—and I mean that literally; I didn’t yet have enough of a handle on TypeScript’s type system to get it to actually compile! But it was the first of <em>multiple</em> (mostly very brief) swings I took at it over the course of the year. The culmination of those repeated stabs at the problem was True Myth, with its polish, test coverage, and very considered design tradeoffs.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> But none of that would have happened without the better part of a year of experimenting along the way.</p>
 <p>What’s more: even that January spike wasn’t the real start of True Myth. I have code in our codebase (code we’re finally mostly done replacing with True Myth!) that was an early attempt to capture these same basic ideas in plain-old JavaScript—code that dates to March 2016!</p>
 <p>So: do not be discouraged when your own work seems to take a long time, or when you see others produce what seem to be fully-formed projects all in a rush. Always, our best work stands on a foundation—of ideas simmering over time, of previous attempts that got partway, of previous outright <em>failures</em>—and all of that is “underground,” out of sight.</p>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Somewhat amusingly to me in retrospect, I’d switched from Flow to TypeScript on our codebase at Olo as my final act of 2016.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>I remain convinced that we hit a <em>really</em> sweet spot with the design here: it works well as idiomatic JavaScript <em>and</em> supports nice functional idioms and I think it just feels nice to use <em>in JavaScript</em>—not just as a port of ideas from Haskell, Scala, etc.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>Somewhat amusingly to me in retrospect, I’d switched from Flow to TypeScript on our codebase at Olo as my final act of 2016.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>I remain convinced that we hit a <em>really</em> sweet spot with the design here: it works well as idiomatic JavaScript <em>and</em> supports nice functional idioms and I think it just feels nice to use <em>in JavaScript</em>—not just as a port of ideas from Haskell, Scala, etc.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -160,7 +161,7 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/finishing-things-on-the-internet.html">Finishing Things on the Internet</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/breaking-up-with-social-media.html">Breaking Up With Social Media</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

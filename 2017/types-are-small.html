@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Types are Small"/>
     <meta name="twitter:description" content="A really fabulous quote from Scott Wlaschin's book Domain Modeling Made Functional crystallized an important point for me: types (in typed functional programming) are small."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -93,15 +94,15 @@
 <blockquote>
 <p>A type in functional programming is not the same as a class in object-oriented programming. It is much simpler. In fact, a type is just the name given to the set of possible values that can be used as inputs or outputs of a function.</p>
 </blockquote>
-<p>A lot of times when I’m trying to explain how I use types in a typed functional programming style, this is a serious point of confusion—both for the Java or C♯ OOP programmer and for the programmers coming from dynamic languages. When people think of “types” they tend to think of <em>classes and interfaces and methods, oh my!</em><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>A lot of times when I’m trying to explain how I use types in a typed functional programming style, this is a serious point of confusion—both for the Java or C♯ OOP programmer and for the programmers coming from dynamic languages. When people think of “types” they tend to think of <em>classes and interfaces and methods, oh my!</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>One is the big heavy class. The other is a nice little LEGO block. The difference is <em>huge</em> in my day to day experience, but I’ve never been able to express it so clearly as Wlaschin’s quote.</p>
 <p>I suspect that when I’m talking to most people coming from dynamically typed languages <em>or</em> from the standard OOP languages, they hear “Write three interfaces and six classes” when I say “using types to help me with my program.” But what I mean is “Write three tiny little shapes, and then one more that shows how they snap together in a slightly bigger one.” Types aren’t big heavy things. They’re just the shapes I want to flow through my program, written down like documentation for later… that gets checked for me to make sure it stays up to date, and lets me know if I missed something in my description of the shape of the data, or tried to do something I didn’t mean to before.</p>
 <p>You <em>can</em> write a language like F♯ or TypeScript or Elm like you would C♯, but it’s generally not going to be an especially <em>happy</em> experience (and it’ll be less happy the more “purely functional,” <em>a la</em> Elm, you go). But you don’t have to! Types are just tiny little descriptions of the shapes you plan to deal with in a particular spot—more concise and more dependable than writing a JSDoc or something like that.</p>
 <p>Types are small. You can build big things with them, but <em>types are small</em>.</p>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>In fact, nearly every “I’m just not into types” or even “I think types are worse for most things” talks I’ve seen—including <a href="https://www.youtube.com/watch?v=2V1FtfBDsLU">this recent and popular one by Rich Hickey</a>—tend to conflate <em>all</em> type systems together. But the experience of writing TypeScript is <em>very</em> different from the experience of writing C♯. (You’ll note that in that talk, for example, Hickey freely jumps back and forth between Java-style types and Haskell-style types when it suits his purposes, and he entirely skips past the structural type systems currently having something of a heyday.) In many cases, I <em>suspect</em> this is simply a lack of deep experience with the whole variety of type systems out there (though I’d not attribute that to any specific individual).<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>In fact, nearly every “I’m just not into types” or even “I think types are worse for most things” talks I’ve seen—including <a href="https://www.youtube.com/watch?v=2V1FtfBDsLU">this recent and popular one by Rich Hickey</a>—tend to conflate <em>all</em> type systems together. But the experience of writing TypeScript is <em>very</em> different from the experience of writing C♯. (You’ll note that in that talk, for example, Hickey freely jumps back and forth between Java-style types and Haskell-style types when it suits his purposes, and he entirely skips past the structural type systems currently having something of a heyday.) In many cases, I <em>suspect</em> this is simply a lack of deep experience with the whole variety of type systems out there (though I’d not attribute that to any specific individual).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -158,7 +159,7 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/finishing-things-on-the-internet.html">Finishing Things on the Internet</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/breaking-up-with-social-media.html">Breaking Up With Social Media</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>

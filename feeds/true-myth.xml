@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Chris Krycho - true myth</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 27 Oct 2018 17:00:00 -0400</lastBuildDate><item><title>True Myth 2.2</title><link>http://www.chriskrycho.com/2018/true-myth-22.html</link><description>&lt;p&gt;I just released v2.2&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; of True Myth, with two new pairs of helpers to deal with &lt;a href="#safe-java-script-object-property-lookup"&gt;safe JavaScript object property lookup with &lt;code&gt;Maybe&lt;/code&gt;s&lt;/a&gt; and &lt;a href="#handling-exception-throwing-functions"&gt;handling exception-throwing code with &lt;code&gt;Result&lt;/code&gt;s&lt;/a&gt;.&lt;/p&gt;
+<rss version="2.0"><channel><title>Chris Krycho - true myth</title><link>http://www.chriskrycho.com/</link><description></description><lastBuildDate>Sat, 27 Oct 2018 17:00:00 -0400</lastBuildDate><item><title>True Myth 2.2</title><link>http://www.chriskrycho.com/2018/true-myth-22.html</link><description>&lt;p&gt;I just released v2.2&lt;a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; of True Myth, with two new pairs of helpers to deal with &lt;a href="#safe-java-script-object-property-lookup"&gt;safe JavaScript object property lookup with &lt;code&gt;Maybe&lt;/code&gt;s&lt;/a&gt; and &lt;a href="#handling-exception-throwing-functions"&gt;handling exception-throwing code with &lt;code&gt;Result&lt;/code&gt;s&lt;/a&gt;.&lt;/p&gt;
 &lt;section id="safe-javascript-object-property-lookup" class="level2"&gt;
 &lt;h2&gt;Safe JavaScript object property lookup&lt;/h2&gt;
 &lt;p&gt;We often deal with &lt;em&gt;optional properties&lt;/em&gt; on JavaScript objects, and by default JavaScript just gives us &lt;code&gt;undefined&lt;/code&gt; if a property doesn’t exist on an object and we look it up:&lt;/p&gt;
@@ -122,10 +122,10 @@ const result = Result.tryOrElse(handleErr, throwsHelpfulErrors);&lt;/code&gt;&lt
 &lt;p&gt;And that’s it for True Myth 2.2! Enjoy, and of course please &lt;a href="https://github.com/true-myth/true-myth/issues"&gt;open an issue&lt;/a&gt; if you run into any bugs!&lt;/p&gt;
 &lt;p&gt;Thanks to &lt;a href="https://github.com/bmakuh"&gt;Ben Makuh&lt;/a&gt; for implementing &lt;code&gt;Result.tryOr&lt;/code&gt; and &lt;code&gt;Result.tryOrElse&lt;/code&gt;. Thanks to Ben and also &lt;a href="https://github.com/tansongyang"&gt;Frank Tan&lt;/a&gt; for helpful input on the &lt;code&gt;Maybe.get&lt;/code&gt; and &lt;code&gt;Maybe.property&lt;/code&gt; &lt;abbr&gt;API&lt;/abbr&gt; design!&lt;/p&gt;
 &lt;/section&gt;
-&lt;section class="footnotes"&gt;
+&lt;section class="footnotes" role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1"&gt;&lt;p&gt;I published both &lt;code&gt;2.2.0&lt;/code&gt; and &lt;code&gt;2.2.1&lt;/code&gt;, because once again I missed something along the way. This time it was making sure all the new functions were optionally curried to support partial application.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;I published both &lt;code&gt;2.2.0&lt;/code&gt; and &lt;code&gt;2.2.1&lt;/code&gt;, because once again I missed something along the way. This time it was making sure all the new functions were optionally curried to support partial application.&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 27 Oct 2018 17:00:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-10-27:/2018/true-myth-22.html</guid><category>typescript</category><category>true myth</category><category>open source software</category><category>functional programming</category></item><item><title>True Myth 2.1.0 Released</title><link>http://www.chriskrycho.com/2018/true-myth-210-released.html</link><description>&lt;p&gt;I’ve just released True Myth 2.1.0 (&lt;a href="https://github.com/chriskrycho/true-myth/tree/v2.1.0"&gt;source&lt;/a&gt;, &lt;a href="https://true-myth.js.org"&gt;docs&lt;/a&gt;), which includes a handful of new utility functions for use with the &lt;code&gt;Maybe&lt;/code&gt; types and arrays or tuples. Note that to make use of these you’ll need to be on at least TypeScript 3.0: they take advantage of the some of the shiny new features in the type system!&lt;/p&gt;
@@ -217,7 +217,7 @@ console.log(allJustsResult.toString());  // Just([2, &amp;quot;hi&amp;quot;, [42
 &lt;p&gt;(If you have nested modules, your &lt;code&gt;postpublish&lt;/code&gt; hook there should clean up the generated folders as well as the generated files.)&lt;/p&gt;
 &lt;p&gt;You can see the full setup I built for True Myth—which generates type defs along these lines, as well as both CommonJS and ES6 modules—in the repository:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/package.json"&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/a&gt;—note especially the &lt;a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/package.json#L32:L42"&gt;&lt;code&gt;&amp;quot;scripts&amp;quot;&lt;/code&gt;&lt;/a&gt; configuration&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/package.json"&gt;&lt;code&gt;package.json&lt;/code&gt;&lt;/a&gt;—note especially the &lt;a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/package.json#L32:L42"&gt;&lt;code&gt;"scripts"&lt;/code&gt;&lt;/a&gt; configuration&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/tsconfig.json"&gt;root &lt;code&gt;tsconfig.json&lt;/code&gt;&lt;/a&gt;, with derived&lt;a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/ts/cjs.tsconfig.json"&gt;CommonJS &lt;code&gt;tsconfig.json&lt;/code&gt;&lt;/a&gt; and &lt;a href="https://github.com/chriskrycho/true-myth/blob/v2.0.0/ts/es.tsconfig.json"&gt;ES6 &lt;code&gt;tsconfig.json&lt;/code&gt;&lt;/a&gt; files.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
@@ -246,11 +246,11 @@ const okDoubles = results
 const errLengths = results
   .filter(Result.isErr)
   .map(({ error }) =&amp;gt; error.length);&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;None of this is especially novel or anything. It was just a neat thing to realize after the fact, because it wasn’t something I had in mind when I was making these changes!&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;section class="footnotes"&gt;
+&lt;p&gt;None of this is especially novel or anything. It was just a neat thing to realize after the fact, because it wasn’t something I had in mind when I was making these changes!&lt;a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;section class="footnotes" role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1"&gt;&lt;p&gt;This was a very strange experience. There’s nothing quite like learning something about a library &lt;em&gt;you wrote&lt;/em&gt;.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;This was a very strange experience. There’s nothing quite like learning something about a library &lt;em&gt;you wrote&lt;/em&gt;.&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 19 May 2018 12:20:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-05-19:/2018/destructuring-with-true-myth-13.html</guid><category>functional programming</category><category>typescript</category><category>open source software</category><category>libraries</category><category>true myth</category></item><item><title>True Myth 1.3.0 and 2.0.0</title><link>http://www.chriskrycho.com/2018/true-myth-130-and-200.html</link><description>&lt;p&gt;Today I released two versions of &lt;a href="https://github.com/chriskrycho/true-myth"&gt;True Myth&lt;/a&gt;: &lt;a href="https://github.com/chriskrycho/true-myth/releases/tag/v1.3.0"&gt;1.3.0&lt;/a&gt; and &lt;a href="https://github.com/chriskrycho/true-myth/releases/tag/v2.0.0"&gt;2.0.0&lt;/a&gt;. You can read the &lt;a href="https://www.chriskrycho.com/2017/announcing-true-myth-10.html"&gt;1.0 announcement&lt;/a&gt; from last November for an overview of the library and a discussion of why you might want to use the library in the first place!&lt;/p&gt;
@@ -286,7 +286,7 @@ function dealsWithAResult(result: Result&amp;lt;string, Error&amp;gt;) {
     console.log(`Alas: ${result.error.message}`);
   }
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Basically: you now have more options for handling these scenarios, a nicer &lt;abbr title="application programming interface"&gt;API&lt;/abbr&gt;, and—not that it should &lt;em&gt;usually&lt;/em&gt; matter that much, but for whatever it’s worth—better performance by way of doing things with property lookups instead of function invocations in quite a few places.&lt;a href="#fn1" class="footnote-ref" id="fnref1"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Basically: you now have more options for handling these scenarios, a nicer &lt;abbr title="application programming interface"&gt;API&lt;/abbr&gt;, and—not that it should &lt;em&gt;usually&lt;/em&gt; matter that much, but for whatever it’s worth—better performance by way of doing things with property lookups instead of function invocations in quite a few places.&lt;a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="static-helper-methods" class="level3"&gt;
 &lt;h3&gt;Static helper methods&lt;/h3&gt;
@@ -316,7 +316,7 @@ function justLengths(maybeStrings: Array&amp;lt;Maybe&amp;lt;string&amp;gt;&amp;
 &lt;p&gt;The 2.0 release is identical in &lt;em&gt;features&lt;/em&gt; with the 1.3 release. However, it makes a breaking change to how consumers interact with the application, requiring updates to your &lt;code&gt;tsconfig.json&lt;/code&gt; file and your bundler configuration, and removing support for Flow types.&lt;/p&gt;
 &lt;section id="configuration-file-updates" class="level3"&gt;
 &lt;h3&gt;Configuration file updates&lt;/h3&gt;
-&lt;p&gt;Getting True Myth working nicely with consuming TypeScript packages has been a source of frustration for me &lt;em&gt;and&lt;/em&gt; others. In short, requiring you to use the &lt;code&gt;&amp;quot;paths&amp;quot;&lt;/code&gt; key in the &lt;code&gt;&amp;quot;compilerOptions&amp;quot;&lt;/code&gt; section of the &lt;code&gt;tsconfig.json&lt;/code&gt; made for an annoying amount of setup work, &lt;em&gt;and&lt;/em&gt; it meant that using True Myth in a library &lt;em&gt;required&lt;/em&gt; you to set it up in any consuming app. No good.&lt;/p&gt;
+&lt;p&gt;Getting True Myth working nicely with consuming TypeScript packages has been a source of frustration for me &lt;em&gt;and&lt;/em&gt; others. In short, requiring you to use the &lt;code&gt;"paths"&lt;/code&gt; key in the &lt;code&gt;"compilerOptions"&lt;/code&gt; section of the &lt;code&gt;tsconfig.json&lt;/code&gt; made for an annoying amount of setup work, &lt;em&gt;and&lt;/em&gt; it meant that using True Myth in a library &lt;em&gt;required&lt;/em&gt; you to set it up in any consuming app. No good.&lt;/p&gt;
 &lt;p&gt;For type resolution to Just Work™, the types &lt;em&gt;must&lt;/em&gt; be at the root of the distributed package.&lt;/p&gt;
 &lt;p&gt;As a result, I’ve stopped using &lt;a href="https://github.com/tildeio/libkit"&gt;libkit&lt;/a&gt;, which put the generated types in a reasonable-seeming but (in my experience) painful-to-use place, and have simplified the build layout substantially.&lt;/p&gt;
 &lt;ul&gt;
@@ -344,7 +344,7 @@ function justLengths(maybeStrings: Array&amp;lt;Maybe&amp;lt;string&amp;gt;&amp;
       result.js
       unit.js
       utils.js&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You’ll just need to completely remove the &lt;code&gt;&amp;quot;paths&amp;quot;&lt;/code&gt; mapping for True Myth from your &lt;code&gt;tsconfig.json&lt;/code&gt; and, if you’ve done anything unusual with it, update your bundler configuration to point to the new build location, i.e. &lt;code&gt;dist/commonjs/src&lt;/code&gt; should now just be &lt;code&gt;dist/cjs&lt;/code&gt;. Bundlers which respect the &lt;code&gt;modules&lt;/code&gt; key in &lt;code&gt;package.json&lt;/code&gt; will pick it up automatically, as will Ember &lt;abbr&gt;CLI&lt;/abbr&gt;.&lt;/p&gt;
+&lt;p&gt;You’ll just need to completely remove the &lt;code&gt;"paths"&lt;/code&gt; mapping for True Myth from your &lt;code&gt;tsconfig.json&lt;/code&gt; and, if you’ve done anything unusual with it, update your bundler configuration to point to the new build location, i.e. &lt;code&gt;dist/commonjs/src&lt;/code&gt; should now just be &lt;code&gt;dist/cjs&lt;/code&gt;. Bundlers which respect the &lt;code&gt;modules&lt;/code&gt; key in &lt;code&gt;package.json&lt;/code&gt; will pick it up automatically, as will Ember &lt;abbr&gt;CLI&lt;/abbr&gt;.&lt;/p&gt;
 &lt;/section&gt;
 &lt;section id="removing-flow-types" class="level3"&gt;
 &lt;h3&gt;Removing Flow types&lt;/h3&gt;
@@ -354,10 +354,10 @@ function justLengths(maybeStrings: Array&amp;lt;Maybe&amp;lt;string&amp;gt;&amp;
 &lt;p&gt;And that’s it! We’ve been using True Myth in production at Olo for quite some time, and it’s proved to be a really valuable tool. Give it a spin and let me know how these latest versions work for you!&lt;/p&gt;
 &lt;/section&gt;
 &lt;/section&gt;
-&lt;section class="footnotes"&gt;
+&lt;section class="footnotes" role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1"&gt;&lt;p&gt;I’ve made some changes under the hood to take advantage of this as well, so the library should be faster. Probably &lt;em&gt;trivially&lt;/em&gt; faster, but my philosophy around library code is very much &lt;em&gt;be as fast as you can&lt;/em&gt;; it’s a way of considering the people using your code—not just the developers, but the end users.&lt;a href="#fnref1" class="footnote-back"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;I’ve made some changes under the hood to take advantage of this as well, so the library should be faster. Probably &lt;em&gt;trivially&lt;/em&gt; faster, but my philosophy around library code is very much &lt;em&gt;be as fast as you can&lt;/em&gt;; it’s a way of considering the people using your code—not just the developers, but the end users.&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 18 May 2018 19:15:00 -0400</pubDate><guid isPermaLink="false">tag:www.chriskrycho.com,2018-05-18:/2018/true-myth-130-and-200.html</guid><category>TypeScript</category><category>functional programming</category><category>libraries</category><category>software development</category><category>open source software</category><category>versioning</category><category>True Myth</category></item><item><title>Announcing True Myth 1.0</title><link>http://www.chriskrycho.com/2017/announcing-true-myth-10.html</link><description>&lt;p&gt;I’m pleased to announce the release of &lt;a href="https://github.com/chriskrycho/true-myth"&gt;True Myth 1.0&lt;/a&gt;! True Myth is a library I’ve been working on over the last month or so, for saner programming in JavaScript, with first-class support for TypeScript (and Flow).&lt;/p&gt;

@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="A Real Victory"/>
     <meta name="twitter:description" content="Today—just shy of two years since I started adding types to our Ember app—it fully type-checks."/>
         <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">tech</a></li>
                 <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -93,14 +94,14 @@
 <p>And as of 6pm today—September 5, 2018, almost two full years later, and 21 months after we switched from Flow to TypeScript (more on this below)—we have a fully type-checked TypeScript Ember application, with the strictness notches dialed as strict as they will go.</p>
 <p>It took almost two full years for us to get there, and I’m incredibly proud of that work.</p>
 <p>It took almost two full years because it was a lot of work, and slow work to do at that, and it was rare that I could block out any large chunks of time for that work—we had to sneak in improvements between features we were working urgently on for our clients and our own internally goals. More, it wasn’t just the work of adding types to our application. It was also the work of writing types for Ember itself, and for the surrounding ecosystem—which thankfully I did not finish alone, but which I did have to start alone. It was the work of integrating (and reintegrating) TypeScript into Ember’s build pipeline.</p>
-<p>Happily, I did <em>not</em> do most of that work alone, and even on our app I’ve had a ton of help getting the types in place. But it has been a massive task, and finishing it today was a real victory. It’s not perfect. We have 200-or-so instances of <code>any</code> in the application (most of them in semi-legitimate places, to be fair), and I wish it were more like 20. We have a number of places in the app with the <code>!</code> “I promise this isn’t <code>null</code> or <code>undefined</code> here” operator on some nullable field, with long comments explaining <em>why</em> it’s not possible for it to be null there.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Happily, I did <em>not</em> do most of that work alone, and even on our app I’ve had a ton of help getting the types in place. But it has been a massive task, and finishing it today was a real victory. It’s not perfect. We have 200-or-so instances of <code>any</code> in the application (most of them in semi-legitimate places, to be fair), and I wish it were more like 20. We have a number of places in the app with the <code>!</code> “I promise this isn’t <code>null</code> or <code>undefined</code> here” operator on some nullable field, with long comments explaining <em>why</em> it’s not possible for it to be null there.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>But it type-checks today, and type errors fail the builds, and that <em>is</em> a real victory.</p>
 <hr />
 <p>You can consider this “part 1” of my thoughts on what feels to me like a pretty significant achievement. I’ll hopefully follow this up with some backstory sometime in the next few weeks.</p>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>See my <a href="https://www.chriskrycho.com/2018/type-informed-design.html">recent post</a> on thinking a lot about design decisions I would have made differently with TypeScript’s strict null checking available from day one!<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>See my <a href="https://www.chriskrycho.com/2018/type-informed-design.html">recent post</a> on thinking a lot about design decisions I would have made differently with TypeScript’s strict null checking available from day one!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -157,7 +158,7 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/finishing-things-on-the-internet.html">Finishing Things on the Internet</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/breaking-up-with-social-media.html">Breaking Up With Social Media</a></li>
         <li>Tech: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-mozilla-and-irc.html">From My Sent Folder: On Mozilla and IRC
 </a></li>
         <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>
