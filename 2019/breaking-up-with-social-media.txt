@@ -8,6 +8,11 @@ Summary: >
 
 ---
 
+<i><b>[Assumed Audience][aa]:</b> anyone *willing* to think hard about social media and its place in our lives.</i>
+
+[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+
+
 ## I. The Itch
 
 I began writing this post from our vacation bedroom in Jamaica, about five days before I could possibly publish it: before we left, I shut down the machines which can generate new versions of my site. I wished, as I started this post, that I had an equally effective measure for cutting off access to social media on this trip.
