@@ -9,7 +9,7 @@ Summary: >
   In response to a thoughtful email from a friend: the non-neutrality of our tools, and the ways wisdom plays out in our using them.
 ---
 
-<i><b>[Assumed Audience][aa]:</b> anyone who cares about the success of free and open-source software.</i>
+<i><b>[Assumed Audience][aa]:</b> anyone *willing* to think hard about social media and its place in our lives.</i>
 
 [aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
 
