@@ -1,7 +1,7 @@
 ---
 Title: "#EmberJS2019, Part 2"
 Subtitle: Let’s make TypeScript a first-class citizen of the Ember ecosystem.
-Date: 2019-06-17 09:20
+Date: 2019-06-17 21:20
 Category: Tech
 Tags: [emberjs, emberjs2019, TypeScript, JavaScript, open-source software]
 Series:
@@ -18,8 +18,8 @@ Over the last year, the Ember community has steadily delivered on the vision we 
 
 So… what should we tackle next? This year, I have only two parts, unlike [last year’s four][emberjs2018] (and I’m sneaking them in just under the wire, as today is the deadline for entries!):
 
-- [Part 1: <b>Let’s finish modernizing the Ember programming model!</b>][part-1]
-- [Part 2 (this post): <b>Let’s make TypeScript a first-class citizen of the Ember ecosystem.</b>][part-2]
+- <b>Part 1:</b> [Let’s finish modernizing the Ember programming model!][part-1]
+- <b>Part 2 (this post):</b> [Let’s make TypeScript a first-class citizen of the Ember ecosystem.</b>][part-2]
 
 [emberjs2018]: https://www.chriskrycho.com/emberjs2018
 [part-1]: https://www.chriskrycho.com/2019/emberjs2019-part-1
