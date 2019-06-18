@@ -49,7 +49,7 @@
 &lt;p&gt;So… what should we tackle next? This year, I have only two parts, unlike &lt;a href="https://www.chriskrycho.com/emberjs2018"&gt;last year’s four&lt;/a&gt; (and I’m sneaking them in just under the wire, as today is the deadline for entries!):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.chriskrycho.com/2019/emberjs2019-part-1"&gt;Part 1 (this post): &lt;b&gt;Let’s finish modernizing the Ember programming model!&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2019/emberjs2019-part-2"&gt;Part 2: &lt;b&gt;Let’s make TypeScript a first-class citizen of the Ember ecosystem.&lt;/b&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.chriskrycho.com/2019/emberjs2019-part-2"&gt;Part 2: Let’s make TypeScript a first-class citizen of the Ember ecosystem.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr /&gt;
 &lt;p&gt;The Octane Edition represents the &lt;em&gt;delivery&lt;/em&gt; of several years worth of work and experimentation. It represents a willingness to say “no” to many good efforts and things Ember needs to continue succeeding. All of that is &lt;em&gt;very&lt;/em&gt; much to the good! It’s precisely what I and many others called for last year.&lt;/p&gt;
