@@ -1,7 +1,7 @@
 ---
 Title: "#EmberJS2019, Part 2"
 Subtitle: Let’s make TypeScript a first-class citizen of the Ember ecosystem.
-Date: 2019-06-17 09:20
+Date: 2019-06-17 21:20
 Category: Tech
 Tags: [emberjs, emberjs2019, TypeScript, JavaScript, open-source software]
 Series:
