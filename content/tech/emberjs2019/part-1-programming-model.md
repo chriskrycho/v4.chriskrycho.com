@@ -49,7 +49,7 @@ The Ember Router was years ahead of its time, and it remains very solid and reli
 
 [swiftui]: https://developer.apple.com/xcode/swiftui/
 
-[^swiftui]: You can expect to hear a *lot* more from me about Swift UI in this space, both in a general sense *and* as it relates to Ember. There are some fascinating points of contact between the two programming models!
+[^swiftui]: You can expect to hear a *lot* more from me about Swift <abbr title="user interface">UI</abbr> in this space, both in a general sense *and* as it relates to Ember. There are some fascinating points of contact between the two programming models!
 
 It’s not that controllers are *bad*, exactly. It’s that they don’t *fit* with the rest of the framework at this point. They’re long-lived singletons (like services) but serve as backing classes for templates (like components). They are eagerly instantiated as soon as a `LinkTo` component with references them is instantiated, but not *set up* until the app transitions to the route associated with them. They’re required if you want to use query parameters, and query parameters don’t work with Ember’s “data down, actions up” paradigm… pretty much at all.
 
