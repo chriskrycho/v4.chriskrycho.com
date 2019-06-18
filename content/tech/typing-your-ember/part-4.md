@@ -7,6 +7,9 @@ Tags: [emberjs, typescript, typing-your-ember]
 Category: Tech
 Summary: >
    In the last post, I mentioned putting your business logic outside Ember's tools and treating it as plain-old TypeScript. Here's what that might look like.
+Series:
+    Title: Typing Your Ember
+    Part: 4
 
 ---
 
@@ -82,7 +85,7 @@ export default Component.extend({
 })
 ```
 
-You might wonder why we'd do this instead of using an `Ember.Service`. In the above example, I could of course make `Num` a service and inject it... 
+You might wonder why we'd do this instead of using an `Ember.Service`. In the above example, I could of course make `Num` a service and inject it...
 
 ```typescript
 import Component from '@ember/component';

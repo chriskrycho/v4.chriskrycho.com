@@ -5,7 +5,9 @@ Subtitle: >
 Date: 2018-01-25 07:00
 Modified: 2018-07-10 20:00
 Category: Tech
-Series: Typing Your Ember
+Series:
+    Title: Typing Your Ember—Update
+    Part: 3
 Tags: [TypeScript, emberjs, typing-your-ember]
 slug: typing-your-ember-update-part-3
 Summary: >

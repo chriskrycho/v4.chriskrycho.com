@@ -4,6 +4,9 @@ Subtitle: Embracing the Ecosystem
 Category: Tech
 Tags: [emberjs, javascript, typescript, emberjs2018]
 Date: 2018-05-29 07:45
+Series:
+    Title: EmberJS2018
+    Part: 4
 Summary: >
     We need to shift from a posture of defensiveness about Ember.js to one of embracing the ecosystem, and embracing our role in the ecosystem.
 ---
