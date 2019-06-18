@@ -4,7 +4,9 @@ Subtitle: How do things look in early 2018? Pretty good, actually!
 Date: 2018-01-22 07:10
 Modified: 2018-07-10 20:00
 Category: Tech
-Series: Typing Your Ember
+Series:
+    Title: Typing Your Ember—Update
+    Part: 1
 Tags: [TypeScript, emberjs, typing-your-ember]
 slug: typing-your-ember-update-part-1
 Summary: >

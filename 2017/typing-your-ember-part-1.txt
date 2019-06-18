@@ -3,7 +3,9 @@ Title: Typing Your Ember, Part 1
 Subtitle: Set your Ember.js project up to use TypeScript.
 Category: Tech
 Tags: [typescript, emberjs, typing-your-ember]
-Series: Typing Your Ember
+Series:
+    Title: Typing Your Ember
+    Part: 1
 Date: 2017-05-05 00:10
 Slug: typing-your-ember-part-1
 Summary: >

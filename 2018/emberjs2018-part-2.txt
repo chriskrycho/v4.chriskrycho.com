@@ -5,6 +5,9 @@ Tags: [emberjs, javascript, typescript, emberjs2018]
 Category: Tech
 Slug: emberjs2018-part-2
 Date: 2018-05-18 22:00
+Series:
+    Title: EmberJS2018
+    Part: 2
 Summary: >
     A project is only as good as its documentation. Ember’s documentation has come a long way… but it still has a long way to go, and it's essential for helping Ember thrive.
 

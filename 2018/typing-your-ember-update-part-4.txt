@@ -4,7 +4,9 @@ Subtitle: Using Ember Data, and service and controller injections improvements.
 Date: 2018-02-08 07:30
 Modified: 2018-07-10 20:00
 Category: Tech
-Series: Typing Your Ember
+Series:
+    Title: Typing Your Ember—Update
+    Part: 4
 Tags: [TypeScript, emberjs, typing-your-ember]
 slug: typing-your-ember-update-part-4
 Summary: >

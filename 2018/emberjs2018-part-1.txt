@@ -6,6 +6,9 @@ Category: Tech
 Slug: emberjs2018-part-1
 Date: 2018-05-11 09:30
 Modified: 2018-05-11 20:45
+Series:
+    Title: EmberJS2018
+    Part: 1
 Summary: >
     We don’t need more new features this year. We need to ship the things we already have in progress.
 ---

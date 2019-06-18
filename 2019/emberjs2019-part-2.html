@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>#EmberJS2019, Part 2 &middot; Chris Krycho</title>
+    <meta name="description" content="Let’s make TypeScript a first-class citizen of the Ember ecosystem. There’s a lot already done, but a lot left to do!"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2019/emberjs2019-part-2.html"/>
+    <meta property="og:title" content="#EmberJS2019, Part 2"/>
+    <meta property="og:description" content="Let’s make TypeScript a first-class citizen of the Ember ecosystem. There’s a lot already done, but a lot left to do!"/>
+        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="#EmberJS2019, Part 2"/>
+    <meta name="twitter:description" content="Let’s make TypeScript a first-class citizen of the Ember ecosystem. There’s a lot already done, but a lot left to do!"/>
+        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">Blog</a></li>
+                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://www.chriskrycho.com/now">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="emberjs emberjs2019 typescript javascript open-source-software tech">
+
+    <header>
+<h1>#EmberJS2019, Part 2</h1>
+<h2>Let’s make TypeScript a first-class citizen of the Ember ecosystem.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://www.chriskrycho.com/2019/emberjs2019-part-2.html" title="#EmberJS2019, Part 2"><i class="fa fa-fw fa-link"></i></a>June 17, 2019</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/emberjs/">#emberjs</a><a class="hashtags" href="http://www.chriskrycho.com/emberjs2019/">#emberjs2019</a><a class="hashtags" href="http://www.chriskrycho.com/javascript/">#javascript</a><a class="hashtags" href="http://www.chriskrycho.com/open-source-software/">#open-source software</a><a class="hashtags" href="http://www.chriskrycho.com/typescript/">#typescript</a></span><span><a href="http://www.chriskrycho.com/2019/emberjs2019-part-2.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p>Over the last year, the Ember community has steadily delivered on the vision we all traced out in last year’s #EmberJS2018 and Roadmap <abbr title="Request for Comments">RFC</abbr> process, culminating with the shipping-very-soon-now <a href="https://emberjs.com/editions/octane/">Ember Octane Edition</a>. (All the pieces are pretty much done and are either on stable or will be shortly; we just need another <abbr title="long term support">LTS</abbr> release before we cut a full new edition!)</p>
+<p>So… what should we tackle next? This year, I have only two parts, unlike <a href="https://www.chriskrycho.com/emberjs2018">last year’s four</a> (and I’m sneaking them in just under the wire, as today is the deadline for entries!):</p>
+<ul>
+<li><a href="https://www.chriskrycho.com/2019/emberjs2019-part-1">Part 1: <b>Let’s finish modernizing the Ember programming model!</b></a></li>
+<li><a href="https://www.chriskrycho.com/2019/emberjs2019-part-2">Part 2 (this post): <b>Let’s make TypeScript a first-class citizen of the Ember ecosystem.</b></a></li>
+</ul>
+<hr />
+<p>For the last two and a half years, I have been working off and on towards making TypeScript viable in Ember apps and addons. I was delighted when others came along to help pick up the load, and we’ve <a href="https://www.chriskrycho.com/2019/emberconf-2019-typed-ember-team-report.html">charted a course</a> for what we’d like to do over the year ahead. The major priorities we identified all point at what I’ve wanted since I started down this road back at the very end of 2016: for TypeScript to be a first-class citizen in the Ember ecosystem. Here’s my roadmap for how we get there. (Note that here I’m speaking only for myself—neither for the Typed Ember team nor for LinkedIn!)</p>
+<section id="the-roadmap" class="level2">
+<h2>The Roadmap</h2>
+<section id="execute-on-our-priorities" class="level3">
+<h3>1. Execute on Our Priorities</h3>
+<p>All of us want this to happen. It’s not yet clear what all of our priorities will be in our jobs over the back half of 2019—but if we can, we’d like to see those efforts across the line.</p>
+<p>The TypeScript team has eased one of our heavy burdens, by investing in performance monitoring infrastructure over the course of this year and paying close attention to how their changes affect us as well as other TypeScript consumers. We’re deeply appreciative! But there’s still a lot of work to be done that just needs time to actually do the work—reducing churn in type definitions, building type-checked templates, and improving our documentation.</p>
+<p>None of those are insurmountable by any stretch. But they’d also be far likelier to happen if they were concretely identified as priorities for Ember as a whole, and we had commitment from the community to help!</p>
+<p>To briefly summarize <a href="https://www.chriskrycho.com/2019/emberconf-2019-typed-ember-team-report.html">those priorities</a> again:</p>
+<ul>
+<li><p>We need to make it so that consumers of our type definitions do not face breakage from updates to Ember’s types <em>or</em> TypeScript definitions. We already worked out a basic strategy to solve this problem, and I’ve done further exploration to validate that with key stakeholders of large apps (both TypeScript users and apps which <em>want</em> to use TypeScript) and core Ember contributors… but none of us have had time since EmberConf to write out the strategy as a Typed Ember <abbr title="Request for Comments">RFC</abbr>, much less to do the actual implementation work.</p></li>
+<li><p>We need to make templates type-aware and type-safe. As fantastic as the experience of writing Glimmer components is—and I genuinely do love it!—it’ll be an order of magnitude better when you get autocomplete from your editor as soon as you type <code>&lt;SomeComponent @</code>… and see the names of the valid arguments to a <code>SomeComponent</code> and the types of things you can pass to them. Everyone who has used TSX in a well-typed React app knows just how good this can be. We can make the experience equally great in Ember, while maintaining the authoring and performance advantages of separate templates. Again: we know how to do this (and the TypeScript team is also working on things which may make it even better for us). We just need the time allocated to take the work from prototype to ready-for-real-world-use.</p></li>
+<li><p>We need to dramatically expand the documentation we provide. Right now, ember-cli-typescript provides a minimal (and very useful!) set of docs. It’s enough to get you <em>started</em>, and if you’re already comfortable with TypeScript you’ll do all right. However, we’d love to provide helpful guides that show people not just the <em>mechanics</em> of using TypeScript with an Ember app, but best practices and techniques and the happy path. There’s a world of difference between being able to run <code>ember install ember-cli-typescript</code> successfully and being able to author an app or addon in TypeScript successfully, and we need to bridge that gap for successful ecosystem-wide adoption!</p></li>
+</ul>
+</section>
+<section id="type-the-ecosystem" class="level3">
+<h3>2. Type the Ecosystem</h3>
+<p>We also need to do the work—and this simply <em>cannot</em> be done solely by the handful of us that make up the core team—to get types in place for the whole of the Ember ecosystem. Two years ago, I started drafting a blog post outlining a quest to type the ecosystem. I rewrote a good chunk of it last year. I even began working on a draft of the quest in our repository in 2018! But we haven’t actually done it, and while a handful of important addons do now have types, (a) most still don’t, and (b) many of those which <em>do</em> have type definitions could use further iteration to tighten them up to make them more reliable or more useful.</p>
+<p>I <em>hope</em> to actually open that quest sometime during the third quarter of this year. If things go as I hope, I will be doing some of that work myself, and I will be building documentation and training materials for others so <em>they</em> can see how to do it, and I will be available for code reviews on conversion efforts. I cannot guarantee that by any stretch—but it is my fervent hope, and there is very good reason to think it may actually come to pass!</p>
+<p>In many ways, this also hinges on our ability to provide a good story for reducing churn in type definitions. Just as it’s important that we make Ember’s <em>own</em> types stable for consumers, it’s also important that we help addon developers provide the same kinds of guarantees for <em>their</em> consumers. The entire Ember community takes SemVer seriously, and that means the tools have to support that.</p>
+</section>
+<section id="define-embers-typescript-story" class="level3">
+<h3>3. Define Ember’s TypeScript Story</h3>
+<p>If we manage to execute on all the priorities outlined above, then there’s one last step for making TypeScript an official part of Ember’s story: an <abbr title="Request for Comments">RFC</abbr> defining <em>exactly</em> how Ember can officially support TypeScript—including two major commitments:</p>
+<ul>
+<li>shipping its own type definitions, with a well-considered approach to SemVer and TypeScript</li>
+<li>considering TypeScript a <em>peer</em> to JavaScript in <abbr title="Application Programming Interface">API</abbr> design decisions</li>
+</ul>
+<p>I have an basic frame in mind for how we tackle both of those. The first is by far the more important of the two; the latter is already happening in an <i>ad hoc</i> way and merely requires the former before it can be formalized. But getting to the point where Ember can ship its own type definitions while upholding its semantic versioning commitments <em>and</em> taking advantage of the advances always happening with TypeScript itself is a large and non-trivial task.</p>
+<p>It means a substantial amount of work within the Ember codebase. It means building new tooling for Ember’s core development process—so that the experience of working on Ember itself can remain ever-more productive even as we make sure that the types published for consumers are reliable, accurate, and stable. It means investing in both further education of the community and more static analysis tooling, to make sure that breaking <em>type</em>-level changes are not introduced accidentally.</p>
+<p>These efforts are worth the investment they will require, but they <em>are</em> serious efforts.</p>
+</section>
+</section>
+<section id="why-it-matters" class="level2">
+<h2>Why It Matters</h2>
+<p>This is not just me speaking as TypeScript fanboy and promoter. These things matter for TypeScript consumers of Ember—and they do, profoundly. But I would not suggest even that <abbr title="Request for Comments">RFC</abbr> for official support merely to that end. The TypeScript user community in Ember has done extremely well to date <em>without</em> that kind of official commitment, and could continue to do so (as do many other communities in the broader JavaScript ecosystem).</p>
+<p>Why, then, do I suggest we make this not just a commitment for our little informal team but for the Ember community as a whole? Because while TypeScript users will benefit the <em>most</em> from these improvements, JavaScript developers will <em>also</em> benefit from them.</p>
+<p>When both Ember core and every major addon in the Ember ecosystem has top-notch types available, <em>every</em> other app and addon author will be able to take advantage of those types, courtesy of the integration offered by TypeScript in every major editor. Whether they’re using Vim or Visual Studio, Ember developers will be able to get rich documentation, suggestions, and inline errors—even for their templates! This can be a massive win for developer productivity throughout the ecosystem. Investing to make TypeScript a first-class citizen fo the Ember ecosystem will make the experience of authoring Ember apps and libraries better for <em>everyone</em>. So let’s do it!</p>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+    <h3>Support Me</h3>
+    <ul class='icons'>
+        <li><a href="https://patreon.com/chriskrycho"><i class='fa fa-fw fa-money'></i>Patreon</a></li>
+        <li><a href="https://cash.me/$chriskrycho"><i class='fa fa-fw fa-usd'></i>Cash.me</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
+        <li>Blog: <a href="http://www.chriskrycho.com/2019/from-my-sent-folder-on-social-media-tradeoffs.html">From My Sent Folder: On Social Media Tradeoffs
+</a></li>
+        <li>Tech: <a href="http://www.chriskrycho.com/2019/emberjs2019-part-1.html">#EmberJS2019, Part 1</a></li>
+        <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
