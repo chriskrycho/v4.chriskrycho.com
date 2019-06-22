@@ -1,8 +1,11 @@
+---
 Title: Don't Be Rude
-Subtitle: Or: Why I Won't Be Upgrading to Billings Pro
+Subtitle: >
+    Or: Why I Won't Be Upgrading to Billings Pro
 Author: Chris Krycho
 Date: 2014-07-12 15:30
 Summary: Customer service matters. In this post, I explain how I bid a company adieu because they talked down to me. Don&lsquo;t be like them.
+---
 
 ###### Note
 I have left the original post here as I wrote it, but there is an important
