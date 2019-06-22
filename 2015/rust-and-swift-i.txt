@@ -7,7 +7,7 @@ Tags: [listicles, programming languages, rust, swift, rust-and-swift]
 Series:
   Title: Rust and Swift
   Part: 1
-modified: 2015-09-07 13:45
+modified: 2019-06-22 10:55
 ...
 
 <i class=editorial>I started writing these responses in a Slack channel of developers I participate in as I worked through the [Swift][Swift] [book][book]. I realized after a bit that it would make a better blog post than chat room content, so here we are. This is all entirely off-the-cuff: me just thinking out loud as I read; this is by no means expert opinion.</i>

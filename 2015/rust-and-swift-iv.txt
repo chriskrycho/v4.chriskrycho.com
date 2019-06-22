@@ -4,6 +4,7 @@ Subtitle: Language design trade-offs, highlighted by string manipulation.
 Category: Tech
 Tags: [programming languages, rust, swift, rust-and-swift]
 Date: 2015-09-10 21:05
+modified: 2019-06-22 10:55
 Series:
   Title: Rust and Swift
   Part: 4

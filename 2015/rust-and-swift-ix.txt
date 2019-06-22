@@ -1,11 +1,11 @@
 ---
 Title: Rust and Swift (ix)
 Subtitle: >
-    Sum types (`enum`s) and more on pattern matching
+    Sum types (<code>enum</code>s) and more on pattern matching
 Category: Tech
 Tags: [software development, listicles, rust, swift, rust-and-swift]
 Date: 2015-11-09 22:20
-Modified: 2016-01-02 21:54
+modified: 2019-06-22 10:55
 Series:
   Title: Rust and Swift
   Part: 9
