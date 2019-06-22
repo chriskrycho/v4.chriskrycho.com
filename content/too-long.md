@@ -1,7 +1,9 @@
+---
 Title: The Long Race
 Author: Chris Krycho
 Date: 2014-05-24 00:07
 Tags: [software development, family, fitness]
+---
 
 It has been too long since I have written anything---too long not for my
 audience (small as it is), but for my soul. The last few weeks of class were of

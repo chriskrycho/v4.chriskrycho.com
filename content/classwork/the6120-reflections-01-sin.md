@@ -1,3 +1,4 @@
+---
 Title: What Was Their Sin?
 Author: Chris Krycho
 Date: 2014-01-25 08:00
@@ -8,6 +9,7 @@ Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
+---
 
 As Christians, we all recognize that Adam and Eve's first sin in the garden of
 Eden prompted the catastropic Fall of all humanity, and that their eating of the

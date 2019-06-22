@@ -1,7 +1,10 @@
+---
 Title: Patriotism and the Church
-Subtitle: Or: Why A Fourth of July Service is a Bad Plan
+Subtitle: >
+    Or: Why A Fourth of July Service is a Bad Plan
 Author: Chris Krycho
 Date: 2014-07-04 11:30
+---
 
 A few days ago, Trevin Wax shared a [thoughtful article][wax] on younger
 evangelicals' discomfort with patriotic services, noting:
@@ -10,7 +13,7 @@ evangelicals' discomfort with patriotic services, noting:
 > have served their country well – heroes who put themselves in harm’s way for
 > the good of their neighbors. They are patriotic citizens who love their
 > country and don’t want to be seen as contributing to cynicism or apathy.
-> 
+>
 > On the other hand, pastors express reservations about incorporating patriotic
 > songs and anthems into a worship service. They worry that too many people are
 > already confused about the relationship between Christianity and the culture,
@@ -29,7 +32,7 @@ read it. However, in his final point, he argued:
 > Some younger evangelicals see any patriotic expression as a compromise with
 > worldly power. Their approach is to take the flag out of the sanctuary, never
 > sing a patriotic song, and never mention a patriotic holiday.
-> 
+>
 > I think this overreaction has unfortunate and unintended repercussions. It
 > lends itself to a Gnostic idea that downplays our embodied state (as humans)
 > within a state (a nation). We are rooted in time and place, and this is

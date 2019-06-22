@@ -1,3 +1,4 @@
+---
 Title: Right Standing Before God
 Summary: Any discussion of the work of God in Christ has to include the idea of justification. It is a central theme in Bible's picture of salvation.
 Author: Chris Krycho
@@ -9,6 +10,7 @@ Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
+---
 
 Any discussion of the work of God in Christ has to include the idea of
 justification: it is an important throughout the Bible, and is especially

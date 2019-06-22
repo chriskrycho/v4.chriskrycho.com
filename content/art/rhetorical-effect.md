@@ -1,7 +1,9 @@
+---
 Title: I Wrote It Wrong
 Author: Chris Krycho
 Date: 2014-07-12 20:07
 Summary: A few lessons I learned from a previous blog post&mdash;rhetorical effectiveness in writing is a non-trivial endeavor to say the least.
+---
 
 I wrote a [blog post][post] earlier, and it seems I got it wrong (see the
 [addendum][edit] at the end of the post). That is always an unpleasant
@@ -12,7 +14,7 @@ experience, to say the least.
 
 The one upside to this whole affair? I took away two important lessons: The
 first was a reminder to read others generously, even when frustrated with
-them---a point I spelled out a bit in my [edit-and-addendum][edit] to the 
+them---a point I spelled out a bit in my [edit-and-addendum][edit] to the
 original post. The other about the effect of certain rhetorical structures in my
 writing. The *idea* I had here was good (even if I may have misread the trigger
 for writing the post in the first place), but it was badly executed, and there

@@ -1,3 +1,4 @@
+---
 Title: The Mother of God
 Author: Chris Krycho
 Date: 2014-02-04 08:30
@@ -8,6 +9,7 @@ Tags: [M. Div., SEBTS]
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
 Template: formats/class
+---
 
 Is it right to call Mary the Mother of God? The historic, orthodox answer is a
 resounding "yes"---though a clearly qualified and well articulated "yes." This

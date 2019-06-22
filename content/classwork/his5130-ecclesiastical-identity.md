@@ -1,3 +1,4 @@
+---
 Author: Chris Krycho
 Class: Baptist History and Identity
 Professor: Dr. Nathan Finn
@@ -7,8 +8,10 @@ Category: theology
 Tags: [M. Div., SEBTS, papers]
 Title: An Uncomfortable Fit
 Subtitle: A Complex, Post-Denominational Ecclesiastical Identity
-Summary: A Complex, Post-Denominational Ecclesiastical Identity: or, how I'm still just a Presmatic Bapterian.
+Summary: >
+    A Complex, Post-Denominational Ecclesiastical Identity: or, how I'm still just a Presmatic Bapterian.
 Template: formats/class
+---
 
 I grew up in a small, non-denominational, baptistic, charismatic church.
 Speaking in tongues, the use of private prayer languages, claims to words of

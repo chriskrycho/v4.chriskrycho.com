@@ -1,7 +1,8 @@
 ---
 Title: 2019 Colfax Half Marathon
 Slug: colfax-half-marathon
-Subtitle: A mile-high sub-1:30 (despite making some mistakes)!
+Subtitle: >
+    A mile-high sub-1:30 (despite making some mistakes)!
 Date: 2019-05-19 14:30
 Modified: 2019-05-19 20:40
 Category: blog

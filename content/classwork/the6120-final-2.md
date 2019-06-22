@@ -1,3 +1,4 @@
+---
 Author: Chris Krycho
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
@@ -9,6 +10,7 @@ Title: Perfectionism
 Subtitle: An Imperfect Doctrine Of Sanctification
 Summary: The classic Wesleyan doctrine of moral perfectionism in this life is tempting on some fronts&mdash;but profoundly unhelpful.
 Template: formats/class
+---
 
 The theory of perfectionism suggests that believers ultimately come to a point
 in their *present* walk with God where they stop willfully sinning. This stands

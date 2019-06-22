@@ -1,3 +1,4 @@
+---
 Author: Chris Krycho
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
@@ -8,6 +9,7 @@ Tags: [M. Div., SEBTS]
 Title: The Spirit's Work in Conversion (redux)
 Summary: The Spirit brought about the Incarnation, and raised Jesus from the dead; now the Spirit makes the Son's work efficacious in the hearts of believers. The Father originated the work of salvation; the Son was and is the means of salvation; the Spirit is the one who guarantees and accomplishes salvation.
 Template: formats/class
+---
 
 The Holy Spirit's work in conversion, as in all the works of the Spirit, is the
 part of executing the will of the Father in the person of the Son. The Spirit

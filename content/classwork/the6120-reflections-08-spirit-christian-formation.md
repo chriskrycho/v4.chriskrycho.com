@@ -1,3 +1,4 @@
+---
 Title: The Spirit and Christian Formation
 Author: Chris Krycho
 Date: 2014-04-09 09:00
@@ -9,6 +10,7 @@ Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
 Summary: Our focus on the obviously miraculous gifts can blind us to the astounding reality of the role played by the Spirit in our Christian formation.
+---
 
 Discussions of the person of the Holy Spirit in modern Christianity tend to
 focus on the third person of the Trinity's obviously miraculous activity in the

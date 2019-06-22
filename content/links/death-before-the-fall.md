@@ -1,3 +1,4 @@
+---
 Title: Death Before the Fall
 Author: Chris Krycho
 Date: 2014-04-08 19:25
@@ -5,7 +6,9 @@ Link: http://alastairadversaria.wordpress.com/2014/04/08/death-before-the-fall/
 Tags: [links]
 Category: theology
 Template: formats/link
-Summary: Link: In which Alastair Roberts suggests that physical death was not a result of the Fall, but something from which humans were always meant to be saved to something better.
+Summary: >
+    Link: In which Alastair Roberts suggests that physical death was not a result of the Fall, but something from which humans were always meant to be saved to something better.
+---
 
 This bit by Alastair Reynolds is an *excellent* summary of the position to which
 I have slowly come over the last few years of reflection on the question of
@@ -43,5 +46,5 @@ And then from the conclusion, which I positively *loved*:
 > world and to the possibility of death within it, but Christ is the Tree of
 > Life and we have unrestricted access to him. Death is no longer the alienating
 > power that it once was.
- 
+
 This is a great read, start to finish. ["Death Before the Fall"](http://alastairadversaria.wordpress.com/2014/04/08/death-before-the-fall/)

@@ -1,10 +1,13 @@
+---
 Title: The Joy of Good Tools
-Subtitle: Or: How deciding to pay for GitHub made me think about delight.
+Subtitle: >
+    Or: How deciding to pay for GitHub made me think about delight.
 Author: Chris Krycho
 Date: 2015-01-09 18:00
 Summary: I started out with a post on being willing to pay for GitHub. I ended up with a meditation on vocation and delight. It's quite the journey!
 Slug: joy-good-tools
 Tags: [software development, design, joy]
+---
 
 <i class="editorial">Note: This started out as a [series of posts on App.net],
 but as I realized that it was growing a bit, I decided to [take my own advice]
@@ -89,8 +92,8 @@ I have the same experience with a number of other tools I use---[Tower],
 [Byword], and [IntelliJ IDEA] to name just a few. This very post is written in
 Byword, and I'm *happy* about it. I wish I felt that way about every tool I use.
 
-[Tower]://www.git-tower.com 
-[Byword]: //bywordapp.com 
+[Tower]://www.git-tower.com
+[Byword]: //bywordapp.com
 [IntelliJ IDEA]: //www.jetbrains.com/idea/
 
 And this goes beyond software. I have had the same experience driving a car. The
@@ -134,5 +137,5 @@ Whether I succeed or no, at least the bar is set where it ought to be.
     minimalism that is in right now... and missing the mark entirely. *All* of
     their tools are a cluttered mess in the UI/X department.
 
-[^muv]: A "Mom Utility Vehicle", my wry term for "SUV"-type vehicles sitting on 
+[^muv]: A "Mom Utility Vehicle", my wry term for "SUV"-type vehicles sitting on
     standard car chasses.
