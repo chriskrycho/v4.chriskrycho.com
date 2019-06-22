@@ -1,8 +1,10 @@
+---
 Title: Work/Portfolio
 Subtitle: Some of the Things I've Made
 Author: Chris Krycho
 Summary: Web design work by Chris Krycho.
 Slug: work
+---
 
 A sample of the web design work I've done over the last few years:
 

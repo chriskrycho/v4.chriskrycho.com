@@ -1,8 +1,10 @@
+---
 Title: Reflection demands
 Summary: Reflection demands / of its practitioners, like poetry / like painting, toil, dance, or ev’ry art…
 Author: Chris Krycho
 Date: 2015-03-28 07:40
 Tags: [poetry]
+---
 
 | Reflection demands
 |     of its practitioners, like poetry,

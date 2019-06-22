@@ -1,3 +1,4 @@
+---
 Title: Further Upward and Further In
 Summary: The Christian life  the life of growing sanctification&mdash;increasing in Christlikeness and so in humanity as it was meant to be.
 Author: Chris Krycho
@@ -9,6 +10,7 @@ Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
+---
 
 Humanity was meant for something more than its current state. Those of us who
 are in Christ are, by the grace of God, slowly being transformed into that

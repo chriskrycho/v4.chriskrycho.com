@@ -1,3 +1,4 @@
+---
 Title: Wisdom and Folly
 Subtitle: Two Women, Two Ways, Two Houses
 Author: Chris Krycho
@@ -8,6 +9,7 @@ School: Southeastern Baptist Theological Seminary
 Template: formats/class
 Category: theology
 Tags: [M. Div., SEBTS]
+---
 
 The book of Proverbs opens with a lengthy introduction to the topic of wisdom,
 expounding its virtues and necessity and contrasting them with the costs of

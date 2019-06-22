@@ -1,3 +1,4 @@
+---
 Author: Chris Krycho
 Date: 2014-05-11 20:00
 Title: The "New" Covenant
@@ -7,6 +8,7 @@ Tags: [M. Div., SEBTS]
 Template: formats/class
 Professor: Dr. Heath Thomas
 School: Southeastern Baptist Theological Seminary
+---
 
 It is common for pastors, popular teachers, and even some scholars to treat the
 'New Covenant' of Jeremiah 31 as something wholly distinct from the previous

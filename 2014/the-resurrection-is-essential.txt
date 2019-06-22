@@ -1,3 +1,4 @@
+---
 Title: The Resurrection is Essential
 Author: Chris Krycho
 Date: 2014-03-18 08:00
@@ -9,6 +10,7 @@ Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
 Summary: Without the resurrection, we are simply not saved. We are not justified, not delivered from death, and will not be resurrected.
+---
 
 Paul tells us that if Jesus was not raised from the dead, then we are still dead
 in our trespasses (1 Corinthians 15:17). This simple statement uncovers a great

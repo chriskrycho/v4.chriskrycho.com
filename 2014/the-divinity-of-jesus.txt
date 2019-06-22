@@ -1,3 +1,4 @@
+---
 Author: Chris Krycho
 Class: Christian Theology II
 Professor: Dr. Steve McKinion
@@ -8,6 +9,7 @@ Tags: [M. Div., SEBTS]
 Title: The Divinity of Jesus
 Summary: Failing to affirm the divinity of Christ means failing to affirm one of the essentials of the faith. Without Christ's divinity, there is no salvation for any of us.
 Template: formats/class
+---
 
 The divinity of Jesus is and has been from the beginning a core component of
 the Christian faith. There are several reasons why Christians have always

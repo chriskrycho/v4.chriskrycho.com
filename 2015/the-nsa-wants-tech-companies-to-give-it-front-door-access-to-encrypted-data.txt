@@ -1,15 +1,17 @@
+---
 Title: The NSA wants tech companies to give it 'front door' access to encrypted data
 Date: 2015-04-12 13:16
 Link: http://www.theverge.com/2015/4/12/8392769/nsa-front-door-access-encryption-key
 Template: formats/link
 Category: tech
 Tags: [links]
+---
 
 The Verge:
 
 > "I don’t want a back door," Rogers said. "I want a front door. And I want the
 > front door to have multiple locks. Big locks...."
-> 
+>
 > Rogers suggests the adoption of "front door" access will allow for essential
 > security measures while keeping data safe from hackers or an outside attack.
 > But opponents of the idea note that even broken into pieces, a master digital

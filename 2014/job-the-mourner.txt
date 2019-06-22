@@ -1,3 +1,4 @@
+---
 Title: Job&mdash;The Mourner
 Author: Chris Krycho
 Date: 2014-03-11 14:30
@@ -7,6 +8,7 @@ School: Southeastern Baptist Theological Seminary
 Template: formats/class
 Category: theology
 Tags: [M. Div., SEBTS]
+---
 
 The book of Job has most commonly been read as theodicy, i.e. as a defense of
 God's goodness in the face of human suffering and the existence of evil in the

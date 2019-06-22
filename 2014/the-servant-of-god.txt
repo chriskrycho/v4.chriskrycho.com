@@ -1,3 +1,4 @@
+---
 Title: The Servant of God
 Subtitle: Israel, Isaiah, and Jesus Christ
 Author: Chris Krycho
@@ -8,6 +9,7 @@ School: Southeastern Baptist Theological Seminary
 Template: formats/class
 Category: theology
 Tags: [M. Div., SEBTS]
+---
 
 The Servant pictured in Isaiah is one of the most famous images in the Old
 Testament for Christians. The language applied to him in Isaiah 53 in particular

@@ -1,8 +1,10 @@
+---
 Title: Whiplash
 Author: Chris Krycho
 Date: 2014-07-14 23:15
 Tags: [family, Kate]
 Summary: Get a big contract&mdash;jubilation! Watch your daughter almost choke to death&mdash;terror!
+---
 
 I have a pretty severe case of emotional whiplash[^1] at the moment. In the last eight hours, I have gone from jubilant to the most worried I have ever been to simple, utter exhaustion.
 

@@ -1,3 +1,4 @@
+---
 Title: Like His Brothers in Every Way
 Author: Chris Krycho
 Date: 2014-02-11 08:30
@@ -9,6 +10,7 @@ Class: Christian Theology II
 Professor: Dr. Steve McKinion
 School: Southeastern Baptist Theological Seminary
 Template: formats/class
+---
 
 Whether Jesus could have sinned or not is a question to tangle the mind. On the
 one hand, we affirm that he was fully human, and this affirmation binds us to

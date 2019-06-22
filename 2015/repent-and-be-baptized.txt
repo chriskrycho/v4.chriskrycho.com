@@ -1,3 +1,4 @@
+---
 Title: Repent and Be Baptized
 Subtitle: The Theology and Practice of Baptism
 Author: Chris Krycho
@@ -9,6 +10,7 @@ Professor: Dr. Nathan Finn
 School: Southeastern Baptist Theological Seminary
 Tags: [M. Div., SEBTS, papers]
 Summary: Who should be baptized, and how, and by whom? Is rebaptism ever allowed? How does baptism affect church membership or the Lord's Supper?
+---
 
 ## Baptismal Theology and Practice
 
@@ -205,7 +207,7 @@ baptism applied to a believer on a valid profession of faith by a true church
 ought to be respected by other Christian churches.[^16]
 
 Baptismal Practice
----- 
+----
 
 ### Baptism and the Lord's Supper
 

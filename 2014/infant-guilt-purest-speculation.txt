@@ -1,3 +1,4 @@
+---
 Title: Infant Guilt—Purest Speculation
 Author: Chris Krycho
 Date: 2014-02-01 08:30
@@ -8,6 +9,7 @@ Class: Christian Theology II
 School: Southeastern Baptist Theological Seminary
 Professor: Dr. Steve McKinion
 Template: formats/class
+---
 
 Whether people are born guilty of sin, or simply inherit a nature so predisposed
 to sin that the actual act is inevitable has been a much debated topic for
