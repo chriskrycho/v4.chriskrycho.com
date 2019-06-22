@@ -42,7 +42,7 @@ In Rust, `assert!` is a macro, not a function, which is an interesting but perha
 
 In any case, this also highlights another large difference between the two: testing is [front and center][rust-tests] in Rust, and barely receives a mention so far in the Swift book (and isn't in the table of contents). Having language-level support for testing is a big deal.
 
-Language tour and first chapter of the language guide down, my sense is that Swift is a substantially better language than C or C++ (and presumably than Objective C, but since I don't know that language I can't speak to it) for app design, but that Rust is a better language yet. Both a far more modern than their predecessors, but they approach the same problems in surprisingly different ways, relatively similar syntax notwithstanding. So far, I like the Rust approach better.
+Language tour and first chapter of the language guide down, my sense is that Swift is a substantially better language than C or C++ (and presumably than Objective C, but since I don't know that language I can't speak to it) for app design, but that Rust is a better language yet. Both far more modern than their predecessors, but they approach the same problems in surprisingly different ways, relatively similar syntax notwithstanding. So far, I like the Rust approach better.
 
 In particular, more syntax is not my preferred way to tackle these things.
 Providing good language constructs and primitives on which to build seems better in *many* ways:

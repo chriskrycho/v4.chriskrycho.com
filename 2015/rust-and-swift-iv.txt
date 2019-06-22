@@ -1,6 +1,6 @@
 ---
 Title: Rust and Swift (iv)
-Subtitle: Language design tradeoffs, highlighted by string manipulation.
+Subtitle: Language design trade-offs, highlighted by string manipulation.
 Category: Tech
 Tags: [programming languages, rust, swift, rust-and-swift]
 Date: 2015-09-10 21:05
@@ -17,7 +17,7 @@ Series:
 
 Both Swift and Rust directly address the issue of having to worry about memory allocation and safety. They do it in different ways, though: Swift by automatic reference counting, Rust by its concept of ownership. For a lot of day-to-day development, I can see the Swift approach being a win for the same reason a language like Python or Ruby is: having that all handled for you is *nice*. Having the power Rust gives you comes at the price of increased cognitive load from having to reason about ownership.
 
-To put it another way: all programming languages have to make trade offs. Although I like Rust's better than Swift's so far, I've no doubt I will find any number of things to appreciate about Swift over Rust. You can't have everything.
+To put it another way: all programming languages have to make trade-offs. Although I like Rust's better than Swift's so far, I've no doubt I will find any number of things to appreciate about Swift over Rust. You can't have everything.
 
 This caught my attention in part because dealing with things like strings (or other pass-by-value types) in Swift is rather more straightforward than in Rust. The outcomes are much the same, but since *all* `String`s in Swift are passed by value (never by reference), you simply don't have to think about modification---even safe modification!
 
@@ -33,7 +33,7 @@ Actually, on reading further, the way Swift handles Unicode strings is pretty ni
 
 Rust's strings are *good*, but not quite as sophisticated (presumably for simplicity around the memory mapping). All Rust `String` or `str` instances are composed of <abbr>UTF32</abbr> Unicode scalars, encoded as <abbr>UTF8</abbr> sequences. It doesn't have some of the convenience methods Swift does for getting any of the other representations. That said, I expect this should show up rarely if at all in my ordinary usage. Importantly, the fundamental storage is the same: both use scalars.
 
-This was the first section where it didn't feel like Rust was just a clear overall "winner" over Swift. Some of the trade offs between the language designs are more apparent here, and I do appreciate the "ergonomics" of Swift in a number of these things.
+This was the first section where it didn't feel like Rust was just a clear overall "winner" over Swift. Some of the trade-offs between the language designs are more apparent here, and I do appreciate the "ergonomics" of Swift in a number of these things.
 
 ---
 
