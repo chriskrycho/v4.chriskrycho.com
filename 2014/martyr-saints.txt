@@ -1,3 +1,4 @@
+---
 Title: Martyr-Saints
 Date: 2014-02-14 23:55
 Author: Chris Krycho
@@ -6,6 +7,7 @@ Tags: [devotions]
 Passages: Revelation 4–7, Psalm 44
 Template: formats/devotions
 Summary: The kingdom of heaven does not come by accident; it comes because men and women sacrifice their lives and die for the gospel.
+---
 
 As we were praying this evening, I spent a few minutes praying for our brothers
 and sisters in North Korea. I was deeply moved by the reality that they face
@@ -40,7 +42,7 @@ contain some of the most beautiful praises offered to God anywhere in Scripture.
 > | ...
 > | To him who sits on the throne and to the Lamb
 > |     be blessing and honor and glory and might forever and ever!
-> 
+>
 > <p class="citation">(Revelation 5:9b--10,12b, 13b)</p>
 
 Set in the midst of this, and against the backdrop of praise and judgment, is
@@ -72,4 +74,3 @@ delivered from death, for them to remain faithful in the face of such harsh
 persecution, and for their governments to cease thte oppression and the gospel
 to go forth in power. So shall I remembere to do going forward, Lord willing.
 
- 

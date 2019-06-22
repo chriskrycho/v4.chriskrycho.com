@@ -1,3 +1,4 @@
+---
 Title: More Than We Could Have Hoped
 Summary: Hebrews points us to the wonder of what we have as those who live when Christ has already come&mdash;and it is wonderful indeed.
 Author: Chris Krycho
@@ -6,6 +7,7 @@ Template: formats/devotions
 Passages: Psalm 75, Proverbs 17, and Hebrews 4:14&ndash;8:13
 Category: theology
 Tags: [devotions]
+---
 
 The past week was something of a bumpy ride. I got sick---the kind of sick that
 makes you feel terrible and want to do nothing but sleep for days on end. The

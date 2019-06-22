@@ -1,3 +1,4 @@
+---
 Title: Kings in Contrast
 Date: 2014-01-02 21:00
 Author: Chris Krycho
@@ -6,6 +7,7 @@ Category: theology
 Tags: [devotions]
 Passages: 1 Kings 14–18, Psalm 2, Proverbs 2
 Template: formats/devotions
+---
 
 Tonight's reading in 1 Kings, Psalms, and Proverbs had some surprising overlaps.
 The material in 1 Kings covered a series of kings whose courses were largely

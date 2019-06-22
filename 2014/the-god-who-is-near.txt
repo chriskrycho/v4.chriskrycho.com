@@ -1,3 +1,4 @@
+---
 Title: The God Who Is Near
 Date: 2014-02-12 22:40
 Author: Chris Krycho
@@ -6,6 +7,7 @@ Tags: [devotions]
 Passages: 2 John, 3 John, Jude, Psalm 42, Ecclesiastes 11
 Template: formats/devotions
 Summary: For the authors of Psalm 42, God's salvation remained far off in many ways. For us, God's salvation has come, and we participate in him and partake of him.
+---
 
 Psalm 42 comes in three parts: two statements of woe, and a refrain. It is an
 interesting open to the second of five "books" that make up the Psalms, and the
@@ -59,7 +61,7 @@ earth. When the enemies of God's people taunt and say, "Where is your God?"
 9), we know where our God is. He is enthroned; and seated at the right hand of
 that throne; and enthroned in our hearts. He is in all and through all and over
 all. He is near to us, even in the times when he is silent and seems far away.
- 
+
 > | Why are you cast down, O my soul,
 > |     and why are you in turmoil within me?
 > | Hope in God; for I shall again praise him,

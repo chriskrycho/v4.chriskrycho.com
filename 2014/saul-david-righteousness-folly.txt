@@ -1,3 +1,4 @@
+---
 Title: Saul and David/Righteousness and Folly
 Date: 2014-01-11 20:50
 Author: Chris Krycho
@@ -6,6 +7,7 @@ Tags: [devotions]
 Slug: saul-david-righteousness-folly
 Passages: 1 Chronicles 6–10, Psalm 11, Proverbs 11
 Template: formats/devotions
+---
 
 The books of Chronicles serve as something of a parallel and supplementary
 account to the books of 1 and 2 Samuel and 1 and 2 Kings.[^kings] There are a
@@ -54,7 +56,7 @@ days troubled and afraid because he was never secure in Yahweh.
 
 Proverbs 11:28 (ESV) comments:
 
-> | Whoever trusts in his riches will fall,  
+> | Whoever trusts in his riches will fall,
 > |     but the righteous will flourish like a green leaf.
 
 The whole chapter resounds with the contrast between trust in riches or power or

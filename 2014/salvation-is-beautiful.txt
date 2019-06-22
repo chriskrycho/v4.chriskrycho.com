@@ -1,3 +1,4 @@
+---
 Title: Salvation is Beautiful
 Author: Chris Krycho
 Date: 2014-03-05 23:00
@@ -6,6 +7,7 @@ Tags: [devotions]
 Category: theology
 Passages: Psalm 54, Proverbs 5, and Romans 4–6
 Template: formats/devotions
+---
 
 Romans is just flat *packed* with theological profundities. Word for word, I am
 hard pressed to think of any other document with such depths. Not for nothing

@@ -1,9 +1,11 @@
+---
 Title: “Optimal Equivalence”
 Subtitle: A Few Thoughts on the Holman Christian Standard Bible
 Author: Chris Krycho
 Date: 2015-02-28 20:30
 Modified: 2015-03-16 20:30
 Slug: hcsb-thoughts
+---
 
 Over the past few months, I have been doing a read-the-Bible-in-90-days plan,
 and decided to take the opportunity to read through the Holman Christian

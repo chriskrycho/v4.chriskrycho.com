@@ -1,3 +1,4 @@
+---
 Title: From Creation to Consummation
 Subtitle: A Meditation on Psalm 24
 Summary: The structure of Psalm 24 is not obvious—but the journey is profoundly rewarding. David beautifully leads us from creation to  consummation.
@@ -7,6 +8,7 @@ Category: theology
 Tags: [devotions]
 Passages: Nehemiah 1–5, Psalm 24, Proverbs 24
 Template: formats/devotions
+---
 
 Some texts are a bit more mysterious than they might at first appear. One such
 is Psalm 24, at least for me. The poem has three basic sections:

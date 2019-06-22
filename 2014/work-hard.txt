@@ -1,3 +1,4 @@
+---
 Title: Work Hard!
 Subtitle: (God is at work in you.)
 Author: Chris Krycho
@@ -7,6 +8,7 @@ Tags: [devotions]
 Category: theology
 Passages: Psalm 55, Proverbs 7, and Romans 13–16
 Template: formats/devotions
+---
 
 Paul doesn't pull punches, and he is not interested in making things easy on
 Christians. As soon as he has finished his theological foundation in Romans---

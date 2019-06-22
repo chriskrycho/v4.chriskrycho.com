@@ -1,3 +1,4 @@
+---
 Title: The City of God
 Summary: Meditating on Zion&mdash;that is, on Jerusalem both old and new&mdash;does not seem at first blush a fertile ground for worship. But that is exactly where the Psalmist takes us in Psalm 48.
 Date: 2014-02-24 07:50
@@ -6,6 +7,7 @@ Category: theology
 Tags: [devotions]
 Passages: Acts 4–8 and Psalm 48
 Template: formats/devotions
+---
 
 As I work through the Psalms after having covered them in my Old Testament
 survery class, a few themes are much more apparent to me than they had been
@@ -17,13 +19,13 @@ on earth---a striking thought!) But the city does come in for special notice
 because Yahweh dwells there, and does so often throughout the Old
 Testament.[^nt]
 
-> | Great is the <span class=smcp>Lord</span> and greatly to be praised  
-> |     in the city of our God!  
-> | His holy mountain, beautiful in elevation,  
-> |     is the joy of all the earth,  
-> | Mount Zion, in the far north,  
+> | Great is the <span class=smcp>Lord</span> and greatly to be praised
+> |     in the city of our God!
+> | His holy mountain, beautiful in elevation,
+> |     is the joy of all the earth,
+> | Mount Zion, in the far north,
 > |     the city of the great King.
-> 
+>
 > (Psalm 48:1–2)
 
 The temple of God, his dwelling place with and among us, comes up over and over

@@ -1,3 +1,4 @@
+---
 Title: A Mighty Change
 Summary: The work done in our hearts by the Holy Spirit is nothing short of breathtaking.
 Date: 2014-02-19 23:12
@@ -6,6 +7,7 @@ Category: theology
 Tags: [devotions]
 Passages: Acts 1–4 and Psalm 47
 Template: formats/devotions
+---
 
 One of the most remarkable transformations in history comes in the beginning of
 the second chapter of Acts. A group of obviously-still-confused men and women

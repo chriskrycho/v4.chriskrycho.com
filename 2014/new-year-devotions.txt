@@ -1,3 +1,4 @@
+---
 Title: A New Year of Devotions
 Date: 2014-01-01 23:25
 Author: Chris Krycho
@@ -6,6 +7,7 @@ Category: theology
 Tags: [devotions]
 Passages: 1 Kings 9–13, Psalm 1, Proverbs 1
 Template: formats/devotions
+---
 
 I have found, over the years, that writing is a remarkably helpful tool for
 thinking through the things I am learning. I have also found that I am often

@@ -1,11 +1,14 @@
+---
 Title: We Are Not Alone
-Summary: Psalms 77 and 78 help us see how to respond to suffering and pain in our lives: by looking (even when it is hardest to do so) to the God who made everything and who has saved his people.
+Summary: >
+    Psalms 77 and 78 help us see how to respond to suffering and pain in our lives: by looking (even when it is hardest to do so) to the God who made everything and who has saved his people.
 Author: Chris Krycho
 Date: 2014-04-23 06:52
 Template: formats/devotions
 Passages: Psalm 77&ndash;78
 Category: theology
 Tags: [devotions]
+---
 
 I came to the end of Psalm 77 and knew that the editors of the Psalms must have
 had the same feeling I did. "And then what happened?"
@@ -20,10 +23,10 @@ questions of God.
 > |     my soul refuses to be comforted.
 > | When I remember God, I moan;
 > |     when I meditate, my spirit faints. Selah
-> | 
+> |
 > | You hold my eyelids open;
 > |     I am so troubled that I cannot speak.
-> 
+>
 > (Psalm 77:1--4 ESV)
 
 I think every person who lives long enough comes to know this feeling. We face

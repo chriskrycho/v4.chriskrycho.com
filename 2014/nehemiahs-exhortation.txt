@@ -1,3 +1,4 @@
+---
 Title: Nehemiah's Exhortation
 Summary: Some thoughts on the way Nehemiah exhorted the people to follow God, and on expositional preaching.
 Date: 2014-01-25 22:30
@@ -6,6 +7,7 @@ Category: theology
 Tags: [devotions]
 Passages: Nehemiah 6--8, Psalm 25, Proverbs 25
 Template: formats/devotions
+---
 
 This week, I did most of my devotional reading early in the morning. Though I
 have gone back and forth on the time of day in which I am best able to spend

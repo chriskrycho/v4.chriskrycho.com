@@ -1,3 +1,4 @@
+---
 Title: Generation by Generation
 Date: 2014-01-21 12:05
 Author: Chris Krycho
@@ -5,6 +6,7 @@ Category: theology
 Tags: [devotions]
 Passages: 2 Chronicles 28–36, Psalm 21, Proverbs 21
 Template: formats/devotions
+---
 
 The concluding chapters of 2 Chronicles are just as mixed a bag as all the
 chapters that preceded them. Over and over again, kings rise and fall;

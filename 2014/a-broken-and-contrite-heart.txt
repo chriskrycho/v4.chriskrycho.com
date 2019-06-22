@@ -1,12 +1,15 @@
+---
 Title: A Broken and Contrite Heart
 Subtitle: Psalm 51 as God's self-revelation.
-Summary: Psalm 51 is often taken as a model for our own prayers of repentance. It is that, but it is much more: it is the self-revelation of God—and it is amazing.
+Summary: >
+    Psalm 51 is often taken as a model for our own prayers of repentance. It is that, but it is much more: it is the self-revelation of God—and it is amazing.
 Date: 2014-02-27 07:40
 Author: Chris Krycho
 Category: theology
 Tags: [devotions]
 Passages: Acts 15–17 and Psalm 51
 Template: formats/devotions
+---
 
 Most often when reading through the Psalms in the past, I have taken them
 primarily as a model for my own interactions with God---not least when coming to
