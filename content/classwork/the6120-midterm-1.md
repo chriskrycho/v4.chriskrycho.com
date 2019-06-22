@@ -1,3 +1,4 @@
+---
 Title: In the Day That You Eat of It
 Author: Chris Krycho
 Class: Christian Theology II
@@ -8,6 +9,7 @@ Category: theology
 Tags: [M. Div., SEBTS]
 Summary: God told Adam that if he ate of the tree of the knowledge of good and evil he would die on that day. Since Adam did not physically die that day, God must have made a mistake, lied, changed his mind—or been speaking of something other than physical death.
 Template: formats/class
+---
 
 When God placed Adam in the Garden of Eden, he told him he could eat freely of
 any fruit in the garden except one: the tree of the knowledge of good and evil.
