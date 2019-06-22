@@ -1,3 +1,4 @@
+---
 Title: Halfway to His Own Thesis
 Subtitle: A Review of <cite>Five Smooth Stones for Pastoral Work</cite>
 Date: 2014-04-12 08:00
@@ -8,8 +9,9 @@ Professor: Dr. Heath Thomas
 School: Southeastern Baptist Theological Seminary
 Category: Theology
 Tags: [M. Div., SEBTS, book reviews]
+---
 
-_Five Smooth Stones for Pastoral Work_, by Eugene H. Peterson. Grand Rapids:
+<cite>Five Smooth Stones for Pastoral Work</cite>, by Eugene H. Peterson. Grand Rapids:
 Eerdmans, 1980. 241 pp. $20.
 
 ## Overview

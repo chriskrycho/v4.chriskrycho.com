@@ -1,3 +1,4 @@
+---
 Title: What He Did Not Assume
 Author: Chris Krycho
 Class: Christian Theology II
@@ -7,6 +8,7 @@ Date: 2014-03-05 15:30
 Category: theology
 Tags: [M. Div., SEBTS]
 Summary: Nearly every major heresy the church confronts (and no few of its littler skirmishes) revolve around issues of the nature of the Incarnate Son of God.
+---
 
 There have been many broken and flawed Christologies over the years, and in
 truth many of them continue to crop up in mainstream evangelicalism. Nearly

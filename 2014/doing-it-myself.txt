@@ -1,8 +1,10 @@
+---
 Title: Doing It Myself
 Date: 2014-03-21 22:14
 Author: Chris Krycho
 Tags: [software development]
 Summary: Working with Pelican&mdash;the static site generator I use for my blog currently&mdash;has reinforced my desire to write my own such software. Sometimes, you just have to do it yourself.
+---
 
 Last summer, I started work on a project I named [Step Stool][ss]---aiming to
 make a static site generator that would tick of all the little boxes marking my
@@ -55,7 +57,7 @@ And yes, I do have a couple other projects on my plate as well---contributions
 to the Smartypants and Typogrify modules, my own [Spacewell typography project][spacewell],
 and quite possibly a [Markdown Poetry extension ][md-poetry]. But I would like
 very much to just get back to doing this myself. There is freedom in rolling my
-own solution to things. I will not always have time to do these kinds of things; 
+own solution to things. I will not always have time to do these kinds of things;
 I figure I should do them when I can.
 
 So here's to [Step Stool][ss], and---more importantly---to writing your own
