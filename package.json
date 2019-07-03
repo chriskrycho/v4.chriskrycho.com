@@ -1,41 +1,41 @@
 {
-  "name": "lib",
-  "license": "MIT OR CC-BY-4.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chriskrycho/v3.chriskrycho.com"
-  },
-  "scripts": {
-    "bundle": "node bundle.js"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "@babel/preset-env": "^7.1.0",
-    "eslint": "^5.6.1",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "prettier": "1.14.3",
-    "rollup": "^0.66.4",
-    "rollup-plugin-babel": "^4.0.3",
-    "@babel/core": "7.1.2"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
-  "browserslist": [
-    "last 2 versions",
-    "> 1%",
-    "not dead"
-  ],
-  "prettier": {
-    "proseWrap": "preserve",
-    "printWidth": 90,
-    "tabWidth": 3
-  },
-  "toolchain": {
-    "node": "10.15.3",
-    "yarn": "1.15.2"
-  }
+   "name": "lib",
+   "license": "MIT OR CC-BY-4.0",
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/chriskrycho/v4.chriskrycho.com"
+   },
+   "scripts": {
+      "bundle": "node bundle.js"
+   },
+   "devDependencies": {
+      "babel-eslint": "^10.0.1",
+      "@babel/preset-env": "^7.1.0",
+      "eslint": "^5.6.1",
+      "eslint-config-prettier": "^3.1.0",
+      "eslint-plugin-prettier": "^3.0.0",
+      "prettier": "1.14.3",
+      "rollup": "^0.66.4",
+      "rollup-plugin-babel": "^4.0.3",
+      "@babel/core": "7.1.2"
+   },
+   "babel": {
+      "presets": [
+         "@babel/preset-env"
+      ]
+   },
+   "browserslist": [
+      "last 2 versions",
+      "> 1%",
+      "not dead"
+   ],
+   "prettier": {
+      "proseWrap": "preserve",
+      "printWidth": 90,
+      "tabWidth": 3
+   },
+   "toolchain": {
+      "node": "10.15.3",
+      "yarn": "1.15.2"
+   }
 }
