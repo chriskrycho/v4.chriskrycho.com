@@ -115,7 +115,7 @@ Pragmatically, it's also just easier to do and get good help from TypeScript by 
 
 One important thing to note is that this all works best with Ember---by far---when your `lib` modules aren't managing stateful objects, but rather defining data structures and functions which just transform those structures in some way. This approach is a great fit for us, because we're increasingly writing a lot of our business and even <abbr title="user interface">UI</abbr> logic in terms of [pure functions] which transform simple "record" types. That keeps each controller, route, component, or service doing relatively little work: they are responsible for getting and passing around data in the application, and for triggering actions---but they're not responsible for *understanding* or *manipulating* that data. Meanwhile the module code doesn't do *any* stateful work; there's no mutation---just boring, input-to-output functions.[^immutable] By contrast, if you're dealing with stateful objects, you're apt to end up running into places where you have lifecycle concerns, and that's where Ember excels.
 
-[pure functions]: http://www.chriskrycho.com/2016/what-is-functional-programming.html#pure-functions
+[pure functions]: http://v4.chriskrycho.com/2016/what-is-functional-programming.html#pure-functions
 
 [^immutable]: If you're wondering: we're not using anything like Redux or Immutable.js yet, but both [ember-redux] and [seamless-immutable] would be great fits for the way we're building the app at this point, and it's likely at least [ember-redux] will become part of our stack in the relatively near future.
 

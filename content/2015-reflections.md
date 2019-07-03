@@ -28,9 +28,9 @@ both of those were written for school. I managed to add a picture to the About
 page, but I didn't even come close to blogging about the family on a monthly
 basis.
 
-[2015-plans]: http://www.chriskrycho.com/2015/public-ish-plans.html
+[2015-plans]: http://v4.chriskrycho.com/2015/public-ish-plans.html
 [sc]: https://soundcloud.com/chriskrycho
-[poetry]: http://www.chriskrycho.com/poetry/
+[poetry]: http://v4.chriskrycho.com/poetry/
 
 In sum: about 50/50 on those goals.
 
@@ -90,7 +90,7 @@ interests, and so on. The goal here is not the mythical notion of "balance" but
 rather faithfulness, which has some superficial similarities but ultimately
 [plays out rather differently][faithfulness].
 
-[faithfulness]: http://www.chriskrycho.com/2015/faithfulness.html
+[faithfulness]: http://v4.chriskrycho.com/2015/faithfulness.html
 
 I'm hoping, in light of those goals, to set annual, monthly, and daily goals in
 each of those categories. The daily goals should help me move toward the monthly

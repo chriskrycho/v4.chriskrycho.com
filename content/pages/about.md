@@ -46,6 +46,6 @@ A few things about me you might find interesting:
 
 * Every once in a long while, I also compose new music.
 
-If you’re interested in the specific details of what I’m up to at any given moment, you can check out my [Now](http://www.chriskrycho.com/now.html) page, which I keep fairly up-to-date.
+If you’re interested in the specific details of what I’m up to at any given moment, you can check out my [Now](http://v4.chriskrycho.com/now.html) page, which I keep fairly up-to-date.
 
 Feel free to email me if you have questions, thoughts, etc. about the things I write about! You can reach me at [hello@chriskrycho.com](mailto:hello@chriskrycho.com).

@@ -12,11 +12,11 @@ Summary: >
 
 <i><b>[Assumed Audience:]</b> people broadly interested in reading, writing, learning, and research systems.</i>
 
-[Assumed Audience:]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[Assumed Audience:]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
 I wrote [earlier this week] about adopting a Zettelkasten approach for research, and moving writing prompts and ideas from [Bear] into [Ulysses] as part of that. I’m already reversing course, though, and pushing *ideas* from Ulysses back over into Bear. (Don’t worry, this isn’t the typical “obsessing over tools *instead* of doing work” problem. It’s a change that flows out of doing the work.)
 
-[earlier this week]: https://www.chriskrycho.com/2018/starting-to-build-a-zettelkasten.html
+[earlier this week]: https://v4.chriskrycho.com/2018/starting-to-build-a-zettelkasten.html
 [Bear]: https://bear.app
 [Ulysses]: https://ulysses.app
 

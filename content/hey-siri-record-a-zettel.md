@@ -9,11 +9,11 @@ Summary: >
 
 ---
 
-<i><b>[Assumed Audience:](https://www.chriskrycho.com/2018/assumed-audiences.html)</b> people interested in reading, writing, learning, and research systems—particularly on iOS, and particularly with automation in view.</i>
+<i><b>[Assumed Audience:](https://v4.chriskrycho.com/2018/assumed-audiences.html)</b> people interested in reading, writing, learning, and research systems—particularly on iOS, and particularly with automation in view.</i>
 
-A few evenings ago, I spent a little while building out some Siri Shortcuts to make the process of building out notes in [my Zettelkasten](https://www.chriskrycho.com/zettelkasten) on the fly easier. Building them in Bear is easy *enough*, but it’s even nicer to just be able to tap a button and have things like the date auto-generated for the note title in exactly the format I want: `YYYY.MM.DD.HHMM`, like `2018.12.14.2205` for a note created on December 14, 2018, at 10:05 pm.
+A few evenings ago, I spent a little while building out some Siri Shortcuts to make the process of building out notes in [my Zettelkasten](https://v4.chriskrycho.com/zettelkasten) on the fly easier. Building them in Bear is easy *enough*, but it’s even nicer to just be able to tap a button and have things like the date auto-generated for the note title in exactly the format I want: `YYYY.MM.DD.HHMM`, like `2018.12.14.2205` for a note created on December 14, 2018, at 10:05 pm.
 
-This timestamp format means I can always find notes by when they were written, and it’s easy to sort them by when I created them, which in turn seems the kind of thing that will prove helpful in the long-term, given how much our memories are *associative*. (This insight is [not original](https://zettelkasten.de/posts/no-categories/) by any means, but it’s something I’ve long valued in my [work](https://www.chriskrycho.com/2018/just-write-down-what-you-do.html).)
+This timestamp format means I can always find notes by when they were written, and it’s easy to sort them by when I created them, which in turn seems the kind of thing that will prove helpful in the long-term, given how much our memories are *associative*. (This insight is [not original](https://zettelkasten.de/posts/no-categories/) by any means, but it’s something I’ve long valued in my [work](https://v4.chriskrycho.com/2018/just-write-down-what-you-do.html).)
 
 So having a little tool that handles that part automatically is *great*. The other thing that’s nice about using shortcuts is that I can use them in a hands-free context. I can now just say, “Hey Siri, record a new Zettel” and (since Shortcut configurations are shared across my iCloud account), I can do the whole process without typing a thing. Tagging is a bit harder here, but I can do well enough (it helps that I enunciate *extremely* clearly).
 

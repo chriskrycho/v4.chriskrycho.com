@@ -92,7 +92,7 @@ it.
 [jasmine]: http://jasmine.github.io
 [jn]: https://github.com/mhevery/jasmine-node
 [iolang]: http://iolanguage.org
-[iopost]: http://www.chriskrycho.com/2014/a-little-crazy.html
+[iopost]: http://v4.chriskrycho.com/2014/a-little-crazy.html
 
 [^1]: Thus the early balding starting by my temples.
 

@@ -9,7 +9,7 @@ Summary: >
 
 ---
 
-Since December, I’ve been working on [writing every day before I start work](https://www.chriskrycho.com/2017/knowing-your-rhythms.html "Knowing Your Rhythms--Or: why I'm marking out all the time before 7am as mine."). I am content to admit that I certainly haven’t done it every single day along the way--but I’m content with that admission in no small part because I *have* done it *most* days along the way. And it has been genuinely wonderful.
+Since December, I’ve been working on [writing every day before I start work](https://v4.chriskrycho.com/2017/knowing-your-rhythms.html "Knowing Your Rhythms--Or: why I'm marking out all the time before 7am as mine."). I am content to admit that I certainly haven’t done it every single day along the way--but I’m content with that admission in no small part because I *have* done it *most* days along the way. And it has been genuinely wonderful.
 
 The things I have written along the way have come in many forms:
 
@@ -26,7 +26,7 @@ I’ve made the analogy before--as have many others, I’m sure!--of writing to 
 
 Writing (or any other valuable habit) seems to be much the same. There are days I do not feel like doing it. There are days when the doing of it is hard, when I feel like I have to drag the words out of myself. There have been days even just in the last few weeks where I realized that words I’d written on previous days simply had to be thrown away--content for New Rustacean that ranged from ill-worded to actually-wrong, for example.
 
-But I have been able to say, nearly every workday when I wasn’t sick or traveling, that I did in fact write *something*. And that’s enough, in truth. As I noted [when I began building this habit](https://www.chriskrycho.com/2017/momentum.html "Momentum--Two weeks of daily writing, and how "productivity" happens."):
+But I have been able to say, nearly every workday when I wasn’t sick or traveling, that I did in fact write *something*. And that’s enough, in truth. As I noted [when I began building this habit](https://v4.chriskrycho.com/2017/momentum.html "Momentum--Two weeks of daily writing, and how "productivity" happens."):
 
 > [The] early morning is the best time for me to be writing, and I get a lot of mileage out of taking anywhere from 30 to 90 minutes to get at it.
 

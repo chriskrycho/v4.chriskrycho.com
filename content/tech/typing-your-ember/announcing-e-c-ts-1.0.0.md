@@ -22,8 +22,8 @@ For a detailed walkthrough of adding TypeScript to your projects, see:
 - [Typing Your Ember, Part 1: Set your Ember.js project up to use TypeScript.][part-1]
 - [Typing Your Ember, Part 2: Adding TypeScript to an existing Ember.js project.][part-2]
 
-[part-1]: http://www.chriskrycho.com/2017/typing-your-ember-part-1.html
-[part-2]: http://www.chriskrycho.com/2017/typing-your-ember-part-2.html
+[part-1]: http://v4.chriskrycho.com/2017/typing-your-ember-part-1.html
+[part-2]: http://v4.chriskrycho.com/2017/typing-your-ember-part-2.html
 
 So what are we shipping today, and what's on the roadmap?
 
@@ -31,7 +31,7 @@ So what are we shipping today, and what's on the roadmap?
 
 This release is intentionally relatively minimal: the goal here is provide stable foundation for building Ember.js applications with TypeScript in the toolchain. This means that in any app you can install the add-on and just start [progressively converting your app over to TypeScript][part-3]. However, we don't expect to change the way you *use* the addon at all in the foreseeable future.
 
-[part-3]: http://www.chriskrycho.com/2017/typing-your-ember-part-3.html
+[part-3]: http://v4.chriskrycho.com/2017/typing-your-ember-part-3.html
 
 I'll give you fair warning that there is one *major* challenge you will find as you work with ember-cli-typescript today: the lack of type definitions for most projects, and the limits of the existing type definitions for Ember.js itself. That's not as bad as it sounds, though:
 

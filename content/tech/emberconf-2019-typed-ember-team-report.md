@@ -11,7 +11,7 @@ Tags: [emberjs, TypeScript, open-source software]
 
 <i><b>[Assumed Audience][aa]:</b> People interested in [Ember] and [TypeScript].</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 [Ember]: https://emberjs.com
 [TypeScript]: http://www.typescriptlang.org
 

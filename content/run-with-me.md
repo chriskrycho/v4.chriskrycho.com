@@ -35,7 +35,7 @@ A few comments on the podcast from a form/genre angle, and a few from a technica
 You can think of ["microcasts"] as being not terribly dissimilar from a [microblog post] in its own way. I'm happily stealing the idea of a microcast from [Manton Reece], whose [Timetable] show is a delightful little thing. (It's not original to him; a quick [Google search] will turn up instances of the term dating back several years at least, but he's where I got the idea, and I think he's certainly one of the first to be popularizing the form.)
 
 ["microcasts"]: //www.manton.org/2016/01/new-podcast-timetable.html
-[microblog post]: //www.chriskrycho.com/micro/
+[microblog post]: //v4.chriskrycho.com/micro/
 [Manton Reece]: //www.manton.org
 [Timetable]: //timetable.manton.org
 

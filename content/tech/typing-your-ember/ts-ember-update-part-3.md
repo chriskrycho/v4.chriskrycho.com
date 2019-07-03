@@ -46,10 +46,10 @@ Here's the outline of this update sequence:
 4. [Using Ember Data, and service and controller injections improvements.][pt4]
 5. Mixins and proxies; or: the really hard-to-type-check bits.
 
-[pt1]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html
-[pt2]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html
-[pt3]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html
-[pt4]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html
+[pt1]: https://v4.chriskrycho.com/2018/typing-your-ember-update-part-1.html
+[pt2]: https://v4.chriskrycho.com/2018/typing-your-ember-update-part-2.html
+[pt3]: https://v4.chriskrycho.com/2018/typing-your-ember-update-part-3.html
+[pt4]: https://v4.chriskrycho.com/2018/typing-your-ember-update-part-4.html
 
 ## A detailed example (cont'd.) -- computed properties, mixins, actions, and class methods
 
@@ -57,7 +57,7 @@ Here's the outline of this update sequence:
 
 ***Note:** please see the [update about class properties published mid-2018][cp-update]. The example below and in the following posts is incorrect in several important ways.
 
-[cp-update]: https://www.chriskrycho.com/2018/ember-ts-class-properties.html
+[cp-update]: https://v4.chriskrycho.com/2018/ember-ts-class-properties.html
 
 </aside>
 

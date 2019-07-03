@@ -10,7 +10,7 @@ Tags: [fitness, running, thinking, habit] Summary: >
 
 <i><b>[Assumed Audience][aa]:</b> People interested in habits, fitness, or emotions, or especially how they intersect</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
 Today I took the second “long” run of my training season for [the first][colfax] of two half marathons I’m running this year (in May; [the other][pl] is in September). As I was showering afterward, I kept feeling that something was *right* in my world again—that I was actually *seriously* training for a half marathon again.
 

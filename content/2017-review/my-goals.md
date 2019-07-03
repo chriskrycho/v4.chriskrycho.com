@@ -11,7 +11,7 @@ Summary: >
 
 As has been my habit for a few years now, I’m taking some time to reflect on the year as it comes to a close. Thinking about how this year went and what I accomplished, and how I would like the next year to go and what I would like to accomplish *then*, has become an important part of my life. There is value in taking stock and making plans—as long as you hold those plans loosely. And this particular set of reflections majors on holding plans loosely.
 
-The best place to start seems to be with a review of my goals for 2017, set out [here](http://www.chriskrycho.com/2017/2016-review-6.html "2016 in Review, Part 6:  Plans for 2017"). In a post later this week, I’ll write up some thoughts on what I hope to accomplish in 2018—though, as you’ll see, there are some hints of that here.
+The best place to start seems to be with a review of my goals for 2017, set out [here](http://v4.chriskrycho.com/2017/2016-review-6.html "2016 in Review, Part 6:  Plans for 2017"). In a post later this week, I’ll write up some thoughts on what I hope to accomplish in 2018—though, as you’ll see, there are some hints of that here.
 
 One other note: there are many things going on in our lives that don’t end up in these reflections—because these reflections (as I conceive them at present, at least) are about the kind of public-facing things I did this year. A blog is not a journal, even if there are some analogies between the two.
 
@@ -31,7 +31,7 @@ I have much the same to say here as I do about family time. I’ll add that we d
 
 > 4. Work hard for Olo.
 
-I shipped a *massive* amount of code this year, including making some pretty significant architectural contributions for the main app I work on—laying the foundation for it to transition from being a *mobile* web application to being a *responsive, progressive* web application in 2018. I also built [True Myth](https://true-myth.js.org) and made some pretty substantial progress on [TypeScript in Ember.js](http://www.chriskrycho.com/typing-your-ember/ "Typing Your Ember").
+I shipped a *massive* amount of code this year, including making some pretty significant architectural contributions for the main app I work on—laying the foundation for it to transition from being a *mobile* web application to being a *responsive, progressive* web application in 2018. I also built [True Myth](https://true-myth.js.org) and made some pretty substantial progress on [TypeScript in Ember.js](http://v4.chriskrycho.com/typing-your-ember/ "Typing Your Ember").
 
 > 5. Save money for a house.
 

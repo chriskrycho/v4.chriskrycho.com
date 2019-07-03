@@ -12,7 +12,7 @@ My wife is out of town and I had coffee at our church small group tonight, so I'
 
 A friend at our small group meeting tonight mentioned his intent to start blogging this year. He had a lot of good reasons for jumping in, and I strongly encouraged it. Blogging is not for everyone---we'll get to that---but blogging is *good*. This newish thing, writing-on-the-web-in-a-log, has been a part of my life for over a decade now. I wrote my first post on Xanga in the fall of 2005, and I have not gone more than a matter of weeks between posts since. It is not hyperbole to say I cannot imagine *not* blogging at this point. (The sheer number of words I [published last year][review] should serve to drive home that point: even in a year which was full to the brim, I somehow ended up publishing almost 70,000 words.)
 
-[review]: http://www.chriskrycho.com/2016/2016-review-2.html "So. many. words. I had no idea how many words."
+[review]: http://v4.chriskrycho.com/2016/2016-review-2.html "So. many. words. I had no idea how many words."
 
 And yet, blogging is not at all like it was in when I started in 2005. Both for good and for ill. The mid-2000s were in many ways the height of blogs' power and reach. Individual sites still hosted all their own content; blogging networks were nascent; and the ability of small content providers to outdo the old guard was beginning to be felt at all levels. Bloggers made a difference in the 2004 election not *so* different than the way Twitter shaped all sorts of politics in 2016.
 
@@ -40,7 +40,7 @@ You see? If you aren't technical yourself, your eyes just glazed over in that pa
 This is the fundamental mistake of Manton Reece's new [micro.blog] project (which I like in principle, and whose goals [I clearly share][category-micro]). People as a whole don't even know there might be a reason to prefer the open web, where everyone owned their own content and there was no central clearing-house of information. Facebook offers real value to people: it shows them things they're interested, and keeps them coming back precisely by tailoring its algorithm to make sure they don't see too many things they *don't* want to see. (The polarization that helps foster may be dreadful, but it's [very good business][stratechery-again].) The same goes for Twitter, regardless of the structure of its timeline: people self-select into their lists of whom to follow. Manton's project is a good one in many ways---but the problem it solves is a [Winning Slowly] kind of problem, and one that takes a lot of selling when the problem Facebook solves is obvious: _I want a new story and a picture of my cousin's kid and a funny cat video._ Decentralizing, whatever its benefits (and again: note well my _bona fides_ [here]), makes those basic tasks *harder*. I've followed what is now the micro.blog project from a distance for years now---and I've always had this one, nagging but oh-so-important question. _How does this solve a **user** problem?_
 
 [micro.blog]: http://micro.blog
-[category-micro]: http://www.chriskrycho.com/micro/
+[category-micro]: http://v4.chriskrycho.com/micro/
 [stratechery-again]: https://stratechery.com/2016/fake-news/
 [Winning Slowly]: http://www.winningslowly.org/5.03/
 [here]: https://github.com/chriskrycho/chriskrycho.com
@@ -65,6 +65,6 @@ But even solving those technical problems will require us to recognize that the 
 
 [POSSE]: https://indieweb.org/POSSE
 [the web we have to save]: https://medium.com/matter/the-web-we-have-to-save-2eb1fe15a426
-[mere ephemera]: http://www.chriskrycho.com/2016/12-31-0817.html
+[mere ephemera]: http://v4.chriskrycho.com/2016/12-31-0817.html
 
 Put another way, we need to care about the open web not in some general or abstract sense, and certainly not just on its technical merits, but instead---and quite specifically---as one means of serving other people. If we cannot express it in those terms, we show that we do not understand the real problems at all. It wouldn't be the first time a bunch of technically-oriented nerds missed the boat.

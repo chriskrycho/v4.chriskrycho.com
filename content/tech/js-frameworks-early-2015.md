@@ -18,7 +18,7 @@ am adapting it into a blog post anyway. You can see the posts that prompted it
 [here][\@keita] and [here][\@jws].</i>
 
 [series of posts]: https://alpha.app.net/chriskrycho/post/57102562
-[resolved]: http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html
+[resolved]: http://v4.chriskrycho.com/2014/a-few-theses-on-blogging.html
 [suggestion]: https://alpha.app.net/jws/post/57108281
 [\@keita]: https://alpha.app.net/keita/post/57096585
 [\@jws]: https://alpha.app.net/jws/post/57096838

@@ -80,12 +80,12 @@ export default class AnExample extends Component {
 
 The problem here is all the computed property assignments and the actions hash assignments. The fact that this sample code ever worked at all was... an accident. It wasn't *supposed* to work. I [noted at the time][cps] that this way of doing things had a performance tradeoff because computed properties ended up installed on every *instance* rather than on the *prototype*... and as it turns out, that was never intended to work. Only the prototype installation was supposed to work. And as it turns out, the [<abbr>ES5</abbr> getters implementation of computed properties][RFC-0281] which landed in Ember 3.1 broke every computed property set up this way.
 
-[cps]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html#computed-properties
+[cps]: https://v4.chriskrycho.com/2018/typing-your-ember-update-part-3.html#computed-properties
 [RFC-0281]: https://github.com/emberjs/rfcs/blob/master/text/0281-es5-getters.md "RFC #0281"
 
 So if you can't use class properties for this... how *do* you do it? There are two ways: the `.extend()` hack I mentioned [previously][cp-details], and [decorators][e-@]. (The Ember Decorators docs include a discussion of this topic as well—see [their discussion of class fields][e-@/classes].)
 
-[cp-details]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html#computed-properties-1
+[cp-details]: https://v4.chriskrycho.com/2018/typing-your-ember-update-part-3.html#computed-properties-1
 [e-@]: http://ember-decorators.github.io/ember-decorators/latest/
 [e-@/classes]: http://ember-decorators.github.io/ember-decorators/latest/docs/class-fields
 
@@ -164,7 +164,7 @@ There are three main things to note here.
 
 First, check out the `session('service')` injection. We need the name of the service being injected for TypeScript to be able to resolve the type correctly (which it does by using "type registries," as discussed briefly [in this footnote][fn] in my series earlier this year). The alternative is writing `session: service() as Session`—a type cast—which is *fine* but isn't particularly idiomatic TypeScript.
 
-[fn]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html#fn1
+[fn]: https://v4.chriskrycho.com/2018/typing-your-ember-update-part-4.html#fn1
 
 Second, notice that we do have to use a type cast, `as Person`, for the `savedUser` definition. While many computed property macros and the `computed` helper itself can properly infer the type of the resulting computed property, macros which accept nested keys do not and cannot. Thus, `bool` can resolve its type to a `boolean`, but `readOnly` or `alias` have to resolve their type as `any`. The value passed to them could be a strangely shaped string key on the local object (`['like.a.path']: true`) or an actual path through multiple objects. (This is the same limitation that means we cannot do nested `get` lookups.)
 

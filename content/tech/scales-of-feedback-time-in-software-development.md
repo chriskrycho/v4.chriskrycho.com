@@ -12,7 +12,7 @@ Summary: >
 
 <i class=editorial>**[Assumed Audience]:** fans of compiled languages with expressive type systems. I’m not trying to persuade fans of dynamic languages they should use a compiler here; I’m trying to surface something that often goes unstated in discussions among fans of compiled languages with expressive type systems, but hopefully it's interesting beyond that. If you don't like compiled languages, just skip the build step bits; the rest all still applies.</i>
 
-[Assumed Audience]: http://www.chriskrycho.com/2018/assumed-audiences.html
+[Assumed Audience]: http://v4.chriskrycho.com/2018/assumed-audiences.html
 
 There are basically six stages of the development of any given software component where you can receive feedback on what you build:[^1]
 

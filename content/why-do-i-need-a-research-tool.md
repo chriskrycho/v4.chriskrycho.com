@@ -8,7 +8,7 @@ Summary: >
 
 ---
 
-For a bit of follow-up on [this morning's post](http://www.chriskrycho.com/2017/how-do-you-manage-your-research-notes.html "How Do You Manage Your Research Notes")—
+For a bit of follow-up on [this morning's post](http://v4.chriskrycho.com/2017/how-do-you-manage-your-research-notes.html "How Do You Manage Your Research Notes")—
 
 It struck me that there's a really important thing implicit in the whole question that's perhaps worth making explicit. That is: *it's worth doing the work of capturing what you're reading*, at least when it's relevant to something you're *studying*. This isn't necessarily obvious, and especially if you have a good memory, you can often get by in shorter-form writing and day-to-day conversation by relying on your memory. It'll get you *close enough* that you can say, "Oh, so-and-so says this," or even fall back to "I wish I could remember where I read this..."
 
@@ -26,7 +26,7 @@ And the inciting incident for this blog post: I was thinking as I read [a helpfu
 
 So that's *why* I'm curious about people's research tools.
 
-[^1]:   You can see this as my following some of the same kinds of paths being worn down right now by writers and thinkers like [Alan Jacobs](http://blog.ayjay.org) and [L. M. Sacasas](https://thefrailestthing.com/the-frailest-thing/), and it's certainly not *new* as a line of thinking for me—see a related post [here](http://www.chriskrycho.com/2017/theological-anthropology.html), for example.
+[^1]:   You can see this as my following some of the same kinds of paths being worn down right now by writers and thinkers like [Alan Jacobs](http://blog.ayjay.org) and [L. M. Sacasas](https://thefrailestthing.com/the-frailest-thing/), and it's certainly not *new* as a line of thinking for me—see a related post [here](http://v4.chriskrycho.com/2017/theological-anthropology.html), for example.
 
 [^2]:   I use brackets to mark off important quotes, the same way someone might use a highlighter, because I hate highlighted books myself. I'll underline *especially* important bits. I jot comments notes in the margins. I mark places where I disagree sufficiently strongly with an "x" and where I agree sufficiently strongly with a check mark or an exclamation point. Things that are essential items in the argument of the book—i.e. things which articulate or are central to argument for the thesis of the book—I'll mark in the margins with a star. Nothing complicated!
 

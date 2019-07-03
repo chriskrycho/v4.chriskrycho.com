@@ -11,12 +11,12 @@ Summary: >
 
 <i><b>[Assumed Audience][aa]:</b> anyone who cares about mental health and recovery… but perhaps especially people who have been following me on [this journey][burnout].</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
-[burnout]: https://www.chriskrycho.com/burnout
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
+[burnout]: https://v4.chriskrycho.com/burnout
 
 It has been just over six months since I hit the rock-bottom point in my experience of burnout: when I had a panic attack… because a programming task came back with a list of small things that needed tweaking. I have made a lot of changes since then, and am—[as I wrote earlier this year][stewarding-my-reserves]—not <i>recovered</i> but <i>recovering</i>. I am trying to write about *this* part of the process too: burnout itself is under-discussed in many ways, but the process of *recovering* from burnout is not something I have seen discussed at all.
 
-[stewarding-my-reserves]: https://www.chriskrycho.com/2018/stewarding-my-reserves.html
+[stewarding-my-reserves]: https://v4.chriskrycho.com/2018/stewarding-my-reserves.html
 
 ## Signs of recovery
 
@@ -51,7 +51,7 @@ Keeping up any kind of momentum on personal projects over the course of 2018 was
 In the last 6 weeks, my interest in those projects has been reviving. I actually started working on in earnest [a project I have been planning for ages][rewrite]—including by doing some work to clear the deck for it in my schedule. I’ll probably play a session of <cite>Mass Effect</cite> with Jaimie *tonight* and we’ll record and publish the corresponding another day this week. I’m more excited by and engaged with Winning Slowly than I have been since late 2016.[^2] I am, as you can see, blogging again (though, [as promised], I intend to keep a relatively tight limit on this for the sake of actually making good progress on other projects).
 
 [rewrite]: https://buttondown.email/rewrite
-[as promised]: https://www.chriskrycho.com/2018/some-closing-thoughts.html#reading-and-writing-1
+[as promised]: https://v4.chriskrycho.com/2018/some-closing-thoughts.html#reading-and-writing-1
 
 ## Signs I’m Still Recovering
 

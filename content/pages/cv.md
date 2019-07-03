@@ -135,7 +135,7 @@ My goal throughout was not merely to make some extra money, nice though that was
 
 Besides my family life, church participation, and day-to-day work, I am also a prolific writer, podcaster, and open source software contributor. My writing you can find primarily on this website; I focus primarily on technology, ethics, and faith (though if you want to read my so-so poetry, [that’s here too][poetry]).
 
-[poetry]: https://www.chriskrycho.com/poetry
+[poetry]: https://v4.chriskrycho.com/poetry
 
 ### Podcasts
 
@@ -157,7 +157,7 @@ As we began actively adopting TypeScript in our Ember.js app [at Olo](#current),
 In March 2017, I began working on the <abbr>CLI</abbr> tooling and the type definitions for the Ember ecosystem. Once I began leading the effort, several others began contributing actively; in early 2018 we formed a small team working on shepherding Ember and TypeScript integration forward. Over the rest of 2017 and 2018, I have [taught][ts-workshop] and [written extensively][ts-blog] on using TypeScript effectively with Ember. Our small team’s efforts have made TypeScript both viable and increasingly mainstream as a choice for Ember apps and addons.
 
 [ts-workshop]: https://emberconf.com/schedule.html#d-typescript-up-your-ember-js-app "EmberConf Workshop: 'TypeScript Up Your Ember.js App'"
-[ts-blog]: https://www.chriskrycho.com/typing-your-ember/ "Typing Your Ember series"
+[ts-blog]: https://v4.chriskrycho.com/typing-your-ember/ "Typing Your Ember series"
 
 #### True Myth
 
@@ -167,7 +167,7 @@ In the **fall of 2017**, I developed [True Myth][tm]: a **TypeScript**-targeted 
 
 True Myth is largely [complete][stable-libraries], with a full set of features and [extensive documentation][tm-docs]. I continue to maintain and expand the library with additional helpers and tooling as TypeScript has supported more capabilities. I have also supported [early efforts to translate the library to C^♯^][tm-C#].
 
-[stable-libraries]: https://www.chriskrycho.com/2018/stable-libraries.html
+[stable-libraries]: https://v4.chriskrycho.com/2018/stable-libraries.html
 [tm-docs]: https://true-myth.js.org/
 [tm-C#]: https://github.com/true-myth/true-myth-csharp "True Myth C♯"
 

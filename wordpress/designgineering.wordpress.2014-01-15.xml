@@ -666,22 +666,22 @@
 
 <div class="column left dont-hyphenate">
 <h3>Javascript</h3>
-<h4><a href="http://www.chriskrycho.com/web/tools/ligatures-plus-js/">ligatures-plus.js &rarr;</a></h4>
-I noticed in late 2011 that while there were a few Javascript tools out there that would substitute ligatures on a web page, none of them could test whether the fonts being rendered actually supported those ligatures. <a href="http://www.chriskrycho.com/web/projects/ligatures-plus-js/" title="Ligatures-plus.js">This script</a> provides a solution.
+<h4><a href="http://v4.chriskrycho.com/web/tools/ligatures-plus-js/">ligatures-plus.js &rarr;</a></h4>
+I noticed in late 2011 that while there were a few Javascript tools out there that would substitute ligatures on a web page, none of them could test whether the fonts being rendered actually supported those ligatures. <a href="http://v4.chriskrycho.com/web/projects/ligatures-plus-js/" title="Ligatures-plus.js">This script</a> provides a solution.
 
 <h3>Bookmarklets</h3>
-<h4><a href="http://www.chriskrycho.com/web/tools/typekitify/">Typekitify! &rarr;</a></h4>
-You want better fonts, and not just on the websites that already care about better fonts. Typekit makes better fonts happen. This <a href="http://www.chriskrycho.com/web/projects/typekitify/" title="Typekitify!">bookmarklet generator</a> makes Typekit happen anywhere. <em>Awesome.</em>
+<h4><a href="http://v4.chriskrycho.com/web/tools/typekitify/">Typekitify! &rarr;</a></h4>
+You want better fonts, and not just on the websites that already care about better fonts. Typekit makes better fonts happen. This <a href="http://v4.chriskrycho.com/web/projects/typekitify/" title="Typekitify!">bookmarklet generator</a> makes Typekit happen anywhere. <em>Awesome.</em>
 </div>
 
 <div class="column right dont-hyphenate">
 <h3>Python</h3>
-<h4><a href="http://www.chriskrycho.com/web/tools/jira-commit-acceptance-plugin-tweaks/">JIRA Commit Acceptance Plugin Tweaks</a> &rarr;</h4>
-JIRA's Commit Acceptance Plugin is great, but years out of date - I took the liberty of <a href="http://www.chriskrycho.com/web/tools/jira-commit-acceptance-plugin-tweaks/" title="JIRA Commit Acceptance Plugin Tweaks">updating the Python script</a> used by the <code>pre-commit.bat</code> repository hook. You'll also find some notes on using the pre-commit hook when you don't have a guarantee that your users have Python installed.
+<h4><a href="http://v4.chriskrycho.com/web/tools/jira-commit-acceptance-plugin-tweaks/">JIRA Commit Acceptance Plugin Tweaks</a> &rarr;</h4>
+JIRA's Commit Acceptance Plugin is great, but years out of date - I took the liberty of <a href="http://v4.chriskrycho.com/web/tools/jira-commit-acceptance-plugin-tweaks/" title="JIRA Commit Acceptance Plugin Tweaks">updating the Python script</a> used by the <code>pre-commit.bat</code> repository hook. You'll also find some notes on using the pre-commit hook when you don't have a guarantee that your users have Python installed.
 
 <h3>Windows Batch Files</h3>
-<h4><a href="http://www.chriskrycho.com/web/tools/run-executable-on-a-network-drive-batch-file/">Run Executables on a Network Drive &rarr;</a></h4>
-You may need to run an executable remotely. This isn't particularly difficult to pull of on Linux or Unix systems, of course. It's much more involved on Windows, because you can't count on everyone having the network location mapped. This short batch file <a href="http://www.chriskrycho.com/web/tools/run-executable-on-a-network-drive-batch-file/" title="Run Executable on a Network Drive – Batch File">fixes that problem</a> quite handily.
+<h4><a href="http://v4.chriskrycho.com/web/tools/run-executable-on-a-network-drive-batch-file/">Run Executables on a Network Drive &rarr;</a></h4>
+You may need to run an executable remotely. This isn't particularly difficult to pull of on Linux or Unix systems, of course. It's much more involved on Windows, because you can't count on everyone having the network location mapped. This short batch file <a href="http://v4.chriskrycho.com/web/tools/run-executable-on-a-network-drive-batch-file/" title="Run Executable on a Network Drive – Batch File">fixes that problem</a> quite handily.
 </div>]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>209</wp:post_id>
@@ -821,7 +821,7 @@ You may need to run an executable remotely. This isn't particularly difficult to
 <pre lang="html4strict">http://use.typekit.com/[characters].js</pre>
 
 Then click the "Using fonts in CSS" link in your Kit and copy the name it supplies for the font family field (you can add fallback fonts, if you so desire). Add font size and list the elements you want to apply the font to (you can be as specific as you like), and away you go!
-<form class="generator" style="padding-top: 1.333em;" action="http://www.chriskrycho.com/utilities/typekitify-generator.php">
+<form class="generator" style="padding-top: 1.333em;" action="http://v4.chriskrycho.com/utilities/typekitify-generator.php">
    <fieldset>
       <legend><span class="italic">Generate Typekitify! bookmarklet</span></legend>
       <div>
@@ -884,7 +884,7 @@ Then click the "Using fonts in CSS" link in your Kit and copy the name it suppli
 			<wp:comment_id>45</wp:comment_id>
 			<wp:comment_author><![CDATA[Introducing Typekitify! &raquo; Designgineering &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/web/projects/introducing-typekitify/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/web/projects/introducing-typekitify/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-02-13 10:54:31</wp:comment_date>
 			<wp:comment_date_gmt>2012-02-13 16:54:31</wp:comment_date_gmt>
@@ -948,8 +948,8 @@ Enabling the script on your site is straightforward. You'll need jQuery running;
 Once you have jQuery running, include the ligatures-plus.js file. You can get it here:
 
 <ul>
-<li><a href="http://www.chriskrycho.com/downloads/lig/ligatures-plus.js" target="_blank">Development version</a></li>
-<li><a href="http://www.chriskrycho.com/downloads/lig/ligatures-plus.min.js" target="_blank">Minified version</a></li>
+<li><a href="http://v4.chriskrycho.com/downloads/lig/ligatures-plus.js" target="_blank">Development version</a></li>
+<li><a href="http://v4.chriskrycho.com/downloads/lig/ligatures-plus.min.js" target="_blank">Minified version</a></li>
 <li><a href="http://code.google.com/p/ligatures-plus/" target="_blank">Google Code</a> (with SVN <a href="http://code.google.com/p/ligatures-plus/source/checkout" target="_blank">repository</a>)</li>
 </ul>
 
@@ -1087,7 +1087,7 @@ I borrowed heavily from Chengyin Liu's work on <a href="http://chengyinliu.com/w
 			<wp:comment_id>44</wp:comment_id>
 			<wp:comment_author><![CDATA[Challenges, blessings, and transitions &raquo; From the Hearth &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/family/updates/challenges-blessings-and-transitions/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/family/updates/challenges-blessings-and-transitions/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-02-11 22:35:49</wp:comment_date>
 			<wp:comment_date_gmt>2012-02-12 04:35:49</wp:comment_date_gmt>
@@ -1107,7 +1107,7 @@ I borrowed heavily from Chengyin Liu's work on <a href="http://chengyinliu.com/w
 		<description></description>
 		<content:encoded><![CDATA[<p>This bookmarklet generator will allow you to create a tool for your bookmarks bar that will replace the fonts of any element on the page with your specified font, as long as that font already resides on your computer. For example, let's say you're a big fan of Book Antiqua (as I am), and it's sitting there happily on your computer, but you can't put it to use on the internet, because everyone specifies their own fonts. Well, now you <em>can</em>, even if you're not technical. Use this bookmarklet, supply the font you'd like to use (in quotes if it's more than one word), the font size, and the parts of the page you want the font-change applied to (usually just 'p'), and drag the resulting bookmarklet to your bookmarks bar. Enjoy!</p>
 
-<form class="generator" style="padding-top: 1.333em;" action="http://www.chriskrycho.com/utilities/fontify-generator.php">
+<form class="generator" style="padding-top: 1.333em;" action="http://v4.chriskrycho.com/utilities/fontify-generator.php">
    <fieldset>
       <legend><span class="italic">Generate Fontify! bookmarklet</span></legend>
       <div>
@@ -1342,7 +1342,7 @@ Note that the path for @svnlook@ must be "local" to the machine that calls the s
 # $Id: jira-client.py 20980 2009-07-23 06:16:03Z dchui $
 
 # Updated by Chris Krycho 2012-06-09                                                                                                
-# www.chriskrycho.com / web@chriskrycho.com 
+# v4.chriskrycho.com / web@chriskrycho.com 
 
 try:
     import subprocess
@@ -1407,9 +1407,9 @@ else:
     sys.exit(1)
 </pre>
 
-Note that I've provided examples for the Windows condition as well as the standard *nix approaches. If you have to use network shares instead of the server approach, you'll need to go one step further: you won't be able to easily have @svnlook@ in a common location (i.e. a shared network location), so you'll need to make sure everyone has their @svnlook.exe@ file in the same location or take advantage of the functionality in my "Network Share Executable batchfile":http://www.chriskrycho.com/web/tools/run-python-on-a-network-drive-batch-file or something similar. In our case, I just had everyone install TortoiseSVN with the command line tools to the default location and pointed to that. (Note that if the remote installation directories for svnlook are the same as those on the server, the script will run without modification regardless of whether users connecting using Network Shares or @svn:@ or @http:@ &ndash; a particularly helpful turn if your users are used to doing everything via network share (as mine are).
+Note that I've provided examples for the Windows condition as well as the standard *nix approaches. If you have to use network shares instead of the server approach, you'll need to go one step further: you won't be able to easily have @svnlook@ in a common location (i.e. a shared network location), so you'll need to make sure everyone has their @svnlook.exe@ file in the same location or take advantage of the functionality in my "Network Share Executable batchfile":http://v4.chriskrycho.com/web/tools/run-python-on-a-network-drive-batch-file or something similar. In our case, I just had everyone install TortoiseSVN with the command line tools to the default location and pointed to that. (Note that if the remote installation directories for svnlook are the same as those on the server, the script will run without modification regardless of whether users connecting using Network Shares or @svn:@ or @http:@ &ndash; a particularly helpful turn if your users are used to doing everything via network share (as mine are).
 
-If you find yourself in the strange position I did &ndash; having to do all this on Windows without Python necessarily being installed &ndash; you can make use of the "batch file":http://www.chriskrycho.com/web/tools/run-python-on-a-network-drive-batch-file I put together to account for that situation. Getting it working right _requires_ two tweaks:
+If you find yourself in the strange position I did &ndash; having to do all this on Windows without Python necessarily being installed &ndash; you can make use of the "batch file":http://v4.chriskrycho.com/web/tools/run-python-on-a-network-drive-batch-file I put together to account for that situation. Getting it working right _requires_ two tweaks:
 
 * Rename the file to pre-commit.bat so that Subversion knows to run the file. (If you're not familiar with pre-commit hooks, start "here":http://svnbook.red-bean.com/en/1.7/svn.ref.reposhooks.html with an introduction to repository hooks and then read "this page":http://svnbook.red-bean.com/en/1.7/svn.ref.reposhooks.pre-commit.html specific to pre-commit hooks.
 * Where you run the executable, you'll need to explicitly reference the @jira-client.py@ file, as here, where we use the first argument, <code>%1</code>, to get the repository location:
@@ -1501,7 +1501,7 @@ p(#note). Note that if you have problems with users' copies of @svnlook@ not bei
 			<wp:comment_id>228</wp:comment_id>
 			<wp:comment_author><![CDATA[Introducing: JIRA Commit Acceptance Plugin Tweaks (Python, Batch) &raquo; Designgineering &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/web/tools/introducing-jira-commit-acceptance-plugin-tweaks-python-batch/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/web/tools/introducing-jira-commit-acceptance-plugin-tweaks-python-batch/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-06-25 22:28:47</wp:comment_date>
 			<wp:comment_date_gmt>2012-06-26 03:28:47</wp:comment_date_gmt>
@@ -1633,7 +1633,7 @@ h4. Notes:
 			<wp:comment_id>801</wp:comment_id>
 			<wp:comment_author><![CDATA[Introducing: JIRA Commit Acceptance Plugin Tweaks (Python, Batch) &raquo; Designgineering &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/web/tools/introducing-jira-commit-acceptance-plugin-tweaks-python-batch/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/web/tools/introducing-jira-commit-acceptance-plugin-tweaks-python-batch/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-08-29 15:02:26</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-29 20:02:26</wp:comment_date_gmt>
@@ -2077,7 +2077,7 @@ Here's hoping the years ahead are both as intellectually challenging and as rewa
 			<wp:comment_id>9</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>108.87.46.253</wp:comment_author_IP>
 			<wp:comment_date>2012-01-19 20:25:13</wp:comment_date>
 			<wp:comment_date_gmt>2012-01-20 02:25:13</wp:comment_date_gmt>
@@ -2257,7 +2257,7 @@ Pleasure, as it turns out, is not an incidental component of good design. It is 
 		<dc:creator><![CDATA[chriskrycho]]></dc:creator>
 		<guid isPermaLink="false">http://2012-2013.chriskrycho.com/web/?p=73</guid>
 		<description></description>
-		<content:encoded><![CDATA[A few people have let me know that they would like to get all of my feeds - not having to subscribe separately to each blog. Gladly for you, I thought of this eventuality; you can use the <a href="http://www.chriskrycho.com#connect" title="&ldquo;Connect&rdquo; at chriskrycho.com" target="_blank">subscription links</a> at the bottom of the <a href="http://www.chriskrycho.com/" title="Home page" target="_blank">main page</a> - then you will get a combined feed of all of my blogs in one.
+		<content:encoded><![CDATA[A few people have let me know that they would like to get all of my feeds - not having to subscribe separately to each blog. Gladly for you, I thought of this eventuality; you can use the <a href="http://v4.chriskrycho.com#connect" title="&ldquo;Connect&rdquo; at chriskrycho.com" target="_blank">subscription links</a> at the bottom of the <a href="http://v4.chriskrycho.com/" title="Home page" target="_blank">main page</a> - then you will get a combined feed of all of my blogs in one.
 
 I hope at some point in the future to set up a system that lets you subscribe easily to whichever of the feeds you like - at the moment I only have individual feeds for the sites or a globally unified feed. Eventually, I want to set up the feed subscriptions so that you can just check a box for the blogs you want to follow, which will then deliver those as a single combined feed for your convenience. Alas, I'm pretty well swamped at the moment, so it'll be a while before I get there.]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -2295,7 +2295,7 @@ I hope at some point in the future to set up a system that lets you subscribe ea
 			<wp:comment_id>4</wp:comment_id>
 			<wp:comment_author><![CDATA[subscription info &raquo; Ardent Fidelity &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/theology/2012/01/18/subscription-info/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/theology/2012/01/18/subscription-info/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-01-18 16:00:37</wp:comment_date>
 			<wp:comment_date_gmt>2012-01-18 16:00:37</wp:comment_date_gmt>
@@ -2444,7 +2444,7 @@ The <em>reality</em> is that old ways of protecting content are dead. Digital di
 			<wp:comment_id>6</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>134.223.116.201</wp:comment_author_IP>
 			<wp:comment_date>2012-01-19 09:49:47</wp:comment_date>
 			<wp:comment_date_gmt>2012-01-19 15:49:47</wp:comment_date_gmt>
@@ -2458,7 +2458,7 @@ The <em>reality</em> is that old ways of protecting content are dead. Digital di
 			<wp:comment_id>10</wp:comment_id>
 			<wp:comment_author><![CDATA[No Castle for you! &raquo; Designgineering &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/web/2012/01/20/no-castle-for-yo/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/web/2012/01/20/no-castle-for-yo/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-01-20 10:39:48</wp:comment_date>
 			<wp:comment_date_gmt>2012-01-20 16:39:48</wp:comment_date_gmt>
@@ -2476,7 +2476,7 @@ The <em>reality</em> is that old ways of protecting content are dead. Digital di
 		<dc:creator><![CDATA[chriskrycho]]></dc:creator>
 		<guid isPermaLink="false">http://2012-2013.chriskrycho.com/web/?p=102</guid>
 		<description></description>
-		<content:encoded><![CDATA[Following up on <a href="http://www.chriskrycho.com/web/2012/01/19/a-note-on-defeating-piracy/" title="A note on defeating piracy" target="_blank">yesterday's thoughts on piracy</a>: I ran across an example that perfectly illustrates the ways that the big content industries are shooting themselves in the foot when it comes to profit and piracy.
+		<content:encoded><![CDATA[Following up on <a href="http://v4.chriskrycho.com/web/2012/01/19/a-note-on-defeating-piracy/" title="A note on defeating piracy" target="_blank">yesterday's thoughts on piracy</a>: I ran across an example that perfectly illustrates the ways that the big content industries are shooting themselves in the foot when it comes to profit and piracy.
 
 <a href="http://jaimiedawn.blogspot.com/" title="Refining Process" target="_blank">Jaimie</a> and I are big fans of <a href="http://beta.abc.go.com/shows/castle" title="Castle @ABC.com" target="_blank"><cite>Castle</cite></a>; it's the only ongoing television show we actually watch. I was reading some discussion on this week's episode this morning, and discovered that while ABC puts the video up on the website for streaming (good move!), they limit access to people in the United States (horrible move!).<!--more-->
 
@@ -2540,7 +2540,7 @@ The easiest way to kill piracy is to dry up the demand for it from the vast majo
 			<wp:comment_id>20</wp:comment_id>
 			<wp:comment_author><![CDATA[for the record &raquo; Designgineering &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/web/2012/01/for-the-record/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/web/2012/01/for-the-record/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-01-22 08:03:04</wp:comment_date>
 			<wp:comment_date_gmt>2012-01-22 14:03:04</wp:comment_date_gmt>
@@ -2582,7 +2582,7 @@ The easiest way to kill piracy is to dry up the demand for it from the vast majo
 			<wp:comment_id>12</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>134.223.116.200</wp:comment_author_IP>
 			<wp:comment_date>2012-01-20 11:40:31</wp:comment_date>
 			<wp:comment_date_gmt>2012-01-20 17:40:31</wp:comment_date_gmt>
@@ -2624,7 +2624,7 @@ The easiest way to kill piracy is to dry up the demand for it from the vast majo
 			<wp:comment_id>15</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>134.223.116.200</wp:comment_author_IP>
 			<wp:comment_date>2012-01-20 13:49:50</wp:comment_date>
 			<wp:comment_date_gmt>2012-01-20 19:49:50</wp:comment_date_gmt>
@@ -2638,7 +2638,7 @@ The easiest way to kill piracy is to dry up the demand for it from the vast majo
 			<wp:comment_id>16</wp:comment_id>
 			<wp:comment_author><![CDATA[for the record &raquo; Ars Artis &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/art/2012/01/for-the-record/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/art/2012/01/for-the-record/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-01-20 14:45:25</wp:comment_date>
 			<wp:comment_date_gmt>2012-01-20 20:45:25</wp:comment_date_gmt>
@@ -2652,7 +2652,7 @@ The easiest way to kill piracy is to dry up the demand for it from the vast majo
 			<wp:comment_id>17</wp:comment_id>
 			<wp:comment_author><![CDATA[for the record &raquo; From the Hearth &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/family/2012/01/for-the-record/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/family/2012/01/for-the-record/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-01-20 14:45:57</wp:comment_date>
 			<wp:comment_date_gmt>2012-01-20 20:45:57</wp:comment_date_gmt>
@@ -2666,7 +2666,7 @@ The easiest way to kill piracy is to dry up the demand for it from the vast majo
 			<wp:comment_id>18</wp:comment_id>
 			<wp:comment_author><![CDATA[for the record &raquo; Ardent Fidelity &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/theology/2012/01/for-the-record-2/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/theology/2012/01/for-the-record-2/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-01-20 14:46:25</wp:comment_date>
 			<wp:comment_date_gmt>2012-01-20 20:46:25</wp:comment_date_gmt>
@@ -2823,7 +2823,7 @@ I locked this site in at between 66 and 72 characters, and it makes a difference
 		<dc:creator><![CDATA[chriskrycho]]></dc:creator>
 		<guid isPermaLink="false">http://2012-2013.chriskrycho.com/web/?p=145</guid>
 		<description></description>
-		<content:encoded><![CDATA[For the record, last week was an extremely unusual week in terms of posting frequency. Between launching the site and the unusually provocative points for <a href="http://www.chriskrycho.com/web/2012/01/no-castle-for-you/" title="No Castle for you!" target="_blank">discussion</a> prompted by PIPA/SOPA, there was a lot of extra content last. I generally hope to have around one post a day up on <em>one</em> of the sections of this site, so each section will get a post only every three or four days on average.]]></content:encoded>
+		<content:encoded><![CDATA[For the record, last week was an extremely unusual week in terms of posting frequency. Between launching the site and the unusually provocative points for <a href="http://v4.chriskrycho.com/web/2012/01/no-castle-for-you/" title="No Castle for you!" target="_blank">discussion</a> prompted by PIPA/SOPA, there was a lot of extra content last. I generally hope to have around one post a day up on <em>one</em> of the sections of this site, so each section will get a post only every three or four days on average.]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>145</wp:post_id>
 		<wp:post_date>2012-01-22 08:00:46</wp:post_date>
@@ -3490,7 +3490,7 @@ Regardless, your main point about studying the skills you use was spot on, and v
 			<wp:comment_id>36</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>134.223.116.200</wp:comment_author_IP>
 			<wp:comment_date>2012-02-01 12:29:20</wp:comment_date>
 			<wp:comment_date_gmt>2012-02-01 18:29:20</wp:comment_date_gmt>
@@ -3546,7 +3546,7 @@ You summarized my point well with your hierarchy. That is the spirit of what I w
 			<wp:comment_id>38</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>134.223.116.200</wp:comment_author_IP>
 			<wp:comment_date>2012-02-01 14:32:01</wp:comment_date>
 			<wp:comment_date_gmt>2012-02-01 20:32:01</wp:comment_date_gmt>
@@ -3596,7 +3596,7 @@ If you enjoyed Raymond's essays, you may want to take a look at these as well: h
 			<wp:comment_id>40</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>134.223.116.201</wp:comment_author_IP>
 			<wp:comment_date>2012-02-01 14:51:31</wp:comment_date>
 			<wp:comment_date_gmt>2012-02-01 20:51:31</wp:comment_date_gmt>
@@ -3670,8 +3670,8 @@ Enabling the script on your site is straightforward. You'll need jQuery running;
 Once you have jQuery running, include the ligatures-plus.js file. You can get it here:
 
 <ul>
-<li><a href="http://www.chriskrycho.com/downloads/lig/ligatures-plus.js" target="_blank">Development version</a></li>
-<li><a href="http://www.chriskrycho.com/downloads/lig/ligatures-plus.min.js" target="_blank">Minified version</a></li>
+<li><a href="http://v4.chriskrycho.com/downloads/lig/ligatures-plus.js" target="_blank">Development version</a></li>
+<li><a href="http://v4.chriskrycho.com/downloads/lig/ligatures-plus.min.js" target="_blank">Minified version</a></li>
 <li><a href="http://code.google.com/p/ligatures-plus/" target="_blank">Google Code</a> (with SVN <a href="http://code.google.com/p/ligatures-plus/source/checkout" target="_blank">repository</a>)</li>
 </ul>
 
@@ -3919,7 +3919,7 @@ A big hat tip on all of this to Mat "Wilto" Marquis (<a href="https://twitter.co
 			<wp:comment_id>47</wp:comment_id>
 			<wp:comment_author><![CDATA[Responsive Design, Server-Side Feature Detection, and a Big Mess &raquo; Designgineering &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/web/posts/responsive-design-server-side-feature-detection-and-a-big-mess/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/web/posts/responsive-design-server-side-feature-detection-and-a-big-mess/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-02-23 08:01:57</wp:comment_date>
 			<wp:comment_date_gmt>2012-02-23 14:01:57</wp:comment_date_gmt>
@@ -3989,7 +3989,7 @@ In short, I'll be flying. It's going to be <em>fun</em> to push the machine and 
 
 <p>Moreover, I realized that <em>lots</em> of people have the same issue, and lots of people might want to change the fonts on their page easily. So, I created this bookmarklet generator to do the trick for you. (A little later this week, I'll be putting up a similar generator that doesn't use Typekit, since you might be perfectly happy with the fonts on your own computer.)</p>
 
-<p>From the permanent <a href="http://www.chriskrycho.com/web/projects/typekitify/" title="Typekitify!" target="_blank">project landing page</a>:</p>
+<p>From the permanent <a href="http://v4.chriskrycho.com/web/projects/typekitify/" title="Typekitify!" target="_blank">project landing page</a>:</p>
 
 <p>To generate a Typekitify! bookmarklet, you need to have a <a href="https://typekit.com/" target="_blank">Typekit</a> account and create a kit with the fonts you want and the domain(s) you want to use. (If you're on a free account, you can only point at one website at a time.) Grab the Embed Code snipped from the Kit Editor and copy the part that looks like this:</p>
 
@@ -4064,7 +4064,7 @@ Then click the "Using fonts in CSS" link in your Kit and copy the name it suppli
 		<dc:creator><![CDATA[chriskrycho]]></dc:creator>
 		<guid isPermaLink="false">http://2012-2013.chriskrycho.com/web/?p=352</guid>
 		<description></description>
-		<content:encoded><![CDATA[Turns out <em>lots</em> of people think <a href="http://www.chriskrycho.com/web/posts/death-to-vendor-prefixes/" title="Death to vendor prefixes!">vendor prefixes</a> need to be used carefully if at all. <a href="http://www.alistapart.com/" target="_blank">A List Apart</a> is one of <em>the</em> authorities on web design practices. Lea Verou <a href="http://www.alistapart.com/articles/every-time-you-call-a-proprietary-feature-css3-a-kitten-dies/" title="Every Time You Call a Proprietary Feature “CSS3,” a Kitten Dies" target="_blank">writes</a>:
+		<content:encoded><![CDATA[Turns out <em>lots</em> of people think <a href="http://v4.chriskrycho.com/web/posts/death-to-vendor-prefixes/" title="Death to vendor prefixes!">vendor prefixes</a> need to be used carefully if at all. <a href="http://www.alistapart.com/" target="_blank">A List Apart</a> is one of <em>the</em> authorities on web design practices. Lea Verou <a href="http://www.alistapart.com/articles/every-time-you-call-a-proprietary-feature-css3-a-kitten-dies/" title="Every Time You Call a Proprietary Feature “CSS3,” a Kitten Dies" target="_blank">writes</a>:
 
 <blockquote>In our eagerness to use the new bling, we often forget how many people fought in the past decade to enable us to write code without forks and hacks and expect it to work interoperably. If you have been in this field more than a few years, you surely remember that it wasn’t always like this. The reason we now have this convenience is web standards, hard won in the Browser Wars.
 
@@ -4330,7 +4330,7 @@ There is some sensible stuff in there; it's worth your time. In particular, I ca
 
 Front end designers and developers have in the last few years finally stopped relying on user-agent detection to make their sites behave in particular ways. That's a <em>good</em> thing; user-agent detection is often unreliable and finicky; it's certainly in a constant state of flux. That's only going to be more true as more mobile browsers allow users to set their user agent, and as browsers for mobile and desktops converge, <i class="language">a la</i> Chrome for Android.
 
-There may be times when user-agent detection is an appropriate strategy on the back end - I'm not sure what they might be, but I'm willing to allow that there are situations in which it may make sense. However, Olsen was explicitly talking about front-end design, albeit from the perspective of back-end development. When someone starts talking about serving different content based on user-agent, I can't see that working out well for users in the long run. Olsen himself may be a good enough developer to avoid doing stupid things with user-agent detection, but are all other back end devs equally disciplined? In other words, it may be just fine for him, but <em>evangelizing</em> for the practice may land us all in a world of trouble down the line. After all, <a href="http://www.chriskrycho.com/web/posts/death-to-vendor-prefixes/" title="Death to vendor prefixes!" target="_blank">it's happened before</a>.
+There may be times when user-agent detection is an appropriate strategy on the back end - I'm not sure what they might be, but I'm willing to allow that there are situations in which it may make sense. However, Olsen was explicitly talking about front-end design, albeit from the perspective of back-end development. When someone starts talking about serving different content based on user-agent, I can't see that working out well for users in the long run. Olsen himself may be a good enough developer to avoid doing stupid things with user-agent detection, but are all other back end devs equally disciplined? In other words, it may be just fine for him, but <em>evangelizing</em> for the practice may land us all in a world of trouble down the line. After all, <a href="http://v4.chriskrycho.com/web/posts/death-to-vendor-prefixes/" title="Death to vendor prefixes!" target="_blank">it's happened before</a>.
 
 Then I read through the discussion, and this line in <a href="http://www.dmolsen.com/mobile-in-higher-ed/2012/02/21/ress-and-the-evolution-of-responsive-web-design/#comment-2744" title="Ronan Cremin @xbs">Ronan Cremin's comment</a> stuck out:
 
@@ -4486,7 +4486,7 @@ As you note, at some point tools need to be built to overcome the gaps we have b
 			<wp:comment_id>49</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>134.223.116.201</wp:comment_author_IP>
 			<wp:comment_date>2012-02-23 11:06:43</wp:comment_date>
 			<wp:comment_date_gmt>2012-02-23 17:06:43</wp:comment_date_gmt>
@@ -4518,7 +4518,7 @@ I think optimally I'd really like for a browser to tell the server a few non-tri
 			<wp:comment_id>51</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>108.87.46.253</wp:comment_author_IP>
 			<wp:comment_date>2012-02-23 16:21:47</wp:comment_date>
 			<wp:comment_date_gmt>2012-02-23 22:21:47</wp:comment_date_gmt>
@@ -4544,7 +4544,7 @@ Thanks again for provoking a good discussion and helping me suss out these thoug
 			<wp:comment_id>96</wp:comment_id>
 			<wp:comment_author><![CDATA[User Agent Detection Will Get You In Trouble &raquo; Designgineering &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/web/posts/user-agent-detection-will-get-you-in-trouble/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/web/posts/user-agent-detection-will-get-you-in-trouble/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-05-11 11:23:17</wp:comment_date>
 			<wp:comment_date_gmt>2012-05-11 16:23:17</wp:comment_date_gmt>
@@ -4650,7 +4650,7 @@ The same is true of data, where oftentimes there is nothing to protect - just ol
 			<wp:comment_id>99</wp:comment_id>
 			<wp:comment_author><![CDATA[Platforms and data: or, why Google+ needs Hootsuite &raquo; Designgineering &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/web/posts/platforms-and-data-or-why-google-needs-hootsuite/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/web/posts/platforms-and-data-or-why-google-needs-hootsuite/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-05-15 07:10:17</wp:comment_date>
 			<wp:comment_date_gmt>2012-05-15 12:10:17</wp:comment_date_gmt>
@@ -4944,9 +4944,9 @@ That message - "You're using an outdated version of Internet Explorer" - told me
 
 The site, it seems, is supplying different content to browsers with different user agents. I didn't get the standard CSS file I should have, and the site was unusable. As in: almost completely. I managed to get through the article, but I won't be back there anytime soon.
 
-I've hit on this topic <a href="http://www.chriskrycho.com/web/posts/responsive-design-server-side-feature-detection-and-a-big-mess/" title="Responsive Design, Server-Side Feature Detection, and a Big Mess">before</a>, and while I came out of the ensuing conversation with a respect for back-end developers who are thinking through these issues, this right here - a real problem, out in the wild - highlights my concerns with the approach, even when carefully administered.
+I've hit on this topic <a href="http://v4.chriskrycho.com/web/posts/responsive-design-server-side-feature-detection-and-a-big-mess/" title="Responsive Design, Server-Side Feature Detection, and a Big Mess">before</a>, and while I came out of the ensuing conversation with a respect for back-end developers who are thinking through these issues, this right here - a real problem, out in the wild - highlights my concerns with the approach, even when carefully administered.
 
-So, a plea for sanity: if you're going to do server-side user-agent detection, fine. I was persuaded by the the <a href="http://www.chriskrycho.com/web/posts/responsive-design-server-side-feature-detection-and-a-big-mess/#comments" title="comment thread">discussion</a> that followed that post that there really is a time and place for that sort of thing. But we need to be extremely careful in <em>where</em> and <em>how</em> we rely on user agent-detection to make decisions about the content we supply to users.
+So, a plea for sanity: if you're going to do server-side user-agent detection, fine. I was persuaded by the the <a href="http://v4.chriskrycho.com/web/posts/responsive-design-server-side-feature-detection-and-a-big-mess/#comments" title="comment thread">discussion</a> that followed that post that there really is a time and place for that sort of thing. But we need to be extremely careful in <em>where</em> and <em>how</em> we rely on user agent-detection to make decisions about the content we supply to users.
 
 We should never - not ever! - actively punish a user for having an out-of-date browser. If you don't want to actively support it, that's one thing. Don't write IE6- or IE7-specific stylesheets. But for goodness' sake, don't stop supply the <em>regular</em> stylesheet! Don't give me completely unstyled content just because you think my browser is out of date. However good user-agent detection gets, it will never be perfectly reliable, and you do no one any good by penalizing them for browser decisions that are often beyond their control.
 
@@ -5047,7 +5047,7 @@ The simple truth is: I would be far more likely to use Google+ if I could integr
 
 That's great, as far as it goes, but it won't get you any pull outside of that area, and the truth is that tech enthusiasts <em>already</em> like Google and many of them already gave Google+ most of the information it can now get from "social analytics" in their other interactions with the search giant. If Google+ wants to grow outside of that niche - if it wants to be a genuine social hub (and it does: it's just good for business) - it needs to make its data open and easily accessible. If it lets me get at Google+ data in my streams on TweetDeck, it <em>will</em> grow. If it doesn't, it will always be stuck in tech geek land.
 
-There's a lesson here for smaller developers, too. Google+ can sort of get away with this, because Google was already sufficiently large as to be able to get some leverage just by having a well-designed interface and banking on its own reputation. You and I don't have that latter factor going for us, so a decent interface isn't going to do the trick. If you're going to build a web app and you want it to catch on, you need to provide a way for users to get at the data. (Optimally, you want that data to be accessible in as raw and unfiltered way as possible, as I've written <a href="http://www.chriskrycho.com/web/posts/a-plea-for-open-data/" title="A Plea for Open Data" target="_blank">before</a>.) This can't be a future feature; it needs to be a priority from day one as you're developing. What will your API look like? How will you allow your users to <em>create value</em> on your platform, using your data? The more you open it up, the more uses people will find for your service, and the more they'll share it with others, and accordingly the more powerful it will be.
+There's a lesson here for smaller developers, too. Google+ can sort of get away with this, because Google was already sufficiently large as to be able to get some leverage just by having a well-designed interface and banking on its own reputation. You and I don't have that latter factor going for us, so a decent interface isn't going to do the trick. If you're going to build a web app and you want it to catch on, you need to provide a way for users to get at the data. (Optimally, you want that data to be accessible in as raw and unfiltered way as possible, as I've written <a href="http://v4.chriskrycho.com/web/posts/a-plea-for-open-data/" title="A Plea for Open Data" target="_blank">before</a>.) This can't be a future feature; it needs to be a priority from day one as you're developing. What will your API look like? How will you allow your users to <em>create value</em> on your platform, using your data? The more you open it up, the more uses people will find for your service, and the more they'll share it with others, and accordingly the more powerful it will be.
 
 Open platforms with accessible APIs are <em>the</em> key to the data side of successful web application development. Data, it turns out, is the currency of an information economy. There are other necessary components in other aspects of application development, but if you don't get data right it won't matter how pretty your interface is; you are doomed to languish in obscurity. If you get data right, though, you might just have a chance of your data going somewhere interesting.]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
@@ -5172,7 +5172,7 @@ Perhaps Google+ just has a shortage of 3rd party developers, like how most peopl
 			<wp:comment_id>102</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>134.223.116.201</wp:comment_author_IP>
 			<wp:comment_date>2012-05-15 13:24:57</wp:comment_date>
 			<wp:comment_date_gmt>2012-05-15 18:24:57</wp:comment_date_gmt>
@@ -5194,7 +5194,7 @@ Perhaps Google+ just has a shortage of 3rd party developers, like how most peopl
 			<wp:comment_id>103</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>134.223.116.201</wp:comment_author_IP>
 			<wp:comment_date>2012-05-15 13:28:58</wp:comment_date>
 			<wp:comment_date_gmt>2012-05-15 18:28:58</wp:comment_date_gmt>
@@ -5726,7 +5726,7 @@ Thanks for the article.]]></wp:comment_content>
 			<wp:comment_id>199</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>108.87.46.253</wp:comment_author_IP>
 			<wp:comment_date>2012-06-17 22:19:59</wp:comment_date>
 			<wp:comment_date_gmt>2012-06-18 03:19:59</wp:comment_date_gmt>
@@ -5770,7 +5770,7 @@ Thanks for the article.]]></wp:comment_content>
 			<wp:comment_id>650</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>70.164.64.17</wp:comment_author_IP>
 			<wp:comment_date>2012-08-15 08:43:44</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-15 13:43:44</wp:comment_date_gmt>
@@ -5875,11 +5875,11 @@ Seeing as the solutions to each of these problems are useful to more than just m
 
 h4. jira-client.py tweaks
 
-Download the tweaked file "here":http://dl.chriskrycho.com/scripts/jira-client.py. See a detailed writeup of what I did, how and why "here":http://www.chriskrycho.com/web/tools/jira-commit-acceptance-plugin-tweaks/.
+Download the tweaked file "here":http://dl.chriskrycho.com/scripts/jira-client.py. See a detailed writeup of what I did, how and why "here":http://v4.chriskrycho.com/web/tools/jira-commit-acceptance-plugin-tweaks/.
 
 h4. pre-commit.bat tweaks
 
-Necessary to deal with Windows Network Shares (as opposed to good old Unix network shares, which work much more sensibly). Download the batch file "here":http://dl.chriskrycho.com/scripts/remote-executable.bat. See a detailed writeup on dealing with shared network drives and executables "here":http://www.chriskrycho.com/web/tools/run-executable-on-a-network-drive-batch-file/. I included some detailed notes on dynamically mapping directories, if you're curious.
+Necessary to deal with Windows Network Shares (as opposed to good old Unix network shares, which work much more sensibly). Download the batch file "here":http://dl.chriskrycho.com/scripts/remote-executable.bat. See a detailed writeup on dealing with shared network drives and executables "here":http://v4.chriskrycho.com/web/tools/run-executable-on-a-network-drive-batch-file/. I included some detailed notes on dynamically mapping directories, if you're curious.
 
 h2. Source code
 
@@ -5893,7 +5893,7 @@ h3. jira-client.py
 # $Id: jira-client.py 20980 2009-07-23 06:16:03Z dchui $
 
 # Updated by Chris Krycho 2012-06-09                                                                                                
-# www.chriskrycho.com / web@chriskrycho.com 
+# v4.chriskrycho.com / web@chriskrycho.com 
 
 try:
     import subprocess
@@ -6093,7 +6093,7 @@ endlocal</pre>]]></content:encoded>
 			<wp:comment_id>791</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>108.87.46.253</wp:comment_author_IP>
 			<wp:comment_date>2012-08-27 22:09:10</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-28 03:09:10</wp:comment_date_gmt>
@@ -6115,7 +6115,7 @@ endlocal</pre>]]></content:encoded>
 			<wp:comment_id>796</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>70.164.64.17</wp:comment_author_IP>
 			<wp:comment_date>2012-08-28 08:53:51</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-28 13:53:51</wp:comment_date_gmt>
@@ -6300,7 +6300,7 @@ endlocal</pre>]]></content:encoded>
 			<wp:comment_id>286</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>108.87.46.253</wp:comment_author_IP>
 			<wp:comment_date>2012-07-03 23:46:16</wp:comment_date>
 			<wp:comment_date_gmt>2012-07-04 04:46:16</wp:comment_date_gmt>
@@ -6350,7 +6350,7 @@ Also, keep in mind when I say that comments indicate bad code, I obviously don't
 			<wp:comment_id>289</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>108.87.46.253</wp:comment_author_IP>
 			<wp:comment_date>2012-07-04 10:48:08</wp:comment_date>
 			<wp:comment_date_gmt>2012-07-04 15:48:08</wp:comment_date_gmt>
@@ -6601,7 +6601,7 @@ This is, simply put, amazing. If you look at science fiction of the past fifty y
 		<description></description>
 		<content:encoded><![CDATA[<p>Today, it came to my attention that <a href="http://www.avid.com/US/">Avid</a>, maker of various audio and video processing tools &#8211; tools you've heard of if you're in those industries, high profile names like Pro Tools - has closed down the main office responsible for developing Sibelius and sourced the development to a team in the Ukraine.</p>
 <p>Nothing against the Ukrainians, but shutting down the London development office responsible for nearly two decades and replacing it with a team a third its size does not bode well for future development.</p>
-<a href="http://www.chriskrycho.com/web/files/2012/08/sibelius-7.jpeg"><img src="http://www.chriskrycho.com/web/files/2012/08/sibelius-7.jpeg" alt="Box art for Sibelius 7" title="sibelius-7" style="max-width: 48%; float: left; margin-right: 1em; margin-top: 1em;" /></a>
+<a href="http://v4.chriskrycho.com/web/files/2012/08/sibelius-7.jpeg"><img src="http://v4.chriskrycho.com/web/files/2012/08/sibelius-7.jpeg" alt="Box art for Sibelius 7" title="sibelius-7" style="max-width: 48%; float: left; margin-right: 1em; margin-top: 1em;" /></a>
 <p>This came out in as underhanded a way as possible, with the sorts of PR doublespeak and carefully prepared press releases I've come to expect from large corporations. Avid's statements indicated that they were consolidating their engineering efforts in order to save money. Since Sibelius seems to be quite profitable, it's clear that Avid is choosing to bleed the product to support its other goals. This move, in other words, reeks of bean-counting trumping any love of product or any real concern for the customers that have invested in Sibelius over the last several decades - invested more than money. <!--more--></p>
 <p>If Avid actually cared about its own employees or about the software, the company would sell Sibelius back to its founders, Ben and Jonathan Finn, who have offered <em>twice</em> to buy the company back, in order to keep the software going and its developers employed. Avid will have none of it. They want the profits with none of the investment.<sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup></p>
 <p>This sort of things is increasingly common in the tech industry, and it's tragic. A large corporation will buy out a smaller one for the talent, or for the profitable software which it then runs into the ground by mismanagement, or just to stamp out possible competition with its own offerings. The market is poorer for it, the original developers watch their vision founder on the hard rocks of corporate bureaucracy, and the users lose out in the end.<sup><a href="#fn2" class="footnoteRef" id="fnref2">2</a></sup></p>
@@ -6623,7 +6623,7 @@ This is, simply put, amazing. If you look at science fiction of the past fifty y
 </li>
 <li id="fn2"><p>So will the big company that makes this move in the end. This is a surefire way to lose your customers. More on that tomorrow in the form of an open letter to the folks at Avid &#8211; when I'm less angry and can write more rationally.<a href="#fnref2">&#8617;</a></p></li>
 <li id="fn3"><p>I've seen some folks suggesting that the solution here is open source. That sounds nice in theory, but the reality is that I've never seen an open source product that could compete with a closed source product in the areas that matter for consumer software. Linux is great, but there's a reason the &quot;year of the Linux desktop&quot; is permanently mythical. If you want really top-notch software, you'll pay for it, because people have to eat. There's more to say about this, but that's for another post.<a href="#fnref3">&#8617;</a></p></li>
-<li id="fn4"><p>This is the third time I've been bitten by this in the last six months. It's getting old. I saw it with <a href="http://www.chriskrycho.com/art/reflections/mass-effect-3-and-art-as-dialectic/" title="Mass Effect 3 and Art as Dialectic"><cite>Mass Effect 3</cite></a>, which bore the clear imprint of corporate takeover killing company vision and culture with EA taking over Bioware a few years ago. I saw it with <a href="http://pandodaily.com/2012/07/20/why-googles-sparrow-acquisition-just-ruined-my-morning/" title="Why Google&#39;s Sparrow Acquisition Just Ruined My Morning">Sparrow</a>, which has now abandoned all future development on a product lots of Mac and iOS users were excited about after its developers were acquired &#8211; for talent, not product &#8211; by Google. And now I've seen it with Sibelius, just a few short years after Avid purchased it.<a href="#fnref4">&#8617;</a></p></li>
+<li id="fn4"><p>This is the third time I've been bitten by this in the last six months. It's getting old. I saw it with <a href="http://v4.chriskrycho.com/art/reflections/mass-effect-3-and-art-as-dialectic/" title="Mass Effect 3 and Art as Dialectic"><cite>Mass Effect 3</cite></a>, which bore the clear imprint of corporate takeover killing company vision and culture with EA taking over Bioware a few years ago. I saw it with <a href="http://pandodaily.com/2012/07/20/why-googles-sparrow-acquisition-just-ruined-my-morning/" title="Why Google&#39;s Sparrow Acquisition Just Ruined My Morning">Sparrow</a>, which has now abandoned all future development on a product lots of Mac and iOS users were excited about after its developers were acquired &#8211; for talent, not product &#8211; by Google. And now I've seen it with Sibelius, just a few short years after Avid purchased it.<a href="#fnref4">&#8617;</a></p></li>
 <li id="fn5"><p>Should Ben or Jonathan Finn happen to read this, understand: I'm not criticizing your decision. Hindsight is always 20/20, and I've no doubt Avid looked like a good move at the time. I wish you the very best of luck in reacquiring Sibelius, and if you do I'll be one of your first customers and one of your loudest supporters. And should Daniel Spreadbury happen by, know that you have my very highest regard and thanks for the support &#8211; some of it despite official statements that my situation was very much <em>not</em> supported &#8211;&#160;over the last couple years.<a href="#fnref5">&#8617;</a></p></li>
 </ol>
 </section>]]></content:encoded>
@@ -6725,7 +6725,7 @@ This is, simply put, amazing. If you look at science fiction of the past fifty y
 			<wp:comment_id>752</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>70.164.64.17</wp:comment_author_IP>
 			<wp:comment_date>2012-08-22 10:19:58</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-22 15:19:58</wp:comment_date_gmt>
@@ -6747,7 +6747,7 @@ This is, simply put, amazing. If you look at science fiction of the past fifty y
 			<wp:comment_id>765</wp:comment_id>
 			<wp:comment_author><![CDATA[Dear Avid: Please Sell Sibelius &raquo; Designgineering &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/web/posts/dear-avid-please-sell-sibelius/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/web/posts/dear-avid-please-sell-sibelius/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-08-23 07:46:03</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-23 12:46:03</wp:comment_date_gmt>
@@ -6761,7 +6761,7 @@ This is, simply put, amazing. If you look at science fiction of the past fifty y
 			<wp:comment_id>770</wp:comment_id>
 			<wp:comment_author><![CDATA[On Avid and Sibelius &raquo; Ars Artis &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/art/links/on-avid-and-sibelius/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/art/links/on-avid-and-sibelius/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-08-23 10:05:54</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-23 15:05:54</wp:comment_date_gmt>
@@ -6801,7 +6801,7 @@ And you're talking about $$,$$$,$$$!]]></wp:comment_content>
 			<wp:comment_id>750</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>70.164.64.17</wp:comment_author_IP>
 			<wp:comment_date>2012-08-22 08:42:13</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-22 13:42:13</wp:comment_date_gmt>
@@ -6829,7 +6829,7 @@ You and I do programming for different reasons, methinks. I like the money aspec
 			<wp:comment_id>742</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>108.87.46.253</wp:comment_author_IP>
 			<wp:comment_date>2012-08-21 23:47:37</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-22 04:47:37</wp:comment_date_gmt>
@@ -6880,7 +6880,7 @@ You and I do programming for different reasons, methinks. I like the money aspec
 		<content:encoded><![CDATA[<p>Dear Avid,<sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup></p>
 <p>Monday, after noting that my copy of Sibelius 5 would not install on my new MacBook Pro - no surprise, it is after all 5-year-old software - I looked for some solutions online. It became clear that I wouldn't be able to get it going, so I started looking at upgrading to Sibelius 7, about which I've heard many good things. Upgrading was an easy decision: I've had nothing but good experiences with Sibelius since I bought a copy of Sibelius 3 back in 2004.</p>
 <p>Along the way, I stumbled on <a href="http://www.sibeliusblog.com/news/upgrade-to-sibelius-7-and-save-25/">this blog post</a> by Daniel Spreadbury. Curious what he meant by &#8220;the recent news about Avid&#8217;s corporate restructuring&#8221;, I followed the link.</p>
-<p>By now, I'm sure you can see <a href="http://www.chriskrycho.com/web/posts/dont-sell-out/" title="Don&#39;t Sell (Out)">where this is going</a>: like many other long-time Sibelius users, I'm more than a bit disgruntled by the news. <!--more-->Given that Sibelius has been an essential part of my musical creative process for nearly a decade now - a length of time dwarfed by others' usage, but a quite substantial fraction of my own life - I was extremely disheartened to hear that you were disbanding the Sibelius development team in the interest of cost cutting.</p>
+<p>By now, I'm sure you can see <a href="http://v4.chriskrycho.com/web/posts/dont-sell-out/" title="Don&#39;t Sell (Out)">where this is going</a>: like many other long-time Sibelius users, I'm more than a bit disgruntled by the news. <!--more-->Given that Sibelius has been an essential part of my musical creative process for nearly a decade now - a length of time dwarfed by others' usage, but a quite substantial fraction of my own life - I was extremely disheartened to hear that you were disbanding the Sibelius development team in the interest of cost cutting.</p>
 <p>To put it mildly, I think this a very poor decision. In cutting the development team, you are making it clear that you are unwilling to continue investing in the people who have made this such an excellent product. Indeed, your willingness to let go the very staff responsible for the creation and development of one of your more consistently profitable products suggests that you have only short-term profits in mind and are not, in fact, dedicated to the future success of the product &#8211; whatever your press releases may say.</p>
 <p>Unfortunately for you and your shareholders, this strategy is almost certainly doomed to failure in the long-term. In the short-term, you will see increased profits from this move. You will not have to pay the salaries of these developers, and in outsourcing the development to Kiev, you will retain the ability to produce at least some code &#8211; the quality of such code is of course doubtful. In the long run, however, the outlook for Sibelius is not exactly good.</p>
 <p>First, the software's current dominance across Hollywood, university music programs, and private composer use is not easily sustained. It is the result of years of diligent effort by the development team to keep advancing the tool and to provide the best customer support in the field. You may be able to keep the product afloat, but you've already dismissed the most important part of its success: the people who created it, know it best, and have the creative vision to keep advancing it year after year. That combination of passion, knowledge, and vision is irreplaceable, and <em>that</em> is what has made Sibelius great.</p>
@@ -7014,7 +7014,7 @@ You and I do programming for different reasons, methinks. I like the money aspec
 			<wp:comment_id>786</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>108.87.46.253</wp:comment_author_IP>
 			<wp:comment_date>2012-08-25 22:14:40</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-26 03:14:40</wp:comment_date_gmt>
@@ -7146,7 +7146,7 @@ You and I do programming for different reasons, methinks. I like the money aspec
 			<wp:comment_id>768</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>70.164.64.17</wp:comment_author_IP>
 			<wp:comment_date>2012-08-23 09:56:34</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-23 14:56:34</wp:comment_date_gmt>
@@ -7190,7 +7190,7 @@ You and I do programming for different reasons, methinks. I like the money aspec
 			<wp:comment_id>771</wp:comment_id>
 			<wp:comment_author><![CDATA[On Avid and Sibelius &raquo; Ars Artis &raquo; Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email></wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com/art/links/on-avid-and-sibelius/</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com/art/links/on-avid-and-sibelius/</wp:comment_author_url>
 			<wp:comment_author_IP>199.96.156.113</wp:comment_author_IP>
 			<wp:comment_date>2012-08-23 10:09:22</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-23 15:09:22</wp:comment_date_gmt>
@@ -7226,7 +7226,7 @@ You and I do programming for different reasons, methinks. I like the money aspec
 			<wp:comment_id>773</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>70.164.64.17</wp:comment_author_IP>
 			<wp:comment_date>2012-08-23 10:25:59</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-23 15:25:59</wp:comment_date_gmt>
@@ -7293,7 +7293,7 @@ Thank you from all of  who use (and promote) Sibelius on a daily basis!]]></wp:c
 			<wp:comment_id>776</wp:comment_id>
 			<wp:comment_author><![CDATA[Chris Krycho]]></wp:comment_author>
 			<wp:comment_author_email>chris@chriskrycho.com</wp:comment_author_email>
-			<wp:comment_author_url>http://www.chriskrycho.com</wp:comment_author_url>
+			<wp:comment_author_url>http://v4.chriskrycho.com</wp:comment_author_url>
 			<wp:comment_author_IP>70.164.64.17</wp:comment_author_IP>
 			<wp:comment_date>2012-08-23 12:54:35</wp:comment_date>
 			<wp:comment_date_gmt>2012-08-23 17:54:35</wp:comment_date_gmt>

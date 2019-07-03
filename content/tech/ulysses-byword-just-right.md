@@ -9,7 +9,7 @@ I'm trying out Ulysses again, as it's been updated substantially since I last us
 
 Neither of them quite *nails* it for my purposes, though:
 
-- Neither is quite there for text that includes a lot of code samples. (Basically: neither supports the GitHub variations on Markdown, which are incredibly important for [a lot of my writing](http://www.chriskrycho.com/rust-and-swift.html)
+- Neither is quite there for text that includes a lot of code samples. (Basically: neither supports the GitHub variations on Markdown, which are incredibly important for [a lot of my writing](http://v4.chriskrycho.com/rust-and-swift.html)
 - Neither has the ability to do things like autocompletion of citations from something like BibLatex. (No standalone app does, to my knowledge.)
 - Ulysses’ most powerful features only work in its iCloud bucket. And they’re not standard: rather than embracing [CriticMarkup](http://criticmarkup.com) for comments, they have their own. The same is true of e.g. their code blocks.
 - Ulysses *converts* any other Markdown documents to its own custom variant when you open them. Had those documents formatted a way you liked (e.g. with specific kinds of link or footnote formatting)? Don’t expect them to still be that way.

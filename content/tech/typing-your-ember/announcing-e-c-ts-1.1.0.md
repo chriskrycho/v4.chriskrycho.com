@@ -22,7 +22,7 @@ We’ve now added support for generating _all_ standard Ember items as TypeScrip
 
 [^pt4]: For details on how this all works, see [TypeScript and Ember.js Update: Part 4][pt4], where I discuss these changes in detail.
 
-[pt4]: http://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html
+[pt4]: http://v4.chriskrycho.com/2018/typing-your-ember-update-part-4.html
 
 Those generators are _mostly_ identical with ones in Ember and Ember Data, just with `.ts` instead of `.js` for the extension. The only changes we have made are: (a) we've tweaked them to use classes where possible, and (b) we have customized the controller, service, and Ember Data model, adapter, and serializer generators so you get the most mileage out of TypeScript for the least effort we can manage today. So when you do `ember generate service session`, this is what you’ll see:
 
@@ -85,7 +85,7 @@ Then anywhere you injected and used it, you'll get auto-complete suggestions and
 
 ## Addon development
 
-As [promised with the 1.0 release](http://www.chriskrycho.com/2017/announcing-ember-cli-typescript-100.html#the-roadmap), 1.1 (though arriving much later than I hoped it would) includes support for developing addons with TypeScript.
+As [promised with the 1.0 release](http://v4.chriskrycho.com/2017/announcing-ember-cli-typescript-100.html#the-roadmap), 1.1 (though arriving much later than I hoped it would) includes support for developing addons with TypeScript.
 
 Strictly speaking, of course, you could _always_ develop addons using TypeScript, but there were two problems with it: (1) dependency management and (2) manual work required to deal with the dependency management problems.
 

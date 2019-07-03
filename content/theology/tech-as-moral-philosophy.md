@@ -11,7 +11,7 @@ Status: draft
 
 ---
 
-<i><b>[Assumed Audience](https://www.chriskrycho.com/2018/ssumed-audiences.html):</b> TODO.</i>
+<i><b>[Assumed Audience](https://v4.chriskrycho.com/2018/ssumed-audiences.html):</b> TODO.</i>
 
 L. M. Sacasas, [reflecting on][sacasas] Paul Goodman’s [claim] that “technology is a branch of moral philosophy, not of science,” and that “technology must have its proper place on the faculty as a learned profession important in modern society, along with medicine, law, the humanities, and natural philosophy, learning from them and having something to teach them”—emphasis mine:
 

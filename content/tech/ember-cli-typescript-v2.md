@@ -11,7 +11,7 @@ Summary: >
 
 <i><b>[Assumed Audience][aa]:</b> People interested in [Ember] and [TypeScript].</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 [Ember]: https://emberjs.com
 [TypeScript]: http://www.typescriptlang.org
 
@@ -36,7 +36,7 @@ There are just two changes, but they're a big deal!
 
 We covered the Babel 7 changes in detail two earlier blog posts:
 
-- [ember-cli-typescript v2 beta](https://www.chriskrycho.com/2018/ember-cli-typescript-v2-beta.html) (me)
+- [ember-cli-typescript v2 beta](https://v4.chriskrycho.com/2018/ember-cli-typescript-v2-beta.html) (me)
 - [ember-cli-typescript v2 release candidate](https://medium.com/@mikenorth/ember-cli-typescript-v2-release-candidate-3d1f72876ea4) (Mike North)
 
 Happily, nothing has changed in the implementation since the beta or <abbr>RC</abbr> releases except fixing some bugs!

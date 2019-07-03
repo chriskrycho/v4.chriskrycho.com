@@ -8,7 +8,7 @@ Category: blog
 
 ---
 
-One thing I try to take into account when I’m [writing a talk](https://www.chriskrycho.com/2018/how-i-write-a-talk.html "How I Write a Talk") is how the talk will work for people who cannot see well or at all. It’s easy, when you have good vision, to simply assume that everyone else does, too. But there are lots of ways that assumption falls over—everything from protanopia (the most common form of color-blindness) to total blindness.
+One thing I try to take into account when I’m [writing a talk](https://v4.chriskrycho.com/2018/how-i-write-a-talk.html "How I Write a Talk") is how the talk will work for people who cannot see well or at all. It’s easy, when you have good vision, to simply assume that everyone else does, too. But there are lots of ways that assumption falls over—everything from protanopia (the most common form of color-blindness) to total blindness.
 
 There’s a question here that you *must* keep in mind when it comes to slides: Is my talk comprehensible without the slides? Because the reality is that some people simply cannot see them. At all.
 

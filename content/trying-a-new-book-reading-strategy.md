@@ -8,7 +8,7 @@ Summary: >
     Improving my approach to deep reading with better notes and my Zettelkasten.
 ---
 
-<i><b>[Assumed Audience:](https://www.chriskrycho.com/2018/assumed-audiences.html)</b> people broadly interested in reading, writing, learning, and research systems.</i>
+<i><b>[Assumed Audience:](https://v4.chriskrycho.com/2018/assumed-audiences.html)</b> people broadly interested in reading, writing, learning, and research systems.</i>
 
 Today I started trying a new(-to-me!) approach to deeply reading books, with some relatively light reading (so that I can get the practice).[^1] I’m hoping to be able to grow this skill and use it effectively for learning deeply in 2019. The strategy is pretty simple:
 
@@ -27,7 +27,7 @@ Along the way, I’ll also write up other thoughts and interactions with the tex
 
 Once I have these kinds of notes, I will have a lot of material available to put to whatever use. Most importantly, I will have done a lot more active thinking about the ideas I encountered, and will have quick access to those thoughts to build on later. But I will also be able to use both those quick references to the book and to my own thoughts as prompted by the book to generate writing prompts for blog posts, book reviews, teaching notes, and so on.
 
-You’ll notice that this is quite similar in a number of ways to [my approach to logging my work](https://www.chriskrycho.com/2018/just-write-down-what-you-do.html); that’s intentional. I have found that an extremely fruitful way to be able to quickly grasp what I have *done* over a given span. It seems likely that this variant on it will be equally useful for quickly grasping what I have *read* over a given span.
+You’ll notice that this is quite similar in a number of ways to [my approach to logging my work](https://v4.chriskrycho.com/2018/just-write-down-what-you-do.html); that’s intentional. I have found that an extremely fruitful way to be able to quickly grasp what I have *done* over a given span. It seems likely that this variant on it will be equally useful for quickly grasping what I have *read* over a given span.
 
 One other note: I will definitely not be doing this for *everything* I read. That would be laborious indeed! I plan to do this for books which I find to be of particularly high value this way. Many books simply do not warrant it, and indeed warrant little more than a quick skim (or to be put aside entirely). I wrote a couple days ago about my intent to use my time more carefully in 2019; one part of that is carefully distinguishing in *how* I read as well as *what* I read.
 

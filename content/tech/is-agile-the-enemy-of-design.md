@@ -9,7 +9,7 @@ Summary: >
 
 ---
 
-<i class=editorial>In line with my recently stated [desire](https://www.chriskrycho.com/2018/continuing-to-reflect-on-my-internet-presence.html "Continuing to Reflect on My Internet Presence") to share out things I’m reading:</i>
+<i class=editorial>In line with my recently stated [desire](https://v4.chriskrycho.com/2018/continuing-to-reflect-on-my-internet-presence.html "Continuing to Reflect on My Internet Presence") to share out things I’m reading:</i>
 
 [main]: https://hackernoon.com/is-agile-the-enemy-of-good-design-14a35806cde7
 

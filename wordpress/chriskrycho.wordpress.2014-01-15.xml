@@ -1029,7 +1029,7 @@
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key>_menu_item_url</wp:meta_key>
-			<wp:meta_value><![CDATA[http://www.chriskrycho.com/art/artists/]]></wp:meta_value>
+			<wp:meta_value><![CDATA[http://v4.chriskrycho.com/art/artists/]]></wp:meta_value>
 		</wp:postmeta>
 	</item>
 	<item>
@@ -1348,7 +1348,7 @@
 		<dc:creator><![CDATA[chriskrycho]]></dc:creator>
 		<guid isPermaLink="false">http://2012-2013.chriskrycho.com/?page_id=39</guid>
 		<description></description>
-		<content:encoded><![CDATA[<script type="text/javascript" src="http://www.chriskrycho.com/utilities/ligatures-plus.js"></script>
+		<content:encoded><![CDATA[<script type="text/javascript" src="http://v4.chriskrycho.com/utilities/ligatures-plus.js"></script>
 
 This is a test page in which I have ligatures enabled for both of the main fonts on the site. Puffy eyes and exploding fish are the way it goes down, kids.
 

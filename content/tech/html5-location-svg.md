@@ -70,7 +70,7 @@ Among other things, this would require making sure that any place we used the
 `<use>` tag, we would have to set that---not exactly a good idea, given that it
 would entail an awful lot of changes if the base URL were ever changed.
 
-[recurring theme]: http://www.chriskrycho.com/2015/how-to-build-a-single-page-app-api-right.html
+[recurring theme]: http://v4.chriskrycho.com/2015/how-to-build-a-single-page-app-api-right.html
 
 What if, instead, we did this?
 

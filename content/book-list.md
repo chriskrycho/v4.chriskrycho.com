@@ -18,5 +18,5 @@ Maybe someday I'll be able to write one of those killer reviews that ends up cha
 
 So: [book list].
 
-[book list]: http://www.chriskrycho.com/2017-book-list.html
+[book list]: http://v4.chriskrycho.com/2017-book-list.html
 

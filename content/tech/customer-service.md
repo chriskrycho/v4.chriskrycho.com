@@ -16,7 +16,7 @@ This post came off as pretty critical of MarketCircle, and that *really* wasn't
 my point. I wanted to use a bad experience I had with MarketCircle to illustrate
 a general principle, *not* to poke at any particular company. I did that poorly
 in this particular piece; for some follow-up on that see [this
-post](http://www.chriskrycho.com/2014/i-wrote-it-wrong.html) which I wrote later
+post](http://v4.chriskrycho.com/2014/i-wrote-it-wrong.html) which I wrote later
 that day, analyzing how and why this piece so spectacularly failed to accomplish
 my desired goals.
 

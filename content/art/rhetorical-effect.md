@@ -9,8 +9,8 @@ I wrote a [blog post][post] earlier, and it seems I got it wrong (see the
 [addendum][edit] at the end of the post). That is always an unpleasant
 experience, to say the least.
 
-[post]: http://www.chriskrycho.com/2014/dont-be-rude.html
-[edit]: http://www.chriskrycho.com/2014/dont-be-rude.html#edit-and-addendum
+[post]: http://v4.chriskrycho.com/2014/dont-be-rude.html
+[edit]: http://v4.chriskrycho.com/2014/dont-be-rude.html#edit-and-addendum
 
 The one upside to this whole affair? I took away two important lessons: The
 first was a reminder to read others generously, even when frustrated with

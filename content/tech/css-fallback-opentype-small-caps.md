@@ -43,7 +43,7 @@ In the past, I have exported the small caps as a distinct webfont and specified
 them directly; see [this post][qml] for a simple example: the first line of each
 paragraph is specified that way.
 
-[qml]: http://www.chriskrycho.com/2014/learning-qml-part-1.html
+[qml]: http://v4.chriskrycho.com/2014/learning-qml-part-1.html
 
 While I *can* do the same thing here (and at least in theory could deliver a
 pretty small typeface, since I really only need three characters: `o`, `r`, and

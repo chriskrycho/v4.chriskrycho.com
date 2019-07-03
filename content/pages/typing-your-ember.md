@@ -22,7 +22,7 @@ This list is updated whenever I publish a new post in the series. You can also s
 [#typing-your-ember]: /feeds/typing-your-ember.xml
 [#typescript]: /feeds/typescript.xml
 [#emberjs]: /feeds/emberjs.xml
-[tag listing]: http://www.chriskrycho.com/typing-your-ember/
+[tag listing]: http://v4.chriskrycho.com/typing-your-ember/
 
 ### Initial Series
 

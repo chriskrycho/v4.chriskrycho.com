@@ -10,7 +10,7 @@ Summary: >
 
 <i class="editorial">A quick note: I drafted this back in June, but forgot to actually publish it!</i>
 
-I find that I’m always reflecting on the shape I want my internet presence to take. Over the last month, in particular, I’ve been thinking about the kind of “link-blogging” and commentary-on-articles-I’ve-read that I’ve experimented with pushing into Pinboard for the last [year and some change](https://www.chriskrycho.com/2017/pick-the-right-tool-for-the-job.html).
+I find that I’m always reflecting on the shape I want my internet presence to take. Over the last month, in particular, I’ve been thinking about the kind of “link-blogging” and commentary-on-articles-I’ve-read that I’ve experimented with pushing into Pinboard for the last [year and some change](https://v4.chriskrycho.com/2017/pick-the-right-tool-for-the-job.html).
 
 On the one hand, I’ve found that Pinboard is *great* for two things:
 
@@ -26,7 +26,7 @@ The thing is, I want this material here on this site. There remain two blockers 
 
 For the most part, I am happy enough with a static site generator setup. However, for this specific kind of use, I wish for a web front-end to my website (or, honestly, an easy way to integrate [Ulysses](https://www.ulyssesapp.com) with it). The options which exist in that general space—WordPress and Ghost—both have their upsides, but also a great many downsides, and I find that I have no interest in using either.
 
----- 
+----
 
 You might find that an odd commitment; here’s an aside on why.
 
@@ -38,7 +38,7 @@ This is one reason I’ve seriously considered figuring out how to make my [long
 
 The problem, of course, is that I’m not yet ready to spend my limited time building out my long-planned and long-delayed personal website generator tool. In short, I’m caught in a catch-22 of my own making.
 
----- 
+----
 
 In any case, I want to figure out a flow for sharing those kinds of notes-on-articles that works better for getting it onto my blog, rather than caught in the mostly-invisible space that is my Pinboard. I need a refreshed site design to support it effectively. I need different *tools* to support that flow effectively. Which means I’m not going to end up doing it tomorrow or anything.
 

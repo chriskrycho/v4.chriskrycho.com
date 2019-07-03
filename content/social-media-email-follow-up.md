@@ -11,13 +11,13 @@ Summary: >
 
 <i><b>[Assumed Audience][aa]:</b> anyone *willing* to think hard about social media and its place in our lives.</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
 ---
 
 <i>I got a particularly thoughtful email from a friend about his family’s use of Facebook in response to [yesterday’s essay][breaking up]. I’ve reproduced most of my response here because I think it’s a helpful extension on that essay.</i>
 
-[breaking up]: https://www.chriskrycho.com/2019/breaking-up-with-social-media.html
+[breaking up]: https://v4.chriskrycho.com/2019/breaking-up-with-social-media.html
 
 I (a) totally hear where you’re coming from, and deeply sympathize; and (b) deeply disagree about the notion that they’re “just tools – not good or evil in themselves.”
 

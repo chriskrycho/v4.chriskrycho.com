@@ -49,13 +49,13 @@ A few other observations about the language itself from reading the book.
 
 **First,** reading this highlighted a lot of strange things about F♯, all of which ultimately come down to the ways F♯'s development has been driven by concerns for interoperability with C♯. Worse, there are a lot of places where the influence of C♯ casts this shadow *entirely unnecessarily*. One particular expression of this which drove me crazy: F♯ far too often uses exceptions instead of `Option`s. It's [one thing] to make sure the language gracefully handle exceptions: you *will* have them coming from outside contexts. It is another entirely to design core parts of the language to throw exceptions where it doesn't have to.
 
-[one thing]: http://www.chriskrycho.com/2017/better-off-using-exceptions.html
+[one thing]: http://v4.chriskrycho.com/2017/better-off-using-exceptions.html
 
 Perhaps the most prominent example is the `List.head` function. Its type signature is `'T list -> 'T`, where I would expect it to be `'T list -> 'T option`. If you call `List.head` on an empty list, you get an exception. It would make far more sense for it to return an `Option` and just give you `None` if there's no item. Then you're not worried about `try` expressions and the type system will actually help you! This is one of the most valuable parts of having a type system like F♯'s! I really don't understand a lot of these decisions, not least since this isn't for interop with C♯ collections---these are for native F♯ collections.
 
 **Second,** the use of things like computation expressions instead of type machinery has an interesting effect: it makes it simpler to read when you first encounter it, but harder to compose, build, etc.---and it's more syntax to remember. Computation expressions just end up being a way to do "monadic" transformations, from what I can tell. But as I noted often in my discussion of [Rust and Swift], I profoundly prefer approaches that build on the same existing machinery---even in the surface syntax of the language---rather than constantly building new machinery. It makes it easier to deeply internalize new concepts and to *understand* the language (rather than just being able to *use*) the language. It also seems (from my admittedly limited vantage point) that computation expressions are as a result much less *composable* than actual type machinery of the sort available in other languages (Haskell, Idris, etc.).
 
-[Rust and Swift]: http://www.chriskrycho.com/rust-and-swift.html
+[Rust and Swift]: http://v4.chriskrycho.com/rust-and-swift.html
 
 Now, the tradeoff there is that adding those adds a lot of complexity both to the compiler and to the libraries people are apt to write; there's a reason Elm has totally eschewed that kind of type machinery to date. But Elm has also refused to just add syntax around ideas like this the way F♯ has here, and it makes for a much cleaner and frankly *nicer* language.
 

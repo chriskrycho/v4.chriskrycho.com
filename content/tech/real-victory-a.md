@@ -25,4 +25,4 @@ But it type-checks today, and type errors fail the builds, and that *is* a real 
 
 You can consider this “part 1” of my thoughts on what feels to me like a pretty significant achievement. I’ll hopefully follow this up with some backstory sometime in the next few weeks.
 
-[^1]:	See my [recent post](https://www.chriskrycho.com/2018/type-informed-design.html) on thinking a lot about design decisions I would have made differently with TypeScript’s strict null checking available from day one!
+[^1]:	See my [recent post](https://v4.chriskrycho.com/2018/type-informed-design.html) on thinking a lot about design decisions I would have made differently with TypeScript’s strict null checking available from day one!

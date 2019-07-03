@@ -97,4 +97,4 @@ That's it!
     `cargo doc` wraps around. I never actually use `rustdoc` directly, though.
 
 [Sap.py]: http://www.sap-py.com
-[Sermons]: http://www.chriskrycho.com/sermons.xml
+[Sermons]: http://v4.chriskrycho.com/sermons.xml

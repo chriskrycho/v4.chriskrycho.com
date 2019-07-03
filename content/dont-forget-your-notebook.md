@@ -9,11 +9,11 @@ Summary: >
 
 ---
 
-<i><b>[Assumed Audience](https://www.chriskrycho.com/2018/assumed-audiences.html):</b> people interested in research, note-taking, memory, and the like.</i>
+<i><b>[Assumed Audience](https://v4.chriskrycho.com/2018/assumed-audiences.html):</b> people interested in research, note-taking, memory, and the like.</i>
 
 I’m sitting at a coffee shop enjoying a tasty drink and working on an app idea I’ve been slowly fleshing out over the last 3½ years… in a paper notebook.
 
-I’ve been [writing a bit](https://www.chriskrycho.com/zettelkasten/ "#zettelkasten on chriskrycho.com") here over the last month or so about my experiment in building a [Zettelkasten](https://zettelkasten.de/posts/extend-your-mind-and-memory-with-a-zettelkasten/ "Extend Your Mind and Memory With a Zettelkasten"), and so far I’m quite pleased with it. It’s already proven helpful to me, and given my experiences so far I expect it to be much more so over the (hopefully many!) years ahead. I’ve [noted](http://www.chriskrycho.com/2018/starting-to-build-a-zettelkasten.html "Starting to Build a Zettelkasten") that [I’m putting all of my notes](http://www.chriskrycho.com/2018/zettelkasten-update-all-in-on-bear.html "Zettelkasten Update: All in on Bear") in [Bear](https://bear.app), as it’s a handy tool that *mostly* maps to the way I think about note-taking.
+I’ve been [writing a bit](https://v4.chriskrycho.com/zettelkasten/ "#zettelkasten on chriskrycho.com") here over the last month or so about my experiment in building a [Zettelkasten](https://zettelkasten.de/posts/extend-your-mind-and-memory-with-a-zettelkasten/ "Extend Your Mind and Memory With a Zettelkasten"), and so far I’m quite pleased with it. It’s already proven helpful to me, and given my experiences so far I expect it to be much more so over the (hopefully many!) years ahead. I’ve [noted](http://v4.chriskrycho.com/2018/starting-to-build-a-zettelkasten.html "Starting to Build a Zettelkasten") that [I’m putting all of my notes](http://v4.chriskrycho.com/2018/zettelkasten-update-all-in-on-bear.html "Zettelkasten Update: All in on Bear") in [Bear](https://bear.app), as it’s a handy tool that *mostly* maps to the way I think about note-taking.
 
 As I’m sitting working on this app design, though, it strikes me how valuable I find a physical notebook to be. Plain old pen and paper remain my favorite tool for *thinking*.
 
