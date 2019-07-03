@@ -14,7 +14,7 @@ Summary: >
 
 <i><b>[Assumed audience:][aa]</b> people into the details of endurance running and races. (Yes, I know that’s probably a vanishingly small part of my normal readership. That’s just fine.)</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
 Today I ran the half marathon event in the [Colfax Marathon][colfax]. You can see the details [here][ra] (I prefer [Strava’s presentation][strava], but you have to have an account to see most of it.) I finished at 1:29:56 wall time, and 1:29:50 chip time. (The difference is because I started at the *back* of the first corral instead of the *front* and had to wait for a few dozen people to get moving in front of me.)
 

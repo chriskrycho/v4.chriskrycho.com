@@ -27,7 +27,7 @@ kinds of work helps me stay fresh on all of them. My own personal [side
 projects][io] are coming along slowly, but that is all right. Slow but steady
 is the best way to go about those kinds of projects anyway.
 
-[io]: http://www.chriskrycho.com/2014/a-little-crazy.html
+[io]: http://v4.chriskrycho.com/2014/a-little-crazy.html
 
 That lesson is one I have learned more and more from my ongoing and
 ever-increasing delight in running. So far in May I have run about 125 miles; I

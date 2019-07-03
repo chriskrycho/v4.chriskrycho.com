@@ -12,30 +12,30 @@ Summary: >
 
 <i><b>[Assumed Audience][aa]:</b> People who have followed or are interested in my experiences with [burnout], or are curious about my new job change.</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
-[burnout]: https://www.chriskrycho.com/burnout/
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
+[burnout]: https://v4.chriskrycho.com/burnout/
 
 I [posted][new job post] a week ago about my (then-impending, now-quite-actual!) transition from [Olo] to [LinkedIn]. My friend [Stephen] pointed out that, especially for long-time readers of this blog, it seemed a bit odd to write about a job change without so much as mentioning my [rather painful experience][symptoms] of [job-triggered burnout] in 2018. He was right!
 
-[new job post]: https://www.chriskrycho.com/2019/a-new-job.html
+[new job post]: https://v4.chriskrycho.com/2019/a-new-job.html
 [Olo]: https://www.olo.com
 [LinkedIn]: https://linkedin.com
 [Stephen]: https://stephencarradini.com
-[symptoms]: https://www.chriskrycho.com/2018/burnout-symptoms.html
-[job-triggered burnout]: https://www.chriskrycho.com/2018/dealing-with-burnout-in-public.html
+[symptoms]: https://v4.chriskrycho.com/2018/burnout-symptoms.html
+[job-triggered burnout]: https://v4.chriskrycho.com/2018/dealing-with-burnout-in-public.html
 
 I chose not to talk about the relationship between this job change and burnout in that particular post because it's rather complicated. I did not move to fix the burnout. As a number of things from my writing over the last few months likely indicated to attentive readers,[^attentive] I have been slowly but steadily *recovering* since mid-October.
 
 [^attentive]: the decrease in frequency of posts on the subject, a post explicitly about [recovering from burnout], past tense language when I [did][2018 post] talk about it…
 
-[recovering from burnout]: http://www.chriskrycho.com/2018/stewarding-my-reserves.html
-[2018 post]: https://www.chriskrycho.com/2018/some-closing-thoughts.html
+[recovering from burnout]: http://v4.chriskrycho.com/2018/stewarding-my-reserves.html
+[2018 post]: https://v4.chriskrycho.com/2018/some-closing-thoughts.html
 
 Mid-October was when I hit rock bottom. On October 15th, I had a panic attack. Thankfully, it was brief and I was at home. (It was just a few hours after I wrote [this post], actually.) As is often the case with panic attacks (from what I have read), the specific trigger was not itself that big of a deal; but it was more stress than I could handle. My body responded to one more little stressor by ***freaking out***.
 
 At that point, I pinged my manager at Olo and said, "Hey, I just had a panic attack; we need to change something." I immediately handed over some high-urgency projects I was working on and took the rest of the week off. It helped. And it helped among other things because it gave me time to get some clarity on why the stressors I was experiencing at Olo were affecting me the ways they were, and what kinds of changes would need to happen for them *not* to have that kind of affect on me.
 
-[this post]: https://www.chriskrycho.com/2018/neither-being-dumb-nor-giving-in.html
+[this post]: https://v4.chriskrycho.com/2018/neither-being-dumb-nor-giving-in.html
 
 I worked with my manager at Olo to make a bunch of changes there which made Olo much better for me. I remain very grateful for those. And I am also grateful that I was able to have a lot of very productive conversations with not just him but others at Olo, including in engineering leadership, which helped me further clarify whether Olo was going to be a good long-term fit for me or not. That I ultimately concluded <i>not</i> is a credit to the openness of Olo's leadership to having those conversations with me and their desire to see their people succeed. I was not exaggerating [when I wrote][new job post] that Olo was the best place I had ever worked.
 
@@ -53,8 +53,8 @@ The net of all of that was that changing jobs was an important part of helping m
 
 That analysis carries with it the important corollary that changing jobs is only one part of avoiding further burnout, though. Avoiding overcommitment, keeping what commitments I do make well-aligned with my priorities, taking time to rest, taking time to [grieve deep pains][poem]: *all* of these are necessary components of avoiding falling back into burnout once again.
 
-[poem]: https://www.chriskrycho.com/2019/time-does-not-heal.html
+[poem]: https://v4.chriskrycho.com/2019/time-does-not-heal.html
 
 More on this—and, hopefully, some of the promised [theological reflection] on the subject—as I am able, while not overdoing it!
 
-[theological reflection]: https://www.chriskrycho.com/2018/dealing-with-burnout-in-public.html
+[theological reflection]: https://v4.chriskrycho.com/2018/dealing-with-burnout-in-public.html

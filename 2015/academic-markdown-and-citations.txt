@@ -15,7 +15,7 @@ Much of my past few weeks were taken up with study for and writing and editing
 papers in Markdown ever since I got here, and haven't regretted any part of
 that... except that managing references and footnotes has been painful at times.
 
-[a paper]: http://www.chriskrycho.com/2015/not-exactly-a-millennium.html
+[a paper]: http://v4.chriskrycho.com/2015/not-exactly-a-millennium.html
 
 Footnotes in Markdown look like this:
 
@@ -46,7 +46,7 @@ What is this? Yet _another_ citation?[^fn3]
 
 [^fn1]: So Chris Krycho, "Not Exactly a Millennium," chriskrycho.com, July 22,
 
-2015, http://www.chriskrycho.com/2015/not-exactly-a-millennium.html
+2015, http://v4.chriskrycho.com/2015/not-exactly-a-millennium.html
 (accessed July 25, 2015), ¶6.
 [^fn2]: Contra Krycho, ¶15, who has everything _quite_ wrong.
 [^fn3]: ibid.
@@ -150,7 +150,7 @@ specify them on a per-file basis so that if I want or need to use _different_
 styles or a separate library for another file at a later time, I can do so with
 a minimum of fuss. More on this below.)
 
-[markdown source]: http://www.chriskrycho.com/2015/not-exactly-a-millennium.txt
+[markdown source]: http://v4.chriskrycho.com/2015/not-exactly-a-millennium.txt
 
 [Here] is the rendered result. You can see that it automatically generated
 everything right down to the "ibid."-style footnotes. I made a few, fairly
@@ -311,7 +311,7 @@ display the content for the landing pages and for category and tag archives.
 And the result: that same paper, rendered to <abbr>HTML</abbr> [on my website],
 with citations and works cited, generated automatically and beautifully.
 
-[on my website]: http://www.chriskrycho.com/2015/not-exactly-a-millennium.html
+[on my website]: http://v4.chriskrycho.com/2015/not-exactly-a-millennium.html
 
 ### Other site generators
 

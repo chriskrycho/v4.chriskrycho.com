@@ -11,6 +11,6 @@ Tags: [talks, software development, programming languages, javascript]
 I gave a short tech talk at my new employer [Olo] today, covering a number of the changes current and forthcoming in ECMAScript 2015 and later. Alas, I ran out of time in preparation and didn't get to cover everything I wanted---I would have liked very much to cover modules, and to cover fat-arrow-functions in more depth than I did. I'll look forward to hopefully giving further tech talks at Olo in the future, and perhaps giving this one, expanded and finished out a bit, elsewhere. (If you'd like me to give a talk, including this one, just let me know!) In the meantime, you can take a look at the [slides], which I think will be helpful and interesting!
 
 [Olo]: http://www.olo.com
-[slides]: //www.chriskrycho.com/talks/es-future-olo
+[slides]: //v4.chriskrycho.com/talks/es-future-olo
 
 And yes, there *were* a lot of really delightful _Doctor Who_ references in this talk. Because *of course* there were!

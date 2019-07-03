@@ -25,5 +25,5 @@ What do we make of this tension, these ironies? Especially when our concerns beg
 
 I don’t know.
 
-[^1]:   One of my concerns in my [ongoing project](http://www.chriskrycho.com/2017/why-do-i-need-a-research-tool.html) is to prompt people around me—friends and family, but perhaps also blog readers!—to consider how our use of technology *forms* us. More on that in a future post.
+[^1]:   One of my concerns in my [ongoing project](http://v4.chriskrycho.com/2017/why-do-i-need-a-research-tool.html) is to prompt people around me—friends and family, but perhaps also blog readers!—to consider how our use of technology *forms* us. More on that in a future post.
 

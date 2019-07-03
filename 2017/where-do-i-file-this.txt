@@ -7,7 +7,7 @@ Tags: [writing]
 
 I want to write more. Blogging does me good. [I say this][repeating] often, but I'm finally coming to a point where it might be a bit more doable. Finishing my M. Div. is giving me more time, and that's *really* wonderful. The trick now is deciding which of the many things I want to do will get my attention. I can split my focus a thousand ways, or I can pick a few tasks and zero in on them and aim to be good at them.
 
-[repeating]: http://www.chriskrycho.com/2014/a-few-theses-on-blogging.html "A Few Theses on Blogging"
+[repeating]: http://v4.chriskrycho.com/2014/a-few-theses-on-blogging.html "A Few Theses on Blogging"
 
 In the case of blogging, I have no doubt it's something I want to continue. But I need to think about *how* and *why* I want to use it, and this relates closely to some of my goals for an information architecture-level restructuring of the site I want to do when I finish building [lightning-rs][lx]. *Blogging*, at its best, isn't long-form articles (though there is certainly room for those on my website as a whole), but [short, cogent pieces which pack a punch and move on][sjd], or [thinking out loud][aj]. Even in my own experience, the best *blog posts* I have written are quite different from the best *essays* I have written. Embracing that seems like a helpful first step.
 
@@ -29,8 +29,8 @@ What I think I'd like to end up with is *something* like this, in terms of struc
 - **Articles**---call this aspirational; if or when I have things published in a more formal way, I'd like them to have a home on my website as well
 
 [journal]: https://en.wikipedia.org/wiki/Commonplace_book
-[ras]: http://www.chriskrycho.com/rust-and-swift.html
-[review]: http://www.chriskrycho.com/2016/2016-review-intro.html
+[ras]: http://v4.chriskrycho.com/rust-and-swift.html
+[review]: http://v4.chriskrycho.com/2016/2016-review-intro.html
 [mod]: http://craigmod.com
 
 This structure has some challenges of its own, of course. Where does a poem go? Is it part of my "journal" or is it more of a one-off "project"? And within those, I shall want both overlapping "categories" as well as cross-cutting "subjects": it is impossible to cleanly separate *all* of my Tech and Theology writing from each other, yet having *some* high-level categories grows increasingly important for navigating the site as its content grows. (This becomes a problem even just for me as I look for old posts to link them---much less for any *other* reader of my site!)

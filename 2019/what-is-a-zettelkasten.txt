@@ -11,7 +11,7 @@ Summary: >
 
 <i><b>[Assumed Audience][aa]:</b> People interested in note-taking, effective learning, or the idea of a Zettelkasten (which [I’ve written about before][zettelkasten]).</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
 A friend recently asked me: “What exactly *is* a Zettelkasten?” Unfortunately, there aren’t any (easy-to-find, anyway) answers in a single place online… hopefully until today![^background] The short answer is: a well-organized box (or group of boxes) of notecards. The word itself is just German for <i>an index card box</i>. Given you likely landed here via an internet search, though, I expect you might want a bit more.
 
@@ -65,11 +65,11 @@ If you’d like to dig deeper into this, I recommend the posts I have found most
 
 [^order]: I’ve chosen to organize my own Zettelkasten by date, because [I find][blog] that seeing what I was thinking at a particular time can be very helpful and very interesting, and it’s also often a [helpful way of remembering things][date].
 
-[zettelkasten]: https://www.chriskrycho.com/zettelkasten/
+[zettelkasten]: https://v4.chriskrycho.com/zettelkasten/
 [Niklas Luhmann]: https://en.wikipedia.org/wiki/Special:Search?search=Niklas%20Luhmann&go=Go
 [hypertext]: https://en.wikipedia.org/wiki/Hypertext
 [bear]: https://bear.app
 [rewrite-list]: https://buttondown.email/rewrite
 [.de]: https://zettelkasten.de
-[blog]: https://www.chriskrycho.com/2018/blog-as-note-taking-tool.html
+[blog]: https://v4.chriskrycho.com/2018/blog-as-note-taking-tool.html
 [date]: https://zettelkasten.de/posts/add-identity/

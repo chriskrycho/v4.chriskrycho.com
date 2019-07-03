@@ -9,9 +9,9 @@ Summary: >
 
 ---
 
-<i><b>[Assumed Audience:](https://www.chriskrycho.com/2018/assumed-audiences.html)</b> people interested in audio post-production for podcasts.</i>
+<i><b>[Assumed Audience:](https://v4.chriskrycho.com/2018/assumed-audiences.html)</b> people interested in audio post-production for podcasts.</i>
 
-For the last  I’ve been using [iZotope RX](https://www.izotope.com/en/products/repair-and-edit/rx.html)[^1] to post-process the audio for [the various podcasts](https://www.chriskrycho.com/podcasts) I produce. It is an absolutely astounding piece of software, and if you’re at the point in your podcasting work where it makes sense—and if you have the budget for it!—I very, very highly recommend it.
+For the last  I’ve been using [iZotope RX](https://www.izotope.com/en/products/repair-and-edit/rx.html)[^1] to post-process the audio for [the various podcasts](https://v4.chriskrycho.com/podcasts) I produce. It is an absolutely astounding piece of software, and if you’re at the point in your podcasting work where it makes sense—and if you have the budget for it!—I very, very highly recommend it.
 
 First, let’s me say something really important, though: for most podcasters, this is not where you should be spending your time or money. You will see far more improvement by investing first of all in your microphone *technique*, secondly in your microphone itself, and third in your recording environment.
 

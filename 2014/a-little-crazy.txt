@@ -123,7 +123,7 @@ Hopefully they'll be interesting (or at least entertaining).
     gains from any engineering degree.
 
 [actor]: http://en.wikipedia.org/wiki/Actor_model
-[do-it-myself]: http://www.chriskrycho.com/2014/doing-it-myself.html
+[do-it-myself]: http://v4.chriskrycho.com/2014/doing-it-myself.html
 [io]: http://iolanguage.org
 [pelican]: https://github.com/getpelican
 [proto]: http://en.wikipedia.org/wiki/Prototype-based_programming

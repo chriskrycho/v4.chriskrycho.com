@@ -10,7 +10,7 @@ Tags: [career, adulthood, Tolkien]
 
 <i><b>[Assumed Audience][aa]:</b> People interested in my career shifts—whether out of personal interest or technical interest.</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
 Big news: Yesterday was my last day working for [Olo], and on Monday I start working on front-end infrastructure for [LinkedIn]!
 
@@ -33,7 +33,7 @@ So: if Olo's people are so great and I've enjoyed working there so much… why a
 
 When I came to Olo, I just wanted to be working in front-end web development and <abbr>UI</abbr>/<abbr>UX</abbr> full time. I had spent the preceding six and a half years writing C, C++, Fortran, and Python in my full-time roles. As much as I enjoyed many things about that work (and as grateful as I am for [what I learned][career] on those projects), I was ready to be working full-time on the kinds of things I actually *enjoyed*: namely, front-end web development! My goal in late 2015 was simply to get a job doing *that*. When a good friend said, "Hey, Olo is hiring and you'd be a great fit," I passed along my résumé and gladly took the job when it was offered—and I have never regretted it. There have been bumps and frustrations along the way, to be sure, some of them large—as there will be with any job—but my overall feelings on Olo remain extremely positive.
 
-[career]: https://www.chriskrycho.com/2018/career-trajectory.html
+[career]: https://v4.chriskrycho.com/2018/career-trajectory.html
 
 For the last three years, I worked full time on one project: Olo's first [Ember] application. I deeply enjoyed a lot of that work, for a long time. It was only the third time I had ever worked on a greenfield project in my entire career—and the first time working on something at this scale. Building <abbr>UI</abbr> was indeed a *lot* better than the kind of work I had been doing previously. Over the course of that project, I grew from just working on the code as others decided it to its technical lead—and I enjoyed that, too.
 
@@ -47,7 +47,7 @@ Something else happened over those three years as well, though, and this is why 
 [TypeScript]: http://www.typescriptlang.org
 [typed-ember]: https://github.com/typed-ember
 [Ben Makuh]: https://mobile.twitter.com/bmakuh
-[True Myth]: https://www.chriskrycho.com/true-myth
+[True Myth]: https://v4.chriskrycho.com/true-myth
 
 Those efforts, and the small—but real—impact they have had on the broader ecosystem, are far and away the things that have brought me the most satisfaction in my tenure at Olo. And so, over the last three years, my ambitions have slowly but steadily shifted: from <i>write front-end web software</i> to <i>find ways to move the whole industry forward</i>. To be clear: it's not that ecosystem work is *better* than the work of product development, and in fact the best ecosystem work is deeply informed by the experience of product development—but they are very *different*.
 
@@ -71,7 +71,7 @@ I have at times found this actively disorienting. When we moved across the count
 
 Yet a year and some months in, my life in North Carolina feels a lifetime away. My friendships are different. My rhythms and routines have all shifted in little ways, pushed on by everything from differences in my family's schedule to the differences in the weather. I feel the difference the more keenly (if still in that melancholic way) now than I did when I expected to most. It comes out and [batters me with grief][poem] in surprising ways and at surprising times; and it comes out in little joys at times as well.
 
-[poem]: http://www.chriskrycho.com/2019/time-does-not-heal.html
+[poem]: http://v4.chriskrycho.com/2019/time-does-not-heal.html
 
 I am sure the same will be true of this transition in jobs. These relationships I have built up over the last three years will shift and change. Some of them will fade; others (perhaps surprising ones!) will endure and change but for the stronger. My daily routine will be subtly different, and the particular sources of frustration and joy will shift in kind with the differences in task and the differences in my company culture and all the myriad small things that will be different—and I will not *really* be able to feel any of those, I think, for quite some time.
 

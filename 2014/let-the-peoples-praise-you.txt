@@ -20,5 +20,5 @@ Nonetheless, I think you may enjoy this digital version. You can, however,
         scrolling="no" frameborder="no"
         src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/142432628&amp;color=5592c9&amp;auto_play=false&amp;hide_related=false&amp;show_artwork=false"></iframe>
 
-[devotions]: http://www.chriskrycho.com/2014/no-resurrection-no-dice.html
+[devotions]: http://v4.chriskrycho.com/2014/no-resurrection-no-dice.html
 [download]: /downloads/psalm-67.pdf

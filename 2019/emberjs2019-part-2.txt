@@ -21,15 +21,15 @@ So… what should we tackle next? This year, I have only two parts, unlike [last
 - <b>Part 1:</b> [Let’s finish modernizing the Ember programming model!][part-1]
 - <b>Part 2 (this post):</b> [Let’s make TypeScript a first-class citizen of the Ember ecosystem.</b>][part-2]
 
-[emberjs2018]: https://www.chriskrycho.com/emberjs2018
-[part-1]: https://www.chriskrycho.com/2019/emberjs2019-part-1
-[part-2]: https://www.chriskrycho.com/2019/emberjs2019-part-2
+[emberjs2018]: https://v4.chriskrycho.com/emberjs2018
+[part-1]: https://v4.chriskrycho.com/2019/emberjs2019-part-1
+[part-2]: https://v4.chriskrycho.com/2019/emberjs2019-part-2
 
 ---
 
 For the last two and a half years, I have been working off and on towards making TypeScript viable in Ember apps and addons. I was delighted when others came along to help pick up the load, and we’ve [charted a course][priorities] for what we’d like to do over the year ahead. The major priorities we identified all point at what I’ve wanted since I started down this road back at the very end of 2016: for TypeScript to be a first-class citizen in the Ember ecosystem. Here’s my roadmap for how we get there. (Note that here I’m speaking only for myself—neither for the Typed Ember team nor for LinkedIn!)
 
-[priorities]: https://www.chriskrycho.com/2019/emberconf-2019-typed-ember-team-report.html
+[priorities]: https://v4.chriskrycho.com/2019/emberconf-2019-typed-ember-team-report.html
 
 ## The Roadmap
 

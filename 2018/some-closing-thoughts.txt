@@ -13,7 +13,7 @@ Summary: >
 
 <i><b>[Assumed Audience:][aa]</b> mostly my future self!—but you’re welcome to read along and see my thoughts on how 2018 went for me and what I hope 2019 will look like.</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
 As has long been my tradition[^how-long] I’m wrapping up the year by looking back at what happened in it and thinking about what I’d like to do in the year ahead. I say little here about family or church, but that should not be taken as an indicator of importance: in fact, my commitments in those two spheres deeply inform everything else!
 
@@ -44,14 +44,14 @@ I also set out this year to read a lot of books—I had a list of a 14 pieces of
 - I devoured Mary Robinette Kowal’s [<cite>The Calculating Stars</cite>][tcs] and [<cite>The Fated Sky</cite>][tfs].
 - I read a couple Hugo and Nebula award winners: Larry Niven’s [<cite>Ringworld</cite>][ringworld] and N.K. Jemisin’s <cite>The Fifth Season</cite>.
 
-[aoc]: http://www.chriskrycho.com/2018/agent-of-change.html
-[tcs]: http://www.chriskrycho.com/2018/the-calculating-stars.html
-[tfs]: http://www.chriskrycho.com/2018/review-the-fated-sky.html
-[ringworld]: http://www.chriskrycho.com/2018/ringworld-review.html
+[aoc]: http://v4.chriskrycho.com/2018/agent-of-change.html
+[tcs]: http://v4.chriskrycho.com/2018/the-calculating-stars.html
+[tfs]: http://v4.chriskrycho.com/2018/review-the-fated-sky.html
+[ringworld]: http://v4.chriskrycho.com/2018/ringworld-review.html
 
 While those novels were basically the only thing I read, I very much like the habit of writing very short reviews I started with those novels. I expect to keep that habit, and it should be useful as I dig back into nonfiction in the future!
 
-Speaking of writing: for all that this year felt like it was unproductive in some ways, I still ended up blogging to the tune of somewhere around 75,000 words across about 95 posts.[^wc-1] That’s a solid showing for a year full of burnout (even if burnout itself [ended up being the subject of no few of those](https://www.chriskrycho.com/burnout): about 6,000 words).[^wc-2] But one of my goals for the year was to publish a few longer-form essays, possibly even getting paid for them. That certainly did not happen; I did not manage to publish even a single essay at Mere Orthodoxy.
+Speaking of writing: for all that this year felt like it was unproductive in some ways, I still ended up blogging to the tune of somewhere around 75,000 words across about 95 posts.[^wc-1] That’s a solid showing for a year full of burnout (even if burnout itself [ended up being the subject of no few of those](https://v4.chriskrycho.com/burnout): about 6,000 words).[^wc-2] But one of my goals for the year was to publish a few longer-form essays, possibly even getting paid for them. That certainly did not happen; I did not manage to publish even a single essay at Mere Orthodoxy.
 
 [^wc-1]: Running `wc -w` on the posts I wrote in 2018 reports 80,911 words, but that number includes all the post metadata. Assuming an average of 65 words of metadata per post, across the 96 posts I wrote, that comes out to around 6,250 words. So: very roughly 75,000, for an average of about 780 words per post. Not too shabby!
 
@@ -93,24 +93,24 @@ I also want to keep my mind sharp and growing on theology, culture, politics, ar
 
 Writing-wise, I know that I’ll continue blogging here. However, I actually hope to blog *less* overall. The time I spent writing 70,000 words this year was time well-spent, but as I note [time] and [again], I have a hard time [*not* blogging]. I plan to work on that in a couple ways.
 
-[time]: https://www.chriskrycho.com/2018/intentional-cyclicality.html "Intentional Cyclicality (March)"
-[again]: https://www.chriskrycho.com/2018/writing-plans-for-the-rest-of-2018.html "Writing Plans for the Rest of 2018 (May)"
-[*not* blogging]: http://www.chriskrycho.com/2018/cant-stop-wont-stop.html "Can’t Stop, Won’t Stop (September)"
+[time]: https://v4.chriskrycho.com/2018/intentional-cyclicality.html "Intentional Cyclicality (March)"
+[again]: https://v4.chriskrycho.com/2018/writing-plans-for-the-rest-of-2018.html "Writing Plans for the Rest of 2018 (May)"
+[*not* blogging]: http://v4.chriskrycho.com/2018/cant-stop-wont-stop.html "Can’t Stop, Won’t Stop (September)"
 
 First, I’m going to try to evaluate, with each idea I have, whether it should be a blog post or just go in my [Zettelkasten]. So much of my writing over the last decade has been a kind of [public thinking-out-loud]. That’s good, but I also feel much more need to polish something if I’m going to publish it than if it’s a private note. The way I polish a blog post is nothing like the way I polish essays, of course, but I do spend some time clarifying and adding nuance. Even when [specifying an assumed audience][aa], I need to be more careful if I am writing for others than if I am working something out by writing about it for myself. As a result, I expect a lot of things which might have ended up on the blog in the past to just go in [Bear].
 
-[public thinking-out-loud]: https://www.chriskrycho.com/2018/blog-as-note-taking-tool.html
-[Zettelkasten]: https://www.chriskrycho.com/zettelkasten/
+[public thinking-out-loud]: https://v4.chriskrycho.com/2018/blog-as-note-taking-tool.html
+[Zettelkasten]: https://v4.chriskrycho.com/zettelkasten/
 [Bear]: https://bear.app
 
 Second, I plan (and we’ll see how this goes), I’m going to try *very* hard to write fewer blog posts in favor of more well-developed essays. About a month ago, I started drafting an essay which seems like it might be legitimately important. Unfortunately, even though it is certainly more worth my time than the things I *have* written since then ([1], [2], [3], [4], [5], [6]), I have not made progress since the day I started it. It’s not that my notes on research and note-taking are worthless. Rather, it’s that there is a cost to spending my limited time on writing those instead of more important writing efforts.[^this-post] At a minimum, I intend to do even *less* polish on those posts than I have to date, when I let myself write them.
 
-[1]: http://www.chriskrycho.com/2018/internal-and-external-parameter-names-in-javascript-and-typescript.html
-[2]: http://www.chriskrycho.com/2018/starting-to-build-a-zettelkasten.html
-[3]: http://www.chriskrycho.com/2018/zettelkasten-update-all-in-on-bear.html
-[4]: http://www.chriskrycho.com/2018/stewarding-my-reserves.html
-[5]: http://www.chriskrycho.com/2018/hey-siri-record-a-zettel.html
-[6]: http://www.chriskrycho.com/2018/javascript-is-c.html
+[1]: http://v4.chriskrycho.com/2018/internal-and-external-parameter-names-in-javascript-and-typescript.html
+[2]: http://v4.chriskrycho.com/2018/starting-to-build-a-zettelkasten.html
+[3]: http://v4.chriskrycho.com/2018/zettelkasten-update-all-in-on-bear.html
+[4]: http://v4.chriskrycho.com/2018/stewarding-my-reserves.html
+[5]: http://v4.chriskrycho.com/2018/hey-siri-record-a-zettel.html
+[6]: http://v4.chriskrycho.com/2018/javascript-is-c.html
 
 [^this-post]: So: what of this kind of year-end review, which is itself not exactly one of those more important writing projects? Good point. I find his exercise helpful, though, and I’d almost certainly be doing it privately in nearly identical terms. I have found this practice helpful over the years, despite never coming near accomplishing the specific goals I’ve set myself, so I expect to keep up this habit.
 
@@ -132,7 +132,7 @@ Given that I’m currently planning two events in late spring and summer, I also
 
 As I close in on the end of the first decade of my career, I’m [thinking a lot][career] about what I want the next decade of my career to look like. I don’t expect to be able to figure it all out ahead of time, of course. At the same time, I’m resolved to find opportunities that align more with my values and the general aims for my career I’ve started developing. As I suggested above, I've found that I'm not on the same page as, well, *most* businesses about how to approach a great many questions. There is no short-term fix for this; but in the longer-term I want to have enough independence to do things more in line with my ["winning slowly"][ws] view of the world.
 
-[career]: https://www.chriskrycho.com/2018/career-trajectory.html
+[career]: https://v4.chriskrycho.com/2018/career-trajectory.html
 
 One part of that is that I intend to push forward on a few things I’ve been plotting for a few years now. I started learning Rust back in the summer of 2015 for a *reason*, and I’m coming back to that reason this year. I don’t in the least regret the detour that I’ve gone on in the meantime: New Rustacean remains one of my favorite things I’ve done, and is certainly a more important contribution than any code I could have written in that time. But the project that got this all started has my attention again, and I will be spending some of my personal time on it this year.[^focus-again] It’s the kind of thing that I rather hope *is* my career a few years down the line—but there’s a boatload of work to do to get there.
 

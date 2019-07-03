@@ -25,7 +25,7 @@ One of the reasons I blog is as an attempt to think well out loud. I cannot make
 
 [^1]:	These are different! Complementary, but different.
 
-[^2]:	See [footnote 2 on an earlier blog post](https://www.chriskrycho.com/2018/the-chinese-room-argument.html#fn2) for a comment on why I assume the problem is likely with *me*. It’s probable that there *is* quite a bit of specifically Christian reflection on many of these ideas; I simply haven’t encountered it. This may also say some things about the specifics of my theological education; I think it does and may return to that in a later post, but that’s neither here nor there.
+[^2]:	See [footnote 2 on an earlier blog post](https://v4.chriskrycho.com/2018/the-chinese-room-argument.html#fn2) for a comment on why I assume the problem is likely with *me*. It’s probable that there *is* quite a bit of specifically Christian reflection on many of these ideas; I simply haven’t encountered it. This may also say some things about the specifics of my theological education; I think it does and may return to that in a later post, but that’s neither here nor there.
 
 [^3]:	A preview:
 

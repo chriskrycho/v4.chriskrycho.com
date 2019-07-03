@@ -26,7 +26,7 @@ Summary: >
 
 ---
 
-Back in July 2017, I wrote [a post](https://www.chriskrycho.com/2017/typing-your-ember-part-3.html) on how to using TypeScript in your Ember.js apps. At the time, we were still busy working on getting the typings more solid for Ember itself, and `class` syntax for Ember was apparently a long way away.
+Back in July 2017, I wrote [a post](https://v4.chriskrycho.com/2017/typing-your-ember-part-3.html) on how to using TypeScript in your Ember.js apps. At the time, we were still busy working on getting the typings more solid for Ember itself, and `class` syntax for Ember was apparently a long way away.
 
 Things have gotten quite a bit better since then, so I thought I'd update that post with recommendations for using TypeScript in an app _now_ with the updated typings, as well as with another six months of experience using TypeScript in our app at Olo (~20k lines of code in the app and another ~15k in tests).
 
@@ -44,10 +44,10 @@ Here's how I expect this update series to go:
 4. [Using Ember Data, and service and controller injections improvements.][pt4]
 5. Mixins and proxies; or: the really hard-to-type-check bits.
 
-[pt1]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-1.html
-[pt2]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-2.html
-[pt3]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-3.html
-[pt4]: https://www.chriskrycho.com/2018/typing-your-ember-update-part-4.html
+[pt1]: https://v4.chriskrycho.com/2018/typing-your-ember-update-part-1.html
+[pt2]: https://v4.chriskrycho.com/2018/typing-your-ember-update-part-2.html
+[pt3]: https://v4.chriskrycho.com/2018/typing-your-ember-update-part-3.html
+[pt4]: https://v4.chriskrycho.com/2018/typing-your-ember-update-part-4.html
 
 ## Normal Ember objects
 
@@ -70,7 +70,7 @@ In order to explain all this clearly, I'm going to start by showing a whole comp
 
 ***Note:** please see the [update about class properties published mid-2018][cp-update]. The example below and in the following posts is incorrect in several important ways.
 
-[cp-update]: https://www.chriskrycho.com/2018/ember-ts-class-properties.html
+[cp-update]: https://v4.chriskrycho.com/2018/ember-ts-class-properties.html
 
 </aside>
 

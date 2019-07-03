@@ -47,4 +47,4 @@ There’s a real trick here, because it’s not that I’m *not* building things
 
 [^2]:	This seems like a typical overcorrection: against the idea that teaching is *unimportant*, it now comes into vogue to say that teaching is the *most* important. Imagine if we simply noted that teaching is some people’s gift and vocation, and not others; and that we can complement one another’s strengths by sharing our own—that it is not a zero-sum game but one in which [we are like hands and feet and elbows and ears, each one needing the other, none able to do without the others](https://www.esv.org/1+Corinthians+12+12/ "1 Corinthians 12:12 and following").
 
-[^3]:	much of the time anyway; the [burnout](https://www.chriskrycho.com/2018/some-mild-burnout.html "Some Mild Burnout") I’m experiencing is related to some of the dynamics of this particular project
+[^3]:	much of the time anyway; the [burnout](https://v4.chriskrycho.com/2018/some-mild-burnout.html "Some Mild Burnout") I’m experiencing is related to some of the dynamics of this particular project

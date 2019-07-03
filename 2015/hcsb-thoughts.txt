@@ -214,7 +214,7 @@ study habits.
 
 [^poetics]: The fact of the matter is: the meaning of a poem is never so cleanly
     separable from its form. I've written about this---though too
-    briefly---[before](http://www.chriskrycho.com/2014/mouths-of-poets.html).
+    briefly---[before](http://v4.chriskrycho.com/2014/mouths-of-poets.html).
 
 [^KJV]: No Byzantine priority for me! Also, I mean no offense to the KJV
     translators, who did a truly phenomenal job. I happen to think, though, that

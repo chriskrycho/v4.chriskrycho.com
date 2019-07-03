@@ -17,7 +17,7 @@ Tools:
 
 <i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I'd be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. [(See all parts in the series.)][series]</i>
 
-[series]: http://www.chriskrycho.com/rust-and-swift.html
+[series]: http://v4.chriskrycho.com/rust-and-swift.html
 
 ---
 
@@ -467,4 +467,4 @@ That takes us back to one of the fundamental differences in design between the t
 
 - [**Previous:** More on initializers!][17]
 
-[17]: http://www.chriskrycho.com/2016/rust-and-swift-xvii.html
+[17]: http://v4.chriskrycho.com/2016/rust-and-swift-xvii.html

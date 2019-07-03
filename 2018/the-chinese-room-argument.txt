@@ -9,7 +9,7 @@ Summary: >
 
 ---
 
-I took a bunch of half days last week, because *goodness* but I was tired. Too long running at full-throttle, and [I’d been running out of steam](http://www.chriskrycho.com/2018/on-steam-specifically-running-out-of-it.html "On Steam (Specifically, Running Out Of It)") as a result. And what did I do instead, that ended up being so effective in [recharging](https://www.chriskrycho.com/2018/vacation-as-recharging.html "Vacation as Recharging")? Well, mostly... read literature reviews on interesting topics in philosophy, at least for the first few days. Dear reader, I am a nerd. But I thought I’d share a few of the thoughts I jotted down in my notebook from that reading.[^1]
+I took a bunch of half days last week, because *goodness* but I was tired. Too long running at full-throttle, and [I’d been running out of steam](http://v4.chriskrycho.com/2018/on-steam-specifically-running-out-of-it.html "On Steam (Specifically, Running Out Of It)") as a result. And what did I do instead, that ended up being so effective in [recharging](https://v4.chriskrycho.com/2018/vacation-as-recharging.html "Vacation as Recharging")? Well, mostly... read literature reviews on interesting topics in philosophy, at least for the first few days. Dear reader, I am a nerd. But I thought I’d share a few of the thoughts I jotted down in my notebook from that reading.[^1]
 
 ----
 

@@ -15,9 +15,9 @@ Following [the example](https://blog.rust-lang.org/2018/01/03/new-years-rust-a-c
 
 There are three major themes I think should characterize the Ember.js community and project for the rest of 2018:
 
-1. [**Finishing What We’ve Started**](http://www.chriskrycho.com/2018/emberjs2018-part-1.html)
-2. [**Doubling Down on Documentation**](https://www.chriskrycho.com/2018/emberjs2018-part-2.html)
-3. [**Defaulting to Public for Discussions**](https://www.chriskrycho.com/2018/emberjs2018-part-3.html)
+1. [**Finishing What We’ve Started**](http://v4.chriskrycho.com/2018/emberjs2018-part-1.html)
+2. [**Doubling Down on Documentation**](https://v4.chriskrycho.com/2018/emberjs2018-part-2.html)
+3. [**Defaulting to Public for Discussions**](https://v4.chriskrycho.com/2018/emberjs2018-part-3.html)
 4. **Embracing the Ecosystem** (this post)
 
 ----
@@ -44,7 +44,7 @@ This is primarily a communications effort; it means changes to the docs and to t
 
 At the highest level, I cannot recommend strongly enough the model suggested by Chris Garrett in [his \#EmberJS2018 post](https://medium.com/@pzuraq/emberjs-2018-ember-as-a-component-service-framework-2e49492734f1): treat Ember.js (both in the docs and also in our presentations and communications about it) as a *component-service* framework. This not only maps more easily to patterns people know from other communities, it has the really important effect of demystifying a lot of the “magic” that seems perplexing in the framework, especially around Ember Data—which is, after all, just a service you can inject!
 
-When we write blog posts, we can accomplish a lot of this simply by being aware of the rest of the ecosystem and making analogies there. You can see an example of how I’ve started trying to do this in my recent blog post on [higher-order components in Ember.js](http://www.chriskrycho.com/2018/higher-order-components-in-emberjs.html). It was just one little line:
+When we write blog posts, we can accomplish a lot of this simply by being aware of the rest of the ecosystem and making analogies there. You can see an example of how I’ve started trying to do this in my recent blog post on [higher-order components in Ember.js](http://v4.chriskrycho.com/2018/higher-order-components-in-emberjs.html). It was just one little line:
 
 > In React, the [higher-order components] pattern as a whole is often known as the `renderProps` pattern, for the way you most often accomplish it. It’s all the same idea, though!
 

@@ -39,8 +39,8 @@ I wonder how many times the word "concise" (or synonyms of it) appear in the Swi
 - [**Previous:** Basic types and the syntax around them.][2]
 - [**Next:** Language design tradeoffs, highlighted by string manipulation.][4]
 
-[2]: http://www.chriskrycho.com/2015/rust-and-swift-ii.html
-[4]: http://www.chriskrycho.com/2015/rust-and-swift-iv.html
+[2]: http://v4.chriskrycho.com/2015/rust-and-swift-ii.html
+[4]: http://v4.chriskrycho.com/2015/rust-and-swift-iv.html
 
 
 

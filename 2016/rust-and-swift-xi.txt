@@ -50,8 +50,8 @@ Having a robust, thriving set of competitors in the market will be good for the 
 -   [**Next:** Properties: type and instance, stored and computed.][12]
 
 
-[10]: http://www.chriskrycho.com/2015/rust-and-swift-x.html
-[12]: http://www.chriskrycho.com/2016/rust-and-swift-xii.html
+[10]: http://v4.chriskrycho.com/2015/rust-and-swift-x.html
+[12]: http://v4.chriskrycho.com/2016/rust-and-swift-xii.html
 
 
 

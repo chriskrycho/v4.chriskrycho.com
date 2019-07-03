@@ -9,7 +9,7 @@ Summary: >
 
 ---
 
-Today I released two versions of [True Myth](https://github.com/chriskrycho/true-myth): [1.3.0](https://github.com/chriskrycho/true-myth/releases/tag/v1.3.0) and [2.0.0](https://github.com/chriskrycho/true-myth/releases/tag/v2.0.0). You can read the [1.0 announcement](https://www.chriskrycho.com/2017/announcing-true-myth-10.html) from last November for an overview of the library and a discussion of why you might want to use the library in the first place!
+Today I released two versions of [True Myth](https://github.com/chriskrycho/true-myth): [1.3.0](https://github.com/chriskrycho/true-myth/releases/tag/v1.3.0) and [2.0.0](https://github.com/chriskrycho/true-myth/releases/tag/v2.0.0). You can read the [1.0 announcement](https://v4.chriskrycho.com/2017/announcing-true-myth-10.html) from last November for an overview of the library and a discussion of why you might want to use the library in the first place!
 
 Since its initial release last November, True Myth has gone through a number of small [feature and bug fix releases](https://github.com/chriskrycho/true-myth/releases "True Myth releases on GitHub"), each of which is more interesting in its own right than 2.0 is—because there are almost no new “features” here, and the changes to the *functionality* which are in 2.0 are purely additive and could readily have gone in 1.3 instead.
 

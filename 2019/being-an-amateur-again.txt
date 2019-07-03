@@ -10,7 +10,7 @@ Summary: >
 
 <i><b>[Assumed Audience][aa]:</b> Just about anyone… but I do assume a bit of familiarity with programming.</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
 Just a little note here, nothing long or fancy tonight.[^not-writing] I’ve just started working in earnest on my long-dreamt-of applications for research writing. This means I’m trying to figure out how to build some applications with native toolkits: UIKit and AppKit, specifically. And, for the first time in most of a decade, I have *no idea* what I’m doing.
 
@@ -34,7 +34,7 @@ It’s both a bit intimidating and a little exhilarating. So: here we go!
 
 [^30s]: Being in your 30s has some advantages, it turns out! Comfort with longer time-scales is one of them.
 
-[burnout]: https://www.chriskrycho.com/burnout
+[burnout]: https://v4.chriskrycho.com/burnout
 [New Rustacean]: https://newrustacean.com
 [EmberConf workshop]: https://emberconf.com/speakers.html#chris-krycho
 [responsive]: https://alistapart.com/article/responsive-web-design

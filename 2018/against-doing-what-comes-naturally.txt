@@ -5,11 +5,11 @@ Date: 2018-02-22 07:00
 Category: blog
 Tags: [ethics, writing]
 Summary: >
-    Twice, recently, I have found myself needing to start over—essentially from scratch—on something I had written. One was a tech talk for work, another my [promised](http://www.chriskrycho.com/2017/2017-in-review-my-goals.html "2017 In Review: My Goals") post on how we chose a new church after we moved across the country. Both pieces suffered from an overabundance of combativeness. Or: I was kind of a jerk in the first drafts.…
+    Twice, recently, I have found myself needing to start over—essentially from scratch—on something I had written. One was a tech talk for work, another my [promised](http://v4.chriskrycho.com/2017/2017-in-review-my-goals.html "2017 In Review: My Goals") post on how we chose a new church after we moved across the country. Both pieces suffered from an overabundance of combativeness. Or: I was kind of a jerk in the first drafts.…
 
 ---
 
-Twice, recently, I have found myself needing to start over—essentially from scratch—on something I had written. One was a tech talk for work, another my [promised](http://www.chriskrycho.com/2017/2017-in-review-my-goals.html "2017 In Review: My Goals") post on how we chose a new church after we moved across the country.
+Twice, recently, I have found myself needing to start over—essentially from scratch—on something I had written. One was a tech talk for work, another my [promised](http://v4.chriskrycho.com/2017/2017-in-review-my-goals.html "2017 In Review: My Goals") post on how we chose a new church after we moved across the country.
 
 Both pieces suffered from an overabundance of combativeness. Or: I was kind of a jerk in the first drafts.
 

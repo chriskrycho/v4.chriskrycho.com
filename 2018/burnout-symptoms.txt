@@ -23,7 +23,7 @@ Some of the symptoms I’ve had while experiencing burnout, all of which are exc
 
 - **cynicism**: finding it difficult to think the best of decisions others make, even when I can explain them in rational and reasonable ways
 
-- **severe demotivation:** having difficulty getting to work and through work; and having a hard time doing any of my normal side projects. The only hobby which has felt *doable* for most of the last few months has been [writing on and working on this website](https://www.chriskrycho.com/2018/making-things-helps.html "Making Things Helps").
+- **severe demotivation:** having difficulty getting to work and through work; and having a hard time doing any of my normal side projects. The only hobby which has felt *doable* for most of the last few months has been [writing on and working on this website](https://v4.chriskrycho.com/2018/making-things-helps.html "Making Things Helps").
 
 - **crying, of all sorts:**
 	- streams of silent tears: not in the “I have something in my eye” sense but in the “I have tears streaming down my face” sense—but with no trigger

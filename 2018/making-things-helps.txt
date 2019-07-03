@@ -9,7 +9,7 @@ Summary: >
 
 ---
 
-As a small bit of follow-up to my recent post on [blogging as part of what helps with my burnout](https://www.chriskrycho.com/2018/cant-stop-wont-stop.html "Can’t Stop, Won’t Stop"), I thought it worth noting that this principle is a bit broader than just *blogging* for me. Writing (currently mostly expressed in the form of blogging) is deep in me, and so blogging remains a helpful outlet.[^1] But so a fair number of other things which might look like *work* to other people.
+As a small bit of follow-up to my recent post on [blogging as part of what helps with my burnout](https://v4.chriskrycho.com/2018/cant-stop-wont-stop.html "Can’t Stop, Won’t Stop"), I thought it worth noting that this principle is a bit broader than just *blogging* for me. Writing (currently mostly expressed in the form of blogging) is deep in me, and so blogging remains a helpful outlet.[^1] But so a fair number of other things which might look like *work* to other people.
 
 Tonight I started putting together some thoughts on what some extensions to an open source software library I maintain might look like.[^2] This after what has to be a record-setting week: the kind in which I reviewed and merged 60 pull requests for a ridiculous crunch of a project I’m on at work. I’m exhausted. I had another one of those moments this evening where I started crying a bit as I was sitting down to eat dinner and praying beforehand. Why? Just because I’m *that* emotionally wrung out: nothing was wrong in the particular moment at all, and probably the “trigger” was actually the small bit of relief of being *away* from the particular (very weird) stressors of this project at work for a while.
 

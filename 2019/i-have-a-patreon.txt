@@ -9,7 +9,7 @@ Summary: >
 
 ---
 
-<i><b>[Assumed Audience](https://www.chriskrycho.com/2018/assumed-audiences.html):</b> people who *really* like this website and like patronage or crowd-funding.</i>
+<i><b>[Assumed Audience](https://v4.chriskrycho.com/2018/assumed-audiences.html):</b> people who *really* like this website and like patronage or crowd-funding.</i>
 
 Happy 2019, readers! As I move into 2019, I wanted to publicize something that has *existed* for most of the last year, but which I have not yet made much noise about: [my Patreon](https://patreon.com/chriskrycho)!
 

@@ -11,7 +11,7 @@ Subtitle: The (many) places you can hear my voice.
 
 ## Occasional
 
-* [Sermons by Chris Krycho (dedicated RSS feed hosted on this site)](http://www.chriskrycho.com/sermons.xml) -- if ever I preach anywhere, it'll be in this feed. Currently just limited to the sermons I preached for my sermon delivery class in seminary.
+* [Sermons by Chris Krycho (dedicated RSS feed hosted on this site)](http://v4.chriskrycho.com/sermons.xml) -- if ever I preach anywhere, it'll be in this feed. Currently just limited to the sermons I preached for my sermon delivery class in seminary.
 
 ## Concluded
 

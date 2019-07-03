@@ -10,7 +10,7 @@ Summary: >
 
 <i><b>[Assumed Audience][aa]:</b> anyone *willing* to think hard about social media and its place in our lives.</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
 
 ## I. The Itch
@@ -61,9 +61,9 @@ The counter-arguments mount up, of course—as they do whenever we think of elim
 
 Moreover, very little of what happens on Twitter is of any lasting import. There is a great deal of Thought Leading,[^tl] but the medium discourages careful, rich, context-sensitive writing: just what is necessary for real work (and not just screaming mobs or fanboying). This is equally as true of software development as of theology. The medium dominates the message. Twitter threads, as I have [noted before] (and see also [here][here-1] and [here][here-2]), are much worse than something like a blog post for their intended purpose. The defining feature of Twitter—the *reply*—is a bug and not a feature. I *love* thoughtful replies to my writing… which is *precisely why I don’t have comments here but encourage people to email me instead*—and Twitter has a far, far worse signal-to-noise ratio than do blog comments. Where’s the upside?
 
-[noted before]: https://www.chriskrycho.com/2018/on-tweeting-instead-of-writing.html
-[here-1]: https://www.chriskrycho.com/2018/tweet-less-blog-more.html
-[here-2]: https://www.chriskrycho.com/2017/the-value-of-silence.html
+[noted before]: https://v4.chriskrycho.com/2018/on-tweeting-instead-of-writing.html
+[here-1]: https://v4.chriskrycho.com/2018/tweet-less-blog-more.html
+[here-2]: https://v4.chriskrycho.com/2017/the-value-of-silence.html
 
 [^tl]: and, worse but in far greater quantity, *wannabe* Thought Leading
 
@@ -129,6 +129,6 @@ So: I have deleted all my tweets save one: a link to this post. I am doing much 
 Going forward, I will be doing much more writing here. I will also continue to publish [my newsletter][atss], normally on a weekly basis. I will still be [podcasting][podcasts]. I hope (and expect) to be writing more full-on essays—the area more than any other where I have felt the drain from social media’s interference. And I will be working on [rewrite]! And if you’d like to get in touch, you can always [email me][email]!
 
 [atss]: https://buttondown.email/chriskrycho
-[podcasts]: https://www.chriskrycho.com/podcasts
+[podcasts]: https://v4.chriskrycho.com/podcasts
 [rewrite]: https://buttondown.email/rewrite
 [email]: mailto:hello@chriskrycho.com

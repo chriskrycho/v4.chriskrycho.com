@@ -518,7 +518,7 @@ Note:
       * Facebook: [chriskrycho][fb]
       * Instagram: [chriskrycho][insta]
 
-[chriskrycho.com]: http://www.chriskrycho.com
+[chriskrycho.com]: http://v4.chriskrycho.com
 [chris@krycho.com]: mailto:chris@krycho.com
 [www.winningslowly.org]: http://www.winningslowly.org
 [tw]: https://www.twitter.com/chriskrycho

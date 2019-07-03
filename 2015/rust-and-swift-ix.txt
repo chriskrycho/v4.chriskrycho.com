@@ -100,5 +100,5 @@ Series:
 -  [**Next:** Classes and structs (product types), and reference and value types.][10]
 
 
-[8]: http://www.chriskrycho.com/2015/rust-and-swift-viii.html
-[10]: http://www.chriskrycho.com/2015/rust-and-swift-x.html
+[8]: http://v4.chriskrycho.com/2015/rust-and-swift-viii.html
+[10]: http://v4.chriskrycho.com/2015/rust-and-swift-x.html

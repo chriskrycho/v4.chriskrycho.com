@@ -12,7 +12,7 @@ Yesterday, I [tweet-complained][tweet] about Lifeway’s ebook policy; posted [h
 > For the record: [\@LifeWay] has the single most user-hostile ebook policy I’ve encountered anywhere. Shame on whoever made these decisions. [∞][tweet]
 
 [tweet]: https://twitter.com/chriskrycho/status/815583525177004032
-[here]: http://www.chriskrycho.com/2017/01-01-1056.html
+[here]: http://v4.chriskrycho.com/2017/01-01-1056.html
 [\@LifeWay]: https://twitter.com/LifeWay
 
 They [invited feedback][link]:

@@ -12,7 +12,7 @@ Summary: >
 
 <i class=editorial><b>Assumed audience:</b> people already persuaded of the value—at least to some extent—of "getting things done" strategies and having an idea of what you accomplished over the course of the year.</i>
 
-For the last few years, I’ve had a habit—not kept perfectly, but done more often than not, courtesy of my daily [pomodoro](https://www.chriskrycho.com/pomodoro/) discipline—of writing down what I do each day. Then, every week, I take a look at what I did each day, and turn that into a summary for the week. And every month, I look over my notes for weeks that made up that month, and write down what I did that month.
+For the last few years, I’ve had a habit—not kept perfectly, but done more often than not, courtesy of my daily [pomodoro](https://v4.chriskrycho.com/pomodoro/) discipline—of writing down what I do each day. Then, every week, I take a look at what I did each day, and turn that into a summary for the week. And every month, I look over my notes for weeks that made up that month, and write down what I did that month.
 
 This has been *fantastic* for me professionally. For one thing, it gives me a quick and easy way to see what I’ve done over the past however-long-between-performance-evaluations. The inevitable “What did you accomplish this year?” question has an an easy answer: I can look over my month-level summaries and summarize *those*. (I’m inevitably frustrated by the months where I slacked off and don’t actually know what I did when do this exercise!)
 

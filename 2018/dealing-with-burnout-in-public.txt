@@ -9,7 +9,7 @@ Summary: >
 
 ---
 
-For the last several months, I’ve been experiencing what I [initially described](https://www.chriskrycho.com/2018/some-mild-burnout.html "Some Mild Burnout") as *mild burnout*. I’m not sure how mild it is at this point, but I’m definitely still experiencing it. As a result, I’m still thinking about how to mitigate it, minimize the length of it, and not least to walk through it well as a Christian.
+For the last several months, I’ve been experiencing what I [initially described](https://v4.chriskrycho.com/2018/some-mild-burnout.html "Some Mild Burnout") as *mild burnout*. I’m not sure how mild it is at this point, but I’m definitely still experiencing it. As a result, I’m still thinking about how to mitigate it, minimize the length of it, and not least to walk through it well as a Christian.
 
 One of my aims--we will see how this plays out, but it is an aim--is to walk through this experience of burnout as publicly as seems appropriate. My reason is basically the same as I noted at the end of the post where I first noted publicly my experience of burnout. Seeing that others have gone through this, and seeing what helped them, can sometimes be a help to us as we walk through things. My experience won’t totally generalize. Some of the things I conclude aren’t going to stick for others because they reject my priors--more on that in a moment. But nonetheless, having something of a public record of dealing with something like this seems to me to be a broadly good thing if it’s done well. I hope to do it well. (I also hope you’ll bear with me insofar as I don’t!)
 

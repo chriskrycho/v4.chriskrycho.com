@@ -31,7 +31,7 @@ This takes me around to the meta point I had in mind when I started the post: us
 
 [1]:	http://www.manton.org/2014/09/owning-the-microblog.html
 [2]:	https://blog.getpelican.com/
-[3]:	http://www.chriskrycho.com/lightning-rs/
+[3]:	http://v4.chriskrycho.com/lightning-rs/
 [4]:	https://pinboard.in
 [5]:	https://pinboard.in/u:chriskrycho
 [6]:	http://text-patterns.thenewatlantis.com/2016/07/happy-birthday-pinboard.html

@@ -13,7 +13,7 @@ Summary: >
 
 <i><b>[Assumed Audience][audience]:</b> people interested in reading *yet more* things I write.</i>
 
-[audience]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[audience]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
 So I hopped onto the bandwagon that everyone else is in 2019—with the excuse that I've been *thinking* about it since late 2017!—and started an email newsletter: [Across the Sundering Seas][link]
 

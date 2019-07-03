@@ -9,7 +9,7 @@ Modified: 2017-01-08 17:47
 
 I recently wrote up some neat things you can do with [`keyof` and mapped types][prev] in TypeScript 2.1. In playing further with those bits, I ran into some interesting variations on the approach I outlined there, so here we are.
 
-[prev]: http://www.chriskrycho.com/2016/keyof-and-mapped-types-in-typescript-21.html
+[prev]: http://v4.chriskrycho.com/2016/keyof-and-mapped-types-in-typescript-21.html
 
 In the previous post, I concluded with an example that looked like this:
 

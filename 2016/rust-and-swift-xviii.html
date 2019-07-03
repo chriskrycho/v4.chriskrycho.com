@@ -7,17 +7,17 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
-<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://www.chriskrycho.com/2016/rust-and-swift-xviii.html"/>
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://v4.chriskrycho.com/2016/rust-and-swift-xviii.html"/>
     <meta property="og:title" content="Rust and Swift (xviii)"/>
     <meta property="og:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note …"/>
-        <meta property="og:image" content="http://www.chriskrycho.com//assets/images/ck.png"/>
+        <meta property="og:image" content="http://v4.chriskrycho.com//assets/images/ck.png"/>
 <link rel="author" href=""/>
 <link rel="me" href=""/><meta name="twitter:card" content="summary"/>
 <meta name="twitter:site" content="@chriskrycho"/>
 <meta name="twitter:creator" content="@chriskrycho"/>
     <meta name="twitter:title" content="Rust and Swift (xviii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note …"/>
-        <meta name="twitter:image" content="http://www.chriskrycho.com/assets/images/ck.png"/>
+        <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
     <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="https://patreon.com/chriskrycho"/>
@@ -28,7 +28,7 @@
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
-    <link rel="openid.delegate" href="http://www.chriskrycho.com/" />
+    <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
 
     <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
@@ -52,7 +52,7 @@
     <header id="site-header">
         <div class="hgroup">
             <h1 id="site-title">
-<a href="http://www.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+<a href="http://v4.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
 </h1>
 
             <h2 id="site-subtitle">Theology, technology, life & art</h2>
@@ -60,16 +60,16 @@
 
         <nav>
             <ul>
-                <li class="section-title art"><a href="http://www.chriskrycho.com/art/">Art</a></li>
-                <li class="section-title blog"><a href="http://www.chriskrycho.com/blog/">blog</a></li>
-                <li class="section-title tech"><a href="http://www.chriskrycho.com/tech/">Tech</a></li>
-                <li class="section-title theology"><a href="http://www.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/series.html">Series</a></li>
                 <li class="section-title divider" role="presentation"></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/about">About</a></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/cv">C.V.</a></li>
-                <li class="section-title"><a href="http://www.chriskrycho.com/now">Now</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/now">Now</a></li>
             </ul>
         </nav>
 
@@ -83,7 +83,7 @@
 <h2>Deinitialization: ownership semantics and automatic reference counting</h2>    </header>
 
     <div class="meta">
-<span class="date"><a href="http://www.chriskrycho.com/2016/rust-and-swift-xviii.html" title="Rust and Swift (xviii)"><i class="fa fa-fw fa-link"></i></a>July 24, 2016</span><span class="section">Filed under <a class="section-title" href="http://www.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://www.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://www.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://www.chriskrycho.com/rust-and-swift/">#rust-and-swift</a><a class="hashtags" href="http://www.chriskrycho.com/swift/">#swift</a></span><span><a href="http://www.chriskrycho.com/2016/rust-and-swift-xviii.txt">Markdown source</a></span><versions>
+<span class="date"><a href="http://v4.chriskrycho.com/2016/rust-and-swift-xviii.html" title="Rust and Swift (xviii)"><i class="fa fa-fw fa-link"></i></a>July 24, 2016</span><span class="section">Filed under <a class="section-title" href="http://v4.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://v4.chriskrycho.com/programming-languages/">#programming languages</a><a class="hashtags" href="http://v4.chriskrycho.com/rust/">#rust</a><a class="hashtags" href="http://v4.chriskrycho.com/rust-and-swift/">#rust-and-swift</a><a class="hashtags" href="http://v4.chriskrycho.com/swift/">#swift</a></span><span><a href="http://v4.chriskrycho.com/2016/rust-and-swift-xviii.txt">Markdown source</a></span><versions>
       <a href="https://doc.rust-lang.org/1.10.0/book/">
     <version-badge>
       <version-badge-info class='tool'>Rust</version-badge-info><!--
@@ -102,7 +102,7 @@
 
         <div class="content">
 
-<p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. <a href="http://www.chriskrycho.com/rust-and-swift.html">(See all parts in the series.)</a></i></p>
+<p><i class="editorial">I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note, too, that my preferences are just that: preferences. Your tastes may differ from mine. <a href="http://v4.chriskrycho.com/rust-and-swift.html">(See all parts in the series.)</a></i></p>
 <hr />
 <section id="part-i-ownership-semantics-vs.-reference-counting" class="level2">
 <h2>Part I: Ownership Semantics vs. Reference Counting</h2>
@@ -320,7 +320,7 @@ func describe(_ trainee: WouldBeJedi) {
 <section id="part-2-deconstructiondeinitialization" class="level2">
 <h2>Part 2: Deconstruction/Deinitialization</h2>
 <p>Both Rust and Swift recognize that, the ordinary case notwithstanding, there are many times when you <em>do</em> need to run some cleanup as part of tearing down an object. For example, if you had an open database connection attached to an object, you should return it to the collection pool before finishing tear-down of the object.</p>
-<p>In Rust, this is accomplished by implementing the <code>Drop</code> trait and supplying the requisite <code>drop</code> method. Imagine we had defined a <code>Jedi</code> type, with a bunch of details about the Jedi’s lightsaber (including whether the Jedi even <em>has</em> a lightsaber. We know from the <em>Star Wars</em> movies that lightsabers turn off automatically when the Jedi dies, or even just drops it for that matter. We can implement <em>all</em> of this in Rust using just the <code>Drop</code> trait. Here’s a pretty full example.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> (Note that both of these implementations draw heavily on material I covered in <a href="http://www.chriskrycho.com/rust-and-swift.html">previous posts</a>.)</p>
+<p>In Rust, this is accomplished by implementing the <code>Drop</code> trait and supplying the requisite <code>drop</code> method. Imagine we had defined a <code>Jedi</code> type, with a bunch of details about the Jedi’s lightsaber (including whether the Jedi even <em>has</em> a lightsaber. We know from the <em>Star Wars</em> movies that lightsabers turn off automatically when the Jedi dies, or even just drops it for that matter. We can implement <em>all</em> of this in Rust using just the <code>Drop</code> trait. Here’s a pretty full example.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> (Note that both of these implementations draw heavily on material I covered in <a href="http://v4.chriskrycho.com/rust-and-swift.html">previous posts</a>.)</p>
 <pre class="rust"><code>#[derive(Debug)]
 enum Color {
     Red,
@@ -395,7 +395,7 @@ fn main() {
     let a_jedi = WouldBeJedi::new(&quot;Zayne Carrick&quot;, Some(saber));
     a_jedi.describe();
 }</code></pre>
-<p>We can do much the same in Swift, using its deinitializers, which are fairly analogous to (but much simpler than) <a href="http://www.chriskrycho.com/2016/rust-and-swift-xvii.html">its initializers</a>, and fulfill the same role as Rust’s <code>Drop</code> trait and <code>drop()</code> method.</p>
+<p>We can do much the same in Swift, using its deinitializers, which are fairly analogous to (but much simpler than) <a href="http://v4.chriskrycho.com/2016/rust-and-swift-xvii.html">its initializers</a>, and fulfill the same role as Rust’s <code>Drop</code> trait and <code>drop()</code> method.</p>
 <pre class="swift"><code>enum Color {
     case red, blue, green, purple, yellow
 }
@@ -481,7 +481,7 @@ func main() {
 <p>That takes us back to one of the fundamental differences in design between the two languages. Rust goes out of its way to leave power in the hands of the user, at the cost of requiring the user to be a bit more explicit. Swift prioritizes brevity and productivity, but it gets there by taking some of the power out of the hands of the developer. Neither of these is wrong, <em>per se</em>. They’re just aiming for (and in this case, I think, fairly successfully landing in) somewhat different spots on a spectrum of tradeoffs.</p>
 <hr />
 <ul>
-<li><a href="http://www.chriskrycho.com/2016/rust-and-swift-xvii.html"><strong>Previous:</strong> More on initializers!</a></li>
+<li><a href="http://v4.chriskrycho.com/2016/rust-and-swift-xvii.html"><strong>Previous:</strong> More on initializers!</a></li>
 </ul>
 </section>
 <section class="footnotes" role="doc-endnotes">
@@ -528,29 +528,29 @@ func main() {
     <h3>Feeds</h3>
     <ul class="icons">
         <li class="section-title">
-            <a href="http://www.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+            <a href="http://v4.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
         </li>
         <li class="section-title">
-            <a href="http://www.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+            <a href="http://v4.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
         </li>
         <li class="section-title">
-            <a href="http://www.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+            <a href="http://v4.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
         </li>
         <li class="section-title">
-            <a href="http://www.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+            <a href="http://v4.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
         </li>
         <li class="section-title">
-            <a href="http://www.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+            <a href="http://v4.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
         </li>
     </ul>
 </section>
 <section id="recent">
     <h2>Recent</h2>
     <ul>
-        <li>Art: <a href="http://www.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://www.chriskrycho.com/2019/all-things-open-2019.html">All Things Open 2019!</a></li>
-        <li>Tech: <a href="http://www.chriskrycho.com/2019/emberjs2019-part-2.html">#EmberJS2019, Part 2</a></li>
-        <li>Theology: <a href="http://www.chriskrycho.com/2019/heresies.html">Heresies</a></li>
+        <li>Art: <a href="http://v4.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
+        <li>Blog: <a href="http://v4.chriskrycho.com/2019/all-things-open-2019.html">All Things Open 2019!</a></li>
+        <li>Tech: <a href="http://v4.chriskrycho.com/2019/emberjs2019-part-2.html">#EmberJS2019, Part 2</a></li>
+        <li>Theology: <a href="http://v4.chriskrycho.com/2019/heresies.html">Heresies</a></li>
     </ul>
 </section></footer>
 

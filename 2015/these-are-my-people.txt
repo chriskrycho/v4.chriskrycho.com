@@ -14,7 +14,7 @@ Software). What I found was not only a bunch of interesting content---though
 there was certainly plenty of that, and props to the Logos/Faithlife people for
 putting on a great event---but also an awful lot of people *a lot like me*.
 
-[talk]: //www.chriskrycho.com/2015/tolle-lege.html
+[talk]: //v4.chriskrycho.com/2015/tolle-lege.html
 [BibleTech]: //bibletechconference.com
 
 Those of you who know me well know this is rare. Finding people who share *one*
@@ -38,12 +38,12 @@ Seattle April 30--May 1, 2015. That's no small thing.
 
 [slack]: //bibletechnology-slack.herokuapp.com/
 
-I have no idea what the future holds for me---whether it will continue to 
+I have no idea what the future holds for me---whether it will continue to
 include writing software for the Bible specifically or not---but I *can* say
 that this phase of my life has been enormously beneficial in this one way if in
 no others. It is nice to find kindred spirits in the world, and to know that,
 even if I am pretty strange, there are other strange people out there, too, and
-that we can keep working in our strange ways to make the Word of God more 
+that we can keep working in our strange ways to make the Word of God more
 available and more useful to people every day.
 
 Good work, BibleTech.

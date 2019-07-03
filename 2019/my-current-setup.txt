@@ -9,7 +9,7 @@ Summary: >
 
 ---
 
-<i><b>[Assumed Audience](https://www.chriskrycho.com/2018/assumed-audiences.html):</b> people interested in productivity and work flow and app choice.</i>
+<i><b>[Assumed Audience](https://v4.chriskrycho.com/2018/assumed-audiences.html):</b> people interested in productivity and work flow and app choice.</i>
 
 A friend was asking me the other day what my workflow looks like, and while I don't generally spend a *lot* of time writing about my working setup, I figured I'd throw up a quick post representing my *current* list so that if people ask I can point them here.
 
@@ -57,14 +57,14 @@ For research and writing, I use:
 [iA Writer]: https://ia.net/writer
 [Ulysses]: http://www.ulysses.app
 [Bear]: https://bear.app
-[bear-1]: https://www.chriskrycho.com/2018/starting-to-build-a-zettelkasten.html
-[bear-2]: https://www.chriskrycho.com/2018/zettelkasten-update-all-in-on-bear.html
+[bear-1]: https://v4.chriskrycho.com/2018/starting-to-build-a-zettelkasten.html
+[bear-2]: https://v4.chriskrycho.com/2018/zettelkasten-update-all-in-on-bear.html
 [Unread]: https://www.goldenhillsoftware.com/unread/
 [Feedbin]: https://feedbin.com
 
 [^mostly]: iA Writer seems to get *randomly* slow at times for reasons I haven't yet identified, but at least for now, I'm taking that tradeoff over Ulysses' habit of being a bit slow *all the time*. As I've often noted before: [my ideal writing app doesn't exist][just right].
 
-[just right]: https://www.chriskrycho.com/2016/ulysses-byword-and-just-right.html "Ulysses, Byword, and “Just Right”"
+[just right]: https://v4.chriskrycho.com/2016/ulysses-byword-and-just-right.html "Ulysses, Byword, and “Just Right”"
 
 You'll note that there are no apps for reading *longer* material on that list. I could mention Apple Books as the place I read most ebooks I read, but that's more a function of the alternatives not being meaningfully *better* in the ways I care about.
 
@@ -81,7 +81,7 @@ For "productivity" concerns, I use:
     ![Inbox Zero in Spark][img]
 
 [Tadam]: https://tadamapp.com
-[tracking]: https://www.chriskrycho.com/2018/just-write-down-what-you-do.html
+[tracking]: https://v4.chriskrycho.com/2018/just-write-down-what-you-do.html
 [Things]: https://culturedcode.com
 [OmniFocus]: https://www.omnigroup.com/omnifocus/
 [Spark]: https://sparkmailapp.com
@@ -104,7 +104,7 @@ For podcast production, I use:
 - [Transmit] for actually uploading the audio files.
 
 [iZotope RX]: https://www.izotope.com/en/products/repair-and-edit/rx.html
-[izotope post]: https://www.chriskrycho.com/2018/izotope-rx-is-amazing.html
+[izotope post]: https://v4.chriskrycho.com/2018/izotope-rx-is-amazing.html
 [logic]: https://www.apple.com/logic-pro/
 [Ferrite]: https://www.wooji-juice.com/products/ferrite/
 [Forecast]: https://www.overcast.fm/forecast

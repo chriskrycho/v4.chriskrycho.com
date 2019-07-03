@@ -63,7 +63,7 @@ There is a trap of thinking that productivity is the most important thing in the
 
 However, I *do* care about accomplishing the particular things I want to do, and doing those as well as being a good husband and dad and a faithful member of our church means using my time as effectively as I can. This is not a new concern for me, and [as such I have written about it before][previously].
 
-[previously]: http://www.chriskrycho.com/2014/boosting-my-productivity.html
+[previously]: http://v4.chriskrycho.com/2014/boosting-my-productivity.html
 
 A lot of the things I wrote about before I still do, and they work well for me. I still use OmniFocus to manage my tasks; I still use the pomodoro approach for keeping my brain moving throughout a whole day, and I still refuse to use email as a task manager (though I've been less disciplined about hitting "Inbox Zero" than I'd like of late). However, I found in the past few months that, while good, those habits aren't quite *enough* for everything I have going. They are necessary but insufficient.
 

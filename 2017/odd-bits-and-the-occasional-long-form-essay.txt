@@ -11,8 +11,8 @@ In the midst of congratulating me on finishing up my M. Div. classwork a few wee
 
 But one of the things I'm considering carefully is what *theological blogging* will look like for me now, and in the years ahead. Most of the theological content on this site in the past four years has come directly out of my coursework. (Click into the [Theology section] of the site and see how many items are tagged [#sebts]. It's *most* of them.) My theological writing before that ([here][2012-2013] and [here][ardent fidelity]) was largely a mix of the _exploratory_, the _explanatory_, and the _response-to-current-events_ kinds of blogging.
 
-[Theology section]: http://www.chriskrycho.com/theology/
-[#sebts]: http://www.chriskrycho.com/sebts/
+[Theology section]: http://v4.chriskrycho.com/theology/
+[#sebts]: http://v4.chriskrycho.com/sebts/
 [2012-2013]: http://2012-2013.chriskrycho.com/theology/
 [ardent fidelity]: http://blog.chriskrycho.com
 

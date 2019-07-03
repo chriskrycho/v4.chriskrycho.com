@@ -10,7 +10,7 @@ Subtitle: Last updated Thursday, June 13, 2019.
 * I dealt with some nasty burnout in the latter half of 2018. I [blogged about it][burnout] quite a bit. I expect to *keep* blogging about it as appropriate, but at a lower volume.
 
 [rewrite]: https://buttondown.email/rewrite
-[burnout]: https://www.chriskrycho.com/burnout
+[burnout]: https://v4.chriskrycho.com/burnout
 [LinkedIn]: https://linkedin.com
 
 ## Podcasts
@@ -29,6 +29,6 @@ There’s a lot going on here, and it’s always changing. See the [the dedicate
 
 * I am in the early phases of building [<b><i>re</i>write</b>][rewrite] (the working title): an incredibly ambitious vision for a genuinely great research writing environment.
 
-* Since early 2017, I've been working on making the experience of writing TypeScript and Ember.js together awesome. [typed-ember](https://github.com/typed-ember) on GitHub is where all the action is at. I've also been writing a series of blog posts, ["Typing Your Ember"](http://www.chriskrycho.com/typing-your-ember/), to help people get off the ground.
+* Since early 2017, I've been working on making the experience of writing TypeScript and Ember.js together awesome. [typed-ember](https://github.com/typed-ember) on GitHub is where all the action is at. I've also been writing a series of blog posts, ["Typing Your Ember"](http://v4.chriskrycho.com/typing-your-ember/), to help people get off the ground.
 
-* I published [True Myth](https://github.com/chriskrycho/true-myth), a library for safer (functional) programming in TypeScript, Flow, or plain-old JavaScript. You can read about the project [in its docs](https://true-myth.js.org) or in my introductory [blog post](http://www.chriskrycho.com/2017/announcing-true-myth-10.html).
+* I published [True Myth](https://github.com/chriskrycho/true-myth), a library for safer (functional) programming in TypeScript, Flow, or plain-old JavaScript. You can read about the project [in its docs](https://true-myth.js.org) or in my introductory [blog post](http://v4.chriskrycho.com/2017/announcing-true-myth-10.html).

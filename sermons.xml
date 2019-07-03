@@ -2,7 +2,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
     <channel>
         <title>Sermons by Chris Krycho</title>
-        <link>http://www.chriskrycho.com/sermons/</link>
+        <link>http://v4.chriskrycho.com/sermons/</link>
         <description>Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a Reformed, evangelical Baptist currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.</description>
         <generator>Feeder 3 3.1.8(2650); Mac OS X Version 10.11.4 (Build 15E65) http://reinventedsoftware.com/feeder/</generator>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
@@ -15,11 +15,11 @@
         <image>
             <url>https://f001.backblazeb2.com/file/chriskrycho-com/sermons/3000.png</url>
             <title>Chris Krycho</title>
-            <link>http://www.chriskrycho.com/sermons/</link>
+            <link>http://v4.chriskrycho.com/sermons/</link>
             <width>144</width>
             <height>144</height>
         </image>
-        <atom:link href="http://www.chriskrycho.com/sermons.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="http://v4.chriskrycho.com/sermons.xml" rel="self" type="application/rss+xml"/>
         <itunes:author>Chris Krycho</itunes:author>
         <itunes:summary><![CDATA[Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a software developer, writer, and podcaster, currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.]]></itunes:summary>
         <itunes:keywords>sermon,Christianity,faith,evangelical,Reformed,baptist,Scripture,exegesis,expository,expositional</itunes:keywords>
@@ -34,7 +34,7 @@
         </itunes:category>
         <item>
             <title>God Is With Us</title>
-            <link>http://www.chriskrycho.com/2016/god-is-with-us.html</link>
+            <link>http://v4.chriskrycho.com/2016/god-is-with-us.html</link>
             <description><![CDATA[<p><strong>John 14:15–31:</strong> We love and obey God; God dwells with us.</p>
 <p>This sermon was delivered in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.</p>
 <p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is recorded with <a href="https://geo.itunes.apple.com/us/app/ferrite-recording-studio/id1018780185?mt=8&amp;at=1001l4KM">Ferrite</a>, using an <a href="http://www.apple.com/iphone-se/">iPhone SE</a> placed on the podium.</p>
@@ -52,7 +52,7 @@ The only constraints on this sermon were that it be between 15 and 25 minutes lo
         </item>
         <item>
             <title>A Strange and Messy Deliverance</title>
-            <link>http://www.chriskrycho.com/2016/a-strange-and-messy-deliverance.html</link>
+            <link>http://v4.chriskrycho.com/2016/a-strange-and-messy-deliverance.html</link>
             <description><![CDATA[<p>Judges 3:7–31: Three stories, three judges and deliverers, one saving God.</p>
 <p>The following was delivered in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.</p>
 <p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is from my iPhone, in my pocket.</p>
@@ -70,7 +70,7 @@ The only constraints on this sermon were that it be between 15 and 25 minutes lo
         </item>
         <item>
             <title>A Humble, Selfless, Unity</title>
-            <link>http://www.chriskrycho.com/2016/a-humble-selfless-unity.html</link>
+            <link>http://v4.chriskrycho.com/2016/a-humble-selfless-unity.html</link>
             <description><![CDATA[<p>Believers are called to a <em>humble, selfless, unity</em> which reflects the <em>humble, selfless, unity</em> of the Trinity.</p>
 <p>The following was written in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.</p>
 <p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from an epistle. Audio is from an old MacBook Pro pointed at the podium.</p>

@@ -19,13 +19,13 @@ Summary: >
 - Part 5: Getting things done in 2016 and beyond. (this post)
 - [Part 6: Plans for 2017!][part-6]
 
-[intro]: http://www.chriskrycho.com/2016/2016-review-intro.html
-[part-1]: http://www.chriskrycho.com/2016/2016-review-1.html
-[part-2]: http://www.chriskrycho.com/2016/2016-review-2.html
-[part-3]: http://www.chriskrycho.com/2016/2016-review-3.html
-[part-4]: http://www.chriskrycho.com/2016/2016-review-4.html
-[part-5]: http://www.chriskrycho.com/2016/2016-review-5.html
-[part-6]: http://www.chriskrycho.com/2017/2016-review-6.html
+[intro]: http://v4.chriskrycho.com/2016/2016-review-intro.html
+[part-1]: http://v4.chriskrycho.com/2016/2016-review-1.html
+[part-2]: http://v4.chriskrycho.com/2016/2016-review-2.html
+[part-3]: http://v4.chriskrycho.com/2016/2016-review-3.html
+[part-4]: http://v4.chriskrycho.com/2016/2016-review-4.html
+[part-5]: http://v4.chriskrycho.com/2016/2016-review-5.html
+[part-6]: http://v4.chriskrycho.com/2017/2016-review-6.html
 
 ---
 
@@ -34,8 +34,8 @@ At a number of points over the last few years, I've tackled the question of prod
 - [Boosting My Productivity][productivity-12-2014] (December, 2014)
 - [A New Schedule: Trying to make better use of my time toward my goals][productivity-07-2016] (July 2016)
 
-[productivity-12-2014]: http://www.chriskrycho.com/2014/boosting-my-productivity.html "Boosting My Productivity"
-[productivity-07-2016]: http://www.chriskrycho.com/2016/a-new-schedule.html "A New Schedule"
+[productivity-12-2014]: http://v4.chriskrycho.com/2014/boosting-my-productivity.html "Boosting My Productivity"
+[productivity-07-2016]: http://v4.chriskrycho.com/2016/a-new-schedule.html "A New Schedule"
 
 A common theme of all productivity plans, of course, is that one can get more focused on the details of the plan than on actually being productive! I'm happy to say, however, that this *wasn't* the case for me with these productivity approaches. First, I have never allowed myself to be slavish about them. If I need to do something different on a given day, I do something different. Second, I am generally able to remember that the point of the plan is *what I'm getting done*. So with that in mind, some comments particularly on the plan I sketched out [mid-year this year][productivity-07-2016].
 

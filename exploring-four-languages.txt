@@ -23,8 +23,8 @@ These languages are all related: they’re descended from [Standard ML](http://s
 
 Why, though? Mostly because I think it’s be interesting to compare the implementations of the domain model from the book side by side. It’ll look just a bit different in each language, and I expect to learn a bit more of the _feel_ of each language by doing this. (That side by side comparison is something I’ve [done before][rust and swift] and [found very profitable][profit].) I’ll also turn it into blog posts, which hopefully will be interesting to others!
 
-[rust and swift]: http://www.chriskrycho.com/rust-and-swift.html 'Series: Rust and Swift'
-[profit]: http://www.chriskrycho.com/2015/rust-and-swift-v.html 'Part V: The value (and challenge) of learning languages in parallel.'
+[rust and swift]: http://v4.chriskrycho.com/rust-and-swift.html 'Series: Rust and Swift'
+[profit]: http://v4.chriskrycho.com/2015/rust-and-swift-v.html 'Part V: The value (and challenge) of learning languages in parallel.'
 
 ## Parts in the Series
 
@@ -43,8 +43,8 @@ This list is updated whenever I publish a new post in the series. You can also s
 3. [Starting to Model the Domain][3]—How we use types to capture business concepts in Rust, Elm, F♯, and ReasonML.
 4. [Integrity and Consistency][4]—Making, and keeping, promises – with Rust, Elm, F♯, and ReasonML.
 
-[1]: http://www.chriskrycho.com/2017/exploring-4-languages.html
-[2]: http://www.chriskrycho.com/2018/exploring-4-languages-project-setup.html
-[3]: http://www.chriskrycho.com/2018/exploring-4-languages-starting-to-model-the-domain.html
-[4]: https://www.chriskrycho.com/2018/exploring-4-languages-integrity-and-consistency.html
+[1]: http://v4.chriskrycho.com/2017/exploring-4-languages.html
+[2]: http://v4.chriskrycho.com/2018/exploring-4-languages-project-setup.html
+[3]: http://v4.chriskrycho.com/2018/exploring-4-languages-starting-to-model-the-domain.html
+[4]: https://v4.chriskrycho.com/2018/exploring-4-languages-integrity-and-consistency.html
 

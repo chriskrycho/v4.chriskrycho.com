@@ -11,7 +11,7 @@ Summary: >
 
 <i><b>[Assumed Audience][aa]:</b> People up for hearing a brief take on the history of the Christian confessions of faith—and why their long history gives me hope today.</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
 ---
 

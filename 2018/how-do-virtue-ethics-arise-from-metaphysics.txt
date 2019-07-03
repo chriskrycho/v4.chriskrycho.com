@@ -7,7 +7,7 @@ Tags: [virtue ethics, Shannon Vallor, Confucianism, Buddhism, Christianity]
 
 ---
 
-Context: I’ve just picked back up Shannon Vallor’s _Technology and the Virtues_ about a month away from it (since my [last post about it](https://www.chriskrycho.com/2018/good-arguments.html "Good Arguments—Learning a great deal by disagreeing with an excellent interlocutor — and thinking hard “out loud.”")). And in light of a number of things I've been thinking about over the last month,[^1] I'm trying to publish short thoughts on things like this as they come up. [Blogging as gardening](https://blog.ayjay.org/new-uses-for-old-blogs/), if you will.
+Context: I’ve just picked back up Shannon Vallor’s _Technology and the Virtues_ about a month away from it (since my [last post about it](https://v4.chriskrycho.com/2018/good-arguments.html "Good Arguments—Learning a great deal by disagreeing with an excellent interlocutor — and thinking hard “out loud.”")). And in light of a number of things I've been thinking about over the last month,[^1] I'm trying to publish short thoughts on things like this as they come up. [Blogging as gardening](https://blog.ayjay.org/new-uses-for-old-blogs/), if you will.
 
 ---- 
 

@@ -397,7 +397,7 @@ Reason... was very, *very* difficult to get sorted out. This is just a function 
 
 ## Summary
 
-As with our [previous foray](http://www.chriskrycho.com/2018/exploring-4-languages-starting-to-model-the-domain.html), we can see a ton of similarities across these languages. All lean heavily on pattern-matching for dealing with different scenarios; all let us make use of a `Result` type for handling success or failure; all make heavy use of expression-bodied-ness; and all supply *some* way to make types constructable only in safe/controlled ways.
+As with our [previous foray](http://v4.chriskrycho.com/2018/exploring-4-languages-starting-to-model-the-domain.html), we can see a ton of similarities across these languages. All lean heavily on pattern-matching for dealing with different scenarios; all let us make use of a `Result` type for handling success or failure; all make heavy use of expression-bodied-ness; and all supply *some* way to make types constructable only in safe/controlled ways.
 
 For Rust, that's a matter of leaving the internals of a `struct` private and making `pub fn` helpers to do the construction and value retrieval. For Elm, F^♯^, and Reason, that's a matter of having the normal type *constructors* be private while exposing the types themselves normally. They do that in different ways (F^♯^'s `private type`, Elm's `exposing`, and Reason's `pri` annotation on the type variant in a module interface file), but the effect is essentially identical, and functionally equivalent to what we see in Rust.
 

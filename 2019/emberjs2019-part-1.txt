@@ -22,9 +22,9 @@ So… what should we tackle next? This year, I have only two parts, unlike [last
 - <b>Part 1 (this post):</b> [Let’s finish modernizing the Ember programming model!][part-1]
 - <b>Part 2:</b> [Let’s make TypeScript a first-class citizen of the Ember ecosystem.][part-2]
 
-[emberjs2018]: https://www.chriskrycho.com/emberjs2018
-[part-1]: https://www.chriskrycho.com/2019/emberjs2019-part-1
-[part-2]: https://www.chriskrycho.com/2019/emberjs2019-part-2
+[emberjs2018]: https://v4.chriskrycho.com/emberjs2018
+[part-1]: https://v4.chriskrycho.com/2019/emberjs2019-part-1
+[part-2]: https://v4.chriskrycho.com/2019/emberjs2019-part-2
 
 ---
 

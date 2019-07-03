@@ -48,7 +48,7 @@ So that's it: goodbye Dropbox; hello other tools. (This post written from an iPa
 [^3]:	I'm hoping to change that a bit in two ways in the future, by having the generator live on a not-my-home-machine server and by making Lighting much easier to just drop in and use than my finicky Pelican setup currently is. But that depends on actually making Lightning, you know, *work*.
 
 [1]:	http://applehelpwriter.com/2016/07/28/revealing-dropboxs-dirty-little-security-hack/
-[2]:	http://www.chriskrycho.com/2014/goodbye-chrome.html "Goodbye, Chrome: You're just too creepy now."
+[2]:	http://v4.chriskrycho.com/2014/goodbye-chrome.html "Goodbye, Chrome: You're just too creepy now."
 [3]:	https://droplr.com
 [4]:	http://independentclauses.com
 [5]:	http://www.winningslowly.org

@@ -13,7 +13,7 @@ Summary: >
 
 <i><b>[Assumed Audience][aa]:</b> anyone who cares about the success of free and open-source software.</i>
 
-[aa]: https://www.chriskrycho.com/2018/assumed-audiences.html
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
 <i>A New Rustacean listener sent me a note lamenting the way [Mozilla’s transition from IRC to Discord][transition]—i.e., from an open protocol to a proprietary service. For many advocates of free software, this is a deeply unsettling move. The kind listener who sent me an email pointed to [Matrix], an open-protocol service, and noted: “perhaps the default web interface is slightly less slick, but there's not much in it, and it's open source.” I sympathize with them, but also had a few *other* thoughts. My reply is reproduced below.</i>
 

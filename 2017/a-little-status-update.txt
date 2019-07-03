@@ -8,7 +8,7 @@ Date: 2017-12-13 18:45
 
 Just a little status update: I’m a few days into [my new routine][post] of blocking out the time before 7am for writing projects—and so far it’s *amazing*. I’ve been able to make progress on a writing project[^1] that has stymied me for months and months. Yesterday and today alike I wrote 600–700 words in roughly an hour (and words I’m relatively happy with, at that). All my previous efforts at this had come to about 600 words in total, largely in outline form, and when I’d taken a stab at it other than that I’d eventually given up and thrown away anything I’d written.
 
-[post]: http://www.chriskrycho.com/2017/knowing-your-rhythms.html
+[post]: http://v4.chriskrycho.com/2017/knowing-your-rhythms.html
 
 This is a pleasant change.
 

@@ -7,7 +7,7 @@ Category: Tech
 Summary: Write! app is a distraction-free text editor—solid enough, but entering a very crowded field, at least on macOS.
 ---
 
-As I've noted in the past, I'm always [on the lookout](http://www.chriskrycho.com/2016/ulysses-byword-and-just-right.html) for top-notch writing environments. I was recently contacted by the team behind [Write!](https://writeapp.co) and asked if I would take a look at and review their app, and I was happy to obliged. I tested the app out fairly thoroughly by doing what I normally do with my writing apps: putting together a blog post or the like. I've written this review from start to finish in it, across my two Mac machines. I promised the authors an unbiased review, so here we go!
+As I've noted in the past, I'm always [on the lookout](http://v4.chriskrycho.com/2016/ulysses-byword-and-just-right.html) for top-notch writing environments. I was recently contacted by the team behind [Write!](https://writeapp.co) and asked if I would take a look at and review their app, and I was happy to obliged. I tested the app out fairly thoroughly by doing what I normally do with my writing apps: putting together a blog post or the like. I've written this review from start to finish in it, across my two Mac machines. I promised the authors an unbiased review, so here we go!
 
 ## Overview
 
@@ -19,7 +19,7 @@ Write![^name] describes itself as a distraction-free text editor. It enters the 
 
 ## The Good
 
-First, the good: the app seems to perform relatively well. Text entry, even on a fairly large document, is smooth and quick. (I imported the text of [this ~7200-word paper](http://www.chriskrycho.com/2016/realism-and-antirealism.html) to test it and it didn't stutter a bit.) Especially given the time I'm going to spend on the not-so-good below, I want to take a moment to applaud the developers for getting that right. It's one of the most important aspects of an app like this, and any number of apps I've used just fall down on large documents. Everything I've seen here makes it seem like Write! would handle much larger documents even than that paper with aplomb.
+First, the good: the app seems to perform relatively well. Text entry, even on a fairly large document, is smooth and quick. (I imported the text of [this ~7200-word paper](http://v4.chriskrycho.com/2016/realism-and-antirealism.html) to test it and it didn't stutter a bit.) Especially given the time I'm going to spend on the not-so-good below, I want to take a moment to applaud the developers for getting that right. It's one of the most important aspects of an app like this, and any number of apps I've used just fall down on large documents. Everything I've seen here makes it seem like Write! would handle much larger documents even than that paper with aplomb.
 
 The app's main writing area looks fairly nice, and the distraction-free/full-screen mode gets out of the way readily enough. The cloud sync that comes with the app is quick and seems reliable. I've worked on this document across the two Macs I use, with no sync issues whatsoever. The writing area also has a (toggleable) overview of the document on the right, _a la_ Sublime Text. To the left is a toggleable outline view, which lets you drill down into the structure of your document if you have multiple heading levels. And within the writing area itself, you can expand and collapse sections demarcated by headings.
 
@@ -57,7 +57,7 @@ As for the business model on the whole: I'm not at all opposed to paying for goo
 
 ## The Bad
 
-Sad to say, from my perspective---to be clear, as a long-time Mac user with [very high standards for my writing tools](http://www.chriskrycho.com/2016/ulysses-byword-and-just-right.html)---this isn't an amazing app. In fact, _on macOS_, it's actually a bad app in many ways.
+Sad to say, from my perspective---to be clear, as a long-time Mac user with [very high standards for my writing tools](http://v4.chriskrycho.com/2016/ulysses-byword-and-just-right.html)---this isn't an amazing app. In fact, _on macOS_, it's actually a bad app in many ways.
 
 ### Non-native UI
 

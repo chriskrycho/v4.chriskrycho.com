@@ -27,5 +27,5 @@ ourselves in the public square. It matters whether our facts are right or not---
 even when the "message" might be right either way. The [whole thing][fc] is
 worth your time.
 
-[nk]: http://www.chriskrycho.com/2014/north-korea-set-to-execute-33-christians.html
+[nk]: http://v4.chriskrycho.com/2014/north-korea-set-to-execute-33-christians.html
 [fc]: http://christandpopculture.com/33-christians-north-korea-really-execution/

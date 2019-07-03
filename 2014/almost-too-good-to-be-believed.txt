@@ -85,5 +85,5 @@ John's narrative.
 [^2]: Though yet again one obscured by the [blasted heading markers inserted in
 the text][headings].
 
-[hinge]: http://www.chriskrycho.com/2014/lukes-hinge.html
-[headings]: http://www.chriskrycho.com/2014/money-parables-and-divorce-and-remarriage.html
+[hinge]: http://v4.chriskrycho.com/2014/lukes-hinge.html
+[headings]: http://v4.chriskrycho.com/2014/money-parables-and-divorce-and-remarriage.html

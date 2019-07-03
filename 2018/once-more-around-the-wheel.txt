@@ -21,4 +21,4 @@ For lots of reasons (c) is probably what I’ll ultimately end up doing; I want 
 
 But in the meantime I really just… want someone else to have the same weird needs I do and build this for me. I just know full well at this point that that’s not going to happen, and accordingly am basically resigned to muddling along with Pelican and Pandoc until such a time as I can actually buckle down and build what I want and need.[^1] _C'est la vie._
 
-[^1]:	As an aside: the prospect of buckling down and building things like that in my spare time is *much* less appealing given my current [struggles with burnout](https://www.chriskrycho.com/burnout/), and as I’ll write about at some point in the future I feel a (perhaps-surprising to you, my reader) lack of confidence about my *ability* to accomplish those things.
+[^1]:	As an aside: the prospect of buckling down and building things like that in my spare time is *much* less appealing given my current [struggles with burnout](https://v4.chriskrycho.com/burnout/), and as I’ll write about at some point in the future I feel a (perhaps-surprising to you, my reader) lack of confidence about my *ability* to accomplish those things.

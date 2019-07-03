@@ -45,6 +45,6 @@ Takeaway: Rust uses traits; Swift uses a keyword. We probably could have guessed
 - [**Next:** Inheritance: a Swiftian specialty (for now).][15]
 
 
-[12]: http://www.chriskrycho.com/2016/rust-and-swift-xii.html
-[13]: http://www.chriskrycho.com/2016/rust-and-swift-xiii.html
-[15]: http://www.chriskrycho.com/2016/rust-and-swift-xv.html
+[12]: http://v4.chriskrycho.com/2016/rust-and-swift-xii.html
+[13]: http://v4.chriskrycho.com/2016/rust-and-swift-xiii.html
+[15]: http://v4.chriskrycho.com/2016/rust-and-swift-xv.html

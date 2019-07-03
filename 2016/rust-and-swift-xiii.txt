@@ -134,7 +134,7 @@ As usual, Rust chooses to use existing language machinery; Swift uses new
 -  [**Next:** Indexing and subscripts, or: traits vs. keywords again.][14]
 
 
-[8]: http://www.chriskrycho.com/2015/rust-and-swift-viii.html
-[10]: http://www.chriskrycho.com/2015/rust-and-swift-x.html
-[12]: http://www.chriskrycho.com/2016/rust-and-swift-xii.html
-[14]: http://www.chriskrycho.com/2016/rust-and-swift-xiv.html
+[8]: http://v4.chriskrycho.com/2015/rust-and-swift-viii.html
+[10]: http://v4.chriskrycho.com/2015/rust-and-swift-x.html
+[12]: http://v4.chriskrycho.com/2016/rust-and-swift-xii.html
+[14]: http://v4.chriskrycho.com/2016/rust-and-swift-xiv.html
