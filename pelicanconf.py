@@ -96,6 +96,7 @@ STATIC_EXCLUDE_SOURCES = False
 PAGE_EXCLUDES = ['talks/bibletech2015', 'talks/es-future-olo', 'talks/rust-belt-rust']
 ARTICLE_EXCLUDES = ['talks/bibletech2015', 'talks/es-future-olo', 'talks/rust-belt-rust']
 EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
+                       'extra/_redirects': {'path': '_redirects'},
                        'extra/sermons.xml': {'path': 'sermons.xml'},
                        'extra/.nojekyll': {'path': '.nojekyll'},
                        'extra/robots.txt': {'path': 'robots.txt'},
