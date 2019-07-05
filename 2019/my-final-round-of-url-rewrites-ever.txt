@@ -16,6 +16,7 @@ Summary: >
 
 Those of you subscribed to my <abbr>RSS</abbr> feed most likely saw a bunch of posts again earlier this week. That’s because the canonical <abbr>URL</abbr>s for the posts on my site changed: from `www.chriskrycho.com/<year>/<title slug>` to `v4.chriskrycho.com/<year>/<title slug>`. So, for example, [my announcement] that I’m speaking at All Things Open 2019 moved from `www.chriskrycho.com/2019/all-things-open-2019.html` to `v4.chriskrycho.com/2019/all-things-open-2019.html`. I spent much of this past Wednesday working on getting this migration done, after spending a fair bit of time over the last week *planning* it. Over the course of the next few days, you’ll see [v1] and [v3] start working; [v2] is already up as I write this.[^52-verses]
 
+[my announcement]: https://v4.chriskrycho.com/2019/all-things-open-2019
 [v1]: https://v1.chriskrycho.com
 [v2]: https://v2.chriskrycho.com
 [v3]: https://v3.chriskrycho.com
