@@ -4,7 +4,7 @@ Title: >
 Subtitle: Tweaking how I handle my domain so my life is simpler for future redesigns.
 Date: 2019-07-05 10:45
 Category: Tech
-Topics: [web development, writing, web design]
+Tags: [web development, writing, web design]
 Summary: >
     This site now lives at v4.chriskrycho.com, and the previous versions of my public site are being migrated to v1, v2, and v3. And so I will never have to do a bunch of URL rewrites for new designs again. (Yes, this means I’m working on a redesign!)
 
