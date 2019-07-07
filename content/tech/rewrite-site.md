@@ -23,7 +23,7 @@ For the past four years, I have been dreaming of an absurdly ambitious applicati
 
 There are tools out there which handle *some* of those pieces well—a few genuinely great notes apps in particular, and some solid contenders in the reference management space. They don’t play together well, though—whether it’s sync errors between apps, the disjointed experience of using tools which know almost nothing about each other, fighting with different journals’ styles, or the simple pain of trying to *write* in what is really a <i>desktop publishing tool</i> (looking at you, Microsoft Word).
 
-And I would know: over the course of my M.Div., I wrote well over a hundred thousand words of papers; and never mind the many books worth of notes I took.
+And I would know: over the course of my M.Div., I wrote well over a hundred thousand words of papers; and never mind the many books’ worth of notes I took.
 
 I eventually found a flow that worked for me during those years, pulling together [Markdown], [BibTeX], [pandoc], and [<abbr title="citation style languages">CSL</abbr>s][CSLs] to generate Word documents. (I wrote about that [here][academic-md], if you’re curious.) It did what I wanted! But it was arcane: even after years of working that way, I could never remember the various script invocations involved without looking them up. In short: there was something wonderful there… but the user experience was terrible.
 
@@ -39,7 +39,7 @@ Even by the time I wrote [that blog post][academic-md], I was thinking: <i>what 
 
 —and I haven’t stopped thinking about it ever since. <i>How do you do reference management well? What makes for a good note-taking system? How do you author large, complex documents with easy reference to those notes? How do you pull all those all together for publishing? How do you make it a *great* app *and* make it cross-platform?</i>
 
-For the past four years, I have been doing two things in preparation for building <b><i>re</i>write</b>:
+For the past four years, I have been doing two things in preparation for building <b><i>re</i>write</b> (the working title for this app):
 
 - filling up that same notebook with design constraints, software architecture considerations, and business model ideas
 - developing the technical skills I’ll need to actually deliver on that dream
