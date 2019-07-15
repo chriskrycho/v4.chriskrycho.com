@@ -3,7 +3,7 @@ Title: "Appearance: Corecursive #34"
 Subtitle: Mostly TypeScript, but also a bit of Rust, type theory, and productivity.
 Date: 2019-07-15 16:45
 Category: Tech
-Tags: [TypeScript, podcasting, Rust, programming languages]
+Tags: [TypeScript, podcasting, Rust, programming languages, appearances]
 Template: formats/link
 Link: https://corecursive.com/034-chris-krycho-typescript/
 Summary: >
