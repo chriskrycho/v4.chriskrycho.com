@@ -1,5 +1,7 @@
 ---
-Title: The Calculating Stars
+Title: >
+    Review: The Calculating Stars
+Slug: the-calculating-stars
 Subtitle: Mary Robinette Kowal’s book is genuinely brilliant.
 Date: 2018-08-19 16:00
 Tags: [book reviews, science fiction, sexism, mental illness]
