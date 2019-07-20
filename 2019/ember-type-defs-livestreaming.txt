@@ -21,7 +21,11 @@ One part of my work, then, is figuring out how to level up the community’s abi
 
 I’m hoping that this will prove a boon not only to the Ember community, but also to the TypeScript community at large. Many people are comfortable working in these spaces… but especially as TypeScript’s popularity grows, having more of this kind of advanced material will hopefully be a boon to *lots* of teams in *lots* of frameworks and contexts.
 
-You can check out the recording of the first live-stream (working on types for a new module layout in Ember Data 3.11) [here](https://www.youtube.com/watch?v=eNLXi-s7-5o), and I created a dedicated YouTube playlist for *all* of this content, as well: [Typing the Ember.js Ecosystem!](https://www.youtube.com/watch?v=eNLXi-s7-5o&list=PLelyiwKWHHApVB8gKKqZJw8Tv8qqCJGUv)
+You can check out the recording of the first live-stream (working on types for a new module layout in Ember Data 3.11) [here][frist], and I created a dedicated YouTube playlist for *all* of this content, as well: [Typing the Ember.js Ecosystem!](https://www.youtube.com/watch?v=eNLXi-s7-5o&list=PLelyiwKWHHApVB8gKKqZJw8Tv8qqCJGUv)
+
+[frist]: https://www.youtube.com/watch?v=eNLXi-s7-5o
+
+Here’s [the first episode][frist]! (Note that I accidentally overlapped the tool I'm using to show keystrokes and the video—noob mistake for sure!)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eNLXi-s7-5o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
