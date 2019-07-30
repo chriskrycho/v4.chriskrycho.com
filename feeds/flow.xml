@@ -10,7 +10,7 @@
 &lt;section class="footnotes" role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;See my &lt;a href="https://v4.chriskrycho.com/2018/type-informed-design.html"&gt;recent post&lt;/a&gt; on thinking a lot about design decisions I would have made differently with TypeScript’s strict null checking available from day one!&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;See my &lt;a href="https://v4.chriskrycho.com/2018/type-informed-design.html"&gt;recent post&lt;/a&gt; on thinking a lot about design decisions I would have made differently with TypeScript’s strict null checking available from day one!&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Wed, 05 Sep 2018 21:45:00 -0400</pubDate><guid isPermaLink="false">tag:v4.chriskrycho.com,2018-09-05:/2018/a-real-victory.html</guid><category>TypeScript</category><category>JavaScript</category><category>Flow</category><category>Ember.js</category><category>software development</category></item></channel></rss>

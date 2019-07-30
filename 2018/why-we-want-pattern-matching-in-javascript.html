@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Why We Want Pattern-Matching in JavaScript"/>
     <meta name="twitter:description" content="A worked example of transforming if/else statements to the proposed pattern-matching syntax, showing how much pattern-matching can clarify (as well as shorten) complicated code."/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -44,7 +44,7 @@
 
     <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
         <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
-        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
         <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
         <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
 </head>
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -227,9 +228,9 @@ const Change = {
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p><code>assertInDev</code> looks a little different; we’re actually using the <code>Maybe</code> type from my <a href="https://github.com/chriskrycho/true-myth">True Myth</a> library instead of returning <code>null</code>; it’s an Ember app; as such it uses a <code>@computed</code> decorator; and of course it’s all in TypeScript. I chose to write it with standard JavaScript to minimize the number of things you have to parse as a reader.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>In the actual TypeScript, these are defined with an <a href="http://www.typescriptlang.org/docs/handbook/enums.html"><code>enum</code></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>Fun fact: the original code actually <em>had</em> missed a number of cases, which I learned only because TypeScript’s <code>strictNullChecks</code> setting informed me.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p><code>assertInDev</code> looks a little different; we’re actually using the <code>Maybe</code> type from my <a href="https://github.com/chriskrycho/true-myth">True Myth</a> library instead of returning <code>null</code>; it’s an Ember app; as such it uses a <code>@computed</code> decorator; and of course it’s all in TypeScript. I chose to write it with standard JavaScript to minimize the number of things you have to parse as a reader.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>In the actual TypeScript, these are defined with an <a href="http://www.typescriptlang.org/docs/handbook/enums.html"><code>enum</code></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Fun fact: the original code actually <em>had</em> missed a number of cases, which I learned only because TypeScript’s <code>strictNullChecks</code> setting informed me.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -272,7 +273,7 @@ const Change = {
             <a href="http://v4.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
         </li>
         <li class="section-title">
-            <a href="http://v4.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+            <a href="http://v4.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
         </li>
         <li class="section-title">
             <a href="http://v4.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
@@ -286,7 +287,8 @@ const Change = {
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://v4.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://v4.chriskrycho.com/2019/starting.html">Starting</a></li>
+        <li>Blog: <a href="http://v4.chriskrycho.com/2019/update-writing-down-what-i-do.html">Update: Writing Down What I Do
+</a></li>
         <li>Tech: <a href="http://v4.chriskrycho.com/2019/ember-type-defs-livestreaming.html">Ember Type-Defs Livestreaming</a></li>
         <li>Theology: <a href="http://v4.chriskrycho.com/2019/review-retrieving-eternal-generation.html">Review: Retrieving Eternal Generation
 </a></li>

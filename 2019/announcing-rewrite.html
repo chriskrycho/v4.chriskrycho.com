@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Announcing rewrite"/>
     <meta name="twitter:description" content="For the past four years, I have been dreaming about an absurdly ambitious project: to build a genuinely great research writing app. Today, I’m “kicking off” the project publicly, at rewrite.software."/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -44,7 +44,7 @@
 
     <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
         <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
-        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
         <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
         <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
 </head>
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -103,7 +104,7 @@
 <p>I eventually found a flow that worked for me during those years, pulling together <a href="https://daringfireball.net/projects/markdown">Markdown</a>, <a href="https://en.wikipedia.org/wiki/BibTeX">BibTeX</a>, <a href="https://pandoc.org">pandoc</a>, and <a href="https://citationstyles.org"><abbr title="citation style languages">CSL</abbr>s</a> to generate Word documents. (I wrote about that <a href="https://v4.chriskrycho.com/2015/academic-markdown-and-citations.html">here</a>, if you’re curious.) It did what I wanted! But it was arcane: even after years of working that way, I could never remember the various script invocations involved without looking them up. In short: there was something wonderful there… but the user experience was terrible.</p>
 <p>Even by the time I wrote <a href="https://v4.chriskrycho.com/2015/academic-markdown-and-citations.html">that blog post</a>, I was thinking: <i>what would a genuinely great app in this space look like?</i> I had sketched out the basics in a notebook early that month—</p>
 <figure>
-<img src="https://f001.backblazeb2.com/file/rewrite/first-page.jpeg" title="a picture of the first page of my working notebook" alt="" /><figcaption>the first page of my working notebook</figcaption>
+<img src="https://f001.backblazeb2.com/file/rewrite/first-page.jpeg" title="a picture of the first page of my working notebook" alt="the first page of my working notebook" /><figcaption>the first page of my working notebook</figcaption>
 </figure>
 <p>—and I haven’t stopped thinking about it ever since. <i>How do you do reference management well? What makes for a good note-taking system? How do you author large, complex documents with easy reference to those notes? How do you pull all those all together for publishing? How do you make it a <em>great</em> app <em>and</em> make it cross-platform?</i></p>
 <p>For the past four years, I have been doing two things in preparation for building <b><i>re</i>write</b> (the working title for this app):</p>
@@ -117,7 +118,7 @@
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>I’m going to try to ship a nice tool for managing references. It’ll be good to have the experience of actually <em>shipping</em> an app. More on that<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>I’m going to try to ship a nice tool for managing references. It’ll be good to have the experience of actually <em>shipping</em> an app. More on that<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -160,7 +161,7 @@
             <a href="http://v4.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
         </li>
         <li class="section-title">
-            <a href="http://v4.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+            <a href="http://v4.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
         </li>
         <li class="section-title">
             <a href="http://v4.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
@@ -174,7 +175,8 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://v4.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://v4.chriskrycho.com/2019/starting.html">Starting</a></li>
+        <li>Blog: <a href="http://v4.chriskrycho.com/2019/update-writing-down-what-i-do.html">Update: Writing Down What I Do
+</a></li>
         <li>Tech: <a href="http://v4.chriskrycho.com/2019/ember-type-defs-livestreaming.html">Ember Type-Defs Livestreaming</a></li>
         <li>Theology: <a href="http://v4.chriskrycho.com/2019/review-retrieving-eternal-generation.html">Review: Retrieving Eternal Generation
 </a></li>

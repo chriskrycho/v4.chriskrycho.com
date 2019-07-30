@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="The Next Generation of Version Control"/>
     <meta name="twitter:description" content="The current state of affairs with version control is a mess. Things we can get right next time around."/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -44,7 +44,7 @@
 
     <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
         <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
-        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
         <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
         <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
 </head>
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -109,15 +110,15 @@
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>A point that was highlighted for me in a conversation a few months ago with my father, a programmer who has been using SVN for a <em>long</em> time and found the transition to Git distinctly less than wonderful.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>Anyone who feels like arguing with me on this point should go spend five minutes laughing at the <a href="http://git-man-page-generator.lokaltog.net">fake man pages</a> instead.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>Few things are as hotly debated as the relative merits of the different systems’ branching models and approaches to history. At the least, I can say that Hg and Bazaar’s branching models are <em>more to my taste</em>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>Yes, there are extensions that let you do this with Hg, but they are fragile at best in my experience, and substantially less capable than Git’s.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p>Yes, I know about Hg’s record extension. No, it is <em>not</em> quite the same, especially because given the way it is implemented major GUI tools cannot support it without major chicanery.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6" role="doc-endnote"><p>Yes, I know about Hg’s queue extension, too. There is a reason it is not turned on by default, and using it is substantially more arcane than Git’s staging are. Think about that for a minute.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7" role="doc-endnote"><p>Yes, there is the <code>-a</code> flag. No, I do not want to have to remember it for every commit.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8" role="doc-endnote"><p>Let’s be honest: if Git’s abstraction were a boat, it would sink. It’s just that leaky.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9" role="doc-endnote"><p>GitHub does all of this quite well… but they have had to write heaps and gobs of software <em>around</em> Git to make it work.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>A point that was highlighted for me in a conversation a few months ago with my father, a programmer who has been using SVN for a <em>long</em> time and found the transition to Git distinctly less than wonderful.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Anyone who feels like arguing with me on this point should go spend five minutes laughing at the <a href="http://git-man-page-generator.lokaltog.net">fake man pages</a> instead.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Few things are as hotly debated as the relative merits of the different systems’ branching models and approaches to history. At the least, I can say that Hg and Bazaar’s branching models are <em>more to my taste</em>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn4" role="doc-endnote"><p>Yes, there are extensions that let you do this with Hg, but they are fragile at best in my experience, and substantially less capable than Git’s.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn5" role="doc-endnote"><p>Yes, I know about Hg’s record extension. No, it is <em>not</em> quite the same, especially because given the way it is implemented major GUI tools cannot support it without major chicanery.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn6" role="doc-endnote"><p>Yes, I know about Hg’s queue extension, too. There is a reason it is not turned on by default, and using it is substantially more arcane than Git’s staging are. Think about that for a minute.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn7" role="doc-endnote"><p>Yes, there is the <code>-a</code> flag. No, I do not want to have to remember it for every commit.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn8" role="doc-endnote"><p>Let’s be honest: if Git’s abstraction were a boat, it would sink. It’s just that leaky.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn9" role="doc-endnote"><p>GitHub does all of this quite well… but they have had to write heaps and gobs of software <em>around</em> Git to make it work.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -160,7 +161,7 @@
             <a href="http://v4.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
         </li>
         <li class="section-title">
-            <a href="http://v4.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+            <a href="http://v4.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
         </li>
         <li class="section-title">
             <a href="http://v4.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
@@ -174,7 +175,8 @@
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://v4.chriskrycho.com/2019/time-does-not-heal.html">Time Does Not Heal</a></li>
-        <li>Blog: <a href="http://v4.chriskrycho.com/2019/starting.html">Starting</a></li>
+        <li>Blog: <a href="http://v4.chriskrycho.com/2019/update-writing-down-what-i-do.html">Update: Writing Down What I Do
+</a></li>
         <li>Tech: <a href="http://v4.chriskrycho.com/2019/ember-type-defs-livestreaming.html">Ember Type-Defs Livestreaming</a></li>
         <li>Theology: <a href="http://v4.chriskrycho.com/2019/review-retrieving-eternal-generation.html">Review: Retrieving Eternal Generation
 </a></li>
