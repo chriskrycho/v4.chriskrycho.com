@@ -9,7 +9,7 @@ Summary: >
 
 ---
 
-Giving a good talk is mostly a matter of *writing* a good talk and crafting a coherent presentation of that material (with or without slides or other helpers). In this post, I’m going to briefly walk through how *I* prepare talks. This process may not work for you at *all*; sometimes I read [other people’s talk preparation strategies](TODO:%20Chris%20Coyier/CSS%20Tricks) and laugh because they’re so wildly different from mine. But this way there’s one more strategy documented out there.
+Giving a good talk is mostly a matter of *writing* a good talk and crafting a coherent presentation of that material (with or without slides or other helpers). In this post, I’m going to briefly walk through how *I* prepare talks. This process may not work for you at *all*; sometimes I read [other people’s talk preparation strategies](https://css-tricks.com/talk-writing-process/) and laugh because they’re so wildly different from mine. But this way there’s one more strategy documented out there.
 
 The strategy is the one I’ve developed over the past few years as I’ve given a couple conference talks and a bunch more weekly tech talks at Olo.
 
