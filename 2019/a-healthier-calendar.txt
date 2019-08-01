@@ -15,7 +15,7 @@ Summary: >
 
 One of the things I’ve found over the last couple months is that my calendar is increasingly *full*—full of meetings with this person or that team. This is not unexpected in an organization as large as LinkedIn, and I had a feeling I’d probably run into this as I transitioned from <i>new guy on the block</i> to <i>someone whose expertise people want</i>. That it’s happening means I’m doing my job: I am in a *leadership* role, and my team’s customers are other developers! It’s important for me to be a resource to other people.
 
-However, I am not a manager, and have no desire to be a manager. That means that it’s also important that I not *only* be a resource to other people. I also need to continue doing technical work myself, and indeed *growing* technically myself. It’s impossible to do that when each day is punctuated by anywhere between 2 and 8 meetings, often in no particular arrangement. Building software *well*, like most other non-managerial work, requires time to think and sustained attention to a specific problem. Even for relatively straightforward programming tasks, half-hour blocks with meetings in between just won’t do it.[^pomodoro]
+However, I am not a manager, and have no desire to be a manager. That means that it’s also important that I not *only* be a resource to other people. I also need to continue doing technical work myself, and indeed *growing* technically myself. It’s impossible to do that when each day is punctuated by anywhere between 2 and 8 meetings, often in no particular arrangement. Building software *well*, like most other non-managerial work, requires time to think and sustained attention to a specific problem.
 
 <aside>
 
@@ -23,7 +23,7 @@ To be clear, some parts of managerial require that as well, but much of manageri
 
 </aside>
 
-This week was the tipping point for me. I’ve had multiple meetings every single day, and *no* sustained blocks for working except in the early morning before any colleagues were working. My progress on a feature I’m implementing has been predictably slow as a result. While many of the meetings I have had were somewhat or even *very* valuable, many others were in the dread urgent-but-not-important bucket.
+This week was the tipping point for me. I’ve had multiple meetings every single day, and *no* sustained blocks for working except in the early morning before any colleagues were working. My progress on a feature I’m implementing has been predictably slow as a result. While many of the meetings I have had were somewhat or even *very* valuable, many others were in the dread urgent-but-not-important bucket. Even for relatively straightforward programming tasks, half-hour blocks with meetings in between just won’t do it.[^pomodoro]
 
 My solution is one I’ve employed before when similarly starting to get over-busy: *book myself*.[^booking] People check my calendar to see when I’m available for meetings, so I have simply blocked out large stretches of my time under the heading Getting Things Done. I left open a few hours each day for people to book meetings with me—remember: it’s part of my job to help others, too!—and of course I have recurring team and project meetings. But outside of those, I now have time allocated to do the hard technical work I was hired to do.
 
