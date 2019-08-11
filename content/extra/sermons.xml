@@ -1,90 +1,265 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
     <channel>
-        <title>Sermons by Chris Krycho</title>
-        <link>http://v4.chriskrycho.com/sermons/</link>
-        <description>Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a Reformed, evangelical Baptist currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.</description>
-        <generator>Feeder 3 3.1.8(2650); Mac OS X Version 10.11.4 (Build 15E65) http://reinventedsoftware.com/feeder/</generator>
+        <title>Teaching and Sermons by Chris Krycho</title>
+        <link>https://v4.chriskrycho.com/sermons/</link>
+        <description>Faithful exposition of Scripture in the catholic, Reformed, evangelical tradition.</description>
+        <generator>Feeder 3 3.6.9(3228); Mac OS X Version 10.14.6 (Build 18G87) http://reinventedsoftware.com/feeder/</generator>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <language>en</language>
         <copyright>2016 Chris Krycho</copyright>
         <managingEditor>chris@krycho.com (Chris Krycho)</managingEditor>
         <webMaster>chris@krycho.com (Chris Krycho)</webMaster>
-        <pubDate>Tue, 12 Apr 2016 23:00:00 -0400</pubDate>
-        <lastBuildDate>Tue, 12 Apr 2016 23:00:01 -0400</lastBuildDate>
+        <pubDate>Sun, 11 Aug 2019 17:36:21 -0600</pubDate>
+        <lastBuildDate>Sun, 11 Aug 2019 17:36:22 -0600</lastBuildDate>
         <image>
-            <url>https://f001.backblazeb2.com/file/chriskrycho-com/sermons/3000.png</url>
+            <url>https://cdn.chriskrycho.com/file/chriskrycho-com/sermons/3000.png</url>
             <title>Chris Krycho</title>
-            <link>http://v4.chriskrycho.com/sermons/</link>
+            <link>https://v4.chriskrycho.com/sermons/</link>
             <width>144</width>
             <height>144</height>
         </image>
-        <atom:link href="http://v4.chriskrycho.com/sermons.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="http://www.chriskrycho.com/sermons.xml" rel="self" type="application/rss+xml"/>
         <itunes:author>Chris Krycho</itunes:author>
-        <itunes:summary><![CDATA[Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a software developer, writer, and podcaster, currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.]]></itunes:summary>
+        <itunes:summary>Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a software developer, writer, and podcaster, currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.</itunes:summary>
         <itunes:keywords>sermon,Christianity,faith,evangelical,Reformed,baptist,Scripture,exegesis,expository,expositional</itunes:keywords>
-        <itunes:image href="https://f001.backblazeb2.com/file/chriskrycho-com/sermons/3000.png"/>
+        <itunes:image href="https://cdn.chriskrycho.com/file/chriskrycho-com/sermons/3000.png"/>
         <itunes:owner>
             <itunes:name>Chris Krycho</itunes:name>
-            <itunes:email>chris@krycho.com</itunes:email>
+            <itunes:email>hello@chriskrycho.com</itunes:email>
         </itunes:owner>
         <itunes:block>no</itunes:block>
         <itunes:category text="Religion &amp; Spirituality">
             <itunes:category text="Christianity"/>
         </itunes:category>
+        <itunes:type>episodic</itunes:type>
+        <item>
+            <title>Christology, Week 1</title>
+            <link>https://forestgate.org/christology-god-with-us-and-for-us/2019/8/11/week-1-introduction-and-the-eternal-son</link>
+            <description><![CDATA[<h2 id="part-1-introduction">Part 1: Introduction <!-- Net: ~15 minutes --></h2>
+<h3 id="opening-and-prayer">Opening and Prayer <!-- ~5m --></h3>
+<p>All right, good morning everyone; let’s get going! Before we start, let me introduce myself since I haven’t met all of you yet. <!-- brief intro --> One of the great joys fo my time in seminary was realizing just how much <em>more</em> depth there was in the doctrine of Christology than I had know before, so I’m excited to share a taste of that with all of you over the next few weeks. Before we dive in, though, let’s pray!</p>
+<!-- pray: 1–2m -->
+<p>So I said that one of the joys of seminary was the doctrine of Christology. But what exactly do I mean by that? When I use the word “Christology,” I think it’s easy for it to feel kind of heady or abstact. And we’re Presbyterians, which means we’re often relatively comfortable with things that are a bit more abstract and heady. But one of the things I hope we take away from the next few weeks is that yes, these <em>are</em> wonderful mysteries; they <em>are</em> a feast for our minds—but they are also a comfort for our weary souls; they’re encouragement on this sometimes <em>very</em> hard path of life. And as we’ll see, that’s how Scripture uses these doctrines: to encourage us in our faith. And my prayer for this is that we come out of this both <em>knowing</em> and <em>feeling</em> God’s love for us more deeply—and with that, loving him more deeply, loving Christ our Savior more deeply.</p>
+<h3 id="outline">Outline <!-- ~8½–9 minutes --></h3>
+<p>So with that as our big picture, let me give you an overview of the class, and set the stage in a bit more detail, and then we’ll dive into a couple of the doctrines!</p>
+<ul>
+<li>This week, we’re setting up the big picture, and then diving into the doctrine of the divinity of the Son of God.</li>
+<li>Next week, we’re going to look at the Incarnation and at how Jesus was Israel’s promised Messiah.</li>
+<li>In week 3, we’ll look at the <em>passion</em>—Jesus’s trial, crucifixion, and death—and the <em>resurrection</em>.</li>
+<li>In week 4, we’ll look at Jesus’ work on our behalf <em>after</em> his resurrection: his ascension, his intercession for us, and his reign—both now, and in the end when it is finished. And then we’ll wrap up and reflecton these things we’ve learned along the way.</li>
+</ul>
+<p>Along the way, we’re going to hear a lot of Scripture, and a lot from our brothers and sisters in the history of the church who have gone before us, thinking hard about these things. We’re also going to be moving <em>very</em> fast, so I’m not going to provide handouts. I think they’d actually just be distracting! But I’m very happy to share all my notes with you, to point you to further resources, and so on—just ask me, or send me or the office an email!</p>
+<h3 id="the-why">The why</h3>
+<p>I want to start by really working to set the stage here. Why do we care about studying “Christology”? The obvious answer is that we are <em>Christians</em>, and that we worship Jesus Christ! We believe he’s our savior. So this doctrine is a core part of our faith. We should care about it. And that’s… true. But the question I’m putting to us is both a bit further back than that, and a bit closer to home than that.</p>
+<ul>
+<li><p>When I say it’s “further back”, I mean: <em><strong>why</strong> is the core of our faith that, as one of my favorite hymns puts it, “the incarnate God ascended / pleads the merit of his blood”?</em> Because there are things there which are strange and wonderful and surprising. And we’re just <em>used</em> to them. But stepping back and seeing them again, <em>feeling</em> that strangeness again, helps us worship, and helps us know his love.</p></li>
+<li><p>And when I say it’s “closer to home”, what I mean is: <em><strong>how</strong> does this come to play in our lives every day?</em> Even beyond the thinking-and-feeling I just described, this matters for how we practice our faith. How does Jesus being Israel’s Messiah impact what I do when I go to work tomorrow? Because it does! How does the doctrine of the Incarnation touch on my dad’s struggle with brain cancer last year? Because it does! Even if it’s not obvious right away: that’s</p></li>
+</ul>
+<p>So we’re going to spend the next four weeks seeing <em>how</em> and <em>why</em> the doctrines of Christ are the core of our faith, and how those doctrines are not just abstract propositions or interesting ideas, but the very core of the Christian life as we <em>live</em> it day in and day out. Because the Christian life is a <em>Christ-ward</em> life. The Westminster Catechism says we exist to love God and enjoy him forever, and we can’t love him or enjoy him if we don’t know him <em>know</em> him. And we come to know him as he reveals himself, and he has revealed himself climactically and finally and conclusively in Jesus Christ.</p>
+<p>As Hebrews puts it: “Long ago, at many times and in many ways, God spoke to our fathers by the prophets, but in these last days he has spoken to us by his Son”! You could equally translate that “by Son”: the Son is the way the Father speaks himself to us. So John says “In the beginning was the Word, and the Word was with God, and the Word was God”—and God has spoken his <em>Word</em> to us, himself, in his Son who is the Word. And as Jesus says to his disciples in John: “Whoever has seen me has seen the Father.” We know God by looking at Christ. We understand all the aims of Scripture by looking at Christ, who is its center. And we walk our faith, we grow in holiness, by looking at Christ. 1 John tells us: “We do not know what we will be like [when he appears]. But we know we will be like him, because we will see him as he is.” To see God, in Christ, with the eyes of our minds and our hearts opened by the Spirit <em>is</em> to be transformed into his likeness.</p>
+<p>We could tackle this in a lot of different ways. All of Scripture points to Christ! But we’re going to focus on Hebrews—I’ll mention many other texts, but I’m going to quote Hebrews the most. And that’s because I learned to think the way I think about all these things from Hebrews. You can summarize the book’s message as “Hold fast because Jesus…” and then fill in the blank with all the doctrines we’re going to cover! The book uses all these deep doctrines to comfort and encourage, to remind us to hold onto the grace he has given to us.</p>
+<p>Hebrews is a book written to a bunch of people tempted to go back to the life they came from—in their case, to Judaism. Things were hard. They were facing persecution: they had fellow believers in jail for their faith. And the author of Hebrews spends the whole book exhorting them to hold fast to their faith… and the way he does that is by digging in to these mysteries of Christ. Not just the cross: not only “Christ died for you so continue in the faith” but also his eternal sonship, his incarnation, his faithfulness in his life and preaching ministry, that he is so clearly the fulfillment of all of Israel’s hopes, and his death on our behalf, once for all; and his resurrection in triumph; and his ascension and his current work as our high priest forever; and the promise and hope of his return.</p>
+<p>Before we dive in and start doing just that—any questions?</p>
+<h2 id="part-2-the-divinity-of-the-son-of-god">Part 2: The Divinity of the Son of God</h2>
+<!-- ~20–25 minutes = 2,400–3,000 words -->
+<p>So, let’s pick up some of those ideas I just mentioned, and dig in. We’re going to start by following the Scriptures to think about God the Son in eternity! I want to open by just <em>stating</em> the doctrine, as the church has understood it through the centuries. Then we’ll hear some of the Scriptures that led the church to those summaries, and finally reflect on this doctrine!</p>
+<h3 id="summary-of-the-doctrine">Summary of the doctrine <!-- ~150 words --></h3>
+<p>The first doctrine is that Jesus Christ is (and here I’m quoting the Nicene-Constantinopolitan Creed from 381 “the Son of God, the Only-begotten, Begotten of the Father before all ages, Light of Light, Very God of Very God, Begotten, not made; of one essence with the Father; by whom all things were made.“ In truth, we could spend a whole lesson on every one of those points, but I’m going to summarize them this way: the Son is <em>truly</em> God, perfectly coequal with the Father. He has no beginning; instead, everything that exists came about <em>through him</em>. And finally—and this is important—he is always <em>the Son</em>: he did not <em>become</em> the Son at some point, but is <em>eternally</em> the Son of God. I’ll say a bit more on all of these points as we come to the end, but first, let’s dig into the reason that the church confesses all these things: because Scripture teaches them!</p>
+<h3 id="scriptural-basis">Scriptural basis <!-- ~1,300 words --></h3>
+<p>Hebrews opens with this, in vv. 1–3:</p>
+<blockquote>
+<p>Long ago God spoke to the fathers by the prophets at different times and in different ways. In these last days, He has spoken to us by His Son. God has appointed Him heir of all things and made the universe through Him. The Son is the radiance of God’s glory and the exact expression of His nature, sustaining all things by His powerful word. After making purification for sins, He sat down at the right hand of the Majesty on high.</p>
+</blockquote>
+<p>Then it continues by quoting the Psalms. In verse 8, the author quotes Psalm 45:</p>
+<blockquote>
+<div class="line-block">Your throne, God,<br />
+    is forever and ever,<br />
+    and the scepter of Your kingdom<br />
+    is a scepter of justice.</div>
+</blockquote>
+<p>He’s <em>explicitly</em> identifying the Son with God. He does the same in verses 10–12, quoting Psalm 102 and alluding to Isaiah 50 and 51:</p>
+<blockquote>
+<div class="line-block">In the beginning, Lord,<br />
+You established the earth,<br />
+    and the heavens are the works of Your hands;<br />
+    they will perish, but You remain.<br />
+They will all wear out like clothing;<br />
+You will roll them up like a cloak,<br />
+    and they will be changed like a robe.<br />
+But You are the same,<br />
+    and Your years will never end.</div>
+</blockquote>
+<p>Many of us are familiar with this, but I think it’s still worth pausing and chewing on this for a minute. We need to <em>feel</em> it again. The Psalm being quoted here is pointing straight back to Genesis 1—“In the beginning God created the heavens and the earth”—and Hebrews is telling us “this is talking about Jesus!” All the ways Hebrews wants us to see that Jesus is better than the angels go back to what it says in verse 2: God made the universe through the Son.</p>
+<p>John 1:1–3 tells us exactly the same thing:</p>
+<blockquote>
+<div class="line-block">In the beginning was the Word,<br />
+    and the Word was with God,<br />
+    and the Word was God.<br />
+He was with God in the beginning.<br />
+    All things were created through Him,<br />
+    and apart from Him not one thing was created<br />
+    that has been created.<br />
+Life was in Him,<br />
+    and that life was the light of men.<br />
+That light shines in the darkness,<br />
+    yet the darkness did not overcome it.</div>
+</blockquote>
+<p>John tells us at the end of his gospel that he wrote it to help people believe that Jesus is the Messiah, the Son of God—and by believing have <em>life</em> in his name. And Jesus tells us in John 5 that this <em>life</em> he has is life the Son has eternally in himself, the same life the Father has in himself, and the Son has it eternally from the Father. This idea of the eternal sonship is at the very guts of John’s gospel, and it’s there from the first verse.</p>
+<p>And in Colossians, Paul makes this same move—Colossians 1:15–17 says of Jesus:</p>
+<blockquote>
+<div class="line-block">He is the image of the invisible God,<br />
+    the firstborn over all creation.<br />
+For everything was created by Him,<br />
+    in heaven and on earth,<br />
+    the visible and the invisible,<br />
+    whether thrones or dominions<br />
+    or rulers or authorities—<br />
+    all things have been created through Him and for Him.<br />
+He is before all things,<br />
+    and by Him all things hold together.</div>
+</blockquote>
+<p>So this should raise a question when we look at these texts. Why do these three different authors all ground their messages <em>here</em>? They all start in the eternal Trinity—specifically, in the Son, the Word, who is God, who was sent by God—the one who made all things, but who is not the Father? When John wants to enable people to believe, <em>this is where he starts</em>. When both Colossians and Hebrews want people to hold fast to the faith, <em>this is where they start</em>. Why? Why do they start <em>here</em>?</p>
+<p>The answer, I think, is that nothing else we say about the person Jesus Christ makes any sense or matters at all if we get this wrong. To put a finer point on it: <em>there is no gospel</em> if we don’t get to the point where we see the full and total and perfect divinity of the one who is our savior! And this is not something I came up with, by a long shot; this is the answer that the church has given throughout history, from Irenaeus in the second century A.D. to Kevin Vanhoozer on a podcast I listened to just yesterday.</p>
+<p>And of course, the other gospels and the other epistles all get to this same conclusion—they just work <em>up</em> to it, <em>starting</em> with Jesus’ humanity. John and Colossians and Hebrews all <em>assume</em> (the content of) the Synoptics: they are meditations by and for people who <em>know</em> the story, and who have drawn the only conclusion it allows: for our sake, God <em>himself</em> came to be with us. And we’ll dig into that part of it more next week when we talk about the Incarnation. Here in John and Colossians and Hebrews, though, we see these three authors thinking, under the inspiration of the Spirit, about what it means that the one who <em>came for us</em> was God, and that God prayed to God, in light of the Old Testament’s affirmation of the <em>oneness</em> of God. To say that the God who created all things, of whom Deuteronomy commands God’s people to say “Our God is <em>one</em>”—to say that this one God is both Father and Son, that the Father created <em>through</em> the Son, is necessarily to have to press into the nature of God himself.</p>
+<p>And this is not an accident! The author of Hebrews wants us to marvel on this: we know these “deep things of God” (a phrase I’m stealing from Fred Sanders) <em>because</em> God has revealed himself “by Son”. We know God as he is because of how he has acted in history.</p>
+<p>The Gospel is <em>utterly</em> Trinitarian. We can see this throughout the whole New Testament, but we can survey a few of the most striking moments here:</p>
+<ul>
+<li>the Incarnation—when the Father sends the Son to be a man by the Spirit overshadowing Mary</li>
+<li>Jesus’ baptism, when the Son prays to the Father and the Spirit descends on him, empowering him for his ministry</li>
+<li>Jesus’ discussion in his final discussion with his disciplines in John 14–17, where he speaks of his own identity with the Father—“Whoever has seen me has seen the Father”!—and of the Spirit whose coming would be <em>better</em> for them than Jesus being <em>right there with them</em> was</li>
+<li>The Son’s resurrection by the power of the Spirit, to ascend and sit at the right hand of the Father, and from there to send the Spirit to us</li>
+<li>The Son serving as our high priest before the Father forever (as Hebrews teaches us), even as the Spirit prays for us when we don’t know how (as Romans teaches us)</li>
+<li>the church itself being built up <em>in Christ</em>, <em>by the Spirit</em>, as a dwelling place <em>for God</em> (as we see in Ephesians)</li>
+</ul>
+<p>I could add many, many more examples, because the gospel simply <em>is</em> Trinitarian. It is the good news that the Father has sent the Son for us and given us the Spirit, and that by the Spirit we <em>also</em> are his sons and daughters in Christ. I really like how the Belgic Confession summarizes this: “that, which appears to us somewhat obscure in the Old Testament, is very plain in the New”. As God’s people <em>waited</em> for their redemption, they were also waiting in a real way for God’s further self-revelation. As Hebrews puts it, they “all died in faith, not having received the things promised, but having seen them and greeted them from afar.” But we <em>have</em> seen: Jesus, God’s perfect self-revelation and our salvation!</p>
+<h3 id="the-doctrine">The doctrine <!-- ~900–1,500 words --></h3>
+<p>This is the essential point the early church came to understand: that in the work of Christ God was showing us himself more clearly. God always acts in accord with who he is—and he is, eternally, Father, Son and Holy Spirit. So when we hear the creeds and confessions that affirm this, we’re hearing our brothers and sisters through the ages having rejoiced in, <em>and guarding</em>, the same thing we’re looking at today: that God has shown himself <em>truly</em> to us in Christ, because Jesus <em>is</em> God, coeternal and coequal with the Father. If we <em>lose</em> this, we lose <em>the gospel</em>!</p>
+<p>The Heidelberg Catechism gets this across beautifully in questions 14 and 18:</p>
+<blockquote>
+<ol start="14" type="1">
+<li><dl>
+<dt>Can another creature—any at all—pay this debt for us?</dt>
+<dd>No. To begin with, God will not punish any other creature for what a human is guilty of. Furthermore, no mere creature can bear the weight of God’s eternal wrath against sin and deliver others from it.
+</dd>
+</dl></li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="18" type="1">
+<li><dl>
+<dt>Why must the mediator also be true God?</dt>
+<dd>So that the mediator, by the power of his divinity, might bear the weight of God’s wrath in his humanity and earn for us and restore to us righteousness and life.
+</dd>
+</dl></li>
+</ol>
+</blockquote>
+<p>Jesus could only save us <em>because</em> he himself was and is the Son of God. No creature could save us. Not even the angels! Only God could reconcile himself to us. Only God is actually sufficient to pay our debt. And so if God were not Triune, there would be no salvation for us. A God who is perfectly unitary would not be the God who can both send and be sent, the God who can pray and hear prayers. Our adoption as daughters and sons is because God the Father is <em>the Father</em> who ever has a <em>Son</em>, and because the <em>Son</em> has made us one with himself and brought us into that life—and all this through the <em>Spirit</em> of the Father and Son, who indwells us and makes Christ’s work effective for us.</p>
+<p>This is where the church’s affirmation down the years of the Trinitarian faith comes from: reflecting on the gospel, on how it is that we become heirs with Christ! The church has learned from Scripture to speak of the eternal <em>sonship of the Son</em> and the eternal <em>fatherhood of the Father</em>. The name for this doctrine is <em>eternal generation</em>. The use of the word “generation” here comes from the history of the word <em>generation</em> and the Greek <em>gennao</em> (γεννάω). Instead of “generation” you might also hear people use the words “begottenness” or “filiation”. I’m not sure of these really gets the point across in modern English: no one uses those words much. Unfortunately, we also don’t have a single word that <em>does</em> get the point across just right! I’m happy to keep the words, as long as we understand what they mean, though.</p>
+<p>And the right way to think of it is that the Father is <em>eternally</em> the Father of the Son, and the Son is <em>eternally</em> the Son of the Father. There was no time when the Father was <em>alone</em>, and no time when the Son did not exist. The Son did not at some point <em>start</em> to be the Son and likewise, the Father did not bring the Son into existence. The Father, through the Son, brought everything <em>else</em> into the existence. And that’s important because the Father’s fatherhood is real, essential Fatherhood—it’s more real than the mountains out that window; it’s at the foundation of reality. It’s not an addon. It’s who the Father <em>is</em>—and the same for the Son: his Sonship (which in some mysterious way we share in through the Spirit) is <em>who he is</em>; it is the only thing that distinguishes him from the Father.</p>
+<p>The Apostles’ Creed covers this in a single phrase, “And in Jesus Christ, his only Son, our Lord…” Over the next couple centuries, the church <em>had</em> to articulate this in more detail, though. This isn’t a church history class so I won’t cover all the twists and turns, but from the beginning people consistently attacked essential elements of the truth of the Gospel. The final formulation the church ended up with about the Son was in the Nicene-Constantinopolitan creed, which I read as the summary at the start:</p>
+<blockquote>
+<p>[We believe] in one Lord Jesus Christ, the Son of God, the Only-begotten, Begotten of the Father before all ages, Light of Light, Very God of Very God, Begotten, not made; of one essence with the Father; by whom all things were made…</p>
+</blockquote>
+<p>The Reformed tradition in general affirms exactly the same points, and indeed <em>all</em> the Reformers drew heavily on the Fathers and regarded the ecumenical councils as binding and authoritative statements of the faith of the church.</p>
+<p>So, for example, the Belgic Confession says in Article 8: <!-- can cut --></p>
+<blockquote>
+<p>The Father is the cause, origin and beginning of all things visible and invisible; the Son is the word, wisdom, and image of the Father; the Holy Ghost is the eternal power and might, proceeding from the Father and the Son.… the Father is not the Son, nor the Son the Father, and likewise the Holy Ghost is neither the Father nor the Son. Nevertheless these persons thus distinguished are not divided, nor intermixed: for the Father hath not assumed the flesh, nor hath the Holy Ghost, but the Son only.… The Father hath never been without his Son, or without his Holy Ghost. For they are all three co-eternal and co-essential. There is neither first nor last: for they are all three one, in truth, in power, in goodness, and in mercy.</p>
+</blockquote>
+<p>The Westminster Larger Catechism traces this out, too (and notice how carefully it follows the language of the creed):</p>
+<blockquote>
+<ol start="9" type="1">
+<li><dl>
+<dt>How many persons are there in the Godhead?</dt>
+<dd>There be three persons in the Godhead, the Father, the Son, and the Holy Ghost; and these three are one true, eternal God, the same in substance, equal in power and glory; although distinguished by their personal properties.
+</dd>
+</dl></li>
+<li><dl>
+<dt>What are the personal properties of the three persons in the Godhead?</dt>
+<dd>It is proper to the Father to beget the Son, and to the Son to be begotten of the Father, and to the Holy Ghost to proceed from the Father and the Son from all eternity.
+</dd>
+</dl></li>
+<li><dl>
+<dt>How does it appear that the Son and the Holy Ghost are God equal with the Father?</dt>
+<dd>The Scriptures manifest that the Son and the Holy Ghost are God equal with the Father, ascribing unto them such names, attributes, works, and worship, as are proper to God only.
+</dd>
+</dl></li>
+</ol>
+</blockquote>
+<p>This is what we <em>have</em> to confess if we are going to hold together everything Scripture says about the Trinity. And yes, it exceeds our ability to understand! I like how D.A. Carson put it:</p>
+<blockquote>
+<p>In short, even though we affirm that the doctrine of the Trinity is warranted by Scripture and rightly affirmed in the ecumenical creeds, it remains, at numerous junctures, impenetrably mysterious, at many points beyond our comprehension. All of us must own that Scripture gives us little more than glimpses of the relations among the Persons, and certainly not a well-elaborated depiction of those relations. Of no part of the discussion is this observation more relevant than of the eternal generation of the Son.… [It] is much easier to be precise about what we are denying than about what we are affirming.</p>
+</blockquote>
+<p>And this is the path that the church has followed down the centuries since the gospels and the epistles were written. There is a reason, when we look at the document that the Council of Chalcedon wrote, for example—and we’ll dig into this a bit more next week—that it spends a big chunk of its time saying what <em>isn’t</em> the case about the two natures of Christ!</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>There are a couple things I think we should take away here:</p>
+<p>One is that humility that Carson points us to. We can speak <em>truly</em> about the eternal Son of God, our Savior, but we cannot speak <em>exhaustively</em>. Whenever we touch on these questions, we are reminded of how much greater than us God is, how much deeper his mysteries are than we can grasp. This should lead us to worship with reverence and awe.</p>
+<p>The other is the joy it is to get to meditate on these things—not just to think about them, though we should do that, but also to pray them and comfort our hearts with them when we struggle. We can rest in God’s love for us as Father—we can be sure that it will never fail, that he will never stop being <em>our</em> Father—because he <em>is</em> the Father of the Son by his very nature, and because the Son who is <em>eternally</em> God the Son has earned for us adoption as sons and daughters, to be his younger siblings, and because the Spirit guarantees that adoption forever.</p>
+<p>Now, we’ve covered a lot of ground, so for these last few minutes: what questions do you all have?</p>
+]]></description>
+            <pubDate>Sun, 11 Aug 2019 17:30:00 -0600</pubDate>
+            <enclosure url="https://cdn.chriskrycho.com/file/chriskrycho-com/teaching/2019-08-11-christology-week-1.mp3" length="42851341" type="audio/mpeg"/>
+            <guid isPermaLink="false">EEA2ABE9-0066-4A6C-8B8C-F052CFDA6959</guid>
+            <itunes:subtitle>Introduction and Eternal Sonship</itunes:subtitle>
+            <itunes:duration>44:35</itunes:duration>
+            <itunes:episodeType>full</itunes:episodeType>
+        </item>
         <item>
             <title>God Is With Us</title>
-            <link>http://v4.chriskrycho.com/2016/god-is-with-us.html</link>
+            <link>http://www.chriskrycho.com/2016/god-is-with-us.html</link>
             <description><![CDATA[<p><strong>John 14:15–31:</strong> We love and obey God; God dwells with us.</p>
 <p>This sermon was delivered in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.</p>
 <p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is recorded with <a href="https://geo.itunes.apple.com/us/app/ferrite-recording-studio/id1018780185?mt=8&amp;at=1001l4KM">Ferrite</a>, using an <a href="http://www.apple.com/iphone-se/">iPhone SE</a> placed on the podium.</p>
 ]]></description>
-            <pubDate>Tue, 12 Apr 2016 19:15:00 -0400</pubDate>
-            <enclosure url="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-04-12.m4a" length="21552435" type="audio/x-m4a"/>
+            <pubDate>Tue, 12 Apr 2016 17:15:00 -0600</pubDate>
+            <enclosure url="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/file/chriskrycho-com/sermons/2016-04-12.m4a" length="21552435" type="audio/x-m4a"/>
             <guid isPermaLink="false">FB3C78ED-C8E2-4A5A-B8A7-54C05586FA80</guid>
             <itunes:subtitle>John 14:15–31: We love and obey God; God dwells with us</itunes:subtitle>
-            <itunes:summary><![CDATA[John 14:15–31: We love and obey God; God dwells with us.
+            <itunes:summary>John 14:15–31: We love and obey God; God dwells with us.
 
 This sermon was delivered in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.
 
-The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is recorded with Ferrite, using an iPhone SE placed on the podium.]]></itunes:summary>
+The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is recorded with Ferrite, using an iPhone SE placed on the podium.</itunes:summary>
             <itunes:duration>21:31</itunes:duration>
+            <itunes:episodeType>full</itunes:episodeType>
         </item>
         <item>
             <title>A Strange and Messy Deliverance</title>
-            <link>http://v4.chriskrycho.com/2016/a-strange-and-messy-deliverance.html</link>
+            <link>http://www.chriskrycho.com/2016/a-strange-and-messy-deliverance.html</link>
             <description><![CDATA[<p>Judges 3:7–31: Three stories, three judges and deliverers, one saving God.</p>
 <p>The following was delivered in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.</p>
 <p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is from my iPhone, in my pocket.</p>
 ]]></description>
-            <pubDate>Tue, 08 Mar 2016 20:00:00 -0500</pubDate>
-            <enclosure url="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-03-08.m4a" length="6552905" type="audio/x-m4a"/>
+            <pubDate>Tue, 08 Mar 2016 18:00:00 -0700</pubDate>
+            <enclosure url="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/file/chriskrycho-com/sermons/2016-03-08.m4a" length="6553019" type="audio/x-m4a"/>
             <guid isPermaLink="false">59367FA6-9E82-4BD2-B431-BA875D6D99E9</guid>
             <itunes:subtitle>Judges 3:7–31: Three stories, three judges and deliverers, one saving God.</itunes:subtitle>
-            <itunes:summary><![CDATA[Judges 3:7–31: Three stories, three judges and deliverers, one saving God.
+            <itunes:summary>Judges 3:7–31: Three stories, three judges and deliverers, one saving God.
 
 The following was delivered in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.
 
-The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is from my iPhone, in my pocket.]]></itunes:summary>
+The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is from my iPhone, in my pocket.</itunes:summary>
             <itunes:duration>21:01</itunes:duration>
+            <itunes:episodeType>full</itunes:episodeType>
         </item>
         <item>
             <title>A Humble, Selfless, Unity</title>
-            <link>http://v4.chriskrycho.com/2016/a-humble-selfless-unity.html</link>
+            <link>http://www.chriskrycho.com/2016/a-humble-selfless-unity.html</link>
             <description><![CDATA[<p>Believers are called to a <em>humble, selfless, unity</em> which reflects the <em>humble, selfless, unity</em> of the Trinity.</p>
 <p>The following was written in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.</p>
 <p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from an epistle. Audio is from an old MacBook Pro pointed at the podium.</p>
 ]]></description>
-            <pubDate>Tue, 09 Feb 2016 18:45:00 -0500</pubDate>
-            <enclosure url="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/sermons/2016-02-09.m4a" length="17108682" type="audio/x-m4a"/>
+            <pubDate>Tue, 09 Feb 2016 16:45:00 -0700</pubDate>
+            <enclosure url="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/file/chriskrycho-com/sermons/2016-02-09.m4a" length="17162108" type="audio/x-m4a"/>
             <guid isPermaLink="false">E20E92FA-793F-49B2-9E94-ACA1B5A47976</guid>
             <itunes:subtitle>Philippians 2:1–11</itunes:subtitle>
-            <itunes:summary><![CDATA[Believers are called to a *humble, selfless, unity* which reflects the *humble, selfless, unity* of the Trinity.
+            <itunes:summary>Believers are called to a *humble, selfless, unity* which reflects the *humble, selfless, unity* of the Trinity.
 
 The following was written in partial fulfillment of the requirements of Dr. Marty Jacumin's Sermon Delivery class at Southeastern Baptist Theological Seminary.
 
-The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from an epistle. Audio is from an old MacBook Pro pointed at the podium.]]></itunes:summary>
+The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from an epistle. Audio is from an old MacBook Pro pointed at the podium.</itunes:summary>
             <itunes:duration>21:57</itunes:duration>
+            <itunes:episodeType>full</itunes:episodeType>
         </item>
     </channel>
 </rss>
