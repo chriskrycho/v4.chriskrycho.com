@@ -21,9 +21,9 @@
 &lt;section class="footnotes" role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;I’m aware that React-Native ultimately binds down to native widgets. It’s still not quite the same.&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn2" role="doc-endnote"&gt;&lt;p&gt;or, frankly, Ember or whatever else; React is great, but it is also overhyped.&lt;a href="#fnref2" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn3" role="doc-endnote"&gt;&lt;p&gt;Swift too, and honestly for a lot of things Swift is an easier experience for not &lt;em&gt;that&lt;/em&gt; much less performance than Rust. But as of today you &lt;em&gt;can’t&lt;/em&gt; ship core functionality in Swift for Android or Windows.&lt;a href="#fnref3" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;I’m aware that React-Native ultimately binds down to native widgets. It’s still not quite the same.&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2" role="doc-endnote"&gt;&lt;p&gt;or, frankly, Ember or whatever else; React is great, but it is also overhyped.&lt;a href="#fnref2" class="footnote-back" role="doc-backlink"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn3" role="doc-endnote"&gt;&lt;p&gt;Swift too, and honestly for a lot of things Swift is an easier experience for not &lt;em&gt;that&lt;/em&gt; much less performance than Rust. But as of today you &lt;em&gt;can’t&lt;/em&gt; ship core functionality in Swift for Android or Windows.&lt;a href="#fnref3" class="footnote-back" role="doc-backlink"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Fri, 07 Oct 2016 08:20:00 -0400</pubDate><guid isPermaLink="false">tag:v4.chriskrycho.com,2016-10-07:/2016/rust-vs-react-native-what.html</guid><category>JavaScript</category><category>Rust</category><category>Swift</category><category>F Sharp</category><category>software development</category></item></channel></rss>

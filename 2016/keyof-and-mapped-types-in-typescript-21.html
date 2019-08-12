@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="keyof and Mapped Types In TypeScript 2.1"/>
     <meta name="twitter:description" content="In the last few months, I’ve been playing with both Flow and TypeScript as tools for increasing the quality and reliability of the JavaScript I write at Olo. Both of these are syntax that sits on top of normal JavaScript to add type analysis—basically, a form of gradual …"/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">Blog</a></li>
                 <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -279,19 +280,19 @@ Updating a union
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>it’s no surprise that Microsoft’s developer tooling is stronger than Facebook’s<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>along with all the other ML-descended languages I’ve played with, including Haskell, F<sup>♯</sup>, PureScript, and Elm.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>it’s no surprise that Microsoft’s developer tooling is stronger than Facebook’s<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>along with all the other ML-descended languages I’ve played with, including Haskell, F<sup>♯</sup>, PureScript, and Elm.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
 <li id="fn3" role="doc-endnote"><p>Aside: to be extra safe and prevent any confusion or mucking around, you should probably call <code>Object.freeze()</code> on the object literal, too:</p>
 <pre class="javascript"><code>const STATE = Object.freeze({
   Pending: &#39;Pending&#39;,
   Started: &#39;Started&#39;,
   Completed: &#39;Completed&#39;,
 })</code></pre>
-<p>Both convention and linters make it unlikely you’ll modify something like this directly—but impossible is better than unlikely.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>Flow has supported this feature for some time; you can write <code>$Keys&lt;typeof STATE&gt;</code>—but the feature is entirely undocumented.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p>Set your <code>"compilerOptions"</code> key in your <code>tsconfig.json</code> to include <code>"noEmitOnError": true,</code>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6" role="doc-endnote"><p>For namespacing in a more general sense, you should use… <a href="http://www.typescriptlang.org/docs/handbook/namespaces.html">namespaces</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7" role="doc-endnote"><p>It would be great if we could get these benefits without the duplication—maybe someday we’ll have better support in JS or TS natively.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<p>Both convention and linters make it unlikely you’ll modify something like this directly—but impossible is better than unlikely.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn4" role="doc-endnote"><p>Flow has supported this feature for some time; you can write <code>$Keys&lt;typeof STATE&gt;</code>—but the feature is entirely undocumented.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn5" role="doc-endnote"><p>Set your <code>"compilerOptions"</code> key in your <code>tsconfig.json</code> to include <code>"noEmitOnError": true,</code>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn6" role="doc-endnote"><p>For namespacing in a more general sense, you should use… <a href="http://www.typescriptlang.org/docs/handbook/namespaces.html">namespaces</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn7" role="doc-endnote"><p>It would be great if we could get these benefits without the duplication—maybe someday we’ll have better support in JS or TS natively.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>

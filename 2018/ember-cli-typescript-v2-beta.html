@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="ember-cli-typescript v2 beta"/>
     <meta name="twitter:description" content="We've released a beta of ember-cli-typescript v2, which will make your builds faster and more reliable, and which will give you better error output with type errors. Please come test it in your apps and addons!"/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">Blog</a></li>
                 <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -141,7 +142,7 @@ export type FooType = Foo.FooType;</code></pre></li>
 <p>In v2, we’re <a href="https://blogs.msdn.microsoft.com/typescript/2018/08/27/typescript-and-babel-7/">now able</a> to use Babel to do the actual <em>build</em> of your TypeScript code, while using the TypeScript compiler in parallel to type-check it. This meant we were able to throw away most of that fragile custom code wiring TypeScript and Ember <abbr>CLI</abbr>’s file-watching and build pipelines together, so it’s much less fragile. And of course it’s much <em>faster</em>. What’s more, because Babel 7 is itself substantially faster than Babel 6 was, build times see an even <em>larger</em> speedup.</p>
 <p>While we were at it, we added some extra nice error reporting for your type errors:</p>
 <figure>
-<img src="https://user-images.githubusercontent.com/108688/47465007-19687d80-d7b9-11e8-8541-395ad82ceb67.gif" title="build errors" alt="" /><figcaption>An example of TypeScript build errors in an Ember app</figcaption>
+<img src="https://user-images.githubusercontent.com/108688/47465007-19687d80-d7b9-11e8-8541-395ad82ceb67.gif" title="build errors" alt="An example of TypeScript build errors in an Ember app" /><figcaption>An example of TypeScript build errors in an Ember app</figcaption>
 </figure>
 <p>These changes are why the addon is now back to being part of the runtime dependencies for addons. In the 1.x series, we did a complicated dance to make sure you could use TypeScript in an addon without burdening consumers with the full size of each distinct version of the TypeScript compiler in use by addons they consumed. (For more on that, see <a href="https://v4.chriskrycho.com/2018/announcing-ember-cli-typescript-110.html#addon-development">my blog post on the 1.1 release</a>.) We still want to keep that commitment, and we do: TypeScript is only a dev dependency. <code>ember-cli-typescript</code>, however, is a full dependency for addons, because we’re just part of the regular Babel/Ember <abbr>CLI</abbr> pipeline now! We play exactly the same role that other Babel transforms in the Ember ecosystem do, including e.g. the <a href="https://github.com/ember-cli/babel-plugin-ember-modules-api-polyfill">modules <abbr>API</abbr> polyfill</a>.</p>
 <p>In short, this update simplifies our internals <em>and</em> makes your experience as a developer better. That’s about as good an outcome as we could hope for. We as a team have been thinking through this for quite some time—ever since we learned that Babel 7 was <a href="https://github.com/facebook/create-react-app/pull/4837">adding TypeScript support</a>—but the actual implementation was almost all <a href="https://twitter.com/__dfreeman">Dan Freeman</a>’s excellent work, so say thank you to him if you get a chance!</p>
