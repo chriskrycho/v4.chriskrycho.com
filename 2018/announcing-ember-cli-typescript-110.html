@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Announcing ember-cli-typescript 1.1.0"/>
     <meta name="twitter:description" content="Now with generators, support for addons, and incremental compilation! A lot has changed in the last six months, and we’re ready to kick the ecosystem into high gear!"/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,7 +61,6 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
-                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">Blog</a></li>
                 <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -140,10 +139,10 @@ declare module &quot;ember&quot; {
 }</code></pre>
 <p>Then anywhere you injected and used it, you’ll get auto-complete suggestions and type checking:</p>
 <figure>
-<img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/ts-autocomplete.png" alt="autocompletion" /><figcaption>autocompletion</figcaption>
+<img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/ts-autocomplete.png" alt="" /><figcaption>autocompletion</figcaption>
 </figure>
 <figure>
-<img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/ts-type-checking.png" alt="type-checking" /><figcaption>type-checking</figcaption>
+<img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/ts-type-checking.png" alt="" /><figcaption>type-checking</figcaption>
 </figure>
 <p>(You’ll see the same kinds of things in other editors, from Vim to IntelliJ IDEA. Visual Studio Code is just my current editor of choice.)</p>
 </section>
@@ -222,10 +221,10 @@ declare module &quot;ember&quot; {
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>For details on how this all works, see <a href="http://v4.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update: Part 4</a>, where I discuss these changes in detail.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn2" role="doc-endnote"><p>although they may actually get some benefits in a number of modern editors, since e.g. VS Code and the JetBrains IDEs will leverage types if they exist!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn3" role="doc-endnote"><p>More on that in a post to be released in the next couple weeks—one I promised <em>long</em> ago, but which we’re now in a place to actually do: a plan and a roadmap for typing the whole Ember ecosystem!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn4" role="doc-endnote"><p>And of course, right as we finally landed our support for it, by hacking around the <code>--watch</code> invocation in a lot of really weird ways, Microsoft shipped API-level support for it. We hope to switch to using that under the hood, but that shouldn’t make any difference at all to you as a consumer of the addon, except that if/when we land it at some point, you’ll just have a nicer experience.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>For details on how this all works, see <a href="http://v4.chriskrycho.com/2018/typing-your-ember-update-part-4.html">TypeScript and Ember.js Update: Part 4</a>, where I discuss these changes in detail.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>although they may actually get some benefits in a number of modern editors, since e.g. VS Code and the JetBrains IDEs will leverage types if they exist!<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>More on that in a post to be released in the next couple weeks—one I promised <em>long</em> ago, but which we’re now in a place to actually do: a plan and a roadmap for typing the whole Ember ecosystem!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>And of course, right as we finally landed our support for it, by hacking around the <code>--watch</code> invocation in a lot of really weird ways, Microsoft shipped API-level support for it. We hope to switch to using that under the hood, but that shouldn’t make any difference at all to you as a consumer of the addon, except that if/when we land it at some point, you’ll just have a nicer experience.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
         </div>
