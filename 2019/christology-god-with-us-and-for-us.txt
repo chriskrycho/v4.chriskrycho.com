@@ -3,6 +3,7 @@ Title: >
     Christology: God With Us and For Us
 Subtitle: Audio and notes from an adult Sunday School class I’m teaching at our church!
 Date: 2019-08-11 20:15
+Modified: 2019-08-12 06:15
 Tags: [Christology, teaching, podcasting, church]
 Category: Theology
 Summary: >
@@ -18,6 +19,7 @@ If you’re interested, you can find each week’s notes and audio on the [dedic
 
 - [Apple Podcasts][apple] (might take a day or two to show up as the feed was dormant for three years!)
 - [Overcast]
+- [Pocket Casts]
 - [RSS][feed]
 
 (Note that, per my [standing principle][brand] of avoiding self-promotion and branding, this is the only time I’ll post about this series.)
@@ -27,5 +29,6 @@ If you’re interested, you can find each week’s notes and audio on the [dedic
 [first]: https://forestgate.org/sunday-school/christology-god-with-us-and-for-us/2019/8/11/week-1-introduction-and-the-eternal-son
 [apple]: https://podcasts.apple.com/us/podcast/sermons-by-chris-krycho/id1083193863
 [Overcast]: https://overcast.fm/itunes1083193863/teaching-and-sermons-by-chris-krycho
+[Pocket Casts]: https://pca.st/slox
 [feed]: https://v4.chriskrycho.com/sermons.xml
 [brand]: https://v4.chriskrycho.com/2016/dont-be-a-brand.html
