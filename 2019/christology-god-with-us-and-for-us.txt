@@ -15,7 +15,7 @@ For the four Sundays starting today, I’m teaching a class at [our church], “
 
 > The topic of Christology probably sounds important, but it might also seem a little abstract or heady. But—as Colossians and Hebrews and many saints along the years will help us see—while Christology is indeed a feast for our minds, it is also comfort for our weary souls, because it’s our truest, deepest, richest picture of God’s love for us. By God’s grace, we’ll all come out encouraged by Jesus the Son’s work on our behalf, and stirred up to love and worship him more!
 
-If you’re interested, you can find each week’s notes and audio on the [dedicated page for the class][page] (as on [the page for today’s lesson][first]), or you can follow along by subscribing in any podcast player in the teaching and sermons feed I set up for these kinds of things a few years ago.
+If you’re interested, you can find each week’s notes and audio on the [dedicated page for the class][page] (as on [the page for today’s lesson][first]), or you can follow along by subscribing in any podcast player in the teaching and sermons feed I set up for these kinds of things a few years ago:
 
 - [Apple Podcasts][apple] (might take a day or two to show up as the feed was dormant for three years!)
 - [Overcast]
