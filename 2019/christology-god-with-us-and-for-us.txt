@@ -4,7 +4,6 @@ Title: >
 Subtitle: Audio and notes from an adult Sunday School class I’m teaching at our church!
 Date: 2019-08-11 20:15
 Tags: [Christology, teaching, podcasting, church]
-Template: formats/link
 Category: Theology
 Summary: >
     For the four Sundays starting today, I’m teaching a class at [our church], “Christology: God With Us and For Us”. If you like, you can check out the notes or recordings.
