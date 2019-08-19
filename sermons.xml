@@ -7,19 +7,19 @@
         <generator>Feeder 3 3.7(3248); Mac OS X Version 10.14.6 (Build 18G87) http://reinventedsoftware.com/feeder/</generator>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <language>en</language>
-        <copyright>2016 Chris Krycho</copyright>
-        <managingEditor>chris@krycho.com (Chris Krycho)</managingEditor>
-        <webMaster>chris@krycho.com (Chris Krycho)</webMaster>
+        <copyright>2016–2019 Chris Krycho</copyright>
+        <managingEditor>hello@chriskrycho.com (Chris Krycho)</managingEditor>
+        <webMaster>hello@chriskrycho.com (Chris Krycho)</webMaster>
         <pubDate>Sun, 18 Aug 2019 20:09:46 -0600</pubDate>
         <lastBuildDate>Sun, 18 Aug 2019 20:09:47 -0600</lastBuildDate>
         <image>
             <url>https://cdn.chriskrycho.com/file/chriskrycho-com/sermons/3000.png</url>
-            <title>Chris Krycho</title>
+            <title>Teaching and Sermons by Chris Krycho</title>
             <link>https://v4.chriskrycho.com/sermons/</link>
             <width>144</width>
             <height>144</height>
         </image>
-        <atom:link href="http://www.chriskrycho.com/sermons.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https://v4.chriskrycho.com/sermons.xml" rel="self" type="application/rss+xml"/>
         <itunes:author>Chris Krycho</itunes:author>
         <itunes:summary>Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a software developer, writer, and podcaster, currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.</itunes:summary>
         <itunes:keywords>sermon,Christianity,faith,evangelical,Reformed,baptist,Scripture,exegesis,expository,expositional</itunes:keywords>
@@ -33,6 +33,7 @@
             <itunes:category text="Christianity"/>
         </itunes:category>
         <itunes:type>episodic</itunes:type>
+        <itunes:explicit>no</itunes:explicit>
         <item>
             <title>Christology, Week 2</title>
             <link>https://forestgate.org/sunday-school/christology-god-with-us-and-for-us/2019/8/18/week-2-israels-messiah-and-the-incarnation</link>
@@ -196,7 +197,7 @@ I will sing hymns to You in the congregation.</div>
 </section>
 ]]></description>
             <pubDate>Sun, 18 Aug 2019 17:30:00 -0600</pubDate>
-            <enclosure url="https://www.podtrac.com/pts/redirect.mp3/cdn.chriskrycho.com/file/chriskrycho-com/teaching/2019-08-18-christology-week-2.mp3" length="43864333" type="audio/mpeg"/>
+            <enclosure url="https://dts.podtrac.com/redirect.mp3/cdn.chriskrycho.com/file/chriskrycho-com/teaching/2019-08-18-christology-week-2.mp3" length="43864333" type="audio/mpeg"/>
             <guid isPermaLink="false">75DFC3AC-DFE6-49E3-8C74-B012E1BF236B</guid>
             <itunes:subtitle>Israel’s Messiah and the Incarnation</itunes:subtitle>
             <itunes:summary>Israel’s Messiah and the Incarnation
@@ -373,7 +374,7 @@ He is before all things,<br />
 <p>Now, we’ve covered a lot of ground, so for these last few minutes: what questions do you all have?</p>
 ]]></description>
             <pubDate>Sun, 11 Aug 2019 17:30:00 -0600</pubDate>
-            <enclosure url="https://www.podtrac.com/pts/redirect.mp3/cdn.chriskrycho.com/file/chriskrycho-com/teaching/2019-08-11-christology-week-1.mp3" length="42851341" type="audio/mpeg"/>
+            <enclosure url="https://dts.podtrac.com/redirect.mp3/cdn.chriskrycho.com/file/chriskrycho-com/teaching/2019-08-11-christology-week-1.mp3" length="42851341" type="audio/mpeg"/>
             <guid isPermaLink="false">EEA2ABE9-0066-4A6C-8B8C-F052CFDA6959</guid>
             <itunes:subtitle>Introduction and Eternal Sonship</itunes:subtitle>
             <itunes:summary>Introduction and Eternal Sonship
@@ -390,7 +391,7 @@ One of the joys of seminary was the doctrine of Christology. But what exactly do
 <p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is recorded with <a href="https://geo.itunes.apple.com/us/app/ferrite-recording-studio/id1018780185?mt=8&amp;at=1001l4KM">Ferrite</a>, using an <a href="http://www.apple.com/iphone-se/">iPhone SE</a> placed on the podium.</p>
 ]]></description>
             <pubDate>Tue, 12 Apr 2016 17:15:00 -0600</pubDate>
-            <enclosure url="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/file/chriskrycho-com/sermons/2016-04-12.m4a" length="21552435" type="audio/x-m4a"/>
+            <enclosure url="https://dts.podtrac.com/redirect.m4a/cdn.chriskrycho.com/file/chriskrycho-com/sermons/2016-04-12.m4a" length="21552435" type="audio/x-m4a"/>
             <guid isPermaLink="false">FB3C78ED-C8E2-4A5A-B8A7-54C05586FA80</guid>
             <itunes:subtitle>John 14:15–31: We love and obey God; God dwells with us</itunes:subtitle>
             <itunes:summary>John 14:15–31: We love and obey God; God dwells with us.
@@ -409,7 +410,7 @@ The only constraints on this sermon were that it be between 15 and 25 minutes lo
 <p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from the Old Testament. Audio is from my iPhone, in my pocket.</p>
 ]]></description>
             <pubDate>Tue, 08 Mar 2016 18:00:00 -0700</pubDate>
-            <enclosure url="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/file/chriskrycho-com/sermons/2016-03-08.m4a" length="6553019" type="audio/x-m4a"/>
+            <enclosure url="https://dts.podtrac.com/redirect.m4a/cdn.chriskrycho.com/file/chriskrycho-com/sermons/2016-03-08.m4a" length="6553019" type="audio/x-m4a"/>
             <guid isPermaLink="false">59367FA6-9E82-4BD2-B431-BA875D6D99E9</guid>
             <itunes:subtitle>Judges 3:7–31: Three stories, three judges and deliverers, one saving God.</itunes:subtitle>
             <itunes:summary>Judges 3:7–31: Three stories, three judges and deliverers, one saving God.
@@ -428,7 +429,7 @@ The only constraints on this sermon were that it be between 15 and 25 minutes lo
 <p>The only constraints on this sermon were that it be between 15 and 25 minutes long, and be on a text from an epistle. Audio is from an old MacBook Pro pointed at the podium.</p>
 ]]></description>
             <pubDate>Tue, 09 Feb 2016 16:45:00 -0700</pubDate>
-            <enclosure url="http://www.podtrac.com/pts/redirect.m4a/cdn.chriskrycho.com/file/chriskrycho-com/sermons/2016-02-09.m4a" length="17162108" type="audio/x-m4a"/>
+            <enclosure url="https://dts.podtrac.com/redirect.m4a/cdn.chriskrycho.com/file/chriskrycho-com/sermons/2016-02-09.m4a" length="17162108" type="audio/x-m4a"/>
             <guid isPermaLink="false">E20E92FA-793F-49B2-9E94-ACA1B5A47976</guid>
             <itunes:subtitle>Philippians 2:1–11</itunes:subtitle>
             <itunes:summary>Believers are called to a *humble, selfless, unity* which reflects the *humble, selfless, unity* of the Trinity.
