@@ -1,7 +1,7 @@
 ---
 Title: >
     Review: <cite>Shades of Milk and Honey</cite>
-Summary: >
+Subtitle: >
     I enjoyed Mary Robinette Kowal’s magic-meets-Regency-romance much more than I expected to.
 Date: 2019-08-17 09:25
 Category: Art
