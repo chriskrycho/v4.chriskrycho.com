@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="TypeScript and Ember.js Update, Part 3"/>
     <meta name="twitter:description" content="Now that we know a bit more about how computed properties work, we’ll talk about computed properties, actions, and mixins on the Ember.js side, along with the normal class methods."/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">Blog</a></li>
                 <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -294,18 +295,18 @@ const value = get(anObject, &#39;some.nested.key&#39;);</code></pre></li>
 get fromModel() {
   return `My name is ${this.model.firstName};`;
 }</code></pre>
-<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></li>
-<li id="fn2" role="doc-endnote"><p>I’ve used <code>Computed&lt;Person&gt;</code> and similar throughout here because it’s the most clear while still being reasonably concise. The actual type name in Ember’s own code is <code>ComputedProperty</code>, but <code>ComputedProperty&lt;Person&gt;</code> is <em>long</em>, and it wouldn’t have added any real clarity here. In my own codebase, we use <code>CP</code> (for “<strong>C</strong>omputed <strong>P</strong>roperty”) for the sake of brevity—so here that would just be <code>CP&lt;Person&gt;</code>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></li>
+<li id="fn2" role="doc-endnote"><p>I’ve used <code>Computed&lt;Person&gt;</code> and similar throughout here because it’s the most clear while still being reasonably concise. The actual type name in Ember’s own code is <code>ComputedProperty</code>, but <code>ComputedProperty&lt;Person&gt;</code> is <em>long</em>, and it wouldn’t have added any real clarity here. In my own codebase, we use <code>CP</code> (for “<strong>C</strong>omputed <strong>P</strong>roperty”) for the sake of brevity—so here that would just be <code>CP&lt;Person&gt;</code>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
 <li id="fn3" role="doc-endnote"><p>In the future, this problem will hopefully be solved neatly by decorators:</p>
 <pre class="typescript"><code>  @action
   addToCollection(value: string) {
     const current = this.get(&#39;aCollection&#39;);
     this.set(&#39;aCollection&#39;, current.concat(value));
   }</code></pre>
-<p>For today, however, specifying a <code>this</code> type is where it’s at.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>You can see this for yourself in <a href="https://ember-twiddle.com/36844717dcc50d734139368edf2e87da">this Ember Twiddle</a>—just open your developer tools and note the sequence.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p>Proxies, along with details of mixins, are a subject I’m leaving aside for Part 5, otherwise known as the “wow, this stuff is really weird to type” entry in the series.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6" role="doc-endnote"><p>Not <em>no</em> hassle, though, and I look forward to a future where we can drop it, as Ember moves more and more toward modern JavaScript ways of solving these same problems!<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<p>For today, however, specifying a <code>this</code> type is where it’s at.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn4" role="doc-endnote"><p>You can see this for yourself in <a href="https://ember-twiddle.com/36844717dcc50d734139368edf2e87da">this Ember Twiddle</a>—just open your developer tools and note the sequence.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn5" role="doc-endnote"><p>Proxies, along with details of mixins, are a subject I’m leaving aside for Part 5, otherwise known as the “wow, this stuff is really weird to type” entry in the series.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn6" role="doc-endnote"><p>Not <em>no</em> hassle, though, and I look forward to a future where we can drop it, as Ember moves more and more toward modern JavaScript ways of solving these same problems!<a href="#fnref6" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -363,7 +364,7 @@ get fromModel() {
     <ul>
         <li>Art: <a href="http://v4.chriskrycho.com/2019/review-shades-of-milk-and-honey.html">Review: <cite>Shades of Milk and Honey</cite>
 </a></li>
-        <li>Blog: <a href="http://v4.chriskrycho.com/2019/a-healthier-calendar.html">A Healthier Calendar</a></li>
+        <li>Blog: <a href="http://v4.chriskrycho.com/2019/cronos.html">Cronos</a></li>
         <li>Tech: <a href="http://v4.chriskrycho.com/2019/ember-type-defs-livestreaming.html">Ember Type-Defs Livestreaming</a></li>
         <li>Theology: <a href="http://v4.chriskrycho.com/2019/christology-god-with-us-and-for-us.html">Christology: God With Us and For Us
 </a></li>
