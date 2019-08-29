@@ -9,6 +9,10 @@ Summary: >
 
 ---
 
+<i><b>[Assumed Audience][aa]:</b> design types and typography nerds.</i>
+
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
+
 I’m not sure when I first stumbled on [Cronos], but it was a *long* time ago at this point. I launched a version of this website using Cronos for titles back in 2012. I’ve experimented with a number of typefaces for the body text since then—including [Minion], [Gentium], and finally [Sabon]—but Cronos has never changed. Every time I’ve thought about moving away from it, I’ve been dissatisfied with everything else I’ve looked at using in its place. It makes for a *solid* choice for body text, but is a *remarkable* titling face.
 
 [Cronos]: https://www.myfonts.com/fonts/adobe/cronos/

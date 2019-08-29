@@ -9,6 +9,10 @@ Summary: >
 
 ---
 
+<i><b>[Assumed Audience][aa]:</b> design types and typography nerds… and digital economics and licensing geeks.</i>
+
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
+
 Yesterday, I wrote a [post] extolling the virtues of the lovely (and quirky!) typeface [Cronos]. Today, I’m back to report on at least *one* of the reasons why it’s not in wider use. In short: Adobe has made it available for web font usage *only* if you’re on a subscription plan through Typekit or one of their other partners (e.g. Fonts.com).
 
 [post]: https://v4.chriskrycho.com/2019/cronos.html

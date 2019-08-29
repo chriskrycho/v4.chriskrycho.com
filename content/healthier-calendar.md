@@ -9,7 +9,7 @@ Summary: >
 
 ---
 
-<i><b>[Assumed Audience][aa]:</b> people already persuaded of the value—at least to some extent—of "getting things done" strategies and having an idea of what you accomplished over the course of the year.</i>
+<i><b>[Assumed Audience][aa]:</b> people already persuaded of the value—at least to some extent—of "getting things done" strategies.</i>
 
 [aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
 
