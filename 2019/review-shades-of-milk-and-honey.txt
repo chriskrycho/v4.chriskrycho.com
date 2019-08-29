@@ -11,6 +11,10 @@ Summary: >
 
 ---
 
+<i><b>[Assumed Audience][aa]:</b> book lovers!</i>
+
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
+
 <i class=editorial>I keep my book review ratings simple---they're either *required*, *recommended*, *recommended with qualifications*, or *not recommended*. If you want the TL;DR, this is it:</i>
 
 <b>Recommended:</b> Regency period piece styled with language and plot reminiscent of an Austen novel… but with more magic and less irony and social commentary. I picked it up because I [loved] her Lady Astronaut books and Jaimie has loved this series for years. In a turn I did not expect (because, well, this is not my genre!), it proved not only to be *good* (which I did expect) but also to be a genuine page-turner; I stayed up late one night last week to finish it. A nice little magic system, excellent use of period literary style, good characters, engaging plot. Will read the rest of the series!
