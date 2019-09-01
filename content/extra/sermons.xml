@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
     <channel>
         <title>Teaching and Sermons by Chris Krycho</title>
         <link>https://v4.chriskrycho.com/sermons/</link>
@@ -10,8 +10,8 @@
         <copyright>2016–2019 Chris Krycho</copyright>
         <managingEditor>hello@chriskrycho.com (Chris Krycho)</managingEditor>
         <webMaster>hello@chriskrycho.com (Chris Krycho)</webMaster>
-        <pubDate>Mon, 26 Aug 2019 12:05:33 -0600</pubDate>
-        <lastBuildDate>Mon, 26 Aug 2019 12:05:33 -0600</lastBuildDate>
+        <pubDate>Sun, 01 Sep 2019 06:57:28 -0600</pubDate>
+        <lastBuildDate>Sun, 01 Sep 2019 06:57:29 -0600</lastBuildDate>
         <image>
             <url>https://cdn.chriskrycho.com/file/chriskrycho-com/sermons/3000.png</url>
             <title>Teaching and Sermons by Chris Krycho</title>
@@ -21,7 +21,7 @@
         </image>
         <atom:link href="http://www.chriskrycho.com/sermons.xml" rel="self" type="application/rss+xml"/>
         <itunes:author>Chris Krycho</itunes:author>
-        <itunes:summary>Faithful exposition of Scripture in the catholic, Reformed, evangelical, Baptist tradition. Chris Krycho is a software developer, writer, and podcaster, currently pursuing an M. Div. from Southeastern Baptist Theological Seminary.</itunes:summary>
+        <itunes:summary>Faithful exposition of Scripture in the catholic, Reformed, evangelical tradition.</itunes:summary>
         <itunes:keywords>sermon,Christianity,faith,evangelical,Reformed,baptist,Scripture,exegesis,expository,expositional</itunes:keywords>
         <itunes:image href="https://cdn.chriskrycho.com/file/chriskrycho-com/sermons/3000.png"/>
         <itunes:explicit>clean</itunes:explicit>
