@@ -11,7 +11,11 @@ Summary: >
 
 ---
 
-<i class=editorial><b>Updated September 1, 2019:</b> added ePub and PDF links at the bottom of the post, as well as direct links to each class page on the Forestgate website.</i>
+<i><b>[Assumed Audience][aa]:</b> orthodox (note the little ‘o’!) Christians. You’re of course very welcome to dig into this material if you are *not* a Christian, but it’s a Sunday School class, so I’m not addressing non-Christians!</i>
+
+[aa]: https://v4.chriskrycho.com/2018/assumed-audiences.html
+
+<i class=editorial><b>Updated September 1, 2019:</b> added <abbr>EPUB</abbr> and <abbr>PDF</abbr> links at the bottom of the post, as well as direct links to each class page on the Forestgate website.</i>
 
 ---
 
