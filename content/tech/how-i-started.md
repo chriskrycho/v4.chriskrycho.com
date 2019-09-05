@@ -1,6 +1,6 @@
 ---
 Title: >
-    Rewrite Dev Journal: How I Started
+    rewrite Dev Journal: How I Started
 Subtitle: The smallest possible set of tasks.
 Date: 2019-09-04 21:30
 Category: Tech
