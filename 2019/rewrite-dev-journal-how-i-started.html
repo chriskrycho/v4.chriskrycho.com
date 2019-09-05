@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rewrite Dev Journal: How I Started &middot; Chris Krycho</title>
+    <meta name="description" content="This week, I started actually writing software for my rewrite project. This is the story of how I got past the daunting feeling of not knowing where to begin."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://v4.chriskrycho.com/2019/rewrite-dev-journal-how-i-started.html"/>
+    <meta property="og:title" content="Rewrite Dev Journal: How I Started"/>
+    <meta property="og:description" content="This week, I started actually writing software for my rewrite project. This is the story of how I got past the daunting feeling of not knowing where to begin."/>
+        <meta property="og:image" content="http://v4.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Rewrite Dev Journal: How I Started"/>
+    <meta name="twitter:description" content="This week, I started actually writing software for my rewrite project. This is the story of how I got past the daunting feeling of not knowing where to begin."/>
+        <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://v4.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">blog</a></li>
+                <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/now">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="rewrite rewrite-dev-journal software-development productivity tech">
+
+    <header>
+<h1>Rewrite Dev Journal: How I Started
+</h1>
+<h2>The smallest possible set of tasks.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://v4.chriskrycho.com/2019/rewrite-dev-journal-how-i-started.html" title="Rewrite Dev Journal: How I Started"><i class="fa fa-fw fa-link"></i></a>September 04, 2019</span><span class="section">Filed under <a class="section-title" href="http://v4.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://v4.chriskrycho.com/productivity/">#productivity</a><a class="hashtags" href="http://v4.chriskrycho.com/rewrite/">#rewrite</a><a class="hashtags" href="http://v4.chriskrycho.com/rewrite-dev-journal/">#rewrite dev journal</a><a class="hashtags" href="http://v4.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://v4.chriskrycho.com/2019/rewrite-dev-journal-how-i-started.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i><b><a href="https://v4.chriskrycho.com/2018/assumed-audiences.html">Assumed Audience</a>:</b> practitioners or interested lookers-on for software development—especially indies.</i></p>
+<p>This week, I started the <i>actually writing software</i> phase of working on <a href="https://rewrite.software"><b><i>re</i>write</b></a>. As of yesterday evening, I actually have a bit of code that, although useless in every way, and not especially attractive, does in fact displays a single reference on an iPhone screen. I have an incredibly, impossibly long way to go.</p>
+<p>It doesn’t matter: I <em>started</em>.</p>
+<p>I had the day off on Monday courtesy of Labor Day, and I chose to spend the chunk of it that <em>wasn’t</em> focused on chores and housework and family time on actually getting this thing moving. I’ve been dreaming for over four years now. That time wasn’t wasted, by a long shot, but as I noted in <a href="https://v4.chriskrycho.com/2019/announcing-rewrite.html">my announcement post</a>, you can plan forever… or you can just start building at some point.</p>
+<p>The problem I had—as I noted <a href="https://v4.chriskrycho.com/2019/starting.html">back in July</a>—is that I didn’t actually feel like I knew <em>how</em> to start. This a mammoth project, for one thing. For another, doing this kind of indie work requires dramatically improving my design and product chops. And of course, developing for native apps means learning whole new technology stacks as well!</p>
+<p>I’ve known all along that the only way to get anywhere was to break the problem down. You know: the same as always in software development. Find something small to start on. I had already identified which <em>part</em> of the app to dig into first: reference management. This is a place where I could have something that is useful to <em>me</em> in reasonably short order (I want to be able to update my own reference library on my iPad!). Even that was daunting, though—still far too large.</p>
+<p>So, Monday, I asked: <i>What is the smallest possible reference-related functionality I could build?</i> The answer, I concluded, was: <i>just display an existing library of references.</i> Then I went further, because “display an existing library of references” is surprisingly complicated. It involves, at a minimum:</p>
+<ul>
+<li>defining how to display a reference
+<ul>
+<li>…and therefore also designing the data structures representing references</li>
+</ul></li>
+<li>actually building that display</li>
+<li>defining how to display a list of references to the user—which things to include, which not to, etc.</li>
+<li>actually building that list</li>
+<li>making it so that tapping on an item in a list displays the detailed view defined previously</li>
+<li>making it so you can get back <em>out</em> of the detail view to the list view again</li>
+<li>loading a list of references from somewhere, e.g. a BibTeX file from iCloud Drive</li>
+<li>parsing that list of references into the internal data structures designed to represent them</li>
+</ul>
+<p>Now, for an experienced iOS or macOS developer, some of those things might feel trivial enough that they don’t even warrant their own bullet point. But I’m <em>not</em> an experienced iOS or macOS developer; I have no idea how to do any of this! What’s more breaking it down that way means that I have small, discrete tasks that I can go after in small blocks of time. Remember: this is a side project, which I am fitting in around my day job, my church commitments, and time with friends and family. I have to be able to make progress in small blocks of time! I have to <em>feel</em> that progress, at least a little, so that I can keep going.</p>
+<p>Every bullet point on the list I came up with represents a discrete item of work. It not only <em>may</em> but <em>must</em> be small, so that I can do it in an evening or three. It needs to be done in such a way that later steps can build on it—but it doesn’t actually need to be anything like what those later steps will transform it into. It just needs to be enough to keep momentum moving, and done in such a way that later changes are not too difficult to make.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Monday evening, I took the items I had identified and turned them into GitHub Issues in a GitHub project, called <b>Display a BibTeX Library</b>. (I’ll talk about how I’m using GitHub projects a little at some point in the future; it’s a nice flow so far.) Every single one of those items, no matter how apparently small, got its own card. One of them, about Swift-Rust interop, got a note saying, roughly, “I’m pretty sure this will need to be its own whole sub-project.” And looking at that list… I felt a lot less daunted! Every one of the tasks involves something I don’t know how to do yet—but only <em>one</em> thing I don’t know how to do yet, not <em>many</em>.</p>
+<p>Last night, I took the first item on the list: display a single reference item. Not <em>parsing</em> them, not even from a string hard-coded into the app, and certainly not loading a file or anything like that. Just hard-coding in a data structure and displaying it on the screen. And, over the course of a few hours, including <em>lots</em> of searching<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> for answers about specific SwiftUI error messages,<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> I managed to implement that one thing.</p>
+<p>As I said above: it’s <em>useless</em> in the strict sense. It’s not especially pretty, either. But it’s progress. I started. And now I have that little sense of momentum, and I can keep going!</p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>If you think this sounds like the ideas current in the best parts of agile software development—working to make future changes easy; iterating rapidly; delivering the smallest possible chunks of value, and doing so continuously—you’re not wrong!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>“Searching,” not “Googling,” because I only very rarely Google anything. I search, with <a href="https://duckduckgo.com">Duck Duck Go</a> as my starting point and its <a href="https://duckduckgo.com/bang">! search commands</a> as power tools for searches in specific places.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn3" role="doc-endnote"><p><em>Wow</em> could SwiftUI’s compiler diagnostics use some improvement! I sincerely hope that the Swift team in general and the SwiftUI folks in particular take a close look at Rust and Elm for inspiration here.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+    <h3>Support Me</h3>
+    <ul class='icons'>
+        <li><a href="https://patreon.com/chriskrycho"><i class='fa fa-fw fa-money'></i>Patreon</a></li>
+        <li><a href="https://cash.me/$chriskrycho"><i class='fa fa-fw fa-usd'></i>Cash.me</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://v4.chriskrycho.com/2019/review-shades-of-milk-and-honey.html">Review: <cite>Shades of Milk and Honey</cite>
+</a></li>
+        <li>Blog: <a href="http://v4.chriskrycho.com/2019/stealing-a-page-from-bullet-journals.html">Stealing a Page From Bullet Journals</a></li>
+        <li>Tech: <a href="http://v4.chriskrycho.com/2019/rewrite-dev-journal-how-i-started.html">Rewrite Dev Journal: How I Started
+</a></li>
+        <li>Theology: <a href="http://v4.chriskrycho.com/2019/christology-god-with-us-and-for-us.html">Christology: God With Us and For Us
+</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
