@@ -1,6 +1,6 @@
 ---
 Title: >
-    <i>re</i>write Dev Journal: How I Started
+    <b><i>re</i>write</b> Dev Journal: How I Started
 Subtitle: The smallest possible set of tasks.
 Date: 2019-09-04 21:30
 Category: Tech
