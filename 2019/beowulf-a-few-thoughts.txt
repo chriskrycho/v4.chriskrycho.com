@@ -2,7 +2,7 @@
 Title: >
     <cite>Beowulf</cite>: A Few Thoughts
 Subtitle: >
-    Notes on *the* great work of Old English literature.
+    Notes on <em>the</em> great work of Old English literature.
 Tags: [reading, book reviews, literature, typography]
 Date: 2019-09-6 21:21
 Category: Art
