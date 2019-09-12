@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Interfaces are API Boundaries &middot; Chris Krycho</title>
+    <meta name="description" content="Yesterday, in the midst of a rollicking conversation about building forms in web apps, I realized: User interfaces are API boundaries, too!"/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://v4.chriskrycho.com/2019/user-interfaces-are-api-boundaries.html"/>
+    <meta property="og:title" content="User Interfaces are API Boundaries"/>
+    <meta property="og:description" content="Yesterday, in the midst of a rollicking conversation about building forms in web apps, I realized: User interfaces are API boundaries, too!"/>
+        <meta property="og:image" content="http://v4.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="User Interfaces are API Boundaries"/>
+    <meta name="twitter:description" content="Yesterday, in the midst of a rollicking conversation about building forms in web apps, I realized: User interfaces are API boundaries, too!"/>
+        <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://v4.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">Blog</a></li>
+                <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/now">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="software-development domain-driven-design ui software-architecture tech">
+
+    <header>
+<h1>User Interfaces are API Boundaries</h1>
+<h2>Applying domain-driven design ideas to <abbr title="user interface">UI</abbr> implementation.
+</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://v4.chriskrycho.com/2019/user-interfaces-are-api-boundaries.html" title="User Interfaces are API Boundaries"><i class="fa fa-fw fa-link"></i></a>September 12, 2019</span><span class="section">Filed under <a class="section-title" href="http://v4.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://v4.chriskrycho.com/domain-driven-design/">#domain-driven design</a><a class="hashtags" href="http://v4.chriskrycho.com/software-architecture/">#software architecture</a><a class="hashtags" href="http://v4.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://v4.chriskrycho.com/ui/">#ui</a></span><span><a href="http://v4.chriskrycho.com/2019/user-interfaces-are-api-boundaries.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i><b><a href="https://v4.chriskrycho.com/2018/assumed-audiences.html">Assumed Audience</a>:</b> software developers, especially those who work on user interfaces.</i></p>
+<p><a href="https://fsharpforfunandprofit.com/ddd/">Domain-driven design</a>, and its near neighbor the <a href="https://web.archive.org/web/20060711221010/http://alistair.cockburn.us:80/index.php/Hexagonal_architecture">ports and adapters (hexagonal) architecture</a> all emphasize the importance of distinguishing between your internal “business logic” and your interactions with the rest of the world. Much of the time, the “ports” that get discussed are <abbr title="application programming interface">API</abbr> calls (e.g. over <abbr title="hyper-text transfer protocol">HTTP</abbr>) or interacting with a database.</p>
+<p>Yesterday, in the midst of a rollicking conversation about building forms in web apps,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> I realized:</p>
+<p><em>User interfaces are <abbr title="application programming interface">API</abbr> boundaries, too!</em></p>
+<aside>
+<p>I claim no novelty here; I’m sure that if I went through the literature on domain-driven design and the adjacent architectural ideas, I’d find this same point made by others. It’s just a fruitful<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> wording I have not heard before—a concise way of expressing an idea that has been rather floating around in my head in much vaguer terms for the last couple years.</p>
+</aside>
+<p>One of the key insights of DDD and the ports-and-adapters model is that every interaction with the world outside your program is a place of uncertainty. The <abbr title="application programming interface">API</abbr> might have changed and you might be getting back different responses than you expect. The database might have been corrupted. The network might be down—or worse, degraded so that you get <em>partial</em> messages through, and have to deal with incomplete or nonsensical data. Your software design has to account for this. If you isolate the complexity of dealing with that to well-defined, well-constrained boundaries for your application, everything in between can be <em>much</em> simpler.</p>
+<p>And the most reliably unpredictable source of data we have for <em>any</em> application… is users! People are complicated and distracted, and our interfaces are always imperfect, often misleading or confusing in various ways (our best intentions notwithstanding). So we get “bad” data from our users. I scare-quote “bad” here because the data is not (necessarily) <em>morally</em> bad (though: see Twitter!) and it is (usually) a <em>mistake</em> rather than <em>malice</em> at root (though: see all sorts of hacking). But from the perspective of our app’s internals, the data has to be validated and transformed to our model of the world, just as data returned from an <abbr title="application programming interface">API</abbr> or a database does.</p>
+<p>If you’re familiar with how these architectures suggest handling sources of data external to your program, the implication for user interaction is obvious: you need to treat it like you would an <abbr title="application programming interface">API</abbr>. You should have a clean separation between the data model of a form and the data model used within your application. Put in common <abbr title="object oriented">OO</abbr> parlance: your form model is a kind of <a href="https://martinfowler.com/eaaCatalog/dataTransferObject.html">data transfer object</a>.</p>
+<p>Notice that this holds whether you’re using a traditional web form which submits a <code>POST</code> request via <abbr title="hyper-text transfer protocol">HTTP</abbr>, or building a rich <abbr title="single page application">SPA</abbr>-style JavaScript app which will use the form data without ever sending it anywhere. You have to first validate the data to make sure it is complete and correct—presumably with a mechanism for letting the user know if it isn’t. You also normally need to <em>transform</em> the basically flat data you get back from your form into in a data structure which is appropriately rich for the domain you’re working with.</p>
+<p>Again: all of this is bog standard for DDD and ports-and-adapters thinking. The point is that you should treat forms specifically and user interaction in general in much the same way as any other external data: because <em>user interfaces are <abbr title="application programming interface">API</abbr> boundaries</em>.</p>
+<p>In a future post, hopefully some time in the next week or two, I’ll trace out one of the implications of this for how I think about building forms in much more concrete terms!</p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>about which conversation more another day!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>I found it <i>fruitful</i> in two senses: it was generative for me as I reflected on it, and it produced some forward motion in a conversation about real-world software development.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+    <h3>Support Me</h3>
+    <ul class='icons'>
+        <li><a href="https://patreon.com/chriskrycho"><i class='fa fa-fw fa-money'></i>Patreon</a></li>
+        <li><a href="https://cash.me/$chriskrycho"><i class='fa fa-fw fa-usd'></i>Cash.me</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://v4.chriskrycho.com/2019/beowulf-a-few-thoughts.html"><cite>Beowulf</cite>: A Few Thoughts
+</a></li>
+        <li>Blog: <a href="http://v4.chriskrycho.com/2019/no-more-alarms.html">No More Alarms</a></li>
+        <li>Tech: <a href="http://v4.chriskrycho.com/2019/user-interfaces-are-api-boundaries.html">User Interfaces are API Boundaries</a></li>
+        <li>Theology: <a href="http://v4.chriskrycho.com/2019/christology-god-with-us-and-for-us.html">Christology: God With Us and For Us
+</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
