@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>rewrite Dev Journal: How Progress Doesn’t Feel &middot; Chris Krycho</title>
+    <meta name="description" content="I spent this afternoon learning about Swift Package Manager. This kind of learning in a new ecosystem doesn’t always feel like progress—but it is."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://v4.chriskrycho.com/2019/rewrite-dev-journal-how-progress-doesnt-feel.html"/>
+    <meta property="og:title" content="rewrite Dev Journal: How Progress Doesn’t Feel"/>
+    <meta property="og:description" content="I spent this afternoon learning about Swift Package Manager. This kind of learning in a new ecosystem doesn’t always feel like progress—but it is."/>
+        <meta property="og:image" content="http://v4.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="rewrite Dev Journal: How Progress Doesn’t Feel"/>
+    <meta name="twitter:description" content="I spent this afternoon learning about Swift Package Manager. This kind of learning in a new ecosystem doesn’t always feel like progress—but it is."/>
+        <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://v4.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/now">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="rewrite rewrite-dev-journal software-development productivity tech">
+
+    <header>
+<h1><b><i>re</i>write</b> Dev Journal: How Progress Doesn’t Feel
+</h1>
+<h2>Learning in a new ecosystem doesn’t always <em>feel</em> like progress—but it is.
+</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://v4.chriskrycho.com/2019/rewrite-dev-journal-how-progress-doesnt-feel.html" title="rewrite Dev Journal: How Progress Doesn’t Feel"><i class="fa fa-fw fa-link"></i></a>October 26, 2019</span><span class="section">Filed under <a class="section-title" href="http://v4.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://v4.chriskrycho.com/productivity/">#productivity</a><a class="hashtags" href="http://v4.chriskrycho.com/rewrite/">#rewrite</a><a class="hashtags" href="http://v4.chriskrycho.com/rewrite-dev-journal/">#rewrite dev journal</a><a class="hashtags" href="http://v4.chriskrycho.com/software-development/">#software development</a></span><span><a href="http://v4.chriskrycho.com/2019/rewrite-dev-journal-how-progress-doesnt-feel.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i><b><a href="https://v4.chriskrycho.com/2018/assumed-audiences.html">Assumed Audience</a>:</b> practitioners or interested lookers-on for software development—especially indies.</i></p>
+<p>Today, I had about 3½ hours dedicated to working on <b><i>re</i>write</b> and I <em>did</em> make progress… but it sure didn’t feel like it.</p>
+<p>For the past month or so, I’ve been sidelined from working on the project by way of getting <em>very</em> sick and then being swamped with travel for a conference followed by a friend’s wedding. I resolved, however, to get some things done today. I enjoyed that sense of momentum I had in those first couple weeks I was working, and I want it back.</p>
+<p>Today’s work, however… <em>felt</em> exceedingly unproductive. It wasn’t. I was <em>learning</em>. Specifically, I was learning how Swift Packages and the <a href="https://github.com/apple/swift-package-manager">Swift Package Manager (<abbr>SPM</abbr>)</a> work, how they work with Xcode, and what they can and cannot do. In general, learning like this is necessary and valuable, and this specific knowledge domain is particularly necessary and valuable for me. For one thing, the details of how I’m building the app will make this very applicable very quickly. (More on that in a future update.) For another, because I work best when I have a good understanding of how the whole system works together.</p>
+<p>The net of it, though, was that I came out with a good idea of how to use Swift Packages… and zero new lines of code written for the app itself. I may yet make a little progress this evening after my little girls are in bed, but the big takeaway for me today was the need to remind myself that <em>learning is a form of progress</em>. You might think that I, academically-minded and hyper-nerdy fellow that I am, would find that easy to remember. It turns out, though, that it <em>isn’t</em> easy to remember in the context of the desire to actually ship something!</p>
+<p>I hope this dev journal entry serves as an encouragement to others doing development work. There’s value in these days. They’re not failures. They’re an integral part of the way you <em>get</em> to the day when you actually ship.</p>
+<p>I know this because I’ve been here before. There was a time when I had no idea how I was going to ship that PHP app and I spent whole afternoons figuring out something about <a href="https://subversion.apache.org">SVN</a>—afternoons that did not feel like part of shipping, but which ultimately led me to recover from accidentally deleting my entire codebase. There was a time when I had no idea how a JavaScript <a href="https://en.wikipedia.org/wiki/Single-page_application">“single page application” (<abbr>SPA</abbr>)</a> could actually work, and spent <em>multiple</em> afternoons reading about <abbr title='application programming interface'>API</abbr>-driven applications—afternoons which did not feel productive, but ultimately led to the point where I’m in a technical leadership role on one of the biggest <abbr>SPA</abbr>s in the world. So I can say fairly confidently that however unproductive this afternoon’s work loading up an accurate understanding of <abbr>SPM</abbr> <em>will</em> yield dividends. And sooner than it feels like today!</p>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+    <h3>Support Me</h3>
+    <ul class='icons'>
+        <li><a href="https://patreon.com/chriskrycho"><i class='fa fa-fw fa-money'></i>Patreon</a></li>
+        <li><a href="https://cash.me/$chriskrycho"><i class='fa fa-fw fa-usd'></i>Cash.me</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://v4.chriskrycho.com/2019/beowulf-a-few-thoughts.html"><cite>Beowulf</cite>: A Few Thoughts
+</a></li>
+        <li>Blog: <a href="http://v4.chriskrycho.com/2019/no-more-alarms.html">No More Alarms</a></li>
+        <li>Tech: <a href="http://v4.chriskrycho.com/2019/rewrite-dev-journal-how-progress-doesnt-feel.html"><b><i>re</i>write</b> Dev Journal: How Progress Doesn’t Feel
+</a></li>
+        <li>Theology: <a href="http://v4.chriskrycho.com/2019/review-what-is-an-evangelical.html">Review: <cite>What is an Evangelical</cite>
+</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
