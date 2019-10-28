@@ -5,7 +5,7 @@ Subtitle: >
     A rollicking sci-fi trilogy about the discovery of giant robot mecha.
 Date: 2019-10-21 08:50
 Tags: [book reviews, science fiction]
-Category: Theology
+Category: Art
 Summary: >
     Recommended: a rollicking sci-fi trilogy about the discovery of giant robot mecha.
 
