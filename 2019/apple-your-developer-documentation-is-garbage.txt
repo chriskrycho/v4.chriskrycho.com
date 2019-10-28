@@ -21,7 +21,7 @@ Some context: I have spent the last five years working very actively in the Java
 
 I was wrong. The current state of Apple’s software documentation is the worst I’ve ever seen for any framework anywhere.
 
-Swift itself is relatively well covered (courtesy of the well-written and well-maintained book). But that’s where the good news ends. Most of SwiftUI is entirely undocumented—not even a single line explanation of what a given type or modifier does. Swift Package Manager has *okay* docs, but finding out the limits of what it can or can’t do from the official docs is difficult to impossible; I got my ground truth from Stack Overflow questions. I’ve repeatedly been reduced to searching through <abbr title='World Wide Developer Conference'>WWDC</abbr> video transcripts to figure out where someone says something relevant to whatever I’m working on.[^transcripts]
+Swift itself is relatively well covered (courtesy of the well-written and well-maintained book). But that’s where the good news ends.[^not-just-me] Most of SwiftUI is entirely undocumented—not even a single line explanation of what a given type or modifier does. Swift Package Manager has *okay* docs, but finding out the limits of what it can or can’t do from the official docs is difficult to impossible; I got my ground truth from Stack Overflow questions. I’ve repeatedly been reduced to searching through <abbr title='World Wide Developer Conference'>WWDC</abbr> video transcripts to figure out where someone says something relevant to whatever I’m working on.[^transcripts]
 
 This is, frankly, unacceptable. In the Ember ecosystem, we have a simple rule that code doesn’t get to ship unless it’s documented. The same goes in Rust (I should know: I [wrote][docs-rfc-PR] the <abbr title='request for comments'>RFC</abbr> [that made that official policy][docs-rfc-text]). Now, I understand that Apple’s <abbr>API</abbr> developers (often) work in a different context than these open source projects—especially in that they face crunches around releases which are tied to hardware products shipping.
 
@@ -37,5 +37,7 @@ Apple, if you want developers to love your platform—and you should, because go
 [rewrite]: https://rewrite.software
 [docs-rfc-PR]: https://github.com/rust-lang/rfcs/pull/1636
 [docs-rfc-text]: https://rust-lang.github.io/rfcs/1636-document_all_features.html
+
+[^not-just-me]: I am not the only one who has noticed this. [No Overview Available](https://nooverviewavailable.com) summarizes the extent of documentation in Apple’s <abbr>API</abbr>s and… it’s not a good look. Hat tip to [Lobste.rs user wink](https://lobste.rs/u/wink) and my friend [Jeremy Sherman](https://jeremywsherman.com), who both noted this.
 
 [^transcripts]: Credit where credit is due: it is genuinely excellent from an accessibility and general usability standpoint that Apple has these transcripts. However, they’re not a substitute for *documentation*!
