@@ -1,7 +1,7 @@
 ---
 Title: Apple, Your Developer Documentation is… Missing
 Slug: apple-your-developer-documentation-is-garbage
-Subtitle: Apple, if you want developers to love your platform, then you need to take this seriously. If it isn’t documented, it isn’t done.
+Subtitle: If you want developers to love your platform, then you need to take this seriously. If it isn’t documented, it isn’t done.
 Date: 2019-10-28 07:25
 Modified: 2019-10-28 08:10
 Category: Tech
