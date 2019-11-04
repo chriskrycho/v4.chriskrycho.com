@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Higher-Order Components in Ember.js"/>
     <meta name="twitter:description" content="Components as arguments! Components getting yielded! Components everywhere! A powerful way to make your Ember.js components more flexible and composeable."/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -101,7 +102,7 @@
 <p>Just like with a “higher-order function,” all we mean when we talk about a “higher-order component” is a component which takes other components as arguments, returns other components itself (in Ember’s case via <code>yield</code> in a template), or both.</p>
 <p>The thing we’re actually going to build here is a “modal” which accepts an optional button as an arguments, and which yields out a component for dividing the modal into sections visually so you can pass your own content in and have it look just right. This is closely based on a component my colleagues and I at Olo built recently, just with some of our specific details stripped away to get at the actually important bits. Here’s what it looks like in practice:</p>
 <figure>
-<img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/hoc-rendered.png" alt="" /><figcaption>a modal with sectioned text and a close button</figcaption>
+<img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/hoc-rendered.png" alt="a modal with sectioned text and a close button" /><figcaption>a modal with sectioned text and a close button</figcaption>
 </figure>
 <p>The goal for the button arguments is to let the modal be able to render the button the caller passes in, while not being concerned with the <em>functionality</em> of the button. Otherwise, we’d have to tie the “API” of the modal to the details of button behavior, bind more actions into it, etc.</p>
 <p>The goal for the yielded sectioning component is for whatever is rendering the modal itself to be able to pass content in and get it chunked up however the modal decides is appropriate—the modal can display its own styles, etc.—without having to worry about the details of applying classes or sectioning up the content itself.</p>
@@ -215,8 +216,8 @@ export default class Application extends Controller {
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>If you want a good way to document the things a component <code>yield</code>s, check out <a href="https://ember-learn.github.io/ember-cli-addon-docs/latest/docs/api/components/docs-demo">ember-cli-addon-docs</a>, which can read an <code>@yield</code> JSDoc annotation.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>And it could just as well be a component; the top-level controller template is just where we put our main app functionality.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>If you want a good way to document the things a component <code>yield</code>s, check out <a href="https://ember-learn.github.io/ember-cli-addon-docs/latest/docs/api/components/docs-demo">ember-cli-addon-docs</a>, which can read an <code>@yield</code> JSDoc annotation.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>And it could just as well be a component; the top-level controller template is just where we put our main app functionality.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
 <li id="fn3" role="doc-endnote"><p>We could also simplify this since we’re only returning one component, and if we had the full Glimmer component story, this could look <em>very</em> nice:</p>
 <pre class="ts"><code>&lt;Modal @button={{component &#39;Button&#39;}} as |Section|&gt;
   &lt;Section&gt;
@@ -231,8 +232,8 @@ export default class Application extends Controller {
     &lt;p&gt;Nothing crazy going on here. Just a normal template!&lt;/p&gt;
   &lt;/Section&gt;
 &lt;/Modal&gt;</code></pre>
-<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></li>
-<li id="fn4" role="doc-endnote"><p>If you’re inclined to “well actually” me about <em>helpers</em> being the real functions of Handlebars templates: in the Glimmer <abbr>VM</abbr> world, helpers are just a kind of component.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></li>
+<li id="fn4" role="doc-endnote"><p>If you’re inclined to “well actually” me about <em>helpers</em> being the real functions of Handlebars templates: in the Glimmer <abbr>VM</abbr> world, helpers are just a kind of component.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
 </ol>
 </section>
         </div>
@@ -288,8 +289,7 @@ export default class Application extends Controller {
 <section id="recent">
     <h2>Recent</h2>
     <ul>
-        <li>Art: <a href="http://v4.chriskrycho.com/2019/review-the-themis-files.html">Review: The Themis Files
-</a></li>
+        <li>Art: <a href="http://v4.chriskrycho.com/2019/photography-ing-again.html">Photography-ing Again!</a></li>
         <li>Blog: <a href="http://v4.chriskrycho.com/2019/at-least-15000-words.html">At Least 15,000 Words</a></li>
         <li>Tech: <a href="http://v4.chriskrycho.com/2019/apple-your-developer-documentation-is-garbage.html">Apple, Your Developer Documentation is… Missing</a></li>
         <li>Theology: <a href="http://v4.chriskrycho.com/2019/review-what-is-an-evangelical.html">Review: <cite>What is an Evangelical</cite>
