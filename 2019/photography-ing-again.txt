@@ -28,7 +28,7 @@ Once upon a time, I [tried][photoblogging] to include some photos in my blogging
 
 This also has me wishing there were better options for social sharing around photos. Indie blogging of the sort I so value is wonderful, but at the moment it doesn’t lend itself well to *interaction* around items like photography. I have a *lot* of thoughts on things like [Webmention], including how I plan to use it on my upcoming site redesign… but those are for another day. For today: thanks for reading!
 
-[![Black & White Coffee, Wake Forest, North Carolina](https://cdn.chriskrycho.com/file/chriskrycho-com/images/Black%20%26%20White%20thumb.jpg)][flickr]
+![Black & White Coffee, Wake Forest, NC – Sony FE 35mm F1.8 – 𝑓/2.2, ISO 400, ¹⁄₁₂₅s ([see full size][flickr])](https://cdn.chriskrycho.com/file/chriskrycho-com/images/Black%20%26%20White%20thumb.jpg "thumbnail of a photograph of a coffee shop")
 
 [burnout]: https://v4.chriskrycho.com/burnout
 [𝑓 numbers]: https://www.geraldundone.com/aperture-f-stop-myths-debunked-the-importance-of-the-entrance-pupil/
