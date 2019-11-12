@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Academic Markdown and Citations"/>
     <meta name="twitter:description" content="Managing citations is painful—especially in plain text. But with a little setup, Pandoc and BibTEX can take a lot of the pain out of it, whether for Word documents or a static site generator."/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,7 +61,6 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
-                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">Blog</a></li>
                 <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -163,7 +162,7 @@ What is this? Yet _another_ citation?[@krycho:revelation:2015]</code></pre>
         Year = {2015}}</code></pre>
 <p>While there is a lot of utility in having that data available in text, on disk, no one wants to <em>edit</em> that by hand.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> Gladly, editing it by hand is not necessary. For this project, I used the freely available <a href="http://bibdesk.sourceforge.net">BibDesk</a> tool, which is a workable (albeit not very pretty and not <em>very</em> capable) manager for <span class="tex">BibT<span class="texE">E</span>X</span>:</p>
 <figure>
-<img src="//cdn.chriskrycho.com/images/bibdesk.png" title="Not very pretty, but it does work" alt="BibDesk – open to the library for my Revelation paper" /><figcaption>BibDesk – open to the library for my Revelation paper</figcaption>
+<img src="//cdn.chriskrycho.com/images/bibdesk.png" title="Not very pretty, but it does work" alt="" /><figcaption>BibDesk – open to the library for my Revelation paper</figcaption>
 </figure>
 <p>Once I filled in the details for each item and set a citekey for it, I was ready to go: BibDesk just stores the files in a standard <code>.bib</code> file on the disk, which I specified per the Pandoc command above.</p>
 <p>BibDesk gets the job done alright, but only alright. Using a citation and reference management tool was a big win, though, and I fully intend to use one for every remaining project while in seminary—and, quite possibly, for other projects as well. Whether that tool is BibDesk or something else is a different matter entirely. (More on this below.)</p>
@@ -205,16 +204,16 @@ What is this? Yet _another_ citation?[@krycho:revelation:2015]</code></pre>
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>Coming up with names for footnotes in Markdown can be painful in general for long documents. If you try to name them manually, like I do for posts on my website, you will very quickly end up wasting time on the names. If you try to number them, they will end up out of order in a hurry. My own <a href="http://2012-2013.chriskrycho.com/web/markdown-and-academic-writing/">previous solution</a> to this problem quickly became unwieldy for larger papers, and required a <em>lot</em> of hand-editing. Gladly, I no longer deal with that manually. Instead, I do all my drafting in <a href="http://www.ulyssesapp.com">Ulysses</a>, where you just type <code>(fn)</code> and it creates a footnote automatically, and will move that footnote <em>object</em> around transparently as you edit, handling all the number-setting, etc. on its own.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn2" role="doc-endnote"><p>The irony of site for software which boasts that it is “a high-quality typesetting system” and looks like <a href="http://www.latex-project.org"><em>this</em></a> is not lost on me…<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn3" role="doc-endnote"><p>If you used the installers on Pandoc’s website, <code>pandoc-citeproc</code> comes with it. If you installed it via a package manager (e.g. by running <code>brew install pandoc</code>), it may not have, so you’ll need to install it manually yourself (e.g. <code>brew install pandoc-citeproc</code>).<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn4" role="doc-endnote"><p>All of the content, including the rendered footnotes and the bibliography, has sensible content types set on it: headers are headers, body text is body text, etc. You can then customize to match the specifications of your style guide. I have a Chicago/Turabian style set set up with the formatting rules to match.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn5" role="doc-endnote"><p>Actually, it was even hairier than this, because I also had a <code>--reference-docx path/to/template.docx</code> specified. If you think it’s perhaps a bit too complex, well, I agree. I plan to turn that into a command line alias in pretty short order, because remembering it every time is just not going to happen.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn6" role="doc-endnote"><p>Using the <code>--reference-docx</code> argument to Pandoc, you can hand it a document that already uses your desired style set, so you don’t have to go in and apply it manually.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn7" role="doc-endnote"><p>I could have done that with Pandoc’s <span class="tex">L<span class="texA">A</span>T<span class="texE">E</span>X</span> <abbr>PDF</abbr> tools, as well, but didn’t really feel like taking the time to tweak the <span class="tex">L<span class="texA">A</span>T<span class="texE">E</span>X</span> template for it.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn8" role="doc-endnote"><p>Probably someone does, but not me, and not most people!<a href="#fnref8" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn9" role="doc-endnote"><p>If you’re using Pelican, you can take a look at my Pelican configuration file <a href="https://github.com/chriskrycho/chriskrycho.com/blob/ef3ecbca1765750392086355aeae026c1159d4b9/pelicanconf.py#L109">here</a> to see the full configuration for using Pandoc this way.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn10" role="doc-endnote"><p>Optimally, I’d really just prefer to be able to set <em>all</em> of these arguments at a per-file level—i.e., not use <code>--filter pandoc cite-proc</code> unless the file actually specifies a bibliography. And I could hack Pelican to do that; I’ve actually already <a href="https://github.com/liob/pandoc_reader/pull/5">messed around</a> with other, semi-related bits regarding Pelican and Pandoc’s shared handling of <abbr>YAML</abbr> metadata. But I’d prefer to keep my installation as “vanilla” as possible to minimize the cost of setting things up again on a new machine or after a crash, etc.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>Coming up with names for footnotes in Markdown can be painful in general for long documents. If you try to name them manually, like I do for posts on my website, you will very quickly end up wasting time on the names. If you try to number them, they will end up out of order in a hurry. My own <a href="http://2012-2013.chriskrycho.com/web/markdown-and-academic-writing/">previous solution</a> to this problem quickly became unwieldy for larger papers, and required a <em>lot</em> of hand-editing. Gladly, I no longer deal with that manually. Instead, I do all my drafting in <a href="http://www.ulyssesapp.com">Ulysses</a>, where you just type <code>(fn)</code> and it creates a footnote automatically, and will move that footnote <em>object</em> around transparently as you edit, handling all the number-setting, etc. on its own.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>The irony of site for software which boasts that it is “a high-quality typesetting system” and looks like <a href="http://www.latex-project.org"><em>this</em></a> is not lost on me…<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>If you used the installers on Pandoc’s website, <code>pandoc-citeproc</code> comes with it. If you installed it via a package manager (e.g. by running <code>brew install pandoc</code>), it may not have, so you’ll need to install it manually yourself (e.g. <code>brew install pandoc-citeproc</code>).<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>All of the content, including the rendered footnotes and the bibliography, has sensible content types set on it: headers are headers, body text is body text, etc. You can then customize to match the specifications of your style guide. I have a Chicago/Turabian style set set up with the formatting rules to match.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>Actually, it was even hairier than this, because I also had a <code>--reference-docx path/to/template.docx</code> specified. If you think it’s perhaps a bit too complex, well, I agree. I plan to turn that into a command line alias in pretty short order, because remembering it every time is just not going to happen.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>Using the <code>--reference-docx</code> argument to Pandoc, you can hand it a document that already uses your desired style set, so you don’t have to go in and apply it manually.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>I could have done that with Pandoc’s <span class="tex">L<span class="texA">A</span>T<span class="texE">E</span>X</span> <abbr>PDF</abbr> tools, as well, but didn’t really feel like taking the time to tweak the <span class="tex">L<span class="texA">A</span>T<span class="texE">E</span>X</span> template for it.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8" role="doc-endnote"><p>Probably someone does, but not me, and not most people!<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9" role="doc-endnote"><p>If you’re using Pelican, you can take a look at my Pelican configuration file <a href="https://github.com/chriskrycho/chriskrycho.com/blob/ef3ecbca1765750392086355aeae026c1159d4b9/pelicanconf.py#L109">here</a> to see the full configuration for using Pandoc this way.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10" role="doc-endnote"><p>Optimally, I’d really just prefer to be able to set <em>all</em> of these arguments at a per-file level—i.e., not use <code>--filter pandoc cite-proc</code> unless the file actually specifies a bibliography. And I could hack Pelican to do that; I’ve actually already <a href="https://github.com/liob/pandoc_reader/pull/5">messed around</a> with other, semi-related bits regarding Pelican and Pandoc’s shared handling of <abbr>YAML</abbr> metadata. But I’d prefer to keep my installation as “vanilla” as possible to minimize the cost of setting things up again on a new machine or after a crash, etc.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
         </div>

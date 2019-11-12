@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Ember.js, TypeScript, and Class Properties"/>
     <meta name="twitter:description" content="I made an important mistake in my discussion of JavaScript and TypeScript class properties in relation to computed properties and injections in Ember earlier this year. Here's the fix you need."/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -61,7 +61,6 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
-                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">Blog</a></li>
                 <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -310,8 +309,8 @@ session: service(&#39;session&#39;),
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>I don’t feel too bad about having gotten in wrong: no one who read the posts noticed the problem at the time, and it was subtle and easy to miss… because, at the time, everything actually <em>worked</em>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn2" role="doc-endnote"><p>It’s experimental because decorators are still only at Stage 2 in the <abbr>TC39</abbr> process. They <em>may</em> advance at this month’s meeting.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>I don’t feel too bad about having gotten in wrong: no one who read the posts noticed the problem at the time, and it was subtle and easy to miss… because, at the time, everything actually <em>worked</em>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>It’s experimental because decorators are still only at Stage 2 in the <abbr>TC39</abbr> process. They <em>may</em> advance at this month’s meeting.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3" role="doc-endnote"><p>If you’re using a non-default name, like <code>specialSession</code>, for the name of the property, the usual rules apply for injections. In that case, you’d write the injection like this:</p>
 <pre class="ts"><code>import Component from &#39;@ember/component&#39;;
 import { service } from &#39;@ember-decorators/service&#39;;
@@ -320,8 +319,8 @@ import Session from &#39;my-app/services/session&#39;;
 export default class AnExample extends Component {
   @service(&#39;session&#39;) specialSession: Session;
 }</code></pre>
-<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></li>
-<li id="fn4" role="doc-endnote"><p>Files do get an extra import in the decorator version… but as it happens, I’m more than okay with that; I’d actually <em>prefer</em> explicit imports of dependencies personally.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></li>
+<li id="fn4" role="doc-endnote"><p>Files do get an extra import in the decorator version… but as it happens, I’m more than okay with that; I’d actually <em>prefer</em> explicit imports of dependencies personally.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
         </div>
