@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Rust and Swift (xvii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note …"/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -278,9 +278,9 @@ match waffles {
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>Also recall that in Rust, we would set the default values either by using the <code>#[derive(Default)]</code> annotation or by implementing the <code>Default</code> trait ourselves.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn2" role="doc-endnote"><p>I’m including a module because of a quirk around the public/private rules: within the same module, <code>area</code> isn’t hidden and you can actually go ahead and initialize the object.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn3" role="doc-endnote"><p>Depending on how you think about extensions, <em>either</em> Rust doesn’t have anything quite like them… <em>or</em> every type implementation is just an extension, because <code>impl</code> allows you to extend <em>any</em> data type in basically arbitrary ways (a few caveats of course). More on all of this when we get there.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>Also recall that in Rust, we would set the default values either by using the <code>#[derive(Default)]</code> annotation or by implementing the <code>Default</code> trait ourselves.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>I’m including a module because of a quirk around the public/private rules: within the same module, <code>area</code> isn’t hidden and you can actually go ahead and initialize the object.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Depending on how you think about extensions, <em>either</em> Rust doesn’t have anything quite like them… <em>or</em> every type implementation is just an extension, because <code>impl</code> allows you to extend <em>any</em> data type in basically arbitrary ways (a few caveats of course). More on all of this when we get there.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4" role="doc-endnote"><p>Here’s a preview of what that would look like, though (fair warning, there’s a lot going on here we haven’t talked about!):</p>
 <pre class="swift"><code>enum Setup {
     case succeed
@@ -318,8 +318,8 @@ do {
 } catch BarSetupError.argh {
     print(&quot;Oh teh noes!&quot;)
 }</code></pre>
-<p>The output from this would be <code>42</code>, <code>nil</code>, and <code>Oh teh noes!</code>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn5" role="doc-endnote"><p><del>It’s conceivable this is actually possible, but nothing in <em>The Swift Programming Language</em> even hints at it, if so.</del> See above!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<p>The output from this would be <code>42</code>, <code>nil</code>, and <code>Oh teh noes!</code>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p><del>It’s conceivable this is actually possible, but nothing in <em>The Swift Programming Language</em> even hints at it, if so.</del> See above!<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
         </div>

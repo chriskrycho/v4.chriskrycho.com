@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Write! app review"/>
     <meta name="twitter:description" content="Write! app is a distraction-free text editor—solid enough, but entering a very crowded field, at least on macOS."/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -130,16 +130,16 @@
 <p>First, Write’s UI looks and behaves like a Windows app. It’s built on <a href="https://www.qt.io">Qt</a>, which does support native(-looking) widgets, but the developers chose not to use them – I assume in the interest of speed of development. If you’re on Windows, that’s fine. But this app will never look remotely native on macOS,<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> and given the plethora of other really high quality writing apps on macOS—some of them with their own publication options!—there’s just no reason why you would pick this over one of those at that most basic level.</p>
 <p>Two examples should illustrate how painfully non-native this app is visually. First, note the window action buttons in the upper right:</p>
 <figure>
-<img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/write-app-review/draft.png" alt="not native windows" /><figcaption>not native windows</figcaption>
+<img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/write-app-review/draft.png" alt="" /><figcaption>not native windows</figcaption>
 </figure>
 <p>These are Windows window action buttons; the normal Mac action buttons simply don’t exist! Similarly, there’s a slide-out menu that appears when you tap the hamburger in the top left:</p>
 <figure>
-<img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/write-app-review/slide-out-menu.png" alt="slide out menu" /><figcaption>slide out menu</figcaption>
+<img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/write-app-review/slide-out-menu.png" alt="" /><figcaption>slide out menu</figcaption>
 </figure>
 <p>This is a reasonably nice, though not totally native-feeling, way of tackling the menu problem… on Windows. On Mac, it’s just duplicating the functionality of the normal menubar. And when I say duplicating, I mean it exactly: those menus are the same as the ones the app puts in the real menubar; there’s no reason for them to appear within the body of the app, other than that the app isn’t designed to work without them.</p>
 <p>Right-click behavior is strange: instead of the normal Mac (or even Windows!) menu, they’ve supplied their own, and it’s actually its own little modal window, not a menu at all:</p>
 <figure>
-<img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/write-app-review/right-click-modal.png" title="right click modal" alt="right-click modal window" /><figcaption>right-click modal window</figcaption>
+<img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/write-app-review/right-click-modal.png" title="right click modal" alt="" /><figcaption>right-click modal window</figcaption>
 </figure>
 <p>I definitely see the utility of the little modal, but most other apps I’ve seen with similar approaches do it on highlighting some text. That way they can leave the normal right-click menu in place, which helps keep the user comfortable in their normal workflows. That’s going to be particularly annoying if you happen to make heavy use of macOS’s services menu—I don’t use it often, but when I want it, I <em>want</em> it.</p>
 </section>
@@ -170,12 +170,12 @@
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>Yes, the app is named “Write!” – not “Write”. It’s not my favorite, not least because it means you have to type an exclamation point every time you write (!) it.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn2" role="doc-endnote"><p>There are many reasons for that, including things to do with many Linux users’ antipathy toward paid or non-open software, which makes it very difficult for not only developers but especially <em>designers</em> to make a living. Never mind the incredibly small size of the audience by comparison.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn3" role="doc-endnote"><p>And who knows if Medium will still be around in five years? But that’s for another post another time.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn4" role="doc-endnote"><p>Or Linux, but then what exactly <em>is</em> native on Linux anyway? 😏 More seriously, this will look out of place on <em>any</em> Linux desktop environment.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn5" role="doc-endnote"><p>These latter ones are sadly too often the case for cross-platform tech; I’ve filed issues on <a href="https://code.visualstudio.com">VS Code</a> and <a href="https://atom.io">Atom</a> in the past that way.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn6" role="doc-endnote"><p>I’ll actually give Write! one point over Ulysses here: Ulysses does some similar conversions under the hood to make the writing experience seem snazzier, and things which don’t get turned into their custom “text objects” can end up exported <em>very</em> strangely.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>Yes, the app is named “Write!” – not “Write”. It’s not my favorite, not least because it means you have to type an exclamation point every time you write (!) it.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>There are many reasons for that, including things to do with many Linux users’ antipathy toward paid or non-open software, which makes it very difficult for not only developers but especially <em>designers</em> to make a living. Never mind the incredibly small size of the audience by comparison.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>And who knows if Medium will still be around in five years? But that’s for another post another time.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>Or Linux, but then what exactly <em>is</em> native on Linux anyway? 😏 More seriously, this will look out of place on <em>any</em> Linux desktop environment.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>These latter ones are sadly too often the case for cross-platform tech; I’ve filed issues on <a href="https://code.visualstudio.com">VS Code</a> and <a href="https://atom.io">Atom</a> in the past that way.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>I’ll actually give Write! one point over Ulysses here: Ulysses does some similar conversions under the hood to make the writing experience seem snazzier, and things which don’t get turned into their custom “text objects” can end up exported <em>very</em> strangely.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
         </div>

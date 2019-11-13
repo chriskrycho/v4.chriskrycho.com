@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="Rust and Swift (xviii)"/>
     <meta name="twitter:description" content="I am reading through the Swift book, and comparing it to Rust, which I have also been learning over the past few months. As with the other posts in this series, these are off-the-cuff impressions, which may be inaccurate in various ways. I’d be happy to hear feedback! Note …"/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
-    <link rel="me" href="https://vimeo.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
     <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
     <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -486,11 +486,11 @@ func main() {
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>I did, however, cover them <a href="http://www.newrustacean.com/show_notes/e015/index.html" title="e015: Not dumb pointers">quite recently</a> on my podcast. Yes, this <em>is</em> another shameless plug.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn2" role="doc-endnote"><p>Mostly, anyway. I believe the Swift compiler also does some degree of static analysis similar to that done by Rust—though to a <em>much</em> lesser extent and, speaking purely descriptively, much less rigorously (it just has different goals). Swift then uses that analysis to handle things at compile time rather than via reference counts if it’s able to determine that it can do so.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn3" role="doc-endnote"><p>We could, if we so desired, get this same basic behavior in Rust. We can easily imagine a world in which every type was automatically wrapped in <code>Rc</code> or <code>Arc</code>, and in fact, I’d be very interested to see just such a language—something which was only a thin layer over Rust, keeping all its semantics but wrapping some or all non-stack-allocated types in <code>Rc</code> or <code>Arc</code> as appropriate. (Something like <a href="http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/">this</a>, but done behind the scenes rather than manually opted into.) You’d incur some performance coasts, but with the benefit that you’d have an <em>extremely</em> ergonomic, practical, ML-descended language quite appropriate for slightly higher-level tasks, and without the radical shift required by switching to a lazily-evaluated, purely functional language like Haskell.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn4" role="doc-endnote"><p>Notably, those tradeoffs are often entirely worth it, and high-performance VMs have astoundingly good characteristics in many ways. The JVM, the CLR, and all the JavaScript VMs have astonishingly excellent performance at this point.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩</a></p></li>
-<li id="fn5" role="doc-endnote"><p>I <em>might</em> have gotten slightly carried away in the details here. I’m just a little bit of a nerd.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>I did, however, cover them <a href="http://www.newrustacean.com/show_notes/e015/index.html" title="e015: Not dumb pointers">quite recently</a> on my podcast. Yes, this <em>is</em> another shameless plug.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Mostly, anyway. I believe the Swift compiler also does some degree of static analysis similar to that done by Rust—though to a <em>much</em> lesser extent and, speaking purely descriptively, much less rigorously (it just has different goals). Swift then uses that analysis to handle things at compile time rather than via reference counts if it’s able to determine that it can do so.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>We could, if we so desired, get this same basic behavior in Rust. We can easily imagine a world in which every type was automatically wrapped in <code>Rc</code> or <code>Arc</code>, and in fact, I’d be very interested to see just such a language—something which was only a thin layer over Rust, keeping all its semantics but wrapping some or all non-stack-allocated types in <code>Rc</code> or <code>Arc</code> as appropriate. (Something like <a href="http://manishearth.github.io/blog/2015/09/01/designing-a-gc-in-rust/">this</a>, but done behind the scenes rather than manually opted into.) You’d incur some performance coasts, but with the benefit that you’d have an <em>extremely</em> ergonomic, practical, ML-descended language quite appropriate for slightly higher-level tasks, and without the radical shift required by switching to a lazily-evaluated, purely functional language like Haskell.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>Notably, those tradeoffs are often entirely worth it, and high-performance VMs have astoundingly good characteristics in many ways. The JVM, the CLR, and all the JavaScript VMs have astonishingly excellent performance at this point.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>I <em>might</em> have gotten slightly carried away in the details here. I’m just a little bit of a nerd.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
         </div>
