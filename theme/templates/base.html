@@ -67,7 +67,7 @@
         <nav>
             <ul>
                 {% for category, _ in categories %}
-                {% if category != 'micro' and category != 'blog' %}
+                {% if category != 'micro' and category != 'blog' and category != 'Blog' %}
                 <li class="section-title {{category.slug}}"><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
                 {% endif %}
                 {% endfor %}
