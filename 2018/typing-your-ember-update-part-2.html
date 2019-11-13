@@ -18,15 +18,15 @@
     <meta name="twitter:title" content="TypeScript and Ember.js Update, Part 2"/>
     <meta name="twitter:description" content="For years, you've been using Ember Object and .extend()—but the rules are different with classes."/>
         <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
-    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
-    <link rel="me" href="https://patreon.com/chriskrycho"/>
-    <link rel="me" href="https://cash.me/$chriskrycho"/>
-    <link rel="me" href="https://github.com/chriskrycho"/>
-    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
-    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
-    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
     <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
 
     <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -44,7 +44,7 @@
 
     <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
         <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
-        <link rel="alternate" href="/feeds/Blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
         <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
         <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
 </head>
@@ -61,6 +61,7 @@
         <nav>
             <ul>
                 <li class="section-title art"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title blog"><a href="http://v4.chriskrycho.com/blog/">blog</a></li>
                 <li class="section-title tech"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
                 <li class="section-title theology"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
@@ -314,8 +315,8 @@ export default class SomeNewComponent extends Component.extend(MyMixin) {
 <section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>You can use this same feature on classes using Babel, with the <a href="https://babeljs.io/docs/plugins/transform-class-properties/">class properties transform</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>Even when <a href="https://github.com/emberjs/rfcs/pull/281">Ember.js RFC #281</a> lands, this problem will not go away, at least under the current implementation, since <a href="https://github.com/emberjs/rfcs/pull/281#issuecomment-360023258"><em>these</em> will <em>not</em> be transformed into getters on the prototype</a>. We are waiting for decorators to solve this problem completely.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>You can use this same feature on classes using Babel, with the <a href="https://babeljs.io/docs/plugins/transform-class-properties/">class properties transform</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Even when <a href="https://github.com/emberjs/rfcs/pull/281">Ember.js RFC #281</a> lands, this problem will not go away, at least under the current implementation, since <a href="https://github.com/emberjs/rfcs/pull/281#issuecomment-360023258"><em>these</em> will <em>not</em> be transformed into getters on the prototype</a>. We are waiting for decorators to solve this problem completely.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩</a></p></li>
 <li id="fn3" role="doc-endnote"><p>In the future, we’ll (hopefully and presumably 🤞🏼) have an escape hatch for those merged or prototypally-set properties via decorators. That’ll look something like this:</p>
 <pre class="typescript"><code>import Component from &#39;@ember/component&#39;;
 import { className, tagName } from &#39;ember-decorators/component&#39;;
@@ -330,7 +331,7 @@ export default class MyListItem extends Component {
   }
   // etc.
 }</code></pre>
-<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></li>
+<a href="#fnref3" class="footnote-back" role="doc-backlink">↩</a></li>
 </ol>
 </section>
         </div>
@@ -373,7 +374,7 @@ export default class MyListItem extends Component {
             <a href="http://v4.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
         </li>
         <li class="section-title">
-            <a href="http://v4.chriskrycho.com/feeds/Blog.xml"><i class="fa fa-fw fa-rss"></i>Blog</a>
+            <a href="http://v4.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
         </li>
         <li class="section-title">
             <a href="http://v4.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
@@ -387,7 +388,7 @@ export default class MyListItem extends Component {
     <h2>Recent</h2>
     <ul>
         <li>Art: <a href="http://v4.chriskrycho.com/2019/photography-ing-again.html">Photography-ing Again!</a></li>
-        <li>Blog: <a href="http://v4.chriskrycho.com/2019/four-miscellanies.html">Four Miscellanies</a></li>
+        <li>Blog: <a href="http://v4.chriskrycho.com/2019/a-silly-spreadsheet-mistake.html">A Silly Spreadsheet Mistake</a></li>
         <li>Tech: <a href="http://v4.chriskrycho.com/2019/a-note-on-attention.html">A Note on Attention</a></li>
         <li>Theology: <a href="http://v4.chriskrycho.com/2019/review-what-is-an-evangelical.html">Review: <cite>What is an Evangelical</cite>
 </a></li>

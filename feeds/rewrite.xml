@@ -50,7 +50,7 @@
 &lt;section class="footnotes" role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;however ill defined!&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;however ill defined!&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Tue, 16 Jul 2019 21:00:00 -0400</pubDate><guid isPermaLink="false">tag:v4.chriskrycho.com,2019-07-16:/2019/starting.html</guid><category>rewrite</category><category>software development</category></item><item><title>Announcing rewrite</title><link>http://v4.chriskrycho.com/2019/announcing-rewrite.html</link><description>&lt;p&gt;&lt;i&gt;&lt;b&gt;&lt;a href="https://v4.chriskrycho.com/2018/assumed-audiences.html"&gt;Assumed Audience&lt;/a&gt;:&lt;/b&gt; people interested in note-taking, research, and long-form writing.&lt;/i&gt;&lt;/p&gt;
@@ -66,7 +66,7 @@
 &lt;p&gt;I eventually found a flow that worked for me during those years, pulling together &lt;a href="https://daringfireball.net/projects/markdown"&gt;Markdown&lt;/a&gt;, &lt;a href="https://en.wikipedia.org/wiki/BibTeX"&gt;BibTeX&lt;/a&gt;, &lt;a href="https://pandoc.org"&gt;pandoc&lt;/a&gt;, and &lt;a href="https://citationstyles.org"&gt;&lt;abbr title="citation style languages"&gt;CSL&lt;/abbr&gt;s&lt;/a&gt; to generate Word documents. (I wrote about that &lt;a href="https://v4.chriskrycho.com/2015/academic-markdown-and-citations.html"&gt;here&lt;/a&gt;, if you’re curious.) It did what I wanted! But it was arcane: even after years of working that way, I could never remember the various script invocations involved without looking them up. In short: there was something wonderful there… but the user experience was terrible.&lt;/p&gt;
 &lt;p&gt;Even by the time I wrote &lt;a href="https://v4.chriskrycho.com/2015/academic-markdown-and-citations.html"&gt;that blog post&lt;/a&gt;, I was thinking: &lt;i&gt;what would a genuinely great app in this space look like?&lt;/i&gt; I had sketched out the basics in a notebook early that month—&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="https://f001.backblazeb2.com/file/rewrite/first-page.jpeg" title="a picture of the first page of my working notebook" alt="" /&gt;&lt;figcaption&gt;the first page of my working notebook&lt;/figcaption&gt;
+&lt;img src="https://f001.backblazeb2.com/file/rewrite/first-page.jpeg" title="a picture of the first page of my working notebook" alt="the first page of my working notebook" /&gt;&lt;figcaption&gt;the first page of my working notebook&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;—and I haven’t stopped thinking about it ever since. &lt;i&gt;How do you do reference management well? What makes for a good note-taking system? How do you author large, complex documents with easy reference to those notes? How do you pull all those all together for publishing? How do you make it a &lt;em&gt;great&lt;/em&gt; app &lt;em&gt;and&lt;/em&gt; make it cross-platform?&lt;/i&gt;&lt;/p&gt;
 &lt;p&gt;For the past four years, I have been doing two things in preparation for building &lt;b&gt;&lt;i&gt;re&lt;/i&gt;write&lt;/b&gt; (the working title for this app):&lt;/p&gt;
@@ -80,7 +80,7 @@
 &lt;section class="footnotes" role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;I’m going to try to ship a nice tool for managing references. It’ll be good to have the experience of actually &lt;em&gt;shipping&lt;/em&gt; an app. More on that&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;I’m going to try to ship a nice tool for managing references. It’ll be good to have the experience of actually &lt;em&gt;shipping&lt;/em&gt; an app. More on that&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 06 Jul 2019 21:50:00 -0400</pubDate><guid isPermaLink="false">tag:v4.chriskrycho.com,2019-07-06:/2019/announcing-rewrite.html</guid><category>rewrite</category><category>software development</category><category>note-taking</category></item></channel></rss>

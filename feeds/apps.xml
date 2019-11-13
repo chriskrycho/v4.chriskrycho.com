@@ -33,7 +33,7 @@
 &lt;li&gt;&lt;p&gt;&lt;a href="https://culturedcode.com"&gt;Things&lt;/a&gt; for a to-do app. Things hits the sweet spot for me in terms of its ability to manage everything from simple tasks and recurring to-do items around the house up to complex multi-month-long projects. I particularly like its distinction between when I want to be &lt;em&gt;reminded&lt;/em&gt; about something and when that task is &lt;em&gt;due&lt;/em&gt;. I’ve used &lt;a href="https://www.omnigroup.com/omnifocus/"&gt;OmniFocus&lt;/a&gt; in the past, but it never quite &lt;em&gt;fit&lt;/em&gt; me; Things does. They’re very comparable in terms of features; it’s just that the way Things approaches those features works better for me.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href="https://sparkmailapp.com"&gt;Spark&lt;/a&gt; as my email client, mostly for its snooze feature, which I use when I know I need to see an email &lt;em&gt;as an email&lt;/em&gt; sometime later, and its ability to integrate nicely with other apps. I have it connect to Things, and emails that require an &lt;em&gt;action&lt;/em&gt; get put there instead of snoozed. The combination lets me keep my inbox at Zero by the end of every day. And its lovely “Inbox Zero” images are a really nice touch:&lt;/p&gt;
 &lt;figure&gt;
-&lt;img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/inbox-zero-spark.png" alt="" /&gt;&lt;figcaption&gt;Inbox Zero in Spark&lt;/figcaption&gt;
+&lt;img src="https://f001.backblazeb2.com/file/chriskrycho-com/images/inbox-zero-spark.png" alt="Inbox Zero in Spark" /&gt;&lt;figcaption&gt;Inbox Zero in Spark&lt;/figcaption&gt;
 &lt;/figure&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/section&gt;
@@ -52,8 +52,8 @@
 &lt;section class="footnotes" role="doc-endnotes"&gt;
 &lt;hr /&gt;
 &lt;ol&gt;
-&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;iA Writer seems to get &lt;em&gt;randomly&lt;/em&gt; slow at times for reasons I haven’t yet identified, but at least for now, I’m taking that tradeoff over Ulysses’ habit of being a bit slow &lt;em&gt;all the time&lt;/em&gt;. As I’ve often noted before: &lt;a href="https://v4.chriskrycho.com/2016/ulysses-byword-and-just-right.html" title="Ulysses, Byword, and “Just Right”"&gt;my ideal writing app doesn’t exist&lt;/a&gt;.&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li id="fn2" role="doc-endnote"&gt;&lt;p&gt;Mass Affection isn’t dead! I promise!&lt;a href="#fnref2" class="footnote-back" role="doc-backlink"&gt;↩︎&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn1" role="doc-endnote"&gt;&lt;p&gt;iA Writer seems to get &lt;em&gt;randomly&lt;/em&gt; slow at times for reasons I haven’t yet identified, but at least for now, I’m taking that tradeoff over Ulysses’ habit of being a bit slow &lt;em&gt;all the time&lt;/em&gt;. As I’ve often noted before: &lt;a href="https://v4.chriskrycho.com/2016/ulysses-byword-and-just-right.html" title="Ulysses, Byword, and “Just Right”"&gt;my ideal writing app doesn’t exist&lt;/a&gt;.&lt;a href="#fnref1" class="footnote-back" role="doc-backlink"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li id="fn2" role="doc-endnote"&gt;&lt;p&gt;Mass Affection isn’t dead! I promise!&lt;a href="#fnref2" class="footnote-back" role="doc-backlink"&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 </description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Chris Krycho</dc:creator><pubDate>Sat, 19 Jan 2019 09:00:00 -0500</pubDate><guid isPermaLink="false">tag:v4.chriskrycho.com,2019-01-19:/2019/my-current-setup.html</guid><category>productivity</category><category>pomodoro</category><category>apps</category><category>writing</category><category>reading</category><category>software development</category></item></channel></rss>
