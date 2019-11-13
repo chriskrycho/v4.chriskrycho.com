@@ -66,11 +66,9 @@
 
         <nav>
             <ul>
-                {% for category, _ in categories %}
-                {% if category != 'micro' and category != 'blog' and category != 'Blog' %}
-                <li class="section-title {{category.slug}}"><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a></li>
-                {% endif %}
-                {% endfor %}
+                <li class="section-title"><a href="{{ SITEURL }}/art/">Art</a></li>
+                <li class="section-title"><a href="{{ SITEURL }}/tech/">Tech</a></li>
+                <li class="section-title"><a href="{{ SITEURL }}/theology/">Theology</a></li>
                 <li class="section-title divider" role="presentation"></li>
                 <li class="section-title"><a href="{{ SITEURL }}/series.html">Series</a></li>
                 <li class="section-title divider" role="presentation"></li>
