@@ -2,13 +2,13 @@
 Title: Curriculum Vitae
 Slug: cv
 Subtitle: >
-    I am a senior software engineer focused on web <abbr>UI</abbr>, typography, functional programming—and ethics.
+    I am a staff software engineer focused on web <abbr>UI</abbr>, typography, functional programming—and ethics.
 Summary: >
-    I am a senior software engineer focused on web UI, typography, functional programming—and ethics. You can have my traditional résumé, but this page will tell you a lot more about whether we might work well together.
+    I am a staff software engineer focused on web UI, typography, functional programming—and ethics. You can have my traditional résumé, but this page will tell you a lot more about whether we might work well together.
 
 ---
 
-In helping hire people over the last few years, I’ve seen a lot of résumés. Even the best of them leave a lot to be desired: they lack context and narrative. So if you’d like a traditional résumé for me, you can snag it [here][resume]—but if you’d like a better idea of whether we might work well together, I think you’ll find the rest of this page a lot more helpful. If you're interested, [say hello][email]!
+In helping hire people over the last few years, I’ve seen a lot of résumés. Even the best of them leave a lot to be desired: they lack context and narrative. So if you’d like a traditional résumé for me, you can snag it [here][resume]—but if you’d like a better idea of whether we might work well together, I think you’ll find the rest of this page a lot more helpful. I’m not looking at this point—but you’re still welcome to [say hello][email]!
 
 [resume]: https://f001.backblazeb2.com/file/chriskrycho-com/resume.pdf
 [email]: mailto:hello@chriskrycho.com?subject=Read%20your%20CV
@@ -42,11 +42,23 @@ Building things the *right way* means I am not interested in slapdash product de
 
 ## My Work
 
-### Current: Olo
+### Current: LinkedIn
+
+Since **January 2019**, I have been a **Staff Software Engineer** at [LinkedIn], working as an infrastructure engineer on the flagship web application—one of the largest JavaScript applications in the world.
+
+- I helped plan major architectural improvements now being rolled out across the application, and spearheaded the process of updating the app to the current versions of Ember.js.
+- I contributed to the development of [Volta], an open-source, cross-platform tool (written in Rust!) for managing Node.js environments in a reproducible, reliable way.
+
+[LinkedIn]: https://www.linkedin.com/feed/
+[Volta]: https://volta.sh
+
+### Earlier Work
+
+#### Olo
 
 *From individual contributor to a project lead with organization-wide influence.*
 
-**Since January 2016**, I have been a front-end-focused software engineer at [**Olo**][olo], a scale-up-phase startup which is the leading provider of online ordering for large restaurant brands.
+From **January 2016 – January 2019**, I was a front-end-focused software engineer at [**Olo**][olo], a scale-up-phase startup which is the leading provider of online ordering for large restaurant brands.
 
 [olo]: https://www.olo.com
 
@@ -74,8 +86,6 @@ Throughout my time at Olo, I:
 - substantially reshaped our front-end engineering practices and tooling choices as an informal leader among our front-end engineering group
 
 I have matured significantly as both an individual contributor and a leader in my time at Olo. For the first time, I have been able to make a substantial difference at the team level, at the organizational level, and at the level of the broader technical community.
-
-### Earlier Work
 
 #### [HolyBible.com][hb]
 
