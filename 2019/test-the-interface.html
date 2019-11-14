@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test the Interface &middot; Chris Krycho</title>
+    <meta name="description" content="A fundamental principle of testing software is: test the interface. If you test at the right level, it makes refactoring easy. If you test at the wrong level, you’re not even really testing what you think you are."/>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+<link rel='me' href='https://alpha.app.net/chriskrycho' data-type='follow' data-user-id='@chriskrycho'/>    <meta property="og:url" content="http://v4.chriskrycho.com/2019/test-the-interface.html"/>
+    <meta property="og:title" content="Test the Interface"/>
+    <meta property="og:description" content="A fundamental principle of testing software is: test the interface. If you test at the right level, it makes refactoring easy. If you test at the wrong level, you’re not even really testing what you think you are."/>
+        <meta property="og:image" content="http://v4.chriskrycho.com//assets/images/ck.png"/>
+<link rel="author" href=""/>
+<link rel="me" href=""/><meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@chriskrycho"/>
+<meta name="twitter:creator" content="@chriskrycho"/>
+    <meta name="twitter:title" content="Test the Interface"/>
+    <meta name="twitter:description" content="A fundamental principle of testing software is: test the interface. If you test at the right level, it makes refactoring easy. If you test at the wrong level, you’re not even really testing what you think you are."/>
+        <meta name="twitter:image" content="http://v4.chriskrycho.com/assets/images/ck.png"/>
+    <link rel="me" href="http://stackoverflow.com/users/564181/chris-krycho"/>
+    <link rel="me" href="https://github.com/chriskrycho"/>
+    <link rel="me" href="https://patreon.com/chriskrycho"/>
+    <link rel="me" href="https://soundcloud.com/chriskrycho"/>
+    <link rel="me" href="https://vimeo.com/chriskrycho"/>
+    <link rel="me" href="https://cash.me/$chriskrycho"/>
+    <link rel="me" href="https://twitter.com/chriskrycho"/>
+    <link rel="me" href="mailto:chris at chriskrycho dot com"/>
+    <link rel="me" href="http://www.linkedin.com/in/chriskrycho"/>
+
+    <link rel="openid.delegate" href="http://v4.chriskrycho.com/" />
+    <link rel="openid.server" href="https://indieauth.com/openid" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <link href="/favicon.png" type="image/png" rel="icon" />
+    <link href="/favicon.ico" type="image/ico" rel="icon" />
+
+    <script type="text/javascript" src="/assets/js/mtiFontTrackingCode.js"></script>
+
+
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="All posts">
+        <link rel="alternate" href="/feeds/Art.xml" type="application/rss+xml" title="Posts filed in in 'Art''">
+        <link rel="alternate" href="/feeds/blog.xml" type="application/rss+xml" title="Posts filed in in 'Blog''">
+        <link rel="alternate" href="/feeds/Tech.xml" type="application/rss+xml" title="Posts filed in in 'Tech''">
+        <link rel="alternate" href="/feeds/Theology.xml" type="application/rss+xml" title="Posts filed in in 'Theology''">
+</head>
+<body>
+    <header id="site-header">
+        <div class="hgroup">
+            <h1 id="site-title">
+<a href="http://v4.chriskrycho.com"><img class="logotype" src="/assets/images/ck.png" alt="ck"/>Chris Krycho</a>
+</h1>
+
+            <h2 id="site-subtitle">Theology, technology, life & art</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/art/">Art</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/tech/">Tech</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/theology/">Theology</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/series.html">Series</a></li>
+                <li class="section-title divider" role="presentation"></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/about">About</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/cv">C.V.</a></li>
+                <li class="section-title"><a href="http://v4.chriskrycho.com/now">Now</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+<article class="software-development testing tech">
+
+    <header>
+<h1>Test the Interface</h1>
+<h2>An essential principle for effective software testing.</h2>    </header>
+
+    <div class="meta">
+<span class="date"><a href="http://v4.chriskrycho.com/2019/test-the-interface.html" title="Test the Interface"><i class="fa fa-fw fa-link"></i></a>November 13, 2019</span><span class="section">Filed under <a class="section-title" href="http://v4.chriskrycho.com/tech/">Tech</a></span><span class="hashtag"><a class="hashtags" href="http://v4.chriskrycho.com/software-development/">#software development</a><a class="hashtags" href="http://v4.chriskrycho.com/testing/">#testing</a></span><span><a href="http://v4.chriskrycho.com/2019/test-the-interface.txt">Markdown source</a></span>    </div>
+
+    <div class="content-wrapper">
+
+
+        <div class="content">
+
+<p><i><b><a href="https://v4.chriskrycho.com/2018/assumed-audiences.html">Assumed Audience</a>:</b> software developers interested in honing their craft—especially folks just trying to get a handle on good techniques for testing.</i></p>
+<p>A fundamental principle of testing software is: <i>test the interface</i>. Failing to keep this principle in mind is at the root of the majority of the problems I see in automated tests (including quite a few of those I’ve written in the past!).</p>
+<p>What do I mean by <i>test the interface</i>? I mean that when you are thinking about what kind of test to write, you can answer it by thinking about how the piece of code will be <em>used</em>. That’s the interface: the place that piece of code interacts with the rest of the world around it. The interaction might be between two functions, or it might be feeding data from a web <abbr title="application programming interface">API</abbr> into your application to show users data, or any of a host of things in between. The point is: wherever that interaction is, <em>that’s</em> the interface, and <em>that’s</em> what you test.</p>
+<p>To see what I mean, let’s define some different kinds of interfaces and how we might test them in the context of a JavaScript application. (I’m using this context because it’s the one I’m most familiar with these days—but the basic principles apply equally well in lots of other contexts.) When we’re writing our app, we have a bunch of different levels of abstraction we can deal with:</p>
+<ul>
+<li>the entire application as the user experiences it</li>
+<li>individual user interface elements within the application—<abbr title="user interface">UI</abbr> components</li>
+<li>functions and classes that manage the business logic of the application</li>
+</ul>
+<p>This is actually pretty much it, though each of those covers an enormous amount of ground. Notice too that each of these layers of abstraction (each interface) is composed of lower levels of abstraction (smaller interfaces). However, you still want to test each interface on its own terms.</p>
+<p>When you are trying to test the entire application as the user experiences it, you should be doing “end-to-end” style testing, preferably with some kind of testing tool that generates the same kinds of input (from the app’s perspective) as a user would. In web apps, we often use tools like <a href="https://developers.google.com/web/tools/puppeteer">Puppeteer</a> or <a href="https://www.seleniumhq.org/projects/webdriver/">Webdriver</a> to simulate a user clicking through our <abbr>UI</abbr> and filling in forms and so on. This is the right level of testing: we interact with the whole app and its interface the same way a user does!</p>
+<p>What we <em>shouldn’t</em> do at this level is use our knowledge of the framework our app is using to go in and replace function calls, or swap out <abbr>UI</abbr> components. As soon as we do that, our test stops actually telling us the truth about the interface it’s testing. A user can’t reach in and swap out a function at runtime. If <em>you</em> do that in your tests, then your test tells you something about a fake world you’ve constructed—not the world your user lives in! How do you <em>know</em> that’s the right level to test at? Because that’s the level at which your app interacts with the user: in terms of clicks and form-filling and those kinds of events. <em>Not</em> in terms of function calls!</p>
+<p>What about <abbr>UI</abbr> components? The same basic principle holds here. The public interface of a component in any modern web framework is its template—whether that’s JSX, Glimmer templates, Vue templates, Angular templates, or something else. How do you know that? Because that’s the level at which the rest of your codebase will <em>use</em> the component. So what you should test is that template invocation. This is the level of a “rendering” test (as we call them in Ember).</p>
+<p>The rest of your codebase doesn’t have the liberty (and in most cases doesn’t have the <em>ability</em>) to reach in and change the behavior of the class or function for your component at runtime. All it can do is call that component with its arguments, and work with anything the component hands back to it. If, during your tests, you violate that—say, by reaching in and calling internal methods on the class that backs a component, rather than via the event handlers you set up to trigger those methods—you are no longer testing what you think you are. Again: you’re in a world of your own construction, <em>not</em> the world the rest of your app code lives in. Your test only tells you what happens when you do something manually behind the scenes with the internals of your component… <em>not</em> what happens when interacting with the component the way other code will.</p>
+<p>The same basic principle applies for other classes used in your codebase. This is the layer for “unit” tests. For functions, you just pass in the various arguments allowed and check that you’re getting the results you expect. For classes, you set them up using their public constructors and call only their public methods and set only their public fields. In languages like JavaScript, Python, Ruby, and others, you can often poke at and use methods and data on the class which are really meant to be private.[^private fields] That can be particularly tempting when you’re the author of the class: <em>you</em> know what these internal details are supposed to do, after all! It can seem faster and easier to just set up a class with some state ahead of time, or to swap out one of its methods for an easier one to test using monkey-patching or mocking.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> If you do this, however, instead of using the documented public <abbr>API</abbr>, you’re once again testing something other that what the rest of your app will be using… and this means that once again your tests don’t actually tell you whether the rest of the app can actually use it correctly!</p>
+<p>In each of these cases, we need to <i>test the interface</i>—the place where the rest of the world will interact with our code, <em>not</em> its internal mechanics.</p>
+<p>This helps guarantee that what we are testing is what the rest of the world sees—whether the “world” in question is other functions or classes, or external <abbr>API</abbr>s, or actual users. It also helps us when refactoring, which is making changes to the internals of some piece of code <em>without changing its public interface</em>. If we test the interface, we can safely refactor internally and know two things: if our tests break, we got our refactoring wrong; and we don’t have to change our tests in the process of refactoring! If we test the internals instead of the interface, though, we’ll <em>often</em> have to make changes to our tests when we’re trying to refactor, because we’ll be changing those “behind the scenes” details.</p>
+<p>None of this is obvious or intuitive when you’re just starting out, but keeping the principle of <i>test the interface</i> in mind will help you pick the right kind of test: end-to-end, some kind of rendering/<abbr>UI</abbr> test for individual components, and unit tests for standalone “business logic” classes or functions. Hopefully this can help a few of you out there internalize this faster than I did!</p>
+<p>[^private fields]: JavaScript is getting private fields and methods soon, which will help a lot with this—but the basic principle here will remain important even then, because not everything that’s private in terms of <abbr>API</abbr> design can or should be private in terms of the implementation mechanics. This is a question I’d love to dig into… in a future post.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>A related tip—if you find yourself wishing that the implementation were easier to <em>test</em>, and needing to mock or stub parts of it to make it testable, that’s <em>often</em> a sign that your design needs some work!</p>
+<p>Note that I didn’t spend much time on functions here because it’s much <em>harder</em> to get yourself into these messes with functions. In most languages, you don’t have any way to reach in and mess with their internals, so you’re safe from a lot of these issues. Inputs and outputs are all you have to work with. This is one of the great advantages to working with a functional style where you can. Use of closures for managing state complicates this story a bit, but even there: less so than with most of the other things discussed here!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+        </div>
+    </div>
+</article>
+
+
+    <footer id="site-footer"><section id="connect">
+    <h2>Connect</h2>
+    <ul class="icons">
+        <li><a href="mailto:chris at chriskrycho dot com"><i class="fa fa-fw fa-envelope"></i>Email</a></li>
+        <li><a href="https://github.com/chriskrycho"><i class="fa fa-fw fa-github"></i>GitHub</a></li>
+        <li><a href="https://twitter.com/chriskrycho"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+        <li><a href="https://soundcloud.com/chriskrycho"><i class="fa fa-fw fa-soundcloud"></i>SoundCloud</a></li>
+        <li><a href="http://www.linkedin.com/in/chriskrycho"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+        <li><a href="https://vimeo.com/chriskrycho"><i class="fa fa-fw fa-vimeo"></i>Vimeo</a></li>
+        <li><a href="http://stackoverflow.com/users/564181/chris-krycho"><i class="fa fa-fw fa-stack-overflow"></i>Stack Overflow</a></li>
+    </ul>
+    <h3>Support Me</h3>
+    <ul class='icons'>
+        <li><a href="https://patreon.com/chriskrycho"><i class='fa fa-fw fa-money'></i>Patreon</a></li>
+        <li><a href="https://cash.me/$chriskrycho"><i class='fa fa-fw fa-usd'></i>Cash.me</a></li>
+    </ul>
+</section>
+<section id="subscribe">
+    <h2>Subscribe</h2>
+    <ul class="icons">
+        <li class="section-title">
+            <a onclick="window.open('http://eepurl.com/GzswP', 'subscribe', 'width=608,height=608')">
+                   <i class="fa fa-fw fa-envelope"></i>Email
+            </a>
+        </li>
+    </ul>
+    <h3>Feeds</h3>
+    <ul class="icons">
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feed.xml"><i class="fa fa-fw fa-rss"></i>Everything</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Art.xml"><i class="fa fa-fw fa-rss"></i>Art</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/blog.xml"><i class="fa fa-fw fa-rss"></i>blog</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Tech.xml"><i class="fa fa-fw fa-rss"></i>Tech</a>
+        </li>
+        <li class="section-title">
+            <a href="http://v4.chriskrycho.com/feeds/Theology.xml"><i class="fa fa-fw fa-rss"></i>Theology</a>
+        </li>
+    </ul>
+</section>
+<section id="recent">
+    <h2>Recent</h2>
+    <ul>
+        <li>Art: <a href="http://v4.chriskrycho.com/2019/photography-ing-again.html">Photography-ing Again!</a></li>
+        <li>Blog: <a href="http://v4.chriskrycho.com/2019/a-silly-spreadsheet-mistake.html">A Silly Spreadsheet Mistake</a></li>
+        <li>Tech: <a href="http://v4.chriskrycho.com/2019/test-the-interface.html">Test the Interface</a></li>
+        <li>Theology: <a href="http://v4.chriskrycho.com/2019/review-what-is-an-evangelical.html">Review: <cite>What is an Evangelical</cite>
+</a></li>
+    </ul>
+</section></footer>
+
+    <script type="text/javascript">
+    var MTIProjectId='a34d2e31-99b5-469a-9b81-128fc0bd9745';
+    </script>
+
+<link rel="stylesheet" href="/assets/tomorrow.min.css">
+<script src="/assets/js/highlight.pack.js"></script>
+<script type="text/javascript">
+// Get all the <pre><code> elements, and use the <pre> element to set the <code>
+// element's class so hljs will use it rather than trying to figure it out.
+var preEls = document.getElementsByTagName('pre');
+for (var e in preEls) {
+    var pre = preEls[e];
+    if (pre.firstChild && pre.firstChild.tagName === 'CODE') {
+        var code = pre.firstChild;
+        code.className = pre.className;
+    }
+}
+
+// Then run hljs.
+hljs.initHighlightingOnLoad();
+</script>
+
+<script type="text/javascript" src="/assets/js/lib.js"></script>
+</body>
+</html>
