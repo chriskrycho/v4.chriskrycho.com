@@ -1,6 +1,7 @@
 ---
-Title: > v5.chriskrycho.com: Sympolymathesy
-Subtitle: Announcing t
+Title: >
+    Sympolymathesy, or: v5.chriskrycho.com:
+Subtitle: Announcing the newest revision of this website!
 Date: 2019-11-17 15:30
 Tags: [writing, links, web design]
 Category: Blog
