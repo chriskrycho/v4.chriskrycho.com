@@ -1,7 +1,17 @@
-chriskrycho.com
-===============
+v4.chriskrycho.com _(ARCHIVED)_
+===============================
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/chriskrycho/chriskrycho.com?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+_**NOTE:** this version of my website is now in archival mode; I am writing all
+future content at [v5.chriskrycho.com][v5] – for which the source is available
+[here][v5-gh]._
+
+[v5]: https://v5.chriskrycho.com
+[v5-gh]: https://github.com/chriskrycho/v5.chriskrycho.com
+
+---
+
+ARCHIVED README CONTENT
+=======================
 
 Here I version control my website. Everything is public, because anything I have
 here is *already* public. Moreover, all of this material is provided open source
