@@ -18,5 +18,5 @@ Summary: >
 
 I’ve just officially launched v5.chriskrycho.com, “Sympolymathesy”. As such, this is the final post on this site! For all the details, check out [the relaunch post][relaunch]!
 
-[relaunch]: https://v5.chriskrycho.com/journal/relaunch/
+[relaunch]: https://v5.chriskrycho.com/journal/relaunch!/
 
