@@ -18,7 +18,7 @@ Yesterday, I wrote a [post] extolling the virtues of the lovely (and quirky!) ty
 [post]: https://v4.chriskrycho.com/2019/cronos.html
 [Cronos]: https://www.myfonts.com/fonts/adobe/cronos/
 
-For context, most web fonts are licensed on a per-pageview basis, where once you exceed the number of allotted views using that web font, you need to pay again to extend or increase the license. The aim—whether it works well or not, I can’t say—is to make it so that high-volume sites pay more to the type foundry (and hopefully designer). The idea makes sense: if your brand relies heavily on someone’s design work, and specifically you’re raking in the profits becuase of your website’s use of that design work, one way to monetize that effectively is to align cost and usage.
+For context, most web fonts are licensed on a per-pageview basis, where once you exceed the number of allotted views using that web font, you need to pay again to extend or increase the license. The aim—whether it works well or not, I can’t say—is to make it so that high-volume sites pay more to the type foundry (and hopefully designer). The idea makes sense: if your brand relies heavily on someone’s design work, and specifically you’re raking in the profits because of your website’s use of that design work, one way to monetize that effectively is to align cost and usage.
 
 Many foundries allow you to get this two ways: either via a subscription, or via a one-time purchase, which you only need to revisit if you exceed the number of page views you paid for. This is how the fantastic type faces at [Klim Type Foundry] work, for example—and it’s one of the reasons I went with [Tiempos] for the [Winning Slowly] site redesign last year. Unfortunately, Adobe is *not* one of those foundries.
 
