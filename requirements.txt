@@ -13,7 +13,7 @@ mccabe==0.6.1
 msgpack==0.5.3
 neovim==0.2.1
 pelican==3.7.1
-Pygments==2.2.0
+Pygments==2.7.4
 pylint==1.9.2
 python-dateutil==2.6.1
 pytz==2017.3
